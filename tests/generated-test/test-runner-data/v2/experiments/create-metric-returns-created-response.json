@@ -1,0 +1,45 @@
+{
+  "api": "Experiments",
+  "expected_status": 201,
+  "feature": "Experiments",
+  "id": "v2/Experiments/Create metric returns \"Created\" response",
+  "operation_id": "CreateMetric",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ExperimentsCreateMetricV2Request",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "data_source_type": "DATADOG",
+            "desired_change": "METRIC_INCREASES",
+            "name": "ex-{{ unique_hash }}",
+            "numerator_aggregation": {
+              "datadog_metric_measure": {
+                "column_name": "@view.time_spent",
+                "column_type": "double",
+                "name": "ex-{{ unique_hash }} view duration",
+                "source_subtype": "RUM_VIEWS",
+                "source_type": "PRODUCT_ANALYTICS"
+              },
+              "operation": "sum"
+            }
+          },
+          "type": "metrics"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/experiments/metrics"
+  },
+  "scenario": "Create metric returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

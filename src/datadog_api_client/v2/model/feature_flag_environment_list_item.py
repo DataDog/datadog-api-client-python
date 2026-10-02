@@ -31,6 +31,7 @@ class FeatureFlagEnvironmentListItem(ModelNormal):
             "environment_name": (str,),
             "environment_queries": ([str],),
             "is_production": (bool,),
+            "observe_full_evaluation_data": (bool,),
             "override_allocation_key": (str,),
             "override_variant_id": (str, none_type),
             "pending_suggestion_id": (str, none_type),
@@ -45,6 +46,7 @@ class FeatureFlagEnvironmentListItem(ModelNormal):
         "environment_name": "environment_name",
         "environment_queries": "environment_queries",
         "is_production": "is_production",
+        "observe_full_evaluation_data": "observe_full_evaluation_data",
         "override_allocation_key": "override_allocation_key",
         "override_variant_id": "override_variant_id",
         "pending_suggestion_id": "pending_suggestion_id",
@@ -61,6 +63,7 @@ class FeatureFlagEnvironmentListItem(ModelNormal):
         environment_name: Union[str, UnsetType] = unset,
         environment_queries: Union[List[str], UnsetType] = unset,
         is_production: Union[bool, UnsetType] = unset,
+        observe_full_evaluation_data: Union[bool, UnsetType] = unset,
         override_allocation_key: Union[str, UnsetType] = unset,
         override_variant_id: Union[str, none_type, UnsetType] = unset,
         pending_suggestion_id: Union[str, none_type, UnsetType] = unset,
@@ -88,6 +91,9 @@ class FeatureFlagEnvironmentListItem(ModelNormal):
         :param is_production: Indicates whether the environment is production.
         :type is_production: bool, optional
 
+        :param observe_full_evaluation_data: Indicates whether feature flag evaluation events include original targeting identifiers and full evaluation context.
+        :type observe_full_evaluation_data: bool, optional
+
         :param override_allocation_key: The allocation key used for the override variant.
         :type override_allocation_key: str, optional
 
@@ -113,6 +119,8 @@ class FeatureFlagEnvironmentListItem(ModelNormal):
             kwargs["environment_queries"] = environment_queries
         if is_production is not unset:
             kwargs["is_production"] = is_production
+        if observe_full_evaluation_data is not unset:
+            kwargs["observe_full_evaluation_data"] = observe_full_evaluation_data
         if override_allocation_key is not unset:
             kwargs["override_allocation_key"] = override_allocation_key
         if override_variant_id is not unset:

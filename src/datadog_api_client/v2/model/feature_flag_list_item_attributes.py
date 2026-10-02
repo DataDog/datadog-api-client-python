@@ -18,6 +18,7 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.feature_flag_environment_list_item import FeatureFlagEnvironmentListItem
+    from datadog_api_client.v2.model.feature_flag_staleness_details import FeatureFlagStalenessDetails
     from datadog_api_client.v2.model.value_type import ValueType
     from datadog_api_client.v2.model.variant import Variant
 
@@ -26,6 +27,7 @@ class FeatureFlagListItemAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.feature_flag_environment_list_item import FeatureFlagEnvironmentListItem
+        from datadog_api_client.v2.model.feature_flag_staleness_details import FeatureFlagStalenessDetails
         from datadog_api_client.v2.model.value_type import ValueType
         from datadog_api_client.v2.model.variant import Variant
 
@@ -36,11 +38,13 @@ class FeatureFlagListItemAttributes(ModelNormal):
             "description": (str,),
             "distribution_channel": (str,),
             "feature_flag_environments": ([FeatureFlagEnvironmentListItem],),
+            "is_favorite": (bool,),
             "json_schema": (str, none_type),
             "key": (str,),
             "last_updated_by": (UUID,),
             "name": (str,),
             "require_approval": (bool,),
+            "staleness_details": (FeatureFlagStalenessDetails,),
             "staleness_status": (str,),
             "tags": ([str],),
             "updated_at": (datetime,),
@@ -55,11 +59,13 @@ class FeatureFlagListItemAttributes(ModelNormal):
         "description": "description",
         "distribution_channel": "distribution_channel",
         "feature_flag_environments": "feature_flag_environments",
+        "is_favorite": "is_favorite",
         "json_schema": "json_schema",
         "key": "key",
         "last_updated_by": "last_updated_by",
         "name": "name",
         "require_approval": "require_approval",
+        "staleness_details": "staleness_details",
         "staleness_status": "staleness_status",
         "tags": "tags",
         "updated_at": "updated_at",
@@ -79,9 +85,11 @@ class FeatureFlagListItemAttributes(ModelNormal):
         created_by: Union[UUID, UnsetType] = unset,
         distribution_channel: Union[str, UnsetType] = unset,
         feature_flag_environments: Union[List[FeatureFlagEnvironmentListItem], UnsetType] = unset,
+        is_favorite: Union[bool, UnsetType] = unset,
         json_schema: Union[str, none_type, UnsetType] = unset,
         last_updated_by: Union[UUID, UnsetType] = unset,
         require_approval: Union[bool, UnsetType] = unset,
+        staleness_details: Union[FeatureFlagStalenessDetails, UnsetType] = unset,
         staleness_status: Union[str, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         updated_at: Union[datetime, UnsetType] = unset,
@@ -108,6 +116,9 @@ class FeatureFlagListItemAttributes(ModelNormal):
         :param feature_flag_environments: Environment-specific settings for the feature flag.
         :type feature_flag_environments: [FeatureFlagEnvironmentListItem], optional
 
+        :param is_favorite: Indicates whether the current user has marked the feature flag as a favorite.
+        :type is_favorite: bool, optional
+
         :param json_schema: JSON schema for validation when value_type is JSON.
         :type json_schema: str, none_type, optional
 
@@ -122,6 +133,9 @@ class FeatureFlagListItemAttributes(ModelNormal):
 
         :param require_approval: Indicates whether this feature flag requires approval for changes.
         :type require_approval: bool, optional
+
+        :param staleness_details: The feature flag's current staleness state and suggested actions.
+        :type staleness_details: FeatureFlagStalenessDetails, optional
 
         :param staleness_status: Indicates the staleness status of the feature flag.
         :type staleness_status: str, optional
@@ -148,12 +162,16 @@ class FeatureFlagListItemAttributes(ModelNormal):
             kwargs["distribution_channel"] = distribution_channel
         if feature_flag_environments is not unset:
             kwargs["feature_flag_environments"] = feature_flag_environments
+        if is_favorite is not unset:
+            kwargs["is_favorite"] = is_favorite
         if json_schema is not unset:
             kwargs["json_schema"] = json_schema
         if last_updated_by is not unset:
             kwargs["last_updated_by"] = last_updated_by
         if require_approval is not unset:
             kwargs["require_approval"] = require_approval
+        if staleness_details is not unset:
+            kwargs["staleness_details"] = staleness_details
         if staleness_status is not unset:
             kwargs["staleness_status"] = staleness_status
         if tags is not unset:

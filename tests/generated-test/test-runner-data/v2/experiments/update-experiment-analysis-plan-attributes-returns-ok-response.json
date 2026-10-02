@@ -1,0 +1,51 @@
+{
+  "api": "Experiments",
+  "expected_status": 200,
+  "feature": "Experiments",
+  "id": "v2/Experiments/Update experiment analysis plan attributes returns \"OK\" response",
+  "operation_id": "UpdateExperimentAnalysisPlanAttributes",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ExperimentsAnalysisPlanWriteV2Request",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "confidence_level": 0.9
+          },
+          "id": "{{ experiment.data.id }}",
+          "type": "analysis-plans"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "experiment_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "experiment.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/experiments/{experiment_id}/analysis-plan"
+  },
+  "scenario": "Update experiment analysis plan attributes returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

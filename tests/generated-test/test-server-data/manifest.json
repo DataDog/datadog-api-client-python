@@ -296,6 +296,11 @@
       "version": "v2"
     },
     {
+      "feature": "Experiments",
+      "file": "v2/experiments.json",
+      "version": "v2"
+    },
+    {
       "feature": "Fastly Integration",
       "file": "v2/fastly-integration.json",
       "version": "v2"

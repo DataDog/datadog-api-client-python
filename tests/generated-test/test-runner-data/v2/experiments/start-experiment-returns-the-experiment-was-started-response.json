@@ -1,0 +1,35 @@
+{
+  "api": "Experiments",
+  "expected_status": 204,
+  "feature": "Experiments",
+  "id": "v2/Experiments/Start experiment returns \"The experiment was started.\" response",
+  "operation_id": "StartExperiment",
+  "request": {
+    "body": null,
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "experiment_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "configured_experiment.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/experiments/{experiment_id}/start"
+  },
+  "scenario": "Start experiment returns \"The experiment was started.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

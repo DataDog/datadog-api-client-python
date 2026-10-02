@@ -1,0 +1,35 @@
+{
+  "api": "Experiments",
+  "expected_status": 200,
+  "feature": "Experiments",
+  "id": "v2/Experiments/Get experiment diagnostics returns \"OK\" response",
+  "operation_id": "GetExperimentDiagnostics",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "experiment_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "experiment.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/experiments/{experiment_id}/diagnostics"
+  },
+  "scenario": "Get experiment diagnostics returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
