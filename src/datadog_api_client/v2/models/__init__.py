@@ -1,3 +1,7 @@
+from datadog_api_client.v2.model.ai_impact_user_activity_attributes import AIImpactUserActivityAttributes
+from datadog_api_client.v2.model.ai_impact_user_activity_data import AIImpactUserActivityData
+from datadog_api_client.v2.model.ai_impact_user_activity_request import AIImpactUserActivityRequest
+from datadog_api_client.v2.model.ai_impact_user_activity_type import AIImpactUserActivityType
 from datadog_api_client.v2.model.api_error_response import APIErrorResponse
 from datadog_api_client.v2.model.api_key_create_attributes import APIKeyCreateAttributes
 from datadog_api_client.v2.model.api_key_create_data import APIKeyCreateData
@@ -11942,6 +11946,10 @@ from datadog_api_client.v2.model.zoom_configuration_reference import ZoomConfigu
 from datadog_api_client.v2.model.zoom_configuration_reference_data import ZoomConfigurationReferenceData
 
 __all__ = [
+    "AIImpactUserActivityAttributes",
+    "AIImpactUserActivityData",
+    "AIImpactUserActivityRequest",
+    "AIImpactUserActivityType",
     "APIErrorResponse",
     "APIKeyCreateAttributes",
     "APIKeyCreateData",
