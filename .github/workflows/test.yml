@@ -68,12 +68,13 @@ jobs:
         id: octo-sts
         uses: DataDog/dd-octo-sts-action@96a25462dbcb10ebf0bfd6e2ccc917d2ab235b9a # v1.0.4
         with:
-          scope: DataDog/datadog-api-spec
+          scope: ddoghq/datadog-api-spec
           policy: datadog-api-client-python.github.post-status-check.pull-request
       - name: Post status check
         uses: DataDog/github-actions/post-status-check@65b4875f33ad773d7ba4b005a2cb5f35020295f3 # v2.3.0
         with:
           github-token: ${{ steps.octo-sts.outputs.token }}
+          owner: ddoghq
           repo: datadog-api-spec
           status: ${{ (needs.test.result == 'cancelled' || needs.examples.result == 'cancelled') && 'pending' || (needs.test.result == 'success' && needs.examples.result == 'success') && 'success' || 'failure' }}
           context: master/unit
