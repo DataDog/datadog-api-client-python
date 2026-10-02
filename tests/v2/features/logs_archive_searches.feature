@@ -1,10 +1,14 @@
 @endpoint(logs-archive-searches) @endpoint(logs-archive-searches-v2)
 Feature: Logs Archive Searches
-  Search the logs stored in a Logs Archive without reindexing them, and
-  optionally rehydrate the matches into a retained historical view.  See the
-  [Rehydrating from
-  Archives](https://app.datadoghq.com/logs/pipelines/historical-views) page
-  for the searches currently running in Datadog.
+  Archive Search queries logs directly from long-term storage archives
+  without prior rehydration and charges only for the data scanned.  A search
+  runs in one of two modes. By default it scans the archive and retains up
+  to 100,000 matching logs for 24 hours on a dedicated results page. Include
+  a `rehydration` object to run a Search & Rehydration instead, which
+  retains the matches for a custom retention period and makes them available
+  in Log Explorer, Dashboards, and Notebooks.  A search requires the
+  `logs_write_historical_view` or `logs_write_archive_search` permission.
+  Rehydration requires `logs_write_historical_view`.
 
   Background:
     Given a valid "apiKeyAuth" key in the system

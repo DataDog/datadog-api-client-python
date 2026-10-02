@@ -13,11 +13,16 @@ from datadog_api_client.v2.model.archive_search_create_request import ArchiveSea
 
 class LogsArchiveSearchesApi:
     """
-    Search the logs stored in a Logs Archive without reindexing them, and optionally rehydrate
-    the matches into a retained historical view.
+    Archive Search queries logs directly from long-term storage archives without prior
+    rehydration and charges only for the data scanned.
 
-    See the `Rehydrating from Archives <https://app.datadoghq.com/logs/pipelines/historical-views>`_
-    page for the searches currently running in Datadog.
+    A search runs in one of two modes. By default it scans the archive and retains up to
+    100,000 matching logs for 24 hours on a dedicated results page. Include a ``rehydration``
+    object to run a Search & Rehydration instead, which retains the matches for a custom
+    retention period and makes them available in Log Explorer, Dashboards, and Notebooks.
+
+    A search requires the ``logs_write_historical_view`` or ``logs_write_archive_search``
+    permission. Rehydration requires ``logs_write_historical_view``.
     """
 
     def __init__(self, api_client=None):
