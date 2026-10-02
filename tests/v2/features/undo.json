@@ -7698,12 +7698,6 @@
       "type": "safe"
     }
   },
-  "QueryAggregatedSignalsProblems": {
-    "tag": "RUM Insights",
-    "undo": {
-      "type": "safe"
-    }
-  },
   "QueryAggregatedWaterfall": {
     "tag": "RUM Insights",
     "undo": {
