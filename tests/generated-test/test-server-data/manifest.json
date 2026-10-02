@@ -171,6 +171,11 @@
       "version": "v2"
     },
     {
+      "feature": "CI Visibility Logs",
+      "file": "v2/ci-visibility-logs.json",
+      "version": "v2"
+    },
+    {
       "feature": "CI Visibility Pipelines",
       "file": "v2/ci-visibility-pipelines.json",
       "version": "v2"

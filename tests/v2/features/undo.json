@@ -1483,6 +1483,12 @@
       "type": "safe"
     }
   },
+  "SubmitCILog": {
+    "tag": "CI Visibility Logs",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListAWSCloudAuthPersonaMappings": {
     "tag": "Cloud Authentication",
     "undo": {
