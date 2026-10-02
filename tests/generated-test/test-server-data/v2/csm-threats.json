@@ -769,7 +769,7 @@
     },
     {
       "feature": "CSM Threats",
-      "frozen_at": "2025-12-11T16:09:25.282Z",
+      "frozen_at": "2026-10-02T11:03:28.390Z",
       "interactions": [
         {
           "request": {
@@ -779,7 +779,7 @@
                 "data": {
                   "attributes": {
                     "description": "My agent policy",
-                    "enabled": true,
+                    "enabled": false,
                     "hostTagsLists": [
                       [
                         "env:test"
@@ -799,13 +799,13 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"dmx-r5f-1rk\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":1,\"enabled\":true,\"hostTagsLists\":[[\"env:test\"]],\"monitoringRulesCount\":7,\"name\":\"my_agent_policy_2\",\"pinned\":false,\"policyVersion\":\"1\",\"ruleCount\":8,\"updateDate\":1765469365635,\"updater\":{\"name\":\"frog\",\"handle\":\"frog@datadoghq.com\"}}}}"
+              "value": "{\"data\":{\"id\":\"imf-crj-0jn\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:test\"]],\"monitoringRulesCount\":9,\"name\":\"my_agent_policy_2\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"1\",\"ruleCount\":9,\"updateDate\":1790939009455,\"updater\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
             },
             "headers": {
-              "content-type": "application/json"
+              "content-type": "application/vnd.api+json"
             },
-            "reason": "OK",
-            "status": 200
+            "reason": "Created",
+            "status": 201
           }
         },
         {
@@ -816,7 +816,7 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/remote_config/products/cws/policy/dmx-r5f-1rk",
+            "path": "/api/v2/remote_config/products/cws/policy/imf-crj-0jn",
             "query": []
           },
           "response": {
@@ -824,15 +824,13 @@
               "encoding": "text",
               "value": ""
             },
-            "headers": {
-              "content-type": "application/json"
-            },
+            "headers": {},
             "reason": "No Content",
             "status": 204
           }
         }
       ],
-      "scenario": "Create a Workload Protection policy returns \"OK\" response",
+      "scenario": "Create a Workload Protection policy returns \"Created\" response",
       "version": "v2"
     },
     {
@@ -2514,7 +2512,7 @@
     },
     {
       "feature": "CSM Threats",
-      "frozen_at": "2025-12-11T16:10:01.227Z",
+      "frozen_at": "2026-10-02T11:03:30.472Z",
       "interactions": [
         {
           "request": {
@@ -2524,11 +2522,11 @@
                 "data": {
                   "attributes": {
                     "description": "My agent policy",
-                    "enabled": true,
+                    "enabled": false,
                     "hostTags": [
                       "env:staging"
                     ],
-                    "name": "testupdateaworkloadprotectionpolicyreturnsokresponse1765469401"
+                    "name": "testupdateaworkloadprotectionpolicyreturnsokresponse1790939010"
                   },
                   "type": "policy"
                 }
@@ -2542,13 +2540,13 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"enm-uk3-cvx\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":1,\"enabled\":true,\"hostTagsLists\":[[\"env:staging\"]],\"monitoringRulesCount\":7,\"name\":\"testupdateaworkloadprotectionpolicyreturnsokresponse1765469401\",\"pinned\":false,\"policyVersion\":\"1\",\"ruleCount\":8,\"updateDate\":1765469401597,\"updater\":{\"name\":\"frog\",\"handle\":\"frog@datadoghq.com\"}}}}"
+              "value": "{\"data\":{\"id\":\"xlz-m8h-s1h\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:staging\"]],\"monitoringRulesCount\":255,\"name\":\"testupdateaworkloadprotectionpolicyreturnsokresponse1790939010\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"1\",\"ruleCount\":255,\"updateDate\":1790939010677,\"updater\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
             },
             "headers": {
-              "content-type": "application/json"
+              "content-type": "application/vnd.api+json"
             },
-            "reason": "OK",
-            "status": 200
+            "reason": "Created",
+            "status": 201
           }
         },
         {
@@ -2559,7 +2557,7 @@
                 "data": {
                   "attributes": {
                     "description": "Updated agent policy",
-                    "enabled": true,
+                    "enabled": false,
                     "hostTagsLists": [
                       [
                         "env:test"
@@ -2567,23 +2565,23 @@
                     ],
                     "name": "updated_agent_policy"
                   },
-                  "id": "enm-uk3-cvx",
+                  "id": "xlz-m8h-s1h",
                   "type": "policy"
                 }
               }
             },
             "content_type": "application/json",
             "method": "PATCH",
-            "path": "/api/v2/remote_config/products/cws/policy/enm-uk3-cvx",
+            "path": "/api/v2/remote_config/products/cws/policy/xlz-m8h-s1h",
             "query": []
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"enm-uk3-cvx\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"datadogManaged\":false,\"description\":\"Updated agent policy\",\"disabledRulesCount\":0,\"enabled\":true,\"hostTagsLists\":[[\"env:test\"]],\"monitoringRulesCount\":0,\"name\":\"updated_agent_policy\",\"pinned\":false,\"policyVersion\":\"2\",\"ruleCount\":0,\"updateDate\":1765469402613,\"updater\":{\"name\":\"frog\",\"handle\":\"frog@datadoghq.com\"}}}}"
+              "value": "{\"data\":{\"id\":\"xlz-m8h-s1h\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"Updated agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:test\"]],\"monitoringRulesCount\":0,\"name\":\"updated_agent_policy\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"2\",\"ruleCount\":0,\"updateDate\":1790939011402,\"updater\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
             },
             "headers": {
-              "content-type": "application/json"
+              "content-type": "application/vnd.api+json"
             },
             "reason": "OK",
             "status": 200
@@ -2597,7 +2595,7 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/remote_config/products/cws/policy/enm-uk3-cvx",
+            "path": "/api/v2/remote_config/products/cws/policy/xlz-m8h-s1h",
             "query": []
           },
           "response": {
@@ -2605,9 +2603,7 @@
               "encoding": "text",
               "value": ""
             },
-            "headers": {
-              "content-type": "application/json"
-            },
+            "headers": {},
             "reason": "No Content",
             "status": 204
           }

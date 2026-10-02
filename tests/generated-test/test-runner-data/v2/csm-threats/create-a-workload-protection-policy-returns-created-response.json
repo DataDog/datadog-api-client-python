@@ -1,8 +1,8 @@
 {
   "api": "CSMThreats",
-  "expected_status": 200,
+  "expected_status": 201,
   "feature": "CSM Threats",
-  "id": "v2/CSM Threats/Create a Workload Protection policy returns \"OK\" response",
+  "id": "v2/CSM Threats/Create a Workload Protection policy returns \"Created\" response",
   "operation_id": "CreateCSMThreatsAgentPolicy",
   "request": {
     "body": {
@@ -16,7 +16,7 @@
         "data": {
           "attributes": {
             "description": "My agent policy",
-            "enabled": true,
+            "enabled": false,
             "hostTagsLists": [
               [
                 "env:test"
@@ -34,7 +34,7 @@
     "parameters": [],
     "path": "/api/v2/remote_config/products/cws/policy"
   },
-  "scenario": "Create a Workload Protection policy returns \"OK\" response",
+  "scenario": "Create a Workload Protection policy returns \"Created\" response",
   "schema_version": 1,
   "version": "v2"
 }

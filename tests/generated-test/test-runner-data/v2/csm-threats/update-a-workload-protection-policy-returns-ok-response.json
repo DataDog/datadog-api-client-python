@@ -16,7 +16,7 @@
         "data": {
           "attributes": {
             "description": "Updated agent policy",
-            "enabled": true,
+            "enabled": false,
             "hostTagsLists": [
               [
                 "env:test"
@@ -24,7 +24,7 @@
             ],
             "name": "updated_agent_policy"
           },
-          "id": "{{ policy.data.id }}",
+          "id": "{{ policy_disabled.data.id }}",
           "type": "policy"
         }
       }
@@ -44,7 +44,7 @@
           "type": "string"
         },
         "source": {
-          "path": "policy.data.id",
+          "path": "policy_disabled.data.id",
           "type": "fixture"
         },
         "style": null

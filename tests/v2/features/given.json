@@ -1278,6 +1278,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"policy\",\n    \"attributes\": {\n      \"name\": \"{{ unique_lower_alnum }}\",\n      \"description\": \"My agent policy\",\n      \"hostTags\": [\"env:staging\"],\n      \"enabled\": false\n     }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"policy_rc_disabled\" in the system",
+    "key": "policy_disabled",
+    "tag": "CSM Threats",
+    "operationId": "CreateCSMThreatsAgentPolicy"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\"\n     },\n     \"type\": \"roles\"\n  }\n}"
       }
     ],
