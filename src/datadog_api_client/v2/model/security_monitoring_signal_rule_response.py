@@ -36,6 +36,7 @@ class SecurityMonitoringSignalRuleResponse(ModelNormal):
 
         return {
             "cases": ([SecurityMonitoringRuleCase],),
+            "compatible_version": (int,),
             "created_at": (int,),
             "creation_author_id": (int,),
             "custom_message": (str,),
@@ -59,6 +60,7 @@ class SecurityMonitoringSignalRuleResponse(ModelNormal):
 
     attribute_map = {
         "cases": "cases",
+        "compatible_version": "compatibleVersion",
         "created_at": "createdAt",
         "creation_author_id": "creationAuthorId",
         "custom_message": "customMessage",
@@ -83,6 +85,7 @@ class SecurityMonitoringSignalRuleResponse(ModelNormal):
     def __init__(
         self_,
         cases: Union[List[SecurityMonitoringRuleCase], UnsetType] = unset,
+        compatible_version: Union[int, UnsetType] = unset,
         created_at: Union[int, UnsetType] = unset,
         creation_author_id: Union[int, UnsetType] = unset,
         custom_message: Union[str, UnsetType] = unset,
@@ -109,6 +112,9 @@ class SecurityMonitoringSignalRuleResponse(ModelNormal):
 
         :param cases: Cases for generating signals.
         :type cases: [SecurityMonitoringRuleCase], optional
+
+        :param compatible_version: The version of the rule at which its detection logic last changed. Updates that only change the name, message, tags, or notifications do not change this value.
+        :type compatible_version: int, optional
 
         :param created_at: When the rule was created, timestamp in milliseconds.
         :type created_at: int, optional
@@ -169,6 +175,8 @@ class SecurityMonitoringSignalRuleResponse(ModelNormal):
         """
         if cases is not unset:
             kwargs["cases"] = cases
+        if compatible_version is not unset:
+            kwargs["compatible_version"] = compatible_version
         if created_at is not unset:
             kwargs["created_at"] = created_at
         if creation_author_id is not unset:

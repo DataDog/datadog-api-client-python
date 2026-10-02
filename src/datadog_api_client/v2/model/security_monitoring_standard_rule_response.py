@@ -56,6 +56,7 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
         return {
             "calculated_fields": ([CalculatedField],),
             "cases": ([SecurityMonitoringRuleCase],),
+            "compatible_version": (int,),
             "compliance_signal_options": (CloudConfigurationRuleComplianceSignalOptions,),
             "created_at": (int,),
             "creation_author_id": (int,),
@@ -87,6 +88,7 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
     attribute_map = {
         "calculated_fields": "calculatedFields",
         "cases": "cases",
+        "compatible_version": "compatibleVersion",
         "compliance_signal_options": "complianceSignalOptions",
         "created_at": "createdAt",
         "creation_author_id": "creationAuthorId",
@@ -119,6 +121,7 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
         self_,
         calculated_fields: Union[List[CalculatedField], UnsetType] = unset,
         cases: Union[List[SecurityMonitoringRuleCase], UnsetType] = unset,
+        compatible_version: Union[int, UnsetType] = unset,
         compliance_signal_options: Union[CloudConfigurationRuleComplianceSignalOptions, UnsetType] = unset,
         created_at: Union[int, UnsetType] = unset,
         creation_author_id: Union[int, UnsetType] = unset,
@@ -155,6 +158,9 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
 
         :param cases: Cases for generating signals.
         :type cases: [SecurityMonitoringRuleCase], optional
+
+        :param compatible_version: The version of the rule at which its detection logic last changed. Updates that only change the name, message, tags, or notifications do not change this value.
+        :type compatible_version: int, optional
 
         :param compliance_signal_options: How to generate compliance signals. Useful for cloud_configuration rules only.
         :type compliance_signal_options: CloudConfigurationRuleComplianceSignalOptions, optional
@@ -238,6 +244,8 @@ class SecurityMonitoringStandardRuleResponse(ModelNormal):
             kwargs["calculated_fields"] = calculated_fields
         if cases is not unset:
             kwargs["cases"] = cases
+        if compatible_version is not unset:
+            kwargs["compatible_version"] = compatible_version
         if compliance_signal_options is not unset:
             kwargs["compliance_signal_options"] = compliance_signal_options
         if created_at is not unset:
