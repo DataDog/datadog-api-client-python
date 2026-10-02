@@ -80,6 +80,7 @@ from datadog_api_client.v1.model.dashboard_bulk_action_data_list import Dashboar
 from datadog_api_client.v1.model.dashboard_bulk_delete_request import DashboardBulkDeleteRequest
 from datadog_api_client.v1.model.dashboard_default_timeframe_setting import DashboardDefaultTimeframeSetting
 from datadog_api_client.v1.model.dashboard_delete_response import DashboardDeleteResponse
+from datadog_api_client.v1.model.dashboard_experience_type import DashboardExperienceType
 from datadog_api_client.v1.model.dashboard_fixed_timeframe import DashboardFixedTimeframe
 from datadog_api_client.v1.model.dashboard_fixed_timeframe_type import DashboardFixedTimeframeType
 from datadog_api_client.v1.model.dashboard_global_time import DashboardGlobalTime
@@ -1553,6 +1554,7 @@ __all__ = [
     "DashboardBulkDeleteRequest",
     "DashboardDefaultTimeframeSetting",
     "DashboardDeleteResponse",
+    "DashboardExperienceType",
     "DashboardFixedTimeframe",
     "DashboardFixedTimeframeType",
     "DashboardGlobalTime",
