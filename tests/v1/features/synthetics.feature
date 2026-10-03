@@ -179,6 +179,16 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 200 OK
 
+  @integration-only @team:DataDog/synthetics-orchestrating-managing
+  Scenario: Create a persistent email global variable returns a generated address
+    Given new "CreateGlobalVariable" request
+    And body with value {"name": "PERSISTENT_EMAIL_{{ unique_upper_alnum }}", "description": "Persistent email variable", "tags": [], "is_email": true}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "is_email" is equal to true
+    And the response "value.secure" is equal to false
+    And the response "value" has field "value"
+
   @replay-only @team:DataDog/synthetics-orchestrating-managing
   Scenario: Create a private location returns "OK" response
     Given there is a valid "role" in the system
