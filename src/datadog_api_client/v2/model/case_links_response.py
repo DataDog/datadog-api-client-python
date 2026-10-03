@@ -30,9 +30,9 @@ class CaseLinksResponse(ModelNormal):
 
     def __init__(self_, data: List[CaseLink], **kwargs):
         """
-        Response containing a list of case links.
+        Response containing a list of work item links.
 
-        :param data: A list of case links.
+        :param data: A list of work item links.
         :type data: [CaseLink]
         """
         super().__init__(kwargs)

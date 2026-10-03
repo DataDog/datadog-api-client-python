@@ -50,7 +50,7 @@ class MaintenanceWindowAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes of a maintenance window, including its schedule and the query that determines which cases are affected.
+        Attributes of a maintenance window, including its schedule and the query that determines which work items are affected.
 
         :param created_by: The UUID of the user who created this maintenance window. Read-only.
         :type created_by: str, optional
@@ -61,7 +61,7 @@ class MaintenanceWindowAttributes(ModelNormal):
         :param name: A human-readable name for the maintenance window (for example, ``Database migration - Dec 15`` ).
         :type name: str
 
-        :param query: A case search query that determines which cases are affected during the maintenance window. Uses the same syntax as the Case Management search bar.
+        :param query: A work item search query that determines which work items are affected during the maintenance window. Uses the same syntax as the Work Management search bar.
         :type query: str
 
         :param start_at: The ISO 8601 timestamp when the maintenance window begins and notifications start being suppressed.

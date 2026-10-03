@@ -73,10 +73,10 @@ class ProjectSettings(ModelNormal):
         """
         Project settings.
 
-        :param auto_close_inactive_cases: Auto-close inactive cases settings.
+        :param auto_close_inactive_cases: Auto-close inactive work items settings.
         :type auto_close_inactive_cases: AutoCloseInactiveCases, optional
 
-        :param auto_transition_assigned_cases: Auto-transition assigned cases settings.
+        :param auto_transition_assigned_cases: Auto-transition assigned work items settings.
         :type auto_transition_assigned_cases: AutoTransitionAssignedCases, optional
 
         :param integration_incident: Incident integration settings.

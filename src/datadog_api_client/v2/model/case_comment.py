@@ -34,12 +34,12 @@ class CaseComment(ModelNormal):
 
     def __init__(self_, attributes: CaseCommentAttributes, type: CaseResourceType, **kwargs):
         """
-        Case comment
+        Work item comment
 
-        :param attributes: Case comment attributes
+        :param attributes: Work item comment attributes
         :type attributes: CaseCommentAttributes
 
-        :param type: JSON:API resource type for cases.
+        :param type: JSON:API resource type for work items.
         :type type: CaseResourceType
         """
         super().__init__(kwargs)

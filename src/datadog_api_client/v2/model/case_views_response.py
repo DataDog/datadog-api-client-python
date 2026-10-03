@@ -30,9 +30,9 @@ class CaseViewsResponse(ModelNormal):
 
     def __init__(self_, data: List[CaseView], **kwargs):
         """
-        Response containing a list of case views.
+        Response containing a list of work item views.
 
-        :param data: A list of case views.
+        :param data: A list of work item views.
         :type data: [CaseView]
         """
         super().__init__(kwargs)

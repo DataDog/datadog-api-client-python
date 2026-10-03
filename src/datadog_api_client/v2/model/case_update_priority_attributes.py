@@ -30,9 +30,9 @@ class CaseUpdatePriorityAttributes(ModelNormal):
 
     def __init__(self_, priority: CasePriority, **kwargs):
         """
-        Case update priority attributes
+        Work item update priority attributes
 
-        :param priority: Case priority
+        :param priority: Work item priority
         :type priority: CasePriority
         """
         super().__init__(kwargs)

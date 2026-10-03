@@ -34,12 +34,12 @@ class CaseUpdateTitle(ModelNormal):
 
     def __init__(self_, attributes: CaseUpdateTitleAttributes, type: CaseResourceType, **kwargs):
         """
-        Case update title
+        Work item update title
 
-        :param attributes: Case update title attributes
+        :param attributes: Work item update title attributes
         :type attributes: CaseUpdateTitleAttributes
 
-        :param type: JSON:API resource type for cases.
+        :param type: JSON:API resource type for work items.
         :type type: CaseResourceType
         """
         super().__init__(kwargs)

@@ -30,9 +30,9 @@ class CaseUpdateCustomAttributeRequest(ModelNormal):
 
     def __init__(self_, data: CaseUpdateCustomAttribute, **kwargs):
         """
-        Case update custom attribute request
+        Work item update custom attribute request
 
-        :param data: Case update custom attribute
+        :param data: Work item update custom attribute
         :type data: CaseUpdateCustomAttribute
         """
         super().__init__(kwargs)

@@ -74,10 +74,10 @@ class AutomationRuleAttributes(ModelNormal):
         :param name: A human-readable name for the automation rule, used to identify the rule in the UI and API responses.
         :type name: str
 
-        :param state: Whether the automation rule is active. Enabled rules trigger on matching case events; disabled rules are inactive but preserve their configuration.
+        :param state: Whether the automation rule is active. Enabled rules trigger on matching work item events; disabled rules are inactive but preserve their configuration.
         :type state: CaseAutomationRuleState
 
-        :param trigger: Defines when the rule activates. Combines a trigger type (the case event to listen for) with optional trigger data (conditions that narrow when the trigger fires).
+        :param trigger: Defines when the rule activates. Combines a trigger type (the work item event to listen for) with optional trigger data (conditions that narrow when the trigger fires).
         :type trigger: AutomationRuleTrigger
         """
         if modified_at is not unset:

@@ -30,7 +30,7 @@ class CaseBulkUpdateRequest(ModelNormal):
 
     def __init__(self_, data: CaseBulkUpdateRequestData, **kwargs):
         """
-        Request payload for applying a single action (such as changing priority, status, or assignment) to multiple cases at once.
+        Request payload for applying a single action (such as changing priority, status, or assignment) to multiple work items at once.
 
         :param data: Data object wrapping the bulk update type and attributes.
         :type data: CaseBulkUpdateRequestData

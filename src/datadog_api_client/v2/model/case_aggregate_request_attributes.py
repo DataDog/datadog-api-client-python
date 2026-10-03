@@ -34,10 +34,10 @@ class CaseAggregateRequestAttributes(ModelNormal):
         """
         Attributes for the aggregation request, including the search query and grouping configuration.
 
-        :param group_by: Configuration for grouping aggregated results by one or more case fields.
+        :param group_by: Configuration for grouping aggregated results by one or more work item fields.
         :type group_by: CaseAggregateGroupBy
 
-        :param query_filter: A search query to filter which cases are included in the aggregation. Uses the same syntax as the Case Management search bar.
+        :param query_filter: A search query to filter which work items are included in the aggregation. Uses the same syntax as the Work Management search bar.
         :type query_filter: str
         """
         super().__init__(kwargs)

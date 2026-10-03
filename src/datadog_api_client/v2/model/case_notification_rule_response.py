@@ -34,7 +34,7 @@ class CaseNotificationRuleResponse(ModelNormal):
         """
         Notification rule response
 
-        :param data: A notification rule for case management
+        :param data: A notification rule for Work Management
         :type data: CaseNotificationRule, optional
         """
         if data is not unset:

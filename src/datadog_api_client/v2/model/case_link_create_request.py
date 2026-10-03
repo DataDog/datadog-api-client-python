@@ -32,7 +32,7 @@ class CaseLinkCreateRequest(ModelNormal):
         """
         Request payload for creating a link between two entities.
 
-        :param data: Data object for creating a case link.
+        :param data: Data object for creating a work item link.
         :type data: CaseLinkCreate
         """
         super().__init__(kwargs)

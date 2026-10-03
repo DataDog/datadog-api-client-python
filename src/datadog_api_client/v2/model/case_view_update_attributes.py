@@ -36,15 +36,15 @@ class CaseViewUpdateAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes that can be updated on a case view. All fields are optional; only provided fields are changed.
+        Attributes that can be updated on a work item view. All fields are optional; only provided fields are changed.
 
         :param name: The name of the view.
         :type name: str, optional
 
-        :param np_rule_id: The identifier of a notification rule linked to this view. When set, users subscribed to the view receive alerts for matching cases.
+        :param np_rule_id: The identifier of a notification rule linked to this view. When set, users subscribed to the view receive alerts for matching work items.
         :type np_rule_id: str, optional
 
-        :param query: The query used to filter cases in this view.
+        :param query: The query used to filter work items in this view.
         :type query: str, optional
         """
         if name is not unset:

@@ -30,9 +30,9 @@ class CaseUpdateDueDateRequest(ModelNormal):
 
     def __init__(self_, data: CaseUpdateDueDate, **kwargs):
         """
-        Request payload for updating a case's due date.
+        Request payload for updating a work item's due date.
 
-        :param data: Data object for updating a case's due date.
+        :param data: Data object for updating a work item's due date.
         :type data: CaseUpdateDueDate
         """
         super().__init__(kwargs)

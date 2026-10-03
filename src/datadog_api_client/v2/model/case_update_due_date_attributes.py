@@ -23,9 +23,9 @@ class CaseUpdateDueDateAttributes(ModelNormal):
 
     def __init__(self_, due_date: str, **kwargs):
         """
-        Attributes for setting or clearing a case's due date.
+        Attributes for setting or clearing a work item's due date.
 
-        :param due_date: The target resolution date for the case, in ``YYYY-MM-DD`` format. Set to ``null`` to clear the due date.
+        :param due_date: The target resolution date for the work item, in ``YYYY-MM-DD`` format. Set to ``null`` to clear the due date.
         :type due_date: str
         """
         super().__init__(kwargs)

@@ -42,7 +42,7 @@ class CaseCreateRelationships(ModelNormal):
         **kwargs,
     ):
         """
-        Relationships formed with the case on creation
+        Relationships formed with the work item on creation
 
         :param assignee: Relationship to user.
         :type assignee: NullableUserRelationship, none_type, optional

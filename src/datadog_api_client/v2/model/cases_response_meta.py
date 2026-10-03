@@ -32,7 +32,7 @@ class CasesResponseMeta(ModelNormal):
 
     def __init__(self_, page: Union[CasesResponseMetaPagination, UnsetType] = unset, **kwargs):
         """
-        Cases response metadata
+        Work items response metadata
 
         :param page: Pagination metadata
         :type page: CasesResponseMetaPagination, optional

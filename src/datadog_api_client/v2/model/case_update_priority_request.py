@@ -30,9 +30,9 @@ class CaseUpdatePriorityRequest(ModelNormal):
 
     def __init__(self_, data: CaseUpdatePriority, **kwargs):
         """
-        Case update priority request
+        Work item update priority request
 
-        :param data: Case priority status
+        :param data: Work item priority status
         :type data: CaseUpdatePriority
         """
         super().__init__(kwargs)

@@ -30,9 +30,9 @@ class CaseWatcherRelationships(ModelNormal):
 
     def __init__(self_, user: CaseWatcherUserRelationship, **kwargs):
         """
-        Relationships for a case watcher, linking to the underlying user resource.
+        Relationships for a work item watcher, linking to the underlying user resource.
 
-        :param user: The user relationship for a case watcher.
+        :param user: The user relationship for a work item watcher.
         :type user: CaseWatcherUserRelationship
         """
         super().__init__(kwargs)

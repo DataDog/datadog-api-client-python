@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class CaseWatcherResourceType(ModelSimple):
     """
-    JSON:API resource type for case watchers.
+    JSON:API resource type for work item watchers.
 
     :param value: If omitted defaults to "watcher". Must be one of ["watcher"].
     :type value: str

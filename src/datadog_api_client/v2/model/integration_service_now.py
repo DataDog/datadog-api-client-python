@@ -55,7 +55,7 @@ class IntegrationServiceNow(ModelNormal):
         :param assignment_group: Assignment group.
         :type assignment_group: str, optional
 
-        :param auto_creation: Auto-creation settings for ServiceNow incidents from cases.
+        :param auto_creation: Auto-creation settings for ServiceNow incidents from work items.
         :type auto_creation: IntegrationServiceNowAutoCreation, optional
 
         :param enabled: Whether ServiceNow integration is enabled.

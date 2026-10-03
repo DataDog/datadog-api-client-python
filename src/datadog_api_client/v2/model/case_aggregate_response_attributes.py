@@ -37,7 +37,7 @@ class CaseAggregateResponseAttributes(ModelNormal):
         :param groups: Aggregated groups.
         :type groups: [CaseAggregateGroup]
 
-        :param total: Total count of aggregated cases.
+        :param total: Total count of aggregated work items.
         :type total: float
         """
         super().__init__(kwargs)

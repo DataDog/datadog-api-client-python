@@ -32,18 +32,18 @@ class CaseViewCreateAttributes(ModelNormal):
 
     def __init__(self_, name: str, project_id: str, query: str, np_rule_id: Union[str, UnsetType] = unset, **kwargs):
         """
-        Attributes required to create a case view.
+        Attributes required to create a work item view.
 
         :param name: The name of the view.
         :type name: str
 
-        :param np_rule_id: The identifier of a notification rule linked to this view. When set, users subscribed to the view receive alerts for matching cases.
+        :param np_rule_id: The identifier of a notification rule linked to this view. When set, users subscribed to the view receive alerts for matching work items.
         :type np_rule_id: str, optional
 
         :param project_id: The UUID of the project this view belongs to. Views are scoped to a single project.
         :type project_id: str
 
-        :param query: The query used to filter cases in this view.
+        :param query: The query used to filter work items in this view.
         :type query: str
         """
         if np_rule_id is not unset:

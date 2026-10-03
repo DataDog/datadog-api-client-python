@@ -33,7 +33,7 @@ class AutoCloseInactiveCases(ModelNormal):
         **kwargs,
     ):
         """
-        Auto-close inactive cases settings.
+        Auto-close inactive work items settings.
 
         :param enabled: Whether auto-close is enabled.
         :type enabled: bool, optional

@@ -30,9 +30,9 @@ class CaseViewResponse(ModelNormal):
 
     def __init__(self_, data: CaseView, **kwargs):
         """
-        Response containing a single case view.
+        Response containing a single work item view.
 
-        :param data: A saved case view that provides a filtered, reusable list of cases matching a specific query. Views act as persistent dashboards for monitoring case subsets.
+        :param data: A saved work item view that provides a filtered, reusable list of work items matching a specific query. Views act as persistent dashboards for monitoring work item subsets.
         :type data: CaseView
         """
         super().__init__(kwargs)

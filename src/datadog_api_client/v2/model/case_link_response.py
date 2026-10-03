@@ -30,9 +30,9 @@ class CaseLinkResponse(ModelNormal):
 
     def __init__(self_, data: CaseLink, **kwargs):
         """
-        Response containing a single case link.
+        Response containing a single work item link.
 
-        :param data: A directional link representing a relationship between two entities. At least one entity must be a case.
+        :param data: A directional link representing a relationship between two entities. At least one entity must be a work item.
         :type data: CaseLink
         """
         super().__init__(kwargs)
