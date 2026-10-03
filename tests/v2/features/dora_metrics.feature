@@ -149,6 +149,24 @@ Feature: DORA Metrics
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/ci-app-backend
+  Scenario: Mark a deployment as failed by ID returns "Accepted" response
+    Given a valid "appKeyAuth" key in the system
+    And new "PatchDORADeployment" request
+    And request contains "deployment_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"change_failure": true, "remediation": {"id": "eG42zNIkVjM", "type": "rollback"}}, "id": "z_RwVLi7v4Y", "type": "dora_deployment_patch_request"}}
+    When the request is sent
+    Then the response status is 202 Accepted
+
+  @generated @skip @team:DataDog/ci-app-backend
+  Scenario: Mark a deployment as failed by ID returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And new "PatchDORADeployment" request
+    And request contains "deployment_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"change_failure": true, "remediation": {"id": "eG42zNIkVjM", "type": "rollback"}}, "id": "z_RwVLi7v4Y", "type": "dora_deployment_patch_request"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/ci-app-backend
   Scenario: Patch a deployment event by version returns "Accepted" response
     Given a valid "appKeyAuth" key in the system
     And operation "PatchDORADeploymentByVersion" enabled
@@ -172,24 +190,6 @@ Feature: DORA Metrics
     And operation "PatchDORADeploymentByVersion" enabled
     And new "PatchDORADeploymentByVersion" request
     And body with value {"data": {"attributes": {"change_failure": true, "env": "production", "service": "my-service"}, "type": "dora_deployment_patch_request"}}
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:DataDog/ci-app-backend
-  Scenario: Patch a deployment event returns "Accepted" response
-    Given a valid "appKeyAuth" key in the system
-    And new "PatchDORADeployment" request
-    And request contains "deployment_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"change_failure": true, "remediation": {"id": "eG42zNIkVjM", "type": "rollback"}}, "id": "z_RwVLi7v4Y", "type": "dora_deployment_patch_request"}}
-    When the request is sent
-    Then the response status is 202 Accepted
-
-  @generated @skip @team:DataDog/ci-app-backend
-  Scenario: Patch a deployment event returns "Bad Request" response
-    Given a valid "appKeyAuth" key in the system
-    And new "PatchDORADeployment" request
-    And request contains "deployment_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"change_failure": true, "remediation": {"id": "eG42zNIkVjM", "type": "rollback"}}, "id": "z_RwVLi7v4Y", "type": "dora_deployment_patch_request"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
