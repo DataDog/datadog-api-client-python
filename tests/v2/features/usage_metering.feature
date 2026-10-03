@@ -15,20 +15,47 @@ Feature: Usage Metering
     And an instance of "UsageMetering" API
 
   @generated @skip @team:DataDog/billing-hub
-  Scenario: Create or update usage quotas returns "Bad Request" response
+  Scenario: Cancel a scheduled usage quota limit returns "Bad Request. Returned if the `id` is malformed or does not belong to the requested quota namespace." response
+    Given operation "DeletePendingQuota" enabled
+    And new "DeletePendingQuota" request
+    And request contains "quota_namespace" parameter from "REPLACE.ME"
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request. Returned if the `id` is malformed or does not belong to the requested quota namespace.
+
+  @generated @skip @team:DataDog/billing-hub
+  Scenario: Cancel a scheduled usage quota limit returns "No Content" response
+    Given operation "DeletePendingQuota" enabled
+    And new "DeletePendingQuota" request
+    And request contains "quota_namespace" parameter from "REPLACE.ME"
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:DataDog/billing-hub
+  Scenario: Cancel a scheduled usage quota limit returns "Not Found" response
+    Given operation "DeletePendingQuota" enabled
+    And new "DeletePendingQuota" request
+    And request contains "quota_namespace" parameter from "REPLACE.ME"
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:DataDog/billing-hub
+  Scenario: Create or update usage quotas returns "Bad Request. Returned if the request is malformed, including when an item sets `pending_usage_limit` on a scoped quota, provides `enforced` without `usage_limit`, or provides neither limit. A pending-only item for a quota that does not exist is reported in that item's `error`; when only the caller's organization is targeted, this failure returns `400`." response
     Given operation "CreateQuotas" enabled
     And new "CreateQuotas" request
     And request contains "quota_namespace" parameter from "REPLACE.ME"
-    And body with value {"data": [{"attributes": {"enforced": true, "scope": {"user_handle": "jane@example.com"}, "usage_limit": 100000}, "type": "quotas"}]}
+    And body with value {"data": [{"attributes": {"enforced": true, "pending_usage_limit": 100000, "usage_limit": 600000}, "type": "quotas"}]}
     When the request is sent
-    Then the response status is 400 Bad Request
+    Then the response status is 400 Bad Request. Returned if the request is malformed, including when an item sets `pending_usage_limit` on a scoped quota, provides `enforced` without `usage_limit`, or provides neither limit. A pending-only item for a quota that does not exist is reported in that item's `error`; when only the caller's organization is targeted, this failure returns `400`.
 
   @generated @skip @team:DataDog/billing-hub
   Scenario: Create or update usage quotas returns "OK. The response includes each item's result; see each item's `error` attribute for any that failed to write." response
     Given operation "CreateQuotas" enabled
     And new "CreateQuotas" request
     And request contains "quota_namespace" parameter from "REPLACE.ME"
-    And body with value {"data": [{"attributes": {"enforced": true, "scope": {"user_handle": "jane@example.com"}, "usage_limit": 100000}, "type": "quotas"}]}
+    And body with value {"data": [{"attributes": {"enforced": true, "pending_usage_limit": 100000, "usage_limit": 600000}, "type": "quotas"}]}
     When the request is sent
     Then the response status is 200 OK. The response includes each item's result; see each item's `error` attribute for any that failed to write.
 
@@ -304,14 +331,14 @@ Feature: Usage Metering
     Then the response status is 200 OK
 
   @generated @skip @team:DataDog/billing-hub
-  Scenario: Update a usage quota returns "Bad Request. Returned if the request is malformed, or if the `id` in the request body does not match the `id` in the request path." response
+  Scenario: Update a usage quota returns "Bad Request. Returned if the request is malformed, if the `id` in the request body does not match the `id` in the request path, if none of `usage_limit`, `enforced`, or `pending_usage_limit` is provided, or if `pending_usage_limit` is set on a scoped quota." response
     Given operation "UpdateQuota" enabled
     And new "UpdateQuota" request
     And request contains "quota_namespace" parameter from "REPLACE.ME"
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"enforced": false, "usage_limit": 120000}, "id": "MjAfYWlfY3JlZGl0c1911c2VyX2hhbmRsZTpfX0FMTF9f", "type": "quotas"}}
+    And body with value {"data": {"attributes": {"enforced": false, "pending_usage_limit": 50000, "usage_limit": 120000}, "id": "MTIzNB9haV9jcmVkaXRzH3VzZXJfaGFuZGxlOl9fQUxMX18", "type": "quotas"}}
     When the request is sent
-    Then the response status is 400 Bad Request. Returned if the request is malformed, or if the `id` in the request body does not match the `id` in the request path.
+    Then the response status is 400 Bad Request. Returned if the request is malformed, if the `id` in the request body does not match the `id` in the request path, if none of `usage_limit`, `enforced`, or `pending_usage_limit` is provided, or if `pending_usage_limit` is set on a scoped quota.
 
   @generated @skip @team:DataDog/billing-hub
   Scenario: Update a usage quota returns "Not Found" response
@@ -319,7 +346,7 @@ Feature: Usage Metering
     And new "UpdateQuota" request
     And request contains "quota_namespace" parameter from "REPLACE.ME"
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"enforced": false, "usage_limit": 120000}, "id": "MjAfYWlfY3JlZGl0c1911c2VyX2hhbmRsZTpfX0FMTF9f", "type": "quotas"}}
+    And body with value {"data": {"attributes": {"enforced": false, "pending_usage_limit": 50000, "usage_limit": 120000}, "id": "MTIzNB9haV9jcmVkaXRzH3VzZXJfaGFuZGxlOl9fQUxMX18", "type": "quotas"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -329,6 +356,6 @@ Feature: Usage Metering
     And new "UpdateQuota" request
     And request contains "quota_namespace" parameter from "REPLACE.ME"
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"enforced": false, "usage_limit": 120000}, "id": "MjAfYWlfY3JlZGl0c1911c2VyX2hhbmRsZTpfX0FMTF9f", "type": "quotas"}}
+    And body with value {"data": {"attributes": {"enforced": false, "pending_usage_limit": 50000, "usage_limit": 120000}, "id": "MTIzNB9haV9jcmVkaXRzH3VzZXJfaGFuZGxlOl9fQUxMX18", "type": "quotas"}}
     When the request is sent
     Then the response status is 200 OK

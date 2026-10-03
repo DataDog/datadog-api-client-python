@@ -8,7 +8,6 @@ from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.usage_metering_api import UsageMeteringApi
 from datadog_api_client.v2.model.usage_quota_create_attributes import UsageQuotaCreateAttributes
 from datadog_api_client.v2.model.usage_quota_create_data import UsageQuotaCreateData
-from datadog_api_client.v2.model.usage_quota_request_scope import UsageQuotaRequestScope
 from datadog_api_client.v2.model.usage_quota_type import UsageQuotaType
 from datadog_api_client.v2.model.usage_quotas_create_request import UsageQuotasCreateRequest
 
@@ -17,10 +16,8 @@ body = UsageQuotasCreateRequest(
         UsageQuotaCreateData(
             attributes=UsageQuotaCreateAttributes(
                 enforced=True,
-                scope=UsageQuotaRequestScope(
-                    user_handle="jane@example.com",
-                ),
-                usage_limit=100000,
+                pending_usage_limit=100000,
+                usage_limit=600000,
             ),
             type=UsageQuotaType.QUOTAS,
         ),
