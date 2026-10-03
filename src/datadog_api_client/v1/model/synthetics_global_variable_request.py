@@ -34,6 +34,7 @@ class SyntheticsGlobalVariableRequest(ModelNormal):
             "attributes": (SyntheticsGlobalVariableAttributes,),
             "description": (str,),
             "id": (str,),
+            "is_email": (bool,),
             "is_fido": (bool,),
             "is_totp": (bool,),
             "name": (str,),
@@ -47,6 +48,7 @@ class SyntheticsGlobalVariableRequest(ModelNormal):
         "attributes": "attributes",
         "description": "description",
         "id": "id",
+        "is_email": "is_email",
         "is_fido": "is_fido",
         "is_totp": "is_totp",
         "name": "name",
@@ -66,6 +68,7 @@ class SyntheticsGlobalVariableRequest(ModelNormal):
         tags: List[str],
         attributes: Union[SyntheticsGlobalVariableAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
+        is_email: Union[bool, UnsetType] = unset,
         is_fido: Union[bool, UnsetType] = unset,
         is_totp: Union[bool, UnsetType] = unset,
         parse_test_options: Union[SyntheticsGlobalVariableParseTestOptions, UnsetType] = unset,
@@ -84,6 +87,9 @@ class SyntheticsGlobalVariableRequest(ModelNormal):
 
         :param id: Unique identifier of the global variable.
         :type id: str, optional
+
+        :param is_email: Whether this global variable is a persistent email variable. Set this when creating the variable and omit ``value`` ; Datadog generates an immutable email address. The variable cannot be converted to or from a persistent email variable.
+        :type is_email: bool, optional
 
         :param is_fido: Determines if the global variable is a FIDO variable.
         :type is_fido: bool, optional
@@ -110,6 +116,8 @@ class SyntheticsGlobalVariableRequest(ModelNormal):
             kwargs["attributes"] = attributes
         if id is not unset:
             kwargs["id"] = id
+        if is_email is not unset:
+            kwargs["is_email"] = is_email
         if is_fido is not unset:
             kwargs["is_fido"] = is_fido
         if is_totp is not unset:
