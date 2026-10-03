@@ -1,0 +1,95 @@
+{
+  "feature": "CI Visibility Logs",
+  "recordings": [
+    {
+      "feature": "CI Visibility Logs",
+      "frozen_at": "2026-10-01T13:38:29.002Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": [
+                {
+                  "job_id": "job-456",
+                  "line_number": 1,
+                  "message": "Starting tests",
+                  "pipeline_unique_id": "3eacb6f3-ff04-4e10-8a9c-46e6d054024a",
+                  "section_name": "tests",
+                  "status": "notice"
+                },
+                {
+                  "job_id": "job-456",
+                  "line_number": 2,
+                  "message": "Tests passed",
+                  "pipeline_unique_id": "3eacb6f3-ff04-4e10-8a9c-46e6d054024a"
+                }
+              ]
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cilogs",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Accepted",
+            "status": 202
+          }
+        }
+      ],
+      "scenario": "Send batched CI job logs returns \"Request accepted for processing\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "CI Visibility Logs",
+      "frozen_at": "2026-10-01T14:45:37.327Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": [
+                {
+                  "ddtags": "runner:linux,architecture:amd64",
+                  "job_id": "job-456",
+                  "line_number": 1,
+                  "message": "Running go test ./...",
+                  "pipeline_unique_id": "3eacb6f3-ff04-4e10-8a9c-46e6d054024a",
+                  "provider_name": "example-provider",
+                  "section_name": "tests",
+                  "status": "warn"
+                }
+              ]
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/cilogs",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Accepted",
+            "status": 202
+          }
+        }
+      ],
+      "scenario": "Send one CI job log returns \"Request accepted for processing\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}
