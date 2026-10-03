@@ -16,14 +16,14 @@ from datadog_api_client.v2.model.cloud_workload_security_agent_policy_update_req
     CloudWorkloadSecurityAgentPolicyUpdateRequest,
 )
 
-# there is a valid "policy_rc" in the system
-POLICY_DATA_ID = environ["POLICY_DATA_ID"]
+# there is a valid "policy_rc_disabled" in the system
+POLICY_DISABLED_DATA_ID = environ["POLICY_DISABLED_DATA_ID"]
 
 body = CloudWorkloadSecurityAgentPolicyUpdateRequest(
     data=CloudWorkloadSecurityAgentPolicyUpdateData(
         attributes=CloudWorkloadSecurityAgentPolicyUpdateAttributes(
             description="Updated agent policy",
-            enabled=True,
+            enabled=False,
             host_tags_lists=[
                 [
                     "env:test",
@@ -31,7 +31,7 @@ body = CloudWorkloadSecurityAgentPolicyUpdateRequest(
             ],
             name="updated_agent_policy",
         ),
-        id=POLICY_DATA_ID,
+        id=POLICY_DISABLED_DATA_ID,
         type=CloudWorkloadSecurityAgentPolicyType.POLICY,
     ),
 )
@@ -40,6 +40,6 @@ configuration = Configuration()
 configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = CSMThreatsApi(api_client)
-    response = api_instance.update_csm_threats_agent_policy(policy_id=POLICY_DATA_ID, body=body)
+    response = api_instance.update_csm_threats_agent_policy(policy_id=POLICY_DISABLED_DATA_ID, body=body)
 
     print(response)
