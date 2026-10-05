@@ -97,6 +97,20 @@ Feature: Fleet Automation
     When the request is sent
     Then the response status is 204 Schedule successfully deleted.
 
+  @generated @skip @team:DataDog/fleet-automation
+  Scenario: Get a configuration file's schema by path returns "Bad Request" response
+    Given new "GetFleetConfigFileSchemaV2" request
+    And request contains "file_path" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:DataDog/fleet-automation
+  Scenario: Get a configuration file's schema by path returns "OK" response
+    Given new "GetFleetConfigFileSchemaV2" request
+    And request contains "file_path" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
   @skip @team:DataDog/fleet-automation
   Scenario: Get a deployment by ID returns "Bad Request" response
     Given new "GetFleetDeploymentV2" request

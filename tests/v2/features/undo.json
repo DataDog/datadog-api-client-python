@@ -3313,6 +3313,12 @@
       "type": "safe"
     }
   },
+  "GetFleetConfigFileSchemaV2": {
+    "tag": "Fleet Automation",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListForms": {
     "tag": "Forms",
     "undo": {
