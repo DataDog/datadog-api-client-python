@@ -10,7 +10,7 @@ Feature: Entity Integration Configs
     And a valid "appKeyAuth" key in the system
     And an instance of "EntityIntegrationConfigs" API
 
-  @generated @skip @team:DataDog/idp
+  @generated @skip @team:ddoghq/idp
   Scenario: Create or update entity integration configuration returns "Bad Request" response
     Given operation "UpdateEntityIntegrationConfig" enabled
     And new "UpdateEntityIntegrationConfig" request
@@ -19,7 +19,7 @@ Feature: Entity Integration Configs
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/idp
+  @generated @skip @team:ddoghq/idp
   Scenario: Create or update entity integration configuration returns "OK" response
     Given operation "UpdateEntityIntegrationConfig" enabled
     And new "UpdateEntityIntegrationConfig" request
@@ -28,7 +28,7 @@ Feature: Entity Integration Configs
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/idp
+  @generated @skip @team:ddoghq/idp
   Scenario: Delete an entity integration configuration returns "Bad Request" response
     Given operation "DeleteEntityIntegrationConfig" enabled
     And new "DeleteEntityIntegrationConfig" request
@@ -36,7 +36,7 @@ Feature: Entity Integration Configs
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/idp
+  @generated @skip @team:ddoghq/idp
   Scenario: Delete an entity integration configuration returns "No Content" response
     Given operation "DeleteEntityIntegrationConfig" enabled
     And new "DeleteEntityIntegrationConfig" request
@@ -44,7 +44,7 @@ Feature: Entity Integration Configs
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/idp
+  @generated @skip @team:ddoghq/idp
   Scenario: Delete an entity integration configuration returns "Not Found" response
     Given operation "DeleteEntityIntegrationConfig" enabled
     And new "DeleteEntityIntegrationConfig" request
@@ -52,7 +52,7 @@ Feature: Entity Integration Configs
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/idp
+  @generated @skip @team:ddoghq/idp
   Scenario: Get an entity integration configuration returns "Bad Request" response
     Given operation "GetEntityIntegrationConfig" enabled
     And new "GetEntityIntegrationConfig" request
@@ -60,7 +60,7 @@ Feature: Entity Integration Configs
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/idp
+  @generated @skip @team:ddoghq/idp
   Scenario: Get an entity integration configuration returns "Not Found" response
     Given operation "GetEntityIntegrationConfig" enabled
     And new "GetEntityIntegrationConfig" request
@@ -68,7 +68,7 @@ Feature: Entity Integration Configs
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/idp
+  @generated @skip @team:ddoghq/idp
   Scenario: Get an entity integration configuration returns "OK" response
     Given operation "GetEntityIntegrationConfig" enabled
     And new "GetEntityIntegrationConfig" request

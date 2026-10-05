@@ -8,7 +8,7 @@ Feature: Annotations
     And a valid "appKeyAuth" key in the system
     And an instance of "Annotations" API
 
-  @generated @skip @team:DataDog/dataviz-advanced-analytics
+  @generated @skip @team:ddoghq/dataviz-advanced-analytics
   Scenario: Create an annotation returns "Bad Request" response
     Given operation "CreateAnnotation" enabled
     And new "CreateAnnotation" request
@@ -16,7 +16,7 @@ Feature: Annotations
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/dataviz-advanced-analytics
+  @team:ddoghq/dataviz-advanced-analytics
   Scenario: Create an annotation returns "OK" response
     Given operation "CreateAnnotation" enabled
     And new "CreateAnnotation" request
@@ -24,7 +24,7 @@ Feature: Annotations
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/dataviz-advanced-analytics
+  @generated @skip @team:ddoghq/dataviz-advanced-analytics
   Scenario: Delete an annotation returns "Bad Request" response
     Given operation "DeleteAnnotation" enabled
     And new "DeleteAnnotation" request
@@ -32,7 +32,7 @@ Feature: Annotations
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/dataviz-advanced-analytics
+  @team:ddoghq/dataviz-advanced-analytics
   Scenario: Delete an annotation returns "No Content" response
     Given operation "DeleteAnnotation" enabled
     And there is a valid "annotation" in the system
@@ -41,7 +41,7 @@ Feature: Annotations
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/dataviz-advanced-analytics
+  @generated @skip @team:ddoghq/dataviz-advanced-analytics
   Scenario: Get annotations for a page returns "Bad Request" response
     Given operation "GetPageAnnotations" enabled
     And new "GetPageAnnotations" request
@@ -51,7 +51,7 @@ Feature: Annotations
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/dataviz-advanced-analytics
+  @team:ddoghq/dataviz-advanced-analytics
   Scenario: Get annotations for a page returns "OK" response
     Given there is a valid "annotation" in the system
     And operation "GetPageAnnotations" enabled
@@ -62,7 +62,7 @@ Feature: Annotations
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/dataviz-advanced-analytics
+  @generated @skip @team:ddoghq/dataviz-advanced-analytics
   Scenario: List annotations returns "Bad Request" response
     Given operation "ListAnnotations" enabled
     And new "ListAnnotations" request
@@ -72,7 +72,7 @@ Feature: Annotations
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/dataviz-advanced-analytics
+  @team:ddoghq/dataviz-advanced-analytics
   Scenario: List annotations returns "OK" response
     Given there is a valid "annotation" in the system
     And operation "ListAnnotations" enabled
@@ -83,7 +83,7 @@ Feature: Annotations
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/dataviz-advanced-analytics
+  @generated @skip @team:ddoghq/dataviz-advanced-analytics
   Scenario: Update an annotation returns "Bad Request" response
     Given operation "UpdateAnnotation" enabled
     And new "UpdateAnnotation" request
@@ -92,7 +92,7 @@ Feature: Annotations
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/dataviz-advanced-analytics
+  @generated @skip @team:ddoghq/dataviz-advanced-analytics
   Scenario: Update an annotation returns "Not Found" response
     Given operation "UpdateAnnotation" enabled
     And new "UpdateAnnotation" request
@@ -101,7 +101,7 @@ Feature: Annotations
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/dataviz-advanced-analytics
+  @team:ddoghq/dataviz-advanced-analytics
   Scenario: Update an annotation returns "OK" response
     Given there is a valid "annotation" in the system
     And operation "UpdateAnnotation" enabled

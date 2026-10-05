@@ -9,14 +9,14 @@ Feature: On-Call
     And a valid "appKeyAuth" key in the system
     And an instance of "On-Call" API
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Create On-Call escalation policy returns "Bad Request" response
     Given new "CreateOnCallEscalationPolicy" request
     And body with value {"data": {"attributes": {"name": "Escalation Policy 1", "resolve_page_on_policy_end": true, "retries": 2, "steps": [{"assignment": "default", "escalate_after_seconds": 3600, "targets": [{"id": "00000000-aba1-0000-0000-000000000000", "type": "users"}, {"config": {"schedule": {"position": "previous"}}, "id": "00000000-aba2-0000-0000-000000000000", "type": "schedules"}, {"id": "00000000-aba3-0000-0000-000000000000", "type": "teams"}]}, {"assignment": "round-robin", "escalate_after_seconds": 3600, "targets": [{"id": "00000000-aba1-0000-0000-000000000000", "type": "users"}, {"id": "00000000-abb1-0000-0000-000000000000", "type": "users"}]}]}, "relationships": {"teams": {"data": [{"id": "00000000-da3a-0000-0000-000000000000", "type": "teams"}]}}, "type": "policies"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/on-call
+  @team:ddoghq/on-call
   Scenario: Create On-Call escalation policy returns "Created" response
     Given new "CreateOnCallEscalationPolicy" request
     And there is a valid "user" in the system
@@ -27,14 +27,14 @@ Feature: On-Call
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Create On-Call schedule returns "Bad Request" response
     Given new "CreateOnCallSchedule" request
     And body with value {"data": {"attributes": {"layers": [{"effective_date": "2025-02-03T05:00:00Z", "end_date": "2025-12-31T00:00:00Z", "interval": {"days": 1}, "members": [{"user": {"id": "00000000-aba1-0000-0000-000000000000"}}], "name": "Layer 1", "restrictions": [{"end_day": "friday", "end_time": "17:00:00", "start_day": "monday", "start_time": "09:00:00"}], "rotation_start": "2025-02-01T00:00:00Z"}], "name": "On-Call Schedule", "time_zone": "America/New_York"}, "relationships": {"teams": {"data": [{"id": "00000000-da3a-0000-0000-000000000000", "type": "teams"}]}}, "type": "schedules"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/on-call
+  @team:ddoghq/on-call
   Scenario: Create On-Call schedule returns "Created" response
     Given new "CreateOnCallSchedule" request
     And there is a valid "user" in the system
@@ -43,7 +43,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Create an On-Call notification channel for a user returns "Bad Request" response
     Given new "CreateUserNotificationChannel" request
     And request contains "user_id" parameter from "REPLACE.ME"
@@ -51,7 +51,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:DataDog/on-call
+  @replay-only @team:ddoghq/on-call
   Scenario: Create an On-Call notification channel for a user returns "Created" response
     Given new "CreateUserNotificationChannel" request
     And there is a valid "user" in the system
@@ -62,7 +62,7 @@ Feature: On-Call
     And the response "data.attributes.config.type" is equal to "email"
     And the response "data.attributes.config.address" is equal to "foo@bar.com"
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Create an On-Call notification channel for a user returns "Not Found" response
     Given new "CreateUserNotificationChannel" request
     And request contains "user_id" parameter from "REPLACE.ME"
@@ -70,7 +70,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Create an On-Call notification rule for a user returns "Bad Request" response
     Given new "CreateUserNotificationRule" request
     And request contains "user_id" parameter from "REPLACE.ME"
@@ -78,7 +78,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:DataDog/on-call
+  @replay-only @team:ddoghq/on-call
   Scenario: Create an On-Call notification rule for a user returns "Created" response
     Given new "CreateUserNotificationRule" request
     And there is a valid "user" in the system
@@ -88,7 +88,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Create an On-Call notification rule for a user returns "Not Found" response
     Given new "CreateUserNotificationRule" request
     And request contains "user_id" parameter from "REPLACE.ME"
@@ -96,7 +96,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/on-call
+  @team:ddoghq/on-call
   Scenario: Delete On-Call escalation policy returns "No Content" response
     Given new "DeleteOnCallEscalationPolicy" request
     And there is a valid "user" in the system
@@ -107,14 +107,14 @@ Feature: On-Call
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Delete On-Call escalation policy returns "Not Found" response
     Given new "DeleteOnCallEscalationPolicy" request
     And request contains "policy_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/on-call
+  @team:ddoghq/on-call
   Scenario: Delete On-Call schedule returns "No Content" response
     Given new "DeleteOnCallSchedule" request
     And there is a valid "user" in the system
@@ -123,14 +123,14 @@ Feature: On-Call
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Delete On-Call schedule returns "Not Found" response
     Given new "DeleteOnCallSchedule" request
     And request contains "schedule_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Delete an On-Call notification channel for a user returns "Bad Request" response
     Given new "DeleteUserNotificationChannel" request
     And request contains "user_id" parameter from "REPLACE.ME"
@@ -138,7 +138,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:DataDog/on-call
+  @replay-only @team:ddoghq/on-call
   Scenario: Delete an On-Call notification channel for a user returns "No Content" response
     Given new "DeleteUserNotificationChannel" request
     And there is a valid "user" in the system
@@ -148,7 +148,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Delete an On-Call notification channel for a user returns "Not Found" response
     Given new "DeleteUserNotificationChannel" request
     And request contains "user_id" parameter from "REPLACE.ME"
@@ -156,7 +156,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Delete an On-Call notification rule for a user returns "Bad Request" response
     Given new "DeleteUserNotificationRule" request
     And request contains "user_id" parameter from "REPLACE.ME"
@@ -164,7 +164,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:DataDog/on-call
+  @replay-only @team:ddoghq/on-call
   Scenario: Delete an On-Call notification rule for a user returns "No Content" response
     Given new "DeleteUserNotificationRule" request
     And there is a valid "user" in the system
@@ -175,7 +175,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Delete an On-Call notification rule for a user returns "Not Found" response
     Given new "DeleteUserNotificationRule" request
     And request contains "user_id" parameter from "REPLACE.ME"
@@ -183,21 +183,21 @@ Feature: On-Call
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Get On-Call escalation policy returns "Bad Request" response
     Given new "GetOnCallEscalationPolicy" request
     And request contains "policy_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Get On-Call escalation policy returns "Not Found" response
     Given new "GetOnCallEscalationPolicy" request
     And request contains "policy_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/on-call
+  @team:ddoghq/on-call
   Scenario: Get On-Call escalation policy returns "OK" response
     Given new "GetOnCallEscalationPolicy" request
     And there is a valid "user" in the system
@@ -209,14 +209,14 @@ Feature: On-Call
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Get On-Call schedule returns "Not Found" response
     Given new "GetOnCallSchedule" request
     And request contains "schedule_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/on-call
+  @team:ddoghq/on-call
   Scenario: Get On-Call schedule returns "OK" response
     Given new "GetOnCallSchedule" request
     And there is a valid "user" in the system
@@ -225,14 +225,14 @@ Feature: On-Call
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Get On-Call team routing rules returns "OK" response
     Given new "GetOnCallTeamRoutingRules" request
     And request contains "team_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Get an On-Call notification channel for a user returns "Bad Request" response
     Given new "GetUserNotificationChannel" request
     And request contains "user_id" parameter from "REPLACE.ME"
@@ -240,7 +240,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Get an On-Call notification channel for a user returns "Not Found" response
     Given new "GetUserNotificationChannel" request
     And request contains "user_id" parameter from "REPLACE.ME"
@@ -248,7 +248,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/on-call
+  @replay-only @team:ddoghq/on-call
   Scenario: Get an On-Call notification channel for a user returns "OK" response
     Given new "GetUserNotificationChannel" request
     And there is a valid "user" in the system
@@ -260,7 +260,7 @@ Feature: On-Call
     And the response "data.attributes.config.type" is equal to "email"
     And the response "data.attributes.config.address" is equal to "{{ user.data.attributes.email }}"
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Get an On-Call notification rule for a user returns "Bad Request" response
     Given new "GetUserNotificationRule" request
     And request contains "user_id" parameter from "REPLACE.ME"
@@ -268,7 +268,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Get an On-Call notification rule for a user returns "Not Found" response
     Given new "GetUserNotificationRule" request
     And request contains "user_id" parameter from "REPLACE.ME"
@@ -276,7 +276,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/on-call
+  @replay-only @team:ddoghq/on-call
   Scenario: Get an On-Call notification rule for a user returns "OK" response
     Given new "GetUserNotificationRule" request
     And there is a valid "user" in the system
@@ -290,21 +290,21 @@ Feature: On-Call
     And the response "data.attributes.category" is equal to "high_urgency"
     And the response "included" has length 1
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Get on-call responders for a schedule returns "Bad Request" response
     Given new "GetScheduleOnCallResponders" request
     And request contains "schedule_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Get on-call responders for a schedule returns "Not Found" response
     Given new "GetScheduleOnCallResponders" request
     And request contains "schedule_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/on-call
+  @team:ddoghq/on-call
   Scenario: Get on-call responders for a schedule returns "OK" response
     Given new "GetScheduleOnCallResponders" request
     And there is a valid "user" in the system
@@ -313,21 +313,21 @@ Feature: On-Call
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Get scheduled on-call user returns "Bad Request" response
     Given new "GetScheduleOnCallUser" request
     And request contains "schedule_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Get scheduled on-call user returns "Not Found" response
     Given new "GetScheduleOnCallUser" request
     And request contains "schedule_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/on-call
+  @team:ddoghq/on-call
   Scenario: Get scheduled on-call user returns "OK" response
     Given new "GetScheduleOnCallUser" request
     And there is a valid "user" in the system
@@ -336,21 +336,21 @@ Feature: On-Call
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Get team on-call users returns "Bad Request" response
     Given new "GetTeamOnCallUsers" request
     And request contains "team_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Get team on-call users returns "Not Found" response
     Given new "GetTeamOnCallUsers" request
     And request contains "team_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/on-call
+  @team:ddoghq/on-call
   Scenario: Get team on-call users returns "OK" response
     Given new "GetTeamOnCallUsers" request
     And there is a valid "user" in the system
@@ -363,21 +363,21 @@ Feature: On-Call
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: List On-Call notification channels for a user returns "Bad Request" response
     Given new "ListUserNotificationChannels" request
     And request contains "user_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: List On-Call notification channels for a user returns "Not Found" response
     Given new "ListUserNotificationChannels" request
     And request contains "user_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/on-call
+  @replay-only @team:ddoghq/on-call
   Scenario: List On-Call notification channels for a user returns "OK" response
     Given new "ListUserNotificationChannels" request
     And there is a valid "user" in the system
@@ -389,21 +389,21 @@ Feature: On-Call
     And the response "data[0].attributes.config.type" is equal to "email"
     And the response "data[0].attributes.config.address" is equal to "{{ user.data.attributes.email }}"
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: List On-Call notification rules for a user returns "Bad Request" response
     Given new "ListUserNotificationRules" request
     And request contains "user_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: List On-Call notification rules for a user returns "Not Found" response
     Given new "ListUserNotificationRules" request
     And request contains "user_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/on-call
+  @replay-only @team:ddoghq/on-call
   Scenario: List On-Call notification rules for a user returns "OK" response
     Given new "ListUserNotificationRules" request
     And there is a valid "user" in the system
@@ -416,25 +416,25 @@ Feature: On-Call
     And the response "data" has length 1
     And the response "included" has length 1
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: List On-Call schedules returns "Bad Request" response
     Given new "ListOnCallSchedules" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/on-call
+  @team:ddoghq/on-call
   Scenario: List On-Call schedules returns "OK" response
     Given new "ListOnCallSchedules" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/on-call @with-pagination
+  @generated @skip @team:ddoghq/on-call @with-pagination
   Scenario: List On-Call schedules returns "OK" response with pagination
     Given new "ListOnCallSchedules" request
     When the request with pagination is sent
     Then the response status is 200 OK
 
-  @skip-python @team:DataDog/on-call
+  @skip-python @team:ddoghq/on-call
   Scenario: Set On-Call team routing rules returns "OK" response
     Given new "SetOnCallTeamRoutingRules" request
     And there is a valid "user" in the system
@@ -447,7 +447,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Update On-Call escalation policy returns "Bad Request" response
     Given new "UpdateOnCallEscalationPolicy" request
     And request contains "policy_id" parameter from "REPLACE.ME"
@@ -455,7 +455,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Update On-Call escalation policy returns "Not Found" response
     Given new "UpdateOnCallEscalationPolicy" request
     And request contains "policy_id" parameter from "REPLACE.ME"
@@ -463,7 +463,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/on-call
+  @team:ddoghq/on-call
   Scenario: Update On-Call escalation policy returns "OK" response
     Given new "UpdateOnCallEscalationPolicy" request
     And there is a valid "user" in the system
@@ -475,7 +475,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Update On-Call schedule returns "Bad Request" response
     Given new "UpdateOnCallSchedule" request
     And request contains "schedule_id" parameter from "REPLACE.ME"
@@ -483,7 +483,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Update On-Call schedule returns "Not Found" response
     Given new "UpdateOnCallSchedule" request
     And request contains "schedule_id" parameter from "REPLACE.ME"
@@ -491,7 +491,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/on-call
+  @team:ddoghq/on-call
   Scenario: Update On-Call schedule returns "OK" response
     Given new "UpdateOnCallSchedule" request
     And there is a valid "user" in the system
@@ -502,7 +502,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Update an On-Call notification rule for a user returns "Bad Request" response
     Given new "UpdateUserNotificationRule" request
     And request contains "user_id" parameter from "REPLACE.ME"
@@ -511,7 +511,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/on-call
+  @generated @skip @team:ddoghq/on-call
   Scenario: Update an On-Call notification rule for a user returns "Not Found" response
     Given new "UpdateUserNotificationRule" request
     And request contains "user_id" parameter from "REPLACE.ME"
@@ -520,7 +520,7 @@ Feature: On-Call
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/on-call
+  @replay-only @team:ddoghq/on-call
   Scenario: Update an On-Call notification rule for a user returns "OK" response
     Given new "UpdateUserNotificationRule" request
     And there is a valid "user" in the system

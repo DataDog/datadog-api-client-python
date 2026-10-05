@@ -10,7 +10,7 @@ Feature: Databricks Integration
     And a valid "appKeyAuth" key in the system
     And an instance of "DatabricksIntegration" API
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Create a Databricks integration account returns "Bad Request" response
     Given operation "CreateDatabricksIntegrationAccount" enabled
     And new "CreateDatabricksIntegrationAccount" request
@@ -18,7 +18,7 @@ Feature: Databricks Integration
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Create a Databricks integration account returns "Created" response
     Given operation "CreateDatabricksIntegrationAccount" enabled
     And new "CreateDatabricksIntegrationAccount" request
@@ -26,7 +26,7 @@ Feature: Databricks Integration
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Create a Databricks integration account returns "Not Found" response
     Given operation "CreateDatabricksIntegrationAccount" enabled
     And new "CreateDatabricksIntegrationAccount" request
@@ -34,7 +34,7 @@ Feature: Databricks Integration
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Create a Databricks integration account returns "The server cannot process the request because it contains invalid data." response
     Given operation "CreateDatabricksIntegrationAccount" enabled
     And new "CreateDatabricksIntegrationAccount" request
@@ -42,7 +42,7 @@ Feature: Databricks Integration
     When the request is sent
     Then the response status is 422 The server cannot process the request because it contains invalid data.
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Delete a Databricks integration account returns "Bad Request" response
     Given operation "DeleteDatabricksIntegrationAccount" enabled
     And new "DeleteDatabricksIntegrationAccount" request
@@ -50,7 +50,7 @@ Feature: Databricks Integration
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Delete a Databricks integration account returns "Not Found" response
     Given operation "DeleteDatabricksIntegrationAccount" enabled
     And new "DeleteDatabricksIntegrationAccount" request
@@ -58,7 +58,7 @@ Feature: Databricks Integration
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Delete a Databricks integration account returns "OK" response
     Given operation "DeleteDatabricksIntegrationAccount" enabled
     And new "DeleteDatabricksIntegrationAccount" request
@@ -66,7 +66,7 @@ Feature: Databricks Integration
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Get a Databricks integration account returns "Bad Request" response
     Given operation "GetDatabricksIntegrationAccount" enabled
     And new "GetDatabricksIntegrationAccount" request
@@ -74,7 +74,7 @@ Feature: Databricks Integration
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Get a Databricks integration account returns "Not Found" response
     Given operation "GetDatabricksIntegrationAccount" enabled
     And new "GetDatabricksIntegrationAccount" request
@@ -82,7 +82,7 @@ Feature: Databricks Integration
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Get a Databricks integration account returns "OK" response
     Given operation "GetDatabricksIntegrationAccount" enabled
     And new "GetDatabricksIntegrationAccount" request
@@ -90,28 +90,28 @@ Feature: Databricks Integration
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: List Databricks integration accounts returns "Bad Request" response
     Given operation "ListDatabricksIntegrationAccounts" enabled
     And new "ListDatabricksIntegrationAccounts" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: List Databricks integration accounts returns "Not Found" response
     Given operation "ListDatabricksIntegrationAccounts" enabled
     And new "ListDatabricksIntegrationAccounts" request
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: List Databricks integration accounts returns "OK" response
     Given operation "ListDatabricksIntegrationAccounts" enabled
     And new "ListDatabricksIntegrationAccounts" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Update a Databricks integration account returns "Bad Request" response
     Given operation "UpdateDatabricksIntegrationAccount" enabled
     And new "UpdateDatabricksIntegrationAccount" request
@@ -120,7 +120,7 @@ Feature: Databricks Integration
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Update a Databricks integration account returns "Not Found" response
     Given operation "UpdateDatabricksIntegrationAccount" enabled
     And new "UpdateDatabricksIntegrationAccount" request
@@ -129,7 +129,7 @@ Feature: Databricks Integration
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Update a Databricks integration account returns "OK" response
     Given operation "UpdateDatabricksIntegrationAccount" enabled
     And new "UpdateDatabricksIntegrationAccount" request
@@ -138,7 +138,7 @@ Feature: Databricks Integration
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Update a Databricks integration account returns "The server cannot process the request because it contains invalid data." response
     Given operation "UpdateDatabricksIntegrationAccount" enabled
     And new "UpdateDatabricksIntegrationAccount" request

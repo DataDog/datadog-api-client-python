@@ -9,49 +9,49 @@ Feature: Test Optimization
     And a valid "appKeyAuth" key in the system
     And an instance of "TestOptimization" API
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Delete Test Optimization service settings returns "Bad Request" response
     Given new "DeleteTestOptimizationServiceSettings" request
     And body with value {"data": {"attributes": {"env": "prod", "repository_id": "github.com/datadog/shopist", "service_name": "shopist"}, "type": "test_optimization_delete_service_settings_request"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Delete Test Optimization service settings returns "No Content" response
     Given new "DeleteTestOptimizationServiceSettings" request
     And body with value {"data": {"attributes": {"env": "prod", "repository_id": "github.com/datadog/shopist", "service_name": "shopist"}, "type": "test_optimization_delete_service_settings_request"}}
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Delete Test Optimization service settings returns "Not Found" response
     Given new "DeleteTestOptimizationServiceSettings" request
     And body with value {"data": {"attributes": {"env": "prod", "repository_id": "github.com/datadog/shopist", "service_name": "shopist"}, "type": "test_optimization_delete_service_settings_request"}}
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Get Flaky Tests Management policies returns "Bad Request" response
     Given new "GetFlakyTestsManagementPolicies" request
     And body with value {"data": {"attributes": {"repository_id": "github.com/datadog/shopist"}, "type": "test_optimization_get_flaky_tests_management_policies_request"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Get Flaky Tests Management policies returns "Not Found" response
     Given new "GetFlakyTestsManagementPolicies" request
     And body with value {"data": {"attributes": {"repository_id": "github.com/datadog/shopist"}, "type": "test_optimization_get_flaky_tests_management_policies_request"}}
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Get Flaky Tests Management policies returns "OK" response
     Given new "GetFlakyTestsManagementPolicies" request
     And body with value {"data": {"attributes": {"repository_id": "github.com/datadog/shopist"}, "type": "test_optimization_get_flaky_tests_management_policies_request"}}
     When the request is sent
     Then the response status is 200 OK
 
-  @skip @team:DataDog/ci-app-backend
+  @skip @team:ddoghq/ci-app-backend
   Scenario: Get Flaky Tests Management policies with empty repository_id returns bad request
     Given operation "GetFlakyTestsManagementPolicies" enabled
     And new "GetFlakyTestsManagementPolicies" request
@@ -59,28 +59,28 @@ Feature: Test Optimization
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Get Test Optimization service settings returns "Bad Request" response
     Given new "GetTestOptimizationServiceSettings" request
     And body with value {"data": {"attributes": {"env": "prod", "repository_id": "github.com/datadog/shopist", "service_name": "shopist"}, "type": "test_optimization_get_service_settings_request"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Get Test Optimization service settings returns "Not Found" response
     Given new "GetTestOptimizationServiceSettings" request
     And body with value {"data": {"attributes": {"env": "prod", "repository_id": "github.com/datadog/shopist", "service_name": "shopist"}, "type": "test_optimization_get_service_settings_request"}}
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Get Test Optimization service settings returns "OK" response
     Given new "GetTestOptimizationServiceSettings" request
     And body with value {"data": {"attributes": {"env": "prod", "repository_id": "github.com/datadog/shopist", "service_name": "shopist"}, "type": "test_optimization_get_service_settings_request"}}
     When the request is sent
     Then the response status is 200 OK
 
-  @skip @team:DataDog/ci-app-backend
+  @skip @team:ddoghq/ci-app-backend
   Scenario: Get Test Optimization service settings with empty env returns bad request
     Given operation "GetTestOptimizationServiceSettings" enabled
     And new "GetTestOptimizationServiceSettings" request
@@ -88,7 +88,7 @@ Feature: Test Optimization
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/ci-app-backend
+  @skip @team:ddoghq/ci-app-backend
   Scenario: Get Test Optimization service settings with empty repository_id returns bad request
     Given operation "GetTestOptimizationServiceSettings" enabled
     And new "GetTestOptimizationServiceSettings" request
@@ -96,7 +96,7 @@ Feature: Test Optimization
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/ci-app-backend
+  @skip @team:ddoghq/ci-app-backend
   Scenario: Get Test Optimization service settings with empty service_name returns bad request
     Given operation "GetTestOptimizationServiceSettings" enabled
     And new "GetTestOptimizationServiceSettings" request
@@ -104,14 +104,14 @@ Feature: Test Optimization
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Search flaky tests returns "Bad Request" response
     Given new "SearchFlakyTests" request
     And body with value {"data": {"attributes": {"filter": {"include_history": true, "query": "flaky_test_state:active @git.repository.id_v2:\"github.com/datadog/shopist\""}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "failure_rate"}, "type": "search_flaky_tests_request"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/ci-app-backend
+  @skip @team:ddoghq/ci-app-backend
   Scenario: Search flaky tests returns "Bad Request" response with invalid limit
     Given operation "SearchFlakyTests" enabled
     And new "SearchFlakyTests" request
@@ -119,14 +119,14 @@ Feature: Test Optimization
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Search flaky tests returns "OK" response
     Given new "SearchFlakyTests" request
     And body with value {"data": {"attributes": {"filter": {"include_history": true, "query": "flaky_test_state:active @git.repository.id_v2:\"github.com/datadog/shopist\""}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "failure_rate"}, "type": "search_flaky_tests_request"}}
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @skip @skip-validation @team:DataDog/ci-app-backend @with-pagination
+  @replay-only @skip @skip-validation @team:ddoghq/ci-app-backend @with-pagination
   Scenario: Search flaky tests returns "OK" response with filtered query
     Given operation "SearchFlakyTests" enabled
     And new "SearchFlakyTests" request
@@ -134,7 +134,7 @@ Feature: Test Optimization
     When the request with pagination is sent
     Then the response status is 200 OK
 
-  @skip @team:DataDog/ci-app-backend
+  @skip @team:ddoghq/ci-app-backend
   Scenario: Search flaky tests returns "OK" response with history
     Given operation "SearchFlakyTests" enabled
     And new "SearchFlakyTests" request
@@ -148,35 +148,35 @@ Feature: Test Optimization
     And the response "data[0].attributes.history[0]" has field "policy_id"
     And the response "data[0].attributes.history[0]" has field "policy_meta"
 
-  @generated @skip @team:DataDog/ci-app-backend @with-pagination
+  @generated @skip @team:ddoghq/ci-app-backend @with-pagination
   Scenario: Search flaky tests returns "OK" response with pagination
     Given new "SearchFlakyTests" request
     And body with value {"data": {"attributes": {"filter": {"include_history": true, "query": "flaky_test_state:active @git.repository.id_v2:\"github.com/datadog/shopist\""}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "failure_rate"}, "type": "search_flaky_tests_request"}}
     When the request with pagination is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Update Flaky Tests Management policies returns "Bad Request" response
     Given new "UpdateFlakyTestsManagementPolicies" request
     And body with value {"data": {"attributes": {"attempt_to_fix": {"retries": 3}, "disabled": {"auto_disable_rule": {"enabled": false, "status": "active", "window_seconds": 3600}, "branch_rule": {"branches": ["main"], "enabled": true, "excluded_branches": [], "excluded_test_services": []}, "enabled": false, "failure_rate_rule": {"branches": [], "enabled": false, "min_runs": 10, "status": "active", "threshold": 0.5}}, "quarantined": {"auto_quarantine_rule": {"enabled": true, "window_seconds": 3600}, "branch_rule": {"branches": ["main"], "enabled": true, "excluded_branches": [], "excluded_test_services": []}, "enabled": true, "failure_rate_rule": {"branches": ["main"], "enabled": true, "min_runs": 10, "threshold": 0.5}}, "repository_id": "github.com/datadog/shopist"}, "type": "test_optimization_update_flaky_tests_management_policies_request"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Update Flaky Tests Management policies returns "Not Found" response
     Given new "UpdateFlakyTestsManagementPolicies" request
     And body with value {"data": {"attributes": {"attempt_to_fix": {"retries": 3}, "disabled": {"auto_disable_rule": {"enabled": false, "status": "active", "window_seconds": 3600}, "branch_rule": {"branches": ["main"], "enabled": true, "excluded_branches": [], "excluded_test_services": []}, "enabled": false, "failure_rate_rule": {"branches": [], "enabled": false, "min_runs": 10, "status": "active", "threshold": 0.5}}, "quarantined": {"auto_quarantine_rule": {"enabled": true, "window_seconds": 3600}, "branch_rule": {"branches": ["main"], "enabled": true, "excluded_branches": [], "excluded_test_services": []}, "enabled": true, "failure_rate_rule": {"branches": ["main"], "enabled": true, "min_runs": 10, "threshold": 0.5}}, "repository_id": "github.com/datadog/shopist"}, "type": "test_optimization_update_flaky_tests_management_policies_request"}}
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Update Flaky Tests Management policies returns "OK" response
     Given new "UpdateFlakyTestsManagementPolicies" request
     And body with value {"data": {"attributes": {"attempt_to_fix": {"retries": 3}, "disabled": {"auto_disable_rule": {"enabled": false, "status": "active", "window_seconds": 3600}, "branch_rule": {"branches": ["main"], "enabled": true, "excluded_branches": [], "excluded_test_services": []}, "enabled": false, "failure_rate_rule": {"branches": [], "enabled": false, "min_runs": 10, "status": "active", "threshold": 0.5}}, "quarantined": {"auto_quarantine_rule": {"enabled": true, "window_seconds": 3600}, "branch_rule": {"branches": ["main"], "enabled": true, "excluded_branches": [], "excluded_test_services": []}, "enabled": true, "failure_rate_rule": {"branches": ["main"], "enabled": true, "min_runs": 10, "threshold": 0.5}}, "repository_id": "github.com/datadog/shopist"}, "type": "test_optimization_update_flaky_tests_management_policies_request"}}
     When the request is sent
     Then the response status is 200 OK
 
-  @skip @team:DataDog/ci-app-backend
+  @skip @team:ddoghq/ci-app-backend
   Scenario: Update Flaky Tests Management policies with empty repository_id returns bad request
     Given operation "UpdateFlakyTestsManagementPolicies" enabled
     And new "UpdateFlakyTestsManagementPolicies" request
@@ -184,28 +184,28 @@ Feature: Test Optimization
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Update Test Optimization service settings returns "Bad Request" response
     Given new "UpdateTestOptimizationServiceSettings" request
     And body with value {"data": {"attributes": {"auto_test_retries_enabled": false, "auto_test_retries_enabled_inherit": false, "code_coverage_enabled": false, "code_coverage_enabled_inherit": false, "early_flake_detection_enabled": false, "early_flake_detection_enabled_inherit": false, "env": "prod", "failed_test_replay_enabled": false, "failed_test_replay_enabled_inherit": false, "pr_comments_enabled": false, "repository_id": "github.com/datadog/shopist", "service_name": "shopist", "test_impact_analysis_enabled": true, "test_impact_analysis_enabled_inherit": true}, "type": "test_optimization_update_service_settings_request"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Update Test Optimization service settings returns "Not Found" response
     Given new "UpdateTestOptimizationServiceSettings" request
     And body with value {"data": {"attributes": {"auto_test_retries_enabled": false, "auto_test_retries_enabled_inherit": false, "code_coverage_enabled": false, "code_coverage_enabled_inherit": false, "early_flake_detection_enabled": false, "early_flake_detection_enabled_inherit": false, "env": "prod", "failed_test_replay_enabled": false, "failed_test_replay_enabled_inherit": false, "pr_comments_enabled": false, "repository_id": "github.com/datadog/shopist", "service_name": "shopist", "test_impact_analysis_enabled": true, "test_impact_analysis_enabled_inherit": true}, "type": "test_optimization_update_service_settings_request"}}
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Update Test Optimization service settings returns "OK" response
     Given new "UpdateTestOptimizationServiceSettings" request
     And body with value {"data": {"attributes": {"auto_test_retries_enabled": false, "auto_test_retries_enabled_inherit": false, "code_coverage_enabled": false, "code_coverage_enabled_inherit": false, "early_flake_detection_enabled": false, "early_flake_detection_enabled_inherit": false, "env": "prod", "failed_test_replay_enabled": false, "failed_test_replay_enabled_inherit": false, "pr_comments_enabled": false, "repository_id": "github.com/datadog/shopist", "service_name": "shopist", "test_impact_analysis_enabled": true, "test_impact_analysis_enabled_inherit": true}, "type": "test_optimization_update_service_settings_request"}}
     When the request is sent
     Then the response status is 200 OK
 
-  @skip @team:DataDog/ci-app-backend
+  @skip @team:ddoghq/ci-app-backend
   Scenario: Update Test Optimization service settings with empty repository_id returns bad request
     Given operation "UpdateTestOptimizationServiceSettings" enabled
     And new "UpdateTestOptimizationServiceSettings" request
@@ -213,14 +213,14 @@ Feature: Test Optimization
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Update flaky test states returns "Bad Request" response
     Given new "UpdateFlakyTests" request
     And body with value {"data": {"attributes": {"tests": [{"id": "4eb1887a8adb1847", "new_state": "active"}]}, "type": "update_flaky_test_state_request"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Update flaky test states returns "OK" response
     Given new "UpdateFlakyTests" request
     And body with value {"data": {"attributes": {"tests": [{"id": "4eb1887a8adb1847", "new_state": "active"}]}, "type": "update_flaky_test_state_request"}}

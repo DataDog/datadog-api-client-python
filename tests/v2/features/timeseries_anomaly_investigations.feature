@@ -11,22 +11,22 @@ Feature: Timeseries Anomaly Investigations
     And new "CreateTimeseriesAnomalyInvestigation" request
     And body with value {"data": {"attributes": {"requests": [{"formulas": [{"formula": "query1"}], "from": 1754406000000, "queries": [{"data_source": "metrics", "name": "query1", "query": "avg:system.cpu.user{env:prod} by {service}"}], "to": 1754423940000}]}, "type": "timeseries_anomaly_investigation"}}
 
-  @generated @skip @team:DataDog/dataviz-backend-maintainers
+  @generated @skip @team:ddoghq/dataviz-backend-maintainers
   Scenario: Investigate a timeseries anomaly returns "Bad Request" response
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/dataviz-backend-maintainers
+  @generated @skip @team:ddoghq/dataviz-backend-maintainers
   Scenario: Investigate a timeseries anomaly returns "OK" response
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/dataviz-backend-maintainers
+  @generated @skip @team:ddoghq/dataviz-backend-maintainers
   Scenario: Investigate a timeseries anomaly returns "Payload Too Large" response
     When the request is sent
     Then the response status is 413 Payload Too Large
 
-  @generated @skip @team:DataDog/dataviz-backend-maintainers
+  @generated @skip @team:ddoghq/dataviz-backend-maintainers
   Scenario: Investigate a timeseries anomaly returns "Unprocessable Entity" response
     When the request is sent
     Then the response status is 422 Unprocessable Entity

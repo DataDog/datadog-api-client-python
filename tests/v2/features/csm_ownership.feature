@@ -12,14 +12,14 @@ Feature: CSM Ownership
     And a valid "appKeyAuth" key in the system
     And an instance of "CSMOwnership" API
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: Count untagged findings by ownership confidence returns "OK" response
     Given operation "GetOwnershipUntaggedFindings" enabled
     And new "GetOwnershipUntaggedFindings" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: Get an ownership inference by owner type returns "Bad Request" response
     Given operation "GetOwnershipInference" enabled
     And new "GetOwnershipInference" request
@@ -28,7 +28,7 @@ Feature: CSM Ownership
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: Get an ownership inference by owner type returns "Not Found" response
     Given operation "GetOwnershipInference" enabled
     And new "GetOwnershipInference" request
@@ -37,7 +37,7 @@ Feature: CSM Ownership
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: Get an ownership inference by owner type returns "OK" response
     Given operation "GetOwnershipInference" enabled
     And new "GetOwnershipInference" request
@@ -46,14 +46,14 @@ Feature: CSM Ownership
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: Get ownership settings for the org returns "OK" response
     Given operation "GetOwnershipSettings" enabled
     And new "GetOwnershipSettings" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: Get the evidence for an ownership inference returns "Bad Request" response
     Given operation "GetOwnershipEvidence" enabled
     And new "GetOwnershipEvidence" request
@@ -62,7 +62,7 @@ Feature: CSM Ownership
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: Get the evidence for an ownership inference returns "Not Found" response
     Given operation "GetOwnershipEvidence" enabled
     And new "GetOwnershipEvidence" request
@@ -71,7 +71,7 @@ Feature: CSM Ownership
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: Get the evidence for an ownership inference returns "OK" response
     Given operation "GetOwnershipEvidence" enabled
     And new "GetOwnershipEvidence" request
@@ -80,7 +80,7 @@ Feature: CSM Ownership
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: List ownership history by owner type returns "Bad Request" response
     Given operation "ListOwnershipHistoryByOwnerType" enabled
     And new "ListOwnershipHistoryByOwnerType" request
@@ -89,7 +89,7 @@ Feature: CSM Ownership
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: List ownership history by owner type returns "OK" response
     Given operation "ListOwnershipHistoryByOwnerType" enabled
     And new "ListOwnershipHistoryByOwnerType" request
@@ -98,7 +98,7 @@ Feature: CSM Ownership
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: List ownership inference history for a resource returns "Bad Request" response
     Given operation "ListOwnershipHistory" enabled
     And new "ListOwnershipHistory" request
@@ -106,7 +106,7 @@ Feature: CSM Ownership
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: List ownership inference history for a resource returns "OK" response
     Given operation "ListOwnershipHistory" enabled
     And new "ListOwnershipHistory" request
@@ -114,7 +114,7 @@ Feature: CSM Ownership
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: List ownership inferences for a resource returns "Bad Request" response
     Given operation "ListOwnershipInferences" enabled
     And new "ListOwnershipInferences" request
@@ -122,7 +122,7 @@ Feature: CSM Ownership
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: List ownership inferences for a resource returns "Not Found" response
     Given operation "ListOwnershipInferences" enabled
     And new "ListOwnershipInferences" request
@@ -130,7 +130,7 @@ Feature: CSM Ownership
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: List ownership inferences for a resource returns "OK" response
     Given operation "ListOwnershipInferences" enabled
     And new "ListOwnershipInferences" request
@@ -138,7 +138,7 @@ Feature: CSM Ownership
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: Submit feedback on an ownership inference returns "Bad Request" response
     Given operation "CreateOwnershipFeedback" enabled
     And new "CreateOwnershipFeedback" request
@@ -148,7 +148,7 @@ Feature: CSM Ownership
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: Submit feedback on an ownership inference returns "Conflict" response
     Given operation "CreateOwnershipFeedback" enabled
     And new "CreateOwnershipFeedback" request
@@ -158,7 +158,7 @@ Feature: CSM Ownership
     When the request is sent
     Then the response status is 409 Conflict
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: Submit feedback on an ownership inference returns "Created" response
     Given operation "CreateOwnershipFeedback" enabled
     And new "CreateOwnershipFeedback" request
@@ -168,7 +168,7 @@ Feature: CSM Ownership
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: Submit feedback on an ownership inference returns "Not Found" response
     Given operation "CreateOwnershipFeedback" enabled
     And new "CreateOwnershipFeedback" request
@@ -178,7 +178,7 @@ Feature: CSM Ownership
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: Update ownership settings for the org returns "Bad Request" response
     Given operation "PostOwnershipSettings" enabled
     And new "PostOwnershipSettings" request
@@ -186,7 +186,7 @@ Feature: CSM Ownership
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: Update ownership settings for the org returns "OK" response
     Given operation "PostOwnershipSettings" enabled
     And new "PostOwnershipSettings" request

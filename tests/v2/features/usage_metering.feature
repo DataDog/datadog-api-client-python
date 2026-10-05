@@ -14,7 +14,7 @@ Feature: Usage Metering
     And a valid "appKeyAuth" key in the system
     And an instance of "UsageMetering" API
 
-  @generated @skip @team:DataDog/billing-hub
+  @generated @skip @team:ddoghq/billing-hub
   Scenario: Create or update usage quotas returns "Bad Request" response
     Given operation "CreateQuotas" enabled
     And new "CreateQuotas" request
@@ -23,7 +23,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/billing-hub
+  @generated @skip @team:ddoghq/billing-hub
   Scenario: Create or update usage quotas returns "OK. The response includes each item's result; see each item's `error` attribute for any that failed to write." response
     Given operation "CreateQuotas" enabled
     And new "CreateQuotas" request
@@ -32,7 +32,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK. The response includes each item's result; see each item's `error` attribute for any that failed to write.
 
-  @generated @skip @team:DataDog/billing-hub
+  @generated @skip @team:ddoghq/billing-hub
   Scenario: Delete a usage quota returns "No Content" response
     Given operation "DeleteQuota" enabled
     And new "DeleteQuota" request
@@ -41,7 +41,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/billing-hub
+  @generated @skip @team:ddoghq/billing-hub
   Scenario: Delete a usage quota returns "Not Found" response
     Given operation "DeleteQuota" enabled
     And new "DeleteQuota" request
@@ -50,7 +50,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/billing-hub
+  @replay-only @team:ddoghq/billing-hub
   Scenario: Get Monthly Cost Attribution returns "Bad Request" response
     Given new "GetMonthlyCostAttribution" request
     And request contains "start_month" parameter with value "{{ timeISO('now - 5d') }}"
@@ -59,7 +59,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:DataDog/billing-hub
+  @replay-only @team:ddoghq/billing-hub
   Scenario: Get Monthly Cost Attribution returns "OK" response
     Given new "GetMonthlyCostAttribution" request
     And request contains "start_month" parameter with value "{{ timeISO('now - 5d') }}"
@@ -68,25 +68,25 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/billing-hub
+  @generated @skip @team:ddoghq/billing-hub
   Scenario: Get active billing dimensions for cost attribution returns "Bad Request" response
     Given new "GetActiveBillingDimensions" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/billing-hub
+  @team:ddoghq/billing-hub
   Scenario: Get active billing dimensions for cost attribution returns "OK" response
     Given new "GetActiveBillingDimensions" request
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/billing-hub
+  @team:ddoghq/billing-hub
   Scenario: Get available fields for usage summary returns "Bad Request" response
     Given new "GetUsageSummaryAvailableFields" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/billing-hub
+  @skip @team:ddoghq/billing-hub
   Scenario: Get available fields for usage summary returns "OK" response
     Given new "GetUsageSummaryAvailableFields" request
     When the request is sent
@@ -97,58 +97,58 @@ Feature: Usage Metering
     And the response "data.attributes" has field "date_fields"
     And the response "data.attributes" has field "date_org_fields"
 
-  @generated @skip @team:DataDog/billing-hub
+  @generated @skip @team:ddoghq/billing-hub
   Scenario: Get available fields for usage summary returns "OK." response
     Given new "GetUsageSummaryAvailableFields" request
     When the request is sent
     Then the response status is 200 OK.
 
-  @team:DataDog/billing-hub
+  @team:ddoghq/billing-hub
   Scenario: Get billing dimension mapping for usage endpoints returns "Bad Request" response
     Given new "GetBillingDimensionMapping" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/billing-hub
+  @skip @team:ddoghq/billing-hub
   Scenario: Get billing dimension mapping for usage endpoints returns "OK" response
     Given new "GetBillingDimensionMapping" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/billing-hub
+  @generated @skip @team:ddoghq/billing-hub
   Scenario: Get cost across multi-org account returns "Bad Request" response
     Given new "GetCostByOrg" request
     And request contains "start_month" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @skip @team:DataDog/billing-hub
+  @replay-only @skip @team:ddoghq/billing-hub
   Scenario: Get cost across multi-org account returns "OK" response
     Given new "GetCostByOrg" request
     And request contains "start_month" parameter with value "{{ timeISO('now - 3d') }}"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/billing-hub
+  @generated @skip @team:ddoghq/billing-hub
   Scenario: Get estimated cost across your account returns "Bad Request" response
     Given new "GetEstimatedCostByOrg" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/billing-hub
+  @generated @skip @team:ddoghq/billing-hub
   Scenario: Get estimated cost across your account returns "OK" response
     Given new "GetEstimatedCostByOrg" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/billing-hub
+  @generated @skip @team:ddoghq/billing-hub
   Scenario: Get historical cost across your account returns "Bad Request" response
     Given new "GetHistoricalCostByOrg" request
     And request contains "start_month" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:DataDog/billing-hub
+  @replay-only @team:ddoghq/billing-hub
   Scenario: Get historical cost across your account returns "OK" response
     Given new "GetHistoricalCostByOrg" request
     And request contains "start_month" parameter with value "{{ timeISO('now - 2M') }}"
@@ -156,7 +156,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/billing-hub
+  @team:ddoghq/billing-hub
   Scenario: Get hourly usage by product family returns "Bad Request" response
     Given new "GetHourlyUsage" request
     And request contains "filter[timestamp][start]" parameter with value "{{ timeISO('now - 3d') }}"
@@ -165,7 +165,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/billing-hub
+  @team:ddoghq/billing-hub
   Scenario: Get hourly usage by product family returns "OK" response
     Given new "GetHourlyUsage" request
     And request contains "filter[timestamp][start]" parameter with value "{{ timeISO('now - 3d') }}"
@@ -175,7 +175,7 @@ Feature: Usage Metering
     And the response "data[0].type" is equal to "usage_timeseries"
     And the response "data[0].attributes.region" is equal to "us"
 
-  @skip @team:DataDog/billing-hub
+  @skip @team:ddoghq/billing-hub
   Scenario: Get hourly usage for Application Security returns "Bad Request" response
     Given new "GetUsageApplicationSecurityMonitoring" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
@@ -183,7 +183,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/billing-hub
+  @skip @team:ddoghq/billing-hub
   Scenario: Get hourly usage for Lambda traced invocations returns "Bad Request" response
     Given new "GetUsageLambdaTracedInvocations" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
@@ -191,7 +191,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/billing-hub
+  @skip @team:ddoghq/billing-hub
   Scenario: Get hourly usage for Lambda traced invocations returns "OK" response
     Given new "GetUsageLambdaTracedInvocations" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -201,7 +201,7 @@ Feature: Usage Metering
     And the response "data[0].type" is equal to "usage_timeseries"
     And the response "data[0].attributes.product_family" is equal to "lambda-traced-invocations"
 
-  @skip @team:DataDog/billing-hub
+  @skip @team:ddoghq/billing-hub
   Scenario: Get hourly usage for Observability Pipelines returns "Bad Request" response
     Given new "GetUsageObservabilityPipelines" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 3d') }}"
@@ -209,14 +209,14 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/billing-hub
+  @generated @skip @team:ddoghq/billing-hub
   Scenario: Get hourly usage for application security returns "Bad Request" response
     Given new "GetUsageApplicationSecurityMonitoring" request
     And request contains "start_hr" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/billing-hub
+  @skip @team:ddoghq/billing-hub
   Scenario: Get hourly usage for application security returns "OK" response
     Given new "GetUsageApplicationSecurityMonitoring" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -226,14 +226,14 @@ Feature: Usage Metering
     And the response "data[0].type" is equal to "usage_timeseries"
     And the response "data[0].attributes.product_family" is equal to "app-sec"
 
-  @generated @skip @team:DataDog/billing-hub
+  @generated @skip @team:ddoghq/billing-hub
   Scenario: Get hourly usage for observability pipelines returns "Bad Request" response
     Given new "GetUsageObservabilityPipelines" request
     And request contains "start_hr" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/billing-hub
+  @skip @team:ddoghq/billing-hub
   Scenario: Get hourly usage for observability pipelines returns "OK" response
     Given new "GetUsageObservabilityPipelines" request
     And request contains "start_hr" parameter with value "{{ timeISO('now - 5d') }}"
@@ -243,26 +243,26 @@ Feature: Usage Metering
     And the response "data[0].type" is equal to "usage_timeseries"
     And the response "data[0].attributes.product_family" is equal to "observability-pipelines"
 
-  @generated @skip @team:DataDog/billing-hub
+  @generated @skip @team:ddoghq/billing-hub
   Scenario: Get projected cost across your account returns "Bad Request" response
     Given new "GetProjectedCost" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:DataDog/billing-hub
+  @replay-only @team:ddoghq/billing-hub
   Scenario: Get projected cost across your account returns "OK" response
     Given new "GetProjectedCost" request
     And request contains "view" parameter with value "sub-org"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/billing-hub
+  @generated @skip @team:ddoghq/billing-hub
   Scenario: Get usage attribution types returns "OK" response
     Given new "GetUsageAttributionTypes" request
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/billing-hub
+  @team:ddoghq/billing-hub
   Scenario: GetEstimatedCostByOrg with both start_month and start_date returns "Bad Request" response
     Given new "GetEstimatedCostByOrg" request
     And request contains "view" parameter with value "sub-org"
@@ -271,7 +271,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:DataDog/billing-hub
+  @replay-only @team:ddoghq/billing-hub
   Scenario: GetEstimatedCostByOrg with start_month returns "OK" response
     Given new "GetEstimatedCostByOrg" request
     And request contains "view" parameter with value "sub-org"
@@ -279,7 +279,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/billing-hub
+  @generated @skip @team:ddoghq/billing-hub
   Scenario: List usage quotas returns "Bad Request" response
     Given operation "ListQuotas" enabled
     And new "ListQuotas" request
@@ -287,7 +287,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/billing-hub
+  @generated @skip @team:ddoghq/billing-hub
   Scenario: List usage quotas returns "OK" response
     Given operation "ListQuotas" enabled
     And new "ListQuotas" request
@@ -295,7 +295,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/billing-hub @with-pagination
+  @generated @skip @team:ddoghq/billing-hub @with-pagination
   Scenario: List usage quotas returns "OK" response with pagination
     Given operation "ListQuotas" enabled
     And new "ListQuotas" request
@@ -303,7 +303,7 @@ Feature: Usage Metering
     When the request with pagination is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/billing-hub
+  @generated @skip @team:ddoghq/billing-hub
   Scenario: Update a usage quota returns "Bad Request. Returned if the request is malformed, or if the `id` in the request body does not match the `id` in the request path." response
     Given operation "UpdateQuota" enabled
     And new "UpdateQuota" request
@@ -313,7 +313,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 400 Bad Request. Returned if the request is malformed, or if the `id` in the request body does not match the `id` in the request path.
 
-  @generated @skip @team:DataDog/billing-hub
+  @generated @skip @team:ddoghq/billing-hub
   Scenario: Update a usage quota returns "Not Found" response
     Given operation "UpdateQuota" enabled
     And new "UpdateQuota" request
@@ -323,7 +323,7 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/billing-hub
+  @generated @skip @team:ddoghq/billing-hub
   Scenario: Update a usage quota returns "OK" response
     Given operation "UpdateQuota" enabled
     And new "UpdateQuota" request

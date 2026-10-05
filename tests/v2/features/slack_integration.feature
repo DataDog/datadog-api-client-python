@@ -10,13 +10,13 @@ Feature: Slack Integration
     And an instance of "SlackIntegration" API
     And new "ListSlackUserBindings" request
 
-  @generated @skip @team:DataDog/chat-integrations
+  @generated @skip @team:ddoghq/chat-integrations
   Scenario: List Slack user bindings returns "Bad Request" response
     Given request contains "user_uuid" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/chat-integrations
+  @generated @skip @team:ddoghq/chat-integrations
   Scenario: List Slack user bindings returns "OK" response
     Given request contains "user_uuid" parameter from "REPLACE.ME"
     When the request is sent

@@ -7,7 +7,7 @@ Feature: Entity Risk Scores
     And a valid "appKeyAuth" key in the system
     And an instance of "EntityRiskScores" API
 
-  @generated @skip @team:DataDog/cloud-siem
+  @generated @skip @team:ddoghq/cloud-siem
   Scenario: Get Entity Risk Score returns "Bad Request" response
     Given operation "GetEntityRiskScore" enabled
     And new "GetEntityRiskScore" request
@@ -15,7 +15,7 @@ Feature: Entity Risk Scores
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/cloud-siem
+  @generated @skip @team:ddoghq/cloud-siem
   Scenario: Get Entity Risk Score returns "Not Found" response
     Given operation "GetEntityRiskScore" enabled
     And new "GetEntityRiskScore" request
@@ -23,7 +23,7 @@ Feature: Entity Risk Scores
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/cloud-siem
+  @generated @skip @team:ddoghq/cloud-siem
   Scenario: Get Entity Risk Score returns "OK" response
     Given operation "GetEntityRiskScore" enabled
     And new "GetEntityRiskScore" request
@@ -31,14 +31,14 @@ Feature: Entity Risk Scores
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/cloud-siem
+  @generated @skip @team:ddoghq/cloud-siem
   Scenario: List Entity Risk Scores returns "Bad Request" response
     Given operation "ListEntityRiskScores" enabled
     And new "ListEntityRiskScores" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/cloud-siem
+  @generated @skip @team:ddoghq/cloud-siem
   Scenario: List Entity Risk Scores returns "OK" response
     Given operation "ListEntityRiskScores" enabled
     And new "ListEntityRiskScores" request

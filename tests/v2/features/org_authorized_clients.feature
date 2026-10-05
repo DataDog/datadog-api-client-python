@@ -7,7 +7,7 @@ Feature: Org Authorized Clients
     And a valid "appKeyAuth" key in the system
     And an instance of "OrgAuthorizedClients" API
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Delete a user authorization for a client returns "No Content" response
     Given new "DeleteOrgAuthorizedClientUserAuthorization" request
     And request contains "org_authorized_client_id" parameter from "REPLACE.ME"
@@ -15,7 +15,7 @@ Feature: Org Authorized Clients
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Delete a user authorization for a client returns "Not Found" response
     Given new "DeleteOrgAuthorizedClientUserAuthorization" request
     And request contains "org_authorized_client_id" parameter from "REPLACE.ME"
@@ -23,7 +23,7 @@ Feature: Org Authorized Clients
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Delete a user's authorizations for a client returns "No Content" response
     Given new "DeleteOrgAuthorizedClientAllUserAuthorizations" request
     And request contains "org_authorized_client_id" parameter from "REPLACE.ME"
@@ -31,7 +31,7 @@ Feature: Org Authorized Clients
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Delete a user's authorizations for a client returns "Not Found" response
     Given new "DeleteOrgAuthorizedClientAllUserAuthorizations" request
     And request contains "org_authorized_client_id" parameter from "REPLACE.ME"
@@ -39,68 +39,68 @@ Feature: Org Authorized Clients
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Delete an org authorized client returns "No Content" response
     Given new "DeleteOrgAuthorizedClient" request
     And request contains "org_authorized_client_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Delete an org authorized client returns "Not Found" response
     Given new "DeleteOrgAuthorizedClient" request
     And request contains "org_authorized_client_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Get an org authorized client returns "Not Found" response
     Given new "GetOrgAuthorizedClient" request
     And request contains "org_authorized_client_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Get an org authorized client returns "OK" response
     Given new "GetOrgAuthorizedClient" request
     And request contains "org_authorized_client_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: List org authorized clients returns "OK" response
     Given new "ListOrgAuthorizedClients" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/delegated-auth-login @with-pagination
+  @generated @skip @team:ddoghq/delegated-auth-login @with-pagination
   Scenario: List org authorized clients returns "OK" response with pagination
     Given new "ListOrgAuthorizedClients" request
     When the request with pagination is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: List user authorizations for a client returns "Not Found" response
     Given new "ListOrgAuthorizedClientUserAuthorizations" request
     And request contains "org_authorized_client_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: List user authorizations for a client returns "OK" response
     Given new "ListOrgAuthorizedClientUserAuthorizations" request
     And request contains "org_authorized_client_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/delegated-auth-login @with-pagination
+  @generated @skip @team:ddoghq/delegated-auth-login @with-pagination
   Scenario: List user authorizations for a client returns "OK" response with pagination
     Given new "ListOrgAuthorizedClientUserAuthorizations" request
     And request contains "org_authorized_client_id" parameter from "REPLACE.ME"
     When the request with pagination is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Update an org authorized client returns "Bad Request" response
     Given new "UpdateOrgAuthorizedClient" request
     And request contains "org_authorized_client_id" parameter from "REPLACE.ME"
@@ -108,7 +108,7 @@ Feature: Org Authorized Clients
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Update an org authorized client returns "Not Found" response
     Given new "UpdateOrgAuthorizedClient" request
     And request contains "org_authorized_client_id" parameter from "REPLACE.ME"
@@ -116,7 +116,7 @@ Feature: Org Authorized Clients
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Update an org authorized client returns "OK" response
     Given new "UpdateOrgAuthorizedClient" request
     And request contains "org_authorized_client_id" parameter from "REPLACE.ME"
@@ -124,7 +124,7 @@ Feature: Org Authorized Clients
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Update an org authorized client returns "Unprocessable Entity" response
     Given new "UpdateOrgAuthorizedClient" request
     And request contains "org_authorized_client_id" parameter from "REPLACE.ME"

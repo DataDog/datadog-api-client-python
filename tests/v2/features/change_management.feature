@@ -10,7 +10,7 @@ Feature: Change Management
     And a valid "appKeyAuth" key in the system
     And an instance of "ChangeManagement" API
 
-  @generated @skip @team:DataDog/case-management
+  @generated @skip @team:ddoghq/case-management
   Scenario: Create a change request branch returns "Bad Request" response
     Given operation "CreateChangeRequestBranch" enabled
     And new "CreateChangeRequestBranch" request
@@ -19,7 +19,7 @@ Feature: Change Management
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/case-management
+  @generated @skip @team:ddoghq/case-management
   Scenario: Create a change request branch returns "Not Found" response
     Given operation "CreateChangeRequestBranch" enabled
     And new "CreateChangeRequestBranch" request
@@ -28,7 +28,7 @@ Feature: Change Management
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/case-management
+  @generated @skip @team:ddoghq/case-management
   Scenario: Create a change request branch returns "OK" response
     Given operation "CreateChangeRequestBranch" enabled
     And new "CreateChangeRequestBranch" request
@@ -37,7 +37,7 @@ Feature: Change Management
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/case-management
+  @generated @skip @team:ddoghq/case-management
   Scenario: Create a change request returns "Bad Request" response
     Given operation "CreateChangeRequest" enabled
     And new "CreateChangeRequest" request
@@ -45,7 +45,7 @@ Feature: Change Management
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/case-management
+  @generated @skip @team:ddoghq/case-management
   Scenario: Create a change request returns "Created" response
     Given operation "CreateChangeRequest" enabled
     And new "CreateChangeRequest" request
@@ -53,7 +53,7 @@ Feature: Change Management
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:DataDog/case-management
+  @generated @skip @team:ddoghq/case-management
   Scenario: Delete a change request decision returns "Bad Request" response
     Given operation "DeleteChangeRequestDecision" enabled
     And new "DeleteChangeRequestDecision" request
@@ -62,7 +62,7 @@ Feature: Change Management
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/case-management
+  @generated @skip @team:ddoghq/case-management
   Scenario: Delete a change request decision returns "Not Found" response
     Given operation "DeleteChangeRequestDecision" enabled
     And new "DeleteChangeRequestDecision" request
@@ -71,7 +71,7 @@ Feature: Change Management
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/case-management
+  @generated @skip @team:ddoghq/case-management
   Scenario: Delete a change request decision returns "OK" response
     Given operation "DeleteChangeRequestDecision" enabled
     And new "DeleteChangeRequestDecision" request
@@ -80,7 +80,7 @@ Feature: Change Management
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/case-management
+  @generated @skip @team:ddoghq/case-management
   Scenario: Get a change request returns "Bad Request" response
     Given operation "GetChangeRequest" enabled
     And new "GetChangeRequest" request
@@ -88,7 +88,7 @@ Feature: Change Management
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/case-management
+  @generated @skip @team:ddoghq/case-management
   Scenario: Get a change request returns "Not Found" response
     Given operation "GetChangeRequest" enabled
     And new "GetChangeRequest" request
@@ -96,7 +96,7 @@ Feature: Change Management
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/case-management
+  @generated @skip @team:ddoghq/case-management
   Scenario: Get a change request returns "OK" response
     Given operation "GetChangeRequest" enabled
     And new "GetChangeRequest" request
@@ -104,7 +104,7 @@ Feature: Change Management
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/case-management
+  @generated @skip @team:ddoghq/case-management
   Scenario: Update a change request decision returns "Bad Request" response
     Given operation "UpdateChangeRequestDecision" enabled
     And new "UpdateChangeRequestDecision" request
@@ -114,7 +114,7 @@ Feature: Change Management
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/case-management
+  @generated @skip @team:ddoghq/case-management
   Scenario: Update a change request decision returns "Not Found" response
     Given operation "UpdateChangeRequestDecision" enabled
     And new "UpdateChangeRequestDecision" request
@@ -124,7 +124,7 @@ Feature: Change Management
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/case-management
+  @generated @skip @team:ddoghq/case-management
   Scenario: Update a change request decision returns "OK" response
     Given operation "UpdateChangeRequestDecision" enabled
     And new "UpdateChangeRequestDecision" request
@@ -134,7 +134,7 @@ Feature: Change Management
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/case-management
+  @generated @skip @team:ddoghq/case-management
   Scenario: Update a change request returns "Bad Request" response
     Given operation "UpdateChangeRequest" enabled
     And new "UpdateChangeRequest" request
@@ -143,7 +143,7 @@ Feature: Change Management
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/case-management
+  @generated @skip @team:ddoghq/case-management
   Scenario: Update a change request returns "Not Found" response
     Given operation "UpdateChangeRequest" enabled
     And new "UpdateChangeRequest" request
@@ -152,7 +152,7 @@ Feature: Change Management
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/case-management
+  @generated @skip @team:ddoghq/case-management
   Scenario: Update a change request returns "OK" response
     Given operation "UpdateChangeRequest" enabled
     And new "UpdateChangeRequest" request

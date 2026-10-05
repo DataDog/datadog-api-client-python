@@ -10,7 +10,7 @@ Feature: Dashboards
     And a valid "appKeyAuth" key in the system
     And an instance of "Dashboards" API
 
-  @generated @skip @team:DataDog/dashboards-backend
+  @generated @skip @team:ddoghq/dashboards-backend
   Scenario: Get usage stats for a dashboard returns "Bad Request" response
     Given operation "GetDashboardUsage" enabled
     And new "GetDashboardUsage" request
@@ -18,7 +18,7 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:DataDog/dashboards-backend
+  @replay-only @team:ddoghq/dashboards-backend
   Scenario: Get usage stats for a dashboard returns "Not Found" response
     Given operation "GetDashboardUsage" enabled
     And new "GetDashboardUsage" request
@@ -26,7 +26,7 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/dashboards-backend
+  @replay-only @team:ddoghq/dashboards-backend
   Scenario: Get usage stats for a dashboard returns "OK" response
     Given operation "GetDashboardUsage" enabled
     And there is a valid "dashboard" in the system
@@ -41,7 +41,7 @@ Feature: Dashboards
     And the response "data.attributes" has field "total_views"
     And the response "data.attributes.author" has field "handle"
 
-  @replay-only @team:DataDog/dashboards-backend
+  @replay-only @team:ddoghq/dashboards-backend
   Scenario: Get usage stats for all dashboards returns "Bad Request" response
     Given operation "ListDashboardsUsage" enabled
     And new "ListDashboardsUsage" request
@@ -49,7 +49,7 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:DataDog/dashboards-backend
+  @replay-only @team:ddoghq/dashboards-backend
   Scenario: Get usage stats for all dashboards returns "OK" response
     Given operation "ListDashboardsUsage" enabled
     And there is a valid "dashboard" in the system
@@ -63,7 +63,7 @@ Feature: Dashboards
     And the response "meta.page" has field "total"
     And the response "links" has field "self"
 
-  @replay-only @skip-validation @team:DataDog/dashboards-backend @with-pagination
+  @replay-only @skip-validation @team:ddoghq/dashboards-backend @with-pagination
   Scenario: Get usage stats for all dashboards returns "OK" response with pagination
     Given operation "ListDashboardsUsage" enabled
     And new "ListDashboardsUsage" request
@@ -72,7 +72,7 @@ Feature: Dashboards
     Then the response status is 200 OK
     And the response has 590 items
 
-  @replay-only @team:DataDog/dashboards-backend
+  @replay-only @team:ddoghq/dashboards-backend
   Scenario: Get usage stats for all dashboards with both filters returns "OK" response
     Given operation "ListDashboardsUsage" enabled
     And new "ListDashboardsUsage" request
@@ -82,7 +82,7 @@ Feature: Dashboards
     Then the response status is 200 OK
     And the response "meta.page" has field "total"
 
-  @replay-only @team:DataDog/dashboards-backend
+  @replay-only @team:ddoghq/dashboards-backend
   Scenario: Get usage stats for all dashboards with edited_before filter returns "OK" response
     Given operation "ListDashboardsUsage" enabled
     And new "ListDashboardsUsage" request
@@ -91,7 +91,7 @@ Feature: Dashboards
     Then the response status is 200 OK
     And the response "meta.page" has field "total"
 
-  @replay-only @team:DataDog/dashboards-backend
+  @replay-only @team:ddoghq/dashboards-backend
   Scenario: Get usage stats for all dashboards with viewed_before filter returns "OK" response
     Given operation "ListDashboardsUsage" enabled
     And new "ListDashboardsUsage" request

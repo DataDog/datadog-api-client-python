@@ -24,7 +24,7 @@ Feature: Logs Restriction Queries
     And a valid "appKeyAuth" key in the system
     And an instance of "LogsRestrictionQueries" API
 
-  @skip-go @skip-java @skip-python @skip-ruby @skip-rust @skip-terraform-config @skip-typescript @skip-validation @team:DataDog/logs-app
+  @skip-go @skip-java @skip-python @skip-ruby @skip-rust @skip-terraform-config @skip-typescript @skip-validation @team:ddoghq/logs-app
   Scenario: Create a restriction query returns "Bad Request" response
     Given operation "CreateRestrictionQuery" enabled
     And new "CreateRestrictionQuery" request
@@ -32,7 +32,7 @@ Feature: Logs Restriction Queries
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/logs-app
+  @team:ddoghq/logs-app
   Scenario: Create a restriction query returns "OK" response
     Given operation "CreateRestrictionQuery" enabled
     And new "CreateRestrictionQuery" request
@@ -40,7 +40,7 @@ Feature: Logs Restriction Queries
     When the request is sent
     Then the response status is 200 OK
 
-  @skip-terraform-config @team:DataDog/logs-app
+  @skip-terraform-config @team:ddoghq/logs-app
   Scenario: Delete a restriction query returns "Bad Request" response
     Given operation "DeleteRestrictionQuery" enabled
     And new "DeleteRestrictionQuery" request
@@ -48,7 +48,7 @@ Feature: Logs Restriction Queries
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip-terraform-config @team:DataDog/logs-app
+  @skip-terraform-config @team:ddoghq/logs-app
   Scenario: Delete a restriction query returns "Not found" response
     Given operation "DeleteRestrictionQuery" enabled
     And new "DeleteRestrictionQuery" request
@@ -56,7 +56,7 @@ Feature: Logs Restriction Queries
     When the request is sent
     Then the response status is 404 Not found
 
-  @team:DataDog/logs-app
+  @team:ddoghq/logs-app
   Scenario: Delete a restriction query returns "OK" response
     Given operation "DeleteRestrictionQuery" enabled
     And there is a valid "restriction_query" in the system
@@ -65,7 +65,7 @@ Feature: Logs Restriction Queries
     When the request is sent
     Then the response status is 204 OK
 
-  @skip-terraform-config @team:DataDog/logs-app
+  @skip-terraform-config @team:ddoghq/logs-app
   Scenario: Get a restriction query returns "Bad Request" response
     Given operation "GetRestrictionQuery" enabled
     And new "GetRestrictionQuery" request
@@ -73,7 +73,7 @@ Feature: Logs Restriction Queries
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip-terraform-config @team:DataDog/logs-app
+  @skip-terraform-config @team:ddoghq/logs-app
   Scenario: Get a restriction query returns "Not found" response
     Given operation "GetRestrictionQuery" enabled
     And new "GetRestrictionQuery" request
@@ -81,7 +81,7 @@ Feature: Logs Restriction Queries
     When the request is sent
     Then the response status is 404 Not found
 
-  @team:DataDog/logs-app
+  @team:ddoghq/logs-app
   Scenario: Get a restriction query returns "OK" response
     Given operation "GetRestrictionQuery" enabled
     And there is a valid "restriction_query" in the system
@@ -90,7 +90,7 @@ Feature: Logs Restriction Queries
     When the request is sent
     Then the response status is 200 OK
 
-  @skip-terraform-config @team:DataDog/logs-app
+  @skip-terraform-config @team:ddoghq/logs-app
   Scenario: Get all restriction queries for a given user returns "Bad Request" response
     Given operation "ListUserRestrictionQueries" enabled
     And new "ListUserRestrictionQueries" request
@@ -98,7 +98,7 @@ Feature: Logs Restriction Queries
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/logs-app
+  @team:ddoghq/logs-app
   Scenario: Get all restriction queries for a given user returns "Not found" response
     Given operation "ListUserRestrictionQueries" enabled
     And new "ListUserRestrictionQueries" request
@@ -106,7 +106,7 @@ Feature: Logs Restriction Queries
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/logs-app
+  @skip @team:ddoghq/logs-app
   Scenario: Get all restriction queries for a given user returns "OK" response
     Given operation "ListUserRestrictionQueries" enabled
     And there is a valid "user" in the system
@@ -115,7 +115,7 @@ Feature: Logs Restriction Queries
     When the request is sent
     Then the response status is 200 OK
 
-  @skip-terraform-config @team:DataDog/logs-app
+  @skip-terraform-config @team:ddoghq/logs-app
   Scenario: Get restriction query for a given role returns "Bad Request" response
     Given operation "GetRoleRestrictionQuery" enabled
     And new "GetRoleRestrictionQuery" request
@@ -123,7 +123,7 @@ Feature: Logs Restriction Queries
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/logs-app
+  @team:ddoghq/logs-app
   Scenario: Get restriction query for a given role returns "Not found" response
     Given operation "GetRoleRestrictionQuery" enabled
     And new "GetRoleRestrictionQuery" request
@@ -131,7 +131,7 @@ Feature: Logs Restriction Queries
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/logs-app
+  @team:ddoghq/logs-app
   Scenario: Get restriction query for a given role returns "OK" response
     Given operation "GetRoleRestrictionQuery" enabled
     And there is a valid "role" in the system
@@ -140,7 +140,7 @@ Feature: Logs Restriction Queries
     When the request is sent
     Then the response status is 200 OK
 
-  @skip-terraform-config @team:DataDog/logs-app
+  @skip-terraform-config @team:ddoghq/logs-app
   Scenario: Grant role to a restriction query returns "Bad Request" response
     Given operation "AddRoleToRestrictionQuery" enabled
     And new "AddRoleToRestrictionQuery" request
@@ -149,7 +149,7 @@ Feature: Logs Restriction Queries
     When the request is sent
     Then the response status is 404 Not found
 
-  @skip-terraform-config @team:DataDog/logs-app
+  @skip-terraform-config @team:ddoghq/logs-app
   Scenario: Grant role to a restriction query returns "Not found" response
     Given operation "AddRoleToRestrictionQuery" enabled
     And new "AddRoleToRestrictionQuery" request
@@ -158,7 +158,7 @@ Feature: Logs Restriction Queries
     When the request is sent
     Then the response status is 404 Not found
 
-  @team:DataDog/logs-app
+  @team:ddoghq/logs-app
   Scenario: Grant role to a restriction query returns "OK" response
     Given operation "AddRoleToRestrictionQuery" enabled
     And there is a valid "restriction_query" in the system
@@ -169,14 +169,14 @@ Feature: Logs Restriction Queries
     When the request is sent
     Then the response status is 204 OK
 
-  @skip-terraform-config @team:DataDog/logs-app
+  @skip-terraform-config @team:ddoghq/logs-app
   Scenario: List restriction queries returns "OK" response
     Given operation "ListRestrictionQueries" enabled
     And new "ListRestrictionQueries" request
     When the request is sent
     Then the response status is 200 OK
 
-  @skip-terraform-config @team:DataDog/logs-app
+  @skip-terraform-config @team:ddoghq/logs-app
   Scenario: List roles for a restriction query returns "Bad Request" response
     Given operation "ListRestrictionQueryRoles" enabled
     And new "ListRestrictionQueryRoles" request
@@ -184,7 +184,7 @@ Feature: Logs Restriction Queries
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip-terraform-config @team:DataDog/logs-app
+  @skip-terraform-config @team:ddoghq/logs-app
   Scenario: List roles for a restriction query returns "Not found" response
     Given operation "ListRestrictionQueryRoles" enabled
     And new "ListRestrictionQueryRoles" request
@@ -192,7 +192,7 @@ Feature: Logs Restriction Queries
     When the request is sent
     Then the response status is 404 Not found
 
-  @team:DataDog/logs-app
+  @team:ddoghq/logs-app
   Scenario: List roles for a restriction query returns "OK" response
     Given operation "ListRestrictionQueryRoles" enabled
     And there is a valid "restriction_query" in the system
@@ -201,7 +201,7 @@ Feature: Logs Restriction Queries
     When the request is sent
     Then the response status is 200 OK
 
-  @skip @team:DataDog/logs-app
+  @skip @team:ddoghq/logs-app
   Scenario: Replace a restriction query returns "Bad Request" response
     Given operation "ReplaceRestrictionQuery" enabled
     And new "ReplaceRestrictionQuery" request
@@ -210,7 +210,7 @@ Feature: Logs Restriction Queries
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/logs-app
+  @skip @team:ddoghq/logs-app
   Scenario: Replace a restriction query returns "Not found" response
     Given operation "ReplaceRestrictionQuery" enabled
     And new "ReplaceRestrictionQuery" request
@@ -219,7 +219,7 @@ Feature: Logs Restriction Queries
     When the request is sent
     Then the response status is 404 Not found
 
-  @skip @team:DataDog/logs-app
+  @skip @team:ddoghq/logs-app
   Scenario: Replace a restriction query returns "OK" response
     Given operation "ReplaceRestrictionQuery" enabled
     And there is a valid "restriction_query" in the system
@@ -229,7 +229,7 @@ Feature: Logs Restriction Queries
     When the request is sent
     Then the response status is 200 OK
 
-  @skip @skip-terraform-config @team:DataDog/logs-app
+  @skip @skip-terraform-config @team:ddoghq/logs-app
   Scenario: Revoke role from a restriction query returns "Bad Request" response
     Given operation "RemoveRoleFromRestrictionQuery" enabled
     And new "RemoveRoleFromRestrictionQuery" request
@@ -238,7 +238,7 @@ Feature: Logs Restriction Queries
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @skip-terraform-config @team:DataDog/logs-app
+  @skip @skip-terraform-config @team:ddoghq/logs-app
   Scenario: Revoke role from a restriction query returns "Not found" response
     Given operation "RemoveRoleFromRestrictionQuery" enabled
     And new "RemoveRoleFromRestrictionQuery" request
@@ -247,7 +247,7 @@ Feature: Logs Restriction Queries
     When the request is sent
     Then the response status is 404 Not found
 
-  @skip @team:DataDog/logs-app
+  @skip @team:ddoghq/logs-app
   Scenario: Revoke role from a restriction query returns "OK" response
     Given operation "RemoveRoleFromRestrictionQuery" enabled
     And there is a valid "restriction_query" in the system
@@ -258,7 +258,7 @@ Feature: Logs Restriction Queries
     When the request is sent
     Then the response status is 204 OK
 
-  @skip @skip-terraform-config @team:DataDog/logs-app
+  @skip @skip-terraform-config @team:ddoghq/logs-app
   Scenario: Update a restriction query returns "Bad Request" response
     Given operation "UpdateRestrictionQuery" enabled
     And new "UpdateRestrictionQuery" request
@@ -267,7 +267,7 @@ Feature: Logs Restriction Queries
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @skip-terraform-config @team:DataDog/logs-app
+  @skip @skip-terraform-config @team:ddoghq/logs-app
   Scenario: Update a restriction query returns "Not found" response
     Given operation "UpdateRestrictionQuery" enabled
     And new "UpdateRestrictionQuery" request
@@ -276,7 +276,7 @@ Feature: Logs Restriction Queries
     When the request is sent
     Then the response status is 404 Not found
 
-  @skip @team:DataDog/logs-app
+  @skip @team:ddoghq/logs-app
   Scenario: Update a restriction query returns "OK" response
     Given operation "UpdateRestrictionQuery" enabled
     And there is a valid "restriction_query" in the system

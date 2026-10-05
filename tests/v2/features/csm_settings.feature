@@ -10,7 +10,7 @@ Feature: CSM Settings
     And a valid "appKeyAuth" key in the system
     And an instance of "CSMSettings" API
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: Get agentless host facet info returns "Bad Request" response
     Given operation "GetCSMAgentlessHostFacetInfo" enabled
     And new "GetCSMAgentlessHostFacetInfo" request
@@ -18,7 +18,7 @@ Feature: CSM Settings
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: Get agentless host facet info returns "OK" response
     Given operation "GetCSMAgentlessHostFacetInfo" enabled
     And new "GetCSMAgentlessHostFacetInfo" request
@@ -26,7 +26,7 @@ Feature: CSM Settings
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: Get unified host facet info returns "Bad Request" response
     Given operation "GetCSMUnifiedHostFacetInfo" enabled
     And new "GetCSMUnifiedHostFacetInfo" request
@@ -34,7 +34,7 @@ Feature: CSM Settings
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: Get unified host facet info returns "OK" response
     Given operation "GetCSMUnifiedHostFacetInfo" enabled
     And new "GetCSMUnifiedHostFacetInfo" request
@@ -42,42 +42,42 @@ Feature: CSM Settings
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: List agentless host facets returns "OK" response
     Given operation "ListCSMAgentlessHostFacets" enabled
     And new "ListCSMAgentlessHostFacets" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: List agentless hosts returns "Bad Request" response
     Given operation "ListCSMAgentlessHosts" enabled
     And new "ListCSMAgentlessHosts" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: List agentless hosts returns "OK" response
     Given operation "ListCSMAgentlessHosts" enabled
     And new "ListCSMAgentlessHosts" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: List unified host facets returns "OK" response
     Given operation "ListCSMUnifiedHostFacets" enabled
     And new "ListCSMUnifiedHostFacets" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: List unified hosts returns "Bad Request" response
     Given operation "ListCSMUnifiedHosts" enabled
     And new "ListCSMUnifiedHosts" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: List unified hosts returns "OK" response
     Given operation "ListCSMUnifiedHosts" enabled
     And new "ListCSMUnifiedHosts" request

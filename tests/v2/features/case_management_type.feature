@@ -10,28 +10,28 @@ Feature: Case Management Type
     And a valid "appKeyAuth" key in the system
     And an instance of "CaseManagementType" API
 
-  @team:DataDog/case-management
+  @team:ddoghq/case-management
   Scenario: Create a case type returns "Bad Request" response
     Given new "CreateCaseType" request
     And body with value {"data": {"attributes": {"description": "Investigations done in case management", "emoji": "notanemoji", "name": "Investigation"}, "type": "case_type"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/case-management
+  @team:ddoghq/case-management
   Scenario: Create a case type returns "CREATED" response
     Given new "CreateCaseType" request
     And body with value {"data": {"attributes": {"description": "Investigations done in case management", "emoji": "👑", "name": "Investigation"}, "type": "case_type"}}
     When the request is sent
     Then the response status is 201 CREATED
 
-  @generated @skip @team:DataDog/case-management
+  @generated @skip @team:ddoghq/case-management
   Scenario: Delete a case type returns "No Content" response
     Given new "DeleteCaseType" request
     And request contains "case_type_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 No Content
 
-  @team:DataDog/case-management
+  @team:ddoghq/case-management
   Scenario: Delete a case type returns "NotContent" response
     Given new "DeleteCaseType" request
     And there is a valid "case_type" in the system
@@ -39,13 +39,13 @@ Feature: Case Management Type
     When the request is sent
     Then the response status is 204 OK
 
-  @team:DataDog/case-management
+  @team:ddoghq/case-management
   Scenario: Get all case types returns "OK" response
     Given new "GetAllCaseTypes" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/case-management
+  @generated @skip @team:ddoghq/case-management
   Scenario: Update a case type returns "Bad Request" response
     Given new "UpdateCaseType" request
     And request contains "case_type_id" parameter from "REPLACE.ME"
@@ -53,7 +53,7 @@ Feature: Case Management Type
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/case-management
+  @generated @skip @team:ddoghq/case-management
   Scenario: Update a case type returns "Not Found" response
     Given new "UpdateCaseType" request
     And request contains "case_type_id" parameter from "REPLACE.ME"
@@ -61,7 +61,7 @@ Feature: Case Management Type
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/case-management
+  @generated @skip @team:ddoghq/case-management
   Scenario: Update a case type returns "OK" response
     Given new "UpdateCaseType" request
     And request contains "case_type_id" parameter from "REPLACE.ME"

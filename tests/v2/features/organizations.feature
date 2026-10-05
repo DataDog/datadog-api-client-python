@@ -8,87 +8,87 @@ Feature: Organizations
     And a valid "appKeyAuth" key in the system
     And an instance of "Organizations" API
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Get a SAML configuration returns "Not Found" response
     Given new "GetSAMLConfiguration" request
     And request contains "saml_config_uuid" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Get a SAML configuration returns "OK" response
     Given new "GetSAMLConfiguration" request
     And request contains "saml_config_uuid" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Get a specific Org Config value returns "Bad Request" response
     Given new "GetOrgConfig" request
     And request contains "org_config_name" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/org-management
+  @team:ddoghq/org-management
   Scenario: Get a specific Org Config value returns "Not Found" response
     Given new "GetOrgConfig" request
     And request contains "org_config_name" parameter with value "i_dont_exist"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/org-management
+  @team:ddoghq/org-management
   Scenario: Get a specific Org Config value returns "OK" response
     Given new "GetOrgConfig" request
     And request contains "org_config_name" parameter with value "custom_roles"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: List Org Configs returns "Bad Request" response
     Given new "ListOrgConfigs" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/org-management
+  @team:ddoghq/org-management
   Scenario: List Org Configs returns "OK" response
     Given new "ListOrgConfigs" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: List SAML configurations returns "OK" response
     Given new "ListSAMLConfigurations" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: List global orgs returns "Bad Request" response
     Given new "ListGlobalOrgs" request
     And request contains "user_handle" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: List global orgs returns "OK" response
     Given new "ListGlobalOrgs" request
     And request contains "user_handle" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/delegated-auth-login @with-pagination
+  @generated @skip @team:ddoghq/delegated-auth-login @with-pagination
   Scenario: List global orgs returns "OK" response with pagination
     Given new "ListGlobalOrgs" request
     And request contains "user_handle" parameter from "REPLACE.ME"
     When the request with pagination is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: List your managed organizations returns "OK" response
     Given new "ListOrgs" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Update a SAML configuration returns "Bad Request" response
     Given new "UpdateSAMLConfiguration" request
     And request contains "saml_config_uuid" parameter from "REPLACE.ME"
@@ -96,7 +96,7 @@ Feature: Organizations
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Update a SAML configuration returns "Not Found" response
     Given new "UpdateSAMLConfiguration" request
     And request contains "saml_config_uuid" parameter from "REPLACE.ME"
@@ -104,7 +104,7 @@ Feature: Organizations
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Update a SAML configuration returns "OK" response
     Given new "UpdateSAMLConfiguration" request
     And request contains "saml_config_uuid" parameter from "REPLACE.ME"
@@ -112,7 +112,7 @@ Feature: Organizations
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Update a SAML configuration returns "Unprocessable Entity" response
     Given new "UpdateSAMLConfiguration" request
     And request contains "saml_config_uuid" parameter from "REPLACE.ME"
@@ -120,7 +120,7 @@ Feature: Organizations
     When the request is sent
     Then the response status is 422 Unprocessable Entity
 
-  @team:DataDog/org-management
+  @team:ddoghq/org-management
   Scenario: Update a specific Org Config returns "Bad Request" response
     Given new "UpdateOrgConfig" request
     And request contains "org_config_name" parameter with value "custom_roles"
@@ -128,7 +128,7 @@ Feature: Organizations
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/org-management
+  @team:ddoghq/org-management
   Scenario: Update a specific Org Config returns "Not Found" response
     Given new "UpdateOrgConfig" request
     And request contains "org_config_name" parameter with value "i_dont_exist"
@@ -136,7 +136,7 @@ Feature: Organizations
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/org-management
+  @team:ddoghq/org-management
   Scenario: Update a specific Org Config returns "OK" response
     Given new "UpdateOrgConfig" request
     And request contains "org_config_name" parameter with value "monitor_timezone"
@@ -144,7 +144,7 @@ Feature: Organizations
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Update organization SAML preferences returns "Bad Request" response
     Given operation "UpdateOrgSamlConfigurations" enabled
     And new "UpdateOrgSamlConfigurations" request
@@ -152,7 +152,7 @@ Feature: Organizations
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Update organization SAML preferences returns "No Content" response
     Given operation "UpdateOrgSamlConfigurations" enabled
     And new "UpdateOrgSamlConfigurations" request
@@ -160,7 +160,7 @@ Feature: Organizations
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Update organization SAML preferences returns "Not Found" response
     Given operation "UpdateOrgSamlConfigurations" enabled
     And new "UpdateOrgSamlConfigurations" request
@@ -168,34 +168,34 @@ Feature: Organizations
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Update the maximum session duration returns "Bad Request" response
     Given new "UpdateLoginOrgConfigsMaxSessionDuration" request
     And body with value {"data": {"attributes": {"max_session_duration": 604800}, "type": "max_session_duration"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Update the maximum session duration returns "No Content" response
     Given new "UpdateLoginOrgConfigsMaxSessionDuration" request
     And body with value {"data": {"attributes": {"max_session_duration": 604800}, "type": "max_session_duration"}}
     When the request is sent
     Then the response status is 204 No Content
 
-  @skip-go @skip-java @skip-python @skip-ruby @skip-rust @skip-terraform-config @skip-typescript @skip-validation @team:DataDog/delegated-auth-login
+  @skip-go @skip-java @skip-python @skip-ruby @skip-rust @skip-terraform-config @skip-typescript @skip-validation @team:ddoghq/delegated-auth-login
   Scenario: Upload IdP metadata returns "Bad Request - caused by either malformed XML or invalid SAML IdP metadata" response
     Given new "UploadIdPMetadata" request
     And request contains "idp_file" parameter with value "fixtures/organizations/saml_configurations/invalid_idp_metadata.xml"
     When the request is sent
     Then the response status is 400 Bad Request - caused by either malformed XML or invalid SAML IdP metadata
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Upload IdP metadata returns "Bad Request" response
     Given new "UploadIdPMetadata" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @integration-only @skip-terraform-config @skip-validation @team:DataDog/delegated-auth-login
+  @integration-only @skip-terraform-config @skip-validation @team:ddoghq/delegated-auth-login
   Scenario: Upload IdP metadata returns "OK" response
     Given new "UploadIdPMetadata" request
     And request contains "idp_file" parameter with value "fixtures/organizations/saml_configurations/valid_idp_metadata.xml"

@@ -3,7 +3,7 @@ Feature: APM
   Observe, troubleshoot, and improve cloud-scale applications with all
   telemetry in context
 
-  @generated @skip @team:DataDog/apm-aoe
+  @generated @skip @team:ddoghq/apm-aoe
   Scenario: Get service list returns "OK" response
     Given a valid "apiKeyAuth" key in the system
     And a valid "appKeyAuth" key in the system

@@ -2,7 +2,7 @@
 Feature: IP Ranges
   Get a list of IP prefixes belonging to Datadog.
 
-  @team:DataDog/network-edge
+  @team:ddoghq/network-edge
   Scenario: List IP Ranges returns "OK" response
     Given an instance of "IPRanges" API
     And new "GetIPRanges" request

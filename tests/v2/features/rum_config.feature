@@ -9,7 +9,7 @@ Feature: RUM Config
     And a valid "appKeyAuth" key in the system
     And an instance of "RUMConfig" API
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Create the RUM configuration returns "Bad Request" response
     Given operation "CreateRumConfig" enabled
     And new "CreateRumConfig" request
@@ -17,7 +17,7 @@ Feature: RUM Config
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Create the RUM configuration returns "Created" response
     Given operation "CreateRumConfig" enabled
     And new "CreateRumConfig" request
@@ -25,14 +25,14 @@ Feature: RUM Config
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Get the RUM configuration returns "OK" response
     Given operation "GetRumConfig" enabled
     And new "GetRumConfig" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Update the RUM configuration returns "Bad Request" response
     Given operation "UpdateRumConfig" enabled
     And new "UpdateRumConfig" request
@@ -40,7 +40,7 @@ Feature: RUM Config
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Update the RUM configuration returns "OK" response
     Given operation "UpdateRumConfig" enabled
     And new "UpdateRumConfig" request

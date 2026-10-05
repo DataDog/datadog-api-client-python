@@ -15,7 +15,7 @@ Feature: Metrics
     Given a valid "apiKeyAuth" key in the system
     And an instance of "Metrics" API
 
-  @skip-typescript @team:DataDog/metrics-experience
+  @skip-typescript @team:ddoghq/metrics-experience
   Scenario: Configure tags for multiple metrics returns "Accepted" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "user" in the system
@@ -24,7 +24,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 202 Accepted
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Configure tags for multiple metrics returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "CreateBulkTagsMetricsConfiguration" request
@@ -32,7 +32,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Configure tags for multiple metrics returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "CreateBulkTagsMetricsConfiguration" request
@@ -40,7 +40,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Create a tag configuration returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "CreateTagConfiguration" request
@@ -49,7 +49,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Create a tag configuration returns "Conflict" response
     Given a valid "appKeyAuth" key in the system
     And new "CreateTagConfiguration" request
@@ -58,7 +58,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 409 Conflict
 
-  @replay-only @skip-validation @team:DataDog/metrics-experience
+  @replay-only @skip-validation @team:ddoghq/metrics-experience
   Scenario: Create a tag configuration returns "Created" response
     Given a valid "appKeyAuth" key in the system
     And new "CreateTagConfiguration" request
@@ -68,7 +68,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Create a tag indexing rule exemption returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "CreateTagIndexingRuleExemption" enabled
@@ -78,7 +78,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Create a tag indexing rule exemption returns "Created" response
     Given a valid "appKeyAuth" key in the system
     And operation "CreateTagIndexingRuleExemption" enabled
@@ -88,7 +88,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 201 Created
 
-  @team:DataDog/metrics-experience
+  @team:ddoghq/metrics-experience
   Scenario: Create a tag indexing rule returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "CreateTagIndexingRule" enabled
@@ -97,7 +97,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/metrics-experience
+  @team:ddoghq/metrics-experience
   Scenario: Create a tag indexing rule returns "Created" response
     Given a valid "appKeyAuth" key in the system
     And operation "CreateTagIndexingRule" enabled
@@ -106,7 +106,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 201 Created
 
-  @team:DataDog/metrics-experience
+  @team:ddoghq/metrics-experience
   Scenario: Create a tag indexing rule with exclude-mode tag usage fields returns "Created" response
     Given a valid "appKeyAuth" key in the system
     And operation "CreateTagIndexingRule" enabled
@@ -115,7 +115,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 201 Created
 
-  @team:DataDog/metrics-experience
+  @team:ddoghq/metrics-experience
   Scenario: Create a tag indexing rule with exclude_not_queried_window_seconds and exclude_tags_mode false returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "CreateTagIndexingRule" enabled
@@ -124,7 +124,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/metrics-experience
+  @skip @team:ddoghq/metrics-experience
   Scenario: Create a tag indexing rule with exclude_not_queried_window_seconds over the maximum returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "CreateTagIndexingRule" enabled
@@ -133,7 +133,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/metrics-experience
+  @team:ddoghq/metrics-experience
   Scenario: Create a tag indexing rule with exclude_not_used_in_assets and exclude_tags_mode false returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "CreateTagIndexingRule" enabled
@@ -142,7 +142,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Delete a historical metrics configuration returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "DeleteHistoricalMetricsConfiguration" enabled
@@ -151,7 +151,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Delete a historical metrics configuration returns "No Content" response
     Given a valid "appKeyAuth" key in the system
     And operation "DeleteHistoricalMetricsConfiguration" enabled
@@ -160,7 +160,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 204 No Content
 
-  @replay-only @skip-validation @team:DataDog/metrics-experience
+  @replay-only @skip-validation @team:ddoghq/metrics-experience
   Scenario: Delete a tag configuration returns "No Content" response
     Given there is a valid "metric" in the system
     And there is a valid "metric_tag_configuration" in the system
@@ -170,7 +170,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Delete a tag configuration returns "Not found" response
     Given a valid "appKeyAuth" key in the system
     And new "DeleteTagConfiguration" request
@@ -178,7 +178,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not found
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Delete a tag indexing rule exemption returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "DeleteTagIndexingRuleExemption" enabled
@@ -187,7 +187,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Delete a tag indexing rule exemption returns "No Content" response
     Given a valid "appKeyAuth" key in the system
     And operation "DeleteTagIndexingRuleExemption" enabled
@@ -196,7 +196,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 204 No Content
 
-  @team:DataDog/metrics-experience
+  @team:ddoghq/metrics-experience
   Scenario: Delete a tag indexing rule returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "DeleteTagIndexingRule" enabled
@@ -205,7 +205,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/metrics-experience
+  @team:ddoghq/metrics-experience
   Scenario: Delete a tag indexing rule returns "No Content" response
     Given a valid "appKeyAuth" key in the system
     And operation "DeleteTagIndexingRule" enabled
@@ -215,7 +215,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Delete tags for multiple metrics returns "Accepted" response
     Given a valid "appKeyAuth" key in the system
     And new "DeleteBulkTagsMetricsConfiguration" request
@@ -223,7 +223,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 202 Accepted
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Delete tags for multiple metrics returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "DeleteBulkTagsMetricsConfiguration" request
@@ -231,7 +231,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Delete tags for multiple metrics returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "DeleteBulkTagsMetricsConfiguration" request
@@ -239,7 +239,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Enable historical metrics ingestion returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "CreateHistoricalMetricsConfiguration" enabled
@@ -248,7 +248,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Enable historical metrics ingestion returns "Created" response
     Given a valid "appKeyAuth" key in the system
     And operation "CreateHistoricalMetricsConfiguration" enabled
@@ -257,7 +257,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Enable historical metrics ingestion returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And operation "CreateHistoricalMetricsConfiguration" enabled
@@ -266,7 +266,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Enable historical metrics ingestion returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And operation "CreateHistoricalMetricsConfiguration" enabled
@@ -275,7 +275,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Enable historical metrics ingestion returns "Unprocessable Entity" response
     Given a valid "appKeyAuth" key in the system
     And operation "CreateHistoricalMetricsConfiguration" enabled
@@ -284,7 +284,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 422 Unprocessable Entity
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Get a historical metrics configuration returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "GetHistoricalMetricsConfiguration" enabled
@@ -293,7 +293,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Get a historical metrics configuration returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And operation "GetHistoricalMetricsConfiguration" enabled
@@ -302,7 +302,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Get a historical metrics configuration returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And operation "GetHistoricalMetricsConfiguration" enabled
@@ -311,14 +311,14 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Get a list of metrics returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "ListTagConfigurations" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/metrics-experience
+  @skip @team:ddoghq/metrics-experience
   Scenario: Get a list of metrics returns "Success" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "metric_tag_configuration" in the system
@@ -326,7 +326,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 Success
 
-  @replay-only @skip-validation @team:DataDog/metrics-experience @with-pagination
+  @replay-only @skip-validation @team:ddoghq/metrics-experience @with-pagination
   Scenario: Get a list of metrics returns "Success" response with pagination
     Given a valid "appKeyAuth" key in the system
     And new "ListTagConfigurations" request
@@ -335,7 +335,7 @@ Feature: Metrics
     Then the response status is 200 Success
     And the response has 3 items
 
-  @team:DataDog/metrics-experience
+  @team:ddoghq/metrics-experience
   Scenario: Get a list of metrics with a tag filter returns "Success" response
     Given a valid "appKeyAuth" key in the system
     And new "ListTagConfigurations" request
@@ -344,7 +344,7 @@ Feature: Metrics
     Then the response status is 200 Success
     And the response "data" has length 0
 
-  @replay-only @team:DataDog/metrics-experience
+  @replay-only @team:ddoghq/metrics-experience
   Scenario: Get a list of metrics with configured filter returns "Success" response
     Given a valid "appKeyAuth" key in the system
     And new "ListTagConfigurations" request
@@ -353,7 +353,7 @@ Feature: Metrics
     Then the response status is 200 Success
     And the response "data[0].type" is equal to "manage_tags"
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Get a tag indexing rule exemption returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "GetTagIndexingRuleExemption" enabled
@@ -362,7 +362,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Get a tag indexing rule exemption returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And operation "GetTagIndexingRuleExemption" enabled
@@ -371,7 +371,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Get a tag indexing rule exemption returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And operation "GetTagIndexingRuleExemption" enabled
@@ -380,7 +380,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/metrics-experience
+  @team:ddoghq/metrics-experience
   Scenario: Get a tag indexing rule returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "GetTagIndexingRule" enabled
@@ -389,7 +389,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/metrics-experience
+  @team:ddoghq/metrics-experience
   Scenario: Get a tag indexing rule returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And operation "GetTagIndexingRule" enabled
@@ -398,7 +398,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/metrics-experience
+  @team:ddoghq/metrics-experience
   Scenario: Get a tag indexing rule returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And operation "GetTagIndexingRule" enabled
@@ -408,7 +408,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Get tag key cardinality details returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "GetMetricTagCardinalityDetails" request
@@ -416,7 +416,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Get tag key cardinality details returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "GetMetricTagCardinalityDetails" request
@@ -424,7 +424,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Get tag key cardinality details returns "Success" response
     Given a valid "appKeyAuth" key in the system
     And new "GetMetricTagCardinalityDetails" request
@@ -432,7 +432,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 Success
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: List active tags and aggregations returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "ListActiveMetricConfigurations" request
@@ -440,7 +440,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: List active tags and aggregations returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "ListActiveMetricConfigurations" request
@@ -448,7 +448,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-validation @team:DataDog/metrics-experience
+  @skip-validation @team:ddoghq/metrics-experience
   Scenario: List active tags and aggregations returns "Success" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "metric_static" in the system
@@ -459,7 +459,7 @@ Feature: Metrics
     And the response "data.type" is equal to "actively_queried_configurations"
     And the response "data.id" is equal to "static_test_metric_donotdelete"
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: List distinct metric volumes by metric name returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "ListVolumesByMetricName" request
@@ -467,7 +467,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: List distinct metric volumes by metric name returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "ListVolumesByMetricName" request
@@ -475,7 +475,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-validation @team:DataDog/metrics-experience
+  @skip-validation @team:ddoghq/metrics-experience
   Scenario: List distinct metric volumes by metric name returns "Success" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "metric_static" in the system
@@ -486,7 +486,7 @@ Feature: Metrics
     And the response "data.type" is equal to "metric_volumes"
     And the response "data.id" is equal to "static_test_metric_donotdelete"
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: List tag configuration by name returns "No tag configuration exists for the metric" response
     Given a valid "appKeyAuth" key in the system
     And new "ListTagConfigurationByName" request
@@ -494,7 +494,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 No tag configuration exists for the metric
 
-  @replay-only @skip-validation @team:DataDog/metrics-experience
+  @replay-only @skip-validation @team:ddoghq/metrics-experience
   Scenario: List tag configuration by name returns "Success" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "metric" in the system
@@ -505,7 +505,7 @@ Feature: Metrics
     Then the response status is 200 Success
     And the response "data.id" has the same value as "metric_tag_configuration.data.id"
 
-  @team:DataDog/metrics-experience
+  @team:ddoghq/metrics-experience
   Scenario: List tag indexing rules for a metric returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "ListTagIndexingRulesForMetric" enabled
@@ -514,7 +514,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/metrics-experience
+  @team:ddoghq/metrics-experience
   Scenario: List tag indexing rules for a metric returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And operation "ListTagIndexingRulesForMetric" enabled
@@ -523,7 +523,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: List tag indexing rules returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "ListTagIndexingRules" enabled
@@ -531,7 +531,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/metrics-experience
+  @team:ddoghq/metrics-experience
   Scenario: List tag indexing rules returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And operation "ListTagIndexingRules" enabled
@@ -539,7 +539,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: List tags by metric name returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "ListTagsByMetricName" request
@@ -547,7 +547,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: List tags by metric name returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And new "ListTagsByMetricName" request
@@ -555,7 +555,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @skip-validation @team:DataDog/metrics-experience
+  @replay-only @skip-validation @team:ddoghq/metrics-experience
   Scenario: List tags by metric name returns "Success" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "metric" in the system
@@ -566,7 +566,7 @@ Feature: Metrics
     Then the response status is 200 Success
     And the response "data.id" has the same value as "metric_tag_configuration.data.id"
 
-  @generated @skip @team:Datadog/timeseries-query
+  @generated @skip @team:ddoghq/timeseries-query
   Scenario: Query scalar data across multiple products returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryScalarData" request
@@ -574,7 +574,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/timeseries-query
+  @generated @skip @team:ddoghq/timeseries-query
   Scenario: Query scalar data across multiple products returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryScalarData" request
@@ -582,7 +582,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:Datadog/timeseries-query
+  @generated @skip @team:ddoghq/timeseries-query
   Scenario: Query timeseries data across multiple products returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryTimeseriesData" request
@@ -590,7 +590,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/timeseries-query
+  @generated @skip @team:ddoghq/timeseries-query
   Scenario: Query timeseries data across multiple products returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryTimeseriesData" request
@@ -598,7 +598,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Related Assets to a Metric returns "API error response." response
     Given a valid "appKeyAuth" key in the system
     And new "ListMetricAssets" request
@@ -606,7 +606,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 API error response.
 
-  @team:DataDog/metrics-experience
+  @team:ddoghq/metrics-experience
   Scenario: Related Assets to a Metric returns "Success" response
     Given a valid "appKeyAuth" key in the system
     And new "ListMetricAssets" request
@@ -616,7 +616,7 @@ Feature: Metrics
     And the response "data.type" is equal to "metrics"
     And the response "data.id" is equal to "system.cpu.user"
 
-  @team:DataDog/metrics-experience
+  @team:ddoghq/metrics-experience
   Scenario: Reorder tag indexing rules returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "ReorderTagIndexingRules" enabled
@@ -625,7 +625,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/metrics-experience
+  @team:ddoghq/metrics-experience
   Scenario: Reorder tag indexing rules returns "No Content" response
     Given a valid "appKeyAuth" key in the system
     And operation "ReorderTagIndexingRules" enabled
@@ -635,7 +635,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 204 No Content
 
-  @team:DataDog/metrics-experience
+  @team:ddoghq/metrics-experience
   Scenario: Reorder tag indexing rules returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And operation "ReorderTagIndexingRules" enabled
@@ -644,7 +644,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:Datadog/timeseries-query
+  @team:ddoghq/timeseries-query
   Scenario: Scalar cross product query returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryScalarData" request
@@ -652,7 +652,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:Datadog/timeseries-query
+  @team:ddoghq/timeseries-query
   Scenario: Scalar cross product query returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryScalarData" request
@@ -662,7 +662,7 @@ Feature: Metrics
     And the response "data.type" is equal to "scalar_response"
     And the response "data.attributes.columns[0].name" is equal to "a"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Scalar cross product query with RUM data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryScalarData" request
@@ -671,7 +671,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "scalar_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Scalar cross product query with apm_dependency_stats data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryScalarData" request
@@ -680,7 +680,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "scalar_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Scalar cross product query with apm_metrics data source and span_kind returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryScalarData" request
@@ -689,7 +689,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "scalar_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Scalar cross product query with apm_metrics data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryScalarData" request
@@ -698,7 +698,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "scalar_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Scalar cross product query with apm_resource_stats data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryScalarData" request
@@ -707,7 +707,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "scalar_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Scalar cross product query with audit data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryScalarData" request
@@ -716,7 +716,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "scalar_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Scalar cross product query with ci_pipelines data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryScalarData" request
@@ -725,7 +725,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "scalar_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Scalar cross product query with ci_tests data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryScalarData" request
@@ -734,7 +734,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "scalar_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Scalar cross product query with container data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryScalarData" request
@@ -743,7 +743,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "scalar_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Scalar cross product query with events data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryScalarData" request
@@ -752,7 +752,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "scalar_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Scalar cross product query with logs data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryScalarData" request
@@ -761,7 +761,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "scalar_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Scalar cross product query with network data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryScalarData" request
@@ -770,7 +770,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "scalar_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Scalar cross product query with on_call_events data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryScalarData" request
@@ -779,7 +779,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "scalar_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Scalar cross product query with process data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryScalarData" request
@@ -788,7 +788,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "scalar_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Scalar cross product query with product_analytics data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryScalarData" request
@@ -797,7 +797,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "scalar_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Scalar cross product query with profiles data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryScalarData" request
@@ -806,7 +806,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "scalar_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Scalar cross product query with security_signals data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryScalarData" request
@@ -815,7 +815,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "scalar_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Scalar cross product query with slo data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryScalarData" request
@@ -824,7 +824,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "scalar_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Scalar cross product query with spans data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryScalarData" request
@@ -833,14 +833,14 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "scalar_response"
 
-  @generated @skip @team:DataDog/metrics-intake
+  @generated @skip @team:ddoghq/metrics-intake
   Scenario: Submit metrics returns "Bad Request" response
     Given new "SubmitMetrics" request
     And body with value {"series": [{"metric": "system.load.1", "points": [{"timestamp": 1475317847, "value": 0.7}], "resources": [{"name": "dummyhost", "type": "host"}]}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/metrics-intake
+  @team:ddoghq/metrics-intake
   Scenario: Submit metrics returns "Payload accepted" response
     Given new "SubmitMetrics" request
     And body with value {"series": [{"metric": "system.load.1", "type": 0, "points": [{"timestamp": {{ timestamp('now') }}, "value": 0.7}], "resources": [{"name": "dummyhost", "type": "host"}]}]}
@@ -848,21 +848,21 @@ Feature: Metrics
     Then the response status is 202 Payload accepted
     And the response "errors" has length 0
 
-  @generated @skip @team:DataDog/metrics-intake
+  @generated @skip @team:ddoghq/metrics-intake
   Scenario: Submit metrics returns "Payload too large" response
     Given new "SubmitMetrics" request
     And body with value {"series": [{"metric": "system.load.1", "points": [{"timestamp": 1475317847, "value": 0.7}], "resources": [{"name": "dummyhost", "type": "host"}]}]}
     When the request is sent
     Then the response status is 413 Payload too large
 
-  @generated @skip @team:DataDog/metrics-intake
+  @generated @skip @team:ddoghq/metrics-intake
   Scenario: Submit metrics returns "Request timeout" response
     Given new "SubmitMetrics" request
     And body with value {"series": [{"metric": "system.load.1", "points": [{"timestamp": 1475317847, "value": 0.7}], "resources": [{"name": "dummyhost", "type": "host"}]}]}
     When the request is sent
     Then the response status is 408 Request timeout
 
-  @integration-only @skip-terraform-config @skip-validation @team:DataDog/metrics-intake
+  @integration-only @skip-terraform-config @skip-validation @team:ddoghq/metrics-intake
   Scenario: Submit metrics with compression returns "Payload accepted" response
     Given new "SubmitMetrics" request
     And body with value {"series": [{"metric": "system.load.1", "type": 0, "points": [{"timestamp": {{ timestamp('now') }}, "value": 0.7}]}]}
@@ -870,7 +870,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 202 Payload accepted
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Tag Configuration Cardinality Estimator returns "API error response." response
     Given a valid "appKeyAuth" key in the system
     And new "EstimateMetricsOutputSeries" request
@@ -878,7 +878,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 API error response.
 
-  @replay-only @team:DataDog/metrics-experience
+  @replay-only @team:ddoghq/metrics-experience
   Scenario: Tag Configuration Cardinality Estimator returns "Success" response
     Given new "EstimateMetricsOutputSeries" request
     And request contains "metric_name" parameter with value "system.cpu.idle"
@@ -887,7 +887,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 Success
 
-  @skip @team:Datadog/timeseries-query
+  @skip @team:ddoghq/timeseries-query
   Scenario: Timeseries cross product query returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryTimeseriesData" request
@@ -895,7 +895,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:Datadog/timeseries-query
+  @team:ddoghq/timeseries-query
   Scenario: Timeseries cross product query returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryTimeseriesData" request
@@ -904,7 +904,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "timeseries_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Timeseries cross product query with RUM data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryTimeseriesData" request
@@ -913,7 +913,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "timeseries_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Timeseries cross product query with apm_dependency_stats data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryTimeseriesData" request
@@ -922,7 +922,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "timeseries_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Timeseries cross product query with apm_metrics data source and span_kind returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryTimeseriesData" request
@@ -931,7 +931,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "timeseries_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Timeseries cross product query with apm_metrics data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryTimeseriesData" request
@@ -940,7 +940,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "timeseries_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Timeseries cross product query with apm_resource_stats data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryTimeseriesData" request
@@ -949,7 +949,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "timeseries_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Timeseries cross product query with audit data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryTimeseriesData" request
@@ -958,7 +958,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "timeseries_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Timeseries cross product query with ci_pipelines data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryTimeseriesData" request
@@ -967,7 +967,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "timeseries_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Timeseries cross product query with ci_tests data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryTimeseriesData" request
@@ -976,7 +976,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "timeseries_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Timeseries cross product query with container data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryTimeseriesData" request
@@ -985,7 +985,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "timeseries_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Timeseries cross product query with events data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryTimeseriesData" request
@@ -994,7 +994,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "timeseries_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Timeseries cross product query with logs data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryTimeseriesData" request
@@ -1003,7 +1003,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "timeseries_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Timeseries cross product query with network data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryTimeseriesData" request
@@ -1012,7 +1012,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "timeseries_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Timeseries cross product query with on_call_events data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryTimeseriesData" request
@@ -1021,7 +1021,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "timeseries_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Timeseries cross product query with process data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryTimeseriesData" request
@@ -1030,7 +1030,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "timeseries_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Timeseries cross product query with product_analytics data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryTimeseriesData" request
@@ -1039,7 +1039,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "timeseries_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Timeseries cross product query with profiles data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryTimeseriesData" request
@@ -1048,7 +1048,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "timeseries_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Timeseries cross product query with security_signals data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryTimeseriesData" request
@@ -1057,7 +1057,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "timeseries_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Timeseries cross product query with slo data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryTimeseriesData" request
@@ -1066,7 +1066,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "timeseries_response"
 
-  @skip-validation @team:Datadog/timeseries-query
+  @skip-validation @team:ddoghq/timeseries-query
   Scenario: Timeseries cross product query with spans data source returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "QueryTimeseriesData" request
@@ -1075,7 +1075,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.type" is equal to "timeseries_response"
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Update a tag configuration returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "UpdateTagConfiguration" request
@@ -1084,7 +1084,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @skip-validation @team:DataDog/metrics-experience
+  @replay-only @skip-validation @team:ddoghq/metrics-experience
   Scenario: Update a tag configuration returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And there is a valid "metric" in the system
@@ -1096,7 +1096,7 @@ Feature: Metrics
     Then the response status is 200 OK
     And the response "data.attributes.tags[0]" is equal to "app"
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Update a tag configuration returns "Unprocessable Entity" response
     Given a valid "appKeyAuth" key in the system
     And new "UpdateTagConfiguration" request
@@ -1105,7 +1105,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 422 Unprocessable Entity
 
-  @team:DataDog/metrics-experience
+  @team:ddoghq/metrics-experience
   Scenario: Update a tag indexing rule returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "UpdateTagIndexingRule" enabled
@@ -1115,7 +1115,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/metrics-experience
+  @generated @skip @team:ddoghq/metrics-experience
   Scenario: Update a tag indexing rule returns "Conflict" response
     Given a valid "appKeyAuth" key in the system
     And operation "UpdateTagIndexingRule" enabled
@@ -1125,7 +1125,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 409 Conflict
 
-  @team:DataDog/metrics-experience
+  @team:ddoghq/metrics-experience
   Scenario: Update a tag indexing rule returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
     And operation "UpdateTagIndexingRule" enabled
@@ -1135,7 +1135,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/metrics-experience
+  @team:ddoghq/metrics-experience
   Scenario: Update a tag indexing rule returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And operation "UpdateTagIndexingRule" enabled
@@ -1146,7 +1146,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/metrics-experience
+  @team:ddoghq/metrics-experience
   Scenario: Update a tag indexing rule with exclude-mode tag usage fields returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And operation "UpdateTagIndexingRule" enabled

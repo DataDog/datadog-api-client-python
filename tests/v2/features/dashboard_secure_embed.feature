@@ -15,7 +15,7 @@ Feature: Dashboard Secure Embed
     And a valid "appKeyAuth" key in the system
     And an instance of "DashboardSecureEmbed" API
 
-  @generated @skip @team:DataDog/dashboardsnotebooks-backend
+  @generated @skip @team:ddoghq/dashboardsnotebooks-backend
   Scenario: Create a secure embed for a dashboard returns "Conflict — max 1000 share URLs per dashboard exceeded" response
     Given operation "CreateDashboardSecureEmbed" enabled
     And new "CreateDashboardSecureEmbed" request
@@ -24,7 +24,7 @@ Feature: Dashboard Secure Embed
     When the request is sent
     Then the response status is 409 Conflict — max 1000 share URLs per dashboard exceeded
 
-  @generated @skip @team:DataDog/dashboardsnotebooks-backend
+  @generated @skip @team:ddoghq/dashboardsnotebooks-backend
   Scenario: Create a secure embed for a dashboard returns "Dashboard Not Found" response
     Given operation "CreateDashboardSecureEmbed" enabled
     And new "CreateDashboardSecureEmbed" request
@@ -33,7 +33,7 @@ Feature: Dashboard Secure Embed
     When the request is sent
     Then the response status is 404 Dashboard Not Found
 
-  @generated @skip @team:DataDog/dashboardsnotebooks-backend
+  @generated @skip @team:ddoghq/dashboardsnotebooks-backend
   Scenario: Create a secure embed for a dashboard returns "OK" response
     Given operation "CreateDashboardSecureEmbed" enabled
     And new "CreateDashboardSecureEmbed" request
@@ -42,7 +42,7 @@ Feature: Dashboard Secure Embed
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/dashboardsnotebooks-backend
+  @generated @skip @team:ddoghq/dashboardsnotebooks-backend
   Scenario: Delete a secure embed for a dashboard returns "No Content" response
     Given operation "DeleteDashboardSecureEmbed" enabled
     And new "DeleteDashboardSecureEmbed" request
@@ -51,7 +51,7 @@ Feature: Dashboard Secure Embed
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/dashboardsnotebooks-backend
+  @generated @skip @team:ddoghq/dashboardsnotebooks-backend
   Scenario: Delete a secure embed for a dashboard returns "Not Found" response
     Given operation "DeleteDashboardSecureEmbed" enabled
     And new "DeleteDashboardSecureEmbed" request
@@ -60,7 +60,7 @@ Feature: Dashboard Secure Embed
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/dashboardsnotebooks-backend
+  @generated @skip @team:ddoghq/dashboardsnotebooks-backend
   Scenario: Get a secure embed for a dashboard returns "Not Found" response
     Given operation "GetDashboardSecureEmbed" enabled
     And new "GetDashboardSecureEmbed" request
@@ -69,7 +69,7 @@ Feature: Dashboard Secure Embed
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/dashboardsnotebooks-backend
+  @generated @skip @team:ddoghq/dashboardsnotebooks-backend
   Scenario: Get a secure embed for a dashboard returns "OK" response
     Given operation "GetDashboardSecureEmbed" enabled
     And new "GetDashboardSecureEmbed" request
@@ -78,7 +78,7 @@ Feature: Dashboard Secure Embed
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/dashboardsnotebooks-backend
+  @generated @skip @team:ddoghq/dashboardsnotebooks-backend
   Scenario: Update a secure embed for a dashboard returns "Not Found" response
     Given operation "UpdateDashboardSecureEmbed" enabled
     And new "UpdateDashboardSecureEmbed" request
@@ -88,7 +88,7 @@ Feature: Dashboard Secure Embed
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/dashboardsnotebooks-backend
+  @generated @skip @team:ddoghq/dashboardsnotebooks-backend
   Scenario: Update a secure embed for a dashboard returns "OK" response
     Given operation "UpdateDashboardSecureEmbed" enabled
     And new "UpdateDashboardSecureEmbed" request

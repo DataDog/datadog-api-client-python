@@ -11,19 +11,19 @@ Feature: Product Catalog
     And operation "ListProductCatalogSKUs" enabled
     And new "ListProductCatalogSKUs" request
 
-  @generated @skip @team:DataDog/red-zone-product-catalog
+  @generated @skip @team:ddoghq/red-zone-product-catalog
   Scenario: List SKUs returns "Bad Request - version is missing or invalid, or as_of_date is malformed or in the future" response
     Given request contains "version" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request - version is missing or invalid, or as_of_date is malformed or in the future
 
-  @generated @skip @team:DataDog/red-zone-product-catalog
+  @generated @skip @team:ddoghq/red-zone-product-catalog
   Scenario: List SKUs returns "Not Found - the requested catalog version is not supported" response
     Given request contains "version" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found - the requested catalog version is not supported
 
-  @generated @skip @team:DataDog/red-zone-product-catalog
+  @generated @skip @team:ddoghq/red-zone-product-catalog
   Scenario: List SKUs returns "OK" response
     Given request contains "version" parameter from "REPLACE.ME"
     When the request is sent

@@ -8,7 +8,7 @@ Feature: Org Groups
     And a valid "appKeyAuth" key in the system
     And an instance of "OrgGroups" API
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Bulk update org group memberships returns "Bad Request" response
     Given operation "BulkUpdateOrgGroupMemberships" enabled
     And new "BulkUpdateOrgGroupMemberships" request
@@ -16,7 +16,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Bulk update org group memberships returns "Not Found" response
     Given operation "BulkUpdateOrgGroupMemberships" enabled
     And new "BulkUpdateOrgGroupMemberships" request
@@ -24,7 +24,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Bulk update org group memberships returns "OK" response
     Given operation "BulkUpdateOrgGroupMemberships" enabled
     And new "BulkUpdateOrgGroupMemberships" request
@@ -32,7 +32,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Create an org group policy override returns "Bad Request" response
     Given operation "CreateOrgGroupPolicyOverride" enabled
     And new "CreateOrgGroupPolicyOverride" request
@@ -40,7 +40,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Create an org group policy override returns "Conflict" response
     Given operation "CreateOrgGroupPolicyOverride" enabled
     And new "CreateOrgGroupPolicyOverride" request
@@ -48,7 +48,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 409 Conflict
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Create an org group policy override returns "Created" response
     Given operation "CreateOrgGroupPolicyOverride" enabled
     And new "CreateOrgGroupPolicyOverride" request
@@ -56,7 +56,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Create an org group policy returns "Bad Request" response
     Given operation "CreateOrgGroupPolicy" enabled
     And new "CreateOrgGroupPolicy" request
@@ -64,7 +64,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Create an org group policy returns "Conflict" response
     Given operation "CreateOrgGroupPolicy" enabled
     And new "CreateOrgGroupPolicy" request
@@ -72,7 +72,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 409 Conflict
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Create an org group policy returns "Created" response
     Given operation "CreateOrgGroupPolicy" enabled
     And new "CreateOrgGroupPolicy" request
@@ -80,7 +80,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Create an org group returns "Bad Request" response
     Given operation "CreateOrgGroup" enabled
     And new "CreateOrgGroup" request
@@ -88,7 +88,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Create an org group returns "Conflict" response
     Given operation "CreateOrgGroup" enabled
     And new "CreateOrgGroup" request
@@ -96,7 +96,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 409 Conflict
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Create an org group returns "Created" response
     Given operation "CreateOrgGroup" enabled
     And new "CreateOrgGroup" request
@@ -104,7 +104,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Delete an org group policy override returns "Bad Request" response
     Given operation "DeleteOrgGroupPolicyOverride" enabled
     And new "DeleteOrgGroupPolicyOverride" request
@@ -112,7 +112,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Delete an org group policy override returns "No Content" response
     Given operation "DeleteOrgGroupPolicyOverride" enabled
     And new "DeleteOrgGroupPolicyOverride" request
@@ -120,7 +120,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Delete an org group policy override returns "Not Found" response
     Given operation "DeleteOrgGroupPolicyOverride" enabled
     And new "DeleteOrgGroupPolicyOverride" request
@@ -128,7 +128,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Delete an org group policy returns "Bad Request" response
     Given operation "DeleteOrgGroupPolicy" enabled
     And new "DeleteOrgGroupPolicy" request
@@ -136,7 +136,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Delete an org group policy returns "No Content" response
     Given operation "DeleteOrgGroupPolicy" enabled
     And new "DeleteOrgGroupPolicy" request
@@ -144,7 +144,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Delete an org group policy returns "Not Found" response
     Given operation "DeleteOrgGroupPolicy" enabled
     And new "DeleteOrgGroupPolicy" request
@@ -152,7 +152,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Delete an org group returns "Bad Request" response
     Given operation "DeleteOrgGroup" enabled
     And new "DeleteOrgGroup" request
@@ -160,7 +160,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Delete an org group returns "No Content" response
     Given operation "DeleteOrgGroup" enabled
     And new "DeleteOrgGroup" request
@@ -168,7 +168,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Delete an org group returns "Not Found" response
     Given operation "DeleteOrgGroup" enabled
     And new "DeleteOrgGroup" request
@@ -176,7 +176,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Get an org group membership returns "Bad Request" response
     Given operation "GetOrgGroupMembership" enabled
     And new "GetOrgGroupMembership" request
@@ -184,7 +184,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Get an org group membership returns "Not Found" response
     Given operation "GetOrgGroupMembership" enabled
     And new "GetOrgGroupMembership" request
@@ -192,7 +192,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Get an org group membership returns "OK" response
     Given operation "GetOrgGroupMembership" enabled
     And new "GetOrgGroupMembership" request
@@ -200,7 +200,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Get an org group policy override returns "Bad Request" response
     Given operation "GetOrgGroupPolicyOverride" enabled
     And new "GetOrgGroupPolicyOverride" request
@@ -208,7 +208,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Get an org group policy override returns "Not Found" response
     Given operation "GetOrgGroupPolicyOverride" enabled
     And new "GetOrgGroupPolicyOverride" request
@@ -216,7 +216,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Get an org group policy override returns "OK" response
     Given operation "GetOrgGroupPolicyOverride" enabled
     And new "GetOrgGroupPolicyOverride" request
@@ -224,7 +224,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Get an org group policy returns "Bad Request" response
     Given operation "GetOrgGroupPolicy" enabled
     And new "GetOrgGroupPolicy" request
@@ -232,7 +232,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Get an org group policy returns "Not Found" response
     Given operation "GetOrgGroupPolicy" enabled
     And new "GetOrgGroupPolicy" request
@@ -240,7 +240,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Get an org group policy returns "OK" response
     Given operation "GetOrgGroupPolicy" enabled
     And new "GetOrgGroupPolicy" request
@@ -248,7 +248,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Get an org group returns "Bad Request" response
     Given operation "GetOrgGroup" enabled
     And new "GetOrgGroup" request
@@ -256,7 +256,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Get an org group returns "Not Found" response
     Given operation "GetOrgGroup" enabled
     And new "GetOrgGroup" request
@@ -264,7 +264,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Get an org group returns "OK" response
     Given operation "GetOrgGroup" enabled
     And new "GetOrgGroup" request
@@ -272,21 +272,21 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: List org group memberships returns "Bad Request" response
     Given operation "ListOrgGroupMemberships" enabled
     And new "ListOrgGroupMemberships" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: List org group memberships returns "OK" response
     Given operation "ListOrgGroupMemberships" enabled
     And new "ListOrgGroupMemberships" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: List org group policies returns "Bad Request" response
     Given operation "ListOrgGroupPolicies" enabled
     And new "ListOrgGroupPolicies" request
@@ -294,7 +294,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: List org group policies returns "OK" response
     Given operation "ListOrgGroupPolicies" enabled
     And new "ListOrgGroupPolicies" request
@@ -302,14 +302,14 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: List org group policy configs returns "OK" response
     Given operation "ListOrgGroupPolicyConfigs" enabled
     And new "ListOrgGroupPolicyConfigs" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: List org group policy overrides returns "Bad Request" response
     Given operation "ListOrgGroupPolicyOverrides" enabled
     And new "ListOrgGroupPolicyOverrides" request
@@ -317,7 +317,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: List org group policy overrides returns "OK" response
     Given operation "ListOrgGroupPolicyOverrides" enabled
     And new "ListOrgGroupPolicyOverrides" request
@@ -325,7 +325,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: List org group policy suggestions returns "Bad Request" response
     Given operation "ListOrgGroupPolicySuggestions" enabled
     And new "ListOrgGroupPolicySuggestions" request
@@ -333,7 +333,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: List org group policy suggestions returns "OK" response
     Given operation "ListOrgGroupPolicySuggestions" enabled
     And new "ListOrgGroupPolicySuggestions" request
@@ -341,21 +341,21 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: List org groups returns "Bad Request" response
     Given operation "ListOrgGroups" enabled
     And new "ListOrgGroups" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: List org groups returns "OK" response
     Given operation "ListOrgGroups" enabled
     And new "ListOrgGroups" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Update an org group membership returns "Bad Request" response
     Given operation "UpdateOrgGroupMembership" enabled
     And new "UpdateOrgGroupMembership" request
@@ -364,7 +364,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Update an org group membership returns "Not Found" response
     Given operation "UpdateOrgGroupMembership" enabled
     And new "UpdateOrgGroupMembership" request
@@ -373,7 +373,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Update an org group membership returns "OK" response
     Given operation "UpdateOrgGroupMembership" enabled
     And new "UpdateOrgGroupMembership" request
@@ -382,7 +382,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Update an org group policy override returns "Bad Request" response
     Given operation "UpdateOrgGroupPolicyOverride" enabled
     And new "UpdateOrgGroupPolicyOverride" request
@@ -391,7 +391,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Update an org group policy override returns "Not Found" response
     Given operation "UpdateOrgGroupPolicyOverride" enabled
     And new "UpdateOrgGroupPolicyOverride" request
@@ -400,7 +400,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Update an org group policy override returns "OK" response
     Given operation "UpdateOrgGroupPolicyOverride" enabled
     And new "UpdateOrgGroupPolicyOverride" request
@@ -409,7 +409,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Update an org group policy returns "Bad Request" response
     Given operation "UpdateOrgGroupPolicy" enabled
     And new "UpdateOrgGroupPolicy" request
@@ -418,7 +418,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Update an org group policy returns "Not Found" response
     Given operation "UpdateOrgGroupPolicy" enabled
     And new "UpdateOrgGroupPolicy" request
@@ -427,7 +427,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Update an org group policy returns "OK" response
     Given operation "UpdateOrgGroupPolicy" enabled
     And new "UpdateOrgGroupPolicy" request
@@ -436,7 +436,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Update an org group returns "Bad Request" response
     Given operation "UpdateOrgGroup" enabled
     And new "UpdateOrgGroup" request
@@ -445,7 +445,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Update an org group returns "Not Found" response
     Given operation "UpdateOrgGroup" enabled
     And new "UpdateOrgGroup" request
@@ -454,7 +454,7 @@ Feature: Org Groups
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Update an org group returns "OK" response
     Given operation "UpdateOrgGroup" enabled
     And new "UpdateOrgGroup" request

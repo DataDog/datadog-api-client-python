@@ -11,7 +11,7 @@ Feature: Execution Policy
     And a valid "appKeyAuth" key in the system
     And an instance of "ExecutionPolicy" API
 
-  @team:DataDog/action-platform
+  @team:ddoghq/action-platform
   Scenario: Create an execution policy returns "Bad Request" response
     Given operation "CreateExecutionPolicy" enabled
     And new "CreateExecutionPolicy" request
@@ -19,7 +19,7 @@ Feature: Execution Policy
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/action-platform
+  @team:ddoghq/action-platform
   Scenario: Create an execution policy returns "Created" response
     Given operation "CreateExecutionPolicy" enabled
     And new "CreateExecutionPolicy" request
@@ -27,7 +27,7 @@ Feature: Execution Policy
     When the request is sent
     Then the response status is 201 Created
 
-  @team:DataDog/action-platform
+  @team:ddoghq/action-platform
   Scenario: Create an execution policy with scope and targets returns "Created" response
     Given operation "CreateExecutionPolicy" enabled
     And new "CreateExecutionPolicy" request
@@ -35,7 +35,7 @@ Feature: Execution Policy
     When the request is sent
     Then the response status is 201 Created
 
-  @team:DataDog/action-platform
+  @team:ddoghq/action-platform
   Scenario: Delete an execution policy returns "No Content" response
     Given there is a valid "execution_policy" in the system
     And operation "DeleteExecutionPolicy" enabled
@@ -44,7 +44,7 @@ Feature: Execution Policy
     When the request is sent
     Then the response status is 204 No Content
 
-  @team:DataDog/action-platform
+  @team:ddoghq/action-platform
   Scenario: Delete an execution policy returns "Not Found" response
     Given operation "DeleteExecutionPolicy" enabled
     And new "DeleteExecutionPolicy" request
@@ -52,7 +52,7 @@ Feature: Execution Policy
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/action-platform
+  @team:ddoghq/action-platform
   Scenario: Get an execution policy returns "Not Found" response
     Given operation "GetExecutionPolicy" enabled
     And new "GetExecutionPolicy" request
@@ -60,7 +60,7 @@ Feature: Execution Policy
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/action-platform
+  @team:ddoghq/action-platform
   Scenario: Get an execution policy returns "OK" response
     Given there is a valid "execution_policy" in the system
     And operation "GetExecutionPolicy" enabled
@@ -69,7 +69,7 @@ Feature: Execution Policy
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/action-platform
+  @team:ddoghq/action-platform
   Scenario: List execution policies returns "Bad Request" response
     Given operation "ListExecutionPolicies" enabled
     And new "ListExecutionPolicies" request
@@ -77,7 +77,7 @@ Feature: Execution Policy
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/action-platform
+  @team:ddoghq/action-platform
   Scenario: List execution policies returns "OK" response
     Given there is a valid "execution_policy" in the system
     And operation "ListExecutionPolicies" enabled
@@ -85,7 +85,7 @@ Feature: Execution Policy
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/action-platform
+  @team:ddoghq/action-platform
   Scenario: List execution policies with query parameters returns "OK" response
     Given there is a valid "execution_policy" in the system
     And operation "ListExecutionPolicies" enabled
@@ -101,7 +101,7 @@ Feature: Execution Policy
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/action-platform
+  @team:ddoghq/action-platform
   Scenario: Update an execution policy returns "Bad Request" response
     Given there is a valid "execution_policy" in the system
     And operation "UpdateExecutionPolicy" enabled
@@ -111,7 +111,7 @@ Feature: Execution Policy
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/action-platform
+  @team:ddoghq/action-platform
   Scenario: Update an execution policy returns "Not Found" response
     Given operation "UpdateExecutionPolicy" enabled
     And new "UpdateExecutionPolicy" request
@@ -120,7 +120,7 @@ Feature: Execution Policy
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/action-platform
+  @team:ddoghq/action-platform
   Scenario: Update an execution policy returns "OK" response
     Given there is a valid "execution_policy" in the system
     And operation "UpdateExecutionPolicy" enabled

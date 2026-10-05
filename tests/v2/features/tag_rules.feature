@@ -12,7 +12,7 @@ Feature: Tag Rules
     And a valid "appKeyAuth" key in the system
     And an instance of "TagRules" API
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Create a tag rule returns "Bad Request" response
     Given operation "CreateTagRule" enabled
     And new "CreateTagRule" request
@@ -20,7 +20,7 @@ Feature: Tag Rules
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Create a tag rule returns "Conflict" response
     Given operation "CreateTagRule" enabled
     And new "CreateTagRule" request
@@ -28,7 +28,7 @@ Feature: Tag Rules
     When the request is sent
     Then the response status is 409 Conflict
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Create a tag rule returns "Created" response
     Given operation "CreateTagRule" enabled
     And new "CreateTagRule" request
@@ -36,7 +36,7 @@ Feature: Tag Rules
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Delete a tag rule returns "Bad Request" response
     Given operation "DeleteTagRule" enabled
     And new "DeleteTagRule" request
@@ -44,7 +44,7 @@ Feature: Tag Rules
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Delete a tag rule returns "No Content" response
     Given operation "DeleteTagRule" enabled
     And new "DeleteTagRule" request
@@ -52,7 +52,7 @@ Feature: Tag Rules
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Delete a tag rule returns "Not Found" response
     Given operation "DeleteTagRule" enabled
     And new "DeleteTagRule" request
@@ -60,7 +60,7 @@ Feature: Tag Rules
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Get a tag rule compliance score returns "Bad Request" response
     Given operation "GetTagRuleScore" enabled
     And new "GetTagRuleScore" request
@@ -68,7 +68,7 @@ Feature: Tag Rules
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Get a tag rule compliance score returns "Not Found" response
     Given operation "GetTagRuleScore" enabled
     And new "GetTagRuleScore" request
@@ -76,7 +76,7 @@ Feature: Tag Rules
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Get a tag rule compliance score returns "OK" response
     Given operation "GetTagRuleScore" enabled
     And new "GetTagRuleScore" request
@@ -84,7 +84,7 @@ Feature: Tag Rules
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Get a tag rule returns "Bad Request" response
     Given operation "GetTagRule" enabled
     And new "GetTagRule" request
@@ -92,7 +92,7 @@ Feature: Tag Rules
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Get a tag rule returns "Not Found" response
     Given operation "GetTagRule" enabled
     And new "GetTagRule" request
@@ -100,7 +100,7 @@ Feature: Tag Rules
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Get a tag rule returns "OK" response
     Given operation "GetTagRule" enabled
     And new "GetTagRule" request
@@ -108,21 +108,21 @@ Feature: Tag Rules
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: List tag rules returns "Bad Request" response
     Given operation "ListTagRules" enabled
     And new "ListTagRules" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: List tag rules returns "OK" response
     Given operation "ListTagRules" enabled
     And new "ListTagRules" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Update a tag rule returns "Bad Request" response
     Given operation "UpdateTagRule" enabled
     And new "UpdateTagRule" request
@@ -131,7 +131,7 @@ Feature: Tag Rules
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Update a tag rule returns "Not Found" response
     Given operation "UpdateTagRule" enabled
     And new "UpdateTagRule" request
@@ -140,7 +140,7 @@ Feature: Tag Rules
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Update a tag rule returns "OK" response
     Given operation "UpdateTagRule" enabled
     And new "UpdateTagRule" request

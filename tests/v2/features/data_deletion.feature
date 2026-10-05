@@ -9,14 +9,14 @@ Feature: Data Deletion
     And a valid "appKeyAuth" key in the system
     And an instance of "DataDeletion" API
 
-  @replay-only @team:DataDog/governance-tooling-and-systems
+  @replay-only @team:ddoghq/governance-tooling-and-systems
   Scenario: Cancels a data deletion request returns "Bad Request" response
     Given new "CancelDataDeletionRequest" request
     And request contains "id" parameter with value "id-1"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/governance-tooling-and-systems
+  @team:ddoghq/governance-tooling-and-systems
   Scenario: Cancels a data deletion request returns "OK" response
     Given there is a valid "deletion_request" in the system
     And new "CancelDataDeletionRequest" request
@@ -28,14 +28,14 @@ Feature: Data Deletion
     And the response "data.attributes.product" is equal to "{{ deletion_request.data.attributes.product }}"
     And the response "data.attributes.status" is equal to "canceled"
 
-  @replay-only @team:DataDog/governance-tooling-and-systems
+  @replay-only @team:ddoghq/governance-tooling-and-systems
   Scenario: Cancels a data deletion request returns "Precondition failed error" response
     Given new "CancelDataDeletionRequest" request
     And request contains "id" parameter with value "-1"
     When the request is sent
     Then the response status is 412 Precondition failed error
 
-  @generated @skip @team:DataDog/governance-tooling-and-systems
+  @generated @skip @team:ddoghq/governance-tooling-and-systems
   Scenario: Creates a data deletion request returns "Bad Request" response
     Given new "CreateDataDeletionRequest" request
     And request contains "product" parameter from "REPLACE.ME"
@@ -43,7 +43,7 @@ Feature: Data Deletion
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/governance-tooling-and-systems
+  @team:ddoghq/governance-tooling-and-systems
   Scenario: Creates a data deletion request returns "OK" response
     Given new "CreateDataDeletionRequest" request
     And request contains "product" parameter with value "logs"
@@ -54,7 +54,7 @@ Feature: Data Deletion
     And the response "data.attributes.product" is equal to "logs"
     And the response "data.attributes.status" is equal to "pending"
 
-  @replay-only @team:DataDog/governance-tooling-and-systems
+  @replay-only @team:ddoghq/governance-tooling-and-systems
   Scenario: Creates a data deletion request returns "Precondition failed error" response
     Given new "CreateDataDeletionRequest" request
     And request contains "product" parameter with value "logs"
@@ -62,13 +62,13 @@ Feature: Data Deletion
     When the request is sent
     Then the response status is 412 Precondition failed error
 
-  @generated @skip @team:DataDog/governance-tooling-and-systems
+  @generated @skip @team:ddoghq/governance-tooling-and-systems
   Scenario: Gets a list of data deletion requests returns "Bad Request" response
     Given new "GetDataDeletionRequests" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/governance-tooling-and-systems
+  @team:ddoghq/governance-tooling-and-systems
   Scenario: Gets a list of data deletion requests returns "OK" response
     Given there is a valid "deletion_request" in the system
     And new "GetDataDeletionRequests" request

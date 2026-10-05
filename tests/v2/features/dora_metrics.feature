@@ -9,7 +9,7 @@ Feature: DORA Metrics
     Given a valid "apiKeyAuth" key in the system
     And an instance of "DORAMetrics" API
 
-  @skip @team:DataDog/ci-app-backend
+  @skip @team:ddoghq/ci-app-backend
   Scenario: Delete a deployment event returns "Accepted" response
     Given new "DeleteDORADeployment" request
     And a valid "appKeyAuth" key in the system
@@ -17,14 +17,14 @@ Feature: DORA Metrics
     When the request is sent
     Then the response status is 202 Accepted
 
-  @skip @team:DataDog/ci-app-backend
+  @skip @team:ddoghq/ci-app-backend
   Scenario: Delete a deployment event returns "Bad Request" response
     Given new "DeleteDORADeployment" request
     And request contains "deployment_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/ci-app-backend
+  @skip @team:ddoghq/ci-app-backend
   Scenario: Delete a failure event returns "Accepted" response
     Given new "DeleteDORAFailure" request
     And a valid "appKeyAuth" key in the system
@@ -32,7 +32,7 @@ Feature: DORA Metrics
     When the request is sent
     Then the response status is 202 Accepted
 
-  @skip @team:DataDog/ci-app-backend
+  @skip @team:ddoghq/ci-app-backend
   Scenario: Delete a failure event returns "Bad Request" response
     Given new "DeleteDORAFailure" request
     And a valid "appKeyAuth" key in the system
@@ -40,7 +40,7 @@ Feature: DORA Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Delete an incident event returns "Accepted" response
     Given a valid "appKeyAuth" key in the system
     And new "DeleteDORAFailure" request
@@ -48,7 +48,7 @@ Feature: DORA Metrics
     When the request is sent
     Then the response status is 202 Accepted
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Delete an incident event returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "DeleteDORAFailure" request
@@ -56,7 +56,7 @@ Feature: DORA Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Get a deployment event returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "GetDORADeployment" request
@@ -64,7 +64,7 @@ Feature: DORA Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Get a deployment event returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "GetDORADeployment" request
@@ -72,7 +72,7 @@ Feature: DORA Metrics
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Get a list of deployment events returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "ListDORADeployments" request
@@ -80,7 +80,7 @@ Feature: DORA Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/ci-app-backend
+  @skip @team:ddoghq/ci-app-backend
   Scenario: Get a list of deployment events returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "ListDORADeployments" request
@@ -88,7 +88,7 @@ Feature: DORA Metrics
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @team:DataDog/ci-app-backend
+  @replay-only @team:ddoghq/ci-app-backend
   Scenario: Get a list of deployment events returns deployments with date-time timestamps
     Given a valid "appKeyAuth" key in the system
     And new "ListDORADeployments" request
@@ -100,7 +100,7 @@ Feature: DORA Metrics
     And the response "data[0].attributes" has field "started_at"
     And the response "data[0].attributes" has field "finished_at"
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Get a list of failure events returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "ListDORAFailures" request
@@ -108,7 +108,7 @@ Feature: DORA Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/ci-app-backend
+  @skip @team:ddoghq/ci-app-backend
   Scenario: Get a list of failure events returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "ListDORAFailures" request
@@ -116,7 +116,7 @@ Feature: DORA Metrics
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Get a list of incident events returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "ListDORAFailures" request
@@ -124,7 +124,7 @@ Feature: DORA Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Get a list of incident events returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "ListDORAFailures" request
@@ -132,7 +132,7 @@ Feature: DORA Metrics
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Get an incident event returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "GetDORAFailure" request
@@ -140,7 +140,7 @@ Feature: DORA Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Get an incident event returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "GetDORAFailure" request
@@ -148,7 +148,7 @@ Feature: DORA Metrics
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Patch a deployment event by version returns "Accepted" response
     Given a valid "appKeyAuth" key in the system
     And operation "PatchDORADeploymentByVersion" enabled
@@ -157,7 +157,7 @@ Feature: DORA Metrics
     When the request is sent
     Then the response status is 202 Accepted
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Patch a deployment event by version returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "PatchDORADeploymentByVersion" enabled
@@ -166,7 +166,7 @@ Feature: DORA Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/ci-app-backend
+  @skip @team:ddoghq/ci-app-backend
   Scenario: Patch a deployment event by version with a missing version returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "PatchDORADeploymentByVersion" enabled
@@ -175,7 +175,7 @@ Feature: DORA Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Patch a deployment event returns "Accepted" response
     Given a valid "appKeyAuth" key in the system
     And new "PatchDORADeployment" request
@@ -184,7 +184,7 @@ Feature: DORA Metrics
     When the request is sent
     Then the response status is 202 Accepted
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Patch a deployment event returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "PatchDORADeployment" request
@@ -193,77 +193,77 @@ Feature: DORA Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/ci-app-backend
+  @skip @team:ddoghq/ci-app-backend
   Scenario: Send a deployment event returns "Bad Request" response
     Given new "CreateDORADeployment" request
     And body with value {"data": {"attributes": {}}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Send a deployment event returns "OK - but delayed due to incident" response
     Given new "CreateDORADeployment" request
     And body with value {"data": {"attributes": {"custom_tags": ["language:java", "department:engineering"], "env": "staging", "finished_at": 1693491984000000000, "git": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/organization/example-repository"}, "service": "shopist", "started_at": 1693491974000000000, "team": "backend", "version": "v1.12.07"}}}
     When the request is sent
     Then the response status is 202 OK - but delayed due to incident
 
-  @replay-only @team:DataDog/ci-app-backend
+  @replay-only @team:ddoghq/ci-app-backend
   Scenario: Send a deployment event returns "OK" response
     Given new "CreateDORADeployment" request
     And body with value {"data": {"attributes": {"finished_at": 1693491984000000000, "git": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/organization/example-repository"}, "service": "shopist", "started_at": 1693491974000000000, "version": "v1.12.07"}}}
     When the request is sent
     Then the response status is 200 OK
 
-  @skip @team:DataDog/ci-app-backend
+  @skip @team:ddoghq/ci-app-backend
   Scenario: Send a failure event returns "Bad Request" response
     Given new "CreateDORAIncident" request
     And body with value {"data": {"attributes": {}}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:DataDog/ci-app-backend
+  @replay-only @team:ddoghq/ci-app-backend
   Scenario: Send a failure event returns "OK" response
     Given new "CreateDORAIncident" request
     And body with value {"data": {"attributes": {"finished_at": 1707842944600000000, "git": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/organization/example-repository"}, "name": "Webserver is down failing all requests", "services": ["shopist"], "severity": "High", "started_at": 1707842944500000000, "team": "backend", "version": "v1.12.07"}}}
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Send an incident event (legacy) returns "Bad Request" response
     Given new "CreateDORAIncident" request
     And body with value {"data": {"attributes": {"custom_tags": ["language:java", "department:engineering"], "env": "staging", "finished_at": 1693491984000000000, "git": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/organization/example-repository"}, "name": "Webserver is down failing all requests.", "services": ["shopist"], "severity": "High", "started_at": 1693491974000000000, "team": "backend", "version": "v1.12.07"}}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Send an incident event (legacy) returns "OK - but delayed due to incident" response
     Given new "CreateDORAIncident" request
     And body with value {"data": {"attributes": {"custom_tags": ["language:java", "department:engineering"], "env": "staging", "finished_at": 1693491984000000000, "git": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/organization/example-repository"}, "name": "Webserver is down failing all requests.", "services": ["shopist"], "severity": "High", "started_at": 1693491974000000000, "team": "backend", "version": "v1.12.07"}}}
     When the request is sent
     Then the response status is 202 OK - but delayed due to incident
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Send an incident event (legacy) returns "OK" response
     Given new "CreateDORAIncident" request
     And body with value {"data": {"attributes": {"custom_tags": ["language:java", "department:engineering"], "env": "staging", "finished_at": 1693491984000000000, "git": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/organization/example-repository"}, "name": "Webserver is down failing all requests.", "services": ["shopist"], "severity": "High", "started_at": 1693491974000000000, "team": "backend", "version": "v1.12.07"}}}
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Send an incident event returns "Bad Request" response
     Given new "CreateDORAFailure" request
     And body with value {"data": {"attributes": {"custom_tags": ["language:java", "department:engineering"], "env": "staging", "finished_at": 1693491984000000000, "git": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/organization/example-repository"}, "name": "Webserver is down failing all requests.", "services": ["shopist"], "severity": "High", "started_at": 1693491974000000000, "team": "backend", "version": "v1.12.07"}}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Send an incident event returns "OK - but delayed due to incident" response
     Given new "CreateDORAFailure" request
     And body with value {"data": {"attributes": {"custom_tags": ["language:java", "department:engineering"], "env": "staging", "finished_at": 1693491984000000000, "git": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/organization/example-repository"}, "name": "Webserver is down failing all requests.", "services": ["shopist"], "severity": "High", "started_at": 1693491974000000000, "team": "backend", "version": "v1.12.07"}}}
     When the request is sent
     Then the response status is 202 OK - but delayed due to incident
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Send an incident event returns "OK" response
     Given new "CreateDORAFailure" request
     And body with value {"data": {"attributes": {"custom_tags": ["language:java", "department:engineering"], "env": "staging", "finished_at": 1693491984000000000, "git": {"commit_sha": "66adc9350f2cc9b250b69abddab733dd55e1a588", "repository_url": "https://github.com/organization/example-repository"}, "name": "Webserver is down failing all requests.", "services": ["shopist"], "severity": "High", "started_at": 1693491974000000000, "team": "backend", "version": "v1.12.07"}}}

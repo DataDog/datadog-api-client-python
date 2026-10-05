@@ -10,7 +10,7 @@ Feature: RUM Insights
     And a valid "appKeyAuth" key in the system
     And an instance of "RUMInsights" API
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Query aggregated long tasks returns "Bad Request" response
     Given operation "QueryAggregatedLongTasks" enabled
     And new "QueryAggregatedLongTasks" request
@@ -18,7 +18,7 @@ Feature: RUM Insights
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Query aggregated long tasks returns "Successful response" response
     Given operation "QueryAggregatedLongTasks" enabled
     And new "QueryAggregatedLongTasks" request
@@ -26,7 +26,7 @@ Feature: RUM Insights
     When the request is sent
     Then the response status is 201 Successful response
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Query aggregated waterfall returns "Bad Request" response
     Given operation "QueryAggregatedWaterfall" enabled
     And new "QueryAggregatedWaterfall" request
@@ -34,7 +34,7 @@ Feature: RUM Insights
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Query aggregated waterfall returns "Successful response" response
     Given operation "QueryAggregatedWaterfall" enabled
     And new "QueryAggregatedWaterfall" request

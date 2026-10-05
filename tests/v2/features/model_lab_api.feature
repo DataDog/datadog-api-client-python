@@ -8,7 +8,7 @@ Feature: Model Lab API
     And a valid "appKeyAuth" key in the system
     And an instance of "ModelLabAPI" API
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Delete a Model Lab run returns "Bad Request" response
     Given operation "DeleteModelLabRun" enabled
     And new "DeleteModelLabRun" request
@@ -16,7 +16,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:DataDog/ml-observability
+  @replay-only @team:ddoghq/ml-observability
   Scenario: Delete a Model Lab run returns "No Content" response
     Given operation "DeleteModelLabRun" enabled
     And new "DeleteModelLabRun" request
@@ -24,7 +24,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 204 No Content
 
-  @replay-only @team:DataDog/ml-observability
+  @replay-only @team:ddoghq/ml-observability
   Scenario: Delete a Model Lab run returns "Not Found" response
     Given operation "DeleteModelLabRun" enabled
     And new "DeleteModelLabRun" request
@@ -32,7 +32,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/ml-observability
+  @replay-only @team:ddoghq/ml-observability
   Scenario: Download artifact content returns "OK" response
     Given operation "GetModelLabArtifactContent" enabled
     And new "GetModelLabArtifactContent" request
@@ -41,7 +41,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get Model Lab artifact content returns "Bad Request" response
     Given operation "GetModelLabArtifactContent" enabled
     And new "GetModelLabArtifactContent" request
@@ -50,7 +50,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get Model Lab artifact content returns "OK" response
     Given operation "GetModelLabArtifactContent" enabled
     And new "GetModelLabArtifactContent" request
@@ -59,7 +59,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get a Model Lab project returns "Bad Request" response
     Given operation "GetModelLabProject" enabled
     And new "GetModelLabProject" request
@@ -67,7 +67,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:DataDog/ml-observability
+  @replay-only @team:ddoghq/ml-observability
   Scenario: Get a Model Lab project returns "Not Found" response
     Given operation "GetModelLabProject" enabled
     And new "GetModelLabProject" request
@@ -75,7 +75,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/ml-observability
+  @replay-only @team:ddoghq/ml-observability
   Scenario: Get a Model Lab project returns "OK" response
     Given operation "GetModelLabProject" enabled
     And new "GetModelLabProject" request
@@ -83,7 +83,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get a Model Lab run returns "Bad Request" response
     Given operation "GetModelLabRun" enabled
     And new "GetModelLabRun" request
@@ -91,7 +91,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:DataDog/ml-observability
+  @replay-only @team:ddoghq/ml-observability
   Scenario: Get a Model Lab run returns "Not Found" response
     Given operation "GetModelLabRun" enabled
     And new "GetModelLabRun" request
@@ -99,7 +99,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/ml-observability
+  @replay-only @team:ddoghq/ml-observability
   Scenario: Get a Model Lab run returns "OK" response
     Given operation "GetModelLabRun" enabled
     And new "GetModelLabRun" request
@@ -107,7 +107,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Model Lab project artifacts returns "Bad Request" response
     Given operation "ListModelLabProjectArtifacts" enabled
     And new "ListModelLabProjectArtifacts" request
@@ -115,7 +115,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:DataDog/ml-observability
+  @replay-only @team:ddoghq/ml-observability
   Scenario: List Model Lab project artifacts returns "OK" response
     Given operation "ListModelLabProjectArtifacts" enabled
     And new "ListModelLabProjectArtifacts" request
@@ -123,14 +123,14 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @team:DataDog/ml-observability
+  @replay-only @team:ddoghq/ml-observability
   Scenario: List Model Lab project facet keys returns "OK" response
     Given operation "ListModelLabProjectFacetKeys" enabled
     And new "ListModelLabProjectFacetKeys" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Model Lab project facet values returns "Bad Request" response
     Given operation "ListModelLabProjectFacetValues" enabled
     And new "ListModelLabProjectFacetValues" request
@@ -139,7 +139,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:DataDog/ml-observability
+  @replay-only @team:ddoghq/ml-observability
   Scenario: List Model Lab project facet values returns "OK" response
     Given operation "ListModelLabProjectFacetValues" enabled
     And new "ListModelLabProjectFacetValues" request
@@ -148,21 +148,21 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Model Lab projects returns "Bad Request" response
     Given operation "ListModelLabProjects" enabled
     And new "ListModelLabProjects" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:DataDog/ml-observability
+  @replay-only @team:ddoghq/ml-observability
   Scenario: List Model Lab projects returns "OK" response
     Given operation "ListModelLabProjects" enabled
     And new "ListModelLabProjects" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Model Lab run artifacts returns "Bad Request" response
     Given operation "ListModelLabRunArtifacts" enabled
     And new "ListModelLabRunArtifacts" request
@@ -170,7 +170,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Model Lab run artifacts returns "Not Found" response
     Given operation "ListModelLabRunArtifacts" enabled
     And new "ListModelLabRunArtifacts" request
@@ -178,7 +178,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/ml-observability
+  @replay-only @team:ddoghq/ml-observability
   Scenario: List Model Lab run artifacts returns "OK" response
     Given operation "ListModelLabRunArtifacts" enabled
     And new "ListModelLabRunArtifacts" request
@@ -186,7 +186,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Model Lab run facet keys returns "Bad Request" response
     Given operation "ListModelLabRunFacetKeys" enabled
     And new "ListModelLabRunFacetKeys" request
@@ -194,7 +194,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Model Lab run facet keys returns "Not Found" response
     Given operation "ListModelLabRunFacetKeys" enabled
     And new "ListModelLabRunFacetKeys" request
@@ -202,7 +202,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/ml-observability
+  @replay-only @team:ddoghq/ml-observability
   Scenario: List Model Lab run facet keys returns "OK" response
     Given operation "ListModelLabRunFacetKeys" enabled
     And new "ListModelLabRunFacetKeys" request
@@ -210,7 +210,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Model Lab run facet values returns "Bad Request" response
     Given operation "ListModelLabRunFacetValues" enabled
     And new "ListModelLabRunFacetValues" request
@@ -220,7 +220,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Model Lab run facet values returns "Not Found" response
     Given operation "ListModelLabRunFacetValues" enabled
     And new "ListModelLabRunFacetValues" request
@@ -230,7 +230,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/ml-observability
+  @replay-only @team:ddoghq/ml-observability
   Scenario: List Model Lab run facet values returns "OK" response
     Given operation "ListModelLabRunFacetValues" enabled
     And new "ListModelLabRunFacetValues" request
@@ -240,21 +240,21 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Model Lab runs returns "Bad Request" response
     Given operation "ListModelLabRuns" enabled
     And new "ListModelLabRuns" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:DataDog/ml-observability
+  @replay-only @team:ddoghq/ml-observability
   Scenario: List Model Lab runs returns "OK" response
     Given operation "ListModelLabRuns" enabled
     And new "ListModelLabRuns" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Pin a Model Lab run returns "Bad Request" response
     Given operation "PinModelLabRun" enabled
     And new "PinModelLabRun" request
@@ -262,7 +262,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:DataDog/ml-observability
+  @replay-only @team:ddoghq/ml-observability
   Scenario: Pin a Model Lab run returns "No Content" response
     Given operation "PinModelLabRun" enabled
     And new "PinModelLabRun" request
@@ -270,7 +270,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 204 No Content
 
-  @replay-only @team:DataDog/ml-observability
+  @replay-only @team:ddoghq/ml-observability
   Scenario: Pin a Model Lab run returns "Not Found" response
     Given operation "PinModelLabRun" enabled
     And new "PinModelLabRun" request
@@ -278,7 +278,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Remove star from a Model Lab project returns "Bad Request" response
     Given operation "UnstarModelLabProject" enabled
     And new "UnstarModelLabProject" request
@@ -286,7 +286,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Remove star from a Model Lab project returns "No Content" response
     Given operation "UnstarModelLabProject" enabled
     And new "UnstarModelLabProject" request
@@ -294,7 +294,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Remove star from a Model Lab project returns "Not Found" response
     Given operation "UnstarModelLabProject" enabled
     And new "UnstarModelLabProject" request
@@ -302,7 +302,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Star a Model Lab project returns "Bad Request" response
     Given operation "StarModelLabProject" enabled
     And new "StarModelLabProject" request
@@ -310,7 +310,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:DataDog/ml-observability
+  @replay-only @team:ddoghq/ml-observability
   Scenario: Star a Model Lab project returns "No Content" response
     Given operation "StarModelLabProject" enabled
     And new "StarModelLabProject" request
@@ -318,7 +318,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 204 No Content
 
-  @replay-only @team:DataDog/ml-observability
+  @replay-only @team:ddoghq/ml-observability
   Scenario: Star a Model Lab project returns "Not Found" response
     Given operation "StarModelLabProject" enabled
     And new "StarModelLabProject" request
@@ -326,7 +326,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Unpin a Model Lab run returns "Bad Request" response
     Given operation "UnpinModelLabRun" enabled
     And new "UnpinModelLabRun" request
@@ -334,7 +334,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:DataDog/ml-observability
+  @replay-only @team:ddoghq/ml-observability
   Scenario: Unpin a Model Lab run returns "No Content" response
     Given operation "UnpinModelLabRun" enabled
     And new "UnpinModelLabRun" request
@@ -342,7 +342,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Unpin a Model Lab run returns "Not Found" response
     Given operation "UnpinModelLabRun" enabled
     And new "UnpinModelLabRun" request
@@ -350,7 +350,7 @@ Feature: Model Lab API
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/ml-observability
+  @replay-only @team:ddoghq/ml-observability
   Scenario: Unstar a Model Lab project returns "No Content" response
     Given operation "UnstarModelLabProject" enabled
     And new "UnstarModelLabProject" request

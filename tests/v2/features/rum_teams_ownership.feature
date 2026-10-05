@@ -9,14 +9,14 @@ Feature: Rum Teams Ownership
     And a valid "appKeyAuth" key in the system
     And an instance of "RumTeamsOwnership" API
 
-  @skip @team:DataDog/rum-backend
+  @skip @team:ddoghq/rum-backend
   Scenario: Bulk create and remove teams ownership mappings returns "Bad Request" response
     Given new "CreateTeamsOwnershipMappingsBatch" request
     And body with value {"atomic:operations":[{"op":"add","data":{"type":"teams_ownership_mappings","attributes":{"team_handle":"team-rum","view_name":"/checkout","service":"web-checkout","application_id":"invalid-uuid","match_type":"exact"}}}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/rum-backend
+  @skip @team:ddoghq/rum-backend
   Scenario: Bulk create and remove teams ownership mappings returns "Bad Request. One or more operations failed validation, so none of the operations were applied." response
     Given operation "CreateTeamsOwnershipMappingsBatch" enabled
     And new "CreateTeamsOwnershipMappingsBatch" request
@@ -24,7 +24,7 @@ Feature: Rum Teams Ownership
     When the request is sent
     Then the response status is 400 Bad Request. One or more operations failed validation, so none of the operations were applied.
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Bulk create and remove teams ownership mappings returns "Conflict. One or more mappings requested for creation already exist." response
     Given operation "CreateTeamsOwnershipMappingsBatch" enabled
     And new "CreateTeamsOwnershipMappingsBatch" request
@@ -32,7 +32,7 @@ Feature: Rum Teams Ownership
     When the request is sent
     Then the response status is 409 Conflict. One or more mappings requested for creation already exist.
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Bulk create and remove teams ownership mappings returns "Not Found. One or more mappings requested for removal do not exist." response
     Given operation "CreateTeamsOwnershipMappingsBatch" enabled
     And new "CreateTeamsOwnershipMappingsBatch" request
@@ -40,7 +40,7 @@ Feature: Rum Teams Ownership
     When the request is sent
     Then the response status is 404 Not Found. One or more mappings requested for removal do not exist.
 
-  @skip @team:DataDog/rum-backend
+  @skip @team:ddoghq/rum-backend
   Scenario: Bulk create and remove teams ownership mappings returns "OK" response
     Given new "CreateTeamsOwnershipMappingsBatch" request
     And body with value {"atomic:operations":[{"op":"add","data":{"type":"teams_ownership_mappings","attributes":{"team_handle":"team-rum","view_name":"/checkout-{{ unique_lower_alnum }}","service":"web-checkout-{{ unique_lower_alnum }}","match_type":"exact"}}}]}
@@ -50,14 +50,14 @@ Feature: Rum Teams Ownership
     And the response "atomic:results[0].data.attributes.team_handle" is equal to "team-rum"
     And the response "atomic:results[0].data.attributes.match_type" is equal to "exact"
 
-  @skip @team:DataDog/rum-backend
+  @skip @team:ddoghq/rum-backend
   Scenario: Bulk create teams ownership mappings without a service or application ID returns "Bad Request" response
     Given new "CreateTeamsOwnershipMappingsBatch" request
     And body with value {"atomic:operations":[{"op":"add","data":{"type":"teams_ownership_mappings","attributes":{"team_handle":"team-rum","view_name":"/checkout-{{ unique_lower_alnum }}","match_type":"exact"}}}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Create a teams ownership mapping returns "Bad Request" response
     Given operation "CreateTeamsOwnershipMapping" enabled
     And new "CreateTeamsOwnershipMapping" request
@@ -65,7 +65,7 @@ Feature: Rum Teams Ownership
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Create a teams ownership mapping returns "Created" response
     Given operation "CreateTeamsOwnershipMapping" enabled
     And new "CreateTeamsOwnershipMapping" request
@@ -73,14 +73,14 @@ Feature: Rum Teams Ownership
     When the request is sent
     Then the response status is 201 Created
 
-  @skip @team:DataDog/rum-backend
+  @skip @team:ddoghq/rum-backend
   Scenario: Create teams ownership mapping returns "Bad Request" response
     Given new "CreateTeamsOwnershipMapping" request
     And body with value {"data":{"type":"teams_ownership_mappings","attributes":{"team_handle":"team-rum","view_name":"/checkout","service":"web-checkout","application_id":"invalid-uuid","match_type":"exact"}}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/rum-backend
+  @skip @team:ddoghq/rum-backend
   Scenario: Create teams ownership mapping returns "Created" response
     Given new "CreateTeamsOwnershipMapping" request
     And body with value {"data":{"type":"teams_ownership_mappings","attributes":{"team_handle":"team-rum","view_name":"/checkout-{{ unique_lower_alnum }}","service":"web-checkout-{{ unique_lower_alnum }}","match_type":"exact"}}}
@@ -92,7 +92,7 @@ Feature: Rum Teams Ownership
     And the response "data.attributes.service" is equal to "web-checkout-{{ unique_lower_alnum }}"
     And the response "data.attributes.match_type" is equal to "exact"
 
-  @skip @team:DataDog/rum-backend
+  @skip @team:ddoghq/rum-backend
   Scenario: Delete a teams ownership mapping returns "No Content" response
     Given there is a valid "teams_ownership_mapping" in the system
     And new "DeleteTeamsOwnershipMapping" request
@@ -100,21 +100,21 @@ Feature: Rum Teams Ownership
     When the request is sent
     Then the response status is 204 No Content
 
-  @skip @team:DataDog/rum-backend
+  @skip @team:ddoghq/rum-backend
   Scenario: Delete a teams ownership mapping returns "Not Found" response
     Given new "DeleteTeamsOwnershipMapping" request
     And request contains "id" parameter with value "{{ unique }}"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip @team:DataDog/rum-backend
+  @skip @team:ddoghq/rum-backend
   Scenario: Get a teams ownership mapping returns "Not Found" response
     Given new "GetTeamsOwnershipMapping" request
     And request contains "id" parameter with value "{{ unique }}"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip @team:DataDog/rum-backend
+  @skip @team:ddoghq/rum-backend
   Scenario: Get a teams ownership mapping returns "OK" response
     Given there is a valid "teams_ownership_mapping" in the system
     And new "GetTeamsOwnershipMapping" request
@@ -127,14 +127,14 @@ Feature: Rum Teams Ownership
     And the response "data.attributes.view_name" is equal to "{{ teams_ownership_mapping.data.attributes.view_name }}"
     And the response "data.attributes.match_type" is equal to "exact"
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: List teams ownership mappings returns "Bad Request" response
     Given operation "ListTeamsOwnershipMappings" enabled
     And new "ListTeamsOwnershipMappings" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/rum-backend
+  @skip @team:ddoghq/rum-backend
   Scenario: List teams ownership mappings returns "OK" response
     Given there is a valid "teams_ownership_mapping" in the system
     And new "ListTeamsOwnershipMappings" request
@@ -148,14 +148,14 @@ Feature: Rum Teams Ownership
     And the response "data[0].attributes.service" is equal to "{{ teams_ownership_mapping.data.attributes.service }}"
     And the response "data[0].attributes.match_type" is equal to "exact"
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: List teams ownership rules returns "Bad Request" response
     Given operation "ListTeamsOwnershipRules" enabled
     And new "ListTeamsOwnershipRules" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/rum-backend
+  @skip @team:ddoghq/rum-backend
   Scenario: List teams ownership rules returns "OK" response
     Given there is a valid "teams_ownership_mapping" in the system
     And new "ListTeamsOwnershipRules" request

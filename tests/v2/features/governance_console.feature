@@ -18,7 +18,7 @@ Feature: Governance Console
     And a valid "appKeyAuth" key in the system
     And an instance of "GovernanceConsole" API
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Get a control returns "Bad Request" response
     Given operation "GetGovernanceControl" enabled
     And new "GetGovernanceControl" request
@@ -26,7 +26,7 @@ Feature: Governance Console
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Get a control returns "Not Found" response
     Given operation "GetGovernanceControl" enabled
     And new "GetGovernanceControl" request
@@ -34,7 +34,7 @@ Feature: Governance Console
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Get a control returns "OK" response
     Given operation "GetGovernanceControl" enabled
     And new "GetGovernanceControl" request
@@ -42,7 +42,7 @@ Feature: Governance Console
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Get a detection returns "Bad Request" response
     Given operation "GetGovernanceDetection" enabled
     And new "GetGovernanceDetection" request
@@ -50,7 +50,7 @@ Feature: Governance Console
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Get a detection returns "Not Found" response
     Given operation "GetGovernanceDetection" enabled
     And new "GetGovernanceDetection" request
@@ -58,7 +58,7 @@ Feature: Governance Console
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Get a detection returns "OK" response
     Given operation "GetGovernanceDetection" enabled
     And new "GetGovernanceDetection" request
@@ -66,7 +66,7 @@ Feature: Governance Console
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Get control notification settings returns "Bad Request" response
     Given operation "GetGovernanceControlNotificationSettings" enabled
     And new "GetGovernanceControlNotificationSettings" request
@@ -74,7 +74,7 @@ Feature: Governance Console
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Get control notification settings returns "OK" response
     Given operation "GetGovernanceControlNotificationSettings" enabled
     And new "GetGovernanceControlNotificationSettings" request
@@ -82,35 +82,35 @@ Feature: Governance Console
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Get notification settings returns "Bad Request" response
     Given operation "GetGovernanceNotificationSettings" enabled
     And new "GetGovernanceNotificationSettings" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Get notification settings returns "OK" response
     Given operation "GetGovernanceNotificationSettings" enabled
     And new "GetGovernanceNotificationSettings" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Get the Governance Console configuration returns "Bad Request" response
     Given operation "GetGovernanceConfig" enabled
     And new "GetGovernanceConfig" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Get the Governance Console configuration returns "OK" response
     Given operation "GetGovernanceConfig" enabled
     And new "GetGovernanceConfig" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: List control detections returns "Bad Request" response
     Given operation "ListGovernanceControlDetections" enabled
     And new "ListGovernanceControlDetections" request
@@ -118,7 +118,7 @@ Feature: Governance Console
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: List control detections returns "OK" response
     Given operation "ListGovernanceControlDetections" enabled
     And new "ListGovernanceControlDetections" request
@@ -126,35 +126,35 @@ Feature: Governance Console
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: List controls returns "Bad Request" response
     Given operation "ListGovernanceControls" enabled
     And new "ListGovernanceControls" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: List controls returns "OK" response
     Given operation "ListGovernanceControls" enabled
     And new "ListGovernanceControls" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: List insights returns "Bad Request" response
     Given operation "ListGovernanceInsights" enabled
     And new "ListGovernanceInsights" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: List insights returns "OK" response
     Given operation "ListGovernanceInsights" enabled
     And new "ListGovernanceInsights" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Mitigate detections returns "Accepted" response
     Given operation "MitigateGovernanceDetections" enabled
     And new "MitigateGovernanceDetections" request
@@ -162,7 +162,7 @@ Feature: Governance Console
     When the request is sent
     Then the response status is 202 Accepted
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Mitigate detections returns "Bad Request" response
     Given operation "MitigateGovernanceDetections" enabled
     And new "MitigateGovernanceDetections" request
@@ -170,7 +170,7 @@ Feature: Governance Console
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Update a control returns "Bad Request" response
     Given operation "UpdateGovernanceControl" enabled
     And new "UpdateGovernanceControl" request
@@ -179,7 +179,7 @@ Feature: Governance Console
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Update a control returns "Not Found" response
     Given operation "UpdateGovernanceControl" enabled
     And new "UpdateGovernanceControl" request
@@ -188,7 +188,7 @@ Feature: Governance Console
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Update a control returns "OK" response
     Given operation "UpdateGovernanceControl" enabled
     And new "UpdateGovernanceControl" request
@@ -197,7 +197,7 @@ Feature: Governance Console
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Update a detection returns "Bad Request" response
     Given operation "UpdateGovernanceDetection" enabled
     And new "UpdateGovernanceDetection" request
@@ -206,7 +206,7 @@ Feature: Governance Console
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Update a detection returns "Not Found" response
     Given operation "UpdateGovernanceDetection" enabled
     And new "UpdateGovernanceDetection" request
@@ -215,7 +215,7 @@ Feature: Governance Console
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Update a detection returns "OK" response
     Given operation "UpdateGovernanceDetection" enabled
     And new "UpdateGovernanceDetection" request
@@ -224,7 +224,7 @@ Feature: Governance Console
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Update control notification settings returns "Bad Request" response
     Given operation "UpdateGovernanceControlNotificationSettings" enabled
     And new "UpdateGovernanceControlNotificationSettings" request
@@ -233,7 +233,7 @@ Feature: Governance Console
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Update control notification settings returns "OK" response
     Given operation "UpdateGovernanceControlNotificationSettings" enabled
     And new "UpdateGovernanceControlNotificationSettings" request
@@ -242,7 +242,7 @@ Feature: Governance Console
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Update notification settings returns "Bad Request" response
     Given operation "UpdateGovernanceNotificationSettings" enabled
     And new "UpdateGovernanceNotificationSettings" request
@@ -250,7 +250,7 @@ Feature: Governance Console
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/aaa-governance-console
+  @generated @skip @team:ddoghq/aaa-governance-console
   Scenario: Update notification settings returns "OK" response
     Given operation "UpdateGovernanceNotificationSettings" enabled
     And new "UpdateGovernanceNotificationSettings" request

@@ -10,7 +10,7 @@ Feature: Case Management Attribute
     And a valid "appKeyAuth" key in the system
     And an instance of "CaseManagementAttribute" API
 
-  @team:DataDog/case-management
+  @team:ddoghq/case-management
   Scenario: Create custom attribute config for a case type returns "Bad Request" response
     Given new "CreateCustomAttributeConfig" request
     And there is a valid "case_type" in the system
@@ -19,7 +19,7 @@ Feature: Case Management Attribute
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/case-management
+  @team:ddoghq/case-management
   Scenario: Create custom attribute config for a case type returns "CREATED" response
     Given new "CreateCustomAttributeConfig" request
     And there is a valid "case_type" in the system
@@ -28,7 +28,7 @@ Feature: Case Management Attribute
     When the request is sent
     Then the response status is 201 CREATED
 
-  @team:DataDog/case-management
+  @team:ddoghq/case-management
   Scenario: Create custom attribute config for a case type returns "Not Found" response
     Given new "CreateCustomAttributeConfig" request
     And request contains "case_type_id" parameter with value "9fd476d7-a955-454a-851d-980c655c02d3"
@@ -36,7 +36,7 @@ Feature: Case Management Attribute
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/case-management
+  @team:ddoghq/case-management
   Scenario: Delete custom attributes config returns "Bad Request" response
     Given new "DeleteCustomAttributeConfig" request
     And there is a valid "case_type" in the system
@@ -45,7 +45,7 @@ Feature: Case Management Attribute
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/case-management
+  @skip @team:ddoghq/case-management
   Scenario: Delete custom attributes config returns "No Content" response
     Given new "DeleteCustomAttributeConfig" request
     And there is a valid "case_type" in the system
@@ -55,14 +55,14 @@ Feature: Case Management Attribute
     When the request is sent
     Then the response status is 204 No Content
 
-  @skip @team:DataDog/case-management
+  @skip @team:ddoghq/case-management
   Scenario: Get all custom attributes config of case type returns "Bad Request" response
     Given new "GetAllCustomAttributeConfigsByCaseType" request
     And request contains "case_type_id" parameter with value "not-an-uuid"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/case-management
+  @team:ddoghq/case-management
   Scenario: Get all custom attributes config of case type returns "OK" response
     Given new "GetAllCustomAttributeConfigsByCaseType" request
     And there is a valid "case_type" in the system
@@ -70,13 +70,13 @@ Feature: Case Management Attribute
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/case-management
+  @team:ddoghq/case-management
   Scenario: Get all custom attributes returns "OK" response
     Given new "GetAllCustomAttributes" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/case-management
+  @generated @skip @team:ddoghq/case-management
   Scenario: Update custom attribute config returns "Bad Request" response
     Given new "UpdateCustomAttributeConfig" request
     And request contains "case_type_id" parameter from "REPLACE.ME"
@@ -85,7 +85,7 @@ Feature: Case Management Attribute
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/case-management
+  @generated @skip @team:ddoghq/case-management
   Scenario: Update custom attribute config returns "Not Found" response
     Given new "UpdateCustomAttributeConfig" request
     And request contains "case_type_id" parameter from "REPLACE.ME"
@@ -94,7 +94,7 @@ Feature: Case Management Attribute
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/case-management
+  @generated @skip @team:ddoghq/case-management
   Scenario: Update custom attribute config returns "OK" response
     Given new "UpdateCustomAttributeConfig" request
     And request contains "case_type_id" parameter from "REPLACE.ME"

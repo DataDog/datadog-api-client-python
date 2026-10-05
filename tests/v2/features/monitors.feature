@@ -11,7 +11,7 @@ Feature: Monitors
     And a valid "appKeyAuth" key in the system
     And an instance of "Monitors" API
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Create a downtime duration monitor configuration policy returns "OK" response
     Given new "CreateMonitorConfigPolicy" request
     And body with value {"data": {"attributes": {"policy_type": "downtime", "policy": {"max_duration_ms": 3600000}}, "type": "monitor-config-policy"}}
@@ -21,14 +21,14 @@ Feature: Monitors
     And the response "data.attributes.policy_type" is equal to "downtime"
     And the response "data.attributes.policy.max_duration_ms" is equal to 3600000
 
-  @skip-validation @team:DataDog/monitor-app
+  @skip-validation @team:ddoghq/monitor-app
   Scenario: Create a monitor configuration policy returns "Bad Request" response
     Given new "CreateMonitorConfigPolicy" request
     And body with value {"data": {"attributes": {"policy_type": "INVALID", "policy": {"tag_key": "datacenter", "tag_key_required": true, "valid_tag_values": ["prod", "staging"]}}, "type": "monitor-config-policy"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Create a monitor configuration policy returns "OK" response
     Given new "CreateMonitorConfigPolicy" request
     And body with value {"data": {"attributes": {"policy_type": "tag", "policy": {"tag_key": "{{ unique_lower_alnum }}", "tag_key_required": false, "valid_tag_values": ["prod", "staging"]}}, "type": "monitor-config-policy"}}
@@ -39,14 +39,14 @@ Feature: Monitors
     And the response "data.attributes.policy.tag_key" is equal to "{{ unique_lower_alnum }}"
     And the response "data.attributes.policy.valid_tag_values" is equal to ["prod", "staging"]
 
-  @skip-validation @team:DataDog/monitor-app
+  @skip-validation @team:ddoghq/monitor-app
   Scenario: Create a monitor notification rule returns "Bad Request" response
     Given new "CreateMonitorNotificationRule" request
     And body with value {"data": {"attributes": {"filter": {"tags": ["test:{{ unique_lower }}", "host:abc"]}, "name": "test rule", "recipients": ["@slack-test-channel", "@jira-test"]}, "type": "monitor-notification-rule"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Create a monitor notification rule returns "OK" response
     Given new "CreateMonitorNotificationRule" request
     And body with value {"data": {"attributes": {"filter": {"tags": ["test:{{ unique_lower }}"]}, "name": "test rule", "recipients": ["slack-test-channel", "jira-test"]}, "type": "monitor-notification-rule"}}
@@ -54,7 +54,7 @@ Feature: Monitors
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "test rule"
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Create a monitor notification rule with bundle config returns "OK" response
     Given new "CreateMonitorNotificationRule" request
     And body with value {"data": {"attributes": {"filter": {"tags": ["test:{{ unique_lower }}"]}, "name": "test rule", "recipients": ["slack-test-channel"], "bundle_config": {"duration": 3600}}, "type": "monitor-notification-rule"}}
@@ -62,7 +62,7 @@ Feature: Monitors
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "test rule"
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Create a monitor notification rule with conditional recipients returns "OK" response
     Given new "CreateMonitorNotificationRule" request
     And body with value {"data": {"attributes": {"filter": {"tags": ["test:{{ unique_lower }}"]}, "name": "test rule", "conditional_recipients": {"conditions": [{"scope": "transition_type:is_alert", "recipients": ["slack-test-channel", "jira-test"]}]}}, "type": "monitor-notification-rule"}}
@@ -70,7 +70,7 @@ Feature: Monitors
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "test rule"
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Create a monitor notification rule with scope returns "OK" response
     Given new "CreateMonitorNotificationRule" request
     And body with value {"data": {"attributes": {"filter": {"scope": "test:{{ unique_lower }}"}, "name": "test rule", "recipients": ["slack-test-channel", "jira-test"]}, "type": "monitor-notification-rule"}}
@@ -78,7 +78,7 @@ Feature: Monitors
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "test rule"
 
-  @skip-validation @team:DataDog/monitor-app
+  @skip-validation @team:ddoghq/monitor-app
   Scenario: Create a monitor user template returns "Bad Request" response
     Given new "CreateMonitorUserTemplate" request
     And operation "CreateMonitorUserTemplate" enabled
@@ -86,7 +86,7 @@ Feature: Monitors
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Create a monitor user template returns "OK" response
     Given new "CreateMonitorUserTemplate" request
     And operation "CreateMonitorUserTemplate" enabled
@@ -94,21 +94,21 @@ Feature: Monitors
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Delete a monitor configuration policy returns "Bad Request" response
     Given new "DeleteMonitorConfigPolicy" request
     And request contains "policy_id" parameter with value "INVALID_UUID"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Delete a monitor configuration policy returns "Not Found" response
     Given new "DeleteMonitorConfigPolicy" request
     And request contains "policy_id" parameter with value "00000000-0000-1234-0000-000000000000"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Delete a monitor configuration policy returns "OK" response
     Given there is a valid "monitor_configuration_policy" in the system
     And new "DeleteMonitorConfigPolicy" request
@@ -116,14 +116,14 @@ Feature: Monitors
     When the request is sent
     Then the response status is 204 OK
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Delete a monitor notification rule returns "Not Found" response
     Given new "DeleteMonitorNotificationRule" request
     And request contains "rule_id" parameter with value "00000000-0000-1234-0000-000000000000"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Delete a monitor notification rule returns "OK" response
     Given there is a valid "monitor_notification_rule" in the system
     And new "DeleteMonitorNotificationRule" request
@@ -131,7 +131,7 @@ Feature: Monitors
     When the request is sent
     Then the response status is 204 OK
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Delete a monitor user template returns "Not Found" response
     Given new "DeleteMonitorUserTemplate" request
     And operation "DeleteMonitorUserTemplate" enabled
@@ -139,7 +139,7 @@ Feature: Monitors
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/monitor-app
+  @generated @skip @team:ddoghq/monitor-app
   Scenario: Delete a monitor user template returns "OK" response
     Given operation "DeleteMonitorUserTemplate" enabled
     And new "DeleteMonitorUserTemplate" request
@@ -147,7 +147,7 @@ Feature: Monitors
     When the request is sent
     Then the response status is 204 OK
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Edit a monitor configuration policy returns "Not Found" response
     Given new "UpdateMonitorConfigPolicy" request
     And request contains "policy_id" parameter with value "00000000-0000-1234-0000-000000000000"
@@ -155,7 +155,7 @@ Feature: Monitors
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Edit a monitor configuration policy returns "OK" response
     Given there is a valid "monitor_configuration_policy" in the system
     And new "UpdateMonitorConfigPolicy" request
@@ -169,7 +169,7 @@ Feature: Monitors
     And the response "data.attributes.policy.tag_key" is equal to "{{ unique_lower_alnum }}"
     And the response "data.attributes.policy.valid_tag_values" is equal to ["prod", "staging"]
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Edit a monitor configuration policy returns "Unprocessable Entity" response
     Given there is a valid "monitor_configuration_policy" in the system
     And new "UpdateMonitorConfigPolicy" request
@@ -178,14 +178,14 @@ Feature: Monitors
     When the request is sent
     Then the response status is 422 Unprocessable Entity
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Get a monitor configuration policy returns "Not Found" response
     Given new "GetMonitorConfigPolicy" request
     And request contains "policy_id" parameter with value "12340000-0000-0000-0000-000000000000"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Get a monitor configuration policy returns "OK" response
     Given there is a valid "monitor_configuration_policy" in the system
     And new "GetMonitorConfigPolicy" request
@@ -198,14 +198,14 @@ Feature: Monitors
     And the response "data.attributes.policy.tag_key" is equal to "{{ unique_lower_alnum }}"
     And the response "data.attributes.policy.valid_tag_values" is equal to ["prod", "staging"]
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Get a monitor notification rule returns "Not Found" response
     Given new "GetMonitorNotificationRule" request
     And request contains "rule_id" parameter with value "00000000-0000-1234-0000-000000000000"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Get a monitor notification rule returns "OK" response
     Given there is a valid "monitor_notification_rule" in the system
     And new "GetMonitorNotificationRule" request
@@ -214,7 +214,7 @@ Feature: Monitors
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "test rule"
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Get a monitor user template returns "Not Found" response
     Given new "GetMonitorUserTemplate" request
     And operation "GetMonitorUserTemplate" enabled
@@ -222,7 +222,7 @@ Feature: Monitors
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Get a monitor user template returns "OK" response
     Given there is a valid "monitor_user_template" in the system
     And new "GetMonitorUserTemplate" request
@@ -232,7 +232,7 @@ Feature: Monitors
     Then the response status is 200 OK
     And the response "data.type" is equal to "monitor-user-template"
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Get all monitor configuration policies returns "OK" response
     Given there is a valid "monitor_configuration_policy" in the system
     And new "ListMonitorConfigPolicies" request
@@ -244,7 +244,7 @@ Feature: Monitors
     And the response "data" has item with field "attributes.policy.tag_key" with value "{{ unique_lower_alnum }}"
     And the response "data" has item with field "attributes.policy.valid_tag_values" with value ["prod", "staging"]
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Get all monitor notification rules returns "OK" response
     Given there is a valid "monitor_notification_rule" in the system
     And new "GetMonitorNotificationRules" request
@@ -252,7 +252,7 @@ Feature: Monitors
     Then the response status is 200 OK
     And the response "data" has item with field "attributes.name" with value "test rule"
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Get all monitor user templates returns "OK" response
     Given there is a valid "monitor_user_template" in the system
     And new "ListMonitorUserTemplates" request
@@ -264,7 +264,7 @@ Feature: Monitors
     And the response "data" has item with field "attributes.description" with value "It's a threshold"
     And the response "data" has item with field "attributes.monitor_definition.message" with value "cats"
 
-  @skip-validation @team:DataDog/monitor-app
+  @skip-validation @team:ddoghq/monitor-app
   Scenario: Update a monitor notification rule returns "Bad Request" response
     Given there is a valid "monitor_notification_rule" in the system
     And new "UpdateMonitorNotificationRule" request
@@ -273,7 +273,7 @@ Feature: Monitors
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Update a monitor notification rule returns "Not Found" response
     Given new "UpdateMonitorNotificationRule" request
     And request contains "rule_id" parameter with value "00000000-0000-1234-0000-000000000000"
@@ -281,7 +281,7 @@ Feature: Monitors
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Update a monitor notification rule returns "OK" response
     Given there is a valid "monitor_notification_rule" in the system
     And new "UpdateMonitorNotificationRule" request
@@ -291,7 +291,7 @@ Feature: Monitors
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "updated rule"
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Update a monitor notification rule with bundle config returns "OK" response
     Given there is a valid "monitor_notification_rule" in the system
     And new "UpdateMonitorNotificationRule" request
@@ -301,7 +301,7 @@ Feature: Monitors
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "updated rule"
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Update a monitor notification rule with conditional_recipients returns "OK" response
     Given there is a valid "monitor_notification_rule" in the system
     And new "UpdateMonitorNotificationRule" request
@@ -311,7 +311,7 @@ Feature: Monitors
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "updated rule"
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Update a monitor notification rule with scope returns "OK" response
     Given there is a valid "monitor_notification_rule" in the system
     And new "UpdateMonitorNotificationRule" request
@@ -321,7 +321,7 @@ Feature: Monitors
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "updated rule"
 
-  @skip-validation @team:DataDog/monitor-app
+  @skip-validation @team:ddoghq/monitor-app
   Scenario: Update a monitor user template to a new version returns "Bad Request" response
     Given there is a valid "monitor_user_template" in the system
     And operation "UpdateMonitorUserTemplate" enabled
@@ -331,7 +331,7 @@ Feature: Monitors
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Update a monitor user template to a new version returns "Not Found" response
     Given new "UpdateMonitorUserTemplate" request
     And operation "UpdateMonitorUserTemplate" enabled
@@ -340,7 +340,7 @@ Feature: Monitors
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Update a monitor user template to a new version returns "OK" response
     Given there is a valid "monitor_user_template" in the system
     And new "UpdateMonitorUserTemplate" request
@@ -350,7 +350,7 @@ Feature: Monitors
     When the request is sent
     Then the response status is 200 OK
 
-  @skip-validation @team:DataDog/monitor-app
+  @skip-validation @team:ddoghq/monitor-app
   Scenario: Validate a monitor user template returns "Bad Request" response
     Given new "ValidateMonitorUserTemplate" request
     And operation "ValidateMonitorUserTemplate" enabled
@@ -358,7 +358,7 @@ Feature: Monitors
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Validate a monitor user template returns "OK" response
     Given new "ValidateMonitorUserTemplate" request
     And operation "ValidateMonitorUserTemplate" enabled
@@ -366,7 +366,7 @@ Feature: Monitors
     When the request is sent
     Then the response status is 204 OK
 
-  @skip-validation @team:DataDog/monitor-app
+  @skip-validation @team:ddoghq/monitor-app
   Scenario: Validate an existing monitor user template returns "Bad Request" response
     Given there is a valid "monitor_user_template" in the system
     And new "ValidateExistingMonitorUserTemplate" request
@@ -376,7 +376,7 @@ Feature: Monitors
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Validate an existing monitor user template returns "Not Found" response
     Given new "ValidateExistingMonitorUserTemplate" request
     And operation "ValidateExistingMonitorUserTemplate" enabled
@@ -385,7 +385,7 @@ Feature: Monitors
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/monitor-app
+  @team:ddoghq/monitor-app
   Scenario: Validate an existing monitor user template returns "OK" response
     Given there is a valid "monitor_user_template" in the system
     And new "ValidateExistingMonitorUserTemplate" request
