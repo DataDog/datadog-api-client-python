@@ -10,7 +10,7 @@ Feature: Incidents
     And a valid "appKeyAuth" key in the system
     And an instance of "Incidents" API
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Add commander to an incident returns "OK" response
     Given operation "UpdateIncident" enabled
     And there is a valid "user" in the system
@@ -21,7 +21,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
 
-  @skip @team:DataDog/incident-app
+  @skip @team:ddoghq/incident-app
   Scenario: Create an incident impact returns "Bad Request" response
     Given operation "CreateIncidentImpact" enabled
     And new "CreateIncidentImpact" request
@@ -30,7 +30,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/incident-app
+  @skip @team:ddoghq/incident-app
   Scenario: Create an incident impact returns "CREATED" response
     Given there is a valid "incident" in the system
     And operation "CreateIncidentImpact" enabled
@@ -42,7 +42,7 @@ Feature: Incidents
     And the response "data.type" is equal to "incident_impacts"
     And the response "data.relationships.incident.data.id" has the same value as "incident.data.id"
 
-  @skip @team:DataDog/incident-app
+  @skip @team:ddoghq/incident-app
   Scenario: Create an incident impact returns "Not Found" response
     Given operation "CreateIncidentImpact" enabled
     And new "CreateIncidentImpact" request
@@ -51,7 +51,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Create an incident integration metadata returns "Bad Request" response
     Given operation "CreateIncidentIntegration" enabled
     And new "CreateIncidentIntegration" request
@@ -60,7 +60,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Create an incident integration metadata returns "CREATED" response
     Given operation "CreateIncidentIntegration" enabled
     And new "CreateIncidentIntegration" request
@@ -73,7 +73,7 @@ Feature: Incidents
     And the response "data.attributes.metadata.channels" has length 1
     And the response "data.attributes.metadata.channels[0].channel_name" is equal to "#new-channel"
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Create an incident integration metadata returns "Not Found" response
     Given operation "CreateIncidentIntegration" enabled
     And new "CreateIncidentIntegration" request
@@ -82,7 +82,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Create an incident notification rule returns "Bad Request" response
     Given operation "CreateIncidentNotificationRule" enabled
     And new "CreateIncidentNotificationRule" request
@@ -90,7 +90,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Create an incident notification rule returns "Created" response
     Given operation "CreateIncidentNotificationRule" enabled
     And new "CreateIncidentNotificationRule" request
@@ -98,7 +98,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Create an incident notification rule returns "Not Found" response
     Given operation "CreateIncidentNotificationRule" enabled
     And new "CreateIncidentNotificationRule" request
@@ -106,7 +106,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Create an incident returns "Bad Request" response
     Given operation "CreateIncident" enabled
     And new "CreateIncident" request
@@ -114,7 +114,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Create an incident returns "CREATED" response
     Given there is a valid "user" in the system
     And operation "CreateIncident" enabled
@@ -125,7 +125,7 @@ Feature: Incidents
     And the response "data.relationships.commander_user.data.id" has the same value as "user.data.id"
     And the response "data.attributes.title" has the same value as "unique"
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Create an incident returns "Not Found" response
     Given operation "CreateIncident" enabled
     And new "CreateIncident" request
@@ -133,7 +133,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Create an incident todo returns "Bad Request" response
     Given operation "CreateIncidentTodo" enabled
     And new "CreateIncidentTodo" request
@@ -142,7 +142,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:Datadog/incident-app
+  @replay-only @team:ddoghq/incident-app
   Scenario: Create an incident todo returns "CREATED" response
     Given operation "CreateIncidentTodo" enabled
     And new "CreateIncidentTodo" request
@@ -153,7 +153,7 @@ Feature: Incidents
     Then the response status is 201 CREATED
     And the response "data.attributes.assignees" has length 1
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Create an incident todo returns "Not Found" response
     Given operation "CreateIncidentTodo" enabled
     And new "CreateIncidentTodo" request
@@ -162,7 +162,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Create an incident type returns "Bad Request" response
     Given operation "CreateIncidentType" enabled
     And new "CreateIncidentType" request
@@ -170,7 +170,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip-terraform-config @skip-validation @team:Datadog/incident-app
+  @skip-terraform-config @skip-validation @team:ddoghq/incident-app
   Scenario: Create an incident type returns "CREATED" response
     Given operation "CreateIncidentType" enabled
     And new "CreateIncidentType" request
@@ -178,7 +178,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 201 CREATED
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Create an incident type returns "Not Found" response
     Given operation "CreateIncidentType" enabled
     And new "CreateIncidentType" request
@@ -186,7 +186,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Create an incident user-defined field returns "Bad Request" response
     Given operation "CreateIncidentUserDefinedField" enabled
     And new "CreateIncidentUserDefinedField" request
@@ -194,7 +194,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Create an incident user-defined field returns "CREATED" response
     Given operation "CreateIncidentUserDefinedField" enabled
     And new "CreateIncidentUserDefinedField" request
@@ -202,7 +202,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 201 CREATED
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Create an incident user-defined field returns "Not Found" response
     Given operation "CreateIncidentUserDefinedField" enabled
     And new "CreateIncidentUserDefinedField" request
@@ -210,7 +210,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Create an incident user-defined role returns "Bad Request" response
     Given operation "CreateIncidentUserDefinedRole" enabled
     And new "CreateIncidentUserDefinedRole" request
@@ -218,7 +218,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Create an incident user-defined role returns "Created" response
     Given operation "CreateIncidentUserDefinedRole" enabled
     And new "CreateIncidentUserDefinedRole" request
@@ -226,7 +226,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Create global incident handle returns "Bad Request" response
     Given operation "CreateGlobalIncidentHandle" enabled
     And new "CreateGlobalIncidentHandle" request
@@ -234,7 +234,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Create global incident handle returns "Created" response
     Given operation "CreateGlobalIncidentHandle" enabled
     And new "CreateGlobalIncidentHandle" request
@@ -242,7 +242,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 201 Created
 
-  @skip @team:DataDog/incident-app
+  @skip @team:ddoghq/incident-app
   Scenario: Create incident attachment returns "Bad Request" response
     Given operation "CreateIncidentAttachment" enabled
     And new "CreateIncidentAttachment" request
@@ -251,7 +251,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Create incident attachment returns "Created" response
     Given operation "CreateIncidentAttachment" enabled
     And there is a valid "incident" in the system
@@ -263,7 +263,7 @@ Feature: Incidents
     And the response "data.type" is equal to "incident_attachments"
     And the response "data.attributes.attachment.title" has the same value as "unique"
 
-  @team:Datadog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Create incident notification rule returns "Bad Request" response
     Given operation "CreateIncidentNotificationRule" enabled
     And new "CreateIncidentNotificationRule" request
@@ -271,7 +271,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip-terraform-config @team:Datadog/incident-app
+  @skip-terraform-config @team:ddoghq/incident-app
   Scenario: Create incident notification rule returns "Created" response
     Given there is a valid "incident_type" in the system
     And operation "CreateIncidentNotificationRule" enabled
@@ -283,7 +283,7 @@ Feature: Incidents
     And the response "data.attributes.visibility" is equal to "organization"
     And the response "data.attributes.enabled" is equal to true
 
-  @team:Datadog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Create incident notification template returns "Bad Request" response
     Given operation "CreateIncidentNotificationTemplate" enabled
     And new "CreateIncidentNotificationTemplate" request
@@ -291,7 +291,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip-terraform-config @team:Datadog/incident-app
+  @skip-terraform-config @team:ddoghq/incident-app
   Scenario: Create incident notification template returns "Created" response
     Given there is a valid "incident_type" in the system
     And operation "CreateIncidentNotificationTemplate" enabled
@@ -304,7 +304,7 @@ Feature: Incidents
     And the response "data.attributes.category" is equal to "alert"
     And the response "data.relationships.incident_type.data.id" has the same value as "incident_type.data.id"
 
-  @team:Datadog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Create incident notification template returns "Not Found" response
     Given operation "CreateIncidentNotificationTemplate" enabled
     And new "CreateIncidentNotificationTemplate" request
@@ -312,7 +312,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Create postmortem attachment returns "Bad Request" response
     Given operation "CreateIncidentPostmortemAttachment" enabled
     And new "CreateIncidentPostmortemAttachment" request
@@ -321,7 +321,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Create postmortem attachment returns "Created" response
     Given operation "CreateIncidentPostmortemAttachment" enabled
     And new "CreateIncidentPostmortemAttachment" request
@@ -330,7 +330,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Create postmortem template returns "Bad Request" response
     Given operation "CreateIncidentPostmortemTemplate" enabled
     And new "CreateIncidentPostmortemTemplate" request
@@ -338,7 +338,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Create postmortem template returns "Created" response
     Given operation "CreateIncidentPostmortemTemplate" enabled
     And new "CreateIncidentPostmortemTemplate" request
@@ -346,7 +346,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Delete a notification template returns "Bad Request" response
     Given operation "DeleteIncidentNotificationTemplate" enabled
     And new "DeleteIncidentNotificationTemplate" request
@@ -354,7 +354,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Delete a notification template returns "No Content" response
     Given operation "DeleteIncidentNotificationTemplate" enabled
     And new "DeleteIncidentNotificationTemplate" request
@@ -362,7 +362,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Delete a notification template returns "Not Found" response
     Given operation "DeleteIncidentNotificationTemplate" enabled
     And new "DeleteIncidentNotificationTemplate" request
@@ -370,7 +370,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Delete an existing incident returns "Bad Request" response
     Given operation "DeleteIncident" enabled
     And new "DeleteIncident" request
@@ -378,7 +378,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Delete an existing incident returns "Not Found" response
     Given operation "DeleteIncident" enabled
     And new "DeleteIncident" request
@@ -386,7 +386,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Delete an existing incident returns "OK" response
     Given operation "DeleteIncident" enabled
     And there is a valid "incident" in the system
@@ -395,7 +395,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 204 OK
 
-  @skip @team:DataDog/incident-app
+  @skip @team:ddoghq/incident-app
   Scenario: Delete an incident impact returns "No Content" response
     Given there is a valid "incident" in the system
     And the "incident" has an "incident_impact"
@@ -406,7 +406,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 204 No Content
 
-  @skip @team:DataDog/incident-app
+  @skip @team:ddoghq/incident-app
   Scenario: Delete an incident impact returns "Not Found" response
     Given operation "DeleteIncidentImpact" enabled
     And new "DeleteIncidentImpact" request
@@ -415,7 +415,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Delete an incident integration metadata returns "Bad Request" response
     Given operation "DeleteIncidentIntegration" enabled
     And new "DeleteIncidentIntegration" request
@@ -424,7 +424,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Delete an incident integration metadata returns "Not Found" response
     Given operation "DeleteIncidentIntegration" enabled
     And new "DeleteIncidentIntegration" request
@@ -433,7 +433,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Delete an incident integration metadata returns "OK" response
     Given operation "DeleteIncidentIntegration" enabled
     And new "DeleteIncidentIntegration" request
@@ -444,7 +444,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 204 OK
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Delete an incident notification rule returns "Bad Request" response
     Given operation "DeleteIncidentNotificationRule" enabled
     And new "DeleteIncidentNotificationRule" request
@@ -452,7 +452,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Delete an incident notification rule returns "No Content" response
     Given operation "DeleteIncidentNotificationRule" enabled
     And new "DeleteIncidentNotificationRule" request
@@ -460,7 +460,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Delete an incident notification rule returns "Not Found" response
     Given operation "DeleteIncidentNotificationRule" enabled
     And new "DeleteIncidentNotificationRule" request
@@ -468,7 +468,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Delete an incident todo returns "Bad Request" response
     Given operation "DeleteIncidentTodo" enabled
     And new "DeleteIncidentTodo" request
@@ -477,7 +477,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Delete an incident todo returns "Not Found" response
     Given operation "DeleteIncidentTodo" enabled
     And new "DeleteIncidentTodo" request
@@ -486,7 +486,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:Datadog/incident-app
+  @replay-only @team:ddoghq/incident-app
   Scenario: Delete an incident todo returns "OK" response
     Given operation "DeleteIncidentTodo" enabled
     And new "DeleteIncidentTodo" request
@@ -497,7 +497,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 204 OK
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Delete an incident type returns "Bad Request" response
     Given operation "DeleteIncidentType" enabled
     And new "DeleteIncidentType" request
@@ -505,7 +505,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Delete an incident type returns "Not Found" response
     Given operation "DeleteIncidentType" enabled
     And new "DeleteIncidentType" request
@@ -513,7 +513,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-terraform-config @skip-validation @team:Datadog/incident-app
+  @skip-terraform-config @skip-validation @team:ddoghq/incident-app
   Scenario: Delete an incident type returns "OK" response
     Given operation "DeleteIncidentType" enabled
     And new "DeleteIncidentType" request
@@ -522,7 +522,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 204 OK
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Delete an incident user-defined field returns "Bad Request" response
     Given operation "DeleteIncidentUserDefinedField" enabled
     And new "DeleteIncidentUserDefinedField" request
@@ -530,7 +530,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Delete an incident user-defined field returns "No Content" response
     Given operation "DeleteIncidentUserDefinedField" enabled
     And new "DeleteIncidentUserDefinedField" request
@@ -538,7 +538,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Delete an incident user-defined field returns "Not Found" response
     Given operation "DeleteIncidentUserDefinedField" enabled
     And new "DeleteIncidentUserDefinedField" request
@@ -546,7 +546,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Delete an incident user-defined role returns "Bad Request" response
     Given operation "DeleteIncidentUserDefinedRole" enabled
     And new "DeleteIncidentUserDefinedRole" request
@@ -554,7 +554,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Delete an incident user-defined role returns "No Content" response
     Given operation "DeleteIncidentUserDefinedRole" enabled
     And new "DeleteIncidentUserDefinedRole" request
@@ -562,7 +562,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Delete an incident user-defined role returns "Not Found" response
     Given operation "DeleteIncidentUserDefinedRole" enabled
     And new "DeleteIncidentUserDefinedRole" request
@@ -570,21 +570,21 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Delete global incident handle returns "Bad Request" response
     Given operation "DeleteGlobalIncidentHandle" enabled
     And new "DeleteGlobalIncidentHandle" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Delete global incident handle returns "No Content" response
     Given operation "DeleteGlobalIncidentHandle" enabled
     And new "DeleteGlobalIncidentHandle" request
     When the request is sent
     Then the response status is 204 No Content
 
-  @skip @team:DataDog/incident-app
+  @skip @team:ddoghq/incident-app
   Scenario: Delete incident attachment returns "Bad Request" response
     Given operation "DeleteIncidentAttachment" enabled
     And new "DeleteIncidentAttachment" request
@@ -593,7 +593,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:DataDog/incident-app
+  @skip @team:ddoghq/incident-app
   Scenario: Delete incident attachment returns "No Content" response
     Given operation "DeleteIncidentAttachment" enabled
     And there is a valid "incident" in the system
@@ -604,7 +604,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 204 No Content
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Delete incident attachment returns "Not Found" response
     Given operation "DeleteIncidentAttachment" enabled
     And new "DeleteIncidentAttachment" request
@@ -613,7 +613,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-terraform-config @team:Datadog/incident-app
+  @skip-terraform-config @team:ddoghq/incident-app
   Scenario: Delete incident notification rule returns "No Content" response
     Given there is a valid "incident_type" in the system
     And there is a valid "notification_rule" in the system
@@ -623,7 +623,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 204 No Content
 
-  @team:Datadog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Delete incident notification rule returns "Not Found" response
     Given operation "DeleteIncidentNotificationRule" enabled
     And new "DeleteIncidentNotificationRule" request
@@ -631,7 +631,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-terraform-config @team:Datadog/incident-app
+  @skip-terraform-config @team:ddoghq/incident-app
   Scenario: Delete incident notification template returns "No Content" response
     Given there is a valid "incident_type" in the system
     And there is a valid "notification_template" in the system
@@ -641,7 +641,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Delete postmortem template returns "Bad Request" response
     Given operation "DeleteIncidentPostmortemTemplate" enabled
     And new "DeleteIncidentPostmortemTemplate" request
@@ -649,7 +649,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Delete postmortem template returns "No Content" response
     Given operation "DeleteIncidentPostmortemTemplate" enabled
     And new "DeleteIncidentPostmortemTemplate" request
@@ -657,7 +657,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Delete postmortem template returns "Not Found" response
     Given operation "DeleteIncidentPostmortemTemplate" enabled
     And new "DeleteIncidentPostmortemTemplate" request
@@ -665,7 +665,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get a list of an incident's integration metadata returns "Bad Request" response
     Given operation "ListIncidentIntegrations" enabled
     And new "ListIncidentIntegrations" request
@@ -673,7 +673,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get a list of an incident's integration metadata returns "Not Found" response
     Given operation "ListIncidentIntegrations" enabled
     And new "ListIncidentIntegrations" request
@@ -681,7 +681,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Get a list of an incident's integration metadata returns "OK" response
     Given operation "ListIncidentIntegrations" enabled
     And new "ListIncidentIntegrations" request
@@ -692,7 +692,7 @@ Feature: Incidents
     Then the response status is 200 OK
     And the response "data[0].attributes.metadata.channels[0].channel_name" is equal to "#example-channel-name"
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get a list of an incident's todos returns "Bad Request" response
     Given operation "ListIncidentTodos" enabled
     And new "ListIncidentTodos" request
@@ -700,7 +700,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get a list of an incident's todos returns "Not Found" response
     Given operation "ListIncidentTodos" enabled
     And new "ListIncidentTodos" request
@@ -708,7 +708,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:Datadog/incident-app
+  @replay-only @team:ddoghq/incident-app
   Scenario: Get a list of an incident's todos returns "OK" response
     Given operation "ListIncidentTodos" enabled
     And new "ListIncidentTodos" request
@@ -721,49 +721,49 @@ Feature: Incidents
     And the response "data[0].attributes.assignees" has length 2
     And the response "data[0].attributes.content" is equal to "Follow up with customer about the impact they saw."
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get a list of incident types returns "Bad Request" response
     Given operation "ListIncidentTypes" enabled
     And new "ListIncidentTypes" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get a list of incident types returns "OK" response
     Given operation "ListIncidentTypes" enabled
     And new "ListIncidentTypes" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get a list of incident user-defined fields returns "Bad Request" response
     Given operation "ListIncidentUserDefinedFields" enabled
     And new "ListIncidentUserDefinedFields" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get a list of incident user-defined fields returns "OK" response
     Given operation "ListIncidentUserDefinedFields" enabled
     And new "ListIncidentUserDefinedFields" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get a list of incidents returns "Bad Request" response
     Given operation "ListIncidents" enabled
     And new "ListIncidents" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get a list of incidents returns "Not Found" response
     Given operation "ListIncidents" enabled
     And new "ListIncidents" request
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Get a list of incidents returns "OK" response
     Given operation "ListIncidents" enabled
     And there is a valid "incident" in the system
@@ -772,7 +772,7 @@ Feature: Incidents
     Then the response status is 200 OK
     And the response "data[0].type" is equal to "incidents"
 
-  @replay-only @skip-validation @team:DataDog/incident-app @with-pagination
+  @replay-only @skip-validation @team:ddoghq/incident-app @with-pagination
   Scenario: Get a list of incidents returns "OK" response with pagination
     Given operation "ListIncidents" enabled
     And new "ListIncidents" request
@@ -781,7 +781,7 @@ Feature: Incidents
     Then the response status is 200 OK
     And the response has 3 items
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get an incident notification rule returns "Bad Request" response
     Given operation "GetIncidentNotificationRule" enabled
     And new "GetIncidentNotificationRule" request
@@ -789,7 +789,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get an incident notification rule returns "Not Found" response
     Given operation "GetIncidentNotificationRule" enabled
     And new "GetIncidentNotificationRule" request
@@ -797,7 +797,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get an incident notification rule returns "OK" response
     Given operation "GetIncidentNotificationRule" enabled
     And new "GetIncidentNotificationRule" request
@@ -805,7 +805,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get an incident user-defined field returns "Not Found" response
     Given operation "GetIncidentUserDefinedField" enabled
     And new "GetIncidentUserDefinedField" request
@@ -813,7 +813,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get an incident user-defined field returns "OK" response
     Given operation "GetIncidentUserDefinedField" enabled
     And new "GetIncidentUserDefinedField" request
@@ -821,7 +821,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get an incident user-defined role returns "Bad Request" response
     Given operation "GetIncidentUserDefinedRole" enabled
     And new "GetIncidentUserDefinedRole" request
@@ -829,7 +829,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get an incident user-defined role returns "Not Found" response
     Given operation "GetIncidentUserDefinedRole" enabled
     And new "GetIncidentUserDefinedRole" request
@@ -837,7 +837,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get an incident user-defined role returns "OK" response
     Given operation "GetIncidentUserDefinedRole" enabled
     And new "GetIncidentUserDefinedRole" request
@@ -845,21 +845,21 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get global incident settings returns "Bad Request" response
     Given operation "GetGlobalIncidentSettings" enabled
     And new "GetGlobalIncidentSettings" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get global incident settings returns "OK" response
     Given operation "GetGlobalIncidentSettings" enabled
     And new "GetGlobalIncidentSettings" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get incident integration metadata details returns "Bad Request" response
     Given operation "GetIncidentIntegration" enabled
     And new "GetIncidentIntegration" request
@@ -868,7 +868,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get incident integration metadata details returns "Not Found" response
     Given operation "GetIncidentIntegration" enabled
     And new "GetIncidentIntegration" request
@@ -877,7 +877,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Get incident integration metadata details returns "OK" response
     Given operation "GetIncidentIntegration" enabled
     And new "GetIncidentIntegration" request
@@ -888,7 +888,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
 
-  @team:Datadog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Get incident notification rule returns "Not Found" response
     Given operation "GetIncidentNotificationRule" enabled
     And new "GetIncidentNotificationRule" request
@@ -896,7 +896,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-terraform-config @team:Datadog/incident-app
+  @skip-terraform-config @team:ddoghq/incident-app
   Scenario: Get incident notification rule returns "OK" response
     Given there is a valid "incident_type" in the system
     And there is a valid "notification_rule" in the system
@@ -908,7 +908,7 @@ Feature: Incidents
     And the response "data.type" is equal to "incident_notification_rules"
     And the response "data.id" has the same value as "notification_rule.data.id"
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get incident notification template returns "Bad Request" response
     Given operation "GetIncidentNotificationTemplate" enabled
     And new "GetIncidentNotificationTemplate" request
@@ -916,7 +916,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get incident notification template returns "Not Found" response
     Given operation "GetIncidentNotificationTemplate" enabled
     And new "GetIncidentNotificationTemplate" request
@@ -924,7 +924,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-terraform-config @team:Datadog/incident-app
+  @skip-terraform-config @team:ddoghq/incident-app
   Scenario: Get incident notification template returns "OK" response
     Given there is a valid "incident_type" in the system
     And there is a valid "notification_template" in the system
@@ -938,7 +938,7 @@ Feature: Incidents
     And the response "data" has field "attributes"
     And the response "data" has field "relationships"
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get incident todo details returns "Bad Request" response
     Given operation "GetIncidentTodo" enabled
     And new "GetIncidentTodo" request
@@ -947,7 +947,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get incident todo details returns "Not Found" response
     Given operation "GetIncidentTodo" enabled
     And new "GetIncidentTodo" request
@@ -956,7 +956,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:Datadog/incident-app
+  @replay-only @team:ddoghq/incident-app
   Scenario: Get incident todo details returns "OK" response
     Given operation "GetIncidentTodo" enabled
     And new "GetIncidentTodo" request
@@ -969,7 +969,7 @@ Feature: Incidents
     And the response "data.attributes.assignees" has length 2
     And the response "data.attributes.content" is equal to "Follow up with customer about the impact they saw."
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get incident type details returns "Bad Request" response
     Given operation "GetIncidentType" enabled
     And new "GetIncidentType" request
@@ -977,7 +977,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get incident type details returns "Not Found" response
     Given operation "GetIncidentType" enabled
     And new "GetIncidentType" request
@@ -985,7 +985,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get incident type details returns "OK" response
     Given operation "GetIncidentType" enabled
     And new "GetIncidentType" request
@@ -993,7 +993,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get postmortem template returns "Bad Request" response
     Given operation "GetIncidentPostmortemTemplate" enabled
     And new "GetIncidentPostmortemTemplate" request
@@ -1001,7 +1001,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get postmortem template returns "Not Found" response
     Given operation "GetIncidentPostmortemTemplate" enabled
     And new "GetIncidentPostmortemTemplate" request
@@ -1009,7 +1009,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get postmortem template returns "OK" response
     Given operation "GetIncidentPostmortemTemplate" enabled
     And new "GetIncidentPostmortemTemplate" request
@@ -1017,7 +1017,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get the details of an incident returns "Bad Request" response
     Given operation "GetIncident" enabled
     And new "GetIncident" request
@@ -1025,7 +1025,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get the details of an incident returns "Not Found" response
     Given operation "GetIncident" enabled
     And new "GetIncident" request
@@ -1033,7 +1033,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Get the details of an incident returns "OK" response
     Given operation "GetIncident" enabled
     And there is a valid "incident" in the system
@@ -1043,7 +1043,7 @@ Feature: Incidents
     Then the response status is 200 OK
     And the response "data.attributes.title" has the same value as "incident.data.attributes.title"
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Import an incident returns "Bad Request" response
     Given operation "ImportIncident" enabled
     And new "ImportIncident" request
@@ -1051,7 +1051,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Import an incident returns "CREATED" response
     Given operation "ImportIncident" enabled
     And new "ImportIncident" request
@@ -1061,7 +1061,7 @@ Feature: Incidents
     And the response "data.type" is equal to "incidents"
     And the response "data.attributes.title" has the same value as "unique"
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Import an incident returns "Not Found" response
     Given operation "ImportIncident" enabled
     And new "ImportIncident" request
@@ -1069,21 +1069,21 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: List an incident's impacts returns "Bad Request" response
     Given new "ListIncidentImpacts" request
     And request contains "incident_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: List an incident's impacts returns "Not Found" response
     Given new "ListIncidentImpacts" request
     And request contains "incident_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip @team:DataDog/incident-app
+  @skip @team:ddoghq/incident-app
   Scenario: List an incident's impacts returns "OK" response
     Given there is a valid "incident" in the system
     And operation "ListIncidentImpacts" enabled
@@ -1092,21 +1092,21 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: List global incident handles returns "Bad Request" response
     Given operation "ListGlobalIncidentHandles" enabled
     And new "ListGlobalIncidentHandles" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: List global incident handles returns "OK" response
     Given operation "ListGlobalIncidentHandles" enabled
     And new "ListGlobalIncidentHandles" request
     When the request is sent
     Then the response status is 200 OK
 
-  @skip @team:DataDog/incident-app
+  @skip @team:ddoghq/incident-app
   Scenario: List incident attachments returns "Bad Request" response
     Given operation "ListIncidentAttachments" enabled
     And new "ListIncidentAttachments" request
@@ -1114,7 +1114,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: List incident attachments returns "OK" response
     Given operation "ListIncidentAttachments" enabled
     And there is a valid "incident" in the system
@@ -1125,21 +1125,21 @@ Feature: Incidents
     Then the response status is 200 OK
     And the response "data" has length 1
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: List incident notification rules returns "Bad Request" response
     Given operation "ListIncidentNotificationRules" enabled
     And new "ListIncidentNotificationRules" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: List incident notification rules returns "Not Found" response
     Given operation "ListIncidentNotificationRules" enabled
     And new "ListIncidentNotificationRules" request
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-terraform-config @team:Datadog/incident-app
+  @skip-terraform-config @team:ddoghq/incident-app
   Scenario: List incident notification rules returns "OK" response
     Given there is a valid "incident_type" in the system
     And there is a valid "notification_rule" in the system
@@ -1150,21 +1150,21 @@ Feature: Incidents
     And the response "data" has length 1
     And the response "data[0].type" is equal to "incident_notification_rules"
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: List incident notification templates returns "Bad Request" response
     Given operation "ListIncidentNotificationTemplates" enabled
     And new "ListIncidentNotificationTemplates" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: List incident notification templates returns "Not Found" response
     Given operation "ListIncidentNotificationTemplates" enabled
     And new "ListIncidentNotificationTemplates" request
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:Datadog/incident-app
+  @team:ddoghq/incident-app
   Scenario: List incident notification templates returns "OK" response
     Given operation "ListIncidentNotificationTemplates" enabled
     And new "ListIncidentNotificationTemplates" request
@@ -1172,35 +1172,35 @@ Feature: Incidents
     Then the response status is 200 OK
     And the response "data" has length 0
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: List incident user-defined roles returns "Bad Request" response
     Given operation "ListIncidentUserDefinedRoles" enabled
     And new "ListIncidentUserDefinedRoles" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: List incident user-defined roles returns "OK" response
     Given operation "ListIncidentUserDefinedRoles" enabled
     And new "ListIncidentUserDefinedRoles" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: List postmortem templates returns "Bad Request" response
     Given operation "ListIncidentPostmortemTemplates" enabled
     And new "ListIncidentPostmortemTemplates" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: List postmortem templates returns "OK" response
     Given operation "ListIncidentPostmortemTemplates" enabled
     And new "ListIncidentPostmortemTemplates" request
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Remove commander from an incident returns "OK" response
     Given operation "UpdateIncident" enabled
     And there is a valid "incident" in the system
@@ -1211,7 +1211,7 @@ Feature: Incidents
     Then the response status is 200 OK
     And the response "data.relationships.commander_user.data" is equal to null
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Search for incidents returns "Bad Request" response
     Given operation "SearchIncidents" enabled
     And new "SearchIncidents" request
@@ -1219,7 +1219,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Search for incidents returns "Not Found" response
     Given operation "SearchIncidents" enabled
     And new "SearchIncidents" request
@@ -1227,7 +1227,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-validation @team:DataDog/incident-app
+  @skip-validation @team:ddoghq/incident-app
   Scenario: Search for incidents returns "OK" response
     Given operation "SearchIncidents" enabled
     And there is a valid "incident" in the system
@@ -1238,7 +1238,7 @@ Feature: Incidents
     And the response "data.type" is equal to "incidents_search_results"
     And the response "data.attributes.incidents[0].data.type" is equal to "incidents"
 
-  @replay-only @skip-validation @team:DataDog/incident-app @with-pagination
+  @replay-only @skip-validation @team:ddoghq/incident-app @with-pagination
   Scenario: Search for incidents returns "OK" response with pagination
     Given operation "SearchIncidents" enabled
     And new "SearchIncidents" request
@@ -1248,7 +1248,7 @@ Feature: Incidents
     Then the response status is 200 OK
     And the response has 3 items
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Update an existing incident integration metadata returns "Bad Request" response
     Given operation "UpdateIncidentIntegration" enabled
     And new "UpdateIncidentIntegration" request
@@ -1258,7 +1258,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Update an existing incident integration metadata returns "Not Found" response
     Given operation "UpdateIncidentIntegration" enabled
     And new "UpdateIncidentIntegration" request
@@ -1268,7 +1268,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Update an existing incident integration metadata returns "OK" response
     Given operation "UpdateIncidentIntegration" enabled
     And new "UpdateIncidentIntegration" request
@@ -1281,7 +1281,7 @@ Feature: Incidents
     Then the response status is 200 OK
     And the response "data.attributes.metadata.channels[0].channel_name" is equal to "#updated-channel-name"
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Update an existing incident returns "Bad Request" response
     Given operation "UpdateIncident" enabled
     And new "UpdateIncident" request
@@ -1290,7 +1290,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Update an existing incident returns "Not Found" response
     Given operation "UpdateIncident" enabled
     And new "UpdateIncident" request
@@ -1299,7 +1299,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Update an existing incident returns "OK" response
     Given operation "UpdateIncident" enabled
     And there is a valid "incident" in the system
@@ -1310,7 +1310,7 @@ Feature: Incidents
     Then the response status is 200 OK
     And the response "data.attributes.title" is equal to "{{ incident.data.attributes.title }}-updated"
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Update an incident impact returns "Bad Request" response
     Given operation "PatchIncidentImpact" enabled
     And new "PatchIncidentImpact" request
@@ -1320,7 +1320,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Update an incident impact returns "Not Found" response
     Given operation "PatchIncidentImpact" enabled
     And new "PatchIncidentImpact" request
@@ -1330,7 +1330,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Update an incident impact returns "OK" response
     Given operation "PatchIncidentImpact" enabled
     And new "PatchIncidentImpact" request
@@ -1340,7 +1340,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Update an incident notification rule returns "Bad Request" response
     Given operation "UpdateIncidentNotificationRule" enabled
     And new "UpdateIncidentNotificationRule" request
@@ -1349,7 +1349,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Update an incident notification rule returns "Not Found" response
     Given operation "UpdateIncidentNotificationRule" enabled
     And new "UpdateIncidentNotificationRule" request
@@ -1358,7 +1358,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Update an incident notification rule returns "OK" response
     Given operation "UpdateIncidentNotificationRule" enabled
     And new "UpdateIncidentNotificationRule" request
@@ -1367,7 +1367,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Update an incident todo returns "Bad Request" response
     Given operation "UpdateIncidentTodo" enabled
     And new "UpdateIncidentTodo" request
@@ -1377,7 +1377,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Update an incident todo returns "Not Found" response
     Given operation "UpdateIncidentTodo" enabled
     And new "UpdateIncidentTodo" request
@@ -1387,7 +1387,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:Datadog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Update an incident todo returns "OK" response
     Given operation "UpdateIncidentTodo" enabled
     And new "UpdateIncidentTodo" request
@@ -1401,7 +1401,7 @@ Feature: Incidents
     And the response "data.attributes.assignees" has length 1
     And the response "data.attributes.content" is equal to "Restore lost data."
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Update an incident type returns "Bad Request" response
     Given operation "UpdateIncidentType" enabled
     And new "UpdateIncidentType" request
@@ -1410,7 +1410,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:Datadog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Update an incident type returns "Not Found" response
     Given operation "UpdateIncidentType" enabled
     And new "UpdateIncidentType" request
@@ -1419,7 +1419,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-terraform-config @skip-validation @team:Datadog/incident-app
+  @skip-terraform-config @skip-validation @team:ddoghq/incident-app
   Scenario: Update an incident type returns "OK" response
     Given operation "UpdateIncidentType" enabled
     And new "UpdateIncidentType" request
@@ -1429,7 +1429,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Update an incident user-defined field returns "Bad Request" response
     Given operation "UpdateIncidentUserDefinedField" enabled
     And new "UpdateIncidentUserDefinedField" request
@@ -1438,7 +1438,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Update an incident user-defined field returns "Not Found" response
     Given operation "UpdateIncidentUserDefinedField" enabled
     And new "UpdateIncidentUserDefinedField" request
@@ -1447,7 +1447,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Update an incident user-defined field returns "OK" response
     Given operation "UpdateIncidentUserDefinedField" enabled
     And new "UpdateIncidentUserDefinedField" request
@@ -1456,7 +1456,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Update an incident user-defined role returns "Bad Request" response
     Given operation "UpdateIncidentUserDefinedRole" enabled
     And new "UpdateIncidentUserDefinedRole" request
@@ -1465,7 +1465,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Update an incident user-defined role returns "Not Found" response
     Given operation "UpdateIncidentUserDefinedRole" enabled
     And new "UpdateIncidentUserDefinedRole" request
@@ -1474,7 +1474,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Update an incident user-defined role returns "OK" response
     Given operation "UpdateIncidentUserDefinedRole" enabled
     And new "UpdateIncidentUserDefinedRole" request
@@ -1483,7 +1483,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Update global incident handle returns "Bad Request" response
     Given operation "UpdateGlobalIncidentHandle" enabled
     And new "UpdateGlobalIncidentHandle" request
@@ -1491,7 +1491,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Update global incident handle returns "OK" response
     Given operation "UpdateGlobalIncidentHandle" enabled
     And new "UpdateGlobalIncidentHandle" request
@@ -1499,7 +1499,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Update global incident settings returns "Bad Request" response
     Given operation "UpdateGlobalIncidentSettings" enabled
     And new "UpdateGlobalIncidentSettings" request
@@ -1507,7 +1507,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Update global incident settings returns "OK" response
     Given operation "UpdateGlobalIncidentSettings" enabled
     And new "UpdateGlobalIncidentSettings" request
@@ -1515,7 +1515,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
 
-  @skip @team:DataDog/incident-app
+  @skip @team:ddoghq/incident-app
   Scenario: Update incident attachment returns "Bad Request" response
     Given operation "UpdateIncidentAttachment" enabled
     And new "UpdateIncidentAttachment" request
@@ -1525,7 +1525,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Update incident attachment returns "Not Found" response
     Given operation "UpdateIncidentAttachment" enabled
     And new "UpdateIncidentAttachment" request
@@ -1535,7 +1535,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Update incident attachment returns "OK" response
     Given operation "UpdateIncidentAttachment" enabled
     And there is a valid "incident" in the system
@@ -1549,7 +1549,7 @@ Feature: Incidents
     And the response "data.type" is equal to "incident_attachments"
     And the response "data.attributes.attachment.title" has the same value as "unique"
 
-  @team:Datadog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Update incident notification rule returns "Bad Request" response
     Given operation "UpdateIncidentNotificationRule" enabled
     And new "UpdateIncidentNotificationRule" request
@@ -1558,7 +1558,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:Datadog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Update incident notification rule returns "Not Found" response
     Given operation "UpdateIncidentNotificationRule" enabled
     And new "UpdateIncidentNotificationRule" request
@@ -1567,7 +1567,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-terraform-config @team:Datadog/incident-app
+  @skip-terraform-config @team:ddoghq/incident-app
   Scenario: Update incident notification rule returns "OK" response
     Given there is a valid "incident_type" in the system
     And there is a valid "notification_rule" in the system
@@ -1582,7 +1582,7 @@ Feature: Incidents
     And the response "data.attributes.visibility" is equal to "private"
     And the response "data.attributes.enabled" is equal to false
 
-  @team:Datadog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Update incident notification template returns "Bad Request" response
     Given operation "UpdateIncidentNotificationTemplate" enabled
     And new "UpdateIncidentNotificationTemplate" request
@@ -1591,7 +1591,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:Datadog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Update incident notification template returns "Not Found" response
     Given operation "UpdateIncidentNotificationTemplate" enabled
     And new "UpdateIncidentNotificationTemplate" request
@@ -1600,7 +1600,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @skip-terraform-config @team:Datadog/incident-app
+  @skip-terraform-config @team:ddoghq/incident-app
   Scenario: Update incident notification template returns "OK" response
     Given there is a valid "incident_type" in the system
     And there is a valid "notification_template" in the system
@@ -1615,7 +1615,7 @@ Feature: Incidents
     And the response "data.attributes.name" has the same value as "unique"
     And the response "data.attributes.category" is equal to "update"
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Update postmortem template returns "Bad Request" response
     Given operation "UpdateIncidentPostmortemTemplate" enabled
     And new "UpdateIncidentPostmortemTemplate" request
@@ -1624,7 +1624,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Update postmortem template returns "Not Found" response
     Given operation "UpdateIncidentPostmortemTemplate" enabled
     And new "UpdateIncidentPostmortemTemplate" request
@@ -1633,7 +1633,7 @@ Feature: Incidents
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Update postmortem template returns "OK" response
     Given operation "UpdateIncidentPostmortemTemplate" enabled
     And new "UpdateIncidentPostmortemTemplate" request

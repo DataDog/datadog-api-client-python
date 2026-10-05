@@ -8,14 +8,14 @@ Feature: Error Tracking
     And a valid "appKeyAuth" key in the system
     And an instance of "ErrorTracking" API
 
-  @team:DataDog/error-tracking
+  @team:ddoghq/error-tracking
   Scenario: Get the details of an error tracking issue returns "Bad Request" response
     Given new "GetIssue" request
     And request contains "issue_id" parameter with value "invalid-issue-id"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/error-tracking
+  @team:ddoghq/error-tracking
   Scenario: Get the details of an error tracking issue returns "Not Found" response
     Given new "GetIssue" request
     And there is a valid "issue" in the system
@@ -23,7 +23,7 @@ Feature: Error Tracking
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/error-tracking
+  @team:ddoghq/error-tracking
   Scenario: Get the details of an error tracking issue returns "OK" response
     Given new "GetIssue" request
     And there is a valid "issue" in the system
@@ -32,14 +32,14 @@ Feature: Error Tracking
     Then the response status is 200 OK
     And the response "data.id" is equal to "{{ issue.id }}"
 
-  @generated @skip @team:DataDog/error-tracking
+  @generated @skip @team:ddoghq/error-tracking
   Scenario: Remove the assignee of an issue returns "Bad Request" response
     Given new "DeleteIssueAssignee" request
     And request contains "issue_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/error-tracking
+  @team:ddoghq/error-tracking
   Scenario: Remove the assignee of an issue returns "No Content" response
     Given new "DeleteIssueAssignee" request
     And there is a valid "issue" in the system
@@ -47,28 +47,28 @@ Feature: Error Tracking
     When the request is sent
     Then the response status is 204 No Content
 
-  @team:DataDog/error-tracking
+  @team:ddoghq/error-tracking
   Scenario: Remove the assignee of an issue returns "Not Found" response
     Given new "DeleteIssueAssignee" request
     And request contains "issue_id" parameter with value "67d80aa3-36ff-44b9-a694-c501a7591737"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/error-tracking
+  @team:ddoghq/error-tracking
   Scenario: Search error tracking issues returns "Bad Request" response
     Given new "SearchIssues" request
     And body with value {"data": {"attributes": {"query": "service:orders-* AND @language:go", "from": 1671612804000, "to": 1671620004000, "track": "invalid-track"}, "type": "search_request"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/error-tracking
+  @team:ddoghq/error-tracking
   Scenario: Search error tracking issues returns "OK" response
     Given new "SearchIssues" request
     And body with value {"data": {"attributes": {"query": "service:orders-* AND @language:go", "from": 1671612804000, "to": 1671620004000, "track": "trace"}, "type": "search_request"}}
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/error-tracking
+  @team:ddoghq/error-tracking
   Scenario: Update the assignee of an issue returns "Bad Request" response
     Given new "UpdateIssueAssignee" request
     And there is a valid "issue" in the system
@@ -77,7 +77,7 @@ Feature: Error Tracking
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/error-tracking
+  @team:ddoghq/error-tracking
   Scenario: Update the assignee of an issue returns "Not Found" response
     Given new "UpdateIssueAssignee" request
     And request contains "issue_id" parameter with value "67d80aa3-36ff-44b9-a694-c501a7591737"
@@ -85,7 +85,7 @@ Feature: Error Tracking
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/error-tracking
+  @team:ddoghq/error-tracking
   Scenario: Update the assignee of an issue returns "OK" response
     Given new "UpdateIssueAssignee" request
     And there is a valid "issue" in the system
@@ -94,7 +94,7 @@ Feature: Error Tracking
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/error-tracking
+  @team:ddoghq/error-tracking
   Scenario: Update the state of an issue returns "Bad Request" response
     Given new "UpdateIssueState" request
     And there is a valid "issue" in the system
@@ -103,7 +103,7 @@ Feature: Error Tracking
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/error-tracking
+  @team:ddoghq/error-tracking
   Scenario: Update the state of an issue returns "Not Found" response
     Given new "UpdateIssueState" request
     And request contains "issue_id" parameter with value "67d80aa3-36ff-44b9-a694-c501a7591737"
@@ -111,7 +111,7 @@ Feature: Error Tracking
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/error-tracking
+  @team:ddoghq/error-tracking
   Scenario: Update the state of an issue returns "OK" response
     Given new "UpdateIssueState" request
     And there is a valid "issue" in the system

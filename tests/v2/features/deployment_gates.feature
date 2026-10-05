@@ -10,7 +10,7 @@ Feature: Deployment Gates
     And a valid "appKeyAuth" key in the system
     And an instance of "DeploymentGates" API
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Create deployment gate returns "Bad Request" response
     Given operation "CreateDeploymentGate" enabled
     And new "CreateDeploymentGate" request
@@ -18,7 +18,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Create deployment gate returns "Bad request." response
     Given operation "CreateDeploymentGate" enabled
     And new "CreateDeploymentGate" request
@@ -26,7 +26,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 400 Bad request.
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Create deployment gate returns "OK" response
     Given operation "CreateDeploymentGate" enabled
     And new "CreateDeploymentGate" request
@@ -34,7 +34,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Create deployment rule returns "Bad Request" response
     Given there is a valid "deployment_gate" in the system
     And operation "CreateDeploymentRule" enabled
@@ -44,7 +44,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Create deployment rule returns "Bad request." response
     Given operation "CreateDeploymentRule" enabled
     And new "CreateDeploymentRule" request
@@ -53,7 +53,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 400 Bad request.
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Create deployment rule returns "OK" response
     Given there is a valid "deployment_gate" in the system
     And operation "CreateDeploymentRule" enabled
@@ -63,7 +63,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Create monitor deployment rule with monitor IDs returns "OK" response
     Given there is a valid "deployment_gate" in the system
     And there is a valid "monitor" in the system
@@ -74,7 +74,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Create monitor deployment rule with query and monitor IDs returns "Bad Request" response
     Given there is a valid "deployment_gate" in the system
     And operation "CreateDeploymentRule" enabled
@@ -84,7 +84,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Create monitor deployment rule with query returns "OK" response
     Given there is a valid "deployment_gate" in the system
     And operation "CreateDeploymentRule" enabled
@@ -94,7 +94,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Delete deployment gate returns "Bad Request" response
     Given operation "DeleteDeploymentGate" enabled
     And new "DeleteDeploymentGate" request
@@ -102,7 +102,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Delete deployment gate returns "Bad request." response
     Given operation "DeleteDeploymentGate" enabled
     And new "DeleteDeploymentGate" request
@@ -110,7 +110,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 400 Bad request.
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Delete deployment gate returns "Deployment gate not found." response
     Given operation "DeleteDeploymentGate" enabled
     And new "DeleteDeploymentGate" request
@@ -118,7 +118,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 404 Deployment gate not found.
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Delete deployment gate returns "No Content" response
     Given there is a valid "deployment_gate" in the system
     And operation "DeleteDeploymentGate" enabled
@@ -127,7 +127,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 204 No Content
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Delete deployment rule returns "Bad Request" response
     Given operation "DeleteDeploymentRule" enabled
     And new "DeleteDeploymentRule" request
@@ -136,7 +136,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Delete deployment rule returns "Bad request." response
     Given operation "DeleteDeploymentRule" enabled
     And new "DeleteDeploymentRule" request
@@ -145,7 +145,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 400 Bad request.
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Delete deployment rule returns "Deployment gate not found." response
     Given operation "DeleteDeploymentRule" enabled
     And new "DeleteDeploymentRule" request
@@ -154,7 +154,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 404 Deployment gate not found.
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Delete deployment rule returns "No Content" response
     Given there is a valid "deployment_gate" in the system
     And there is a valid "deployment_rule" in the system
@@ -165,7 +165,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Get a deployment gate evaluation result returns "Bad request." response
     Given operation "GetDeploymentGatesEvaluationResult" enabled
     And new "GetDeploymentGatesEvaluationResult" request
@@ -173,7 +173,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 400 Bad request.
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Get a deployment gate evaluation result returns "Deployment gate not found." response
     Given operation "GetDeploymentGatesEvaluationResult" enabled
     And new "GetDeploymentGatesEvaluationResult" request
@@ -181,7 +181,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 404 Deployment gate not found.
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Get a deployment gate evaluation result returns "OK" response
     Given operation "GetDeploymentGatesEvaluationResult" enabled
     And new "GetDeploymentGatesEvaluationResult" request
@@ -189,7 +189,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Get a deployment gates evaluation result returns "Deployment gate not found." response
     Given operation "GetDeploymentGatesEvaluationResult" enabled
     And new "GetDeploymentGatesEvaluationResult" request
@@ -197,7 +197,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 404 Deployment gate not found.
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Get a deployment gates evaluation result returns "OK" response
     Given operation "GetDeploymentGatesEvaluationResult" enabled
     And there is a valid "deployment_gate" in the system
@@ -209,21 +209,21 @@ Feature: Deployment Gates
     Then the response status is 200 OK
     And the response "data.type" is equal to "deployment_gates_evaluation_result_response"
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Get all deployment gates returns "Bad request." response
     Given operation "ListDeploymentGates" enabled
     And new "ListDeploymentGates" request
     When the request is sent
     Then the response status is 400 Bad request.
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Get all deployment gates returns "OK" response
     Given operation "ListDeploymentGates" enabled
     And new "ListDeploymentGates" request
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Get deployment gate returns "Bad Request" response
     Given operation "GetDeploymentGate" enabled
     And new "GetDeploymentGate" request
@@ -231,7 +231,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Get deployment gate returns "Bad request." response
     Given operation "GetDeploymentGate" enabled
     And new "GetDeploymentGate" request
@@ -239,7 +239,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 400 Bad request.
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Get deployment gate returns "Deployment gate not found." response
     Given operation "GetDeploymentGate" enabled
     And new "GetDeploymentGate" request
@@ -247,7 +247,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 404 Deployment gate not found.
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Get deployment gate returns "OK" response
     Given there is a valid "deployment_gate" in the system
     And operation "GetDeploymentGate" enabled
@@ -256,7 +256,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Get deployment rule returns "Bad Request" response
     Given there is a valid "deployment_gate" in the system
     And there is a valid "deployment_rule" in the system
@@ -267,7 +267,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Get deployment rule returns "Bad request." response
     Given operation "GetDeploymentRule" enabled
     And new "GetDeploymentRule" request
@@ -276,7 +276,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 400 Bad request.
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Get deployment rule returns "Deployment rule not found." response
     Given operation "GetDeploymentRule" enabled
     And new "GetDeploymentRule" request
@@ -285,7 +285,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 404 Deployment rule not found.
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Get deployment rule returns "OK" response
     Given there is a valid "deployment_gate" in the system
     And there is a valid "deployment_rule" in the system
@@ -296,7 +296,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Get rules for a deployment gate returns "Bad request." response
     Given operation "GetDeploymentGateRules" enabled
     And new "GetDeploymentGateRules" request
@@ -304,7 +304,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 400 Bad request.
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Get rules for a deployment gate returns "OK" response
     Given there is a valid "deployment_gate" in the system
     And operation "GetDeploymentGateRules" enabled
@@ -313,7 +313,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Trigger a deployment gate evaluation returns "Accepted" response
     Given operation "TriggerDeploymentGatesEvaluation" enabled
     And new "TriggerDeploymentGatesEvaluation" request
@@ -321,7 +321,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 202 Accepted
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Trigger a deployment gate evaluation returns "Bad request." response
     Given operation "TriggerDeploymentGatesEvaluation" enabled
     And new "TriggerDeploymentGatesEvaluation" request
@@ -329,7 +329,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 400 Bad request.
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Trigger a deployment gate evaluation returns "Deployment gate not found." response
     Given operation "TriggerDeploymentGatesEvaluation" enabled
     And new "TriggerDeploymentGatesEvaluation" request
@@ -337,7 +337,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 404 Deployment gate not found.
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Trigger a deployment gates evaluation returns "Accepted" response
     Given operation "TriggerDeploymentGatesEvaluation" enabled
     And there is a valid "deployment_gate" in the system
@@ -348,7 +348,7 @@ Feature: Deployment Gates
     Then the response status is 202 Accepted
     And the response "data.type" is equal to "deployment_gates_evaluation_response"
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Trigger a deployment gates evaluation returns "Bad request." response
     Given operation "TriggerDeploymentGatesEvaluation" enabled
     And new "TriggerDeploymentGatesEvaluation" request
@@ -356,7 +356,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 400 Bad request.
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Trigger a deployment gates evaluation returns "Deployment gate not found." response
     Given operation "TriggerDeploymentGatesEvaluation" enabled
     And new "TriggerDeploymentGatesEvaluation" request
@@ -364,7 +364,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 404 Deployment gate not found.
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Update deployment gate returns "Bad Request" response
     Given operation "UpdateDeploymentGate" enabled
     And new "UpdateDeploymentGate" request
@@ -373,7 +373,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Update deployment gate returns "Bad request." response
     Given operation "UpdateDeploymentGate" enabled
     And new "UpdateDeploymentGate" request
@@ -382,7 +382,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 400 Bad request.
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Update deployment gate returns "Deployment gate not found." response
     Given operation "UpdateDeploymentGate" enabled
     And new "UpdateDeploymentGate" request
@@ -391,7 +391,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 404 Deployment gate not found.
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Update deployment gate returns "OK" response
     Given there is a valid "deployment_gate" in the system
     And operation "UpdateDeploymentGate" enabled
@@ -401,7 +401,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Update deployment rule returns "Bad Request" response
     Given there is a valid "deployment_gate" in the system
     And there is a valid "deployment_rule" in the system
@@ -413,7 +413,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ci-app-backend
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Update deployment rule returns "Bad request." response
     Given operation "UpdateDeploymentRule" enabled
     And new "UpdateDeploymentRule" request
@@ -423,7 +423,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 400 Bad request.
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Update deployment rule returns "Deployment rule not found." response
     Given operation "UpdateDeploymentRule" enabled
     And new "UpdateDeploymentRule" request
@@ -433,7 +433,7 @@ Feature: Deployment Gates
     When the request is sent
     Then the response status is 404 Deployment rule not found.
 
-  @team:DataDog/ci-app-backend
+  @team:ddoghq/ci-app-backend
   Scenario: Update deployment rule returns "OK" response
     Given there is a valid "deployment_gate" in the system
     And there is a valid "deployment_rule" in the system

@@ -14,13 +14,13 @@ Feature: Compliance
     And operation "GetRuleBasedView" enabled
     And new "GetRuleBasedView" request
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: Get the rule-based view of compliance findings returns "Bad Request" response
     Given request contains "to" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/k9-misconfigs
+  @generated @skip @team:ddoghq/k9-misconfigs
   Scenario: Get the rule-based view of compliance findings returns "OK" response
     Given request contains "to" parameter from "REPLACE.ME"
     When the request is sent

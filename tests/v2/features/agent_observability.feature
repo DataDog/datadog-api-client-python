@@ -8,7 +8,7 @@ Feature: Agent Observability
     And a valid "appKeyAuth" key in the system
     And an instance of "AgentObservability" API
 
-  @skip @team:DataDog/ml-observability
+  @skip @team:ddoghq/ml-observability
   Scenario: Add a display_block interaction returns "Created" response
     Given operation "CreateLLMObsAnnotationQueueInteractions" enabled
     And new "CreateLLMObsAnnotationQueueInteractions" request
@@ -17,7 +17,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 201 Created
 
-  @skip @team:DataDog/ml-observability
+  @skip @team:ddoghq/ml-observability
   Scenario: Add a display_block interaction with an image block missing url returns "Bad Request" response
     Given operation "CreateLLMObsAnnotationQueueInteractions" enabled
     And new "CreateLLMObsAnnotationQueueInteractions" request
@@ -26,7 +26,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Add annotation queue interactions returns "Bad Request" response
     Given operation "CreateLLMObsAnnotationQueueInteractions" enabled
     And new "CreateLLMObsAnnotationQueueInteractions" request
@@ -35,7 +35,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Add annotation queue interactions returns "Created" response
     Given operation "CreateLLMObsAnnotationQueueInteractions" enabled
     And new "CreateLLMObsAnnotationQueueInteractions" request
@@ -44,7 +44,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Add annotation queue interactions returns "Not Found" response
     Given operation "CreateLLMObsAnnotationQueueInteractions" enabled
     And new "CreateLLMObsAnnotationQueueInteractions" request
@@ -53,7 +53,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Aggregate Agent Observability experimentation returns "Bad Request" response
     Given operation "AggregateLLMObsExperimentation" enabled
     And new "AggregateLLMObsExperimentation" request
@@ -61,7 +61,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Aggregate Agent Observability experimentation returns "OK" response
     Given operation "AggregateLLMObsExperimentation" enabled
     And new "AggregateLLMObsExperimentation" request
@@ -69,7 +69,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Append records to an Agent Observability dataset returns "Bad Request" response
     Given operation "CreateLLMObsDatasetRecords" enabled
     And new "CreateLLMObsDatasetRecords" request
@@ -79,7 +79,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Append records to an Agent Observability dataset returns "Created" response
     Given operation "CreateLLMObsDatasetRecords" enabled
     And new "CreateLLMObsDatasetRecords" request
@@ -89,7 +89,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Append records to an Agent Observability dataset returns "Not Found" response
     Given operation "CreateLLMObsDatasetRecords" enabled
     And new "CreateLLMObsDatasetRecords" request
@@ -99,7 +99,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Append records to an Agent Observability dataset returns "OK" response
     Given operation "CreateLLMObsDatasetRecords" enabled
     And new "CreateLLMObsDatasetRecords" request
@@ -109,7 +109,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Batch update Agent Observability dataset records returns "Bad Request" response
     Given operation "BatchUpdateLLMObsDataset" enabled
     And new "BatchUpdateLLMObsDataset" request
@@ -119,7 +119,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Batch update Agent Observability dataset records returns "Not Found" response
     Given operation "BatchUpdateLLMObsDataset" enabled
     And new "BatchUpdateLLMObsDataset" request
@@ -129,7 +129,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Batch update Agent Observability dataset records returns "OK" response
     Given operation "BatchUpdateLLMObsDataset" enabled
     And new "BatchUpdateLLMObsDataset" request
@@ -139,7 +139,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Batch update Agent Observability dataset records returns "Payload Too Large" response
     Given operation "BatchUpdateLLMObsDataset" enabled
     And new "BatchUpdateLLMObsDataset" request
@@ -149,7 +149,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 413 Payload Too Large
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Clone an Agent Observability dataset returns "Bad Request" response
     Given operation "CloneLLMObsDataset" enabled
     And new "CloneLLMObsDataset" request
@@ -159,7 +159,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Clone an Agent Observability dataset returns "Not Found" response
     Given operation "CloneLLMObsDataset" enabled
     And new "CloneLLMObsDataset" request
@@ -169,7 +169,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Clone an Agent Observability dataset returns "OK" response
     Given operation "CloneLLMObsDataset" enabled
     And new "CloneLLMObsDataset" request
@@ -179,7 +179,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Create a new Agent Observability prompt version returns "Bad Request" response
     Given operation "CreateLLMObsPromptVersion" enabled
     And new "CreateLLMObsPromptVersion" request
@@ -188,7 +188,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Create a new Agent Observability prompt version returns "Not Found" response
     Given operation "CreateLLMObsPromptVersion" enabled
     And new "CreateLLMObsPromptVersion" request
@@ -197,7 +197,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Create a new Agent Observability prompt version returns "OK" response
     Given operation "CreateLLMObsPromptVersion" enabled
     And new "CreateLLMObsPromptVersion" request
@@ -206,7 +206,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Create an Agent Observability annotation queue returns "Bad Request" response
     Given operation "CreateLLMObsAnnotationQueue" enabled
     And new "CreateLLMObsAnnotationQueue" request
@@ -214,7 +214,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Create an Agent Observability annotation queue returns "Created" response
     Given operation "CreateLLMObsAnnotationQueue" enabled
     And new "CreateLLMObsAnnotationQueue" request
@@ -222,7 +222,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Create an Agent Observability dataset returns "Bad Request" response
     Given operation "CreateLLMObsDataset" enabled
     And new "CreateLLMObsDataset" request
@@ -231,7 +231,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Create an Agent Observability dataset returns "Created" response
     Given operation "CreateLLMObsDataset" enabled
     And new "CreateLLMObsDataset" request
@@ -240,7 +240,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Create an Agent Observability dataset returns "Not Found" response
     Given operation "CreateLLMObsDataset" enabled
     And new "CreateLLMObsDataset" request
@@ -249,7 +249,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Create an Agent Observability dataset returns "OK" response
     Given operation "CreateLLMObsDataset" enabled
     And new "CreateLLMObsDataset" request
@@ -258,7 +258,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Create an Agent Observability experiment returns "Bad Request" response
     Given operation "CreateLLMObsExperiment" enabled
     And new "CreateLLMObsExperiment" request
@@ -266,7 +266,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Create an Agent Observability experiment returns "Created" response
     Given operation "CreateLLMObsExperiment" enabled
     And new "CreateLLMObsExperiment" request
@@ -274,7 +274,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Create an Agent Observability experiment returns "OK" response
     Given operation "CreateLLMObsExperiment" enabled
     And new "CreateLLMObsExperiment" request
@@ -282,7 +282,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Create an Agent Observability project returns "Bad Request" response
     Given operation "CreateLLMObsProject" enabled
     And new "CreateLLMObsProject" request
@@ -290,7 +290,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Create an Agent Observability project returns "Created" response
     Given operation "CreateLLMObsProject" enabled
     And new "CreateLLMObsProject" request
@@ -298,7 +298,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Create an Agent Observability project returns "OK" response
     Given operation "CreateLLMObsProject" enabled
     And new "CreateLLMObsProject" request
@@ -306,7 +306,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Create an Agent Observability prompt returns "Bad Request" response
     Given operation "CreateLLMObsPrompt" enabled
     And new "CreateLLMObsPrompt" request
@@ -314,7 +314,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Create an Agent Observability prompt returns "Conflict" response
     Given operation "CreateLLMObsPrompt" enabled
     And new "CreateLLMObsPrompt" request
@@ -322,7 +322,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 409 Conflict
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Create an Agent Observability prompt returns "OK" response
     Given operation "CreateLLMObsPrompt" enabled
     And new "CreateLLMObsPrompt" request
@@ -330,7 +330,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Create or update a custom evaluator configuration returns "Bad Request" response
     Given operation "UpdateLLMObsCustomEvalConfig" enabled
     And new "UpdateLLMObsCustomEvalConfig" request
@@ -339,7 +339,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Create or update a custom evaluator configuration returns "Not Found" response
     Given operation "UpdateLLMObsCustomEvalConfig" enabled
     And new "UpdateLLMObsCustomEvalConfig" request
@@ -348,7 +348,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Create or update a custom evaluator configuration returns "OK" response
     Given operation "UpdateLLMObsCustomEvalConfig" enabled
     And new "UpdateLLMObsCustomEvalConfig" request
@@ -357,7 +357,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Create or update a custom evaluator configuration returns "Unprocessable Entity" response
     Given operation "UpdateLLMObsCustomEvalConfig" enabled
     And new "UpdateLLMObsCustomEvalConfig" request
@@ -366,7 +366,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 422 Unprocessable Entity
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Create or update a patterns configuration returns "Bad Request" response
     Given operation "UpsertLLMObsPatternsConfig" enabled
     And new "UpsertLLMObsPatternsConfig" request
@@ -374,7 +374,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Create or update a patterns configuration returns "Not Found" response
     Given operation "UpsertLLMObsPatternsConfig" enabled
     And new "UpsertLLMObsPatternsConfig" request
@@ -382,7 +382,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Create or update a patterns configuration returns "OK" response
     Given operation "UpsertLLMObsPatternsConfig" enabled
     And new "UpsertLLMObsPatternsConfig" request
@@ -390,7 +390,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Create or update annotations returns "Bad Request" response
     Given operation "UpsertLLMObsAnnotations" enabled
     And new "UpsertLLMObsAnnotations" request
@@ -399,7 +399,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Create or update annotations returns "Not Found — the queue does not exist." response
     Given operation "UpsertLLMObsAnnotations" enabled
     And new "UpsertLLMObsAnnotations" request
@@ -408,7 +408,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found — the queue does not exist.
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Create or update annotations returns "OK — annotations created or updated. For mixed batches, denied items and other per-item errors are listed in `errors`." response
     Given operation "UpsertLLMObsAnnotations" enabled
     And new "UpsertLLMObsAnnotations" request
@@ -417,7 +417,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK — annotations created or updated. For mixed batches, denied items and other per-item errors are listed in `errors`.
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Delete Agent Observability dataset records returns "Bad Request" response
     Given operation "DeleteLLMObsDatasetRecords" enabled
     And new "DeleteLLMObsDatasetRecords" request
@@ -427,7 +427,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Delete Agent Observability dataset records returns "No Content" response
     Given operation "DeleteLLMObsDatasetRecords" enabled
     And new "DeleteLLMObsDatasetRecords" request
@@ -437,7 +437,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Delete Agent Observability dataset records returns "Not Found" response
     Given operation "DeleteLLMObsDatasetRecords" enabled
     And new "DeleteLLMObsDatasetRecords" request
@@ -447,7 +447,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Delete Agent Observability datasets returns "Bad Request" response
     Given operation "DeleteLLMObsDatasets" enabled
     And new "DeleteLLMObsDatasets" request
@@ -456,7 +456,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Delete Agent Observability datasets returns "No Content" response
     Given operation "DeleteLLMObsDatasets" enabled
     And new "DeleteLLMObsDatasets" request
@@ -465,7 +465,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Delete Agent Observability datasets returns "Not Found" response
     Given operation "DeleteLLMObsDatasets" enabled
     And new "DeleteLLMObsDatasets" request
@@ -474,7 +474,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Delete Agent Observability experiments returns "Bad Request" response
     Given operation "DeleteLLMObsExperiments" enabled
     And new "DeleteLLMObsExperiments" request
@@ -482,7 +482,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Delete Agent Observability experiments returns "No Content" response
     Given operation "DeleteLLMObsExperiments" enabled
     And new "DeleteLLMObsExperiments" request
@@ -490,7 +490,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Delete Agent Observability projects returns "Bad Request" response
     Given operation "DeleteLLMObsProjects" enabled
     And new "DeleteLLMObsProjects" request
@@ -498,7 +498,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Delete Agent Observability projects returns "No Content" response
     Given operation "DeleteLLMObsProjects" enabled
     And new "DeleteLLMObsProjects" request
@@ -506,7 +506,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Delete a custom evaluator configuration returns "Bad Request" response
     Given operation "DeleteLLMObsCustomEvalConfig" enabled
     And new "DeleteLLMObsCustomEvalConfig" request
@@ -514,7 +514,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Delete a custom evaluator configuration returns "No Content" response
     Given operation "DeleteLLMObsCustomEvalConfig" enabled
     And new "DeleteLLMObsCustomEvalConfig" request
@@ -522,7 +522,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Delete a custom evaluator configuration returns "Not Found" response
     Given operation "DeleteLLMObsCustomEvalConfig" enabled
     And new "DeleteLLMObsCustomEvalConfig" request
@@ -530,7 +530,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Delete a patterns configuration returns "Bad Request" response
     Given operation "DeleteLLMObsPatternsConfig" enabled
     And new "DeleteLLMObsPatternsConfig" request
@@ -538,7 +538,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Delete a patterns configuration returns "No Content" response
     Given operation "DeleteLLMObsPatternsConfig" enabled
     And new "DeleteLLMObsPatternsConfig" request
@@ -546,7 +546,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Delete a patterns configuration returns "Not Found" response
     Given operation "DeleteLLMObsPatternsConfig" enabled
     And new "DeleteLLMObsPatternsConfig" request
@@ -554,7 +554,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Delete an Agent Observability annotation queue returns "No Content" response
     Given operation "DeleteLLMObsAnnotationQueue" enabled
     And new "DeleteLLMObsAnnotationQueue" request
@@ -562,7 +562,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Delete an Agent Observability annotation queue returns "Not Found" response
     Given operation "DeleteLLMObsAnnotationQueue" enabled
     And new "DeleteLLMObsAnnotationQueue" request
@@ -570,7 +570,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Delete an Agent Observability prompt returns "Not Found" response
     Given operation "DeleteLLMObsPrompt" enabled
     And new "DeleteLLMObsPrompt" request
@@ -578,7 +578,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Delete an Agent Observability prompt returns "OK" response
     Given operation "DeleteLLMObsPrompt" enabled
     And new "DeleteLLMObsPrompt" request
@@ -586,7 +586,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Delete annotation queue interactions returns "Bad Request" response
     Given operation "DeleteLLMObsAnnotationQueueInteractions" enabled
     And new "DeleteLLMObsAnnotationQueueInteractions" request
@@ -595,7 +595,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Delete annotation queue interactions returns "No Content" response
     Given operation "DeleteLLMObsAnnotationQueueInteractions" enabled
     And new "DeleteLLMObsAnnotationQueueInteractions" request
@@ -604,7 +604,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Delete annotation queue interactions returns "Not Found" response
     Given operation "DeleteLLMObsAnnotationQueueInteractions" enabled
     And new "DeleteLLMObsAnnotationQueueInteractions" request
@@ -613,7 +613,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Delete annotations returns "Bad Request" response
     Given operation "DeleteLLMObsAnnotations" enabled
     And new "DeleteLLMObsAnnotations" request
@@ -622,7 +622,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Delete annotations returns "Not Found — the queue does not exist." response
     Given operation "DeleteLLMObsAnnotations" enabled
     And new "DeleteLLMObsAnnotations" request
@@ -631,7 +631,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found — the queue does not exist.
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Delete annotations returns "OK — annotations deleted. Errors for annotations that could not be deleted are listed in `errors`." response
     Given operation "DeleteLLMObsAnnotations" enabled
     And new "DeleteLLMObsAnnotations" request
@@ -640,7 +640,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK — annotations deleted. Errors for annotations that could not be deleted are listed in `errors`.
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Export an Agent Observability dataset returns "Bad Request" response
     Given operation "ExportLLMObsDataset" enabled
     And new "ExportLLMObsDataset" request
@@ -649,7 +649,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Export an Agent Observability dataset returns "Not Found" response
     Given operation "ExportLLMObsDataset" enabled
     And new "ExportLLMObsDataset" request
@@ -658,7 +658,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Export an Agent Observability dataset returns "OK" response
     Given operation "ExportLLMObsDataset" enabled
     And new "ExportLLMObsDataset" request
@@ -667,7 +667,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get Agent Observability dataset draft state returns "Bad Request" response
     Given operation "GetLLMObsDatasetDraftState" enabled
     And new "GetLLMObsDatasetDraftState" request
@@ -676,7 +676,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get Agent Observability dataset draft state returns "Not Found" response
     Given operation "GetLLMObsDatasetDraftState" enabled
     And new "GetLLMObsDatasetDraftState" request
@@ -685,7 +685,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get Agent Observability dataset draft state returns "OK" response
     Given operation "GetLLMObsDatasetDraftState" enabled
     And new "GetLLMObsDatasetDraftState" request
@@ -694,7 +694,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get a custom evaluator configuration returns "Bad Request" response
     Given operation "GetLLMObsCustomEvalConfig" enabled
     And new "GetLLMObsCustomEvalConfig" request
@@ -702,7 +702,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get a custom evaluator configuration returns "Not Found" response
     Given operation "GetLLMObsCustomEvalConfig" enabled
     And new "GetLLMObsCustomEvalConfig" request
@@ -710,7 +710,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get a custom evaluator configuration returns "OK" response
     Given operation "GetLLMObsCustomEvalConfig" enabled
     And new "GetLLMObsCustomEvalConfig" request
@@ -718,28 +718,28 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get a patterns configuration returns "Bad Request" response
     Given operation "GetLLMObsPatternsConfig" enabled
     And new "GetLLMObsPatternsConfig" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get a patterns configuration returns "Not Found" response
     Given operation "GetLLMObsPatternsConfig" enabled
     And new "GetLLMObsPatternsConfig" request
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get a patterns configuration returns "OK" response
     Given operation "GetLLMObsPatternsConfig" enabled
     And new "GetLLMObsPatternsConfig" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get a specific Agent Observability prompt version returns "Bad Request" response
     Given operation "GetLLMObsPromptVersion" enabled
     And new "GetLLMObsPromptVersion" request
@@ -748,7 +748,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get a specific Agent Observability prompt version returns "Not Found" response
     Given operation "GetLLMObsPromptVersion" enabled
     And new "GetLLMObsPromptVersion" request
@@ -757,7 +757,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get a specific Agent Observability prompt version returns "OK" response
     Given operation "GetLLMObsPromptVersion" enabled
     And new "GetLLMObsPromptVersion" request
@@ -766,7 +766,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get an Agent Observability prompt returns "Not Found" response
     Given operation "GetLLMObsPrompt" enabled
     And new "GetLLMObsPrompt" request
@@ -774,7 +774,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get an Agent Observability prompt returns "OK" response
     Given operation "GetLLMObsPrompt" enabled
     And new "GetLLMObsPrompt" request
@@ -782,7 +782,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get an annotated queue interaction returns "Bad Request" response
     Given operation "GetLLMObsAnnotatedInteraction" enabled
     And new "GetLLMObsAnnotatedInteraction" request
@@ -791,7 +791,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get an annotated queue interaction returns "Not Found" response
     Given operation "GetLLMObsAnnotatedInteraction" enabled
     And new "GetLLMObsAnnotatedInteraction" request
@@ -800,7 +800,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get an annotated queue interaction returns "OK" response
     Given operation "GetLLMObsAnnotatedInteraction" enabled
     And new "GetLLMObsAnnotatedInteraction" request
@@ -809,7 +809,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability @with-pagination
+  @generated @skip @team:ddoghq/ml-observability @with-pagination
   Scenario: Get an annotated queue interaction returns "OK" response with pagination
     Given operation "GetLLMObsAnnotatedInteraction" enabled
     And new "GetLLMObsAnnotatedInteraction" request
@@ -818,7 +818,7 @@ Feature: Agent Observability
     When the request with pagination is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get annotated interactions by content IDs returns "Bad Request" response
     Given operation "GetLLMObsAnnotatedInteractionsByTraceIDs" enabled
     And new "GetLLMObsAnnotatedInteractionsByTraceIDs" request
@@ -826,7 +826,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get annotated interactions by content IDs returns "OK" response
     Given operation "GetLLMObsAnnotatedInteractionsByTraceIDs" enabled
     And new "GetLLMObsAnnotatedInteractionsByTraceIDs" request
@@ -834,7 +834,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get annotated queue interactions returns "Bad Request" response
     Given operation "GetLLMObsAnnotatedInteractions" enabled
     And new "GetLLMObsAnnotatedInteractions" request
@@ -842,7 +842,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get annotated queue interactions returns "Not Found" response
     Given operation "GetLLMObsAnnotatedInteractions" enabled
     And new "GetLLMObsAnnotatedInteractions" request
@@ -850,7 +850,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get annotated queue interactions returns "OK" response
     Given operation "GetLLMObsAnnotatedInteractions" enabled
     And new "GetLLMObsAnnotatedInteractions" request
@@ -858,7 +858,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get annotation queue label schema returns "Not Found" response
     Given operation "GetLLMObsAnnotationQueueLabelSchema" enabled
     And new "GetLLMObsAnnotationQueueLabelSchema" request
@@ -866,7 +866,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get annotation queue label schema returns "OK" response
     Given operation "GetLLMObsAnnotationQueueLabelSchema" enabled
     And new "GetLLMObsAnnotationQueueLabelSchema" request
@@ -874,7 +874,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get patterns run status returns "Bad Request" response
     Given operation "GetLLMObsPatternsRunStatus" enabled
     And new "GetLLMObsPatternsRunStatus" request
@@ -882,7 +882,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get patterns run status returns "Not Found" response
     Given operation "GetLLMObsPatternsRunStatus" enabled
     And new "GetLLMObsPatternsRunStatus" request
@@ -890,7 +890,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Get patterns run status returns "OK" response
     Given operation "GetLLMObsPatternsRunStatus" enabled
     And new "GetLLMObsPatternsRunStatus" request
@@ -898,21 +898,21 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Agent Observability annotation queues returns "Bad Request" response
     Given operation "ListLLMObsAnnotationQueues" enabled
     And new "ListLLMObsAnnotationQueues" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Agent Observability annotation queues returns "OK" response
     Given operation "ListLLMObsAnnotationQueues" enabled
     And new "ListLLMObsAnnotationQueues" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Agent Observability dataset records returns "Bad Request" response
     Given operation "ListLLMObsDatasetRecords" enabled
     And new "ListLLMObsDatasetRecords" request
@@ -921,7 +921,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Agent Observability dataset records returns "Not Found" response
     Given operation "ListLLMObsDatasetRecords" enabled
     And new "ListLLMObsDatasetRecords" request
@@ -930,7 +930,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Agent Observability dataset records returns "OK" response
     Given operation "ListLLMObsDatasetRecords" enabled
     And new "ListLLMObsDatasetRecords" request
@@ -939,7 +939,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Agent Observability dataset versions returns "Bad Request" response
     Given operation "ListLLMObsDatasetVersions" enabled
     And new "ListLLMObsDatasetVersions" request
@@ -948,7 +948,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Agent Observability dataset versions returns "Not Found" response
     Given operation "ListLLMObsDatasetVersions" enabled
     And new "ListLLMObsDatasetVersions" request
@@ -957,7 +957,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Agent Observability dataset versions returns "OK" response
     Given operation "ListLLMObsDatasetVersions" enabled
     And new "ListLLMObsDatasetVersions" request
@@ -966,7 +966,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Agent Observability datasets returns "Bad Request" response
     Given operation "ListLLMObsDatasets" enabled
     And new "ListLLMObsDatasets" request
@@ -974,7 +974,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Agent Observability datasets returns "Not Found" response
     Given operation "ListLLMObsDatasets" enabled
     And new "ListLLMObsDatasets" request
@@ -982,7 +982,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Agent Observability datasets returns "OK" response
     Given operation "ListLLMObsDatasets" enabled
     And new "ListLLMObsDatasets" request
@@ -990,7 +990,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Agent Observability experiment events (v2) returns "Bad Request" response
     Given operation "ListLLMObsExperimentEventsV2" enabled
     And new "ListLLMObsExperimentEventsV2" request
@@ -998,7 +998,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Agent Observability experiment events (v2) returns "Not Found" response
     Given operation "ListLLMObsExperimentEventsV2" enabled
     And new "ListLLMObsExperimentEventsV2" request
@@ -1006,7 +1006,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Agent Observability experiment events (v2) returns "OK" response
     Given operation "ListLLMObsExperimentEventsV2" enabled
     And new "ListLLMObsExperimentEventsV2" request
@@ -1014,7 +1014,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Agent Observability experiment spans (v1) returns "Bad Request" response
     Given operation "ListLLMObsExperimentEventsV1" enabled
     And new "ListLLMObsExperimentEventsV1" request
@@ -1022,7 +1022,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Agent Observability experiment spans (v1) returns "Not Found" response
     Given operation "ListLLMObsExperimentEventsV1" enabled
     And new "ListLLMObsExperimentEventsV1" request
@@ -1030,7 +1030,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Agent Observability experiment spans (v1) returns "OK" response
     Given operation "ListLLMObsExperimentEventsV1" enabled
     And new "ListLLMObsExperimentEventsV1" request
@@ -1038,56 +1038,56 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Agent Observability experiments returns "Bad Request" response
     Given operation "ListLLMObsExperiments" enabled
     And new "ListLLMObsExperiments" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Agent Observability experiments returns "OK" response
     Given operation "ListLLMObsExperiments" enabled
     And new "ListLLMObsExperiments" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Agent Observability projects returns "Bad Request" response
     Given operation "ListLLMObsProjects" enabled
     And new "ListLLMObsProjects" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Agent Observability projects returns "OK" response
     Given operation "ListLLMObsProjects" enabled
     And new "ListLLMObsProjects" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Agent Observability prompts returns "OK" response
     Given operation "ListLLMObsPrompts" enabled
     And new "ListLLMObsPrompts" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Agent Observability spans returns "Bad Request" response
     Given operation "ListLLMObsSpans" enabled
     And new "ListLLMObsSpans" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List Agent Observability spans returns "OK" response
     Given operation "ListLLMObsSpans" enabled
     And new "ListLLMObsSpans" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List LLM integration accounts returns "Bad Request" response
     Given operation "ListLLMObsIntegrationAccounts" enabled
     And new "ListLLMObsIntegrationAccounts" request
@@ -1095,7 +1095,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List LLM integration accounts returns "OK" response
     Given operation "ListLLMObsIntegrationAccounts" enabled
     And new "ListLLMObsIntegrationAccounts" request
@@ -1103,7 +1103,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List LLM integration models returns "Bad Request" response
     Given operation "ListLLMObsIntegrationModels" enabled
     And new "ListLLMObsIntegrationModels" request
@@ -1112,7 +1112,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List LLM integration models returns "OK" response
     Given operation "ListLLMObsIntegrationModels" enabled
     And new "ListLLMObsIntegrationModels" request
@@ -1121,14 +1121,14 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List custom evaluator configurations returns "OK" response
     Given operation "ListLLMObsCustomEvalConfigs" enabled
     And new "ListLLMObsCustomEvalConfigs" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List events for an Agent Observability experiment returns "Bad Request" response
     Given operation "ListLLMObsExperimentEvents" enabled
     And new "ListLLMObsExperimentEvents" request
@@ -1136,7 +1136,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List events for an Agent Observability experiment returns "Not Found" response
     Given operation "ListLLMObsExperimentEvents" enabled
     And new "ListLLMObsExperimentEvents" request
@@ -1144,7 +1144,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List events for an Agent Observability experiment returns "OK" response
     Given operation "ListLLMObsExperimentEvents" enabled
     And new "ListLLMObsExperimentEvents" request
@@ -1152,7 +1152,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List patterns clustered points returns "Bad Request" response
     Given operation "ListLLMObsPatternsClusteredPoints" enabled
     And new "ListLLMObsPatternsClusteredPoints" request
@@ -1160,7 +1160,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List patterns clustered points returns "Not Found" response
     Given operation "ListLLMObsPatternsClusteredPoints" enabled
     And new "ListLLMObsPatternsClusteredPoints" request
@@ -1168,7 +1168,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List patterns clustered points returns "OK" response
     Given operation "ListLLMObsPatternsClusteredPoints" enabled
     And new "ListLLMObsPatternsClusteredPoints" request
@@ -1176,21 +1176,21 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List patterns configurations returns "Bad Request" response
     Given operation "ListLLMObsPatternsConfigs" enabled
     And new "ListLLMObsPatternsConfigs" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List patterns configurations returns "OK" response
     Given operation "ListLLMObsPatternsConfigs" enabled
     And new "ListLLMObsPatternsConfigs" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List patterns runs returns "Bad Request" response
     Given operation "ListLLMObsPatternsRuns" enabled
     And new "ListLLMObsPatternsRuns" request
@@ -1198,7 +1198,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List patterns runs returns "Not Found" response
     Given operation "ListLLMObsPatternsRuns" enabled
     And new "ListLLMObsPatternsRuns" request
@@ -1206,7 +1206,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List patterns runs returns "OK" response
     Given operation "ListLLMObsPatternsRuns" enabled
     And new "ListLLMObsPatternsRuns" request
@@ -1214,7 +1214,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List patterns topics returns "Bad Request" response
     Given operation "ListLLMObsPatternsTopics" enabled
     And new "ListLLMObsPatternsTopics" request
@@ -1222,7 +1222,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List patterns topics returns "Not Found" response
     Given operation "ListLLMObsPatternsTopics" enabled
     And new "ListLLMObsPatternsTopics" request
@@ -1230,7 +1230,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List patterns topics returns "OK" response
     Given operation "ListLLMObsPatternsTopics" enabled
     And new "ListLLMObsPatternsTopics" request
@@ -1238,7 +1238,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List patterns topics with clustered points returns "Bad Request" response
     Given operation "ListLLMObsPatternsTopicsWithClusteredPoints" enabled
     And new "ListLLMObsPatternsTopicsWithClusteredPoints" request
@@ -1246,7 +1246,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List patterns topics with clustered points returns "Not Found" response
     Given operation "ListLLMObsPatternsTopicsWithClusteredPoints" enabled
     And new "ListLLMObsPatternsTopicsWithClusteredPoints" request
@@ -1254,7 +1254,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List patterns topics with clustered points returns "OK" response
     Given operation "ListLLMObsPatternsTopicsWithClusteredPoints" enabled
     And new "ListLLMObsPatternsTopicsWithClusteredPoints" request
@@ -1262,7 +1262,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List versions of an Agent Observability prompt returns "OK" response
     Given operation "ListLLMObsPromptVersions" enabled
     And new "ListLLMObsPromptVersions" request
@@ -1270,7 +1270,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Lock Agent Observability dataset draft state returns "Bad Request" response
     Given operation "LockLLMObsDatasetDraftState" enabled
     And new "LockLLMObsDatasetDraftState" request
@@ -1279,7 +1279,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Lock Agent Observability dataset draft state returns "Not Found" response
     Given operation "LockLLMObsDatasetDraftState" enabled
     And new "LockLLMObsDatasetDraftState" request
@@ -1288,7 +1288,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Lock Agent Observability dataset draft state returns "OK" response
     Given operation "LockLLMObsDatasetDraftState" enabled
     And new "LockLLMObsDatasetDraftState" request
@@ -1297,7 +1297,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Push events for an Agent Observability experiment returns "Accepted" response
     Given operation "CreateLLMObsExperimentEvents" enabled
     And new "CreateLLMObsExperimentEvents" request
@@ -1306,7 +1306,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 202 Accepted
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Push events for an Agent Observability experiment returns "Bad Request" response
     Given operation "CreateLLMObsExperimentEvents" enabled
     And new "CreateLLMObsExperimentEvents" request
@@ -1315,7 +1315,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Push events for an Agent Observability experiment returns "Not Found" response
     Given operation "CreateLLMObsExperimentEvents" enabled
     And new "CreateLLMObsExperimentEvents" request
@@ -1324,7 +1324,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Restore an Agent Observability dataset version returns "Bad Request" response
     Given operation "RestoreLLMObsDatasetVersion" enabled
     And new "RestoreLLMObsDatasetVersion" request
@@ -1334,7 +1334,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Restore an Agent Observability dataset version returns "Not Found" response
     Given operation "RestoreLLMObsDatasetVersion" enabled
     And new "RestoreLLMObsDatasetVersion" request
@@ -1344,7 +1344,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Restore an Agent Observability dataset version returns "OK" response
     Given operation "RestoreLLMObsDatasetVersion" enabled
     And new "RestoreLLMObsDatasetVersion" request
@@ -1354,7 +1354,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Run an LLM inference returns "Bad Request" response
     Given operation "CreateLLMObsIntegrationInference" enabled
     And new "CreateLLMObsIntegrationInference" request
@@ -1364,7 +1364,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Run an LLM inference returns "OK" response
     Given operation "CreateLLMObsIntegrationInference" enabled
     And new "CreateLLMObsIntegrationInference" request
@@ -1374,7 +1374,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Search Agent Observability experimentation returns "Bad Request" response
     Given operation "SearchLLMObsExperimentation" enabled
     And new "SearchLLMObsExperimentation" request
@@ -1382,7 +1382,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Search Agent Observability experimentation returns "OK — all results returned in a single page." response
     Given operation "SearchLLMObsExperimentation" enabled
     And new "SearchLLMObsExperimentation" request
@@ -1390,7 +1390,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK — all results returned in a single page.
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Search Agent Observability experimentation returns "Partial Content — more results are available. Use `meta.after` as the next `page.cursor`." response
     Given operation "SearchLLMObsExperimentation" enabled
     And new "SearchLLMObsExperimentation" request
@@ -1398,7 +1398,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 206 Partial Content — more results are available. Use `meta.after` as the next `page.cursor`.
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Search Agent Observability spans returns "Bad Request" response
     Given operation "SearchLLMObsSpans" enabled
     And new "SearchLLMObsSpans" request
@@ -1406,7 +1406,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Search Agent Observability spans returns "OK" response
     Given operation "SearchLLMObsSpans" enabled
     And new "SearchLLMObsSpans" request
@@ -1414,7 +1414,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Simple search experimentation entities returns "Bad Request" response
     Given operation "SimpleSearchLLMObsExperimentation" enabled
     And new "SimpleSearchLLMObsExperimentation" request
@@ -1422,7 +1422,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Simple search experimentation entities returns "OK" response
     Given operation "SimpleSearchLLMObsExperimentation" enabled
     And new "SimpleSearchLLMObsExperimentation" request
@@ -1430,7 +1430,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Trigger a patterns run returns "Accepted" response
     Given operation "TriggerLLMObsPatterns" enabled
     And new "TriggerLLMObsPatterns" request
@@ -1438,7 +1438,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 202 Accepted
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Trigger a patterns run returns "Bad Request" response
     Given operation "TriggerLLMObsPatterns" enabled
     And new "TriggerLLMObsPatterns" request
@@ -1446,7 +1446,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Trigger a patterns run returns "Not Found" response
     Given operation "TriggerLLMObsPatterns" enabled
     And new "TriggerLLMObsPatterns" request
@@ -1454,7 +1454,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Unlock Agent Observability dataset draft state returns "Bad Request" response
     Given operation "UnlockLLMObsDatasetDraftState" enabled
     And new "UnlockLLMObsDatasetDraftState" request
@@ -1463,7 +1463,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Unlock Agent Observability dataset draft state returns "Not Found" response
     Given operation "UnlockLLMObsDatasetDraftState" enabled
     And new "UnlockLLMObsDatasetDraftState" request
@@ -1472,7 +1472,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Unlock Agent Observability dataset draft state returns "OK" response
     Given operation "UnlockLLMObsDatasetDraftState" enabled
     And new "UnlockLLMObsDatasetDraftState" request
@@ -1481,7 +1481,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Update Agent Observability dataset records returns "Bad Request" response
     Given operation "UpdateLLMObsDatasetRecords" enabled
     And new "UpdateLLMObsDatasetRecords" request
@@ -1491,7 +1491,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Update Agent Observability dataset records returns "Not Found" response
     Given operation "UpdateLLMObsDatasetRecords" enabled
     And new "UpdateLLMObsDatasetRecords" request
@@ -1501,7 +1501,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Update Agent Observability dataset records returns "OK" response
     Given operation "UpdateLLMObsDatasetRecords" enabled
     And new "UpdateLLMObsDatasetRecords" request
@@ -1511,7 +1511,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Update an Agent Observability annotation queue returns "Bad Request" response
     Given operation "UpdateLLMObsAnnotationQueue" enabled
     And new "UpdateLLMObsAnnotationQueue" request
@@ -1520,7 +1520,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Update an Agent Observability annotation queue returns "Not Found" response
     Given operation "UpdateLLMObsAnnotationQueue" enabled
     And new "UpdateLLMObsAnnotationQueue" request
@@ -1529,7 +1529,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Update an Agent Observability annotation queue returns "OK" response
     Given operation "UpdateLLMObsAnnotationQueue" enabled
     And new "UpdateLLMObsAnnotationQueue" request
@@ -1538,7 +1538,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Update an Agent Observability dataset returns "Bad Request" response
     Given operation "UpdateLLMObsDataset" enabled
     And new "UpdateLLMObsDataset" request
@@ -1548,7 +1548,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Update an Agent Observability dataset returns "Not Found" response
     Given operation "UpdateLLMObsDataset" enabled
     And new "UpdateLLMObsDataset" request
@@ -1558,7 +1558,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Update an Agent Observability dataset returns "OK" response
     Given operation "UpdateLLMObsDataset" enabled
     And new "UpdateLLMObsDataset" request
@@ -1568,7 +1568,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Update an Agent Observability experiment returns "Bad Request" response
     Given operation "UpdateLLMObsExperiment" enabled
     And new "UpdateLLMObsExperiment" request
@@ -1577,7 +1577,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Update an Agent Observability experiment returns "Not Found" response
     Given operation "UpdateLLMObsExperiment" enabled
     And new "UpdateLLMObsExperiment" request
@@ -1586,7 +1586,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Update an Agent Observability experiment returns "OK" response
     Given operation "UpdateLLMObsExperiment" enabled
     And new "UpdateLLMObsExperiment" request
@@ -1595,7 +1595,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Update an Agent Observability project returns "Bad Request" response
     Given operation "UpdateLLMObsProject" enabled
     And new "UpdateLLMObsProject" request
@@ -1604,7 +1604,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Update an Agent Observability project returns "Not Found" response
     Given operation "UpdateLLMObsProject" enabled
     And new "UpdateLLMObsProject" request
@@ -1613,7 +1613,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Update an Agent Observability project returns "OK" response
     Given operation "UpdateLLMObsProject" enabled
     And new "UpdateLLMObsProject" request
@@ -1622,7 +1622,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Update an Agent Observability prompt returns "Bad Request" response
     Given operation "UpdateLLMObsPrompt" enabled
     And new "UpdateLLMObsPrompt" request
@@ -1631,7 +1631,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Update an Agent Observability prompt returns "Not Found" response
     Given operation "UpdateLLMObsPrompt" enabled
     And new "UpdateLLMObsPrompt" request
@@ -1640,7 +1640,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Update an Agent Observability prompt returns "OK" response
     Given operation "UpdateLLMObsPrompt" enabled
     And new "UpdateLLMObsPrompt" request
@@ -1649,7 +1649,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Update an Agent Observability prompt version returns "Bad Request" response
     Given operation "UpdateLLMObsPromptVersion" enabled
     And new "UpdateLLMObsPromptVersion" request
@@ -1659,7 +1659,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Update an Agent Observability prompt version returns "Not Found" response
     Given operation "UpdateLLMObsPromptVersion" enabled
     And new "UpdateLLMObsPromptVersion" request
@@ -1669,7 +1669,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Update an Agent Observability prompt version returns "OK" response
     Given operation "UpdateLLMObsPromptVersion" enabled
     And new "UpdateLLMObsPromptVersion" request
@@ -1679,7 +1679,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Update annotation queue label schema returns "Bad Request" response
     Given operation "UpdateLLMObsAnnotationQueueLabelSchema" enabled
     And new "UpdateLLMObsAnnotationQueueLabelSchema" request
@@ -1688,7 +1688,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Update annotation queue label schema returns "Not Found" response
     Given operation "UpdateLLMObsAnnotationQueueLabelSchema" enabled
     And new "UpdateLLMObsAnnotationQueueLabelSchema" request
@@ -1697,7 +1697,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Update annotation queue label schema returns "OK" response
     Given operation "UpdateLLMObsAnnotationQueueLabelSchema" enabled
     And new "UpdateLLMObsAnnotationQueueLabelSchema" request
@@ -1706,7 +1706,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Upload records to an Agent Observability dataset returns "Bad Request" response
     Given operation "UploadLLMObsDatasetRecordsFile" enabled
     And new "UploadLLMObsDatasetRecordsFile" request
@@ -1715,7 +1715,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Upload records to an Agent Observability dataset returns "Not Found" response
     Given operation "UploadLLMObsDatasetRecordsFile" enabled
     And new "UploadLLMObsDatasetRecordsFile" request
@@ -1724,7 +1724,7 @@ Feature: Agent Observability
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/ml-observability
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Upload records to an Agent Observability dataset returns "OK" response
     Given operation "UploadLLMObsDatasetRecordsFile" enabled
     And new "UploadLLMObsDatasetRecordsFile" request

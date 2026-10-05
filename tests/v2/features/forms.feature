@@ -9,7 +9,7 @@ Feature: Forms
     And a valid "appKeyAuth" key in the system
     And an instance of "Forms" API
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @generated @skip @team:ddoghq/app-builder-backend
   Scenario: Clone a form returns "Bad Request" response
     Given operation "CloneForm" enabled
     And new "CloneForm" request
@@ -18,7 +18,7 @@ Feature: Forms
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/app-builder-backend
+  @team:ddoghq/app-builder-backend
   Scenario: Clone a form returns "Not Found" response
     Given operation "CloneForm" enabled
     And new "CloneForm" request
@@ -27,7 +27,7 @@ Feature: Forms
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @generated @skip @team:ddoghq/app-builder-backend
   Scenario: Clone a form returns "OK" response
     Given operation "CloneForm" enabled
     And new "CloneForm" request
@@ -36,7 +36,7 @@ Feature: Forms
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @generated @skip @team:ddoghq/app-builder-backend
   Scenario: Create a form returns "Bad Request" response
     Given operation "CreateForm" enabled
     And new "CreateForm" request
@@ -44,7 +44,7 @@ Feature: Forms
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/app-builder-backend
+  @team:ddoghq/app-builder-backend
   Scenario: Create a form returns "OK" response
     Given operation "CreateForm" enabled
     And new "CreateForm" request
@@ -52,7 +52,7 @@ Feature: Forms
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @generated @skip @team:ddoghq/app-builder-backend
   Scenario: Create and publish a form returns "Bad Request" response
     Given operation "CreateAndPublishForm" enabled
     And new "CreateAndPublishForm" request
@@ -60,7 +60,7 @@ Feature: Forms
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/app-builder-backend
+  @team:ddoghq/app-builder-backend
   Scenario: Create and publish a form returns "OK" response
     Given operation "CreateAndPublishForm" enabled
     And new "CreateAndPublishForm" request
@@ -68,7 +68,7 @@ Feature: Forms
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @generated @skip @team:ddoghq/app-builder-backend
   Scenario: Create or update a form version returns "Bad Request" response
     Given operation "UpsertFormVersion" enabled
     And new "UpsertFormVersion" request
@@ -77,7 +77,7 @@ Feature: Forms
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/app-builder-backend
+  @team:ddoghq/app-builder-backend
   Scenario: Create or update a form version returns "Not Found" response
     Given operation "UpsertFormVersion" enabled
     And new "UpsertFormVersion" request
@@ -86,7 +86,7 @@ Feature: Forms
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/app-builder-backend
+  @team:ddoghq/app-builder-backend
   Scenario: Create or update a form version returns "OK" response
     Given operation "UpsertFormVersion" enabled
     And there is a valid "form" in the system
@@ -96,7 +96,7 @@ Feature: Forms
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @generated @skip @team:ddoghq/app-builder-backend
   Scenario: Delete a form returns "Bad Request" response
     Given operation "DeleteForm" enabled
     And new "DeleteForm" request
@@ -104,7 +104,7 @@ Feature: Forms
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/app-builder-backend
+  @team:ddoghq/app-builder-backend
   Scenario: Delete a form returns "OK" response
     Given operation "DeleteForm" enabled
     And there is a valid "form" in the system
@@ -115,7 +115,7 @@ Feature: Forms
     And the response "data.id" has the same value as "form.data.id"
     And the response "data.type" is equal to "forms"
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @generated @skip @team:ddoghq/app-builder-backend
   Scenario: Get a form returns "Bad Request" response
     Given operation "GetForm" enabled
     And new "GetForm" request
@@ -123,7 +123,7 @@ Feature: Forms
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/app-builder-backend
+  @team:ddoghq/app-builder-backend
   Scenario: Get a form returns "Not Found" response
     Given operation "GetForm" enabled
     And new "GetForm" request
@@ -131,7 +131,7 @@ Feature: Forms
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/app-builder-backend
+  @team:ddoghq/app-builder-backend
   Scenario: Get a form returns "OK" response
     Given operation "GetForm" enabled
     And there is a valid "form" in the system
@@ -143,14 +143,14 @@ Feature: Forms
     And the response "data.type" is equal to "forms"
     And the response "data.attributes.name" is equal to "{{ unique }}"
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @generated @skip @team:ddoghq/app-builder-backend
   Scenario: List forms returns "Bad Request" response
     Given operation "ListForms" enabled
     And new "ListForms" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/app-builder-backend
+  @team:ddoghq/app-builder-backend
   Scenario: List forms returns "OK" response
     Given operation "ListForms" enabled
     And there is a valid "form" in the system
@@ -161,7 +161,7 @@ Feature: Forms
     And the response "data" has item with field "type" with value "forms"
     And the response "data" has item with field "attributes.name" with value "{{ unique }}"
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @generated @skip @team:ddoghq/app-builder-backend
   Scenario: Publish a form version returns "Bad Request" response
     Given operation "PublishForm" enabled
     And new "PublishForm" request
@@ -170,7 +170,7 @@ Feature: Forms
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/app-builder-backend
+  @team:ddoghq/app-builder-backend
   Scenario: Publish a form version returns "Not Found" response
     Given operation "PublishForm" enabled
     And new "PublishForm" request
@@ -179,7 +179,7 @@ Feature: Forms
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/app-builder-backend
+  @team:ddoghq/app-builder-backend
   Scenario: Publish a form version returns "OK" response
     Given operation "PublishForm" enabled
     And there is a valid "form" in the system
@@ -189,7 +189,7 @@ Feature: Forms
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @generated @skip @team:ddoghq/app-builder-backend
   Scenario: Update a form returns "Bad Request" response
     Given operation "UpdateForm" enabled
     And new "UpdateForm" request
@@ -198,7 +198,7 @@ Feature: Forms
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/app-builder-backend
+  @team:ddoghq/app-builder-backend
   Scenario: Update a form returns "Not Found" response
     Given operation "UpdateForm" enabled
     And new "UpdateForm" request
@@ -207,7 +207,7 @@ Feature: Forms
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/app-builder-backend
+  @team:ddoghq/app-builder-backend
   Scenario: Update a form returns "OK" response
     Given operation "UpdateForm" enabled
     And there is a valid "form" in the system
@@ -217,7 +217,7 @@ Feature: Forms
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/app-builder-backend
+  @generated @skip @team:ddoghq/app-builder-backend
   Scenario: Upsert and publish a form version returns "Bad Request" response
     Given operation "UpsertAndPublishFormVersion" enabled
     And new "UpsertAndPublishFormVersion" request
@@ -226,7 +226,7 @@ Feature: Forms
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/app-builder-backend
+  @team:ddoghq/app-builder-backend
   Scenario: Upsert and publish a form version returns "Not Found" response
     Given operation "UpsertAndPublishFormVersion" enabled
     And new "UpsertAndPublishFormVersion" request
@@ -235,7 +235,7 @@ Feature: Forms
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/app-builder-backend
+  @team:ddoghq/app-builder-backend
   Scenario: Upsert and publish a form version returns "OK" response
     Given operation "UpsertAndPublishFormVersion" enabled
     And there is a valid "form" in the system

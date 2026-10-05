@@ -9,7 +9,7 @@ Feature: RUM Remote Config
     And a valid "appKeyAuth" key in the system
     And an instance of "RUMRemoteConfig" API
 
-  @team:DataDog/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Get a RUM SDK configuration returns "Forbidden" response
     Given operation "GetRumSdkConfig" enabled
     And new "GetRumSdkConfig" request
@@ -17,7 +17,7 @@ Feature: RUM Remote Config
     When the request is sent
     Then the response status is 403 Forbidden
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Get a RUM SDK configuration returns "Not Found" response
     Given operation "GetRumSdkConfig" enabled
     And new "GetRumSdkConfig" request
@@ -25,7 +25,7 @@ Feature: RUM Remote Config
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Get a RUM SDK configuration returns "OK" response
     Given operation "GetRumSdkConfig" enabled
     And new "GetRumSdkConfig" request
@@ -33,7 +33,7 @@ Feature: RUM Remote Config
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Update a RUM SDK configuration returns "Bad Request" response
     Given operation "UpdateRumSdkConfig" enabled
     And new "UpdateRumSdkConfig" request
@@ -42,7 +42,7 @@ Feature: RUM Remote Config
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Update a RUM SDK configuration returns "Forbidden" response
     Given operation "UpdateRumSdkConfig" enabled
     And new "UpdateRumSdkConfig" request
@@ -51,7 +51,7 @@ Feature: RUM Remote Config
     When the request is sent
     Then the response status is 403 Forbidden
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Update a RUM SDK configuration returns "Not Found" response
     Given operation "UpdateRumSdkConfig" enabled
     And new "UpdateRumSdkConfig" request
@@ -60,7 +60,7 @@ Feature: RUM Remote Config
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Update a RUM SDK configuration returns "OK" response
     Given operation "UpdateRumSdkConfig" enabled
     And new "UpdateRumSdkConfig" request

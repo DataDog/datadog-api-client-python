@@ -12,17 +12,17 @@ Feature: Customer Org
     And new "DisableCustomerOrg" request
     And body with value {"data": {"attributes": {"org_uuid": "abcdef01-2345-6789-abcd-ef0123456789"}, "id": "1", "type": "customer_org_disable"}}
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Disable the authenticated customer organization returns "Bad Request" response
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Disable the authenticated customer organization returns "Conflict" response
     When the request is sent
     Then the response status is 409 Conflict
 
-  @generated @skip @team:DataDog/org-management
+  @generated @skip @team:ddoghq/org-management
   Scenario: Disable the authenticated customer organization returns "OK" response
     When the request is sent
     Then the response status is 200 OK

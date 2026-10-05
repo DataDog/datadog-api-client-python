@@ -10,7 +10,7 @@ Feature: Elastic Cloud Integration
     And a valid "appKeyAuth" key in the system
     And an instance of "ElasticCloudIntegration" API
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Create an Elastic Cloud integration account returns "Bad Request" response
     Given operation "CreateElasticCloudIntegrationAccount" enabled
     And new "CreateElasticCloudIntegrationAccount" request
@@ -18,7 +18,7 @@ Feature: Elastic Cloud Integration
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Create an Elastic Cloud integration account returns "Created" response
     Given operation "CreateElasticCloudIntegrationAccount" enabled
     And new "CreateElasticCloudIntegrationAccount" request
@@ -26,7 +26,7 @@ Feature: Elastic Cloud Integration
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Create an Elastic Cloud integration account returns "Not Found" response
     Given operation "CreateElasticCloudIntegrationAccount" enabled
     And new "CreateElasticCloudIntegrationAccount" request
@@ -34,7 +34,7 @@ Feature: Elastic Cloud Integration
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Create an Elastic Cloud integration account returns "The server cannot process the request because it contains invalid data." response
     Given operation "CreateElasticCloudIntegrationAccount" enabled
     And new "CreateElasticCloudIntegrationAccount" request
@@ -42,7 +42,7 @@ Feature: Elastic Cloud Integration
     When the request is sent
     Then the response status is 422 The server cannot process the request because it contains invalid data.
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Delete an Elastic Cloud integration account returns "Bad Request" response
     Given operation "DeleteElasticCloudIntegrationAccount" enabled
     And new "DeleteElasticCloudIntegrationAccount" request
@@ -50,7 +50,7 @@ Feature: Elastic Cloud Integration
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Delete an Elastic Cloud integration account returns "Not Found" response
     Given operation "DeleteElasticCloudIntegrationAccount" enabled
     And new "DeleteElasticCloudIntegrationAccount" request
@@ -58,7 +58,7 @@ Feature: Elastic Cloud Integration
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Delete an Elastic Cloud integration account returns "OK" response
     Given operation "DeleteElasticCloudIntegrationAccount" enabled
     And new "DeleteElasticCloudIntegrationAccount" request
@@ -66,7 +66,7 @@ Feature: Elastic Cloud Integration
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Get an Elastic Cloud integration account returns "Bad Request" response
     Given operation "GetElasticCloudIntegrationAccount" enabled
     And new "GetElasticCloudIntegrationAccount" request
@@ -74,7 +74,7 @@ Feature: Elastic Cloud Integration
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Get an Elastic Cloud integration account returns "Not Found" response
     Given operation "GetElasticCloudIntegrationAccount" enabled
     And new "GetElasticCloudIntegrationAccount" request
@@ -82,7 +82,7 @@ Feature: Elastic Cloud Integration
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Get an Elastic Cloud integration account returns "OK" response
     Given operation "GetElasticCloudIntegrationAccount" enabled
     And new "GetElasticCloudIntegrationAccount" request
@@ -90,28 +90,28 @@ Feature: Elastic Cloud Integration
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: List Elastic Cloud integration accounts returns "Bad Request" response
     Given operation "ListElasticCloudIntegrationAccounts" enabled
     And new "ListElasticCloudIntegrationAccounts" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: List Elastic Cloud integration accounts returns "Not Found" response
     Given operation "ListElasticCloudIntegrationAccounts" enabled
     And new "ListElasticCloudIntegrationAccounts" request
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: List Elastic Cloud integration accounts returns "OK" response
     Given operation "ListElasticCloudIntegrationAccounts" enabled
     And new "ListElasticCloudIntegrationAccounts" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Update an Elastic Cloud integration account returns "Bad Request" response
     Given operation "UpdateElasticCloudIntegrationAccount" enabled
     And new "UpdateElasticCloudIntegrationAccount" request
@@ -120,7 +120,7 @@ Feature: Elastic Cloud Integration
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Update an Elastic Cloud integration account returns "Not Found" response
     Given operation "UpdateElasticCloudIntegrationAccount" enabled
     And new "UpdateElasticCloudIntegrationAccount" request
@@ -129,7 +129,7 @@ Feature: Elastic Cloud Integration
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Update an Elastic Cloud integration account returns "OK" response
     Given operation "UpdateElasticCloudIntegrationAccount" enabled
     And new "UpdateElasticCloudIntegrationAccount" request
@@ -138,7 +138,7 @@ Feature: Elastic Cloud Integration
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Update an Elastic Cloud integration account returns "The server cannot process the request because it contains invalid data." response
     Given operation "UpdateElasticCloudIntegrationAccount" enabled
     And new "UpdateElasticCloudIntegrationAccount" request

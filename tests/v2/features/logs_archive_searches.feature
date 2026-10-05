@@ -11,7 +11,7 @@ Feature: Logs Archive Searches
     And a valid "appKeyAuth" key in the system
     And an instance of "LogsArchiveSearches" API
 
-  @generated @skip @team:DataDog/logs-federated-search @team:DataDog/logs-routing
+  @generated @skip @team:ddoghq/logs-federated-search @team:ddoghq/logs-routing
   Scenario: Create an Archive Search returns "Bad Request" response
     Given operation "CreateArchiveSearch" enabled
     And new "CreateArchiveSearch" request
@@ -19,7 +19,7 @@ Feature: Logs Archive Searches
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/logs-federated-search @team:DataDog/logs-routing
+  @generated @skip @team:ddoghq/logs-federated-search @team:ddoghq/logs-routing
   Scenario: Create an Archive Search returns "Not Found" response
     Given operation "CreateArchiveSearch" enabled
     And new "CreateArchiveSearch" request
@@ -27,7 +27,7 @@ Feature: Logs Archive Searches
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/logs-federated-search @team:DataDog/logs-routing
+  @generated @skip @team:ddoghq/logs-federated-search @team:ddoghq/logs-routing
   Scenario: Create an Archive Search returns "OK" response
     Given operation "CreateArchiveSearch" enabled
     And new "CreateArchiveSearch" request
@@ -35,7 +35,7 @@ Feature: Logs Archive Searches
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/logs-federated-search @team:DataDog/logs-routing
+  @generated @skip @team:ddoghq/logs-federated-search @team:ddoghq/logs-routing
   Scenario: Get an Archive Search returns "Bad Request" response
     Given operation "GetArchiveSearch" enabled
     And new "GetArchiveSearch" request
@@ -43,7 +43,7 @@ Feature: Logs Archive Searches
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/logs-federated-search @team:DataDog/logs-routing
+  @generated @skip @team:ddoghq/logs-federated-search @team:ddoghq/logs-routing
   Scenario: Get an Archive Search returns "Not Found" response
     Given operation "GetArchiveSearch" enabled
     And new "GetArchiveSearch" request
@@ -51,7 +51,7 @@ Feature: Logs Archive Searches
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/logs-federated-search @team:DataDog/logs-routing
+  @generated @skip @team:ddoghq/logs-federated-search @team:ddoghq/logs-routing
   Scenario: Get an Archive Search returns "OK" response
     Given operation "GetArchiveSearch" enabled
     And new "GetArchiveSearch" request

@@ -11,7 +11,7 @@ Feature: RUM Operations
     And a valid "appKeyAuth" key in the system
     And an instance of "RUMOperations" API
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Create a RUM operation link returns "Bad Request" response
     Given operation "CreateRUMOperationStrongLink" enabled
     And new "CreateRUMOperationStrongLink" request
@@ -19,7 +19,7 @@ Feature: RUM Operations
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Create a RUM operation link returns "Conflict. A link between this operation and journey already exists." response
     Given operation "CreateRUMOperationStrongLink" enabled
     And new "CreateRUMOperationStrongLink" request
@@ -27,7 +27,7 @@ Feature: RUM Operations
     When the request is sent
     Then the response status is 409 Conflict. A link between this operation and journey already exists.
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Create a RUM operation link returns "Created" response
     Given operation "CreateRUMOperationStrongLink" enabled
     And new "CreateRUMOperationStrongLink" request
@@ -35,7 +35,7 @@ Feature: RUM Operations
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Create a RUM operation link returns "Not Found. The referenced `operation_id` does not exist." response
     Given operation "CreateRUMOperationStrongLink" enabled
     And new "CreateRUMOperationStrongLink" request
@@ -43,7 +43,7 @@ Feature: RUM Operations
     When the request is sent
     Then the response status is 404 Not Found. The referenced `operation_id` does not exist.
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Create a RUM operation returns "Bad Request" response
     Given operation "CreateRUMOperation" enabled
     And new "CreateRUMOperation" request
@@ -51,7 +51,7 @@ Feature: RUM Operations
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Create a RUM operation returns "Conflict. An operation with this name already exists." response
     Given operation "CreateRUMOperation" enabled
     And new "CreateRUMOperation" request
@@ -59,7 +59,7 @@ Feature: RUM Operations
     When the request is sent
     Then the response status is 409 Conflict. An operation with this name already exists.
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Create a RUM operation returns "OK" response
     Given operation "CreateRUMOperation" enabled
     And new "CreateRUMOperation" request
@@ -67,7 +67,7 @@ Feature: RUM Operations
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Delete a RUM operation link returns "No Content" response
     Given operation "DeleteRUMOperationStrongLink" enabled
     And new "DeleteRUMOperationStrongLink" request
@@ -76,7 +76,7 @@ Feature: RUM Operations
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Delete a RUM operation link returns "Not Found" response
     Given operation "DeleteRUMOperationStrongLink" enabled
     And new "DeleteRUMOperationStrongLink" request
@@ -85,7 +85,7 @@ Feature: RUM Operations
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Delete a RUM operation returns "No Content" response
     Given operation "DeleteRUMOperation" enabled
     And new "DeleteRUMOperation" request
@@ -93,7 +93,7 @@ Feature: RUM Operations
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Delete a RUM operation returns "Not Found" response
     Given operation "DeleteRUMOperation" enabled
     And new "DeleteRUMOperation" request
@@ -101,7 +101,7 @@ Feature: RUM Operations
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Get a RUM operation by name returns "Bad Request" response
     Given operation "GetRUMOperationByName" enabled
     And new "GetRUMOperationByName" request
@@ -109,7 +109,7 @@ Feature: RUM Operations
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Get a RUM operation by name returns "Not Found" response
     Given operation "GetRUMOperationByName" enabled
     And new "GetRUMOperationByName" request
@@ -117,7 +117,7 @@ Feature: RUM Operations
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Get a RUM operation by name returns "OK" response
     Given operation "GetRUMOperationByName" enabled
     And new "GetRUMOperationByName" request
@@ -125,7 +125,7 @@ Feature: RUM Operations
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Get a RUM operation returns "Not Found" response
     Given operation "GetRUMOperation" enabled
     And new "GetRUMOperation" request
@@ -133,7 +133,7 @@ Feature: RUM Operations
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Get a RUM operation returns "OK" response
     Given operation "GetRUMOperation" enabled
     And new "GetRUMOperation" request
@@ -141,33 +141,33 @@ Feature: RUM Operations
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: List RUM operation links returns "Bad Request" response
     Given new "ListRUMOperationStrongLinks" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: List RUM operation links returns "OK" response
     Given new "ListRUMOperationStrongLinks" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Search RUM operations returns "Bad Request" response
     Given operation "ListRUMOperations" enabled
     And new "ListRUMOperations" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Search RUM operations returns "OK" response
     Given operation "ListRUMOperations" enabled
     And new "ListRUMOperations" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Update a RUM operation link returns "Bad Request" response
     Given operation "UpdateRUMOperationStrongLink" enabled
     And new "UpdateRUMOperationStrongLink" request
@@ -177,7 +177,7 @@ Feature: RUM Operations
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Update a RUM operation link returns "Not Found" response
     Given operation "UpdateRUMOperationStrongLink" enabled
     And new "UpdateRUMOperationStrongLink" request
@@ -187,7 +187,7 @@ Feature: RUM Operations
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Update a RUM operation link returns "OK" response
     Given operation "UpdateRUMOperationStrongLink" enabled
     And new "UpdateRUMOperationStrongLink" request
@@ -197,7 +197,7 @@ Feature: RUM Operations
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Update a RUM operation returns "Bad Request" response
     Given operation "UpdateRUMOperation" enabled
     And new "UpdateRUMOperation" request
@@ -206,7 +206,7 @@ Feature: RUM Operations
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Update a RUM operation returns "Conflict. An operation with this name already exists." response
     Given operation "UpdateRUMOperation" enabled
     And new "UpdateRUMOperation" request
@@ -215,7 +215,7 @@ Feature: RUM Operations
     When the request is sent
     Then the response status is 409 Conflict. An operation with this name already exists.
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Update a RUM operation returns "Not Found" response
     Given operation "UpdateRUMOperation" enabled
     And new "UpdateRUMOperation" request
@@ -224,7 +224,7 @@ Feature: RUM Operations
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Update a RUM operation returns "OK" response
     Given operation "UpdateRUMOperation" enabled
     And new "UpdateRUMOperation" request

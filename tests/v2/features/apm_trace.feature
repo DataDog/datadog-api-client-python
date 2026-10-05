@@ -7,7 +7,7 @@ Feature: APM Trace
     And a valid "appKeyAuth" key in the system
     And an instance of "APMTrace" API
 
-  @generated @skip @team:DataDog/apm-reliability
+  @generated @skip @team:ddoghq/apm-reliability
   Scenario: Get a pruned trace by ID returns "Not Found" response
     Given operation "GetPrunedTraceByID" enabled
     And new "GetPrunedTraceByID" request
@@ -15,7 +15,7 @@ Feature: APM Trace
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/apm-reliability
+  @generated @skip @team:ddoghq/apm-reliability
   Scenario: Get a pruned trace by ID returns "OK" response
     Given operation "GetPrunedTraceByID" enabled
     And new "GetPrunedTraceByID" request
@@ -23,7 +23,7 @@ Feature: APM Trace
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/apm-reliability
+  @generated @skip @team:ddoghq/apm-reliability
   Scenario: Get a trace by ID returns "Not Found" response
     Given operation "GetTraceByID" enabled
     And new "GetTraceByID" request
@@ -31,7 +31,7 @@ Feature: APM Trace
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/apm-reliability
+  @generated @skip @team:ddoghq/apm-reliability
   Scenario: Get a trace by ID returns "OK" response
     Given operation "GetTraceByID" enabled
     And new "GetTraceByID" request
@@ -39,7 +39,7 @@ Feature: APM Trace
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/apm-reliability
+  @generated @skip @team:ddoghq/apm-reliability
   Scenario: Get a trace by ID returns "Payload Too Large" response
     Given operation "GetTraceByID" enabled
     And new "GetTraceByID" request

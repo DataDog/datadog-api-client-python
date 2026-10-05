@@ -15,7 +15,7 @@ Feature: Roles
     And a valid "appKeyAuth" key in the system
     And an instance of "Roles" API
 
-  @generated @skip @team:DataDog/access-policies-lifecycle
+  @generated @skip @team:ddoghq/access-policies-lifecycle
   Scenario: Add a user to a role returns "Bad Request" response
     Given new "AddUserToRole" request
     And request contains "role_id" parameter from "REPLACE.ME"
@@ -23,7 +23,7 @@ Feature: Roles
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/access-policies-lifecycle
+  @generated @skip @team:ddoghq/access-policies-lifecycle
   Scenario: Add a user to a role returns "Not found" response
     Given new "AddUserToRole" request
     And request contains "role_id" parameter from "REPLACE.ME"
@@ -31,7 +31,7 @@ Feature: Roles
     When the request is sent
     Then the response status is 404 Not found
 
-  @team:DataDog/access-policies-lifecycle
+  @team:ddoghq/access-policies-lifecycle
   Scenario: Add a user to a role returns "OK" response
     Given there is a valid "role" in the system
     And there is a valid "user" in the system
@@ -44,7 +44,7 @@ Feature: Roles
     And the response "data[0].type" is equal to "{{ user.data.type }}"
     And the response "data[0].relationships.roles.data" has item with field "id" with value "{{ role.data.id }}"
 
-  @team:DataDog/access-policies-lifecycle
+  @team:ddoghq/access-policies-lifecycle
   Scenario: Create a new role by cloning an existing role returns "Bad Request" response
     Given there is a valid "role" in the system
     And new "CloneRole" request
@@ -53,7 +53,7 @@ Feature: Roles
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/access-policies-lifecycle
+  @team:ddoghq/access-policies-lifecycle
   Scenario: Create a new role by cloning an existing role returns "Conflict" response
     Given there is a valid "role" in the system
     And new "CloneRole" request
@@ -62,7 +62,7 @@ Feature: Roles
     When the request is sent
     Then the response status is 409 Conflict
 
-  @generated @skip @team:DataDog/access-policies-lifecycle
+  @generated @skip @team:ddoghq/access-policies-lifecycle
   Scenario: Create a new role by cloning an existing role returns "Not found" response
     Given new "CloneRole" request
     And request contains "role_id" parameter from "REPLACE.ME"
@@ -70,7 +70,7 @@ Feature: Roles
     When the request is sent
     Then the response status is 404 Not found
 
-  @team:DataDog/access-policies-lifecycle
+  @team:ddoghq/access-policies-lifecycle
   Scenario: Create a new role by cloning an existing role returns "OK" response
     Given there is a valid "role" in the system
     And new "CloneRole" request
@@ -80,21 +80,21 @@ Feature: Roles
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "{{ unique }} clone"
 
-  @generated @skip @team:DataDog/access-policies-lifecycle
+  @generated @skip @team:ddoghq/access-policies-lifecycle
   Scenario: Create role returns "Bad Request" response
     Given new "CreateRole" request
     And body with value {"data": {"attributes": {"name": "developers", "receives_permissions_from": []}, "relationships": {"permissions": {"data": [{"type": "permissions"}]}}, "type": "roles"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/access-policies-lifecycle
+  @generated @skip @team:ddoghq/access-policies-lifecycle
   Scenario: Create role returns "OK" response
     Given new "CreateRole" request
     And body with value {"data": {"attributes": {"name": "developers", "receives_permissions_from": []}, "relationships": {"permissions": {"data": [{"type": "permissions"}]}}, "type": "roles"}}
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/access-policies-lifecycle
+  @team:ddoghq/access-policies-lifecycle
   Scenario: Create role with a permission returns "OK" response
     Given new "CreateRole" request
     And there is a valid "permission" in the system
@@ -105,14 +105,14 @@ Feature: Roles
     And the response "data.type" is equal to "roles"
     And the response "data.relationships.permissions.data" has item with field "id" with value "{{ permission.id }}"
 
-  @generated @skip @team:DataDog/access-policies-lifecycle
+  @generated @skip @team:ddoghq/access-policies-lifecycle
   Scenario: Delete role returns "Not found" response
     Given new "DeleteRole" request
     And request contains "role_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not found
 
-  @team:DataDog/access-policies-lifecycle
+  @team:ddoghq/access-policies-lifecycle
   Scenario: Delete role returns "OK" response
     Given there is a valid "role" in the system
     And new "DeleteRole" request
@@ -120,14 +120,14 @@ Feature: Roles
     When the request is sent
     Then the response status is 204 OK
 
-  @generated @skip @team:DataDog/access-policies-lifecycle
+  @generated @skip @team:ddoghq/access-policies-lifecycle
   Scenario: Get a role returns "Not found" response
     Given new "GetRole" request
     And request contains "role_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not found
 
-  @team:DataDog/access-policies-lifecycle
+  @team:ddoghq/access-policies-lifecycle
   Scenario: Get a role returns "OK" response
     Given there is a valid "role" in the system
     And new "GetRole" request
@@ -137,14 +137,14 @@ Feature: Roles
     And the response "data.attributes.name" has the same value as "role.data.attributes.name"
     And the response "data.id" has the same value as "role.data.id"
 
-  @generated @skip @team:DataDog/access-policies-lifecycle
+  @generated @skip @team:ddoghq/access-policies-lifecycle
   Scenario: Get all users of a role returns "Not found" response
     Given new "ListRoleUsers" request
     And request contains "role_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not found
 
-  @team:DataDog/access-policies-lifecycle
+  @team:ddoghq/access-policies-lifecycle
   Scenario: Get all users of a role returns "OK" response
     Given there is a valid "role" in the system
     And there is a valid "user" in the system
@@ -156,7 +156,7 @@ Feature: Roles
     And the response "meta.page.total_count" is equal to 1
     And the response "data" has item with field "id" with value "{{ user.data.id }}"
 
-  @generated @skip @team:DataDog/access-policies-lifecycle
+  @generated @skip @team:ddoghq/access-policies-lifecycle
   Scenario: Grant permission to a role returns "Bad Request" response
     Given new "AddPermissionToRole" request
     And request contains "role_id" parameter from "REPLACE.ME"
@@ -164,7 +164,7 @@ Feature: Roles
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/access-policies-lifecycle
+  @generated @skip @team:ddoghq/access-policies-lifecycle
   Scenario: Grant permission to a role returns "Not found" response
     Given new "AddPermissionToRole" request
     And request contains "role_id" parameter from "REPLACE.ME"
@@ -172,7 +172,7 @@ Feature: Roles
     When the request is sent
     Then the response status is 404 Not found
 
-  @team:DataDog/access-policies-lifecycle
+  @team:ddoghq/access-policies-lifecycle
   Scenario: Grant permission to a role returns "OK" response
     Given there is a valid "role" in the system
     And there is a valid "permission" in the system
@@ -184,14 +184,14 @@ Feature: Roles
     And the response "data[0].type" is equal to "{{ permission.type }}"
     And the response "data" has item with field "id" with value "{{ permission.id }}"
 
-  @generated @skip @team:DataDog/access-policies-lifecycle
+  @generated @skip @team:ddoghq/access-policies-lifecycle
   Scenario: List permissions for a role returns "Not found" response
     Given new "ListRolePermissions" request
     And request contains "role_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not found
 
-  @team:DataDog/access-policies-lifecycle
+  @team:ddoghq/access-policies-lifecycle
   Scenario: List permissions for a role returns "OK" response
     Given there is a valid "role" in the system
     And there is a valid "permission" in the system
@@ -203,7 +203,7 @@ Feature: Roles
     And the response "data[0].type" is equal to "{{ permission.type }}"
     And the response "data" has item with field "id" with value "{{ permission.id }}"
 
-  @team:DataDog/aaa-core-access @team:DataDog/access-policies-lifecycle
+  @team:ddoghq/aaa-core-access @team:ddoghq/access-policies-lifecycle
   Scenario: List permissions including scopes returns "OK" response
     Given new "ListPermissions" request
     And request contains "include_scopes" parameter with value true
@@ -211,13 +211,13 @@ Feature: Roles
     Then the response status is 200 OK
     And the response "data" has item with field "attributes.name" with value "admin"
 
-  @generated @skip @team:DataDog/aaa-core-access @team:DataDog/access-policies-lifecycle
+  @generated @skip @team:ddoghq/aaa-core-access @team:ddoghq/access-policies-lifecycle
   Scenario: List permissions returns "Bad Request" response
     Given new "ListPermissions" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/aaa-core-access @team:DataDog/access-policies-lifecycle
+  @team:ddoghq/aaa-core-access @team:ddoghq/access-policies-lifecycle
   Scenario: List permissions returns "OK" response
     Given new "ListPermissions" request
     When the request is sent
@@ -227,14 +227,14 @@ Feature: Roles
     And the response "data" has item with field "attributes.name" with value "admin"
     And the response "data" has item with field "attributes.name_aliases" with value []
 
-  @generated @skip @team:DataDog/access-policies-lifecycle
+  @generated @skip @team:ddoghq/access-policies-lifecycle
   Scenario: List role templates returns "OK" response
     Given operation "ListRoleTemplates" enabled
     And new "ListRoleTemplates" request
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/access-policies-lifecycle
+  @team:ddoghq/access-policies-lifecycle
   Scenario: List roles returns "OK" response
     Given there is a valid "role" in the system
     And new "ListRoles" request
@@ -245,7 +245,7 @@ Feature: Roles
     And the response "data[0].id" has the same value as "role.data.id"
     And the response "data[0].attributes.name" has the same value as "role.data.attributes.name"
 
-  @generated @skip @team:DataDog/access-policies-lifecycle
+  @generated @skip @team:ddoghq/access-policies-lifecycle
   Scenario: Remove a user from a role returns "Bad Request" response
     Given new "RemoveUserFromRole" request
     And request contains "role_id" parameter from "REPLACE.ME"
@@ -253,7 +253,7 @@ Feature: Roles
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/access-policies-lifecycle
+  @generated @skip @team:ddoghq/access-policies-lifecycle
   Scenario: Remove a user from a role returns "Not found" response
     Given new "RemoveUserFromRole" request
     And request contains "role_id" parameter from "REPLACE.ME"
@@ -261,7 +261,7 @@ Feature: Roles
     When the request is sent
     Then the response status is 404 Not found
 
-  @team:DataDog/access-policies-lifecycle
+  @team:ddoghq/access-policies-lifecycle
   Scenario: Remove a user from a role returns "OK" response
     Given there is a valid "role" in the system
     And there is a valid "user" in the system
@@ -272,7 +272,7 @@ Feature: Roles
     When the request is sent
     Then the response status is 200 OK
 
-  @skip-validation @team:DataDog/access-policies-lifecycle
+  @skip-validation @team:ddoghq/access-policies-lifecycle
   Scenario: Revoke permission returns "Bad Request" response
     Given there is a valid "role" in the system
     And new "RemovePermissionFromRole" request
@@ -281,7 +281,7 @@ Feature: Roles
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/access-policies-lifecycle
+  @team:ddoghq/access-policies-lifecycle
   Scenario: Revoke permission returns "Not found" response
     Given there is a valid "permission" in the system
     And new "RemovePermissionFromRole" request
@@ -290,7 +290,7 @@ Feature: Roles
     When the request is sent
     Then the response status is 404 Not found
 
-  @team:DataDog/access-policies-lifecycle
+  @team:ddoghq/access-policies-lifecycle
   Scenario: Revoke permission returns "OK" response
     Given there is a valid "role" in the system
     And there is a valid "permission" in the system
@@ -302,7 +302,7 @@ Feature: Roles
     Then the response status is 200 OK
     And the response "data[0].type" is equal to "permissions"
 
-  @team:DataDog/access-policies-lifecycle
+  @team:ddoghq/access-policies-lifecycle
   Scenario: Update a role returns "Bad Request" response
     Given there is a valid "role" in the system
     And there is a valid "permission" in the system
@@ -312,7 +312,7 @@ Feature: Roles
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/access-policies-lifecycle
+  @team:ddoghq/access-policies-lifecycle
   Scenario: Update a role returns "Bad Role ID" response
     Given there is a valid "role" in the system
     And there is a valid "permission" in the system
@@ -322,7 +322,7 @@ Feature: Roles
     When the request is sent
     Then the response status is 422 Bad Role ID in Request
 
-  @team:DataDog/access-policies-lifecycle
+  @team:ddoghq/access-policies-lifecycle
   Scenario: Update a role returns "Not found" response
     Given there is a valid "permission" in the system
     And new "UpdateRole" request
@@ -331,7 +331,7 @@ Feature: Roles
     When the request is sent
     Then the response status is 404 Not found
 
-  @skip @team:DataDog/access-policies-lifecycle
+  @skip @team:ddoghq/access-policies-lifecycle
   Scenario: Update a role returns "OK" response
     Given there is a valid "role" in the system
     And there is a valid "permission" in the system
@@ -342,7 +342,7 @@ Feature: Roles
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "{{ role.data.attributes.name }}-updated"
 
-  @generated @skip @team:DataDog/access-policies-lifecycle
+  @generated @skip @team:ddoghq/access-policies-lifecycle
   Scenario: Update a role returns "Unprocessable Entity" response
     Given new "UpdateRole" request
     And request contains "role_id" parameter from "REPLACE.ME"

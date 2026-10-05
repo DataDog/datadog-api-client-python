@@ -8,7 +8,7 @@ Feature: OAuth2 Client Public
     And a valid "appKeyAuth" key in the system
     And an instance of "OAuth2ClientPublic" API
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Delete an OAuth2 client scopes restriction returns "Bad Request" response
     Given operation "DeleteScopesRestriction" enabled
     And new "DeleteScopesRestriction" request
@@ -16,7 +16,7 @@ Feature: OAuth2 Client Public
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Delete an OAuth2 client scopes restriction returns "No Content" response
     Given operation "DeleteScopesRestriction" enabled
     And new "DeleteScopesRestriction" request
@@ -24,7 +24,7 @@ Feature: OAuth2 Client Public
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Delete an OAuth2 client scopes restriction returns "Not Found" response
     Given operation "DeleteScopesRestriction" enabled
     And new "DeleteScopesRestriction" request
@@ -32,7 +32,7 @@ Feature: OAuth2 Client Public
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Get an OAuth2 client scopes restriction returns "Bad Request" response
     Given operation "GetScopesRestriction" enabled
     And new "GetScopesRestriction" request
@@ -40,7 +40,7 @@ Feature: OAuth2 Client Public
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Get an OAuth2 client scopes restriction returns "Not Found" response
     Given operation "GetScopesRestriction" enabled
     And new "GetScopesRestriction" request
@@ -48,7 +48,7 @@ Feature: OAuth2 Client Public
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Get an OAuth2 client scopes restriction returns "OK" response
     Given operation "GetScopesRestriction" enabled
     And new "GetScopesRestriction" request
@@ -56,7 +56,7 @@ Feature: OAuth2 Client Public
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Register an OAuth2 client returns "Bad Request" response
     Given operation "RegisterOAuthClient" enabled
     And new "RegisterOAuthClient" request
@@ -64,7 +64,7 @@ Feature: OAuth2 Client Public
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Register an OAuth2 client returns "Created" response
     Given operation "RegisterOAuthClient" enabled
     And new "RegisterOAuthClient" request
@@ -72,7 +72,7 @@ Feature: OAuth2 Client Public
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Upsert an OAuth2 client scopes restriction returns "Bad Request" response
     Given operation "UpsertScopesRestriction" enabled
     And new "UpsertScopesRestriction" request
@@ -81,7 +81,7 @@ Feature: OAuth2 Client Public
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Upsert an OAuth2 client scopes restriction returns "Not Found" response
     Given operation "UpsertScopesRestriction" enabled
     And new "UpsertScopesRestriction" request
@@ -90,7 +90,7 @@ Feature: OAuth2 Client Public
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/delegated-auth-login
+  @generated @skip @team:ddoghq/delegated-auth-login
   Scenario: Upsert an OAuth2 client scopes restriction returns "OK" response
     Given operation "UpsertScopesRestriction" enabled
     And new "UpsertScopesRestriction" request

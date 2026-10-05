@@ -3,7 +3,7 @@ Feature: Integrations
   The Integrations API is used to list available integrations and retrieve
   information about their installation status.
 
-  @skip-validation @team:DataDog/integrations-experience
+  @skip-validation @team:ddoghq/integrations-experience
   Scenario: List Integrations returns "Successful Response." response
     Given a valid "apiKeyAuth" key in the system
     And a valid "appKeyAuth" key in the system

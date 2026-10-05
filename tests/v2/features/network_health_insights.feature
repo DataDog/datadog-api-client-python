@@ -12,12 +12,12 @@ Feature: Network Health Insights
     And operation "ListNetworkHealthInsights" enabled
     And new "ListNetworkHealthInsights" request
 
-  @generated @skip @team:DataDog/cloud-network-monitoring
+  @generated @skip @team:ddoghq/cloud-network-monitoring
   Scenario: List network health insights returns "Bad Request" response
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/cloud-network-monitoring
+  @generated @skip @team:ddoghq/cloud-network-monitoring
   Scenario: List network health insights returns "OK" response
     When the request is sent
     Then the response status is 200 OK

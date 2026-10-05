@@ -8,7 +8,7 @@ Feature: RUM Retention Quotas
     And a valid "appKeyAuth" key in the system
     And an instance of "RUMRetentionQuotas" API
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Create or update a RUM retention quota config returns "Bad Request" response
     Given new "UpsertRumQuotaConfig" request
     And request contains "scope_type" parameter from "REPLACE.ME"
@@ -17,7 +17,7 @@ Feature: RUM Retention Quotas
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Create or update a RUM retention quota config returns "Not Found" response
     Given new "UpsertRumQuotaConfig" request
     And request contains "scope_type" parameter from "REPLACE.ME"
@@ -26,7 +26,7 @@ Feature: RUM Retention Quotas
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Create or update a RUM retention quota config returns "OK" response
     Given new "UpsertRumQuotaConfig" request
     And request contains "scope_type" parameter from "REPLACE.ME"
@@ -35,7 +35,7 @@ Feature: RUM Retention Quotas
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Delete a RUM retention quota configuration returns "Bad Request" response
     Given new "DeleteRumQuotaConfig" request
     And request contains "scope_type" parameter from "REPLACE.ME"
@@ -43,7 +43,7 @@ Feature: RUM Retention Quotas
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Delete a RUM retention quota configuration returns "No Content" response
     Given new "DeleteRumQuotaConfig" request
     And request contains "scope_type" parameter from "REPLACE.ME"
@@ -51,7 +51,7 @@ Feature: RUM Retention Quotas
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Delete a RUM retention quota configuration returns "Not Found" response
     Given new "DeleteRumQuotaConfig" request
     And request contains "scope_type" parameter from "REPLACE.ME"
@@ -59,7 +59,7 @@ Feature: RUM Retention Quotas
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Get a RUM retention quota configuration returns "Bad Request" response
     Given new "GetRumQuotaConfig" request
     And request contains "scope_type" parameter from "REPLACE.ME"
@@ -67,7 +67,7 @@ Feature: RUM Retention Quotas
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Get a RUM retention quota configuration returns "Not Found" response
     Given new "GetRumQuotaConfig" request
     And request contains "scope_type" parameter from "REPLACE.ME"
@@ -75,7 +75,7 @@ Feature: RUM Retention Quotas
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Get a RUM retention quota configuration returns "OK" response
     Given new "GetRumQuotaConfig" request
     And request contains "scope_type" parameter from "REPLACE.ME"

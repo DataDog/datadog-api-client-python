@@ -9,7 +9,7 @@ Feature: Rum Retention Filters
     And a valid "appKeyAuth" key in the system
     And an instance of "RumRetentionFilters" API
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Create a RUM exclusion filter returns "Bad Request" response
     Given operation "CreateExclusionFilter" enabled
     And new "CreateExclusionFilter" request
@@ -18,7 +18,7 @@ Feature: Rum Retention Filters
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Create a RUM exclusion filter returns "Created" response
     Given operation "CreateExclusionFilter" enabled
     And new "CreateExclusionFilter" request
@@ -27,7 +27,7 @@ Feature: Rum Retention Filters
     When the request is sent
     Then the response status is 201 Created
 
-  @team:DataDog/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Create a RUM retention filter returns "Bad Request" response
     Given new "CreateRetentionFilter" request
     And request contains "app_id" parameter with value "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
@@ -35,7 +35,7 @@ Feature: Rum Retention Filters
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:DataDog/rum-backend
+  @replay-only @team:ddoghq/rum-backend
   Scenario: Create a RUM retention filter returns "Created" response
     Given new "CreateRetentionFilter" request
     And request contains "app_id" parameter with value "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
@@ -49,7 +49,7 @@ Feature: Rum Retention Filters
     And the response "data.attributes.query" is equal to "custom_query"
     And the response "data.attributes.sample_rate" is equal to 50
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Delete a RUM exclusion filter returns "Method Not Allowed" response
     Given operation "DeleteExclusionFilter" enabled
     And new "DeleteExclusionFilter" request
@@ -58,7 +58,7 @@ Feature: Rum Retention Filters
     When the request is sent
     Then the response status is 405 Method Not Allowed
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Delete a RUM exclusion filter returns "No Content" response
     Given operation "DeleteExclusionFilter" enabled
     And new "DeleteExclusionFilter" request
@@ -67,7 +67,7 @@ Feature: Rum Retention Filters
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Delete a RUM exclusion filter returns "Not Found" response
     Given operation "DeleteExclusionFilter" enabled
     And new "DeleteExclusionFilter" request
@@ -76,7 +76,7 @@ Feature: Rum Retention Filters
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/rum-backend
+  @replay-only @team:ddoghq/rum-backend
   Scenario: Delete a RUM retention filter returns "No Content" response
     Given new "DeleteRetentionFilter" request
     And request contains "app_id" parameter with value "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
@@ -84,7 +84,7 @@ Feature: Rum Retention Filters
     When the request is sent
     Then the response status is 204 No Content
 
-  @team:DataDog/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Delete a RUM retention filter returns "Not Found" response
     Given new "DeleteRetentionFilter" request
     And request contains "app_id" parameter with value "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
@@ -92,7 +92,7 @@ Feature: Rum Retention Filters
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Get a RUM exclusion filter returns "Not Found" response
     Given operation "GetExclusionFilter" enabled
     And new "GetExclusionFilter" request
@@ -101,7 +101,7 @@ Feature: Rum Retention Filters
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Get a RUM exclusion filter returns "OK" response
     Given operation "GetExclusionFilter" enabled
     And new "GetExclusionFilter" request
@@ -110,7 +110,7 @@ Feature: Rum Retention Filters
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Get a RUM retention filter returns "Not Found" response
     Given new "GetRetentionFilter" request
     And request contains "app_id" parameter with value "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
@@ -118,7 +118,7 @@ Feature: Rum Retention Filters
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/rum-backend
+  @replay-only @team:ddoghq/rum-backend
   Scenario: Get a RUM retention filter returns "OK" response
     Given new "GetRetentionFilter" request
     And request contains "app_id" parameter with value "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
@@ -133,7 +133,7 @@ Feature: Rum Retention Filters
     And the response "data.attributes.query" is equal to "custom_query"
     And the response "data.attributes.sample_rate" is equal to 25
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Get a permanent RUM retention filter returns "Not Found" response
     Given new "GetPermanentRetentionFilter" request
     And request contains "app_id" parameter from "REPLACE.ME"
@@ -141,7 +141,7 @@ Feature: Rum Retention Filters
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Get a permanent RUM retention filter returns "OK" response
     Given new "GetPermanentRetentionFilter" request
     And request contains "app_id" parameter from "REPLACE.ME"
@@ -149,7 +149,7 @@ Feature: Rum Retention Filters
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Get all RUM exclusion filters returns "OK" response
     Given operation "ListExclusionFilters" enabled
     And new "ListExclusionFilters" request
@@ -157,7 +157,7 @@ Feature: Rum Retention Filters
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @team:DataDog/rum-backend
+  @replay-only @team:ddoghq/rum-backend
   Scenario: Get all RUM retention filters returns "OK" response
     Given new "ListRetentionFilters" request
     And request contains "app_id" parameter with value "1d4b9c34-7ac4-423a-91cf-9902d926e9b3"
@@ -165,14 +165,14 @@ Feature: Rum Retention Filters
     Then the response status is 200 OK
     And the response "data" has length 3
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Get all permanent RUM retention filters returns "OK" response
     Given new "ListPermanentRetentionFilters" request
     And request contains "app_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Order RUM retention filters returns "Bad Request" response
     Given new "OrderRetentionFilters" request
     And request contains "app_id" parameter with value "1d4b9c34-7ac4-423a-91cf-9902d926e9b3"
@@ -180,7 +180,7 @@ Feature: Rum Retention Filters
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:DataDog/rum-backend
+  @replay-only @team:ddoghq/rum-backend
   Scenario: Order RUM retention filters returns "Ordered" response
     Given new "OrderRetentionFilters" request
     And request contains "app_id" parameter with value "1d4b9c34-7ac4-423a-91cf-9902d926e9b3"
@@ -191,7 +191,7 @@ Feature: Rum Retention Filters
     And the response "data[1].id" is equal to "42d89430-5b80-426e-a44b-ba3b417ece25"
     And the response "data[2].id" is equal to "bff0bc34-99e9-4c16-adce-f47e71948c23"
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Update a RUM exclusion filter returns "Bad Request" response
     Given operation "UpdateExclusionFilter" enabled
     And new "UpdateExclusionFilter" request
@@ -201,7 +201,7 @@ Feature: Rum Retention Filters
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Update a RUM exclusion filter returns "Conflict" response
     Given operation "UpdateExclusionFilter" enabled
     And new "UpdateExclusionFilter" request
@@ -211,7 +211,7 @@ Feature: Rum Retention Filters
     When the request is sent
     Then the response status is 409 Conflict
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Update a RUM exclusion filter returns "Not Found" response
     Given operation "UpdateExclusionFilter" enabled
     And new "UpdateExclusionFilter" request
@@ -221,7 +221,7 @@ Feature: Rum Retention Filters
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Update a RUM exclusion filter returns "Updated" response
     Given operation "UpdateExclusionFilter" enabled
     And new "UpdateExclusionFilter" request
@@ -231,7 +231,7 @@ Feature: Rum Retention Filters
     When the request is sent
     Then the response status is 200 Updated
 
-  @team:DataDog/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Update a RUM retention filter returns "Bad Request" response
     Given new "UpdateRetentionFilter" request
     And request contains "app_id" parameter with value "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
@@ -240,7 +240,7 @@ Feature: Rum Retention Filters
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Update a RUM retention filter returns "Not Found" response
     Given new "UpdateRetentionFilter" request
     And request contains "app_id" parameter with value "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
@@ -249,7 +249,7 @@ Feature: Rum Retention Filters
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:DataDog/rum-backend
+  @replay-only @team:ddoghq/rum-backend
   Scenario: Update a RUM retention filter returns "Updated" response
     Given new "UpdateRetentionFilter" request
     And request contains "app_id" parameter with value "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
@@ -265,7 +265,7 @@ Feature: Rum Retention Filters
     And the response "data.attributes.query" is equal to "view_query"
     And the response "data.attributes.sample_rate" is equal to 100
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Update a permanent RUM retention filter returns "Bad Request" response
     Given new "UpdatePermanentRetentionFilter" request
     And request contains "app_id" parameter from "REPLACE.ME"
@@ -274,7 +274,7 @@ Feature: Rum Retention Filters
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Update a permanent RUM retention filter returns "Not Found" response
     Given new "UpdatePermanentRetentionFilter" request
     And request contains "app_id" parameter from "REPLACE.ME"
@@ -283,7 +283,7 @@ Feature: Rum Retention Filters
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/rum-backend
+  @generated @skip @team:ddoghq/rum-backend
   Scenario: Update a permanent RUM retention filter returns "Updated" response
     Given new "UpdatePermanentRetentionFilter" request
     And request contains "app_id" parameter from "REPLACE.ME"

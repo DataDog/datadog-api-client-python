@@ -9,7 +9,7 @@ Feature: Teams
     And a valid "appKeyAuth" key in the system
     And an instance of "Teams" API
 
-  @generated @skip @team:DataDog/aaa-omg
+  @generated @skip @team:ddoghq/aaa-omg
   Scenario: Add a member team returns "API error response." response
     Given operation "AddMemberTeam" enabled
     And new "AddMemberTeam" request
@@ -18,7 +18,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 409 API error response.
 
-  @generated @skip @team:DataDog/aaa-omg
+  @generated @skip @team:ddoghq/aaa-omg
   Scenario: Add a member team returns "Added" response
     Given operation "AddMemberTeam" enabled
     And new "AddMemberTeam" request
@@ -27,7 +27,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 204 Added
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Add a user to a team returns "API error response." response
     Given new "CreateTeamMembership" request
     And there is a valid "dd_team" in the system
@@ -38,7 +38,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 409 API error response.
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Add a user to a team returns "Represents a user's association to a team" response
     Given new "CreateTeamMembership" request
     And there is a valid "dd_team" in the system
@@ -50,7 +50,7 @@ Feature: Teams
     And the response "data.attributes.role" is equal to "admin"
     And the response "data.relationships.user.data.id" is equal to "{{ user.data.id }}"
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Create a team hierarchy link returns "Conflict" response
     Given new "AddTeamHierarchyLink" request
     And there is a valid "dd_team" in the system
@@ -60,7 +60,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 409 Conflict
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Create a team hierarchy link returns "OK" response
     Given new "AddTeamHierarchyLink" request
     And there is a valid "dd_team" in the system
@@ -69,7 +69,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Create a team link returns "API error response." response
     Given new "CreateTeamLink" request
     And there is a valid "dd_team" in the system
@@ -78,7 +78,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 422 API error response.
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Create a team link returns "OK" response
     Given new "CreateTeamLink" request
     And there is a valid "dd_team" in the system
@@ -90,7 +90,7 @@ Feature: Teams
     And the response "data.attributes.url" is equal to "https://example.com"
     And the response "data.attributes.position" is equal to 0
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Create a team returns "API error response." response
     Given new "CreateTeam" request
     And there is a valid "dd_team" in the system
@@ -98,7 +98,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 409 API error response.
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Create a team returns "CREATED" response
     Given new "CreateTeam" request
     And body with value {"data": {"attributes": {"handle": "test-handle-{{ unique_hash }}", "name": "test-name-{{ unique_hash }}"}, "relationships": {"users": {"data": []}}, "type": "team"}}
@@ -108,7 +108,7 @@ Feature: Teams
     And the response "data.attributes.handle" is equal to "test-handle-{{ unique_hash }}"
     And the response "data.attributes.name" is equal to "test-name-{{ unique_hash }}"
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Create a team with V2 fields returns "CREATED" response
     Given new "CreateTeam" request
     And body with value {"data": {"attributes": {"handle": "test-handle-{{ unique_hash }}","name": "test-name-{{ unique_hash }}", "avatar": "🥑", "banner": 7, "visible_modules": ["m1","m2"], "hidden_modules": ["m3"]}, "type": "team"}}
@@ -125,14 +125,14 @@ Feature: Teams
     And the response "data.attributes.hidden_modules" has length 1
     And the response "data.attributes.hidden_modules" array contains value "m3"
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Create team connections returns "Bad Request" response
     Given new "CreateTeamConnections" request
     And body with value {"data": []}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Create team connections returns "Conflict" response
     Given new "CreateTeamConnections" request
     And there is a valid "dd_team" in the system
@@ -141,7 +141,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 409 Conflict
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Create team connections returns "Created" response
     Given new "CreateTeamConnections" request
     And there is a valid "dd_team" in the system
@@ -154,7 +154,7 @@ Feature: Teams
     And the response "data[0].relationships.connected_team.data.id" is equal to "@MyGitHubAccount/my-team-name"
     And the response "data[0].type" is equal to "team_connection"
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Create team notification rule returns "API error response." response
     Given new "CreateTeamNotificationRule" request
     And there is a valid "dd_team" in the system
@@ -164,7 +164,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 409 API error response.
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Create team notification rule returns "OK" response
     Given new "CreateTeamNotificationRule" request
     And there is a valid "dd_team" in the system
@@ -173,14 +173,14 @@ Feature: Teams
     When the request is sent
     Then the response status is 201 Created
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Delete team connections returns "Bad Request" response
     Given new "DeleteTeamConnections" request
     And body with value {"data": [{"id": "", "type": "team_connection"}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Delete team connections returns "No Content" response
     Given new "DeleteTeamConnections" request
     And there is a valid "dd_team" in the system
@@ -189,14 +189,14 @@ Feature: Teams
     When the request is sent
     Then the response status is 204 No Content
 
-  @skip @team:DataDog/aaa-omg
+  @skip @team:ddoghq/aaa-omg
   Scenario: Delete team connections returns "Not Found" response
     Given new "DeleteTeamConnections" request
     And body with value {"data": [{"id": "00000000-0000-dead-beef-000000000000", "type": "team_connection"}]}
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Delete team notification rule returns "API error response." response
     Given new "DeleteTeamNotificationRule" request
     And there is a valid "dd_team" in the system
@@ -206,7 +206,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 404 API error response.
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Delete team notification rule returns "No Content" response
     Given new "DeleteTeamNotificationRule" request
     And there is a valid "dd_team" in the system
@@ -216,14 +216,14 @@ Feature: Teams
     When the request is sent
     Then the response status is 204 No Content
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Get a team hierarchy link returns "API error response." response
     Given new "GetTeamHierarchyLink" request
     And request contains "link_id" parameter with value "aaa11111-aa11-aa11-aaaa-aaaaaa111111"
     When the request is sent
     Then the response status is 404 API error response.
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Get a team hierarchy link returns "OK" response
     Given new "GetTeamHierarchyLink" request
     And there is a valid "dd_team" in the system
@@ -238,7 +238,7 @@ Feature: Teams
     And the response "included" has item with field "id" with value "{{ dd_team.data.id }}"
     And the response "included" has item with field "id" with value "{{ dd_team_2.data.id }}"
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Get a team link returns "API error response." response
     Given new "GetTeamLink" request
     And there is a valid "dd_team" in the system
@@ -247,7 +247,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 404 API error response.
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Get a team link returns "OK" response
     Given new "GetTeamLink" request
     And there is a valid "dd_team" in the system
@@ -257,14 +257,14 @@ Feature: Teams
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Get a team returns "API error response." response
     Given new "GetTeam" request
     And request contains "team_id" parameter with value "REPLACE.ME"
     When the request is sent
     Then the response status is 404 API error response.
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Get a team returns "OK" response
     Given new "GetTeam" request
     And there is a valid "dd_team" in the system
@@ -272,7 +272,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/aaa-omg
+  @generated @skip @team:ddoghq/aaa-omg
   Scenario: Get all member teams returns "API error response." response
     Given operation "ListMemberTeams" enabled
     And new "ListMemberTeams" request
@@ -280,7 +280,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 404 API error response.
 
-  @generated @skip @team:DataDog/aaa-omg
+  @generated @skip @team:ddoghq/aaa-omg
   Scenario: Get all member teams returns "OK" response
     Given operation "ListMemberTeams" enabled
     And new "ListMemberTeams" request
@@ -288,7 +288,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/aaa-omg @with-pagination
+  @generated @skip @team:ddoghq/aaa-omg @with-pagination
   Scenario: Get all member teams returns "OK" response with pagination
     Given operation "ListMemberTeams" enabled
     And new "ListMemberTeams" request
@@ -296,7 +296,7 @@ Feature: Teams
     When the request with pagination is sent
     Then the response status is 200 OK
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Get all teams returns "OK" response
     Given new "ListTeams" request
     And there is a valid "dd_team" in the system
@@ -304,7 +304,7 @@ Feature: Teams
     Then the response status is 200 OK
     And the response "data" has item with field "id" with value "{{ dd_team.data.id }}"
 
-  @replay-only @skip-validation @team:DataDog/aaa-omg @with-pagination
+  @replay-only @skip-validation @team:ddoghq/aaa-omg @with-pagination
   Scenario: Get all teams returns "OK" response with pagination
     Given new "ListTeams" request
     And request contains "page[size]" parameter with value 2
@@ -312,7 +312,7 @@ Feature: Teams
     Then the response status is 200 OK
     And the response has 3 items
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Get all teams with fields_team parameter returns "OK" response
     Given new "ListTeams" request
     And there is a valid "dd_team" in the system
@@ -323,14 +323,14 @@ Feature: Teams
     And the response "data[0].attributes" has field "name"
     And the response "data[0].attributes" has field "handle"
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Get links for a team returns "API error response." response
     Given new "GetTeamLinks" request
     And request contains "team_id" parameter with value "REPLACE.ME"
     When the request is sent
     Then the response status is 404 API error response.
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Get links for a team returns "OK" response
     Given new "GetTeamLinks" request
     And there is a valid "dd_team" in the system
@@ -338,14 +338,14 @@ Feature: Teams
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Get permission settings for a team returns "API error response." response
     Given new "GetTeamPermissionSettings" request
     And request contains "team_id" parameter with value "REPLACE.ME"
     When the request is sent
     Then the response status is 404 API error response.
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Get permission settings for a team returns "OK" response
     Given new "GetTeamPermissionSettings" request
     And there is a valid "dd_team" in the system
@@ -353,7 +353,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Get team hierarchy links returns "OK" response
     Given new "ListTeamHierarchyLinks" request
     And there is a valid "dd_team" in the system
@@ -372,20 +372,20 @@ Feature: Teams
     And the response "included" has item with field "id" with value "{{ dd_team.data.id }}"
     And the response "included" has item with field "id" with value "{{ dd_team_2.data.id }}"
 
-  @generated @skip @team:DataDog/aaa-omg @with-pagination
+  @generated @skip @team:ddoghq/aaa-omg @with-pagination
   Scenario: Get team hierarchy links returns "OK" response with pagination
     Given new "ListTeamHierarchyLinks" request
     When the request with pagination is sent
     Then the response status is 200 OK
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Get team memberships returns "API error response." response
     Given new "GetTeamMemberships" request
     And request contains "team_id" parameter with value "REPLACE.ME"
     When the request is sent
     Then the response status is 404 API error response.
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Get team memberships returns "Represents a user's association to a team" response
     Given new "GetTeamMemberships" request
     And there is a valid "dd_team" in the system
@@ -393,7 +393,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 200 Represents a user's association to a team
 
-  @replay-only @skip-validation @team:DataDog/aaa-omg @with-pagination
+  @replay-only @skip-validation @team:ddoghq/aaa-omg @with-pagination
   Scenario: Get team memberships returns "Represents a user's association to a team" response with pagination
     Given new "GetTeamMemberships" request
     And request contains "team_id" parameter with value "2e06bf2c-193b-41d4-b3c2-afccc080458f"
@@ -402,7 +402,7 @@ Feature: Teams
     Then the response status is 200 OK
     And the response has 3 items
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Get team notification rule returns "API error response." response
     Given new "GetTeamNotificationRule" request
     And there is a valid "dd_team" in the system
@@ -412,7 +412,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 404 API error response.
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Get team notification rule returns "OK" response
     Given new "GetTeamNotificationRule" request
     And there is a valid "dd_team" in the system
@@ -422,14 +422,14 @@ Feature: Teams
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/aaa-omg
+  @generated @skip @team:ddoghq/aaa-omg
   Scenario: Get team notification rules returns "API error response." response
     Given new "GetTeamNotificationRules" request
     And request contains "team_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 API error response.
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Get team notification rules returns "OK" response
     Given new "GetTeamNotificationRules" request
     And there is a valid "dd_team" in the system
@@ -439,21 +439,21 @@ Feature: Teams
     Then the response status is 200 OK
     And the response "data" has length 1
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Get team sync configurations returns "OK" response
     Given new "GetTeamSync" request
     And request contains "filter[source]" parameter with value "github"
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/aaa-omg
+  @generated @skip @team:ddoghq/aaa-omg
   Scenario: Get user memberships returns "API error response." response
     Given new "GetUserMemberships" request
     And request contains "user_uuid" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 API error response.
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Get user memberships returns "Represents a user's association to a team" response
     Given new "GetUserMemberships" request
     And there is a valid "user" in the system
@@ -462,27 +462,27 @@ Feature: Teams
     Then the response status is 200 Represents a user's association to a team
     And the response "data" has length 0
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Link Teams with GitHub Teams returns "No Content" response
     Given new "SyncTeams" request
     And body with value {"data": {"attributes": {"source": "github", "type": "link", "selection_state": [{"external_id": {"type": "organization", "value": "1"}}]}, "type": "team_sync_bulk"}}
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/aaa-omg
+  @generated @skip @team:ddoghq/aaa-omg
   Scenario: Link Teams with GitHub Teams returns "OK" response
     Given new "SyncTeams" request
     And body with value {"data": {"attributes": {"source": "github", "type": "link"}, "type": "team_sync_bulk"}}
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/aaa-omg
+  @generated @skip @team:ddoghq/aaa-omg
   Scenario: List team connections returns "Bad Request" response
     Given new "ListTeamConnections" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: List team connections returns "OK" response
     Given new "ListTeamConnections" request
     And there is a valid "dd_team" in the system
@@ -491,13 +491,13 @@ Feature: Teams
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/aaa-omg @with-pagination
+  @generated @skip @team:ddoghq/aaa-omg @with-pagination
   Scenario: List team connections returns "OK" response with pagination
     Given new "ListTeamConnections" request
     When the request with pagination is sent
     Then the response status is 200 OK
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: List team connections with filters returns "OK" response
     Given new "ListTeamConnections" request
     And there is a valid "dd_team" in the system
@@ -507,7 +507,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/aaa-omg
+  @generated @skip @team:ddoghq/aaa-omg
   Scenario: Remove a member team returns "API error response." response
     Given operation "RemoveMemberTeam" enabled
     And new "RemoveMemberTeam" request
@@ -516,7 +516,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 404 API error response.
 
-  @generated @skip @team:DataDog/aaa-omg
+  @generated @skip @team:ddoghq/aaa-omg
   Scenario: Remove a member team returns "No Content" response
     Given operation "RemoveMemberTeam" enabled
     And new "RemoveMemberTeam" request
@@ -525,14 +525,14 @@ Feature: Teams
     When the request is sent
     Then the response status is 204 No Content
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Remove a team hierarchy link returns "API error response." response
     Given new "RemoveTeamHierarchyLink" request
     And request contains "link_id" parameter with value "aaa11111-aa11-aa11-aaaa-aaaaaa111111"
     When the request is sent
     Then the response status is 404 API error response.
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Remove a team hierarchy link returns "No Content" response
     Given new "RemoveTeamHierarchyLink" request
     And there is a valid "dd_team" in the system
@@ -542,7 +542,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 204 No Content
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Remove a team link returns "API error response." response
     Given new "DeleteTeamLink" request
     And there is a valid "dd_team" in the system
@@ -551,7 +551,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 404 API error response.
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Remove a team link returns "No Content" response
     Given new "DeleteTeamLink" request
     And there is a valid "dd_team" in the system
@@ -561,14 +561,14 @@ Feature: Teams
     When the request is sent
     Then the response status is 204 No Content
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Remove a team returns "API error response." response
     Given new "DeleteTeam" request
     And request contains "team_id" parameter with value "REPLACE.ME"
     When the request is sent
     Then the response status is 404 API error response.
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Remove a team returns "No Content" response
     Given new "DeleteTeam" request
     And there is a valid "dd_team" in the system
@@ -576,7 +576,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 204 No Content
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Remove a user from a team returns "API error response." response
     Given new "DeleteTeamMembership" request
     And there is a valid "dd_team" in the system
@@ -585,7 +585,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 404 API error response.
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Remove a user from a team returns "No Content" response
     Given new "DeleteTeamMembership" request
     And there is a valid "dd_team" in the system
@@ -596,7 +596,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 204 No Content
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Update a team link returns "API error response." response
     Given new "UpdateTeamLink" request
     And there is a valid "dd_team" in the system
@@ -606,7 +606,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 404 API error response.
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Update a team link returns "OK" response
     Given new "UpdateTeamLink" request
     And there is a valid "dd_team" in the system
@@ -621,7 +621,7 @@ Feature: Teams
     And the response "data.attributes.label" is equal to "New Label"
     And the response "data.attributes.url" is equal to "https://example.com"
 
-  @skip @team:DataDog/aaa-omg
+  @skip @team:ddoghq/aaa-omg
   Scenario: Update a team returns "API error response." response
     Given new "UpdateTeam" request
     And there is a valid "dd_team" in the system
@@ -631,7 +631,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 409 API error response.
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Update a team returns "OK" response
     Given new "UpdateTeam" request
     And there is a valid "dd_team" in the system
@@ -647,7 +647,7 @@ Feature: Teams
     And the response "data.attributes.hidden_modules" is equal to ["m3"]
     And the response "data.attributes.visible_modules" is equal to ["m1", "m2"]
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Update a team with partial update returns "OK" response
     Given new "UpdateTeam" request
     And there is a valid "dd_team" in the system
@@ -658,7 +658,7 @@ Feature: Teams
     And the response "data.attributes.name" is equal to "{{dd_team.data.attributes.name}} updated"
     And the response "data.attributes.handle" is equal to "{{dd_team.data.attributes.handle}}"
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Update a user's membership attributes on a team returns "API error response." response
     Given new "UpdateTeamMembership" request
     And there is a valid "dd_team" in the system
@@ -668,7 +668,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 404 API error response.
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Update a user's membership attributes on a team returns "OK" response
     Given new "UpdateTeamMembership" request
     And there is a valid "dd_team" in the system
@@ -682,7 +682,7 @@ Feature: Teams
     And the response "data.attributes.role" is equal to "admin"
     And the response "data.relationships.user.data.id" is equal to "{{ user.data.id }}"
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Update a user's membership attributes on a team with invalid role returns "API error response." response
     Given new "UpdateTeamMembership" request
     And there is a valid "dd_team" in the system
@@ -694,7 +694,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 400 API error response.
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Update permission setting for team returns "API error response." response
     Given new "UpdateTeamPermissionSetting" request
     And there is a valid "dd_team" in the system
@@ -704,7 +704,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 404 API error response.
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Update permission setting for team returns "OK" response
     Given new "UpdateTeamPermissionSetting" request
     And there is a valid "dd_team" in the system
@@ -714,7 +714,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Update team notification rule returns "API error response." response
     Given new "UpdateTeamNotificationRule" request
     And there is a valid "dd_team" in the system
@@ -725,7 +725,7 @@ Feature: Teams
     When the request is sent
     Then the response status is 409 API error response.
 
-  @team:DataDog/aaa-omg
+  @team:ddoghq/aaa-omg
   Scenario: Update team notification rule returns "OK" response
     Given new "UpdateTeamNotificationRule" request
     And there is a valid "dd_team" in the system

@@ -10,7 +10,7 @@ Feature: Status Pages
     And a valid "appKeyAuth" key in the system
     And an instance of "StatusPages" API
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Create backfilled degradation returns "Created" response
     Given there is a valid "status_page" in the system
     And new "CreateBackfilledDegradation" request
@@ -20,7 +20,7 @@ Feature: Status Pages
     Then the response status is 201 Created
     And the response "data.attributes.title" is equal to "Past API Outage"
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Create backfilled maintenance returns "Created" response
     Given there is a valid "status_page" in the system
     And new "CreateBackfilledMaintenance" request
@@ -30,7 +30,7 @@ Feature: Status Pages
     Then the response status is 201 Created
     And the response "data.attributes.title" is equal to "Past Database Maintenance"
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Create component returns "Created" response
     Given there is a valid "status_page" in the system
     And new "CreateComponent" request
@@ -40,7 +40,7 @@ Feature: Status Pages
     Then the response status is 201 Created
     And the response "data.attributes.status" is equal to "operational"
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Create degradation returns "Created" response
     Given there is a valid "status_page" in the system
     And new "CreateDegradation" request
@@ -50,7 +50,7 @@ Feature: Status Pages
     Then the response status is 201 Created
     And the response "data.attributes.updates" has length 1
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Create degradation template returns "Created" response
     Given new "CreateDegradationTemplate" request
     And request contains "page_id" parameter from "REPLACE.ME"
@@ -58,7 +58,7 @@ Feature: Status Pages
     When the request is sent
     Then the response status is 201 Created
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Create maintenance returns "Created" response
     Given there is a valid "status_page" in the system
     And new "CreateMaintenance" request
@@ -68,7 +68,7 @@ Feature: Status Pages
     Then the response status is 201 Created
     And the response "data.attributes.updates" has length 1
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Create maintenance template returns "Created" response
     Given new "CreateMaintenanceTemplate" request
     And request contains "page_id" parameter from "REPLACE.ME"
@@ -76,14 +76,14 @@ Feature: Status Pages
     When the request is sent
     Then the response status is 201 Created
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Create status page returns "Created" response
     Given new "CreateStatusPage" request
     And body with value {"data": {"attributes": {"name": "A Status Page", "domain_prefix": "{{ unique_hash }}", "components":[{"name": "Login", "type": "component", "position": 0},{"name": "Settings", "type": "component", "position": 1}], "type": "internal", "visualization_type": "bars_and_uptime_percentage"}, "type": "status_pages"}}
     When the request is sent
     Then the response status is 201 Created
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Delete component returns "No Content" response
     Given new "DeleteComponent" request
     And there is a valid "status_page" in the system
@@ -92,7 +92,7 @@ Feature: Status Pages
     When the request is sent
     Then the response status is 204 No Content
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Delete degradation returns "No Content" response
     Given new "DeleteDegradation" request
     And there is a valid "status_page" in the system
@@ -102,7 +102,7 @@ Feature: Status Pages
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Delete degradation template returns "No Content" response
     Given new "DeleteDegradationTemplate" request
     And request contains "page_id" parameter from "REPLACE.ME"
@@ -110,7 +110,7 @@ Feature: Status Pages
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Delete maintenance template returns "No Content" response
     Given new "DeleteMaintenanceTemplate" request
     And request contains "page_id" parameter from "REPLACE.ME"
@@ -118,7 +118,7 @@ Feature: Status Pages
     When the request is sent
     Then the response status is 204 No Content
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Delete status page returns "No Content" response
     Given new "DeleteStatusPage" request
     And there is a valid "status_page" in the system
@@ -126,7 +126,7 @@ Feature: Status Pages
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Edit degradation update returns "OK" response
     Given new "EditDegradationUpdate" request
     And request contains "degradation_id" parameter from "REPLACE.ME"
@@ -136,7 +136,7 @@ Feature: Status Pages
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Edit maintenance update returns "OK" response
     Given new "PatchMaintenanceUpdate" request
     And request contains "page_id" parameter from "REPLACE.ME"
@@ -146,7 +146,7 @@ Feature: Status Pages
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Get component returns "OK" response
     Given new "GetComponent" request
     And there is a valid "status_page" in the system
@@ -155,7 +155,7 @@ Feature: Status Pages
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Get degradation returns "OK" response
     Given new "GetDegradation" request
     And there is a valid "status_page" in the system
@@ -165,7 +165,7 @@ Feature: Status Pages
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get degradation template returns "OK" response
     Given new "GetDegradationTemplate" request
     And request contains "page_id" parameter from "REPLACE.ME"
@@ -173,7 +173,7 @@ Feature: Status Pages
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Get maintenance returns "OK" response
     Given there is a valid "status_page" in the system
     And there is a valid "maintenance" in the system
@@ -183,7 +183,7 @@ Feature: Status Pages
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Get maintenance template returns "OK" response
     Given new "GetMaintenanceTemplate" request
     And request contains "page_id" parameter from "REPLACE.ME"
@@ -191,7 +191,7 @@ Feature: Status Pages
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Get status page returns "OK" response
     Given new "GetStatusPage" request
     And there is a valid "status_page" in the system
@@ -199,7 +199,7 @@ Feature: Status Pages
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: List components returns "OK" response
     Given new "ListComponents" request
     And there is a valid "status_page" in the system
@@ -207,14 +207,14 @@ Feature: Status Pages
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: List degradation templates returns "OK" response
     Given new "ListDegradationTemplates" request
     And request contains "page_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: List degradations returns "OK" response
     Given new "ListDegradations" request
     And there is a valid "status_page" in the system
@@ -222,14 +222,14 @@ Feature: Status Pages
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: List maintenance templates returns "OK" response
     Given new "ListMaintenanceTemplates" request
     And request contains "page_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: List maintenances returns "OK" response
     Given there is a valid "status_page" in the system
     And there is a valid "maintenance" in the system
@@ -237,14 +237,14 @@ Feature: Status Pages
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: List status pages returns "OK" response
     Given new "ListStatusPages" request
     And there is a valid "status_page" in the system
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Publish status page returns "No Content" response
     Given there is a valid "status_page" in the system
     And new "PublishStatusPage" request
@@ -252,7 +252,7 @@ Feature: Status Pages
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Schedule maintenance returns "Created" response
     Given new "CreateMaintenance" request
     And request contains "page_id" parameter from "REPLACE.ME"
@@ -260,7 +260,7 @@ Feature: Status Pages
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Soft delete degradation update returns "No Content" response
     Given new "SoftDeleteDegradationUpdate" request
     And request contains "degradation_id" parameter from "REPLACE.ME"
@@ -269,14 +269,14 @@ Feature: Status Pages
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Unpublish status page returns "No Content" response
     Given new "UnpublishStatusPage" request
     And request contains "page_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 No Content
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Update component returns "OK" response
     Given new "UpdateComponent" request
     And there is a valid "status_page" in the system
@@ -287,7 +287,7 @@ Feature: Status Pages
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "Logs Indexing"
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Update degradation returns "OK" response
     Given new "UpdateDegradation" request
     And there is a valid "status_page" in the system
@@ -299,7 +299,7 @@ Feature: Status Pages
     Then the response status is 200 OK
     And the response "data.attributes.title" is equal to "Elevated API Latency in US1"
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Update degradation template returns "OK" response
     Given new "UpdateDegradationTemplate" request
     And request contains "template_id" parameter from "REPLACE.ME"
@@ -308,7 +308,7 @@ Feature: Status Pages
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Update maintenance returns "OK" response
     Given there is a valid "status_page" in the system
     And there is a valid "maintenance" in the system
@@ -319,7 +319,7 @@ Feature: Status Pages
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/incident-app
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Update maintenance template returns "OK" response
     Given new "UpdateMaintenanceTemplate" request
     And request contains "page_id" parameter from "REPLACE.ME"
@@ -328,7 +328,7 @@ Feature: Status Pages
     When the request is sent
     Then the response status is 200 OK
 
-  @team:DataDog/incident-app
+  @team:ddoghq/incident-app
   Scenario: Update status page returns "OK" response
     Given new "UpdateStatusPage" request
     And there is a valid "status_page" in the system

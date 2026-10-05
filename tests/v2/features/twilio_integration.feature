@@ -10,7 +10,7 @@ Feature: Twilio Integration
     And a valid "appKeyAuth" key in the system
     And an instance of "TwilioIntegration" API
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Create a Twilio integration account returns "Bad Request" response
     Given operation "CreateTwilioIntegrationAccount" enabled
     And new "CreateTwilioIntegrationAccount" request
@@ -18,7 +18,7 @@ Feature: Twilio Integration
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Create a Twilio integration account returns "Created" response
     Given operation "CreateTwilioIntegrationAccount" enabled
     And new "CreateTwilioIntegrationAccount" request
@@ -26,7 +26,7 @@ Feature: Twilio Integration
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Create a Twilio integration account returns "Not Found" response
     Given operation "CreateTwilioIntegrationAccount" enabled
     And new "CreateTwilioIntegrationAccount" request
@@ -34,7 +34,7 @@ Feature: Twilio Integration
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Create a Twilio integration account returns "The server cannot process the request because it contains invalid data." response
     Given operation "CreateTwilioIntegrationAccount" enabled
     And new "CreateTwilioIntegrationAccount" request
@@ -42,7 +42,7 @@ Feature: Twilio Integration
     When the request is sent
     Then the response status is 422 The server cannot process the request because it contains invalid data.
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Delete a Twilio integration account returns "Bad Request" response
     Given operation "DeleteTwilioIntegrationAccount" enabled
     And new "DeleteTwilioIntegrationAccount" request
@@ -50,7 +50,7 @@ Feature: Twilio Integration
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Delete a Twilio integration account returns "Not Found" response
     Given operation "DeleteTwilioIntegrationAccount" enabled
     And new "DeleteTwilioIntegrationAccount" request
@@ -58,7 +58,7 @@ Feature: Twilio Integration
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Delete a Twilio integration account returns "OK" response
     Given operation "DeleteTwilioIntegrationAccount" enabled
     And new "DeleteTwilioIntegrationAccount" request
@@ -66,7 +66,7 @@ Feature: Twilio Integration
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Get a Twilio integration account returns "Bad Request" response
     Given operation "GetTwilioIntegrationAccount" enabled
     And new "GetTwilioIntegrationAccount" request
@@ -74,7 +74,7 @@ Feature: Twilio Integration
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Get a Twilio integration account returns "Not Found" response
     Given operation "GetTwilioIntegrationAccount" enabled
     And new "GetTwilioIntegrationAccount" request
@@ -82,7 +82,7 @@ Feature: Twilio Integration
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Get a Twilio integration account returns "OK" response
     Given operation "GetTwilioIntegrationAccount" enabled
     And new "GetTwilioIntegrationAccount" request
@@ -90,28 +90,28 @@ Feature: Twilio Integration
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: List Twilio integration accounts returns "Bad Request" response
     Given operation "ListTwilioIntegrationAccounts" enabled
     And new "ListTwilioIntegrationAccounts" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: List Twilio integration accounts returns "Not Found" response
     Given operation "ListTwilioIntegrationAccounts" enabled
     And new "ListTwilioIntegrationAccounts" request
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: List Twilio integration accounts returns "OK" response
     Given operation "ListTwilioIntegrationAccounts" enabled
     And new "ListTwilioIntegrationAccounts" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Update a Twilio integration account returns "Bad Request" response
     Given operation "UpdateTwilioIntegrationAccount" enabled
     And new "UpdateTwilioIntegrationAccount" request
@@ -120,7 +120,7 @@ Feature: Twilio Integration
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Update a Twilio integration account returns "Not Found" response
     Given operation "UpdateTwilioIntegrationAccount" enabled
     And new "UpdateTwilioIntegrationAccount" request
@@ -129,7 +129,7 @@ Feature: Twilio Integration
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Update a Twilio integration account returns "OK" response
     Given operation "UpdateTwilioIntegrationAccount" enabled
     And new "UpdateTwilioIntegrationAccount" request
@@ -138,7 +138,7 @@ Feature: Twilio Integration
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Update a Twilio integration account returns "The server cannot process the request because it contains invalid data." response
     Given operation "UpdateTwilioIntegrationAccount" enabled
     And new "UpdateTwilioIntegrationAccount" request

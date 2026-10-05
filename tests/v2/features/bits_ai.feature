@@ -7,7 +7,7 @@ Feature: Bits AI
     And a valid "appKeyAuth" key in the system
     And an instance of "BitsAI" API
 
-  @generated @skip @team:DataDog/bits-ai
+  @generated @skip @team:ddoghq/bits-ai
   Scenario: Get a Bits AI investigation returns "Bad Request" response
     Given operation "GetInvestigation" enabled
     And new "GetInvestigation" request
@@ -15,7 +15,7 @@ Feature: Bits AI
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/bits-ai
+  @generated @skip @team:ddoghq/bits-ai
   Scenario: Get a Bits AI investigation returns "Not Found" response
     Given operation "GetInvestigation" enabled
     And new "GetInvestigation" request
@@ -23,7 +23,7 @@ Feature: Bits AI
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/bits-ai
+  @generated @skip @team:ddoghq/bits-ai
   Scenario: Get a Bits AI investigation returns "OK" response
     Given operation "GetInvestigation" enabled
     And new "GetInvestigation" request
@@ -31,28 +31,28 @@ Feature: Bits AI
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/bits-ai
+  @generated @skip @team:ddoghq/bits-ai
   Scenario: List Bits AI investigations returns "Bad Request" response
     Given operation "ListInvestigations" enabled
     And new "ListInvestigations" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/bits-ai
+  @generated @skip @team:ddoghq/bits-ai
   Scenario: List Bits AI investigations returns "OK" response
     Given operation "ListInvestigations" enabled
     And new "ListInvestigations" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/bits-ai @with-pagination
+  @generated @skip @team:ddoghq/bits-ai @with-pagination
   Scenario: List Bits AI investigations returns "OK" response with pagination
     Given operation "ListInvestigations" enabled
     And new "ListInvestigations" request
     When the request with pagination is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/bits-ai
+  @generated @skip @team:ddoghq/bits-ai
   Scenario: Trigger a Bits AI investigation returns "Bad Request" response
     Given operation "TriggerInvestigation" enabled
     And new "TriggerInvestigation" request
@@ -60,7 +60,7 @@ Feature: Bits AI
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/bits-ai
+  @generated @skip @team:ddoghq/bits-ai
   Scenario: Trigger a Bits AI investigation returns "OK" response
     Given operation "TriggerInvestigation" enabled
     And new "TriggerInvestigation" request

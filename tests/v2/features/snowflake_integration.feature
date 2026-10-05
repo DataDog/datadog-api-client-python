@@ -10,7 +10,7 @@ Feature: Snowflake Integration
     And a valid "appKeyAuth" key in the system
     And an instance of "SnowflakeIntegration" API
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Create a Snowflake integration account returns "Bad Request" response
     Given operation "CreateSnowflakeIntegrationAccount" enabled
     And new "CreateSnowflakeIntegrationAccount" request
@@ -18,7 +18,7 @@ Feature: Snowflake Integration
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Create a Snowflake integration account returns "Created" response
     Given operation "CreateSnowflakeIntegrationAccount" enabled
     And new "CreateSnowflakeIntegrationAccount" request
@@ -26,7 +26,7 @@ Feature: Snowflake Integration
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Create a Snowflake integration account returns "Not Found" response
     Given operation "CreateSnowflakeIntegrationAccount" enabled
     And new "CreateSnowflakeIntegrationAccount" request
@@ -34,7 +34,7 @@ Feature: Snowflake Integration
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Create a Snowflake integration account returns "The server cannot process the request because it contains invalid data." response
     Given operation "CreateSnowflakeIntegrationAccount" enabled
     And new "CreateSnowflakeIntegrationAccount" request
@@ -42,7 +42,7 @@ Feature: Snowflake Integration
     When the request is sent
     Then the response status is 422 The server cannot process the request because it contains invalid data.
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Delete a Snowflake integration account returns "Bad Request" response
     Given operation "DeleteSnowflakeIntegrationAccount" enabled
     And new "DeleteSnowflakeIntegrationAccount" request
@@ -50,7 +50,7 @@ Feature: Snowflake Integration
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Delete a Snowflake integration account returns "Not Found" response
     Given operation "DeleteSnowflakeIntegrationAccount" enabled
     And new "DeleteSnowflakeIntegrationAccount" request
@@ -58,7 +58,7 @@ Feature: Snowflake Integration
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Delete a Snowflake integration account returns "OK" response
     Given operation "DeleteSnowflakeIntegrationAccount" enabled
     And new "DeleteSnowflakeIntegrationAccount" request
@@ -66,7 +66,7 @@ Feature: Snowflake Integration
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Get a Snowflake integration account returns "Bad Request" response
     Given operation "GetSnowflakeIntegrationAccount" enabled
     And new "GetSnowflakeIntegrationAccount" request
@@ -74,7 +74,7 @@ Feature: Snowflake Integration
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Get a Snowflake integration account returns "Not Found" response
     Given operation "GetSnowflakeIntegrationAccount" enabled
     And new "GetSnowflakeIntegrationAccount" request
@@ -82,7 +82,7 @@ Feature: Snowflake Integration
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Get a Snowflake integration account returns "OK" response
     Given operation "GetSnowflakeIntegrationAccount" enabled
     And new "GetSnowflakeIntegrationAccount" request
@@ -90,28 +90,28 @@ Feature: Snowflake Integration
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: List Snowflake integration accounts returns "Bad Request" response
     Given operation "ListSnowflakeIntegrationAccounts" enabled
     And new "ListSnowflakeIntegrationAccounts" request
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: List Snowflake integration accounts returns "Not Found" response
     Given operation "ListSnowflakeIntegrationAccounts" enabled
     And new "ListSnowflakeIntegrationAccounts" request
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: List Snowflake integration accounts returns "OK" response
     Given operation "ListSnowflakeIntegrationAccounts" enabled
     And new "ListSnowflakeIntegrationAccounts" request
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Update a Snowflake integration account returns "Bad Request" response
     Given operation "UpdateSnowflakeIntegrationAccount" enabled
     And new "UpdateSnowflakeIntegrationAccount" request
@@ -120,7 +120,7 @@ Feature: Snowflake Integration
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Update a Snowflake integration account returns "Not Found" response
     Given operation "UpdateSnowflakeIntegrationAccount" enabled
     And new "UpdateSnowflakeIntegrationAccount" request
@@ -129,7 +129,7 @@ Feature: Snowflake Integration
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Update a Snowflake integration account returns "OK" response
     Given operation "UpdateSnowflakeIntegrationAccount" enabled
     And new "UpdateSnowflakeIntegrationAccount" request
@@ -138,7 +138,7 @@ Feature: Snowflake Integration
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/saas-integrations
+  @generated @skip @team:ddoghq/saas-integrations
   Scenario: Update a Snowflake integration account returns "The server cannot process the request because it contains invalid data." response
     Given operation "UpdateSnowflakeIntegrationAccount" enabled
     And new "UpdateSnowflakeIntegrationAccount" request

@@ -6,7 +6,7 @@ Feature: Spa
   Background:
     Given an instance of "Spa" API
 
-  @generated @skip @team:DataDog/data-and-analytics-processing
+  @generated @skip @team:ddoghq/data-and-analytics-processing
   Scenario: Get SPA Recommendations returns "Bad Request" response
     Given operation "GetSPARecommendations" enabled
     And new "GetSPARecommendations" request
@@ -14,7 +14,7 @@ Feature: Spa
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/data-and-analytics-processing
+  @generated @skip @team:ddoghq/data-and-analytics-processing
   Scenario: Get SPA Recommendations returns "OK" response
     Given operation "GetSPARecommendations" enabled
     And new "GetSPARecommendations" request
@@ -22,7 +22,7 @@ Feature: Spa
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/data-and-analytics-processing
+  @generated @skip @team:ddoghq/data-and-analytics-processing
   Scenario: Get SPA Recommendations with a shard parameter returns "Bad Request" response
     Given operation "GetSPARecommendationsWithShard" enabled
     And new "GetSPARecommendationsWithShard" request
@@ -31,7 +31,7 @@ Feature: Spa
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/data-and-analytics-processing
+  @generated @skip @team:ddoghq/data-and-analytics-processing
   Scenario: Get SPA Recommendations with a shard parameter returns "OK" response
     Given operation "GetSPARecommendationsWithShard" enabled
     And new "GetSPARecommendationsWithShard" request
@@ -40,7 +40,7 @@ Feature: Spa
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:DataDog/data-and-analytics-processing
+  @generated @skip @team:ddoghq/data-and-analytics-processing
   Scenario: Get SPA recommendations v2 returns "Bad Request" response
     Given operation "GetSPARecommendationsV2" enabled
     And new "GetSPARecommendationsV2" request
@@ -49,7 +49,7 @@ Feature: Spa
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/data-and-analytics-processing
+  @generated @skip @team:ddoghq/data-and-analytics-processing
   Scenario: Get SPA recommendations v2 returns "Not Found" response
     Given operation "GetSPARecommendationsV2" enabled
     And new "GetSPARecommendationsV2" request
@@ -58,7 +58,7 @@ Feature: Spa
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:DataDog/data-and-analytics-processing
+  @generated @skip @team:ddoghq/data-and-analytics-processing
   Scenario: Get SPA recommendations v2 returns "OK" response
     Given operation "GetSPARecommendationsV2" enabled
     And new "GetSPARecommendationsV2" request
@@ -67,7 +67,7 @@ Feature: Spa
     When the request is sent
     Then the response status is 200 OK
 
-  @skip @team:DataDog/data-and-analytics-processing
+  @skip @team:ddoghq/data-and-analytics-processing
   Scenario: GetSPARecommendations returns a JSON:API Recommendation with driver and executor estimations
     Given new "GetSPARecommendations" request
     And a valid "apiKeyAuth" key in the system

@@ -8,21 +8,21 @@ Feature: Observability Pipelines
     And a valid "appKeyAuth" key in the system
     And an instance of "ObservabilityPipelines" API
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Create a new pipeline returns "Bad Request" response
     Given new "CreatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "unknown-processor", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Main Observability Pipeline"}, "type": "pipelines"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/observability-pipelines
+  @generated @skip @team:ddoghq/observability-pipelines
   Scenario: Create a new pipeline returns "Conflict" response
     Given new "CreatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "pipeline_type": "logs", "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}, {"enabled": true, "field": "message", "id": "json-processor", "include": "*", "type": "parse_json"}]}], "processors": [], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Main Observability Pipeline"}, "type": "pipelines"}}
     When the request is sent
     Then the response status is 409 Conflict
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Create a new pipeline returns "OK" response
     Given new "CreatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Main Observability Pipeline"}, "type": "pipelines"}}
@@ -35,7 +35,7 @@ Feature: Observability Pipelines
     And the response "data.attributes.config.processor_groups" has length 1
     And the response "data.attributes.config.destinations" has length 1
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Create a pipeline with dedupe processor with cache returns "OK" response
     Given new "CreatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "dedupe-processor", "include": "service:my-service", "type": "dedupe", "fields": ["message"], "mode": "match", "cache": {"num_events": 5000}}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with Dedupe Cache"}, "type": "pipelines"}}
@@ -44,7 +44,7 @@ Feature: Observability Pipelines
     And the response "data.attributes.config.processor_groups[0].processors[0].type" is equal to "dedupe"
     And the response "data.attributes.config.processor_groups[0].processors[0].cache.num_events" is equal to 5000
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Create a pipeline with dedupe processor without cache returns "OK" response
     Given new "CreatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "dedupe-processor", "include": "service:my-service", "type": "dedupe", "fields": ["message"], "mode": "match"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with Dedupe No Cache"}, "type": "pipelines"}}
@@ -53,21 +53,21 @@ Feature: Observability Pipelines
     And the response "data.attributes.config.processor_groups[0].processors[0].type" is equal to "dedupe"
     And the response "data.attributes.config.processor_groups[0].processors[0].fields[0]" is equal to "message"
 
-  @generated @skip @team:DataDog/observability-pipelines
+  @generated @skip @team:ddoghq/observability-pipelines
   Scenario: Delete a pipeline returns "Conflict" response
     Given new "DeletePipeline" request
     And request contains "pipeline_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 409 Conflict
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Delete a pipeline returns "Not Found" response
     Given new "DeletePipeline" request
     And request contains "pipeline_id" parameter with value "3fa85f64-5717-4562-b3fc-2c963f66afa6"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Delete a pipeline returns "OK" response
     Given there is a valid "pipeline" in the system
     And new "DeletePipeline" request
@@ -75,7 +75,7 @@ Feature: Observability Pipelines
     When the request is sent
     Then the response status is 204 OK
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Get a specific pipeline returns "OK" response
     Given there is a valid "pipeline" in the system
     And new "GetPipeline" request
@@ -89,14 +89,14 @@ Feature: Observability Pipelines
     And the response "data.attributes.config.processor_groups" has length 1
     And the response "data.attributes.config.destinations" has length 1
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: List pipelines returns "Bad Request" response
     Given new "ListPipelines" request
     And request contains "page[size]" parameter with value 0
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: List pipelines returns "OK" response
     Given there is a valid "pipeline" in the system
     And new "ListPipelines" request
@@ -108,7 +108,7 @@ Feature: Observability Pipelines
     And the response "data[0].attributes.config.sources[0]" has field "id"
     And the response "data[0].attributes.config.destinations[0]" has field "id"
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Update a pipeline returns "Bad Request" response
     Given new "UpdatePipeline" request
     And there is a valid "pipeline" in the system
@@ -117,7 +117,7 @@ Feature: Observability Pipelines
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:DataDog/observability-pipelines
+  @generated @skip @team:ddoghq/observability-pipelines
   Scenario: Update a pipeline returns "Conflict" response
     Given new "UpdatePipeline" request
     And request contains "pipeline_id" parameter from "REPLACE.ME"
@@ -125,7 +125,7 @@ Feature: Observability Pipelines
     When the request is sent
     Then the response status is 409 Conflict
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Update a pipeline returns "Not Found" response
     Given new "UpdatePipeline" request
     And request contains "pipeline_id" parameter with value "3fa85f64-5717-4562-b3fc-2c963f66afa6"
@@ -133,7 +133,7 @@ Feature: Observability Pipelines
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Update a pipeline returns "OK" response
     Given there is a valid "pipeline" in the system
     And new "UpdatePipeline" request
@@ -149,7 +149,7 @@ Feature: Observability Pipelines
     And the response "data.attributes.config.destinations" has length 1
     And the response "data.attributes.config.destinations[0].id" is equal to "updated-datadog-logs-destination-id"
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Validate a metrics pipeline with enrichment table processor file lookup returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"pipeline_type": "metrics", "destinations": [{"id": "datadog-metrics-destination", "inputs": ["my-processor-group"], "type": "datadog_metrics"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "*", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "enrichment-table-processor", "include": "*", "type": "enrichment_table", "file": {"encoding": {"delimiter": ",", "type": "csv", "includes_headers": true}, "key": {"column": "service", "source": {"type": "tag", "name": "service"}}, "path": "/etc/enrichment/lookup.csv"}}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Metrics Pipeline with Enrichment Table File Lookup"}, "type": "pipelines"}}
@@ -157,7 +157,7 @@ Feature: Observability Pipelines
     Then the response status is 200 OK
     And the response "errors" has length 0
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Validate a metrics pipeline with enrichment table processor reference table returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"pipeline_type": "metrics", "destinations": [{"id": "datadog-metrics-destination", "inputs": ["my-processor-group"], "type": "datadog_metrics"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "*", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "enrichment-table-processor", "include": "*", "type": "enrichment_table", "reference_table": {"table_id": "metric-enrichment", "key": {"source": {"type": "metric_name"}}, "columns": ["environment", "team"]}}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Metrics Pipeline with Enrichment Table Reference Table"}, "type": "pipelines"}}
@@ -165,7 +165,7 @@ Feature: Observability Pipelines
     Then the response status is 200 OK
     And the response "errors" has length 0
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Validate a metrics pipeline with opentelemetry source returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"pipeline_type": "metrics", "destinations": [{"id": "datadog-metrics-destination", "inputs": ["my-processor-group"], "type": "datadog_metrics"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "*", "inputs": ["opentelemetry-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "env:production", "type": "filter"}]}], "sources": [{"id": "opentelemetry-source", "type": "opentelemetry"}]}, "name": "Metrics OTel Pipeline"}, "type": "pipelines"}}
@@ -173,7 +173,7 @@ Feature: Observability Pipelines
     Then the response status is 200 OK
     And the response "errors" has length 0
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Validate an observability pipeline returns "Bad Request" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "filter-processor", "type": "filter"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Main Observability Pipeline"}, "type": "pipelines"}}
@@ -184,7 +184,7 @@ Feature: Observability Pipelines
     And the response "errors[0].meta.id" is equal to "filter-processor"
     And the response "errors[0].meta.message" is equal to "Field 'include' is required"
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Validate an observability pipeline returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Main Observability Pipeline"}, "type": "pipelines"}}
@@ -192,7 +192,7 @@ Feature: Observability Pipelines
     Then the response status is 200 OK
     And the response "errors" has length 0
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Validate an observability pipeline with ClickHouse destination arrow_stream format returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "clickhouse-destination", "inputs": ["my-processor-group"], "type": "clickhouse", "table": "application_logs", "database": "my_database", "format": "arrow_stream", "batch_encoding": {"codec": "arrow_stream", "allow_nullable_fields": false}, "compression": "gzip", "auth": {"strategy": "basic", "username_key": "CLICKHOUSE_USERNAME", "password_key": "CLICKHOUSE_PASSWORD"}, "batch": {"max_events": 1000, "timeout_secs": 1}}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with ClickHouse Destination Arrow Stream"}, "type": "pipelines"}}
@@ -200,7 +200,7 @@ Feature: Observability Pipelines
     Then the response status is 200 OK
     And the response "errors" has length 0
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Validate an observability pipeline with ClickHouse destination returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "clickhouse-destination", "inputs": ["my-processor-group"], "type": "clickhouse", "table": "application_logs", "database": "my_database", "compression": "gzip", "auth": {"strategy": "basic", "username_key": "CLICKHOUSE_USERNAME", "password_key": "CLICKHOUSE_PASSWORD"}, "batch": {"max_events": 1000, "timeout_secs": 1}}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with ClickHouse Destination"}, "type": "pipelines"}}
@@ -208,7 +208,7 @@ Feature: Observability Pipelines
     Then the response status is 200 OK
     And the response "errors" has length 0
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Validate an observability pipeline with ClickHouse destination with all fields set returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "clickhouse-destination", "inputs": ["my-processor-group"], "type": "clickhouse", "endpoint_url_key": "CLICKHOUSE_ENDPOINT_URL", "database": "my_database", "table": "application_logs", "format": "arrow_stream", "skip_unknown_fields": true, "date_time_best_effort": true, "compression": {"algorithm": "gzip", "level": 6}, "auth": {"strategy": "basic", "username_key": "CLICKHOUSE_USERNAME", "password_key": "CLICKHOUSE_PASSWORD"}, "batch": {"max_events": 1000, "timeout_secs": 1}, "batch_encoding": {"codec": "arrow_stream", "allow_nullable_fields": true}, "tls": {"crt_file": "/path/to/cert.crt", "ca_file": "/path/to/ca.crt", "key_file": "/path/to/key.key", "key_pass_key": "TLS_KEY_PASSPHRASE"}, "buffer": {"type": "memory", "max_events": 500, "when_full": "block"}}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with ClickHouse Destination All Fields"}, "type": "pipelines"}}
@@ -216,7 +216,7 @@ Feature: Observability Pipelines
     Then the response status is 200 OK
     And the response "errors" has length 0
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Validate an observability pipeline with HTTP server source valid_tokens returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["http-server-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "http-server-source", "type": "http_server", "auth_strategy": "none", "decoding": "json", "valid_tokens": [{"token_key": "HTTP_SERVER_TOKEN", "enabled": true, "path_to_token": {"header": "X-Token"}, "field_to_add": {"key": "token_name", "value": "primary_token"}}, {"token_key": "HTTP_SERVER_TOKEN_BACKUP", "enabled": true, "path_to_token": "path"}]}]}, "name": "Pipeline with HTTP server valid_tokens"}, "type": "pipelines"}}
@@ -224,7 +224,7 @@ Feature: Observability Pipelines
     Then the response status is 200 OK
     And the response "errors" has length 0
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Validate an observability pipeline with OCSF mapper custom mapping returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "ocsf-mapper-processor", "include": "service:my-service", "mappings": [{"include": "source:custom", "mapping": {"mapping": [{"default": "", "dest": "time", "source": "timestamp"}, {"default": "", "dest": "severity", "source": "level"}, {"default": "", "dest": "device.type", "lookup": {"table": [{"contains": "Desktop", "value": "desktop"}]}, "source": "host.type"}], "metadata": {"class": "Device Inventory Info", "profiles": ["container"], "version": "1.3.0"}, "version": 1}}], "type": "ocsf_mapper"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "OCSF Custom Mapper Pipeline"}, "type": "pipelines"}}
@@ -232,14 +232,14 @@ Feature: Observability Pipelines
     Then the response status is 200 OK
     And the response "errors" has length 0
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Validate an observability pipeline with OCSF mapper invalid custom mapping returns "Bad Request" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "ocsf-mapper-processor", "include": "service:my-service", "mappings": [{"include": "source:custom", "mapping": {"mapping": [{"dest": "time", "source": "timestamp"}], "metadata": {"class": "Invalid Class", "profiles": ["container"], "version": "1.3.0"}, "version": 0}}], "type": "ocsf_mapper"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "OCSF Invalid Mapper Pipeline"}, "type": "pipelines"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Validate an observability pipeline with OCSF mapper keep_unmatched returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "ocsf-mapper-processor", "include": "service:my-service", "type": "ocsf_mapper", "keep_unmatched": true, "mappings": [{"include": "source:cloudtrail", "mapping": "CloudTrail Account Change"}]}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "OCSF Mapper Keep Unmatched Pipeline"}, "type": "pipelines"}}
@@ -247,7 +247,7 @@ Feature: Observability Pipelines
     Then the response status is 200 OK
     And the response "errors" has length 0
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Validate an observability pipeline with OCSF mapper library mapping returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "ocsf-mapper-processor", "include": "service:my-service", "type": "ocsf_mapper", "mappings": [{"include": "source:cloudtrail", "mapping": "CloudTrail Account Change"}]}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "OCSF Mapper Pipeline"}, "type": "pipelines"}}
@@ -255,7 +255,7 @@ Feature: Observability Pipelines
     Then the response status is 200 OK
     And the response "errors" has length 0
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Validate an observability pipeline with Splunk HEC destination endpoint_target returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "splunk-hec-destination", "inputs": ["my-processor-group"], "type": "splunk_hec", "token_key": "SPLUNK_HEC_TOKEN", "endpoint_target": "raw"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with Splunk HEC endpoint_target"}, "type": "pipelines"}}
@@ -263,7 +263,7 @@ Feature: Observability Pipelines
     Then the response status is 200 OK
     And the response "errors" has length 0
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Validate an observability pipeline with Splunk HEC destination token_strategy returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "splunk-hec-destination", "inputs": ["my-processor-group"], "type": "splunk_hec", "token_key": "SPLUNK_HEC_TOKEN", "token_strategy": "custom"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with Splunk HEC token_strategy"}, "type": "pipelines"}}
@@ -271,7 +271,7 @@ Feature: Observability Pipelines
     Then the response status is 200 OK
     And the response "errors" has length 0
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Validate an observability pipeline with Splunk HEC source store_hec_token returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["splunk-hec-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "splunk-hec-source", "type": "splunk_hec", "store_hec_token": true}]}, "name": "Pipeline with Splunk HEC store_hec_token"}, "type": "pipelines"}}
@@ -279,7 +279,7 @@ Feature: Observability Pipelines
     Then the response status is 200 OK
     And the response "errors" has length 0
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Validate an observability pipeline with Splunk HEC source valid_tokens returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["splunk-hec-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "splunk-hec-source", "type": "splunk_hec", "valid_tokens": [{"token_key": "SPLUNK_HEC_TOKEN", "enabled": true, "field_to_add": {"key": "token_name", "value": "primary_token"}}, {"token_key": "SPLUNK_HEC_TOKEN_BACKUP", "enabled": false}]}]}, "name": "Pipeline with Splunk HEC valid_tokens"}, "type": "pipelines"}}
@@ -287,7 +287,7 @@ Feature: Observability Pipelines
     Then the response status is 200 OK
     And the response "errors" has length 0
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Validate an observability pipeline with Splunk TCP source max_connection_duration_secs returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["splunk-tcp-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "splunk-tcp-source", "type": "splunk_tcp", "max_connection_duration_secs": 3600}]}, "name": "Pipeline with Splunk TCP max connection duration"}, "type": "pipelines"}}
@@ -295,7 +295,7 @@ Feature: Observability Pipelines
     Then the response status is 200 OK
     And the response "errors" has length 0
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Validate an observability pipeline with amazon S3 source compression returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["amazon-s3-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "service:my-service", "type": "filter"}]}], "sources": [{"id": "amazon-s3-source", "type": "amazon_s3", "region": "us-east-1", "compression": "gzip"}]}, "name": "Pipeline with S3 Source Compression"}, "type": "pipelines"}}
@@ -303,7 +303,7 @@ Feature: Observability Pipelines
     Then the response status is 200 OK
     And the response "errors" has length 0
 
-  @skip @team:DataDog/observability-pipelines
+  @skip @team:ddoghq/observability-pipelines
   Scenario: Validate an observability pipeline with cloud_prem destination buffer returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "cloud-prem-destination", "inputs": ["my-processor-group"], "type": "cloud_prem", "endpoint_url_key": "CLOUDPREM_ENDPOINT_URL", "buffer": {"type": "disk", "max_size": 1073741824, "when_full": "block"}}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with CloudPrem Buffer"}, "type": "pipelines"}}
@@ -311,7 +311,7 @@ Feature: Observability Pipelines
     Then the response status is 200 OK
     And the response "errors" has length 0
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Validate an observability pipeline with destination secret key returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "sumo-logic-destination", "inputs": ["my-processor-group"], "type": "sumo_logic", "endpoint_url_key": "SUMO_LOGIC_ENDPOINT_URL"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with Secret Key"}, "type": "pipelines"}}
@@ -319,7 +319,7 @@ Feature: Observability Pipelines
     Then the response status is 200 OK
     And the response "errors" has length 0
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Validate an observability pipeline with enrichment table secret field lookup returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "enrichment-processor", "include": "*", "target": "enriched", "type": "enrichment_table", "file": {"encoding": {"delimiter": ",", "type": "csv", "includes_headers": true}, "key": [{"column": "user_id", "comparison": "equals", "field": {"secret": "LOOKUP_KEY_SECRET"}}], "path": "/etc/enrichment/lookup.csv", "schema": [{"column": "user_id", "type": "string"}]}}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with Enrichment Table Secret Field Lookup"}, "type": "pipelines"}}
@@ -327,7 +327,7 @@ Feature: Observability Pipelines
     Then the response status is 200 OK
     And the response "errors" has length 0
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Validate an observability pipeline with parse grok processor include rules returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "parse-grok-processor", "include": "*", "type": "parse_grok", "field": "content", "rules": [{"include": "service:foo", "match_rules": [{"name": "MyParsingRule", "rule": "%{word:user}"}]}]}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with Parse Grok Include Rules"}, "type": "pipelines"}}
@@ -335,7 +335,7 @@ Feature: Observability Pipelines
     Then the response status is 200 OK
     And the response "errors" has length 0
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Validate an observability pipeline with parse grok processor source rules returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "parse-grok-processor", "include": "*", "type": "parse_grok", "rules": [{"source": "message", "match_rules": [{"name": "MyParsingRule", "rule": "%{word:user}"}]}]}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with Parse Grok Source Rules"}, "type": "pipelines"}}
@@ -343,7 +343,7 @@ Feature: Observability Pipelines
     Then the response status is 200 OK
     And the response "errors" has length 0
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Validate an observability pipeline with source secret key returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["http-client-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "http-client-source", "type": "http_client", "decoding": "bytes", "scrape_interval_secs": 15, "scrape_timeout_secs": 5, "auth_strategy": "bearer", "token_key": "HTTP_CLIENT_TOKEN"}]}, "name": "Pipeline with Source Secret"}, "type": "pipelines"}}
@@ -351,7 +351,7 @@ Feature: Observability Pipelines
     Then the response status is 200 OK
     And the response "errors" has length 0
 
-  @team:DataDog/observability-pipelines
+  @team:ddoghq/observability-pipelines
   Scenario: Validate an observability pipeline with websocket source bearer auth returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["websocket-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "websocket-source", "type": "websocket", "decoding": "json", "auth_strategy": "bearer", "token_key": "WS_BEARER_TOKEN", "uri_key": "WS_URI", "tls": {"mode": "enabled"}}]}, "name": "Pipeline with WebSocket Source"}, "type": "pipelines"}}

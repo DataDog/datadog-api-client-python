@@ -3,7 +3,7 @@ Feature: Rum Replay Sessions
   Retrieve segments for RUM replay sessions. Access session replay data
   stored in event platform or blob storage.
 
-  @generated @skip @team:DataDog/session-replay
+  @generated @skip @team:ddoghq/session-replay
   Scenario: Get segments returns "OK" response
     Given a valid "apiKeyAuth" key in the system
     And a valid "appKeyAuth" key in the system
