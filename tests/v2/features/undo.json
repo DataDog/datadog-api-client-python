@@ -6825,7 +6825,25 @@
       "type": "safe"
     }
   },
+  "CreateOrgGroupMemberships": {
+    "tag": "Org Groups",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
   "BulkUpdateOrgGroupMemberships": {
+    "tag": "Org Groups",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "BulkDeleteOrgGroupMemberships": {
+    "tag": "Org Groups",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteOrgGroupMembership": {
     "tag": "Org Groups",
     "undo": {
       "type": "idempotent"

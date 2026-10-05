@@ -15,7 +15,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.global_org_identifier import GlobalOrgIdentifier
 
 
-class OrgGroupMembershipBulkUpdateAttributes(ModelNormal):
+class OrgGroupMembershipCreateAttributes(ModelNormal):
     validations = {
         "orgs": {
             "max_items": 100,
@@ -37,9 +37,9 @@ class OrgGroupMembershipBulkUpdateAttributes(ModelNormal):
 
     def __init__(self_, orgs: List[GlobalOrgIdentifier], **kwargs):
         """
-        Attributes for bulk updating org group memberships.
+        Attributes for adding organizations to an org group.
 
-        :param orgs: List of organizations to move. Between 1 and 100 per request. Each ``org_uuid`` and ``org_site`` pair must be unique.
+        :param orgs: List of organizations to add. Between 1 and 100 per request. Each ``org_uuid`` and ``org_site`` pair must be unique.
         :type orgs: [GlobalOrgIdentifier]
         """
         super().__init__(kwargs)
