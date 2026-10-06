@@ -458,7 +458,7 @@ class DORAMetricsApi:
         self,
         body: DORADeploymentPatchByVersionRequest,
     ) -> None:
-        """Patch a deployment event by version.
+        """Mark a deployment as failed by version.
 
         Update a deployment's change failure status, identifying the deployment by its service, environment, and version instead of its ID. Use this to mark a deployment as a change failure or back to stable. You can optionally include remediation details to enable failed deployment recovery time calculation. If multiple deployments match the given service, environment, and version, the most recently finished one is updated.
 

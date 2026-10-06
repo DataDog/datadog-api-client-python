@@ -1,5 +1,5 @@
 """
-Patch a deployment event by version returns "Accepted" response
+Mark a deployment as failed by version returns "Accepted" response
 """
 
 from os import environ
@@ -36,7 +36,6 @@ body = DORADeploymentPatchByVersionRequest(
 
 configuration = Configuration()
 configuration.access_token = environ["DD_BEARER_TOKEN"]
-configuration.unstable_operations["patch_dora_deployment_by_version"] = True
 with ApiClient(configuration) as api_client:
     api_instance = DORAMetricsApi(api_client)
     api_instance.patch_dora_deployment_by_version(body=body)
