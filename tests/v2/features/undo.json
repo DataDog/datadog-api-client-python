@@ -1808,6 +1808,12 @@
       "type": "safe"
     }
   },
+  "ListCostCloudAccountsV2": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetCommitmentsCommitmentList": {
     "tag": "Cloud Cost Management",
     "undo": {

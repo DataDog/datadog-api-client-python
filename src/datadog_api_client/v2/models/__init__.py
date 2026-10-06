@@ -1270,6 +1270,10 @@ from datadog_api_client.v2.model.cloud_configuration_rule_create_payload import 
 from datadog_api_client.v2.model.cloud_configuration_rule_options import CloudConfigurationRuleOptions
 from datadog_api_client.v2.model.cloud_configuration_rule_payload import CloudConfigurationRulePayload
 from datadog_api_client.v2.model.cloud_configuration_rule_type import CloudConfigurationRuleType
+from datadog_api_client.v2.model.cloud_cost_account import CloudCostAccount
+from datadog_api_client.v2.model.cloud_cost_account_attributes import CloudCostAccountAttributes
+from datadog_api_client.v2.model.cloud_cost_account_type import CloudCostAccountType
+from datadog_api_client.v2.model.cloud_cost_accounts_response import CloudCostAccountsResponse
 from datadog_api_client.v2.model.cloud_inventory_cloud_provider_id import CloudInventoryCloudProviderId
 from datadog_api_client.v2.model.cloud_inventory_cloud_provider_request_type import (
     CloudInventoryCloudProviderRequestType,
@@ -13551,6 +13555,10 @@ __all__ = [
     "CloudConfigurationRuleOptions",
     "CloudConfigurationRulePayload",
     "CloudConfigurationRuleType",
+    "CloudCostAccount",
+    "CloudCostAccountAttributes",
+    "CloudCostAccountType",
+    "CloudCostAccountsResponse",
     "CloudInventoryCloudProviderId",
     "CloudInventoryCloudProviderRequestType",
     "CloudInventorySyncConfigAWSRequestAttributes",

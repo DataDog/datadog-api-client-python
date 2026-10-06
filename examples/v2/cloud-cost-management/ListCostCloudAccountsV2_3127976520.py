@@ -1,0 +1,17 @@
+"""
+List Cloud Cost Management cloud accounts with mixed-case AWS CUR 2.0 filter returns "OK" response
+"""
+
+from os import environ
+from datadog_api_client import ApiClient, Configuration
+from datadog_api_client.v2.api.cloud_cost_management_api import CloudCostManagementApi
+
+configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
+with ApiClient(configuration) as api_client:
+    api_instance = CloudCostManagementApi(api_client)
+    response = api_instance.list_cost_cloud_accounts_v2(
+        filter_cloud="Aws_Cur2",
+    )
+
+    print(response)
