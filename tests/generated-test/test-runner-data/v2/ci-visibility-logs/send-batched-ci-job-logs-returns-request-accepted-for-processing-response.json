@@ -1,0 +1,46 @@
+{
+  "api": "CIVisibilityLogs",
+  "expected_status": 202,
+  "feature": "CI Visibility Logs",
+  "id": "v2/CI Visibility Logs/Send batched CI job logs returns \"Request accepted for processing\" response",
+  "operation_id": "SubmitCILog",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "items": {
+          "format": null,
+          "ref": "CILogItem",
+          "type": "object"
+        },
+        "ref": "CILogRequest",
+        "type": "array"
+      },
+      "source": "inline",
+      "value": [
+        {
+          "job_id": "job-456",
+          "line_number": 1,
+          "message": "Starting tests",
+          "pipeline_unique_id": "3eacb6f3-ff04-4e10-8a9c-46e6d054024a",
+          "section_name": "tests",
+          "status": "notice"
+        },
+        {
+          "job_id": "job-456",
+          "line_number": 2,
+          "message": "Tests passed",
+          "pipeline_unique_id": "3eacb6f3-ff04-4e10-8a9c-46e6d054024a"
+        }
+      ]
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/cilogs"
+  },
+  "scenario": "Send batched CI job logs returns \"Request accepted for processing\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
