@@ -3809,6 +3809,20 @@
       "version": "v2"
     },
     {
+      "feature": "CI Visibility Logs",
+      "feature_file": "../../v2/features/ci_visibility_logs.feature",
+      "file": "v2/ci-visibility-logs/send-batched-ci-job-logs-returns-request-accepted-for-processing-response.json",
+      "scenario": "Send batched CI job logs returns \"Request accepted for processing\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "CI Visibility Logs",
+      "feature_file": "../../v2/features/ci_visibility_logs.feature",
+      "file": "v2/ci-visibility-logs/send-one-ci-job-log-returns-request-accepted-for-processing-response.json",
+      "scenario": "Send one CI job log returns \"Request accepted for processing\" response",
+      "version": "v2"
+    },
+    {
       "feature": "CI Visibility Pipelines",
       "feature_file": "../../v2/features/ci_visibility_pipelines.feature",
       "file": "v2/ci-visibility-pipelines/aggregate-pipelines-events-returns-ok-response.json",

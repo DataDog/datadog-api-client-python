@@ -1013,6 +1013,12 @@ from datadog_api_client.v2.model.ci_app_tests_bucket_response import CIAppTestsB
 from datadog_api_client.v2.model.ci_app_tests_group_by import CIAppTestsGroupBy
 from datadog_api_client.v2.model.ci_app_tests_query_filter import CIAppTestsQueryFilter
 from datadog_api_client.v2.model.ci_app_warning import CIAppWarning
+from datadog_api_client.v2.model.ci_log_attribute_value import CILogAttributeValue
+from datadog_api_client.v2.model.ci_log_content_encoding import CILogContentEncoding
+from datadog_api_client.v2.model.ci_log_errors import CILogErrors
+from datadog_api_client.v2.model.ci_log_intake_error import CILogIntakeError
+from datadog_api_client.v2.model.ci_log_intake_errors import CILogIntakeErrors
+from datadog_api_client.v2.model.ci_log_item import CILogItem
 from datadog_api_client.v2.model.csm_agents_metadata import CSMAgentsMetadata
 from datadog_api_client.v2.model.csm_agents_type import CSMAgentsType
 from datadog_api_client.v2.model.cvss import CVSS
@@ -13314,6 +13320,12 @@ __all__ = [
     "CIAppTestsGroupBy",
     "CIAppTestsQueryFilter",
     "CIAppWarning",
+    "CILogAttributeValue",
+    "CILogContentEncoding",
+    "CILogErrors",
+    "CILogIntakeError",
+    "CILogIntakeErrors",
+    "CILogItem",
     "CSMAgentsMetadata",
     "CSMAgentsType",
     "CVSS",
