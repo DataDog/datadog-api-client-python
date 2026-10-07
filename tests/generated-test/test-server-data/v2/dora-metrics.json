@@ -271,7 +271,7 @@
           }
         }
       ],
-      "scenario": "Patch a deployment event returns \"Accepted\" response",
+      "scenario": "Mark a deployment as failed by ID returns \"Accepted\" response",
       "version": "v2"
     },
     {
@@ -351,7 +351,7 @@
           }
         }
       ],
-      "scenario": "Patch a deployment event returns \"Bad Request\" response",
+      "scenario": "Mark a deployment as failed by ID returns \"Bad Request\" response",
       "version": "v2"
     },
     {
