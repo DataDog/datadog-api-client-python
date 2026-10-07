@@ -4133,6 +4133,55 @@
     {
       "feature": "Cloud Cost Management",
       "feature_file": "../../v2/features/cloud_cost_management.feature",
+      "file": "v2/cloud-cost-management/list-cloud-cost-management-cloud-accounts-returns-bad-request-response.json",
+      "scenario": "List Cloud Cost Management cloud accounts returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "feature_file": "../../v2/features/cloud_cost_management.feature",
+      "file": "v2/cloud-cost-management/list-cloud-cost-management-cloud-accounts-returns-ok-response.json",
+      "scenario": "List Cloud Cost Management cloud accounts returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "feature_file": "../../v2/features/cloud_cost_management.feature",
+      "file": "v2/cloud-cost-management/list-cloud-cost-management-cloud-accounts-with-aws-cur-2-0-filter-returns-ok-response.json",
+      "scenario": "List Cloud Cost Management cloud accounts with AWS CUR 2.0 filter returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "feature_file": "../../v2/features/cloud_cost_management.feature",
+      "file": "v2/cloud-cost-management/list-cloud-cost-management-cloud-accounts-with-oci-filter-returns-ok-response.json",
+      "scenario": "List Cloud Cost Management cloud accounts with OCI filter returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "feature_file": "../../v2/features/cloud_cost_management.feature",
+      "file": "v2/cloud-cost-management/list-cloud-cost-management-cloud-accounts-with-an-empty-filter-returns-ok-response.json",
+      "scenario": "List Cloud Cost Management cloud accounts with an empty filter returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "feature_file": "../../v2/features/cloud_cost_management.feature",
+      "file": "v2/cloud-cost-management/list-cloud-cost-management-cloud-accounts-with-mixed-case-aws-cur-2-0-filter-returns-ok-response.json",
+      "scenario": "List Cloud Cost Management cloud accounts with mixed-case AWS CUR 2.0 filter returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "feature_file": "../../v2/features/cloud_cost_management.feature",
+      "file": "v2/cloud-cost-management/list-cloud-cost-management-cloud-accounts-with-mixed-case-oci-filter-returns-ok-response.json",
+      "scenario": "List Cloud Cost Management cloud accounts with mixed-case OCI filter returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "feature_file": "../../v2/features/cloud_cost_management.feature",
       "file": "v2/cloud-cost-management/list-custom-costs-files-returns-ok-response.json",
       "scenario": "List Custom Costs Files returns \"OK\" response",
       "version": "v2"

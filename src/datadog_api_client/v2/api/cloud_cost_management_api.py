@@ -38,6 +38,7 @@ from datadog_api_client.v2.model.custom_forecast_upsert_request import CustomFor
 from datadog_api_client.v2.model.budget_validation_response import BudgetValidationResponse
 from datadog_api_client.v2.model.budget_validation_request import BudgetValidationRequest
 from datadog_api_client.v2.model.budget_array import BudgetArray
+from datadog_api_client.v2.model.cloud_cost_accounts_response import CloudCostAccountsResponse
 from datadog_api_client.v2.model.commitments_list_response import CommitmentsListResponse
 from datadog_api_client.v2.model.commitments_provider import CommitmentsProvider
 from datadog_api_client.v2.model.commitments_commitment_type import CommitmentsCommitmentType
@@ -1343,6 +1344,29 @@ class CloudCostManagementApi:
                 "version": "v2",
             },
             params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_cost_cloud_accounts_v2_endpoint = _Endpoint(
+            settings={
+                "response_type": (CloudCostAccountsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/cloud_accounts",
+                "operation_id": "list_cost_cloud_accounts_v2",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "filter_cloud": {
+                    "validation": {},
+                    "openapi_types": (str,),
+                    "attribute": "filter[cloud]",
+                    "location": "query",
+                },
+            },
             headers_map={
                 "accept": ["application/json"],
             },
@@ -3195,6 +3219,32 @@ class CloudCostManagementApi:
         kwargs: Dict[str, Any] = {}
         return self._list_cost_azure_uc_configs_endpoint.call_with_http_info(**kwargs)
 
+    def list_cost_cloud_accounts_v2(
+        self,
+        *,
+        filter_cloud: Union[str, UnsetType] = unset,
+    ) -> CloudCostAccountsResponse:
+        """List Cloud Cost Management cloud accounts.
+
+        List the OCI and AWS CUR 2.0 cloud accounts for your organization, including account IDs, status, and validation errors.
+        Use ``filter[cloud]=oci`` or ``filter[cloud]=aws_cur2`` to return a single cloud. When omitted or empty, both clouds are returned.
+        AWS CUR 1.0, Azure, and GCP accounts are available through their dedicated configuration endpoints.
+        Archived accounts are excluded. The response contains all matching accounts and is not paginated.
+
+        This endpoint replaces ``GET /api/v2/cost/oci_config``. To migrate, use ``filter[cloud]=oci`` and update clients to accept
+        the ``cloud_account`` resource type instead of ``oci_config``. Account IDs and the existing attributes are preserved;
+        each account also includes the ``cloud`` attribute.
+
+        :param filter_cloud: Filter by cloud, either ``oci`` or ``aws_cur2`` (case insensitive). Omit or leave empty to return both.
+        :type filter_cloud: str, optional
+        :rtype: CloudCostAccountsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if filter_cloud is not unset:
+            kwargs["filter_cloud"] = filter_cloud
+
+        return self._list_cost_cloud_accounts_v2_endpoint.call_with_http_info(**kwargs)
+
     def list_cost_gcp_usage_cost_configs(
         self,
     ) -> GCPUsageCostConfigsResponse:
@@ -3212,7 +3262,9 @@ class CloudCostManagementApi:
     ) -> OCIConfigsResponse:
         """List Cloud Cost Management OCI configs. **Deprecated**.
 
-        **Note** : This endpoint is deprecated. View OCI accounts in Cloud Cost Settings in the Datadog web application instead.
+        **Note** : This endpoint is deprecated. Use `List Cloud Cost Management cloud accounts <https://docs.datadoghq.com/api/latest/cloud-cost-management/#list-cloud-cost-management-cloud-accounts>`_
+        with ``filter[cloud]=oci`` instead. Update clients to accept the ``cloud_account`` resource type instead of ``oci_config``.
+        Account IDs and the existing attributes are preserved; each account also includes the ``cloud`` attribute.
 
         List the OCI configs.
 

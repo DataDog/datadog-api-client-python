@@ -767,6 +767,56 @@ Feature: Cloud Cost Management
     When the request is sent
     Then the response status is 200 OK
 
+  @team:ddoghq/cloud-cost-management
+  Scenario: List Cloud Cost Management cloud accounts returns "Bad Request" response
+    Given new "ListCostCloudAccountsV2" request
+    And request contains "filter[cloud]" parameter with value "gcp"
+    When the request is sent
+    Then the response status is 400 Bad Request
+    And the response "errors[0].status" is equal to "400"
+    And the response "errors[0].detail" is equal to "attribute \"filter[cloud]\" must be one of: oci, aws_cur2"
+
+  @team:ddoghq/cloud-cost-management
+  Scenario: List Cloud Cost Management cloud accounts returns "OK" response
+    Given new "ListCostCloudAccountsV2" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:ddoghq/cloud-cost-management
+  Scenario: List Cloud Cost Management cloud accounts with AWS CUR 2.0 filter returns "OK" response
+    Given new "ListCostCloudAccountsV2" request
+    And request contains "filter[cloud]" parameter with value "aws_cur2"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:ddoghq/cloud-cost-management
+  Scenario: List Cloud Cost Management cloud accounts with OCI filter returns "OK" response
+    Given new "ListCostCloudAccountsV2" request
+    And request contains "filter[cloud]" parameter with value "oci"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:ddoghq/cloud-cost-management
+  Scenario: List Cloud Cost Management cloud accounts with an empty filter returns "OK" response
+    Given new "ListCostCloudAccountsV2" request
+    And request contains "filter[cloud]" parameter with value ""
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:ddoghq/cloud-cost-management
+  Scenario: List Cloud Cost Management cloud accounts with mixed-case AWS CUR 2.0 filter returns "OK" response
+    Given new "ListCostCloudAccountsV2" request
+    And request contains "filter[cloud]" parameter with value "Aws_Cur2"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @team:ddoghq/cloud-cost-management
+  Scenario: List Cloud Cost Management cloud accounts with mixed-case OCI filter returns "OK" response
+    Given new "ListCostCloudAccountsV2" request
+    And request contains "filter[cloud]" parameter with value "OcI"
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:ddoghq/cloud-cost-management
   Scenario: List Cloud Cost Management orchestrators returns "Bad Request" response
     Given operation "ListCostTagMetadataOrchestrators" enabled
