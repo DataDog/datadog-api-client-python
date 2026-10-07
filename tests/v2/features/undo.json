@@ -802,6 +802,18 @@
       "type": "safe"
     }
   },
+  "GetMonitorAutomation": {
+    "tag": "Bits AI",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateMonitorAutomation": {
+    "tag": "Bits AI",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "SearchCases": {
     "tag": "Case Management",
     "undo": {

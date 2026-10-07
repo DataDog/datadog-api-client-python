@@ -19,6 +19,8 @@ from datadog_api_client.v2.model.list_investigations_response_data import ListIn
 from datadog_api_client.v2.model.trigger_investigation_response import TriggerInvestigationResponse
 from datadog_api_client.v2.model.trigger_investigation_request import TriggerInvestigationRequest
 from datadog_api_client.v2.model.get_investigation_response import GetInvestigationResponse
+from datadog_api_client.v2.model.monitor_automation_response import MonitorAutomationResponse
+from datadog_api_client.v2.model.monitor_automation_request import MonitorAutomationRequest
 
 
 class BitsAIApi:
@@ -45,6 +47,32 @@ class BitsAIApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_monitor_automation_endpoint = _Endpoint(
+            settings={
+                "response_type": (MonitorAutomationResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/bits-ai/monitors/{monitor_id}/automation",
+                "operation_id": "get_monitor_automation",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "monitor_id": {
+                    "required": True,
+                    "validation": {
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "monitor_id",
                     "location": "path",
                 },
             },
@@ -109,6 +137,35 @@ class BitsAIApi:
             api_client=api_client,
         )
 
+        self._update_monitor_automation_endpoint = _Endpoint(
+            settings={
+                "response_type": (MonitorAutomationResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/bits-ai/monitors/{monitor_id}/automation",
+                "operation_id": "update_monitor_automation",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "monitor_id": {
+                    "required": True,
+                    "validation": {
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "monitor_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (MonitorAutomationRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
     def get_investigation(
         self,
         id: str,
@@ -125,6 +182,23 @@ class BitsAIApi:
         kwargs["id"] = id
 
         return self._get_investigation_endpoint.call_with_http_info(**kwargs)
+
+    def get_monitor_automation(
+        self,
+        monitor_id: int,
+    ) -> MonitorAutomationResponse:
+        """Get automatic investigation settings for a monitor.
+
+        Manage the Bits automatic investigation setting independently of the monitor definition. Requires access to the monitor and the specified permissions. A newly created monitor and updated settings can take time to appear in reads.
+
+        :param monitor_id: The monitor ID.
+        :type monitor_id: int
+        :rtype: MonitorAutomationResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["monitor_id"] = monitor_id
+
+        return self._get_monitor_automation_endpoint.call_with_http_info(**kwargs)
 
     def list_investigations(
         self,
@@ -217,3 +291,25 @@ class BitsAIApi:
         kwargs["body"] = body
 
         return self._trigger_investigation_endpoint.call_with_http_info(**kwargs)
+
+    def update_monitor_automation(
+        self,
+        monitor_id: int,
+        body: MonitorAutomationRequest,
+    ) -> MonitorAutomationResponse:
+        """Update monitor automatic investigation settings.
+
+        Manage the Bits automatic investigation setting independently of the monitor definition. Requires access to the monitor and the specified permissions. A newly created monitor and updated settings can take time to appear in reads. The enabled attribute is required; false disables automatic investigations. Repeated requests set the same desired state. This operation does not create or delete the monitor.
+
+        :param monitor_id: The monitor ID.
+        :type monitor_id: int
+        :param body: Automatic investigation settings to apply.
+        :type body: MonitorAutomationRequest
+        :rtype: MonitorAutomationResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["monitor_id"] = monitor_id
+
+        kwargs["body"] = body
+
+        return self._update_monitor_automation_endpoint.call_with_http_info(**kwargs)
