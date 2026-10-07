@@ -438,7 +438,7 @@ class DORAMetricsApi:
         deployment_id: str,
         body: DORADeploymentPatchRequest,
     ) -> None:
-        """Patch a deployment event.
+        """Mark a deployment as failed by ID.
 
         Update a deployment's change failure status. Use this to mark a deployment as a change failure or back to stable. You can optionally include remediation details to enable failed deployment recovery time calculation.
 
