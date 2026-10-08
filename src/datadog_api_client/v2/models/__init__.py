@@ -6665,6 +6665,12 @@ from datadog_api_client.v2.model.observability_pipeline_add_metric_tags_processo
 from datadog_api_client.v2.model.observability_pipeline_aggregate_processor import (
     ObservabilityPipelineAggregateProcessor,
 )
+from datadog_api_client.v2.model.observability_pipeline_aggregate_processor_aggregation_timing import (
+    ObservabilityPipelineAggregateProcessorAggregationTiming,
+)
+from datadog_api_client.v2.model.observability_pipeline_aggregate_processor_aggregation_timing_type import (
+    ObservabilityPipelineAggregateProcessorAggregationTimingType,
+)
 from datadog_api_client.v2.model.observability_pipeline_aggregate_processor_mode import (
     ObservabilityPipelineAggregateProcessorMode,
 )
@@ -17254,6 +17260,8 @@ __all__ = [
     "ObservabilityPipelineAddMetricTagsProcessor",
     "ObservabilityPipelineAddMetricTagsProcessorType",
     "ObservabilityPipelineAggregateProcessor",
+    "ObservabilityPipelineAggregateProcessorAggregationTiming",
+    "ObservabilityPipelineAggregateProcessorAggregationTimingType",
     "ObservabilityPipelineAggregateProcessorMode",
     "ObservabilityPipelineAggregateProcessorType",
     "ObservabilityPipelineAmazonDataFirehoseSource",

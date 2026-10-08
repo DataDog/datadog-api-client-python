@@ -157,6 +157,9 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         :param tags: A list of static tags (key-value pairs) added to each metric processed by this component.
         :type tags: [ObservabilityPipelineFieldValue]
 
+        :param aggregation_timing: Configures how metrics are assigned to aggregation windows. When omitted, metrics are grouped using system time.
+        :type aggregation_timing: ObservabilityPipelineAggregateProcessorAggregationTiming, optional
+
         :param interval_secs: The interval, in seconds, over which metrics are aggregated.
         :type interval_secs: int
 

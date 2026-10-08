@@ -14,6 +14,9 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.observability_pipeline_aggregate_processor_aggregation_timing import (
+        ObservabilityPipelineAggregateProcessorAggregationTiming,
+    )
     from datadog_api_client.v2.model.observability_pipeline_aggregate_processor_mode import (
         ObservabilityPipelineAggregateProcessorMode,
     )
@@ -32,6 +35,9 @@ class ObservabilityPipelineAggregateProcessor(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.observability_pipeline_aggregate_processor_aggregation_timing import (
+            ObservabilityPipelineAggregateProcessorAggregationTiming,
+        )
         from datadog_api_client.v2.model.observability_pipeline_aggregate_processor_mode import (
             ObservabilityPipelineAggregateProcessorMode,
         )
@@ -40,6 +46,7 @@ class ObservabilityPipelineAggregateProcessor(ModelNormal):
         )
 
         return {
+            "aggregation_timing": (ObservabilityPipelineAggregateProcessorAggregationTiming,),
             "display_name": (str,),
             "enabled": (bool,),
             "id": (str,),
@@ -50,6 +57,7 @@ class ObservabilityPipelineAggregateProcessor(ModelNormal):
         }
 
     attribute_map = {
+        "aggregation_timing": "aggregation_timing",
         "display_name": "display_name",
         "enabled": "enabled",
         "id": "id",
@@ -67,6 +75,7 @@ class ObservabilityPipelineAggregateProcessor(ModelNormal):
         interval_secs: int,
         mode: ObservabilityPipelineAggregateProcessorMode,
         type: ObservabilityPipelineAggregateProcessorType,
+        aggregation_timing: Union[ObservabilityPipelineAggregateProcessorAggregationTiming, UnsetType] = unset,
         display_name: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -74,6 +83,9 @@ class ObservabilityPipelineAggregateProcessor(ModelNormal):
         The ``aggregate`` processor combines metrics that share the same name and tags into a single metric over a configurable interval.
 
         **Supported pipeline types:** metrics
+
+        :param aggregation_timing: Configures how metrics are assigned to aggregation windows. When omitted, metrics are grouped using system time.
+        :type aggregation_timing: ObservabilityPipelineAggregateProcessorAggregationTiming, optional
 
         :param display_name: The display name for a component.
         :type display_name: str, optional
@@ -96,6 +108,8 @@ class ObservabilityPipelineAggregateProcessor(ModelNormal):
         :param type: The processor type. The value must be ``aggregate``.
         :type type: ObservabilityPipelineAggregateProcessorType
         """
+        if aggregation_timing is not unset:
+            kwargs["aggregation_timing"] = aggregation_timing
         if display_name is not unset:
             kwargs["display_name"] = display_name
         super().__init__(kwargs)
