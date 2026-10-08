@@ -6435,6 +6435,12 @@ from datadog_api_client.v2.model.model_lab_run_type import ModelLabRunType
 from datadog_api_client.v2.model.model_lab_runs_response import ModelLabRunsResponse
 from datadog_api_client.v2.model.model_lab_tag import ModelLabTag
 from datadog_api_client.v2.model.monitor_alert_trigger_attributes import MonitorAlertTriggerAttributes
+from datadog_api_client.v2.model.monitor_automation_attributes import MonitorAutomationAttributes
+from datadog_api_client.v2.model.monitor_automation_data import MonitorAutomationData
+from datadog_api_client.v2.model.monitor_automation_request import MonitorAutomationRequest
+from datadog_api_client.v2.model.monitor_automation_request_data import MonitorAutomationRequestData
+from datadog_api_client.v2.model.monitor_automation_response import MonitorAutomationResponse
+from datadog_api_client.v2.model.monitor_automation_type import MonitorAutomationType
 from datadog_api_client.v2.model.monitor_config_policy_attribute_create_request import (
     MonitorConfigPolicyAttributeCreateRequest,
 )
@@ -17080,6 +17086,12 @@ __all__ = [
     "ModelLabRunsResponse",
     "ModelLabTag",
     "MonitorAlertTriggerAttributes",
+    "MonitorAutomationAttributes",
+    "MonitorAutomationData",
+    "MonitorAutomationRequest",
+    "MonitorAutomationRequestData",
+    "MonitorAutomationResponse",
+    "MonitorAutomationType",
     "MonitorConfigPolicyAttributeCreateRequest",
     "MonitorConfigPolicyAttributeEditRequest",
     "MonitorConfigPolicyAttributeResponse",
