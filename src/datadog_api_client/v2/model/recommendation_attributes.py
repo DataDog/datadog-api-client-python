@@ -26,12 +26,14 @@ class RecommendationAttributes(ModelNormal):
             "confidence_level": (float,),
             "driver": (ComponentRecommendation,),
             "executor": (ComponentRecommendation,),
+            "matched_params": (str,),
         }
 
     attribute_map = {
         "confidence_level": "confidence_level",
         "driver": "driver",
         "executor": "executor",
+        "matched_params": "matched_params",
     }
 
     def __init__(
@@ -39,6 +41,7 @@ class RecommendationAttributes(ModelNormal):
         driver: ComponentRecommendation,
         executor: ComponentRecommendation,
         confidence_level: Union[float, UnsetType] = unset,
+        matched_params: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -52,9 +55,15 @@ class RecommendationAttributes(ModelNormal):
 
         :param executor: Resource recommendation for a single Spark component (driver or executor). Contains estimation data used to patch Spark job specs.
         :type executor: ComponentRecommendation
+
+        :param matched_params: Only returned by the v2 endpoint. The job parameters whose values the recommendation was matched on, as ``parameter=value`` pairs joined by ``|``.
+            An empty string means the service-wide (coarse) recommendation was used.
+        :type matched_params: str, optional
         """
         if confidence_level is not unset:
             kwargs["confidence_level"] = confidence_level
+        if matched_params is not unset:
+            kwargs["matched_params"] = matched_params
         super().__init__(kwargs)
 
         self_.driver = driver
