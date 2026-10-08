@@ -142100,7 +142100,7 @@ paths:
         - apiKeyAuth: []
       summary: Send AI tool user activity
       tags:
-        - AI Impact
+        - DORA Metrics
       x-codegen-request-body-name: body
   /api/v2/annotation:
     get:
@@ -245703,9 +245703,6 @@ servers:
         default: api
         description: The subdomain where the API is deployed.
 tags:
-  - description: |-
-      Send AI coding tool usage data to measure the impact of AI tools on software delivery.
-    name: AI Impact
   - description: |-
       Configure your API endpoints through the Datadog API.
     name: API Management

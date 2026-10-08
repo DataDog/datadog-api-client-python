@@ -8,6 +8,7 @@ import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
+from datadog_api_client.v2.model.ai_impact_user_activity_request import AIImpactUserActivityRequest
 from datadog_api_client.v2.model.dora_deployment_response import DORADeploymentResponse
 from datadog_api_client.v2.model.dora_deployment_request import DORADeploymentRequest
 from datadog_api_client.v2.model.dora_deployment_patch_by_version_request import DORADeploymentPatchByVersionRequest
@@ -33,6 +34,26 @@ class DORAMetricsApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._create_ai_impact_user_activity_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth"],
+                "endpoint_path": "/api/v2/ai_impact/user_activity",
+                "operation_id": "create_ai_impact_user_activity",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (AIImpactUserActivityRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
 
         self._create_dora_deployment_endpoint = _Endpoint(
             settings={
@@ -271,6 +292,25 @@ class DORAMetricsApi:
             headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
             api_client=api_client,
         )
+
+    def create_ai_impact_user_activity(
+        self,
+        body: AIImpactUserActivityRequest,
+    ) -> None:
+        """Send AI tool user activity.
+
+        Send daily AI coding tool activity for one or more users. Each entry records whether a
+        user was active on a given day, along with the AI tools and models they used. An entry
+        is stored once per tool, and sending the same user, day, and tool again overwrites the
+        previous value.
+
+        :type body: AIImpactUserActivityRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_ai_impact_user_activity_endpoint.call_with_http_info(**kwargs)
 
     def create_dora_deployment(
         self,
