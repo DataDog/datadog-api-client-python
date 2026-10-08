@@ -1526,6 +1526,68 @@
       "type": "safe"
     }
   },
+  "ListGitHubCloudAuthIntakeMappings": {
+    "tag": "Cloud Authentication",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateGitHubCloudAuthIntakeMapping": {
+    "tag": "Cloud Authentication",
+    "undo": {
+      "operationId": "DeleteGitHubCloudAuthIntakeMapping",
+      "parameters": [
+        {
+          "name": "intake_mapping_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteGitHubCloudAuthIntakeMapping": {
+    "tag": "Cloud Authentication",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetGitHubCloudAuthIntakeMapping": {
+    "tag": "Cloud Authentication",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListGitHubCloudAuthPersonaMappings": {
+    "tag": "Cloud Authentication",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateGitHubCloudAuthPersonaMapping": {
+    "tag": "Cloud Authentication",
+    "undo": {
+      "operationId": "DeleteGitHubCloudAuthPersonaMapping",
+      "parameters": [
+        {
+          "name": "persona_mapping_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteGitHubCloudAuthPersonaMapping": {
+    "tag": "Cloud Authentication",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetGitHubCloudAuthPersonaMapping": {
+    "tag": "Cloud Authentication",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateCustomFramework": {
     "tag": "Security Monitoring",
     "undo": {

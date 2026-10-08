@@ -4299,6 +4299,49 @@ from datadog_api_client.v2.model.get_suppression_version_history_data_type impor
 from datadog_api_client.v2.model.get_suppression_version_history_response import GetSuppressionVersionHistoryResponse
 from datadog_api_client.v2.model.get_team_memberships_sort import GetTeamMembershipsSort
 from datadog_api_client.v2.model.get_workflow_response import GetWorkflowResponse
+from datadog_api_client.v2.model.git_hub_cloud_auth_intake_mapping_attributes_response import (
+    GitHubCloudAuthIntakeMappingAttributesResponse,
+)
+from datadog_api_client.v2.model.git_hub_cloud_auth_intake_mapping_create_attributes import (
+    GitHubCloudAuthIntakeMappingCreateAttributes,
+)
+from datadog_api_client.v2.model.git_hub_cloud_auth_intake_mapping_create_data import (
+    GitHubCloudAuthIntakeMappingCreateData,
+)
+from datadog_api_client.v2.model.git_hub_cloud_auth_intake_mapping_create_request import (
+    GitHubCloudAuthIntakeMappingCreateRequest,
+)
+from datadog_api_client.v2.model.git_hub_cloud_auth_intake_mapping_data_response import (
+    GitHubCloudAuthIntakeMappingDataResponse,
+)
+from datadog_api_client.v2.model.git_hub_cloud_auth_intake_mapping_response import GitHubCloudAuthIntakeMappingResponse
+from datadog_api_client.v2.model.git_hub_cloud_auth_intake_mapping_type import GitHubCloudAuthIntakeMappingType
+from datadog_api_client.v2.model.git_hub_cloud_auth_intake_mappings_response import (
+    GitHubCloudAuthIntakeMappingsResponse,
+)
+from datadog_api_client.v2.model.git_hub_cloud_auth_persona_mapping_attributes_response import (
+    GitHubCloudAuthPersonaMappingAttributesResponse,
+)
+from datadog_api_client.v2.model.git_hub_cloud_auth_persona_mapping_create_attributes import (
+    GitHubCloudAuthPersonaMappingCreateAttributes,
+)
+from datadog_api_client.v2.model.git_hub_cloud_auth_persona_mapping_create_data import (
+    GitHubCloudAuthPersonaMappingCreateData,
+)
+from datadog_api_client.v2.model.git_hub_cloud_auth_persona_mapping_create_request import (
+    GitHubCloudAuthPersonaMappingCreateRequest,
+)
+from datadog_api_client.v2.model.git_hub_cloud_auth_persona_mapping_data_response import (
+    GitHubCloudAuthPersonaMappingDataResponse,
+)
+from datadog_api_client.v2.model.git_hub_cloud_auth_persona_mapping_response import (
+    GitHubCloudAuthPersonaMappingResponse,
+)
+from datadog_api_client.v2.model.git_hub_cloud_auth_persona_mapping_type import GitHubCloudAuthPersonaMappingType
+from datadog_api_client.v2.model.git_hub_cloud_auth_persona_mappings_response import (
+    GitHubCloudAuthPersonaMappingsResponse,
+)
+from datadog_api_client.v2.model.git_hub_oidc_claim_patterns import GitHubOIDCClaimPatterns
 from datadog_api_client.v2.model.github_webhook_trigger import GithubWebhookTrigger
 from datadog_api_client.v2.model.github_webhook_trigger_wrapper import GithubWebhookTriggerWrapper
 from datadog_api_client.v2.model.gitlab_api_key import GitlabAPIKey
@@ -15520,6 +15563,23 @@ __all__ = [
     "GetSuppressionVersionHistoryResponse",
     "GetTeamMembershipsSort",
     "GetWorkflowResponse",
+    "GitHubCloudAuthIntakeMappingAttributesResponse",
+    "GitHubCloudAuthIntakeMappingCreateAttributes",
+    "GitHubCloudAuthIntakeMappingCreateData",
+    "GitHubCloudAuthIntakeMappingCreateRequest",
+    "GitHubCloudAuthIntakeMappingDataResponse",
+    "GitHubCloudAuthIntakeMappingResponse",
+    "GitHubCloudAuthIntakeMappingType",
+    "GitHubCloudAuthIntakeMappingsResponse",
+    "GitHubCloudAuthPersonaMappingAttributesResponse",
+    "GitHubCloudAuthPersonaMappingCreateAttributes",
+    "GitHubCloudAuthPersonaMappingCreateData",
+    "GitHubCloudAuthPersonaMappingCreateRequest",
+    "GitHubCloudAuthPersonaMappingDataResponse",
+    "GitHubCloudAuthPersonaMappingResponse",
+    "GitHubCloudAuthPersonaMappingType",
+    "GitHubCloudAuthPersonaMappingsResponse",
+    "GitHubOIDCClaimPatterns",
     "GithubWebhookTrigger",
     "GithubWebhookTriggerWrapper",
     "GitlabAPIKey",
