@@ -44,6 +44,9 @@ class RoutingRuleAction(ModelComposed):
 
         :param urgency: Specifies the level of urgency for a routing rule (low, high, or dynamic).
         :type urgency: Urgency, optional
+
+        :param destination_team_id: The ID of the team to reroute the page to.
+        :type destination_team_id: UUID
         """
         super().__init__(kwargs)
 
@@ -60,6 +63,7 @@ class RoutingRuleAction(ModelComposed):
         from datadog_api_client.v2.model.send_teams_message_action import SendTeamsMessageAction
         from datadog_api_client.v2.model.trigger_workflow_automation_action import TriggerWorkflowAutomationAction
         from datadog_api_client.v2.model.routing_rule_escalation_policy_action import RoutingRuleEscalationPolicyAction
+        from datadog_api_client.v2.model.routing_rule_reroute_to_team_action import RoutingRuleRerouteToTeamAction
 
         return {
             "oneOf": [
@@ -67,5 +71,6 @@ class RoutingRuleAction(ModelComposed):
                 SendTeamsMessageAction,
                 TriggerWorkflowAutomationAction,
                 RoutingRuleEscalationPolicyAction,
+                RoutingRuleRerouteToTeamAction,
             ],
         }

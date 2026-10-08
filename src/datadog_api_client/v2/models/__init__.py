@@ -9076,6 +9076,8 @@ from datadog_api_client.v2.model.routing_rule_relationships_policy_data import R
 from datadog_api_client.v2.model.routing_rule_relationships_policy_data_type import (
     RoutingRuleRelationshipsPolicyDataType,
 )
+from datadog_api_client.v2.model.routing_rule_reroute_to_team_action import RoutingRuleRerouteToTeamAction
+from datadog_api_client.v2.model.routing_rule_reroute_to_team_action_type import RoutingRuleRerouteToTeamActionType
 from datadog_api_client.v2.model.routing_rule_type import RoutingRuleType
 from datadog_api_client.v2.model.rule_attributes import RuleAttributes
 from datadog_api_client.v2.model.rule_attributes_request import RuleAttributesRequest
@@ -18651,6 +18653,8 @@ __all__ = [
     "RoutingRuleRelationshipsPolicy",
     "RoutingRuleRelationshipsPolicyData",
     "RoutingRuleRelationshipsPolicyDataType",
+    "RoutingRuleRerouteToTeamAction",
+    "RoutingRuleRerouteToTeamActionType",
     "RoutingRuleType",
     "RuleAttributes",
     "RuleAttributesRequest",
