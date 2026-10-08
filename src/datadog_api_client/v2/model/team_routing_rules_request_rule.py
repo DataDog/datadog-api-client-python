@@ -21,6 +21,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.send_teams_message_action import SendTeamsMessageAction
     from datadog_api_client.v2.model.trigger_workflow_automation_action import TriggerWorkflowAutomationAction
     from datadog_api_client.v2.model.routing_rule_escalation_policy_action import RoutingRuleEscalationPolicyAction
+    from datadog_api_client.v2.model.routing_rule_reroute_to_team_action import RoutingRuleRerouteToTeamAction
 
 
 class TeamRoutingRulesRequestRule(ModelNormal):
@@ -58,6 +59,7 @@ class TeamRoutingRulesRequestRule(ModelNormal):
                     SendTeamsMessageAction,
                     TriggerWorkflowAutomationAction,
                     RoutingRuleEscalationPolicyAction,
+                    RoutingRuleRerouteToTeamAction,
                 ]
             ],
             UnsetType,
