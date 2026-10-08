@@ -9,61 +9,53 @@ Feature: Bits AI
 
   @generated @skip @team:ddoghq/bits-ai
   Scenario: Get a Bits AI investigation returns "Bad Request" response
-    Given operation "GetInvestigation" enabled
-    And new "GetInvestigation" request
+    Given new "GetInvestigation" request
     And request contains "id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:ddoghq/bits-ai
   Scenario: Get a Bits AI investigation returns "Not Found" response
-    Given operation "GetInvestigation" enabled
-    And new "GetInvestigation" request
+    Given new "GetInvestigation" request
     And request contains "id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:ddoghq/bits-ai
   Scenario: Get a Bits AI investigation returns "OK" response
-    Given operation "GetInvestigation" enabled
-    And new "GetInvestigation" request
+    Given new "GetInvestigation" request
     And request contains "id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/bits-ai
   Scenario: List Bits AI investigations returns "Bad Request" response
-    Given operation "ListInvestigations" enabled
-    And new "ListInvestigations" request
+    Given new "ListInvestigations" request
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:ddoghq/bits-ai
   Scenario: List Bits AI investigations returns "OK" response
-    Given operation "ListInvestigations" enabled
-    And new "ListInvestigations" request
+    Given new "ListInvestigations" request
     When the request is sent
     Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/bits-ai @with-pagination
   Scenario: List Bits AI investigations returns "OK" response with pagination
-    Given operation "ListInvestigations" enabled
-    And new "ListInvestigations" request
+    Given new "ListInvestigations" request
     When the request with pagination is sent
     Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/bits-ai
   Scenario: Trigger a Bits AI investigation returns "Bad Request" response
-    Given operation "TriggerInvestigation" enabled
-    And new "TriggerInvestigation" request
+    Given new "TriggerInvestigation" request
     And body with value {"data": {"attributes": {"trigger": {"monitor_alert_trigger": {"event_id": "1234567890123456789", "event_ts": 1700000000000, "monitor_id": 12345678}, "type": "monitor_alert_trigger"}}, "type": "trigger_investigation_request"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:ddoghq/bits-ai
   Scenario: Trigger a Bits AI investigation returns "OK" response
-    Given operation "TriggerInvestigation" enabled
-    And new "TriggerInvestigation" request
+    Given new "TriggerInvestigation" request
     And body with value {"data": {"attributes": {"trigger": {"monitor_alert_trigger": {"event_id": "1234567890123456789", "event_ts": 1700000000000, "monitor_id": 12345678}, "type": "monitor_alert_trigger"}}, "type": "trigger_investigation_request"}}
     When the request is sent
     Then the response status is 200 OK
