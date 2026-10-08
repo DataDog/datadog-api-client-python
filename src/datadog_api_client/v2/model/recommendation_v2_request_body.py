@@ -31,7 +31,7 @@ class RecommendationV2RequestBody(ModelNormal):
     def __init__(self_, data: RecommendationV2RequestData, **kwargs):
         """
         Request body for retrieving SPA recommendations by forwarding a Spark job's raw arguments
-        instead of a precomputed shard.
+        instead of a pre-computed shard.
 
         :param data: JSON:API resource object for the SPA v2 recommendation request.
         :type data: RecommendationV2RequestData

@@ -25,7 +25,7 @@ class RecommendationV2RequestAttributes(ModelNormal):
     def __init__(self_, arguments: List[str], **kwargs):
         """
         Attributes for requesting SPA recommendations by forwarding a Spark job's raw arguments
-        instead of a precomputed shard.
+        instead of a pre-computed shard.
 
         :param arguments: Raw, unfiltered Spark job arguments as submitted (for example, ``--org_id=2`` ).
             SPA determines which arguments are relevant for the given service.
