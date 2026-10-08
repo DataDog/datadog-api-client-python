@@ -23,12 +23,14 @@ class ScheduleUserAttributes(ModelNormal):
         from datadog_api_client.v2.model.user_attributes_status import UserAttributesStatus
 
         return {
+            "color": (str,),
             "email": (str,),
             "name": (str,),
             "status": (UserAttributesStatus,),
         }
 
     attribute_map = {
+        "color": "color",
         "email": "email",
         "name": "name",
         "status": "status",
@@ -36,6 +38,7 @@ class ScheduleUserAttributes(ModelNormal):
 
     def __init__(
         self_,
+        color: Union[str, UnsetType] = unset,
         email: Union[str, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         status: Union[UserAttributesStatus, UnsetType] = unset,
@@ -43,6 +46,9 @@ class ScheduleUserAttributes(ModelNormal):
     ):
         """
         Provides basic user information for a schedule, including a name and email address.
+
+        :param color: The user's on-call color, as a hex code (for example, ``#FF0000`` ). Included only when ``user.color`` is requested in the ``include`` parameter.
+        :type color: str, optional
 
         :param email: The user's email address.
         :type email: str, optional
@@ -53,6 +59,8 @@ class ScheduleUserAttributes(ModelNormal):
         :param status: The user's status.
         :type status: UserAttributesStatus, optional
         """
+        if color is not unset:
+            kwargs["color"] = color
         if email is not unset:
             kwargs["email"] = email
         if name is not unset:

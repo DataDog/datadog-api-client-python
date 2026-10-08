@@ -37,11 +37,7 @@ class ScheduleUser(ModelNormal):
     }
 
     def __init__(
-        self_,
-        type: ScheduleUserType,
-        attributes: Union[ScheduleUserAttributes, UnsetType] = unset,
-        id: Union[str, UnsetType] = unset,
-        **kwargs,
+        self_, id: str, type: ScheduleUserType, attributes: Union[ScheduleUserAttributes, UnsetType] = unset, **kwargs
     ):
         """
         Represents a user object in the context of a schedule, including their ``id`` , type, and basic attributes.
@@ -50,15 +46,14 @@ class ScheduleUser(ModelNormal):
         :type attributes: ScheduleUserAttributes, optional
 
         :param id: The unique user identifier.
-        :type id: str, optional
+        :type id: str
 
         :param type: Users resource type.
         :type type: ScheduleUserType
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
-        if id is not unset:
-            kwargs["id"] = id
         super().__init__(kwargs)
 
+        self_.id = id
         self_.type = type

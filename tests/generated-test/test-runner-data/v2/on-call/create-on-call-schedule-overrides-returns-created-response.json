@@ -1,0 +1,61 @@
+{
+  "api": "On-Call",
+  "expected_status": 201,
+  "feature": "On-Call",
+  "id": "v2/On-Call/Create On-Call schedule overrides returns \"Created\" response",
+  "operation_id": "CreateScheduleOverrides",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateOverridesRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": [
+          {
+            "attributes": {
+              "end": "{{ timeISO('now + 1d') }}",
+              "start": "{{ timeISO('now') }}"
+            },
+            "relationships": {
+              "user": {
+                "data": {
+                  "id": "{{ user.data.id }}",
+                  "type": "users"
+                }
+              }
+            },
+            "type": "overrides"
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "schedule_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "schedule.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/on-call/schedules/{schedule_id}/overrides"
+  },
+  "scenario": "Create On-Call schedule overrides returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

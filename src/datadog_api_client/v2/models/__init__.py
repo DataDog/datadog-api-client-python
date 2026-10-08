@@ -1874,6 +1874,10 @@ from datadog_api_client.v2.model.create_open_api_response_data import CreateOpen
 from datadog_api_client.v2.model.create_or_update_widget_request import CreateOrUpdateWidgetRequest
 from datadog_api_client.v2.model.create_or_update_widget_request_attributes import CreateOrUpdateWidgetRequestAttributes
 from datadog_api_client.v2.model.create_or_update_widget_request_data import CreateOrUpdateWidgetRequestData
+from datadog_api_client.v2.model.create_override_request_attributes import CreateOverrideRequestAttributes
+from datadog_api_client.v2.model.create_override_request_data import CreateOverrideRequestData
+from datadog_api_client.v2.model.create_override_request_relationships import CreateOverrideRequestRelationships
+from datadog_api_client.v2.model.create_overrides_request import CreateOverridesRequest
 from datadog_api_client.v2.model.create_page_request import CreatePageRequest
 from datadog_api_client.v2.model.create_page_request_data import CreatePageRequestData
 from datadog_api_client.v2.model.create_page_request_data_attributes import CreatePageRequestDataAttributes
@@ -7945,6 +7949,19 @@ from datadog_api_client.v2.model.outcomes_response_links import OutcomesResponse
 from datadog_api_client.v2.model.output_schema import OutputSchema
 from datadog_api_client.v2.model.output_schema_parameters import OutputSchemaParameters
 from datadog_api_client.v2.model.output_schema_parameters_type import OutputSchemaParametersType
+from datadog_api_client.v2.model.override_attributes import OverrideAttributes
+from datadog_api_client.v2.model.override_create_response import OverrideCreateResponse
+from datadog_api_client.v2.model.override_data import OverrideData
+from datadog_api_client.v2.model.override_data_type import OverrideDataType
+from datadog_api_client.v2.model.override_included import OverrideIncluded
+from datadog_api_client.v2.model.override_relationships import OverrideRelationships
+from datadog_api_client.v2.model.override_relationships_schedule import OverrideRelationshipsSchedule
+from datadog_api_client.v2.model.override_relationships_schedule_data import OverrideRelationshipsScheduleData
+from datadog_api_client.v2.model.override_relationships_schedule_data_type import OverrideRelationshipsScheduleDataType
+from datadog_api_client.v2.model.override_relationships_user import OverrideRelationshipsUser
+from datadog_api_client.v2.model.override_relationships_user_data import OverrideRelationshipsUserData
+from datadog_api_client.v2.model.override_relationships_user_data_type import OverrideRelationshipsUserDataType
+from datadog_api_client.v2.model.overrides import Overrides
 from datadog_api_client.v2.model.overwrite_allocations_request import OverwriteAllocationsRequest
 from datadog_api_client.v2.model.ownership_confidence_level import OwnershipConfidenceLevel
 from datadog_api_client.v2.model.ownership_evidence_attributes import OwnershipEvidenceAttributes
@@ -13971,6 +13988,10 @@ __all__ = [
     "CreateOrUpdateWidgetRequest",
     "CreateOrUpdateWidgetRequestAttributes",
     "CreateOrUpdateWidgetRequestData",
+    "CreateOverrideRequestAttributes",
+    "CreateOverrideRequestData",
+    "CreateOverrideRequestRelationships",
+    "CreateOverridesRequest",
     "CreatePageRequest",
     "CreatePageRequestData",
     "CreatePageRequestDataAttributes",
@@ -17848,6 +17869,19 @@ __all__ = [
     "OutputSchema",
     "OutputSchemaParameters",
     "OutputSchemaParametersType",
+    "OverrideAttributes",
+    "OverrideCreateResponse",
+    "OverrideData",
+    "OverrideDataType",
+    "OverrideIncluded",
+    "OverrideRelationships",
+    "OverrideRelationshipsSchedule",
+    "OverrideRelationshipsScheduleData",
+    "OverrideRelationshipsScheduleDataType",
+    "OverrideRelationshipsUser",
+    "OverrideRelationshipsUserData",
+    "OverrideRelationshipsUserDataType",
+    "Overrides",
     "OverwriteAllocationsRequest",
     "OwnershipConfidenceLevel",
     "OwnershipEvidenceAttributes",

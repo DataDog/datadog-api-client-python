@@ -6635,6 +6635,36 @@
       "type": "safe"
     }
   },
+  "ListScheduleOverrides": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateScheduleOverrides": {
+    "tag": "On-Call",
+    "undo": {
+      "operationId": "DeleteScheduleOverride",
+      "parameters": [
+        {
+          "name": "schedule_id",
+          "origin": "path",
+          "source": "schedule_id"
+        },
+        {
+          "name": "override_id",
+          "source": "data[0].id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteScheduleOverride": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetScheduleOnCallResponders": {
     "tag": "On-Call",
     "undo": {

@@ -1,0 +1,67 @@
+{
+  "api": "On-Call",
+  "expected_status": 200,
+  "feature": "On-Call",
+  "id": "v2/On-Call/List On-Call schedule overrides returns \"OK\" response",
+  "operation_id": "ListScheduleOverrides",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "schedule_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "schedule.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[start]",
+        "required": true,
+        "schema": {
+          "format": "date-time",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "{{ timeISO('now - 1d') }}"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[end]",
+        "required": true,
+        "schema": {
+          "format": "date-time",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "{{ timeISO('now + 2d') }}"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/on-call/schedules/{schedule_id}/overrides"
+  },
+  "scenario": "List On-Call schedule overrides returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
