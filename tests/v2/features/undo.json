@@ -368,6 +368,12 @@
       "type": "safe"
     }
   },
+  "CreateAIImpactUserActivity": {
+    "tag": "AI Impact",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListAnnotations": {
     "tag": "Annotations",
     "undo": {
