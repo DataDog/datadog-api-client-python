@@ -369,7 +369,7 @@
     }
   },
   "CreateAIImpactUserActivity": {
-    "tag": "AI Impact",
+    "tag": "DORA Metrics",
     "undo": {
       "type": "idempotent"
     }
