@@ -14,9 +14,10 @@ body = UsageQuotaUpdateRequest(
     data=UsageQuotaUpdateData(
         attributes=UsageQuotaUpdateAttributes(
             enforced=False,
+            pending_usage_limit=50000,
             usage_limit=120000,
         ),
-        id="MjAfYWlfY3JlZGl0c1911c2VyX2hhbmRsZTpfX0FMTF9f",
+        id="MTIzNB9haV9jcmVkaXRzH3VzZXJfaGFuZGxlOl9fQUxMX18",
         type=UsageQuotaType.QUOTAS,
     ),
 )
@@ -27,7 +28,7 @@ configuration.unstable_operations["update_quota"] = True
 with ApiClient(configuration) as api_client:
     api_instance = UsageMeteringApi(api_client)
     response = api_instance.update_quota(
-        quota_namespace="ai_credits", id="MjAfYWlfY3JlZGl0c1911c2VyX2hhbmRsZTpfX0FMTF9f", body=body
+        quota_namespace="ai_credits", id="MTIzNB9haV9jcmVkaXRzH3VzZXJfaGFuZGxlOl9fQUxMX18", body=body
     )
 
     print(response)
