@@ -22,6 +22,7 @@ class JSSourcemapAttributes(ModelNormal):
             "blob_storage_sourcemap_path": (str,),
             "build_id": (str,),
             "created_at": (datetime,),
+            "debug_id": (str,),
             "domain": (str,),
             "file_name": (str,),
             "mapkind": (str,),
@@ -37,6 +38,7 @@ class JSSourcemapAttributes(ModelNormal):
         "blob_storage_sourcemap_path": "blob_storage_sourcemap_path",
         "build_id": "build_id",
         "created_at": "created_at",
+        "debug_id": "debug_id",
         "domain": "domain",
         "file_name": "file_name",
         "mapkind": "mapkind",
@@ -55,6 +57,7 @@ class JSSourcemapAttributes(ModelNormal):
         absolute_path: Union[str, UnsetType] = unset,
         blob_storage_sourcemap_path: Union[str, UnsetType] = unset,
         build_id: Union[str, UnsetType] = unset,
+        debug_id: Union[str, UnsetType] = unset,
         domain: Union[str, UnsetType] = unset,
         file_name: Union[str, UnsetType] = unset,
         service: Union[str, UnsetType] = unset,
@@ -77,6 +80,10 @@ class JSSourcemapAttributes(ModelNormal):
 
         :param created_at: The timestamp when the source map was created.
         :type created_at: datetime
+
+        :param debug_id: The debug identifier (UUID format) that uniquely identifies this
+            JavaScript source map. Returned for source maps indexed by debug ID.
+        :type debug_id: str, optional
 
         :param domain: The domain associated with the source map.
         :type domain: str, optional
@@ -108,6 +115,8 @@ class JSSourcemapAttributes(ModelNormal):
             kwargs["blob_storage_sourcemap_path"] = blob_storage_sourcemap_path
         if build_id is not unset:
             kwargs["build_id"] = build_id
+        if debug_id is not unset:
+            kwargs["debug_id"] = debug_id
         if domain is not unset:
             kwargs["domain"] = domain
         if file_name is not unset:
