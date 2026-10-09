@@ -2714,6 +2714,12 @@ from datadog_api_client.v2.model.dependency_location import DependencyLocation
 from datadog_api_client.v2.model.deployment import Deployment
 from datadog_api_client.v2.model.deployment_attributes import DeploymentAttributes
 from datadog_api_client.v2.model.deployment_gate_data_type import DeploymentGateDataType
+from datadog_api_client.v2.model.deployment_gate_evaluation_attributes import DeploymentGateEvaluationAttributes
+from datadog_api_client.v2.model.deployment_gate_evaluation_data import DeploymentGateEvaluationData
+from datadog_api_client.v2.model.deployment_gate_evaluation_data_type import DeploymentGateEvaluationDataType
+from datadog_api_client.v2.model.deployment_gate_evaluation_list_meta import DeploymentGateEvaluationListMeta
+from datadog_api_client.v2.model.deployment_gate_evaluation_page import DeploymentGateEvaluationPage
+from datadog_api_client.v2.model.deployment_gate_evaluations_response import DeploymentGateEvaluationsResponse
 from datadog_api_client.v2.model.deployment_gate_response import DeploymentGateResponse
 from datadog_api_client.v2.model.deployment_gate_response_data import DeploymentGateResponseData
 from datadog_api_client.v2.model.deployment_gate_response_data_attributes import DeploymentGateResponseDataAttributes
@@ -2723,6 +2729,19 @@ from datadog_api_client.v2.model.deployment_gate_response_data_attributes_create
 from datadog_api_client.v2.model.deployment_gate_response_data_attributes_updated_by import (
     DeploymentGateResponseDataAttributesUpdatedBy,
 )
+from datadog_api_client.v2.model.deployment_gate_rule_evaluation_attributes import (
+    DeploymentGateRuleEvaluationAttributes,
+)
+from datadog_api_client.v2.model.deployment_gate_rule_evaluation_configuration import (
+    DeploymentGateRuleEvaluationConfiguration,
+)
+from datadog_api_client.v2.model.deployment_gate_rule_evaluation_data import DeploymentGateRuleEvaluationData
+from datadog_api_client.v2.model.deployment_gate_rule_evaluation_data_type import DeploymentGateRuleEvaluationDataType
+from datadog_api_client.v2.model.deployment_gate_rule_evaluation_type import DeploymentGateRuleEvaluationType
+from datadog_api_client.v2.model.deployment_gate_rule_evaluations_response import DeploymentGateRuleEvaluationsResponse
+from datadog_api_client.v2.model.deployment_gate_rule_failure_monitor import DeploymentGateRuleFailureMonitor
+from datadog_api_client.v2.model.deployment_gate_rule_failure_narrative import DeploymentGateRuleFailureNarrative
+from datadog_api_client.v2.model.deployment_gate_rule_failures import DeploymentGateRuleFailures
 from datadog_api_client.v2.model.deployment_gate_rules_response import DeploymentGateRulesResponse
 from datadog_api_client.v2.model.deployment_gates_evaluation_configuration import DeploymentGatesEvaluationConfiguration
 from datadog_api_client.v2.model.deployment_gates_evaluation_request import DeploymentGatesEvaluationRequest
@@ -14580,11 +14599,26 @@ __all__ = [
     "Deployment",
     "DeploymentAttributes",
     "DeploymentGateDataType",
+    "DeploymentGateEvaluationAttributes",
+    "DeploymentGateEvaluationData",
+    "DeploymentGateEvaluationDataType",
+    "DeploymentGateEvaluationListMeta",
+    "DeploymentGateEvaluationPage",
+    "DeploymentGateEvaluationsResponse",
     "DeploymentGateResponse",
     "DeploymentGateResponseData",
     "DeploymentGateResponseDataAttributes",
     "DeploymentGateResponseDataAttributesCreatedBy",
     "DeploymentGateResponseDataAttributesUpdatedBy",
+    "DeploymentGateRuleEvaluationAttributes",
+    "DeploymentGateRuleEvaluationConfiguration",
+    "DeploymentGateRuleEvaluationData",
+    "DeploymentGateRuleEvaluationDataType",
+    "DeploymentGateRuleEvaluationType",
+    "DeploymentGateRuleEvaluationsResponse",
+    "DeploymentGateRuleFailureMonitor",
+    "DeploymentGateRuleFailureNarrative",
+    "DeploymentGateRuleFailures",
     "DeploymentGateRulesResponse",
     "DeploymentGatesEvaluationConfiguration",
     "DeploymentGatesEvaluationRequest",

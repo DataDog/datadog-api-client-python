@@ -314,6 +314,48 @@ Feature: Deployment Gates
     Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/ci-app-backend
+  Scenario: List deployment gate evaluations returns "Bad request." response
+    Given operation "ListDeploymentGateEvaluations" enabled
+    And new "ListDeploymentGateEvaluations" request
+    When the request is sent
+    Then the response status is 400 Bad request.
+
+  @generated @skip @team:ddoghq/ci-app-backend
+  Scenario: List deployment gate evaluations returns "OK" response
+    Given operation "ListDeploymentGateEvaluations" enabled
+    And new "ListDeploymentGateEvaluations" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/ci-app-backend @with-pagination
+  Scenario: List deployment gate evaluations returns "OK" response with pagination
+    Given operation "ListDeploymentGateEvaluations" enabled
+    And new "ListDeploymentGateEvaluations" request
+    When the request with pagination is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/ci-app-backend
+  Scenario: List deployment gate rule evaluations returns "Bad request." response
+    Given operation "ListDeploymentRuleEvaluations" enabled
+    And new "ListDeploymentRuleEvaluations" request
+    When the request is sent
+    Then the response status is 400 Bad request.
+
+  @generated @skip @team:ddoghq/ci-app-backend
+  Scenario: List deployment gate rule evaluations returns "OK" response
+    Given operation "ListDeploymentRuleEvaluations" enabled
+    And new "ListDeploymentRuleEvaluations" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/ci-app-backend @with-pagination
+  Scenario: List deployment gate rule evaluations returns "OK" response with pagination
+    Given operation "ListDeploymentRuleEvaluations" enabled
+    And new "ListDeploymentRuleEvaluations" request
+    When the request with pagination is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/ci-app-backend
   Scenario: Trigger a deployment gate evaluation returns "Accepted" response
     Given operation "TriggerDeploymentGatesEvaluation" enabled
     And new "TriggerDeploymentGatesEvaluation" request
