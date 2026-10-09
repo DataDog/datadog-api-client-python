@@ -1,0 +1,84 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a heatgrid widget with custom gradient colors for both themes",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "layout_type": "ordered",
+        "title": "{{ unique }}",
+        "widgets": [
+          {
+            "definition": {
+              "color": {
+                "mode": "gradient",
+                "source": "custom",
+                "stops": [
+                  {
+                    "color": [
+                      "#FFFFFF",
+                      "#000000"
+                    ],
+                    "position": 0
+                  },
+                  {
+                    "color": "#FF0000",
+                    "position": 100
+                  }
+                ]
+              },
+              "label_column": {
+                "width": "m"
+              },
+              "legend": {
+                "show_caption": true
+              },
+              "requests": [
+                {
+                  "formulas": [
+                    {
+                      "formula": "query1"
+                    }
+                  ],
+                  "queries": [
+                    {
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "avg:system.cpu.user{*} by {host}"
+                    }
+                  ],
+                  "response_format": "timeseries"
+                }
+              ],
+              "sort": {
+                "nesting_display": "flat",
+                "sort_by": {
+                  "aggregation": "avg",
+                  "order": "desc",
+                  "property": "value"
+                }
+              },
+              "type": "heatgrid"
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a heatgrid widget with custom gradient colors for both themes",
+  "schema_version": 1,
+  "version": "v1"
+}

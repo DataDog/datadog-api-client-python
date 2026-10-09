@@ -157,6 +157,27 @@
     {
       "feature": "Dashboards",
       "feature_file": "../../v1/features/dashboards.feature",
+      "file": "v1/dashboards/create-a-heatgrid-widget-with-a-preset-gradient.json",
+      "scenario": "Create a heatgrid widget with a preset gradient",
+      "version": "v1"
+    },
+    {
+      "feature": "Dashboards",
+      "feature_file": "../../v1/features/dashboards.feature",
+      "file": "v1/dashboards/create-a-heatgrid-widget-with-custom-discrete-thresholds.json",
+      "scenario": "Create a heatgrid widget with custom discrete thresholds",
+      "version": "v1"
+    },
+    {
+      "feature": "Dashboards",
+      "feature_file": "../../v1/features/dashboards.feature",
+      "file": "v1/dashboards/create-a-heatgrid-widget-with-custom-gradient-colors-for-both-themes.json",
+      "scenario": "Create a heatgrid widget with custom gradient colors for both themes",
+      "version": "v1"
+    },
+    {
+      "feature": "Dashboards",
+      "feature_file": "../../v1/features/dashboards.feature",
       "file": "v1/dashboards/create-a-new-dashboard-returns-ok-response.json",
       "scenario": "Create a new dashboard returns \"OK\" response",
       "version": "v1"

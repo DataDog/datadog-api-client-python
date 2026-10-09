@@ -1,0 +1,79 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a heatgrid widget with custom discrete thresholds",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "layout_type": "ordered",
+        "title": "{{ unique }}",
+        "widgets": [
+          {
+            "definition": {
+              "color": {
+                "bins": [
+                  {
+                    "color": "#00FF00"
+                  },
+                  {
+                    "color": "#FF0000",
+                    "lower_bound": 80
+                  }
+                ],
+                "mode": "discrete",
+                "source": "custom"
+              },
+              "label_column": {
+                "width": "m"
+              },
+              "legend": {
+                "show_caption": true
+              },
+              "requests": [
+                {
+                  "formulas": [
+                    {
+                      "formula": "query1"
+                    }
+                  ],
+                  "queries": [
+                    {
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "avg:system.cpu.user{*} by {host}"
+                    }
+                  ],
+                  "response_format": "timeseries"
+                }
+              ],
+              "sort": {
+                "nesting_display": "flat",
+                "sort_by": {
+                  "order": "asc",
+                  "property": "label"
+                }
+              },
+              "type": "heatgrid"
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a heatgrid widget with custom discrete thresholds",
+  "schema_version": 1,
+  "version": "v1"
+}

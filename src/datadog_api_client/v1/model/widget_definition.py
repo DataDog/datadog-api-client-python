@@ -135,6 +135,15 @@ class WidgetDefinition(ModelComposed):
         :param widgets: List of widget groups.
         :type widgets: [Widget]
 
+        :param label_column: Configuration of the group label column.
+        :type label_column: HeatgridLabelColumn, optional
+
+        :param legend: Legend configuration for the heatgrid widget.
+        :type legend: HeatgridLegend, optional
+
+        :param sort: Ordering of the heatgrid rows.
+        :type sort: HeatgridSort
+
         :param events: List of widget events. Deprecated - Use `overlay` request type instead.
         :type events: [WidgetEvent], optional
 
@@ -197,9 +206,6 @@ class WidgetDefinition(ModelComposed):
         :param show_message_column: Whether to show the message column or not
         :type show_message_column: bool, optional
 
-        :param sort: Which column and order to sort by
-        :type sort: WidgetFieldSort, optional
-
         :param color_preference: Which color to use on the widget.
         :type color_preference: WidgetColorPreference, optional
 
@@ -244,9 +250,6 @@ class WidgetDefinition(ModelComposed):
 
         :param template_variables: Powerpack template variables.
         :type template_variables: PowerpackTemplateVariables, optional
-
-        :param legend: Legend configuration for the point plot widget.
-        :type legend: PointPlotWidgetLegend, optional
 
         :param autoscale: Whether to use auto-scaling or not.
         :type autoscale: bool, optional
@@ -387,6 +390,7 @@ class WidgetDefinition(ModelComposed):
         )
         from datadog_api_client.v1.model.geomap_widget_definition import GeomapWidgetDefinition
         from datadog_api_client.v1.model.group_widget_definition import GroupWidgetDefinition
+        from datadog_api_client.v1.model.heatgrid_widget_definition import HeatgridWidgetDefinition
         from datadog_api_client.v1.model.heat_map_widget_definition import HeatMapWidgetDefinition
         from datadog_api_client.v1.model.host_map_widget_definition import HostMapWidgetDefinition
         from datadog_api_client.v1.model.i_frame_widget_definition import IFrameWidgetDefinition
@@ -432,6 +436,7 @@ class WidgetDefinition(ModelComposed):
                 ProductAnalyticsFunnelWidgetDefinition,
                 GeomapWidgetDefinition,
                 GroupWidgetDefinition,
+                HeatgridWidgetDefinition,
                 HeatMapWidgetDefinition,
                 HostMapWidgetDefinition,
                 IFrameWidgetDefinition,

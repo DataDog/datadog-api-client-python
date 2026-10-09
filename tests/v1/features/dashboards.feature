@@ -87,6 +87,66 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[1].text_formats[0].palette" is equal to "white_on_red"
     And the response "widgets[0].definition.view.focus" is equal to "NORTH_AMERICA"
 
+  @team:ddoghq/dashboards-backend
+  Scenario: Create a heatgrid widget with a preset gradient
+    Given new "CreateDashboard" request
+    And body with value {"title": "{{ unique }}", "layout_type": "ordered", "widgets": [{"definition": {"type": "heatgrid", "requests": [{"response_format": "timeseries", "queries": [{"data_source": "metrics", "name": "query1", "query": "avg:system.cpu.user{*} by {host}"}], "formulas": [{"formula": "query1"}]}], "sort": {"nesting_display": "flat", "sort_by": {"property": "value", "order": "desc", "aggregation": "avg"}}, "color": {"mode": "gradient", "source": "preset", "preset_name": "classic"}, "legend": {"show_caption": true}, "label_column": {"width": "m"}}}]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "heatgrid"
+    And the response "widgets[0].definition.color.mode" is equal to "gradient"
+    And the response "widgets[0].definition.color.source" is equal to "preset"
+    And the response "widgets[0].definition.color.preset_name" is equal to "classic"
+    And the response "widgets[0].definition.sort.nesting_display" is equal to "flat"
+    And the response "widgets[0].definition.sort.sort_by.property" is equal to "value"
+    And the response "widgets[0].definition.sort.sort_by.order" is equal to "desc"
+    And the response "widgets[0].definition.sort.sort_by.aggregation" is equal to "avg"
+    And the response "widgets[0].definition.legend.show_caption" is equal to true
+    And the response "widgets[0].definition.label_column.width" is equal to "m"
+
+  @team:ddoghq/dashboards-backend
+  Scenario: Create a heatgrid widget with custom discrete thresholds
+    Given new "CreateDashboard" request
+    And body with value {"title": "{{ unique }}", "layout_type": "ordered", "widgets": [{"definition": {"type": "heatgrid", "requests": [{"response_format": "timeseries", "queries": [{"data_source": "metrics", "name": "query1", "query": "avg:system.cpu.user{*} by {host}"}], "formulas": [{"formula": "query1"}]}], "sort": {"nesting_display": "flat", "sort_by": {"property": "label", "order": "asc"}}, "color": {"mode": "discrete", "source": "custom", "bins": [{"color": "#00FF00"}, {"color": "#FF0000", "lower_bound": 80}]}, "legend": {"show_caption": true}, "label_column": {"width": "m"}}}]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "heatgrid"
+    And the response "widgets[0].definition.color.mode" is equal to "discrete"
+    And the response "widgets[0].definition.color.source" is equal to "custom"
+    And the response "widgets[0].definition.color.bins" has length 2
+    And the response "widgets[0].definition.color.bins[0].color" is equal to "#00FF00"
+    And the response "widgets[0].definition.color.bins[1].color" is equal to "#FF0000"
+    And the response "widgets[0].definition.color.bins[1].lower_bound" is equal to 80
+    And the response "widgets[0].definition.color.bins[0]" does not have field "lower_bound"
+    And the response "widgets[0].definition.sort.nesting_display" is equal to "flat"
+    And the response "widgets[0].definition.sort.sort_by.property" is equal to "label"
+    And the response "widgets[0].definition.sort.sort_by.order" is equal to "asc"
+    And the response "widgets[0].definition.legend.show_caption" is equal to true
+    And the response "widgets[0].definition.label_column.width" is equal to "m"
+
+  @team:ddoghq/dashboards-backend
+  Scenario: Create a heatgrid widget with custom gradient colors for both themes
+    Given new "CreateDashboard" request
+    And body with value {"title": "{{ unique }}", "layout_type": "ordered", "widgets": [{"definition": {"type": "heatgrid", "requests": [{"response_format": "timeseries", "queries": [{"data_source": "metrics", "name": "query1", "query": "avg:system.cpu.user{*} by {host}"}], "formulas": [{"formula": "query1"}]}], "sort": {"nesting_display": "flat", "sort_by": {"property": "value", "order": "desc", "aggregation": "avg"}}, "color": {"mode": "gradient", "source": "custom", "stops": [{"position": 0, "color": ["#FFFFFF", "#000000"]}, {"position": 100, "color": "#FF0000"}]}, "legend": {"show_caption": true}, "label_column": {"width": "m"}}}]}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "heatgrid"
+    And the response "widgets[0].definition.color.mode" is equal to "gradient"
+    And the response "widgets[0].definition.color.source" is equal to "custom"
+    And the response "widgets[0].definition.color.stops" has length 2
+    And the response "widgets[0].definition.color.stops[0].position" is equal to 0
+    And the response "widgets[0].definition.color.stops[0].color" has length 2
+    And the response "widgets[0].definition.color.stops[0].color[0]" is equal to "#FFFFFF"
+    And the response "widgets[0].definition.color.stops[0].color[1]" is equal to "#000000"
+    And the response "widgets[0].definition.color.stops[1].position" is equal to 100
+    And the response "widgets[0].definition.color.stops[1].color" is equal to "#FF0000"
+    And the response "widgets[0].definition.sort.nesting_display" is equal to "flat"
+    And the response "widgets[0].definition.sort.sort_by.property" is equal to "value"
+    And the response "widgets[0].definition.sort.sort_by.order" is equal to "desc"
+    And the response "widgets[0].definition.sort.sort_by.aggregation" is equal to "avg"
+    And the response "widgets[0].definition.legend.show_caption" is equal to true
+    And the response "widgets[0].definition.label_column.width" is equal to "m"
+
   @generated @skip @team:ddoghq/dashboards-backend
   Scenario: Create a new dashboard returns "Bad Request" response
     Given new "CreateDashboard" request
