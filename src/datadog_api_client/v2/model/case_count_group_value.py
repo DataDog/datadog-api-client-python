@@ -25,9 +25,9 @@ class CaseCountGroupValue(ModelNormal):
 
     def __init__(self_, count: int, value: str, **kwargs):
         """
-        A single value within a count group, representing the number of cases with that specific field value.
+        A single value within a count group, representing the number of work items with that specific field value.
 
-        :param count: Count of cases for this value.
+        :param count: Count of work items for this value.
         :type count: int
 
         :param value: The group value.

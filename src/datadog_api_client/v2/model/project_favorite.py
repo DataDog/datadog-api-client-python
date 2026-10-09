@@ -32,7 +32,7 @@ class ProjectFavorite(ModelNormal):
 
     def __init__(self_, id: str, type: ProjectFavoriteResourceType, **kwargs):
         """
-        Represents a case project that the current user has bookmarked for quick access. Favorited projects appear prominently in the Case Management UI.
+        Represents a Work Management project that the current user has bookmarked for quick access. Favorited projects appear prominently in the Work Management UI.
 
         :param id: The UUID of the favorited project.
         :type id: str

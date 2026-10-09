@@ -63,7 +63,7 @@ class TimelineCell(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes of a timeline cell, representing a single event in a case's chronological activity log (for example, a comment, status change, or assignment update).
+        Attributes of a timeline cell, representing a single event in a work item's chronological activity log (for example, a comment, status change, or assignment update).
 
         :param author: The author of the timeline cell. Currently only user authors are supported.
         :type author: TimelineCellAuthor, optional

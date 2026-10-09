@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class Case3rdPartyTicketStatus(ModelSimple):
     """
-    Case status
+    Work item status
 
     :param value: If omitted defaults to "IN_PROGRESS". Must be one of ["IN_PROGRESS", "COMPLETED", "FAILED"].
     :type value: str

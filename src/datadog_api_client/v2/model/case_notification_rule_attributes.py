@@ -52,7 +52,7 @@ class CaseNotificationRuleAttributes(ModelNormal):
         :param is_enabled: Whether the notification rule is enabled
         :type is_enabled: bool, optional
 
-        :param query: Query to filter cases for this notification rule
+        :param query: Query to filter work items for this notification rule
         :type query: str, optional
 
         :param recipients: List of notification recipients

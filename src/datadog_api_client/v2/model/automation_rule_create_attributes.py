@@ -57,10 +57,10 @@ class AutomationRuleCreateAttributes(ModelNormal):
         :param name: Name of the automation rule.
         :type name: str
 
-        :param state: Whether the automation rule is active. Enabled rules trigger on matching case events; disabled rules are inactive but preserve their configuration.
+        :param state: Whether the automation rule is active. Enabled rules trigger on matching work item events; disabled rules are inactive but preserve their configuration.
         :type state: CaseAutomationRuleState, optional
 
-        :param trigger: Defines when the rule activates. Combines a trigger type (the case event to listen for) with optional trigger data (conditions that narrow when the trigger fires).
+        :param trigger: Defines when the rule activates. Combines a trigger type (the work item event to listen for) with optional trigger data (conditions that narrow when the trigger fires).
         :type trigger: AutomationRuleTrigger
         """
         if state is not unset:

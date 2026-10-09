@@ -23,9 +23,9 @@ class CaseUpdateTitleAttributes(ModelNormal):
 
     def __init__(self_, title: str, **kwargs):
         """
-        Case update title attributes
+        Work item update title attributes
 
-        :param title: Case new title
+        :param title: Work item new title
         :type title: str
         """
         super().__init__(kwargs)

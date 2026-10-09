@@ -30,9 +30,9 @@ class CaseUpdateDescriptionRequest(ModelNormal):
 
     def __init__(self_, data: CaseUpdateDescription, **kwargs):
         """
-        Case update description request
+        Work item update description request
 
-        :param data: Case update description
+        :param data: Work item update description
         :type data: CaseUpdateDescription
         """
         super().__init__(kwargs)

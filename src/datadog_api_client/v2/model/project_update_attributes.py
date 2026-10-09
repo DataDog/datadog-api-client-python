@@ -55,7 +55,7 @@ class ProjectUpdateAttributes(ModelNormal):
         :param columns_config: Project columns configuration.
         :type columns_config: ProjectColumnsConfig, optional
 
-        :param enabled_custom_case_types: List of enabled custom case type IDs.
+        :param enabled_custom_case_types: List of enabled custom work item type IDs.
         :type enabled_custom_case_types: [str], optional
 
         :param name: Project name.

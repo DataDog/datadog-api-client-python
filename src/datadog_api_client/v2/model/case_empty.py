@@ -30,9 +30,9 @@ class CaseEmpty(ModelNormal):
 
     def __init__(self_, type: CaseResourceType, **kwargs):
         """
-        Case empty request data
+        Work item empty request data
 
-        :param type: JSON:API resource type for cases.
+        :param type: JSON:API resource type for work items.
         :type type: CaseResourceType
         """
         super().__init__(kwargs)

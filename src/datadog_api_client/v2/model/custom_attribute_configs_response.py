@@ -34,7 +34,7 @@ class CustomAttributeConfigsResponse(ModelNormal):
         """
         Response containing a list of custom attribute configurations.
 
-        :param data: List of custom attribute configs of case type
+        :param data: List of custom attribute configs of work item type
         :type data: [CustomAttributeConfig], optional
         """
         if data is not unset:

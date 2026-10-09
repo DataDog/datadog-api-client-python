@@ -30,7 +30,7 @@ class CaseCountResponse(ModelNormal):
 
     def __init__(self_, data: CaseCountResponseData, **kwargs):
         """
-        Response containing the total number of cases matching a query, optionally grouped by specified fields.
+        Response containing the total number of work items matching a query, optionally grouped by specified fields.
 
         :param data: Data object containing the count results, including per-field group breakdowns.
         :type data: CaseCountResponseData

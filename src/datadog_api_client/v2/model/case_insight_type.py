@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class CaseInsightType(ModelSimple):
     """
-    The type of Datadog resource linked to the case as contextual evidence. Each type corresponds to a different Datadog product signal (for example, a security finding, a monitor alert, or an incident).
+    The type of Datadog resource linked to the work item as contextual evidence. Each type corresponds to a different Datadog product signal (for example, a security finding, a monitor alert, or an incident).
 
     :param value: Must be one of ["SECURITY_SIGNAL", "MONITOR", "EVENT_CORRELATION", "ERROR_TRACKING", "CLOUD_COST_RECOMMENDATION", "INCIDENT", "SENSITIVE_DATA_SCANNER_ISSUE", "EVENT", "WATCHDOG_STORY", "WIDGET", "SECURITY_FINDING", "INSIGHT_SCORECARD_CAMPAIGN", "RESOURCE_POLICY", "APM_RECOMMENDATION", "SCM_URL", "PROFILING_DOWNSIZING_EXPERIMENT"].
     :type value: str

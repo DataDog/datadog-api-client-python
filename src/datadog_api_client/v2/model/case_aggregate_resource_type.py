@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class CaseAggregateResourceType(ModelSimple):
     """
-    JSON:API resource type for case aggregation requests.
+    JSON:API resource type for work item aggregation requests.
 
     :param value: If omitted defaults to "aggregate". Must be one of ["aggregate"].
     :type value: str

@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class CaseLinkResourceType(ModelSimple):
     """
-    JSON:API resource type for case links.
+    JSON:API resource type for work item links.
 
     :param value: If omitted defaults to "link". Must be one of ["link"].
     :type value: str

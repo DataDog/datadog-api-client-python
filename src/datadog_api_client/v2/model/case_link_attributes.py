@@ -39,7 +39,7 @@ class CaseLinkAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes describing a directional relationship between two entities (cases, incidents, or pages).
+        Attributes describing a directional relationship between two entities (work items, incidents, or pages).
 
         :param child_entity_id: The UUID of the child (target) entity in the relationship.
         :type child_entity_id: str

@@ -32,7 +32,7 @@ class AutomationRuleResponse(ModelNormal):
         """
         Response containing a single automation rule.
 
-        :param data: An automation rule that executes an action (such as running a Datadog workflow or assigning an AI agent) when a specified case event occurs within a project.
+        :param data: An automation rule that executes an action (such as running a Datadog workflow or assigning an AI agent) when a specified work item event occurs within a project.
         :type data: AutomationRule
         """
         super().__init__(kwargs)

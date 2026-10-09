@@ -72,9 +72,7 @@ from datadog_api_client.v2.model.maintenance_window_update_request import Mainte
 
 class CaseManagementApi:
     """
-    **Note** : Work Management is the UI name for Case Management. These API endpoints and permissions use ``case`` terminology.
-
-    View and manage work items and projects within Work Management. For more information, see `Work Management <https://docs.datadoghq.com/incident_response/work_management/>`_.
+    View and manage work items and projects within Work Management. API paths, resource types, and permissions retain ``case`` terminology. For more information, see `Work Management <https://docs.datadoghq.com/incident_response/work_management/>`_.
     """
 
     def __init__(self, api_client=None):
@@ -1784,11 +1782,11 @@ class CaseManagementApi:
     ) -> CaseResponse:
         """Add insights to a case.
 
-        Adds one or more insights to a case. Insights are references to related Datadog resources (such as monitors, security signals, incidents, or error tracking issues) that provide investigative context. Up to 100 insights can be added per request. Each insight requires a type (see ``CaseInsightType`` for allowed values), a ref (URL path to the resource), and a resource_id.
+        Adds one or more insights to a work item. Insights are references to related Datadog resources (such as monitors, security signals, incidents, or error tracking issues) that provide investigative context. Up to 100 insights can be added per request. Each insight requires a type (see ``CaseInsightType`` for allowed values), a ref (URL path to the resource), and a resource_id.
 
-        :param case_id: Case's UUID or key
+        :param case_id: Work item's UUID or key
         :type case_id: str
-        :param body: Case insights request.
+        :param body: Work item insights request.
         :type body: CaseInsightsRequest
         :rtype: CaseResponse
         """
@@ -1805,9 +1803,9 @@ class CaseManagementApi:
     ) -> CaseAggregateResponse:
         """Aggregate cases.
 
-        Performs an aggregation query over cases, grouping results by specified fields and returning counts per group along with a total. Useful for dashboards and analytics.
+        Performs an aggregation query over work items, grouping results by specified fields and returning counts per group along with a total. Useful for dashboards and analytics.
 
-        :param body: Case aggregate request payload.
+        :param body: Work item aggregate request payload.
         :type body: CaseAggregateRequest
         :rtype: CaseAggregateResponse
         """
@@ -1823,11 +1821,11 @@ class CaseManagementApi:
     ) -> CaseResponse:
         """Archive case.
 
-        Archive case
+        Archive work item
 
-        :param case_id: Case's UUID or key
+        :param case_id: Work item's UUID or key
         :type case_id: str
-        :param body: Archive case payload
+        :param body: Archive work item payload
         :type body: CaseEmptyRequest
         :rtype: CaseResponse
         """
@@ -1845,11 +1843,11 @@ class CaseManagementApi:
     ) -> CaseResponse:
         """Assign case.
 
-        Assign case to a user
+        Assign work item to a user
 
-        :param case_id: Case's UUID or key
+        :param case_id: Work item's UUID or key
         :type case_id: str
-        :param body: Assign case payload
+        :param body: Assign work item payload
         :type body: CaseAssignRequest
         :rtype: CaseResponse
         """
@@ -1866,9 +1864,9 @@ class CaseManagementApi:
     ) -> None:
         """Bulk update cases.
 
-        Applies a single action (such as changing priority, status, assignment, or archiving) to multiple cases at once. The list of case IDs and the action type with its payload are specified in the request body.
+        Applies a single action (such as changing priority, status, assignment, or archiving) to multiple work items at once. The list of work item IDs and the action type with its payload are specified in the request body.
 
-        :param body: Case bulk update request payload.
+        :param body: Work item bulk update request payload.
         :type body: CaseBulkUpdateRequest
         :rtype: None
         """
@@ -1884,11 +1882,11 @@ class CaseManagementApi:
     ) -> TimelineResponse:
         """Comment case.
 
-        Comment case
+        Add a comment to a work item.
 
-        :param case_id: Case's UUID or key
+        :param case_id: Work item's UUID or key
         :type case_id: str
-        :param body: Case comment payload
+        :param body: Work item comment payload
         :type body: CaseCommentRequest
         :rtype: TimelineResponse
         """
@@ -1908,9 +1906,9 @@ class CaseManagementApi:
     ) -> CaseCountResponse:
         """Count cases.
 
-        Returns case counts, optionally grouped by one or more fields (for example, status, priority). Supports a query filter to narrow the scope.
+        Returns work item counts, optionally grouped by one or more fields (for example, status, priority). Supports a query filter to narrow the scope.
 
-        :param query_filter: Filter query for cases.
+        :param query_filter: Filter query for work items.
         :type query_filter: str, optional
         :param group_bys: Comma-separated fields to group by.
         :type group_bys: str, optional
@@ -1936,9 +1934,9 @@ class CaseManagementApi:
     ) -> CaseResponse:
         """Create a case.
 
-        Create a Case
+        Create a work item
 
-        :param body: Case payload
+        :param body: Work item payload
         :type body: CaseCreateRequest
         :rtype: CaseResponse
         """
@@ -1954,7 +1952,7 @@ class CaseManagementApi:
     ) -> AutomationRuleResponse:
         """Create an automation rule.
 
-        Creates an automation rule for a project. The rule defines a trigger event (for example, case created, status transitioned) and an action to execute.
+        Creates an automation rule for a project. The rule defines a trigger event (for example, work item created, status transitioned) and an action to execute.
 
         :param project_id: The UUID of the project that owns the automation rules.
         :type project_id: str
@@ -1976,9 +1974,9 @@ class CaseManagementApi:
     ) -> None:
         """Create Jira issue for case.
 
-        Create a new Jira issue and link it to a case
+        Create a new Jira issue and link it to a work item
 
-        :param case_id: Case's UUID or key
+        :param case_id: Work item's UUID or key
         :type case_id: str
         :param body: Jira issue creation request
         :type body: JiraIssueCreateRequest
@@ -1997,9 +1995,9 @@ class CaseManagementApi:
     ) -> CaseLinkResponse:
         """Create a case link.
 
-        Creates a directional link between two cases (for example, case A blocks case B). The parent and child cases and their relationship type must be specified.
+        Creates a directional link between two work items (for example, work item A blocks work item B). The parent and child work items and their relationship type must be specified.
 
-        :param body: Case link create request.
+        :param body: Work item link create request.
         :type body: CaseLinkCreateRequest
         :rtype: CaseLinkResponse
         """
@@ -2015,9 +2013,9 @@ class CaseManagementApi:
     ) -> None:
         """Create investigation notebook for case.
 
-        Create a new investigation notebook and link it to a case
+        Create a new investigation notebook and link it to a work item
 
-        :param case_id: Case's UUID or key
+        :param case_id: Work item's UUID or key
         :type case_id: str
         :param body: Notebook creation request
         :type body: NotebookCreateRequest
@@ -2037,9 +2035,9 @@ class CaseManagementApi:
     ) -> None:
         """Create ServiceNow ticket for case.
 
-        Create a new ServiceNow incident ticket and link it to a case
+        Create a new ServiceNow incident ticket and link it to a work item
 
-        :param case_id: Case's UUID or key
+        :param case_id: Work item's UUID or key
         :type case_id: str
         :param body: ServiceNow ticket creation request
         :type body: ServiceNowTicketCreateRequest
@@ -2058,9 +2056,9 @@ class CaseManagementApi:
     ) -> CaseViewResponse:
         """Create a case view.
 
-        Creates a new saved case view with a name, filter query, and associated project. Optionally, a notification rule can be linked to the view.
+        Creates a new saved work item view with a name, filter query, and associated project. Optionally, a notification rule can be linked to the view.
 
-        :param body: Case view payload.
+        :param body: Work item view payload.
         :type body: CaseViewCreateRequest
         :rtype: CaseViewResponse
         """
@@ -2075,7 +2073,7 @@ class CaseManagementApi:
     ) -> MaintenanceWindowResponse:
         """Create a maintenance window.
 
-        Creates a maintenance window for event management cases with a name, case filter query, and time range (start and end).
+        Creates a maintenance window for event management work items with a name, work item filter query, and time range (start and end).
 
         :param body: Maintenance window payload.
         :type body: MaintenanceWindowCreateRequest
@@ -2154,9 +2152,9 @@ class CaseManagementApi:
     ) -> None:
         """Delete case comment.
 
-        Delete case comment
+        Delete work item comment
 
-        :param case_id: Case's UUID or key
+        :param case_id: Work item's UUID or key
         :type case_id: str
         :param cell_id: The UUID of the timeline cell (comment) to update.
         :type cell_id: str
@@ -2176,11 +2174,11 @@ class CaseManagementApi:
     ) -> CaseResponse:
         """Delete custom attribute from case.
 
-        Delete custom attribute from case
+        Delete custom attribute from work item
 
-        :param case_id: Case's UUID or key
+        :param case_id: Work item's UUID or key
         :type case_id: str
-        :param custom_attribute_key: Case Custom attribute's key
+        :param custom_attribute_key: Work item custom attribute's key.
         :type custom_attribute_key: str
         :rtype: CaseResponse
         """
@@ -2197,9 +2195,9 @@ class CaseManagementApi:
     ) -> None:
         """Delete a case link.
 
-        Deletes an existing link between cases by link ID.
+        Deletes an existing link between work items by link ID.
 
-        :param link_id: The UUID of the case link.
+        :param link_id: The UUID of the work item link.
         :type link_id: str
         :rtype: None
         """
@@ -2214,9 +2212,9 @@ class CaseManagementApi:
     ) -> None:
         """Delete a case view.
 
-        Permanently deletes a saved case view.
+        Permanently deletes a saved work item view.
 
-        :param view_id: The UUID of the case view.
+        :param view_id: The UUID of the work item view.
         :type view_id: str
         :rtype: None
         """
@@ -2288,7 +2286,7 @@ class CaseManagementApi:
     ) -> AutomationRuleResponse:
         """Disable an automation rule.
 
-        Disables an automation rule so it no longer triggers on case events. The rule configuration is preserved.
+        Disables an automation rule so it no longer triggers on work item events. The rule configuration is preserved.
 
         :param project_id: The UUID of the project that owns the automation rules.
         :type project_id: str
@@ -2310,7 +2308,7 @@ class CaseManagementApi:
     ) -> AutomationRuleResponse:
         """Enable an automation rule.
 
-        Enables a previously disabled automation rule so it triggers on matching case events.
+        Enables a previously disabled automation rule so it triggers on matching work item events.
 
         :param project_id: The UUID of the project that owns the automation rules.
         :type project_id: str
@@ -2331,7 +2329,7 @@ class CaseManagementApi:
     ) -> None:
         """Favorite a project.
 
-        Marks a case project as a favorite for the current authenticated user.
+        Marks a Work Management project as a favorite for the current authenticated user.
 
         :param project_id: Project UUID.
         :type project_id: str
@@ -2348,9 +2346,9 @@ class CaseManagementApi:
     ) -> CaseResponse:
         """Get the details of a case.
 
-        Get the details of case by ``case_id``
+        Get the details of a work item by ``case_id``.
 
-        :param case_id: Case's UUID or key
+        :param case_id: Work item's UUID or key
         :type case_id: str
         :rtype: CaseResponse
         """
@@ -2387,9 +2385,9 @@ class CaseManagementApi:
     ) -> CaseViewResponse:
         """Get a case view.
 
-        Returns a single saved case view identified by its UUID, including its query, associated project, and timestamps.
+        Returns a single saved work item view identified by its UUID, including its query, associated project, and timestamps.
 
-        :param view_id: The UUID of the case view.
+        :param view_id: The UUID of the work item view.
         :type view_id: str
         :rtype: CaseViewResponse
         """
@@ -2451,9 +2449,9 @@ class CaseManagementApi:
     ) -> CaseResponse:
         """Link incident to case.
 
-        Link an incident to a case
+        Link an incident to a work item
 
-        :param case_id: Case's UUID or key
+        :param case_id: Work item's UUID or key
         :type case_id: str
         :param body: Incident link request
         :type body: RelationshipToIncidentRequest
@@ -2473,9 +2471,9 @@ class CaseManagementApi:
     ) -> None:
         """Link existing Jira issue to case.
 
-        Link an existing Jira issue to a case
+        Link an existing Jira issue to a work item
 
-        :param case_id: Case's UUID or key
+        :param case_id: Work item's UUID or key
         :type case_id: str
         :param body: Jira issue link request
         :type body: JiraIssueLinkRequest
@@ -2494,7 +2492,7 @@ class CaseManagementApi:
     ) -> AutomationRulesResponse:
         """List automation rules.
 
-        Returns all automation rules configured for a project. Automation rules allow automatic actions to be triggered by case events like creation, status transitions, or attribute changes.
+        Returns all automation rules configured for a project. Automation rules allow automatic actions to be triggered by work item events like creation, status transitions, or attribute changes.
 
         :param project_id: The UUID of the project that owns the automation rules.
         :type project_id: str
@@ -2514,9 +2512,9 @@ class CaseManagementApi:
     ) -> CaseLinksResponse:
         """List case links.
 
-        Returns all links associated with a case. Links define relationships (for example, BLOCKS) between cases. Requires entity_type and entity_id query parameters.
+        Returns all links associated with a work item. Links define relationships (for example, BLOCKS) between work items. Requires entity_type and entity_id query parameters.
 
-        :param entity_type: The entity type to look up links for. Use ``CASE`` to find links for a specific case.
+        :param entity_type: The entity type to look up links for. Use ``CASE`` to find links for a specific work item.
         :type entity_type: str
         :param entity_id: The UUID of the entity to look up links for.
         :type entity_id: str
@@ -2544,9 +2542,9 @@ class CaseManagementApi:
     ) -> TimelineResponse:
         """Get case timeline.
 
-        Returns the timeline of events for a case, including comments, status changes, and other activity. Supports pagination and sort order.
+        Returns the timeline of events for a work item, including comments, status changes, and other activity. Supports pagination and sort order.
 
-        :param case_id: Case's UUID or key
+        :param case_id: Work item's UUID or key
         :type case_id: str
         :param page_size: Number of timeline cells to return per page.
         :type page_size: int, optional
@@ -2576,7 +2574,7 @@ class CaseManagementApi:
     ) -> CaseViewsResponse:
         """List case views.
 
-        Returns all saved case views for a given project. Views are saved search queries that allow quick access to filtered lists of cases.
+        Returns all saved work item views for a given project. Views are saved search queries that allow quick access to filtered lists of work items.
 
         :param project_id: Filter views by project identifier.
         :type project_id: str
@@ -2593,9 +2591,9 @@ class CaseManagementApi:
     ) -> CaseWatchersResponse:
         """List case watchers.
 
-        Returns the list of users who are watching a case. Watchers receive notifications about updates to the case.
+        Returns the list of users who are watching a work item. Watchers receive notifications about updates to the work item.
 
-        :param case_id: Case's UUID or key
+        :param case_id: Work item's UUID or key
         :type case_id: str
         :rtype: CaseWatchersResponse
         """
@@ -2609,7 +2607,7 @@ class CaseManagementApi:
     ) -> MaintenanceWindowsResponse:
         """List maintenance windows.
 
-        Returns all configured maintenance windows for event management cases. Maintenance windows define time periods during which case notifications and automation rules are suppressed for cases matching a given query.
+        Returns all configured maintenance windows for event management work items. Maintenance windows define time periods during which work item notifications and automation rules are suppressed for work items matching a given query.
 
         :rtype: MaintenanceWindowsResponse
         """
@@ -2621,7 +2619,7 @@ class CaseManagementApi:
     ) -> ProjectFavoritesResponse:
         """List project favorites.
 
-        Returns the list of case projects that the current authenticated user has marked as favorites.
+        Returns the list of Work Management projects that the current authenticated user has marked as favorites.
 
         :rtype: ProjectFavoritesResponse
         """
@@ -2635,9 +2633,9 @@ class CaseManagementApi:
     ) -> CaseResponse:
         """Update case project.
 
-        Update the project associated with a case
+        Update the project associated with a work item
 
-        :param case_id: Case's UUID or key
+        :param case_id: Work item's UUID or key
         :type case_id: str
         :param body: Project update request
         :type body: ProjectRelationship
@@ -2657,11 +2655,11 @@ class CaseManagementApi:
     ) -> CaseResponse:
         """Remove insights from a case.
 
-        Removes one or more previously added insights from a case by specifying their type and resource identifier in the request body.
+        Removes one or more previously added insights from a work item by specifying their type and resource identifier in the request body.
 
-        :param case_id: Case's UUID or key
+        :param case_id: Work item's UUID or key
         :type case_id: str
-        :param body: Case insights request.
+        :param body: Work item insights request.
         :type body: CaseInsightsRequest
         :rtype: CaseResponse
         """
@@ -2683,7 +2681,7 @@ class CaseManagementApi:
     ) -> CasesResponse:
         """Search cases.
 
-        Search cases.
+        Search work items.
 
         :param page_size: Number of items to return per page. The maximum allowed value is 100.
         :type page_size: int, optional
@@ -2778,11 +2776,11 @@ class CaseManagementApi:
     ) -> CaseResponse:
         """Unarchive case.
 
-        Unarchive case
+        Unarchive work item
 
-        :param case_id: Case's UUID or key
+        :param case_id: Work item's UUID or key
         :type case_id: str
-        :param body: Unarchive case payload
+        :param body: Unarchive work item payload
         :type body: CaseEmptyRequest
         :rtype: CaseResponse
         """
@@ -2800,11 +2798,11 @@ class CaseManagementApi:
     ) -> CaseResponse:
         """Unassign case.
 
-        Unassign case
+        Unassign work item
 
-        :param case_id: Case's UUID or key
+        :param case_id: Work item's UUID or key
         :type case_id: str
-        :param body: Unassign case payload
+        :param body: Unassign work item payload
         :type body: CaseEmptyRequest
         :rtype: CaseResponse
         """
@@ -2821,7 +2819,7 @@ class CaseManagementApi:
     ) -> None:
         """Unfavorite a project.
 
-        Removes a case project from the current user's favorites list.
+        Removes a Work Management project from the current user's favorites list.
 
         :param project_id: Project UUID.
         :type project_id: str
@@ -2838,9 +2836,9 @@ class CaseManagementApi:
     ) -> None:
         """Remove Jira issue link from case.
 
-        Remove the link between a Jira issue and a case
+        Remove the link between a Jira issue and a work item
 
-        :param case_id: Case's UUID or key
+        :param case_id: Work item's UUID or key
         :type case_id: str
         :rtype: None
         """
@@ -2856,9 +2854,9 @@ class CaseManagementApi:
     ) -> None:
         """Unwatch a case.
 
-        Removes a user from the watchers list of a case. The user no longer receives notifications about updates to the case.
+        Removes a user from the watchers list of a work item. The user no longer receives notifications about updates to the work item.
 
-        :param case_id: Case's UUID or key
+        :param case_id: Work item's UUID or key
         :type case_id: str
         :param user_uuid: The UUID of the user to add or remove as a watcher.
         :type user_uuid: str
@@ -2878,11 +2876,11 @@ class CaseManagementApi:
     ) -> CaseResponse:
         """Update case attributes.
 
-        Update case attributes
+        Update work item attributes
 
-        :param case_id: Case's UUID or key
+        :param case_id: Work item's UUID or key
         :type case_id: str
-        :param body: Case attributes update payload
+        :param body: Work item attributes update payload
         :type body: CaseUpdateAttributesRequest
         :rtype: CaseResponse
         """
@@ -2928,13 +2926,13 @@ class CaseManagementApi:
     ) -> None:
         """Update case comment.
 
-        Updates the text content of an existing comment on a case timeline. The comment is identified by its cell ID.
+        Updates the text content of an existing comment on a work item timeline. The comment is identified by its cell ID.
 
-        :param case_id: Case's UUID or key
+        :param case_id: Work item's UUID or key
         :type case_id: str
         :param cell_id: The UUID of the timeline cell (comment) to update.
         :type cell_id: str
-        :param body: Case update comment payload.
+        :param body: Work item update comment payload.
         :type body: CaseUpdateCommentRequest
         :rtype: None
         """
@@ -2955,13 +2953,13 @@ class CaseManagementApi:
     ) -> CaseResponse:
         """Update case custom attribute.
 
-        Update case custom attribute
+        Update work item custom attribute
 
-        :param case_id: Case's UUID or key
+        :param case_id: Work item's UUID or key
         :type case_id: str
-        :param custom_attribute_key: Case Custom attribute's key
+        :param custom_attribute_key: Work item custom attribute's key.
         :type custom_attribute_key: str
-        :param body: Update case custom attribute payload
+        :param body: Update work item custom attribute payload
         :type body: CaseUpdateCustomAttributeRequest
         :rtype: CaseResponse
         """
@@ -2981,11 +2979,11 @@ class CaseManagementApi:
     ) -> CaseResponse:
         """Update case description.
 
-        Update case description
+        Update work item description
 
-        :param case_id: Case's UUID or key
+        :param case_id: Work item's UUID or key
         :type case_id: str
-        :param body: Case description update payload
+        :param body: Work item description update payload
         :type body: CaseUpdateDescriptionRequest
         :rtype: CaseResponse
         """
@@ -3003,11 +3001,11 @@ class CaseManagementApi:
     ) -> CaseResponse:
         """Update case due date.
 
-        Sets or updates the due date for a case. The due date is a calendar date (without a time component) indicating when the case should be resolved.
+        Sets or updates the due date for a work item. The due date is a calendar date (without a time component) indicating when the work item should be resolved.
 
-        :param case_id: Case's UUID or key
+        :param case_id: Work item's UUID or key
         :type case_id: str
-        :param body: Case due date update payload.
+        :param body: Work item due date update payload.
         :type body: CaseUpdateDueDateRequest
         :rtype: CaseResponse
         """
@@ -3025,11 +3023,11 @@ class CaseManagementApi:
     ) -> CaseResponse:
         """Update case resolved reason.
 
-        Sets the resolved reason for a security case (for example, FALSE_POSITIVE, TRUE_POSITIVE). Applicable to security-type cases.
+        Sets the resolved reason for a security work item (for example, FALSE_POSITIVE, TRUE_POSITIVE). Applicable to security-type work items.
 
-        :param case_id: Case's UUID or key
+        :param case_id: Work item's UUID or key
         :type case_id: str
-        :param body: Case resolved reason update payload.
+        :param body: Work item resolved reason update payload.
         :type body: CaseUpdateResolvedReasonRequest
         :rtype: CaseResponse
         """
@@ -3047,11 +3045,11 @@ class CaseManagementApi:
     ) -> CaseResponse:
         """Update case title.
 
-        Update case title
+        Update work item title
 
-        :param case_id: Case's UUID or key
+        :param case_id: Work item's UUID or key
         :type case_id: str
-        :param body: Case title update payload
+        :param body: Work item title update payload
         :type body: CaseUpdateTitleRequest
         :rtype: CaseResponse
         """
@@ -3069,11 +3067,11 @@ class CaseManagementApi:
     ) -> CaseViewResponse:
         """Update a case view.
 
-        Updates the name, query, or notification rule of an existing case view.
+        Updates the name, query, or notification rule of an existing work item view.
 
-        :param view_id: The UUID of the case view.
+        :param view_id: The UUID of the work item view.
         :type view_id: str
-        :param body: Case view payload.
+        :param body: Work item view payload.
         :type body: CaseViewUpdateRequest
         :rtype: CaseViewResponse
         """
@@ -3113,11 +3111,11 @@ class CaseManagementApi:
     ) -> CaseResponse:
         """Update case priority.
 
-        Update case priority
+        Update work item priority
 
-        :param case_id: Case's UUID or key
+        :param case_id: Work item's UUID or key
         :type case_id: str
-        :param body: Case priority update payload
+        :param body: Work item priority update payload
         :type body: CaseUpdatePriorityRequest
         :rtype: CaseResponse
         """
@@ -3184,11 +3182,11 @@ class CaseManagementApi:
     ) -> CaseResponse:
         """Update case status.
 
-        Update case status
+        Update work item status
 
-        :param case_id: Case's UUID or key
+        :param case_id: Work item's UUID or key
         :type case_id: str
-        :param body: Case status update payload
+        :param body: Work item status update payload
         :type body: CaseUpdateStatusRequest
         :rtype: CaseResponse
         """
@@ -3206,9 +3204,9 @@ class CaseManagementApi:
     ) -> None:
         """Watch a case.
 
-        Adds a user (identified by their UUID) as a watcher of a case. The user receives notifications about subsequent updates to the case.
+        Adds a user (identified by their UUID) as a watcher of a work item. The user receives notifications about subsequent updates to the work item.
 
-        :param case_id: Case's UUID or key
+        :param case_id: Work item's UUID or key
         :type case_id: str
         :param user_uuid: The UUID of the user to add or remove as a watcher.
         :type user_uuid: str
