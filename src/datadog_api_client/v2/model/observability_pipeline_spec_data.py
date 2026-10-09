@@ -34,7 +34,7 @@ class ObservabilityPipelineSpecData(ModelNormal):
 
     def __init__(self_, attributes: ObservabilityPipelineDataAttributes, **kwargs):
         """
-        Contains the the pipeline configuration.
+        Contains the pipeline configuration.
 
         :param attributes: Defines the pipeline’s name and its components (sources, processors, and destinations).
         :type attributes: ObservabilityPipelineDataAttributes
