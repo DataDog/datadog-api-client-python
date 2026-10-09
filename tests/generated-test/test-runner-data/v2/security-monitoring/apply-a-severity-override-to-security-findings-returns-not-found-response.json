@@ -1,0 +1,46 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 404,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Apply a severity override to security findings returns \"Not Found\" response",
+  "operation_id": "UpdateFindingsSeverity",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SeverityOverrideRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "severity": {
+              "action": "set",
+              "value": "high"
+            }
+          },
+          "relationships": {
+            "findings": {
+              "data": [
+                {
+                  "id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==",
+                  "type": "findings"
+                }
+              ]
+            }
+          },
+          "type": "severity_override"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security/findings/severity"
+  },
+  "scenario": "Apply a severity override to security findings returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

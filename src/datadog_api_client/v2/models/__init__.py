@@ -10657,6 +10657,23 @@ from datadog_api_client.v2.model.severity_modifier_rule_update_request import Se
 from datadog_api_client.v2.model.severity_modifier_rules_response import SeverityModifierRulesResponse
 from datadog_api_client.v2.model.severity_modifier_severity import SeverityModifierSeverity
 from datadog_api_client.v2.model.severity_modifier_severity_delta import SeverityModifierSeverityDelta
+from datadog_api_client.v2.model.severity_override_attributes import SeverityOverrideAttributes
+from datadog_api_client.v2.model.severity_override_clear import SeverityOverrideClear
+from datadog_api_client.v2.model.severity_override_clear_action_type import SeverityOverrideClearActionType
+from datadog_api_client.v2.model.severity_override_data_type import SeverityOverrideDataType
+from datadog_api_client.v2.model.severity_override_request import SeverityOverrideRequest
+from datadog_api_client.v2.model.severity_override_request_data import SeverityOverrideRequestData
+from datadog_api_client.v2.model.severity_override_request_data_attributes import SeverityOverrideRequestDataAttributes
+from datadog_api_client.v2.model.severity_override_request_data_relationships import (
+    SeverityOverrideRequestDataRelationships,
+)
+from datadog_api_client.v2.model.severity_override_response import SeverityOverrideResponse
+from datadog_api_client.v2.model.severity_override_response_data import SeverityOverrideResponseData
+from datadog_api_client.v2.model.severity_override_response_meta import SeverityOverrideResponseMeta
+from datadog_api_client.v2.model.severity_override_result import SeverityOverrideResult
+from datadog_api_client.v2.model.severity_override_set import SeverityOverrideSet
+from datadog_api_client.v2.model.severity_override_set_action_type import SeverityOverrideSetActionType
+from datadog_api_client.v2.model.severity_override_value import SeverityOverrideValue
 from datadog_api_client.v2.model.shared_dashboard_global_time import SharedDashboardGlobalTime
 from datadog_api_client.v2.model.shared_dashboard_included import SharedDashboardIncluded
 from datadog_api_client.v2.model.shared_dashboard_included_dashboard import SharedDashboardIncludedDashboard
@@ -19655,6 +19672,21 @@ __all__ = [
     "SeverityModifierRulesResponse",
     "SeverityModifierSeverity",
     "SeverityModifierSeverityDelta",
+    "SeverityOverrideAttributes",
+    "SeverityOverrideClear",
+    "SeverityOverrideClearActionType",
+    "SeverityOverrideDataType",
+    "SeverityOverrideRequest",
+    "SeverityOverrideRequestData",
+    "SeverityOverrideRequestDataAttributes",
+    "SeverityOverrideRequestDataRelationships",
+    "SeverityOverrideResponse",
+    "SeverityOverrideResponseData",
+    "SeverityOverrideResponseMeta",
+    "SeverityOverrideResult",
+    "SeverityOverrideSet",
+    "SeverityOverrideSetActionType",
+    "SeverityOverrideValue",
     "SharedDashboardGlobalTime",
     "SharedDashboardIncluded",
     "SharedDashboardIncludedDashboard",
