@@ -9516,6 +9516,27 @@
     {
       "feature": "Security Monitoring",
       "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/apply-a-severity-override-to-security-findings-returns-accepted-response.json",
+      "scenario": "Apply a severity override to security findings returns \"Accepted\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/apply-a-severity-override-to-security-findings-returns-not-found-response.json",
+      "scenario": "Apply a severity override to security findings returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/apply-a-severity-override-to-security-findings-returns-unprocessable-entity-response.json",
+      "scenario": "Apply a severity override to security findings returns \"Unprocessable Entity\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
       "file": "v2/security-monitoring/attach-security-finding-to-a-jira-issue-returns-ok-response.json",
       "scenario": "Attach security finding to a Jira issue returns \"OK\" response",
       "version": "v2"
@@ -9609,6 +9630,13 @@
       "feature_file": "../../v2/features/security_monitoring.feature",
       "file": "v2/security-monitoring/change-the-triage-state-of-a-security-signal-returns-ok-response.json",
       "scenario": "Change the triage state of a security signal returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/clear-the-severity-override-of-security-findings-returns-accepted-response.json",
+      "scenario": "Clear the severity override of security findings returns \"Accepted\" response",
       "version": "v2"
     },
     {

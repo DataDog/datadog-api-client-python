@@ -3,6 +3,159 @@
   "recordings": [
     {
       "feature": "Security Monitoring",
+      "frozen_at": "2026-10-08T12:23:32.869Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "severity": {
+                      "action": "set",
+                      "description": "Database contains sensitive data.",
+                      "value": "high"
+                    }
+                  },
+                  "relationships": {
+                    "findings": {
+                      "data": [
+                        {
+                          "id": "ZGVmLTAwMC0wYmd-MDE4NjcyMDJkMzE4MDE5ODY5MGE4ZmQ2MmFlMjg0Y2M=",
+                          "type": "findings"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "severity_override"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/security/findings/severity",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"ac66db29-c96f-45f2-bd4b-69f753400a9d\",\"type\":\"severity_override\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Accepted",
+            "status": 202
+          }
+        }
+      ],
+      "scenario": "Apply a severity override to security findings returns \"Accepted\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "frozen_at": "2026-10-08T12:23:35.263Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "severity": {
+                      "action": "set",
+                      "value": "high"
+                    }
+                  },
+                  "relationships": {
+                    "findings": {
+                      "data": [
+                        {
+                          "id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==",
+                          "type": "findings"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "severity_override"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/security/findings/severity",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"finding not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Apply a severity override to security findings returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "frozen_at": "2026-10-08T12:23:35.347Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "severity": {
+                      "action": "set"
+                    }
+                  },
+                  "relationships": {
+                    "findings": {
+                      "data": [
+                        {
+                          "id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==",
+                          "type": "findings"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "severity_override"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/security/findings/severity",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"invalid severity value \\\"\\\" for action \\\"set\\\": must be one of info, low, medium, high, critical\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Unprocessable Entity",
+            "status": 422
+          }
+        }
+      ],
+      "scenario": "Apply a severity override to security findings returns \"Unprocessable Entity\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
       "frozen_at": "2025-11-20T15:49:48.969Z",
       "interactions": [
         {
@@ -737,6 +890,56 @@
         }
       ],
       "scenario": "Change the triage state of a security signal returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "frozen_at": "2026-10-08T12:23:35.440Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "severity": {
+                      "action": "clear"
+                    }
+                  },
+                  "relationships": {
+                    "findings": {
+                      "data": [
+                        {
+                          "id": "ZGVmLTAwMC0wYmd-MDE4NjcyMDJkMzE4MDE5ODY5MGE4ZmQ2MmFlMjg0Y2M=",
+                          "type": "findings"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "severity_override"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/security/findings/severity",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a1cea0d7-e53b-4e44-a914-c90343617a70\",\"type\":\"severity_override\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Accepted",
+            "status": 202
+          }
+        }
+      ],
+      "scenario": "Clear the severity override of security findings returns \"Accepted\" response",
       "version": "v2"
     },
     {

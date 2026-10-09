@@ -88,6 +88,8 @@ from datadog_api_client.v2.model.mute_findings_request import MuteFindingsReques
 from datadog_api_client.v2.model.security_findings_search_request import SecurityFindingsSearchRequest
 from datadog_api_client.v2.model.attach_service_now_ticket_request import AttachServiceNowTicketRequest
 from datadog_api_client.v2.model.create_service_now_ticket_request_array import CreateServiceNowTicketRequestArray
+from datadog_api_client.v2.model.severity_override_response import SeverityOverrideResponse
+from datadog_api_client.v2.model.severity_override_request import SeverityOverrideRequest
 from datadog_api_client.v2.model.list_assets_sbo_ms_response import ListAssetsSBOMsResponse
 from datadog_api_client.v2.model.asset_type import AssetType
 from datadog_api_client.v2.model.sbom_component_license_type import SBOMComponentLicenseType
@@ -4716,6 +4718,26 @@ class SecurityMonitoringApi:
                 "body": {
                     "required": True,
                     "openapi_types": (AssigneeRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_findings_severity_endpoint = _Endpoint(
+            settings={
+                "response_type": (SeverityOverrideResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/findings/severity",
+                "operation_id": "update_findings_severity",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SeverityOverrideRequest,),
                     "location": "body",
                 },
             },
@@ -9565,6 +9587,36 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._update_findings_assignee_endpoint.call_with_http_info(**kwargs)
+
+    def update_findings_severity(
+        self,
+        body: SeverityOverrideRequest,
+    ) -> SeverityOverrideResponse:
+        """Override the severity of security findings.
+
+        Set or clear the manual severity override of security findings.
+
+        You can update up to 100 security findings per request.
+        Use the ``set`` action with a ``value`` to apply a manual severity override.
+        ``value`` is required for ``set`` and must be omitted for ``clear``.
+        The ``info`` value sets the lowest severity the finding type allows.
+        Use the ``clear`` action to remove a manual severity override.
+        ``clear`` does not remove a severity set by an automation rule.
+        The optional ``description`` is accepted with both actions and has a limit of 280 characters.
+
+        Auto-closed findings are excluded.
+        Findings whose severity was set by an automation rule are skipped and listed in the response ``meta.warnings``.
+        If every finding is skipped this way, the request fails with a ``400`` error.
+        Findings that cannot be found are skipped without a warning.
+        The request fails with a ``404`` error only if none of the findings can be found.
+
+        :type body: SeverityOverrideRequest
+        :rtype: SeverityOverrideResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._update_findings_severity_endpoint.call_with_http_info(**kwargs)
 
     def update_resource_evaluation_filters(
         self,

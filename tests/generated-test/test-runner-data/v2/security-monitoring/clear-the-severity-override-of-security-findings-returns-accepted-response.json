@@ -1,0 +1,45 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 202,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Clear the severity override of security findings returns \"Accepted\" response",
+  "operation_id": "UpdateFindingsSeverity",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SeverityOverrideRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "severity": {
+              "action": "clear"
+            }
+          },
+          "relationships": {
+            "findings": {
+              "data": [
+                {
+                  "id": "ZGVmLTAwMC0wYmd-MDE4NjcyMDJkMzE4MDE5ODY5MGE4ZmQ2MmFlMjg0Y2M=",
+                  "type": "findings"
+                }
+              ]
+            }
+          },
+          "type": "severity_override"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security/findings/severity"
+  },
+  "scenario": "Clear the severity override of security findings returns \"Accepted\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
