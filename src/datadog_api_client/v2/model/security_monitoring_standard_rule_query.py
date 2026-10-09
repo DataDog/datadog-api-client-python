@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import Dict, List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -36,6 +36,8 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
             "aggregation": (SecurityMonitoringRuleQueryAggregation,),
             "custom_query_extension": (str,),
             "data_source": (SecurityMonitoringStandardDataSource,),
+            "dataset_ids": ([str],),
+            "dataset_versions": ({str: (int,)},),
             "distinct_fields": ([str],),
             "group_by_fields": ([str],),
             "has_optional_group_by_fields": (bool,),
@@ -45,12 +47,15 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
             "metrics": ([str],),
             "name": (str,),
             "query": (str,),
+            "query_language": (str,),
         }
 
     attribute_map = {
         "aggregation": "aggregation",
         "custom_query_extension": "customQueryExtension",
         "data_source": "dataSource",
+        "dataset_ids": "datasetIds",
+        "dataset_versions": "datasetVersions",
         "distinct_fields": "distinctFields",
         "group_by_fields": "groupByFields",
         "has_optional_group_by_fields": "hasOptionalGroupByFields",
@@ -60,6 +65,7 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
         "metrics": "metrics",
         "name": "name",
         "query": "query",
+        "query_language": "queryLanguage",
     }
 
     def __init__(
@@ -67,6 +73,8 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
         aggregation: Union[SecurityMonitoringRuleQueryAggregation, UnsetType] = unset,
         custom_query_extension: Union[str, UnsetType] = unset,
         data_source: Union[SecurityMonitoringStandardDataSource, UnsetType] = unset,
+        dataset_ids: Union[List[str], UnsetType] = unset,
+        dataset_versions: Union[Dict[str, int], UnsetType] = unset,
         distinct_fields: Union[List[str], UnsetType] = unset,
         group_by_fields: Union[List[str], UnsetType] = unset,
         has_optional_group_by_fields: Union[bool, UnsetType] = unset,
@@ -76,6 +84,7 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
         metrics: Union[List[str], UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         query: Union[str, UnsetType] = unset,
+        query_language: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -89,6 +98,12 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
 
         :param data_source: Source of events, either logs, audit trail, security signals, or Datadog events. ``app_sec_spans`` is deprecated in favor of ``spans``.
         :type data_source: SecurityMonitoringStandardDataSource, optional
+
+        :param dataset_ids: IDs of the datasets queried by the rule. Only used when ``queryLanguage`` is ``sql``.
+        :type dataset_ids: [str], optional
+
+        :param dataset_versions: Version of each dataset used by the rule, keyed by dataset ID. Only used when ``queryLanguage`` is ``sql``.
+        :type dataset_versions: {str: (int,)}, optional
 
         :param distinct_fields: Field for which the cardinality is measured. Sent as an array.
         :type distinct_fields: [str], optional
@@ -118,6 +133,9 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
 
         :param query: Query to run on logs.
         :type query: str, optional
+
+        :param query_language: Language of the query. Use ``sql`` for SQL-based rules over datasets. Defaults to ``event_query``.
+        :type query_language: str, optional
         """
         if aggregation is not unset:
             kwargs["aggregation"] = aggregation
@@ -125,6 +143,10 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
             kwargs["custom_query_extension"] = custom_query_extension
         if data_source is not unset:
             kwargs["data_source"] = data_source
+        if dataset_ids is not unset:
+            kwargs["dataset_ids"] = dataset_ids
+        if dataset_versions is not unset:
+            kwargs["dataset_versions"] = dataset_versions
         if distinct_fields is not unset:
             kwargs["distinct_fields"] = distinct_fields
         if group_by_fields is not unset:
@@ -143,4 +165,6 @@ class SecurityMonitoringStandardRuleQuery(ModelNormal):
             kwargs["name"] = name
         if query is not unset:
             kwargs["query"] = query
+        if query_language is not unset:
+            kwargs["query_language"] = query_language
         super().__init__(kwargs)

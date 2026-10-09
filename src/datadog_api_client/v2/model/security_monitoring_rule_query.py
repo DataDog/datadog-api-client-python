@@ -24,6 +24,12 @@ class SecurityMonitoringRuleQuery(ModelComposed):
         :param data_source: Source of events, either logs, audit trail, security signals, or Datadog events. `app_sec_spans` is deprecated in favor of `spans`.
         :type data_source: SecurityMonitoringStandardDataSource, optional
 
+        :param dataset_ids: IDs of the datasets queried by the rule. Only used when `queryLanguage` is `sql`.
+        :type dataset_ids: [str], optional
+
+        :param dataset_versions: Version of each dataset used by the rule, keyed by dataset ID. Only used when `queryLanguage` is `sql`.
+        :type dataset_versions: {str: (int,)}, optional
+
         :param distinct_fields: Field for which the cardinality is measured. Sent as an array.
         :type distinct_fields: [str], optional
 
@@ -52,6 +58,9 @@ class SecurityMonitoringRuleQuery(ModelComposed):
 
         :param query: Query to run on logs.
         :type query: str, optional
+
+        :param query_language: Language of the query. Use `sql` for SQL-based rules over datasets. Defaults to `event_query`.
+        :type query_language: str, optional
 
         :param correlated_by_fields: Fields to group by.
         :type correlated_by_fields: [str], optional
