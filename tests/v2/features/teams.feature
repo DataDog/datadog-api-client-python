@@ -477,6 +477,18 @@ Feature: Teams
     Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/aaa-omg
+  Scenario: List all teams returns "OK" response
+    Given new "ListTeams" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/aaa-omg @with-pagination
+  Scenario: List all teams returns "OK" response with pagination
+    Given new "ListTeams" request
+    When the request with pagination is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/aaa-omg
   Scenario: List team connections returns "Bad Request" response
     Given new "ListTeamConnections" request
     When the request is sent
