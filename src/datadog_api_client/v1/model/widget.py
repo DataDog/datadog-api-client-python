@@ -33,6 +33,7 @@ if TYPE_CHECKING:
     )
     from datadog_api_client.v1.model.geomap_widget_definition import GeomapWidgetDefinition
     from datadog_api_client.v1.model.group_widget_definition import GroupWidgetDefinition
+    from datadog_api_client.v1.model.heatgrid_widget_definition import HeatgridWidgetDefinition
     from datadog_api_client.v1.model.heat_map_widget_definition import HeatMapWidgetDefinition
     from datadog_api_client.v1.model.host_map_widget_definition import HostMapWidgetDefinition
     from datadog_api_client.v1.model.i_frame_widget_definition import IFrameWidgetDefinition
@@ -99,6 +100,7 @@ class Widget(ModelNormal):
             ProductAnalyticsFunnelWidgetDefinition,
             GeomapWidgetDefinition,
             GroupWidgetDefinition,
+            HeatgridWidgetDefinition,
             HeatMapWidgetDefinition,
             HostMapWidgetDefinition,
             IFrameWidgetDefinition,

@@ -698,6 +698,325 @@
     },
     {
       "feature": "Dashboards",
+      "frozen_at": "2026-10-08T20:45:28.713Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "layout_type": "ordered",
+                "title": "Test-Create_a_heatgrid_widget_with_a_preset_gradient-1791492328",
+                "widgets": [
+                  {
+                    "definition": {
+                      "color": {
+                        "mode": "gradient",
+                        "preset_name": "classic",
+                        "source": "preset"
+                      },
+                      "label_column": {
+                        "width": "m"
+                      },
+                      "legend": {
+                        "show_caption": true
+                      },
+                      "requests": [
+                        {
+                          "formulas": [
+                            {
+                              "formula": "query1"
+                            }
+                          ],
+                          "queries": [
+                            {
+                              "data_source": "metrics",
+                              "name": "query1",
+                              "query": "avg:system.cpu.user{*} by {host}"
+                            }
+                          ],
+                          "response_format": "timeseries"
+                        }
+                      ],
+                      "sort": {
+                        "nesting_display": "flat",
+                        "sort_by": {
+                          "aggregation": "avg",
+                          "order": "desc",
+                          "property": "value"
+                        }
+                      },
+                      "type": "heatgrid"
+                    }
+                  }
+                ]
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/dashboard",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":\"rws-u2c-xjn\",\"title\":\"Test-Create_a_heatgrid_widget_with_a_preset_gradient-1791492328\",\"description\":null,\"author_handle\":\"test@example.com\",\"author_name\":\"Test User\",\"layout_type\":\"ordered\",\"url\":\"/dashboard/rws-u2c-xjn/test-createaheatgridwidgetwithapresetgradient-1791492328\",\"template_variables\":null,\"widgets\":[{\"definition\":{\"color\":{\"mode\":\"gradient\",\"preset_name\":\"classic\",\"source\":\"preset\"},\"label_column\":{\"width\":\"m\"},\"legend\":{\"show_caption\":true},\"requests\":[{\"formulas\":[{\"formula\":\"query1\"}],\"queries\":[{\"data_source\":\"metrics\",\"name\":\"query1\",\"query\":\"avg:system.cpu.user{*} by {host}\"}],\"response_format\":\"timeseries\"}],\"sort\":{\"nesting_display\":\"flat\",\"sort_by\":{\"aggregation\":\"avg\",\"order\":\"desc\",\"property\":\"value\"}},\"type\":\"heatgrid\"},\"id\":703699353428571}],\"notify_list\":null,\"created_at\":\"2026-10-08T20:45:28.947012+00:00\",\"modified_at\":\"2026-10-08T20:45:28.947012+00:00\",\"experience_type\":\"default\",\"restricted_roles\":[]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/dashboard/rws-u2c-xjn",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_dashboard_id\":\"rws-u2c-xjn\"}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a heatgrid widget with a preset gradient",
+      "version": "v1"
+    },
+    {
+      "feature": "Dashboards",
+      "frozen_at": "2026-10-08T20:45:29.961Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "layout_type": "ordered",
+                "title": "Test-Create_a_heatgrid_widget_with_custom_discrete_thresholds-1791492329",
+                "widgets": [
+                  {
+                    "definition": {
+                      "color": {
+                        "bins": [
+                          {
+                            "color": "#00FF00"
+                          },
+                          {
+                            "color": "#FF0000",
+                            "lower_bound": 80
+                          }
+                        ],
+                        "mode": "discrete",
+                        "source": "custom"
+                      },
+                      "label_column": {
+                        "width": "m"
+                      },
+                      "legend": {
+                        "show_caption": true
+                      },
+                      "requests": [
+                        {
+                          "formulas": [
+                            {
+                              "formula": "query1"
+                            }
+                          ],
+                          "queries": [
+                            {
+                              "data_source": "metrics",
+                              "name": "query1",
+                              "query": "avg:system.cpu.user{*} by {host}"
+                            }
+                          ],
+                          "response_format": "timeseries"
+                        }
+                      ],
+                      "sort": {
+                        "nesting_display": "flat",
+                        "sort_by": {
+                          "order": "asc",
+                          "property": "label"
+                        }
+                      },
+                      "type": "heatgrid"
+                    }
+                  }
+                ]
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/dashboard",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":\"6sq-avw-idr\",\"title\":\"Test-Create_a_heatgrid_widget_with_custom_discrete_thresholds-1791492329\",\"description\":null,\"author_handle\":\"test@example.com\",\"author_name\":\"Test User\",\"layout_type\":\"ordered\",\"url\":\"/dashboard/6sq-avw-idr/test-createaheatgridwidgetwithcustomdiscretethresholds-1791492329\",\"template_variables\":null,\"widgets\":[{\"definition\":{\"color\":{\"bins\":[{\"color\":\"#00FF00\"},{\"color\":\"#FF0000\",\"lower_bound\":80}],\"mode\":\"discrete\",\"source\":\"custom\"},\"label_column\":{\"width\":\"m\"},\"legend\":{\"show_caption\":true},\"requests\":[{\"formulas\":[{\"formula\":\"query1\"}],\"queries\":[{\"data_source\":\"metrics\",\"name\":\"query1\",\"query\":\"avg:system.cpu.user{*} by {host}\"}],\"response_format\":\"timeseries\"}],\"sort\":{\"nesting_display\":\"flat\",\"sort_by\":{\"order\":\"asc\",\"property\":\"label\"}},\"type\":\"heatgrid\"},\"id\":4032652334995696}],\"notify_list\":null,\"created_at\":\"2026-10-08T20:45:30.208364+00:00\",\"modified_at\":\"2026-10-08T20:45:30.208364+00:00\",\"experience_type\":\"default\",\"restricted_roles\":[]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/dashboard/6sq-avw-idr",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_dashboard_id\":\"6sq-avw-idr\"}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a heatgrid widget with custom discrete thresholds",
+      "version": "v1"
+    },
+    {
+      "feature": "Dashboards",
+      "frozen_at": "2026-10-08T20:45:31.220Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "layout_type": "ordered",
+                "title": "Test-Create_a_heatgrid_widget_with_custom_gradient_colors_for_both_themes-1791492331",
+                "widgets": [
+                  {
+                    "definition": {
+                      "color": {
+                        "mode": "gradient",
+                        "source": "custom",
+                        "stops": [
+                          {
+                            "color": [
+                              "#FFFFFF",
+                              "#000000"
+                            ],
+                            "position": 0
+                          },
+                          {
+                            "color": "#FF0000",
+                            "position": 100
+                          }
+                        ]
+                      },
+                      "label_column": {
+                        "width": "m"
+                      },
+                      "legend": {
+                        "show_caption": true
+                      },
+                      "requests": [
+                        {
+                          "formulas": [
+                            {
+                              "formula": "query1"
+                            }
+                          ],
+                          "queries": [
+                            {
+                              "data_source": "metrics",
+                              "name": "query1",
+                              "query": "avg:system.cpu.user{*} by {host}"
+                            }
+                          ],
+                          "response_format": "timeseries"
+                        }
+                      ],
+                      "sort": {
+                        "nesting_display": "flat",
+                        "sort_by": {
+                          "aggregation": "avg",
+                          "order": "desc",
+                          "property": "value"
+                        }
+                      },
+                      "type": "heatgrid"
+                    }
+                  }
+                ]
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/dashboard",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":\"p5v-36u-h29\",\"title\":\"Test-Create_a_heatgrid_widget_with_custom_gradient_colors_for_both_themes-1791492331\",\"description\":null,\"author_handle\":\"test@example.com\",\"author_name\":\"Test User\",\"layout_type\":\"ordered\",\"url\":\"/dashboard/p5v-36u-h29/test-createaheatgridwidgetwithcustomgradientcolorsforboththemes-1791492331\",\"template_variables\":null,\"widgets\":[{\"definition\":{\"color\":{\"mode\":\"gradient\",\"source\":\"custom\",\"stops\":[{\"color\":[\"#FFFFFF\",\"#000000\"],\"position\":0},{\"color\":\"#FF0000\",\"position\":100}]},\"label_column\":{\"width\":\"m\"},\"legend\":{\"show_caption\":true},\"requests\":[{\"formulas\":[{\"formula\":\"query1\"}],\"queries\":[{\"data_source\":\"metrics\",\"name\":\"query1\",\"query\":\"avg:system.cpu.user{*} by {host}\"}],\"response_format\":\"timeseries\"}],\"sort\":{\"nesting_display\":\"flat\",\"sort_by\":{\"aggregation\":\"avg\",\"order\":\"desc\",\"property\":\"value\"}},\"type\":\"heatgrid\"},\"id\":4644010913884827}],\"notify_list\":null,\"created_at\":\"2026-10-08T20:45:31.439485+00:00\",\"modified_at\":\"2026-10-08T20:45:31.439485+00:00\",\"experience_type\":\"default\",\"restricted_roles\":[]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/dashboard/p5v-36u-h29",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_dashboard_id\":\"p5v-36u-h29\"}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a heatgrid widget with custom gradient colors for both themes",
+      "version": "v1"
+    },
+    {
+      "feature": "Dashboards",
       "frozen_at": "2024-11-15T19:32:29.001Z",
       "interactions": [
         {

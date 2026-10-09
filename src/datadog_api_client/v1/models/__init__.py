@@ -266,6 +266,35 @@ from datadog_api_client.v1.model.heat_map_widget_definition import HeatMapWidget
 from datadog_api_client.v1.model.heat_map_widget_definition_type import HeatMapWidgetDefinitionType
 from datadog_api_client.v1.model.heat_map_widget_request import HeatMapWidgetRequest
 from datadog_api_client.v1.model.heat_map_widget_x_axis import HeatMapWidgetXAxis
+from datadog_api_client.v1.model.heatgrid_color import HeatgridColor
+from datadog_api_client.v1.model.heatgrid_color_bin import HeatgridColorBin
+from datadog_api_client.v1.model.heatgrid_color_config import HeatgridColorConfig
+from datadog_api_client.v1.model.heatgrid_color_stop import HeatgridColorStop
+from datadog_api_client.v1.model.heatgrid_custom_color_source import HeatgridCustomColorSource
+from datadog_api_client.v1.model.heatgrid_discrete_custom_color import HeatgridDiscreteCustomColor
+from datadog_api_client.v1.model.heatgrid_discrete_mode import HeatgridDiscreteMode
+from datadog_api_client.v1.model.heatgrid_discrete_preset_color import HeatgridDiscretePresetColor
+from datadog_api_client.v1.model.heatgrid_gradient_custom_color import HeatgridGradientCustomColor
+from datadog_api_client.v1.model.heatgrid_gradient_mode import HeatgridGradientMode
+from datadog_api_client.v1.model.heatgrid_gradient_preset_color import HeatgridGradientPresetColor
+from datadog_api_client.v1.model.heatgrid_label_column import HeatgridLabelColumn
+from datadog_api_client.v1.model.heatgrid_label_column_width import HeatgridLabelColumnWidth
+from datadog_api_client.v1.model.heatgrid_legend import HeatgridLegend
+from datadog_api_client.v1.model.heatgrid_nesting_display import HeatgridNestingDisplay
+from datadog_api_client.v1.model.heatgrid_preset_color_source import HeatgridPresetColorSource
+from datadog_api_client.v1.model.heatgrid_sort import HeatgridSort
+from datadog_api_client.v1.model.heatgrid_sort_aggregation import HeatgridSortAggregation
+from datadog_api_client.v1.model.heatgrid_sort_by import HeatgridSortBy
+from datadog_api_client.v1.model.heatgrid_sort_by_label import HeatgridSortByLabel
+from datadog_api_client.v1.model.heatgrid_sort_by_label_property import HeatgridSortByLabelProperty
+from datadog_api_client.v1.model.heatgrid_sort_by_value import HeatgridSortByValue
+from datadog_api_client.v1.model.heatgrid_sort_by_value_property import HeatgridSortByValueProperty
+from datadog_api_client.v1.model.heatgrid_sort_order import HeatgridSortOrder
+from datadog_api_client.v1.model.heatgrid_widget_definition import HeatgridWidgetDefinition
+from datadog_api_client.v1.model.heatgrid_widget_definition_type import HeatgridWidgetDefinitionType
+from datadog_api_client.v1.model.heatgrid_widget_formula import HeatgridWidgetFormula
+from datadog_api_client.v1.model.heatgrid_widget_request import HeatgridWidgetRequest
+from datadog_api_client.v1.model.heatgrid_widget_response_format import HeatgridWidgetResponseFormat
 from datadog_api_client.v1.model.host import Host
 from datadog_api_client.v1.model.host_list_response import HostListResponse
 from datadog_api_client.v1.model.host_map_request import HostMapRequest
@@ -1690,6 +1719,35 @@ __all__ = [
     "HeatMapWidgetDefinitionType",
     "HeatMapWidgetRequest",
     "HeatMapWidgetXAxis",
+    "HeatgridColor",
+    "HeatgridColorBin",
+    "HeatgridColorConfig",
+    "HeatgridColorStop",
+    "HeatgridCustomColorSource",
+    "HeatgridDiscreteCustomColor",
+    "HeatgridDiscreteMode",
+    "HeatgridDiscretePresetColor",
+    "HeatgridGradientCustomColor",
+    "HeatgridGradientMode",
+    "HeatgridGradientPresetColor",
+    "HeatgridLabelColumn",
+    "HeatgridLabelColumnWidth",
+    "HeatgridLegend",
+    "HeatgridNestingDisplay",
+    "HeatgridPresetColorSource",
+    "HeatgridSort",
+    "HeatgridSortAggregation",
+    "HeatgridSortBy",
+    "HeatgridSortByLabel",
+    "HeatgridSortByLabelProperty",
+    "HeatgridSortByValue",
+    "HeatgridSortByValueProperty",
+    "HeatgridSortOrder",
+    "HeatgridWidgetDefinition",
+    "HeatgridWidgetDefinitionType",
+    "HeatgridWidgetFormula",
+    "HeatgridWidgetRequest",
+    "HeatgridWidgetResponseFormat",
     "Host",
     "HostListResponse",
     "HostMapRequest",
