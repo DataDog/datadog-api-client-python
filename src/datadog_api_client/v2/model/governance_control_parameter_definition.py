@@ -25,18 +25,7 @@ class GovernanceControlParameterDefinition(ModelNormal):
         from datadog_api_client.v2.model.governance_control_supported_value import GovernanceControlSupportedValue
 
         return {
-            "default_value": (
-                bool,
-                date,
-                datetime,
-                dict,
-                float,
-                int,
-                list,
-                str,
-                UUID,
-                none_type,
-            ),
+            "default_value": (bool, date, datetime, dict, float, int, list, str, UUID, none_type, none_type),
             "description": (str,),
             "display_name": (str,),
             "name": (str,),
@@ -57,7 +46,7 @@ class GovernanceControlParameterDefinition(ModelNormal):
 
     def __init__(
         self_,
-        default_value: Any,
+        default_value: Union[Any, none_type],
         description: str,
         display_name: str,
         name: str,
@@ -69,8 +58,8 @@ class GovernanceControlParameterDefinition(ModelNormal):
         """
         The definition of a configurable parameter on a control or mitigation.
 
-        :param default_value: The default value of the parameter. The JSON type depends on the parameter's ``type``.
-        :type default_value: bool, date, datetime, dict, float, int, list, str, UUID, none_type
+        :param default_value: The default value of the parameter. The JSON type depends on the parameter's ``type``. ``null`` when the parameter has no default.
+        :type default_value: bool, date, datetime, dict, float, int, list, str, UUID, none_type, none_type
 
         :param description: A human-readable description of the parameter.
         :type description: str
