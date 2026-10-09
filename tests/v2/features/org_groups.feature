@@ -9,6 +9,33 @@ Feature: Org Groups
     And an instance of "OrgGroups" API
 
   @generated @skip @team:ddoghq/org-management
+  Scenario: Bulk delete org group memberships returns "Bad Request" response
+    Given operation "BulkDeleteOrgGroupMemberships" enabled
+    And new "BulkDeleteOrgGroupMemberships" request
+    And request contains "filter[org_group_id]" parameter from "REPLACE.ME"
+    And body with value {"data": [{"id": "f1e2d3c4-b5a6-7890-1234-567890abcdef", "type": "org_group_memberships"}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/org-management
+  Scenario: Bulk delete org group memberships returns "No Content" response
+    Given operation "BulkDeleteOrgGroupMemberships" enabled
+    And new "BulkDeleteOrgGroupMemberships" request
+    And request contains "filter[org_group_id]" parameter from "REPLACE.ME"
+    And body with value {"data": [{"id": "f1e2d3c4-b5a6-7890-1234-567890abcdef", "type": "org_group_memberships"}]}
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:ddoghq/org-management
+  Scenario: Bulk delete org group memberships returns "Not Found" response
+    Given operation "BulkDeleteOrgGroupMemberships" enabled
+    And new "BulkDeleteOrgGroupMemberships" request
+    And request contains "filter[org_group_id]" parameter from "REPLACE.ME"
+    And body with value {"data": [{"id": "f1e2d3c4-b5a6-7890-1234-567890abcdef", "type": "org_group_memberships"}]}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/org-management
   Scenario: Bulk update org group memberships returns "Bad Request" response
     Given operation "BulkUpdateOrgGroupMemberships" enabled
     And new "BulkUpdateOrgGroupMemberships" request
@@ -103,6 +130,57 @@ Feature: Org Groups
     And body with value {"data": {"attributes": {"name": "My Org Group"}, "type": "org_groups"}}
     When the request is sent
     Then the response status is 201 Created
+
+  @generated @skip @team:ddoghq/org-management
+  Scenario: Create org group memberships returns "Bad Request" response
+    Given operation "CreateOrgGroupMemberships" enabled
+    And new "CreateOrgGroupMemberships" request
+    And body with value {"data": {"attributes": {"orgs": [{"org_site": "us1", "org_uuid": "c3d4e5f6-a7b8-9012-cdef-012345678901"}]}, "relationships": {"org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}}, "type": "org_group_memberships"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/org-management
+  Scenario: Create org group memberships returns "Created" response
+    Given operation "CreateOrgGroupMemberships" enabled
+    And new "CreateOrgGroupMemberships" request
+    And body with value {"data": {"attributes": {"orgs": [{"org_site": "us1", "org_uuid": "c3d4e5f6-a7b8-9012-cdef-012345678901"}]}, "relationships": {"org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}}, "type": "org_group_memberships"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:ddoghq/org-management
+  Scenario: Create org group memberships returns "Not Found" response
+    Given operation "CreateOrgGroupMemberships" enabled
+    And new "CreateOrgGroupMemberships" request
+    And body with value {"data": {"attributes": {"orgs": [{"org_site": "us1", "org_uuid": "c3d4e5f6-a7b8-9012-cdef-012345678901"}]}, "relationships": {"org_group": {"data": {"id": "a1b2c3d4-e5f6-7890-abcd-ef0123456789", "type": "org_groups"}}}, "type": "org_group_memberships"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/org-management
+  Scenario: Delete an org group membership returns "Bad Request" response
+    Given operation "DeleteOrgGroupMembership" enabled
+    And new "DeleteOrgGroupMembership" request
+    And request contains "org_group_membership_id" parameter from "REPLACE.ME"
+    And request contains "filter[org_group_id]" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/org-management
+  Scenario: Delete an org group membership returns "No Content" response
+    Given operation "DeleteOrgGroupMembership" enabled
+    And new "DeleteOrgGroupMembership" request
+    And request contains "org_group_membership_id" parameter from "REPLACE.ME"
+    And request contains "filter[org_group_id]" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:ddoghq/org-management
+  Scenario: Delete an org group membership returns "Not Found" response
+    Given operation "DeleteOrgGroupMembership" enabled
+    And new "DeleteOrgGroupMembership" request
+    And request contains "org_group_membership_id" parameter from "REPLACE.ME"
+    And request contains "filter[org_group_id]" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
 
   @generated @skip @team:ddoghq/org-management
   Scenario: Delete an org group policy override returns "Bad Request" response

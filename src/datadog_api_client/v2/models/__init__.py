@@ -7887,6 +7887,10 @@ from datadog_api_client.v2.model.org_group_create_request import OrgGroupCreateR
 from datadog_api_client.v2.model.org_group_data import OrgGroupData
 from datadog_api_client.v2.model.org_group_list_response import OrgGroupListResponse
 from datadog_api_client.v2.model.org_group_membership_attributes import OrgGroupMembershipAttributes
+from datadog_api_client.v2.model.org_group_membership_bulk_delete_request import OrgGroupMembershipBulkDeleteRequest
+from datadog_api_client.v2.model.org_group_membership_bulk_delete_request_data import (
+    OrgGroupMembershipBulkDeleteRequestData,
+)
 from datadog_api_client.v2.model.org_group_membership_bulk_update_attributes import (
     OrgGroupMembershipBulkUpdateAttributes,
 )
@@ -7896,6 +7900,10 @@ from datadog_api_client.v2.model.org_group_membership_bulk_update_relationships 
 )
 from datadog_api_client.v2.model.org_group_membership_bulk_update_request import OrgGroupMembershipBulkUpdateRequest
 from datadog_api_client.v2.model.org_group_membership_bulk_update_type import OrgGroupMembershipBulkUpdateType
+from datadog_api_client.v2.model.org_group_membership_create_attributes import OrgGroupMembershipCreateAttributes
+from datadog_api_client.v2.model.org_group_membership_create_data import OrgGroupMembershipCreateData
+from datadog_api_client.v2.model.org_group_membership_create_relationships import OrgGroupMembershipCreateRelationships
+from datadog_api_client.v2.model.org_group_membership_create_request import OrgGroupMembershipCreateRequest
 from datadog_api_client.v2.model.org_group_membership_data import OrgGroupMembershipData
 from datadog_api_client.v2.model.org_group_membership_list_response import OrgGroupMembershipListResponse
 from datadog_api_client.v2.model.org_group_membership_relationships import OrgGroupMembershipRelationships
@@ -17840,11 +17848,17 @@ __all__ = [
     "OrgGroupData",
     "OrgGroupListResponse",
     "OrgGroupMembershipAttributes",
+    "OrgGroupMembershipBulkDeleteRequest",
+    "OrgGroupMembershipBulkDeleteRequestData",
     "OrgGroupMembershipBulkUpdateAttributes",
     "OrgGroupMembershipBulkUpdateData",
     "OrgGroupMembershipBulkUpdateRelationships",
     "OrgGroupMembershipBulkUpdateRequest",
     "OrgGroupMembershipBulkUpdateType",
+    "OrgGroupMembershipCreateAttributes",
+    "OrgGroupMembershipCreateData",
+    "OrgGroupMembershipCreateRelationships",
+    "OrgGroupMembershipCreateRequest",
     "OrgGroupMembershipData",
     "OrgGroupMembershipListResponse",
     "OrgGroupMembershipRelationships",
