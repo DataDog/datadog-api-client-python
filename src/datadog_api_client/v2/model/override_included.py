@@ -10,10 +10,10 @@ from datadog_api_client.model_utils import (
 )
 
 
-class ShiftIncluded(ModelComposed):
+class OverrideIncluded(ModelComposed):
     def __init__(self, **kwargs):
         """
-        Included data for shift operations.
+        Included data for on-call schedule override operations.
 
         :param attributes: Provides basic user information for a schedule, including a name and email address.
         :type attributes: ScheduleUserAttributes, optional

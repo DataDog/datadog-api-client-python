@@ -28,6 +28,32 @@ Feature: On-Call
     Then the response status is 201 Created
 
   @generated @skip @team:ddoghq/on-call
+  Scenario: Create On-Call schedule overrides returns "Bad Request" response
+    Given new "CreateScheduleOverrides" request
+    And request contains "schedule_id" parameter from "REPLACE.ME"
+    And body with value {"data": [{"attributes": {"end": "2024-01-08T02:53:01.000000000Z", "start": "2024-01-07T02:53:01.000000000Z"}, "relationships": {"overridden_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}, "user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}}, "type": "overrides"}]}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:ddoghq/on-call
+  Scenario: Create On-Call schedule overrides returns "Created" response
+    Given new "CreateScheduleOverrides" request
+    And there is a valid "user" in the system
+    And there is a valid "schedule" in the system
+    And request contains "schedule_id" parameter from "schedule.data.id"
+    And body with value {"data": [{"attributes": {"end": "{{ timeISO('now + 1d') }}", "start": "{{ timeISO('now') }}"}, "relationships": {"user": {"data": {"id": "{{ user.data.id }}", "type": "users"}}}, "type": "overrides"}]}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:ddoghq/on-call
+  Scenario: Create On-Call schedule overrides returns "Not Found" response
+    Given new "CreateScheduleOverrides" request
+    And request contains "schedule_id" parameter from "REPLACE.ME"
+    And body with value {"data": [{"attributes": {"end": "2024-01-08T02:53:01.000000000Z", "start": "2024-01-07T02:53:01.000000000Z"}, "relationships": {"overridden_user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}, "user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}}, "type": "overrides"}]}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/on-call
   Scenario: Create On-Call schedule returns "Bad Request" response
     Given new "CreateOnCallSchedule" request
     And body with value {"data": {"attributes": {"layers": [{"effective_date": "2025-02-03T05:00:00Z", "end_date": "2025-12-31T00:00:00Z", "interval": {"days": 1}, "members": [{"user": {"id": "00000000-aba1-0000-0000-000000000000"}}], "name": "Layer 1", "restrictions": [{"end_day": "friday", "end_time": "17:00:00", "start_day": "monday", "start_time": "09:00:00"}], "rotation_start": "2025-02-01T00:00:00Z"}], "name": "On-Call Schedule", "time_zone": "America/New_York"}, "relationships": {"teams": {"data": [{"id": "00000000-da3a-0000-0000-000000000000", "type": "teams"}]}}, "type": "schedules"}}
@@ -111,6 +137,33 @@ Feature: On-Call
   Scenario: Delete On-Call escalation policy returns "Not Found" response
     Given new "DeleteOnCallEscalationPolicy" request
     And request contains "policy_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/on-call
+  Scenario: Delete On-Call schedule override returns "Bad Request" response
+    Given new "DeleteScheduleOverride" request
+    And request contains "schedule_id" parameter from "REPLACE.ME"
+    And request contains "override_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:ddoghq/on-call
+  Scenario: Delete On-Call schedule override returns "No Content" response
+    Given new "DeleteScheduleOverride" request
+    And there is a valid "user" in the system
+    And there is a valid "schedule" in the system
+    And there is a valid "override" in the system
+    And request contains "schedule_id" parameter from "schedule.data.id"
+    And request contains "override_id" parameter from "override.data[0].id"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:ddoghq/on-call
+  Scenario: Delete On-Call schedule override returns "Not Found" response
+    Given new "DeleteScheduleOverride" request
+    And request contains "schedule_id" parameter from "REPLACE.ME"
+    And request contains "override_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -415,6 +468,46 @@ Feature: On-Call
     Then the response status is 200 OK
     And the response "data" has length 1
     And the response "included" has length 1
+
+  @generated @skip @team:ddoghq/on-call
+  Scenario: List On-Call schedule overrides returns "Bad Request" response
+    Given new "ListScheduleOverrides" request
+    And request contains "schedule_id" parameter from "REPLACE.ME"
+    And request contains "filter[start]" parameter from "REPLACE.ME"
+    And request contains "filter[end]" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/on-call
+  Scenario: List On-Call schedule overrides returns "Not Found" response
+    Given new "ListScheduleOverrides" request
+    And request contains "schedule_id" parameter from "REPLACE.ME"
+    And request contains "filter[start]" parameter from "REPLACE.ME"
+    And request contains "filter[end]" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:ddoghq/on-call
+  Scenario: List On-Call schedule overrides returns "OK" response
+    Given new "ListScheduleOverrides" request
+    And there is a valid "user" in the system
+    And there is a valid "schedule" in the system
+    And there is a valid "override" in the system
+    And request contains "schedule_id" parameter from "schedule.data.id"
+    And request contains "filter[start]" parameter with value "{{ timeISO('now - 1d') }}"
+    And request contains "filter[end]" parameter with value "{{ timeISO('now + 2d') }}"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 1
+
+  @generated @skip @team:ddoghq/on-call @with-pagination
+  Scenario: List On-Call schedule overrides returns "OK" response with pagination
+    Given new "ListScheduleOverrides" request
+    And request contains "schedule_id" parameter from "REPLACE.ME"
+    And request contains "filter[start]" parameter from "REPLACE.ME"
+    And request contains "filter[end]" parameter from "REPLACE.ME"
+    When the request with pagination is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/on-call
   Scenario: List On-Call schedules returns "Bad Request" response

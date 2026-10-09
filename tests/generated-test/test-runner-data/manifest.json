@@ -8466,6 +8466,13 @@
     {
       "feature": "On-Call",
       "feature_file": "../../v2/features/on-call.feature",
+      "file": "v2/on-call/create-on-call-schedule-overrides-returns-created-response.json",
+      "scenario": "Create On-Call schedule overrides returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "feature_file": "../../v2/features/on-call.feature",
       "file": "v2/on-call/create-on-call-schedule-returns-created-response.json",
       "scenario": "Create On-Call schedule returns \"Created\" response",
       "version": "v2"
@@ -8489,6 +8496,13 @@
       "feature_file": "../../v2/features/on-call.feature",
       "file": "v2/on-call/delete-on-call-escalation-policy-returns-no-content-response.json",
       "scenario": "Delete On-Call escalation policy returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "feature_file": "../../v2/features/on-call.feature",
+      "file": "v2/on-call/delete-on-call-schedule-override-returns-no-content-response.json",
+      "scenario": "Delete On-Call schedule override returns \"No Content\" response",
       "version": "v2"
     },
     {
@@ -8573,6 +8587,13 @@
       "feature_file": "../../v2/features/on-call.feature",
       "file": "v2/on-call/list-on-call-notification-rules-for-a-user-returns-ok-response.json",
       "scenario": "List On-Call notification rules for a user returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "feature_file": "../../v2/features/on-call.feature",
+      "file": "v2/on-call/list-on-call-schedule-overrides-returns-ok-response.json",
+      "scenario": "List On-Call schedule overrides returns \"OK\" response",
       "version": "v2"
     },
     {
