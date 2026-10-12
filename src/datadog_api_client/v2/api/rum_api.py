@@ -14,6 +14,7 @@ from datadog_api_client.model_utils import (
     get_attribute_from_path,
     UnsetType,
     unset,
+    UUID,
 )
 from datadog_api_client.v2.model.rum_analytics_aggregate_response import RUMAnalyticsAggregateResponse
 from datadog_api_client.v2.model.rum_aggregate_request import RUMAggregateRequest
@@ -29,6 +30,7 @@ from datadog_api_client.v2.model.sourcemaps_response import SourcemapsResponse
 from datadog_api_client.v2.model.sourcemap_map_kind import SourcemapMapKind
 from datadog_api_client.v2.model.sourcemap_file_response import SourcemapFileResponse
 from datadog_api_client.v2.model.list_sourcemaps_response import ListSourcemapsResponse
+from datadog_api_client.v2.model.sourcemap_search_by import SourcemapSearchBy
 from datadog_api_client.v2.model.service_repository_info_response import ServiceRepositoryInfoResponse
 from datadog_api_client.v2.model.service_repository_info_request import ServiceRepositoryInfoRequest
 
@@ -392,17 +394,33 @@ class RUMApi:
                 "version": "v2",
             },
             params_map={
+                "search_by": {
+                    "openapi_types": (SourcemapSearchBy,),
+                    "attribute": "search_by",
+                    "location": "query",
+                },
                 "mapkind": {
                     "openapi_types": (SourcemapMapKind,),
                     "attribute": "mapkind",
                     "location": "query",
                 },
+                "page_after": {
+                    "openapi_types": (str,),
+                    "attribute": "page[after]",
+                    "location": "query",
+                },
                 "page_size": {
+                    "validation": {
+                        "inclusive_minimum": 1,
+                    },
                     "openapi_types": (int,),
                     "attribute": "page[size]",
                     "location": "query",
                 },
                 "page_number": {
+                    "validation": {
+                        "inclusive_minimum": 1,
+                    },
                     "openapi_types": (int,),
                     "attribute": "page[number]",
                     "location": "query",
@@ -491,7 +509,7 @@ class RUMApi:
                     "location": "query",
                 },
                 "filter_debug_id": {
-                    "openapi_types": (str,),
+                    "openapi_types": (UUID,),
                     "attribute": "filter[debug_id]",
                     "location": "query",
                 },
@@ -1073,7 +1091,9 @@ class RUMApi:
     def list_sourcemaps(
         self,
         *,
+        search_by: Union[SourcemapSearchBy, UnsetType] = unset,
         mapkind: Union[SourcemapMapKind, UnsetType] = unset,
+        page_after: Union[str, UnsetType] = unset,
         page_size: Union[int, UnsetType] = unset,
         page_number: Union[int, UnsetType] = unset,
         filter_service: Union[List[str], UnsetType] = unset,
@@ -1090,26 +1110,121 @@ class RUMApi:
         filter_origin: Union[List[str], UnsetType] = unset,
         filter_origin_version: Union[List[str], UnsetType] = unset,
         filter_filename: Union[str, UnsetType] = unset,
-        filter_debug_id: Union[str, UnsetType] = unset,
+        filter_debug_id: Union[UUID, UnsetType] = unset,
         filter_gnu_build_id: Union[str, UnsetType] = unset,
         filter_go_build_id: Union[str, UnsetType] = unset,
         filter_file_hash: Union[str, UnsetType] = unset,
     ) -> ListSourcemapsResponse:
         """List source maps.
 
-        Retrieves a paginated list of source maps matching the specified filter criteria.
+        Retrieves a paginated list of source maps. Send filters as query parameters,
+        not in a JSON request body. ``mapkind`` defaults to ``js``.
 
+        For JavaScript source maps, choose one of the three request shapes below.
+
+        **Examples:** the following commands use the US1 API host. Replace the host with
+        the API host for your site, and the service, version, debug ID, and cursor with
+        values from your organization. Use ``--get`` so curl sends the filters in the query
+        string; ``-X GET`` with ``--data-urlencode`` sends them in the request body instead.
+
+        **1. List by service and version**
+
+        Provide both ``filter[service]`` and ``filter[version]`` to search source maps
+        indexed by service and version. Omit ``search_by``.
+
+        **Pagination:** prefer cursor pagination. Omit ``page[after]`` and ``page[number]``
+        on the first request. To get the next page, pass ``meta.page.next_cursor`` as
+        ``page[after]`` , keeping the same filters. Continue until
+        ``meta.page.has_more_results`` is ``false``. Do not decode or modify the cursor.
+        Legacy page-number pagination is also supported, starting at ``page[number]=1``.
+
+        .. code-block:: bash
+
+           curl -sS --get "https://api.datadoghq.com/api/v2/sourcemaps/list" \
+             -H "Accept: application/json" \
+             -H "Authorization: Bearer ${DD_BEARER_TOKEN}" \
+             --data-urlencode "mapkind=js" \
+             --data-urlencode "filter[service]=my-web-service" \
+             --data-urlencode "filter[version]=1.0.0" \
+             --data-urlencode "page[size]=10"
+
+        **2. Find a specific JavaScript debug ID**
+
+        Provide ``filter[debug_id]`` with a UUID. Service and version filters are not
+        required. Omit ``search_by``.
+
+        **Pagination:** the lookup returns at most one result, so no pagination is
+        needed. ``page[after]`` is not supported.
+
+        .. code-block:: bash
+
+           curl -sS --get "https://api.datadoghq.com/api/v2/sourcemaps/list" \
+             -H "Accept: application/json" \
+             -H "Authorization: Bearer ${DD_BEARER_TOKEN}" \
+             --data-urlencode "mapkind=js" \
+             --data-urlencode "filter[debug_id]=00000000-0000-4000-8000-000000000001"
+
+        **3. Browse source maps indexed by debug ID**
+
+        Set ``search_by=debug_id`` without specifying a debug ID. Do not send service,
+        version, or filename filters in this mode.
+
+        **Pagination:** this mode requires cursor pagination; ``page[number]`` is not
+        supported. Omit ``page[after]`` on the first request. To get the next page, pass
+        ``meta.page.next_cursor`` as ``page[after]`` , keeping the same search mode and
+        filters. Continue until ``meta.page.has_more_results`` is ``false``. Do not decode
+        or modify the cursor.
+
+        First page:
+
+        .. code-block:: bash
+
+           curl -sS --get "https://api.datadoghq.com/api/v2/sourcemaps/list" \
+             -H "Accept: application/json" \
+             -H "Authorization: Bearer ${DD_BEARER_TOKEN}" \
+             --data-urlencode "mapkind=js" \
+             --data-urlencode "search_by=debug_id" \
+             --data-urlencode "page[size]=10"
+
+        Next page:
+
+        .. code-block:: bash
+
+           curl -sS --get "https://api.datadoghq.com/api/v2/sourcemaps/list" \
+             -H "Accept: application/json" \
+             -H "Authorization: Bearer ${DD_BEARER_TOKEN}" \
+             --data-urlencode "mapkind=js" \
+             --data-urlencode "search_by=debug_id" \
+             --data-urlencode "page[size]=10" \
+             --data-urlencode "page[after]=<meta.page.next_cursor>"
+
+        For other map kinds, use ``page[number]`` , starting at 1.
+
+        :param search_by: Set to ``debug_id`` to browse JavaScript source maps indexed by debug ID.
+            Only supported for ``mapkind=js``. Omit for service/version searches or a
+            specific ``filter[debug_id]`` lookup. In debug-ID browse mode, service,
+            version, and filename filters are not supported.
+        :type search_by: SourcemapSearchBy, optional
         :param mapkind: The type of source map. Defaults to ``js``.
         :type mapkind: SourcemapMapKind, optional
-        :param page_size: The number of results to return per page. Must be at least 1.
+        :param page_after: Cursor for the next page of a JavaScript listing. Use the value from
+            ``meta.page.next_cursor`` and keep the same search mode and filters.
+            Omit on the first request. Not supported for other map kinds or for
+            a specific ``filter[debug_id]`` lookup without ``search_by=debug_id``.
+        :type page_after: str, optional
+        :param page_size: The number of results per page. Defaults to 100. Must be at least 1; values above 1000 are capped at 1000.
         :type page_size: int, optional
-        :param page_number: The page number to retrieve, starting from 1.
+        :param page_number: Legacy page number, starting from 1. Prefer ``page[after]`` for JavaScript
+            listings. Not supported with ``search_by=debug_id``. Other map kinds
+            default to page 1 when pagination parameters are omitted.
         :type page_number: int, optional
         :param filter_service: Filter by service names (multiple values allowed). Required for
-            ``js`` , ``jvm`` , ``react`` , and ``flutter`` map kinds.
+            ``jvm`` , ``react`` , and ``flutter`` map kinds. Also required for ``js`` unless
+            searching by ``filter[debug_id]`` or browsing with ``search_by=debug_id``.
         :type filter_service: [str], optional
         :param filter_version: Filter by version values (multiple values allowed). Required for
-            ``js`` , ``jvm`` , ``react`` , and ``flutter`` map kinds.
+            ``jvm`` , ``react`` , and ``flutter`` map kinds. Also required for ``js`` unless
+            searching by ``filter[debug_id]`` or browsing with ``search_by=debug_id``.
         :type filter_version: [str], optional
         :param filter_variant: Filter by variant values (multiple values allowed). Supported for ``jvm``.
         :type filter_variant: [str], optional
@@ -1136,8 +1251,10 @@ class RUMApi:
         :type filter_origin_version: [str], optional
         :param filter_filename: Filter by filename (single value). Supported for ``js`` , ``elf`` , and ``ndk``.
         :type filter_filename: str, optional
-        :param filter_debug_id: Filter by debug ID (single value). Supported for ``react``.
-        :type filter_debug_id: str, optional
+        :param filter_debug_id: Filter by a single debug ID in UUID format. Supported for ``js`` and ``react``.
+            For ``js`` , the lookup returns at most one result and does not require
+            service/version filters. For ``react`` , service/version filters remain required.
+        :type filter_debug_id: UUID, optional
         :param filter_gnu_build_id: Filter by GNU build ID (single value). Supported for ``elf``.
         :type filter_gnu_build_id: str, optional
         :param filter_go_build_id: Filter by Go build ID (single value). Supported for ``elf``.
@@ -1147,8 +1264,14 @@ class RUMApi:
         :rtype: ListSourcemapsResponse
         """
         kwargs: Dict[str, Any] = {}
+        if search_by is not unset:
+            kwargs["search_by"] = search_by
+
         if mapkind is not unset:
             kwargs["mapkind"] = mapkind
+
+        if page_after is not unset:
+            kwargs["page_after"] = page_after
 
         if page_size is not unset:
             kwargs["page_size"] = page_size
