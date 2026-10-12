@@ -23,7 +23,7 @@ body = CloudWorkloadSecurityAgentPolicyUpdateRequest(
     data=CloudWorkloadSecurityAgentPolicyUpdateData(
         attributes=CloudWorkloadSecurityAgentPolicyUpdateAttributes(
             description="Updated agent policy",
-            enabled=True,
+            enabled=False,
             host_tags_lists=[
                 [
                     "env:test",

@@ -4574,8 +4574,8 @@
     {
       "feature": "CSM Threats",
       "feature_file": "../../v2/features/csm_threats.feature",
-      "file": "v2/csm-threats/create-a-workload-protection-policy-returns-ok-response.json",
-      "scenario": "Create a Workload Protection policy returns \"OK\" response",
+      "file": "v2/csm-threats/create-a-workload-protection-policy-returns-created-response.json",
+      "scenario": "Create a Workload Protection policy returns \"Created\" response",
       "version": "v2"
     },
     {

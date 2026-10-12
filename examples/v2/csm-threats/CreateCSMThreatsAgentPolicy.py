@@ -1,5 +1,5 @@
 """
-Create a Workload Protection policy returns "OK" response
+Create a Workload Protection policy returns "Created" response
 """
 
 from os import environ
@@ -20,7 +20,7 @@ body = CloudWorkloadSecurityAgentPolicyCreateRequest(
     data=CloudWorkloadSecurityAgentPolicyCreateData(
         attributes=CloudWorkloadSecurityAgentPolicyCreateAttributes(
             description="My agent policy",
-            enabled=True,
+            enabled=False,
             host_tags_lists=[
                 [
                     "env:test",
