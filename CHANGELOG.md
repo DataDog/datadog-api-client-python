@@ -1,5 +1,64 @@
 # CHANGELOG
 
+## 2.62.0/2026-10-13
+
+### Added
+* Clarify JavaScript source map listing and pagination [#4127](https://github.com/DataDog/datadog-api-client-python/pull/4127)
+* Document public Deployment Gate and rule evaluation endpoints [#4126](https://github.com/DataDog/datadog-api-client-python/pull/4126)
+* Add Heatgrid dashboard widget support [#4123](https://github.com/DataDog/datadog-api-client-python/pull/4123)
+* Mark Bits Investigation endpoints as stable [#4122](https://github.com/DataDog/datadog-api-client-python/pull/4122)
+* Add endpoint to override the severity of security findings [#4119](https://github.com/DataDog/datadog-api-client-python/pull/4119)
+* Include the matched shard in the SPA v2 response [#4118](https://github.com/DataDog/datadog-api-client-python/pull/4118)
+* Add reroute_to_team action to On-Call team routing rules [#4117](https://github.com/DataDog/datadog-api-client-python/pull/4117)
+* Add aggregate event-time configuration to Observability Pipelines [#4111](https://github.com/DataDog/datadog-api-client-python/pull/4111)
+* Publish Cloud Cost Management cloud account listing [#4110](https://github.com/DataDog/datadog-api-client-python/pull/4110)
+* Add AI Impact user activity endpoint [#4102](https://github.com/DataDog/datadog-api-client-python/pull/4102)
+* Rename Patch a deployment event to Mark a deployment as failed by ID [#4101](https://github.com/DataDog/datadog-api-client-python/pull/4101)
+* Promote Mark a deployment as failed by version endpoint to GA [#4100](https://github.com/DataDog/datadog-api-client-python/pull/4100)
+* Document Supply Chain Firewall reports API [#4099](https://github.com/DataDog/datadog-api-client-python/pull/4099)
+* Add compatibleVersion to security monitoring rule responses [#4097](https://github.com/DataDog/datadog-api-client-python/pull/4097)
+* Add CI job logs intake API [#4095](https://github.com/DataDog/datadog-api-client-python/pull/4095)
+* Add Archive Search endpoints to the public API [#4093](https://github.com/DataDog/datadog-api-client-python/pull/4093)
+* Add SPA recommendations v2 endpoint [#4092](https://github.com/DataDog/datadog-api-client-python/pull/4092)
+* Add dashboard experience type to API responses [#4091](https://github.com/DataDog/datadog-api-client-python/pull/4091)
+* Extend Cloud Auth Config endpoints to support new GitHub provider [#4090](https://github.com/DataDog/datadog-api-client-python/pull/4090)
+* Add case_stream to dashboard list stream sources [#4085](https://github.com/DataDog/datadog-api-client-python/pull/4085)
+* Add metrics enrichment table processor to Observability Pipelines [#4084](https://github.com/DataDog/datadog-api-client-python/pull/4084)
+* Add bits_ai_auto_investigate to synthetics test options [#4081](https://github.com/DataDog/datadog-api-client-python/pull/4081)
+* Document `source` field in DataDeletionResponseItemAttributes [#4080](https://github.com/DataDog/datadog-api-client-python/pull/4080)
+* Document Flink as a Confluent Cloud resource type [#4076](https://github.com/DataDog/datadog-api-client-python/pull/4076)
+* Document recently updated entities endpoint and entity_type parameter [#4075](https://github.com/DataDog/datadog-api-client-python/pull/4075)
+* Publish stable Experiments v2 APIs [#4072](https://github.com/DataDog/datadog-api-client-python/pull/4072)
+* Document leak information on personal and service access tokens [#4069](https://github.com/DataDog/datadog-api-client-python/pull/4069)
+* Increase Reference Tables Upsert/DeleteRows payload limit to 1 MiB [#4060](https://github.com/DataDog/datadog-api-client-python/pull/4060)
+* add recipient_email and servicenow to team notification rule [#4057](https://github.com/DataDog/datadog-api-client-python/pull/4057)
+* Document the meta object returned by Reference Tables Get rows by id [#4039](https://github.com/DataDog/datadog-api-client-python/pull/4039)
+* Add support for general investigations to Bits Investigations trigger API [#4033](https://github.com/DataDog/datadog-api-client-python/pull/4033)
+* Document managed prompt message placeholders [#4006](https://github.com/DataDog/datadog-api-client-python/pull/4006)
+
+### Changed
+* Document AI Impact user activity endpoint under DORA Metrics [#4121](https://github.com/DataDog/datadog-api-client-python/pull/4121)
+* Document dashboard quality scores in usage APIs [#4108](https://github.com/DataDog/datadog-api-client-python/pull/4108)
+* Update signalsDetected description to reflect risk-contributing signals [#4026](https://github.com/DataDog/datadog-api-client-python/pull/4026)
+
+### Fixed
+* Allow null default_value in governance control parameter definitions [#4120](https://github.com/DataDog/datadog-api-client-python/pull/4120)
+* Remove bearer token auth from the CreateEvent intake endpoint [#4116](https://github.com/DataDog/datadog-api-client-python/pull/4116)
+* Clarify the Archive Search tag description [#4103](https://github.com/DataDog/datadog-api-client-python/pull/4103)
+* Fix Workload Protection policy creation success response to 201 Created [#4096](https://github.com/DataDog/datadog-api-client-python/pull/4096)
+* Document DDSQL query permissions and OAuth scope [#4074](https://github.com/DataDog/datadog-api-client-python/pull/4074)
+* Specify UUID format for Databricks Private Action Runner connection fields [#4062](https://github.com/DataDog/datadog-api-client-python/pull/4062)
+* CCM Recommendations API - Re-add filter request attribute and fix sort examples [#4046](https://github.com/DataDog/datadog-api-client-python/pull/4046)
+* Automation pipelines require ID in updates and use different request/response schemas [#3980](https://github.com/DataDog/datadog-api-client-python/pull/3980)
+* RUM Rename feature to journey strong link to link in comments and desc [#3948](https://github.com/DataDog/datadog-api-client-python/pull/3948)
+* Document missing limitations and 409 response for org disable endpoint [#3797](https://github.com/DataDog/datadog-api-client-python/pull/3797)
+
+### Deprecated
+* Deprecate Salesforce Incidents API endpoints [#4113](https://github.com/DataDog/datadog-api-client-python/pull/4113)
+
+### Removed
+* Retire the RUM aggregated signals and problems endpoint [#4077](https://github.com/DataDog/datadog-api-client-python/pull/4077)
+
 ## 2.61.0/2026-09-24
 
 ### Added
