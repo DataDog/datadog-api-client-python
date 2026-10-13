@@ -388,6 +388,7 @@ class NetworkDeviceMonitoringApi:
         """Update the tags for a device.
 
         Update the tags for a device.
+        A device supports up to 20 user tags by default. To request a higher limit for your organization, `contact Support <https://docs.datadoghq.com/help/>`_.
 
         :param device_id: The id of the device to update tags for.
         :type device_id: str
