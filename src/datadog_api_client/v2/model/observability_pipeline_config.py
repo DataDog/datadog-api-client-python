@@ -45,6 +45,9 @@ if TYPE_CHECKING:
         ObservabilityPipelineAmazonSecurityLakeDestination,
     )
     from datadog_api_client.v2.model.azure_storage_destination import AzureStorageDestination
+    from datadog_api_client.v2.model.observability_pipeline_azure_data_explorer_destination import (
+        ObservabilityPipelineAzureDataExplorerDestination,
+    )
     from datadog_api_client.v2.model.observability_pipeline_clickhouse_destination import (
         ObservabilityPipelineClickhouseDestination,
     )
@@ -198,6 +201,7 @@ class ObservabilityPipelineConfig(ModelNormal):
                 ObservabilityPipelineAmazonS3GenericDestination,
                 ObservabilityPipelineAmazonSecurityLakeDestination,
                 AzureStorageDestination,
+                ObservabilityPipelineAzureDataExplorerDestination,
                 ObservabilityPipelineClickhouseDestination,
                 ObservabilityPipelineCloudPremDestination,
                 ObservabilityPipelineCrowdStrikeNextGenSiemDestination,
