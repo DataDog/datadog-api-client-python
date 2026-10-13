@@ -208050,6 +208050,7 @@ paths:
                 - browser-intake-us5-datadoghq.com
                 - browser-intake-ap1-datadoghq.com
                 - browser-intake-ap2-datadoghq.com
+                - browser-intake-uk1-datadoghq.com
                 - browser-intake-datadoghq.eu
               x-enum-varnames:
                 - US1
@@ -208057,6 +208058,7 @@ paths:
                 - US5
                 - AP1
                 - AP2
+                - UK1
                 - EU1
         - url: "{protocol}://{name}"
           variables:
