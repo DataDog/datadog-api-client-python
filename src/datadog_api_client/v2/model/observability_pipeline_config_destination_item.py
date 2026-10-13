@@ -113,15 +113,29 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         :param container_name: The name of the Azure Blob Storage container to store logs in.
         :type container_name: str
 
-        :param batch: Batching configuration for ClickHouse inserts.
-        :type batch: ObservabilityPipelineClickhouseDestinationBatch, optional
+        :param batch: Event batching settings for Azure Data Explorer ingestion.
+        :type batch: ObservabilityPipelineAzureDataExplorerDestinationBatch, optional
+
+        :param database: The name of the Azure Data Explorer database to ingest into. Supports template syntax.
+        :type database: str
+
+        :param ingestion_endpoint_key: Name of the environment variable or secret that holds the Azure Data Explorer ingestion endpoint URL.
+            Defaults to `DESTINATION_AZURE_DATA_EXPLORER_INGESTION_ENDPOINT` (prefixed with `DD_OP_` at runtime).
+        :type ingestion_endpoint_key: str, optional
+
+        :param mapping_reference: The name of a pre-created ingestion mapping on the table used to map incoming events to columns. Supports template syntax.
+        :type mapping_reference: str, none_type, optional
+
+        :param table: The name of the Azure Data Explorer table to ingest into. Supports template syntax.
+        :type table: str
+
+        :param token_scope: The OAuth scope requested when acquiring an access token for Azure Data Explorer.
+            Defaults to `https://kusto.kusto.windows.net/.default`.
+        :type token_scope: str, optional
 
         :param batch_encoding: Batch encoding configuration for the ClickHouse destination.
             Required when `format` is `arrow_stream`. The `codec` field must be set to `arrow_stream`.
         :type batch_encoding: ObservabilityPipelineClickhouseDestinationBatchEncoding, optional
-
-        :param database: Optional ClickHouse database name. If omitted, the user's default database on the ClickHouse server is used.
-        :type database: str, optional
 
         :param date_time_best_effort: When `true`, enables flexible DateTime parsing on the ClickHouse server side.
         :type date_time_best_effort: bool, optional
@@ -136,9 +150,6 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         :param skip_unknown_fields: When `true`, fields not present in the target table schema are dropped instead of causing insert errors.
             When unset, the ClickHouse server's own `input_format_skip_unknown_fields` setting applies.
         :type skip_unknown_fields: bool, none_type, optional
-
-        :param table: Target ClickHouse table name. Events are inserted into this table.
-        :type table: str
 
         :param routes: A list of routing rules that forward matching logs to Datadog using dedicated API keys.
         :type routes: [ObservabilityPipelineDatadogLogsDestinationRoute], optional
@@ -253,9 +264,6 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
         :param header_source_name: Optional override for the source name header.
         :type header_source_name: str, optional
 
-        :param ingestion_endpoint_key: Name of the environment variable or the secret identifier that references the Databricks Zerobus ingestion endpoint, which is used to stream data directly into your Databricks Lakehouse.
-        :type ingestion_endpoint_key: str, optional
-
         :param table_name: The fully qualified name of your target Databricks table. Make sure this table already exists in your Databricks workspace before deploying.
         :type table_name: str
 
@@ -301,6 +309,9 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
             ObservabilityPipelineAmazonSecurityLakeDestination,
         )
         from datadog_api_client.v2.model.azure_storage_destination import AzureStorageDestination
+        from datadog_api_client.v2.model.observability_pipeline_azure_data_explorer_destination import (
+            ObservabilityPipelineAzureDataExplorerDestination,
+        )
         from datadog_api_client.v2.model.observability_pipeline_clickhouse_destination import (
             ObservabilityPipelineClickhouseDestination,
         )
@@ -375,6 +386,7 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
                 ObservabilityPipelineAmazonS3GenericDestination,
                 ObservabilityPipelineAmazonSecurityLakeDestination,
                 AzureStorageDestination,
+                ObservabilityPipelineAzureDataExplorerDestination,
                 ObservabilityPipelineClickhouseDestination,
                 ObservabilityPipelineCloudPremDestination,
                 ObservabilityPipelineCrowdStrikeNextGenSiemDestination,
