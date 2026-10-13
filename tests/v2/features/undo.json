@@ -2563,6 +2563,18 @@
       "type": "unsafe"
     }
   },
+  "ListDeploymentGateEvaluations": {
+    "tag": "Deployment Gates",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListDeploymentRuleEvaluations": {
+    "tag": "Deployment Gates",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetDeploymentGateRules": {
     "tag": "Deployment Gates",
     "undo": {
