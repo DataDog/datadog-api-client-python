@@ -310,6 +310,216 @@
     },
     {
       "feature": "On-Call",
+      "frozen_at": "2026-10-06T08:42:47.443Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Create_On_Call_schedule_overrides_returns_Created_response-1791276167@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"27330e31-d3d9-4994-a41a-14691da1c8ab\",\"attributes\":{\"uuid\":\"27330e31-d3d9-4994-a41a-14691da1c8ab\",\"name\":null,\"handle\":\"test-create_on_call_schedule_overrides_returns_created_response-1791276167@datadoghq.com\",\"created_at\":\"2026-10-06T08:42:48.091337+00:00\",\"modified_at\":\"2026-10-06T08:42:48.091337+00:00\",\"email\":\"test-create_on_call_schedule_overrides_returns_created_response-1791276167@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/eae271a7602fcbfc2e6d844cbed122c0?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "layers": [
+                      {
+                        "effective_date": "2026-09-26T08:42:47.443Z",
+                        "end_date": "2026-10-16T08:42:47.443Z",
+                        "interval": {
+                          "days": 1
+                        },
+                        "members": [
+                          {
+                            "user": {
+                              "id": "27330e31-d3d9-4994-a41a-14691da1c8ab"
+                            }
+                          }
+                        ],
+                        "name": "Layer 1",
+                        "restrictions": [
+                          {
+                            "end_day": "friday",
+                            "end_time": "17:00:00",
+                            "start_day": "monday",
+                            "start_time": "09:00:00"
+                          }
+                        ],
+                        "rotation_start": "2026-10-01T08:42:47.443Z"
+                      }
+                    ],
+                    "name": "Test-Create_On_Call_schedule_overrides_returns_Created_response-1791276167",
+                    "time_zone": "America/New_York"
+                  },
+                  "relationships": {
+                    "teams": {
+                      "data": [
+                        {
+                          "id": "65aea9d0-941c-4607-bf8a-14fc0dac2820",
+                          "type": "teams"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "schedules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/schedules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"4164292e-5479-4bba-8332-37458a9e25ab\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Test-Create_On_Call_schedule_overrides_returns_Created_response-1791276167\",\"tags\":[],\"time_zone\":\"America/New_York\"},\"relationships\":{\"layers\":{\"data\":[{\"id\":\"90b867ea-bd5a-4926-86f0-51170247d1bb\",\"type\":\"layers\"}]},\"teams\":{\"data\":[{\"id\":\"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\"type\":\"teams\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": [
+                  {
+                    "attributes": {
+                      "end": "2026-10-07T08:42:47.443Z",
+                      "start": "2026-10-06T08:42:47.443Z"
+                    },
+                    "relationships": {
+                      "user": {
+                        "data": {
+                          "id": "27330e31-d3d9-4994-a41a-14691da1c8ab",
+                          "type": "users"
+                        }
+                      }
+                    },
+                    "type": "overrides"
+                  }
+                ]
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/schedules/4164292e-5479-4bba-8332-37458a9e25ab/overrides",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"60640257-ccce-4df6-8750-26cf92dd011b\",\"type\":\"overrides\",\"attributes\":{\"end\":\"2026-10-07T08:42:47.443Z\",\"inactive\":false,\"start\":\"2026-10-06T08:42:49.172035924Z\"},\"relationships\":{\"schedule\":{\"data\":{\"id\":\"4164292e-5479-4bba-8332-37458a9e25ab\",\"type\":\"schedules\"}},\"user\":{\"data\":{\"id\":\"27330e31-d3d9-4994-a41a-14691da1c8ab\",\"type\":\"users\"}}}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/schedules/4164292e-5479-4bba-8332-37458a9e25ab/overrides/60640257-ccce-4df6-8750-26cf92dd011b",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/schedules/4164292e-5479-4bba-8332-37458a9e25ab",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/27330e31-d3d9-4994-a41a-14691da1c8ab",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create On-Call schedule overrides returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
       "frozen_at": "2025-11-27T14:11:22.484Z",
       "interactions": [
         {
@@ -1062,6 +1272,237 @@
         }
       ],
       "scenario": "Delete On-Call escalation policy returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "frozen_at": "2026-10-06T08:49:55.200Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Delete_On_Call_schedule_override_returns_No_Content_response-1791276595@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"29374a96-b8c0-4d3a-b087-c5ccfb164565\",\"attributes\":{\"uuid\":\"29374a96-b8c0-4d3a-b087-c5ccfb164565\",\"name\":null,\"handle\":\"test-delete_on_call_schedule_override_returns_no_content_response-1791276595@datadoghq.com\",\"created_at\":\"2026-10-06T08:49:55.984951+00:00\",\"modified_at\":\"2026-10-06T08:49:55.984951+00:00\",\"email\":\"test-delete_on_call_schedule_override_returns_no_content_response-1791276595@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/fc0de12aa0cc4a42039c8d50b2eef23a?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "layers": [
+                      {
+                        "effective_date": "2026-09-26T08:49:55.200Z",
+                        "end_date": "2026-10-16T08:49:55.200Z",
+                        "interval": {
+                          "days": 1
+                        },
+                        "members": [
+                          {
+                            "user": {
+                              "id": "29374a96-b8c0-4d3a-b087-c5ccfb164565"
+                            }
+                          }
+                        ],
+                        "name": "Layer 1",
+                        "restrictions": [
+                          {
+                            "end_day": "friday",
+                            "end_time": "17:00:00",
+                            "start_day": "monday",
+                            "start_time": "09:00:00"
+                          }
+                        ],
+                        "rotation_start": "2026-10-01T08:49:55.200Z"
+                      }
+                    ],
+                    "name": "Test-Delete_On_Call_schedule_override_returns_No_Content_response-1791276595",
+                    "time_zone": "America/New_York"
+                  },
+                  "relationships": {
+                    "teams": {
+                      "data": [
+                        {
+                          "id": "65aea9d0-941c-4607-bf8a-14fc0dac2820",
+                          "type": "teams"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "schedules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/schedules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"17dfc152-2200-4514-9eca-718d30bd736f\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Test-Delete_On_Call_schedule_override_returns_No_Content_response-1791276595\",\"tags\":[],\"time_zone\":\"America/New_York\"},\"relationships\":{\"layers\":{\"data\":[{\"id\":\"a02c99c5-9159-456d-a6ee-56ba954936e7\",\"type\":\"layers\"}]},\"teams\":{\"data\":[{\"id\":\"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\"type\":\"teams\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": [
+                  {
+                    "attributes": {
+                      "end": "2026-10-07T08:49:55.200Z",
+                      "start": "2026-10-06T08:49:55.200Z"
+                    },
+                    "relationships": {
+                      "user": {
+                        "data": {
+                          "id": "29374a96-b8c0-4d3a-b087-c5ccfb164565",
+                          "type": "users"
+                        }
+                      }
+                    },
+                    "type": "overrides"
+                  }
+                ]
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/schedules/17dfc152-2200-4514-9eca-718d30bd736f/overrides",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"cb7930dc-cb88-424c-83fc-0225d15be537\",\"type\":\"overrides\",\"attributes\":{\"end\":\"2026-10-07T08:49:55.2Z\",\"inactive\":false,\"start\":\"2026-10-06T08:49:56.710364158Z\"},\"relationships\":{\"schedule\":{\"data\":{\"id\":\"17dfc152-2200-4514-9eca-718d30bd736f\",\"type\":\"schedules\"}},\"user\":{\"data\":{\"id\":\"29374a96-b8c0-4d3a-b087-c5ccfb164565\",\"type\":\"users\"}}}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/schedules/17dfc152-2200-4514-9eca-718d30bd736f/overrides/cb7930dc-cb88-424c-83fc-0225d15be537",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/schedules/17dfc152-2200-4514-9eca-718d30bd736f/overrides/cb7930dc-cb88-424c-83fc-0225d15be537",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/schedules/17dfc152-2200-4514-9eca-718d30bd736f",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/29374a96-b8c0-4d3a-b087-c5ccfb164565",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Delete On-Call schedule override returns \"No Content\" response",
       "version": "v2"
     },
     {
@@ -3312,6 +3753,248 @@
         }
       ],
       "scenario": "List On-Call notification rules for a user returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "frozen_at": "2026-10-06T08:43:24.486Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-List_On_Call_schedule_overrides_returns_OK_response-1791276204@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"35d9d4c3-4fa9-413b-a35c-c3c295c172db\",\"attributes\":{\"uuid\":\"35d9d4c3-4fa9-413b-a35c-c3c295c172db\",\"name\":null,\"handle\":\"test-list_on_call_schedule_overrides_returns_ok_response-1791276204@datadoghq.com\",\"created_at\":\"2026-10-06T08:43:25.005435+00:00\",\"modified_at\":\"2026-10-06T08:43:25.005435+00:00\",\"email\":\"test-list_on_call_schedule_overrides_returns_ok_response-1791276204@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/8fe3e59240d413aa181a1ed1d005a734?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "layers": [
+                      {
+                        "effective_date": "2026-09-26T08:43:24.486Z",
+                        "end_date": "2026-10-16T08:43:24.486Z",
+                        "interval": {
+                          "days": 1
+                        },
+                        "members": [
+                          {
+                            "user": {
+                              "id": "35d9d4c3-4fa9-413b-a35c-c3c295c172db"
+                            }
+                          }
+                        ],
+                        "name": "Layer 1",
+                        "restrictions": [
+                          {
+                            "end_day": "friday",
+                            "end_time": "17:00:00",
+                            "start_day": "monday",
+                            "start_time": "09:00:00"
+                          }
+                        ],
+                        "rotation_start": "2026-10-01T08:43:24.486Z"
+                      }
+                    ],
+                    "name": "Test-List_On_Call_schedule_overrides_returns_OK_response-1791276204",
+                    "time_zone": "America/New_York"
+                  },
+                  "relationships": {
+                    "teams": {
+                      "data": [
+                        {
+                          "id": "65aea9d0-941c-4607-bf8a-14fc0dac2820",
+                          "type": "teams"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "schedules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/schedules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"4ae25b05-e83f-42ed-9e41-b43ebf934999\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Test-List_On_Call_schedule_overrides_returns_OK_response-1791276204\",\"tags\":[],\"time_zone\":\"America/New_York\"},\"relationships\":{\"layers\":{\"data\":[{\"id\":\"485408e0-e4eb-452a-8731-3a834ef0ec6e\",\"type\":\"layers\"}]},\"teams\":{\"data\":[{\"id\":\"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\"type\":\"teams\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": [
+                  {
+                    "attributes": {
+                      "end": "2026-10-07T08:43:24.486Z",
+                      "start": "2026-10-06T08:43:24.486Z"
+                    },
+                    "relationships": {
+                      "user": {
+                        "data": {
+                          "id": "35d9d4c3-4fa9-413b-a35c-c3c295c172db",
+                          "type": "users"
+                        }
+                      }
+                    },
+                    "type": "overrides"
+                  }
+                ]
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/schedules/4ae25b05-e83f-42ed-9e41-b43ebf934999/overrides",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"374246e6-f1e4-4570-aa1b-ed0235966153\",\"type\":\"overrides\",\"attributes\":{\"end\":\"2026-10-07T08:43:24.486Z\",\"inactive\":false,\"start\":\"2026-10-06T08:43:26.48255523Z\"},\"relationships\":{\"schedule\":{\"data\":{\"id\":\"4ae25b05-e83f-42ed-9e41-b43ebf934999\",\"type\":\"schedules\"}},\"user\":{\"data\":{\"id\":\"35d9d4c3-4fa9-413b-a35c-c3c295c172db\",\"type\":\"users\"}}}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/on-call/schedules/4ae25b05-e83f-42ed-9e41-b43ebf934999/overrides",
+            "query": [
+              [
+                "filter[end]",
+                "2026-10-08T08:43:24.486Z"
+              ],
+              [
+                "filter[start]",
+                "2026-10-05T08:43:24.486Z"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"374246e6-f1e4-4570-aa1b-ed0235966153\",\"type\":\"overrides\",\"attributes\":{\"end\":\"2026-10-07T08:43:24.486Z\",\"inactive\":false,\"start\":\"2026-10-06T08:43:26.482555Z\"},\"relationships\":{\"schedule\":{\"data\":{\"id\":\"4ae25b05-e83f-42ed-9e41-b43ebf934999\",\"type\":\"schedules\"}},\"user\":{\"data\":{\"id\":\"35d9d4c3-4fa9-413b-a35c-c3c295c172db\",\"type\":\"users\"}}}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/schedules/4ae25b05-e83f-42ed-9e41-b43ebf934999/overrides/374246e6-f1e4-4570-aa1b-ed0235966153",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/schedules/4ae25b05-e83f-42ed-9e41-b43ebf934999",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/35d9d4c3-4fa9-413b-a35c-c3c295c172db",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "List On-Call schedule overrides returns \"OK\" response",
       "version": "v2"
     },
     {

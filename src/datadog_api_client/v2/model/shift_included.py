@@ -19,7 +19,7 @@ class ShiftIncluded(ModelComposed):
         :type attributes: ScheduleUserAttributes, optional
 
         :param id: The unique user identifier.
-        :type id: str, optional
+        :type id: str
 
         :param type: Users resource type.
         :type type: ScheduleUserType
