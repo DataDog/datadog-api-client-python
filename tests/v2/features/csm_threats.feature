@@ -92,11 +92,11 @@ Feature: CSM Threats
     Then the response status is 409 Conflict
 
   @team:ddoghq/k9-cws-backend
-  Scenario: Create a Workload Protection policy returns "OK" response
+  Scenario: Create a Workload Protection policy returns "Created" response
     Given new "CreateCSMThreatsAgentPolicy" request
-    And body with value {"data": {"attributes": {"description": "My agent policy", "enabled": true, "hostTagsLists": [["env:test"]], "name": "my_agent_policy_2"}, "type": "policy"}}
+    And body with value {"data": {"attributes": {"description": "My agent policy", "enabled": false, "hostTagsLists": [["env:test"]], "name": "my_agent_policy_2"}, "type": "policy"}}
     When the request is sent
-    Then the response status is 200 OK
+    Then the response status is 201 Created
 
   @replay-only @team:ddoghq/k9-cws-backend
   Scenario: Delete a Workload Protection agent rule (US1-FED) returns "Not Found" response
@@ -328,6 +328,6 @@ Feature: CSM Threats
     Given there is a valid "policy_rc" in the system
     And new "UpdateCSMThreatsAgentPolicy" request
     And request contains "policy_id" parameter from "policy.data.id"
-    And body with value {"data": {"attributes": {"description": "Updated agent policy", "enabled": true, "hostTagsLists": [["env:test"]], "name": "updated_agent_policy"}, "id": "{{ policy.data.id }}", "type": "policy"}}
+    And body with value {"data": {"attributes": {"description": "Updated agent policy", "enabled": false, "hostTagsLists": [["env:test"]], "name": "updated_agent_policy"}, "id": "{{ policy.data.id }}", "type": "policy"}}
     When the request is sent
     Then the response status is 200 OK
