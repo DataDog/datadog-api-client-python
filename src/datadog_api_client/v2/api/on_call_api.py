@@ -10,6 +10,7 @@ import warnings
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
+    datetime,
     set_attribute_from_path,
     get_attribute_from_path,
     UnsetType,
@@ -24,6 +25,10 @@ from datadog_api_client.v2.model.schedule import Schedule
 from datadog_api_client.v2.model.schedule_create_request import ScheduleCreateRequest
 from datadog_api_client.v2.model.schedule_update_request import ScheduleUpdateRequest
 from datadog_api_client.v2.model.shift import Shift
+from datadog_api_client.v2.model.overrides import Overrides
+from datadog_api_client.v2.model.override_data import OverrideData
+from datadog_api_client.v2.model.override_create_response import OverrideCreateResponse
+from datadog_api_client.v2.model.create_overrides_request import CreateOverridesRequest
 from datadog_api_client.v2.model.schedule_on_call_responders import ScheduleOnCallResponders
 from datadog_api_client.v2.model.team_on_call_responders import TeamOnCallResponders
 from datadog_api_client.v2.model.team_routing_rules import TeamRoutingRules
@@ -91,6 +96,37 @@ class OnCallApi:
                 "body": {
                     "required": True,
                     "openapi_types": (ScheduleCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_schedule_overrides_endpoint = _Endpoint(
+            settings={
+                "response_type": (OverrideCreateResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/on-call/schedules/{schedule_id}/overrides",
+                "operation_id": "create_schedule_overrides",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "schedule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "schedule_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (CreateOverridesRequest,),
                     "location": "body",
                 },
             },
@@ -187,6 +223,35 @@ class OnCallApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "schedule_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_schedule_override_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/on-call/schedules/{schedule_id}/overrides/{override_id}",
+                "operation_id": "delete_schedule_override",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "schedule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "schedule_id",
+                    "location": "path",
+                },
+                "override_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "override_id",
                     "location": "path",
                 },
             },
@@ -537,6 +602,59 @@ class OnCallApi:
             api_client=api_client,
         )
 
+        self._list_schedule_overrides_endpoint = _Endpoint(
+            settings={
+                "response_type": (Overrides,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/on-call/schedules/{schedule_id}/overrides",
+                "operation_id": "list_schedule_overrides",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "schedule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "schedule_id",
+                    "location": "path",
+                },
+                "filter_start": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "filter[start]",
+                    "location": "query",
+                },
+                "filter_end": {
+                    "required": True,
+                    "openapi_types": (datetime,),
+                    "attribute": "filter[end]",
+                    "location": "query",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "page_size": {
+                    "validation": {
+                        "inclusive_maximum": 50,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+                "page_number": {
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_user_notification_channels_endpoint = _Endpoint(
             settings={
                 "response_type": (ListNotificationChannelsResponse,),
@@ -764,6 +882,34 @@ class OnCallApi:
 
         return self._create_on_call_schedule_endpoint.call_with_http_info(**kwargs)
 
+    def create_schedule_overrides(
+        self,
+        schedule_id: str,
+        body: CreateOverridesRequest,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> OverrideCreateResponse:
+        """Create On-Call schedule overrides.
+
+        Create one or more overrides for the specified On-Call schedule.
+
+        :param schedule_id: The ID of the schedule.
+        :type schedule_id: str
+        :type body: CreateOverridesRequest
+        :param include: Comma-separated list of included relationships to be returned. Allowed values: ``user`` , ``overridden_user`` , ``user.color``.
+        :type include: str, optional
+        :rtype: OverrideCreateResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["schedule_id"] = schedule_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["body"] = body
+
+        return self._create_schedule_overrides_endpoint.call_with_http_info(**kwargs)
+
     def create_user_notification_channel(
         self,
         user_id: str,
@@ -839,6 +985,28 @@ class OnCallApi:
         kwargs["schedule_id"] = schedule_id
 
         return self._delete_on_call_schedule_endpoint.call_with_http_info(**kwargs)
+
+    def delete_schedule_override(
+        self,
+        schedule_id: str,
+        override_id: str,
+    ) -> None:
+        """Delete On-Call schedule override.
+
+        Delete an override from the specified On-Call schedule.
+
+        :param schedule_id: The ID of the schedule.
+        :type schedule_id: str
+        :param override_id: The ID of the override.
+        :type override_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["schedule_id"] = schedule_id
+
+        kwargs["override_id"] = override_id
+
+        return self._delete_schedule_override_endpoint.call_with_http_info(**kwargs)
 
     def delete_user_notification_channel(
         self,
@@ -974,7 +1142,7 @@ class OnCallApi:
         :type include: str, optional
         :param filter_position: Comma-separated list of positions to retrieve. Allowed values: ``previous`` , ``current`` , ``next``. Defaults to ``current`` if omitted.
         :type filter_position: str, optional
-        :param filter_at_ts: Retrieves the on-call responders at the given timestamp in RFC3339 format (for example, ``2025-05-07T02:53:01Z`` or ``2025-05-07T02:53:01+00:00`` ). When using timezone offsets with ``+`` or ``-`` , ensure proper URL encoding ( ``+`` should be encoded as ``%2B`` ). Defaults to the current time if omitted.
+        :param filter_at_ts: Retrieves the on-call responders at the given timestamp in RFC3339 format (for example, ``2025-05-07T02:53:01Z`` or ``2025-05-07T02:53:01+00:00`` ). If you use a time zone offset with ``+`` , URL-encode the ``+`` as ``%2B``. Defaults to the current time if omitted.
         :type filter_at_ts: str, optional
         :rtype: ScheduleOnCallResponders
         """
@@ -1007,7 +1175,7 @@ class OnCallApi:
         :type schedule_id: str
         :param include: Specifies related resources to include in the response as a comma-separated list. Allowed value: ``user``.
         :type include: str, optional
-        :param filter_at_ts: Retrieves the on-call user at the given timestamp in RFC3339 format (for example, ``2025-05-07T02:53:01Z`` or ``2025-05-07T02:53:01+00:00`` ). When using timezone offsets with ``+`` or ``-`` , ensure proper URL encoding ( ``+`` should be encoded as ``%2B`` ). Defaults to the current time if omitted.
+        :param filter_at_ts: Retrieves the on-call user at the given timestamp in RFC3339 format (for example, ``2025-05-07T02:53:01Z`` or ``2025-05-07T02:53:01+00:00`` ). If you use a time zone offset with ``+`` , URL-encode the ``+`` as ``%2B``. Defaults to the current time if omitted.
         :type filter_at_ts: str, optional
         :rtype: Shift
         """
@@ -1174,6 +1342,111 @@ class OnCallApi:
 
         local_page_size = get_attribute_from_path(kwargs, "page_size", 10)
         endpoint = self._list_on_call_schedules_endpoint
+        set_attribute_from_path(kwargs, "page_size", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "page_param": "page_number",
+            "page_start": 0,
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
+
+    def list_schedule_overrides(
+        self,
+        schedule_id: str,
+        filter_start: datetime,
+        filter_end: datetime,
+        *,
+        include: Union[str, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+    ) -> Overrides:
+        """List On-Call schedule overrides.
+
+        Retrieve a list of overrides for the specified On-Call schedule within a given time range.
+
+        :param schedule_id: The ID of the schedule.
+        :type schedule_id: str
+        :param filter_start: Start of the time range to retrieve overrides for, in RFC3339 format (for example, ``2025-05-07T02:53:01Z`` or ``2025-05-07T02:53:01+00:00`` ). If you use a time zone offset with ``+`` , URL-encode the ``+`` as ``%2B``.
+        :type filter_start: datetime
+        :param filter_end: End of the time range to retrieve overrides for, in RFC3339 format (for example, ``2025-05-07T02:53:01Z`` or ``2025-05-07T02:53:01+00:00`` ). If you use a time zone offset with ``+`` , URL-encode the ``+`` as ``%2B``. The time range cannot exceed 45 days.
+        :type filter_end: datetime
+        :param include: Comma-separated list of related resources to include in the response. Allowed values: ``user`` , ``overridden_user`` , ``user.color``.
+        :type include: str, optional
+        :param page_size: Number of overrides to return per page. The maximum allowed value is 50.
+        :type page_size: int, optional
+        :param page_number: Specific page number to return.
+        :type page_number: int, optional
+        :rtype: Overrides
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["schedule_id"] = schedule_id
+
+        kwargs["filter_start"] = filter_start
+
+        kwargs["filter_end"] = filter_end
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        return self._list_schedule_overrides_endpoint.call_with_http_info(**kwargs)
+
+    def list_schedule_overrides_with_pagination(
+        self,
+        schedule_id: str,
+        filter_start: datetime,
+        filter_end: datetime,
+        *,
+        include: Union[str, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+    ) -> collections.abc.Iterable[OverrideData]:
+        """List On-Call schedule overrides.
+
+        Provide a paginated version of :meth:`list_schedule_overrides`, returning all items.
+
+        :param schedule_id: The ID of the schedule.
+        :type schedule_id: str
+        :param filter_start: Start of the time range to retrieve overrides for, in RFC3339 format (for example, ``2025-05-07T02:53:01Z`` or ``2025-05-07T02:53:01+00:00`` ). If you use a time zone offset with ``+`` , URL-encode the ``+`` as ``%2B``.
+        :type filter_start: datetime
+        :param filter_end: End of the time range to retrieve overrides for, in RFC3339 format (for example, ``2025-05-07T02:53:01Z`` or ``2025-05-07T02:53:01+00:00`` ). If you use a time zone offset with ``+`` , URL-encode the ``+`` as ``%2B``. The time range cannot exceed 45 days.
+        :type filter_end: datetime
+        :param include: Comma-separated list of related resources to include in the response. Allowed values: ``user`` , ``overridden_user`` , ``user.color``.
+        :type include: str, optional
+        :param page_size: Number of overrides to return per page. The maximum allowed value is 50.
+        :type page_size: int, optional
+        :param page_number: Specific page number to return.
+        :type page_number: int, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[OverrideData]
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["schedule_id"] = schedule_id
+
+        kwargs["filter_start"] = filter_start
+
+        kwargs["filter_end"] = filter_end
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        local_page_size = get_attribute_from_path(kwargs, "page_size", 10)
+        endpoint = self._list_schedule_overrides_endpoint
         set_attribute_from_path(kwargs, "page_size", local_page_size, endpoint.params_map)
         pagination = {
             "limit_value": local_page_size,
