@@ -23,11 +23,11 @@ from datadog_api_client.v2.model.dora_list_failures_request import DORAListFailu
 from datadog_api_client.v2.model.dora_failure_fetch_response import DORAFailureFetchResponse
 
 
-class DORAMetricsApi:
+class DeliveryPerformanceApi:
     """
-    Search, send, or delete events for DORA Metrics to measure and improve your software delivery performance. See the `DORA Metrics page <https://docs.datadoghq.com/dora_metrics/>`_ for more information.
+    Search, send, or delete events for Delivery Performance (formerly DORA Metrics) to measure and improve your software delivery performance. See the `Delivery Performance page <https://docs.datadoghq.com/dora_metrics/>`_ for more information.
 
-    **Note** : DORA Metrics are not available in the US1-FED site.
+    **Note** : Delivery Performance is not available in the US1-FED site.
     """
 
     def __init__(self, api_client=None):

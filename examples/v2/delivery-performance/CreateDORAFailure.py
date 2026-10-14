@@ -3,7 +3,7 @@ Send an incident event returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration
-from datadog_api_client.v2.api.dora_metrics_api import DORAMetricsApi
+from datadog_api_client.v2.api.delivery_performance_api import DeliveryPerformanceApi
 from datadog_api_client.v2.model.dora_failure_request import DORAFailureRequest
 from datadog_api_client.v2.model.dora_failure_request_attributes import DORAFailureRequestAttributes
 from datadog_api_client.v2.model.dora_failure_request_data import DORAFailureRequestData
@@ -36,7 +36,7 @@ body = DORAFailureRequest(
 
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
-    api_instance = DORAMetricsApi(api_client)
+    api_instance = DeliveryPerformanceApi(api_client)
     response = api_instance.create_dora_failure(body=body)
 
     print(response)

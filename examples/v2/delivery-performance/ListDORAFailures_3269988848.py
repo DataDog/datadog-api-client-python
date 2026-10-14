@@ -4,7 +4,7 @@ Get a list of failure events returns "OK" response
 
 from os import environ
 from datadog_api_client import ApiClient, Configuration
-from datadog_api_client.v2.api.dora_metrics_api import DORAMetricsApi
+from datadog_api_client.v2.api.delivery_performance_api import DeliveryPerformanceApi
 from datadog_api_client.v2.model.dora_list_failures_request import DORAListFailuresRequest
 from datadog_api_client.v2.model.dora_list_failures_request_attributes import DORAListFailuresRequestAttributes
 from datadog_api_client.v2.model.dora_list_failures_request_data import DORAListFailuresRequestData
@@ -26,7 +26,7 @@ body = DORAListFailuresRequest(
 configuration = Configuration()
 configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
-    api_instance = DORAMetricsApi(api_client)
+    api_instance = DeliveryPerformanceApi(api_client)
     response = api_instance.list_dora_failures(body=body)
 
     print(response)

@@ -3,7 +3,7 @@ Send a deployment event returns "OK" response
 """
 
 from datadog_api_client import ApiClient, Configuration
-from datadog_api_client.v2.api.dora_metrics_api import DORAMetricsApi
+from datadog_api_client.v2.api.delivery_performance_api import DeliveryPerformanceApi
 from datadog_api_client.v2.model.dora_deployment_request import DORADeploymentRequest
 from datadog_api_client.v2.model.dora_deployment_request_attributes import DORADeploymentRequestAttributes
 from datadog_api_client.v2.model.dora_deployment_request_data import DORADeploymentRequestData
@@ -26,7 +26,7 @@ body = DORADeploymentRequest(
 
 configuration = Configuration()
 with ApiClient(configuration) as api_client:
-    api_instance = DORAMetricsApi(api_client)
+    api_instance = DeliveryPerformanceApi(api_client)
     response = api_instance.create_dora_deployment(body=body)
 
     print(response)

@@ -1,8 +1,8 @@
 {
-  "api": "DORAMetrics",
+  "api": "DeliveryPerformance",
   "expected_status": 200,
-  "feature": "DORA Metrics",
-  "id": "v2/DORA Metrics/Send a deployment event returns \"OK\" response",
+  "feature": "Delivery Performance",
+  "id": "v2/Delivery Performance/Send a deployment event returns \"OK\" response",
   "operation_id": "CreateDORADeployment",
   "request": {
     "body": {

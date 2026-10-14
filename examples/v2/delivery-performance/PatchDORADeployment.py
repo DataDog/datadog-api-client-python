@@ -4,7 +4,7 @@ Mark a deployment as failed by ID returns "Accepted" response
 
 from os import environ
 from datadog_api_client import ApiClient, Configuration
-from datadog_api_client.v2.api.dora_metrics_api import DORAMetricsApi
+from datadog_api_client.v2.api.delivery_performance_api import DeliveryPerformanceApi
 from datadog_api_client.v2.model.dora_deployment_patch_remediation import DORADeploymentPatchRemediation
 from datadog_api_client.v2.model.dora_deployment_patch_remediation_type import DORADeploymentPatchRemediationType
 from datadog_api_client.v2.model.dora_deployment_patch_request import DORADeploymentPatchRequest
@@ -29,5 +29,5 @@ body = DORADeploymentPatchRequest(
 configuration = Configuration()
 configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
-    api_instance = DORAMetricsApi(api_client)
+    api_instance = DeliveryPerformanceApi(api_client)
     api_instance.patch_dora_deployment(deployment_id="deployment_id", body=body)

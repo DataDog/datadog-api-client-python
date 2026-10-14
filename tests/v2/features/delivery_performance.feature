@@ -1,13 +1,14 @@
-@endpoint(dora-metrics) @endpoint(dora-metrics-v2)
-Feature: DORA Metrics
-  Search, send, or delete events for DORA Metrics to measure and improve
-  your software delivery performance. See the [DORA Metrics
-  page](https://docs.datadoghq.com/dora_metrics/) for more information.
-  **Note**: DORA Metrics are not available in the US1-FED site.
+@endpoint(delivery-performance) @endpoint(delivery-performance-v2)
+Feature: Delivery Performance
+  Search, send, or delete events for Delivery Performance (formerly DORA
+  Metrics) to measure and improve your software delivery performance. See
+  the [Delivery Performance page](https://docs.datadoghq.com/dora_metrics/)
+  for more information.  **Note**: Delivery Performance is not available in
+  the US1-FED site.
 
   Background:
     Given a valid "apiKeyAuth" key in the system
-    And an instance of "DORAMetrics" API
+    And an instance of "DeliveryPerformance" API
 
   @skip @team:ddoghq/ci-app-backend
   Scenario: Delete a deployment event returns "Accepted" response

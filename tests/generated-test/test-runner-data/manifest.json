@@ -4971,6 +4971,41 @@
       "version": "v2"
     },
     {
+      "feature": "Delivery Performance",
+      "feature_file": "../../v2/features/delivery_performance.feature",
+      "file": "v2/delivery-performance/get-a-list-of-deployment-events-returns-bad-request-response.json",
+      "scenario": "Get a list of deployment events returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Delivery Performance",
+      "feature_file": "../../v2/features/delivery_performance.feature",
+      "file": "v2/delivery-performance/get-a-list-of-deployment-events-returns-deployments-with-date-time-timestamps.json",
+      "scenario": "Get a list of deployment events returns deployments with date-time timestamps",
+      "version": "v2"
+    },
+    {
+      "feature": "Delivery Performance",
+      "feature_file": "../../v2/features/delivery_performance.feature",
+      "file": "v2/delivery-performance/get-a-list-of-failure-events-returns-bad-request-response.json",
+      "scenario": "Get a list of failure events returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Delivery Performance",
+      "feature_file": "../../v2/features/delivery_performance.feature",
+      "file": "v2/delivery-performance/send-a-deployment-event-returns-ok-response.json",
+      "scenario": "Send a deployment event returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Delivery Performance",
+      "feature_file": "../../v2/features/delivery_performance.feature",
+      "file": "v2/delivery-performance/send-a-failure-event-returns-ok-response.json",
+      "scenario": "Send a failure event returns \"OK\" response",
+      "version": "v2"
+    },
+    {
       "feature": "Deployment Gates",
       "feature_file": "../../v2/features/deployment_gates.feature",
       "file": "v2/deployment-gates/create-deployment-gate-returns-bad-request-response.json",
@@ -5206,41 +5241,6 @@
       "feature_file": "../../v2/features/domain_allowlist.feature",
       "file": "v2/domain-allowlist/sets-domain-allowlist-returns-ok-response.json",
       "scenario": "Sets Domain Allowlist returns \"OK\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "DORA Metrics",
-      "feature_file": "../../v2/features/dora_metrics.feature",
-      "file": "v2/dora-metrics/get-a-list-of-deployment-events-returns-bad-request-response.json",
-      "scenario": "Get a list of deployment events returns \"Bad Request\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "DORA Metrics",
-      "feature_file": "../../v2/features/dora_metrics.feature",
-      "file": "v2/dora-metrics/get-a-list-of-deployment-events-returns-deployments-with-date-time-timestamps.json",
-      "scenario": "Get a list of deployment events returns deployments with date-time timestamps",
-      "version": "v2"
-    },
-    {
-      "feature": "DORA Metrics",
-      "feature_file": "../../v2/features/dora_metrics.feature",
-      "file": "v2/dora-metrics/get-a-list-of-failure-events-returns-bad-request-response.json",
-      "scenario": "Get a list of failure events returns \"Bad Request\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "DORA Metrics",
-      "feature_file": "../../v2/features/dora_metrics.feature",
-      "file": "v2/dora-metrics/send-a-deployment-event-returns-ok-response.json",
-      "scenario": "Send a deployment event returns \"OK\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "DORA Metrics",
-      "feature_file": "../../v2/features/dora_metrics.feature",
-      "file": "v2/dora-metrics/send-a-failure-event-returns-ok-response.json",
-      "scenario": "Send a failure event returns \"OK\" response",
       "version": "v2"
     },
     {

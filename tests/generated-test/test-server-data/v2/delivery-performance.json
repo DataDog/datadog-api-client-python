@@ -1,8 +1,8 @@
 {
-  "feature": "DORA Metrics",
+  "feature": "Delivery Performance",
   "recordings": [
     {
-      "feature": "DORA Metrics",
+      "feature": "Delivery Performance",
       "frozen_at": "2025-05-22T10:44:58.608Z",
       "interactions": [
         {
@@ -39,7 +39,7 @@
       "version": "v2"
     },
     {
-      "feature": "DORA Metrics",
+      "feature": "Delivery Performance",
       "frozen_at": "2025-05-22T10:44:58.897Z",
       "interactions": [
         {
@@ -79,7 +79,7 @@
       "version": "v2"
     },
     {
-      "feature": "DORA Metrics",
+      "feature": "Delivery Performance",
       "frozen_at": "2023-08-31T14:26:14.000Z",
       "interactions": [
         {
@@ -118,7 +118,7 @@
       "version": "v2"
     },
     {
-      "feature": "DORA Metrics",
+      "feature": "Delivery Performance",
       "frozen_at": "2025-05-22T10:44:59.446Z",
       "interactions": [
         {
@@ -155,7 +155,7 @@
       "version": "v2"
     },
     {
-      "feature": "DORA Metrics",
+      "feature": "Delivery Performance",
       "frozen_at": "2025-05-22T10:44:59.522Z",
       "interactions": [
         {
@@ -195,7 +195,7 @@
       "version": "v2"
     },
     {
-      "feature": "DORA Metrics",
+      "feature": "Delivery Performance",
       "frozen_at": "2026-01-29T09:25:52.032Z",
       "interactions": [
         {
@@ -275,7 +275,7 @@
       "version": "v2"
     },
     {
-      "feature": "DORA Metrics",
+      "feature": "Delivery Performance",
       "frozen_at": "2026-01-29T09:25:52.758Z",
       "interactions": [
         {
@@ -355,7 +355,7 @@
       "version": "v2"
     },
     {
-      "feature": "DORA Metrics",
+      "feature": "Delivery Performance",
       "frozen_at": "2023-11-16T16:58:35.007Z",
       "interactions": [
         {
@@ -399,7 +399,7 @@
       "version": "v2"
     },
     {
-      "feature": "DORA Metrics",
+      "feature": "Delivery Performance",
       "frozen_at": "2024-02-13T16:54:07.556Z",
       "interactions": [
         {

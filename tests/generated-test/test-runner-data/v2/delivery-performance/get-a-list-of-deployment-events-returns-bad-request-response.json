@@ -1,8 +1,8 @@
 {
-  "api": "DORAMetrics",
+  "api": "DeliveryPerformance",
   "expected_status": 400,
-  "feature": "DORA Metrics",
-  "id": "v2/DORA Metrics/Get a list of deployment events returns \"Bad Request\" response",
+  "feature": "Delivery Performance",
+  "id": "v2/Delivery Performance/Get a list of deployment events returns \"Bad Request\" response",
   "operation_id": "ListDORADeployments",
   "request": {
     "body": {
