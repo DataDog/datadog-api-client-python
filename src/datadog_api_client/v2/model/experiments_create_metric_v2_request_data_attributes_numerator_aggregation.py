@@ -57,7 +57,7 @@ class ExperimentsCreateMetricV2RequestDataAttributesNumeratorAggregation(ModelCo
         :type timeframe_unit: str, optional
 
         :param warehouse_metric_measure: Reference to a measure defined in a warehouse metric SQL model.
-        :type warehouse_metric_measure: ExperimentsCreateMetricV2RequestDataAttributesPercentileAggregationWarehouseMetricMeasure
+        :type warehouse_metric_measure: ExperimentsWarehouseMetricMeasure
 
         :param winsor_lower_fixed_value: Fixed lower bound used to cap extreme measure values.
         :type winsor_lower_fixed_value: float, optional

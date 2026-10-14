@@ -15,7 +15,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.experiments_warehouse_exposure_filter import ExperimentsWarehouseExposureFilter
 
 
-class ExperimentsPatchExperimentV2ResponseDataAttributesWarehouseExposureConfigurationEntryPoint(ModelNormal):
+class ExperimentsWarehouseEntryPoint(ModelNormal):
     _nullable = True
 
     @cached_property

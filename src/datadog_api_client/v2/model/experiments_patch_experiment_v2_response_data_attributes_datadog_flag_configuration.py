@@ -18,9 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_datadog_flag_configuration_entry_point import (
         ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPoint,
     )
-    from datadog_api_client.v2.model.experiments_create_experiment_v2_request_data_attributes_datadog_flag_configuration_targeting_rules_items import (
-        ExperimentsCreateExperimentV2RequestDataAttributesDatadogFlagConfigurationTargetingRulesItems,
-    )
+    from datadog_api_client.v2.model.experiments_targeting_rule import ExperimentsTargetingRule
 
 
 class ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfiguration(ModelNormal):
@@ -31,18 +29,14 @@ class ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfiguration
         from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_datadog_flag_configuration_entry_point import (
             ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPoint,
         )
-        from datadog_api_client.v2.model.experiments_create_experiment_v2_request_data_attributes_datadog_flag_configuration_targeting_rules_items import (
-            ExperimentsCreateExperimentV2RequestDataAttributesDatadogFlagConfigurationTargetingRulesItems,
-        )
+        from datadog_api_client.v2.model.experiments_targeting_rule import ExperimentsTargetingRule
 
         return {
             "allocation_key": (str,),
             "entry_point": (ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPoint,),
             "environment_id": (str,),
             "feature_flag_id": (str,),
-            "targeting_rules": (
-                [ExperimentsCreateExperimentV2RequestDataAttributesDatadogFlagConfigurationTargetingRulesItems],
-            ),
+            "targeting_rules": ([ExperimentsTargetingRule],),
         }
 
     attribute_map = {
@@ -61,10 +55,7 @@ class ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfiguration
         allocation_key: Union[str, UnsetType] = unset,
         environment_id: Union[str, UnsetType] = unset,
         feature_flag_id: Union[str, UnsetType] = unset,
-        targeting_rules: Union[
-            List[ExperimentsCreateExperimentV2RequestDataAttributesDatadogFlagConfigurationTargetingRulesItems],
-            UnsetType,
-        ] = unset,
+        targeting_rules: Union[List[ExperimentsTargetingRule], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -83,7 +74,7 @@ class ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfiguration
         :type feature_flag_id: str, optional
 
         :param targeting_rules: Rules that select subjects for the experiment.
-        :type targeting_rules: [ExperimentsCreateExperimentV2RequestDataAttributesDatadogFlagConfigurationTargetingRulesItems], optional
+        :type targeting_rules: [ExperimentsTargetingRule], optional
         """
         if allocation_key is not unset:
             kwargs["allocation_key"] = allocation_key

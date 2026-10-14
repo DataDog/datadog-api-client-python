@@ -66,6 +66,9 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         :param metrics: Configuration for generating individual metrics.
         :type metrics: [ObservabilityPipelineGeneratedMetric], optional
 
+        :param enabled_metric_aggregation: [Recommended] Indicates whether generated metrics are automatically aggregated and enriched with the `worker_uuid` tag before being sent to the metric destination.
+        :type enabled_metric_aggregation: bool, optional
+
         :param keep_unmatched: Whether to keep an event that does not match any of the mapping filters.
         :type keep_unmatched: bool, optional
 
