@@ -31,7 +31,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"rcu-vlu-ths\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:staging\"]],\"monitoringRulesCount\":260,\"name\":\"testcreateaworkloadprotectionagentruleus1fedreturnsbadrequestresponse1791584398\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"1\",\"ruleCount\":260,\"updateDate\":1791584400171,\"updater\":{\"name\":\"David Tapiador del Dujo\",\"handle\":\"david.tapiadordeldujo@datadoghq.com\"}}}}"
+              "value": "{\"data\":{\"id\":\"rcu-vlu-ths\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:staging\"]],\"monitoringRulesCount\":260,\"name\":\"testcreateaworkloadprotectionagentruleus1fedreturnsbadrequestresponse1791584398\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"1\",\"ruleCount\":260,\"updateDate\":1791584400171,\"updater\":{\"name\":\"C\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\"}}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -129,7 +129,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"rva-ljb-ty3\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:staging\"]],\"monitoringRulesCount\":260,\"name\":\"testcreateaworkloadprotectionagentruleus1fedreturnsokresponse1791584402\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"1\",\"ruleCount\":260,\"updateDate\":1791584402268,\"updater\":{\"name\":\"David Tapiador del Dujo\",\"handle\":\"david.tapiadordeldujo@datadoghq.com\"}}}}"
+              "value": "{\"data\":{\"id\":\"rva-ljb-ty3\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:staging\"]],\"monitoringRulesCount\":260,\"name\":\"testcreateaworkloadprotectionagentruleus1fedreturnsokresponse1791584402\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"1\",\"ruleCount\":260,\"updateDate\":1791584402268,\"updater\":{\"name\":\"C\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\"}}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -163,7 +163,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"sb9-egs-p1s\",\"attributes\":{\"version\":1,\"name\":\"testcreateaworkloadprotectionagentruleus1fedreturnsokresponse1791584402\",\"description\":\"My Agent rule\",\"expression\":\"exec.file.name == \\\"sh\\\"\",\"category\":\"Process Activity\",\"defaultRule\":false,\"enabled\":true,\"creationAuthorUuId\":\"30924c52-076c-4642-b292-7c122aaced8d\",\"creationDate\":1791584402827,\"updateAuthorUuId\":\"30924c52-076c-4642-b292-7c122aaced8d\",\"updateDate\":1791584402827,\"filters\":[],\"actions\":[],\"agentConstraint\":\"\",\"creator\":{\"name\":\"David Tapiador del Dujo\",\"handle\":\"david.tapiadordeldujo@datadoghq.com\"},\"updater\":{\"name\":\"David Tapiador del Dujo\",\"handle\":\"david.tapiadordeldujo@datadoghq.com\"}},\"type\":\"agent_rule\"}}\n"
+              "value": "{\"data\":{\"id\":\"sb9-egs-p1s\",\"attributes\":{\"version\":1,\"name\":\"testcreateaworkloadprotectionagentruleus1fedreturnsokresponse1791584402\",\"description\":\"My Agent rule\",\"expression\":\"exec.file.name == \\\"sh\\\"\",\"category\":\"Process Activity\",\"defaultRule\":false,\"enabled\":true,\"creationAuthorUuId\":\"30924c52-076c-4642-b292-7c122aaced8d\",\"creationDate\":1791584402827,\"updateAuthorUuId\":\"30924c52-076c-4642-b292-7c122aaced8d\",\"updateDate\":1791584402827,\"filters\":[],\"actions\":[],\"agentConstraint\":\"\",\"creator\":{\"name\":\"C\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\"},\"updater\":{\"name\":\"C\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\"}},\"type\":\"agent_rule\"}}\n"
             },
             "headers": {
               "content-type": "application/json"
@@ -220,7 +220,7 @@
     },
     {
       "feature": "CSM Threats",
-      "frozen_at": "2026-10-08T15:55:42.387Z",
+      "frozen_at": "2026-10-13T11:39:15.370Z",
       "interactions": [
         {
           "request": {
@@ -234,7 +234,7 @@
                     "hostTags": [
                       "env:staging"
                     ],
-                    "name": "testcreateaworkloadprotectionagentrulereturnsbadrequestresponse1791474942"
+                    "name": "testcreateaworkloadprotectionagentrulereturnsbadrequestresponse1791891555"
                   },
                   "type": "policy"
                 }
@@ -248,7 +248,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"x9j-mc7-jer\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:staging\"]],\"monitoringRulesCount\":9,\"name\":\"testcreateaworkloadprotectionagentrulereturnsbadrequestresponse1791474942\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"1\",\"ruleCount\":9,\"updateDate\":1791474943587,\"updater\":{\"name\":\"David Tapiador del Dujo\",\"handle\":\"david.tapiadordeldujo@datadoghq.com\"}}}}"
+              "value": "{\"data\":{\"id\":\"uaq-ecd-4oz\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:staging\"]],\"monitoringRulesCount\":92,\"name\":\"testcreateaworkloadprotectionagentrulereturnsbadrequestresponse1791891555\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"1\",\"ruleCount\":92,\"updateDate\":1791891556363,\"updater\":{\"name\":\"C\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\"}}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -269,7 +269,7 @@
                     "expression": "exec.file.name",
                     "filters": [],
                     "name": "my_agent_rule",
-                    "policy_id": "x9j-mc7-jer",
+                    "policy_id": "uaq-ecd-4oz",
                     "product_tags": []
                   },
                   "type": "agent_rule"
@@ -301,7 +301,7 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/remote_config/products/cws/policy/x9j-mc7-jer",
+            "path": "/api/v2/remote_config/products/cws/policy/uaq-ecd-4oz",
             "query": []
           },
           "response": {
@@ -320,7 +320,7 @@
     },
     {
       "feature": "CSM Threats",
-      "frozen_at": "2026-10-08T15:55:44.934Z",
+      "frozen_at": "2026-10-13T11:39:17.800Z",
       "interactions": [
         {
           "request": {
@@ -334,7 +334,7 @@
                     "hostTags": [
                       "env:staging"
                     ],
-                    "name": "testcreateaworkloadprotectionagentrulereturnsokresponse1791474944"
+                    "name": "testcreateaworkloadprotectionagentrulereturnsokresponse1791891557"
                   },
                   "type": "policy"
                 }
@@ -348,7 +348,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"xte-bxy-h2s\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:staging\"]],\"monitoringRulesCount\":260,\"name\":\"testcreateaworkloadprotectionagentrulereturnsokresponse1791474944\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"1\",\"ruleCount\":260,\"updateDate\":1791474945149,\"updater\":{\"name\":\"David Tapiador del Dujo\",\"handle\":\"david.tapiadordeldujo@datadoghq.com\"}}}}"
+              "value": "{\"data\":{\"id\":\"3bd-rhe-gjp\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:staging\"]],\"monitoringRulesCount\":260,\"name\":\"testcreateaworkloadprotectionagentrulereturnsokresponse1791891557\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"1\",\"ruleCount\":260,\"updateDate\":1791891557906,\"updater\":{\"name\":\"C\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\"}}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -369,8 +369,8 @@
                     "enabled": true,
                     "expression": "exec.file.name == \"sh\"",
                     "filters": [],
-                    "name": "testcreateaworkloadprotectionagentrulereturnsokresponse1791474944",
-                    "policy_id": "xte-bxy-h2s",
+                    "name": "testcreateaworkloadprotectionagentrulereturnsokresponse1791891557",
+                    "policy_id": "3bd-rhe-gjp",
                     "product_tags": []
                   },
                   "type": "agent_rule"
@@ -385,7 +385,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"wjq-srg-dxo\",\"type\":\"agent_rule\",\"attributes\":{\"blocking\":[],\"category\":\"Process Activity\",\"creationDate\":1791474945624,\"creator\":{\"name\":\"David Tapiador del Dujo\",\"handle\":\"david.tapiadordeldujo@datadoghq.com\"},\"defaultRule\":false,\"description\":\"My Agent rule\",\"disabled\":[],\"enabled\":true,\"expression\":\"exec.file.name == \\\"sh\\\"\",\"filters\":[\"os == \\\"linux\\\"\"],\"monitoring\":[\"xte-bxy-h2s\"],\"name\":\"testcreateaworkloadprotectionagentrulereturnsokresponse1791474944\",\"product_tags\":[],\"updateDate\":1791474945624,\"updater\":{\"name\":\"David Tapiador del Dujo\",\"handle\":\"david.tapiadordeldujo@datadoghq.com\"}}}}"
+              "value": "{\"data\":{\"id\":\"itu-ua4-aha\",\"type\":\"agent_rule\",\"attributes\":{\"blocking\":[],\"category\":\"Process Activity\",\"creationDate\":1791891558603,\"creator\":{\"name\":\"C\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\"},\"defaultRule\":false,\"description\":\"My Agent rule\",\"disabled\":[],\"enabled\":true,\"expression\":\"exec.file.name == \\\"sh\\\"\",\"filters\":[\"os == \\\"linux\\\"\"],\"monitoring\":[\"3bd-rhe-gjp\"],\"name\":\"testcreateaworkloadprotectionagentrulereturnsokresponse1791891557\",\"product_tags\":[],\"updateDate\":1791891558603,\"updater\":{\"name\":\"C\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\"}}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -402,7 +402,7 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/remote_config/products/cws/agent_rules/wjq-srg-dxo",
+            "path": "/api/v2/remote_config/products/cws/agent_rules/itu-ua4-aha",
             "query": []
           },
           "response": {
@@ -423,7 +423,7 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/remote_config/products/cws/policy/xte-bxy-h2s",
+            "path": "/api/v2/remote_config/products/cws/policy/3bd-rhe-gjp",
             "query": []
           },
           "response": {
@@ -442,7 +442,7 @@
     },
     {
       "feature": "CSM Threats",
-      "frozen_at": "2026-10-08T15:55:47.403Z",
+      "frozen_at": "2026-10-13T11:39:20.016Z",
       "interactions": [
         {
           "request": {
@@ -456,7 +456,7 @@
                     "hostTags": [
                       "env:staging"
                     ],
-                    "name": "testcreateaworkloadprotectionagentrulewithsetactionreturnsokresponse1791474947"
+                    "name": "testcreateaworkloadprotectionagentrulewithsetactionreturnsokresponse1791891560"
                   },
                   "type": "policy"
                 }
@@ -470,7 +470,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"uqk-ror-ggv\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:staging\"]],\"monitoringRulesCount\":9,\"name\":\"testcreateaworkloadprotectionagentrulewithsetactionreturnsokresponse1791474947\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"1\",\"ruleCount\":9,\"updateDate\":1791474947608,\"updater\":{\"name\":\"David Tapiador del Dujo\",\"handle\":\"david.tapiadordeldujo@datadoghq.com\"}}}}"
+              "value": "{\"data\":{\"id\":\"kdi-7uh-phv\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:staging\"]],\"monitoringRulesCount\":92,\"name\":\"testcreateaworkloadprotectionagentrulewithsetactionreturnsokresponse1791891560\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"1\",\"ruleCount\":92,\"updateDate\":1791891560124,\"updater\":{\"name\":\"C\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\"}}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -505,8 +505,8 @@
                     "enabled": true,
                     "expression": "exec.file.name == \"sh\"",
                     "filters": [],
-                    "name": "testcreateaworkloadprotectionagentrulewithsetactionreturnsokresponse1791474947",
-                    "policy_id": "uqk-ror-ggv",
+                    "name": "testcreateaworkloadprotectionagentrulewithsetactionreturnsokresponse1791891560",
+                    "policy_id": "kdi-7uh-phv",
                     "product_tags": []
                   },
                   "type": "agent_rule"
@@ -521,7 +521,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"ale-bhs-cmw\",\"type\":\"agent_rule\",\"attributes\":{\"actions\":[{\"set\":{\"name\":\"test_set\",\"value\":\"test_value\",\"scope\":\"process\",\"inherited\":true},\"disabled\":false},{\"hash\":{\"field\":\"exec.file\"},\"disabled\":false}],\"blocking\":[],\"category\":\"Process Activity\",\"creationDate\":1791474948032,\"creator\":{\"name\":\"David Tapiador del Dujo\",\"handle\":\"david.tapiadordeldujo@datadoghq.com\"},\"defaultRule\":false,\"description\":\"My Agent rule with set action\",\"disabled\":[],\"enabled\":true,\"expression\":\"exec.file.name == \\\"sh\\\"\",\"filters\":[\"os == \\\"linux\\\"\"],\"monitoring\":[\"uqk-ror-ggv\"],\"name\":\"testcreateaworkloadprotectionagentrulewithsetactionreturnsokresponse1791474947\",\"product_tags\":[],\"updateDate\":1791474948032,\"updater\":{\"name\":\"David Tapiador del Dujo\",\"handle\":\"david.tapiadordeldujo@datadoghq.com\"}}}}"
+              "value": "{\"data\":{\"id\":\"jok-6aq-saf\",\"type\":\"agent_rule\",\"attributes\":{\"actions\":[{\"set\":{\"name\":\"test_set\",\"value\":\"test_value\",\"scope\":\"process\",\"inherited\":true},\"disabled\":false},{\"hash\":{\"field\":\"exec.file\"},\"disabled\":false}],\"blocking\":[],\"category\":\"Process Activity\",\"creationDate\":1791891560555,\"creator\":{\"name\":\"C\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\"},\"defaultRule\":false,\"description\":\"My Agent rule with set action\",\"disabled\":[],\"enabled\":true,\"expression\":\"exec.file.name == \\\"sh\\\"\",\"filters\":[\"os == \\\"linux\\\"\"],\"monitoring\":[\"kdi-7uh-phv\"],\"name\":\"testcreateaworkloadprotectionagentrulewithsetactionreturnsokresponse1791891560\",\"product_tags\":[],\"updateDate\":1791891560555,\"updater\":{\"name\":\"C\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\"}}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -538,7 +538,7 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/remote_config/products/cws/agent_rules/ale-bhs-cmw",
+            "path": "/api/v2/remote_config/products/cws/agent_rules/jok-6aq-saf",
             "query": []
           },
           "response": {
@@ -559,7 +559,7 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/remote_config/products/cws/policy/uqk-ror-ggv",
+            "path": "/api/v2/remote_config/products/cws/policy/kdi-7uh-phv",
             "query": []
           },
           "response": {
@@ -578,7 +578,7 @@
     },
     {
       "feature": "CSM Threats",
-      "frozen_at": "2026-10-08T15:55:49.756Z",
+      "frozen_at": "2026-10-13T11:39:21.848Z",
       "interactions": [
         {
           "request": {
@@ -592,7 +592,7 @@
                     "hostTags": [
                       "env:staging"
                     ],
-                    "name": "testcreateaworkloadprotectionagentrulewithsetactionwithexpressionreturnsokresponse1791474949"
+                    "name": "testcreateaworkloadprotectionagentrulewithsetactionwithexpressionreturnsokresponse1791891561"
                   },
                   "type": "policy"
                 }
@@ -606,7 +606,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"ewe-a6f-o0a\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:staging\"]],\"monitoringRulesCount\":260,\"name\":\"testcreateaworkloadprotectionagentrulewithsetactionwithexpressionreturnsokresponse1791474949\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"1\",\"ruleCount\":260,\"updateDate\":1791474949965,\"updater\":{\"name\":\"David Tapiador del Dujo\",\"handle\":\"david.tapiadordeldujo@datadoghq.com\"}}}}"
+              "value": "{\"data\":{\"id\":\"8tm-2vc-kgn\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:staging\"]],\"monitoringRulesCount\":260,\"name\":\"testcreateaworkloadprotectionagentrulewithsetactionwithexpressionreturnsokresponse1791891561\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"1\",\"ruleCount\":260,\"updateDate\":1791891561967,\"updater\":{\"name\":\"C\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\"}}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -636,8 +636,8 @@
                     "enabled": true,
                     "expression": "exec.file.name == \"sh\"",
                     "filters": [],
-                    "name": "testcreateaworkloadprotectionagentrulewithsetactionwithexpressionreturnsokresponse1791474949",
-                    "policy_id": "ewe-a6f-o0a",
+                    "name": "testcreateaworkloadprotectionagentrulewithsetactionwithexpressionreturnsokresponse1791891561",
+                    "policy_id": "8tm-2vc-kgn",
                     "product_tags": []
                   },
                   "type": "agent_rule"
@@ -652,7 +652,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"c0i-2ab-6sf\",\"type\":\"agent_rule\",\"attributes\":{\"actions\":[{\"set\":{\"name\":\"test_set\",\"default_value\":\"/dev/null\",\"expression\":\"exec.file.path\",\"scope\":\"process\"},\"disabled\":false}],\"blocking\":[],\"category\":\"Process Activity\",\"creationDate\":1791474950521,\"creator\":{\"name\":\"David Tapiador del Dujo\",\"handle\":\"david.tapiadordeldujo@datadoghq.com\"},\"defaultRule\":false,\"description\":\"My Agent rule with set action with expression\",\"disabled\":[],\"enabled\":true,\"expression\":\"exec.file.name == \\\"sh\\\"\",\"filters\":[\"os == \\\"linux\\\"\"],\"monitoring\":[\"ewe-a6f-o0a\"],\"name\":\"testcreateaworkloadprotectionagentrulewithsetactionwithexpressionreturnsokresponse1791474949\",\"product_tags\":[],\"updateDate\":1791474950521,\"updater\":{\"name\":\"David Tapiador del Dujo\",\"handle\":\"david.tapiadordeldujo@datadoghq.com\"}}}}"
+              "value": "{\"data\":{\"id\":\"fux-fml-nm1\",\"type\":\"agent_rule\",\"attributes\":{\"actions\":[{\"set\":{\"name\":\"test_set\",\"default_value\":\"/dev/null\",\"expression\":\"exec.file.path\",\"scope\":\"process\"},\"disabled\":false}],\"blocking\":[],\"category\":\"Process Activity\",\"creationDate\":1791891562386,\"creator\":{\"name\":\"C\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\"},\"defaultRule\":false,\"description\":\"My Agent rule with set action with expression\",\"disabled\":[],\"enabled\":true,\"expression\":\"exec.file.name == \\\"sh\\\"\",\"filters\":[\"os == \\\"linux\\\"\"],\"monitoring\":[\"8tm-2vc-kgn\"],\"name\":\"testcreateaworkloadprotectionagentrulewithsetactionwithexpressionreturnsokresponse1791891561\",\"product_tags\":[],\"updateDate\":1791891562386,\"updater\":{\"name\":\"C\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\"}}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -669,7 +669,7 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/remote_config/products/cws/agent_rules/c0i-2ab-6sf",
+            "path": "/api/v2/remote_config/products/cws/agent_rules/fux-fml-nm1",
             "query": []
           },
           "response": {
@@ -690,7 +690,7 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/remote_config/products/cws/policy/ewe-a6f-o0a",
+            "path": "/api/v2/remote_config/products/cws/policy/8tm-2vc-kgn",
             "query": []
           },
           "response": {
@@ -964,7 +964,7 @@
     },
     {
       "feature": "CSM Threats",
-      "frozen_at": "2026-10-08T15:55:52.105Z",
+      "frozen_at": "2026-10-13T11:39:24.018Z",
       "interactions": [
         {
           "request": {
@@ -978,7 +978,7 @@
                     "hostTags": [
                       "env:staging"
                     ],
-                    "name": "testdeleteaworkloadprotectionagentrulereturnsokresponse1791474952"
+                    "name": "testdeleteaworkloadprotectionagentrulereturnsokresponse1791891564"
                   },
                   "type": "policy"
                 }
@@ -992,7 +992,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"n52-jig-xvp\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:staging\"]],\"monitoringRulesCount\":9,\"name\":\"testdeleteaworkloadprotectionagentrulereturnsokresponse1791474952\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"1\",\"ruleCount\":9,\"updateDate\":1791474952345,\"updater\":{\"name\":\"David Tapiador del Dujo\",\"handle\":\"david.tapiadordeldujo@datadoghq.com\"}}}}"
+              "value": "{\"data\":{\"id\":\"ilo-ejm-glm\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:staging\"]],\"monitoringRulesCount\":92,\"name\":\"testdeleteaworkloadprotectionagentrulereturnsokresponse1791891564\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"1\",\"ruleCount\":92,\"updateDate\":1791891564121,\"updater\":{\"name\":\"C\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\"}}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -1023,8 +1023,8 @@
                     "description": "My Agent rule",
                     "enabled": true,
                     "expression": "exec.file.name == \"sh\"",
-                    "name": "testdeleteaworkloadprotectionagentrulereturnsokresponse1791474952",
-                    "policy_id": "n52-jig-xvp",
+                    "name": "testdeleteaworkloadprotectionagentrulereturnsokresponse1791891564",
+                    "policy_id": "ilo-ejm-glm",
                     "product_tags": [
                       "security:attack",
                       "technique:T1059"
@@ -1042,7 +1042,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"u4t-xik-znp\",\"type\":\"agent_rule\",\"attributes\":{\"actions\":[{\"set\":{\"name\":\"test_set\",\"value\":\"test_value\",\"scope\":\"process\"},\"disabled\":false},{\"hash\":{},\"disabled\":false}],\"blocking\":[],\"category\":\"Process Activity\",\"creationDate\":1791474952946,\"creator\":{\"name\":\"David Tapiador del Dujo\",\"handle\":\"david.tapiadordeldujo@datadoghq.com\"},\"defaultRule\":false,\"description\":\"My Agent rule\",\"disabled\":[],\"enabled\":true,\"expression\":\"exec.file.name == \\\"sh\\\"\",\"filters\":[\"os == \\\"linux\\\"\"],\"monitoring\":[\"n52-jig-xvp\"],\"name\":\"testdeleteaworkloadprotectionagentrulereturnsokresponse1791474952\",\"product_tags\":[\"security:attack\",\"technique:T1059\"],\"updateDate\":1791474952946,\"updater\":{\"name\":\"David Tapiador del Dujo\",\"handle\":\"david.tapiadordeldujo@datadoghq.com\"}}}}"
+              "value": "{\"data\":{\"id\":\"e0e-ihn-bg7\",\"type\":\"agent_rule\",\"attributes\":{\"actions\":[{\"set\":{\"name\":\"test_set\",\"value\":\"test_value\",\"scope\":\"process\"},\"disabled\":false},{\"hash\":{},\"disabled\":false}],\"blocking\":[],\"category\":\"Process Activity\",\"creationDate\":1791891564485,\"creator\":{\"name\":\"C\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\"},\"defaultRule\":false,\"description\":\"My Agent rule\",\"disabled\":[],\"enabled\":true,\"expression\":\"exec.file.name == \\\"sh\\\"\",\"filters\":[\"os == \\\"linux\\\"\"],\"monitoring\":[\"ilo-ejm-glm\"],\"name\":\"testdeleteaworkloadprotectionagentrulereturnsokresponse1791891564\",\"product_tags\":[\"security:attack\",\"technique:T1059\"],\"updateDate\":1791891564485,\"updater\":{\"name\":\"C\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\"}}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -1059,11 +1059,11 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/remote_config/products/cws/agent_rules/u4t-xik-znp",
+            "path": "/api/v2/remote_config/products/cws/agent_rules/e0e-ihn-bg7",
             "query": [
               [
                 "policy_id",
-                "n52-jig-xvp"
+                "ilo-ejm-glm"
               ]
             ]
           },
@@ -1085,13 +1085,13 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/remote_config/products/cws/agent_rules/u4t-xik-znp",
+            "path": "/api/v2/remote_config/products/cws/agent_rules/e0e-ihn-bg7",
             "query": []
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"rule \\\"u4t-xik-znp\\\" not found\"}]}"
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"rule \\\"e0e-ihn-bg7\\\" not found\"}]}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -1108,7 +1108,7 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/remote_config/products/cws/policy/n52-jig-xvp",
+            "path": "/api/v2/remote_config/products/cws/policy/ilo-ejm-glm",
             "query": []
           },
           "response": {
@@ -1158,7 +1158,7 @@
     },
     {
       "feature": "CSM Threats",
-      "frozen_at": "2026-10-08T15:55:55.045Z",
+      "frozen_at": "2026-10-13T11:39:26.381Z",
       "interactions": [
         {
           "request": {
@@ -1172,7 +1172,7 @@
                     "hostTags": [
                       "env:staging"
                     ],
-                    "name": "testdeleteaworkloadprotectionpolicyreturnsokresponse1791474955"
+                    "name": "testdeleteaworkloadprotectionpolicyreturnsokresponse1791891566"
                   },
                   "type": "policy"
                 }
@@ -1186,7 +1186,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"tpm-uvd-t8s\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:staging\"]],\"monitoringRulesCount\":260,\"name\":\"testdeleteaworkloadprotectionpolicyreturnsokresponse1791474955\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"1\",\"ruleCount\":260,\"updateDate\":1791474955254,\"updater\":{\"name\":\"David Tapiador del Dujo\",\"handle\":\"david.tapiadordeldujo@datadoghq.com\"}}}}"
+              "value": "{\"data\":{\"id\":\"yki-89z-oxn\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:staging\"]],\"monitoringRulesCount\":92,\"name\":\"testdeleteaworkloadprotectionpolicyreturnsokresponse1791891566\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"1\",\"ruleCount\":92,\"updateDate\":1791891566486,\"updater\":{\"name\":\"C\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\"}}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -1203,7 +1203,7 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/remote_config/products/cws/policy/tpm-uvd-t8s",
+            "path": "/api/v2/remote_config/products/cws/policy/yki-89z-oxn",
             "query": []
           },
           "response": {
@@ -1224,13 +1224,13 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/remote_config/products/cws/policy/tpm-uvd-t8s",
+            "path": "/api/v2/remote_config/products/cws/policy/yki-89z-oxn",
             "query": []
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"policy \\\"tpm-uvd-t8s\\\" not found\"}]}"
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"policy \\\"yki-89z-oxn\\\" not found\"}]}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -1454,7 +1454,7 @@
     },
     {
       "feature": "CSM Threats",
-      "frozen_at": "2026-10-08T15:55:56.630Z",
+      "frozen_at": "2026-10-13T11:39:27.632Z",
       "interactions": [
         {
           "request": {
@@ -1468,7 +1468,7 @@
                     "hostTags": [
                       "env:staging"
                     ],
-                    "name": "testgetaworkloadprotectionagentrulereturnsokresponse1791474956"
+                    "name": "testgetaworkloadprotectionagentrulereturnsokresponse1791891567"
                   },
                   "type": "policy"
                 }
@@ -1482,7 +1482,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"4d5-arg-zrn\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:staging\"]],\"monitoringRulesCount\":9,\"name\":\"testgetaworkloadprotectionagentrulereturnsokresponse1791474956\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"1\",\"ruleCount\":9,\"updateDate\":1791474956840,\"updater\":{\"name\":\"David Tapiador del Dujo\",\"handle\":\"david.tapiadordeldujo@datadoghq.com\"}}}}"
+              "value": "{\"data\":{\"id\":\"huf-hf4-pgg\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:staging\"]],\"monitoringRulesCount\":92,\"name\":\"testgetaworkloadprotectionagentrulereturnsokresponse1791891567\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"1\",\"ruleCount\":92,\"updateDate\":1791891567738,\"updater\":{\"name\":\"C\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\"}}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -1513,8 +1513,8 @@
                     "description": "My Agent rule",
                     "enabled": true,
                     "expression": "exec.file.name == \"sh\"",
-                    "name": "testgetaworkloadprotectionagentrulereturnsokresponse1791474956",
-                    "policy_id": "4d5-arg-zrn",
+                    "name": "testgetaworkloadprotectionagentrulereturnsokresponse1791891567",
+                    "policy_id": "huf-hf4-pgg",
                     "product_tags": [
                       "security:attack",
                       "technique:T1059"
@@ -1532,7 +1532,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"wlk-lsz-ols\",\"type\":\"agent_rule\",\"attributes\":{\"actions\":[{\"set\":{\"name\":\"test_set\",\"value\":\"test_value\",\"scope\":\"process\"},\"disabled\":false},{\"hash\":{},\"disabled\":false}],\"blocking\":[],\"category\":\"Process Activity\",\"creationDate\":1791474957247,\"creator\":{\"name\":\"David Tapiador del Dujo\",\"handle\":\"david.tapiadordeldujo@datadoghq.com\"},\"defaultRule\":false,\"description\":\"My Agent rule\",\"disabled\":[],\"enabled\":true,\"expression\":\"exec.file.name == \\\"sh\\\"\",\"filters\":[\"os == \\\"linux\\\"\"],\"monitoring\":[\"4d5-arg-zrn\"],\"name\":\"testgetaworkloadprotectionagentrulereturnsokresponse1791474956\",\"product_tags\":[\"security:attack\",\"technique:T1059\"],\"updateDate\":1791474957247,\"updater\":{\"name\":\"David Tapiador del Dujo\",\"handle\":\"david.tapiadordeldujo@datadoghq.com\"}}}}"
+              "value": "{\"data\":{\"id\":\"zxk-owp-ac7\",\"type\":\"agent_rule\",\"attributes\":{\"actions\":[{\"set\":{\"name\":\"test_set\",\"value\":\"test_value\",\"scope\":\"process\"},\"disabled\":false},{\"hash\":{},\"disabled\":false}],\"blocking\":[],\"category\":\"Process Activity\",\"creationDate\":1791891568051,\"creator\":{\"name\":\"C\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\"},\"defaultRule\":false,\"description\":\"My Agent rule\",\"disabled\":[],\"enabled\":true,\"expression\":\"exec.file.name == \\\"sh\\\"\",\"filters\":[\"os == \\\"linux\\\"\"],\"monitoring\":[\"huf-hf4-pgg\"],\"name\":\"testgetaworkloadprotectionagentrulereturnsokresponse1791891567\",\"product_tags\":[\"security:attack\",\"technique:T1059\"],\"updateDate\":1791891568051,\"updater\":{\"name\":\"C\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\"}}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -1549,18 +1549,18 @@
             },
             "content_type": "",
             "method": "GET",
-            "path": "/api/v2/remote_config/products/cws/agent_rules/wlk-lsz-ols",
+            "path": "/api/v2/remote_config/products/cws/agent_rules/zxk-owp-ac7",
             "query": [
               [
                 "policy_id",
-                "4d5-arg-zrn"
+                "huf-hf4-pgg"
               ]
             ]
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"wlk-lsz-ols\",\"type\":\"agent_rule\",\"attributes\":{\"actions\":[{\"set\":{\"name\":\"test_set\",\"value\":\"test_value\",\"scope\":\"process\"},\"disabled\":false},{\"hash\":{},\"disabled\":false}],\"category\":\"Process Activity\",\"creationDate\":1791474957247,\"creator\":{\"name\":\"David Tapiador del Dujo\",\"handle\":\"david.tapiadordeldujo@datadoghq.com\"},\"defaultRule\":false,\"description\":\"My Agent rule\",\"enabled\":true,\"expression\":\"exec.file.name == \\\"sh\\\"\",\"filters\":[\"os == \\\"linux\\\"\"],\"monitoring\":[\"4d5-arg-zrn\"],\"name\":\"testgetaworkloadprotectionagentrulereturnsokresponse1791474956\",\"product_tags\":[\"security:attack\",\"technique:T1059\"],\"updateDate\":1791474957247,\"updater\":{\"name\":\"David Tapiador del Dujo\",\"handle\":\"david.tapiadordeldujo@datadoghq.com\"}}}}"
+              "value": "{\"data\":{\"id\":\"zxk-owp-ac7\",\"type\":\"agent_rule\",\"attributes\":{\"actions\":[{\"set\":{\"name\":\"test_set\",\"value\":\"test_value\",\"scope\":\"process\"},\"disabled\":false},{\"hash\":{},\"disabled\":false}],\"category\":\"Process Activity\",\"creationDate\":1791891568051,\"creator\":{\"name\":\"C\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\"},\"defaultRule\":false,\"description\":\"My Agent rule\",\"enabled\":true,\"expression\":\"exec.file.name == \\\"sh\\\"\",\"filters\":[\"os == \\\"linux\\\"\"],\"monitoring\":[\"huf-hf4-pgg\"],\"name\":\"testgetaworkloadprotectionagentrulereturnsokresponse1791891567\",\"product_tags\":[\"security:attack\",\"technique:T1059\"],\"updateDate\":1791891568051,\"updater\":{\"name\":\"C\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\"}}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -1577,7 +1577,7 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/remote_config/products/cws/agent_rules/wlk-lsz-ols",
+            "path": "/api/v2/remote_config/products/cws/agent_rules/zxk-owp-ac7",
             "query": []
           },
           "response": {
@@ -1598,7 +1598,7 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/remote_config/products/cws/policy/4d5-arg-zrn",
+            "path": "/api/v2/remote_config/products/cws/policy/huf-hf4-pgg",
             "query": []
           },
           "response": {
@@ -1648,7 +1648,7 @@
     },
     {
       "feature": "CSM Threats",
-      "frozen_at": "2026-10-08T15:55:59.149Z",
+      "frozen_at": "2026-10-13T11:39:29.733Z",
       "interactions": [
         {
           "request": {
@@ -1662,7 +1662,7 @@
                     "hostTags": [
                       "env:staging"
                     ],
-                    "name": "testgetaworkloadprotectionpolicyreturnsokresponse1791474959"
+                    "name": "testgetaworkloadprotectionpolicyreturnsokresponse1791891569"
                   },
                   "type": "policy"
                 }
@@ -1676,7 +1676,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"fl1-qbh-z9h\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:staging\"]],\"monitoringRulesCount\":92,\"name\":\"testgetaworkloadprotectionpolicyreturnsokresponse1791474959\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"1\",\"ruleCount\":92,\"updateDate\":1791474959359,\"updater\":{\"name\":\"David Tapiador del Dujo\",\"handle\":\"david.tapiadordeldujo@datadoghq.com\"}}}}"
+              "value": "{\"data\":{\"id\":\"t3h-1qw-dt8\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:staging\"]],\"monitoringRulesCount\":9,\"name\":\"testgetaworkloadprotectionpolicyreturnsokresponse1791891569\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"1\",\"ruleCount\":9,\"updateDate\":1791891569832,\"updater\":{\"name\":\"C\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\"}}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -1693,13 +1693,13 @@
             },
             "content_type": "",
             "method": "GET",
-            "path": "/api/v2/remote_config/products/cws/policy/fl1-qbh-z9h",
+            "path": "/api/v2/remote_config/products/cws/policy/t3h-1qw-dt8",
             "query": []
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"fl1-qbh-z9h\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:staging\"]],\"monitoringRulesCount\":0,\"name\":\"testgetaworkloadprotectionpolicyreturnsokresponse1791474959\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"1\",\"ruleCount\":0,\"updateDate\":1791474959359,\"updater\":{\"name\":\"David Tapiador del Dujo\",\"handle\":\"david.tapiadordeldujo@datadoghq.com\"}}}}"
+              "value": "{\"data\":{\"id\":\"t3h-1qw-dt8\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:staging\"]],\"monitoringRulesCount\":0,\"name\":\"testgetaworkloadprotectionpolicyreturnsokresponse1791891569\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"1\",\"ruleCount\":0,\"updateDate\":1791891569832,\"updater\":{\"name\":\"C\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\"}}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -1716,7 +1716,7 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/remote_config/products/cws/policy/fl1-qbh-z9h",
+            "path": "/api/v2/remote_config/products/cws/policy/t3h-1qw-dt8",
             "query": []
           },
           "response": {
@@ -2058,7 +2058,7 @@
     },
     {
       "feature": "CSM Threats",
-      "frozen_at": "2026-10-08T15:56:00.491Z",
+      "frozen_at": "2026-10-13T11:39:30.785Z",
       "interactions": [
         {
           "request": {
@@ -2072,7 +2072,7 @@
                     "hostTags": [
                       "env:staging"
                     ],
-                    "name": "testupdateaworkloadprotectionagentrulereturnsbadrequestresponse1791474960"
+                    "name": "testupdateaworkloadprotectionagentrulereturnsbadrequestresponse1791891570"
                   },
                   "type": "policy"
                 }
@@ -2086,7 +2086,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"lzv-9ap-4iw\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:staging\"]],\"monitoringRulesCount\":92,\"name\":\"testupdateaworkloadprotectionagentrulereturnsbadrequestresponse1791474960\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"1\",\"ruleCount\":92,\"updateDate\":1791474960694,\"updater\":{\"name\":\"David Tapiador del Dujo\",\"handle\":\"david.tapiadordeldujo@datadoghq.com\"}}}}"
+              "value": "{\"data\":{\"id\":\"lau-cdn-6h2\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:staging\"]],\"monitoringRulesCount\":92,\"name\":\"testupdateaworkloadprotectionagentrulereturnsbadrequestresponse1791891570\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"1\",\"ruleCount\":92,\"updateDate\":1791891570891,\"updater\":{\"name\":\"C\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\"}}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -2117,8 +2117,8 @@
                     "description": "My Agent rule",
                     "enabled": true,
                     "expression": "exec.file.name == \"sh\"",
-                    "name": "testupdateaworkloadprotectionagentrulereturnsbadrequestresponse1791474960",
-                    "policy_id": "lzv-9ap-4iw",
+                    "name": "testupdateaworkloadprotectionagentrulereturnsbadrequestresponse1791891570",
+                    "policy_id": "lau-cdn-6h2",
                     "product_tags": [
                       "security:attack",
                       "technique:T1059"
@@ -2136,7 +2136,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"wpz-ibl-vhv\",\"type\":\"agent_rule\",\"attributes\":{\"actions\":[{\"set\":{\"name\":\"test_set\",\"value\":\"test_value\",\"scope\":\"process\"},\"disabled\":false},{\"hash\":{},\"disabled\":false}],\"blocking\":[],\"category\":\"Process Activity\",\"creationDate\":1791474961337,\"creator\":{\"name\":\"David Tapiador del Dujo\",\"handle\":\"david.tapiadordeldujo@datadoghq.com\"},\"defaultRule\":false,\"description\":\"My Agent rule\",\"disabled\":[],\"enabled\":true,\"expression\":\"exec.file.name == \\\"sh\\\"\",\"filters\":[\"os == \\\"linux\\\"\"],\"monitoring\":[\"lzv-9ap-4iw\"],\"name\":\"testupdateaworkloadprotectionagentrulereturnsbadrequestresponse1791474960\",\"product_tags\":[\"security:attack\",\"technique:T1059\"],\"updateDate\":1791474961337,\"updater\":{\"name\":\"David Tapiador del Dujo\",\"handle\":\"david.tapiadordeldujo@datadoghq.com\"}}}}"
+              "value": "{\"data\":{\"id\":\"btd-i6r-zmn\",\"type\":\"agent_rule\",\"attributes\":{\"actions\":[{\"set\":{\"name\":\"test_set\",\"value\":\"test_value\",\"scope\":\"process\"},\"disabled\":false},{\"hash\":{},\"disabled\":false}],\"blocking\":[],\"category\":\"Process Activity\",\"creationDate\":1791891571284,\"creator\":{\"name\":\"C\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\"},\"defaultRule\":false,\"description\":\"My Agent rule\",\"disabled\":[],\"enabled\":true,\"expression\":\"exec.file.name == \\\"sh\\\"\",\"filters\":[\"os == \\\"linux\\\"\"],\"monitoring\":[\"lau-cdn-6h2\"],\"name\":\"testupdateaworkloadprotectionagentrulereturnsbadrequestresponse1791891570\",\"product_tags\":[\"security:attack\",\"technique:T1059\"],\"updateDate\":1791891571284,\"updater\":{\"name\":\"C\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\"}}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -2155,7 +2155,7 @@
                     "description": "My Agent rule",
                     "enabled": true,
                     "expression": "exec.file.name == \"sh\"",
-                    "policy_id": "lzv-9ap-4iw",
+                    "policy_id": "lau-cdn-6h2",
                     "product_tags": []
                   },
                   "id": "invalid-agent-rule-id",
@@ -2165,7 +2165,7 @@
             },
             "content_type": "application/json",
             "method": "PATCH",
-            "path": "/api/v2/remote_config/products/cws/agent_rules/wpz-ibl-vhv",
+            "path": "/api/v2/remote_config/products/cws/agent_rules/btd-i6r-zmn",
             "query": []
           },
           "response": {
@@ -2188,7 +2188,7 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/remote_config/products/cws/agent_rules/wpz-ibl-vhv",
+            "path": "/api/v2/remote_config/products/cws/agent_rules/btd-i6r-zmn",
             "query": []
           },
           "response": {
@@ -2209,7 +2209,7 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/remote_config/products/cws/policy/lzv-9ap-4iw",
+            "path": "/api/v2/remote_config/products/cws/policy/lau-cdn-6h2",
             "query": []
           },
           "response": {
@@ -2228,7 +2228,7 @@
     },
     {
       "feature": "CSM Threats",
-      "frozen_at": "2026-10-08T15:56:03.268Z",
+      "frozen_at": "2026-10-13T11:39:32.945Z",
       "interactions": [
         {
           "request": {
@@ -2242,7 +2242,7 @@
                     "hostTags": [
                       "env:staging"
                     ],
-                    "name": "testupdateaworkloadprotectionagentrulereturnsnotfoundresponse1791474963"
+                    "name": "testupdateaworkloadprotectionagentrulereturnsnotfoundresponse1791891572"
                   },
                   "type": "policy"
                 }
@@ -2256,7 +2256,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"p7i-nhp-ijn\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:staging\"]],\"monitoringRulesCount\":260,\"name\":\"testupdateaworkloadprotectionagentrulereturnsnotfoundresponse1791474963\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"1\",\"ruleCount\":260,\"updateDate\":1791474963470,\"updater\":{\"name\":\"David Tapiador del Dujo\",\"handle\":\"david.tapiadordeldujo@datadoghq.com\"}}}}"
+              "value": "{\"data\":{\"id\":\"pup-pgi-rte\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:staging\"]],\"monitoringRulesCount\":260,\"name\":\"testupdateaworkloadprotectionagentrulereturnsnotfoundresponse1791891572\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"1\",\"ruleCount\":260,\"updateDate\":1791891573042,\"updater\":{\"name\":\"C\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\"}}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -2275,7 +2275,7 @@
                     "description": "My Agent rule",
                     "enabled": true,
                     "expression": "exec.file.name == \"sh\"",
-                    "policy_id": "p7i-nhp-ijn",
+                    "policy_id": "pup-pgi-rte",
                     "product_tags": []
                   },
                   "id": "non-existent-rule-id",
@@ -2308,7 +2308,7 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/remote_config/products/cws/policy/p7i-nhp-ijn",
+            "path": "/api/v2/remote_config/products/cws/policy/pup-pgi-rte",
             "query": []
           },
           "response": {
@@ -2327,7 +2327,7 @@
     },
     {
       "feature": "CSM Threats",
-      "frozen_at": "2026-10-08T15:56:04.783Z",
+      "frozen_at": "2026-10-13T11:39:34.393Z",
       "interactions": [
         {
           "request": {
@@ -2341,7 +2341,7 @@
                     "hostTags": [
                       "env:staging"
                     ],
-                    "name": "testupdateaworkloadprotectionpolicyreturnsbadrequestresponse1791474964"
+                    "name": "testupdateaworkloadprotectionpolicyreturnsbadrequestresponse1791891574"
                   },
                   "type": "policy"
                 }
@@ -2355,7 +2355,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"gzr-six-xb9\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:staging\"]],\"monitoringRulesCount\":260,\"name\":\"testupdateaworkloadprotectionpolicyreturnsbadrequestresponse1791474964\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"1\",\"ruleCount\":260,\"updateDate\":1791474964990,\"updater\":{\"name\":\"David Tapiador del Dujo\",\"handle\":\"david.tapiadordeldujo@datadoghq.com\"}}}}"
+              "value": "{\"data\":{\"id\":\"lc7-aps-hdo\",\"type\":\"policy\",\"attributes\":{\"blockingRulesCount\":0,\"contentPackUpdateAvailable\":null,\"datadogManaged\":false,\"description\":\"My agent policy\",\"disabledRulesCount\":0,\"enabled\":false,\"hostTagsLists\":[[\"env:staging\"]],\"monitoringRulesCount\":9,\"name\":\"testupdateaworkloadprotectionpolicyreturnsbadrequestresponse1791891574\",\"pinned\":false,\"policyType\":\"custom\",\"policyVersion\":\"1\",\"ruleCount\":9,\"updateDate\":1791891574492,\"updater\":{\"name\":\"C\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\"}}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -2383,14 +2383,14 @@
                     ],
                     "name": ""
                   },
-                  "id": "gzr-six-xb9",
+                  "id": "lc7-aps-hdo",
                   "type": "policy"
                 }
               }
             },
             "content_type": "application/json",
             "method": "PATCH",
-            "path": "/api/v2/remote_config/products/cws/policy/gzr-six-xb9",
+            "path": "/api/v2/remote_config/products/cws/policy/lc7-aps-hdo",
             "query": []
           },
           "response": {
@@ -2413,7 +2413,7 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/remote_config/products/cws/policy/gzr-six-xb9",
+            "path": "/api/v2/remote_config/products/cws/policy/lc7-aps-hdo",
             "query": []
           },
           "response": {
