@@ -1,0 +1,42 @@
+{
+  "api": "FeatureFlags",
+  "expected_status": 400,
+  "feature": "Feature Flags",
+  "id": "v2/Feature Flags/List feature flags rejects empty team handles",
+  "operation_id": "ListFeatureFlags",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": true,
+        "in": "query",
+        "name": "teams",
+        "required": false,
+        "schema": {
+          "format": null,
+          "items": {
+            "format": null,
+            "ref": null,
+            "type": "string"
+          },
+          "ref": null,
+          "type": "array"
+        },
+        "source": {
+          "type": "literal",
+          "value": [
+            ""
+          ]
+        },
+        "style": "form"
+      }
+    ],
+    "path": "/api/v2/feature-flags"
+  },
+  "scenario": "List feature flags rejects empty team handles",
+  "schema_version": 1,
+  "version": "v2"
+}

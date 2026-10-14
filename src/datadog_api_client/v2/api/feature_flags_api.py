@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict, Union
+from typing import Any, Dict, List, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -13,6 +13,10 @@ from datadog_api_client.model_utils import (
     UUID,
 )
 from datadog_api_client.v2.model.list_feature_flags_response import ListFeatureFlagsResponse
+from datadog_api_client.v2.model.feature_flag_production_status import FeatureFlagProductionStatus
+from datadog_api_client.v2.model.feature_flag_distribution_channel import FeatureFlagDistributionChannel
+from datadog_api_client.v2.model.value_type import ValueType
+from datadog_api_client.v2.model.feature_flag_staleness_status import FeatureFlagStalenessStatus
 from datadog_api_client.v2.model.feature_flag_response import FeatureFlagResponse
 from datadog_api_client.v2.model.create_feature_flag_request import CreateFeatureFlagRequest
 from datadog_api_client.v2.model.list_environments_response import ListEnvironmentsResponse
@@ -352,6 +356,84 @@ class FeatureFlagsApi:
                     },
                     "openapi_types": (int,),
                     "attribute": "offset",
+                    "location": "query",
+                },
+                "tags": {
+                    "openapi_types": ([str],),
+                    "attribute": "tags",
+                    "location": "query",
+                    "collection_format": "multi",
+                },
+                "teams": {
+                    "openapi_types": ([str],),
+                    "attribute": "teams",
+                    "location": "query",
+                    "collection_format": "multi",
+                },
+                "production_status": {
+                    "openapi_types": ([FeatureFlagProductionStatus],),
+                    "attribute": "production_status",
+                    "location": "query",
+                    "collection_format": "multi",
+                },
+                "distribution_channel": {
+                    "openapi_types": (FeatureFlagDistributionChannel,),
+                    "attribute": "distribution_channel",
+                    "location": "query",
+                },
+                "search": {
+                    "openapi_types": (str,),
+                    "attribute": "search",
+                    "location": "query",
+                },
+                "value_type": {
+                    "openapi_types": ([ValueType],),
+                    "attribute": "value_type",
+                    "location": "query",
+                    "collection_format": "multi",
+                },
+                "created_by": {
+                    "openapi_types": ([UUID],),
+                    "attribute": "created_by",
+                    "location": "query",
+                    "collection_format": "multi",
+                },
+                "flag_ids": {
+                    "openapi_types": ([UUID],),
+                    "attribute": "flag_ids",
+                    "location": "query",
+                    "collection_format": "multi",
+                },
+                "staleness_status": {
+                    "openapi_types": (FeatureFlagStalenessStatus,),
+                    "attribute": "staleness_status",
+                    "location": "query",
+                },
+                "saved_filter_id": {
+                    "openapi_types": (UUID,),
+                    "attribute": "saved_filter_id",
+                    "location": "query",
+                },
+                "sort": {
+                    "openapi_types": (str,),
+                    "attribute": "sort",
+                    "location": "query",
+                },
+                "page_limit": {
+                    "validation": {
+                        "inclusive_maximum": 50,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
+                    "location": "query",
+                },
+                "page_offset": {
+                    "validation": {
+                        "inclusive_minimum": 0,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[offset]",
                     "location": "query",
                 },
             },
@@ -871,20 +953,60 @@ class FeatureFlagsApi:
         is_archived: Union[bool, UnsetType] = unset,
         limit: Union[int, UnsetType] = unset,
         offset: Union[int, UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
+        teams: Union[List[str], UnsetType] = unset,
+        production_status: Union[List[FeatureFlagProductionStatus], UnsetType] = unset,
+        distribution_channel: Union[FeatureFlagDistributionChannel, UnsetType] = unset,
+        search: Union[str, UnsetType] = unset,
+        value_type: Union[List[ValueType], UnsetType] = unset,
+        created_by: Union[List[UUID], UnsetType] = unset,
+        flag_ids: Union[List[UUID], UnsetType] = unset,
+        staleness_status: Union[FeatureFlagStalenessStatus, UnsetType] = unset,
+        saved_filter_id: Union[UUID, UnsetType] = unset,
+        sort: Union[str, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+        page_offset: Union[int, UnsetType] = unset,
     ) -> ListFeatureFlagsResponse:
         """List feature flags.
 
-        Returns a list of feature flags for the organization.
-        Supports filtering by key and archived status.
+        Returns a paginated list of feature flags for the organization.
+        Supports filtering by key, tags, teams, SDK availability, production status, and other flag properties.
+        Use ``page[limit]`` and ``page[offset]`` to paginate, or follow the ``next`` link in the response.
 
-        :param key: Filter feature flags by key (partial matching).
+        :param key: Filter feature flags by an exact, case-sensitive key. Use ``search`` for partial matching.
         :type key: str, optional
-        :param is_archived: Filter by archived status.
+        :param is_archived: Filter by archived status. If ``true`` , return only archived flags. If ``false`` , return only flags that are not archived. If omitted, return both.
         :type is_archived: bool, optional
-        :param limit: Maximum number of results to return.
+        :param limit: Deprecated alias for ``page[limit]``. Use ``page[limit]`` for new requests. Used only when ``page[limit]`` is absent. When both parameters are omitted, the server defaults to ``25``. Values that exceed ``50`` are set to ``50`` ; non-positive or empty values use the server default.
         :type limit: int, optional
-        :param offset: Number of results to skip.
+        :param offset: Deprecated alias for ``page[offset]``. Used only when ``page[offset]`` is absent. Defaults to ``0``. Negative or empty values are set to ``0``.
         :type offset: int, optional
+        :param tags: Filter by exact tag values using repeated parameters, such as ``tags=env:prod&tags=purpose:sitemap``. A flag must have all ordinary tags. Values of the form ``team:<handle>`` match any selected team and are combined with ``teams`` into one set. The result must match all ordinary tags, any selected team, and all other filters. Empty values are ignored.
+        :type tags: [str], optional
+        :param teams: Filter by team handles without the ``team:`` prefix. Use repeated parameters to filter by multiple team handles, such as ``teams=checkout&teams=payments``. A flag must belong to at least one selected team. Team handles from ``teams`` and ``team:<handle>`` values from tags are treated as a single set and combined with ordinary tags and other filters using AND logic. Duplicate handles do not duplicate results. Unknown handles do not match any flags. Empty handles, surrounding white space, or using the ``team:`` prefix return a bad request error. Response tags are unchanged.
+        :type teams: [str], optional
+        :param production_status: Filter by status across production environments. Use repeated parameters to match any selected status. ``ENABLED`` matches at least one enabled production environment without a variant override. ``OVERRIDDEN`` matches at least one enabled production environment with a variant override. ``DISABLED`` matches flags whose associated production environments are all disabled. A flag can match both ``ENABLED`` and ``OVERRIDDEN`` in different environments. Flags without associated production environments do not match. This does not filter by a specific environment. Unknown values do not match any status.
+        :type production_status: [FeatureFlagProductionStatus], optional
+        :param distribution_channel: Filter by SDK availability. ``CLIENT`` returns flags with channel ``CLIENT`` or ``ALL``. ``SERVER`` returns flags with channel ``SERVER`` or ``ALL``. ``ALL`` , an empty value, or omission applies no channel restriction; it does not select only flags whose channel is ``ALL``. Values are case-insensitive and surrounding white space is ignored. Invalid values return a bad request error.
+        :type distribution_channel: FeatureFlagDistributionChannel, optional
+        :param search: Case-insensitive substring search on flag names, keys, and tag names. Combined with all other filters. An empty value applies no search restriction.
+        :type search: str, optional
+        :param value_type: Filter by variant value types using repeated parameters. A flag must match at least one selected type. Empty values are ignored. Invalid types return a bad request error.
+        :type value_type: [ValueType], optional
+        :param created_by: Filter by creator UUIDs using repeated parameters. A flag must match at least one creator. Empty values are ignored. Invalid UUIDs return a bad request error.
+        :type created_by: [UUID], optional
+        :param flag_ids: Filter by feature flag UUIDs using repeated parameters. A flag must match at least one ID and all other filters. Duplicate IDs return each flag once. Unknown IDs and IDs from other organizations do not match any flags. Empty or invalid UUIDs return a bad request error. Pagination still applies.
+        :type flag_ids: [UUID], optional
+        :param staleness_status: Filter by the computed staleness status: ``ACTIVE`` , ``STALE`` , or ``PERMANENT``. Values are case-insensitive and surrounding white space is ignored. An empty value or omission applies no restriction. Invalid values return a bad request error. Read the computed result from ``staleness_details.staleness_status`` , not the legacy ``staleness_status`` response field.
+        :type staleness_status: FeatureFlagStalenessStatus, optional
+        :param saved_filter_id: Filter to flags that reference this saved filter in their targeting conditions. An empty value or omission applies no restriction. An invalid UUID returns a bad request error.
+        :type saved_filter_id: UUID, optional
+        :param sort: Sort by ``name`` , ``updated_at`` , ``created_at`` , or ``evaluations``. Use a comma-separated list for multiple sort fields and prefix a field with ``-`` for descending order. The default is ``updated_at`` descending. When favorites are enabled, the authenticated user's favorite flags take precedence over the selected ordering. Unknown fields return a bad request error.
+        :type sort: str, optional
+        :param page_limit: Maximum number of flags to return. Defaults to ``25`` and is capped at ``50``. Values that exceed ``50`` are set to ``50``. Non-positive or empty values use the default. A non-integer value returns a bad request error. Takes precedence over ``limit`` when both are present. Pagination applies even when no pagination parameters are supplied.
+        :type page_limit: int, optional
+        :param page_offset: Number of matching flags to skip before returning results. Defaults to ``0``. Negative or empty values are set to ``0``. A non-integer value returns a bad request error. Takes precedence over ``offset`` when both are present.
+        :type page_offset: int, optional
         :rtype: ListFeatureFlagsResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -899,6 +1021,45 @@ class FeatureFlagsApi:
 
         if offset is not unset:
             kwargs["offset"] = offset
+
+        if tags is not unset:
+            kwargs["tags"] = tags
+
+        if teams is not unset:
+            kwargs["teams"] = teams
+
+        if production_status is not unset:
+            kwargs["production_status"] = production_status
+
+        if distribution_channel is not unset:
+            kwargs["distribution_channel"] = distribution_channel
+
+        if search is not unset:
+            kwargs["search"] = search
+
+        if value_type is not unset:
+            kwargs["value_type"] = value_type
+
+        if created_by is not unset:
+            kwargs["created_by"] = created_by
+
+        if flag_ids is not unset:
+            kwargs["flag_ids"] = flag_ids
+
+        if staleness_status is not unset:
+            kwargs["staleness_status"] = staleness_status
+
+        if saved_filter_id is not unset:
+            kwargs["saved_filter_id"] = saved_filter_id
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
 
         return self._list_feature_flags_endpoint.call_with_http_info(**kwargs)
 

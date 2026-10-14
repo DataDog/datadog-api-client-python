@@ -1,0 +1,35 @@
+{
+  "api": "FeatureFlags",
+  "expected_status": 400,
+  "feature": "Feature Flags",
+  "id": "v2/Feature Flags/List feature flags rejects unknown sort fields",
+  "operation_id": "ListFeatureFlags",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "sort",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "invalid"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/feature-flags"
+  },
+  "scenario": "List feature flags rejects unknown sort fields",
+  "schema_version": 1,
+  "version": "v2"
+}

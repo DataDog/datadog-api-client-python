@@ -559,11 +559,59 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\"data\": {\"type\": \"feature-flags\", \"attributes\": {\"key\": \"list-a-{{ unique_lower }}\", \"name\": \"List A {{ unique }}\", \"description\": \"Feature flag for list API tests.\", \"value_type\": \"BOOLEAN\", \"variants\": [{\"key\": \"on\", \"name\": \"On\", \"value\": \"true\"}, {\"key\": \"off\", \"name\": \"Off\", \"value\": \"false\"}], \"default_variant_key\": \"off\", \"distribution_channel\": \"CLIENT\", \"staleness_status\": \"PERMANENT\", \"require_approval\": false, \"tags\": [\"list-test:{{ unique_lower }}\", \"color:blue\", \"team:api-client-test-a\"]}}}"
+      }
+    ],
+    "step": "there is a valid \"feature_flag_list_a\" in the system",
+    "key": "feature_flag_list_a",
+    "tag": "Feature Flags",
+    "operationId": "CreateFeatureFlag"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\"data\": {\"type\": \"feature-flags\", \"attributes\": {\"key\": \"list-b-{{ unique_lower }}\", \"name\": \"List B {{ unique }}\", \"description\": \"Feature flag for list API tests.\", \"value_type\": \"BOOLEAN\", \"variants\": [{\"key\": \"on\", \"name\": \"On\", \"value\": \"true\"}, {\"key\": \"off\", \"name\": \"Off\", \"value\": \"false\"}], \"default_variant_key\": \"off\", \"distribution_channel\": \"ALL\", \"staleness_status\": \"ACTIVE\", \"require_approval\": false, \"tags\": [\"list-test:{{ unique_lower }}\", \"color:red\", \"team:api-client-test-b\"]}}}"
+      }
+    ],
+    "step": "there is a valid \"feature_flag_list_b\" in the system",
+    "key": "feature_flag_list_b",
+    "tag": "Feature Flags",
+    "operationId": "CreateFeatureFlag"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\"data\": {\"type\": \"feature-flags\", \"attributes\": {\"key\": \"list-c-{{ unique_lower }}\", \"name\": \"List C {{ unique }}\", \"description\": \"Feature flag for list API tests.\", \"value_type\": \"BOOLEAN\", \"variants\": [{\"key\": \"on\", \"name\": \"On\", \"value\": \"true\"}, {\"key\": \"off\", \"name\": \"Off\", \"value\": \"false\"}], \"default_variant_key\": \"off\", \"distribution_channel\": \"SERVER\", \"staleness_status\": \"ACTIVE\", \"require_approval\": false, \"tags\": [\"list-test:{{ unique_lower }}\", \"color:green\", \"team:api-client-test-c\"]}}}"
+      }
+    ],
+    "step": "there is a valid \"feature_flag_list_c\" in the system",
+    "key": "feature_flag_list_c",
+    "tag": "Feature Flags",
+    "operationId": "CreateFeatureFlag"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\"data\": {\"type\": \"environments\", \"attributes\": {\"name\": \"Test Environment {{ unique }}\", \"queries\": [\"test-{{ unique }}\", \"env-{{ unique }}\"]}}}"
       }
     ],
     "step": "there is a valid \"environment\" in the system",
     "key": "environment",
+    "tag": "Feature Flags",
+    "operationId": "CreateFeatureFlagsEnvironment"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\"data\": {\"type\": \"environments\", \"attributes\": {\"name\": \"List Production {{ unique }}\", \"queries\": [\"list-production-{{ unique_lower }}\"], \"is_production\": true, \"require_feature_flag_approval\": false}}}"
+      }
+    ],
+    "step": "there is a valid \"production_environment\" in the system",
+    "key": "production_environment",
     "tag": "Feature Flags",
     "operationId": "CreateFeatureFlagsEnvironment"
   },

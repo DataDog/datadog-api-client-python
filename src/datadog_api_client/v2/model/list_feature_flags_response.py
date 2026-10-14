@@ -15,6 +15,7 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.feature_flag_list_item import FeatureFlagListItem
+    from datadog_api_client.v2.model.feature_flags_pagination_links import FeatureFlagsPaginationLinks
     from datadog_api_client.v2.model.feature_flags_pagination_meta import FeatureFlagsPaginationMeta
 
 
@@ -22,20 +23,27 @@ class ListFeatureFlagsResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.feature_flag_list_item import FeatureFlagListItem
+        from datadog_api_client.v2.model.feature_flags_pagination_links import FeatureFlagsPaginationLinks
         from datadog_api_client.v2.model.feature_flags_pagination_meta import FeatureFlagsPaginationMeta
 
         return {
             "data": ([FeatureFlagListItem],),
+            "links": (FeatureFlagsPaginationLinks,),
             "meta": (FeatureFlagsPaginationMeta,),
         }
 
     attribute_map = {
         "data": "data",
+        "links": "links",
         "meta": "meta",
     }
 
     def __init__(
-        self_, data: List[FeatureFlagListItem], meta: Union[FeatureFlagsPaginationMeta, UnsetType] = unset, **kwargs
+        self_,
+        data: List[FeatureFlagListItem],
+        links: Union[FeatureFlagsPaginationLinks, UnsetType] = unset,
+        meta: Union[FeatureFlagsPaginationMeta, UnsetType] = unset,
+        **kwargs,
     ):
         """
         Response containing a list of feature flags.
@@ -43,9 +51,14 @@ class ListFeatureFlagsResponse(ModelNormal):
         :param data: List of feature flags.
         :type data: [FeatureFlagListItem]
 
+        :param links: Pagination links. Follow ``next`` with the same authentication to retrieve the next page. Links use ``page[limit]`` and ``page[offset]`` and preserve the filters. Navigation links are omitted when not applicable.
+        :type links: FeatureFlagsPaginationLinks, optional
+
         :param meta: Pagination metadata for feature flags.
         :type meta: FeatureFlagsPaginationMeta, optional
         """
+        if links is not unset:
+            kwargs["links"] = links
         if meta is not unset:
             kwargs["meta"] = meta
         super().__init__(kwargs)

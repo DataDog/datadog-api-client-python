@@ -1,0 +1,35 @@
+{
+  "api": "FeatureFlags",
+  "expected_status": 200,
+  "feature": "Feature Flags",
+  "id": "v2/Feature Flags/List feature flags applies default pagination",
+  "operation_id": "ListFeatureFlags",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "key",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "missing-{{ unique_lower }}"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/feature-flags"
+  },
+  "scenario": "List feature flags applies default pagination",
+  "schema_version": 1,
+  "version": "v2"
+}
