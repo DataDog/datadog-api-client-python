@@ -36,10 +36,10 @@ class CaseBulkUpdateRequestData(ModelNormal):
         """
         Data object wrapping the bulk update type and attributes.
 
-        :param attributes: Attributes for the bulk update, specifying which cases to update and the action to apply.
+        :param attributes: Attributes for the bulk update, specifying which work items to update and the action to apply.
         :type attributes: CaseBulkUpdateRequestAttributes
 
-        :param type: JSON:API resource type for bulk case operations.
+        :param type: JSON:API resource type for bulk work item operations.
         :type type: CaseBulkResourceType
         """
         super().__init__(kwargs)

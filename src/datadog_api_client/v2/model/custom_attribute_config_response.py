@@ -34,7 +34,7 @@ class CustomAttributeConfigResponse(ModelNormal):
         """
         Response containing a single custom attribute configuration.
 
-        :param data: A custom attribute configuration that defines an organization-specific metadata field on cases. Custom attributes are scoped to a case type and can hold text, URLs, numbers, or predefined select options.
+        :param data: A custom attribute configuration that defines an organization-specific metadata field on work items. Custom attributes are scoped to a work item type and can hold text, URLs, numbers, or predefined select options.
         :type data: CustomAttributeConfig, optional
         """
         if data is not unset:

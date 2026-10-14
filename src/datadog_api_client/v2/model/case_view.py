@@ -49,18 +49,18 @@ class CaseView(ModelNormal):
         **kwargs,
     ):
         """
-        A saved case view that provides a filtered, reusable list of cases matching a specific query. Views act as persistent dashboards for monitoring case subsets.
+        A saved work item view that provides a filtered, reusable list of work items matching a specific query. Views act as persistent dashboards for monitoring work item subsets.
 
-        :param attributes: Attributes of a case view, including the filter query and optional notification rule.
+        :param attributes: Attributes of a work item view, including the filter query and optional notification rule.
         :type attributes: CaseViewAttributes
 
         :param id: The view's identifier.
         :type id: str
 
-        :param relationships: Related resources for the case view, including the creator, last modifier, and associated project.
+        :param relationships: Related resources for the work item view, including the creator, last modifier, and associated project.
         :type relationships: CaseViewRelationships, optional
 
-        :param type: JSON:API resource type for case views.
+        :param type: JSON:API resource type for work item views.
         :type type: CaseViewResourceType
         """
         if relationships is not unset:

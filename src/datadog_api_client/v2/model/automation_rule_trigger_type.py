@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class AutomationRuleTriggerType(ModelSimple):
     """
-    The case event that activates the automation rule.
+    The work item event that activates the automation rule.
 
     :param value: Must be one of ["CASE_CREATED", "STATUS_TRANSITIONED", "ATTRIBUTE_VALUE_CHANGED", "EVENT_CORRELATION_SIGNAL_CORRELATED", "CASE_REVIEW_APPROVED", "COMMENT_ADDED"].
     :type value: str

@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class CaseAutomationRuleResourceType(ModelSimple):
     """
-    JSON:API resource type for case automation rules.
+    JSON:API resource type for work item automation rules.
 
     :param value: If omitted defaults to "rule". Must be one of ["rule"].
     :type value: str

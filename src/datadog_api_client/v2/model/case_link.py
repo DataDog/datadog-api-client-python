@@ -36,15 +36,15 @@ class CaseLink(ModelNormal):
 
     def __init__(self_, attributes: CaseLinkAttributes, id: str, type: CaseLinkResourceType, **kwargs):
         """
-        A directional link representing a relationship between two entities. At least one entity must be a case.
+        A directional link representing a relationship between two entities. At least one entity must be a work item.
 
-        :param attributes: Attributes describing a directional relationship between two entities (cases, incidents, or pages).
+        :param attributes: Attributes describing a directional relationship between two entities (work items, incidents, or pages).
         :type attributes: CaseLinkAttributes
 
-        :param id: The case link identifier.
+        :param id: The work item link identifier.
         :type id: str
 
-        :param type: JSON:API resource type for case links.
+        :param type: JSON:API resource type for work item links.
         :type type: CaseLinkResourceType
         """
         super().__init__(kwargs)

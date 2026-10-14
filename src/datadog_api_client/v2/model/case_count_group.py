@@ -32,7 +32,7 @@ class CaseCountGroup(ModelNormal):
 
     def __init__(self_, group: str, group_values: List[CaseCountGroupValue], **kwargs):
         """
-        A facet group containing counts broken down by the distinct values of a case field (for example, status or priority).
+        A facet group containing counts broken down by the distinct values of a work item field (for example, status or priority).
 
         :param group: The name of the field being grouped on (for example, ``status`` or ``priority`` ).
         :type group: str

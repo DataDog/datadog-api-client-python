@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class CaseBulkResourceType(ModelSimple):
     """
-    JSON:API resource type for bulk case operations.
+    JSON:API resource type for bulk work item operations.
 
     :param value: If omitted defaults to "bulk". Must be one of ["bulk"].
     :type value: str

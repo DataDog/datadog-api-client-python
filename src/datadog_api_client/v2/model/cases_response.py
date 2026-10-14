@@ -38,12 +38,12 @@ class CasesResponse(ModelNormal):
         self_, data: Union[List[Case], UnsetType] = unset, meta: Union[CasesResponseMeta, UnsetType] = unset, **kwargs
     ):
         """
-        Response with cases
+        Response with work items
 
-        :param data: Cases response data
+        :param data: Work items response data
         :type data: [Case], optional
 
-        :param meta: Cases response metadata
+        :param meta: Work items response metadata
         :type meta: CasesResponseMeta, optional
         """
         if data is not unset:

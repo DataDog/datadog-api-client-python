@@ -42,9 +42,9 @@ class CaseBulkUpdateRequestAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes for the bulk update, specifying which cases to update and the action to apply.
+        Attributes for the bulk update, specifying which work items to update and the action to apply.
 
-        :param case_ids: An array of case identifiers to apply the bulk action to.
+        :param case_ids: An array of work item identifiers to apply the bulk action to.
         :type case_ids: [str]
 
         :param payload: A key-value map of action-specific parameters. The required keys depend on the action type (for example, ``priority`` for the priority action, ``assignee_id`` for assign).

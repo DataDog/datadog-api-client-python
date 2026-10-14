@@ -30,9 +30,9 @@ class CaseCreateRequest(ModelNormal):
 
     def __init__(self_, data: CaseCreate, **kwargs):
         """
-        Case create request
+        Work item create request
 
-        :param data: Case creation data
+        :param data: Work item creation data
         :type data: CaseCreate
         """
         super().__init__(kwargs)

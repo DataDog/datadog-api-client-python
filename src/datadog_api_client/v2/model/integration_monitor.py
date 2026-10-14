@@ -44,7 +44,7 @@ class IntegrationMonitor(ModelNormal):
         :param auto_resolve_enabled: Whether auto-resolve is enabled.
         :type auto_resolve_enabled: bool, optional
 
-        :param case_type_id: Case type ID for monitor integration.
+        :param case_type_id: Work item type ID for monitor integration.
         :type case_type_id: str, optional
 
         :param enabled: Whether monitor integration is enabled.

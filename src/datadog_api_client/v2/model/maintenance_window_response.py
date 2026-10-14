@@ -32,7 +32,7 @@ class MaintenanceWindowResponse(ModelNormal):
         """
         Response containing a single maintenance window.
 
-        :param data: A maintenance window that defines a scheduled time period during which case-related notifications and automation rules are suppressed. Each maintenance window applies to cases matching a specified query.
+        :param data: A maintenance window that defines a scheduled time period during which notifications and automation rules related to work items are suppressed. Each maintenance window applies to work items matching a specified query.
         :type data: MaintenanceWindow
         """
         super().__init__(kwargs)

@@ -108,57 +108,57 @@ class CaseAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Case resource attributes
+        Work item resource attributes
 
-        :param archived_at: Timestamp of when the case was archived
+        :param archived_at: Timestamp of when the work item was archived
         :type archived_at: datetime, none_type, optional
 
-        :param attributes: Key-value pairs of case attributes. Each key maps to an array of string values, used for flexible metadata such as labels or tags.
+        :param attributes: Key-value pairs of work item attributes. Each key maps to an array of string values, used for flexible metadata such as labels or tags.
         :type attributes: CaseObjectAttributes, optional
 
-        :param closed_at: Timestamp of when the case was closed
+        :param closed_at: Timestamp of when the work item was closed
         :type closed_at: datetime, none_type, optional
 
-        :param created_at: Timestamp of when the case was created
+        :param created_at: Timestamp of when the work item was created
         :type created_at: datetime, optional
 
-        :param custom_attributes: Case custom attributes
+        :param custom_attributes: Work item custom attributes
         :type custom_attributes: {str: (CustomAttributeValue,)}, optional
 
         :param description: Description
         :type description: str, optional
 
-        :param jira_issue: Jira issue attached to case
+        :param jira_issue: Jira issue attached to work item
         :type jira_issue: JiraIssue, none_type, optional
 
         :param key: Key
         :type key: str, optional
 
-        :param modified_at: Timestamp of when the case was last modified
+        :param modified_at: Timestamp of when the work item was last modified
         :type modified_at: datetime, none_type, optional
 
-        :param priority: Case priority
+        :param priority: Work item priority
         :type priority: CasePriority, optional
 
-        :param service_now_ticket: ServiceNow ticket attached to case
+        :param service_now_ticket: ServiceNow ticket attached to work item
         :type service_now_ticket: ServiceNowTicket, none_type, optional
 
-        :param status: Deprecated way of representing the case status, which only supports OPEN, IN_PROGRESS, and CLOSED statuses. Use ``status_name`` instead. **Deprecated**.
+        :param status: Deprecated way of representing the work item status, which only supports OPEN, IN_PROGRESS, and CLOSED statuses. Use ``status_name`` instead. **Deprecated**.
         :type status: CaseStatus, optional
 
-        :param status_group: Status group of the case.
+        :param status_group: Status group of the work item.
         :type status_group: CaseStatusGroup, optional
 
-        :param status_name: Status of the case. Must be one of the existing statuses for the case's type.
+        :param status_name: Status of the work item. Must be one of the existing statuses for the work item's type.
         :type status_name: str, optional
 
         :param title: Title
         :type title: str, optional
 
-        :param type: Case type **Deprecated**.
+        :param type: Work item type **Deprecated**.
         :type type: CaseType, optional
 
-        :param type_id: Case type UUID
+        :param type_id: Work item type UUID
         :type type_id: str, optional
         """
         if archived_at is not unset:

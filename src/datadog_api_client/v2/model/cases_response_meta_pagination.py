@@ -41,7 +41,7 @@ class CasesResponseMetaPagination(ModelNormal):
         :param current: Current page number
         :type current: int, optional
 
-        :param size: Number of cases in current page
+        :param size: Number of work items in current page
         :type size: int, optional
 
         :param total: Total number of pages

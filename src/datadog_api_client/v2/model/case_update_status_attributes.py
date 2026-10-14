@@ -36,12 +36,12 @@ class CaseUpdateStatusAttributes(ModelNormal):
         self_, status: Union[CaseStatus, UnsetType] = unset, status_name: Union[str, UnsetType] = unset, **kwargs
     ):
         """
-        Case update status attributes
+        Work item update status attributes
 
-        :param status: Deprecated way of representing the case status, which only supports OPEN, IN_PROGRESS, and CLOSED statuses. Use ``status_name`` instead. **Deprecated**.
+        :param status: Deprecated way of representing the work item status, which only supports OPEN, IN_PROGRESS, and CLOSED statuses. Use ``status_name`` instead. **Deprecated**.
         :type status: CaseStatus, optional
 
-        :param status_name: Status of the case. Must be one of the existing statuses for the case's type.
+        :param status_name: Status of the work item. Must be one of the existing statuses for the work item's type.
         :type status_name: str, optional
         """
         if status is not unset:

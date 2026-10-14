@@ -31,7 +31,7 @@ class CaseAggregateGroup(ModelNormal):
         :param group: The value of the field being grouped on (for example, ``OPEN`` when grouping by status).
         :type group: str
 
-        :param value: The count of cases in this group.
+        :param value: The count of work items in this group.
         :type value: [float]
         """
         super().__init__(kwargs)

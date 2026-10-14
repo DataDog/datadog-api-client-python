@@ -36,12 +36,12 @@ class CaseUpdateResolvedReason(ModelNormal):
 
     def __init__(self_, attributes: CaseUpdateResolvedReasonAttributes, type: CaseResourceType, **kwargs):
         """
-        Data object for updating a case's resolved reason.
+        Data object for updating a work item's resolved reason.
 
-        :param attributes: Attributes for setting the resolution reason on a security case.
+        :param attributes: Attributes for setting the resolution reason on a security work item.
         :type attributes: CaseUpdateResolvedReasonAttributes
 
-        :param type: JSON:API resource type for cases.
+        :param type: JSON:API resource type for work items.
         :type type: CaseResourceType
         """
         super().__init__(kwargs)

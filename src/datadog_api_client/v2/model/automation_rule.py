@@ -49,7 +49,7 @@ class AutomationRule(ModelNormal):
         **kwargs,
     ):
         """
-        An automation rule that executes an action (such as running a Datadog workflow or assigning an AI agent) when a specified case event occurs within a project.
+        An automation rule that executes an action (such as running a Datadog workflow or assigning an AI agent) when a specified work item event occurs within a project.
 
         :param attributes: Core attributes of an automation rule, including its name, trigger condition, action to execute, and current state.
         :type attributes: AutomationRuleAttributes
@@ -60,7 +60,7 @@ class AutomationRule(ModelNormal):
         :param relationships: Related resources for the automation rule, including the users who created and last modified it.
         :type relationships: AutomationRuleRelationships, optional
 
-        :param type: JSON:API resource type for case automation rules.
+        :param type: JSON:API resource type for work item automation rules.
         :type type: CaseAutomationRuleResourceType
         """
         if relationships is not unset:

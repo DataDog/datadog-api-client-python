@@ -30,9 +30,9 @@ class CaseUpdateCommentRequest(ModelNormal):
 
     def __init__(self_, data: CaseUpdateComment, **kwargs):
         """
-        Request payload for updating a comment on a case timeline.
+        Request payload for updating a comment on a work item timeline.
 
-        :param data: Data object for updating a case comment.
+        :param data: Data object for updating a work item comment.
         :type data: CaseUpdateComment
         """
         super().__init__(kwargs)

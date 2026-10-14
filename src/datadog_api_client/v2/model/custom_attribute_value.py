@@ -42,7 +42,7 @@ class CustomAttributeValue(ModelNormal):
         **kwargs,
     ):
         """
-        A typed value for a custom attribute on a specific case.
+        A typed value for a custom attribute on a specific work item.
 
         :param is_multi: If true, value must be an array
         :type is_multi: bool

@@ -30,9 +30,9 @@ class CaseUpdateResolvedReasonRequest(ModelNormal):
 
     def __init__(self_, data: CaseUpdateResolvedReason, **kwargs):
         """
-        Request payload for updating the resolution reason on a closed security case.
+        Request payload for updating the resolution reason on a closed security work item.
 
-        :param data: Data object for updating a case's resolved reason.
+        :param data: Data object for updating a work item's resolved reason.
         :type data: CaseUpdateResolvedReason
         """
         super().__init__(kwargs)

@@ -23,7 +23,7 @@ class CaseCommentAttributes(ModelNormal):
 
     def __init__(self_, comment: str, **kwargs):
         """
-        Case comment attributes
+        Work item comment attributes
 
         :param comment: The ``CaseCommentAttributes`` ``message``.
         :type comment: str

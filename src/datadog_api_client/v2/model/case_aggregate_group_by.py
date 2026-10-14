@@ -32,7 +32,7 @@ class CaseAggregateGroupBy(ModelNormal):
 
     def __init__(self_, groups: List[str], limit: int, **kwargs):
         """
-        Configuration for grouping aggregated results by one or more case fields.
+        Configuration for grouping aggregated results by one or more work item fields.
 
         :param groups: Fields to group by.
         :type groups: [str]

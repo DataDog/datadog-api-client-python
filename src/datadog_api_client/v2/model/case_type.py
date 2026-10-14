@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class CaseType(ModelSimple):
     """
-    Case type
+    Work item type
 
     :param value: If omitted defaults to "STANDARD". Must be one of ["STANDARD"].
     :type value: str
