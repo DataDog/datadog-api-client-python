@@ -58,7 +58,6 @@ body = RUMOperationCreateRequest(
 
 configuration = Configuration()
 configuration.access_token = environ["DD_BEARER_TOKEN"]
-configuration.unstable_operations["create_rum_operation"] = True
 with ApiClient(configuration) as api_client:
     api_instance = RUMOperationsApi(api_client)
     response = api_instance.create_rum_operation(body=body)
