@@ -3361,6 +3361,7 @@ from datadog_api_client.v2.model.experiments_conclude_experiment_v2_request_data
 from datadog_api_client.v2.model.experiments_conclude_experiment_v2_request_data_type import (
     ExperimentsConcludeExperimentV2RequestDataType,
 )
+from datadog_api_client.v2.model.experiments_confidence_interval import ExperimentsConfidenceInterval
 from datadog_api_client.v2.model.experiments_create_experiment_metric_group_v2_request import (
     ExperimentsCreateExperimentMetricGroupV2Request,
 )
@@ -3382,9 +3383,6 @@ from datadog_api_client.v2.model.experiments_create_experiment_v2_request_data_a
 )
 from datadog_api_client.v2.model.experiments_create_experiment_v2_request_data_attributes_datadog_flag_configuration import (
     ExperimentsCreateExperimentV2RequestDataAttributesDatadogFlagConfiguration,
-)
-from datadog_api_client.v2.model.experiments_create_experiment_v2_request_data_attributes_datadog_flag_configuration_targeting_rules_items import (
-    ExperimentsCreateExperimentV2RequestDataAttributesDatadogFlagConfigurationTargetingRulesItems,
 )
 from datadog_api_client.v2.model.experiments_create_experiment_v2_request_data_attributes_decision_metrics_items import (
     ExperimentsCreateExperimentV2RequestDataAttributesDecisionMetricsItems,
@@ -3466,9 +3464,6 @@ from datadog_api_client.v2.model.experiments_create_metric_v2_request_data_attri
 from datadog_api_client.v2.model.experiments_create_metric_v2_request_data_attributes_percentile_aggregation import (
     ExperimentsCreateMetricV2RequestDataAttributesPercentileAggregation,
 )
-from datadog_api_client.v2.model.experiments_create_metric_v2_request_data_attributes_percentile_aggregation_warehouse_metric_measure import (
-    ExperimentsCreateMetricV2RequestDataAttributesPercentileAggregationWarehouseMetricMeasure,
-)
 from datadog_api_client.v2.model.experiments_create_subject_type_v2_request import ExperimentsCreateSubjectTypeV2Request
 from datadog_api_client.v2.model.experiments_create_subject_type_v2_request_data import (
     ExperimentsCreateSubjectTypeV2RequestData,
@@ -3477,6 +3472,12 @@ from datadog_api_client.v2.model.experiments_create_subject_type_v2_request_data
     ExperimentsCreateSubjectTypeV2RequestDataAttributes,
 )
 from datadog_api_client.v2.model.experiments_datadog_entry_point_filter import ExperimentsDatadogEntryPointFilter
+from datadog_api_client.v2.model.experiments_datadog_entry_point_filter_column_type import (
+    ExperimentsDatadogEntryPointFilterColumnType,
+)
+from datadog_api_client.v2.model.experiments_datadog_entry_point_filter_operation import (
+    ExperimentsDatadogEntryPointFilterOperation,
+)
 from datadog_api_client.v2.model.experiments_datadog_metric_aggregation_input import (
     ExperimentsDatadogMetricAggregationInput,
 )
@@ -3674,15 +3675,6 @@ from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_a
 from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_datadog_flag_configuration_entry_point import (
     ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPoint,
 )
-from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_datadog_flag_configuration_entry_point_filters_items_items_column_type import (
-    ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPointFiltersItemsItemsColumnType,
-)
-from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_datadog_flag_configuration_entry_point_filters_items_items_operation import (
-    ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPointFiltersItemsItemsOperation,
-)
-from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_datadog_flag_configuration_targeting_rules_items_conditions_items_operator import (
-    ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationTargetingRulesItemsConditionsItemsOperator,
-)
 from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_split_by_properties_items_column_type import (
     ExperimentsPatchExperimentV2ResponseDataAttributesSplitByPropertiesItemsColumnType,
 )
@@ -3694,12 +3686,6 @@ from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_a
 )
 from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_warehouse_exposure_configuration import (
     ExperimentsPatchExperimentV2ResponseDataAttributesWarehouseExposureConfiguration,
-)
-from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_warehouse_exposure_configuration_entry_point import (
-    ExperimentsPatchExperimentV2ResponseDataAttributesWarehouseExposureConfigurationEntryPoint,
-)
-from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_warehouse_exposure_configuration_entry_point_filters_items_operation import (
-    ExperimentsPatchExperimentV2ResponseDataAttributesWarehouseExposureConfigurationEntryPointFiltersItemsOperation,
 )
 from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_type import (
     ExperimentsPatchExperimentV2ResponseDataType,
@@ -3816,7 +3802,9 @@ from datadog_api_client.v2.model.experiments_subject_type_v2_dto_data_attributes
     ExperimentsSubjectTypeV2DTODataAttributes,
 )
 from datadog_api_client.v2.model.experiments_subject_type_v2_dto_data_type import ExperimentsSubjectTypeV2DTODataType
+from datadog_api_client.v2.model.experiments_targeting_rule import ExperimentsTargetingRule
 from datadog_api_client.v2.model.experiments_targeting_rule_condition import ExperimentsTargetingRuleCondition
+from datadog_api_client.v2.model.experiments_targeting_rule_operator import ExperimentsTargetingRuleOperator
 from datadog_api_client.v2.model.experiments_traffic_summary_v2_dto import ExperimentsTrafficSummaryV2DTO
 from datadog_api_client.v2.model.experiments_traffic_summary_v2_dto_data import ExperimentsTrafficSummaryV2DTOData
 from datadog_api_client.v2.model.experiments_traffic_summary_v2_dto_data_attributes import (
@@ -3868,9 +3856,6 @@ from datadog_api_client.v2.model.experiments_variant_results_v2_dto_data_attribu
 from datadog_api_client.v2.model.experiments_variant_results_v2_dto_data_attributes_metrics_items_analyses_items import (
     ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItems,
 )
-from datadog_api_client.v2.model.experiments_variant_results_v2_dto_data_attributes_metrics_items_analyses_items_confidence_interval import (
-    ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItemsConfidenceInterval,
-)
 from datadog_api_client.v2.model.experiments_variant_results_v2_dto_data_attributes_metrics_items_analyses_items_lift_type import (
     ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItemsLiftType,
 )
@@ -3886,11 +3871,16 @@ from datadog_api_client.v2.model.experiments_variant_results_v2_dto_data_attribu
 from datadog_api_client.v2.model.experiments_variant_results_v2_dto_data_type import (
     ExperimentsVariantResultsV2DTODataType,
 )
+from datadog_api_client.v2.model.experiments_warehouse_entry_point import ExperimentsWarehouseEntryPoint
+from datadog_api_client.v2.model.experiments_warehouse_entry_point_filter_operation import (
+    ExperimentsWarehouseEntryPointFilterOperation,
+)
 from datadog_api_client.v2.model.experiments_warehouse_exposure_filter import ExperimentsWarehouseExposureFilter
 from datadog_api_client.v2.model.experiments_warehouse_filter_input import ExperimentsWarehouseFilterInput
 from datadog_api_client.v2.model.experiments_warehouse_metric_aggregation_input import (
     ExperimentsWarehouseMetricAggregationInput,
 )
+from datadog_api_client.v2.model.experiments_warehouse_metric_measure import ExperimentsWarehouseMetricMeasure
 from datadog_api_client.v2.model.experiments_warehouse_percentile_aggregation_input import (
     ExperimentsWarehousePercentileAggregationInput,
 )
@@ -15102,6 +15092,7 @@ __all__ = [
     "ExperimentsConcludeExperimentV2RequestData",
     "ExperimentsConcludeExperimentV2RequestDataAttributes",
     "ExperimentsConcludeExperimentV2RequestDataType",
+    "ExperimentsConfidenceInterval",
     "ExperimentsCreateExperimentMetricGroupV2Request",
     "ExperimentsCreateExperimentMetricGroupV2RequestData",
     "ExperimentsCreateExperimentMetricGroupV2RequestDataAttributes",
@@ -15110,7 +15101,6 @@ __all__ = [
     "ExperimentsCreateExperimentV2RequestData",
     "ExperimentsCreateExperimentV2RequestDataAttributes",
     "ExperimentsCreateExperimentV2RequestDataAttributesDatadogFlagConfiguration",
-    "ExperimentsCreateExperimentV2RequestDataAttributesDatadogFlagConfigurationTargetingRulesItems",
     "ExperimentsCreateExperimentV2RequestDataAttributesDecisionMetricsItems",
     "ExperimentsCreateExperimentV2RequestDataAttributesRelatedLinksItems",
     "ExperimentsCreateExperimentV2RequestDataAttributesSplitByPropertiesItems",
@@ -15139,11 +15129,12 @@ __all__ = [
     "ExperimentsCreateMetricV2RequestDataAttributesDesiredChange",
     "ExperimentsCreateMetricV2RequestDataAttributesNumeratorAggregation",
     "ExperimentsCreateMetricV2RequestDataAttributesPercentileAggregation",
-    "ExperimentsCreateMetricV2RequestDataAttributesPercentileAggregationWarehouseMetricMeasure",
     "ExperimentsCreateSubjectTypeV2Request",
     "ExperimentsCreateSubjectTypeV2RequestData",
     "ExperimentsCreateSubjectTypeV2RequestDataAttributes",
     "ExperimentsDatadogEntryPointFilter",
+    "ExperimentsDatadogEntryPointFilterColumnType",
+    "ExperimentsDatadogEntryPointFilterOperation",
     "ExperimentsDatadogMetricAggregationInput",
     "ExperimentsDatadogMetricMeasureInput",
     "ExperimentsDatadogPercentileAggregationInput",
@@ -15229,15 +15220,10 @@ __all__ = [
     "ExperimentsPatchExperimentV2ResponseDataAttributesConclusion",
     "ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfiguration",
     "ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPoint",
-    "ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPointFiltersItemsItemsColumnType",
-    "ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPointFiltersItemsItemsOperation",
-    "ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationTargetingRulesItemsConditionsItemsOperator",
     "ExperimentsPatchExperimentV2ResponseDataAttributesSplitByPropertiesItemsColumnType",
     "ExperimentsPatchExperimentV2ResponseDataAttributesStructuredMetadataItemsFieldType",
     "ExperimentsPatchExperimentV2ResponseDataAttributesTrafficExposure",
     "ExperimentsPatchExperimentV2ResponseDataAttributesWarehouseExposureConfiguration",
-    "ExperimentsPatchExperimentV2ResponseDataAttributesWarehouseExposureConfigurationEntryPoint",
-    "ExperimentsPatchExperimentV2ResponseDataAttributesWarehouseExposureConfigurationEntryPointFiltersItemsOperation",
     "ExperimentsPatchExperimentV2ResponseDataType",
     "ExperimentsPatchMetricCollectionV2Request",
     "ExperimentsPatchMetricCollectionV2RequestData",
@@ -15285,7 +15271,9 @@ __all__ = [
     "ExperimentsSubjectTypeV2DTOData",
     "ExperimentsSubjectTypeV2DTODataAttributes",
     "ExperimentsSubjectTypeV2DTODataType",
+    "ExperimentsTargetingRule",
     "ExperimentsTargetingRuleCondition",
+    "ExperimentsTargetingRuleOperator",
     "ExperimentsTrafficSummaryV2DTO",
     "ExperimentsTrafficSummaryV2DTOData",
     "ExperimentsTrafficSummaryV2DTODataAttributes",
@@ -15307,15 +15295,17 @@ __all__ = [
     "ExperimentsVariantResultsV2DTODataAttributes",
     "ExperimentsVariantResultsV2DTODataAttributesMetricsItems",
     "ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItems",
-    "ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItemsConfidenceInterval",
     "ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItemsLiftType",
     "ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItemsMethod",
     "ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItemsUnreliableReason",
     "ExperimentsVariantResultsV2DTODataAttributesMetricsItemsCoverageSummary",
     "ExperimentsVariantResultsV2DTODataType",
+    "ExperimentsWarehouseEntryPoint",
+    "ExperimentsWarehouseEntryPointFilterOperation",
     "ExperimentsWarehouseExposureFilter",
     "ExperimentsWarehouseFilterInput",
     "ExperimentsWarehouseMetricAggregationInput",
+    "ExperimentsWarehouseMetricMeasure",
     "ExperimentsWarehousePercentileAggregationInput",
     "ExposureRolloutStepRequest",
     "ExposureScheduleRequest",

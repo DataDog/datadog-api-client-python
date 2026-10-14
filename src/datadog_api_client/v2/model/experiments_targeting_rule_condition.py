@@ -22,7 +22,7 @@ class ExperimentsTargetingRuleCondition(ModelComposed):
         :type attribute: str
 
         :param operator: Required with attribute and value for an inline condition; omit when saved_filter_id is set.
-        :type operator: ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationTargetingRulesItemsConditionsItemsOperator
+        :type operator: ExperimentsTargetingRuleOperator
 
         :param value: Values used by the operator. Every operator requires at least one value.
         :type value: [str]

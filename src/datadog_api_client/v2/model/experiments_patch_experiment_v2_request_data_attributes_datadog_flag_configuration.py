@@ -18,9 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_datadog_flag_configuration_entry_point import (
         ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPoint,
     )
-    from datadog_api_client.v2.model.experiments_create_experiment_v2_request_data_attributes_datadog_flag_configuration_targeting_rules_items import (
-        ExperimentsCreateExperimentV2RequestDataAttributesDatadogFlagConfigurationTargetingRulesItems,
-    )
+    from datadog_api_client.v2.model.experiments_targeting_rule import ExperimentsTargetingRule
 
 
 class ExperimentsPatchExperimentV2RequestDataAttributesDatadogFlagConfiguration(ModelNormal):
@@ -31,18 +29,14 @@ class ExperimentsPatchExperimentV2RequestDataAttributesDatadogFlagConfiguration(
         from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_datadog_flag_configuration_entry_point import (
             ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPoint,
         )
-        from datadog_api_client.v2.model.experiments_create_experiment_v2_request_data_attributes_datadog_flag_configuration_targeting_rules_items import (
-            ExperimentsCreateExperimentV2RequestDataAttributesDatadogFlagConfigurationTargetingRulesItems,
-        )
+        from datadog_api_client.v2.model.experiments_targeting_rule import ExperimentsTargetingRule
 
         return {
             "entry_point": (ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPoint,),
             "environment_id": (str,),
             "feature_flag_id": (str,),
             "reset_on_feature_flag_change": (bool,),
-            "targeting_rules": (
-                [ExperimentsCreateExperimentV2RequestDataAttributesDatadogFlagConfigurationTargetingRulesItems],
-            ),
+            "targeting_rules": ([ExperimentsTargetingRule],),
         }
 
     attribute_map = {
@@ -61,10 +55,7 @@ class ExperimentsPatchExperimentV2RequestDataAttributesDatadogFlagConfiguration(
         environment_id: Union[str, UnsetType] = unset,
         feature_flag_id: Union[str, UnsetType] = unset,
         reset_on_feature_flag_change: Union[bool, UnsetType] = unset,
-        targeting_rules: Union[
-            List[ExperimentsCreateExperimentV2RequestDataAttributesDatadogFlagConfigurationTargetingRulesItems],
-            UnsetType,
-        ] = unset,
+        targeting_rules: Union[List[ExperimentsTargetingRule], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -83,7 +74,7 @@ class ExperimentsPatchExperimentV2RequestDataAttributesDatadogFlagConfiguration(
         :type reset_on_feature_flag_change: bool, optional
 
         :param targeting_rules: Omit to keep the stored rules. Use an empty array to remove targeting rules.
-        :type targeting_rules: [ExperimentsCreateExperimentV2RequestDataAttributesDatadogFlagConfigurationTargetingRulesItems], optional
+        :type targeting_rules: [ExperimentsTargetingRule], optional
         """
         if entry_point is not unset:
             kwargs["entry_point"] = entry_point

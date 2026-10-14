@@ -14,23 +14,21 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_datadog_flag_configuration_entry_point_filters_items_items_column_type import (
-        ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPointFiltersItemsItemsColumnType,
+    from datadog_api_client.v2.model.experiments_datadog_entry_point_filter_column_type import (
+        ExperimentsDatadogEntryPointFilterColumnType,
     )
 
 
 class ExperimentsCreateExperimentV2RequestDataAttributesSplitByPropertiesItems(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_datadog_flag_configuration_entry_point_filters_items_items_column_type import (
-            ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPointFiltersItemsItemsColumnType,
+        from datadog_api_client.v2.model.experiments_datadog_entry_point_filter_column_type import (
+            ExperimentsDatadogEntryPointFilterColumnType,
         )
 
         return {
             "column_name": (str,),
-            "column_type": (
-                ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPointFiltersItemsItemsColumnType,
-            ),
+            "column_type": (ExperimentsDatadogEntryPointFilterColumnType,),
             "name": (str,),
         }
 
@@ -43,10 +41,7 @@ class ExperimentsCreateExperimentV2RequestDataAttributesSplitByPropertiesItems(M
     def __init__(
         self_,
         column_name: str,
-        column_type: Union[
-            ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPointFiltersItemsItemsColumnType,
-            UnsetType,
-        ] = unset,
+        column_type: Union[ExperimentsDatadogEntryPointFilterColumnType, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -57,7 +52,7 @@ class ExperimentsCreateExperimentV2RequestDataAttributesSplitByPropertiesItems(M
         :type column_name: str
 
         :param column_type: Data type of the column evaluated by the entry-point filter.
-        :type column_type: ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPointFiltersItemsItemsColumnType, optional
+        :type column_type: ExperimentsDatadogEntryPointFilterColumnType, optional
 
         :param name: Optional display name. Defaults to column_name for a new property.
         :type name: str, optional

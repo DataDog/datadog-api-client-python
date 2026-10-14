@@ -19,7 +19,7 @@ class ExperimentsWarehouseFilterInput(ModelComposed):
         :type measure_id: str, none_type, optional
 
         :param operation: Comparison applied by the warehouse entry-point filter.
-        :type operation: ExperimentsPatchExperimentV2ResponseDataAttributesWarehouseExposureConfigurationEntryPointFiltersItemsOperation
+        :type operation: ExperimentsWarehouseEntryPointFilterOperation
 
         :param property_id: ID of the property on the aggregation source.
         :type property_id: UUID

@@ -16,8 +16,8 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_warehouse_exposure_configuration_entry_point_filters_items_operation import (
-        ExperimentsPatchExperimentV2ResponseDataAttributesWarehouseExposureConfigurationEntryPointFiltersItemsOperation,
+    from datadog_api_client.v2.model.experiments_warehouse_entry_point_filter_operation import (
+        ExperimentsWarehouseEntryPointFilterOperation,
     )
 
 
@@ -34,15 +34,13 @@ class ExperimentsPropertyFilterInput(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_warehouse_exposure_configuration_entry_point_filters_items_operation import (
-            ExperimentsPatchExperimentV2ResponseDataAttributesWarehouseExposureConfigurationEntryPointFiltersItemsOperation,
+        from datadog_api_client.v2.model.experiments_warehouse_entry_point_filter_operation import (
+            ExperimentsWarehouseEntryPointFilterOperation,
         )
 
         return {
             "measure_id": (str, none_type),
-            "operation": (
-                ExperimentsPatchExperimentV2ResponseDataAttributesWarehouseExposureConfigurationEntryPointFiltersItemsOperation,
-            ),
+            "operation": (ExperimentsWarehouseEntryPointFilterOperation,),
             "property_id": (UUID,),
             "values": ([str],),
         }
@@ -56,7 +54,7 @@ class ExperimentsPropertyFilterInput(ModelNormal):
 
     def __init__(
         self_,
-        operation: ExperimentsPatchExperimentV2ResponseDataAttributesWarehouseExposureConfigurationEntryPointFiltersItemsOperation,
+        operation: ExperimentsWarehouseEntryPointFilterOperation,
         property_id: UUID,
         values: List[str],
         measure_id: Union[str, none_type, UnsetType] = unset,
@@ -69,7 +67,7 @@ class ExperimentsPropertyFilterInput(ModelNormal):
         :type measure_id: str, none_type, optional
 
         :param operation: Comparison applied by the warehouse entry-point filter.
-        :type operation: ExperimentsPatchExperimentV2ResponseDataAttributesWarehouseExposureConfigurationEntryPointFiltersItemsOperation
+        :type operation: ExperimentsWarehouseEntryPointFilterOperation
 
         :param property_id: ID of the property on the aggregation source.
         :type property_id: UUID

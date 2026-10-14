@@ -45,10 +45,6 @@
                     {
                       "field": "classic",
                       "width": "auto"
-                    },
-                    {
-                      "field": "",
-                      "width": "auto"
                     }
                   ],
                   "query": {

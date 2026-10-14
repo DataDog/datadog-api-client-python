@@ -61,10 +61,6 @@ body = Dashboard(
                                 field="classic",
                                 width=ListStreamColumnWidth.AUTO,
                             ),
-                            ListStreamColumn(
-                                field="",
-                                width=ListStreamColumnWidth.AUTO,
-                            ),
                         ],
                     ),
                 ],

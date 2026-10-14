@@ -19,9 +19,7 @@ if TYPE_CHECKING:
         ExperimentsNullableDatadogPercentileMeasureInput,
     )
     from datadog_api_client.v2.model.experiments_property_filter_input import ExperimentsPropertyFilterInput
-    from datadog_api_client.v2.model.experiments_create_metric_v2_request_data_attributes_percentile_aggregation_warehouse_metric_measure import (
-        ExperimentsCreateMetricV2RequestDataAttributesPercentileAggregationWarehouseMetricMeasure,
-    )
+    from datadog_api_client.v2.model.experiments_warehouse_metric_measure import ExperimentsWarehouseMetricMeasure
 
 
 class ExperimentsWarehousePercentileAggregationInput(ModelNormal):
@@ -38,17 +36,13 @@ class ExperimentsWarehousePercentileAggregationInput(ModelNormal):
             ExperimentsNullableDatadogPercentileMeasureInput,
         )
         from datadog_api_client.v2.model.experiments_property_filter_input import ExperimentsPropertyFilterInput
-        from datadog_api_client.v2.model.experiments_create_metric_v2_request_data_attributes_percentile_aggregation_warehouse_metric_measure import (
-            ExperimentsCreateMetricV2RequestDataAttributesPercentileAggregationWarehouseMetricMeasure,
-        )
+        from datadog_api_client.v2.model.experiments_warehouse_metric_measure import ExperimentsWarehouseMetricMeasure
 
         return {
             "datadog_metric_measure": (ExperimentsNullableDatadogPercentileMeasureInput,),
             "percentile": (float,),
             "property_filters": ([[ExperimentsPropertyFilterInput]], none_type),
-            "warehouse_metric_measure": (
-                ExperimentsCreateMetricV2RequestDataAttributesPercentileAggregationWarehouseMetricMeasure,
-            ),
+            "warehouse_metric_measure": (ExperimentsWarehouseMetricMeasure,),
         }
 
     attribute_map = {
@@ -61,7 +55,7 @@ class ExperimentsWarehousePercentileAggregationInput(ModelNormal):
     def __init__(
         self_,
         percentile: float,
-        warehouse_metric_measure: ExperimentsCreateMetricV2RequestDataAttributesPercentileAggregationWarehouseMetricMeasure,
+        warehouse_metric_measure: ExperimentsWarehouseMetricMeasure,
         datadog_metric_measure: Union[ExperimentsNullableDatadogPercentileMeasureInput, none_type, UnsetType] = unset,
         property_filters: Union[List[List[ExperimentsPropertyFilterInput]], none_type, UnsetType] = unset,
         **kwargs,
@@ -79,7 +73,7 @@ class ExperimentsWarehousePercentileAggregationInput(ModelNormal):
         :type property_filters: [[ExperimentsPropertyFilterInput]], none_type, optional
 
         :param warehouse_metric_measure: Reference to a measure defined in a warehouse metric SQL model.
-        :type warehouse_metric_measure: ExperimentsCreateMetricV2RequestDataAttributesPercentileAggregationWarehouseMetricMeasure
+        :type warehouse_metric_measure: ExperimentsWarehouseMetricMeasure
         """
         if datadog_metric_measure is not unset:
             kwargs["datadog_metric_measure"] = datadog_metric_measure

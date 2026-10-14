@@ -25,7 +25,7 @@ class ExperimentsCreateMetricV2RequestDataAttributesPercentileAggregation(ModelC
         :type property_filters: [[ExperimentsPropertyFilterInput]], none_type, optional
 
         :param warehouse_metric_measure: Reference to a measure defined in a warehouse metric SQL model.
-        :type warehouse_metric_measure: ExperimentsCreateMetricV2RequestDataAttributesPercentileAggregationWarehouseMetricMeasure
+        :type warehouse_metric_measure: ExperimentsWarehouseMetricMeasure
         """
         super().__init__(kwargs)
 

@@ -19,9 +19,7 @@ if TYPE_CHECKING:
         ExperimentsNullableDatadogMetricMeasureInput,
     )
     from datadog_api_client.v2.model.experiments_warehouse_filter_input import ExperimentsWarehouseFilterInput
-    from datadog_api_client.v2.model.experiments_create_metric_v2_request_data_attributes_percentile_aggregation_warehouse_metric_measure import (
-        ExperimentsCreateMetricV2RequestDataAttributesPercentileAggregationWarehouseMetricMeasure,
-    )
+    from datadog_api_client.v2.model.experiments_warehouse_metric_measure import ExperimentsWarehouseMetricMeasure
 
 
 class ExperimentsWarehouseMetricAggregationInput(ModelNormal):
@@ -37,9 +35,7 @@ class ExperimentsWarehouseMetricAggregationInput(ModelNormal):
             ExperimentsNullableDatadogMetricMeasureInput,
         )
         from datadog_api_client.v2.model.experiments_warehouse_filter_input import ExperimentsWarehouseFilterInput
-        from datadog_api_client.v2.model.experiments_create_metric_v2_request_data_attributes_percentile_aggregation_warehouse_metric_measure import (
-            ExperimentsCreateMetricV2RequestDataAttributesPercentileAggregationWarehouseMetricMeasure,
-        )
+        from datadog_api_client.v2.model.experiments_warehouse_metric_measure import ExperimentsWarehouseMetricMeasure
 
         return {
             "aging_threshold_days": (int,),
@@ -55,9 +51,7 @@ class ExperimentsWarehouseMetricAggregationInput(ModelNormal):
             "timeframe_end_value": (float,),
             "timeframe_start_value": (float,),
             "timeframe_unit": (str,),
-            "warehouse_metric_measure": (
-                ExperimentsCreateMetricV2RequestDataAttributesPercentileAggregationWarehouseMetricMeasure,
-            ),
+            "warehouse_metric_measure": (ExperimentsWarehouseMetricMeasure,),
             "winsor_lower_fixed_value": (float,),
             "winsor_lower_percentile": (float,),
             "winsor_upper_fixed_value": (float,),
@@ -90,7 +84,7 @@ class ExperimentsWarehouseMetricAggregationInput(ModelNormal):
     def __init__(
         self_,
         operation: str,
-        warehouse_metric_measure: ExperimentsCreateMetricV2RequestDataAttributesPercentileAggregationWarehouseMetricMeasure,
+        warehouse_metric_measure: ExperimentsWarehouseMetricMeasure,
         aging_threshold_days: Union[int, UnsetType] = unset,
         datadog_metric_measure: Union[ExperimentsNullableDatadogMetricMeasureInput, none_type, UnsetType] = unset,
         enable_aging_subject_filter: Union[bool, UnsetType] = unset,
@@ -155,7 +149,7 @@ class ExperimentsWarehouseMetricAggregationInput(ModelNormal):
         :type timeframe_unit: str, optional
 
         :param warehouse_metric_measure: Reference to a measure defined in a warehouse metric SQL model.
-        :type warehouse_metric_measure: ExperimentsCreateMetricV2RequestDataAttributesPercentileAggregationWarehouseMetricMeasure
+        :type warehouse_metric_measure: ExperimentsWarehouseMetricMeasure
 
         :param winsor_lower_fixed_value: Fixed lower bound used to cap extreme measure values.
         :type winsor_lower_fixed_value: float, optional
