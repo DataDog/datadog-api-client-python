@@ -216188,6 +216188,27 @@ paths:
       requestBody:
         content:
           application/json:
+            examples:
+              default:
+                value:
+                  data:
+                    attributes:
+                      application_id: "abc12345-1234-5678-abcd-ef1234567890"
+                      category: conversion
+                      description: "Tracks users completing the checkout flow."
+                      display_name: Checkout completed
+                      journey_rum:
+                        rum_steps:
+                          - nodes:
+                              - query: '@type:action @action.type:click @action.target.name:"Checkout"'
+                            type: start
+                          - nodes:
+                              - query: '@type:action @action.type:click @action.target.name:"Confirm order"'
+                            type: stop
+                      name: checkout_completed
+                      tags:
+                        - "team:checkout"
+                    type: operations
             schema:
               $ref: "#/components/schemas/RUMOperationCreateRequest"
         required: true
@@ -216250,9 +216271,6 @@ paths:
       summary: Create a RUM operation
       tags:
         - RUM Operations
-      x-unstable: |-
-        **Note**: This endpoint is in Preview and is subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/rum/operations/by-name/{name}:
     get:
       description: Retrieve a specific RUM operation by its unique name.
@@ -216323,9 +216341,6 @@ paths:
       summary: Get a RUM operation by name
       tags:
         - RUM Operations
-      x-unstable: |-
-        **Note**: This endpoint is in Preview and is subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/rum/operations/search:
     get:
       description: |-
@@ -216450,9 +216465,6 @@ paths:
       summary: Search RUM operations
       tags:
         - RUM Operations
-      x-unstable: |-
-        **Note**: This endpoint is in Preview and is subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/rum/operations/strong_links:
     get:
       description: |-
@@ -216538,6 +216550,18 @@ paths:
       requestBody:
         content:
           application/json:
+            examples:
+              default:
+                value:
+                  data:
+                    attributes:
+                      description: "Confirmed link between checkout_completed and journey-123."
+                      feature_id: "journey-123"
+                      operation_id: "abc12345-1234-5678-abcd-ef1234567890"
+                      status: CONFIRMED
+                      tags:
+                        - "team:checkout"
+                    type: strong_links
             schema:
               $ref: "#/components/schemas/RUMOperationStrongLinkCreateRequest"
         required: true
@@ -216586,9 +216610,6 @@ paths:
       summary: Create a RUM operation link
       tags:
         - RUM Operations
-      x-unstable: |-
-        **Note**: This endpoint is in Preview and is subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/rum/operations/strong_links/{rum_operation_id}/{feature_id}:
     delete:
       description: Delete the link between a RUM operation and a journey.
@@ -216620,9 +216641,6 @@ paths:
       summary: Delete a RUM operation link
       tags:
         - RUM Operations
-      x-unstable: |-
-        **Note**: This endpoint is in Preview and is subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
     put:
       description: Update the status of a link between a RUM operation and a journey.
       operationId: UpdateRUMOperationStrongLink
@@ -216642,6 +216660,13 @@ paths:
       requestBody:
         content:
           application/json:
+            examples:
+              default:
+                value:
+                  data:
+                    attributes:
+                      status: CONFIRMED
+                    type: strong_links
             schema:
               $ref: "#/components/schemas/RUMOperationStrongLinkUpdateRequest"
         required: true
@@ -216684,9 +216709,6 @@ paths:
       summary: Update a RUM operation link
       tags:
         - RUM Operations
-      x-unstable: |-
-        **Note**: This endpoint is in Preview and is subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/rum/operations/{rum_operation_id}:
     delete:
       description: Delete a RUM operation.
@@ -216712,9 +216734,6 @@ paths:
       summary: Delete a RUM operation
       tags:
         - RUM Operations
-      x-unstable: |-
-        **Note**: This endpoint is in Preview and is subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
     get:
       description: Retrieve a specific RUM operation by its unique identifier.
       operationId: GetRUMOperation
@@ -216778,9 +216797,6 @@ paths:
       summary: Get a RUM operation
       tags:
         - RUM Operations
-      x-unstable: |-
-        **Note**: This endpoint is in Preview and is subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
     put:
       description: |-
         Update an existing RUM operation. Fields omitted from the request body keep their existing value,
@@ -216796,6 +216812,28 @@ paths:
       requestBody:
         content:
           application/json:
+            examples:
+              default:
+                value:
+                  data:
+                    attributes:
+                      application_id: "abc12345-1234-5678-abcd-ef1234567890"
+                      category: conversion
+                      description: "Tracks users completing the checkout flow."
+                      display_name: Checkout completed
+                      journey_rum:
+                        rum_steps:
+                          - nodes:
+                              - query: '@type:action @action.type:click @action.target.name:"Checkout"'
+                            type: start
+                          - nodes:
+                              - query: '@type:action @action.type:click @action.target.name:"Confirm order"'
+                            type: stop
+                      name: checkout_completed
+                      tags:
+                        - "team:checkout"
+                    id: "abc12345-1234-5678-abcd-ef1234567890"
+                    type: operations
             schema:
               $ref: "#/components/schemas/RUMOperationUpdateRequest"
         required: true
@@ -216868,9 +216906,6 @@ paths:
       summary: Update a RUM operation
       tags:
         - RUM Operations
-      x-unstable: |-
-        **Note**: This endpoint is in Preview and is subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/rum/query/insight/aggregated_long_tasks:
     post:
       description: |-
