@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class ObservabilityPipelineAzureDataExplorerDestinationAuthManagedIdentityClientAssertionKind(ModelSimple):
+class ObservabilityPipelineAzureDataExplorerManagedIdentityClientAssertionKind(ModelSimple):
     """
     The Azure credential kind. The value should always be `managed_identity_client_assertion`.
 
@@ -24,7 +24,7 @@ class ObservabilityPipelineAzureDataExplorerDestinationAuthManagedIdentityClient
         "managed_identity_client_assertion",
     }
     MANAGED_IDENTITY_CLIENT_ASSERTION: ClassVar[
-        "ObservabilityPipelineAzureDataExplorerDestinationAuthManagedIdentityClientAssertionKind"
+        "ObservabilityPipelineAzureDataExplorerManagedIdentityClientAssertionKind"
     ]
 
     @cached_property
@@ -34,6 +34,6 @@ class ObservabilityPipelineAzureDataExplorerDestinationAuthManagedIdentityClient
         }
 
 
-ObservabilityPipelineAzureDataExplorerDestinationAuthManagedIdentityClientAssertionKind.MANAGED_IDENTITY_CLIENT_ASSERTION = ObservabilityPipelineAzureDataExplorerDestinationAuthManagedIdentityClientAssertionKind(
-    "managed_identity_client_assertion"
+ObservabilityPipelineAzureDataExplorerManagedIdentityClientAssertionKind.MANAGED_IDENTITY_CLIENT_ASSERTION = (
+    ObservabilityPipelineAzureDataExplorerManagedIdentityClientAssertionKind("managed_identity_client_assertion")
 )
