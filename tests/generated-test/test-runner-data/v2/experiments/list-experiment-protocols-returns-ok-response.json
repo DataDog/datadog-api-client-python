@@ -9,7 +9,47 @@
     "content_type": null,
     "method": "GET",
     "pagination": false,
-    "parameters": [],
+    "parameters": [
+      {
+        "explode": true,
+        "in": "query",
+        "name": "filter[status]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "items": {
+            "format": null,
+            "ref": "ExperimentsPublicProtocolResponseDataAttributesStatus",
+            "type": "string"
+          },
+          "ref": null,
+          "type": "array"
+        },
+        "source": {
+          "type": "literal",
+          "value": [
+            "DRAFT"
+          ]
+        },
+        "style": "form"
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[query]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "experiment_protocol.data.attributes.name",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
     "path": "/api/v2/experiments/protocols"
   },
   "scenario": "List experiment protocols returns \"OK\" response",

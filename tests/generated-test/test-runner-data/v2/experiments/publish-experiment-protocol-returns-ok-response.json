@@ -1,0 +1,35 @@
+{
+  "api": "Experiments",
+  "expected_status": 200,
+  "feature": "Experiments",
+  "id": "v2/Experiments/Publish experiment protocol returns \"OK\" response",
+  "operation_id": "PublishExperimentProtocol",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "protocol_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "configured_experiment_protocol.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/experiments/protocols/{protocol_id}/publish"
+  },
+  "scenario": "Publish experiment protocol returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
