@@ -9434,40 +9434,6 @@ from datadog_api_client.v2.model.stix_metadata_object import STIXMetadataObject
 from datadog_api_client.v2.model.stix_object import STIXObject
 from datadog_api_client.v2.model.stix_pattern_type import STIXPatternType
 from datadog_api_client.v2.model.stix_spec_version import STIXSpecVersion
-from datadog_api_client.v2.model.salesforce_incidents_organization_response_attributes import (
-    SalesforceIncidentsOrganizationResponseAttributes,
-)
-from datadog_api_client.v2.model.salesforce_incidents_organization_response_data import (
-    SalesforceIncidentsOrganizationResponseData,
-)
-from datadog_api_client.v2.model.salesforce_incidents_organization_type import SalesforceIncidentsOrganizationType
-from datadog_api_client.v2.model.salesforce_incidents_organizations_response import (
-    SalesforceIncidentsOrganizationsResponse,
-)
-from datadog_api_client.v2.model.salesforce_incidents_template_create_attributes import (
-    SalesforceIncidentsTemplateCreateAttributes,
-)
-from datadog_api_client.v2.model.salesforce_incidents_template_create_data import SalesforceIncidentsTemplateCreateData
-from datadog_api_client.v2.model.salesforce_incidents_template_create_request import (
-    SalesforceIncidentsTemplateCreateRequest,
-)
-from datadog_api_client.v2.model.salesforce_incidents_template_priority import SalesforceIncidentsTemplatePriority
-from datadog_api_client.v2.model.salesforce_incidents_template_response import SalesforceIncidentsTemplateResponse
-from datadog_api_client.v2.model.salesforce_incidents_template_response_attributes import (
-    SalesforceIncidentsTemplateResponseAttributes,
-)
-from datadog_api_client.v2.model.salesforce_incidents_template_response_data import (
-    SalesforceIncidentsTemplateResponseData,
-)
-from datadog_api_client.v2.model.salesforce_incidents_template_type import SalesforceIncidentsTemplateType
-from datadog_api_client.v2.model.salesforce_incidents_template_update_attributes import (
-    SalesforceIncidentsTemplateUpdateAttributes,
-)
-from datadog_api_client.v2.model.salesforce_incidents_template_update_data import SalesforceIncidentsTemplateUpdateData
-from datadog_api_client.v2.model.salesforce_incidents_template_update_request import (
-    SalesforceIncidentsTemplateUpdateRequest,
-)
-from datadog_api_client.v2.model.salesforce_incidents_templates_response import SalesforceIncidentsTemplatesResponse
 from datadog_api_client.v2.model.sample_log_generation_bulk_subscription_attributes import (
     SampleLogGenerationBulkSubscriptionAttributes,
 )
@@ -19075,22 +19041,6 @@ __all__ = [
     "STIXObject",
     "STIXPatternType",
     "STIXSpecVersion",
-    "SalesforceIncidentsOrganizationResponseAttributes",
-    "SalesforceIncidentsOrganizationResponseData",
-    "SalesforceIncidentsOrganizationType",
-    "SalesforceIncidentsOrganizationsResponse",
-    "SalesforceIncidentsTemplateCreateAttributes",
-    "SalesforceIncidentsTemplateCreateData",
-    "SalesforceIncidentsTemplateCreateRequest",
-    "SalesforceIncidentsTemplatePriority",
-    "SalesforceIncidentsTemplateResponse",
-    "SalesforceIncidentsTemplateResponseAttributes",
-    "SalesforceIncidentsTemplateResponseData",
-    "SalesforceIncidentsTemplateType",
-    "SalesforceIncidentsTemplateUpdateAttributes",
-    "SalesforceIncidentsTemplateUpdateData",
-    "SalesforceIncidentsTemplateUpdateRequest",
-    "SalesforceIncidentsTemplatesResponse",
     "SampleLogGenerationBulkSubscriptionAttributes",
     "SampleLogGenerationBulkSubscriptionData",
     "SampleLogGenerationBulkSubscriptionItemMeta",
