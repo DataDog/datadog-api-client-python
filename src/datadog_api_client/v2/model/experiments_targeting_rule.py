@@ -17,7 +17,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.experiments_inline_condition import ExperimentsInlineCondition
 
 
-class ExperimentsCreateExperimentV2RequestDataAttributesDatadogFlagConfigurationTargetingRulesItems(ModelNormal):
+class ExperimentsTargetingRule(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.experiments_targeting_rule_condition import ExperimentsTargetingRuleCondition

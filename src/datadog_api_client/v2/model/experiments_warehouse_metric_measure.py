@@ -11,7 +11,7 @@ from datadog_api_client.model_utils import (
 )
 
 
-class ExperimentsCreateMetricV2RequestDataAttributesPercentileAggregationWarehouseMetricMeasure(ModelNormal):
+class ExperimentsWarehouseMetricMeasure(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {

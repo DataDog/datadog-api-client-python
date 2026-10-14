@@ -12,9 +12,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_datadog_flag_configuration_targeting_rules_items_conditions_items_operator import (
-        ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationTargetingRulesItemsConditionsItemsOperator,
-    )
+    from datadog_api_client.v2.model.experiments_targeting_rule_operator import ExperimentsTargetingRuleOperator
 
 
 class ExperimentsInlineCondition(ModelNormal):
@@ -29,15 +27,11 @@ class ExperimentsInlineCondition(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_datadog_flag_configuration_targeting_rules_items_conditions_items_operator import (
-            ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationTargetingRulesItemsConditionsItemsOperator,
-        )
+        from datadog_api_client.v2.model.experiments_targeting_rule_operator import ExperimentsTargetingRuleOperator
 
         return {
             "attribute": (str,),
-            "operator": (
-                ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationTargetingRulesItemsConditionsItemsOperator,
-            ),
+            "operator": (ExperimentsTargetingRuleOperator,),
             "value": ([str],),
         }
 
@@ -47,13 +41,7 @@ class ExperimentsInlineCondition(ModelNormal):
         "value": "value",
     }
 
-    def __init__(
-        self_,
-        attribute: str,
-        operator: ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationTargetingRulesItemsConditionsItemsOperator,
-        value: List[str],
-        **kwargs,
-    ):
+    def __init__(self_, attribute: str, operator: ExperimentsTargetingRuleOperator, value: List[str], **kwargs):
         """
         An inline condition. The saved_filter_id field must be omitted or null.
 
@@ -61,7 +49,7 @@ class ExperimentsInlineCondition(ModelNormal):
         :type attribute: str
 
         :param operator: Required with attribute and value for an inline condition; omit when saved_filter_id is set.
-        :type operator: ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationTargetingRulesItemsConditionsItemsOperator
+        :type operator: ExperimentsTargetingRuleOperator
 
         :param value: Values used by the operator. Every operator requires at least one value.
         :type value: [str]

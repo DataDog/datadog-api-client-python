@@ -33,6 +33,7 @@ class ObservabilityPipelineGenerateMetricsV2Processor(ModelNormal):
         return {
             "display_name": (str,),
             "enabled": (bool,),
+            "enabled_metric_aggregation": (bool,),
             "id": (str,),
             "include": (str,),
             "metrics": ([ObservabilityPipelineGeneratedMetric],),
@@ -42,6 +43,7 @@ class ObservabilityPipelineGenerateMetricsV2Processor(ModelNormal):
     attribute_map = {
         "display_name": "display_name",
         "enabled": "enabled",
+        "enabled_metric_aggregation": "enabled_metric_aggregation",
         "id": "id",
         "include": "include",
         "metrics": "metrics",
@@ -54,6 +56,7 @@ class ObservabilityPipelineGenerateMetricsV2Processor(ModelNormal):
         id: str,
         type: ObservabilityPipelineGenerateMetricsV2ProcessorType,
         display_name: Union[str, UnsetType] = unset,
+        enabled_metric_aggregation: Union[bool, UnsetType] = unset,
         include: Union[str, UnsetType] = unset,
         metrics: Union[List[ObservabilityPipelineGeneratedMetric], UnsetType] = unset,
         **kwargs,
@@ -72,6 +75,9 @@ class ObservabilityPipelineGenerateMetricsV2Processor(ModelNormal):
         :param enabled: Indicates whether the processor is enabled.
         :type enabled: bool
 
+        :param enabled_metric_aggregation: [Recommended] Indicates whether generated metrics are automatically aggregated and enriched with the ``worker_uuid`` tag before being sent to the metric destination.
+        :type enabled_metric_aggregation: bool, optional
+
         :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline.
         :type id: str
 
@@ -86,6 +92,8 @@ class ObservabilityPipelineGenerateMetricsV2Processor(ModelNormal):
         """
         if display_name is not unset:
             kwargs["display_name"] = display_name
+        if enabled_metric_aggregation is not unset:
+            kwargs["enabled_metric_aggregation"] = enabled_metric_aggregation
         if include is not unset:
             kwargs["include"] = include
         if metrics is not unset:
