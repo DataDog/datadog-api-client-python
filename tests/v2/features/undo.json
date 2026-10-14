@@ -369,7 +369,7 @@
     }
   },
   "CreateAIImpactUserActivity": {
-    "tag": "DORA Metrics",
+    "tag": "Delivery Performance",
     "undo": {
       "type": "idempotent"
     }
@@ -2659,67 +2659,67 @@
     }
   },
   "CreateDORADeployment": {
-    "tag": "DORA Metrics",
+    "tag": "Delivery Performance",
     "undo": {
       "type": "idempotent"
     }
   },
   "DeleteDORADeployment": {
-    "tag": "DORA Metrics",
+    "tag": "Delivery Performance",
     "undo": {
       "type": "idempotent"
     }
   },
   "PatchDORADeploymentByVersion": {
-    "tag": "DORA Metrics",
+    "tag": "Delivery Performance",
     "undo": {
       "type": "idempotent"
     }
   },
   "ListDORADeployments": {
-    "tag": "DORA Metrics",
+    "tag": "Delivery Performance",
     "undo": {
       "type": "safe"
     }
   },
   "GetDORADeployment": {
-    "tag": "DORA Metrics",
+    "tag": "Delivery Performance",
     "undo": {
       "type": "safe"
     }
   },
   "PatchDORADeployment": {
-    "tag": "DORA Metrics",
+    "tag": "Delivery Performance",
     "undo": {
       "type": "idempotent"
     }
   },
   "CreateDORAFailure": {
-    "tag": "DORA Metrics",
+    "tag": "Delivery Performance",
     "undo": {
       "type": "idempotent"
     }
   },
   "DeleteDORAFailure": {
-    "tag": "DORA Metrics",
+    "tag": "Delivery Performance",
     "undo": {
       "type": "idempotent"
     }
   },
   "ListDORAFailures": {
-    "tag": "DORA Metrics",
+    "tag": "Delivery Performance",
     "undo": {
       "type": "safe"
     }
   },
   "GetDORAFailure": {
-    "tag": "DORA Metrics",
+    "tag": "Delivery Performance",
     "undo": {
       "type": "safe"
     }
   },
   "CreateDORAIncident": {
-    "tag": "DORA Metrics",
+    "tag": "Delivery Performance",
     "undo": {
       "type": "idempotent"
     }

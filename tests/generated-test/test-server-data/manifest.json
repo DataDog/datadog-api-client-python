@@ -246,11 +246,6 @@
       "version": "v2"
     },
     {
-      "feature": "DORA Metrics",
-      "file": "v2/dora-metrics.json",
-      "version": "v2"
-    },
-    {
       "feature": "Dashboard Lists",
       "file": "v2/dashboard-lists.json",
       "version": "v2"
@@ -268,6 +263,11 @@
     {
       "feature": "Datasets",
       "file": "v2/datasets.json",
+      "version": "v2"
+    },
+    {
+      "feature": "Delivery Performance",
+      "file": "v2/delivery-performance.json",
       "version": "v2"
     },
     {

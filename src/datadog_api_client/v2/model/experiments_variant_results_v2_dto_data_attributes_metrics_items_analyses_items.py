@@ -15,9 +15,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.experiments_variant_results_v2_dto_data_attributes_metrics_items_analyses_items_confidence_interval import (
-        ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItemsConfidenceInterval,
-    )
+    from datadog_api_client.v2.model.experiments_confidence_interval import ExperimentsConfidenceInterval
     from datadog_api_client.v2.model.experiments_variant_results_v2_dto_data_attributes_metrics_items_analyses_items_lift_type import (
         ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItemsLiftType,
     )
@@ -32,9 +30,7 @@ if TYPE_CHECKING:
 class ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItems(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.experiments_variant_results_v2_dto_data_attributes_metrics_items_analyses_items_confidence_interval import (
-            ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItemsConfidenceInterval,
-        )
+        from datadog_api_client.v2.model.experiments_confidence_interval import ExperimentsConfidenceInterval
         from datadog_api_client.v2.model.experiments_variant_results_v2_dto_data_attributes_metrics_items_analyses_items_lift_type import (
             ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItemsLiftType,
         )
@@ -46,9 +42,7 @@ class ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItems(Mode
         )
 
         return {
-            "confidence_interval": (
-                ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItemsConfidenceInterval,
-            ),
+            "confidence_interval": (ExperimentsConfidenceInterval,),
             "confidence_level": (float,),
             "evsi": (float,),
             "expectation_above_zero": (float,),
@@ -99,9 +93,7 @@ class ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItems(Mode
 
     def __init__(
         self_,
-        confidence_interval: Union[
-            ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItemsConfidenceInterval, UnsetType
-        ] = unset,
+        confidence_interval: Union[ExperimentsConfidenceInterval, UnsetType] = unset,
         confidence_level: Union[float, UnsetType] = unset,
         evsi: Union[float, UnsetType] = unset,
         expectation_above_zero: Union[float, UnsetType] = unset,
@@ -132,7 +124,7 @@ class ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItems(Mode
         One statistical comparison for a metric and variant.
 
         :param confidence_interval: Lower and upper bounds of the reported statistical interval.
-        :type confidence_interval: ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItemsConfidenceInterval, optional
+        :type confidence_interval: ExperimentsConfidenceInterval, optional
 
         :param confidence_level: Configured nominal confidence level. Interval bounds can use an adjusted level for multiple testing or hybrid methods.
         :type confidence_level: float, optional

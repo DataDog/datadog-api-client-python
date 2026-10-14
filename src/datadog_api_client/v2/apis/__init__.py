@@ -39,7 +39,6 @@ from datadog_api_client.v2.api.containers_api import ContainersApi
 from datadog_api_client.v2.api.customer_org_api import CustomerOrgApi
 from datadog_api_client.v2.api.ddsql_api import DDSQLApi
 from datadog_api_client.v2.api.dem_api import DEMApi
-from datadog_api_client.v2.api.dora_metrics_api import DORAMetricsApi
 from datadog_api_client.v2.api.dashboard_lists_api import DashboardListsApi
 from datadog_api_client.v2.api.dashboard_secure_embed_api import DashboardSecureEmbedApi
 from datadog_api_client.v2.api.dashboard_sharing_api import DashboardSharingApi
@@ -48,6 +47,7 @@ from datadog_api_client.v2.api.data_deletion_api import DataDeletionApi
 from datadog_api_client.v2.api.data_observability_api import DataObservabilityApi
 from datadog_api_client.v2.api.databricks_integration_api import DatabricksIntegrationApi
 from datadog_api_client.v2.api.datasets_api import DatasetsApi
+from datadog_api_client.v2.api.delivery_performance_api import DeliveryPerformanceApi
 from datadog_api_client.v2.api.deployment_gates_api import DeploymentGatesApi
 from datadog_api_client.v2.api.domain_allowlist_api import DomainAllowlistApi
 from datadog_api_client.v2.api.downtimes_api import DowntimesApi
@@ -196,7 +196,6 @@ __all__ = [
     "CustomerOrgApi",
     "DDSQLApi",
     "DEMApi",
-    "DORAMetricsApi",
     "DashboardListsApi",
     "DashboardSecureEmbedApi",
     "DashboardSharingApi",
@@ -205,6 +204,7 @@ __all__ = [
     "DataObservabilityApi",
     "DatabricksIntegrationApi",
     "DatasetsApi",
+    "DeliveryPerformanceApi",
     "DeploymentGatesApi",
     "DomainAllowlistApi",
     "DowntimesApi",

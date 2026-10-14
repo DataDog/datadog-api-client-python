@@ -13,9 +13,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_warehouse_exposure_configuration_entry_point import (
-        ExperimentsPatchExperimentV2ResponseDataAttributesWarehouseExposureConfigurationEntryPoint,
-    )
+    from datadog_api_client.v2.model.experiments_warehouse_entry_point import ExperimentsWarehouseEntryPoint
 
 
 class ExperimentsCreateExperimentV2RequestDataAttributesWarehouseExposureConfiguration(ModelNormal):
@@ -29,14 +27,10 @@ class ExperimentsCreateExperimentV2RequestDataAttributesWarehouseExposureConfigu
 
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_warehouse_exposure_configuration_entry_point import (
-            ExperimentsPatchExperimentV2ResponseDataAttributesWarehouseExposureConfigurationEntryPoint,
-        )
+        from datadog_api_client.v2.model.experiments_warehouse_entry_point import ExperimentsWarehouseEntryPoint
 
         return {
-            "entry_point": (
-                ExperimentsPatchExperimentV2ResponseDataAttributesWarehouseExposureConfigurationEntryPoint,
-            ),
+            "entry_point": (ExperimentsWarehouseEntryPoint,),
             "experiment_key": (str,),
             "exposure_sql_model_id": (str,),
         }
@@ -49,9 +43,7 @@ class ExperimentsCreateExperimentV2RequestDataAttributesWarehouseExposureConfigu
 
     def __init__(
         self_,
-        entry_point: Union[
-            ExperimentsPatchExperimentV2ResponseDataAttributesWarehouseExposureConfigurationEntryPoint, none_type
-        ],
+        entry_point: Union[ExperimentsWarehouseEntryPoint, none_type],
         experiment_key: str,
         exposure_sql_model_id: str,
         **kwargs,
@@ -60,7 +52,7 @@ class ExperimentsCreateExperimentV2RequestDataAttributesWarehouseExposureConfigu
         Warehouse model and experiment key used to read assignment data.
 
         :param entry_point: Optional Warehouse measure that scopes analyzed subjects.
-        :type entry_point: ExperimentsPatchExperimentV2ResponseDataAttributesWarehouseExposureConfigurationEntryPoint, none_type
+        :type entry_point: ExperimentsWarehouseEntryPoint, none_type
 
         :param experiment_key: Warehouse experiment key. Must not be blank.
         :type experiment_key: str

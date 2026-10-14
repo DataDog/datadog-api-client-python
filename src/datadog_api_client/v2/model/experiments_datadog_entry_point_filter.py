@@ -12,32 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_datadog_flag_configuration_entry_point_filters_items_items_column_type import (
-        ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPointFiltersItemsItemsColumnType,
+    from datadog_api_client.v2.model.experiments_datadog_entry_point_filter_column_type import (
+        ExperimentsDatadogEntryPointFilterColumnType,
     )
-    from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_datadog_flag_configuration_entry_point_filters_items_items_operation import (
-        ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPointFiltersItemsItemsOperation,
+    from datadog_api_client.v2.model.experiments_datadog_entry_point_filter_operation import (
+        ExperimentsDatadogEntryPointFilterOperation,
     )
 
 
 class ExperimentsDatadogEntryPointFilter(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_datadog_flag_configuration_entry_point_filters_items_items_column_type import (
-            ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPointFiltersItemsItemsColumnType,
+        from datadog_api_client.v2.model.experiments_datadog_entry_point_filter_column_type import (
+            ExperimentsDatadogEntryPointFilterColumnType,
         )
-        from datadog_api_client.v2.model.experiments_patch_experiment_v2_response_data_attributes_datadog_flag_configuration_entry_point_filters_items_items_operation import (
-            ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPointFiltersItemsItemsOperation,
+        from datadog_api_client.v2.model.experiments_datadog_entry_point_filter_operation import (
+            ExperimentsDatadogEntryPointFilterOperation,
         )
 
         return {
             "column": (str,),
-            "column_type": (
-                ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPointFiltersItemsItemsColumnType,
-            ),
-            "operation": (
-                ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPointFiltersItemsItemsOperation,
-            ),
+            "column_type": (ExperimentsDatadogEntryPointFilterColumnType,),
+            "operation": (ExperimentsDatadogEntryPointFilterOperation,),
             "values": ([str],),
         }
 
@@ -51,8 +47,8 @@ class ExperimentsDatadogEntryPointFilter(ModelNormal):
     def __init__(
         self_,
         column: str,
-        column_type: ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPointFiltersItemsItemsColumnType,
-        operation: ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPointFiltersItemsItemsOperation,
+        column_type: ExperimentsDatadogEntryPointFilterColumnType,
+        operation: ExperimentsDatadogEntryPointFilterOperation,
         values: List[str],
         **kwargs,
     ):
@@ -63,10 +59,10 @@ class ExperimentsDatadogEntryPointFilter(ModelNormal):
         :type column: str
 
         :param column_type: Data type of the column evaluated by the entry-point filter.
-        :type column_type: ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPointFiltersItemsItemsColumnType
+        :type column_type: ExperimentsDatadogEntryPointFilterColumnType
 
         :param operation: Comparison applied by the Datadog entry-point filter.
-        :type operation: ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfigurationEntryPointFiltersItemsItemsOperation
+        :type operation: ExperimentsDatadogEntryPointFilterOperation
 
         :param values: Comparison values used by the filter operation.
         :type values: [str]
