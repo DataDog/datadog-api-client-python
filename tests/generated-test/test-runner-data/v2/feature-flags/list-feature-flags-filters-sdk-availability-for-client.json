@@ -1,0 +1,58 @@
+{
+  "api": "FeatureFlags",
+  "expected_status": 200,
+  "feature": "Feature Flags",
+  "id": "v2/Feature Flags/List feature flags filters SDK availability for CLIENT",
+  "operation_id": "ListFeatureFlags",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": true,
+        "in": "query",
+        "name": "tags",
+        "required": false,
+        "schema": {
+          "format": null,
+          "items": {
+            "format": null,
+            "ref": null,
+            "type": "string"
+          },
+          "ref": null,
+          "type": "array"
+        },
+        "source": {
+          "type": "literal",
+          "value": [
+            "list-test:{{ unique_lower }}"
+          ]
+        },
+        "style": "form"
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "distribution_channel",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": "FeatureFlagDistributionChannel",
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "CLIENT"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/feature-flags"
+  },
+  "scenario": "List feature flags filters SDK availability for CLIENT",
+  "schema_version": 1,
+  "version": "v2"
+}

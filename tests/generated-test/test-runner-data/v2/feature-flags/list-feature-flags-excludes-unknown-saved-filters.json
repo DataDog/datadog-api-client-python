@@ -1,0 +1,58 @@
+{
+  "api": "FeatureFlags",
+  "expected_status": 200,
+  "feature": "Feature Flags",
+  "id": "v2/Feature Flags/List feature flags excludes unknown saved filters",
+  "operation_id": "ListFeatureFlags",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": true,
+        "in": "query",
+        "name": "tags",
+        "required": false,
+        "schema": {
+          "format": null,
+          "items": {
+            "format": null,
+            "ref": null,
+            "type": "string"
+          },
+          "ref": null,
+          "type": "array"
+        },
+        "source": {
+          "type": "literal",
+          "value": [
+            "list-test:{{ unique_lower }}"
+          ]
+        },
+        "style": "form"
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "saved_filter_id",
+        "required": false,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "00000000-0000-0000-0000-000000000000"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/feature-flags"
+  },
+  "scenario": "List feature flags excludes unknown saved filters",
+  "schema_version": 1,
+  "version": "v2"
+}

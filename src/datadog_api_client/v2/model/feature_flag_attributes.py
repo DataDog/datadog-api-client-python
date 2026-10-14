@@ -19,6 +19,7 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.feature_flag_environment import FeatureFlagEnvironment
     from datadog_api_client.v2.model.feature_flag_staleness_details import FeatureFlagStalenessDetails
+    from datadog_api_client.v2.model.feature_flag_staleness_status_override import FeatureFlagStalenessStatusOverride
     from datadog_api_client.v2.model.value_type import ValueType
     from datadog_api_client.v2.model.variant import Variant
 
@@ -28,6 +29,9 @@ class FeatureFlagAttributes(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v2.model.feature_flag_environment import FeatureFlagEnvironment
         from datadog_api_client.v2.model.feature_flag_staleness_details import FeatureFlagStalenessDetails
+        from datadog_api_client.v2.model.feature_flag_staleness_status_override import (
+            FeatureFlagStalenessStatusOverride,
+        )
         from datadog_api_client.v2.model.value_type import ValueType
         from datadog_api_client.v2.model.variant import Variant
 
@@ -46,6 +50,7 @@ class FeatureFlagAttributes(ModelNormal):
             "require_approval": (bool,),
             "staleness_details": (FeatureFlagStalenessDetails,),
             "staleness_status": (str,),
+            "staleness_status_override": (FeatureFlagStalenessStatusOverride,),
             "tags": ([str],),
             "updated_at": (datetime,),
             "value_type": (ValueType,),
@@ -67,6 +72,7 @@ class FeatureFlagAttributes(ModelNormal):
         "require_approval": "require_approval",
         "staleness_details": "staleness_details",
         "staleness_status": "staleness_status",
+        "staleness_status_override": "staleness_status_override",
         "tags": "tags",
         "updated_at": "updated_at",
         "value_type": "value_type",
@@ -91,6 +97,7 @@ class FeatureFlagAttributes(ModelNormal):
         require_approval: Union[bool, UnsetType] = unset,
         staleness_details: Union[FeatureFlagStalenessDetails, UnsetType] = unset,
         staleness_status: Union[str, UnsetType] = unset,
+        staleness_status_override: Union[FeatureFlagStalenessStatusOverride, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         updated_at: Union[datetime, UnsetType] = unset,
         **kwargs,
@@ -140,6 +147,9 @@ class FeatureFlagAttributes(ModelNormal):
         :param staleness_status: Indicates the whether a feature flag is stale or not.
         :type staleness_status: str, optional
 
+        :param staleness_status_override: An explicit staleness status override. Omitted when no override is set.
+        :type staleness_status_override: FeatureFlagStalenessStatusOverride, optional
+
         :param tags: Tags associated with the feature flag.
         :type tags: [str], optional
 
@@ -174,6 +184,8 @@ class FeatureFlagAttributes(ModelNormal):
             kwargs["staleness_details"] = staleness_details
         if staleness_status is not unset:
             kwargs["staleness_status"] = staleness_status
+        if staleness_status_override is not unset:
+            kwargs["staleness_status_override"] = staleness_status_override
         if tags is not unset:
             kwargs["tags"] = tags
         if updated_at is not unset:

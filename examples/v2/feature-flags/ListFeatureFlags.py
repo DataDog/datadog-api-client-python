@@ -11,7 +11,12 @@ configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = FeatureFlagsApi(api_client)
     response = api_instance.list_feature_flags(
-        limit=10,
+        tags=[
+            "list-test:example-feature-flag",
+        ],
+        sort="name",
+        page_limit=1,
+        page_offset=0,
     )
 
     print(response)

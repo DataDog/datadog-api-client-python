@@ -1,0 +1,66 @@
+{
+  "api": "FeatureFlags",
+  "expected_status": 200,
+  "feature": "Feature Flags",
+  "id": "v2/Feature Flags/List feature flags filters disabled production status",
+  "operation_id": "ListFeatureFlags",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": true,
+        "in": "query",
+        "name": "flag_ids",
+        "required": false,
+        "schema": {
+          "format": null,
+          "items": {
+            "format": "uuid",
+            "ref": null,
+            "type": "string"
+          },
+          "ref": null,
+          "type": "array"
+        },
+        "source": {
+          "type": "literal",
+          "value": [
+            "{{ feature_flag_list_a.data.id }}",
+            "{{ feature_flag_list_b.data.id }}"
+          ]
+        },
+        "style": "form"
+      },
+      {
+        "explode": true,
+        "in": "query",
+        "name": "production_status",
+        "required": false,
+        "schema": {
+          "format": null,
+          "items": {
+            "format": null,
+            "ref": "FeatureFlagProductionStatus",
+            "type": "string"
+          },
+          "ref": null,
+          "type": "array"
+        },
+        "source": {
+          "type": "literal",
+          "value": [
+            "DISABLED"
+          ]
+        },
+        "style": "form"
+      }
+    ],
+    "path": "/api/v2/feature-flags"
+  },
+  "scenario": "List feature flags filters disabled production status",
+  "schema_version": 1,
+  "version": "v2"
+}

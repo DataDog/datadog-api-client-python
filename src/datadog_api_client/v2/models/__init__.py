@@ -3938,11 +3938,15 @@ from datadog_api_client.v2.model.feature_flag_environment import FeatureFlagEnvi
 from datadog_api_client.v2.model.feature_flag_environment_list_item import FeatureFlagEnvironmentListItem
 from datadog_api_client.v2.model.feature_flag_list_item import FeatureFlagListItem
 from datadog_api_client.v2.model.feature_flag_list_item_attributes import FeatureFlagListItemAttributes
+from datadog_api_client.v2.model.feature_flag_production_status import FeatureFlagProductionStatus
 from datadog_api_client.v2.model.feature_flag_response import FeatureFlagResponse
 from datadog_api_client.v2.model.feature_flag_staleness_code_reference import FeatureFlagStalenessCodeReference
 from datadog_api_client.v2.model.feature_flag_staleness_details import FeatureFlagStalenessDetails
 from datadog_api_client.v2.model.feature_flag_staleness_recommended_action import FeatureFlagStalenessRecommendedAction
+from datadog_api_client.v2.model.feature_flag_staleness_status import FeatureFlagStalenessStatus
+from datadog_api_client.v2.model.feature_flag_staleness_status_override import FeatureFlagStalenessStatusOverride
 from datadog_api_client.v2.model.feature_flag_status import FeatureFlagStatus
+from datadog_api_client.v2.model.feature_flags_pagination_links import FeatureFlagsPaginationLinks
 from datadog_api_client.v2.model.feature_flags_pagination_meta import FeatureFlagsPaginationMeta
 from datadog_api_client.v2.model.feature_flags_pagination_meta_page import FeatureFlagsPaginationMetaPage
 from datadog_api_client.v2.model.file_coverage_lines import FileCoverageLines
@@ -15355,11 +15359,15 @@ __all__ = [
     "FeatureFlagEnvironmentListItem",
     "FeatureFlagListItem",
     "FeatureFlagListItemAttributes",
+    "FeatureFlagProductionStatus",
     "FeatureFlagResponse",
     "FeatureFlagStalenessCodeReference",
     "FeatureFlagStalenessDetails",
     "FeatureFlagStalenessRecommendedAction",
+    "FeatureFlagStalenessStatus",
+    "FeatureFlagStalenessStatusOverride",
     "FeatureFlagStatus",
+    "FeatureFlagsPaginationLinks",
     "FeatureFlagsPaginationMeta",
     "FeatureFlagsPaginationMetaPage",
     "FileCoverageLines",

@@ -1,0 +1,44 @@
+{
+  "api": "FeatureFlags",
+  "expected_status": 200,
+  "feature": "Feature Flags",
+  "id": "v2/Feature Flags/List feature flags requires every ordinary tag",
+  "operation_id": "ListFeatureFlags",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": true,
+        "in": "query",
+        "name": "tags",
+        "required": false,
+        "schema": {
+          "format": null,
+          "items": {
+            "format": null,
+            "ref": null,
+            "type": "string"
+          },
+          "ref": null,
+          "type": "array"
+        },
+        "source": {
+          "type": "literal",
+          "value": [
+            "list-test:{{ unique_lower }}",
+            "color:blue",
+            "color:red"
+          ]
+        },
+        "style": "form"
+      }
+    ],
+    "path": "/api/v2/feature-flags"
+  },
+  "scenario": "List feature flags requires every ordinary tag",
+  "schema_version": 1,
+  "version": "v2"
+}

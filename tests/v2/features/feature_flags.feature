@@ -75,7 +75,7 @@ Feature: Feature Flags
     When the request is sent
     Then the response status is 409 Conflict
 
-  @skip-validation @team:ddoghq/feature-flags
+  @team:ddoghq/feature-flags
   Scenario: Create a feature flag returns "Created" response
     Given new "CreateFeatureFlag" request
     And body with value {"data": {"type": "feature-flags", "attributes": {"default_variant_key": "variant-{{ unique }}-1", "distribution_channel": "SERVER", "key": "test-feature-flag-{{ unique }}", "name": "Test Feature Flag {{ unique }}", "require_approval": false, "staleness_status": "PERMANENT", "tags": ["env:api-client-test"], "value_type": "BOOLEAN", "variants": [{"key": "variant-{{ unique }}-1", "name": "Variant {{ unique }} A", "value": "true"}, {"key": "variant-{{ unique }}-2", "name": "Variant {{ unique }} B", "value": "false"}]}}}
@@ -85,6 +85,7 @@ Feature: Feature Flags
     And the response "data.attributes.key" is equal to "test-feature-flag-{{ unique }}"
     And the response "data.attributes.name" is equal to "Test Feature Flag {{ unique }}"
     And the response "data.attributes.require_approval" is equal to false
+    And the response "data.attributes.staleness_status_override" is equal to "PERMANENT"
     And the response "data.attributes.tags" is equal to ["env:api-client-test"]
     And the response "data.attributes.value_type" is equal to "BOOLEAN"
 
@@ -308,11 +309,276 @@ Feature: Feature Flags
     Then the response status is 200 OK
 
   @team:ddoghq/feature-flags
-  Scenario: List feature flags returns "OK" response
+  Scenario: List feature flags applies default pagination
     Given new "ListFeatureFlags" request
-    And request contains "limit" parameter with value 10
+    And request contains "key" parameter with value "missing-{{ unique_lower }}"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data" has length 0
+    And the response "meta.page.total" is equal to 0
+    And the response "meta.page.limit" is equal to 25
+    And the response "meta.page.offset" is equal to 0
+
+  @team:ddoghq/feature-flags
+  Scenario: List feature flags combines exact keys tags search types creators and IDs
+    Given there is a valid "feature_flag_list_a" in the system
+    And there is a valid "feature_flag_list_b" in the system
+    And new "ListFeatureFlags" request
+    And request contains "key" parameter with value "list-a-{{ unique_lower }}"
+    And request contains "tags" parameter with value ["list-test:{{ unique_lower }}", "color:blue"]
+    And request contains "search" parameter with value "LIST-A-{{ unique_lower }}"
+    And request contains "value_type" parameter with value ["BOOLEAN", "STRING"]
+    And request contains "created_by" parameter with value ["{{ feature_flag_list_a.data.attributes.created_by }}"]
+    And request contains "flag_ids" parameter with value ["{{ feature_flag_list_a.data.id }}", "{{ feature_flag_list_b.data.id }}"]
+    And request contains "is_archived" parameter with value false
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 1
+    And the response "meta.page.total" is equal to 1
+    And the response "data[0].id" has the same value as "feature_flag_list_a.data.id"
+
+  @team:ddoghq/feature-flags
+  Scenario: List feature flags combines teams with legacy team tags
+    Given there is a valid "feature_flag_list_a" in the system
+    And there is a valid "feature_flag_list_b" in the system
+    And new "ListFeatureFlags" request
+    And request contains "tags" parameter with value ["list-test:{{ unique_lower }}", "team:api-client-test-b"]
+    And request contains "teams" parameter with value ["api-client-test-a", "api-client-test-a"]
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 2
+    And the response "meta.page.total" is equal to 2
+
+  @team:ddoghq/feature-flags
+  Scenario: List feature flags combines teams with ordinary tags
+    Given there is a valid "feature_flag_list_a" in the system
+    And there is a valid "feature_flag_list_b" in the system
+    And new "ListFeatureFlags" request
+    And request contains "tags" parameter with value ["list-test:{{ unique_lower }}", "color:blue"]
+    And request contains "teams" parameter with value ["api-client-test-a", "api-client-test-b"]
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 1
+    And the response "meta.page.total" is equal to 1
+
+  @team:ddoghq/feature-flags
+  Scenario: List feature flags does not partially match keys
+    Given there is a valid "feature_flag_list_a" in the system
+    And new "ListFeatureFlags" request
+    And request contains "key" parameter with value "list-a-"
+    And request contains "tags" parameter with value ["list-test:{{ unique_lower }}"]
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 0
+    And the response "meta.page.total" is equal to 0
+
+  @team:ddoghq/feature-flags
+  Scenario: List feature flags excludes unknown saved filters
+    Given there is a valid "feature_flag_list_a" in the system
+    And new "ListFeatureFlags" request
+    And request contains "tags" parameter with value ["list-test:{{ unique_lower }}"]
+    And request contains "saved_filter_id" parameter with value "00000000-0000-0000-0000-000000000000"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 0
+    And the response "meta.page.total" is equal to 0
+
+  @team:ddoghq/feature-flags
+  Scenario: List feature flags excludes unknown teams
+    Given there is a valid "feature_flag_list_a" in the system
+    And there is a valid "feature_flag_list_b" in the system
+    And new "ListFeatureFlags" request
+    And request contains "tags" parameter with value ["list-test:{{ unique_lower }}"]
+    And request contains "teams" parameter with value ["missing-{{ unique_lower }}"]
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 0
+    And the response "meta.page.total" is equal to 0
+
+  @team:ddoghq/feature-flags
+  Scenario: List feature flags filters SDK availability for ALL
+    Given there is a valid "feature_flag_list_a" in the system
+    And there is a valid "feature_flag_list_b" in the system
+    And there is a valid "feature_flag_list_c" in the system
+    And new "ListFeatureFlags" request
+    And request contains "tags" parameter with value ["list-test:{{ unique_lower }}"]
+    And request contains "distribution_channel" parameter with value "ALL"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 3
+    And the response "meta.page.total" is equal to 3
+
+  @team:ddoghq/feature-flags
+  Scenario: List feature flags filters SDK availability for CLIENT
+    Given there is a valid "feature_flag_list_a" in the system
+    And there is a valid "feature_flag_list_b" in the system
+    And there is a valid "feature_flag_list_c" in the system
+    And new "ListFeatureFlags" request
+    And request contains "tags" parameter with value ["list-test:{{ unique_lower }}"]
+    And request contains "distribution_channel" parameter with value "CLIENT"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 2
+    And the response "meta.page.total" is equal to 2
+
+  @team:ddoghq/feature-flags
+  Scenario: List feature flags filters SDK availability for SERVER
+    Given there is a valid "feature_flag_list_a" in the system
+    And there is a valid "feature_flag_list_b" in the system
+    And there is a valid "feature_flag_list_c" in the system
+    And new "ListFeatureFlags" request
+    And request contains "tags" parameter with value ["list-test:{{ unique_lower }}"]
+    And request contains "distribution_channel" parameter with value "SERVER"
+    And request contains "sort" parameter with value "name"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 2
+    And the response "meta.page.total" is equal to 2
+    And the response "data[0].attributes.key" is equal to "list-b-{{ unique_lower }}"
+
+  @team:ddoghq/feature-flags
+  Scenario: List feature flags filters disabled production status
+    Given there is a valid "production_environment" in the system
+    And there is a valid "feature_flag_list_a" in the system
+    And there is a valid "feature_flag_list_b" in the system
+    And new "ListFeatureFlags" request
+    And request contains "flag_ids" parameter with value ["{{ feature_flag_list_a.data.id }}", "{{ feature_flag_list_b.data.id }}"]
+    And request contains "production_status" parameter with value ["DISABLED"]
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 2
+    And the response "meta.page.total" is equal to 2
+
+  @team:ddoghq/feature-flags
+  Scenario: List feature flags filters permanent staleness using computed details
+    Given there is a valid "feature_flag_list_a" in the system
+    And there is a valid "feature_flag_list_b" in the system
+    And new "ListFeatureFlags" request
+    And request contains "tags" parameter with value ["list-test:{{ unique_lower }}"]
+    And request contains "staleness_status" parameter with value "PERMANENT"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 1
+    And the response "meta.page.total" is equal to 1
+    And the response "data[0].attributes.staleness_details.staleness_status" is equal to "PERMANENT"
+    And the response "data[0].attributes.staleness_status" is equal to "ACTIVE"
+
+  @team:ddoghq/feature-flags
+  Scenario: List feature flags gives page parameters precedence over aliases
+    Given there is a valid "feature_flag_list_a" in the system
+    And there is a valid "feature_flag_list_b" in the system
+    And new "ListFeatureFlags" request
+    And request contains "tags" parameter with value ["list-test:{{ unique_lower }}"]
+    And request contains "limit" parameter with value 2
+    And request contains "offset" parameter with value 1
+    And request contains "page[limit]" parameter with value 1
+    And request contains "page[offset]" parameter with value 0
+    And request contains "sort" parameter with value "name"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 1
+    And the response "data[0].attributes.key" is equal to "list-a-{{ unique_lower }}"
+    And the response "meta.page.limit" is equal to 1
+    And the response "meta.page.offset" is equal to 0
+
+  @team:ddoghq/feature-flags
+  Scenario: List feature flags matches any selected team
+    Given there is a valid "feature_flag_list_a" in the system
+    And there is a valid "feature_flag_list_b" in the system
+    And new "ListFeatureFlags" request
+    And request contains "tags" parameter with value ["list-test:{{ unique_lower }}"]
+    And request contains "teams" parameter with value ["api-client-test-a", "api-client-test-b"]
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 2
+    And the response "meta.page.total" is equal to 2
+
+  @team:ddoghq/feature-flags
+  Scenario: List feature flags rejects empty team handles
+    Given new "ListFeatureFlags" request
+    And request contains "teams" parameter with value [""]
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:ddoghq/feature-flags
+  Scenario: List feature flags rejects unknown sort fields
+    Given new "ListFeatureFlags" request
+    And request contains "sort" parameter with value "invalid"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:ddoghq/feature-flags
+  Scenario: List feature flags requires every ordinary tag
+    Given there is a valid "feature_flag_list_a" in the system
+    And there is a valid "feature_flag_list_b" in the system
+    And new "ListFeatureFlags" request
+    And request contains "tags" parameter with value ["list-test:{{ unique_lower }}", "color:blue", "color:red"]
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 0
+    And the response "meta.page.total" is equal to 0
+
+  @team:ddoghq/feature-flags
+  Scenario: List feature flags returns "Bad Request" response
+    Given new "ListFeatureFlags" request
+    And request contains "teams" parameter with value ["team:checkout"]
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:ddoghq/feature-flags
+  Scenario: List feature flags returns "OK" response
+    Given there is a valid "feature_flag_list_a" in the system
+    And there is a valid "feature_flag_list_b" in the system
+    And new "ListFeatureFlags" request
+    And request contains "tags" parameter with value ["list-test:{{ unique_lower }}"]
+    And request contains "page[limit]" parameter with value 1
+    And request contains "page[offset]" parameter with value 0
+    And request contains "sort" parameter with value "name"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 1
+    And the response "data[0].attributes.key" is equal to "list-a-{{ unique_lower }}"
+    And the response "meta.page.type" is equal to "offset_limit"
+    And the response "meta.page.limit" is equal to 1
+    And the response "meta.page.offset" is equal to 0
+    And the response "meta.page.total" is equal to 2
+    And the response "meta.page.next_offset" is equal to 1
+    And the response "links" has field "next"
+
+  @team:ddoghq/feature-flags
+  Scenario: List feature flags returns the second filtered page
+    Given there is a valid "feature_flag_list_a" in the system
+    And there is a valid "feature_flag_list_b" in the system
+    And new "ListFeatureFlags" request
+    And request contains "tags" parameter with value ["list-test:{{ unique_lower }}"]
+    And request contains "page[limit]" parameter with value 1
+    And request contains "page[offset]" parameter with value 1
+    And request contains "sort" parameter with value "name"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 1
+    And the response "data[0].attributes.key" is equal to "list-b-{{ unique_lower }}"
+    And the response "meta.page.offset" is equal to 1
+    And the response "meta.page.total" is equal to 2
+    And the response "meta.page.next_offset" is equal to null
+    And the response "links" has field "prev"
+
+  @team:ddoghq/feature-flags
+  Scenario: List feature flags supports legacy pagination aliases
+    Given there is a valid "feature_flag_list_a" in the system
+    And there is a valid "feature_flag_list_b" in the system
+    And new "ListFeatureFlags" request
+    And request contains "tags" parameter with value ["list-test:{{ unique_lower }}"]
+    And request contains "limit" parameter with value 1
+    And request contains "offset" parameter with value 1
+    And request contains "sort" parameter with value "name"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 1
+    And the response "data[0].attributes.key" is equal to "list-b-{{ unique_lower }}"
+    And the response "meta.page.limit" is equal to 1
+    And the response "meta.page.offset" is equal to 1
+    And the response "meta.page.total" is equal to 2
 
   @generated @skip @team:ddoghq/feature-flags
   Scenario: Pause a progressive rollout returns "Bad Request" response

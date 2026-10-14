@@ -11,9 +11,32 @@
     "pagination": false,
     "parameters": [
       {
+        "explode": true,
+        "in": "query",
+        "name": "tags",
+        "required": false,
+        "schema": {
+          "format": null,
+          "items": {
+            "format": null,
+            "ref": null,
+            "type": "string"
+          },
+          "ref": null,
+          "type": "array"
+        },
+        "source": {
+          "type": "literal",
+          "value": [
+            "list-test:{{ unique_lower }}"
+          ]
+        },
+        "style": "form"
+      },
+      {
         "explode": null,
         "in": "query",
-        "name": "limit",
+        "name": "page[limit]",
         "required": false,
         "schema": {
           "format": "int64",
@@ -22,7 +45,39 @@
         },
         "source": {
           "type": "literal",
-          "value": 10
+          "value": 1
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "page[offset]",
+        "required": false,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 0
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "sort",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "name"
         },
         "style": null
       }
