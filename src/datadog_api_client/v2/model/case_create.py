@@ -46,15 +46,15 @@ class CaseCreate(ModelNormal):
         **kwargs,
     ):
         """
-        Case creation data
+        Work item creation data
 
-        :param attributes: Case creation attributes
+        :param attributes: Work item creation attributes
         :type attributes: CaseCreateAttributes
 
-        :param relationships: Relationships formed with the case on creation
+        :param relationships: Relationships formed with the work item on creation
         :type relationships: CaseCreateRelationships, optional
 
-        :param type: JSON:API resource type for cases.
+        :param type: JSON:API resource type for work items.
         :type type: CaseResourceType
         """
         if relationships is not unset:

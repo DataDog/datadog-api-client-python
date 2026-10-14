@@ -44,18 +44,18 @@ class CaseTypeResourceAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes of a case type, which define a classification category for cases. Organizations use case types to model different workflows (for example, Security Incident, Bug Report, Change Request).
+        Attributes of a work item type, which define a classification category for work items. Organizations use work item types to model different workflows (for example, Security Incident, Bug Report, Change Request).
 
-        :param deleted_at: Timestamp when the case type was marked as deleted. A null value indicates the case type is active.
+        :param deleted_at: Timestamp when the work item type was marked as deleted. A null value indicates the work item type is active.
         :type deleted_at: datetime, none_type, optional
 
-        :param description: A detailed description explaining when this case type should be used.
+        :param description: A detailed description explaining when this work item type should be used.
         :type description: str, optional
 
-        :param emoji: An emoji icon representing the case type in the UI.
+        :param emoji: An emoji icon representing the work item type in the UI.
         :type emoji: str, optional
 
-        :param name: The display name of the case type, shown in the Case Management UI when creating or viewing cases.
+        :param name: The display name of the work item type, shown in the Work Management UI when creating or viewing work items.
         :type name: str
         """
         if deleted_at is not unset:

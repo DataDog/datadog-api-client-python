@@ -48,7 +48,7 @@ class CaseRelationships(ModelNormal):
         **kwargs,
     ):
         """
-        Resources related to a case
+        Resources related to a work item
 
         :param assignee: Relationship to user.
         :type assignee: NullableUserRelationship, none_type, optional

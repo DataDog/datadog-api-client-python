@@ -30,9 +30,9 @@ class CaseCommentRequest(ModelNormal):
 
     def __init__(self_, data: CaseComment, **kwargs):
         """
-        Case comment request
+        Work item comment request
 
-        :param data: Case comment
+        :param data: Work item comment
         :type data: CaseComment
         """
         super().__init__(kwargs)

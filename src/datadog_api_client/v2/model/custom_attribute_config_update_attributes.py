@@ -55,7 +55,7 @@ class CustomAttributeConfigUpdateAttributes(ModelNormal):
         :param description: A description explaining the purpose and expected values for this custom attribute.
         :type description: str, optional
 
-        :param display_name: The human-readable label shown in the Case Management UI for this custom attribute.
+        :param display_name: The human-readable label shown in the Work Management UI for this custom attribute.
         :type display_name: str, optional
 
         :param map_from: An external field identifier to auto-populate this attribute from (used for integrations with external systems).

@@ -46,7 +46,7 @@ class AutomationRuleUpdate(ModelNormal):
         :param attributes: Attributes required to create an automation rule.
         :type attributes: AutomationRuleCreateAttributes, optional
 
-        :param type: JSON:API resource type for case automation rules.
+        :param type: JSON:API resource type for work item automation rules.
         :type type: CaseAutomationRuleResourceType
         """
         if attributes is not unset:

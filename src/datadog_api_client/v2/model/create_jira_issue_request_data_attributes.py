@@ -78,7 +78,7 @@ class CreateJiraIssueRequestDataAttributes(ModelNormal):
         :param fields: Custom fields of the Jira issue to create. For the list of available fields, see `Jira documentation <https://developer.atlassian.com/cloud/jira/platform/rest/v2/api-group-issues/#api-rest-api-2-issue-createmeta-projectidorkey-issuetypes-issuetypeid-get>`_.
         :type fields: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
-        :param priority: Case priority
+        :param priority: Work item priority
         :type priority: CasePriority, optional
 
         :param title: Title of the Jira issue. If not provided, the title will be automatically generated.

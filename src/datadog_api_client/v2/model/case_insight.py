@@ -34,7 +34,7 @@ class CaseInsight(ModelNormal):
 
     def __init__(self_, ref: str, resource_id: str, type: CaseInsightType, **kwargs):
         """
-        A reference to an external Datadog resource that provides investigative context for a case, such as a security signal, monitor alert, error tracking issue, or incident.
+        A reference to an external Datadog resource that provides investigative context for a work item, such as a security signal, monitor alert, error tracking issue, or incident.
 
         :param ref: The URL path or deep link to the insight resource within Datadog (for example, ``/monitors/12345?q=total`` ).
         :type ref: str
@@ -42,7 +42,7 @@ class CaseInsight(ModelNormal):
         :param resource_id: The unique identifier of the referenced Datadog resource (for example, a monitor ID, incident ID, or signal ID).
         :type resource_id: str
 
-        :param type: The type of Datadog resource linked to the case as contextual evidence. Each type corresponds to a different Datadog product signal (for example, a security finding, a monitor alert, or an incident).
+        :param type: The type of Datadog resource linked to the work item as contextual evidence. Each type corresponds to a different Datadog product signal (for example, a security finding, a monitor alert, or an incident).
         :type type: CaseInsightType
         """
         super().__init__(kwargs)

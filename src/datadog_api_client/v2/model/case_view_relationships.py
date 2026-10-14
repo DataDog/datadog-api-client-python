@@ -45,7 +45,7 @@ class CaseViewRelationships(ModelNormal):
         **kwargs,
     ):
         """
-        Related resources for the case view, including the creator, last modifier, and associated project.
+        Related resources for the work item view, including the creator, last modifier, and associated project.
 
         :param created_by: Relationship to user.
         :type created_by: NullableUserRelationship, none_type, optional

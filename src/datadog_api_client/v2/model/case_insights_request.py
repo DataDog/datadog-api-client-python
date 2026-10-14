@@ -30,7 +30,7 @@ class CaseInsightsRequest(ModelNormal):
 
     def __init__(self_, data: CaseInsightsData, **kwargs):
         """
-        Request payload for adding or removing case insights.
+        Request payload for adding or removing work item insights.
 
         :param data: Data object containing the insights to add or remove.
         :type data: CaseInsightsData

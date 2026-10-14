@@ -46,12 +46,12 @@ class JiraIssue(ModelNormal):
         **kwargs,
     ):
         """
-        Jira issue attached to case
+        Jira issue attached to work item
 
         :param result: Jira issue information
         :type result: JiraIssueResult, optional
 
-        :param status: Case status
+        :param status: Work item status
         :type status: Case3rdPartyTicketStatus, optional
         """
         if result is not unset:

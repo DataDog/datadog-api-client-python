@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class CaseStatus(ModelSimple):
     """
-    Deprecated way of representing the case status, which only supports OPEN, IN_PROGRESS, and CLOSED statuses. Use `status_name` instead.
+    Deprecated way of representing the work item status, which only supports OPEN, IN_PROGRESS, and CLOSED statuses. Use `status_name` instead.
 
     :param value: Must be one of ["OPEN", "IN_PROGRESS", "CLOSED"].
     :type value: str

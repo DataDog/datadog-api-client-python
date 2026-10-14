@@ -38,9 +38,9 @@ class MaintenanceWindow(ModelNormal):
         self_, attributes: MaintenanceWindowAttributes, id: str, type: MaintenanceWindowResourceType, **kwargs
     ):
         """
-        A maintenance window that defines a scheduled time period during which case-related notifications and automation rules are suppressed. Each maintenance window applies to cases matching a specified query.
+        A maintenance window that defines a scheduled time period during which notifications and automation rules related to work items are suppressed. Each maintenance window applies to work items matching a specified query.
 
-        :param attributes: Attributes of a maintenance window, including its schedule and the query that determines which cases are affected.
+        :param attributes: Attributes of a maintenance window, including its schedule and the query that determines which work items are affected.
         :type attributes: MaintenanceWindowAttributes
 
         :param id: The maintenance window's identifier.

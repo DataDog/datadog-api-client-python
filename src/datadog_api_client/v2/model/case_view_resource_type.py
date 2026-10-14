@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class CaseViewResourceType(ModelSimple):
     """
-    JSON:API resource type for case views.
+    JSON:API resource type for work item views.
 
     :param value: If omitted defaults to "view". Must be one of ["view"].
     :type value: str

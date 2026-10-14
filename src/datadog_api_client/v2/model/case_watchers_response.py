@@ -30,9 +30,9 @@ class CaseWatchersResponse(ModelNormal):
 
     def __init__(self_, data: List[CaseWatcher], **kwargs):
         """
-        Response containing the list of users watching a case.
+        Response containing the list of users watching a work item.
 
-        :param data: List of case watchers.
+        :param data: List of work item watchers.
         :type data: [CaseWatcher]
         """
         super().__init__(kwargs)

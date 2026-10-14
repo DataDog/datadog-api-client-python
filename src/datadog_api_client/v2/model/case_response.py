@@ -32,9 +32,9 @@ class CaseResponse(ModelNormal):
 
     def __init__(self_, data: Union[Case, UnsetType] = unset, **kwargs):
         """
-        Case response
+        Work item response
 
-        :param data: A case
+        :param data: A work item
         :type data: Case, optional
         """
         if data is not unset:

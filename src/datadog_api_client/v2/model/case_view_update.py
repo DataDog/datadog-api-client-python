@@ -38,12 +38,12 @@ class CaseViewUpdate(ModelNormal):
         self_, type: CaseViewResourceType, attributes: Union[CaseViewUpdateAttributes, UnsetType] = unset, **kwargs
     ):
         """
-        Data object for updating a case view.
+        Data object for updating a work item view.
 
-        :param attributes: Attributes that can be updated on a case view. All fields are optional; only provided fields are changed.
+        :param attributes: Attributes that can be updated on a work item view. All fields are optional; only provided fields are changed.
         :type attributes: CaseViewUpdateAttributes, optional
 
-        :param type: JSON:API resource type for case views.
+        :param type: JSON:API resource type for work item views.
         :type type: CaseViewResourceType
         """
         if attributes is not unset:

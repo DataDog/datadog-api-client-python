@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class CaseAutomationRuleState(ModelSimple):
     """
-    Whether the automation rule is active. Enabled rules trigger on matching case events; disabled rules are inactive but preserve their configuration.
+    Whether the automation rule is active. Enabled rules trigger on matching work item events; disabled rules are inactive but preserve their configuration.
 
     :param value: Must be one of ["ENABLED", "DISABLED"].
     :type value: str

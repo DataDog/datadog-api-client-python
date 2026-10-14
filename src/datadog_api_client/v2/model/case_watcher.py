@@ -36,15 +36,15 @@ class CaseWatcher(ModelNormal):
 
     def __init__(self_, id: str, relationships: CaseWatcherRelationships, type: CaseWatcherResourceType, **kwargs):
         """
-        Represents a user who is subscribed to notifications for a case. Watchers receive updates when the case's status, priority, assignee, or comments change.
+        Represents a user who is subscribed to notifications for a work item. Watchers receive updates when the work item's status, priority, assignee, or comments change.
 
-        :param id: The primary identifier of the case watcher.
+        :param id: The primary identifier of the work item watcher.
         :type id: str
 
-        :param relationships: Relationships for a case watcher, linking to the underlying user resource.
+        :param relationships: Relationships for a work item watcher, linking to the underlying user resource.
         :type relationships: CaseWatcherRelationships
 
-        :param type: JSON:API resource type for case watchers.
+        :param type: JSON:API resource type for work item watchers.
         :type type: CaseWatcherResourceType
         """
         super().__init__(kwargs)

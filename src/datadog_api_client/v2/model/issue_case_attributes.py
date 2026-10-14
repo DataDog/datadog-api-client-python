@@ -122,10 +122,10 @@ class IssueCaseAttributes(ModelNormal):
         :param modified_at: Timestamp of when the case was last modified.
         :type modified_at: datetime, optional
 
-        :param priority: Case priority
+        :param priority: Work item priority
         :type priority: CasePriority, optional
 
-        :param status: Deprecated way of representing the case status, which only supports OPEN, IN_PROGRESS, and CLOSED statuses. Use ``status_name`` instead. **Deprecated**.
+        :param status: Deprecated way of representing the work item status, which only supports OPEN, IN_PROGRESS, and CLOSED statuses. Use ``status_name`` instead. **Deprecated**.
         :type status: CaseStatus, optional
 
         :param title: Title of the case.

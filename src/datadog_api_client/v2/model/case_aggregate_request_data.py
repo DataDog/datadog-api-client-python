@@ -39,7 +39,7 @@ class CaseAggregateRequestData(ModelNormal):
         :param attributes: Attributes for the aggregation request, including the search query and grouping configuration.
         :type attributes: CaseAggregateRequestAttributes
 
-        :param type: JSON:API resource type for case aggregation requests.
+        :param type: JSON:API resource type for work item aggregation requests.
         :type type: CaseAggregateResourceType
         """
         super().__init__(kwargs)

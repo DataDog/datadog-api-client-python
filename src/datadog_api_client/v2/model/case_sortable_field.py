@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class CaseSortableField(ModelSimple):
     """
-    Case field that can be sorted on
+    Work item field that can be sorted on
 
     :param value: Must be one of ["created_at", "priority", "status"].
     :type value: str

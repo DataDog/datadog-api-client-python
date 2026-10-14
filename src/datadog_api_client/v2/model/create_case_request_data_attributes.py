@@ -53,7 +53,7 @@ class CreateCaseRequestDataAttributes(ModelNormal):
         :param description: Description of the case. If not provided, the description will be automatically generated.
         :type description: str, optional
 
-        :param priority: Case priority
+        :param priority: Work item priority
         :type priority: CasePriority, optional
 
         :param title: Title of the case. If not provided, the title will be automatically generated.

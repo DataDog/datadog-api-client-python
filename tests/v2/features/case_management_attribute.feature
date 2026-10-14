@@ -1,8 +1,8 @@
 @endpoint(case-management-attribute) @endpoint(case-management-attribute-v2)
 Feature: Case Management Attribute
-  View and configure custom attributes within Case Management. See the [Case
+  View and configure custom attributes within Work Management. See the [Work
   Management
-  page](https://docs.datadoghq.com/service_management/case_management/) for
+  page](https://docs.datadoghq.com/incident_response/work_management/) for
   more information.
 
   Background:

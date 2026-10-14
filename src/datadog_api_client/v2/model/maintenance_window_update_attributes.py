@@ -48,7 +48,7 @@ class MaintenanceWindowUpdateAttributes(ModelNormal):
         :param name: The name of the maintenance window.
         :type name: str, optional
 
-        :param query: The query to filter event management cases for this maintenance window.
+        :param query: The query to filter event management work items for this maintenance window.
         :type query: str, optional
 
         :param start_at: The start time of the maintenance window.

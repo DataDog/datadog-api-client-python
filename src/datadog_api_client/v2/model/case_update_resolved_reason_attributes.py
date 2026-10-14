@@ -23,9 +23,9 @@ class CaseUpdateResolvedReasonAttributes(ModelNormal):
 
     def __init__(self_, security_resolved_reason: str, **kwargs):
         """
-        Attributes for setting the resolution reason on a security case.
+        Attributes for setting the resolution reason on a security work item.
 
-        :param security_resolved_reason: The reason the security case was resolved (for example, ``FALSE_POSITIVE`` , ``TRUE_POSITIVE`` , ``BENIGN_POSITIVE`` ).
+        :param security_resolved_reason: The reason the security work item was resolved (for example, ``FALSE_POSITIVE`` , ``TRUE_POSITIVE`` , ``BENIGN_POSITIVE`` ).
         :type security_resolved_reason: str
         """
         super().__init__(kwargs)

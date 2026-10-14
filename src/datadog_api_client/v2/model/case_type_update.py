@@ -38,12 +38,12 @@ class CaseTypeUpdate(ModelNormal):
         self_, type: CaseTypeResourceType, attributes: Union[CaseTypeResourceAttributes, UnsetType] = unset, **kwargs
     ):
         """
-        Data object for updating a case type.
+        Data object for updating a work item type.
 
-        :param attributes: Attributes of a case type, which define a classification category for cases. Organizations use case types to model different workflows (for example, Security Incident, Bug Report, Change Request).
+        :param attributes: Attributes of a work item type, which define a classification category for work items. Organizations use work item types to model different workflows (for example, Security Incident, Bug Report, Change Request).
         :type attributes: CaseTypeResourceAttributes, optional
 
-        :param type: JSON:API resource type for case types.
+        :param type: JSON:API resource type for work item types.
         :type type: CaseTypeResourceType
         """
         if attributes is not unset:

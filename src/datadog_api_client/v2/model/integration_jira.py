@@ -51,13 +51,13 @@ class IntegrationJira(ModelNormal):
         """
         Jira integration settings.
 
-        :param auto_creation: Auto-creation settings for Jira issues from cases.
+        :param auto_creation: Auto-creation settings for Jira issues from work items.
         :type auto_creation: IntegrationJiraAutoCreation, optional
 
         :param enabled: Whether Jira integration is enabled.
         :type enabled: bool, optional
 
-        :param metadata: Metadata for connecting a case management project to a Jira project.
+        :param metadata: Metadata for connecting a Work Management project to a Jira project.
         :type metadata: IntegrationJiraMetadata, optional
 
         :param sync: Synchronization configuration for Jira integration.

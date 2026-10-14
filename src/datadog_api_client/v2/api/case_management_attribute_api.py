@@ -15,7 +15,7 @@ from datadog_api_client.v2.model.custom_attribute_config_update_request import C
 
 class CaseManagementAttributeApi:
     """
-    View and configure custom attributes within Case Management. See the `Case Management page <https://docs.datadoghq.com/service_management/case_management/>`_ for more information.
+    View and configure custom attributes within Work Management. See the `Work Management page <https://docs.datadoghq.com/incident_response/work_management/>`_ for more information.
     """
 
     def __init__(self, api_client=None):
@@ -156,9 +156,9 @@ class CaseManagementAttributeApi:
     ) -> CustomAttributeConfigResponse:
         """Create custom attribute config for a case type.
 
-        Create custom attribute config for a case type
+        Create a custom attribute configuration for a work item type.
 
-        :param case_type_id: The UUID of the case type.
+        :param case_type_id: The UUID of the work item type.
         :type case_type_id: str
         :param body: Custom attribute config payload
         :type body: CustomAttributeConfigCreateRequest
@@ -180,9 +180,9 @@ class CaseManagementAttributeApi:
 
         Delete custom attribute config
 
-        :param case_type_id: The UUID of the case type.
+        :param case_type_id: The UUID of the work item type.
         :type case_type_id: str
-        :param custom_attribute_id: Case Custom attribute's UUID
+        :param custom_attribute_id: Work item custom attribute's UUID.
         :type custom_attribute_id: str
         :rtype: None
         """
@@ -199,9 +199,9 @@ class CaseManagementAttributeApi:
     ) -> CustomAttributeConfigsResponse:
         """Get all custom attributes config of case type.
 
-        Get all custom attribute config of case type
+        Get custom attribute configurations for a work item type.
 
-        :param case_type_id: The UUID of the case type.
+        :param case_type_id: The UUID of the work item type.
         :type case_type_id: str
         :rtype: CustomAttributeConfigsResponse
         """
@@ -230,11 +230,11 @@ class CaseManagementAttributeApi:
     ) -> CustomAttributeConfigResponse:
         """Update custom attribute config.
 
-        Updates the display name, description, type, or options of an existing custom attribute configuration for a case type.
+        Updates the display name, description, type, or options of an existing custom attribute configuration for a work item type.
 
-        :param case_type_id: The UUID of the case type.
+        :param case_type_id: The UUID of the work item type.
         :type case_type_id: str
-        :param custom_attribute_id: Case Custom attribute's UUID
+        :param custom_attribute_id: Work item custom attribute's UUID.
         :type custom_attribute_id: str
         :param body: Custom attribute config payload.
         :type body: CustomAttributeConfigUpdateRequest

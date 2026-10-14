@@ -34,12 +34,12 @@ class CaseAssign(ModelNormal):
 
     def __init__(self_, attributes: CaseAssignAttributes, type: CaseResourceType, **kwargs):
         """
-        Case assign
+        Work item assign
 
-        :param attributes: Case assign attributes
+        :param attributes: Work item assign attributes
         :type attributes: CaseAssignAttributes
 
-        :param type: JSON:API resource type for cases.
+        :param type: JSON:API resource type for work items.
         :type type: CaseResourceType
         """
         super().__init__(kwargs)

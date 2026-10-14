@@ -30,9 +30,9 @@ class CaseAssignRequest(ModelNormal):
 
     def __init__(self_, data: CaseAssign, **kwargs):
         """
-        Case assign request
+        Work item assign request
 
-        :param data: Case assign
+        :param data: Work item assign
         :type data: CaseAssign
         """
         super().__init__(kwargs)

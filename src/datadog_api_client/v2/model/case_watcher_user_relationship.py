@@ -30,7 +30,7 @@ class CaseWatcherUserRelationship(ModelNormal):
 
     def __init__(self_, data: UserRelationshipData, **kwargs):
         """
-        The user relationship for a case watcher.
+        The user relationship for a work item watcher.
 
         :param data: Relationship to user object.
         :type data: UserRelationshipData
