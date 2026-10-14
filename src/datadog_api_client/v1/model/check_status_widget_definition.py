@@ -21,6 +21,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.widget_legacy_live_span import WidgetLegacyLiveSpan
     from datadog_api_client.v1.model.widget_new_live_span import WidgetNewLiveSpan
     from datadog_api_client.v1.model.widget_new_fixed_span import WidgetNewFixedSpan
+    from datadog_api_client.v1.model.widget_calendar_aligned_span import WidgetCalendarAlignedSpan
 
 
 class CheckStatusWidgetDefinition(ModelNormal):
@@ -68,7 +69,14 @@ class CheckStatusWidgetDefinition(ModelNormal):
         group: Union[str, UnsetType] = unset,
         group_by: Union[List[str], UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
-        time: Union[WidgetTime, WidgetLegacyLiveSpan, WidgetNewLiveSpan, WidgetNewFixedSpan, UnsetType] = unset,
+        time: Union[
+            WidgetTime,
+            WidgetLegacyLiveSpan,
+            WidgetNewLiveSpan,
+            WidgetNewFixedSpan,
+            WidgetCalendarAlignedSpan,
+            UnsetType,
+        ] = unset,
         title: Union[str, UnsetType] = unset,
         title_align: Union[WidgetTextAlign, UnsetType] = unset,
         title_size: Union[str, UnsetType] = unset,
