@@ -309,20 +309,22 @@ class RUMApi:
                 "version": "v2",
             },
             params_map={
+                "debug_id": {
+                    "openapi_types": (UUID,),
+                    "attribute": "debug_id",
+                    "location": "query",
+                },
                 "filename": {
-                    "required": True,
                     "openapi_types": (str,),
                     "attribute": "filename",
                     "location": "query",
                 },
                 "service": {
-                    "required": True,
                     "openapi_types": (str,),
                     "attribute": "service",
                     "location": "query",
                 },
                 "version": {
-                    "required": True,
                     "openapi_types": (str,),
                     "attribute": "version",
                     "location": "query",
@@ -948,29 +950,71 @@ class RUMApi:
 
     def get_sourcemaps(
         self,
-        filename: str,
-        service: str,
-        version: str,
+        *,
+        debug_id: Union[UUID, UnsetType] = unset,
+        filename: Union[str, UnsetType] = unset,
+        service: Union[str, UnsetType] = unset,
+        version: Union[str, UnsetType] = unset,
     ) -> SourcemapFileResponse:
         """Get a JavaScript source map.
 
-        Retrieves the content of a specific JavaScript source map file by its
-        filename, service name, and version.
+        Retrieves the content of a specific JavaScript source map file. Provide either
+        ``debug_id`` with a UUID, or all three of ``filename`` , ``service`` , and ``version``.
+        When ``debug_id`` is provided, filename, service, and version are not required
+        and are ignored.
 
-        :param filename: The path to the source map file.
-        :type filename: str
-        :param service: The service name associated with the source map.
-        :type service: str
-        :param version: The version of the service associated with the source map.
-        :type version: str
+        **Examples:** the following commands use the US1 API host. Replace the host
+        with the API host for your site, and the filename, service, version, and
+        debug ID with values from your organization. Use ``--get`` so curl sends the
+        parameters in the query string.
+
+        **1. Retrieve a source map by debug ID**
+
+        Provide ``debug_id`` with a UUID. No filename, service, or version is required.
+
+        .. code-block:: bash
+
+           curl -sS --get "https://api.datadoghq.com/api/v2/sourcemaps" \
+             -H "Accept: application/json" \
+             -H "Authorization: Bearer ${DD_BEARER_TOKEN}" \
+             --data-urlencode "debug_id=00000000-0000-4000-8000-000000000001"
+
+        **2. Retrieve a source map by service and version**
+
+        Provide ``filename`` together with ``service`` and ``version``.
+
+        .. code-block:: bash
+
+           curl -sS --get "https://api.datadoghq.com/api/v2/sourcemaps" \
+             -H "Accept: application/json" \
+             -H "Authorization: Bearer ${DD_BEARER_TOKEN}" \
+             --data-urlencode "filename=js/bundle.min.js.map" \
+             --data-urlencode "service=my-web-service" \
+             --data-urlencode "version=1.0.0"
+
+        :param debug_id: The debug ID of the JavaScript source map, in UUID format. When provided,
+            filename, service, and version are not required and are ignored.
+        :type debug_id: UUID, optional
+        :param filename: The path to the source map file. Required when ``debug_id`` is omitted.
+        :type filename: str, optional
+        :param service: The service name associated with the source map. Required when ``debug_id`` is omitted.
+        :type service: str, optional
+        :param version: The version of the service associated with the source map. Required when ``debug_id`` is omitted.
+        :type version: str, optional
         :rtype: SourcemapFileResponse
         """
         kwargs: Dict[str, Any] = {}
-        kwargs["filename"] = filename
+        if debug_id is not unset:
+            kwargs["debug_id"] = debug_id
 
-        kwargs["service"] = service
+        if filename is not unset:
+            kwargs["filename"] = filename
 
-        kwargs["version"] = version
+        if service is not unset:
+            kwargs["service"] = service
+
+        if version is not unset:
+            kwargs["version"] = version
 
         return self._get_sourcemaps_endpoint.call_with_http_info(**kwargs)
 
