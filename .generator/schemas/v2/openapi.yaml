@@ -212433,7 +212433,7 @@ paths:
                   data:
                     attributes:
                       description: My agent policy
-                      enabled: true
+                      enabled: false
                       hostTagsLists:
                         -   - env:test
                       name: my_agent_policy
@@ -212452,7 +212452,7 @@ paths:
                     data:
                       attributes:
                         description: My agent policy
-                        enabled: true
+                        enabled: false
                         name: my_agent_policy
                       id: abc-123
                       type: policy
@@ -212569,7 +212569,7 @@ paths:
                   data:
                     attributes:
                       description: My agent policy
-                      enabled: true
+                      enabled: false
                       name: my_agent_policy
                     id: 6517fcc1-cec7-4394-a655-8d6e9d085255
                     type: policy
@@ -212587,7 +212587,7 @@ paths:
                     data:
                       attributes:
                         description: My agent policy
-                        enabled: true
+                        enabled: false
                         name: my_agent_policy
                       id: abc-123
                       type: policy
