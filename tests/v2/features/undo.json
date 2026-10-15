@@ -10860,12 +10860,6 @@
       "type": "idempotent"
     }
   },
-  "GetTeamHierarchyMembers": {
-    "tag": "Teams",
-    "undo": {
-      "type": "safe"
-    }
-  },
   "GetTeamMemberships": {
     "tag": "Teams",
     "undo": {
