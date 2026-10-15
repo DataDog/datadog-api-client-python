@@ -5622,6 +5622,12 @@
       "type": "safe"
     }
   },
+  "ListLLMObsPatternsTemplates": {
+    "tag": "Agent Observability",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListLLMObsPatternsTopics": {
     "tag": "Agent Observability",
     "undo": {
@@ -10858,12 +10864,6 @@
     "tag": "Teams",
     "undo": {
       "type": "idempotent"
-    }
-  },
-  "GetTeamHierarchyMembers": {
-    "tag": "Teams",
-    "undo": {
-      "type": "safe"
     }
   },
   "GetTeamMemberships": {

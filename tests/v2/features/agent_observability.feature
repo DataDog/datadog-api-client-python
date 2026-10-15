@@ -1215,6 +1215,13 @@ Feature: Agent Observability
     Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/ml-observability
+  Scenario: List patterns templates returns "OK" response
+    Given operation "ListLLMObsPatternsTemplates" enabled
+    And new "ListLLMObsPatternsTemplates" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: List patterns topics returns "Bad Request" response
     Given operation "ListLLMObsPatternsTopics" enabled
     And new "ListLLMObsPatternsTopics" request
