@@ -1,0 +1,65 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a dashboard with network device flows formula query",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "layout_type": "ordered",
+        "title": "{{ unique }} network device flows",
+        "widgets": [
+          {
+            "definition": {
+              "requests": [
+                {
+                  "queries": [
+                    {
+                      "compute": {
+                        "aggregation": "count"
+                      },
+                      "data_source": "network_device_flows",
+                      "group_by": {
+                        "fields": [
+                          "@source.ip"
+                        ],
+                        "limit": 10
+                      },
+                      "name": "query1",
+                      "search": {
+                        "query": ""
+                      }
+                    }
+                  ],
+                  "response_format": "timeseries"
+                }
+              ],
+              "type": "timeseries"
+            },
+            "layout": {
+              "height": 2,
+              "width": 4,
+              "x": 0,
+              "y": 0
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a dashboard with network device flows formula query",
+  "schema_version": 1,
+  "version": "v1"
+}

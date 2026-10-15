@@ -94,6 +94,99 @@
     },
     {
       "feature": "Dashboards",
+      "frozen_at": "2026-10-13T17:22:34.474Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "layout_type": "ordered",
+                "title": "Test-Create_a_dashboard_with_network_device_flows_formula_query-1791912154 network device flows",
+                "widgets": [
+                  {
+                    "definition": {
+                      "requests": [
+                        {
+                          "queries": [
+                            {
+                              "compute": {
+                                "aggregation": "count"
+                              },
+                              "data_source": "network_device_flows",
+                              "group_by": {
+                                "fields": [
+                                  "@source.ip"
+                                ],
+                                "limit": 10
+                              },
+                              "name": "query1",
+                              "search": {
+                                "query": ""
+                              }
+                            }
+                          ],
+                          "response_format": "timeseries"
+                        }
+                      ],
+                      "type": "timeseries"
+                    },
+                    "layout": {
+                      "height": 2,
+                      "width": 4,
+                      "x": 0,
+                      "y": 0
+                    }
+                  }
+                ]
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/dashboard",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":\"3wt-6t8-i2d\",\"title\":\"Test-Create_a_dashboard_with_network_device_flows_formula_query-1791912154 network device flows\",\"description\":null,\"author_handle\":\"cassettexxxxxxxxxxxxx@datadoghq.com\",\"author_name\":\"David Tapiador del Dujo\",\"layout_type\":\"ordered\",\"url\":\"/dashboard/3wt-6t8-i2d/test-createadashboardwithnetworkdeviceflowsformulaquery-1791912154-network-devic\",\"template_variables\":null,\"widgets\":[{\"definition\":{\"requests\":[{\"queries\":[{\"compute\":{\"aggregation\":\"count\"},\"data_source\":\"network_device_flows\",\"group_by\":{\"fields\":[\"@source.ip\"],\"limit\":10},\"name\":\"query1\",\"search\":{\"query\":\"\"}}],\"response_format\":\"timeseries\"}],\"type\":\"timeseries\"},\"layout\":{\"height\":2,\"width\":4,\"x\":0,\"y\":0},\"id\":4350654696140889}],\"notify_list\":null,\"created_at\":\"2026-10-13T17:22:34.659735+00:00\",\"modified_at\":\"2026-10-13T17:22:34.659735+00:00\",\"experience_type\":\"default\",\"restricted_roles\":[]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/dashboard/3wt-6t8-i2d",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_dashboard_id\":\"3wt-6t8-i2d\"}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a dashboard with network device flows formula query",
+      "version": "v1"
+    },
+    {
+      "feature": "Dashboards",
       "frozen_at": "2024-11-15T19:32:26.867Z",
       "interactions": [
         {

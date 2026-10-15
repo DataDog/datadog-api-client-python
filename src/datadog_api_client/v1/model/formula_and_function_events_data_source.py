@@ -16,7 +16,7 @@ class FormulaAndFunctionEventsDataSource(ModelSimple):
     """
     Data source for event platform-based queries.
 
-    :param value: Must be one of ["logs", "spans", "network", "rum", "security_signals", "profiles", "audit", "events", "ci_tests", "ci_pipelines", "incident_analytics", "product_analytics", "on_call_events", "errors", "llm_observability"].
+    :param value: Must be one of ["logs", "spans", "network", "network_device_flows", "rum", "security_signals", "profiles", "audit", "events", "ci_tests", "ci_pipelines", "incident_analytics", "product_analytics", "on_call_events", "errors", "llm_observability"].
     :type value: str
     """
 
@@ -24,6 +24,7 @@ class FormulaAndFunctionEventsDataSource(ModelSimple):
         "logs",
         "spans",
         "network",
+        "network_device_flows",
         "rum",
         "security_signals",
         "profiles",
@@ -40,6 +41,7 @@ class FormulaAndFunctionEventsDataSource(ModelSimple):
     LOGS: ClassVar["FormulaAndFunctionEventsDataSource"]
     SPANS: ClassVar["FormulaAndFunctionEventsDataSource"]
     NETWORK: ClassVar["FormulaAndFunctionEventsDataSource"]
+    NETWORK_DEVICE_FLOWS: ClassVar["FormulaAndFunctionEventsDataSource"]
     RUM: ClassVar["FormulaAndFunctionEventsDataSource"]
     SECURITY_SIGNALS: ClassVar["FormulaAndFunctionEventsDataSource"]
     PROFILES: ClassVar["FormulaAndFunctionEventsDataSource"]
@@ -63,6 +65,7 @@ class FormulaAndFunctionEventsDataSource(ModelSimple):
 FormulaAndFunctionEventsDataSource.LOGS = FormulaAndFunctionEventsDataSource("logs")
 FormulaAndFunctionEventsDataSource.SPANS = FormulaAndFunctionEventsDataSource("spans")
 FormulaAndFunctionEventsDataSource.NETWORK = FormulaAndFunctionEventsDataSource("network")
+FormulaAndFunctionEventsDataSource.NETWORK_DEVICE_FLOWS = FormulaAndFunctionEventsDataSource("network_device_flows")
 FormulaAndFunctionEventsDataSource.RUM = FormulaAndFunctionEventsDataSource("rum")
 FormulaAndFunctionEventsDataSource.SECURITY_SIGNALS = FormulaAndFunctionEventsDataSource("security_signals")
 FormulaAndFunctionEventsDataSource.PROFILES = FormulaAndFunctionEventsDataSource("profiles")

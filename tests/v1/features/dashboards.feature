@@ -18,6 +18,15 @@ Feature: Dashboards
     And the response "widgets[0].definition.time" is equal to {}
 
   @team:ddoghq/dashboards-backend
+  Scenario: Create a dashboard with network device flows formula query
+    Given new "CreateDashboard" request
+    And body with value {"title": "{{ unique }} network device flows", "widgets": [{"definition": {"type": "timeseries", "requests": [{"response_format": "timeseries", "queries": [{"data_source": "network_device_flows", "name": "query1", "search": {"query": ""}, "compute": {"aggregation": "count"}, "group_by": {"fields": ["@source.ip"], "limit": 10}}]}]}, "layout": {"x": 0, "y": 0, "width": 4, "height": 2}}], "layout_type": "ordered"}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.requests[0].queries[0].data_source" is equal to "network_device_flows"
+    And the response "widgets[0].definition.requests[0].queries[0].group_by.fields[0]" is equal to "@source.ip"
+
+  @team:ddoghq/dashboards-backend
   Scenario: Create a distribution widget using a histogram request containing a formulas and functions APM Stats query
     Given new "CreateDashboard" request
     And body with value { "title": "{{ unique }}", "description": "", "widgets": [ { "definition": { "title": "APM Stats - Request latency HOP", "title_size": "16", "title_align": "left", "show_legend": false, "type": "distribution", "xaxis": { "max": "auto", "include_zero": true, "scale": "linear", "min": "auto" }, "yaxis": { "max": "auto", "include_zero": true, "scale": "linear", "min": "auto" }, "requests": [ { "query": { "primary_tag_value": "*", "stat": "latency_distribution", "data_source": "apm_resource_stats", "name": "query1", "service": "azure-bill-import", "group_by": [ "resource_name" ], "env": "staging", "primary_tag_name": "datacenter", "operation_name": "universal.http.client" }, "request_type": "histogram", "style": { "palette": "dog_classic" } } ] }, "layout": { "x": 8, "y": 0, "width": 4, "height": 2 } } ], "layout_type": "ordered" }
