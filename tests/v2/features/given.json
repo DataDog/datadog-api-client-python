@@ -1965,6 +1965,38 @@
     "parameters": [
       {
         "name": "team_id",
+        "source": "dd_team_2.data.id"
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"role\": \"admin\"\n    },\n    \"relationships\": {\n      \"user\": {\n        \"data\": {\n          \"id\": \"{{team_hierarchy_user.data.id}}\",\n          \"type\": \"users\"\n        }\n      }\n    },\n    \"type\": \"team_memberships\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"team_hierarchy_child_membership\" in the system",
+    "key": "team_hierarchy_child_membership",
+    "tag": "Teams",
+    "operationId": "CreateTeamMembership"
+  },
+  {
+    "parameters": [
+      {
+        "name": "team_id",
+        "source": "dd_team_2.data.id"
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"role\": \"admin\"\n    },\n    \"relationships\": {\n      \"user\": {\n        \"data\": {\n          \"id\": \"{{user.data.id}}\",\n          \"type\": \"users\"\n        }\n      }\n    },\n    \"type\": \"team_memberships\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"team_hierarchy_duplicate_membership\" in the system",
+    "key": "team_hierarchy_duplicate_membership",
+    "tag": "Teams",
+    "operationId": "CreateTeamMembership"
+  },
+  {
+    "parameters": [
+      {
+        "name": "team_id",
         "source": "dd_team.data.id"
       },
       {
@@ -2005,6 +2037,18 @@
     "key": "user_invitation",
     "tag": "Users",
     "operationId": "SendInvitations"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"users\",\n    \"attributes\": {\n      \"email\": \"hierarchy-{{ unique }}@datadoghq.com\",\n      \"name\": \"Hierarchy member\"\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"team_hierarchy_user\" in the system",
+    "key": "team_hierarchy_user",
+    "tag": "Users",
+    "operationId": "CreateUser"
   },
   {
     "parameters": [
