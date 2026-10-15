@@ -14,7 +14,9 @@ from datadog_api_client.model_utils import (
 )
 from datadog_api_client.v2.model.org_group_membership_list_response import OrgGroupMembershipListResponse
 from datadog_api_client.v2.model.org_group_membership_sort_option import OrgGroupMembershipSortOption
+from datadog_api_client.v2.model.org_group_membership_create_request import OrgGroupMembershipCreateRequest
 from datadog_api_client.v2.model.org_group_membership_bulk_update_request import OrgGroupMembershipBulkUpdateRequest
+from datadog_api_client.v2.model.org_group_membership_bulk_delete_request import OrgGroupMembershipBulkDeleteRequest
 from datadog_api_client.v2.model.org_group_membership_response import OrgGroupMembershipResponse
 from datadog_api_client.v2.model.org_group_membership_update_request import OrgGroupMembershipUpdateRequest
 from datadog_api_client.v2.model.org_group_policy_list_response import OrgGroupPolicyListResponse
@@ -87,6 +89,26 @@ class OrgGroupsApi:
             api_client=api_client,
         )
 
+        self._create_org_group_memberships_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/org_group_memberships",
+                "operation_id": "create_org_group_memberships",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (OrgGroupMembershipCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._create_org_group_policy_endpoint = _Endpoint(
             settings={
                 "response_type": (OrgGroupPolicyResponse,),
@@ -147,6 +169,61 @@ class OrgGroupsApi:
             headers_map={
                 "accept": ["*/*"],
             },
+            api_client=api_client,
+        )
+
+        self._delete_org_group_membership_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/org_group_memberships/{org_group_membership_id}",
+                "operation_id": "delete_org_group_membership",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "org_group_membership_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "org_group_membership_id",
+                    "location": "path",
+                },
+                "filter_org_group_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "filter[org_group_id]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_org_group_memberships_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/org_group_memberships/bulk_delete",
+                "operation_id": "delete_org_group_memberships",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "filter_org_group_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "filter[org_group_id]",
+                    "location": "query",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (OrgGroupMembershipBulkDeleteRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -630,7 +707,7 @@ class OrgGroupsApi:
     ) -> OrgGroupMembershipListResponse:
         """Bulk update org group memberships.
 
-        Move a batch of organizations from one org group to another. This is an atomic operation. Maximum 100 orgs per request.
+        Move a batch of organizations from one organization group to another. This is an atomic operation. Each request must include between 1 and 100 organizations. Each organization must be identified by a unique ``org_uuid`` and ``org_site`` pair, and must be in the same site as the requesting organization.
 
         :type body: OrgGroupMembershipBulkUpdateRequest
         :rtype: OrgGroupMembershipListResponse
@@ -655,6 +732,22 @@ class OrgGroupsApi:
         kwargs["body"] = body
 
         return self._create_org_group_endpoint.call_with_http_info(**kwargs)
+
+    def create_org_group_memberships(
+        self,
+        body: OrgGroupMembershipCreateRequest,
+    ) -> None:
+        """Create org group memberships.
+
+        Add a batch of organizations to an existing organization group. This operation is not supported for organization groups with ``group_type`` set to ``config_management``. This is an atomic operation: either all organizations are added or none are. Each request must include between 1 and 100 organizations. Each organization must be identified by a unique ``org_uuid`` and ``org_site`` pair, and must be in the same site as the requesting organization. The requesting organization must own the organization group.
+
+        :type body: OrgGroupMembershipCreateRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_org_group_memberships_endpoint.call_with_http_info(**kwargs)
 
     def create_org_group_policy(
         self,
@@ -704,6 +797,49 @@ class OrgGroupsApi:
         kwargs["org_group_id"] = org_group_id
 
         return self._delete_org_group_endpoint.call_with_http_info(**kwargs)
+
+    def delete_org_group_membership(
+        self,
+        org_group_membership_id: UUID,
+        filter_org_group_id: UUID,
+    ) -> None:
+        """Delete an org group membership.
+
+        Remove an organization from an organization group by deleting its membership. This operation is not supported for organization groups with ``group_type`` set to ``config_management``. The organization group that the membership belongs to must be specified using ``filter[org_group_id]`` , and the requesting organization must own that organization group. Returns ``404`` if the membership does not exist, was already removed, or does not belong to the organization group.
+
+        :param org_group_membership_id: The ID of the org group membership.
+        :type org_group_membership_id: UUID
+        :param filter_org_group_id: The ID of the organization group that the memberships belong to.
+        :type filter_org_group_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["org_group_membership_id"] = org_group_membership_id
+
+        kwargs["filter_org_group_id"] = filter_org_group_id
+
+        return self._delete_org_group_membership_endpoint.call_with_http_info(**kwargs)
+
+    def delete_org_group_memberships(
+        self,
+        filter_org_group_id: UUID,
+        body: OrgGroupMembershipBulkDeleteRequest,
+    ) -> None:
+        """Bulk delete org group memberships.
+
+        Delete a batch of memberships from an organization group. This operation is not supported for organization groups with ``group_type`` set to ``config_management``. The memberships to delete are provided as membership resource identifiers, and the organization group they belong to must be specified using ``filter[org_group_id]``. Each request must include between 1 and 100 unique membership IDs, and the requesting organization must own the organization group. The request does not fail if a membership ID refers to a membership that has already been deleted, does not exist, or does not belong to the organization group.
+
+        :param filter_org_group_id: The ID of the organization group that the memberships belong to.
+        :type filter_org_group_id: UUID
+        :type body: OrgGroupMembershipBulkDeleteRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["filter_org_group_id"] = filter_org_group_id
+
+        kwargs["body"] = body
+
+        return self._delete_org_group_memberships_endpoint.call_with_http_info(**kwargs)
 
     def delete_org_group_policy(
         self,

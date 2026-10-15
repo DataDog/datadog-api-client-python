@@ -16,6 +16,13 @@ if TYPE_CHECKING:
 
 
 class OrgGroupMembershipBulkUpdateAttributes(ModelNormal):
+    validations = {
+        "orgs": {
+            "max_items": 100,
+            "min_items": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.global_org_identifier import GlobalOrgIdentifier
@@ -32,7 +39,7 @@ class OrgGroupMembershipBulkUpdateAttributes(ModelNormal):
         """
         Attributes for bulk updating org group memberships.
 
-        :param orgs: List of organizations to move. Maximum 100 per request.
+        :param orgs: List of organizations to move. Each request must include between 1 and 100 organizations. Each ``org_uuid`` and ``org_site`` pair must be unique.
         :type orgs: [GlobalOrgIdentifier]
         """
         super().__init__(kwargs)
