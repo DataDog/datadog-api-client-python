@@ -1,0 +1,18 @@
+"""
+Delete an org group membership returns "No Content" response
+"""
+
+from os import environ
+from datadog_api_client import ApiClient, Configuration
+from datadog_api_client.v2.api.org_groups_api import OrgGroupsApi
+from uuid import UUID
+
+configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
+configuration.unstable_operations["delete_org_group_membership"] = True
+with ApiClient(configuration) as api_client:
+    api_instance = OrgGroupsApi(api_client)
+    api_instance.delete_org_group_membership(
+        org_group_membership_id=UUID("f1e2d3c4-b5a6-7890-1234-567890abcdef"),
+        filter_org_group_id=UUID("a1b2c3d4-e5f6-7890-abcd-ef0123456789"),
+    )
