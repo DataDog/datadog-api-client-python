@@ -40,8 +40,8 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_azure_data_explorer_destination_auth_managed_identity import (
         ObservabilityPipelineAzureDataExplorerDestinationAuthManagedIdentity,
     )
-    from datadog_api_client.v2.model.observability_pipeline_azure_data_explorer_destination_auth_managed_identity_client_assertion import (
-        ObservabilityPipelineAzureDataExplorerDestinationAuthManagedIdentityClientAssertion,
+    from datadog_api_client.v2.model.observability_pipeline_azure_data_explorer_managed_identity_client_assertion import (
+        ObservabilityPipelineAzureDataExplorerManagedIdentityClientAssertion,
     )
     from datadog_api_client.v2.model.observability_pipeline_azure_data_explorer_destination_auth_workload_identity import (
         ObservabilityPipelineAzureDataExplorerDestinationAuthWorkloadIdentity,
@@ -112,7 +112,7 @@ class ObservabilityPipelineAzureDataExplorerDestination(ModelNormal):
             ObservabilityPipelineAzureDataExplorerDestinationAuthClientSecret,
             ObservabilityPipelineAzureDataExplorerDestinationAuthClientCertificate,
             ObservabilityPipelineAzureDataExplorerDestinationAuthManagedIdentity,
-            ObservabilityPipelineAzureDataExplorerDestinationAuthManagedIdentityClientAssertion,
+            ObservabilityPipelineAzureDataExplorerManagedIdentityClientAssertion,
             ObservabilityPipelineAzureDataExplorerDestinationAuthWorkloadIdentity,
         ],
         database: str,

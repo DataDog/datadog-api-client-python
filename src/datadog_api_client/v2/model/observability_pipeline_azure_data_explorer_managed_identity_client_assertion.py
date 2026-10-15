@@ -15,28 +15,26 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.observability_pipeline_azure_data_explorer_destination_auth_managed_identity_client_assertion_kind import (
-        ObservabilityPipelineAzureDataExplorerDestinationAuthManagedIdentityClientAssertionKind,
+    from datadog_api_client.v2.model.observability_pipeline_azure_data_explorer_managed_identity_client_assertion_kind import (
+        ObservabilityPipelineAzureDataExplorerManagedIdentityClientAssertionKind,
     )
     from datadog_api_client.v2.model.observability_pipeline_azure_data_explorer_destination_managed_identity_id_type import (
         ObservabilityPipelineAzureDataExplorerDestinationManagedIdentityIdType,
     )
 
 
-class ObservabilityPipelineAzureDataExplorerDestinationAuthManagedIdentityClientAssertion(ModelNormal):
+class ObservabilityPipelineAzureDataExplorerManagedIdentityClientAssertion(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.observability_pipeline_azure_data_explorer_destination_auth_managed_identity_client_assertion_kind import (
-            ObservabilityPipelineAzureDataExplorerDestinationAuthManagedIdentityClientAssertionKind,
+        from datadog_api_client.v2.model.observability_pipeline_azure_data_explorer_managed_identity_client_assertion_kind import (
+            ObservabilityPipelineAzureDataExplorerManagedIdentityClientAssertionKind,
         )
         from datadog_api_client.v2.model.observability_pipeline_azure_data_explorer_destination_managed_identity_id_type import (
             ObservabilityPipelineAzureDataExplorerDestinationManagedIdentityIdType,
         )
 
         return {
-            "azure_credential_kind": (
-                ObservabilityPipelineAzureDataExplorerDestinationAuthManagedIdentityClientAssertionKind,
-            ),
+            "azure_credential_kind": (ObservabilityPipelineAzureDataExplorerManagedIdentityClientAssertionKind,),
             "client_assertion_client_id": (str,),
             "client_assertion_tenant_id": (str,),
             "user_assigned_managed_identity_id": (str, none_type),
@@ -55,7 +53,7 @@ class ObservabilityPipelineAzureDataExplorerDestinationAuthManagedIdentityClient
 
     def __init__(
         self_,
-        azure_credential_kind: ObservabilityPipelineAzureDataExplorerDestinationAuthManagedIdentityClientAssertionKind,
+        azure_credential_kind: ObservabilityPipelineAzureDataExplorerManagedIdentityClientAssertionKind,
         client_assertion_client_id: str,
         client_assertion_tenant_id: str,
         user_assigned_managed_identity_id: Union[str, none_type, UnsetType] = unset,
@@ -68,7 +66,7 @@ class ObservabilityPipelineAzureDataExplorerDestinationAuthManagedIdentityClient
         Authenticate using a managed identity as a client assertion for a Microsoft Entra application.
 
         :param azure_credential_kind: The Azure credential kind. The value should always be ``managed_identity_client_assertion``.
-        :type azure_credential_kind: ObservabilityPipelineAzureDataExplorerDestinationAuthManagedIdentityClientAssertionKind
+        :type azure_credential_kind: ObservabilityPipelineAzureDataExplorerManagedIdentityClientAssertionKind
 
         :param client_assertion_client_id: The client ID of the Microsoft Entra application that trusts the managed identity.
         :type client_assertion_client_id: str

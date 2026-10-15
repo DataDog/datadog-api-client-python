@@ -6868,12 +6868,6 @@ from datadog_api_client.v2.model.observability_pipeline_azure_data_explorer_dest
 from datadog_api_client.v2.model.observability_pipeline_azure_data_explorer_destination_auth_managed_identity import (
     ObservabilityPipelineAzureDataExplorerDestinationAuthManagedIdentity,
 )
-from datadog_api_client.v2.model.observability_pipeline_azure_data_explorer_destination_auth_managed_identity_client_assertion import (
-    ObservabilityPipelineAzureDataExplorerDestinationAuthManagedIdentityClientAssertion,
-)
-from datadog_api_client.v2.model.observability_pipeline_azure_data_explorer_destination_auth_managed_identity_client_assertion_kind import (
-    ObservabilityPipelineAzureDataExplorerDestinationAuthManagedIdentityClientAssertionKind,
-)
 from datadog_api_client.v2.model.observability_pipeline_azure_data_explorer_destination_auth_managed_identity_kind import (
     ObservabilityPipelineAzureDataExplorerDestinationAuthManagedIdentityKind,
 )
@@ -6891,6 +6885,12 @@ from datadog_api_client.v2.model.observability_pipeline_azure_data_explorer_dest
 )
 from datadog_api_client.v2.model.observability_pipeline_azure_data_explorer_destination_type import (
     ObservabilityPipelineAzureDataExplorerDestinationType,
+)
+from datadog_api_client.v2.model.observability_pipeline_azure_data_explorer_managed_identity_client_assertion import (
+    ObservabilityPipelineAzureDataExplorerManagedIdentityClientAssertion,
+)
+from datadog_api_client.v2.model.observability_pipeline_azure_data_explorer_managed_identity_client_assertion_kind import (
+    ObservabilityPipelineAzureDataExplorerManagedIdentityClientAssertionKind,
 )
 from datadog_api_client.v2.model.observability_pipeline_azure_storage_destination_compression import (
     ObservabilityPipelineAzureStorageDestinationCompression,
@@ -17493,14 +17493,14 @@ __all__ = [
     "ObservabilityPipelineAzureDataExplorerDestinationAuthClientSecret",
     "ObservabilityPipelineAzureDataExplorerDestinationAuthClientSecretKind",
     "ObservabilityPipelineAzureDataExplorerDestinationAuthManagedIdentity",
-    "ObservabilityPipelineAzureDataExplorerDestinationAuthManagedIdentityClientAssertion",
-    "ObservabilityPipelineAzureDataExplorerDestinationAuthManagedIdentityClientAssertionKind",
     "ObservabilityPipelineAzureDataExplorerDestinationAuthManagedIdentityKind",
     "ObservabilityPipelineAzureDataExplorerDestinationAuthWorkloadIdentity",
     "ObservabilityPipelineAzureDataExplorerDestinationAuthWorkloadIdentityKind",
     "ObservabilityPipelineAzureDataExplorerDestinationBatch",
     "ObservabilityPipelineAzureDataExplorerDestinationManagedIdentityIdType",
     "ObservabilityPipelineAzureDataExplorerDestinationType",
+    "ObservabilityPipelineAzureDataExplorerManagedIdentityClientAssertion",
+    "ObservabilityPipelineAzureDataExplorerManagedIdentityClientAssertionKind",
     "ObservabilityPipelineAzureStorageDestinationCompression",
     "ObservabilityPipelineAzureStorageDestinationCompressionGzip",
     "ObservabilityPipelineAzureStorageDestinationCompressionGzipType",
