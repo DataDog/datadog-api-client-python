@@ -540,6 +540,99 @@
     },
     {
       "feature": "Feature Flags",
+      "frozen_at": "2026-10-14T20:24:21.981Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/feature-flags/saved-filters/00000000-0000-0000-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"saved filter not found: record not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get a saved filter returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-10-14T20:24:22.481Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/feature-flags/saved-filters/8c051ac8-df7a-496e-b5c0-de691a411100",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"8c051ac8-df7a-496e-b5c0-de691a411100\",\"type\":\"saved-filters\",\"attributes\":{\"created_at\":\"2026-10-14T19:57:33Z\",\"created_by\":\"550e8400-e29b-41d4-a716-446655440091\",\"creation_type\":\"RULES\",\"description\":\"Synthetic fixture for OpenAPI tests\",\"name\":\"getSavedFilterTest-Rule\",\"targeting_rules\":[{\"id\":\"204d53d3-9913-485f-af8e-8a8b4b34a4cb\",\"conditions\":[{\"id\":\"e12773d9-27ec-4009-88ab-6654227138c3\",\"operator\":\"ONE_OF\",\"attribute\":\"email\",\"value\":[\"test@example.com\"]}]},{\"id\":\"286b13f5-2b57-42a6-9dd6-555e46332591\",\"conditions\":[{\"id\":\"17367bb6-18cb-4e92-b126-2f1591ab3582\",\"operator\":\"ONE_OF\",\"attribute\":\"org_id\",\"value\":[\"test-org-1\"]}]}],\"updated_at\":\"2026-10-14T19:57:33Z\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get a saved filter returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-10-14T20:24:22.277Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/feature-flags/saved-filters/fb44ff15-fe17-4bab-afe8-9a8eb0cf586c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"fb44ff15-fe17-4bab-afe8-9a8eb0cf586c\",\"type\":\"saved-filters\",\"attributes\":{\"created_at\":\"2026-10-14T20:06:17Z\",\"created_by\":\"550e8400-e29b-41d4-a716-446655440091\",\"creation_type\":\"LIST\",\"description\":\"Synthetic fixture for OpenAPI tests\",\"name\":\"getSavedFilterTest-list\",\"targeting_rules\":[{\"id\":\"bb656152-2e92-43bc-a30a-b0bd9187c2ec\",\"conditions\":[{\"id\":\"6b2127a4-a463-4069-baa8-4950f11c6605\",\"operator\":\"ONE_OF\",\"attribute\":\"user_id\",\"value\":[\"test-user-1\",\"test-user-2\"]}]}],\"updated_at\":\"2026-10-14T20:06:17Z\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get a saved filter returns a saved list",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
       "frozen_at": "2026-10-13T16:23:05.377Z",
       "interactions": [
         {

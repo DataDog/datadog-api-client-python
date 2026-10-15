@@ -5890,6 +5890,27 @@
     {
       "feature": "Feature Flags",
       "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/get-a-saved-filter-returns-not-found-response.json",
+      "scenario": "Get a saved filter returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/get-a-saved-filter-returns-ok-response.json",
+      "scenario": "Get a saved filter returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/get-a-saved-filter-returns-a-saved-list.json",
+      "scenario": "Get a saved filter returns a saved list",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
       "file": "v2/feature-flags/list-feature-flags-applies-default-pagination.json",
       "scenario": "List feature flags applies default pagination",
       "version": "v2"

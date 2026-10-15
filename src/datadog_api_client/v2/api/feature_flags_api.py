@@ -24,6 +24,7 @@ from datadog_api_client.v2.model.environment_response import EnvironmentResponse
 from datadog_api_client.v2.model.create_environment_request import CreateEnvironmentRequest
 from datadog_api_client.v2.model.update_environment_request import UpdateEnvironmentRequest
 from datadog_api_client.v2.model.allocation_exposure_schedule_response import AllocationExposureScheduleResponse
+from datadog_api_client.v2.model.saved_filter_response import SavedFilterResponse
 from datadog_api_client.v2.model.update_feature_flag_request import UpdateFeatureFlagRequest
 from datadog_api_client.v2.model.allocation_response import AllocationResponse
 from datadog_api_client.v2.model.create_allocations_request import CreateAllocationsRequest
@@ -312,6 +313,29 @@ class FeatureFlagsApi:
                     "required": True,
                     "openapi_types": (UUID,),
                     "attribute": "environment_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_saved_filter_endpoint = _Endpoint(
+            settings={
+                "response_type": (SavedFilterResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/feature-flags/saved-filters/{saved_filter_id}",
+                "operation_id": "get_saved_filter",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "saved_filter_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "saved_filter_id",
                     "location": "path",
                 },
             },
@@ -945,6 +969,27 @@ class FeatureFlagsApi:
         kwargs["environment_id"] = environment_id
 
         return self._get_feature_flags_environment_endpoint.call_with_http_info(**kwargs)
+
+    def get_saved_filter(
+        self,
+        saved_filter_id: UUID,
+    ) -> SavedFilterResponse:
+        """Get a saved filter.
+
+        Returns a saved filter by ID, including its full targeting rules, conditions, and values.
+        Supports both saved lists and saved rules. Targeting rules are combined with OR,
+        and conditions within each rule are combined with AND.
+        Returns the stored filter definition rather than evaluating it against users or organizations.
+        Archived filters can be retrieved. Filters that are deleted or belong to another organization return a not found error.
+
+        :param saved_filter_id: The ID of the saved filter.
+        :type saved_filter_id: UUID
+        :rtype: SavedFilterResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["saved_filter_id"] = saved_filter_id
+
+        return self._get_saved_filter_endpoint.call_with_http_info(**kwargs)
 
     def list_feature_flags(
         self,

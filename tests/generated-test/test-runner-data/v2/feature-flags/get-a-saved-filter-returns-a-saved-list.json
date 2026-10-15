@@ -1,0 +1,35 @@
+{
+  "api": "FeatureFlags",
+  "expected_status": 200,
+  "feature": "Feature Flags",
+  "id": "v2/Feature Flags/Get a saved filter returns a saved list",
+  "operation_id": "GetSavedFilter",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "saved_filter_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "fb44ff15-fe17-4bab-afe8-9a8eb0cf586c"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/feature-flags/saved-filters/{saved_filter_id}"
+  },
+  "scenario": "Get a saved filter returns a saved list",
+  "schema_version": 1,
+  "version": "v2"
+}
