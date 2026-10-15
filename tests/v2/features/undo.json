@@ -3251,6 +3251,12 @@
       "type": "idempotent"
     }
   },
+  "GetSavedFilter": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetFeatureFlag": {
     "tag": "Feature Flags",
     "undo": {

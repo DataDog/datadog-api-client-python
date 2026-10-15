@@ -9534,6 +9534,14 @@ from datadog_api_client.v2.model.sast_ruleset_data import SastRulesetData
 from datadog_api_client.v2.model.sast_ruleset_data_attributes import SastRulesetDataAttributes
 from datadog_api_client.v2.model.sast_ruleset_response import SastRulesetResponse
 from datadog_api_client.v2.model.sast_rulesets_response import SastRulesetsResponse
+from datadog_api_client.v2.model.saved_filter_attributes import SavedFilterAttributes
+from datadog_api_client.v2.model.saved_filter_condition import SavedFilterCondition
+from datadog_api_client.v2.model.saved_filter_condition_operator import SavedFilterConditionOperator
+from datadog_api_client.v2.model.saved_filter_creation_type import SavedFilterCreationType
+from datadog_api_client.v2.model.saved_filter_data import SavedFilterData
+from datadog_api_client.v2.model.saved_filter_data_type import SavedFilterDataType
+from datadog_api_client.v2.model.saved_filter_response import SavedFilterResponse
+from datadog_api_client.v2.model.saved_filter_targeting_rule import SavedFilterTargetingRule
 from datadog_api_client.v2.model.sca_request import ScaRequest
 from datadog_api_client.v2.model.sca_request_data import ScaRequestData
 from datadog_api_client.v2.model.sca_request_data_attributes import ScaRequestDataAttributes
@@ -19129,6 +19137,14 @@ __all__ = [
     "SastRulesetDataAttributes",
     "SastRulesetResponse",
     "SastRulesetsResponse",
+    "SavedFilterAttributes",
+    "SavedFilterCondition",
+    "SavedFilterConditionOperator",
+    "SavedFilterCreationType",
+    "SavedFilterData",
+    "SavedFilterDataType",
+    "SavedFilterResponse",
+    "SavedFilterTargetingRule",
     "ScaRequest",
     "ScaRequestData",
     "ScaRequestDataAttributes",

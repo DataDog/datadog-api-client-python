@@ -287,6 +287,58 @@ Feature: Feature Flags
     And the response "data.attributes.name" has the same value as "feature_flag.data.attributes.name"
     And the response "data.attributes.value_type" has the same value as "feature_flag.data.attributes.value_type"
 
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Get a saved filter returns "Bad Request" response
+    Given new "GetSavedFilter" request
+    And request contains "saved_filter_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:ddoghq/feature-flags
+  Scenario: Get a saved filter returns "Not Found" response
+    Given new "GetSavedFilter" request
+    And request contains "saved_filter_id" parameter with value "00000000-0000-0000-0000-000000000000"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @replay-only @team:ddoghq/feature-flags
+  Scenario: Get a saved filter returns "OK" response
+    Given new "GetSavedFilter" request
+    And request contains "saved_filter_id" parameter with value "8c051ac8-df7a-496e-b5c0-de691a411100"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" is equal to "8c051ac8-df7a-496e-b5c0-de691a411100"
+    And the response "data.type" is equal to "saved-filters"
+    And the response "data.attributes.creation_type" is equal to "RULES"
+    And the response "data.attributes.name" is equal to "getSavedFilterTest-Rule"
+    And the response "data.attributes.description" is equal to "Synthetic fixture for OpenAPI tests"
+    And the response "data.attributes.targeting_rules" has length 2
+    And the response "data.attributes.targeting_rules[0].conditions" has length 1
+    And the response "data.attributes.targeting_rules[0].conditions[0].attribute" is equal to "email"
+    And the response "data.attributes.targeting_rules[0].conditions[0].operator" is equal to "ONE_OF"
+    And the response "data.attributes.targeting_rules[0].conditions[0].value" is equal to ["test@example.com"]
+    And the response "data.attributes.targeting_rules[1].conditions" has length 1
+    And the response "data.attributes.targeting_rules[1].conditions[0].attribute" is equal to "org_id"
+    And the response "data.attributes.targeting_rules[1].conditions[0].operator" is equal to "ONE_OF"
+    And the response "data.attributes.targeting_rules[1].conditions[0].value" is equal to ["test-org-1"]
+
+  @replay-only @team:ddoghq/feature-flags
+  Scenario: Get a saved filter returns a saved list
+    Given new "GetSavedFilter" request
+    And request contains "saved_filter_id" parameter with value "fb44ff15-fe17-4bab-afe8-9a8eb0cf586c"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" is equal to "fb44ff15-fe17-4bab-afe8-9a8eb0cf586c"
+    And the response "data.type" is equal to "saved-filters"
+    And the response "data.attributes.creation_type" is equal to "LIST"
+    And the response "data.attributes.name" is equal to "getSavedFilterTest-list"
+    And the response "data.attributes.description" is equal to "Synthetic fixture for OpenAPI tests"
+    And the response "data.attributes.targeting_rules" has length 1
+    And the response "data.attributes.targeting_rules[0].conditions" has length 1
+    And the response "data.attributes.targeting_rules[0].conditions[0].attribute" is equal to "user_id"
+    And the response "data.attributes.targeting_rules[0].conditions[0].operator" is equal to "ONE_OF"
+    And the response "data.attributes.targeting_rules[0].conditions[0].value" is equal to ["test-user-1", "test-user-2"]
+
   @skip @team:ddoghq/feature-flags
   Scenario: Get an environment returns "Not Found" response
     Given new "GetFeatureFlagsEnvironment" request
