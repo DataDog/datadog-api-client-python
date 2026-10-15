@@ -3,6 +3,116 @@
   "recordings": [
     {
       "feature": "Experiments",
+      "frozen_at": "2026-10-13T23:54:48.799Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "ex-protocol-65a8ff450f8f1534"
+                  },
+                  "type": "protocols"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/experiments/protocols",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"06acec4c-a1dd-7000-b972-8e4c9e0aea3e\",\"type\":\"protocols\",\"attributes\":{\"assignment_source_default_properties\":[],\"created_at\":\"2026-10-13T23:54:50.477680057Z\",\"enforcement\":{\"subject_type\":\"LOCKED\",\"flag_source\":\"LOCKED\",\"primary_metric\":\"EDITABLE\",\"secondary_metrics\":\"EDITABLE\",\"environment\":\"EDITABLE\",\"targeting_rules\":\"EDITABLE\",\"warehouse_exposure_source\":\"EDITABLE\",\"traffic_exposure\":\"EDITABLE\",\"default_duration\":\"EDITABLE\",\"confidence_interval_method\":\"LOCKED\",\"confidence_level\":\"EDITABLE\",\"cuped_calculation\":\"EDITABLE\",\"multiple_testing_correction\":\"EDITABLE\",\"split_by_exploration_dimensions\":\"EDITABLE\",\"notifications\":\"EDITABLE\"},\"experiment_count\":0,\"is_duration_required_to_start\":false,\"is_equal_split_enforced\":false,\"is_metric_limit_enabled\":false,\"is_minimum_duration_enabled\":false,\"metric_groups\":[],\"name\":\"ex-protocol-65a8ff450f8f1534\",\"status\":\"DRAFT\",\"subject_type\":{\"id\":\"06abb0e8-33b2-7001-ad2f-70568bfbf6e9\",\"name\":\"User\"},\"subject_type_id\":\"06abb0e8-33b2-7001-ad2f-70568bfbf6e9\",\"targeting_rules\":[],\"updated_at\":\"2026-10-13T23:54:50.477680057Z\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "POST",
+            "path": "/api/v2/experiments/protocols/06acec4c-a1dd-7000-b972-8e4c9e0aea3e/archive",
+            "query": [
+              [
+                "expected_updated_at",
+                "2026-10-13T23:54:50.477680057Z"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"06acec4c-a1dd-7000-b972-8e4c9e0aea3e\",\"type\":\"protocols\",\"attributes\":{\"archived_at\":\"2026-10-13T23:54:50.552093069Z\",\"assignment_source_default_properties\":[],\"created_at\":\"2026-10-13T23:54:50.47768Z\",\"enforcement\":{\"subject_type\":\"LOCKED\",\"flag_source\":\"LOCKED\",\"primary_metric\":\"EDITABLE\",\"secondary_metrics\":\"EDITABLE\",\"environment\":\"EDITABLE\",\"targeting_rules\":\"EDITABLE\",\"warehouse_exposure_source\":\"EDITABLE\",\"traffic_exposure\":\"EDITABLE\",\"default_duration\":\"EDITABLE\",\"confidence_interval_method\":\"LOCKED\",\"confidence_level\":\"EDITABLE\",\"cuped_calculation\":\"EDITABLE\",\"multiple_testing_correction\":\"EDITABLE\",\"split_by_exploration_dimensions\":\"EDITABLE\",\"notifications\":\"EDITABLE\"},\"experiment_count\":0,\"is_duration_required_to_start\":false,\"is_equal_split_enforced\":false,\"is_metric_limit_enabled\":false,\"is_minimum_duration_enabled\":false,\"metric_groups\":[],\"name\":\"ex-protocol-65a8ff450f8f1534\",\"status\":\"ARCHIVED\",\"subject_type\":{\"id\":\"06abb0e8-33b2-7001-ad2f-70568bfbf6e9\",\"name\":\"User\"},\"subject_type_id\":\"06abb0e8-33b2-7001-ad2f-70568bfbf6e9\",\"targeting_rules\":[],\"updated_at\":\"2026-10-13T23:54:50.552093069Z\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/experiments/protocols/06acec4c-a1dd-7000-b972-8e4c9e0aea3e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/experiments/protocols/06acec4c-a1dd-7000-b972-8e4c9e0aea3e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"protocol 06acec4c-a1dd-7000-b972-8e4c9e0aea3e: record not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Archive experiment protocol returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
       "frozen_at": "2026-09-29T01:19:00.715Z",
       "interactions": [
         {
@@ -513,6 +623,66 @@
     },
     {
       "feature": "Experiments",
+      "frozen_at": "2026-10-13T23:54:50.739Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Protocol created by the API test.",
+                    "name": "ex-protocol-4a78507518e21f86"
+                  },
+                  "type": "protocols"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/experiments/protocols",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"06acec4c-a309-7000-909e-547fc28207b4\",\"type\":\"protocols\",\"attributes\":{\"assignment_source_default_properties\":[],\"created_at\":\"2026-10-13T23:54:50.777066926Z\",\"description\":\"Protocol created by the API test.\",\"enforcement\":{\"subject_type\":\"LOCKED\",\"flag_source\":\"LOCKED\",\"primary_metric\":\"EDITABLE\",\"secondary_metrics\":\"EDITABLE\",\"environment\":\"EDITABLE\",\"targeting_rules\":\"EDITABLE\",\"warehouse_exposure_source\":\"EDITABLE\",\"traffic_exposure\":\"EDITABLE\",\"default_duration\":\"EDITABLE\",\"confidence_interval_method\":\"LOCKED\",\"confidence_level\":\"EDITABLE\",\"cuped_calculation\":\"EDITABLE\",\"multiple_testing_correction\":\"EDITABLE\",\"split_by_exploration_dimensions\":\"EDITABLE\",\"notifications\":\"EDITABLE\"},\"experiment_count\":0,\"is_duration_required_to_start\":false,\"is_equal_split_enforced\":false,\"is_metric_limit_enabled\":false,\"is_minimum_duration_enabled\":false,\"metric_groups\":[],\"name\":\"ex-protocol-4a78507518e21f86\",\"status\":\"DRAFT\",\"subject_type\":{\"id\":\"06abb0e8-33b2-7001-ad2f-70568bfbf6e9\",\"name\":\"User\"},\"subject_type_id\":\"06abb0e8-33b2-7001-ad2f-70568bfbf6e9\",\"targeting_rules\":[],\"updated_at\":\"2026-10-13T23:54:50.777066926Z\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/experiments/protocols/06acec4c-a309-7000-909e-547fc28207b4",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create experiment protocol returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
       "frozen_at": "2026-09-29T01:19:07.122Z",
       "interactions": [
         {
@@ -962,6 +1132,93 @@
         }
       ],
       "scenario": "Delete experiment metric group returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "frozen_at": "2026-10-13T23:54:50.888Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "ex-protocol-abb1e54410b46a25"
+                  },
+                  "type": "protocols"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/experiments/protocols",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"06acec4c-a39d-7000-9027-643278324415\",\"type\":\"protocols\",\"attributes\":{\"assignment_source_default_properties\":[],\"created_at\":\"2026-10-13T23:54:50.925536724Z\",\"enforcement\":{\"subject_type\":\"LOCKED\",\"flag_source\":\"LOCKED\",\"primary_metric\":\"EDITABLE\",\"secondary_metrics\":\"EDITABLE\",\"environment\":\"EDITABLE\",\"targeting_rules\":\"EDITABLE\",\"warehouse_exposure_source\":\"EDITABLE\",\"traffic_exposure\":\"EDITABLE\",\"default_duration\":\"EDITABLE\",\"confidence_interval_method\":\"LOCKED\",\"confidence_level\":\"EDITABLE\",\"cuped_calculation\":\"EDITABLE\",\"multiple_testing_correction\":\"EDITABLE\",\"split_by_exploration_dimensions\":\"EDITABLE\",\"notifications\":\"EDITABLE\"},\"experiment_count\":0,\"is_duration_required_to_start\":false,\"is_equal_split_enforced\":false,\"is_metric_limit_enabled\":false,\"is_minimum_duration_enabled\":false,\"metric_groups\":[],\"name\":\"ex-protocol-abb1e54410b46a25\",\"status\":\"DRAFT\",\"subject_type\":{\"id\":\"06abb0e8-33b2-7001-ad2f-70568bfbf6e9\",\"name\":\"User\"},\"subject_type_id\":\"06abb0e8-33b2-7001-ad2f-70568bfbf6e9\",\"targeting_rules\":[],\"updated_at\":\"2026-10-13T23:54:50.925536724Z\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/experiments/protocols/06acec4c-a39d-7000-9027-643278324415",
+            "query": [
+              [
+                "expected_updated_at",
+                "2026-10-13T23:54:50.925536724Z"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/experiments/protocols/06acec4c-a39d-7000-9027-643278324415",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"protocol 06acec4c-a39d-7000-9027-643278324415: record not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete experiment protocol returns \"No Content\" response",
       "version": "v2"
     },
     {
@@ -1468,6 +1725,88 @@
         }
       ],
       "scenario": "Get experiment diagnostics returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "frozen_at": "2026-10-13T23:54:51.077Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "ex-protocol-9f133bc213cd3e6b"
+                  },
+                  "type": "protocols"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/experiments/protocols",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"06acec4c-b082-7000-b10a-f9517ddc0a59\",\"type\":\"protocols\",\"attributes\":{\"assignment_source_default_properties\":[],\"created_at\":\"2026-10-13T23:54:51.130120274Z\",\"enforcement\":{\"subject_type\":\"LOCKED\",\"flag_source\":\"LOCKED\",\"primary_metric\":\"EDITABLE\",\"secondary_metrics\":\"EDITABLE\",\"environment\":\"EDITABLE\",\"targeting_rules\":\"EDITABLE\",\"warehouse_exposure_source\":\"EDITABLE\",\"traffic_exposure\":\"EDITABLE\",\"default_duration\":\"EDITABLE\",\"confidence_interval_method\":\"LOCKED\",\"confidence_level\":\"EDITABLE\",\"cuped_calculation\":\"EDITABLE\",\"multiple_testing_correction\":\"EDITABLE\",\"split_by_exploration_dimensions\":\"EDITABLE\",\"notifications\":\"EDITABLE\"},\"experiment_count\":0,\"is_duration_required_to_start\":false,\"is_equal_split_enforced\":false,\"is_metric_limit_enabled\":false,\"is_minimum_duration_enabled\":false,\"metric_groups\":[],\"name\":\"ex-protocol-9f133bc213cd3e6b\",\"status\":\"DRAFT\",\"subject_type\":{\"id\":\"06abb0e8-33b2-7001-ad2f-70568bfbf6e9\",\"name\":\"User\"},\"subject_type_id\":\"06abb0e8-33b2-7001-ad2f-70568bfbf6e9\",\"targeting_rules\":[],\"updated_at\":\"2026-10-13T23:54:51.130120274Z\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/experiments/protocols/06acec4c-b082-7000-b10a-f9517ddc0a59",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"06acec4c-b082-7000-b10a-f9517ddc0a59\",\"type\":\"protocols\",\"attributes\":{\"assignment_source_default_properties\":[],\"created_at\":\"2026-10-13T23:54:51.13012Z\",\"enforcement\":{\"subject_type\":\"LOCKED\",\"flag_source\":\"LOCKED\",\"primary_metric\":\"EDITABLE\",\"secondary_metrics\":\"EDITABLE\",\"environment\":\"EDITABLE\",\"targeting_rules\":\"EDITABLE\",\"warehouse_exposure_source\":\"EDITABLE\",\"traffic_exposure\":\"EDITABLE\",\"default_duration\":\"EDITABLE\",\"confidence_interval_method\":\"LOCKED\",\"confidence_level\":\"EDITABLE\",\"cuped_calculation\":\"EDITABLE\",\"multiple_testing_correction\":\"EDITABLE\",\"split_by_exploration_dimensions\":\"EDITABLE\",\"notifications\":\"EDITABLE\"},\"experiment_count\":0,\"is_duration_required_to_start\":false,\"is_equal_split_enforced\":false,\"is_metric_limit_enabled\":false,\"is_minimum_duration_enabled\":false,\"metric_groups\":[],\"name\":\"ex-protocol-9f133bc213cd3e6b\",\"status\":\"DRAFT\",\"subject_type\":{\"id\":\"06abb0e8-33b2-7001-ad2f-70568bfbf6e9\",\"name\":\"User\"},\"subject_type_id\":\"06abb0e8-33b2-7001-ad2f-70568bfbf6e9\",\"targeting_rules\":[],\"updated_at\":\"2026-10-13T23:54:51.13012Z\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/experiments/protocols/06acec4c-b082-7000-b10a-f9517ddc0a59",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get experiment protocol returns \"OK\" response",
       "version": "v2"
     },
     {
@@ -1980,8 +2319,38 @@
     },
     {
       "feature": "Experiments",
-      "frozen_at": "2026-09-29T01:19:21.616Z",
+      "frozen_at": "2026-10-13T23:54:51.283Z",
       "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "ex-protocol-cbdb0f80c3ab204c"
+                  },
+                  "type": "protocols"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/experiments/protocols",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"06acec4c-b148-7000-a255-e02850dcf331\",\"type\":\"protocols\",\"attributes\":{\"assignment_source_default_properties\":[],\"created_at\":\"2026-10-13T23:54:51.328046316Z\",\"enforcement\":{\"subject_type\":\"LOCKED\",\"flag_source\":\"LOCKED\",\"primary_metric\":\"EDITABLE\",\"secondary_metrics\":\"EDITABLE\",\"environment\":\"EDITABLE\",\"targeting_rules\":\"EDITABLE\",\"warehouse_exposure_source\":\"EDITABLE\",\"traffic_exposure\":\"EDITABLE\",\"default_duration\":\"EDITABLE\",\"confidence_interval_method\":\"LOCKED\",\"confidence_level\":\"EDITABLE\",\"cuped_calculation\":\"EDITABLE\",\"multiple_testing_correction\":\"EDITABLE\",\"split_by_exploration_dimensions\":\"EDITABLE\",\"notifications\":\"EDITABLE\"},\"experiment_count\":0,\"is_duration_required_to_start\":false,\"is_equal_split_enforced\":false,\"is_metric_limit_enabled\":false,\"is_minimum_duration_enabled\":false,\"metric_groups\":[],\"name\":\"ex-protocol-cbdb0f80c3ab204c\",\"status\":\"DRAFT\",\"subject_type\":{\"id\":\"06abb0e8-33b2-7001-ad2f-70568bfbf6e9\",\"name\":\"User\"},\"subject_type_id\":\"06abb0e8-33b2-7001-ad2f-70568bfbf6e9\",\"targeting_rules\":[],\"updated_at\":\"2026-10-13T23:54:51.328046316Z\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
         {
           "request": {
             "body": {
@@ -1991,18 +2360,48 @@
             "content_type": "",
             "method": "GET",
             "path": "/api/v2/experiments/protocols",
-            "query": []
+            "query": [
+              [
+                "filter[query]",
+                "ex-protocol-cbdb0f80c3ab204c"
+              ],
+              [
+                "filter[status]",
+                "DRAFT"
+              ]
+            ]
           },
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":[],\"meta\":{\"page\":{\"type\":\"offset_limit\",\"offset\":0,\"limit\":25,\"total\":0,\"first_offset\":0,\"prev_offset\":null,\"next_offset\":null,\"last_offset\":0}},\"links\":{\"self\":\"https://api.datadoghq.com/api/v2/experiments/protocols\",\"first\":\"https://api.datadoghq.com/api/v2/experiments/protocols?page%5Blimit%5D=25\\u0026page%5Boffset%5D=0\",\"last\":\"https://api.datadoghq.com/api/v2/experiments/protocols?page%5Blimit%5D=25\\u0026page%5Boffset%5D=0\"}}"
+              "value": "{\"data\":[{\"id\":\"06acec4c-b148-7000-a255-e02850dcf331\",\"type\":\"protocols\",\"attributes\":{\"experiment_count\":0,\"name\":\"ex-protocol-cbdb0f80c3ab204c\",\"status\":\"DRAFT\",\"subject_type\":{\"id\":\"06abb0e8-33b2-7001-ad2f-70568bfbf6e9\",\"name\":\"User\"},\"subject_type_id\":\"06abb0e8-33b2-7001-ad2f-70568bfbf6e9\",\"updated_at\":\"2026-10-13T23:54:51.328046Z\"}}],\"meta\":{\"page\":{\"type\":\"offset_limit\",\"offset\":0,\"limit\":25,\"total\":1,\"first_offset\":0,\"prev_offset\":null,\"next_offset\":null,\"last_offset\":0}},\"links\":{\"self\":\"https://api.datadoghq.com/api/v2/experiments/protocols?filter%5Bquery%5D=ex-protocol-cbdb0f80c3ab204c\\u0026filter%5Bstatus%5D=DRAFT\",\"first\":\"https://api.datadoghq.com/api/v2/experiments/protocols?filter%5Bquery%5D=ex-protocol-cbdb0f80c3ab204c\\u0026filter%5Bstatus%5D=DRAFT\\u0026page%5Blimit%5D=25\\u0026page%5Boffset%5D=0\",\"last\":\"https://api.datadoghq.com/api/v2/experiments/protocols?filter%5Bquery%5D=ex-protocol-cbdb0f80c3ab204c\\u0026filter%5Bstatus%5D=DRAFT\\u0026page%5Blimit%5D=25\\u0026page%5Boffset%5D=0\"}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
             },
             "reason": "OK",
             "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/experiments/protocols/06acec4c-b148-7000-a255-e02850dcf331",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
           }
         }
       ],
@@ -2375,6 +2774,430 @@
         }
       ],
       "scenario": "Patch subject type returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "frozen_at": "2026-10-13T23:54:51.470Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "ex-62d0ddcfb96a2d76",
+                    "product_analytics_attribute": "@account.id",
+                    "warehouse_column_names": [
+                      "account_id"
+                    ]
+                  },
+                  "type": "subject-types"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/experiments/subject-types",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"06acec4c-b203-7001-a428-414951b10bb9\",\"type\":\"subject-types\",\"attributes\":{\"created_at\":\"2026-10-13T23:54:51.515941433Z\",\"is_default\":false,\"name\":\"ex-62d0ddcfb96a2d76\",\"product_analytics_attribute\":\"@account.id\",\"updated_at\":\"2026-10-13T23:54:51.515941433Z\",\"warehouse_column_names\":[\"account_id\"]}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "ex-protocol-62d0ddcfb96a2d76"
+                  },
+                  "type": "protocols"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/experiments/protocols",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"06acec4c-b246-7000-a43c-af6adeeb6d3b\",\"type\":\"protocols\",\"attributes\":{\"assignment_source_default_properties\":[],\"created_at\":\"2026-10-13T23:54:51.582261941Z\",\"enforcement\":{\"subject_type\":\"LOCKED\",\"flag_source\":\"LOCKED\",\"primary_metric\":\"EDITABLE\",\"secondary_metrics\":\"EDITABLE\",\"environment\":\"EDITABLE\",\"targeting_rules\":\"EDITABLE\",\"warehouse_exposure_source\":\"EDITABLE\",\"traffic_exposure\":\"EDITABLE\",\"default_duration\":\"EDITABLE\",\"confidence_interval_method\":\"LOCKED\",\"confidence_level\":\"EDITABLE\",\"cuped_calculation\":\"EDITABLE\",\"multiple_testing_correction\":\"EDITABLE\",\"split_by_exploration_dimensions\":\"EDITABLE\",\"notifications\":\"EDITABLE\"},\"experiment_count\":0,\"is_duration_required_to_start\":false,\"is_equal_split_enforced\":false,\"is_metric_limit_enabled\":false,\"is_minimum_duration_enabled\":false,\"metric_groups\":[],\"name\":\"ex-protocol-62d0ddcfb96a2d76\",\"status\":\"DRAFT\",\"subject_type\":{\"id\":\"06abb0e8-33b2-7001-ad2f-70568bfbf6e9\",\"name\":\"User\"},\"subject_type_id\":\"06abb0e8-33b2-7001-ad2f-70568bfbf6e9\",\"targeting_rules\":[],\"updated_at\":\"2026-10-13T23:54:51.582261941Z\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "subject_type_id": "06acec4c-b203-7001-a428-414951b10bb9"
+                  },
+                  "id": "06acec4c-b246-7000-a43c-af6adeeb6d3b",
+                  "type": "protocols"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/experiments/protocols/06acec4c-b246-7000-a43c-af6adeeb6d3b",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"06acec4c-b246-7000-a43c-af6adeeb6d3b\",\"type\":\"protocols\",\"attributes\":{\"assignment_source_default_properties\":[],\"created_at\":\"2026-10-13T23:54:51.582261Z\",\"enforcement\":{\"subject_type\":\"LOCKED\",\"flag_source\":\"LOCKED\",\"primary_metric\":\"EDITABLE\",\"secondary_metrics\":\"EDITABLE\",\"environment\":\"EDITABLE\",\"targeting_rules\":\"EDITABLE\",\"warehouse_exposure_source\":\"EDITABLE\",\"traffic_exposure\":\"EDITABLE\",\"default_duration\":\"EDITABLE\",\"confidence_interval_method\":\"LOCKED\",\"confidence_level\":\"EDITABLE\",\"cuped_calculation\":\"EDITABLE\",\"multiple_testing_correction\":\"EDITABLE\",\"split_by_exploration_dimensions\":\"EDITABLE\",\"notifications\":\"EDITABLE\"},\"experiment_count\":0,\"is_duration_required_to_start\":false,\"is_equal_split_enforced\":false,\"is_metric_limit_enabled\":false,\"is_minimum_duration_enabled\":false,\"metric_groups\":[],\"name\":\"ex-protocol-62d0ddcfb96a2d76\",\"status\":\"DRAFT\",\"subject_type\":{\"id\":\"06acec4c-b203-7001-a428-414951b10bb9\",\"name\":\"ex-62d0ddcfb96a2d76\"},\"subject_type_id\":\"06acec4c-b203-7001-a428-414951b10bb9\",\"targeting_rules\":[],\"updated_at\":\"2026-10-13T23:54:51.655593854Z\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "POST",
+            "path": "/api/v2/experiments/protocols/06acec4c-b246-7000-a43c-af6adeeb6d3b/publish",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"06acec4c-b246-7000-a43c-af6adeeb6d3b\",\"type\":\"protocols\",\"attributes\":{\"assignment_source_default_properties\":[],\"created_at\":\"2026-10-13T23:54:51.582261Z\",\"enforcement\":{\"subject_type\":\"LOCKED\",\"flag_source\":\"LOCKED\",\"primary_metric\":\"EDITABLE\",\"secondary_metrics\":\"EDITABLE\",\"environment\":\"EDITABLE\",\"targeting_rules\":\"EDITABLE\",\"warehouse_exposure_source\":\"EDITABLE\",\"traffic_exposure\":\"EDITABLE\",\"default_duration\":\"EDITABLE\",\"confidence_interval_method\":\"LOCKED\",\"confidence_level\":\"EDITABLE\",\"cuped_calculation\":\"EDITABLE\",\"multiple_testing_correction\":\"EDITABLE\",\"split_by_exploration_dimensions\":\"EDITABLE\",\"notifications\":\"EDITABLE\"},\"experiment_count\":0,\"is_duration_required_to_start\":false,\"is_equal_split_enforced\":false,\"is_metric_limit_enabled\":false,\"is_minimum_duration_enabled\":false,\"metric_groups\":[],\"name\":\"ex-protocol-62d0ddcfb96a2d76\",\"published_at\":\"2026-10-13T23:54:51.726996749Z\",\"status\":\"PUBLISHED\",\"subject_type\":{\"id\":\"06acec4c-b203-7001-a428-414951b10bb9\",\"name\":\"ex-62d0ddcfb96a2d76\"},\"subject_type_id\":\"06acec4c-b203-7001-a428-414951b10bb9\",\"targeting_rules\":[],\"updated_at\":\"2026-10-13T23:54:51.726996749Z\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/experiments/protocols/06acec4c-b246-7000-a43c-af6adeeb6d3b",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/experiments/protocols/06acec4c-b246-7000-a43c-af6adeeb6d3b",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"protocol 06acec4c-b246-7000-a43c-af6adeeb6d3b: record not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/experiments/subject-types/06acec4c-b203-7001-a428-414951b10bb9",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Publish experiment protocol returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "frozen_at": "2026-10-13T23:54:51.979Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "ex-fd8848916035bf3a",
+                    "product_analytics_attribute": "@account.id",
+                    "warehouse_column_names": [
+                      "account_id"
+                    ]
+                  },
+                  "type": "subject-types"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/experiments/subject-types",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"06acec4c-c00f-7001-96bd-866f120464e6\",\"type\":\"subject-types\",\"attributes\":{\"created_at\":\"2026-10-13T23:54:52.015055515Z\",\"is_default\":false,\"name\":\"ex-fd8848916035bf3a\",\"product_analytics_attribute\":\"@account.id\",\"updated_at\":\"2026-10-13T23:54:52.015055515Z\",\"warehouse_column_names\":[\"account_id\"]}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "ex-protocol-fd8848916035bf3a"
+                  },
+                  "type": "protocols"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/experiments/protocols",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"06acec4c-c052-7000-ae27-b2c339240c8e\",\"type\":\"protocols\",\"attributes\":{\"assignment_source_default_properties\":[],\"created_at\":\"2026-10-13T23:54:52.082221256Z\",\"enforcement\":{\"subject_type\":\"LOCKED\",\"flag_source\":\"LOCKED\",\"primary_metric\":\"EDITABLE\",\"secondary_metrics\":\"EDITABLE\",\"environment\":\"EDITABLE\",\"targeting_rules\":\"EDITABLE\",\"warehouse_exposure_source\":\"EDITABLE\",\"traffic_exposure\":\"EDITABLE\",\"default_duration\":\"EDITABLE\",\"confidence_interval_method\":\"LOCKED\",\"confidence_level\":\"EDITABLE\",\"cuped_calculation\":\"EDITABLE\",\"multiple_testing_correction\":\"EDITABLE\",\"split_by_exploration_dimensions\":\"EDITABLE\",\"notifications\":\"EDITABLE\"},\"experiment_count\":0,\"is_duration_required_to_start\":false,\"is_equal_split_enforced\":false,\"is_metric_limit_enabled\":false,\"is_minimum_duration_enabled\":false,\"metric_groups\":[],\"name\":\"ex-protocol-fd8848916035bf3a\",\"status\":\"DRAFT\",\"subject_type\":{\"id\":\"06abb0e8-33b2-7001-ad2f-70568bfbf6e9\",\"name\":\"User\"},\"subject_type_id\":\"06abb0e8-33b2-7001-ad2f-70568bfbf6e9\",\"targeting_rules\":[],\"updated_at\":\"2026-10-13T23:54:52.082221256Z\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "subject_type_id": "06acec4c-c00f-7001-96bd-866f120464e6"
+                  },
+                  "id": "06acec4c-c052-7000-ae27-b2c339240c8e",
+                  "type": "protocols"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/experiments/protocols/06acec4c-c052-7000-ae27-b2c339240c8e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"06acec4c-c052-7000-ae27-b2c339240c8e\",\"type\":\"protocols\",\"attributes\":{\"assignment_source_default_properties\":[],\"created_at\":\"2026-10-13T23:54:52.082221Z\",\"enforcement\":{\"subject_type\":\"LOCKED\",\"flag_source\":\"LOCKED\",\"primary_metric\":\"EDITABLE\",\"secondary_metrics\":\"EDITABLE\",\"environment\":\"EDITABLE\",\"targeting_rules\":\"EDITABLE\",\"warehouse_exposure_source\":\"EDITABLE\",\"traffic_exposure\":\"EDITABLE\",\"default_duration\":\"EDITABLE\",\"confidence_interval_method\":\"LOCKED\",\"confidence_level\":\"EDITABLE\",\"cuped_calculation\":\"EDITABLE\",\"multiple_testing_correction\":\"EDITABLE\",\"split_by_exploration_dimensions\":\"EDITABLE\",\"notifications\":\"EDITABLE\"},\"experiment_count\":0,\"is_duration_required_to_start\":false,\"is_equal_split_enforced\":false,\"is_metric_limit_enabled\":false,\"is_minimum_duration_enabled\":false,\"metric_groups\":[],\"name\":\"ex-protocol-fd8848916035bf3a\",\"status\":\"DRAFT\",\"subject_type\":{\"id\":\"06acec4c-c00f-7001-96bd-866f120464e6\",\"name\":\"ex-fd8848916035bf3a\"},\"subject_type_id\":\"06acec4c-c00f-7001-96bd-866f120464e6\",\"targeting_rules\":[],\"updated_at\":\"2026-10-13T23:54:52.148416189Z\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "POST",
+            "path": "/api/v2/experiments/protocols/06acec4c-c052-7000-ae27-b2c339240c8e/publish",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"06acec4c-c052-7000-ae27-b2c339240c8e\",\"type\":\"protocols\",\"attributes\":{\"assignment_source_default_properties\":[],\"created_at\":\"2026-10-13T23:54:52.082221Z\",\"enforcement\":{\"subject_type\":\"LOCKED\",\"flag_source\":\"LOCKED\",\"primary_metric\":\"EDITABLE\",\"secondary_metrics\":\"EDITABLE\",\"environment\":\"EDITABLE\",\"targeting_rules\":\"EDITABLE\",\"warehouse_exposure_source\":\"EDITABLE\",\"traffic_exposure\":\"EDITABLE\",\"default_duration\":\"EDITABLE\",\"confidence_interval_method\":\"LOCKED\",\"confidence_level\":\"EDITABLE\",\"cuped_calculation\":\"EDITABLE\",\"multiple_testing_correction\":\"EDITABLE\",\"split_by_exploration_dimensions\":\"EDITABLE\",\"notifications\":\"EDITABLE\"},\"experiment_count\":0,\"is_duration_required_to_start\":false,\"is_equal_split_enforced\":false,\"is_metric_limit_enabled\":false,\"is_minimum_duration_enabled\":false,\"metric_groups\":[],\"name\":\"ex-protocol-fd8848916035bf3a\",\"published_at\":\"2026-10-13T23:54:52.214666803Z\",\"status\":\"PUBLISHED\",\"subject_type\":{\"id\":\"06acec4c-c00f-7001-96bd-866f120464e6\",\"name\":\"ex-fd8848916035bf3a\"},\"subject_type_id\":\"06acec4c-c00f-7001-96bd-866f120464e6\",\"targeting_rules\":[],\"updated_at\":\"2026-10-13T23:54:52.214666803Z\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "default_duration_days": 14,
+                    "is_duration_required_to_start": false,
+                    "is_equal_split_enforced": false,
+                    "is_metric_limit_enabled": false,
+                    "is_minimum_duration_enabled": false,
+                    "metric_groups": [],
+                    "subject_type_id": "06acec4c-c00f-7001-96bd-866f120464e6"
+                  },
+                  "id": "06acec4c-c052-7000-ae27-b2c339240c8e",
+                  "type": "protocols"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/experiments/protocols/06acec4c-c052-7000-ae27-b2c339240c8e",
+            "query": [
+              [
+                "expected_updated_at",
+                "2026-10-13T23:54:52.214666803Z"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"06acec4c-c052-7000-ae27-b2c339240c8e\",\"type\":\"protocols\",\"attributes\":{\"assignment_source_default_properties\":[],\"created_at\":\"2026-10-13T23:54:52.082221Z\",\"default_duration_days\":14,\"enforcement\":{\"subject_type\":\"LOCKED\",\"flag_source\":\"LOCKED\",\"primary_metric\":\"EDITABLE\",\"secondary_metrics\":\"EDITABLE\",\"environment\":\"EDITABLE\",\"targeting_rules\":\"EDITABLE\",\"warehouse_exposure_source\":\"EDITABLE\",\"traffic_exposure\":\"EDITABLE\",\"default_duration\":\"EDITABLE\",\"confidence_interval_method\":\"LOCKED\",\"confidence_level\":\"EDITABLE\",\"cuped_calculation\":\"EDITABLE\",\"multiple_testing_correction\":\"EDITABLE\",\"split_by_exploration_dimensions\":\"EDITABLE\",\"notifications\":\"EDITABLE\"},\"experiment_count\":0,\"is_duration_required_to_start\":false,\"is_equal_split_enforced\":false,\"is_metric_limit_enabled\":false,\"is_minimum_duration_enabled\":false,\"metric_groups\":[],\"name\":\"ex-protocol-fd8848916035bf3a\",\"published_at\":\"2026-10-13T23:54:52.214666Z\",\"status\":\"PUBLISHED\",\"subject_type\":{\"id\":\"06acec4c-c00f-7001-96bd-866f120464e6\",\"name\":\"ex-fd8848916035bf3a\"},\"subject_type_id\":\"06acec4c-c00f-7001-96bd-866f120464e6\",\"targeting_rules\":[],\"updated_at\":\"2026-10-13T23:54:52.281154081Z\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/experiments/protocols/06acec4c-c052-7000-ae27-b2c339240c8e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/experiments/protocols/06acec4c-c052-7000-ae27-b2c339240c8e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"protocol 06acec4c-c052-7000-ae27-b2c339240c8e: record not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/experiments/subject-types/06acec4c-c00f-7001-96bd-866f120464e6",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Replace experiment protocol returns \"OK\" response",
       "version": "v2"
     },
     {
@@ -3064,6 +3887,96 @@
         }
       ],
       "scenario": "Update experiment metric group returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "frozen_at": "2026-10-13T23:54:52.508Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "ex-protocol-68e0a228123b5f3a"
+                  },
+                  "type": "protocols"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/experiments/protocols",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"06acec4c-c226-7000-8670-0a9772b917a6\",\"type\":\"protocols\",\"attributes\":{\"assignment_source_default_properties\":[],\"created_at\":\"2026-10-13T23:54:52.549995623Z\",\"enforcement\":{\"subject_type\":\"LOCKED\",\"flag_source\":\"LOCKED\",\"primary_metric\":\"EDITABLE\",\"secondary_metrics\":\"EDITABLE\",\"environment\":\"EDITABLE\",\"targeting_rules\":\"EDITABLE\",\"warehouse_exposure_source\":\"EDITABLE\",\"traffic_exposure\":\"EDITABLE\",\"default_duration\":\"EDITABLE\",\"confidence_interval_method\":\"LOCKED\",\"confidence_level\":\"EDITABLE\",\"cuped_calculation\":\"EDITABLE\",\"multiple_testing_correction\":\"EDITABLE\",\"split_by_exploration_dimensions\":\"EDITABLE\",\"notifications\":\"EDITABLE\"},\"experiment_count\":0,\"is_duration_required_to_start\":false,\"is_equal_split_enforced\":false,\"is_metric_limit_enabled\":false,\"is_minimum_duration_enabled\":false,\"metric_groups\":[],\"name\":\"ex-protocol-68e0a228123b5f3a\",\"status\":\"DRAFT\",\"subject_type\":{\"id\":\"06abb0e8-33b2-7001-ad2f-70568bfbf6e9\",\"name\":\"User\"},\"subject_type_id\":\"06abb0e8-33b2-7001-ad2f-70568bfbf6e9\",\"targeting_rules\":[],\"updated_at\":\"2026-10-13T23:54:52.549995623Z\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Updated protocol description."
+                  },
+                  "id": "06acec4c-c226-7000-8670-0a9772b917a6",
+                  "type": "protocols"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/experiments/protocols/06acec4c-c226-7000-8670-0a9772b917a6",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"06acec4c-c226-7000-8670-0a9772b917a6\",\"type\":\"protocols\",\"attributes\":{\"assignment_source_default_properties\":[],\"created_at\":\"2026-10-13T23:54:52.549995Z\",\"description\":\"Updated protocol description.\",\"enforcement\":{\"subject_type\":\"LOCKED\",\"flag_source\":\"LOCKED\",\"primary_metric\":\"EDITABLE\",\"secondary_metrics\":\"EDITABLE\",\"environment\":\"EDITABLE\",\"targeting_rules\":\"EDITABLE\",\"warehouse_exposure_source\":\"EDITABLE\",\"traffic_exposure\":\"EDITABLE\",\"default_duration\":\"EDITABLE\",\"confidence_interval_method\":\"LOCKED\",\"confidence_level\":\"EDITABLE\",\"cuped_calculation\":\"EDITABLE\",\"multiple_testing_correction\":\"EDITABLE\",\"split_by_exploration_dimensions\":\"EDITABLE\",\"notifications\":\"EDITABLE\"},\"experiment_count\":0,\"is_duration_required_to_start\":false,\"is_equal_split_enforced\":false,\"is_metric_limit_enabled\":false,\"is_minimum_duration_enabled\":false,\"metric_groups\":[],\"name\":\"ex-protocol-68e0a228123b5f3a\",\"status\":\"DRAFT\",\"subject_type\":{\"id\":\"06abb0e8-33b2-7001-ad2f-70568bfbf6e9\",\"name\":\"User\"},\"subject_type_id\":\"06abb0e8-33b2-7001-ad2f-70568bfbf6e9\",\"targeting_rules\":[],\"updated_at\":\"2026-10-13T23:54:52.61837237Z\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/experiments/protocols/06acec4c-c226-7000-8670-0a9772b917a6",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update experiment protocol returns \"OK\" response",
       "version": "v2"
     },
     {

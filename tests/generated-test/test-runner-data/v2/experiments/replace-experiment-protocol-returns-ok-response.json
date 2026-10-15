@@ -1,0 +1,73 @@
+{
+  "api": "Experiments",
+  "expected_status": 200,
+  "feature": "Experiments",
+  "id": "v2/Experiments/Replace experiment protocol returns \"OK\" response",
+  "operation_id": "ReplaceExperimentProtocol",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ExperimentsReplaceExperimentProtocolRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "default_duration_days": 14,
+            "is_duration_required_to_start": false,
+            "is_equal_split_enforced": false,
+            "is_metric_limit_enabled": false,
+            "is_minimum_duration_enabled": false,
+            "metric_groups": [],
+            "subject_type_id": "{{ experiment_subject_type.data.id }}"
+          },
+          "id": "{{ published_protocol.data.id }}",
+          "type": "protocols"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "protocol_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "published_protocol.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "expected_updated_at",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "published_protocol.data.attributes.updated_at",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/experiments/protocols/{protocol_id}"
+  },
+  "scenario": "Replace experiment protocol returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

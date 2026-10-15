@@ -45,6 +45,12 @@ if TYPE_CHECKING:
 
 
 class ExperimentsPublicProtocolResponseDataAttributes(ModelNormal):
+    validations = {
+        "experiment_count": {
+            "inclusive_minimum": 0,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.experiments_public_protocol_response_data_attributes_analysis_plan import (
@@ -74,14 +80,17 @@ class ExperimentsPublicProtocolResponseDataAttributes(ModelNormal):
 
         return {
             "analysis_plan": (ExperimentsPublicProtocolResponseDataAttributesAnalysisPlan,),
+            "archived_at": (datetime,),
             "assignment_source_default_properties": (
                 [ExperimentsPublicProtocolResponseDataAttributesAssignmentSourceDefaultPropertiesItems],
             ),
             "assignment_source_id": (str,),
+            "created_at": (datetime,),
             "default_duration_days": (int,),
             "description": (str,),
             "enforcement": (ExperimentsPublicProtocolResponseDataAttributesEnforcement,),
             "environment_id": (str,),
+            "experiment_count": (int,),
             "exposure_schedule": (ExperimentsPublicProtocolResponseDataAttributesExposureSchedule,),
             "is_duration_required_to_start": (bool,),
             "is_equal_split_enforced": (bool,),
@@ -116,12 +125,15 @@ class ExperimentsPublicProtocolResponseDataAttributes(ModelNormal):
 
     attribute_map = {
         "analysis_plan": "analysis_plan",
+        "archived_at": "archived_at",
         "assignment_source_default_properties": "assignment_source_default_properties",
         "assignment_source_id": "assignment_source_id",
+        "created_at": "created_at",
         "default_duration_days": "default_duration_days",
         "description": "description",
         "enforcement": "enforcement",
         "environment_id": "environment_id",
+        "experiment_count": "experiment_count",
         "exposure_schedule": "exposure_schedule",
         "is_duration_required_to_start": "is_duration_required_to_start",
         "is_equal_split_enforced": "is_equal_split_enforced",
@@ -145,6 +157,7 @@ class ExperimentsPublicProtocolResponseDataAttributes(ModelNormal):
 
     def __init__(
         self_,
+        created_at: datetime,
         is_duration_required_to_start: bool,
         is_equal_split_enforced: bool,
         is_metric_limit_enabled: bool,
@@ -154,6 +167,7 @@ class ExperimentsPublicProtocolResponseDataAttributes(ModelNormal):
         status: ExperimentsPublicProtocolResponseDataAttributesStatus,
         updated_at: str,
         analysis_plan: Union[ExperimentsPublicProtocolResponseDataAttributesAnalysisPlan, UnsetType] = unset,
+        archived_at: Union[datetime, UnsetType] = unset,
         assignment_source_default_properties: Union[
             List[ExperimentsPublicProtocolResponseDataAttributesAssignmentSourceDefaultPropertiesItems], UnsetType
         ] = unset,
@@ -162,6 +176,7 @@ class ExperimentsPublicProtocolResponseDataAttributes(ModelNormal):
         description: Union[str, UnsetType] = unset,
         enforcement: Union[ExperimentsPublicProtocolResponseDataAttributesEnforcement, UnsetType] = unset,
         environment_id: Union[str, UnsetType] = unset,
+        experiment_count: Union[int, UnsetType] = unset,
         exposure_schedule: Union[ExperimentsPublicProtocolResponseDataAttributesExposureSchedule, UnsetType] = unset,
         metric_limit: Union[int, UnsetType] = unset,
         migration_metadata: Union[Any, UnsetType] = unset,
@@ -183,11 +198,17 @@ class ExperimentsPublicProtocolResponseDataAttributes(ModelNormal):
         :param analysis_plan: Default statistical settings supplied by the protocol.
         :type analysis_plan: ExperimentsPublicProtocolResponseDataAttributesAnalysisPlan, optional
 
+        :param archived_at: Time when the protocol was archived. Omitted if it has not been archived.
+        :type archived_at: datetime, optional
+
         :param assignment_source_default_properties: Default properties supplied by the protocol's assignment source.
         :type assignment_source_default_properties: [ExperimentsPublicProtocolResponseDataAttributesAssignmentSourceDefaultPropertiesItems], optional
 
         :param assignment_source_id: ID of the assignment source selected by the protocol.
         :type assignment_source_id: str, optional
+
+        :param created_at: Time when the protocol was created.
+        :type created_at: datetime
 
         :param default_duration_days: Default experiment duration supplied by the protocol, in days.
         :type default_duration_days: int, optional
@@ -200,6 +221,9 @@ class ExperimentsPublicProtocolResponseDataAttributes(ModelNormal):
 
         :param environment_id: ID of the feature flag environment used by the experiment.
         :type environment_id: str, optional
+
+        :param experiment_count: Number of experiments in the organization that use this protocol, excluding deleted experiments. Omitted if the count cannot be retrieved. An omitted count does not mean zero.
+        :type experiment_count: int, optional
 
         :param exposure_schedule: Schedule that controls traffic exposure for experiments created from the protocol.
         :type exposure_schedule: ExperimentsPublicProtocolResponseDataAttributesExposureSchedule, optional
@@ -255,11 +279,14 @@ class ExperimentsPublicProtocolResponseDataAttributes(ModelNormal):
         :param targeting_rules: Rules that select subjects for the experiment.
         :type targeting_rules: [ExperimentsPublicProtocolResponseDataAttributesTargetingRulesItems], optional
 
-        :param updated_at: RFC3339 update time. Preserve all fractional seconds when passing this value as expected_updated_at.
+        :param updated_at: RFC3339 update time. Preserve all fractional seconds when passing this value as
+            ``expected_updated_at``.
         :type updated_at: str
         """
         if analysis_plan is not unset:
             kwargs["analysis_plan"] = analysis_plan
+        if archived_at is not unset:
+            kwargs["archived_at"] = archived_at
         if assignment_source_default_properties is not unset:
             kwargs["assignment_source_default_properties"] = assignment_source_default_properties
         if assignment_source_id is not unset:
@@ -272,6 +299,8 @@ class ExperimentsPublicProtocolResponseDataAttributes(ModelNormal):
             kwargs["enforcement"] = enforcement
         if environment_id is not unset:
             kwargs["environment_id"] = environment_id
+        if experiment_count is not unset:
+            kwargs["experiment_count"] = experiment_count
         if exposure_schedule is not unset:
             kwargs["exposure_schedule"] = exposure_schedule
         if metric_limit is not unset:
@@ -296,6 +325,7 @@ class ExperimentsPublicProtocolResponseDataAttributes(ModelNormal):
             kwargs["targeting_rules"] = targeting_rules
         super().__init__(kwargs)
 
+        self_.created_at = created_at
         self_.is_duration_required_to_start = is_duration_required_to_start
         self_.is_equal_split_enforced = is_equal_split_enforced
         self_.is_metric_limit_enabled = is_metric_limit_enabled

@@ -1,0 +1,34 @@
+{
+  "api": "Experiments",
+  "expected_status": 201,
+  "feature": "Experiments",
+  "id": "v2/Experiments/Create experiment protocol returns \"Created\" response",
+  "operation_id": "CreateExperimentProtocol",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ExperimentsCreateExperimentProtocolRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "description": "Protocol created by the API test.",
+            "name": "ex-protocol-{{ unique_hash }}"
+          },
+          "type": "protocols"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/experiments/protocols"
+  },
+  "scenario": "Create experiment protocol returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

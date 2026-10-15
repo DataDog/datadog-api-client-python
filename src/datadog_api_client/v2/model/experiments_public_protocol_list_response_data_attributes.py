@@ -23,6 +23,12 @@ if TYPE_CHECKING:
 
 
 class ExperimentsPublicProtocolListResponseDataAttributes(ModelNormal):
+    validations = {
+        "experiment_count": {
+            "inclusive_minimum": 0,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.experiments_public_protocol_response_data_attributes_subject_type import (
@@ -34,6 +40,7 @@ class ExperimentsPublicProtocolListResponseDataAttributes(ModelNormal):
 
         return {
             "description": (str,),
+            "experiment_count": (int,),
             "name": (str,),
             "primary_metric": (ExperimentsPublicProtocolResponseDataAttributesSubjectType,),
             "primary_metric_id": (str,),
@@ -45,6 +52,7 @@ class ExperimentsPublicProtocolListResponseDataAttributes(ModelNormal):
 
     attribute_map = {
         "description": "description",
+        "experiment_count": "experiment_count",
         "name": "name",
         "primary_metric": "primary_metric",
         "primary_metric_id": "primary_metric_id",
@@ -56,6 +64,7 @@ class ExperimentsPublicProtocolListResponseDataAttributes(ModelNormal):
 
     def __init__(
         self_,
+        experiment_count: int,
         name: str,
         status: ExperimentsPublicProtocolResponseDataAttributesStatus,
         updated_at: str,
@@ -71,6 +80,9 @@ class ExperimentsPublicProtocolListResponseDataAttributes(ModelNormal):
 
         :param description: Text that explains the protocol.
         :type description: str, optional
+
+        :param experiment_count: Number of experiments in the organization that use this protocol, excluding deleted experiments.
+        :type experiment_count: int
 
         :param name: Display name of the protocol.
         :type name: str
@@ -90,7 +102,8 @@ class ExperimentsPublicProtocolListResponseDataAttributes(ModelNormal):
         :param subject_type_id: ID of the subject type used by this configuration.
         :type subject_type_id: str, optional
 
-        :param updated_at: RFC3339 update time. Preserve all fractional seconds when passing this value as expected_updated_at.
+        :param updated_at: RFC3339 update time. Preserve all fractional seconds when passing this value as
+            ``expected_updated_at``.
         :type updated_at: str
         """
         if description is not unset:
@@ -105,6 +118,7 @@ class ExperimentsPublicProtocolListResponseDataAttributes(ModelNormal):
             kwargs["subject_type_id"] = subject_type_id
         super().__init__(kwargs)
 
+        self_.experiment_count = experiment_count
         self_.name = name
         self_.status = status
         self_.updated_at = updated_at
