@@ -873,6 +873,7 @@ class Configuration:
                 "v2.update_ai_custom_ruleset": False,
                 "v2.update_custom_ruleset": False,
                 "v2.add_member_team": False,
+                "v2.get_team_hierarchy_members": False,
                 "v2.list_member_teams": False,
                 "v2.remove_member_team": False,
                 "v2.create_timeseries_anomaly_investigation": False,
