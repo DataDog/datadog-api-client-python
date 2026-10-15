@@ -29,9 +29,9 @@ class PaginatedResponseMeta(ModelNormal):
 
     def __init__(self_, count: int, limit: int, offset: int, total: int, **kwargs):
         """
-        Metadata for scores response.
+        Pagination metadata.
 
-        :param count: Number of entities in this response.
+        :param count: Number of results in this response.
         :type count: int
 
         :param limit: Pagination limit.
@@ -40,7 +40,7 @@ class PaginatedResponseMeta(ModelNormal):
         :param offset: Pagination offset.
         :type offset: int
 
-        :param total: Total number of entities available.
+        :param total: Total number of results matching the filters.
         :type total: int
         """
         super().__init__(kwargs)

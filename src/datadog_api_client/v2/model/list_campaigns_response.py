@@ -39,7 +39,7 @@ class ListCampaignsResponse(ModelNormal):
         :param data: Array of campaigns.
         :type data: [CampaignResponseData]
 
-        :param meta: Metadata for scores response.
+        :param meta: Pagination metadata.
         :type meta: PaginatedResponseMeta
         """
         super().__init__(kwargs)
