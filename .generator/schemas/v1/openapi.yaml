@@ -3496,6 +3496,7 @@ components:
         - logs
         - spans
         - network
+        - network_device_flows
         - rum
         - security_signals
         - profiles
@@ -3514,6 +3515,7 @@ components:
         - LOGS
         - SPANS
         - NETWORK
+        - NETWORK_DEVICE_FLOWS
         - RUM
         - SECURITY_SIGNALS
         - PROFILES
