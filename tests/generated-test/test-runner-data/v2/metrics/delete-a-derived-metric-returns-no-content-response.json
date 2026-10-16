@@ -1,0 +1,35 @@
+{
+  "api": "Metrics",
+  "expected_status": 204,
+  "feature": "Metrics",
+  "id": "v2/Metrics/Delete a derived metric returns \"No Content\" response",
+  "operation_id": "DeleteDerivedMetric",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "metric_name",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "derived_metric.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/metrics/derived-metrics/{metric_name}"
+  },
+  "scenario": "Delete a derived metric returns \"No Content\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

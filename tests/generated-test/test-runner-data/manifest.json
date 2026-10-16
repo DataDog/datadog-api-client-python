@@ -7276,6 +7276,27 @@
     {
       "feature": "Metrics",
       "feature_file": "../../v2/features/metrics.feature",
+      "file": "v2/metrics/create-a-derived-metric-returns-bad-request-response.json",
+      "scenario": "Create a derived metric returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Metrics",
+      "feature_file": "../../v2/features/metrics.feature",
+      "file": "v2/metrics/create-a-derived-metric-returns-conflict-response.json",
+      "scenario": "Create a derived metric returns \"Conflict\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Metrics",
+      "feature_file": "../../v2/features/metrics.feature",
+      "file": "v2/metrics/create-a-derived-metric-returns-created-response.json",
+      "scenario": "Create a derived metric returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Metrics",
+      "feature_file": "../../v2/features/metrics.feature",
       "file": "v2/metrics/create-a-tag-configuration-returns-created-response.json",
       "scenario": "Create a tag configuration returns \"Created\" response",
       "version": "v2"
@@ -7318,6 +7339,20 @@
     {
       "feature": "Metrics",
       "feature_file": "../../v2/features/metrics.feature",
+      "file": "v2/metrics/delete-a-derived-metric-returns-bad-request-response.json",
+      "scenario": "Delete a derived metric returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Metrics",
+      "feature_file": "../../v2/features/metrics.feature",
+      "file": "v2/metrics/delete-a-derived-metric-returns-no-content-response.json",
+      "scenario": "Delete a derived metric returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Metrics",
+      "feature_file": "../../v2/features/metrics.feature",
       "file": "v2/metrics/delete-a-tag-configuration-returns-no-content-response.json",
       "scenario": "Delete a tag configuration returns \"No Content\" response",
       "version": "v2"
@@ -7334,6 +7369,27 @@
       "feature_file": "../../v2/features/metrics.feature",
       "file": "v2/metrics/delete-a-tag-indexing-rule-returns-no-content-response.json",
       "scenario": "Delete a tag indexing rule returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Metrics",
+      "feature_file": "../../v2/features/metrics.feature",
+      "file": "v2/metrics/get-a-derived-metric-returns-bad-request-response.json",
+      "scenario": "Get a derived metric returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Metrics",
+      "feature_file": "../../v2/features/metrics.feature",
+      "file": "v2/metrics/get-a-derived-metric-returns-not-found-response.json",
+      "scenario": "Get a derived metric returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Metrics",
+      "feature_file": "../../v2/features/metrics.feature",
+      "file": "v2/metrics/get-a-derived-metric-returns-ok-response.json",
+      "scenario": "Get a derived metric returns \"OK\" response",
       "version": "v2"
     },
     {
@@ -7754,6 +7810,27 @@
       "feature_file": "../../v2/features/metrics.feature",
       "file": "v2/metrics/timeseries-cross-product-query-with-spans-data-source-returns-ok-response.json",
       "scenario": "Timeseries cross product query with spans data source returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Metrics",
+      "feature_file": "../../v2/features/metrics.feature",
+      "file": "v2/metrics/update-a-derived-metric-returns-bad-request-response.json",
+      "scenario": "Update a derived metric returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Metrics",
+      "feature_file": "../../v2/features/metrics.feature",
+      "file": "v2/metrics/update-a-derived-metric-returns-not-found-response.json",
+      "scenario": "Update a derived metric returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Metrics",
+      "feature_file": "../../v2/features/metrics.feature",
+      "file": "v2/metrics/update-a-derived-metric-returns-ok-response.json",
+      "scenario": "Update a derived metric returns \"OK\" response",
       "version": "v2"
     },
     {

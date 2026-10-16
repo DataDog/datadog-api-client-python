@@ -6085,6 +6085,37 @@
       "type": "unsafe"
     }
   },
+  "CreateDerivedMetric": {
+    "tag": "Metrics",
+    "undo": {
+      "operationId": "DeleteDerivedMetric",
+      "parameters": [
+        {
+          "name": "metric_name",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteDerivedMetric": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetDerivedMetric": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateDerivedMetric": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "CreateHistoricalMetricsConfiguration": {
     "tag": "Metrics",
     "undo": {

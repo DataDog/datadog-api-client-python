@@ -40,6 +40,36 @@ Feature: Metrics
     When the request is sent
     Then the response status is 404 Not Found
 
+  @team:ddoghq/metrics-experience
+  Scenario: Create a derived metric returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And new "CreateDerivedMetric" request
+    And body with value {"data": {"attributes": {"definition": {"formula": "a", "queries": [{"data_source": "metrics", "name": "a", "query": "avg:system.cpu.user{*}"}]}}, "id": "1invalid.metric", "type": "derived_metrics"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+    And the response "errors" has length 1
+
+  @team:ddoghq/metrics-experience
+  Scenario: Create a derived metric returns "Conflict" response
+    Given a valid "appKeyAuth" key in the system
+    And there is a valid "derived_metric" in the system
+    And new "CreateDerivedMetric" request
+    And body with value {"data": {"attributes": {"definition": {"formula": "a", "queries": [{"data_source": "metrics", "name": "a", "query": "avg:system.cpu.user{*}"}]}}, "id": "{{ derived_metric.data.id }}", "type": "derived_metrics"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+    And the response "errors" has length 1
+
+  @team:ddoghq/metrics-experience
+  Scenario: Create a derived metric returns "Created" response
+    Given a valid "appKeyAuth" key in the system
+    And new "CreateDerivedMetric" request
+    And body with value {"data": {"attributes": {"definition": {"formula": "a", "queries": [{"data_source": "metrics", "name": "a", "query": "avg:system.cpu.user{*}"}]}}, "id": "test.derived.{{ unique_lower_alnum }}", "type": "derived_metrics"}}
+    When the request is sent
+    Then the response status is 201 Created
+    And the response "data.id" is equal to "test.derived.{{ unique_lower_alnum }}"
+    And the response "data.type" is equal to "derived_metrics"
+    And the response "data.attributes.definition.formula" is equal to "a"
+
   @generated @skip @team:ddoghq/metrics-experience
   Scenario: Create a tag configuration returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
@@ -141,6 +171,24 @@ Feature: Metrics
     And body with value {"data": {"attributes": {"exclude_tags_mode": false, "ignored_metric_name_matches": [], "metric_name_matches": ["dd.test.*"], "name": "my-indexing-rule", "options": {"data": {"dynamic_tags": {"exclude_not_used_in_assets": true}, "manage_preexisting_metrics": true, "override_previous_rules": false}, "version": 1}, "tags": ["env", "service"]}, "type": "tag_indexing_rules"}}
     When the request is sent
     Then the response status is 400 Bad Request
+
+  @team:ddoghq/metrics-experience
+  Scenario: Delete a derived metric returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And new "DeleteDerivedMetric" request
+    And request contains "metric_name" parameter with value "1invalid.metric"
+    When the request is sent
+    Then the response status is 400 Bad Request
+    And the response "errors" has length 1
+
+  @team:ddoghq/metrics-experience
+  Scenario: Delete a derived metric returns "No Content" response
+    Given a valid "appKeyAuth" key in the system
+    And there is a valid "derived_metric" in the system
+    And new "DeleteDerivedMetric" request
+    And request contains "metric_name" parameter from "derived_metric.data.id"
+    When the request is sent
+    Then the response status is 204 No Content
 
   @generated @skip @team:ddoghq/metrics-experience
   Scenario: Delete a historical metrics configuration returns "Bad Request" response
@@ -283,6 +331,36 @@ Feature: Metrics
     And body with value {"data": {"id": "dd.test.metric", "type": "historical_metrics_configurations"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity
+
+  @team:ddoghq/metrics-experience
+  Scenario: Get a derived metric returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And new "GetDerivedMetric" request
+    And request contains "metric_name" parameter with value "1invalid.metric"
+    When the request is sent
+    Then the response status is 400 Bad Request
+    And the response "errors" has length 1
+
+  @team:ddoghq/metrics-experience
+  Scenario: Get a derived metric returns "Not Found" response
+    Given a valid "appKeyAuth" key in the system
+    And new "GetDerivedMetric" request
+    And request contains "metric_name" parameter with value "test.derived.missing.{{ unique_lower_alnum }}"
+    When the request is sent
+    Then the response status is 404 Not Found
+    And the response "errors" has length 1
+
+  @team:ddoghq/metrics-experience
+  Scenario: Get a derived metric returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And there is a valid "derived_metric" in the system
+    And new "GetDerivedMetric" request
+    And request contains "metric_name" parameter from "derived_metric.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" has the same value as "derived_metric.data.id"
+    And the response "data.type" is equal to "derived_metrics"
+    And the response "data.attributes.definition.formula" is equal to "a"
 
   @generated @skip @team:ddoghq/metrics-experience
   Scenario: Get a historical metrics configuration returns "Bad Request" response
@@ -1074,6 +1152,39 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 OK
     And the response "data.type" is equal to "timeseries_response"
+
+  @team:ddoghq/metrics-experience
+  Scenario: Update a derived metric returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And new "UpdateDerivedMetric" request
+    And request contains "metric_name" parameter with value "test.derived.{{ unique_lower_alnum }}"
+    And body with value {"data": {"attributes": {"definition": {"formula": "a", "queries": [{"data_source": "metrics", "name": "a", "query": "avg:system.cpu.user{*}"}]}}, "id": "test.derived.mismatch.{{ unique_lower_alnum }}", "type": "derived_metrics"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+    And the response "errors" has length 1
+
+  @team:ddoghq/metrics-experience
+  Scenario: Update a derived metric returns "Not Found" response
+    Given a valid "appKeyAuth" key in the system
+    And new "UpdateDerivedMetric" request
+    And request contains "metric_name" parameter with value "test.derived.missing.{{ unique_lower_alnum }}"
+    And body with value {"data": {"attributes": {"definition": {"formula": "a", "queries": [{"data_source": "metrics", "name": "a", "query": "avg:system.cpu.user{*}"}]}}, "id": "test.derived.missing.{{ unique_lower_alnum }}", "type": "derived_metrics"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+    And the response "errors" has length 1
+
+  @team:ddoghq/metrics-experience
+  Scenario: Update a derived metric returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And there is a valid "derived_metric" in the system
+    And new "UpdateDerivedMetric" request
+    And request contains "metric_name" parameter from "derived_metric.data.id"
+    And body with value {"data": {"attributes": {"definition": {"formula": "a * 2", "queries": [{"data_source": "metrics", "name": "a", "query": "avg:system.cpu.user{*}"}]}}, "id": "{{ derived_metric.data.id }}", "type": "derived_metrics"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" has the same value as "derived_metric.data.id"
+    And the response "data.type" is equal to "derived_metrics"
+    And the response "data.attributes.definition.formula" is equal to "a * 2"
 
   @generated @skip @team:ddoghq/metrics-experience
   Scenario: Update a tag configuration returns "Bad Request" response

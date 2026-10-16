@@ -1,0 +1,43 @@
+{
+  "api": "Metrics",
+  "expected_status": 409,
+  "feature": "Metrics",
+  "id": "v2/Metrics/Create a derived metric returns \"Conflict\" response",
+  "operation_id": "CreateDerivedMetric",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "DerivedMetricCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "definition": {
+              "formula": "a",
+              "queries": [
+                {
+                  "data_source": "metrics",
+                  "name": "a",
+                  "query": "avg:system.cpu.user{*}"
+                }
+              ]
+            }
+          },
+          "id": "{{ derived_metric.data.id }}",
+          "type": "derived_metrics"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/metrics/derived-metrics"
+  },
+  "scenario": "Create a derived metric returns \"Conflict\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

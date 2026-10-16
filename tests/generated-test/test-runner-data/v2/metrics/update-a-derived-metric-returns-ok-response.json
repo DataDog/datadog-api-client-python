@@ -1,0 +1,60 @@
+{
+  "api": "Metrics",
+  "expected_status": 200,
+  "feature": "Metrics",
+  "id": "v2/Metrics/Update a derived metric returns \"OK\" response",
+  "operation_id": "UpdateDerivedMetric",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "DerivedMetricCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "definition": {
+              "formula": "a * 2",
+              "queries": [
+                {
+                  "data_source": "metrics",
+                  "name": "a",
+                  "query": "avg:system.cpu.user{*}"
+                }
+              ]
+            }
+          },
+          "id": "{{ derived_metric.data.id }}",
+          "type": "derived_metrics"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "metric_name",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "derived_metric.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/metrics/derived-metrics/{metric_name}"
+  },
+  "scenario": "Update a derived metric returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
