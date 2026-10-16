@@ -1,0 +1,45 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 201,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Create a batch migration returns \"Created\" response",
+  "operation_id": "CreateSecurityMonitoringBatchMigration",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SecurityMonitoringBatchMigrationCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "description": "Rules imported from Splunk",
+            "name": "{{ unique }}",
+            "resources": [
+              {
+                "description": "Detects repeated failed Windows authentication attempts.",
+                "input": "index=wineventlog EventCode=4625",
+                "inputType": "spl",
+                "name": "Repeated Windows login failures"
+              }
+            ],
+            "tags": [
+              "source:splunk"
+            ]
+          },
+          "type": "batchMigration"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security_monitoring/batch-migrations"
+  },
+  "scenario": "Create a batch migration returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

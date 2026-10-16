@@ -1,0 +1,54 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Update a batch migration returns \"OK\" response",
+  "operation_id": "UpdateSecurityMonitoringBatchMigration",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SecurityMonitoringBatchMigrationUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "{{ unique }}-updated",
+            "tags": [
+              "source:splunk",
+              "team:secops"
+            ]
+          },
+          "type": "batchMigration"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "batch_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "batch_migration.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security_monitoring/batch-migrations/{batch_id}"
+  },
+  "scenario": "Update a batch migration returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

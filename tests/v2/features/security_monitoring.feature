@@ -52,6 +52,46 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Add resources to a batch migration returns "Bad Request" response
+    Given operation "CreateSecurityMonitoringBatchMigrationResources" enabled
+    And new "CreateSecurityMonitoringBatchMigrationResources" request
+    And request contains "batch_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"resources": [{"description": "Detects repeated failed Windows authentication attempts.", "input": "index=wineventlog EventCode=4625", "inputType": "spl", "name": "Repeated Windows login failures"}]}, "type": "batchMigrationResources"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Add resources to a batch migration returns "Conflict" response
+    Given operation "CreateSecurityMonitoringBatchMigrationResources" enabled
+    And new "CreateSecurityMonitoringBatchMigrationResources" request
+    And request contains "batch_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"resources": [{"description": "Detects repeated failed Windows authentication attempts.", "input": "index=wineventlog EventCode=4625", "inputType": "spl", "name": "Repeated Windows login failures"}]}, "type": "batchMigrationResources"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @team:ddoghq/cloud-siem
+  Scenario: Add resources to a batch migration returns "Created" response
+    Given operation "CreateSecurityMonitoringBatchMigrationResources" enabled
+    And there is a valid "batch_migration" in the system
+    And new "CreateSecurityMonitoringBatchMigrationResources" request
+    And request contains "batch_id" parameter from "batch_migration.data.id"
+    And body with value {"data": {"type": "batchMigrationResources", "attributes": {"resources": [{"name": "Linux sudo abuse", "inputType": "spl", "input": "index=linux process=sudo \"authentication failure\" | stats count by user, host"}]}}}
+    When the request is sent
+    Then the response status is 201 Created
+    And the response "data" has length 1
+    And the response "data[0].attributes.name" is equal to "Linux sudo abuse"
+    And the response "data[0].attributes.status" is equal to "pending"
+
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Add resources to a batch migration returns "Not Found" response
+    Given operation "CreateSecurityMonitoringBatchMigrationResources" enabled
+    And new "CreateSecurityMonitoringBatchMigrationResources" request
+    And request contains "batch_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"resources": [{"description": "Detects repeated failed Windows authentication attempts.", "input": "index=wineventlog EventCode=4625", "inputType": "spl", "name": "Repeated Windows login failures"}]}, "type": "batchMigrationResources"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @generated @skip @team:ddoghq/k9-vm-ast
   Scenario: Analyze code returns "Bad Request" response
     Given operation "CreateStaticAnalysisServerAnalysis" enabled
@@ -357,6 +397,38 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Cancel a batch migration returns "Accepted" response
+    Given operation "CancelSecurityMonitoringBatchMigration" enabled
+    And new "CancelSecurityMonitoringBatchMigration" request
+    And request contains "batch_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 202 Accepted
+
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Cancel a batch migration returns "Bad Request" response
+    Given operation "CancelSecurityMonitoringBatchMigration" enabled
+    And new "CancelSecurityMonitoringBatchMigration" request
+    And request contains "batch_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Cancel a batch migration returns "Conflict" response
+    Given operation "CancelSecurityMonitoringBatchMigration" enabled
+    And new "CancelSecurityMonitoringBatchMigration" request
+    And request contains "batch_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Cancel a batch migration returns "Not Found" response
+    Given operation "CancelSecurityMonitoringBatchMigration" enabled
+    And new "CancelSecurityMonitoringBatchMigration" request
+    And request contains "batch_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @team:ddoghq/cloud-siem
   Scenario: Cancel a historical job returns "Bad Request" response
     Given operation "CancelHistoricalJob" enabled
@@ -650,6 +722,26 @@ Feature: Security Monitoring
     And body with value {"data": [{"attributes": {"assignee_id": "f315bdaf-9ee7-4808-a9c1-99c15bf0f4d0", "description": "A description of the ServiceNow ticket.", "priority": "NOT_DEFINED", "title": "A title for the ServiceNow ticket."}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}, "project": {"data": {"id": "aeadc05e-98a8-11ec-ac2c-da7ad0900001", "type": "projects"}}}, "type": "servicenow_tickets"}]}
     When the request is sent
     Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Create a batch migration returns "Bad Request" response
+    Given operation "CreateSecurityMonitoringBatchMigration" enabled
+    And new "CreateSecurityMonitoringBatchMigration" request
+    And body with value {"data": {"attributes": {"description": "Rules imported from Splunk", "name": "Splunk migration", "resources": [{"description": "Detects repeated failed Windows authentication attempts.", "input": "index=wineventlog EventCode=4625", "inputType": "spl", "name": "Repeated Windows login failures"}], "tags": ["source:splunk"]}, "type": "batchMigration"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:ddoghq/cloud-siem
+  Scenario: Create a batch migration returns "Created" response
+    Given operation "CreateSecurityMonitoringBatchMigration" enabled
+    And new "CreateSecurityMonitoringBatchMigration" request
+    And body with value {"data": {"type": "batchMigration", "attributes": {"name": "{{ unique }}", "description": "Rules imported from Splunk", "tags": ["source:splunk"], "resources": [{"name": "Repeated Windows login failures", "description": "Detects repeated failed Windows authentication attempts.", "inputType": "spl", "input": "index=wineventlog EventCode=4625"}]}}}
+    When the request is sent
+    Then the response status is 201 Created
+    And the response "data.type" is equal to "batchMigration"
+    And the response "data.attributes.name" is equal to "{{ unique }}"
+    And the response "data.attributes.status" is equal to "draft"
+    And the response "data.attributes.resourceStatusCounts.pending" is equal to 1
 
   @skip-validation @team:ddoghq/cloud-siem
   Scenario: Create a cloud_configuration rule returns "OK" response
@@ -1218,6 +1310,39 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Delete a batch migration returns "Bad Request" response
+    Given operation "DeleteSecurityMonitoringBatchMigration" enabled
+    And new "DeleteSecurityMonitoringBatchMigration" request
+    And request contains "batch_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Delete a batch migration returns "Conflict" response
+    Given operation "DeleteSecurityMonitoringBatchMigration" enabled
+    And new "DeleteSecurityMonitoringBatchMigration" request
+    And request contains "batch_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @team:ddoghq/cloud-siem
+  Scenario: Delete a batch migration returns "No Content" response
+    Given operation "DeleteSecurityMonitoringBatchMigration" enabled
+    And there is a valid "batch_migration" in the system
+    And new "DeleteSecurityMonitoringBatchMigration" request
+    And request contains "batch_id" parameter from "batch_migration.data.id"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Delete a batch migration returns "Not Found" response
+    Given operation "DeleteSecurityMonitoringBatchMigration" enabled
+    And new "DeleteSecurityMonitoringBatchMigration" request
+    And request contains "batch_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @team:ddoghq/cloud-siem
   Scenario: Delete a critical asset returns "Not Found" response
     Given new "DeleteSecurityMonitoringCriticalAsset" request
@@ -1535,6 +1660,44 @@ Feature: Security Monitoring
     And request contains "rule_id" parameter from "valid_inbox_rule.data.id"
     When the request is sent
     Then the response status is 204 Successfully deleted the inbox rule
+
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Delete resources from a batch migration returns "Bad Request" response
+    Given operation "DeleteSecurityMonitoringBatchMigrationResources" enabled
+    And new "DeleteSecurityMonitoringBatchMigrationResources" request
+    And request contains "batch_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"resourceIds": ["c968cf83-56c2-4d54-a993-6c86dfb83527"]}, "type": "batchMigrationResources"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Delete resources from a batch migration returns "Conflict" response
+    Given operation "DeleteSecurityMonitoringBatchMigrationResources" enabled
+    And new "DeleteSecurityMonitoringBatchMigrationResources" request
+    And request contains "batch_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"resourceIds": ["c968cf83-56c2-4d54-a993-6c86dfb83527"]}, "type": "batchMigrationResources"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @team:ddoghq/cloud-siem
+  Scenario: Delete resources from a batch migration returns "No Content" response
+    Given operation "DeleteSecurityMonitoringBatchMigrationResources" enabled
+    And there is a valid "batch_migration" in the system
+    And there is a valid "batch_migration_resource" in the system
+    And new "DeleteSecurityMonitoringBatchMigrationResources" request
+    And request contains "batch_id" parameter from "batch_migration.data.id"
+    And body with value {"data": {"type": "batchMigrationResources", "attributes": {"resourceIds": ["{{ batch_migration_resource.id }}"]}}}
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Delete resources from a batch migration returns "Not Found" response
+    Given operation "DeleteSecurityMonitoringBatchMigrationResources" enabled
+    And new "DeleteSecurityMonitoringBatchMigrationResources" request
+    And request contains "batch_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"resourceIds": ["c968cf83-56c2-4d54-a993-6c86dfb83527"]}, "type": "batchMigrationResources"}}
+    When the request is sent
+    Then the response status is 404 Not Found
 
   @team:ddoghq/k9-investigation
   Scenario: Detach security findings from their case returns "Bad Request" response
@@ -2763,6 +2926,52 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: List batch migration resources returns "Bad Request" response
+    Given operation "ListSecurityMonitoringBatchMigrationResources" enabled
+    And new "ListSecurityMonitoringBatchMigrationResources" request
+    And request contains "batch_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: List batch migration resources returns "Not Found" response
+    Given operation "ListSecurityMonitoringBatchMigrationResources" enabled
+    And new "ListSecurityMonitoringBatchMigrationResources" request
+    And request contains "batch_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:ddoghq/cloud-siem
+  Scenario: List batch migration resources returns "OK" response
+    Given operation "ListSecurityMonitoringBatchMigrationResources" enabled
+    And there is a valid "batch_migration" in the system
+    And new "ListSecurityMonitoringBatchMigrationResources" request
+    And request contains "batch_id" parameter from "batch_migration.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 1
+    And the response "data[0].attributes.batchId" has the same value as "batch_migration.data.id"
+    And the response "data[0].attributes.status" is equal to "pending"
+
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: List batch migrations returns "Bad Request" response
+    Given operation "ListSecurityMonitoringBatchMigrations" enabled
+    And new "ListSecurityMonitoringBatchMigrations" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:ddoghq/cloud-siem
+  Scenario: List batch migrations returns "OK" response
+    Given operation "ListSecurityMonitoringBatchMigrations" enabled
+    And there is a valid "batch_migration" in the system
+    And new "ListSecurityMonitoringBatchMigrations" request
+    And request contains "filter[query]" parameter with value "id:{{ batch_migration.data.id }}"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 1
+    And the response "data[0].id" has the same value as "batch_migration.data.id"
+
   @generated @skip @team:ddoghq/k9-vm-ast
   Scenario: List codegen rulesets returns "Bad Request" response
     Given operation "ListStaticAnalysisCodegenRulesets" enabled
@@ -3213,6 +3422,42 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 422 The server cannot process the request because it contains invalid data.
 
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Publish a batch migration returns "Bad Request" response
+    Given operation "PublishSecurityMonitoringBatchMigration" enabled
+    And new "PublishSecurityMonitoringBatchMigration" request
+    And request contains "batch_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"resourceIds": ["c968cf83-56c2-4d54-a993-6c86dfb83527"]}, "type": "batchMigrationPublish"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Publish a batch migration returns "Conflict" response
+    Given operation "PublishSecurityMonitoringBatchMigration" enabled
+    And new "PublishSecurityMonitoringBatchMigration" request
+    And request contains "batch_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"resourceIds": ["c968cf83-56c2-4d54-a993-6c86dfb83527"]}, "type": "batchMigrationPublish"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Publish a batch migration returns "Not Found" response
+    Given operation "PublishSecurityMonitoringBatchMigration" enabled
+    And new "PublishSecurityMonitoringBatchMigration" request
+    And request contains "batch_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"resourceIds": ["c968cf83-56c2-4d54-a993-6c86dfb83527"]}, "type": "batchMigrationPublish"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Publish a batch migration returns "OK" response
+    Given operation "PublishSecurityMonitoringBatchMigration" enabled
+    And new "PublishSecurityMonitoringBatchMigration" request
+    And request contains "batch_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"resourceIds": ["c968cf83-56c2-4d54-a993-6c86dfb83527"]}, "type": "batchMigrationPublish"}}
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:ddoghq/k9-automation
   Scenario: Reorder due date rules returns "Bad Request" response
     Given operation "ReorderSecurityFindingsAutomationDueDateRules" enabled
@@ -3468,6 +3713,38 @@ Feature: Security Monitoring
     And the response "links" has field "next"
 
   @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Start a batch migration returns "Accepted" response
+    Given operation "StartSecurityMonitoringBatchMigration" enabled
+    And new "StartSecurityMonitoringBatchMigration" request
+    And request contains "batch_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 202 Accepted
+
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Start a batch migration returns "Bad Request" response
+    Given operation "StartSecurityMonitoringBatchMigration" enabled
+    And new "StartSecurityMonitoringBatchMigration" request
+    And request contains "batch_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Start a batch migration returns "Conflict" response
+    Given operation "StartSecurityMonitoringBatchMigration" enabled
+    And new "StartSecurityMonitoringBatchMigration" request
+    And request contains "batch_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Start a batch migration returns "Not Found" response
+    Given operation "StartSecurityMonitoringBatchMigration" enabled
+    And new "StartSecurityMonitoringBatchMigration" request
+    And request contains "batch_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/cloud-siem
   Scenario: Subscribe to sample log generation returns "Bad Request" response
     Given operation "CreateSampleLogGenerationSubscription" enabled
     And new "CreateSampleLogGenerationSubscription" request
@@ -3579,6 +3856,81 @@ Feature: Security Monitoring
     And request contains "content_pack_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Update a batch migration resource returns "Bad Request" response
+    Given operation "UpdateSecurityMonitoringBatchMigrationResource" enabled
+    And new "UpdateSecurityMonitoringBatchMigrationResource" request
+    And request contains "batch_id" parameter from "REPLACE.ME"
+    And request contains "resource_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Detects repeated failed Windows authentication attempts.", "input": "index=wineventlog EventCode=4625 | stats count by user", "inputType": "spl", "name": "Repeated Windows login failures"}, "type": "batchMigrationResource"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Update a batch migration resource returns "Conflict" response
+    Given operation "UpdateSecurityMonitoringBatchMigrationResource" enabled
+    And new "UpdateSecurityMonitoringBatchMigrationResource" request
+    And request contains "batch_id" parameter from "REPLACE.ME"
+    And request contains "resource_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Detects repeated failed Windows authentication attempts.", "input": "index=wineventlog EventCode=4625 | stats count by user", "inputType": "spl", "name": "Repeated Windows login failures"}, "type": "batchMigrationResource"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Update a batch migration resource returns "Not Found" response
+    Given operation "UpdateSecurityMonitoringBatchMigrationResource" enabled
+    And new "UpdateSecurityMonitoringBatchMigrationResource" request
+    And request contains "batch_id" parameter from "REPLACE.ME"
+    And request contains "resource_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Detects repeated failed Windows authentication attempts.", "input": "index=wineventlog EventCode=4625 | stats count by user", "inputType": "spl", "name": "Repeated Windows login failures"}, "type": "batchMigrationResource"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:ddoghq/cloud-siem
+  Scenario: Update a batch migration resource returns "OK" response
+    Given operation "UpdateSecurityMonitoringBatchMigrationResource" enabled
+    And there is a valid "batch_migration" in the system
+    And there is a valid "batch_migration_resource" in the system
+    And new "UpdateSecurityMonitoringBatchMigrationResource" request
+    And request contains "batch_id" parameter from "batch_migration.data.id"
+    And request contains "resource_id" parameter from "batch_migration_resource.id"
+    And body with value {"data": {"type": "batchMigrationResource", "attributes": {"input": "index=wineventlog EventCode=4625 | stats count by user"}}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" has the same value as "batch_migration_resource.id"
+    And the response "data.attributes.input" is equal to "index=wineventlog EventCode=4625 | stats count by user"
+
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Update a batch migration returns "Bad Request" response
+    Given operation "UpdateSecurityMonitoringBatchMigration" enabled
+    And new "UpdateSecurityMonitoringBatchMigration" request
+    And request contains "batch_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Rules imported from Splunk", "name": "Splunk migration - Windows", "tags": ["source:splunk"]}, "type": "batchMigration"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Update a batch migration returns "Not Found" response
+    Given operation "UpdateSecurityMonitoringBatchMigration" enabled
+    And new "UpdateSecurityMonitoringBatchMigration" request
+    And request contains "batch_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Rules imported from Splunk", "name": "Splunk migration - Windows", "tags": ["source:splunk"]}, "type": "batchMigration"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:ddoghq/cloud-siem
+  Scenario: Update a batch migration returns "OK" response
+    Given operation "UpdateSecurityMonitoringBatchMigration" enabled
+    And there is a valid "batch_migration" in the system
+    And new "UpdateSecurityMonitoringBatchMigration" request
+    And request contains "batch_id" parameter from "batch_migration.data.id"
+    And body with value {"data": {"type": "batchMigration", "attributes": {"name": "{{ unique }}-updated", "tags": ["source:splunk", "team:secops"]}}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.name" is equal to "{{ unique }}-updated"
+    And the response "data.attributes.tags" is equal to ["source:splunk", "team:secops"]
+    And the response "data.attributes.description" has the same value as "batch_migration.data.attributes.description"
 
   @skip-validation @team:ddoghq/cloud-siem
   Scenario: Update a cloud configuration rule's details returns "OK" response

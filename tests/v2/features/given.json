@@ -1622,6 +1622,31 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"batchMigration\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"description\": \"Rules imported from Splunk\",\n      \"tags\": [\"source:splunk\"],\n      \"resources\": [\n        {\n          \"name\": \"Repeated Windows login failures\",\n          \"inputType\": \"spl\",\n          \"input\": \"index=wineventlog EventCode=4625\"\n        }\n      ]\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"batch_migration\" in the system",
+    "key": "batch_migration",
+    "tag": "Security Monitoring",
+    "operationId": "CreateSecurityMonitoringBatchMigration"
+  },
+  {
+    "parameters": [
+      {
+        "name": "batch_id",
+        "value": "\"{{ batch_migration.data.id }}\""
+      }
+    ],
+    "source": "data[0]",
+    "step": "there is a valid \"batch_migration_resource\" in the system",
+    "key": "batch_migration_resource",
+    "tag": "Security Monitoring",
+    "operationId": "ListSecurityMonitoringBatchMigrationResources"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"agent_rule\",\n    \"attributes\": {\n      \"name\": \"{{ unique_lower_alnum }}\",\n      \"description\": \"My Agent rule\",\n      \"expression\": \"exec.file.name == \\\"sh\\\"\",\n      \"enabled\": true\n     }\n  }\n}"
       }
     ],

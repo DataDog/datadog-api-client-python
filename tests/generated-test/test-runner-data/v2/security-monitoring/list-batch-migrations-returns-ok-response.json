@@ -1,0 +1,35 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/List batch migrations returns \"OK\" response",
+  "operation_id": "ListSecurityMonitoringBatchMigrations",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[query]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "id:{{ batch_migration.data.id }}"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security_monitoring/batch-migrations"
+  },
+  "scenario": "List batch migrations returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
