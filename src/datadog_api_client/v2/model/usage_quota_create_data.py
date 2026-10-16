@@ -36,7 +36,7 @@ class UsageQuotaCreateData(ModelNormal):
         """
         A usage quota resource to create or update by scope.
 
-        :param attributes: Attributes for creating or updating a usage quota by scope.
+        :param attributes: Attributes for creating or updating a usage quota by scope. Each item must provide ``usage_limit`` , ``pending_usage_limit`` , or both. Providing only ``pending_usage_limit`` updates an existing organization-wide quota, never creates one, requires ``enforced`` to be omitted, and fails if the quota does not exist.
         :type attributes: UsageQuotaCreateAttributes
 
         :param type: The JSON:API resource type for a usage quota.
