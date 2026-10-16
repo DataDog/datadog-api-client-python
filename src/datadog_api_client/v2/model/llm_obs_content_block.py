@@ -96,7 +96,6 @@ class LLMObsContentBlock(ModelNormal):
 
     def __init__(
         self_,
-        type: LLMObsContentBlockType,
         alt: Union[str, UnsetType] = unset,
         code: Union[str, UnsetType] = unset,
         content: Union[Any, UnsetType] = unset,
@@ -107,6 +106,7 @@ class LLMObsContentBlock(ModelNormal):
         tile_def: Union[Any, UnsetType] = unset,
         time_frame: Union[LLMObsContentBlockTimeFrame, UnsetType] = unset,
         trace_id: Union[str, UnsetType] = unset,
+        type: Union[LLMObsContentBlockType, UnsetType] = unset,
         url: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -118,7 +118,7 @@ class LLMObsContentBlock(ModelNormal):
         * ``header`` : ``content`` must be a string; ``level`` , when set, must be one of ``sm`` , ``md`` , ``lg`` , ``xl``.
         * ``json`` : ``content`` must be a well-formed JSON value (object, array, or scalar).
         * ``image`` : ``url`` is required.
-        * ``widget`` : ``tileDef`` is required (any well-formed JSON; the frontend owns the renderable schema).
+        * ``univiz`` : ``tileDef`` is required (any well-formed JSON; the frontend owns the renderable schema).
         * ``llmobs_trace`` : ``traceId`` is required; ``interactionType`` , when set, must be ``trace`` or ``experiment_trace``.
         * ``frontend`` : ``code`` is required and must be a non-empty string; ``label`` is optional.
 
@@ -132,7 +132,7 @@ class LLMObsContentBlock(ModelNormal):
 
         :param content: Block payload. A string for ``markdown`` , ``header`` , and ``text`` ; an
             arbitrary JSON value (object, array, or scalar) for ``json``. Omitted
-            for ``image`` , ``widget`` , ``llmobs_trace`` , and ``frontend``.
+            for ``image`` , ``univiz`` , ``llmobs_trace`` , and ``frontend``.
         :type content: bool, date, datetime, dict, float, int, list, str, UUID, none_type, optional
 
         :param height: Optional rendered height. Must be positive when set.
@@ -148,7 +148,7 @@ class LLMObsContentBlock(ModelNormal):
         :param level: Visual size for a ``header`` block.
         :type level: LLMObsContentBlockHeaderLevel, optional
 
-        :param tile_def: Tile definition for a ``widget`` block. Required for ``widget``. The
+        :param tile_def: Tile definition for a ``univiz`` block. Required for ``univiz``. The
             schema is owned by the frontend renderer.
         :type tile_def: bool, date, datetime, dict, float, int, list, str, UUID, none_type, optional
 
@@ -160,7 +160,7 @@ class LLMObsContentBlock(ModelNormal):
 
         :param type: Discriminator for a single ``display_block`` content block. Adding a
             variant requires coordinated changes in the frontend renderer.
-        :type type: LLMObsContentBlockType
+        :type type: LLMObsContentBlockType, optional
 
         :param url: URL of the image. Required for ``image`` blocks.
         :type url: str, optional
@@ -185,8 +185,8 @@ class LLMObsContentBlock(ModelNormal):
             kwargs["time_frame"] = time_frame
         if trace_id is not unset:
             kwargs["trace_id"] = trace_id
+        if type is not unset:
+            kwargs["type"] = type
         if url is not unset:
             kwargs["url"] = url
         super().__init__(kwargs)
-
-        self_.type = type
