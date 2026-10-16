@@ -8960,6 +8960,87 @@
       "type": "safe"
     }
   },
+  "ListSecurityMonitoringBatchMigrations": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateSecurityMonitoringBatchMigration": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "operationId": "DeleteSecurityMonitoringBatchMigration",
+      "parameters": [
+        {
+          "name": "batch_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteSecurityMonitoringBatchMigration": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateSecurityMonitoringBatchMigration": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CancelSecurityMonitoringBatchMigration": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "PublishSecurityMonitoringBatchMigration": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "DeleteSecurityMonitoringBatchMigrationResources": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListSecurityMonitoringBatchMigrationResources": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateSecurityMonitoringBatchMigrationResources": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "operationId": "DeleteSecurityMonitoringBatchMigration",
+      "parameters": [
+        {
+          "name": "batch_id",
+          "origin": "path",
+          "source": "batch_id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "UpdateSecurityMonitoringBatchMigrationResource": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "StartSecurityMonitoringBatchMigration": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListCloudWorkloadSecurityAgentRules": {
     "tag": "CSM Threats",
     "undo": {
