@@ -98,6 +98,7 @@ from datadog_api_client.v2.model.llm_obs_patterns_runs_response import LLMObsPat
 from datadog_api_client.v2.model.llm_obs_patterns_trigger_response import LLMObsPatternsTriggerResponse
 from datadog_api_client.v2.model.llm_obs_patterns_trigger_request import LLMObsPatternsTriggerRequest
 from datadog_api_client.v2.model.llm_obs_patterns_run_status_response import LLMObsPatternsRunStatusResponse
+from datadog_api_client.v2.model.llm_obs_patterns_templates_response import LLMObsPatternsTemplatesResponse
 from datadog_api_client.v2.model.llm_obs_patterns_topics_response import LLMObsPatternsTopicsResponse
 from datadog_api_client.v2.model.llm_obs_patterns_topics_with_clustered_points_response import (
     LLMObsPatternsTopicsWithClusteredPointsResponse,
@@ -1466,6 +1467,22 @@ class AgentObservabilityApi:
                     "location": "query",
                 },
             },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_llm_obs_patterns_templates_endpoint = _Endpoint(
+            settings={
+                "response_type": (LLMObsPatternsTemplatesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/llm-obs/v1/topic-discovery-templates",
+                "operation_id": "list_llm_obs_patterns_templates",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
             },
@@ -3411,6 +3428,18 @@ class AgentObservabilityApi:
         kwargs["config_id"] = config_id
 
         return self._list_llm_obs_patterns_runs_endpoint.call_with_http_info(**kwargs)
+
+    def list_llm_obs_patterns_templates(
+        self,
+    ) -> LLMObsPatternsTemplatesResponse:
+        """List patterns templates.
+
+        List all enabled patterns templates.
+
+        :rtype: LLMObsPatternsTemplatesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_llm_obs_patterns_templates_endpoint.call_with_http_info(**kwargs)
 
     def list_llm_obs_patterns_topics(
         self,
