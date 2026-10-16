@@ -25,7 +25,6 @@ body = RumExclusionFilterCreateRequest(
 
 configuration = Configuration()
 configuration.access_token = environ["DD_BEARER_TOKEN"]
-configuration.unstable_operations["create_exclusion_filter"] = True
 with ApiClient(configuration) as api_client:
     api_instance = RumRetentionFiltersApi(api_client)
     response = api_instance.create_exclusion_filter(app_id="app_id", body=body)

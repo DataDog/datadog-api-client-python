@@ -11,8 +11,7 @@ Feature: Rum Retention Filters
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: Create a RUM exclusion filter returns "Bad Request" response
-    Given operation "CreateExclusionFilter" enabled
-    And new "CreateExclusionFilter" request
+    Given new "CreateExclusionFilter" request
     And request contains "app_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"enabled": true, "event_type": "error", "name": "Exclude noisy browser extension errors", "query": "@error.message:*extension*"}, "type": "exclusion_filters"}}
     When the request is sent
@@ -20,8 +19,7 @@ Feature: Rum Retention Filters
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: Create a RUM exclusion filter returns "Created" response
-    Given operation "CreateExclusionFilter" enabled
-    And new "CreateExclusionFilter" request
+    Given new "CreateExclusionFilter" request
     And request contains "app_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"enabled": true, "event_type": "error", "name": "Exclude noisy browser extension errors", "query": "@error.message:*extension*"}, "type": "exclusion_filters"}}
     When the request is sent
@@ -51,8 +49,7 @@ Feature: Rum Retention Filters
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: Delete a RUM exclusion filter returns "Method Not Allowed" response
-    Given operation "DeleteExclusionFilter" enabled
-    And new "DeleteExclusionFilter" request
+    Given new "DeleteExclusionFilter" request
     And request contains "app_id" parameter from "REPLACE.ME"
     And request contains "ef_id" parameter from "REPLACE.ME"
     When the request is sent
@@ -60,8 +57,7 @@ Feature: Rum Retention Filters
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: Delete a RUM exclusion filter returns "No Content" response
-    Given operation "DeleteExclusionFilter" enabled
-    And new "DeleteExclusionFilter" request
+    Given new "DeleteExclusionFilter" request
     And request contains "app_id" parameter from "REPLACE.ME"
     And request contains "ef_id" parameter from "REPLACE.ME"
     When the request is sent
@@ -69,8 +65,7 @@ Feature: Rum Retention Filters
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: Delete a RUM exclusion filter returns "Not Found" response
-    Given operation "DeleteExclusionFilter" enabled
-    And new "DeleteExclusionFilter" request
+    Given new "DeleteExclusionFilter" request
     And request contains "app_id" parameter from "REPLACE.ME"
     And request contains "ef_id" parameter from "REPLACE.ME"
     When the request is sent
@@ -94,8 +89,7 @@ Feature: Rum Retention Filters
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: Get a RUM exclusion filter returns "Not Found" response
-    Given operation "GetExclusionFilter" enabled
-    And new "GetExclusionFilter" request
+    Given new "GetExclusionFilter" request
     And request contains "app_id" parameter from "REPLACE.ME"
     And request contains "ef_id" parameter from "REPLACE.ME"
     When the request is sent
@@ -103,8 +97,7 @@ Feature: Rum Retention Filters
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: Get a RUM exclusion filter returns "OK" response
-    Given operation "GetExclusionFilter" enabled
-    And new "GetExclusionFilter" request
+    Given new "GetExclusionFilter" request
     And request contains "app_id" parameter from "REPLACE.ME"
     And request contains "ef_id" parameter from "REPLACE.ME"
     When the request is sent
@@ -151,8 +144,7 @@ Feature: Rum Retention Filters
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: Get all RUM exclusion filters returns "OK" response
-    Given operation "ListExclusionFilters" enabled
-    And new "ListExclusionFilters" request
+    Given new "ListExclusionFilters" request
     And request contains "app_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
@@ -193,8 +185,7 @@ Feature: Rum Retention Filters
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: Update a RUM exclusion filter returns "Bad Request" response
-    Given operation "UpdateExclusionFilter" enabled
-    And new "UpdateExclusionFilter" request
+    Given new "UpdateExclusionFilter" request
     And request contains "app_id" parameter from "REPLACE.ME"
     And request contains "ef_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"enabled": true, "event_type": "error", "name": "Exclude noisy browser extension errors", "query": "@error.message:*extension*"}, "id": "051601eb-54a0-abc0-03f9-cc02efa18892", "type": "exclusion_filters"}}
@@ -203,8 +194,7 @@ Feature: Rum Retention Filters
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: Update a RUM exclusion filter returns "Conflict" response
-    Given operation "UpdateExclusionFilter" enabled
-    And new "UpdateExclusionFilter" request
+    Given new "UpdateExclusionFilter" request
     And request contains "app_id" parameter from "REPLACE.ME"
     And request contains "ef_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"enabled": true, "event_type": "error", "name": "Exclude noisy browser extension errors", "query": "@error.message:*extension*"}, "id": "051601eb-54a0-abc0-03f9-cc02efa18892", "type": "exclusion_filters"}}
@@ -213,8 +203,7 @@ Feature: Rum Retention Filters
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: Update a RUM exclusion filter returns "Not Found" response
-    Given operation "UpdateExclusionFilter" enabled
-    And new "UpdateExclusionFilter" request
+    Given new "UpdateExclusionFilter" request
     And request contains "app_id" parameter from "REPLACE.ME"
     And request contains "ef_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"enabled": true, "event_type": "error", "name": "Exclude noisy browser extension errors", "query": "@error.message:*extension*"}, "id": "051601eb-54a0-abc0-03f9-cc02efa18892", "type": "exclusion_filters"}}
@@ -223,8 +212,7 @@ Feature: Rum Retention Filters
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: Update a RUM exclusion filter returns "Updated" response
-    Given operation "UpdateExclusionFilter" enabled
-    And new "UpdateExclusionFilter" request
+    Given new "UpdateExclusionFilter" request
     And request contains "app_id" parameter from "REPLACE.ME"
     And request contains "ef_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"enabled": true, "event_type": "error", "name": "Exclude noisy browser extension errors", "query": "@error.message:*extension*"}, "id": "051601eb-54a0-abc0-03f9-cc02efa18892", "type": "exclusion_filters"}}
