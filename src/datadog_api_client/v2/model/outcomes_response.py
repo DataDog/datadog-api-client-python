@@ -17,6 +17,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.outcomes_response_data_item import OutcomesResponseDataItem
     from datadog_api_client.v2.model.outcomes_response_included_item import OutcomesResponseIncludedItem
     from datadog_api_client.v2.model.outcomes_response_links import OutcomesResponseLinks
+    from datadog_api_client.v2.model.paginated_response_meta import PaginatedResponseMeta
 
 
 class OutcomesResponse(ModelNormal):
@@ -25,17 +26,20 @@ class OutcomesResponse(ModelNormal):
         from datadog_api_client.v2.model.outcomes_response_data_item import OutcomesResponseDataItem
         from datadog_api_client.v2.model.outcomes_response_included_item import OutcomesResponseIncludedItem
         from datadog_api_client.v2.model.outcomes_response_links import OutcomesResponseLinks
+        from datadog_api_client.v2.model.paginated_response_meta import PaginatedResponseMeta
 
         return {
             "data": ([OutcomesResponseDataItem],),
             "included": ([OutcomesResponseIncludedItem],),
             "links": (OutcomesResponseLinks,),
+            "meta": (PaginatedResponseMeta,),
         }
 
     attribute_map = {
         "data": "data",
         "included": "included",
         "links": "links",
+        "meta": "meta",
     }
 
     def __init__(
@@ -43,6 +47,7 @@ class OutcomesResponse(ModelNormal):
         data: Union[List[OutcomesResponseDataItem], UnsetType] = unset,
         included: Union[List[OutcomesResponseIncludedItem], UnsetType] = unset,
         links: Union[OutcomesResponseLinks, UnsetType] = unset,
+        meta: Union[PaginatedResponseMeta, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -54,8 +59,11 @@ class OutcomesResponse(ModelNormal):
         :param included: Array of rule details.
         :type included: [OutcomesResponseIncludedItem], optional
 
-        :param links: Links attributes.
+        :param links: Pagination links for rule outcomes.
         :type links: OutcomesResponseLinks, optional
+
+        :param meta: Pagination metadata.
+        :type meta: PaginatedResponseMeta, optional
         """
         if data is not unset:
             kwargs["data"] = data
@@ -63,4 +71,6 @@ class OutcomesResponse(ModelNormal):
             kwargs["included"] = included
         if links is not unset:
             kwargs["links"] = links
+        if meta is not unset:
+            kwargs["meta"] = meta
         super().__init__(kwargs)
