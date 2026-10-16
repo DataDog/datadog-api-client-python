@@ -25,6 +25,8 @@ from datadog_api_client.v2.model.metrics_and_metric_tag_configurations import Me
 from datadog_api_client.v2.model.metric_bulk_tag_config_response import MetricBulkTagConfigResponse
 from datadog_api_client.v2.model.metric_bulk_tag_config_delete_request import MetricBulkTagConfigDeleteRequest
 from datadog_api_client.v2.model.metric_bulk_tag_config_create_request import MetricBulkTagConfigCreateRequest
+from datadog_api_client.v2.model.derived_metric_response import DerivedMetricResponse
+from datadog_api_client.v2.model.derived_metric_create_request import DerivedMetricCreateRequest
 from datadog_api_client.v2.model.historical_metrics_configuration_response import HistoricalMetricsConfigurationResponse
 from datadog_api_client.v2.model.historical_metrics_configuration_create_request import (
     HistoricalMetricsConfigurationCreateRequest,
@@ -93,6 +95,26 @@ class MetricsApi:
                 "body": {
                     "required": True,
                     "openapi_types": (MetricBulkTagConfigCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_derived_metric_endpoint = _Endpoint(
+            settings={
+                "response_type": (DerivedMetricResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/metrics/derived-metrics",
+                "operation_id": "create_derived_metric",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (DerivedMetricCreateRequest,),
                     "location": "body",
                 },
             },
@@ -209,6 +231,29 @@ class MetricsApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._delete_derived_metric_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/metrics/derived-metrics/{metric_name}",
+                "operation_id": "delete_derived_metric",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "metric_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "metric_name",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
             api_client=api_client,
         )
 
@@ -359,6 +404,29 @@ class MetricsApi:
                     "openapi_types": (int,),
                     "attribute": "filter[timespan_h]",
                     "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_derived_metric_endpoint = _Endpoint(
+            settings={
+                "response_type": (DerivedMetricResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/metrics/derived-metrics/{metric_name}",
+                "operation_id": "get_derived_metric",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "metric_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "metric_name",
+                    "location": "path",
                 },
             },
             headers_map={
@@ -857,6 +925,32 @@ class MetricsApi:
             api_client=api_client,
         )
 
+        self._update_derived_metric_endpoint = _Endpoint(
+            settings={
+                "response_type": (DerivedMetricResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/metrics/derived-metrics/{metric_name}",
+                "operation_id": "update_derived_metric",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "metric_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "metric_name",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (DerivedMetricCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_tag_configuration_endpoint = _Endpoint(
             settings={
                 "response_type": (MetricTagConfigurationResponse,),
@@ -933,6 +1027,24 @@ class MetricsApi:
 
         warnings.warn("create_bulk_tags_metrics_configuration is deprecated", DeprecationWarning, stacklevel=2)
         return self._create_bulk_tags_metrics_configuration_endpoint.call_with_http_info(**kwargs)
+
+    def create_derived_metric(
+        self,
+        body: DerivedMetricCreateRequest,
+    ) -> DerivedMetricResponse:
+        """Create a derived metric.
+
+        Create a derived metric for the org. The metric name is supplied as the resource ``id`` ,
+        and the ``definition`` sets the formula and the queries the formula is computed from.
+        Requires the ``Manage Tags for Metrics`` permission.
+
+        :type body: DerivedMetricCreateRequest
+        :rtype: DerivedMetricResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_derived_metric_endpoint.call_with_http_info(**kwargs)
 
     def create_historical_metrics_configuration(
         self,
@@ -1039,6 +1151,24 @@ class MetricsApi:
 
         warnings.warn("delete_bulk_tags_metrics_configuration is deprecated", DeprecationWarning, stacklevel=2)
         return self._delete_bulk_tags_metrics_configuration_endpoint.call_with_http_info(**kwargs)
+
+    def delete_derived_metric(
+        self,
+        metric_name: str,
+    ) -> None:
+        """Delete a derived metric.
+
+        Delete a derived metric by name. Idempotent: returns 204 regardless of whether the derived
+        metric existed. Requires the ``Manage Tags for Metrics`` permission.
+
+        :param metric_name: The name of the metric.
+        :type metric_name: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["metric_name"] = metric_name
+
+        return self._delete_derived_metric_endpoint.call_with_http_info(**kwargs)
 
     def delete_historical_metrics_configuration(
         self,
@@ -1169,6 +1299,23 @@ class MetricsApi:
             kwargs["filter_timespan_h"] = filter_timespan_h
 
         return self._estimate_metrics_output_series_endpoint.call_with_http_info(**kwargs)
+
+    def get_derived_metric(
+        self,
+        metric_name: str,
+    ) -> DerivedMetricResponse:
+        """Get a derived metric.
+
+        Get the definition of a derived metric by name.
+
+        :param metric_name: The name of the metric.
+        :type metric_name: str
+        :rtype: DerivedMetricResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["metric_name"] = metric_name
+
+        return self._get_derived_metric_endpoint.call_with_http_info(**kwargs)
 
     def get_historical_metrics_configuration(
         self,
@@ -1740,6 +1887,28 @@ class MetricsApi:
         kwargs["body"] = body
 
         return self._submit_metrics_endpoint.call_with_http_info(**kwargs)
+
+    def update_derived_metric(
+        self,
+        metric_name: str,
+        body: DerivedMetricCreateRequest,
+    ) -> DerivedMetricResponse:
+        """Update a derived metric.
+
+        Update the definition of an existing derived metric. The ``id`` in the request body
+        must match the ``metric_name`` path parameter. Requires the ``Manage Tags for Metrics`` permission.
+
+        :param metric_name: The name of the metric.
+        :type metric_name: str
+        :type body: DerivedMetricCreateRequest
+        :rtype: DerivedMetricResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["metric_name"] = metric_name
+
+        kwargs["body"] = body
+
+        return self._update_derived_metric_endpoint.call_with_http_info(**kwargs)
 
     def update_tag_configuration(
         self,

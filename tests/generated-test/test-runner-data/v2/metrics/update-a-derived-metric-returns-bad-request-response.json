@@ -1,0 +1,60 @@
+{
+  "api": "Metrics",
+  "expected_status": 400,
+  "feature": "Metrics",
+  "id": "v2/Metrics/Update a derived metric returns \"Bad Request\" response",
+  "operation_id": "UpdateDerivedMetric",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "DerivedMetricCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "definition": {
+              "formula": "a",
+              "queries": [
+                {
+                  "data_source": "metrics",
+                  "name": "a",
+                  "query": "avg:system.cpu.user{*}"
+                }
+              ]
+            }
+          },
+          "id": "test.derived.mismatch.{{ unique_lower_alnum }}",
+          "type": "derived_metrics"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "metric_name",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "test.derived.{{ unique_lower_alnum }}"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/metrics/derived-metrics/{metric_name}"
+  },
+  "scenario": "Update a derived metric returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

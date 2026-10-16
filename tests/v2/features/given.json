@@ -1138,6 +1138,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"id\": \"test.derived.{{ unique_lower_alnum }}\",\n    \"type\": \"derived_metrics\",\n    \"attributes\": {\n      \"definition\": {\n        \"formula\": \"a\",\n        \"queries\": [{\"data_source\": \"metrics\", \"name\": \"a\", \"query\": \"avg:system.cpu.user{*}\"}]\n      }\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"derived_metric\" in the system",
+    "key": "derived_metric",
+    "tag": "Metrics",
+    "operationId": "CreateDerivedMetric"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"tag_indexing_rules\",\n    \"attributes\": {\n      \"name\": \"{{ unique_alnum }}\",\n      \"metric_name_matches\": [\"dd.{{ unique_alnum }}.*\"],\n      \"tags\": [\"env\", \"service\"]\n    }\n  }\n}"
       }
     ],

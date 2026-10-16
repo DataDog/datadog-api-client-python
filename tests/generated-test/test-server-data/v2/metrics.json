@@ -133,6 +133,232 @@
     },
     {
       "feature": "Metrics",
+      "frozen_at": "2026-10-13T19:38:42.783Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "definition": {
+                      "formula": "a",
+                      "queries": [
+                        {
+                          "data_source": "metrics",
+                          "name": "a",
+                          "query": "avg:system.cpu.user{*}"
+                        }
+                      ]
+                    }
+                  },
+                  "id": "1invalid.metric",
+                  "type": "derived_metrics"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/metrics/derived-metrics",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"metric name must start with a letter and only contain letters, numbers, dots, and underscores\"]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create a derived metric returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Metrics",
+      "frozen_at": "2026-10-13T19:38:45.093Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "definition": {
+                      "formula": "a",
+                      "queries": [
+                        {
+                          "data_source": "metrics",
+                          "name": "a",
+                          "query": "avg:system.cpu.user{*}"
+                        }
+                      ]
+                    }
+                  },
+                  "id": "test.derived.testcreateaderivedmetricreturnsconflictresponse1791920325",
+                  "type": "derived_metrics"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/metrics/derived-metrics",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"test.derived.testcreateaderivedmetricreturnsconflictresponse1791920325\",\"type\":\"derived_metrics\",\"attributes\":{\"definition\":{\"formula\":\"a\",\"queries\":[{\"data_source\":\"metrics\",\"name\":\"a\",\"query\":\"avg:system.cpu.user{*}\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "definition": {
+                      "formula": "a",
+                      "queries": [
+                        {
+                          "data_source": "metrics",
+                          "name": "a",
+                          "query": "avg:system.cpu.user{*}"
+                        }
+                      ]
+                    }
+                  },
+                  "id": "test.derived.testcreateaderivedmetricreturnsconflictresponse1791920325",
+                  "type": "derived_metrics"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/metrics/derived-metrics",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"A generated metric named \\\"test.derived.testcreateaderivedmetricreturnsconflictresponse1791920325\\\" already exists in this organization. Delete it or choose a different name.\"]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Conflict",
+            "status": 409
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/metrics/derived-metrics/test.derived.testcreateaderivedmetricreturnsconflictresponse1791920325",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a derived metric returns \"Conflict\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Metrics",
+      "frozen_at": "2026-10-13T19:38:45.914Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "definition": {
+                      "formula": "a",
+                      "queries": [
+                        {
+                          "data_source": "metrics",
+                          "name": "a",
+                          "query": "avg:system.cpu.user{*}"
+                        }
+                      ]
+                    }
+                  },
+                  "id": "test.derived.testcreateaderivedmetricreturnscreatedresponse1791920325",
+                  "type": "derived_metrics"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/metrics/derived-metrics",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"test.derived.testcreateaderivedmetricreturnscreatedresponse1791920325\",\"type\":\"derived_metrics\",\"attributes\":{\"definition\":{\"formula\":\"a\",\"queries\":[{\"data_source\":\"metrics\",\"name\":\"a\",\"query\":\"avg:system.cpu.user{*}\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/metrics/derived-metrics/test.derived.testcreateaderivedmetricreturnscreatedresponse1791920325",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a derived metric returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Metrics",
       "frozen_at": "2022-05-12T11:27:30.563Z",
       "interactions": [
         {
@@ -613,6 +839,127 @@
     },
     {
       "feature": "Metrics",
+      "frozen_at": "2026-10-13T19:38:46.452Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/metrics/derived-metrics/1invalid.metric",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"metric name must start with a letter and only contain letters, numbers, dots, and underscores\"]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Delete a derived metric returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Metrics",
+      "frozen_at": "2026-10-13T19:38:46.687Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "definition": {
+                      "formula": "a",
+                      "queries": [
+                        {
+                          "data_source": "metrics",
+                          "name": "a",
+                          "query": "avg:system.cpu.user{*}"
+                        }
+                      ]
+                    }
+                  },
+                  "id": "test.derived.testdeleteaderivedmetricreturnsnocontentresponse1791920326",
+                  "type": "derived_metrics"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/metrics/derived-metrics",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"test.derived.testdeleteaderivedmetricreturnsnocontentresponse1791920326\",\"type\":\"derived_metrics\",\"attributes\":{\"definition\":{\"formula\":\"a\",\"queries\":[{\"data_source\":\"metrics\",\"name\":\"a\",\"query\":\"avg:system.cpu.user{*}\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/metrics/derived-metrics/test.derived.testdeleteaderivedmetricreturnsnocontentresponse1791920326",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/metrics/derived-metrics/test.derived.testdeleteaderivedmetricreturnsnocontentresponse1791920326",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Delete a derived metric returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Metrics",
       "frozen_at": "2022-05-12T11:26:28.844Z",
       "interactions": [
         {
@@ -854,6 +1201,160 @@
         }
       ],
       "scenario": "Delete a tag indexing rule returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Metrics",
+      "frozen_at": "2026-10-13T19:38:47.504Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/metrics/derived-metrics/1invalid.metric",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"metric name must start with a letter and only contain letters, numbers, dots, and underscores\"]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Get a derived metric returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Metrics",
+      "frozen_at": "2026-10-13T19:38:47.745Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/metrics/derived-metrics/test.derived.missing.testgetaderivedmetricreturnsnotfoundresponse1791920327",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Not Found\"]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get a derived metric returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Metrics",
+      "frozen_at": "2026-10-13T19:38:47.979Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "definition": {
+                      "formula": "a",
+                      "queries": [
+                        {
+                          "data_source": "metrics",
+                          "name": "a",
+                          "query": "avg:system.cpu.user{*}"
+                        }
+                      ]
+                    }
+                  },
+                  "id": "test.derived.testgetaderivedmetricreturnsokresponse1791920327",
+                  "type": "derived_metrics"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/metrics/derived-metrics",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"test.derived.testgetaderivedmetricreturnsokresponse1791920327\",\"type\":\"derived_metrics\",\"attributes\":{\"definition\":{\"formula\":\"a\",\"queries\":[{\"data_source\":\"metrics\",\"name\":\"a\",\"query\":\"avg:system.cpu.user{*}\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/metrics/derived-metrics/test.derived.testgetaderivedmetricreturnsokresponse1791920327",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"test.derived.testgetaderivedmetricreturnsokresponse1791920327\",\"type\":\"derived_metrics\",\"attributes\":{\"definition\":{\"formula\":\"a\",\"queries\":[{\"data_source\":\"metrics\",\"name\":\"a\",\"query\":\"avg:system.cpu.user{*}\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/metrics/derived-metrics/test.derived.testgetaderivedmetricreturnsokresponse1791920327",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get a derived metric returns \"OK\" response",
       "version": "v2"
     },
     {
@@ -4560,6 +5061,211 @@
         }
       ],
       "scenario": "Timeseries cross product query with spans data source returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Metrics",
+      "frozen_at": "2026-10-13T19:38:48.794Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "definition": {
+                      "formula": "a",
+                      "queries": [
+                        {
+                          "data_source": "metrics",
+                          "name": "a",
+                          "query": "avg:system.cpu.user{*}"
+                        }
+                      ]
+                    }
+                  },
+                  "id": "test.derived.mismatch.testupdateaderivedmetricreturnsbadrequestresponse1791920328",
+                  "type": "derived_metrics"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/metrics/derived-metrics/test.derived.testupdateaderivedmetricreturnsbadrequestresponse1791920328",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"invalid derived metric request body\"]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Update a derived metric returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Metrics",
+      "frozen_at": "2026-10-13T19:38:49.048Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "definition": {
+                      "formula": "a",
+                      "queries": [
+                        {
+                          "data_source": "metrics",
+                          "name": "a",
+                          "query": "avg:system.cpu.user{*}"
+                        }
+                      ]
+                    }
+                  },
+                  "id": "test.derived.missing.testupdateaderivedmetricreturnsnotfoundresponse1791920329",
+                  "type": "derived_metrics"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/metrics/derived-metrics/test.derived.missing.testupdateaderivedmetricreturnsnotfoundresponse1791920329",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[\"Not Found\"]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Update a derived metric returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Metrics",
+      "frozen_at": "2026-10-13T19:38:49.305Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "definition": {
+                      "formula": "a",
+                      "queries": [
+                        {
+                          "data_source": "metrics",
+                          "name": "a",
+                          "query": "avg:system.cpu.user{*}"
+                        }
+                      ]
+                    }
+                  },
+                  "id": "test.derived.testupdateaderivedmetricreturnsokresponse1791920329",
+                  "type": "derived_metrics"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/metrics/derived-metrics",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"test.derived.testupdateaderivedmetricreturnsokresponse1791920329\",\"type\":\"derived_metrics\",\"attributes\":{\"definition\":{\"formula\":\"a\",\"queries\":[{\"data_source\":\"metrics\",\"name\":\"a\",\"query\":\"avg:system.cpu.user{*}\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "definition": {
+                      "formula": "a * 2",
+                      "queries": [
+                        {
+                          "data_source": "metrics",
+                          "name": "a",
+                          "query": "avg:system.cpu.user{*}"
+                        }
+                      ]
+                    }
+                  },
+                  "id": "test.derived.testupdateaderivedmetricreturnsokresponse1791920329",
+                  "type": "derived_metrics"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/metrics/derived-metrics/test.derived.testupdateaderivedmetricreturnsokresponse1791920329",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"test.derived.testupdateaderivedmetricreturnsokresponse1791920329\",\"type\":\"derived_metrics\",\"attributes\":{\"definition\":{\"formula\":\"a * 2\",\"queries\":[{\"data_source\":\"metrics\",\"name\":\"a\",\"query\":\"avg:system.cpu.user{*}\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/metrics/derived-metrics/test.derived.testupdateaderivedmetricreturnsokresponse1791920329",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a derived metric returns \"OK\" response",
       "version": "v2"
     },
     {
