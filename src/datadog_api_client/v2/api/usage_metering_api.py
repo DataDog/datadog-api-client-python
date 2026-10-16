@@ -89,6 +89,35 @@ class UsageMeteringApi:
             api_client=api_client,
         )
 
+        self._delete_pending_quota_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/usage/quotas/{quota_namespace}/{id}/pending",
+                "operation_id": "delete_pending_quota",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "quota_namespace": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "quota_namespace",
+                    "location": "path",
+                },
+                "id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._delete_quota_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -632,7 +661,11 @@ class UsageMeteringApi:
     ) -> UsageQuotasBulkResponse:
         """Create or update usage quotas.
 
-        Creates or updates one or more usage quotas by scope. If a quota already exists for a supplied scope, it is updated; otherwise, a new quota is created. Requires the ``billing_edit`` permission.
+        Creates or updates one or more usage quotas by scope. If a quota already exists for a supplied scope, it is updated.
+        Otherwise, a quota is created only when ``usage_limit`` and ``enforced`` are provided.
+        For the organization-wide quota, ``pending_usage_limit`` schedules a limit for the next usage period and can
+        accompany an immediate limit or update an existing quota by itself.
+        Scheduled changes follow ``include_descendants`` like the other fields. Requires the ``billing_edit`` permission.
 
         :param quota_namespace: The product-specific namespace whose usage quotas are being managed.
         :type quota_namespace: str
@@ -651,6 +684,28 @@ class UsageMeteringApi:
         kwargs["body"] = body
 
         return self._create_quotas_endpoint.call_with_http_info(**kwargs)
+
+    def delete_pending_quota(
+        self,
+        quota_namespace: str,
+        id: str,
+    ) -> None:
+        """Cancel a scheduled usage quota limit.
+
+        Cancels the limit change scheduled to take effect at the start of the next usage period, leaving the usage quota and its current limit unchanged. Returns ``404`` when the quota does not exist, has no scheduled change, or its scheduled change has already taken effect; in every case the quota is left unchanged. The quota must belong to the caller's organization or one of its descendants, and its opaque identifier must belong to the requested quota namespace. Requires the ``billing_edit`` permission.
+
+        :param quota_namespace: The product-specific namespace whose usage quotas are being managed.
+        :type quota_namespace: str
+        :param id: The opaque quota identifier returned by a previous list or create request. Clients must pass this value verbatim.
+        :type id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["quota_namespace"] = quota_namespace
+
+        kwargs["id"] = id
+
+        return self._delete_pending_quota_endpoint.call_with_http_info(**kwargs)
 
     def delete_quota(
         self,
@@ -1266,7 +1321,7 @@ class UsageMeteringApi:
     ) -> UsageQuotaResponse:
         """Update a usage quota.
 
-        Updates the supplied fields on a usage quota and leaves omitted fields unchanged. The quota must belong to the caller's organization or one of its descendants, and its opaque identifier must belong to the requested quota namespace. Requires the ``billing_edit`` permission.
+        Updates the supplied fields on a usage quota and leaves omitted fields unchanged. For an organization-wide quota, ``pending_usage_limit`` schedules a limit for the next usage period. The quota must belong to the caller's organization or one of its descendants, and its opaque identifier must belong to the requested quota namespace. Requires the ``billing_edit`` permission.
 
         :param quota_namespace: The product-specific namespace whose usage quotas are being managed.
         :type quota_namespace: str

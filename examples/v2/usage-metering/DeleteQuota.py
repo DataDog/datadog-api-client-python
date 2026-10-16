@@ -13,5 +13,5 @@ with ApiClient(configuration) as api_client:
     api_instance = UsageMeteringApi(api_client)
     api_instance.delete_quota(
         quota_namespace="ai_credits",
-        id="MjAfYWlfY3JlZGl0c1911c2VyX2hhbmRsZTpfX0FMTF9f",
+        id="MTIzNB9haV9jcmVkaXRzH3VzZXJfaGFuZGxlOl9fQUxMX18",
     )
