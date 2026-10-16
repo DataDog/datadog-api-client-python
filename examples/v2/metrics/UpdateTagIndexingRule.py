@@ -36,7 +36,6 @@ body = TagIndexingRuleUpdateRequest(
                 ),
                 version=1,
             ),
-            rule_order=2,
             tags=[
                 "env",
                 "service",
