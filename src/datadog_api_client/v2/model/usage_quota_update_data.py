@@ -38,7 +38,7 @@ class UsageQuotaUpdateData(ModelNormal):
         """
         A usage quota resource to update.
 
-        :param attributes: Attributes to update on a usage quota. Omitting a property leaves its current value unchanged.
+        :param attributes: Attributes to update on a usage quota. At least one of ``usage_limit`` , ``enforced`` , or ``pending_usage_limit`` must be provided. Omitting a property leaves its current value unchanged.
         :type attributes: UsageQuotaUpdateAttributes
 
         :param id: The opaque usage quota identifier, which must match the identifier in the request path.
