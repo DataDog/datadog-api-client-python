@@ -2679,6 +2679,11 @@ from datadog_api_client.v2.model.dem_create_journey_test_suite_attributes import
 from datadog_api_client.v2.model.dem_create_journey_test_suite_data import DemCreateJourneyTestSuiteData
 from datadog_api_client.v2.model.dem_create_journey_test_suite_request import DemCreateJourneyTestSuiteRequest
 from datadog_api_client.v2.model.dem_create_journey_test_suite_request_type import DemCreateJourneyTestSuiteRequestType
+from datadog_api_client.v2.model.dem_inferred_journey_candidate_attributes import DemInferredJourneyCandidateAttributes
+from datadog_api_client.v2.model.dem_inferred_journey_candidate_data import DemInferredJourneyCandidateData
+from datadog_api_client.v2.model.dem_inferred_journey_ignored_attributes import DemInferredJourneyIgnoredAttributes
+from datadog_api_client.v2.model.dem_inferred_journey_ignored_data import DemInferredJourneyIgnoredData
+from datadog_api_client.v2.model.dem_inferred_journey_item import DemInferredJourneyItem
 from datadog_api_client.v2.model.dem_inferred_journey_status import DemInferredJourneyStatus
 from datadog_api_client.v2.model.dem_journey_create_attributes import DemJourneyCreateAttributes
 from datadog_api_client.v2.model.dem_journey_create_data import DemJourneyCreateData
@@ -2702,9 +2707,6 @@ from datadog_api_client.v2.model.dem_rum_node import DemRumNode
 from datadog_api_client.v2.model.dem_rum_step import DemRumStep
 from datadog_api_client.v2.model.dem_rum_step_type import DemRumStepType
 from datadog_api_client.v2.model.dem_search_inferred_journeys_response import DemSearchInferredJourneysResponse
-from datadog_api_client.v2.model.dem_search_inferred_journeys_response_data_item import (
-    DemSearchInferredJourneysResponse_dataItem,
-)
 from datadog_api_client.v2.model.dem_test_suite_nested import DemTestSuiteNested
 from datadog_api_client.v2.model.dem_user import DemUser
 from datadog_api_client.v2.model.dem_variant import DemVariant
@@ -4223,6 +4225,8 @@ from datadog_api_client.v2.model.general_investigation_attributes_with_time_boun
 from datadog_api_client.v2.model.general_investigation_attributes_without_time_bounds import (
     GeneralInvestigationAttributesWithoutTimeBounds,
 )
+from datadog_api_client.v2.model.general_investigation_trigger import GeneralInvestigationTrigger
+from datadog_api_client.v2.model.general_investigation_trigger_type import GeneralInvestigationTriggerType
 from datadog_api_client.v2.model.generate_cost_tag_description_response import GenerateCostTagDescriptionResponse
 from datadog_api_client.v2.model.generated_cost_tag_description import GeneratedCostTagDescription
 from datadog_api_client.v2.model.generated_cost_tag_description_attributes import GeneratedCostTagDescriptionAttributes
@@ -6501,7 +6505,9 @@ from datadog_api_client.v2.model.model_lab_run_status import ModelLabRunStatus
 from datadog_api_client.v2.model.model_lab_run_type import ModelLabRunType
 from datadog_api_client.v2.model.model_lab_runs_response import ModelLabRunsResponse
 from datadog_api_client.v2.model.model_lab_tag import ModelLabTag
+from datadog_api_client.v2.model.monitor_alert_trigger import MonitorAlertTrigger
 from datadog_api_client.v2.model.monitor_alert_trigger_attributes import MonitorAlertTriggerAttributes
+from datadog_api_client.v2.model.monitor_alert_trigger_type import MonitorAlertTriggerType
 from datadog_api_client.v2.model.monitor_config_policy_attribute_create_request import (
     MonitorConfigPolicyAttributeCreateRequest,
 )
@@ -12107,7 +12113,6 @@ from datadog_api_client.v2.model.trigger_investigation_response_data_attributes 
 from datadog_api_client.v2.model.trigger_investigation_response_type import TriggerInvestigationResponseType
 from datadog_api_client.v2.model.trigger_rate_limit import TriggerRateLimit
 from datadog_api_client.v2.model.trigger_source import TriggerSource
-from datadog_api_client.v2.model.trigger_type import TriggerType
 from datadog_api_client.v2.model.trigger_workflow_automation_action import TriggerWorkflowAutomationAction
 from datadog_api_client.v2.model.trigger_workflow_automation_action_type import TriggerWorkflowAutomationActionType
 from datadog_api_client.v2.model.twilio_alerts_logs_integration_dataflow_request import (
@@ -14669,6 +14674,11 @@ __all__ = [
     "DemCreateJourneyTestSuiteData",
     "DemCreateJourneyTestSuiteRequest",
     "DemCreateJourneyTestSuiteRequestType",
+    "DemInferredJourneyCandidateAttributes",
+    "DemInferredJourneyCandidateData",
+    "DemInferredJourneyIgnoredAttributes",
+    "DemInferredJourneyIgnoredData",
+    "DemInferredJourneyItem",
     "DemInferredJourneyStatus",
     "DemJourneyCreateAttributes",
     "DemJourneyCreateData",
@@ -14692,7 +14702,6 @@ __all__ = [
     "DemRumStep",
     "DemRumStepType",
     "DemSearchInferredJourneysResponse",
-    "DemSearchInferredJourneysResponse_dataItem",
     "DemTestSuiteNested",
     "DemUser",
     "DemVariant",
@@ -15643,6 +15652,8 @@ __all__ = [
     "GeneralInvestigationAttributes",
     "GeneralInvestigationAttributesWithTimeBounds",
     "GeneralInvestigationAttributesWithoutTimeBounds",
+    "GeneralInvestigationTrigger",
+    "GeneralInvestigationTriggerType",
     "GenerateCostTagDescriptionResponse",
     "GeneratedCostTagDescription",
     "GeneratedCostTagDescriptionAttributes",
@@ -17297,7 +17308,9 @@ __all__ = [
     "ModelLabRunType",
     "ModelLabRunsResponse",
     "ModelLabTag",
+    "MonitorAlertTrigger",
     "MonitorAlertTriggerAttributes",
+    "MonitorAlertTriggerType",
     "MonitorConfigPolicyAttributeCreateRequest",
     "MonitorConfigPolicyAttributeEditRequest",
     "MonitorConfigPolicyAttributeResponse",
@@ -20745,7 +20758,6 @@ __all__ = [
     "TriggerInvestigationResponseType",
     "TriggerRateLimit",
     "TriggerSource",
-    "TriggerType",
     "TriggerWorkflowAutomationAction",
     "TriggerWorkflowAutomationActionType",
     "TwilioAlertsLogsIntegrationDataflowRequest",
