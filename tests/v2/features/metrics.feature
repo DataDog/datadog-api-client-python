@@ -625,7 +625,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:ddoghq/metrics-experience
+  @skip-terraform-config @team:ddoghq/metrics-experience
   Scenario: Reorder tag indexing rules returns "No Content" response
     Given a valid "appKeyAuth" key in the system
     And operation "ReorderTagIndexingRules" enabled
@@ -1142,7 +1142,7 @@ Feature: Metrics
     And there is a valid "tag_indexing_rule" in the system
     And new "UpdateTagIndexingRule" request
     And request contains "id" parameter from "tag_indexing_rule.data.id"
-    And body with value {"data": {"attributes": {"ignored_metric_name_matches": [], "metric_name_matches": ["dd.test.*"], "name": "my-indexing-rule", "options": {"data": {"dynamic_tags": {}, "manage_preexisting_metrics": true, "metric_match": {"queried_window_seconds": 3600}, "override_previous_rules": false}, "version": 1}, "rule_order": 2, "tags": ["env", "service"]}, "type": "tag_indexing_rules"}}
+    And body with value {"data": {"attributes": {"ignored_metric_name_matches": [], "metric_name_matches": ["dd.test.*"], "name": "my-indexing-rule", "options": {"data": {"dynamic_tags": {}, "manage_preexisting_metrics": true, "metric_match": {"queried_window_seconds": 3600}, "override_previous_rules": false}, "version": 1}, "tags": ["env", "service"]}, "type": "tag_indexing_rules"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -1153,6 +1153,6 @@ Feature: Metrics
     And there is a valid "tag_indexing_rule_exclude_mode" in the system
     And new "UpdateTagIndexingRule" request
     And request contains "id" parameter from "tag_indexing_rule_exclude_mode.data.id"
-    And body with value {"data": {"attributes": {"exclude_tags_mode": true, "ignored_metric_name_matches": [], "metric_name_matches": ["dd.test.*"], "name": "my-indexing-rule", "options": {"data": {"dynamic_tags": {"exclude_not_queried_window_seconds": 7200, "exclude_not_used_in_assets": true}, "manage_preexisting_metrics": true, "override_previous_rules": false}, "version": 1}, "rule_order": 2, "tags": ["env", "service"]}, "type": "tag_indexing_rules"}}
+    And body with value {"data": {"attributes": {"exclude_tags_mode": true, "ignored_metric_name_matches": [], "metric_name_matches": ["dd.test.*"], "name": "my-indexing-rule", "options": {"data": {"dynamic_tags": {"exclude_not_queried_window_seconds": 7200, "exclude_not_used_in_assets": true}, "manage_preexisting_metrics": true, "override_previous_rules": false}, "version": 1}, "tags": ["env", "service"]}, "type": "tag_indexing_rules"}}
     When the request is sent
     Then the response status is 200 OK
