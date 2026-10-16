@@ -1110,42 +1110,6 @@
     },
     {
       "feature": "Cloud Cost Management",
-      "frozen_at": "2026-09-28T21:36:23.736Z",
-      "interactions": [
-        {
-          "request": {
-            "body": {
-              "type": "empty",
-              "value": null
-            },
-            "content_type": "",
-            "method": "GET",
-            "path": "/api/v2/cost/cloud_accounts",
-            "query": [
-              [
-                "filter[cloud]",
-                "gcp"
-              ]
-            ]
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"filter[cloud]\\\" must be one of: oci, aws_cur2\"}]}"
-            },
-            "headers": {
-              "content-type": "application/vnd.api+json"
-            },
-            "reason": "Bad Request",
-            "status": 400
-          }
-        }
-      ],
-      "scenario": "List Cloud Cost Management cloud accounts returns \"Bad Request\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "Cloud Cost Management",
       "frozen_at": "2026-09-28T21:36:24.451Z",
       "interactions": [
         {

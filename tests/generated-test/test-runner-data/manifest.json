@@ -4161,13 +4161,6 @@
     {
       "feature": "Cloud Cost Management",
       "feature_file": "../../v2/features/cloud_cost_management.feature",
-      "file": "v2/cloud-cost-management/list-cloud-cost-management-cloud-accounts-returns-bad-request-response.json",
-      "scenario": "List Cloud Cost Management cloud accounts returns \"Bad Request\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "Cloud Cost Management",
-      "feature_file": "../../v2/features/cloud_cost_management.feature",
       "file": "v2/cloud-cost-management/list-cloud-cost-management-cloud-accounts-returns-ok-response.json",
       "scenario": "List Cloud Cost Management cloud accounts returns \"OK\" response",
       "version": "v2"
