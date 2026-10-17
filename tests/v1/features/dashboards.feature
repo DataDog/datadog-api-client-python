@@ -1428,6 +1428,22 @@ Feature: Dashboards
     Then the response status is 200 OK
     And the response "author_name" is equal to "Frog Account"
 
+  @team:ddoghq/dashboards-backend
+  Scenario: Get a dashboard with five team tags and two AI tags
+    Given there is a valid "dashboard_with_team_and_ai_tags" in the system
+    And new "GetDashboard" request
+    And request contains "dashboard_id" parameter from "dashboard_with_team_and_ai_tags.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "tags" has length 7
+    And the response "tags" array contains value "team:alpha"
+    And the response "tags" array contains value "team:beta"
+    And the response "tags" array contains value "team:gamma"
+    And the response "tags" array contains value "team:delta"
+    And the response "tags" array contains value "team:epsilon"
+    And the response "tags" array contains value "ai:generated"
+    And the response "tags" array contains value "ai:edited"
+
   @team:ddoghq/reporting-and-sharing
   Scenario: Get a shared dashboard returns "OK" response
     Given there is a valid "dashboard" in the system
