@@ -1,0 +1,56 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 201,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Add resources to a batch migration returns \"Created\" response",
+  "operation_id": "CreateSecurityMonitoringBatchMigrationResources",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SecurityMonitoringBatchMigrationResourcesCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "resources": [
+              {
+                "input": "index=linux process=sudo \"authentication failure\" | stats count by user, host",
+                "inputType": "spl",
+                "name": "Linux sudo abuse"
+              }
+            ]
+          },
+          "type": "batchMigrationResources"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "batch_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "batch_migration.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security_monitoring/batch-migrations/{batch_id}/resources"
+  },
+  "scenario": "Add resources to a batch migration returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

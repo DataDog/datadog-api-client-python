@@ -3,6 +3,135 @@
   "recordings": [
     {
       "feature": "Security Monitoring",
+      "frozen_at": "2026-10-16T11:40:25.719Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Rules imported from Splunk",
+                    "name": "Test-Add_resources_to_a_batch_migration_returns_Created_response-1792150825",
+                    "resources": [
+                      {
+                        "input": "index=wineventlog EventCode=4625",
+                        "inputType": "spl",
+                        "name": "Repeated Windows login failures"
+                      }
+                    ],
+                    "tags": [
+                      "source:splunk"
+                    ]
+                  },
+                  "type": "batchMigration"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/security_monitoring/batch-migrations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"c8acb77f-ab3f-4d81-ba8c-7a63ce5ad84e\",\"type\":\"batchMigration\",\"attributes\":{\"createdAt\":\"2026-10-16T11:40:27.371898Z\",\"createdBy\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"description\":\"Rules imported from Splunk\",\"inputSource\":\"batch_migration\",\"lastUpdatedAt\":\"2026-10-16T11:40:27.371898Z\",\"lastUpdatedBy\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"name\":\"Test-Add_resources_to_a_batch_migration_returns_Created_response-1792150825\",\"orgId\":321813,\"resourceStatusCounts\":{\"pending\":1,\"inProgress\":0,\"completed\":0,\"canceled\":0,\"failed\":0,\"publishing\":0,\"published\":0,\"duplicate\":0},\"status\":\"draft\",\"tags\":[\"source:splunk\"]}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "resources": [
+                      {
+                        "input": "index=linux process=sudo \"authentication failure\" | stats count by user, host",
+                        "inputType": "spl",
+                        "name": "Linux sudo abuse"
+                      }
+                    ]
+                  },
+                  "type": "batchMigrationResources"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/security_monitoring/batch-migrations/c8acb77f-ab3f-4d81-ba8c-7a63ce5ad84e/resources",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"ed73ea28-42dc-4313-8340-a62ccddff61b\",\"type\":\"batchMigrationResource\",\"attributes\":{\"batchId\":\"c8acb77f-ab3f-4d81-ba8c-7a63ce5ad84e\",\"createdAt\":\"2026-10-16T11:40:27.543286Z\",\"createdBy\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"input\":\"index=linux process=sudo \\\"authentication failure\\\" | stats count by user, host\",\"inputType\":\"spl\",\"lastUpdatedAt\":\"2026-10-16T11:40:27.543286Z\",\"lastUpdatedBy\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"name\":\"Linux sudo abuse\",\"output\":null,\"outputType\":\"siem_rule\",\"status\":\"pending\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/security_monitoring/batch-migrations/c8acb77f-ab3f-4d81-ba8c-7a63ce5ad84e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/security_monitoring/batch-migrations/c8acb77f-ab3f-4d81-ba8c-7a63ce5ad84e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"detail\":\"batch migration not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Add resources to a batch migration returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
       "frozen_at": "2026-10-08T12:23:32.869Z",
       "interactions": [
         {
@@ -1599,6 +1728,77 @@
         }
       ],
       "scenario": "Create Jira issues for security findings returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "frozen_at": "2026-10-16T11:40:27.944Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Rules imported from Splunk",
+                    "name": "Test-Create_a_batch_migration_returns_Created_response-1792150827",
+                    "resources": [
+                      {
+                        "description": "Detects repeated failed Windows authentication attempts.",
+                        "input": "index=wineventlog EventCode=4625",
+                        "inputType": "spl",
+                        "name": "Repeated Windows login failures"
+                      }
+                    ],
+                    "tags": [
+                      "source:splunk"
+                    ]
+                  },
+                  "type": "batchMigration"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/security_monitoring/batch-migrations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"1d186fc0-0dee-47c1-8a42-6f1626b46253\",\"type\":\"batchMigration\",\"attributes\":{\"createdAt\":\"2026-10-16T11:40:28.064962Z\",\"createdBy\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"description\":\"Rules imported from Splunk\",\"inputSource\":\"batch_migration\",\"lastUpdatedAt\":\"2026-10-16T11:40:28.064962Z\",\"lastUpdatedBy\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"name\":\"Test-Create_a_batch_migration_returns_Created_response-1792150827\",\"orgId\":321813,\"resourceStatusCounts\":{\"pending\":1,\"inProgress\":0,\"completed\":0,\"canceled\":0,\"failed\":0,\"publishing\":0,\"published\":0,\"duplicate\":0},\"status\":\"draft\",\"tags\":[\"source:splunk\"]}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/security_monitoring/batch-migrations/1d186fc0-0dee-47c1-8a42-6f1626b46253",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a batch migration returns \"Created\" response",
       "version": "v2"
     },
     {
@@ -4330,6 +4530,99 @@
     },
     {
       "feature": "Security Monitoring",
+      "frozen_at": "2026-10-16T11:40:28.297Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Rules imported from Splunk",
+                    "name": "Test-Delete_a_batch_migration_returns_No_Content_response-1792150828",
+                    "resources": [
+                      {
+                        "input": "index=wineventlog EventCode=4625",
+                        "inputType": "spl",
+                        "name": "Repeated Windows login failures"
+                      }
+                    ],
+                    "tags": [
+                      "source:splunk"
+                    ]
+                  },
+                  "type": "batchMigration"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/security_monitoring/batch-migrations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"5e372cc3-56e1-48e0-9628-8f94c8486483\",\"type\":\"batchMigration\",\"attributes\":{\"createdAt\":\"2026-10-16T11:40:28.408635Z\",\"createdBy\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"description\":\"Rules imported from Splunk\",\"inputSource\":\"batch_migration\",\"lastUpdatedAt\":\"2026-10-16T11:40:28.408635Z\",\"lastUpdatedBy\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"name\":\"Test-Delete_a_batch_migration_returns_No_Content_response-1792150828\",\"orgId\":321813,\"resourceStatusCounts\":{\"pending\":1,\"inProgress\":0,\"completed\":0,\"canceled\":0,\"failed\":0,\"publishing\":0,\"published\":0,\"duplicate\":0},\"status\":\"draft\",\"tags\":[\"source:splunk\"]}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/security_monitoring/batch-migrations/5e372cc3-56e1-48e0-9628-8f94c8486483",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/security_monitoring/batch-migrations/5e372cc3-56e1-48e0-9628-8f94c8486483",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"detail\":\"batch migration not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a batch migration returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
       "frozen_at": "2026-01-02T19:09:07.983Z",
       "interactions": [
         {
@@ -5649,6 +5942,129 @@
         }
       ],
       "scenario": "Delete an inbox rule returns \"Successfully deleted the inbox rule\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "frozen_at": "2026-10-16T11:40:28.793Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Rules imported from Splunk",
+                    "name": "Test-Delete_resources_from_a_batch_migration_returns_No_Content_response-1792150828",
+                    "resources": [
+                      {
+                        "input": "index=wineventlog EventCode=4625",
+                        "inputType": "spl",
+                        "name": "Repeated Windows login failures"
+                      }
+                    ],
+                    "tags": [
+                      "source:splunk"
+                    ]
+                  },
+                  "type": "batchMigration"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/security_monitoring/batch-migrations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"41c9062b-cc72-4892-9edd-e12d063e1b3e\",\"type\":\"batchMigration\",\"attributes\":{\"createdAt\":\"2026-10-16T11:40:28.894065Z\",\"createdBy\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"description\":\"Rules imported from Splunk\",\"inputSource\":\"batch_migration\",\"lastUpdatedAt\":\"2026-10-16T11:40:28.894065Z\",\"lastUpdatedBy\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"name\":\"Test-Delete_resources_from_a_batch_migration_returns_No_Content_response-1792150828\",\"orgId\":321813,\"resourceStatusCounts\":{\"pending\":1,\"inProgress\":0,\"completed\":0,\"canceled\":0,\"failed\":0,\"publishing\":0,\"published\":0,\"duplicate\":0},\"status\":\"draft\",\"tags\":[\"source:splunk\"]}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/security_monitoring/batch-migrations/41c9062b-cc72-4892-9edd-e12d063e1b3e/resources",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"3ac8ef63-32f5-421a-ba9c-5e13cf538aab\",\"type\":\"batchMigrationResource\",\"attributes\":{\"batchId\":\"41c9062b-cc72-4892-9edd-e12d063e1b3e\",\"createdAt\":\"2026-10-16T11:40:28.894065Z\",\"createdBy\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"input\":\"index=wineventlog EventCode=4625\",\"inputType\":\"spl\",\"lastUpdatedAt\":\"2026-10-16T11:40:28.894065Z\",\"lastUpdatedBy\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"name\":\"Repeated Windows login failures\",\"output\":null,\"outputType\":\"siem_rule\",\"status\":\"pending\"}}],\"meta\":{\"totalCount\":1}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "resourceIds": [
+                      "3ac8ef63-32f5-421a-ba9c-5e13cf538aab"
+                    ]
+                  },
+                  "type": "batchMigrationResources"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "DELETE",
+            "path": "/api/v2/security_monitoring/batch-migrations/41c9062b-cc72-4892-9edd-e12d063e1b3e/resources",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/security_monitoring/batch-migrations/41c9062b-cc72-4892-9edd-e12d063e1b3e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Delete resources from a batch migration returns \"No Content\" response",
       "version": "v2"
     },
     {
@@ -10040,6 +10456,197 @@
     },
     {
       "feature": "Security Monitoring",
+      "frozen_at": "2026-10-16T11:40:29.430Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Rules imported from Splunk",
+                    "name": "Test-List_batch_migration_resources_returns_OK_response-1792150829",
+                    "resources": [
+                      {
+                        "input": "index=wineventlog EventCode=4625",
+                        "inputType": "spl",
+                        "name": "Repeated Windows login failures"
+                      }
+                    ],
+                    "tags": [
+                      "source:splunk"
+                    ]
+                  },
+                  "type": "batchMigration"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/security_monitoring/batch-migrations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"98125ff6-2691-4222-b62d-01a146ca7314\",\"type\":\"batchMigration\",\"attributes\":{\"createdAt\":\"2026-10-16T11:40:29.536705Z\",\"createdBy\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"description\":\"Rules imported from Splunk\",\"inputSource\":\"batch_migration\",\"lastUpdatedAt\":\"2026-10-16T11:40:29.536705Z\",\"lastUpdatedBy\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"name\":\"Test-List_batch_migration_resources_returns_OK_response-1792150829\",\"orgId\":321813,\"resourceStatusCounts\":{\"pending\":1,\"inProgress\":0,\"completed\":0,\"canceled\":0,\"failed\":0,\"publishing\":0,\"published\":0,\"duplicate\":0},\"status\":\"draft\",\"tags\":[\"source:splunk\"]}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/security_monitoring/batch-migrations/98125ff6-2691-4222-b62d-01a146ca7314/resources",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"b34397f1-e95a-486c-8960-409bfa6989db\",\"type\":\"batchMigrationResource\",\"attributes\":{\"batchId\":\"98125ff6-2691-4222-b62d-01a146ca7314\",\"createdAt\":\"2026-10-16T11:40:29.536705Z\",\"createdBy\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"input\":\"index=wineventlog EventCode=4625\",\"inputType\":\"spl\",\"lastUpdatedAt\":\"2026-10-16T11:40:29.536705Z\",\"lastUpdatedBy\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"name\":\"Repeated Windows login failures\",\"output\":null,\"outputType\":\"siem_rule\",\"status\":\"pending\"}}],\"meta\":{\"totalCount\":1}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/security_monitoring/batch-migrations/98125ff6-2691-4222-b62d-01a146ca7314",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "List batch migration resources returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "frozen_at": "2026-10-16T11:40:29.908Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Rules imported from Splunk",
+                    "name": "Test-List_batch_migrations_returns_OK_response-1792150829",
+                    "resources": [
+                      {
+                        "input": "index=wineventlog EventCode=4625",
+                        "inputType": "spl",
+                        "name": "Repeated Windows login failures"
+                      }
+                    ],
+                    "tags": [
+                      "source:splunk"
+                    ]
+                  },
+                  "type": "batchMigration"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/security_monitoring/batch-migrations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"80b4557e-efc6-45ce-84b9-2ce4d2b8bd58\",\"type\":\"batchMigration\",\"attributes\":{\"createdAt\":\"2026-10-16T11:40:30.025529Z\",\"createdBy\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"description\":\"Rules imported from Splunk\",\"inputSource\":\"batch_migration\",\"lastUpdatedAt\":\"2026-10-16T11:40:30.025529Z\",\"lastUpdatedBy\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"name\":\"Test-List_batch_migrations_returns_OK_response-1792150829\",\"orgId\":321813,\"resourceStatusCounts\":{\"pending\":1,\"inProgress\":0,\"completed\":0,\"canceled\":0,\"failed\":0,\"publishing\":0,\"published\":0,\"duplicate\":0},\"status\":\"draft\",\"tags\":[\"source:splunk\"]}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/security_monitoring/batch-migrations",
+            "query": [
+              [
+                "filter[query]",
+                "id:80b4557e-efc6-45ce-84b9-2ce4d2b8bd58"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"80b4557e-efc6-45ce-84b9-2ce4d2b8bd58\",\"type\":\"batchMigration\",\"attributes\":{\"createdAt\":\"2026-10-16T11:40:30.025529Z\",\"createdBy\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"description\":\"Rules imported from Splunk\",\"inputSource\":\"batch_migration\",\"lastUpdatedAt\":\"2026-10-16T11:40:30.025529Z\",\"lastUpdatedBy\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"name\":\"Test-List_batch_migrations_returns_OK_response-1792150829\",\"orgId\":321813,\"resourceStatusCounts\":{\"pending\":1,\"inProgress\":0,\"completed\":0,\"canceled\":0,\"failed\":0,\"publishing\":0,\"published\":0,\"duplicate\":0},\"status\":\"draft\",\"tags\":[\"source:splunk\"]}}],\"meta\":{\"totalCount\":1}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/security_monitoring/batch-migrations/80b4557e-efc6-45ce-84b9-2ce4d2b8bd58",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "List batch migrations returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
       "frozen_at": "2023-04-13T12:26:02.750Z",
       "interactions": [
         {
@@ -13056,6 +13663,233 @@
         }
       ],
       "scenario": "Unmute security findings returns \"Unprocessable Entity\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "frozen_at": "2026-10-16T11:40:30.425Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Rules imported from Splunk",
+                    "name": "Test-Update_a_batch_migration_resource_returns_OK_response-1792150830",
+                    "resources": [
+                      {
+                        "input": "index=wineventlog EventCode=4625",
+                        "inputType": "spl",
+                        "name": "Repeated Windows login failures"
+                      }
+                    ],
+                    "tags": [
+                      "source:splunk"
+                    ]
+                  },
+                  "type": "batchMigration"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/security_monitoring/batch-migrations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"e0d9aff4-46cb-4ffd-8e72-7752878e09ec\",\"type\":\"batchMigration\",\"attributes\":{\"createdAt\":\"2026-10-16T11:40:30.529101Z\",\"createdBy\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"description\":\"Rules imported from Splunk\",\"inputSource\":\"batch_migration\",\"lastUpdatedAt\":\"2026-10-16T11:40:30.529101Z\",\"lastUpdatedBy\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"name\":\"Test-Update_a_batch_migration_resource_returns_OK_response-1792150830\",\"orgId\":321813,\"resourceStatusCounts\":{\"pending\":1,\"inProgress\":0,\"completed\":0,\"canceled\":0,\"failed\":0,\"publishing\":0,\"published\":0,\"duplicate\":0},\"status\":\"draft\",\"tags\":[\"source:splunk\"]}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/security_monitoring/batch-migrations/e0d9aff4-46cb-4ffd-8e72-7752878e09ec/resources",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"968512c2-fbbe-43ed-8ec1-c718cf97b19b\",\"type\":\"batchMigrationResource\",\"attributes\":{\"batchId\":\"e0d9aff4-46cb-4ffd-8e72-7752878e09ec\",\"createdAt\":\"2026-10-16T11:40:30.529101Z\",\"createdBy\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"input\":\"index=wineventlog EventCode=4625\",\"inputType\":\"spl\",\"lastUpdatedAt\":\"2026-10-16T11:40:30.529101Z\",\"lastUpdatedBy\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"name\":\"Repeated Windows login failures\",\"output\":null,\"outputType\":\"siem_rule\",\"status\":\"pending\"}}],\"meta\":{\"totalCount\":1}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "input": "index=wineventlog EventCode=4625 | stats count by user"
+                  },
+                  "type": "batchMigrationResource"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/security_monitoring/batch-migrations/e0d9aff4-46cb-4ffd-8e72-7752878e09ec/resources/968512c2-fbbe-43ed-8ec1-c718cf97b19b",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"968512c2-fbbe-43ed-8ec1-c718cf97b19b\",\"type\":\"batchMigrationResource\",\"attributes\":{\"batchId\":\"e0d9aff4-46cb-4ffd-8e72-7752878e09ec\",\"createdAt\":\"2026-10-16T11:40:30.529101Z\",\"createdBy\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"input\":\"index=wineventlog EventCode=4625 | stats count by user\",\"inputType\":\"spl\",\"lastUpdatedAt\":\"2026-10-16T11:40:30.854488Z\",\"lastUpdatedBy\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"name\":\"Repeated Windows login failures\",\"output\":null,\"outputType\":\"siem_rule\",\"status\":\"pending\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/security_monitoring/batch-migrations/e0d9aff4-46cb-4ffd-8e72-7752878e09ec",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a batch migration resource returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "frozen_at": "2026-10-16T11:40:31.062Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Rules imported from Splunk",
+                    "name": "Test-Update_a_batch_migration_returns_OK_response-1792150831",
+                    "resources": [
+                      {
+                        "input": "index=wineventlog EventCode=4625",
+                        "inputType": "spl",
+                        "name": "Repeated Windows login failures"
+                      }
+                    ],
+                    "tags": [
+                      "source:splunk"
+                    ]
+                  },
+                  "type": "batchMigration"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/security_monitoring/batch-migrations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"6ec704f1-29d6-47a3-b0ed-1a68ae58ee8b\",\"type\":\"batchMigration\",\"attributes\":{\"createdAt\":\"2026-10-16T11:40:31.174851Z\",\"createdBy\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"description\":\"Rules imported from Splunk\",\"inputSource\":\"batch_migration\",\"lastUpdatedAt\":\"2026-10-16T11:40:31.174851Z\",\"lastUpdatedBy\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"name\":\"Test-Update_a_batch_migration_returns_OK_response-1792150831\",\"orgId\":321813,\"resourceStatusCounts\":{\"pending\":1,\"inProgress\":0,\"completed\":0,\"canceled\":0,\"failed\":0,\"publishing\":0,\"published\":0,\"duplicate\":0},\"status\":\"draft\",\"tags\":[\"source:splunk\"]}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Update_a_batch_migration_returns_OK_response-1792150831-updated",
+                    "tags": [
+                      "source:splunk",
+                      "team:secops"
+                    ]
+                  },
+                  "type": "batchMigration"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/security_monitoring/batch-migrations/6ec704f1-29d6-47a3-b0ed-1a68ae58ee8b",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"6ec704f1-29d6-47a3-b0ed-1a68ae58ee8b\",\"type\":\"batchMigration\",\"attributes\":{\"createdAt\":\"2026-10-16T11:40:31.174851Z\",\"createdBy\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"description\":\"Rules imported from Splunk\",\"inputSource\":\"batch_migration\",\"lastUpdatedAt\":\"2026-10-16T11:40:31.344792Z\",\"lastUpdatedBy\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"name\":\"Test-Update_a_batch_migration_returns_OK_response-1792150831-updated\",\"orgId\":321813,\"resourceStatusCounts\":{\"pending\":1,\"inProgress\":0,\"completed\":0,\"canceled\":0,\"failed\":0,\"publishing\":0,\"published\":0,\"duplicate\":0},\"status\":\"draft\",\"tags\":[\"source:splunk\",\"team:secops\"]}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/security_monitoring/batch-migrations/6ec704f1-29d6-47a3-b0ed-1a68ae58ee8b",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a batch migration returns \"OK\" response",
       "version": "v2"
     },
     {

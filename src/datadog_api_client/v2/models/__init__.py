@@ -9826,6 +9826,134 @@ from datadog_api_client.v2.model.security_findings_status import SecurityFinding
 from datadog_api_client.v2.model.security_monitoring_azure_app_registration import (
     SecurityMonitoringAzureAppRegistration,
 )
+from datadog_api_client.v2.model.security_monitoring_batch_migration_attributes import (
+    SecurityMonitoringBatchMigrationAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_create_attributes import (
+    SecurityMonitoringBatchMigrationCreateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_create_data import (
+    SecurityMonitoringBatchMigrationCreateData,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_create_request import (
+    SecurityMonitoringBatchMigrationCreateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_data import SecurityMonitoringBatchMigrationData
+from datadog_api_client.v2.model.security_monitoring_batch_migration_input_source import (
+    SecurityMonitoringBatchMigrationInputSource,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_list_meta import (
+    SecurityMonitoringBatchMigrationListMeta,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_publish_attributes import (
+    SecurityMonitoringBatchMigrationPublishAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_publish_data import (
+    SecurityMonitoringBatchMigrationPublishData,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_publish_request import (
+    SecurityMonitoringBatchMigrationPublishRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_publish_response import (
+    SecurityMonitoringBatchMigrationPublishResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_publish_type import (
+    SecurityMonitoringBatchMigrationPublishType,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_published_resource_attributes import (
+    SecurityMonitoringBatchMigrationPublishedResourceAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_published_resource_data import (
+    SecurityMonitoringBatchMigrationPublishedResourceData,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_published_resource_status import (
+    SecurityMonitoringBatchMigrationPublishedResourceStatus,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_published_resource_type import (
+    SecurityMonitoringBatchMigrationPublishedResourceType,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_resource_attributes import (
+    SecurityMonitoringBatchMigrationResourceAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_resource_create_item import (
+    SecurityMonitoringBatchMigrationResourceCreateItem,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_resource_data import (
+    SecurityMonitoringBatchMigrationResourceData,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_resource_input_type import (
+    SecurityMonitoringBatchMigrationResourceInputType,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_resource_output import (
+    SecurityMonitoringBatchMigrationResourceOutput,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_resource_response import (
+    SecurityMonitoringBatchMigrationResourceResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_resource_status import (
+    SecurityMonitoringBatchMigrationResourceStatus,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_resource_status_counts import (
+    SecurityMonitoringBatchMigrationResourceStatusCounts,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_resource_type import (
+    SecurityMonitoringBatchMigrationResourceType,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_resource_update_attributes import (
+    SecurityMonitoringBatchMigrationResourceUpdateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_resource_update_data import (
+    SecurityMonitoringBatchMigrationResourceUpdateData,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_resource_update_request import (
+    SecurityMonitoringBatchMigrationResourceUpdateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_resources_create_attributes import (
+    SecurityMonitoringBatchMigrationResourcesCreateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_resources_create_data import (
+    SecurityMonitoringBatchMigrationResourcesCreateData,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_resources_create_request import (
+    SecurityMonitoringBatchMigrationResourcesCreateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_resources_create_response import (
+    SecurityMonitoringBatchMigrationResourcesCreateResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_resources_delete_attributes import (
+    SecurityMonitoringBatchMigrationResourcesDeleteAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_resources_delete_data import (
+    SecurityMonitoringBatchMigrationResourcesDeleteData,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_resources_delete_request import (
+    SecurityMonitoringBatchMigrationResourcesDeleteRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_resources_list_response import (
+    SecurityMonitoringBatchMigrationResourcesListResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_resources_type import (
+    SecurityMonitoringBatchMigrationResourcesType,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_response import (
+    SecurityMonitoringBatchMigrationResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_status import (
+    SecurityMonitoringBatchMigrationStatus,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_type import SecurityMonitoringBatchMigrationType
+from datadog_api_client.v2.model.security_monitoring_batch_migration_update_attributes import (
+    SecurityMonitoringBatchMigrationUpdateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_update_data import (
+    SecurityMonitoringBatchMigrationUpdateData,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_update_request import (
+    SecurityMonitoringBatchMigrationUpdateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migrations_list_response import (
+    SecurityMonitoringBatchMigrationsListResponse,
+)
 from datadog_api_client.v2.model.security_monitoring_content_pack_activation import (
     SecurityMonitoringContentPackActivation,
 )
@@ -19358,6 +19486,50 @@ __all__ = [
     "SecurityFindingsSort",
     "SecurityFindingsStatus",
     "SecurityMonitoringAzureAppRegistration",
+    "SecurityMonitoringBatchMigrationAttributes",
+    "SecurityMonitoringBatchMigrationCreateAttributes",
+    "SecurityMonitoringBatchMigrationCreateData",
+    "SecurityMonitoringBatchMigrationCreateRequest",
+    "SecurityMonitoringBatchMigrationData",
+    "SecurityMonitoringBatchMigrationInputSource",
+    "SecurityMonitoringBatchMigrationListMeta",
+    "SecurityMonitoringBatchMigrationPublishAttributes",
+    "SecurityMonitoringBatchMigrationPublishData",
+    "SecurityMonitoringBatchMigrationPublishRequest",
+    "SecurityMonitoringBatchMigrationPublishResponse",
+    "SecurityMonitoringBatchMigrationPublishType",
+    "SecurityMonitoringBatchMigrationPublishedResourceAttributes",
+    "SecurityMonitoringBatchMigrationPublishedResourceData",
+    "SecurityMonitoringBatchMigrationPublishedResourceStatus",
+    "SecurityMonitoringBatchMigrationPublishedResourceType",
+    "SecurityMonitoringBatchMigrationResourceAttributes",
+    "SecurityMonitoringBatchMigrationResourceCreateItem",
+    "SecurityMonitoringBatchMigrationResourceData",
+    "SecurityMonitoringBatchMigrationResourceInputType",
+    "SecurityMonitoringBatchMigrationResourceOutput",
+    "SecurityMonitoringBatchMigrationResourceResponse",
+    "SecurityMonitoringBatchMigrationResourceStatus",
+    "SecurityMonitoringBatchMigrationResourceStatusCounts",
+    "SecurityMonitoringBatchMigrationResourceType",
+    "SecurityMonitoringBatchMigrationResourceUpdateAttributes",
+    "SecurityMonitoringBatchMigrationResourceUpdateData",
+    "SecurityMonitoringBatchMigrationResourceUpdateRequest",
+    "SecurityMonitoringBatchMigrationResourcesCreateAttributes",
+    "SecurityMonitoringBatchMigrationResourcesCreateData",
+    "SecurityMonitoringBatchMigrationResourcesCreateRequest",
+    "SecurityMonitoringBatchMigrationResourcesCreateResponse",
+    "SecurityMonitoringBatchMigrationResourcesDeleteAttributes",
+    "SecurityMonitoringBatchMigrationResourcesDeleteData",
+    "SecurityMonitoringBatchMigrationResourcesDeleteRequest",
+    "SecurityMonitoringBatchMigrationResourcesListResponse",
+    "SecurityMonitoringBatchMigrationResourcesType",
+    "SecurityMonitoringBatchMigrationResponse",
+    "SecurityMonitoringBatchMigrationStatus",
+    "SecurityMonitoringBatchMigrationType",
+    "SecurityMonitoringBatchMigrationUpdateAttributes",
+    "SecurityMonitoringBatchMigrationUpdateData",
+    "SecurityMonitoringBatchMigrationUpdateRequest",
+    "SecurityMonitoringBatchMigrationsListResponse",
     "SecurityMonitoringContentPackActivation",
     "SecurityMonitoringContentPackAppSecDetails",
     "SecurityMonitoringContentPackAppSecDetailsType",

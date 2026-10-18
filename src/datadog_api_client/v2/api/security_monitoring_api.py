@@ -114,6 +114,42 @@ from datadog_api_client.v2.model.vulnerability_tool import VulnerabilityTool
 from datadog_api_client.v2.model.vulnerability_ecosystem import VulnerabilityEcosystem
 from datadog_api_client.v2.model.cyclone_dx_bom import CycloneDXBom
 from datadog_api_client.v2.model.list_vulnerable_assets_response import ListVulnerableAssetsResponse
+from datadog_api_client.v2.model.security_monitoring_batch_migrations_list_response import (
+    SecurityMonitoringBatchMigrationsListResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_response import (
+    SecurityMonitoringBatchMigrationResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_create_request import (
+    SecurityMonitoringBatchMigrationCreateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_update_request import (
+    SecurityMonitoringBatchMigrationUpdateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_publish_response import (
+    SecurityMonitoringBatchMigrationPublishResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_publish_request import (
+    SecurityMonitoringBatchMigrationPublishRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_resources_delete_request import (
+    SecurityMonitoringBatchMigrationResourcesDeleteRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_resources_list_response import (
+    SecurityMonitoringBatchMigrationResourcesListResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_resources_create_response import (
+    SecurityMonitoringBatchMigrationResourcesCreateResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_resources_create_request import (
+    SecurityMonitoringBatchMigrationResourcesCreateRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_resource_response import (
+    SecurityMonitoringBatchMigrationResourceResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_resource_update_request import (
+    SecurityMonitoringBatchMigrationResourceUpdateRequest,
+)
 from datadog_api_client.v2.model.security_monitoring_critical_assets_response import (
     SecurityMonitoringCriticalAssetsResponse,
 )
@@ -666,6 +702,29 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._cancel_security_monitoring_batch_migration_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/batch-migrations/{batch_id}/cancel",
+                "operation_id": "cancel_security_monitoring_batch_migration",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "batch_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "batch_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._convert_existing_security_monitoring_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringRuleConvertResponse,),
@@ -988,6 +1047,52 @@ class SecurityMonitoringApi:
                 "body": {
                     "required": True,
                     "openapi_types": (TicketCreationRuleCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_security_monitoring_batch_migration_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringBatchMigrationResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/batch-migrations",
+                "operation_id": "create_security_monitoring_batch_migration",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringBatchMigrationCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_security_monitoring_batch_migration_resources_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringBatchMigrationResourcesCreateResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/batch-migrations/{batch_id}/resources",
+                "operation_id": "create_security_monitoring_batch_migration_resources",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "batch_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "batch_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringBatchMigrationResourcesCreateRequest,),
                     "location": "body",
                 },
             },
@@ -1451,6 +1556,55 @@ class SecurityMonitoringApi:
             headers_map={
                 "accept": ["*/*"],
             },
+            api_client=api_client,
+        )
+
+        self._delete_security_monitoring_batch_migration_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/batch-migrations/{batch_id}",
+                "operation_id": "delete_security_monitoring_batch_migration",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "batch_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "batch_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_security_monitoring_batch_migration_resources_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/batch-migrations/{batch_id}/resources",
+                "operation_id": "delete_security_monitoring_batch_migration_resources",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "batch_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "batch_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringBatchMigrationResourcesDeleteRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -3711,6 +3865,90 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._list_security_monitoring_batch_migration_resources_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringBatchMigrationResourcesListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/batch-migrations/{batch_id}/resources",
+                "operation_id": "list_security_monitoring_batch_migration_resources",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "batch_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "batch_id",
+                    "location": "path",
+                },
+                "page_size": {
+                    "validation": {
+                        "inclusive_maximum": 500,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+                "page_number": {
+                    "validation": {
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
+                },
+                "filter_query": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[query]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_security_monitoring_batch_migrations_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringBatchMigrationsListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/batch-migrations",
+                "operation_id": "list_security_monitoring_batch_migrations",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_size": {
+                    "validation": {
+                        "inclusive_maximum": 500,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+                "page_number": {
+                    "validation": {
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
+                },
+                "filter_query": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[query]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_security_monitoring_critical_assets_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringCriticalAssetsResponse,),
@@ -4400,6 +4638,32 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._publish_security_monitoring_batch_migration_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringBatchMigrationPublishResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/batch-migrations/{batch_id}/publish",
+                "operation_id": "publish_security_monitoring_batch_migration",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "batch_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "batch_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringBatchMigrationPublishRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._reorder_security_findings_automation_due_date_rules_endpoint = _Endpoint(
             settings={
                 "response_type": (DueDateRuleReorderResponse,),
@@ -4624,6 +4888,29 @@ class SecurityMonitoringApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._start_security_monitoring_batch_migration_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/batch-migrations/{batch_id}/start",
+                "operation_id": "start_security_monitoring_batch_migration",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "batch_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "batch_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
             api_client=api_client,
         )
 
@@ -4914,6 +5201,64 @@ class SecurityMonitoringApi:
                 "body": {
                     "required": True,
                     "openapi_types": (TicketCreationRuleUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_security_monitoring_batch_migration_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringBatchMigrationResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/batch-migrations/{batch_id}",
+                "operation_id": "update_security_monitoring_batch_migration",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "batch_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "batch_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringBatchMigrationUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_security_monitoring_batch_migration_resource_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringBatchMigrationResourceResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/batch-migrations/{batch_id}/resources/{resource_id}",
+                "operation_id": "update_security_monitoring_batch_migration_resource",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "batch_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "batch_id",
+                    "location": "path",
+                },
+                "resource_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "resource_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringBatchMigrationResourceUpdateRequest,),
                     "location": "body",
                 },
             },
@@ -5445,6 +5790,27 @@ class SecurityMonitoringApi:
 
         return self._cancel_historical_job_endpoint.call_with_http_info(**kwargs)
 
+    def cancel_security_monitoring_batch_migration(
+        self,
+        batch_id: UUID,
+    ) -> None:
+        """Cancel a batch migration.
+
+        Cancel an ``in_progress`` batch migration. Resources that are ``pending`` or ``in_progress``
+        become ``canceled``. Resources that are already ``completed`` or ``failed`` keep their status
+        and output, so completed resources can still be published. Canceling a ``canceled`` batch
+        migration succeeds, so the request can be safely retried. Returns ``409 Conflict`` if the
+        batch migration is ``draft`` or ``completed``.
+
+        :param batch_id: The UUID of the batch migration.
+        :type batch_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["batch_id"] = batch_id
+
+        return self._cancel_security_monitoring_batch_migration_endpoint.call_with_http_info(**kwargs)
+
     def convert_existing_security_monitoring_rule(
         self,
         rule_id: str,
@@ -5743,6 +6109,49 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._create_security_findings_automation_ticket_creation_rule_endpoint.call_with_http_info(**kwargs)
+
+    def create_security_monitoring_batch_migration(
+        self,
+        body: SecurityMonitoringBatchMigrationCreateRequest,
+    ) -> SecurityMonitoringBatchMigrationResponse:
+        """Create a batch migration.
+
+        Create a batch migration in the ``draft`` status, together with 1 to 100 initial
+        resources. Each resource holds one source rule to translate into a Cloud SIEM detection
+        rule. To load more rules, add them with the add resources endpoint before starting the
+        batch migration. A batch migration can hold up to 1000 resources. The response does not
+        include the created resources: list the resources of the batch migration to retrieve them.
+
+        :type body: SecurityMonitoringBatchMigrationCreateRequest
+        :rtype: SecurityMonitoringBatchMigrationResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_security_monitoring_batch_migration_endpoint.call_with_http_info(**kwargs)
+
+    def create_security_monitoring_batch_migration_resources(
+        self,
+        batch_id: UUID,
+        body: SecurityMonitoringBatchMigrationResourcesCreateRequest,
+    ) -> SecurityMonitoringBatchMigrationResourcesCreateResponse:
+        """Add resources to a batch migration.
+
+        Add 1 to 1000 resources to a ``draft`` batch migration. Returns ``409 Conflict`` if the
+        batch migration is not ``draft`` , and ``400 Bad Request`` if the batch migration would
+        contain more than 1000 resources.
+
+        :param batch_id: The UUID of the batch migration.
+        :type batch_id: UUID
+        :type body: SecurityMonitoringBatchMigrationResourcesCreateRequest
+        :rtype: SecurityMonitoringBatchMigrationResourcesCreateResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["batch_id"] = batch_id
+
+        kwargs["body"] = body
+
+        return self._create_security_monitoring_batch_migration_resources_endpoint.call_with_http_info(**kwargs)
 
     def create_security_monitoring_critical_asset(
         self,
@@ -6117,6 +6526,50 @@ class SecurityMonitoringApi:
         kwargs["rule_id"] = rule_id
 
         return self._delete_security_findings_automation_ticket_creation_rule_endpoint.call_with_http_info(**kwargs)
+
+    def delete_security_monitoring_batch_migration(
+        self,
+        batch_id: UUID,
+    ) -> None:
+        """Delete a batch migration.
+
+        Delete a batch migration and its resources. Detection rules that were already
+        published are not deleted. Returns ``409 Conflict`` while any resource is ``in_progress``
+        or ``publishing`` : cancel the batch migration, or wait for publishing to finish, and
+        then try again.
+
+        :param batch_id: The UUID of the batch migration.
+        :type batch_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["batch_id"] = batch_id
+
+        return self._delete_security_monitoring_batch_migration_endpoint.call_with_http_info(**kwargs)
+
+    def delete_security_monitoring_batch_migration_resources(
+        self,
+        batch_id: UUID,
+        body: SecurityMonitoringBatchMigrationResourcesDeleteRequest,
+    ) -> None:
+        """Delete resources from a batch migration.
+
+        Delete resources from a batch migration. The request is all-or-nothing: it returns
+        ``404 Not Found`` if any resource does not exist, and ``409 Conflict`` if any resource is
+        ``in_progress`` or ``publishing``. In both cases nothing is deleted. Duplicate resource IDs
+        are ignored. Detection rules already published from the deleted resources are not deleted.
+
+        :param batch_id: The UUID of the batch migration.
+        :type batch_id: UUID
+        :type body: SecurityMonitoringBatchMigrationResourcesDeleteRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["batch_id"] = batch_id
+
+        kwargs["body"] = body
+
+        return self._delete_security_monitoring_batch_migration_resources_endpoint.call_with_http_info(**kwargs)
 
     def delete_security_monitoring_critical_asset(
         self,
@@ -8384,6 +8837,82 @@ class SecurityMonitoringApi:
 
         return self._list_security_findings_automation_ticket_creation_rules_endpoint.call_with_http_info(**kwargs)
 
+    def list_security_monitoring_batch_migration_resources(
+        self,
+        batch_id: UUID,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        filter_query: Union[str, UnsetType] = unset,
+    ) -> SecurityMonitoringBatchMigrationResourcesListResponse:
+        """List batch migration resources.
+
+        List the resources of a batch migration, including the input of each source rule and,
+        once translated, the proposed Cloud SIEM detection rule in ``output``.
+
+        :param batch_id: The UUID of the batch migration.
+        :type batch_id: UUID
+        :param page_size: Size for a given page. The maximum allowed value is 500.
+        :type page_size: int, optional
+        :param page_number: Specific page number to return, starting at 1.
+        :type page_number: int, optional
+        :param filter_query: A search query in Datadog search syntax to filter resources, such as
+            ``status:completed``. Filterable attributes are ``id`` , ``name`` , ``description`` , ``inputType`` ,
+            ``status`` , ``input`` , ``createdBy`` , and ``lastUpdatedBy``. Free text matches the resource name.
+        :type filter_query: str, optional
+        :rtype: SecurityMonitoringBatchMigrationResourcesListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["batch_id"] = batch_id
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if filter_query is not unset:
+            kwargs["filter_query"] = filter_query
+
+        return self._list_security_monitoring_batch_migration_resources_endpoint.call_with_http_info(**kwargs)
+
+    def list_security_monitoring_batch_migrations(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        filter_query: Union[str, UnsetType] = unset,
+    ) -> SecurityMonitoringBatchMigrationsListResponse:
+        """List batch migrations.
+
+        List the batch migrations of your organization. A batch migration groups detection
+        rules from another SIEM that the Datadog Detection Agent translates into Cloud SIEM
+        detection rules. To retrieve a single batch migration, filter by its ID with
+        ``filter[query]=id:<batch_id>``. Poll this endpoint to follow the progress of a batch
+        migration through its ``status`` and ``resourceStatusCounts``.
+
+        :param page_size: Size for a given page. The maximum allowed value is 500.
+        :type page_size: int, optional
+        :param page_number: Specific page number to return, starting at 1.
+        :type page_number: int, optional
+        :param filter_query: A search query in Datadog search syntax to filter batch migrations, such as
+            ``status:completed``. Filterable attributes are ``id`` , ``name`` , ``description`` , ``status`` ,
+            ``createdBy`` , and ``lastUpdatedBy``. Free text matches the batch migration name.
+        :type filter_query: str, optional
+        :rtype: SecurityMonitoringBatchMigrationsListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if filter_query is not unset:
+            kwargs["filter_query"] = filter_query
+
+        return self._list_security_monitoring_batch_migrations_endpoint.call_with_http_info(**kwargs)
+
     def list_security_monitoring_critical_assets(
         self,
     ) -> SecurityMonitoringCriticalAssetsResponse:
@@ -9252,6 +9781,39 @@ class SecurityMonitoringApi:
 
         return self._patch_vulnerability_notification_rule_endpoint.call_with_http_info(**kwargs)
 
+    def publish_security_monitoring_batch_migration(
+        self,
+        batch_id: UUID,
+        body: SecurityMonitoringBatchMigrationPublishRequest,
+    ) -> SecurityMonitoringBatchMigrationPublishResponse:
+        """Publish a batch migration.
+
+        Create a Cloud SIEM detection rule from the ``output`` of each selected ``completed``
+        resource of a batch migration. Completed resources can be published while the rest of
+        the batch migration is still being translated. When ``resourceIds`` is omitted or empty,
+        every ``completed`` resource is published. Published rules are created disabled.
+
+        Every requested resource must be publishable: ``completed`` , or left in ``publishing`` for
+        more than one minute after an uncertain result. Otherwise, the request returns
+        ``409 Conflict`` and nothing is published. Already published resources are not publishable.
+
+        The response reports the outcome of each resource, and some resources can be published
+        while others fail. A ``failed`` result that contains a ``ruleId`` means the rule was created:
+        do not retry that resource. Publishing a rule with a ``block_ip`` or ``block_user`` action
+        requires the ``appsec_protect_write`` permission.
+
+        :param batch_id: The UUID of the batch migration.
+        :type batch_id: UUID
+        :type body: SecurityMonitoringBatchMigrationPublishRequest
+        :rtype: SecurityMonitoringBatchMigrationPublishResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["batch_id"] = batch_id
+
+        kwargs["body"] = body
+
+        return self._publish_security_monitoring_batch_migration_endpoint.call_with_http_info(**kwargs)
+
     def reorder_security_findings_automation_due_date_rules(
         self,
         body: DueDateRuleReorderRequest,
@@ -9508,6 +10070,35 @@ class SecurityMonitoringApi:
 
         return self._send_security_monitoring_notification_preview_endpoint.call_with_http_info(**kwargs)
 
+    def start_security_monitoring_batch_migration(
+        self,
+        batch_id: UUID,
+    ) -> None:
+        """Start a batch migration.
+
+        Start translating the ``pending`` resources of a ``draft`` batch migration into Cloud SIEM
+        detection rules. The batch migration moves to ``in_progress`` , and its resources are
+        translated asynchronously. Once no resource is ``pending`` or ``in_progress`` , the batch
+        migration moves to ``completed``. Starting an ``in_progress`` batch migration again does not
+        queue duplicate work, so the request can be safely retried, including after a timeout or
+        a ``5xx`` error. Returns ``409 Conflict`` if the batch migration is ``completed`` or ``canceled``.
+
+        An organization can translate up to 2000 resources in total across all of its batch
+        migrations. Resources that were already processed count toward this limit even after
+        they are deleted, and ``pending`` resources of ``in_progress`` batch migrations reserve
+        capacity. Returns ``409 Conflict`` if starting the batch migration would exceed this limit.
+        To request a higher limit for your organization, contact
+        `Datadog support <https://docs.datadoghq.com/help/>`_.
+
+        :param batch_id: The UUID of the batch migration.
+        :type batch_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["batch_id"] = batch_id
+
+        return self._start_security_monitoring_batch_migration_endpoint.call_with_http_info(**kwargs)
+
     def test_existing_security_monitoring_rule(
         self,
         rule_id: str,
@@ -9761,6 +10352,58 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._update_security_findings_automation_ticket_creation_rule_endpoint.call_with_http_info(**kwargs)
+
+    def update_security_monitoring_batch_migration(
+        self,
+        batch_id: UUID,
+        body: SecurityMonitoringBatchMigrationUpdateRequest,
+    ) -> SecurityMonitoringBatchMigrationResponse:
+        """Update a batch migration.
+
+        Update the name, description, or tags of a batch migration, in any status. At least
+        one of these attributes must be provided. Omitted attributes are left unchanged, and
+        ``tags`` replaces the full list of tags.
+
+        :param batch_id: The UUID of the batch migration.
+        :type batch_id: UUID
+        :type body: SecurityMonitoringBatchMigrationUpdateRequest
+        :rtype: SecurityMonitoringBatchMigrationResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["batch_id"] = batch_id
+
+        kwargs["body"] = body
+
+        return self._update_security_monitoring_batch_migration_endpoint.call_with_http_info(**kwargs)
+
+    def update_security_monitoring_batch_migration_resource(
+        self,
+        batch_id: UUID,
+        resource_id: UUID,
+        body: SecurityMonitoringBatchMigrationResourceUpdateRequest,
+    ) -> SecurityMonitoringBatchMigrationResourceResponse:
+        """Update a batch migration resource.
+
+        Update a resource of a batch migration. At least one of ``name`` , ``description`` ,
+        ``inputType`` , or ``input`` must be provided. ``name`` and ``description`` can be updated at
+        any time. ``inputType`` and ``input`` can only be updated while the resource is ``pending`` ;
+        otherwise, the request returns ``409 Conflict``. The translated ``output`` cannot be edited.
+
+        :param batch_id: The UUID of the batch migration.
+        :type batch_id: UUID
+        :param resource_id: The UUID of the batch migration resource.
+        :type resource_id: UUID
+        :type body: SecurityMonitoringBatchMigrationResourceUpdateRequest
+        :rtype: SecurityMonitoringBatchMigrationResourceResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["batch_id"] = batch_id
+
+        kwargs["resource_id"] = resource_id
+
+        kwargs["body"] = body
+
+        return self._update_security_monitoring_batch_migration_resource_endpoint.call_with_http_info(**kwargs)
 
     def update_security_monitoring_critical_asset(
         self,

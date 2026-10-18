@@ -9726,6 +9726,13 @@
     {
       "feature": "Security Monitoring",
       "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/add-resources-to-a-batch-migration-returns-created-response.json",
+      "scenario": "Add resources to a batch migration returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
       "file": "v2/security-monitoring/apply-a-severity-override-to-security-findings-returns-accepted-response.json",
       "scenario": "Apply a severity override to security findings returns \"Accepted\" response",
       "version": "v2"
@@ -9910,6 +9917,13 @@
       "feature_file": "../../v2/features/security_monitoring.feature",
       "file": "v2/security-monitoring/create-jira-issues-for-security-findings-returns-not-found-response.json",
       "scenario": "Create Jira issues for security findings returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/create-a-batch-migration-returns-created-response.json",
+      "scenario": "Create a batch migration returns \"Created\" response",
       "version": "v2"
     },
     {
@@ -10153,6 +10167,13 @@
     {
       "feature": "Security Monitoring",
       "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/delete-a-batch-migration-returns-no-content-response.json",
+      "scenario": "Delete a batch migration returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
       "file": "v2/security-monitoring/delete-a-critical-asset-returns-not-found-response.json",
       "scenario": "Delete a critical asset returns \"Not Found\" response",
       "version": "v2"
@@ -10274,6 +10295,13 @@
       "feature_file": "../../v2/features/security_monitoring.feature",
       "file": "v2/security-monitoring/delete-an-inbox-rule-returns-successfully-deleted-the-inbox-rule-response.json",
       "scenario": "Delete an inbox rule returns \"Successfully deleted the inbox rule\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/delete-resources-from-a-batch-migration-returns-no-content-response.json",
+      "scenario": "Delete resources from a batch migration returns \"No Content\" response",
       "version": "v2"
     },
     {
@@ -10713,6 +10741,20 @@
     {
       "feature": "Security Monitoring",
       "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/list-batch-migration-resources-returns-ok-response.json",
+      "scenario": "List batch migration resources returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/list-batch-migrations-returns-ok-response.json",
+      "scenario": "List batch migrations returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
       "file": "v2/security-monitoring/list-findings-returns-ok-response.json",
       "scenario": "List findings returns \"OK\" response",
       "version": "v2"
@@ -11030,6 +11072,20 @@
       "feature_file": "../../v2/features/security_monitoring.feature",
       "file": "v2/security-monitoring/unmute-security-findings-returns-unprocessable-entity-response.json",
       "scenario": "Unmute security findings returns \"Unprocessable Entity\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/update-a-batch-migration-resource-returns-ok-response.json",
+      "scenario": "Update a batch migration resource returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/update-a-batch-migration-returns-ok-response.json",
+      "scenario": "Update a batch migration returns \"OK\" response",
       "version": "v2"
     },
     {

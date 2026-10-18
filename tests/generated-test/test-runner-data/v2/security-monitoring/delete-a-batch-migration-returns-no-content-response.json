@@ -1,0 +1,35 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 204,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Delete a batch migration returns \"No Content\" response",
+  "operation_id": "DeleteSecurityMonitoringBatchMigration",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "batch_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "batch_migration.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security_monitoring/batch-migrations/{batch_id}"
+  },
+  "scenario": "Delete a batch migration returns \"No Content\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

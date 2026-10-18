@@ -1,0 +1,52 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 204,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Delete resources from a batch migration returns \"No Content\" response",
+  "operation_id": "DeleteSecurityMonitoringBatchMigrationResources",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SecurityMonitoringBatchMigrationResourcesDeleteRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "resourceIds": [
+              "{{ batch_migration_resource.id }}"
+            ]
+          },
+          "type": "batchMigrationResources"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "batch_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "batch_migration.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security_monitoring/batch-migrations/{batch_id}/resources"
+  },
+  "scenario": "Delete resources from a batch migration returns \"No Content\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
