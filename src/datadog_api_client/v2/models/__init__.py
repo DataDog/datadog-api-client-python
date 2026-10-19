@@ -211,6 +211,12 @@ from datadog_api_client.v2.model.active_billing_dimensions_response import Activ
 from datadog_api_client.v2.model.active_billing_dimensions_type import ActiveBillingDimensionsType
 from datadog_api_client.v2.model.add_member_team_request import AddMemberTeamRequest
 from datadog_api_client.v2.model.advisory import Advisory
+from datadog_api_client.v2.model.agent_health_agent_type import AgentHealthAgentType
+from datadog_api_client.v2.model.agent_health_host_issue import AgentHealthHostIssue
+from datadog_api_client.v2.model.agent_health_host_issues_attributes import AgentHealthHostIssuesAttributes
+from datadog_api_client.v2.model.agent_health_host_issues_data import AgentHealthHostIssuesData
+from datadog_api_client.v2.model.agent_health_host_issues_response import AgentHealthHostIssuesResponse
+from datadog_api_client.v2.model.agent_health_host_issues_type import AgentHealthHostIssuesType
 from datadog_api_client.v2.model.agent_trigger import AgentTrigger
 from datadog_api_client.v2.model.agent_trigger_wrapper import AgentTriggerWrapper
 from datadog_api_client.v2.model.aggregated_long_tasks_by_invoker_type import AggregatedLongTasksByInvokerType
@@ -13047,6 +13053,12 @@ __all__ = [
     "ActiveBillingDimensionsType",
     "AddMemberTeamRequest",
     "Advisory",
+    "AgentHealthAgentType",
+    "AgentHealthHostIssue",
+    "AgentHealthHostIssuesAttributes",
+    "AgentHealthHostIssuesData",
+    "AgentHealthHostIssuesResponse",
+    "AgentHealthHostIssuesType",
     "AgentTrigger",
     "AgentTriggerWrapper",
     "AggregatedLongTasksByInvokerType",
