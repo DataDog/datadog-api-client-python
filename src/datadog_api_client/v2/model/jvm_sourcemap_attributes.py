@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,13 +14,19 @@ from datadog_api_client.model_utils import (
 )
 
 
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.jvm_sourcemap_map_kind import JVMSourcemapMapKind
+
+
 class JVMSourcemapAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.jvm_sourcemap_map_kind import JVMSourcemapMapKind
+
         return {
             "build_id": (str,),
             "created_at": (datetime,),
-            "mapkind": (str,),
+            "mapkind": (JVMSourcemapMapKind,),
             "service": (str,),
             "size": (int,),
             "variant": (str,),
@@ -42,7 +48,7 @@ class JVMSourcemapAttributes(ModelNormal):
     def __init__(
         self_,
         created_at: datetime,
-        mapkind: str,
+        mapkind: JVMSourcemapMapKind,
         size: int,
         build_id: Union[str, UnsetType] = unset,
         service: Union[str, UnsetType] = unset,
@@ -60,8 +66,8 @@ class JVMSourcemapAttributes(ModelNormal):
         :param created_at: The timestamp when the mapping file was created.
         :type created_at: datetime
 
-        :param mapkind: The type of source map.
-        :type mapkind: str
+        :param mapkind: The type of source map. Always ``jvm`` for JVM source maps.
+        :type mapkind: JVMSourcemapMapKind
 
         :param service: The service name associated with the mapping file.
         :type service: str, optional

@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,9 +14,15 @@ from datadog_api_client.model_utils import (
 )
 
 
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.js_sourcemap_map_kind import JSSourcemapMapKind
+
+
 class JSSourcemapAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.js_sourcemap_map_kind import JSSourcemapMapKind
+
         return {
             "absolute_path": (str,),
             "blob_storage_sourcemap_path": (str,),
@@ -25,7 +31,7 @@ class JSSourcemapAttributes(ModelNormal):
             "debug_id": (str,),
             "domain": (str,),
             "file_name": (str,),
-            "mapkind": (str,),
+            "mapkind": (JSSourcemapMapKind,),
             "service": (str,),
             "size": (int,),
             "variant": (str,),
@@ -52,7 +58,7 @@ class JSSourcemapAttributes(ModelNormal):
     def __init__(
         self_,
         created_at: datetime,
-        mapkind: str,
+        mapkind: JSSourcemapMapKind,
         size: int,
         absolute_path: Union[str, UnsetType] = unset,
         blob_storage_sourcemap_path: Union[str, UnsetType] = unset,
@@ -91,8 +97,8 @@ class JSSourcemapAttributes(ModelNormal):
         :param file_name: The file name of the minified JavaScript file.
         :type file_name: str, optional
 
-        :param mapkind: The type of source map.
-        :type mapkind: str
+        :param mapkind: The type of source map. Always ``js`` for JavaScript source maps.
+        :type mapkind: JSSourcemapMapKind
 
         :param service: The service name associated with the source map.
         :type service: str, optional

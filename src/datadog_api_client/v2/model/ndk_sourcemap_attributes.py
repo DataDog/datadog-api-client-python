@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,15 +14,21 @@ from datadog_api_client.model_utils import (
 )
 
 
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.ndk_sourcemap_map_kind import NDKSourcemapMapKind
+
+
 class NDKSourcemapAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.ndk_sourcemap_map_kind import NDKSourcemapMapKind
+
         return {
             "arch": (str,),
             "build_id": (str,),
             "created_at": (datetime,),
             "file_name": (str,),
-            "mapkind": (str,),
+            "mapkind": (NDKSourcemapMapKind,),
             "size": (int,),
         }
 
@@ -38,7 +44,7 @@ class NDKSourcemapAttributes(ModelNormal):
     def __init__(
         self_,
         created_at: datetime,
-        mapkind: str,
+        mapkind: NDKSourcemapMapKind,
         size: int,
         arch: Union[str, UnsetType] = unset,
         build_id: Union[str, UnsetType] = unset,
@@ -60,8 +66,8 @@ class NDKSourcemapAttributes(ModelNormal):
         :param file_name: The NDK library file name.
         :type file_name: str, optional
 
-        :param mapkind: The type of source map.
-        :type mapkind: str
+        :param mapkind: The type of source map. Always ``ndk`` for Android NDK source maps.
+        :type mapkind: NDKSourcemapMapKind
 
         :param size: The size of the symbol file in bytes.
         :type size: int

@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,13 +14,19 @@ from datadog_api_client.model_utils import (
 )
 
 
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.flutter_sourcemap_map_kind import FlutterSourcemapMapKind
+
+
 class FlutterSourcemapAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.flutter_sourcemap_map_kind import FlutterSourcemapMapKind
+
         return {
             "arch": (str,),
             "created_at": (datetime,),
-            "mapkind": (str,),
+            "mapkind": (FlutterSourcemapMapKind,),
             "service": (str,),
             "size": (int,),
             "variant": (str,),
@@ -40,7 +46,7 @@ class FlutterSourcemapAttributes(ModelNormal):
     def __init__(
         self_,
         created_at: datetime,
-        mapkind: str,
+        mapkind: FlutterSourcemapMapKind,
         size: int,
         arch: Union[str, UnsetType] = unset,
         service: Union[str, UnsetType] = unset,
@@ -57,8 +63,8 @@ class FlutterSourcemapAttributes(ModelNormal):
         :param created_at: The timestamp when the symbol file was created.
         :type created_at: datetime
 
-        :param mapkind: The type of source map.
-        :type mapkind: str
+        :param mapkind: The type of source map. Always ``flutter`` for Flutter source maps.
+        :type mapkind: FlutterSourcemapMapKind
 
         :param service: The service name associated with the symbol file.
         :type service: str, optional

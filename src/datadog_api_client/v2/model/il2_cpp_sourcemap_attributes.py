@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,13 +14,19 @@ from datadog_api_client.model_utils import (
 )
 
 
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.il2_cpp_sourcemap_map_kind import IL2CPPSourcemapMapKind
+
+
 class IL2CPPSourcemapAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.il2_cpp_sourcemap_map_kind import IL2CPPSourcemapMapKind
+
         return {
             "build_id": (str,),
             "created_at": (datetime,),
-            "mapkind": (str,),
+            "mapkind": (IL2CPPSourcemapMapKind,),
             "size": (int,),
         }
 
@@ -32,7 +38,12 @@ class IL2CPPSourcemapAttributes(ModelNormal):
     }
 
     def __init__(
-        self_, created_at: datetime, mapkind: str, size: int, build_id: Union[str, UnsetType] = unset, **kwargs
+        self_,
+        created_at: datetime,
+        mapkind: IL2CPPSourcemapMapKind,
+        size: int,
+        build_id: Union[str, UnsetType] = unset,
+        **kwargs,
     ):
         """
         Attributes of an IL2CPP mapping file.
@@ -43,8 +54,8 @@ class IL2CPPSourcemapAttributes(ModelNormal):
         :param created_at: The timestamp when the mapping file was created.
         :type created_at: datetime
 
-        :param mapkind: The type of source map.
-        :type mapkind: str
+        :param mapkind: The type of source map. Always ``il2cpp`` for IL2CPP source maps.
+        :type mapkind: IL2CPPSourcemapMapKind
 
         :param size: The size of the mapping file in bytes.
         :type size: int

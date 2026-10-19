@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,9 +14,15 @@ from datadog_api_client.model_utils import (
 )
 
 
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.elf_sourcemap_map_kind import ELFSourcemapMapKind
+
+
 class ELFSourcemapAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.elf_sourcemap_map_kind import ELFSourcemapMapKind
+
         return {
             "arch": (str,),
             "created_at": (datetime,),
@@ -24,7 +30,7 @@ class ELFSourcemapAttributes(ModelNormal):
             "file_name": (str,),
             "gnu_build_id": (str,),
             "go_build_id": (str,),
-            "mapkind": (str,),
+            "mapkind": (ELFSourcemapMapKind,),
             "origin": (str,),
             "origin_version": (str,),
             "size": (int,),
@@ -48,7 +54,7 @@ class ELFSourcemapAttributes(ModelNormal):
     def __init__(
         self_,
         created_at: datetime,
-        mapkind: str,
+        mapkind: ELFSourcemapMapKind,
         size: int,
         arch: Union[str, UnsetType] = unset,
         file_hash: Union[str, UnsetType] = unset,
@@ -81,8 +87,8 @@ class ELFSourcemapAttributes(ModelNormal):
         :param go_build_id: The Go build ID (UUID format).
         :type go_build_id: str, optional
 
-        :param mapkind: The type of source map.
-        :type mapkind: str
+        :param mapkind: The type of source map. Always ``elf`` for ELF source maps.
+        :type mapkind: ELFSourcemapMapKind
 
         :param origin: The origin of the ELF file.
         :type origin: str, optional
