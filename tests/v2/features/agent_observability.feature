@@ -75,7 +75,7 @@ Feature: Agent Observability
     And new "CreateLLMObsDatasetRecords" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And request contains "dataset_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"records": [{"expected_output": null, "input": null}]}, "type": "records"}}
+    And body with value {"data": {"attributes": {"records": [{"expected_output": null, "input": null}]}, "type": "datasets"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -85,7 +85,7 @@ Feature: Agent Observability
     And new "CreateLLMObsDatasetRecords" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And request contains "dataset_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"records": [{"expected_output": null, "input": null}]}, "type": "records"}}
+    And body with value {"data": {"attributes": {"records": [{"expected_output": null, "input": null}]}, "type": "datasets"}}
     When the request is sent
     Then the response status is 201 Created
 
@@ -95,7 +95,7 @@ Feature: Agent Observability
     And new "CreateLLMObsDatasetRecords" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And request contains "dataset_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"records": [{"expected_output": null, "input": null}]}, "type": "records"}}
+    And body with value {"data": {"attributes": {"records": [{"expected_output": null, "input": null}]}, "type": "datasets"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -105,7 +105,7 @@ Feature: Agent Observability
     And new "CreateLLMObsDatasetRecords" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And request contains "dataset_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"records": [{"expected_output": null, "input": null}]}, "type": "records"}}
+    And body with value {"data": {"attributes": {"records": [{"expected_output": null, "input": null}]}, "type": "datasets"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -423,7 +423,7 @@ Feature: Agent Observability
     And new "DeleteLLMObsDatasetRecords" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And request contains "dataset_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"record_ids": ["rec-7c3f5a1b-9e2d-4f8a-b1c6-3d7e9f0a2b4c"]}, "type": "records"}}
+    And body with value {"data": {"attributes": {"record_ids": ["rec-7c3f5a1b-9e2d-4f8a-b1c6-3d7e9f0a2b4c"]}, "type": "datasets"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -433,7 +433,7 @@ Feature: Agent Observability
     And new "DeleteLLMObsDatasetRecords" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And request contains "dataset_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"record_ids": ["rec-7c3f5a1b-9e2d-4f8a-b1c6-3d7e9f0a2b4c"]}, "type": "records"}}
+    And body with value {"data": {"attributes": {"record_ids": ["rec-7c3f5a1b-9e2d-4f8a-b1c6-3d7e9f0a2b4c"]}, "type": "datasets"}}
     When the request is sent
     Then the response status is 204 No Content
 
@@ -443,7 +443,7 @@ Feature: Agent Observability
     And new "DeleteLLMObsDatasetRecords" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And request contains "dataset_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"record_ids": ["rec-7c3f5a1b-9e2d-4f8a-b1c6-3d7e9f0a2b4c"]}, "type": "records"}}
+    And body with value {"data": {"attributes": {"record_ids": ["rec-7c3f5a1b-9e2d-4f8a-b1c6-3d7e9f0a2b4c"]}, "type": "datasets"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -1309,7 +1309,7 @@ Feature: Agent Observability
     Given operation "CreateLLMObsExperimentEvents" enabled
     And new "CreateLLMObsExperimentEvents" request
     And request contains "experiment_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"metrics": [{"assessment": "pass", "error": {}, "label": "faithfulness", "metric_type": "score", "span_id": "span-7a1b2c3d", "tags": [], "timestamp_ms": 1705314600000}], "spans": [{"dataset_id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "duration": 1500000000, "meta": {"error": {"message": "Model response timed out", "stack": "Traceback (most recent call last):\n  File \"main.py\", line 10, in <module>\n    response = model.generate(input)\n  File \"model.py\", line 45, in generate\n    raise TimeoutError(\"Model response timed out\")\nTimeoutError: Model response timed out", "type": "TimeoutError"}, "input": null, "output": null}, "name": "llm_call", "project_id": "a33671aa-24fd-4dcd-9b33-a8ec7dde7751", "span_id": "span-7a1b2c3d", "start_ns": 1705314600000000000, "status": "ok", "tags": [], "trace_id": "abc123def456"}]}, "type": "events"}}
+    And body with value {"data": {"attributes": {"metrics": [{"assessment": "pass", "error": {}, "label": "faithfulness", "metric_type": "score", "span_id": "span-7a1b2c3d", "tags": [], "timestamp_ms": 1705314600000}], "spans": [{"dataset_id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "duration": 1500000000, "meta": {"error": {"message": "Model response timed out", "stack": "Traceback (most recent call last):\n  File \"main.py\", line 10, in <module>\n    response = model.generate(input)\n  File \"model.py\", line 45, in generate\n    raise TimeoutError(\"Model response timed out\")\nTimeoutError: Model response timed out", "type": "TimeoutError"}, "input": null, "output": null}, "name": "llm_call", "project_id": "a33671aa-24fd-4dcd-9b33-a8ec7dde7751", "span_id": "span-7a1b2c3d", "start_ns": 1705314600000000000, "status": "ok", "tags": [], "trace_id": "abc123def456"}]}, "type": "experiments"}}
     When the request is sent
     Then the response status is 202 Accepted
 
@@ -1318,7 +1318,7 @@ Feature: Agent Observability
     Given operation "CreateLLMObsExperimentEvents" enabled
     And new "CreateLLMObsExperimentEvents" request
     And request contains "experiment_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"metrics": [{"assessment": "pass", "error": {}, "label": "faithfulness", "metric_type": "score", "span_id": "span-7a1b2c3d", "tags": [], "timestamp_ms": 1705314600000}], "spans": [{"dataset_id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "duration": 1500000000, "meta": {"error": {"message": "Model response timed out", "stack": "Traceback (most recent call last):\n  File \"main.py\", line 10, in <module>\n    response = model.generate(input)\n  File \"model.py\", line 45, in generate\n    raise TimeoutError(\"Model response timed out\")\nTimeoutError: Model response timed out", "type": "TimeoutError"}, "input": null, "output": null}, "name": "llm_call", "project_id": "a33671aa-24fd-4dcd-9b33-a8ec7dde7751", "span_id": "span-7a1b2c3d", "start_ns": 1705314600000000000, "status": "ok", "tags": [], "trace_id": "abc123def456"}]}, "type": "events"}}
+    And body with value {"data": {"attributes": {"metrics": [{"assessment": "pass", "error": {}, "label": "faithfulness", "metric_type": "score", "span_id": "span-7a1b2c3d", "tags": [], "timestamp_ms": 1705314600000}], "spans": [{"dataset_id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "duration": 1500000000, "meta": {"error": {"message": "Model response timed out", "stack": "Traceback (most recent call last):\n  File \"main.py\", line 10, in <module>\n    response = model.generate(input)\n  File \"model.py\", line 45, in generate\n    raise TimeoutError(\"Model response timed out\")\nTimeoutError: Model response timed out", "type": "TimeoutError"}, "input": null, "output": null}, "name": "llm_call", "project_id": "a33671aa-24fd-4dcd-9b33-a8ec7dde7751", "span_id": "span-7a1b2c3d", "start_ns": 1705314600000000000, "status": "ok", "tags": [], "trace_id": "abc123def456"}]}, "type": "experiments"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -1327,7 +1327,7 @@ Feature: Agent Observability
     Given operation "CreateLLMObsExperimentEvents" enabled
     And new "CreateLLMObsExperimentEvents" request
     And request contains "experiment_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"metrics": [{"assessment": "pass", "error": {}, "label": "faithfulness", "metric_type": "score", "span_id": "span-7a1b2c3d", "tags": [], "timestamp_ms": 1705314600000}], "spans": [{"dataset_id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "duration": 1500000000, "meta": {"error": {"message": "Model response timed out", "stack": "Traceback (most recent call last):\n  File \"main.py\", line 10, in <module>\n    response = model.generate(input)\n  File \"model.py\", line 45, in generate\n    raise TimeoutError(\"Model response timed out\")\nTimeoutError: Model response timed out", "type": "TimeoutError"}, "input": null, "output": null}, "name": "llm_call", "project_id": "a33671aa-24fd-4dcd-9b33-a8ec7dde7751", "span_id": "span-7a1b2c3d", "start_ns": 1705314600000000000, "status": "ok", "tags": [], "trace_id": "abc123def456"}]}, "type": "events"}}
+    And body with value {"data": {"attributes": {"metrics": [{"assessment": "pass", "error": {}, "label": "faithfulness", "metric_type": "score", "span_id": "span-7a1b2c3d", "tags": [], "timestamp_ms": 1705314600000}], "spans": [{"dataset_id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "duration": 1500000000, "meta": {"error": {"message": "Model response timed out", "stack": "Traceback (most recent call last):\n  File \"main.py\", line 10, in <module>\n    response = model.generate(input)\n  File \"model.py\", line 45, in generate\n    raise TimeoutError(\"Model response timed out\")\nTimeoutError: Model response timed out", "type": "TimeoutError"}, "input": null, "output": null}, "name": "llm_call", "project_id": "a33671aa-24fd-4dcd-9b33-a8ec7dde7751", "span_id": "span-7a1b2c3d", "start_ns": 1705314600000000000, "status": "ok", "tags": [], "trace_id": "abc123def456"}]}, "type": "experiments"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -1494,7 +1494,7 @@ Feature: Agent Observability
     And new "UpdateLLMObsDatasetRecords" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And request contains "dataset_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"records": [{"expected_output": null, "id": "rec-7c3f5a1b-9e2d-4f8a-b1c6-3d7e9f0a2b4c", "input": null}]}, "type": "records"}}
+    And body with value {"data": {"attributes": {"records": [{"expected_output": null, "id": "rec-7c3f5a1b-9e2d-4f8a-b1c6-3d7e9f0a2b4c", "input": null}]}, "type": "datasets"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -1504,7 +1504,7 @@ Feature: Agent Observability
     And new "UpdateLLMObsDatasetRecords" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And request contains "dataset_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"records": [{"expected_output": null, "id": "rec-7c3f5a1b-9e2d-4f8a-b1c6-3d7e9f0a2b4c", "input": null}]}, "type": "records"}}
+    And body with value {"data": {"attributes": {"records": [{"expected_output": null, "id": "rec-7c3f5a1b-9e2d-4f8a-b1c6-3d7e9f0a2b4c", "input": null}]}, "type": "datasets"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -1514,7 +1514,7 @@ Feature: Agent Observability
     And new "UpdateLLMObsDatasetRecords" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And request contains "dataset_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"records": [{"expected_output": null, "id": "rec-7c3f5a1b-9e2d-4f8a-b1c6-3d7e9f0a2b4c", "input": null}]}, "type": "records"}}
+    And body with value {"data": {"attributes": {"records": [{"expected_output": null, "id": "rec-7c3f5a1b-9e2d-4f8a-b1c6-3d7e9f0a2b4c", "input": null}]}, "type": "datasets"}}
     When the request is sent
     Then the response status is 200 OK
 

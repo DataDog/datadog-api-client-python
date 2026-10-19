@@ -15,7 +15,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.llm_obs_dataset_records_data_attributes_request import (
         LLMObsDatasetRecordsDataAttributesRequest,
     )
-    from datadog_api_client.v2.model.llm_obs_record_type import LLMObsRecordType
+    from datadog_api_client.v2.model.llm_obs_dataset_type import LLMObsDatasetType
 
 
 class LLMObsDatasetRecordsDataRequest(ModelNormal):
@@ -24,11 +24,11 @@ class LLMObsDatasetRecordsDataRequest(ModelNormal):
         from datadog_api_client.v2.model.llm_obs_dataset_records_data_attributes_request import (
             LLMObsDatasetRecordsDataAttributesRequest,
         )
-        from datadog_api_client.v2.model.llm_obs_record_type import LLMObsRecordType
+        from datadog_api_client.v2.model.llm_obs_dataset_type import LLMObsDatasetType
 
         return {
             "attributes": (LLMObsDatasetRecordsDataAttributesRequest,),
-            "type": (LLMObsRecordType,),
+            "type": (LLMObsDatasetType,),
         }
 
     attribute_map = {
@@ -36,15 +36,15 @@ class LLMObsDatasetRecordsDataRequest(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: LLMObsDatasetRecordsDataAttributesRequest, type: LLMObsRecordType, **kwargs):
+    def __init__(self_, attributes: LLMObsDatasetRecordsDataAttributesRequest, type: LLMObsDatasetType, **kwargs):
         """
         Data object for appending records to an Agent Observability dataset.
 
         :param attributes: Attributes for appending records to an Agent Observability dataset.
         :type attributes: LLMObsDatasetRecordsDataAttributesRequest
 
-        :param type: Resource type of Agent Observability dataset records.
-        :type type: LLMObsRecordType
+        :param type: Resource type of an Agent Observability dataset.
+        :type type: LLMObsDatasetType
         """
         super().__init__(kwargs)
 
