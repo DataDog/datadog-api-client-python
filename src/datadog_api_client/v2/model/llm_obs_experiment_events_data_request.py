@@ -15,7 +15,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.llm_obs_experiment_events_data_attributes_request import (
         LLMObsExperimentEventsDataAttributesRequest,
     )
-    from datadog_api_client.v2.model.llm_obs_event_type import LLMObsEventType
+    from datadog_api_client.v2.model.llm_obs_experiment_type import LLMObsExperimentType
 
 
 class LLMObsExperimentEventsDataRequest(ModelNormal):
@@ -24,11 +24,11 @@ class LLMObsExperimentEventsDataRequest(ModelNormal):
         from datadog_api_client.v2.model.llm_obs_experiment_events_data_attributes_request import (
             LLMObsExperimentEventsDataAttributesRequest,
         )
-        from datadog_api_client.v2.model.llm_obs_event_type import LLMObsEventType
+        from datadog_api_client.v2.model.llm_obs_experiment_type import LLMObsExperimentType
 
         return {
             "attributes": (LLMObsExperimentEventsDataAttributesRequest,),
-            "type": (LLMObsEventType,),
+            "type": (LLMObsExperimentType,),
         }
 
     attribute_map = {
@@ -36,15 +36,15 @@ class LLMObsExperimentEventsDataRequest(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: LLMObsExperimentEventsDataAttributesRequest, type: LLMObsEventType, **kwargs):
+    def __init__(self_, attributes: LLMObsExperimentEventsDataAttributesRequest, type: LLMObsExperimentType, **kwargs):
         """
         Data object for pushing experiment events.
 
         :param attributes: Attributes for pushing experiment events including spans and metrics.
         :type attributes: LLMObsExperimentEventsDataAttributesRequest
 
-        :param type: Resource type for Agent Observability experiment events.
-        :type type: LLMObsEventType
+        :param type: Resource type of an Agent Observability experiment.
+        :type type: LLMObsExperimentType
         """
         super().__init__(kwargs)
 

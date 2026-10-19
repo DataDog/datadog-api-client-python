@@ -69285,7 +69285,7 @@ components:
         attributes:
           $ref: "#/components/schemas/LLMObsDatasetRecordsDataAttributesRequest"
         type:
-          $ref: "#/components/schemas/LLMObsRecordType"
+          $ref: "#/components/schemas/LLMObsDatasetType"
       required:
         - type
         - attributes
@@ -69350,7 +69350,7 @@ components:
         attributes:
           $ref: "#/components/schemas/LLMObsDatasetRecordsUpdateDataAttributesRequest"
         type:
-          $ref: "#/components/schemas/LLMObsRecordType"
+          $ref: "#/components/schemas/LLMObsDatasetType"
       required:
         - type
         - attributes
@@ -69687,7 +69687,7 @@ components:
         attributes:
           $ref: "#/components/schemas/LLMObsDeleteDatasetRecordsDataAttributesRequest"
         type:
-          $ref: "#/components/schemas/LLMObsRecordType"
+          $ref: "#/components/schemas/LLMObsDatasetType"
       required:
         - type
         - attributes
@@ -69926,14 +69926,6 @@ components:
       type: string
       x-enum-varnames:
         - DISPLAY_BLOCK
-    LLMObsEventType:
-      description: Resource type for Agent Observability experiment events.
-      enum:
-        - events
-      example: events
-      type: string
-      x-enum-varnames:
-        - EVENTS
     LLMObsExperimentDataAttributesRequest:
       description: Attributes for creating an Agent Observability experiment.
       properties:
@@ -70189,7 +70181,7 @@ components:
         attributes:
           $ref: "#/components/schemas/LLMObsExperimentEventsDataAttributesRequest"
         type:
-          $ref: "#/components/schemas/LLMObsEventType"
+          $ref: "#/components/schemas/LLMObsExperimentType"
       required:
         - type
         - attributes
@@ -73735,14 +73727,6 @@ components:
       required:
         - data
       type: object
-    LLMObsRecordType:
-      description: Resource type of Agent Observability dataset records.
-      enum:
-        - records
-      example: records
-      type: string
-      x-enum-varnames:
-        - RECORDS
     LLMObsSearchSpansRequest:
       description: Request body for searching Agent Observability spans.
       properties:
@@ -192310,7 +192294,7 @@ paths:
                           start_ns: 1705314600000000000
                           status: ok
                           trace_id: abc123def456
-                    type: events
+                    type: experiments
             schema:
               $ref: "#/components/schemas/LLMObsExperimentEventsRequest"
         description: Experiment events payload.
@@ -195577,7 +195561,7 @@ paths:
                     attributes:
                       records:
                         - id: rec-7c3f5a1b-9e2d-4f8a-b1c6-3d7e9f0a2b4c
-                    type: records
+                    type: datasets
             schema:
               $ref: "#/components/schemas/LLMObsDatasetRecordsUpdateRequest"
         description: Update records payload.
@@ -195652,7 +195636,7 @@ paths:
               default:
                 value:
                   data:
-                    type: records
+                    type: datasets
             schema:
               $ref: "#/components/schemas/LLMObsDatasetRecordsRequest"
         description: Append records payload.
@@ -195751,7 +195735,7 @@ paths:
                     attributes:
                       record_ids:
                         - rec-7c3f5a1b-9e2d-4f8a-b1c6-3d7e9f0a2b4c
-                    type: records
+                    type: datasets
             schema:
               $ref: "#/components/schemas/LLMObsDeleteDatasetRecordsRequest"
         description: Delete records payload.

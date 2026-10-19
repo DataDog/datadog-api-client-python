@@ -5,6 +5,7 @@ Delete Agent Observability dataset records returns "No Content" response
 from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.agent_observability_api import AgentObservabilityApi
+from datadog_api_client.v2.model.llm_obs_dataset_type import LLMObsDatasetType
 from datadog_api_client.v2.model.llm_obs_delete_dataset_records_data_attributes_request import (
     LLMObsDeleteDatasetRecordsDataAttributesRequest,
 )
@@ -12,7 +13,6 @@ from datadog_api_client.v2.model.llm_obs_delete_dataset_records_data_request imp
     LLMObsDeleteDatasetRecordsDataRequest,
 )
 from datadog_api_client.v2.model.llm_obs_delete_dataset_records_request import LLMObsDeleteDatasetRecordsRequest
-from datadog_api_client.v2.model.llm_obs_record_type import LLMObsRecordType
 
 body = LLMObsDeleteDatasetRecordsRequest(
     data=LLMObsDeleteDatasetRecordsDataRequest(
@@ -21,7 +21,7 @@ body = LLMObsDeleteDatasetRecordsRequest(
                 "rec-7c3f5a1b-9e2d-4f8a-b1c6-3d7e9f0a2b4c",
             ],
         ),
-        type=LLMObsRecordType.RECORDS,
+        type=LLMObsDatasetType.DATASETS,
     ),
 )
 

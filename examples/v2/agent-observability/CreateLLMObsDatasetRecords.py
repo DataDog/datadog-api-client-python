@@ -11,7 +11,7 @@ from datadog_api_client.v2.model.llm_obs_dataset_records_data_attributes_request
 )
 from datadog_api_client.v2.model.llm_obs_dataset_records_data_request import LLMObsDatasetRecordsDataRequest
 from datadog_api_client.v2.model.llm_obs_dataset_records_request import LLMObsDatasetRecordsRequest
-from datadog_api_client.v2.model.llm_obs_record_type import LLMObsRecordType
+from datadog_api_client.v2.model.llm_obs_dataset_type import LLMObsDatasetType
 
 body = LLMObsDatasetRecordsRequest(
     data=LLMObsDatasetRecordsDataRequest(
@@ -23,7 +23,7 @@ body = LLMObsDatasetRecordsRequest(
                 ),
             ],
         ),
-        type=LLMObsRecordType.RECORDS,
+        type=LLMObsDatasetType.DATASETS,
     ),
 )
 

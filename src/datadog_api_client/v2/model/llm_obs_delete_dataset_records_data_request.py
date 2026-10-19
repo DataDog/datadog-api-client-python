@@ -15,7 +15,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.llm_obs_delete_dataset_records_data_attributes_request import (
         LLMObsDeleteDatasetRecordsDataAttributesRequest,
     )
-    from datadog_api_client.v2.model.llm_obs_record_type import LLMObsRecordType
+    from datadog_api_client.v2.model.llm_obs_dataset_type import LLMObsDatasetType
 
 
 class LLMObsDeleteDatasetRecordsDataRequest(ModelNormal):
@@ -24,11 +24,11 @@ class LLMObsDeleteDatasetRecordsDataRequest(ModelNormal):
         from datadog_api_client.v2.model.llm_obs_delete_dataset_records_data_attributes_request import (
             LLMObsDeleteDatasetRecordsDataAttributesRequest,
         )
-        from datadog_api_client.v2.model.llm_obs_record_type import LLMObsRecordType
+        from datadog_api_client.v2.model.llm_obs_dataset_type import LLMObsDatasetType
 
         return {
             "attributes": (LLMObsDeleteDatasetRecordsDataAttributesRequest,),
-            "type": (LLMObsRecordType,),
+            "type": (LLMObsDatasetType,),
         }
 
     attribute_map = {
@@ -36,15 +36,15 @@ class LLMObsDeleteDatasetRecordsDataRequest(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: LLMObsDeleteDatasetRecordsDataAttributesRequest, type: LLMObsRecordType, **kwargs):
+    def __init__(self_, attributes: LLMObsDeleteDatasetRecordsDataAttributesRequest, type: LLMObsDatasetType, **kwargs):
         """
         Data object for deleting records from an Agent Observability dataset.
 
         :param attributes: Attributes for deleting records from an Agent Observability dataset.
         :type attributes: LLMObsDeleteDatasetRecordsDataAttributesRequest
 
-        :param type: Resource type of Agent Observability dataset records.
-        :type type: LLMObsRecordType
+        :param type: Resource type of an Agent Observability dataset.
+        :type type: LLMObsDatasetType
         """
         super().__init__(kwargs)
 

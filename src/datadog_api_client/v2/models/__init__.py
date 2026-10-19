@@ -5653,7 +5653,6 @@ from datadog_api_client.v2.model.llm_obs_display_block_interaction_response_item
     LLMObsDisplayBlockInteractionResponseItem,
 )
 from datadog_api_client.v2.model.llm_obs_display_block_interaction_type import LLMObsDisplayBlockInteractionType
-from datadog_api_client.v2.model.llm_obs_event_type import LLMObsEventType
 from datadog_api_client.v2.model.llm_obs_experiment_data_attributes_request import LLMObsExperimentDataAttributesRequest
 from datadog_api_client.v2.model.llm_obs_experiment_data_attributes_response import (
     LLMObsExperimentDataAttributesResponse,
@@ -5913,7 +5912,6 @@ from datadog_api_client.v2.model.llm_obs_prompt_version_response import LLMObsPr
 from datadog_api_client.v2.model.llm_obs_prompt_version_type import LLMObsPromptVersionType
 from datadog_api_client.v2.model.llm_obs_prompt_versions_response import LLMObsPromptVersionsResponse
 from datadog_api_client.v2.model.llm_obs_prompts_response import LLMObsPromptsResponse
-from datadog_api_client.v2.model.llm_obs_record_type import LLMObsRecordType
 from datadog_api_client.v2.model.llm_obs_search_spans_request import LLMObsSearchSpansRequest
 from datadog_api_client.v2.model.llm_obs_search_spans_request_attributes import LLMObsSearchSpansRequestAttributes
 from datadog_api_client.v2.model.llm_obs_search_spans_request_data import LLMObsSearchSpansRequestData
@@ -16801,7 +16799,6 @@ __all__ = [
     "LLMObsDisplayBlockInteractionItem",
     "LLMObsDisplayBlockInteractionResponseItem",
     "LLMObsDisplayBlockInteractionType",
-    "LLMObsEventType",
     "LLMObsExperimentDataAttributesRequest",
     "LLMObsExperimentDataAttributesResponse",
     "LLMObsExperimentDataRequest",
@@ -16983,7 +16980,6 @@ __all__ = [
     "LLMObsPromptVersionType",
     "LLMObsPromptVersionsResponse",
     "LLMObsPromptsResponse",
-    "LLMObsRecordType",
     "LLMObsSearchSpansRequest",
     "LLMObsSearchSpansRequestAttributes",
     "LLMObsSearchSpansRequestData",

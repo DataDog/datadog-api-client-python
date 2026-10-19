@@ -5,7 +5,6 @@ Push events for an Agent Observability experiment returns "Accepted" response
 from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.agent_observability_api import AgentObservabilityApi
-from datadog_api_client.v2.model.llm_obs_event_type import LLMObsEventType
 from datadog_api_client.v2.model.llm_obs_experiment_events_data_attributes_request import (
     LLMObsExperimentEventsDataAttributesRequest,
 )
@@ -17,6 +16,7 @@ from datadog_api_client.v2.model.llm_obs_experiment_span import LLMObsExperiment
 from datadog_api_client.v2.model.llm_obs_experiment_span_error import LLMObsExperimentSpanError
 from datadog_api_client.v2.model.llm_obs_experiment_span_meta import LLMObsExperimentSpanMeta
 from datadog_api_client.v2.model.llm_obs_experiment_span_status import LLMObsExperimentSpanStatus
+from datadog_api_client.v2.model.llm_obs_experiment_type import LLMObsExperimentType
 from datadog_api_client.v2.model.llm_obs_metric_assessment import LLMObsMetricAssessment
 from datadog_api_client.v2.model.llm_obs_metric_score_type import LLMObsMetricScoreType
 
@@ -57,7 +57,7 @@ body = LLMObsExperimentEventsRequest(
                 ),
             ],
         ),
-        type=LLMObsEventType.EVENTS,
+        type=LLMObsExperimentType.EXPERIMENTS,
     ),
 )
 
