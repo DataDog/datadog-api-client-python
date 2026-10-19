@@ -2813,6 +2813,14 @@ from datadog_api_client.v2.model.deployment_rule_response_data_attributes_update
     DeploymentRuleResponseDataAttributesUpdatedBy,
 )
 from datadog_api_client.v2.model.deployment_rules_options import DeploymentRulesOptions
+from datadog_api_client.v2.model.derived_metric_attributes import DerivedMetricAttributes
+from datadog_api_client.v2.model.derived_metric_create_data import DerivedMetricCreateData
+from datadog_api_client.v2.model.derived_metric_create_request import DerivedMetricCreateRequest
+from datadog_api_client.v2.model.derived_metric_data import DerivedMetricData
+from datadog_api_client.v2.model.derived_metric_definition import DerivedMetricDefinition
+from datadog_api_client.v2.model.derived_metric_query import DerivedMetricQuery
+from datadog_api_client.v2.model.derived_metric_response import DerivedMetricResponse
+from datadog_api_client.v2.model.derived_metrics_type import DerivedMetricsType
 from datadog_api_client.v2.model.detach_case_request import DetachCaseRequest
 from datadog_api_client.v2.model.detach_case_request_data import DetachCaseRequestData
 from datadog_api_client.v2.model.detach_case_request_data_relationships import DetachCaseRequestDataRelationships
@@ -14895,6 +14903,14 @@ __all__ = [
     "DeploymentRuleResponseDataAttributesType",
     "DeploymentRuleResponseDataAttributesUpdatedBy",
     "DeploymentRulesOptions",
+    "DerivedMetricAttributes",
+    "DerivedMetricCreateData",
+    "DerivedMetricCreateRequest",
+    "DerivedMetricData",
+    "DerivedMetricDefinition",
+    "DerivedMetricQuery",
+    "DerivedMetricResponse",
+    "DerivedMetricsType",
     "DetachCaseRequest",
     "DetachCaseRequestData",
     "DetachCaseRequestDataRelationships",

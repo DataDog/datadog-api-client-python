@@ -1,0 +1,35 @@
+{
+  "api": "Metrics",
+  "expected_status": 200,
+  "feature": "Metrics",
+  "id": "v2/Metrics/Get a derived metric returns \"OK\" response",
+  "operation_id": "GetDerivedMetric",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "metric_name",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "derived_metric.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/metrics/derived-metrics/{metric_name}"
+  },
+  "scenario": "Get a derived metric returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
