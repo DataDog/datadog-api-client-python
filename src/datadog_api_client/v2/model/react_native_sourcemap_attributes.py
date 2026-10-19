@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,16 +14,22 @@ from datadog_api_client.model_utils import (
 )
 
 
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.react_native_sourcemap_map_kind import ReactNativeSourcemapMapKind
+
+
 class ReactNativeSourcemapAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.react_native_sourcemap_map_kind import ReactNativeSourcemapMapKind
+
         return {
             "build_number": (str,),
             "bundle_name": (str,),
             "bundle_version": (str,),
             "created_at": (datetime,),
             "debug_id": (str,),
-            "mapkind": (str,),
+            "mapkind": (ReactNativeSourcemapMapKind,),
             "platform": (str,),
             "service": (str,),
             "size": (int,),
@@ -46,7 +52,7 @@ class ReactNativeSourcemapAttributes(ModelNormal):
     def __init__(
         self_,
         created_at: datetime,
-        mapkind: str,
+        mapkind: ReactNativeSourcemapMapKind,
         size: int,
         build_number: Union[str, UnsetType] = unset,
         bundle_name: Union[str, UnsetType] = unset,
@@ -75,8 +81,8 @@ class ReactNativeSourcemapAttributes(ModelNormal):
         :param debug_id: The debug identifier (UUID format).
         :type debug_id: str, optional
 
-        :param mapkind: The type of source map.
-        :type mapkind: str
+        :param mapkind: The type of source map. Always ``react`` for React Native source maps.
+        :type mapkind: ReactNativeSourcemapMapKind
 
         :param platform: The platform the source map was built for (e.g., ``ios`` , ``android`` ).
         :type platform: str, optional

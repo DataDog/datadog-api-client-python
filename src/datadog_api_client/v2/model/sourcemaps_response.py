@@ -21,6 +21,8 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.elf_sourcemap_data import ELFSourcemapData
     from datadog_api_client.v2.model.ndk_sourcemap_data import NDKSourcemapData
     from datadog_api_client.v2.model.il2_cpp_sourcemap_data import IL2CPPSourcemapData
+    from datadog_api_client.v2.model.wasm_sourcemap_data import WASMSourcemapData
+    from datadog_api_client.v2.model.portable_pdb_sourcemap_data import PortablePdbSourcemapData
 
 
 class SourcemapsResponse(ModelNormal):
@@ -49,6 +51,8 @@ class SourcemapsResponse(ModelNormal):
                 ELFSourcemapData,
                 NDKSourcemapData,
                 IL2CPPSourcemapData,
+                WASMSourcemapData,
+                PortablePdbSourcemapData,
             ]
         ],
         **kwargs,

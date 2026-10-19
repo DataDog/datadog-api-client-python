@@ -2901,6 +2901,7 @@ from datadog_api_client.v2.model.due_date_rules_response import DueDateRulesResp
 from datadog_api_client.v2.model.due_date_severity import DueDateSeverity
 from datadog_api_client.v2.model.elf_sourcemap_attributes import ELFSourcemapAttributes
 from datadog_api_client.v2.model.elf_sourcemap_data import ELFSourcemapData
+from datadog_api_client.v2.model.elf_sourcemap_map_kind import ELFSourcemapMapKind
 from datadog_api_client.v2.model.epss import EPSS
 from datadog_api_client.v2.model.elastic_cloud_detailed_index_stats_integration_dataflow_request import (
     ElasticCloudDetailedIndexStatsIntegrationDataflowRequest,
@@ -4106,6 +4107,7 @@ from datadog_api_client.v2.model.fleet_tracers_response_data_attributes import F
 from datadog_api_client.v2.model.fleet_tracers_response_meta import FleetTracersResponseMeta
 from datadog_api_client.v2.model.flutter_sourcemap_attributes import FlutterSourcemapAttributes
 from datadog_api_client.v2.model.flutter_sourcemap_data import FlutterSourcemapData
+from datadog_api_client.v2.model.flutter_sourcemap_map_kind import FlutterSourcemapMapKind
 from datadog_api_client.v2.model.form_data import FormData
 from datadog_api_client.v2.model.form_data_attributes import FormDataAttributes
 from datadog_api_client.v2.model.form_data_definition import FormDataDefinition
@@ -4610,8 +4612,10 @@ from datadog_api_client.v2.model.hourly_usage_response import HourlyUsageRespons
 from datadog_api_client.v2.model.hourly_usage_type import HourlyUsageType
 from datadog_api_client.v2.model.il2_cpp_sourcemap_attributes import IL2CPPSourcemapAttributes
 from datadog_api_client.v2.model.il2_cpp_sourcemap_data import IL2CPPSourcemapData
+from datadog_api_client.v2.model.il2_cpp_sourcemap_map_kind import IL2CPPSourcemapMapKind
 from datadog_api_client.v2.model.ios_sourcemap_attributes import IOSSourcemapAttributes
 from datadog_api_client.v2.model.ios_sourcemap_data import IOSSourcemapData
+from datadog_api_client.v2.model.ios_sourcemap_map_kind import IOSSourcemapMapKind
 from datadog_api_client.v2.model.ip_allowlist_attributes import IPAllowlistAttributes
 from datadog_api_client.v2.model.ip_allowlist_data import IPAllowlistData
 from datadog_api_client.v2.model.ip_allowlist_entry import IPAllowlistEntry
@@ -5293,8 +5297,10 @@ from datadog_api_client.v2.model.jsonapi_error_item_source import JSONAPIErrorIt
 from datadog_api_client.v2.model.jsonapi_error_response import JSONAPIErrorResponse
 from datadog_api_client.v2.model.js_sourcemap_attributes import JSSourcemapAttributes
 from datadog_api_client.v2.model.js_sourcemap_data import JSSourcemapData
+from datadog_api_client.v2.model.js_sourcemap_map_kind import JSSourcemapMapKind
 from datadog_api_client.v2.model.jvm_sourcemap_attributes import JVMSourcemapAttributes
 from datadog_api_client.v2.model.jvm_sourcemap_data import JVMSourcemapData
+from datadog_api_client.v2.model.jvm_sourcemap_map_kind import JVMSourcemapMapKind
 from datadog_api_client.v2.model.jira_account_attributes import JiraAccountAttributes
 from datadog_api_client.v2.model.jira_account_data import JiraAccountData
 from datadog_api_client.v2.model.jira_account_relationship import JiraAccountRelationship
@@ -6622,6 +6628,7 @@ from datadog_api_client.v2.model.mute_rule_update_request import MuteRuleUpdateR
 from datadog_api_client.v2.model.mute_rules_response import MuteRulesResponse
 from datadog_api_client.v2.model.ndk_sourcemap_attributes import NDKSourcemapAttributes
 from datadog_api_client.v2.model.ndk_sourcemap_data import NDKSourcemapData
+from datadog_api_client.v2.model.ndk_sourcemap_map_kind import NDKSourcemapMapKind
 from datadog_api_client.v2.model.network_health_insight import NetworkHealthInsight
 from datadog_api_client.v2.model.network_health_insight_attributes import NetworkHealthInsightAttributes
 from datadog_api_client.v2.model.network_health_insight_category import NetworkHealthInsightCategory
@@ -8314,6 +8321,9 @@ from datadog_api_client.v2.model.playlists_session import PlaylistsSession
 from datadog_api_client.v2.model.playlists_session_array import PlaylistsSessionArray
 from datadog_api_client.v2.model.playlists_session_data import PlaylistsSessionData
 from datadog_api_client.v2.model.playlists_session_data_attributes import PlaylistsSessionDataAttributes
+from datadog_api_client.v2.model.portable_pdb_sourcemap_attributes import PortablePdbSourcemapAttributes
+from datadog_api_client.v2.model.portable_pdb_sourcemap_data import PortablePdbSourcemapData
+from datadog_api_client.v2.model.portable_pdb_sourcemap_map_kind import PortablePdbSourcemapMapKind
 from datadog_api_client.v2.model.postmortem_attachment_request import PostmortemAttachmentRequest
 from datadog_api_client.v2.model.postmortem_attachment_request_attributes import PostmortemAttachmentRequestAttributes
 from datadog_api_client.v2.model.postmortem_attachment_request_data import PostmortemAttachmentRequestData
@@ -8938,6 +8948,7 @@ from datadog_api_client.v2.model.rum_warning import RUMWarning
 from datadog_api_client.v2.model.raw_error_budget_remaining import RawErrorBudgetRemaining
 from datadog_api_client.v2.model.react_native_sourcemap_attributes import ReactNativeSourcemapAttributes
 from datadog_api_client.v2.model.react_native_sourcemap_data import ReactNativeSourcemapData
+from datadog_api_client.v2.model.react_native_sourcemap_map_kind import ReactNativeSourcemapMapKind
 from datadog_api_client.v2.model.readiness_gate import ReadinessGate
 from datadog_api_client.v2.model.readiness_gate_threshold_type import ReadinessGateThresholdType
 from datadog_api_client.v2.model.recently_updated_entities_response import RecentlyUpdatedEntitiesResponse
@@ -12717,6 +12728,9 @@ from datadog_api_client.v2.model.vulnerability_severity import VulnerabilitySeve
 from datadog_api_client.v2.model.vulnerability_status import VulnerabilityStatus
 from datadog_api_client.v2.model.vulnerability_tool import VulnerabilityTool
 from datadog_api_client.v2.model.vulnerability_type import VulnerabilityType
+from datadog_api_client.v2.model.wasm_sourcemap_attributes import WASMSourcemapAttributes
+from datadog_api_client.v2.model.wasm_sourcemap_data import WASMSourcemapData
+from datadog_api_client.v2.model.wasm_sourcemap_map_kind import WASMSourcemapMapKind
 from datadog_api_client.v2.model.watch import Watch
 from datadog_api_client.v2.model.watch_data import WatchData
 from datadog_api_client.v2.model.watch_data_attributes import WatchDataAttributes
@@ -14973,6 +14987,7 @@ __all__ = [
     "DueDateSeverity",
     "ELFSourcemapAttributes",
     "ELFSourcemapData",
+    "ELFSourcemapMapKind",
     "EPSS",
     "ElasticCloudDetailedIndexStatsIntegrationDataflowRequest",
     "ElasticCloudDetailedIndexStatsIntegrationDataflowResponse",
@@ -15664,6 +15679,7 @@ __all__ = [
     "FleetTracersResponseMeta",
     "FlutterSourcemapAttributes",
     "FlutterSourcemapData",
+    "FlutterSourcemapMapKind",
     "FormData",
     "FormDataAttributes",
     "FormDataDefinition",
@@ -16046,8 +16062,10 @@ __all__ = [
     "HourlyUsageType",
     "IL2CPPSourcemapAttributes",
     "IL2CPPSourcemapData",
+    "IL2CPPSourcemapMapKind",
     "IOSSourcemapAttributes",
     "IOSSourcemapData",
+    "IOSSourcemapMapKind",
     "IPAllowlistAttributes",
     "IPAllowlistData",
     "IPAllowlistEntry",
@@ -16543,8 +16561,10 @@ __all__ = [
     "JSONAPIErrorResponse",
     "JSSourcemapAttributes",
     "JSSourcemapData",
+    "JSSourcemapMapKind",
     "JVMSourcemapAttributes",
     "JVMSourcemapData",
+    "JVMSourcemapMapKind",
     "JiraAccountAttributes",
     "JiraAccountData",
     "JiraAccountRelationship",
@@ -17516,6 +17536,7 @@ __all__ = [
     "MuteRulesResponse",
     "NDKSourcemapAttributes",
     "NDKSourcemapData",
+    "NDKSourcemapMapKind",
     "NetworkHealthInsight",
     "NetworkHealthInsightAttributes",
     "NetworkHealthInsightCategory",
@@ -18392,6 +18413,9 @@ __all__ = [
     "PlaylistsSessionArray",
     "PlaylistsSessionData",
     "PlaylistsSessionDataAttributes",
+    "PortablePdbSourcemapAttributes",
+    "PortablePdbSourcemapData",
+    "PortablePdbSourcemapMapKind",
     "PostmortemAttachmentRequest",
     "PostmortemAttachmentRequestAttributes",
     "PostmortemAttachmentRequestData",
@@ -18802,6 +18826,7 @@ __all__ = [
     "RawErrorBudgetRemaining",
     "ReactNativeSourcemapAttributes",
     "ReactNativeSourcemapData",
+    "ReactNativeSourcemapMapKind",
     "ReadinessGate",
     "ReadinessGateThresholdType",
     "RecentlyUpdatedEntitiesResponse",
@@ -21259,6 +21284,9 @@ __all__ = [
     "VulnerabilityStatus",
     "VulnerabilityTool",
     "VulnerabilityType",
+    "WASMSourcemapAttributes",
+    "WASMSourcemapData",
+    "WASMSourcemapMapKind",
     "Watch",
     "WatchData",
     "WatchDataAttributes",
