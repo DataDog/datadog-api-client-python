@@ -18,7 +18,9 @@ class ProcessSummaryAttributes(ModelNormal):
     def openapi_types(_):
         return {
             "cmdline": (str,),
+            "executable": (str,),
             "host": (str,),
+            "identifying_tags": ([str],),
             "pid": (int,),
             "ppid": (int,),
             "start": (str,),
@@ -29,7 +31,9 @@ class ProcessSummaryAttributes(ModelNormal):
 
     attribute_map = {
         "cmdline": "cmdline",
+        "executable": "executable",
         "host": "host",
+        "identifying_tags": "identifying_tags",
         "pid": "pid",
         "ppid": "ppid",
         "start": "start",
@@ -41,7 +45,9 @@ class ProcessSummaryAttributes(ModelNormal):
     def __init__(
         self_,
         cmdline: Union[str, UnsetType] = unset,
+        executable: Union[str, UnsetType] = unset,
         host: Union[str, UnsetType] = unset,
+        identifying_tags: Union[List[str], UnsetType] = unset,
         pid: Union[int, UnsetType] = unset,
         ppid: Union[int, UnsetType] = unset,
         start: Union[str, UnsetType] = unset,
@@ -56,8 +62,15 @@ class ProcessSummaryAttributes(ModelNormal):
         :param cmdline: Process command line.
         :type cmdline: str, optional
 
+        :param executable: Path to the process executable.
+        :type executable: str, optional
+
         :param host: Host running the process.
         :type host: str, optional
+
+        :param identifying_tags: Tags that uniquely identify the process: a host identity tag ( ``host`` , ``task_arn`` ,
+            or ``eks_fargate_node`` ) and a ``pid`` tag. Omitted if either tag is unavailable.
+        :type identifying_tags: [str], optional
 
         :param pid: Process ID.
         :type pid: int, optional
@@ -79,8 +92,12 @@ class ProcessSummaryAttributes(ModelNormal):
         """
         if cmdline is not unset:
             kwargs["cmdline"] = cmdline
+        if executable is not unset:
+            kwargs["executable"] = executable
         if host is not unset:
             kwargs["host"] = host
+        if identifying_tags is not unset:
+            kwargs["identifying_tags"] = identifying_tags
         if pid is not unset:
             kwargs["pid"] = pid
         if ppid is not unset:
