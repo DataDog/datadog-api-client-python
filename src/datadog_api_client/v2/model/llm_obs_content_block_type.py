@@ -17,7 +17,7 @@ class LLMObsContentBlockType(ModelSimple):
     Discriminator for a single `display_block` content block. Adding a
         variant requires coordinated changes in the frontend renderer.
 
-    :param value: Must be one of ["markdown", "header", "text", "json", "image", "widget", "llmobs_trace", "frontend"].
+    :param value: Must be one of ["markdown", "header", "text", "json", "image", "univiz", "llmobs_trace", "frontend"].
     :type value: str
     """
 
@@ -27,7 +27,7 @@ class LLMObsContentBlockType(ModelSimple):
         "text",
         "json",
         "image",
-        "widget",
+        "univiz",
         "llmobs_trace",
         "frontend",
     }
@@ -36,7 +36,7 @@ class LLMObsContentBlockType(ModelSimple):
     TEXT: ClassVar["LLMObsContentBlockType"]
     JSON: ClassVar["LLMObsContentBlockType"]
     IMAGE: ClassVar["LLMObsContentBlockType"]
-    WIDGET: ClassVar["LLMObsContentBlockType"]
+    UNIVIZ: ClassVar["LLMObsContentBlockType"]
     LLMOBS_TRACE: ClassVar["LLMObsContentBlockType"]
     FRONTEND: ClassVar["LLMObsContentBlockType"]
 
@@ -52,6 +52,6 @@ LLMObsContentBlockType.HEADER = LLMObsContentBlockType("header")
 LLMObsContentBlockType.TEXT = LLMObsContentBlockType("text")
 LLMObsContentBlockType.JSON = LLMObsContentBlockType("json")
 LLMObsContentBlockType.IMAGE = LLMObsContentBlockType("image")
-LLMObsContentBlockType.WIDGET = LLMObsContentBlockType("widget")
+LLMObsContentBlockType.UNIVIZ = LLMObsContentBlockType("univiz")
 LLMObsContentBlockType.LLMOBS_TRACE = LLMObsContentBlockType("llmobs_trace")
 LLMObsContentBlockType.FRONTEND = LLMObsContentBlockType("frontend")

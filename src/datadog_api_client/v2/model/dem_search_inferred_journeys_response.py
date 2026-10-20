@@ -3,35 +3,43 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, List
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    date,
-    datetime,
-    none_type,
-    UUID,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.dem_inferred_journey_item import DemInferredJourneyItem
+    from datadog_api_client.v2.model.dem_inferred_journey_candidate_data import DemInferredJourneyCandidateData
+    from datadog_api_client.v2.model.dem_inferred_journey_ignored_data import DemInferredJourneyIgnoredData
 
 
 class DemSearchInferredJourneysResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.dem_inferred_journey_item import DemInferredJourneyItem
+
         return {
-            "data": ([bool, date, datetime, dict, float, int, list, str, UUID, none_type],),
+            "data": ([DemInferredJourneyItem],),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: List[Any], **kwargs):
+    def __init__(
+        self_,
+        data: List[Union[DemInferredJourneyItem, DemInferredJourneyCandidateData, DemInferredJourneyIgnoredData]],
+        **kwargs,
+    ):
         """
         Response body for searching inferred journeys. Contains either candidate or ignored items depending on the ``status`` query parameter.
 
         :param data: List of inferred journey items matching the search criteria.
-        :type data: [bool, date, datetime, dict, float, int, list, str, UUID, none_type]
+        :type data: [DemInferredJourneyItem]
         """
         super().__init__(kwargs)
 
