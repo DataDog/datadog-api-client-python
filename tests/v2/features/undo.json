@@ -11080,6 +11080,30 @@
       "type": "safe"
     }
   },
+  "PublicListTemporaryGrantRequests": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "PublicGetTemporaryGrantRequest": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "PublicDecideTemporaryGrantRequest": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "PublicRevokeRequestedTemporaryGrant": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetUsageApplicationSecurityMonitoring": {
     "tag": "Usage Metering",
     "undo": {
@@ -11165,6 +11189,37 @@
     }
   },
   "GetUsageSummaryAvailableFields": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "PublicListMyTemporaryGrantRequests": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "PublicCreateTemporaryGrantRequest": {
+    "tag": "Usage Metering",
+    "undo": {
+      "operationId": "PublicCancelTemporaryGrantRequest",
+      "parameters": [
+        {
+          "name": "request_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "PublicCancelTemporaryGrantRequest": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "PublicGetMyTemporaryGrantRequest": {
     "tag": "Usage Metering",
     "undo": {
       "type": "safe"

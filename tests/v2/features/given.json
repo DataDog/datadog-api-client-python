@@ -2034,6 +2034,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\"data\":{\"type\":\"temporary_grant_requests\",\"attributes\":{\"total\":200,\"justification\":\"SDK temporary grant request test\"}}}"
+      }
+    ],
+    "step": "there is a valid \"temporary_grant_request\" in the system",
+    "key": "temporary_grant_request",
+    "tag": "Usage Metering",
+    "operationId": "PublicCreateTemporaryGrantRequest"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": [\n    {\n      \"relationships\": {\"user\": {\"data\": {\n        \"id\": \"{{ user.data.id }}\",\n        \"type\": \"{{ user.data.type }}\"\n      }}},\n      \"type\": \"user_invitations\"\n    }\n  ]\n}"
       }
     ],

@@ -1,0 +1,34 @@
+{
+  "api": "UsageMetering",
+  "expected_status": 201,
+  "feature": "Usage Metering",
+  "id": "v2/Usage Metering/Create a temporary grant request with a justification",
+  "operation_id": "PublicCreateTemporaryGrantRequest",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "TemporaryGrantRequestCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "justification": "SDK temporary grant request test",
+            "total": 200
+          },
+          "type": "temporary_grant_requests"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/usage/temporary-grant-requests"
+  },
+  "scenario": "Create a temporary grant request with a justification",
+  "schema_version": 1,
+  "version": "v2"
+}

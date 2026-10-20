@@ -15,10 +15,16 @@ from datadog_api_client.model_utils import (
     get_attribute_from_path,
     UnsetType,
     unset,
+    UUID,
 )
 from datadog_api_client.v2.model.active_billing_dimensions_response import ActiveBillingDimensionsResponse
 from datadog_api_client.v2.model.monthly_cost_attribution_response import MonthlyCostAttributionResponse
 from datadog_api_client.v2.model.sort_direction import SortDirection
+from datadog_api_client.v2.model.temporary_grant_request_list_response import TemporaryGrantRequestListResponse
+from datadog_api_client.v2.model.temporary_grant_request_status import TemporaryGrantRequestStatus
+from datadog_api_client.v2.model.temporary_grant_request_data import TemporaryGrantRequestData
+from datadog_api_client.v2.model.temporary_grant_request_response import TemporaryGrantRequestResponse
+from datadog_api_client.v2.model.temporary_grant_request_decision_request import TemporaryGrantRequestDecisionRequest
 from datadog_api_client.v2.model.usage_application_security_monitoring_response import (
     UsageApplicationSecurityMonitoringResponse,
 )
@@ -36,6 +42,7 @@ from datadog_api_client.v2.model.usage_quotas_create_request import UsageQuotasC
 from datadog_api_client.v2.model.usage_quota_response import UsageQuotaResponse
 from datadog_api_client.v2.model.usage_quota_update_request import UsageQuotaUpdateRequest
 from datadog_api_client.v2.model.usage_summary_available_fields_response import UsageSummaryAvailableFieldsResponse
+from datadog_api_client.v2.model.temporary_grant_request_create_request import TemporaryGrantRequestCreateRequest
 from datadog_api_client.v2.model.usage_attribution_types_response import UsageAttributionTypesResponse
 
 
@@ -616,6 +623,221 @@ class UsageMeteringApi:
             },
             headers_map={
                 "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._public_cancel_temporary_grant_request_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/usage/temporary-grant-requests/{request_id}",
+                "operation_id": "public_cancel_temporary_grant_request",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "request_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "request_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._public_create_temporary_grant_request_endpoint = _Endpoint(
+            settings={
+                "response_type": (TemporaryGrantRequestResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/usage/temporary-grant-requests",
+                "operation_id": "public_create_temporary_grant_request",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (TemporaryGrantRequestCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._public_decide_temporary_grant_request_endpoint = _Endpoint(
+            settings={
+                "response_type": (TemporaryGrantRequestResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/usage/admin/temporary-grant-requests/{request_id}/decision",
+                "operation_id": "public_decide_temporary_grant_request",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "request_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "request_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (TemporaryGrantRequestDecisionRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._public_get_my_temporary_grant_request_endpoint = _Endpoint(
+            settings={
+                "response_type": (TemporaryGrantRequestResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/usage/temporary-grant-requests/{request_id}",
+                "operation_id": "public_get_my_temporary_grant_request",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "request_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "request_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._public_get_temporary_grant_request_endpoint = _Endpoint(
+            settings={
+                "response_type": (TemporaryGrantRequestResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/usage/admin/temporary-grant-requests/{request_id}",
+                "operation_id": "public_get_temporary_grant_request",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "request_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "request_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._public_list_my_temporary_grant_requests_endpoint = _Endpoint(
+            settings={
+                "response_type": (TemporaryGrantRequestListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/usage/temporary-grant-requests",
+                "operation_id": "public_list_my_temporary_grant_requests",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "filter_status": {
+                    "openapi_types": (TemporaryGrantRequestStatus,),
+                    "attribute": "filter[status]",
+                    "location": "query",
+                },
+                "page_limit": {
+                    "validation": {
+                        "inclusive_maximum": 100,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
+                    "location": "query",
+                },
+                "page_cursor": {
+                    "openapi_types": (UUID,),
+                    "attribute": "page[cursor]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._public_list_temporary_grant_requests_endpoint = _Endpoint(
+            settings={
+                "response_type": (TemporaryGrantRequestListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/usage/admin/temporary-grant-requests",
+                "operation_id": "public_list_temporary_grant_requests",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "filter_status": {
+                    "openapi_types": (TemporaryGrantRequestStatus,),
+                    "attribute": "filter[status]",
+                    "location": "query",
+                },
+                "page_limit": {
+                    "validation": {
+                        "inclusive_maximum": 100,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
+                    "location": "query",
+                },
+                "page_cursor": {
+                    "openapi_types": (UUID,),
+                    "attribute": "page[cursor]",
+                    "location": "query",
+                },
+                "filter_requested_by_user_id": {
+                    "openapi_types": (UUID,),
+                    "attribute": "filter[requested_by_user_id]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._public_revoke_requested_temporary_grant_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/usage/admin/temporary-grant-requests/{request_id}/grant",
+                "operation_id": "public_revoke_requested_temporary_grant",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "request_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "request_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
             },
             api_client=api_client,
         )
@@ -1312,6 +1534,273 @@ class UsageMeteringApi:
             "kwargs": kwargs,
         }
         return endpoint.call_with_http_info_paginated(pagination)
+
+    def public_cancel_temporary_grant_request(
+        self,
+        request_id: UUID,
+    ) -> None:
+        """Cancel your temporary grant request.
+
+        Cancel an owned pending request. Retains request history and does not create or revoke a grant. Requires an authenticated human user and the temporary-grants feature enabled for the organization. Service-account credentials are unsupported. Request status remains approved after expiry, revocation, or replacement.
+
+        :param request_id: The temporary grant request UUID.
+        :type request_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["request_id"] = request_id
+
+        return self._public_cancel_temporary_grant_request_endpoint.call_with_http_info(**kwargs)
+
+    def public_create_temporary_grant_request(
+        self,
+        body: TemporaryGrantRequestCreateRequest,
+    ) -> TemporaryGrantRequestResponse:
+        """Create a temporary grant request.
+
+        Submit a request for the authenticated human user with a target monthly limit in positive whole AI credits, justification, and optional expiry. Fractional credits are not accepted. Requires an authenticated human user and the temporary-grants feature enabled for the organization. Service-account credentials are unsupported. Request status remains approved after expiry, revocation, or replacement.
+
+        :type body: TemporaryGrantRequestCreateRequest
+        :rtype: TemporaryGrantRequestResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._public_create_temporary_grant_request_endpoint.call_with_http_info(**kwargs)
+
+    def public_decide_temporary_grant_request(
+        self,
+        request_id: UUID,
+        body: TemporaryGrantRequestDecisionRequest,
+    ) -> TemporaryGrantRequestResponse:
+        """Decide a temporary grant request.
+
+        Approve or deny the immutable submitted terms. Approval atomically writes the grant, audit, and request decision. An expired request cannot be approved. Requires Billing Edit. Requires an authenticated human user and the temporary-grants feature enabled for the organization. Service-account credentials are unsupported. Request status remains approved after expiry, revocation, or replacement.
+
+        :param request_id: The temporary grant request UUID.
+        :type request_id: UUID
+        :type body: TemporaryGrantRequestDecisionRequest
+        :rtype: TemporaryGrantRequestResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["request_id"] = request_id
+
+        kwargs["body"] = body
+
+        return self._public_decide_temporary_grant_request_endpoint.call_with_http_info(**kwargs)
+
+    def public_get_my_temporary_grant_request(
+        self,
+        request_id: UUID,
+    ) -> TemporaryGrantRequestResponse:
+        """Get your temporary grant request.
+
+        Read an owned request, its decision, and its linked grant state. Requires an authenticated human user and the temporary-grants feature enabled for the organization. Service-account credentials are unsupported. Request status remains approved after expiry, revocation, or replacement.
+
+        :param request_id: The temporary grant request UUID.
+        :type request_id: UUID
+        :rtype: TemporaryGrantRequestResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["request_id"] = request_id
+
+        return self._public_get_my_temporary_grant_request_endpoint.call_with_http_info(**kwargs)
+
+    def public_get_temporary_grant_request(
+        self,
+        request_id: UUID,
+    ) -> TemporaryGrantRequestResponse:
+        """Get an organization temporary grant request.
+
+        Read an organization request, justification, decision, and linked grant state. Requires Billing Edit. Requires an authenticated human user and the temporary-grants feature enabled for the organization. Service-account credentials are unsupported. Request status remains approved after expiry, revocation, or replacement.
+
+        :param request_id: The temporary grant request UUID.
+        :type request_id: UUID
+        :rtype: TemporaryGrantRequestResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["request_id"] = request_id
+
+        return self._public_get_temporary_grant_request_endpoint.call_with_http_info(**kwargs)
+
+    def public_list_my_temporary_grant_requests(
+        self,
+        *,
+        filter_status: Union[TemporaryGrantRequestStatus, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+        page_cursor: Union[UUID, UnsetType] = unset,
+    ) -> TemporaryGrantRequestListResponse:
+        """List your temporary grant requests.
+
+        List the authenticated user's own requests, including decided requests. Other users' requests are never included. Requires an authenticated human user and the temporary-grants feature enabled for the organization. Service-account credentials are unsupported. Request status remains approved after expiry, revocation, or replacement.
+
+        :param filter_status: Optional status; defaults to all statuses.
+        :type filter_status: TemporaryGrantRequestStatus, optional
+        :param page_limit: Page size, from 1 to 100.
+        :type page_limit: int, optional
+        :param page_cursor: UUID cursor from meta.page.next_cursor.
+        :type page_cursor: UUID, optional
+        :rtype: TemporaryGrantRequestListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if filter_status is not unset:
+            kwargs["filter_status"] = filter_status
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
+        return self._public_list_my_temporary_grant_requests_endpoint.call_with_http_info(**kwargs)
+
+    def public_list_my_temporary_grant_requests_with_pagination(
+        self,
+        *,
+        filter_status: Union[TemporaryGrantRequestStatus, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+        page_cursor: Union[UUID, UnsetType] = unset,
+    ) -> collections.abc.Iterable[TemporaryGrantRequestData]:
+        """List your temporary grant requests.
+
+        Provide a paginated version of :meth:`public_list_my_temporary_grant_requests`, returning all items.
+
+        :param filter_status: Optional status; defaults to all statuses.
+        :type filter_status: TemporaryGrantRequestStatus, optional
+        :param page_limit: Page size, from 1 to 100.
+        :type page_limit: int, optional
+        :param page_cursor: UUID cursor from meta.page.next_cursor.
+        :type page_cursor: UUID, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[TemporaryGrantRequestData]
+        """
+        kwargs: Dict[str, Any] = {}
+        if filter_status is not unset:
+            kwargs["filter_status"] = filter_status
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
+        local_page_size = get_attribute_from_path(kwargs, "page_limit", 50)
+        endpoint = self._public_list_my_temporary_grant_requests_endpoint
+        set_attribute_from_path(kwargs, "page_limit", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "cursor_param": "page_cursor",
+            "cursor_path": "meta.page.next_cursor",
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
+
+    def public_list_temporary_grant_requests(
+        self,
+        *,
+        filter_status: Union[TemporaryGrantRequestStatus, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+        page_cursor: Union[UUID, UnsetType] = unset,
+        filter_requested_by_user_id: Union[UUID, UnsetType] = unset,
+    ) -> TemporaryGrantRequestListResponse:
+        """List organization temporary grant requests.
+
+        List all request statuses within the authenticated organization. Filter by pending status for the review queue. Requires Billing Edit, including for reads. Requires an authenticated human user and the temporary-grants feature enabled for the organization. Service-account credentials are unsupported. Request status remains approved after expiry, revocation, or replacement.
+
+        :param filter_status: Optional status; defaults to all statuses.
+        :type filter_status: TemporaryGrantRequestStatus, optional
+        :param page_limit: Page size, from 1 to 100.
+        :type page_limit: int, optional
+        :param page_cursor: UUID cursor from meta.page.next_cursor.
+        :type page_cursor: UUID, optional
+        :param filter_requested_by_user_id: Filter by requester UUID within the authenticated organization.
+        :type filter_requested_by_user_id: UUID, optional
+        :rtype: TemporaryGrantRequestListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if filter_status is not unset:
+            kwargs["filter_status"] = filter_status
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
+        if filter_requested_by_user_id is not unset:
+            kwargs["filter_requested_by_user_id"] = filter_requested_by_user_id
+
+        return self._public_list_temporary_grant_requests_endpoint.call_with_http_info(**kwargs)
+
+    def public_list_temporary_grant_requests_with_pagination(
+        self,
+        *,
+        filter_status: Union[TemporaryGrantRequestStatus, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+        page_cursor: Union[UUID, UnsetType] = unset,
+        filter_requested_by_user_id: Union[UUID, UnsetType] = unset,
+    ) -> collections.abc.Iterable[TemporaryGrantRequestData]:
+        """List organization temporary grant requests.
+
+        Provide a paginated version of :meth:`public_list_temporary_grant_requests`, returning all items.
+
+        :param filter_status: Optional status; defaults to all statuses.
+        :type filter_status: TemporaryGrantRequestStatus, optional
+        :param page_limit: Page size, from 1 to 100.
+        :type page_limit: int, optional
+        :param page_cursor: UUID cursor from meta.page.next_cursor.
+        :type page_cursor: UUID, optional
+        :param filter_requested_by_user_id: Filter by requester UUID within the authenticated organization.
+        :type filter_requested_by_user_id: UUID, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[TemporaryGrantRequestData]
+        """
+        kwargs: Dict[str, Any] = {}
+        if filter_status is not unset:
+            kwargs["filter_status"] = filter_status
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
+        if filter_requested_by_user_id is not unset:
+            kwargs["filter_requested_by_user_id"] = filter_requested_by_user_id
+
+        local_page_size = get_attribute_from_path(kwargs, "page_limit", 50)
+        endpoint = self._public_list_temporary_grant_requests_endpoint
+        set_attribute_from_path(kwargs, "page_limit", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "cursor_param": "page_cursor",
+            "cursor_path": "meta.page.next_cursor",
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
+
+    def public_revoke_requested_temporary_grant(
+        self,
+        request_id: UUID,
+    ) -> None:
+        """Revoke a requested temporary grant.
+
+        Revoke only the grant still associated with this approved request. Request and audit history remain. A stale request cannot revoke a replacement grant. Requires Billing Edit. Requires an authenticated human user and the temporary-grants feature enabled for the organization. Service-account credentials are unsupported. Request status remains approved after expiry, revocation, or replacement.
+
+        :param request_id: The temporary grant request UUID.
+        :type request_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["request_id"] = request_id
+
+        return self._public_revoke_requested_temporary_grant_endpoint.call_with_http_info(**kwargs)
 
     def update_quota(
         self,

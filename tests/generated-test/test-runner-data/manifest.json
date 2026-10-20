@@ -12358,6 +12358,20 @@
     {
       "feature": "Usage Metering",
       "feature_file": "../../v2/features/usage_metering.feature",
+      "file": "v2/usage-metering/create-a-temporary-grant-request-with-a-justification.json",
+      "scenario": "Create a temporary grant request with a justification",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
+      "feature_file": "../../v2/features/usage_metering.feature",
+      "file": "v2/usage-metering/deny-a-missing-temporary-grant-request-returns-not-found.json",
+      "scenario": "Deny a missing temporary grant request returns Not Found",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
+      "feature_file": "../../v2/features/usage_metering.feature",
       "file": "v2/usage-metering/get-monthly-cost-attribution-returns-bad-request-response.json",
       "scenario": "Get Monthly Cost Attribution returns \"Bad Request\" response",
       "version": "v2"
@@ -12430,6 +12444,20 @@
       "feature_file": "../../v2/features/usage_metering.feature",
       "file": "v2/usage-metering/getestimatedcostbyorg-with-start-month-returns-ok-response.json",
       "scenario": "GetEstimatedCostByOrg with start_month returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
+      "feature_file": "../../v2/features/usage_metering.feature",
+      "file": "v2/usage-metering/list-your-pending-temporary-grant-requests.json",
+      "scenario": "List your pending temporary grant requests",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
+      "feature_file": "../../v2/features/usage_metering.feature",
+      "file": "v2/usage-metering/read-an-owned-temporary-grant-request.json",
+      "scenario": "Read an owned temporary grant request",
       "version": "v2"
     },
     {

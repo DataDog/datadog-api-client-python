@@ -1,0 +1,51 @@
+{
+  "api": "UsageMetering",
+  "expected_status": 200,
+  "feature": "Usage Metering",
+  "id": "v2/Usage Metering/List your pending temporary grant requests",
+  "operation_id": "PublicListMyTemporaryGrantRequests",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[status]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": "TemporaryGrantRequestStatus",
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "pending"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "page[limit]",
+        "required": false,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 1
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/usage/temporary-grant-requests"
+  },
+  "scenario": "List your pending temporary grant requests",
+  "schema_version": 1,
+  "version": "v2"
+}
