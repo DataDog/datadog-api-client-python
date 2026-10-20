@@ -4312,6 +4312,845 @@
     },
     {
       "feature": "Feature Flags",
+      "frozen_at": "2026-10-16T20:20:29.850359Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Metadata with current timestamp.",
+                    "last_updated_at": "2026-10-16T20:20:29Z"
+                  },
+                  "type": "saved-filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/feature-flags/saved-filters/a8c393b4-3a9c-48fd-aa48-402c97e8d9c9",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a8c393b4-3a9c-48fd-aa48-402c97e8d9c9\",\"type\":\"saved-filters\",\"attributes\":{\"created_at\":\"2026-10-16T20:20:29Z\",\"created_by\":\"550e8400-e29b-41d4-a716-446655440091\",\"creation_type\":\"RULES\",\"description\":\"Metadata with current timestamp.\",\"name\":\"patchSavedFilterTest-concurrency-437ebfe7\",\"targeting_rules\":[{\"id\":\"6574b030-a2c7-4cd4-8adf-b10fa11c6701\",\"conditions\":[{\"id\":\"53bb120f-9a9d-4c05-a500-c89d4a51d1ad\",\"operator\":\"ONE_OF\",\"attribute\":\"user_id\",\"value\":[\"test-user-1\"]}]}],\"updated_at\":\"2026-10-16T20:20:30Z\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Patch a saved filter accepts the current timestamp for metadata",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-10-16T20:20:29.969751Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "last_updated_at": "2026-10-16T20:20:30Z",
+                    "targeting_rules": [
+                      {
+                        "conditions": [
+                          {
+                            "attribute": "user_id",
+                            "operator": "ONE_OF",
+                            "value": [
+                              "test-user-2"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "saved-filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/feature-flags/saved-filters/a8c393b4-3a9c-48fd-aa48-402c97e8d9c9",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a8c393b4-3a9c-48fd-aa48-402c97e8d9c9\",\"type\":\"saved-filters\",\"attributes\":{\"created_at\":\"2026-10-16T20:20:29Z\",\"created_by\":\"550e8400-e29b-41d4-a716-446655440091\",\"creation_type\":\"RULES\",\"description\":\"Metadata with current timestamp.\",\"name\":\"patchSavedFilterTest-concurrency-437ebfe7\",\"targeting_rules\":[{\"id\":\"efe993b9-2792-443e-838e-509ee7ee5d89\",\"conditions\":[{\"id\":\"23ba234c-a66f-4a34-9678-524d0de9742a\",\"operator\":\"ONE_OF\",\"attribute\":\"user_id\",\"value\":[\"test-user-2\"]}]}],\"updated_at\":\"2026-10-16T20:20:30Z\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Patch a saved filter accepts the current timestamp for rules",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-10-16T20:15:10.461609Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": ""
+                  },
+                  "type": "saved-filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/feature-flags/saved-filters/2cfc7949-7eb4-4d76-b1b8-d1aa9b565535",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"2cfc7949-7eb4-4d76-b1b8-d1aa9b565535\",\"type\":\"saved-filters\",\"attributes\":{\"created_at\":\"2026-10-16T20:15:09Z\",\"created_by\":\"550e8400-e29b-41d4-a716-446655440091\",\"creation_type\":\"RULES\",\"description\":\"\",\"name\":\"patchSavedFilterTest-null-157e7ff3\",\"targeting_rules\":[{\"id\":\"666fb698-8e0a-436b-b269-d008c3b5c860\",\"conditions\":[{\"id\":\"fb5218f6-2c90-42f0-ab6d-74d11ab3d1d8\",\"operator\":\"ONE_OF\",\"attribute\":\"org_id\",\"value\":[\"test-org-1\"]}]}],\"updated_at\":\"2026-10-16T20:15:10Z\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Patch a saved filter clears the description with an empty string",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-10-16T20:15:10.283978Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": null,
+                    "name": "patchSavedFilterTest-null-157e7ff3"
+                  },
+                  "type": "saved-filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/feature-flags/saved-filters/2cfc7949-7eb4-4d76-b1b8-d1aa9b565535",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"2cfc7949-7eb4-4d76-b1b8-d1aa9b565535\",\"type\":\"saved-filters\",\"attributes\":{\"created_at\":\"2026-10-16T20:15:09Z\",\"created_by\":\"550e8400-e29b-41d4-a716-446655440091\",\"creation_type\":\"RULES\",\"description\":\"Combined synthetic test update.\",\"name\":\"patchSavedFilterTest-null-157e7ff3\",\"targeting_rules\":[{\"id\":\"666fb698-8e0a-436b-b269-d008c3b5c860\",\"conditions\":[{\"id\":\"fb5218f6-2c90-42f0-ab6d-74d11ab3d1d8\",\"operator\":\"ONE_OF\",\"attribute\":\"org_id\",\"value\":[\"test-org-1\"]}]}],\"updated_at\":\"2026-10-16T20:15:10Z\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Patch a saved filter preserves a null description",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-10-16T20:15:11.650679Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "patchSavedFilterTest-LIST-157e7ff3"
+                  },
+                  "type": "saved-filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/feature-flags/saved-filters/2cfc7949-7eb4-4d76-b1b8-d1aa9b565535",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"409\",\"title\":\"Conflict\",\"detail\":\"a saved filter with this name already exists: conflict occurred\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Conflict",
+            "status": 409
+          }
+        }
+      ],
+      "scenario": "Patch a saved filter rejects a duplicate name",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-10-16T20:15:10.737063Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": null
+                  },
+                  "type": "saved-filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/feature-flags/saved-filters/2cfc7949-7eb4-4d76-b1b8-d1aa9b565535",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"at least one field must be provided\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Patch a saved filter rejects a null-only update",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-10-16T20:20:30.337845Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "last_updated_at": "2026-10-16T20:20:30Z"
+                  },
+                  "type": "saved-filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/feature-flags/saved-filters/a8c393b4-3a9c-48fd-aa48-402c97e8d9c9",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"at least one field must be provided\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Patch a saved filter rejects a timestamp-only update",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-10-16T20:15:10.829934Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": ""
+                  },
+                  "type": "saved-filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/feature-flags/saved-filters/2cfc7949-7eb4-4d76-b1b8-d1aa9b565535",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"name must not be empty\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Patch a saved filter rejects an empty name",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-10-16T20:15:11.185268Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Not applied.",
+                    "last_updated_at": "invalid"
+                  },
+                  "type": "saved-filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/feature-flags/saved-filters/2cfc7949-7eb4-4d76-b1b8-d1aa9b565535",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"last_updated_at must be a valid RFC3339 timestamp\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Patch a saved filter rejects an invalid timestamp",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-10-16T20:15:10.983440Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "targeting_rules": []
+                  },
+                  "type": "saved-filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/feature-flags/saved-filters/2cfc7949-7eb4-4d76-b1b8-d1aa9b565535",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"targeting_rules\\\" failed min validation\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Patch a saved filter rejects empty targeting rules",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-10-16T20:15:11.075942Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "targeting_rules": [
+                      {
+                        "conditions": [
+                          {
+                            "attribute": "user_id",
+                            "operator": "ONE_OF",
+                            "saved_filter_id": "d8e3a81b-1505-4600-99c6-c563d01d46b1",
+                            "value": [
+                              "test-user-1"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "saved-filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/feature-flags/saved-filters/2cfc7949-7eb4-4d76-b1b8-d1aa9b565535",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"targeting rule 0 condition 0: saved filters cannot reference other saved filters\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Patch a saved filter rejects nested saved filters",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-10-16T20:20:30.141351Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "last_updated_at": "2020-01-01T00:00:00Z",
+                    "targeting_rules": [
+                      {
+                        "conditions": [
+                          {
+                            "attribute": "user_id",
+                            "operator": "ONE_OF",
+                            "value": [
+                              "not-applied"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "saved-filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/feature-flags/saved-filters/a8c393b4-3a9c-48fd-aa48-402c97e8d9c9",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"409\",\"title\":\"Conflict\",\"detail\":\"saved filter has been modified since you last fetched it; please refresh and retry: conflict occurred\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Conflict",
+            "status": 409
+          }
+        }
+      ],
+      "scenario": "Patch a saved filter rejects stale rule updates",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-10-16T20:15:09.936504Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "targeting_rules": [
+                      {
+                        "conditions": [
+                          {
+                            "attribute": "email",
+                            "operator": "ONE_OF",
+                            "value": [
+                              "test@example.com"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "saved-filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/feature-flags/saved-filters/2cfc7949-7eb4-4d76-b1b8-d1aa9b565535",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"2cfc7949-7eb4-4d76-b1b8-d1aa9b565535\",\"type\":\"saved-filters\",\"attributes\":{\"created_at\":\"2026-10-16T20:15:09Z\",\"created_by\":\"550e8400-e29b-41d4-a716-446655440091\",\"creation_type\":\"RULES\",\"description\":\"Original synthetic test description.\",\"name\":\"patchSavedFilterTest-renamed-157e7ff3\",\"targeting_rules\":[{\"id\":\"d2477e54-e8d3-4681-a61d-27475a3a15f0\",\"conditions\":[{\"id\":\"70246a9c-a20e-4ec1-b8e8-498338fa2b58\",\"operator\":\"ONE_OF\",\"attribute\":\"email\",\"value\":[\"test@example.com\"]}]}],\"updated_at\":\"2026-10-16T20:15:10Z\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Patch a saved filter replaces rules and preserves metadata",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-10-16T20:15:09.710568Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "targeting_rules": [
+                      {
+                        "conditions": [
+                          {
+                            "attribute": "user_id",
+                            "operator": "ONE_OF",
+                            "value": [
+                              "test-user-3"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "saved-filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/feature-flags/saved-filters/d8e3a81b-1505-4600-99c6-c563d01d46b1",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"d8e3a81b-1505-4600-99c6-c563d01d46b1\",\"type\":\"saved-filters\",\"attributes\":{\"created_at\":\"2026-10-16T20:15:09Z\",\"created_by\":\"550e8400-e29b-41d4-a716-446655440091\",\"creation_type\":\"LIST\",\"description\":\"Updated synthetic test description.\",\"name\":\"patchSavedFilterTest-LIST-157e7ff3\",\"targeting_rules\":[{\"id\":\"1257126b-c18d-49dc-827d-75c72fe023bb\",\"conditions\":[{\"id\":\"9935e8c2-4cd8-44b9-89cd-1b24f2a9442a\",\"operator\":\"ONE_OF\",\"attribute\":\"user_id\",\"value\":[\"test-user-3\"]}]}],\"updated_at\":\"2026-10-16T20:15:09Z\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Patch a saved filter replaces the rules of a saved list",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-10-16T20:15:10.643890Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {},
+                  "type": "saved-filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/feature-flags/saved-filters/2cfc7949-7eb4-4d76-b1b8-d1aa9b565535",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"at least one field must be provided\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Patch a saved filter returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-10-16T20:15:11.406641Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Not applied.",
+                    "last_updated_at": "2020-01-01T00:00:00Z"
+                  },
+                  "type": "saved-filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/feature-flags/saved-filters/2cfc7949-7eb4-4d76-b1b8-d1aa9b565535",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"409\",\"title\":\"Conflict\",\"detail\":\"saved filter has been modified since you last fetched it; please refresh and retry: conflict occurred\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Conflict",
+            "status": 409
+          }
+        }
+      ],
+      "scenario": "Patch a saved filter returns \"Conflict\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-10-16T20:15:11.282379Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Not applied."
+                  },
+                  "type": "saved-filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/feature-flags/saved-filters/00000000-0000-0000-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"saved filter not found or already deleted: record not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Patch a saved filter returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-10-16T20:15:09.418909Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "patchSavedFilterTest-renamed-157e7ff3"
+                  },
+                  "type": "saved-filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/feature-flags/saved-filters/2cfc7949-7eb4-4d76-b1b8-d1aa9b565535",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"2cfc7949-7eb4-4d76-b1b8-d1aa9b565535\",\"type\":\"saved-filters\",\"attributes\":{\"created_at\":\"2026-10-16T20:15:09Z\",\"created_by\":\"550e8400-e29b-41d4-a716-446655440091\",\"creation_type\":\"RULES\",\"description\":\"Original synthetic test description.\",\"name\":\"patchSavedFilterTest-renamed-157e7ff3\",\"targeting_rules\":[{\"id\":\"b6cb0903-79ec-42af-bd1c-139a017416d2\",\"conditions\":[{\"id\":\"ba1e08f4-ce3e-420d-9c9e-f0112edd6976\",\"operator\":\"ONE_OF\",\"attribute\":\"user_id\",\"value\":[\"test-user-1\",\"test-user-2\"]}]}],\"updated_at\":\"2026-10-16T20:15:09Z\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Patch a saved filter returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-10-16T20:15:10.111275Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Combined synthetic test update.",
+                    "name": "patchSavedFilterTest-combined-157e7ff3",
+                    "targeting_rules": [
+                      {
+                        "conditions": [
+                          {
+                            "attribute": "org_id",
+                            "operator": "ONE_OF",
+                            "value": [
+                              "test-org-1"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "type": "saved-filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/feature-flags/saved-filters/2cfc7949-7eb4-4d76-b1b8-d1aa9b565535",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"2cfc7949-7eb4-4d76-b1b8-d1aa9b565535\",\"type\":\"saved-filters\",\"attributes\":{\"created_at\":\"2026-10-16T20:15:09Z\",\"created_by\":\"550e8400-e29b-41d4-a716-446655440091\",\"creation_type\":\"RULES\",\"description\":\"Combined synthetic test update.\",\"name\":\"patchSavedFilterTest-combined-157e7ff3\",\"targeting_rules\":[{\"id\":\"666fb698-8e0a-436b-b269-d008c3b5c860\",\"conditions\":[{\"id\":\"fb5218f6-2c90-42f0-ab6d-74d11ab3d1d8\",\"operator\":\"ONE_OF\",\"attribute\":\"org_id\",\"value\":[\"test-org-1\"]}]}],\"updated_at\":\"2026-10-16T20:15:10Z\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Patch a saved filter updates metadata and rules together",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-10-16T20:15:09.584831Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "description": "Updated synthetic test description."
+                  },
+                  "type": "saved-filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/feature-flags/saved-filters/d8e3a81b-1505-4600-99c6-c563d01d46b1",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"d8e3a81b-1505-4600-99c6-c563d01d46b1\",\"type\":\"saved-filters\",\"attributes\":{\"created_at\":\"2026-10-16T20:15:09Z\",\"created_by\":\"550e8400-e29b-41d4-a716-446655440091\",\"creation_type\":\"LIST\",\"description\":\"Updated synthetic test description.\",\"name\":\"patchSavedFilterTest-LIST-157e7ff3\",\"targeting_rules\":[{\"id\":\"5cf3c126-8342-4187-9d2f-1b04a6cd0d97\",\"conditions\":[{\"id\":\"c4ac8587-d84d-4b1b-8e96-d347aca28f82\",\"operator\":\"ONE_OF\",\"attribute\":\"user_id\",\"value\":[\"test-user-1\",\"test-user-2\"]}]}],\"updated_at\":\"2026-10-16T20:15:09Z\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Patch a saved filter updates only the description of a saved list",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
       "frozen_at": "2026-04-22T20:15:57.687Z",
       "interactions": [
         {

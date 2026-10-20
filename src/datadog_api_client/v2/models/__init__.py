@@ -8270,6 +8270,11 @@ from datadog_api_client.v2.model.patch_notification_rule_parameters_data import 
 from datadog_api_client.v2.model.patch_notification_rule_parameters_data_attributes import (
     PatchNotificationRuleParametersDataAttributes,
 )
+from datadog_api_client.v2.model.patch_saved_filter_attributes import PatchSavedFilterAttributes
+from datadog_api_client.v2.model.patch_saved_filter_conflict_response import PatchSavedFilterConflictResponse
+from datadog_api_client.v2.model.patch_saved_filter_data import PatchSavedFilterData
+from datadog_api_client.v2.model.patch_saved_filter_forbidden_response import PatchSavedFilterForbiddenResponse
+from datadog_api_client.v2.model.patch_saved_filter_request import PatchSavedFilterRequest
 from datadog_api_client.v2.model.patch_status_page_request import PatchStatusPageRequest
 from datadog_api_client.v2.model.patch_status_page_request_data import PatchStatusPageRequestData
 from datadog_api_client.v2.model.patch_status_page_request_data_attributes import PatchStatusPageRequestDataAttributes
@@ -9565,14 +9570,27 @@ from datadog_api_client.v2.model.sast_ruleset_data import SastRulesetData
 from datadog_api_client.v2.model.sast_ruleset_data_attributes import SastRulesetDataAttributes
 from datadog_api_client.v2.model.sast_ruleset_response import SastRulesetResponse
 from datadog_api_client.v2.model.sast_rulesets_response import SastRulesetsResponse
+from datadog_api_client.v2.model.saved_filter_api_error_response import SavedFilterAPIErrorResponse
+from datadog_api_client.v2.model.saved_filter_approval_conflict_attributes import SavedFilterApprovalConflictAttributes
+from datadog_api_client.v2.model.saved_filter_approval_conflict_data import SavedFilterApprovalConflictData
+from datadog_api_client.v2.model.saved_filter_approval_conflict_response import SavedFilterApprovalConflictResponse
+from datadog_api_client.v2.model.saved_filter_approval_conflict_type import SavedFilterApprovalConflictType
 from datadog_api_client.v2.model.saved_filter_attributes import SavedFilterAttributes
 from datadog_api_client.v2.model.saved_filter_condition import SavedFilterCondition
 from datadog_api_client.v2.model.saved_filter_condition_operator import SavedFilterConditionOperator
+from datadog_api_client.v2.model.saved_filter_condition_request import SavedFilterConditionRequest
 from datadog_api_client.v2.model.saved_filter_creation_type import SavedFilterCreationType
 from datadog_api_client.v2.model.saved_filter_data import SavedFilterData
 from datadog_api_client.v2.model.saved_filter_data_type import SavedFilterDataType
+from datadog_api_client.v2.model.saved_filter_flag_reference import SavedFilterFlagReference
+from datadog_api_client.v2.model.saved_filter_jsonapi_error_response import SavedFilterJSONAPIErrorResponse
+from datadog_api_client.v2.model.saved_filter_permission_denied_attributes import SavedFilterPermissionDeniedAttributes
+from datadog_api_client.v2.model.saved_filter_permission_denied_data import SavedFilterPermissionDeniedData
+from datadog_api_client.v2.model.saved_filter_permission_denied_response import SavedFilterPermissionDeniedResponse
+from datadog_api_client.v2.model.saved_filter_permission_denied_type import SavedFilterPermissionDeniedType
 from datadog_api_client.v2.model.saved_filter_response import SavedFilterResponse
 from datadog_api_client.v2.model.saved_filter_targeting_rule import SavedFilterTargetingRule
+from datadog_api_client.v2.model.saved_filter_targeting_rule_request import SavedFilterTargetingRuleRequest
 from datadog_api_client.v2.model.sca_request import ScaRequest
 from datadog_api_client.v2.model.sca_request_data import ScaRequestData
 from datadog_api_client.v2.model.sca_request_data_attributes import ScaRequestDataAttributes
@@ -18394,6 +18412,11 @@ __all__ = [
     "PatchNotificationRuleParameters",
     "PatchNotificationRuleParametersData",
     "PatchNotificationRuleParametersDataAttributes",
+    "PatchSavedFilterAttributes",
+    "PatchSavedFilterConflictResponse",
+    "PatchSavedFilterData",
+    "PatchSavedFilterForbiddenResponse",
+    "PatchSavedFilterRequest",
     "PatchStatusPageRequest",
     "PatchStatusPageRequestData",
     "PatchStatusPageRequestDataAttributes",
@@ -19329,14 +19352,27 @@ __all__ = [
     "SastRulesetDataAttributes",
     "SastRulesetResponse",
     "SastRulesetsResponse",
+    "SavedFilterAPIErrorResponse",
+    "SavedFilterApprovalConflictAttributes",
+    "SavedFilterApprovalConflictData",
+    "SavedFilterApprovalConflictResponse",
+    "SavedFilterApprovalConflictType",
     "SavedFilterAttributes",
     "SavedFilterCondition",
     "SavedFilterConditionOperator",
+    "SavedFilterConditionRequest",
     "SavedFilterCreationType",
     "SavedFilterData",
     "SavedFilterDataType",
+    "SavedFilterFlagReference",
+    "SavedFilterJSONAPIErrorResponse",
+    "SavedFilterPermissionDeniedAttributes",
+    "SavedFilterPermissionDeniedData",
+    "SavedFilterPermissionDeniedResponse",
+    "SavedFilterPermissionDeniedType",
     "SavedFilterResponse",
     "SavedFilterTargetingRule",
+    "SavedFilterTargetingRuleRequest",
     "ScaRequest",
     "ScaRequestData",
     "ScaRequestDataAttributes",
