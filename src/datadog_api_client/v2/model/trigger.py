@@ -78,6 +78,9 @@ class Trigger(ModelComposed):
         :param notebook_trigger: Trigger a workflow from a Notebook.
         :type notebook_trigger: dict
 
+        :param on_call_shift_change_trigger: Trigger a workflow when an On-Call shift changes. The workflow must be published.
+        :type on_call_shift_change_trigger: OnCallShiftChangeTrigger
+
         :param on_call_trigger: Trigger a workflow from an On-Call Page or On-Call Handover. For automatic triggering a handle must be configured and the workflow must be published.
         :type on_call_trigger: OnCallTrigger
 
@@ -138,6 +141,7 @@ class Trigger(ModelComposed):
         from datadog_api_client.v2.model.incident_trigger_wrapper import IncidentTriggerWrapper
         from datadog_api_client.v2.model.monitor_trigger_wrapper import MonitorTriggerWrapper
         from datadog_api_client.v2.model.notebook_trigger_wrapper import NotebookTriggerWrapper
+        from datadog_api_client.v2.model.on_call_shift_change_trigger_wrapper import OnCallShiftChangeTriggerWrapper
         from datadog_api_client.v2.model.on_call_trigger_wrapper import OnCallTriggerWrapper
         from datadog_api_client.v2.model.schedule_trigger_wrapper import ScheduleTriggerWrapper
         from datadog_api_client.v2.model.security_trigger_wrapper import SecurityTriggerWrapper
@@ -168,6 +172,7 @@ class Trigger(ModelComposed):
                 IncidentTriggerWrapper,
                 MonitorTriggerWrapper,
                 NotebookTriggerWrapper,
+                OnCallShiftChangeTriggerWrapper,
                 OnCallTriggerWrapper,
                 ScheduleTriggerWrapper,
                 SecurityTriggerWrapper,
