@@ -34,6 +34,7 @@ class AWSMetricsConfig(ModelNormal):
             "automute_enabled": (bool,),
             "collect_cloudwatch_alarms": (bool,),
             "collect_custom_metrics": (bool,),
+            "collect_service_quotas": (bool,),
             "enabled": (bool,),
             "metric_name_filters": ([AWSMetricNameFilters],),
             "namespace_filters": (AWSNamespaceFilters,),
@@ -44,6 +45,7 @@ class AWSMetricsConfig(ModelNormal):
         "automute_enabled": "automute_enabled",
         "collect_cloudwatch_alarms": "collect_cloudwatch_alarms",
         "collect_custom_metrics": "collect_custom_metrics",
+        "collect_service_quotas": "collect_service_quotas",
         "enabled": "enabled",
         "metric_name_filters": "metric_name_filters",
         "namespace_filters": "namespace_filters",
@@ -55,6 +57,7 @@ class AWSMetricsConfig(ModelNormal):
         automute_enabled: Union[bool, UnsetType] = unset,
         collect_cloudwatch_alarms: Union[bool, UnsetType] = unset,
         collect_custom_metrics: Union[bool, UnsetType] = unset,
+        collect_service_quotas: Union[bool, UnsetType] = unset,
         enabled: Union[bool, UnsetType] = unset,
         metric_name_filters: Union[
             List[Union[AWSMetricNameFilters, AWSMetricNameFiltersIncludeOnly, AWSMetricNameFiltersExcludeOnly]],
@@ -78,6 +81,9 @@ class AWSMetricsConfig(ModelNormal):
         :param collect_custom_metrics: Enable custom metrics collection. Defaults to ``false``.
         :type collect_custom_metrics: bool, optional
 
+        :param collect_service_quotas: Enable Service Quotas collection. Defaults to ``false``.
+        :type collect_service_quotas: bool, optional
+
         :param enabled: Enable AWS metrics collection. Defaults to ``true``.
         :type enabled: bool, optional
 
@@ -97,6 +103,8 @@ class AWSMetricsConfig(ModelNormal):
             kwargs["collect_cloudwatch_alarms"] = collect_cloudwatch_alarms
         if collect_custom_metrics is not unset:
             kwargs["collect_custom_metrics"] = collect_custom_metrics
+        if collect_service_quotas is not unset:
+            kwargs["collect_service_quotas"] = collect_service_quotas
         if enabled is not unset:
             kwargs["enabled"] = enabled
         if metric_name_filters is not unset:
