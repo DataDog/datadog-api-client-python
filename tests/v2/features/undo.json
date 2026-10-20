@@ -239,6 +239,12 @@
       "type": "idempotent"
     }
   },
+  "ListAgentHealthHostIssues": {
+    "tag": "Agent Health",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListAwsScanOptions": {
     "tag": "Agentless Scanning",
     "undo": {
