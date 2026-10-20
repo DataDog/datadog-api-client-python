@@ -1,0 +1,63 @@
+{
+  "api": "FeatureFlags",
+  "expected_status": 409,
+  "feature": "Feature Flags",
+  "id": "v2/Feature Flags/Patch a saved filter rejects stale rule updates",
+  "operation_id": "UpdateSavedFilterAttributes",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "PatchSavedFilterRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "last_updated_at": "2020-01-01T00:00:00Z",
+            "targeting_rules": [
+              {
+                "conditions": [
+                  {
+                    "attribute": "user_id",
+                    "operator": "ONE_OF",
+                    "value": [
+                      "not-applied"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "type": "saved-filters"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "saved_filter_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "a8c393b4-3a9c-48fd-aa48-402c97e8d9c9"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/feature-flags/saved-filters/{saved_filter_id}"
+  },
+  "scenario": "Patch a saved filter rejects stale rule updates",
+  "schema_version": 1,
+  "version": "v2"
+}

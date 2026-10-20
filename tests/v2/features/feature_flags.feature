@@ -632,6 +632,300 @@ Feature: Feature Flags
     And the response "meta.page.offset" is equal to 1
     And the response "meta.page.total" is equal to 2
 
+  @replay-only @team:ddoghq/feature-flags
+  Scenario: Patch a saved filter accepts the current timestamp for metadata
+    Given new "UpdateSavedFilterAttributes" request
+    And request contains "saved_filter_id" parameter with value "a8c393b4-3a9c-48fd-aa48-402c97e8d9c9"
+    And body with value {"data":{"attributes":{"description":"Metadata with current timestamp.","last_updated_at":"2026-10-16T20:20:29Z"},"type":"saved-filters"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" is equal to "a8c393b4-3a9c-48fd-aa48-402c97e8d9c9"
+    And the response "data.type" is equal to "saved-filters"
+    And the response "data.attributes.name" is equal to "patchSavedFilterTest-concurrency-437ebfe7"
+    And the response "data.attributes.description" is equal to "Metadata with current timestamp."
+    And the response "data.attributes.creation_type" is equal to "RULES"
+    And the response "data.attributes.targeting_rules" has length 1
+    And the response "data.attributes.targeting_rules[0].conditions" has length 1
+    And the response "data.attributes.targeting_rules[0].conditions[0].operator" is equal to "ONE_OF"
+    And the response "data.attributes.targeting_rules[0].conditions[0].attribute" is equal to "user_id"
+    And the response "data.attributes.targeting_rules[0].conditions[0].value" is equal to ["test-user-1"]
+
+  @replay-only @team:ddoghq/feature-flags
+  Scenario: Patch a saved filter accepts the current timestamp for rules
+    Given new "UpdateSavedFilterAttributes" request
+    And request contains "saved_filter_id" parameter with value "a8c393b4-3a9c-48fd-aa48-402c97e8d9c9"
+    And body with value {"data":{"attributes":{"last_updated_at":"2026-10-16T20:20:30Z","targeting_rules":[{"conditions":[{"attribute":"user_id","operator":"ONE_OF","value":["test-user-2"]}]}]},"type":"saved-filters"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" is equal to "a8c393b4-3a9c-48fd-aa48-402c97e8d9c9"
+    And the response "data.type" is equal to "saved-filters"
+    And the response "data.attributes.name" is equal to "patchSavedFilterTest-concurrency-437ebfe7"
+    And the response "data.attributes.description" is equal to "Metadata with current timestamp."
+    And the response "data.attributes.creation_type" is equal to "RULES"
+    And the response "data.attributes.targeting_rules" has length 1
+    And the response "data.attributes.targeting_rules[0].conditions" has length 1
+    And the response "data.attributes.targeting_rules[0].conditions[0].operator" is equal to "ONE_OF"
+    And the response "data.attributes.targeting_rules[0].conditions[0].attribute" is equal to "user_id"
+    And the response "data.attributes.targeting_rules[0].conditions[0].value" is equal to ["test-user-2"]
+
+  @replay-only @team:ddoghq/feature-flags
+  Scenario: Patch a saved filter clears the description with an empty string
+    Given new "UpdateSavedFilterAttributes" request
+    And request contains "saved_filter_id" parameter with value "2cfc7949-7eb4-4d76-b1b8-d1aa9b565535"
+    And body with value {"data":{"type":"saved-filters","attributes":{"description":""}}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" is equal to "2cfc7949-7eb4-4d76-b1b8-d1aa9b565535"
+    And the response "data.type" is equal to "saved-filters"
+    And the response "data.attributes.name" is equal to "patchSavedFilterTest-null-157e7ff3"
+    And the response "data.attributes.description" is equal to ""
+    And the response "data.attributes.creation_type" is equal to "RULES"
+    And the response "data.attributes.targeting_rules" has length 1
+    And the response "data.attributes.targeting_rules[0].conditions" has length 1
+    And the response "data.attributes.targeting_rules[0].conditions[0].operator" is equal to "ONE_OF"
+    And the response "data.attributes.targeting_rules[0].conditions[0].attribute" is equal to "org_id"
+    And the response "data.attributes.targeting_rules[0].conditions[0].value" is equal to ["test-org-1"]
+
+  @replay-only @team:ddoghq/feature-flags
+  Scenario: Patch a saved filter preserves a null description
+    Given new "UpdateSavedFilterAttributes" request
+    And request contains "saved_filter_id" parameter with value "2cfc7949-7eb4-4d76-b1b8-d1aa9b565535"
+    And body with value {"data":{"type":"saved-filters","attributes":{"description":null,"name":"patchSavedFilterTest-null-157e7ff3"}}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" is equal to "2cfc7949-7eb4-4d76-b1b8-d1aa9b565535"
+    And the response "data.type" is equal to "saved-filters"
+    And the response "data.attributes.name" is equal to "patchSavedFilterTest-null-157e7ff3"
+    And the response "data.attributes.description" is equal to "Combined synthetic test update."
+    And the response "data.attributes.creation_type" is equal to "RULES"
+    And the response "data.attributes.targeting_rules" has length 1
+    And the response "data.attributes.targeting_rules[0].conditions" has length 1
+    And the response "data.attributes.targeting_rules[0].conditions[0].operator" is equal to "ONE_OF"
+    And the response "data.attributes.targeting_rules[0].conditions[0].attribute" is equal to "org_id"
+    And the response "data.attributes.targeting_rules[0].conditions[0].value" is equal to ["test-org-1"]
+
+  @replay-only @team:ddoghq/feature-flags
+  Scenario: Patch a saved filter rejects a duplicate name
+    Given new "UpdateSavedFilterAttributes" request
+    And request contains "saved_filter_id" parameter with value "2cfc7949-7eb4-4d76-b1b8-d1aa9b565535"
+    And body with value {"data":{"type":"saved-filters","attributes":{"name":"patchSavedFilterTest-LIST-157e7ff3"}}}
+    When the request is sent
+    Then the response status is 409 Conflict
+    And the response "errors" has length 1
+    And the response "errors[0].status" is equal to "409"
+    And the response "errors[0].title" is equal to "Conflict"
+    And the response "errors[0].detail" is equal to "a saved filter with this name already exists: conflict occurred"
+
+  @replay-only @team:ddoghq/feature-flags
+  Scenario: Patch a saved filter rejects a null-only update
+    Given new "UpdateSavedFilterAttributes" request
+    And request contains "saved_filter_id" parameter with value "2cfc7949-7eb4-4d76-b1b8-d1aa9b565535"
+    And body with value {"data":{"type":"saved-filters","attributes":{"description":null}}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+    And the response "errors" has length 1
+    And the response "errors[0].status" is equal to "400"
+    And the response "errors[0].title" is equal to "Bad Request"
+    And the response "errors[0].detail" is equal to "at least one field must be provided"
+
+  @replay-only @team:ddoghq/feature-flags
+  Scenario: Patch a saved filter rejects a timestamp-only update
+    Given new "UpdateSavedFilterAttributes" request
+    And request contains "saved_filter_id" parameter with value "a8c393b4-3a9c-48fd-aa48-402c97e8d9c9"
+    And body with value {"data":{"attributes":{"last_updated_at":"2026-10-16T20:20:30Z"},"type":"saved-filters"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+    And the response "errors" has length 1
+    And the response "errors[0].status" is equal to "400"
+    And the response "errors[0].title" is equal to "Bad Request"
+    And the response "errors[0].detail" is equal to "at least one field must be provided"
+
+  @replay-only @skip-python @skip-ruby @team:ddoghq/feature-flags
+  Scenario: Patch a saved filter rejects an empty name
+    Given new "UpdateSavedFilterAttributes" request
+    And request contains "saved_filter_id" parameter with value "2cfc7949-7eb4-4d76-b1b8-d1aa9b565535"
+    And body with value {"data":{"type":"saved-filters","attributes":{"name":""}}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+    And the response "errors" has length 1
+    And the response "errors[0].status" is equal to "400"
+    And the response "errors[0].title" is equal to "Bad Request"
+    And the response "errors[0].detail" is equal to "name must not be empty"
+
+  @replay-only @skip-java @skip-python @skip-ruby @skip-typescript @team:ddoghq/feature-flags
+  Scenario: Patch a saved filter rejects an invalid timestamp
+    Given new "UpdateSavedFilterAttributes" request
+    And request contains "saved_filter_id" parameter with value "2cfc7949-7eb4-4d76-b1b8-d1aa9b565535"
+    And body with value {"data":{"type":"saved-filters","attributes":{"description":"Not applied.","last_updated_at":"invalid"}}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+    And the response "errors" has length 1
+    And the response "errors[0].status" is equal to "400"
+    And the response "errors[0].title" is equal to "Bad Request"
+    And the response "errors[0].detail" is equal to "last_updated_at must be a valid RFC3339 timestamp"
+
+  @replay-only @skip-python @skip-ruby @team:ddoghq/feature-flags
+  Scenario: Patch a saved filter rejects empty targeting rules
+    Given new "UpdateSavedFilterAttributes" request
+    And request contains "saved_filter_id" parameter with value "2cfc7949-7eb4-4d76-b1b8-d1aa9b565535"
+    And body with value {"data":{"type":"saved-filters","attributes":{"targeting_rules":[]}}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+    And the response "errors" has length 1
+    And the response "errors[0].status" is equal to "400"
+    And the response "errors[0].title" is equal to "Bad Request"
+    And the response "errors[0].detail" is equal to "attribute \"targeting_rules\" failed min validation"
+
+  @replay-only @team:ddoghq/feature-flags
+  Scenario: Patch a saved filter rejects nested saved filters
+    Given new "UpdateSavedFilterAttributes" request
+    And request contains "saved_filter_id" parameter with value "2cfc7949-7eb4-4d76-b1b8-d1aa9b565535"
+    And body with value {"data":{"type":"saved-filters","attributes":{"targeting_rules":[{"conditions":[{"operator":"ONE_OF","attribute":"user_id","value":["test-user-1"],"saved_filter_id":"d8e3a81b-1505-4600-99c6-c563d01d46b1"}]}]}}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+    And the response "errors" has length 1
+    And the response "errors[0].status" is equal to "400"
+    And the response "errors[0].title" is equal to "Bad Request"
+    And the response "errors[0].detail" is equal to "targeting rule 0 condition 0: saved filters cannot reference other saved filters"
+
+  @replay-only @team:ddoghq/feature-flags
+  Scenario: Patch a saved filter rejects stale rule updates
+    Given new "UpdateSavedFilterAttributes" request
+    And request contains "saved_filter_id" parameter with value "a8c393b4-3a9c-48fd-aa48-402c97e8d9c9"
+    And body with value {"data":{"attributes":{"last_updated_at":"2020-01-01T00:00:00Z","targeting_rules":[{"conditions":[{"attribute":"user_id","operator":"ONE_OF","value":["not-applied"]}]}]},"type":"saved-filters"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+    And the response "errors" has length 1
+    And the response "errors[0].status" is equal to "409"
+    And the response "errors[0].title" is equal to "Conflict"
+    And the response "errors[0].detail" is equal to "saved filter has been modified since you last fetched it; please refresh and retry: conflict occurred"
+
+  @replay-only @team:ddoghq/feature-flags
+  Scenario: Patch a saved filter replaces rules and preserves metadata
+    Given new "UpdateSavedFilterAttributes" request
+    And request contains "saved_filter_id" parameter with value "2cfc7949-7eb4-4d76-b1b8-d1aa9b565535"
+    And body with value {"data":{"type":"saved-filters","attributes":{"targeting_rules":[{"conditions":[{"operator":"ONE_OF","attribute":"email","value":["test@example.com"]}]}]}}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" is equal to "2cfc7949-7eb4-4d76-b1b8-d1aa9b565535"
+    And the response "data.type" is equal to "saved-filters"
+    And the response "data.attributes.name" is equal to "patchSavedFilterTest-renamed-157e7ff3"
+    And the response "data.attributes.description" is equal to "Original synthetic test description."
+    And the response "data.attributes.creation_type" is equal to "RULES"
+    And the response "data.attributes.targeting_rules" has length 1
+    And the response "data.attributes.targeting_rules[0].conditions" has length 1
+    And the response "data.attributes.targeting_rules[0].conditions[0].operator" is equal to "ONE_OF"
+    And the response "data.attributes.targeting_rules[0].conditions[0].attribute" is equal to "email"
+    And the response "data.attributes.targeting_rules[0].conditions[0].value" is equal to ["test@example.com"]
+
+  @replay-only @team:ddoghq/feature-flags
+  Scenario: Patch a saved filter replaces the rules of a saved list
+    Given new "UpdateSavedFilterAttributes" request
+    And request contains "saved_filter_id" parameter with value "d8e3a81b-1505-4600-99c6-c563d01d46b1"
+    And body with value {"data":{"type":"saved-filters","attributes":{"targeting_rules":[{"conditions":[{"operator":"ONE_OF","attribute":"user_id","value":["test-user-3"]}]}]}}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" is equal to "d8e3a81b-1505-4600-99c6-c563d01d46b1"
+    And the response "data.type" is equal to "saved-filters"
+    And the response "data.attributes.name" is equal to "patchSavedFilterTest-LIST-157e7ff3"
+    And the response "data.attributes.description" is equal to "Updated synthetic test description."
+    And the response "data.attributes.creation_type" is equal to "LIST"
+    And the response "data.attributes.targeting_rules" has length 1
+    And the response "data.attributes.targeting_rules[0].conditions" has length 1
+    And the response "data.attributes.targeting_rules[0].conditions[0].operator" is equal to "ONE_OF"
+    And the response "data.attributes.targeting_rules[0].conditions[0].attribute" is equal to "user_id"
+    And the response "data.attributes.targeting_rules[0].conditions[0].value" is equal to ["test-user-3"]
+
+  @replay-only @team:ddoghq/feature-flags
+  Scenario: Patch a saved filter returns "Bad Request" response
+    Given new "UpdateSavedFilterAttributes" request
+    And request contains "saved_filter_id" parameter with value "2cfc7949-7eb4-4d76-b1b8-d1aa9b565535"
+    And body with value {"data":{"type":"saved-filters","attributes":{}}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+    And the response "errors" has length 1
+    And the response "errors[0].status" is equal to "400"
+    And the response "errors[0].title" is equal to "Bad Request"
+    And the response "errors[0].detail" is equal to "at least one field must be provided"
+
+  @replay-only @team:ddoghq/feature-flags
+  Scenario: Patch a saved filter returns "Conflict" response
+    Given new "UpdateSavedFilterAttributes" request
+    And request contains "saved_filter_id" parameter with value "2cfc7949-7eb4-4d76-b1b8-d1aa9b565535"
+    And body with value {"data":{"type":"saved-filters","attributes":{"description":"Not applied.","last_updated_at":"2020-01-01T00:00:00Z"}}}
+    When the request is sent
+    Then the response status is 409 Conflict
+    And the response "errors" has length 1
+    And the response "errors[0].status" is equal to "409"
+    And the response "errors[0].title" is equal to "Conflict"
+    And the response "errors[0].detail" is equal to "saved filter has been modified since you last fetched it; please refresh and retry: conflict occurred"
+
+  @replay-only @team:ddoghq/feature-flags
+  Scenario: Patch a saved filter returns "Not Found" response
+    Given new "UpdateSavedFilterAttributes" request
+    And request contains "saved_filter_id" parameter with value "00000000-0000-0000-0000-000000000000"
+    And body with value {"data":{"type":"saved-filters","attributes":{"description":"Not applied."}}}
+    When the request is sent
+    Then the response status is 404 Not Found
+    And the response "errors" has length 1
+    And the response "errors[0].status" is equal to "404"
+    And the response "errors[0].title" is equal to "Not Found"
+    And the response "errors[0].detail" is equal to "saved filter not found or already deleted: record not found"
+
+  @replay-only @team:ddoghq/feature-flags
+  Scenario: Patch a saved filter returns "OK" response
+    Given new "UpdateSavedFilterAttributes" request
+    And request contains "saved_filter_id" parameter with value "2cfc7949-7eb4-4d76-b1b8-d1aa9b565535"
+    And body with value {"data":{"type":"saved-filters","attributes":{"name":"patchSavedFilterTest-renamed-157e7ff3"}}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" is equal to "2cfc7949-7eb4-4d76-b1b8-d1aa9b565535"
+    And the response "data.type" is equal to "saved-filters"
+    And the response "data.attributes.name" is equal to "patchSavedFilterTest-renamed-157e7ff3"
+    And the response "data.attributes.description" is equal to "Original synthetic test description."
+    And the response "data.attributes.creation_type" is equal to "RULES"
+    And the response "data.attributes.targeting_rules" has length 1
+    And the response "data.attributes.targeting_rules[0].conditions" has length 1
+    And the response "data.attributes.targeting_rules[0].conditions[0].operator" is equal to "ONE_OF"
+    And the response "data.attributes.targeting_rules[0].conditions[0].attribute" is equal to "user_id"
+    And the response "data.attributes.targeting_rules[0].conditions[0].value" is equal to ["test-user-1","test-user-2"]
+
+  @replay-only @team:ddoghq/feature-flags
+  Scenario: Patch a saved filter updates metadata and rules together
+    Given new "UpdateSavedFilterAttributes" request
+    And request contains "saved_filter_id" parameter with value "2cfc7949-7eb4-4d76-b1b8-d1aa9b565535"
+    And body with value {"data":{"type":"saved-filters","attributes":{"name":"patchSavedFilterTest-combined-157e7ff3","description":"Combined synthetic test update.","targeting_rules":[{"conditions":[{"operator":"ONE_OF","attribute":"org_id","value":["test-org-1"]}]}]}}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" is equal to "2cfc7949-7eb4-4d76-b1b8-d1aa9b565535"
+    And the response "data.type" is equal to "saved-filters"
+    And the response "data.attributes.name" is equal to "patchSavedFilterTest-combined-157e7ff3"
+    And the response "data.attributes.description" is equal to "Combined synthetic test update."
+    And the response "data.attributes.creation_type" is equal to "RULES"
+    And the response "data.attributes.targeting_rules" has length 1
+    And the response "data.attributes.targeting_rules[0].conditions" has length 1
+    And the response "data.attributes.targeting_rules[0].conditions[0].operator" is equal to "ONE_OF"
+    And the response "data.attributes.targeting_rules[0].conditions[0].attribute" is equal to "org_id"
+    And the response "data.attributes.targeting_rules[0].conditions[0].value" is equal to ["test-org-1"]
+
+  @replay-only @team:ddoghq/feature-flags
+  Scenario: Patch a saved filter updates only the description of a saved list
+    Given new "UpdateSavedFilterAttributes" request
+    And request contains "saved_filter_id" parameter with value "d8e3a81b-1505-4600-99c6-c563d01d46b1"
+    And body with value {"data":{"type":"saved-filters","attributes":{"description":"Updated synthetic test description."}}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" is equal to "d8e3a81b-1505-4600-99c6-c563d01d46b1"
+    And the response "data.type" is equal to "saved-filters"
+    And the response "data.attributes.name" is equal to "patchSavedFilterTest-LIST-157e7ff3"
+    And the response "data.attributes.description" is equal to "Updated synthetic test description."
+    And the response "data.attributes.creation_type" is equal to "LIST"
+    And the response "data.attributes.targeting_rules" has length 1
+    And the response "data.attributes.targeting_rules[0].conditions" has length 1
+    And the response "data.attributes.targeting_rules[0].conditions[0].operator" is equal to "ONE_OF"
+    And the response "data.attributes.targeting_rules[0].conditions[0].attribute" is equal to "user_id"
+    And the response "data.attributes.targeting_rules[0].conditions[0].value" is equal to ["test-user-1","test-user-2"]
+
   @generated @skip @team:ddoghq/feature-flags
   Scenario: Pause a progressive rollout returns "Bad Request" response
     Given new "PauseExposureSchedule" request

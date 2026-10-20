@@ -3263,6 +3263,12 @@
       "type": "safe"
     }
   },
+  "UpdateSavedFilterAttributes": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetFeatureFlag": {
     "tag": "Feature Flags",
     "undo": {

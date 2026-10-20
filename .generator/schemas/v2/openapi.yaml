@@ -94889,6 +94889,64 @@ components:
         version:
           $ref: "#/components/schemas/Version"
       type: object
+    PatchSavedFilterAttributes:
+      description: Fields to update. At least one of `name`, `description`, or `targeting_rules` must have a non-null value. Omitted or null fields are preserved. The creation type cannot be changed.
+      properties:
+        description:
+          description: The new description. Send an empty string to clear the description. If omitted or null, the existing description is preserved.
+          example: Updated early access users.
+          nullable: true
+          type: string
+        last_updated_at:
+          description: The `updated_at` value returned by a previous read, as an RFC 3339 timestamp. If it differs from the stored update time, truncated to seconds, the request returns a 409 response. For metadata-only updates, this check does not prevent all concurrent writes. This field alone does not constitute an update.
+          example: "2026-01-02T12:00:00Z"
+          format: date-time
+          nullable: true
+          type: string
+        name:
+          description: The new name of the saved filter. Must not be empty.
+          example: Early access users
+          minLength: 1
+          nullable: true
+          type: string
+        targeting_rules:
+          description: The complete replacement targeting rules, combined with OR. Conditions within each rule are combined with AND. Replaces all existing rules. Values are not appended. Must contain at least one rule. Saved filters cannot reference other saved filters.
+          items:
+            $ref: "#/components/schemas/SavedFilterTargetingRuleRequest"
+          minItems: 1
+          nullable: true
+          type: array
+      type: object
+    PatchSavedFilterConflictResponse:
+      description: A stale update, duplicate name, or other conflict, or a resource listing consumer flags requiring approval.
+      oneOf:
+        - $ref: "#/components/schemas/SavedFilterJSONAPIErrorResponse"
+        - $ref: "#/components/schemas/SavedFilterApprovalConflictResponse"
+    PatchSavedFilterData:
+      description: The saved filter fields to update.
+      properties:
+        attributes:
+          $ref: "#/components/schemas/PatchSavedFilterAttributes"
+        type:
+          $ref: "#/components/schemas/SavedFilterDataType"
+      required:
+        - type
+        - attributes
+      type: object
+    PatchSavedFilterForbiddenResponse:
+      description: An authentication or permission error, or a resource listing consumer flags that the caller cannot edit.
+      oneOf:
+        - $ref: "#/components/schemas/SavedFilterAPIErrorResponse"
+        - $ref: "#/components/schemas/SavedFilterJSONAPIErrorResponse"
+        - $ref: "#/components/schemas/SavedFilterPermissionDeniedResponse"
+    PatchSavedFilterRequest:
+      description: Request to partially update a saved filter.
+      properties:
+        data:
+          $ref: "#/components/schemas/PatchSavedFilterData"
+      required:
+        - data
+      type: object
     PatchStatusPageRequest:
       description: Request object for updating a status page.
       example:
@@ -108855,6 +108913,72 @@ components:
       required:
         - data
       type: object
+    SavedFilterAPIErrorResponse:
+      additionalProperties: false
+      description: A saved filter authorization error containing at least one error message.
+      properties:
+        errors:
+          description: The authorization error messages.
+          example:
+            - Forbidden
+            - Failed permission authorization checks
+          items:
+            type: string
+          minItems: 1
+          type: array
+      required:
+        - errors
+      type: object
+    SavedFilterApprovalConflictAttributes:
+      description: One or more feature flags that reference this saved filter require approval for the rule update.
+      properties:
+        approval_required_flags:
+          description: Feature flags preventing this update.
+          items:
+            $ref: "#/components/schemas/SavedFilterFlagReference"
+          type: array
+        message:
+          description: The reason the saved filter update was rejected.
+          example: One or more feature flags that reference this saved filter require approval for the rule update.
+          type: string
+      required:
+        - message
+        - approval_required_flags
+      type: object
+    SavedFilterApprovalConflictData:
+      description: One or more feature flags that reference this saved filter require approval for the rule update.
+      properties:
+        attributes:
+          $ref: "#/components/schemas/SavedFilterApprovalConflictAttributes"
+        id:
+          description: The ID of the saved filter.
+          example: 550e8400-e29b-41d4-a716-446655440090
+          format: uuid
+          type: string
+        type:
+          $ref: "#/components/schemas/SavedFilterApprovalConflictType"
+      required:
+        - id
+        - type
+        - attributes
+      type: object
+    SavedFilterApprovalConflictResponse:
+      additionalProperties: false
+      description: One or more feature flags that reference this saved filter require approval for the rule update.
+      properties:
+        data:
+          $ref: "#/components/schemas/SavedFilterApprovalConflictData"
+      required:
+        - data
+      type: object
+    SavedFilterApprovalConflictType:
+      description: The resource type for this saved filter update error.
+      enum:
+        - update-approval-conflict
+      example: update-approval-conflict
+      type: string
+      x-enum-varnames:
+        - UPDATE_APPROVAL_CONFLICT
     SavedFilterAttributes:
       description: Saved filter details, including the full targeting rules and conditions.
       properties:
@@ -108970,6 +109094,30 @@ components:
         - SEMVER_LTE
         - SEMVER_GT
         - SEMVER_GTE
+    SavedFilterConditionRequest:
+      description: An inline condition to write in a saved filter. Nested saved-filter references are not supported.
+      properties:
+        attribute:
+          description: The attribute evaluated by the condition.
+          example: user_id
+          minLength: 1
+          type: string
+        operator:
+          $ref: "#/components/schemas/SavedFilterConditionOperator"
+        value:
+          description: Values used by the condition operator. Values must satisfy the selected operator and the organization targeting limits.
+          example:
+            - test-user-1
+            - test-user-2
+          items:
+            type: string
+          minItems: 1
+          type: array
+      required:
+        - operator
+        - attribute
+        - value
+      type: object
     SavedFilterCreationType:
       description: How the saved filter was authored. RULES indicates rule-based authoring and LIST indicates list import. Both types return targeting rules and conditions.
       enum:
@@ -109005,6 +109153,89 @@ components:
       type: string
       x-enum-varnames:
         - SAVED_FILTERS
+    SavedFilterFlagReference:
+      description: A feature flag that references the saved filter.
+      properties:
+        id:
+          description: The ID of the feature flag.
+          example: 550e8400-e29b-41d4-a716-446655440000
+          format: uuid
+          type: string
+        name:
+          description: The name of the feature flag.
+          example: Early access
+          type: string
+      required:
+        - id
+        - name
+      type: object
+    SavedFilterJSONAPIErrorResponse:
+      additionalProperties: false
+      description: A saved filter error containing at least one JSON:API error object.
+      properties:
+        errors:
+          description: The error details.
+          example:
+            - detail: A saved filter with this name already exists.
+              status: "409"
+              title: Conflict
+          items:
+            $ref: "#/components/schemas/JSONAPIErrorItem"
+          minItems: 1
+          type: array
+      required:
+        - errors
+      type: object
+    SavedFilterPermissionDeniedAttributes:
+      description: The caller lacks edit permission on one or more feature flags that reference this saved filter.
+      properties:
+        denied_flags:
+          description: Feature flags preventing this update.
+          items:
+            $ref: "#/components/schemas/SavedFilterFlagReference"
+          type: array
+        message:
+          description: The reason the saved filter update was rejected.
+          example: The caller lacks edit permission on one or more feature flags that reference this saved filter.
+          type: string
+      required:
+        - message
+        - denied_flags
+      type: object
+    SavedFilterPermissionDeniedData:
+      description: The caller lacks edit permission on one or more feature flags that reference this saved filter.
+      properties:
+        attributes:
+          $ref: "#/components/schemas/SavedFilterPermissionDeniedAttributes"
+        id:
+          description: The ID of the saved filter.
+          example: 550e8400-e29b-41d4-a716-446655440090
+          format: uuid
+          type: string
+        type:
+          $ref: "#/components/schemas/SavedFilterPermissionDeniedType"
+      required:
+        - id
+        - type
+        - attributes
+      type: object
+    SavedFilterPermissionDeniedResponse:
+      additionalProperties: false
+      description: The caller lacks edit permission on one or more feature flags that reference this saved filter.
+      properties:
+        data:
+          $ref: "#/components/schemas/SavedFilterPermissionDeniedData"
+      required:
+        - data
+      type: object
+    SavedFilterPermissionDeniedType:
+      description: The resource type for this saved filter update error.
+      enum:
+        - update-grace-denied
+      example: update-grace-denied
+      type: string
+      x-enum-varnames:
+        - UPDATE_GRACE_DENIED
     SavedFilterResponse:
       description: Response containing a saved filter and its targeting rules.
       properties:
@@ -109028,6 +109259,18 @@ components:
           type: string
       required:
         - id
+        - conditions
+      type: object
+    SavedFilterTargetingRuleRequest:
+      description: A replacement saved filter targeting rule.
+      properties:
+        conditions:
+          description: Inline conditions combined with AND. Must contain at least one condition.
+          items:
+            $ref: "#/components/schemas/SavedFilterConditionRequest"
+          minItems: 1
+          type: array
+      required:
         - conditions
       type: object
     ScaRequest:
@@ -173172,6 +173415,128 @@ paths:
         operator: AND
         permissions:
           - feature_flag_config_read
+    patch:
+      description: |-
+        Partially updates a saved filter. Supports both `LIST` and `RULES` filters.
+        Supply at least one of `name`, `description`, or `targeting_rules`. Omitted or null fields
+        are preserved. Supplying `targeting_rules` replaces the entire collection and propagates
+        changes to every feature flag that references the saved filter.
+        Metadata-only updates do not require edit permission or approval on those feature flags.
+        Rule updates require edit permission on all consumer flags and are rejected when approval
+        is required, unless the caller has the `feature_flag_approvals_override` permission.
+        The optional `last_updated_at` field detects stale updates. It does not set the update time.
+      operationId: UpdateSavedFilterAttributes
+      parameters:
+        - description: The ID of the saved filter.
+          example: 550e8400-e29b-41d4-a716-446655440090
+          in: path
+          name: saved_filter_id
+          required: true
+          schema:
+            format: uuid
+            type: string
+      requestBody:
+        content:
+          application/json:
+            examples:
+              default:
+                summary: Rename a saved filter while preserving its description and rules
+                value:
+                  data:
+                    attributes:
+                      name: Early access users
+                    type: saved-filters
+              replace_rules:
+                summary: Replace the complete rules collection
+                value:
+                  data:
+                    attributes:
+                      targeting_rules:
+                        - conditions:
+                            - attribute: user_id
+                              operator: ONE_OF
+                              value:
+                                - test-user-1
+                                - test-user-2
+                    type: saved-filters
+            schema:
+              $ref: "#/components/schemas/PatchSavedFilterRequest"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                default:
+                  summary: A saved filter matching an email address or an organization ID
+                  value:
+                    data:
+                      attributes:
+                        created_at: "2026-01-01T12:00:00Z"
+                        created_by: 550e8400-e29b-41d4-a716-446655440091
+                        creation_type: RULES
+                        description: Users selected by email address or organization ID.
+                        name: Early access users
+                        targeting_rules:
+                          - conditions:
+                              - attribute: email
+                                id: 550e8400-e29b-41d4-a716-446655440093
+                                operator: ONE_OF
+                                value:
+                                  - user@example.com
+                            id: 550e8400-e29b-41d4-a716-446655440092
+                          - conditions:
+                              - attribute: org_id
+                                id: 550e8400-e29b-41d4-a716-446655440095
+                                operator: ONE_OF
+                                value:
+                                  - "12345"
+                                  - "67890"
+                            id: 550e8400-e29b-41d4-a716-446655440094
+                        updated_at: "2026-01-02T12:00:00Z"
+                      id: 550e8400-e29b-41d4-a716-446655440090
+                      type: saved-filters
+              schema:
+                $ref: "#/components/schemas/SavedFilterResponse"
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Bad Request
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PatchSavedFilterForbiddenResponse"
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Not Found
+        "409":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PatchSavedFilterConflictResponse"
+          description: Conflict
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      security:
+        - apiKeyAuth: []
+          appKeyAuth: []
+        - AuthZ:
+            - feature_flag_config_write
+      summary: Patch a saved filter
+      tags:
+        - Feature Flags
+      x-permission:
+        operator: AND
+        permissions:
+          - feature_flag_config_write
   /api/v2/feature-flags/{feature_flag_id}:
     get:
       description: |-

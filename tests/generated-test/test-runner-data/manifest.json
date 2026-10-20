@@ -6058,6 +6058,146 @@
     {
       "feature": "Feature Flags",
       "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/patch-a-saved-filter-accepts-the-current-timestamp-for-metadata.json",
+      "scenario": "Patch a saved filter accepts the current timestamp for metadata",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/patch-a-saved-filter-accepts-the-current-timestamp-for-rules.json",
+      "scenario": "Patch a saved filter accepts the current timestamp for rules",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/patch-a-saved-filter-clears-the-description-with-an-empty-string.json",
+      "scenario": "Patch a saved filter clears the description with an empty string",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/patch-a-saved-filter-preserves-a-null-description.json",
+      "scenario": "Patch a saved filter preserves a null description",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/patch-a-saved-filter-rejects-a-duplicate-name.json",
+      "scenario": "Patch a saved filter rejects a duplicate name",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/patch-a-saved-filter-rejects-a-null-only-update.json",
+      "scenario": "Patch a saved filter rejects a null-only update",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/patch-a-saved-filter-rejects-a-timestamp-only-update.json",
+      "scenario": "Patch a saved filter rejects a timestamp-only update",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/patch-a-saved-filter-rejects-an-empty-name.json",
+      "scenario": "Patch a saved filter rejects an empty name",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/patch-a-saved-filter-rejects-an-invalid-timestamp.json",
+      "scenario": "Patch a saved filter rejects an invalid timestamp",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/patch-a-saved-filter-rejects-empty-targeting-rules.json",
+      "scenario": "Patch a saved filter rejects empty targeting rules",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/patch-a-saved-filter-rejects-nested-saved-filters.json",
+      "scenario": "Patch a saved filter rejects nested saved filters",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/patch-a-saved-filter-rejects-stale-rule-updates.json",
+      "scenario": "Patch a saved filter rejects stale rule updates",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/patch-a-saved-filter-replaces-rules-and-preserves-metadata.json",
+      "scenario": "Patch a saved filter replaces rules and preserves metadata",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/patch-a-saved-filter-replaces-the-rules-of-a-saved-list.json",
+      "scenario": "Patch a saved filter replaces the rules of a saved list",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/patch-a-saved-filter-returns-bad-request-response.json",
+      "scenario": "Patch a saved filter returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/patch-a-saved-filter-returns-conflict-response.json",
+      "scenario": "Patch a saved filter returns \"Conflict\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/patch-a-saved-filter-returns-not-found-response.json",
+      "scenario": "Patch a saved filter returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/patch-a-saved-filter-returns-ok-response.json",
+      "scenario": "Patch a saved filter returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/patch-a-saved-filter-updates-metadata-and-rules-together.json",
+      "scenario": "Patch a saved filter updates metadata and rules together",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/patch-a-saved-filter-updates-only-the-description-of-a-saved-list.json",
+      "scenario": "Patch a saved filter updates only the description of a saved list",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
       "file": "v2/feature-flags/update-a-feature-flag-returns-ok-response.json",
       "scenario": "Update a feature flag returns \"OK\" response",
       "version": "v2"

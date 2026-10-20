@@ -25,6 +25,7 @@ from datadog_api_client.v2.model.create_environment_request import CreateEnviron
 from datadog_api_client.v2.model.update_environment_request import UpdateEnvironmentRequest
 from datadog_api_client.v2.model.allocation_exposure_schedule_response import AllocationExposureScheduleResponse
 from datadog_api_client.v2.model.saved_filter_response import SavedFilterResponse
+from datadog_api_client.v2.model.patch_saved_filter_request import PatchSavedFilterRequest
 from datadog_api_client.v2.model.update_feature_flag_request import UpdateFeatureFlagRequest
 from datadog_api_client.v2.model.allocation_response import AllocationResponse
 from datadog_api_client.v2.model.create_allocations_request import CreateAllocationsRequest
@@ -715,6 +716,32 @@ class FeatureFlagsApi:
             api_client=api_client,
         )
 
+        self._update_saved_filter_attributes_endpoint = _Endpoint(
+            settings={
+                "response_type": (SavedFilterResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/feature-flags/saved-filters/{saved_filter_id}",
+                "operation_id": "update_saved_filter_attributes",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "saved_filter_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "saved_filter_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (PatchSavedFilterRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_variant_for_feature_flag_endpoint = _Endpoint(
             settings={
                 "response_type": (Variant,),
@@ -1308,6 +1335,34 @@ class FeatureFlagsApi:
         kwargs["body"] = body
 
         return self._update_feature_flags_environment_endpoint.call_with_http_info(**kwargs)
+
+    def update_saved_filter_attributes(
+        self,
+        saved_filter_id: UUID,
+        body: PatchSavedFilterRequest,
+    ) -> SavedFilterResponse:
+        """Patch a saved filter.
+
+        Partially updates a saved filter. Supports both ``LIST`` and ``RULES`` filters.
+        Supply at least one of ``name`` , ``description`` , or ``targeting_rules``. Omitted or null fields
+        are preserved. Supplying ``targeting_rules`` replaces the entire collection and propagates
+        changes to every feature flag that references the saved filter.
+        Metadata-only updates do not require edit permission or approval on those feature flags.
+        Rule updates require edit permission on all consumer flags and are rejected when approval
+        is required, unless the caller has the ``feature_flag_approvals_override`` permission.
+        The optional ``last_updated_at`` field detects stale updates. It does not set the update time.
+
+        :param saved_filter_id: The ID of the saved filter.
+        :type saved_filter_id: UUID
+        :type body: PatchSavedFilterRequest
+        :rtype: SavedFilterResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["saved_filter_id"] = saved_filter_id
+
+        kwargs["body"] = body
+
+        return self._update_saved_filter_attributes_endpoint.call_with_http_info(**kwargs)
 
     def update_variant_for_feature_flag(
         self,

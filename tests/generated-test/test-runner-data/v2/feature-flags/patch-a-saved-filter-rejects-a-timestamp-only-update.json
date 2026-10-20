@@ -1,0 +1,50 @@
+{
+  "api": "FeatureFlags",
+  "expected_status": 400,
+  "feature": "Feature Flags",
+  "id": "v2/Feature Flags/Patch a saved filter rejects a timestamp-only update",
+  "operation_id": "UpdateSavedFilterAttributes",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "PatchSavedFilterRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "last_updated_at": "2026-10-16T20:20:30Z"
+          },
+          "type": "saved-filters"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "saved_filter_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "a8c393b4-3a9c-48fd-aa48-402c97e8d9c9"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/feature-flags/saved-filters/{saved_filter_id}"
+  },
+  "scenario": "Patch a saved filter rejects a timestamp-only update",
+  "schema_version": 1,
+  "version": "v2"
+}
