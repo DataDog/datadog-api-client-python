@@ -56,7 +56,7 @@ class UserTeamAttributes(ModelNormal):
         :param provisioned_by_id: UUID of the User or Service Account who provisioned this team membership, or null if provisioned via SAML mapping.
         :type provisioned_by_id: str, none_type, optional
 
-        :param role: The user's role within the team
+        :param role: The user's role within the team. A value of ``null`` represents a regular member.
         :type role: UserTeamRole, none_type, optional
         """
         if provisioned_by is not unset:

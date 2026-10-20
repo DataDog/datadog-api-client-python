@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class UserTeamRole(ModelSimple):
     """
-    The user's role within the team
+    The user's role within the team. A value of `null` represents a regular member.
 
     :param value: If omitted defaults to "admin". Must be one of ["admin"].
     :type value: str

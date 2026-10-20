@@ -139375,7 +139375,7 @@ components:
           type: array
       type: object
     UserTeamRole:
-      description: The user's role within the team
+      description: The user's role within the team. A value of `null` represents a regular member.
       enum:
         - admin
       nullable: true
@@ -246307,6 +246307,10 @@ paths:
                       - attributes:
                           role: admin
                         id: TeamMembership-aeadc05e-98a8-11ec-ac2c-da7ad0900001-38835
+                        type: team_memberships
+                      - attributes:
+                          role:
+                        id: TeamMembership-b8626d7e-cedd-11eb-abf5-da7ad0900001-38835
                         type: team_memberships
               schema:
                 $ref: "#/components/schemas/UserTeamsResponse"
