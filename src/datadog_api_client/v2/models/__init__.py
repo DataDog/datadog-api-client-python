@@ -7869,6 +7869,8 @@ from datadog_api_client.v2.model.on_call_notification_rules_included import OnCa
 from datadog_api_client.v2.model.on_call_page_target_type import OnCallPageTargetType
 from datadog_api_client.v2.model.on_call_phone_notification_rule_method import OnCallPhoneNotificationRuleMethod
 from datadog_api_client.v2.model.on_call_phone_notification_rule_settings import OnCallPhoneNotificationRuleSettings
+from datadog_api_client.v2.model.on_call_shift_change_trigger import OnCallShiftChangeTrigger
+from datadog_api_client.v2.model.on_call_shift_change_trigger_wrapper import OnCallShiftChangeTriggerWrapper
 from datadog_api_client.v2.model.on_call_trigger import OnCallTrigger
 from datadog_api_client.v2.model.on_call_trigger_wrapper import OnCallTriggerWrapper
 from datadog_api_client.v2.model.on_demand_concurrency_cap import OnDemandConcurrencyCap
@@ -18067,6 +18069,8 @@ __all__ = [
     "OnCallPageTargetType",
     "OnCallPhoneNotificationRuleMethod",
     "OnCallPhoneNotificationRuleSettings",
+    "OnCallShiftChangeTrigger",
+    "OnCallShiftChangeTriggerWrapper",
     "OnCallTrigger",
     "OnCallTriggerWrapper",
     "OnDemandConcurrencyCap",
