@@ -16,16 +16,20 @@ class MetricTagConfigurationMetricTypeCategory(ModelSimple):
     """
     The metric's type category.
 
-    :param value: If omitted defaults to "distribution". Must be one of ["non_distribution", "distribution"].
+    :param value: If omitted defaults to "distribution". Must be one of ["non_distribution", "distribution", "exponential_histogram", "explicit_histogram"].
     :type value: str
     """
 
     allowed_values = {
         "non_distribution",
         "distribution",
+        "exponential_histogram",
+        "explicit_histogram",
     }
     NON_DISTRIBUTION: ClassVar["MetricTagConfigurationMetricTypeCategory"]
     DISTRIBUTION: ClassVar["MetricTagConfigurationMetricTypeCategory"]
+    EXPONENTIAL_HISTOGRAM: ClassVar["MetricTagConfigurationMetricTypeCategory"]
+    EXPLICIT_HISTOGRAM: ClassVar["MetricTagConfigurationMetricTypeCategory"]
 
     @cached_property
     def openapi_types(_):
@@ -36,3 +40,9 @@ class MetricTagConfigurationMetricTypeCategory(ModelSimple):
 
 MetricTagConfigurationMetricTypeCategory.NON_DISTRIBUTION = MetricTagConfigurationMetricTypeCategory("non_distribution")
 MetricTagConfigurationMetricTypeCategory.DISTRIBUTION = MetricTagConfigurationMetricTypeCategory("distribution")
+MetricTagConfigurationMetricTypeCategory.EXPONENTIAL_HISTOGRAM = MetricTagConfigurationMetricTypeCategory(
+    "exponential_histogram"
+)
+MetricTagConfigurationMetricTypeCategory.EXPLICIT_HISTOGRAM = MetricTagConfigurationMetricTypeCategory(
+    "explicit_histogram"
+)
