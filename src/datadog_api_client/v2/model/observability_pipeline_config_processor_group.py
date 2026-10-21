@@ -65,6 +65,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor import (
         ObservabilityPipelineSensitiveDataScannerProcessor,
     )
+    from datadog_api_client.v2.model.observability_pipeline_spike_protection_processor import (
+        ObservabilityPipelineSpikeProtectionProcessor,
+    )
     from datadog_api_client.v2.model.observability_pipeline_split_array_processor import (
         ObservabilityPipelineSplitArrayProcessor,
     )
@@ -145,6 +148,7 @@ class ObservabilityPipelineConfigProcessorGroup(ModelNormal):
                 ObservabilityPipelineRenameFieldsProcessor,
                 ObservabilityPipelineSampleProcessor,
                 ObservabilityPipelineSensitiveDataScannerProcessor,
+                ObservabilityPipelineSpikeProtectionProcessor,
                 ObservabilityPipelineSplitArrayProcessor,
                 ObservabilityPipelineThrottleProcessor,
                 ObservabilityPipelineAddMetricTagsProcessor,
