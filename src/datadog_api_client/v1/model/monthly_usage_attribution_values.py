@@ -713,16 +713,16 @@ class MonthlyUsageAttributionValues(ModelNormal):
         :param error_tracking_usage: The error tracking events usage by tag(s).
         :type error_tracking_usage: float, optional
 
-        :param estimated_indexed_spans_percentage: The percentage of estimated indexed spans usage by tag(s).
+        :param estimated_indexed_spans_percentage: The percentage of estimated indexed spans usage by tag(s) (To be deprecated on February 1st, 2027). **Deprecated**.
         :type estimated_indexed_spans_percentage: float, optional
 
-        :param estimated_indexed_spans_usage: The estimated indexed spans usage by tag(s).
+        :param estimated_indexed_spans_usage: The estimated indexed spans usage by tag(s) (To be deprecated on February 1st, 2027). **Deprecated**.
         :type estimated_indexed_spans_usage: float, optional
 
-        :param estimated_ingested_spans_percentage: The percentage of estimated ingested spans usage by tag(s).
+        :param estimated_ingested_spans_percentage: The percentage of estimated ingested spans usage by tag(s) (To be deprecated on February 1st, 2027). **Deprecated**.
         :type estimated_ingested_spans_percentage: float, optional
 
-        :param estimated_ingested_spans_usage: The estimated ingested spans usage by tag(s).
+        :param estimated_ingested_spans_usage: The estimated ingested spans usage by tag(s) (To be deprecated on February 1st, 2027). **Deprecated**.
         :type estimated_ingested_spans_usage: float, optional
 
         :param fargate_percentage: The percentage of Fargate usage by tags.
