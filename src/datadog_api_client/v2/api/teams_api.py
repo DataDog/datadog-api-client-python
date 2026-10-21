@@ -1816,7 +1816,7 @@ class TeamsApi:
         filter_me: Union[bool, UnsetType] = unset,
         fields_team: Union[List[TeamsField], UnsetType] = unset,
     ) -> TeamsResponse:
-        """Get all teams.
+        """List all teams.
 
         Get all teams.
         Can be used to search for teams using the ``filter[keyword]`` and ``filter[me]`` query parameters.
@@ -1872,7 +1872,7 @@ class TeamsApi:
         filter_me: Union[bool, UnsetType] = unset,
         fields_team: Union[List[TeamsField], UnsetType] = unset,
     ) -> collections.abc.Iterable[Team]:
-        """Get all teams.
+        """List all teams.
 
         Provide a paginated version of :meth:`list_teams`, returning all items.
 

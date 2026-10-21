@@ -1,5 +1,5 @@
 """
-Get all teams returns "OK" response
+List all teams returns "OK" response
 """
 
 from os import environ
