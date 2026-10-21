@@ -4394,7 +4394,7 @@
     },
     {
       "feature": "Teams",
-      "frozen_at": "2026-03-04T16:01:34.366Z",
+      "frozen_at": "2026-10-19T16:23:49.447Z",
       "interactions": [
         {
           "request": {
@@ -4434,7 +4434,7 @@
           }
         }
       ],
-      "scenario": "Link Teams with GitHub Teams returns \"No Content\" response",
+      "scenario": "Link teams with external teams returns \"No Content\" response",
       "version": "v2"
     },
     {

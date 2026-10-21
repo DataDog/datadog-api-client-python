@@ -14,16 +14,18 @@ from typing import ClassVar
 
 class TeamSyncAttributesSource(ModelSimple):
     """
-    The external source platform for team synchronization. Only "github" is supported.
+    The external source platform for team synchronization.
 
-    :param value: If omitted defaults to "github". Must be one of ["github"].
+    :param value: Must be one of ["github", "servicenow"].
     :type value: str
     """
 
     allowed_values = {
         "github",
+        "servicenow",
     }
     GITHUB: ClassVar["TeamSyncAttributesSource"]
+    SERVICENOW: ClassVar["TeamSyncAttributesSource"]
 
     @cached_property
     def openapi_types(_):
@@ -33,3 +35,4 @@ class TeamSyncAttributesSource(ModelSimple):
 
 
 TeamSyncAttributesSource.GITHUB = TeamSyncAttributesSource("github")
+TeamSyncAttributesSource.SERVICENOW = TeamSyncAttributesSource("servicenow")

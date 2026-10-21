@@ -16,14 +16,16 @@ class ConnectedTeamRefDataType(ModelSimple):
     """
     External team resource type.
 
-    :param value: If omitted defaults to "github_team". Must be one of ["github_team"].
+    :param value: If omitted defaults to "github_team". Must be one of ["github_team", "servicenow_team"].
     :type value: str
     """
 
     allowed_values = {
         "github_team",
+        "servicenow_team",
     }
     GITHUB_TEAM: ClassVar["ConnectedTeamRefDataType"]
+    SERVICENOW_TEAM: ClassVar["ConnectedTeamRefDataType"]
 
     @cached_property
     def openapi_types(_):
@@ -33,3 +35,4 @@ class ConnectedTeamRefDataType(ModelSimple):
 
 
 ConnectedTeamRefDataType.GITHUB_TEAM = ConnectedTeamRefDataType("github_team")
+ConnectedTeamRefDataType.SERVICENOW_TEAM = ConnectedTeamRefDataType("servicenow_team")

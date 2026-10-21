@@ -33,7 +33,7 @@ class TeamConnectionAttributes(ModelNormal):
         :param managed_by: The entity that manages this team connection.
         :type managed_by: str, optional
 
-        :param source: The name of the external source.
+        :param source: The name of the external source, such as ``github`` or ``servicenow``.
         :type source: str, optional
         """
         if managed_by is not unset:

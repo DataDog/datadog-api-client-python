@@ -64,7 +64,7 @@ class TeamSyncAttributes(ModelNormal):
             items and their subtrees.
         :type selection_state: [TeamSyncSelectionStateItem], optional
 
-        :param source: The external source platform for team synchronization. Only "github" is supported.
+        :param source: The external source platform for team synchronization.
         :type source: TeamSyncAttributesSource
 
         :param sync_membership: Whether to sync members from the external team to the Datadog team. Defaults to ``false`` when not provided.

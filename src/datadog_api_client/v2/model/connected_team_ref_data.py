@@ -35,6 +35,8 @@ class ConnectedTeamRefData(ModelNormal):
         Reference to connected external team.
 
         :param id: The connected team ID as it is referenced throughout the Datadog ecosystem.
+            For GitHub teams, this is ``@<organization>/<team-slug>``.
+            For ServiceNow groups, this is ``<instance_name>/<sys_id>``.
         :type id: str
 
         :param type: External team resource type.

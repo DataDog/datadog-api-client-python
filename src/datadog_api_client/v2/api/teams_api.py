@@ -1490,7 +1490,7 @@ class TeamsApi:
         """Get team sync configurations.
 
         Get all team synchronization configurations.
-        Returns a list of configurations used for linking or provisioning teams with external sources like GitHub.
+        Returns a list of configurations used for linking or provisioning teams with external sources like GitHub or ServiceNow.
 
         :param filter_source: Filter by the external source platform for team synchronization
         :type filter_source: TeamSyncAttributesSource
@@ -1625,7 +1625,7 @@ class TeamsApi:
         :type page_size: int, optional
         :param page_number: Specific page number to return.
         :type page_number: int, optional
-        :param filter_sources: Filter team connections by external source systems.
+        :param filter_sources: Filter team connections by external source systems, such as ``github`` or ``servicenow``.
         :type filter_sources: [str], optional
         :param filter_team_ids: Filter team connections by Datadog team IDs.
         :type filter_team_ids: [str], optional
@@ -1674,7 +1674,7 @@ class TeamsApi:
         :type page_size: int, optional
         :param page_number: Specific page number to return.
         :type page_number: int, optional
-        :param filter_sources: Filter team connections by external source systems.
+        :param filter_sources: Filter team connections by external source systems, such as ``github`` or ``servicenow``.
         :type filter_sources: [str], optional
         :param filter_team_ids: Filter team connections by Datadog team IDs.
         :type filter_team_ids: [str], optional
@@ -1975,23 +1975,28 @@ class TeamsApi:
         self,
         body: TeamSyncRequest,
     ) -> None:
-        """Link Teams with GitHub Teams.
+        """Link teams with external teams.
 
-        This endpoint configures synchronization between your existing Datadog teams and GitHub teams by matching their names.
-        It evaluates all current Datadog teams and compares them against teams in the GitHub organization
-        connected to your Datadog account, based on Datadog Team handle and GitHub Team slug
-        (lowercased and kebab-cased).
+        This endpoint configures synchronization between your existing Datadog teams and teams from
+        GitHub or ServiceNow by matching team names.
+        It evaluates all current Datadog teams and compares them against teams in the external source
+        connected to your Datadog account.
 
-        This operation is read-only on the GitHub side, no teams will be modified or created.
+        This operation is read-only on the external source side, no teams will be modified or created there.
+        This only creates new teams in Datadog when type is set to ``provision``.
 
         Optionally, provide ``selection_state`` to limit synchronization
         to specific teams or organizations and their subtrees, instead
         of syncing all teams.
 
-        `A GitHub organization must be connected to your Datadog account <https://docs.datadoghq.com/integrations/github/>`_ ,
+        **GitHub** : `A GitHub organization must be connected to your Datadog account <https://docs.datadoghq.com/integrations/github/>`_ ,
         and the GitHub App integrated with Datadog must have the ``Members Read`` permission. Matching is performed by comparing the Datadog team handle to the GitHub team slug
-        using a normalized exact match; case is ignored and spaces are removed. No modifications are made
-        to teams in GitHub. This only creates new teams in Datadog when type is set to ``provision``.
+        (lowercased and kebab-cased) using a normalized exact match; case is ignored and spaces are removed.
+
+        **ServiceNow** : `The ServiceNow integration must be configured for your Datadog account <https://docs.datadoghq.com/integrations/servicenow/>`_.
+        Active assignment groups from every configured ServiceNow instance are synchronized, and the ServiceNow
+        group hierarchy is preserved. When ``sync_membership`` is enabled, group members are matched to Datadog
+        users by email address.
 
         :type body: TeamSyncRequest
         :rtype: None
