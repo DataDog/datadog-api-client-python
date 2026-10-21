@@ -463,14 +463,14 @@ Feature: Teams
     And the response "data" has length 0
 
   @team:ddoghq/aaa-omg
-  Scenario: Link Teams with GitHub Teams returns "No Content" response
+  Scenario: Link teams with external teams returns "No Content" response
     Given new "SyncTeams" request
     And body with value {"data": {"attributes": {"source": "github", "type": "link", "selection_state": [{"external_id": {"type": "organization", "value": "1"}}]}, "type": "team_sync_bulk"}}
     When the request is sent
     Then the response status is 204 No Content
 
   @generated @skip @team:ddoghq/aaa-omg
-  Scenario: Link Teams with GitHub Teams returns "OK" response
+  Scenario: Link teams with external teams returns "OK" response
     Given new "SyncTeams" request
     And body with value {"data": {"attributes": {"source": "github", "type": "link"}, "type": "team_sync_bulk"}}
     When the request is sent
