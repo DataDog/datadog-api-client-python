@@ -16,7 +16,7 @@ class TeamsField(ModelSimple):
     """
     Supported teams field.
 
-    :param value: Must be one of ["id", "name", "handle", "summary", "description", "avatar", "banner", "visible_modules", "hidden_modules", "created_at", "modified_at", "user_count", "link_count", "team_links", "user_team_permissions"].
+    :param value: Must be one of ["id", "name", "handle", "summary", "description", "avatar", "banner", "visible_modules", "hidden_modules", "created_at", "modified_at", "user_count", "link_count", "team_links", "user_team_permissions", "is_managed", "provisioned_by"].
     :type value: str
     """
 
@@ -36,6 +36,8 @@ class TeamsField(ModelSimple):
         "link_count",
         "team_links",
         "user_team_permissions",
+        "is_managed",
+        "provisioned_by",
     }
     ID: ClassVar["TeamsField"]
     NAME: ClassVar["TeamsField"]
@@ -52,6 +54,8 @@ class TeamsField(ModelSimple):
     LINK_COUNT: ClassVar["TeamsField"]
     TEAM_LINKS: ClassVar["TeamsField"]
     USER_TEAM_PERMISSIONS: ClassVar["TeamsField"]
+    IS_MANAGED: ClassVar["TeamsField"]
+    PROVISIONED_BY: ClassVar["TeamsField"]
 
     @cached_property
     def openapi_types(_):
@@ -75,3 +79,5 @@ TeamsField.USER_COUNT = TeamsField("user_count")
 TeamsField.LINK_COUNT = TeamsField("link_count")
 TeamsField.TEAM_LINKS = TeamsField("team_links")
 TeamsField.USER_TEAM_PERMISSIONS = TeamsField("user_team_permissions")
+TeamsField.IS_MANAGED = TeamsField("is_managed")
+TeamsField.PROVISIONED_BY = TeamsField("provisioned_by")
