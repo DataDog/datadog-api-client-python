@@ -4202,6 +4202,10 @@ components:
           description: Enable custom metrics collection. Defaults to `false`.
           example: false
           type: boolean
+        collect_service_quotas:
+          description: Enable Service Quotas collection. Defaults to `false`.
+          example: false
+          type: boolean
         enabled:
           description: Enable AWS metrics collection. Defaults to `true`.
           example: true
@@ -184870,6 +184874,7 @@ paths:
                         automute_enabled: true
                         collect_cloudwatch_alarms: false
                         collect_custom_metrics: false
+                        collect_service_quotas: false
                         enabled: true
                         metric_name_filters:
                           - include_only:
@@ -185012,6 +185017,7 @@ paths:
                         automute_enabled: true
                         collect_cloudwatch_alarms: false
                         collect_custom_metrics: false
+                        collect_service_quotas: false
                         enabled: true
                         metric_name_filters:
                           - include_only:
