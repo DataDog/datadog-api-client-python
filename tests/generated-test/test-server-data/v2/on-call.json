@@ -720,6 +720,207 @@
     },
     {
       "feature": "On-Call",
+      "frozen_at": "2026-10-20T11:32:04.097Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Create_additive_On_Call_schedule_returns_Created_response-1792495924@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"abeef14b-68fc-4ad6-9ddd-0812391aa040\",\"attributes\":{\"uuid\":\"abeef14b-68fc-4ad6-9ddd-0812391aa040\",\"name\":null,\"handle\":\"test-create_additive_on_call_schedule_returns_created_response-1792495924@datadoghq.com\",\"created_at\":\"2026-10-20T11:32:06.420588+00:00\",\"modified_at\":\"2026-10-20T11:32:06.420588+00:00\",\"email\":\"test-create_additive_on_call_schedule_returns_created_response-1792495924@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/213f27789bc8221573484f959f3135f7?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "handle": "test-handle-ead75d58f5fb7c5c",
+                    "name": "test-name-ead75d58f5fb7c5c"
+                  },
+                  "type": "team"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"beb4aedb-ba05-488e-852c-dc2cf3591a9e\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":5,\"created_at\":\"2026-10-20T11:32:06.532436+00:00\",\"description\":null,\"handle\":\"test-handle-ead75d58f5fb7c5c\",\"hidden_modules\":null,\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-10-20T11:32:06.532437+00:00\",\"name\":\"test-name-ead75d58f5fb7c5c\",\"summary\":null,\"user_count\":0,\"visible_modules\":null},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/beb4aedb-ba05-488e-852c-dc2cf3591a9e/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/beb4aedb-ba05-488e-852c-dc2cf3591a9e/permission-settings\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "layers": [
+                      {
+                        "effective_date": "2026-10-10T11:32:04.097Z",
+                        "end_date": "2026-10-30T11:32:04.097Z",
+                        "interval": {
+                          "days": 1
+                        },
+                        "members": [
+                          {
+                            "user": {
+                              "id": "abeef14b-68fc-4ad6-9ddd-0812391aa040"
+                            }
+                          }
+                        ],
+                        "name": "Layer 1",
+                        "restrictions": [
+                          {
+                            "end_day": "friday",
+                            "end_time": "17:00:00",
+                            "start_day": "monday",
+                            "start_time": "09:00:00"
+                          }
+                        ],
+                        "rotation_start": "2026-10-15T11:32:04.097Z"
+                      }
+                    ],
+                    "max_responders": 1,
+                    "name": "Test-Create_additive_On_Call_schedule_returns_Created_response-1792495924",
+                    "time_zone": "America/New_York"
+                  },
+                  "relationships": {
+                    "teams": {
+                      "data": [
+                        {
+                          "id": "beb4aedb-ba05-488e-852c-dc2cf3591a9e",
+                          "type": "teams"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "schedules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/schedules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"b46d8df3-cda6-4342-9b74-f3788ff235de\",\"type\":\"schedules\",\"attributes\":{\"max_responders\":1,\"name\":\"Test-Create_additive_On_Call_schedule_returns_Created_response-1792495924\",\"tags\":[],\"time_zone\":\"America/New_York\"},\"relationships\":{\"layers\":{\"data\":[{\"id\":\"33ed2f85-3bdf-45ff-a886-2ad0429825ab\",\"type\":\"layers\"}]},\"teams\":{\"data\":[{\"id\":\"beb4aedb-ba05-488e-852c-dc2cf3591a9e\",\"type\":\"teams\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/schedules/b46d8df3-cda6-4342-9b74-f3788ff235de",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/beb4aedb-ba05-488e-852c-dc2cf3591a9e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/abeef14b-68fc-4ad6-9ddd-0812391aa040",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create additive On-Call schedule returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
       "frozen_at": "2025-12-12T14:05:32.425Z",
       "interactions": [
         {
