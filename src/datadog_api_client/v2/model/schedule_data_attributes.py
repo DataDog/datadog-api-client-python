@@ -14,15 +14,24 @@ from datadog_api_client.model_utils import (
 
 
 class ScheduleDataAttributes(ModelNormal):
+    validations = {
+        "max_responders": {
+            "inclusive_maximum": 10,
+            "inclusive_minimum": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         return {
+            "max_responders": (int,),
             "name": (str,),
             "tags": ([str],),
             "time_zone": (str,),
         }
 
     attribute_map = {
+        "max_responders": "max_responders",
         "name": "name",
         "tags": "tags",
         "time_zone": "time_zone",
@@ -30,6 +39,7 @@ class ScheduleDataAttributes(ModelNormal):
 
     def __init__(
         self_,
+        max_responders: Union[int, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         time_zone: Union[str, UnsetType] = unset,
@@ -37,6 +47,10 @@ class ScheduleDataAttributes(ModelNormal):
     ):
         """
         Provides core properties of a schedule object such as its name and time zone.
+
+        :param max_responders: Maximum number of users who can be on call at the same time.
+            The value is between 1 and the number of layers, and no greater than 10.
+        :type max_responders: int, optional
 
         :param name: A short name for the schedule.
         :type name: str, optional
@@ -47,6 +61,8 @@ class ScheduleDataAttributes(ModelNormal):
         :param time_zone: The time zone in which this schedule operates.
         :type time_zone: str, optional
         """
+        if max_responders is not unset:
+            kwargs["max_responders"] = max_responders
         if name is not unset:
             kwargs["name"] = name
         if tags is not unset:

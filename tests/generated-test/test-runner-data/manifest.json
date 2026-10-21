@@ -8886,6 +8886,13 @@
     {
       "feature": "On-Call",
       "feature_file": "../../v2/features/on-call.feature",
+      "file": "v2/on-call/create-additive-on-call-schedule-returns-created-response.json",
+      "scenario": "Create additive On-Call schedule returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "feature_file": "../../v2/features/on-call.feature",
       "file": "v2/on-call/create-an-on-call-notification-channel-for-a-user-returns-created-response.json",
       "scenario": "Create an On-Call notification channel for a user returns \"Created\" response",
       "version": "v2"

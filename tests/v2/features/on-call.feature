@@ -56,7 +56,7 @@ Feature: On-Call
   @generated @skip @team:ddoghq/on-call
   Scenario: Create On-Call schedule returns "Bad Request" response
     Given new "CreateOnCallSchedule" request
-    And body with value {"data": {"attributes": {"layers": [{"effective_date": "2025-02-03T05:00:00Z", "end_date": "2025-12-31T00:00:00Z", "interval": {"days": 1}, "members": [{"user": {"id": "00000000-aba1-0000-0000-000000000000"}}], "name": "Layer 1", "restrictions": [{"end_day": "friday", "end_time": "17:00:00", "start_day": "monday", "start_time": "09:00:00"}], "rotation_start": "2025-02-01T00:00:00Z"}], "name": "On-Call Schedule", "time_zone": "America/New_York"}, "relationships": {"teams": {"data": [{"id": "00000000-da3a-0000-0000-000000000000", "type": "teams"}]}}, "type": "schedules"}}
+    And body with value {"data": {"attributes": {"layers": [{"effective_date": "2025-02-03T05:00:00Z", "end_date": "2025-12-31T00:00:00Z", "interval": {"days": 1}, "members": [{"user": {"id": "00000000-aba1-0000-0000-000000000000"}}], "name": "Layer 1", "restrictions": [{"end_day": "friday", "end_time": "17:00:00", "start_day": "monday", "start_time": "09:00:00"}], "rotation_start": "2025-02-01T00:00:00Z"}], "max_responders": 1, "name": "On-Call Schedule", "time_zone": "America/New_York"}, "relationships": {"teams": {"data": [{"id": "00000000-da3a-0000-0000-000000000000", "type": "teams"}]}}, "type": "schedules"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -68,6 +68,16 @@ Feature: On-Call
     And body with value {"data": {"attributes": {"layers": [{"effective_date": "{{ timeISO('now - 10d') }}", "end_date": "{{ timeISO('now + 10d') }}", "interval": {"days": 1}, "members": [{"user": {"id": "{{user.data.id}}"}}], "name": "Layer 1", "restrictions": [{"end_day": "friday", "end_time": "17:00:00", "start_day": "monday", "start_time": "09:00:00"}], "rotation_start": "{{ timeISO('now - 5d') }}"}], "name": "{{ unique }}", "time_zone": "America/New_York"}, "relationships": {"teams": {"data": [{"id": "{{dd_team.data.id}}", "type": "teams"}]}}, "type": "schedules"}}
     When the request is sent
     Then the response status is 201 Created
+
+  @team:ddoghq/on-call
+  Scenario: Create additive On-Call schedule returns "Created" response
+    Given new "CreateOnCallSchedule" request
+    And there is a valid "user" in the system
+    And there is a valid "dd_team" in the system
+    And body with value {"data": {"attributes": {"max_responders": 1, "layers": [{"effective_date": "{{ timeISO('now - 10d') }}", "end_date": "{{ timeISO('now + 10d') }}", "interval": {"days": 1}, "members": [{"user": {"id": "{{user.data.id}}"}}], "name": "Layer 1", "restrictions": [{"end_day": "friday", "end_time": "17:00:00", "start_day": "monday", "start_time": "09:00:00"}], "rotation_start": "{{ timeISO('now - 5d') }}"}], "name": "{{ unique }}", "time_zone": "America/New_York"}, "relationships": {"teams": {"data": [{"id": "{{dd_team.data.id}}", "type": "teams"}]}}, "type": "schedules"}}
+    When the request is sent
+    Then the response status is 201 Created
+    And the response "data.attributes.max_responders" is equal to 1
 
   @generated @skip @team:ddoghq/on-call
   Scenario: Create an On-Call notification channel for a user returns "Bad Request" response
@@ -572,7 +582,7 @@ Feature: On-Call
   Scenario: Update On-Call schedule returns "Bad Request" response
     Given new "UpdateOnCallSchedule" request
     And request contains "schedule_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"layers": [{"effective_date": "2025-02-03T05:00:00Z", "end_date": "2025-12-31T00:00:00Z", "interval": {"seconds": 3600}, "members": [{"user": {"id": "00000000-aba1-0000-0000-000000000000"}}], "name": "Layer 1", "restrictions": [{"end_day": "friday", "end_time": "17:00:00", "start_day": "monday", "start_time": "09:00:00"}], "rotation_start": "2025-02-01T00:00:00Z"}], "name": "On-Call Schedule Updated", "time_zone": "America/New_York"}, "id": "3653d3c6-0c75-11ea-ad28-fb5701eabc7d", "relationships": {"teams": {"data": [{"id": "00000000-da3a-0000-0000-000000000000", "type": "teams"}]}}, "type": "schedules"}}
+    And body with value {"data": {"attributes": {"layers": [{"effective_date": "2025-02-03T05:00:00Z", "end_date": "2025-12-31T00:00:00Z", "interval": {"seconds": 3600}, "members": [{"user": {"id": "00000000-aba1-0000-0000-000000000000"}}], "name": "Layer 1", "restrictions": [{"end_day": "friday", "end_time": "17:00:00", "start_day": "monday", "start_time": "09:00:00"}], "rotation_start": "2025-02-01T00:00:00Z"}], "max_responders": 1, "name": "On-Call Schedule Updated", "time_zone": "America/New_York"}, "id": "3653d3c6-0c75-11ea-ad28-fb5701eabc7d", "relationships": {"teams": {"data": [{"id": "00000000-da3a-0000-0000-000000000000", "type": "teams"}]}}, "type": "schedules"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -580,7 +590,7 @@ Feature: On-Call
   Scenario: Update On-Call schedule returns "Not Found" response
     Given new "UpdateOnCallSchedule" request
     And request contains "schedule_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"layers": [{"effective_date": "2025-02-03T05:00:00Z", "end_date": "2025-12-31T00:00:00Z", "interval": {"seconds": 3600}, "members": [{"user": {"id": "00000000-aba1-0000-0000-000000000000"}}], "name": "Layer 1", "restrictions": [{"end_day": "friday", "end_time": "17:00:00", "start_day": "monday", "start_time": "09:00:00"}], "rotation_start": "2025-02-01T00:00:00Z"}], "name": "On-Call Schedule Updated", "time_zone": "America/New_York"}, "id": "3653d3c6-0c75-11ea-ad28-fb5701eabc7d", "relationships": {"teams": {"data": [{"id": "00000000-da3a-0000-0000-000000000000", "type": "teams"}]}}, "type": "schedules"}}
+    And body with value {"data": {"attributes": {"layers": [{"effective_date": "2025-02-03T05:00:00Z", "end_date": "2025-12-31T00:00:00Z", "interval": {"seconds": 3600}, "members": [{"user": {"id": "00000000-aba1-0000-0000-000000000000"}}], "name": "Layer 1", "restrictions": [{"end_day": "friday", "end_time": "17:00:00", "start_day": "monday", "start_time": "09:00:00"}], "rotation_start": "2025-02-01T00:00:00Z"}], "max_responders": 1, "name": "On-Call Schedule Updated", "time_zone": "America/New_York"}, "id": "3653d3c6-0c75-11ea-ad28-fb5701eabc7d", "relationships": {"teams": {"data": [{"id": "00000000-da3a-0000-0000-000000000000", "type": "teams"}]}}, "type": "schedules"}}
     When the request is sent
     Then the response status is 404 Not Found
 
