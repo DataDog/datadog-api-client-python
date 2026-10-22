@@ -12617,6 +12617,13 @@
     {
       "feature": "Users",
       "feature_file": "../../v2/features/users.feature",
+      "file": "v2/users/list-all-users-filtered-by-handle-returns-ok-response.json",
+      "scenario": "List all users filtered by handle returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Users",
+      "feature_file": "../../v2/features/users.feature",
       "file": "v2/users/list-all-users-returns-ok-response.json",
       "scenario": "List all users returns \"OK\" response",
       "version": "v2"

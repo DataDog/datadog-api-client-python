@@ -298,6 +298,11 @@ class UsersApi:
                     "attribute": "filter[status]",
                     "location": "query",
                 },
+                "filter_handle": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[handle]",
+                    "location": "query",
+                },
             },
             headers_map={
                 "accept": ["application/json"],
@@ -579,6 +584,7 @@ class UsersApi:
         sort_dir: Union[QuerySortOrder, UnsetType] = unset,
         filter: Union[str, UnsetType] = unset,
         filter_status: Union[str, UnsetType] = unset,
+        filter_handle: Union[str, UnsetType] = unset,
     ) -> UsersResponse:
         """List all users.
 
@@ -602,6 +608,9 @@ class UsersApi:
             Comma separated list, with possible values ``Active`` , ``Pending`` , and ``Disabled``.
             Defaults to no filtering.
         :type filter_status: str, optional
+        :param filter_handle: Filter on the exact user handle. This filter also returns Datadog-managed users,
+            which the list otherwise excludes. Defaults to no filtering.
+        :type filter_handle: str, optional
         :rtype: UsersResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -623,6 +632,9 @@ class UsersApi:
         if filter_status is not unset:
             kwargs["filter_status"] = filter_status
 
+        if filter_handle is not unset:
+            kwargs["filter_handle"] = filter_handle
+
         return self._list_users_endpoint.call_with_http_info(**kwargs)
 
     def list_users_with_pagination(
@@ -634,6 +646,7 @@ class UsersApi:
         sort_dir: Union[QuerySortOrder, UnsetType] = unset,
         filter: Union[str, UnsetType] = unset,
         filter_status: Union[str, UnsetType] = unset,
+        filter_handle: Union[str, UnsetType] = unset,
     ) -> collections.abc.Iterable[User]:
         """List all users.
 
@@ -656,6 +669,9 @@ class UsersApi:
             Comma separated list, with possible values ``Active`` , ``Pending`` , and ``Disabled``.
             Defaults to no filtering.
         :type filter_status: str, optional
+        :param filter_handle: Filter on the exact user handle. This filter also returns Datadog-managed users,
+            which the list otherwise excludes. Defaults to no filtering.
+        :type filter_handle: str, optional
 
         :return: A generator of paginated results.
         :rtype: collections.abc.Iterable[User]
@@ -678,6 +694,9 @@ class UsersApi:
 
         if filter_status is not unset:
             kwargs["filter_status"] = filter_status
+
+        if filter_handle is not unset:
+            kwargs["filter_handle"] = filter_handle
 
         local_page_size = get_attribute_from_path(kwargs, "page_size", 10)
         endpoint = self._list_users_endpoint
