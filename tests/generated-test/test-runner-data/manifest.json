@@ -8991,6 +8991,13 @@
     {
       "feature": "On-Call",
       "feature_file": "../../v2/features/on-call.feature",
+      "file": "v2/on-call/list-on-call-escalation-policies-returns-ok-response.json",
+      "scenario": "List On-Call escalation policies returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "feature_file": "../../v2/features/on-call.feature",
       "file": "v2/on-call/list-on-call-notification-channels-for-a-user-returns-ok-response.json",
       "scenario": "List On-Call notification channels for a user returns \"OK\" response",
       "version": "v2"

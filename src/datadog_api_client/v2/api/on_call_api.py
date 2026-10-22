@@ -16,6 +16,8 @@ from datadog_api_client.model_utils import (
     UnsetType,
     unset,
 )
+from datadog_api_client.v2.model.escalation_policies import EscalationPolicies
+from datadog_api_client.v2.model.escalation_policy_list_item import EscalationPolicyListItem
 from datadog_api_client.v2.model.escalation_policy import EscalationPolicy
 from datadog_api_client.v2.model.escalation_policy_create_request import EscalationPolicyCreateRequest
 from datadog_api_client.v2.model.escalation_policy_update_request import EscalationPolicyUpdateRequest
@@ -552,6 +554,71 @@ class OnCallApi:
                     "openapi_types": (str,),
                     "attribute": "rule_id",
                     "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_on_call_escalation_policies_endpoint = _Endpoint(
+            settings={
+                "response_type": (EscalationPolicies,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/on-call/escalation-policies",
+                "operation_id": "list_on_call_escalation_policies",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_size": {
+                    "validation": {
+                        "inclusive_maximum": 50,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+                "page_number": {
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
+                },
+                "filter_query": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[query]",
+                    "location": "query",
+                },
+                "filter_team_id": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[team_id]",
+                    "location": "query",
+                },
+                "filter_user_id": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[user_id]",
+                    "location": "query",
+                },
+                "filter_schedule_id": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[schedule_id]",
+                    "location": "query",
+                },
+                "filter_tags": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[tags]",
+                    "location": "query",
+                },
+                "filter_tags_any": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[tags_any]",
+                    "location": "query",
                 },
                 "include": {
                     "openapi_types": (str,),
@@ -1265,6 +1332,153 @@ class OnCallApi:
             kwargs["include"] = include
 
         return self._get_user_notification_rule_endpoint.call_with_http_info(**kwargs)
+
+    def list_on_call_escalation_policies(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        filter_query: Union[str, UnsetType] = unset,
+        filter_team_id: Union[str, UnsetType] = unset,
+        filter_user_id: Union[str, UnsetType] = unset,
+        filter_schedule_id: Union[str, UnsetType] = unset,
+        filter_tags: Union[str, UnsetType] = unset,
+        filter_tags_any: Union[str, UnsetType] = unset,
+        include: Union[str, UnsetType] = unset,
+    ) -> EscalationPolicies:
+        """List On-Call escalation policies.
+
+        Retrieve a paginated list of On-Call escalation policies, sorted by name.
+
+        :param page_size: Number of escalation policies to return per page. The maximum allowed value is 50.
+        :type page_size: int, optional
+        :param page_number: Specific page number to return.
+        :type page_number: int, optional
+        :param filter_query: Search query to filter escalation policies. Supports free-text search on the policy name (case-insensitive) and structured filters on ``team.id`` and ``tags``. When set, ``filter[team_id]`` , ``filter[user_id]`` , and ``filter[schedule_id]`` are ignored. Can't be combined with ``filter[tags]`` or ``filter[tags_any]``.
+        :type filter_query: str, optional
+        :param filter_team_id: Comma-separated list of team IDs. Returns escalation policies that belong to any of these teams or have a step targeting any of them.
+        :type filter_team_id: str, optional
+        :param filter_user_id: Comma-separated list of user IDs. Returns escalation policies with a step targeting any of these users.
+        :type filter_user_id: str, optional
+        :param filter_schedule_id: Comma-separated list of schedule IDs. Returns escalation policies with a step targeting any of these schedules.
+        :type filter_schedule_id: str, optional
+        :param filter_tags: Comma-separated list of ``key:value`` tags. Returns escalation policies that have all of these tags.
+        :type filter_tags: str, optional
+        :param filter_tags_any: Comma-separated list of ``key:value`` tags. Returns escalation policies that have at least one of these tags.
+        :type filter_tags_any: str, optional
+        :param include: Comma-separated list of included relationships to be returned. Allowed values: ``teams`` , ``steps`` , ``steps.targets`` , ``steps.targets.schedule`` , ``user.color``. ``user.color`` populates the ``color`` attribute of users included through ``steps.targets``.
+        :type include: str, optional
+        :rtype: EscalationPolicies
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if filter_query is not unset:
+            kwargs["filter_query"] = filter_query
+
+        if filter_team_id is not unset:
+            kwargs["filter_team_id"] = filter_team_id
+
+        if filter_user_id is not unset:
+            kwargs["filter_user_id"] = filter_user_id
+
+        if filter_schedule_id is not unset:
+            kwargs["filter_schedule_id"] = filter_schedule_id
+
+        if filter_tags is not unset:
+            kwargs["filter_tags"] = filter_tags
+
+        if filter_tags_any is not unset:
+            kwargs["filter_tags_any"] = filter_tags_any
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        return self._list_on_call_escalation_policies_endpoint.call_with_http_info(**kwargs)
+
+    def list_on_call_escalation_policies_with_pagination(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        filter_query: Union[str, UnsetType] = unset,
+        filter_team_id: Union[str, UnsetType] = unset,
+        filter_user_id: Union[str, UnsetType] = unset,
+        filter_schedule_id: Union[str, UnsetType] = unset,
+        filter_tags: Union[str, UnsetType] = unset,
+        filter_tags_any: Union[str, UnsetType] = unset,
+        include: Union[str, UnsetType] = unset,
+    ) -> collections.abc.Iterable[EscalationPolicyListItem]:
+        """List On-Call escalation policies.
+
+        Provide a paginated version of :meth:`list_on_call_escalation_policies`, returning all items.
+
+        :param page_size: Number of escalation policies to return per page. The maximum allowed value is 50.
+        :type page_size: int, optional
+        :param page_number: Specific page number to return.
+        :type page_number: int, optional
+        :param filter_query: Search query to filter escalation policies. Supports free-text search on the policy name (case-insensitive) and structured filters on ``team.id`` and ``tags``. When set, ``filter[team_id]`` , ``filter[user_id]`` , and ``filter[schedule_id]`` are ignored. Can't be combined with ``filter[tags]`` or ``filter[tags_any]``.
+        :type filter_query: str, optional
+        :param filter_team_id: Comma-separated list of team IDs. Returns escalation policies that belong to any of these teams or have a step targeting any of them.
+        :type filter_team_id: str, optional
+        :param filter_user_id: Comma-separated list of user IDs. Returns escalation policies with a step targeting any of these users.
+        :type filter_user_id: str, optional
+        :param filter_schedule_id: Comma-separated list of schedule IDs. Returns escalation policies with a step targeting any of these schedules.
+        :type filter_schedule_id: str, optional
+        :param filter_tags: Comma-separated list of ``key:value`` tags. Returns escalation policies that have all of these tags.
+        :type filter_tags: str, optional
+        :param filter_tags_any: Comma-separated list of ``key:value`` tags. Returns escalation policies that have at least one of these tags.
+        :type filter_tags_any: str, optional
+        :param include: Comma-separated list of included relationships to be returned. Allowed values: ``teams`` , ``steps`` , ``steps.targets`` , ``steps.targets.schedule`` , ``user.color``. ``user.color`` populates the ``color`` attribute of users included through ``steps.targets``.
+        :type include: str, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[EscalationPolicyListItem]
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if filter_query is not unset:
+            kwargs["filter_query"] = filter_query
+
+        if filter_team_id is not unset:
+            kwargs["filter_team_id"] = filter_team_id
+
+        if filter_user_id is not unset:
+            kwargs["filter_user_id"] = filter_user_id
+
+        if filter_schedule_id is not unset:
+            kwargs["filter_schedule_id"] = filter_schedule_id
+
+        if filter_tags is not unset:
+            kwargs["filter_tags"] = filter_tags
+
+        if filter_tags_any is not unset:
+            kwargs["filter_tags_any"] = filter_tags_any
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        local_page_size = get_attribute_from_path(kwargs, "page_size", 20)
+        endpoint = self._list_on_call_escalation_policies_endpoint
+        set_attribute_from_path(kwargs, "page_size", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "page_param": "page_number",
+            "page_start": 0,
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
 
     def list_on_call_schedules(
         self,

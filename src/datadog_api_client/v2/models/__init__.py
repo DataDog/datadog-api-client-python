@@ -3184,6 +3184,9 @@ from datadog_api_client.v2.model.environments_pagination_meta import Environment
 from datadog_api_client.v2.model.environments_pagination_meta_page import EnvironmentsPaginationMetaPage
 from datadog_api_client.v2.model.error_handler import ErrorHandler
 from datadog_api_client.v2.model.escalation import Escalation
+from datadog_api_client.v2.model.escalation_policies import EscalationPolicies
+from datadog_api_client.v2.model.escalation_policies_response_meta import EscalationPoliciesResponseMeta
+from datadog_api_client.v2.model.escalation_policies_response_meta_page import EscalationPoliciesResponseMetaPage
 from datadog_api_client.v2.model.escalation_policy import EscalationPolicy
 from datadog_api_client.v2.model.escalation_policy_create_request import EscalationPolicyCreateRequest
 from datadog_api_client.v2.model.escalation_policy_create_request_data import EscalationPolicyCreateRequestData
@@ -3211,6 +3214,7 @@ from datadog_api_client.v2.model.escalation_policy_data_relationships_steps_data
 )
 from datadog_api_client.v2.model.escalation_policy_data_type import EscalationPolicyDataType
 from datadog_api_client.v2.model.escalation_policy_included import EscalationPolicyIncluded
+from datadog_api_client.v2.model.escalation_policy_list_item import EscalationPolicyListItem
 from datadog_api_client.v2.model.escalation_policy_step import EscalationPolicyStep
 from datadog_api_client.v2.model.escalation_policy_step_attributes import EscalationPolicyStepAttributes
 from datadog_api_client.v2.model.escalation_policy_step_attributes_assignment import (
@@ -15182,6 +15186,9 @@ __all__ = [
     "EnvironmentsPaginationMetaPage",
     "ErrorHandler",
     "Escalation",
+    "EscalationPolicies",
+    "EscalationPoliciesResponseMeta",
+    "EscalationPoliciesResponseMetaPage",
     "EscalationPolicy",
     "EscalationPolicyCreateRequest",
     "EscalationPolicyCreateRequestData",
@@ -15197,6 +15204,7 @@ __all__ = [
     "EscalationPolicyDataRelationshipsStepsDataItemsType",
     "EscalationPolicyDataType",
     "EscalationPolicyIncluded",
+    "EscalationPolicyListItem",
     "EscalationPolicyStep",
     "EscalationPolicyStepAttributes",
     "EscalationPolicyStepAttributesAssignment",

@@ -6656,6 +6656,12 @@
       "type": "idempotent"
     }
   },
+  "ListOnCallEscalationPolicies": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateOnCallEscalationPolicy": {
     "tag": "On-Call",
     "undo": {

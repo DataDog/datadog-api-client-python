@@ -1,0 +1,51 @@
+{
+  "api": "On-Call",
+  "expected_status": 200,
+  "feature": "On-Call",
+  "id": "v2/On-Call/List On-Call escalation policies returns \"OK\" response",
+  "operation_id": "ListOnCallEscalationPolicies",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[schedule_id]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "schedule.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "include",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "steps.targets"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/on-call/escalation-policies"
+  },
+  "scenario": "List On-Call escalation policies returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

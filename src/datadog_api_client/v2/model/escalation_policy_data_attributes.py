@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
+from typing import List, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -30,12 +30,14 @@ class EscalationPolicyDataAttributes(ModelNormal):
             "name": (str,),
             "resolve_page_on_policy_end": (bool,),
             "retries": (int,),
+            "tags": ([str],),
         }
 
     attribute_map = {
         "name": "name",
         "resolve_page_on_policy_end": "resolve_page_on_policy_end",
         "retries": "retries",
+        "tags": "tags",
     }
 
     def __init__(
@@ -43,6 +45,7 @@ class EscalationPolicyDataAttributes(ModelNormal):
         name: str,
         resolve_page_on_policy_end: Union[bool, UnsetType] = unset,
         retries: Union[int, UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -56,11 +59,16 @@ class EscalationPolicyDataAttributes(ModelNormal):
 
         :param retries: Specifies how many times the escalation sequence is retried if there is no response.
         :type retries: int, optional
+
+        :param tags: A list of tags attached to the escalation policy, in ``key:value`` format.
+        :type tags: [str], optional
         """
         if resolve_page_on_policy_end is not unset:
             kwargs["resolve_page_on_policy_end"] = resolve_page_on_policy_end
         if retries is not unset:
             kwargs["retries"] = retries
+        if tags is not unset:
+            kwargs["tags"] = tags
         super().__init__(kwargs)
 
         self_.name = name

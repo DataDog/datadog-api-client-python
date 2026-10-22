@@ -3676,6 +3676,340 @@
     },
     {
       "feature": "On-Call",
+      "frozen_at": "2026-10-21T07:56:00.111Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-List_On_Call_escalation_policies_returns_OK_response-1792569360@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"b59d1cec-8aae-4b77-90b1-51383a15fa9c\",\"attributes\":{\"uuid\":\"b59d1cec-8aae-4b77-90b1-51383a15fa9c\",\"name\":null,\"handle\":\"test-list_on_call_escalation_policies_returns_ok_response-1792569360@datadoghq.com\",\"created_at\":\"2026-10-21T07:56:00.661034+00:00\",\"modified_at\":\"2026-10-21T07:56:00.661034+00:00\",\"email\":\"test-list_on_call_escalation_policies_returns_ok_response-1792569360@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/d037931a8597527c0e9740820b731ea9?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "handle": "test-handle-4b526d34522a83e5",
+                    "name": "test-name-4b526d34522a83e5"
+                  },
+                  "type": "team"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"32f0af28-fc1d-4b2e-8e1d-9a39b3fb3aee\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":0,\"created_at\":\"2026-10-21T07:56:01.240173+00:00\",\"description\":null,\"handle\":\"test-handle-4b526d34522a83e5\",\"hidden_modules\":null,\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-10-21T07:56:01.240173+00:00\",\"name\":\"test-name-4b526d34522a83e5\",\"summary\":null,\"user_count\":0,\"visible_modules\":null},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/32f0af28-fc1d-4b2e-8e1d-9a39b3fb3aee/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/32f0af28-fc1d-4b2e-8e1d-9a39b3fb3aee/permission-settings\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "layers": [
+                      {
+                        "effective_date": "2026-10-11T07:56:00.111Z",
+                        "end_date": "2026-10-31T07:56:00.111Z",
+                        "interval": {
+                          "days": 1
+                        },
+                        "members": [
+                          {
+                            "user": {
+                              "id": "b59d1cec-8aae-4b77-90b1-51383a15fa9c"
+                            }
+                          }
+                        ],
+                        "name": "Layer 1",
+                        "restrictions": [
+                          {
+                            "end_day": "friday",
+                            "end_time": "17:00:00",
+                            "start_day": "monday",
+                            "start_time": "09:00:00"
+                          }
+                        ],
+                        "rotation_start": "2026-10-16T07:56:00.111Z"
+                      }
+                    ],
+                    "name": "Test-List_On_Call_escalation_policies_returns_OK_response-1792569360",
+                    "time_zone": "America/New_York"
+                  },
+                  "relationships": {
+                    "teams": {
+                      "data": [
+                        {
+                          "id": "65aea9d0-941c-4607-bf8a-14fc0dac2820",
+                          "type": "teams"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "schedules"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/schedules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"4be12f3a-531d-472d-8597-796017572212\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Test-List_On_Call_escalation_policies_returns_OK_response-1792569360\",\"tags\":[],\"time_zone\":\"America/New_York\"},\"relationships\":{\"layers\":{\"data\":[{\"id\":\"397a6351-607e-4151-8617-19f1b2107533\",\"type\":\"layers\"}]},\"teams\":{\"data\":[{\"id\":\"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\"type\":\"teams\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-List_On_Call_escalation_policies_returns_OK_response-1792569360",
+                    "resolve_page_on_policy_end": true,
+                    "retries": 2,
+                    "steps": [
+                      {
+                        "assignment": "default",
+                        "escalate_after_seconds": 3600,
+                        "targets": [
+                          {
+                            "id": "32f0af28-fc1d-4b2e-8e1d-9a39b3fb3aee",
+                            "type": "teams"
+                          },
+                          {
+                            "id": "4be12f3a-531d-472d-8597-796017572212",
+                            "type": "schedules"
+                          },
+                          {
+                            "config": {
+                              "schedule": {
+                                "position": "previous"
+                              }
+                            },
+                            "id": "4be12f3a-531d-472d-8597-796017572212",
+                            "type": "schedules"
+                          },
+                          {
+                            "id": "b59d1cec-8aae-4b77-90b1-51383a15fa9c",
+                            "type": "users"
+                          }
+                        ]
+                      },
+                      {
+                        "assignment": "round-robin",
+                        "escalate_after_seconds": 3600,
+                        "targets": [
+                          {
+                            "id": "32f0af28-fc1d-4b2e-8e1d-9a39b3fb3aee",
+                            "type": "teams"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "relationships": {
+                    "teams": {
+                      "data": [
+                        {
+                          "id": "32f0af28-fc1d-4b2e-8e1d-9a39b3fb3aee",
+                          "type": "teams"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "policies"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/escalation-policies",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"fa88ac55-aa5d-470d-abbd-5a160d6f4d5c\",\"type\":\"policies\",\"attributes\":{\"name\":\"Test-List_On_Call_escalation_policies_returns_OK_response-1792569360\",\"resolve_page_on_policy_end\":true,\"retries\":2,\"tags\":[]},\"relationships\":{\"steps\":{\"data\":[{\"id\":\"cf613965-854c-48fd-a299-cda5d491a132\",\"type\":\"steps\"},{\"id\":\"11d3ca7e-aa82-4dcc-9147-6a0fec5f222c\",\"type\":\"steps\"}]},\"teams\":{\"data\":[{\"id\":\"32f0af28-fc1d-4b2e-8e1d-9a39b3fb3aee\",\"type\":\"teams\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/on-call/escalation-policies",
+            "query": [
+              [
+                "filter[schedule_id]",
+                "4be12f3a-531d-472d-8597-796017572212"
+              ],
+              [
+                "include",
+                "steps.targets"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"fa88ac55-aa5d-470d-abbd-5a160d6f4d5c\",\"type\":\"policies\",\"attributes\":{\"name\":\"Test-List_On_Call_escalation_policies_returns_OK_response-1792569360\",\"resolve_page_on_policy_end\":true,\"retries\":2,\"tags\":[]},\"relationships\":{\"steps\":{\"data\":[{\"id\":\"cf613965-854c-48fd-a299-cda5d491a132\",\"type\":\"steps\"},{\"id\":\"11d3ca7e-aa82-4dcc-9147-6a0fec5f222c\",\"type\":\"steps\"}]},\"teams\":{\"data\":[{\"id\":\"32f0af28-fc1d-4b2e-8e1d-9a39b3fb3aee\",\"type\":\"teams\"}]}}}],\"meta\":{\"page\":{\"type\":\"number_size\",\"number\":0,\"size\":20,\"total\":1,\"first_number\":0,\"prev_number\":null,\"next_number\":null,\"last_number\":0}},\"included\":[{\"id\":\"cf613965-854c-48fd-a299-cda5d491a132\",\"type\":\"steps\",\"attributes\":{\"assignment\":\"default\",\"escalate_after_seconds\":3600},\"relationships\":{\"targets\":{\"data\":[{\"id\":\"32f0af28-fc1d-4b2e-8e1d-9a39b3fb3aee\",\"type\":\"teams\"},{\"id\":\"4be12f3a-531d-472d-8597-796017572212\",\"type\":\"schedules\"},{\"id\":\"4be12f3a-531d-472d-8597-796017572212_previous\",\"type\":\"schedule_target\"},{\"id\":\"b59d1cec-8aae-4b77-90b1-51383a15fa9c\",\"type\":\"users\"}]}}},{\"id\":\"4be12f3a-531d-472d-8597-796017572212_previous\",\"type\":\"schedule_target\",\"attributes\":{\"position\":\"previous\"},\"relationships\":{\"schedule\":{\"data\":{\"id\":\"4be12f3a-531d-472d-8597-796017572212\",\"type\":\"schedules\"}}}},{\"id\":\"11d3ca7e-aa82-4dcc-9147-6a0fec5f222c\",\"type\":\"steps\",\"attributes\":{\"assignment\":\"round-robin\",\"escalate_after_seconds\":3600},\"relationships\":{\"targets\":{\"data\":[{\"id\":\"32f0af28-fc1d-4b2e-8e1d-9a39b3fb3aee\",\"type\":\"teams\"}]}}},{\"id\":\"32f0af28-fc1d-4b2e-8e1d-9a39b3fb3aee\",\"type\":\"teams\",\"attributes\":{\"avatar\":\"\",\"description\":\"\",\"handle\":\"test-handle-4b526d34522a83e5\",\"name\":\"test-name-4b526d34522a83e5\"}},{\"id\":\"4be12f3a-531d-472d-8597-796017572212\",\"type\":\"schedules\",\"attributes\":{\"name\":\"Test-List_On_Call_escalation_policies_returns_OK_response-1792569360\",\"tags\":[],\"time_zone\":\"America/New_York\"},\"relationships\":{\"layers\":{\"data\":[{\"id\":\"397a6351-607e-4151-8617-19f1b2107533\",\"type\":\"layers\"}]},\"teams\":{\"data\":[{\"id\":\"65aea9d0-941c-4607-bf8a-14fc0dac2820\",\"type\":\"teams\"}]}}},{\"id\":\"b59d1cec-8aae-4b77-90b1-51383a15fa9c\",\"type\":\"users\",\"attributes\":{\"email\":\"test-list_on_call_escalation_policies_returns_ok_response-1792569360@datadoghq.com\",\"name\":\"\",\"status\":\"pending\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/escalation-policies/fa88ac55-aa5d-470d-abbd-5a160d6f4d5c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/on-call/schedules/4be12f3a-531d-472d-8597-796017572212",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/32f0af28-fc1d-4b2e-8e1d-9a39b3fb3aee",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/b59d1cec-8aae-4b77-90b1-51383a15fa9c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "List On-Call escalation policies returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
       "frozen_at": "2025-12-12T14:40:40.219Z",
       "interactions": [
         {

@@ -40214,6 +40214,68 @@ components:
       required:
         - type
       type: object
+    EscalationPolicies:
+      description: "A paginated list of escalation policies, with any related resources requested through `include`."
+      properties:
+        data:
+          description: "A list of escalation policies."
+          items:
+            $ref: "#/components/schemas/EscalationPolicyListItem"
+          type: array
+        included:
+          description: "Provides any included related resources, such as teams, steps, or targets, returned with the policies."
+          items:
+            $ref: "#/components/schemas/EscalationPolicyIncluded"
+          type: array
+        meta:
+          $ref: "#/components/schemas/EscalationPoliciesResponseMeta"
+      required:
+        - data
+      type: object
+    EscalationPoliciesResponseMeta:
+      description: Metadata included in the response when listing escalation policies.
+      properties:
+        page:
+          $ref: "#/components/schemas/EscalationPoliciesResponseMetaPage"
+      type: object
+    EscalationPoliciesResponseMetaPage:
+      description: Pagination metadata included in the response when listing escalation policies.
+      properties:
+        first_number:
+          description: First page number.
+          format: int64
+          type: integer
+        last_number:
+          description: Last page number.
+          format: int64
+          type: integer
+        next_number:
+          description: Next page number.
+          format: int64
+          nullable: true
+          type: integer
+        number:
+          description: Page number.
+          format: int64
+          type: integer
+        prev_number:
+          description: Previous page number.
+          format: int64
+          nullable: true
+          type: integer
+        size:
+          description: Page size.
+          format: int64
+          type: integer
+        total:
+          description: Total number of results.
+          format: int64
+          type: integer
+        type:
+          description: Pagination type.
+          example: "number_size"
+          type: string
+      type: object
     EscalationPolicy:
       description: "Represents a complete escalation policy response, including policy data and optionally included related resources."
       example:
@@ -40432,6 +40494,14 @@ components:
           maximum: 10
           minimum: 0
           type: integer
+        tags:
+          description: "A list of tags attached to the escalation policy, in `key:value` format."
+          example:
+            - "env:prod"
+          items:
+            description: "A tag in `key:value` format."
+            type: string
+          type: array
       required:
         - name
       type: object
@@ -40493,6 +40563,23 @@ components:
         - $ref: "#/components/schemas/ScheduleData"
         - $ref: "#/components/schemas/ConfiguredSchedule"
         - $ref: "#/components/schemas/TeamReference"
+    EscalationPolicyListItem:
+      description: "Represents an escalation policy returned in a list, including its attributes, ID, relationships, and resource type."
+      properties:
+        attributes:
+          $ref: "#/components/schemas/EscalationPolicyDataAttributes"
+        id:
+          description: "Specifies the unique identifier of the escalation policy."
+          example: "ab000000-0000-0000-0000-000000000000"
+          type: string
+        relationships:
+          $ref: "#/components/schemas/EscalationPolicyDataRelationships"
+        type:
+          $ref: "#/components/schemas/EscalationPolicyDataType"
+      required:
+        - id
+        - type
+      type: object
     EscalationPolicyStep:
       description: "Represents a single step in an escalation policy, including its attributes, relationships, and resource type."
       properties:
@@ -40709,6 +40796,10 @@ components:
     EscalationPolicyUserAttributes:
       description: Provides basic user information for an escalation policy, including a name and email address.
       properties:
+        color:
+          description: "The user's on-call color, as a hex code (for example, `#FF0000`). Included only when `user.color` is requested in the `include` parameter."
+          example: "#FF0000"
+          type: string
         email:
           description: The user's email address.
           example: "jane.doe@example.com"
@@ -204642,6 +204733,129 @@ paths:
         permissions:
           - observability_pipelines_deploy
   /api/v2/on-call/escalation-policies:
+    get:
+      description: Retrieve a paginated list of On-Call escalation policies, sorted by name.
+      operationId: ListOnCallEscalationPolicies
+      parameters:
+        - description: Number of escalation policies to return per page. The maximum allowed value is 50.
+          in: query
+          name: page[size]
+          required: false
+          schema:
+            default: 20
+            example: 20
+            format: int64
+            maximum: 50
+            type: integer
+        - $ref: "#/components/parameters/PageNumber"
+        - description: "Search query to filter escalation policies. Supports free-text search on the policy name (case-insensitive) and structured filters on `team.id` and `tags`. When set, `filter[team_id]`, `filter[user_id]`, and `filter[schedule_id]` are ignored. Can't be combined with `filter[tags]` or `filter[tags_any]`."
+          in: query
+          name: filter[query]
+          required: false
+          schema:
+            type: string
+        - description: Comma-separated list of team IDs. Returns escalation policies that belong to any of these teams or have a step targeting any of them.
+          in: query
+          name: filter[team_id]
+          required: false
+          schema:
+            example: "00000000-da3a-0000-0000-000000000000"
+            type: string
+        - description: Comma-separated list of user IDs. Returns escalation policies with a step targeting any of these users.
+          in: query
+          name: filter[user_id]
+          required: false
+          schema:
+            example: "00000000-aba1-0000-0000-000000000000"
+            type: string
+        - description: Comma-separated list of schedule IDs. Returns escalation policies with a step targeting any of these schedules.
+          in: query
+          name: filter[schedule_id]
+          required: false
+          schema:
+            example: "00000000-aba2-0000-0000-000000000000"
+            type: string
+        - description: "Comma-separated list of `key:value` tags. Returns escalation policies that have all of these tags."
+          in: query
+          name: filter[tags]
+          required: false
+          schema:
+            example: "env:prod"
+            type: string
+        - description: "Comma-separated list of `key:value` tags. Returns escalation policies that have at least one of these tags."
+          in: query
+          name: filter[tags_any]
+          required: false
+          schema:
+            example: "env:prod,env:staging"
+            type: string
+        - description: "Comma-separated list of included relationships to be returned. Allowed values: `teams`, `steps`, `steps.targets`, `steps.targets.schedule`, `user.color`. `user.color` populates the `color` attribute of users included through `steps.targets`."
+          in: query
+          name: include
+          required: false
+          schema:
+            type: string
+      responses:
+        "200":
+          content:
+            "application/json":
+              examples:
+                default:
+                  value:
+                    data:
+                      - attributes:
+                          name: Escalation Policy 1
+                          resolve_page_on_policy_end: true
+                          retries: 2
+                          tags:
+                            - env:prod
+                        id: 00000000-aba1-0000-0000-000000000000
+                        relationships:
+                          steps:
+                            data:
+                              - id: 00000000-aba1-0000-0000-000000000000
+                                type: steps
+                          teams:
+                            data:
+                              - id: 00000000-da3a-0000-0000-000000000000
+                                type: teams
+                        type: policies
+                    meta:
+                      page:
+                        first_number: 0
+                        last_number: 0
+                        next_number:
+                        number: 0
+                        prev_number:
+                        size: 20
+                        total: 1
+                        type: number_size
+              schema:
+                $ref: "#/components/schemas/EscalationPolicies"
+          description: OK
+        "400":
+          $ref: "#/components/responses/BadRequestResponse"
+        "401":
+          $ref: "#/components/responses/UnauthorizedResponse"
+        "403":
+          $ref: "#/components/responses/ForbiddenResponse"
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      security:
+        - apiKeyAuth: []
+          appKeyAuth: []
+        - AuthZ: []
+      summary: List On-Call escalation policies
+      tags:
+        - On-Call
+      x-pagination:
+        limitParam: page[size]
+        pageParam: page[number]
+        resultsPath: data
+      "x-permission":
+        operator: AND
+        permissions:
+          - on_call_read
     post:
       description: Create a new On-Call escalation policy
       operationId: CreateOnCallEscalationPolicy
