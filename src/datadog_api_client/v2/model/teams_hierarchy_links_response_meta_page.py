@@ -19,10 +19,16 @@ class TeamsHierarchyLinksResponseMetaPage(ModelNormal):
     def openapi_types(_):
         return {
             "first_number": (int,),
+            "first_offset": (int,),
             "last_number": (int,),
+            "last_offset": (int, none_type),
+            "limit": (int,),
             "next_number": (int, none_type),
+            "next_offset": (int, none_type),
             "number": (int,),
+            "offset": (int,),
             "prev_number": (int, none_type),
+            "prev_offset": (int, none_type),
             "size": (int,),
             "total": (int,),
             "type": (str,),
@@ -30,10 +36,16 @@ class TeamsHierarchyLinksResponseMetaPage(ModelNormal):
 
     attribute_map = {
         "first_number": "first_number",
+        "first_offset": "first_offset",
         "last_number": "last_number",
+        "last_offset": "last_offset",
+        "limit": "limit",
         "next_number": "next_number",
+        "next_offset": "next_offset",
         "number": "number",
+        "offset": "offset",
         "prev_number": "prev_number",
+        "prev_offset": "prev_offset",
         "size": "size",
         "total": "total",
         "type": "type",
@@ -42,10 +54,16 @@ class TeamsHierarchyLinksResponseMetaPage(ModelNormal):
     def __init__(
         self_,
         first_number: Union[int, UnsetType] = unset,
+        first_offset: Union[int, UnsetType] = unset,
         last_number: Union[int, UnsetType] = unset,
+        last_offset: Union[int, none_type, UnsetType] = unset,
+        limit: Union[int, UnsetType] = unset,
         next_number: Union[int, none_type, UnsetType] = unset,
+        next_offset: Union[int, none_type, UnsetType] = unset,
         number: Union[int, UnsetType] = unset,
+        offset: Union[int, UnsetType] = unset,
         prev_number: Union[int, none_type, UnsetType] = unset,
+        prev_offset: Union[int, none_type, UnsetType] = unset,
         size: Union[int, UnsetType] = unset,
         total: Union[int, UnsetType] = unset,
         type: Union[str, UnsetType] = unset,
@@ -57,17 +75,35 @@ class TeamsHierarchyLinksResponseMetaPage(ModelNormal):
         :param first_number: First page number.
         :type first_number: int, optional
 
+        :param first_offset: First offset.
+        :type first_offset: int, optional
+
         :param last_number: Last page number.
         :type last_number: int, optional
+
+        :param last_offset: Last offset.
+        :type last_offset: int, none_type, optional
+
+        :param limit: Page limit, when offset pagination is used.
+        :type limit: int, optional
 
         :param next_number: Next page number.
         :type next_number: int, none_type, optional
 
+        :param next_offset: Next offset.
+        :type next_offset: int, none_type, optional
+
         :param number: Page number.
         :type number: int, optional
 
+        :param offset: Current offset, when offset pagination is used.
+        :type offset: int, optional
+
         :param prev_number: Previous page number.
         :type prev_number: int, none_type, optional
+
+        :param prev_offset: Previous offset.
+        :type prev_offset: int, none_type, optional
 
         :param size: Page size.
         :type size: int, optional
@@ -80,14 +116,26 @@ class TeamsHierarchyLinksResponseMetaPage(ModelNormal):
         """
         if first_number is not unset:
             kwargs["first_number"] = first_number
+        if first_offset is not unset:
+            kwargs["first_offset"] = first_offset
         if last_number is not unset:
             kwargs["last_number"] = last_number
+        if last_offset is not unset:
+            kwargs["last_offset"] = last_offset
+        if limit is not unset:
+            kwargs["limit"] = limit
         if next_number is not unset:
             kwargs["next_number"] = next_number
+        if next_offset is not unset:
+            kwargs["next_offset"] = next_offset
         if number is not unset:
             kwargs["number"] = number
+        if offset is not unset:
+            kwargs["offset"] = offset
         if prev_number is not unset:
             kwargs["prev_number"] = prev_number
+        if prev_offset is not unset:
+            kwargs["prev_offset"] = prev_offset
         if size is not unset:
             kwargs["size"] = size
         if total is not unset:

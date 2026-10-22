@@ -42,11 +42,14 @@ class TeamAttributes(ModelNormal):
             "created_at": (datetime,),
             "description": (str, none_type),
             "handle": (str,),
+            "handles": ([str], none_type),
             "hidden_modules": ([str], none_type),
             "is_managed": (bool,),
+            "is_open_membership": (bool,),
             "link_count": (int,),
             "modified_at": (datetime,),
             "name": (str,),
+            "provisioned_by": (str,),
             "summary": (str, none_type),
             "user_count": (int,),
             "visible_modules": ([str], none_type),
@@ -58,17 +61,23 @@ class TeamAttributes(ModelNormal):
         "created_at": "created_at",
         "description": "description",
         "handle": "handle",
+        "handles": "handles",
         "hidden_modules": "hidden_modules",
         "is_managed": "is_managed",
+        "is_open_membership": "is_open_membership",
         "link_count": "link_count",
         "modified_at": "modified_at",
         "name": "name",
+        "provisioned_by": "provisioned_by",
         "summary": "summary",
         "user_count": "user_count",
         "visible_modules": "visible_modules",
     }
     read_only_vars = {
+        "handles",
+        "is_open_membership",
         "link_count",
+        "provisioned_by",
         "user_count",
     }
 
@@ -80,10 +89,13 @@ class TeamAttributes(ModelNormal):
         banner: Union[int, none_type, UnsetType] = unset,
         created_at: Union[datetime, UnsetType] = unset,
         description: Union[str, none_type, UnsetType] = unset,
+        handles: Union[List[str], none_type, UnsetType] = unset,
         hidden_modules: Union[List[str], none_type, UnsetType] = unset,
         is_managed: Union[bool, UnsetType] = unset,
+        is_open_membership: Union[bool, UnsetType] = unset,
         link_count: Union[int, UnsetType] = unset,
         modified_at: Union[datetime, UnsetType] = unset,
+        provisioned_by: Union[str, UnsetType] = unset,
         summary: Union[str, none_type, UnsetType] = unset,
         user_count: Union[int, UnsetType] = unset,
         visible_modules: Union[List[str], none_type, UnsetType] = unset,
@@ -107,11 +119,17 @@ class TeamAttributes(ModelNormal):
         :param handle: The team's identifier
         :type handle: str
 
+        :param handles: Collection of handles associated with the team.
+        :type handles: [str], none_type, optional
+
         :param hidden_modules: Collection of hidden modules for the team
         :type hidden_modules: [str], none_type, optional
 
         :param is_managed: Whether the team is managed from an external source
         :type is_managed: bool, optional
+
+        :param is_open_membership: Whether any user can join the team without an invitation.
+        :type is_open_membership: bool, optional
 
         :param link_count: The number of links belonging to the team
         :type link_count: int, optional
@@ -121,6 +139,10 @@ class TeamAttributes(ModelNormal):
 
         :param name: The name of the team
         :type name: str
+
+        :param provisioned_by: The mechanism that created the team, such as ``teams_api`` , ``teams_terraform`` , or ``teams_ui``.
+            Omitted when unknown.
+        :type provisioned_by: str, optional
 
         :param summary: A brief summary of the team, derived from the ``description``
         :type summary: str, none_type, optional
@@ -139,14 +161,20 @@ class TeamAttributes(ModelNormal):
             kwargs["created_at"] = created_at
         if description is not unset:
             kwargs["description"] = description
+        if handles is not unset:
+            kwargs["handles"] = handles
         if hidden_modules is not unset:
             kwargs["hidden_modules"] = hidden_modules
         if is_managed is not unset:
             kwargs["is_managed"] = is_managed
+        if is_open_membership is not unset:
+            kwargs["is_open_membership"] = is_open_membership
         if link_count is not unset:
             kwargs["link_count"] = link_count
         if modified_at is not unset:
             kwargs["modified_at"] = modified_at
+        if provisioned_by is not unset:
+            kwargs["provisioned_by"] = provisioned_by
         if summary is not unset:
             kwargs["summary"] = summary
         if user_count is not unset:

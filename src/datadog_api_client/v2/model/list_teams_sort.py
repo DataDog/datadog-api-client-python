@@ -16,7 +16,7 @@ class ListTeamsSort(ModelSimple):
     """
     Specifies the order of the returned teams
 
-    :param value: Must be one of ["name", "-name", "user_count", "-user_count"].
+    :param value: Must be one of ["name", "-name", "user_count", "-user_count", "link_count", "-link_count"].
     :type value: str
     """
 
@@ -25,11 +25,15 @@ class ListTeamsSort(ModelSimple):
         "-name",
         "user_count",
         "-user_count",
+        "link_count",
+        "-link_count",
     }
     NAME: ClassVar["ListTeamsSort"]
     _NAME: ClassVar["ListTeamsSort"]
     USER_COUNT: ClassVar["ListTeamsSort"]
     _USER_COUNT: ClassVar["ListTeamsSort"]
+    LINK_COUNT: ClassVar["ListTeamsSort"]
+    _LINK_COUNT: ClassVar["ListTeamsSort"]
 
     @cached_property
     def openapi_types(_):
@@ -42,3 +46,5 @@ ListTeamsSort.NAME = ListTeamsSort("name")
 ListTeamsSort._NAME = ListTeamsSort("-name")
 ListTeamsSort.USER_COUNT = ListTeamsSort("user_count")
 ListTeamsSort._USER_COUNT = ListTeamsSort("-user_count")
+ListTeamsSort.LINK_COUNT = ListTeamsSort("link_count")
+ListTeamsSort._LINK_COUNT = ListTeamsSort("-link_count")
