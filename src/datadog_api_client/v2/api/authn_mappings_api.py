@@ -226,7 +226,7 @@ class AuthNMappingsApi:
     ) -> AuthNMappingsResponse:
         """List all AuthN Mappings.
 
-        List all AuthN Mappings in the org.
+        List all AuthN Mappings in the organization.
 
         :param page_size: Number of items to return per page. The maximum allowed value is 100.
         :type page_size: int, optional
