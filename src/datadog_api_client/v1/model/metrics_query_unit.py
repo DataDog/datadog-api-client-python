@@ -20,6 +20,7 @@ class MetricsQueryUnit(ModelNormal):
     def openapi_types(_):
         return {
             "family": (str,),
+            "id": (int,),
             "name": (str,),
             "plural": (str,),
             "scale_factor": (float,),
@@ -28,6 +29,7 @@ class MetricsQueryUnit(ModelNormal):
 
     attribute_map = {
         "family": "family",
+        "id": "id",
         "name": "name",
         "plural": "plural",
         "scale_factor": "scale_factor",
@@ -35,6 +37,7 @@ class MetricsQueryUnit(ModelNormal):
     }
     read_only_vars = {
         "family",
+        "id",
         "name",
         "plural",
         "scale_factor",
@@ -44,6 +47,7 @@ class MetricsQueryUnit(ModelNormal):
     def __init__(
         self_,
         family: Union[str, UnsetType] = unset,
+        id: Union[int, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         plural: Union[str, UnsetType] = unset,
         scale_factor: Union[float, UnsetType] = unset,
@@ -55,6 +59,9 @@ class MetricsQueryUnit(ModelNormal):
 
         :param family: Unit family, allows for conversion between units of the same family, for scaling.
         :type family: str, optional
+
+        :param id: Unit identifier.
+        :type id: int, optional
 
         :param name: Unit name
         :type name: str, optional
@@ -70,6 +77,8 @@ class MetricsQueryUnit(ModelNormal):
         """
         if family is not unset:
             kwargs["family"] = family
+        if id is not unset:
+            kwargs["id"] = id
         if name is not unset:
             kwargs["name"] = name
         if plural is not unset:

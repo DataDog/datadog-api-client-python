@@ -3,13 +3,17 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import Any, List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    date,
+    datetime,
+    none_type,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -29,9 +33,12 @@ class MetricsQueryResponse(ModelNormal):
             "message": (str,),
             "query": (str,),
             "res_type": (str,),
+            "resp_version": (int,),
             "series": ([MetricsQueryMetadata],),
             "status": (str,),
+            "times": ([bool, date, datetime, dict, float, int, list, str, UUID, none_type],),
             "to_date": (int,),
+            "values": ([bool, date, datetime, dict, float, int, list, str, UUID, none_type],),
         }
 
     attribute_map = {
@@ -41,9 +48,12 @@ class MetricsQueryResponse(ModelNormal):
         "message": "message",
         "query": "query",
         "res_type": "res_type",
+        "resp_version": "resp_version",
         "series": "series",
         "status": "status",
+        "times": "times",
         "to_date": "to_date",
+        "values": "values",
     }
     read_only_vars = {
         "error",
@@ -52,9 +62,12 @@ class MetricsQueryResponse(ModelNormal):
         "message",
         "query",
         "res_type",
+        "resp_version",
         "series",
         "status",
+        "times",
         "to_date",
+        "values",
     }
 
     def __init__(
@@ -65,9 +78,12 @@ class MetricsQueryResponse(ModelNormal):
         message: Union[str, UnsetType] = unset,
         query: Union[str, UnsetType] = unset,
         res_type: Union[str, UnsetType] = unset,
+        resp_version: Union[int, UnsetType] = unset,
         series: Union[List[MetricsQueryMetadata], UnsetType] = unset,
         status: Union[str, UnsetType] = unset,
+        times: Union[List[Any], UnsetType] = unset,
         to_date: Union[int, UnsetType] = unset,
+        values: Union[List[Any], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -91,14 +107,25 @@ class MetricsQueryResponse(ModelNormal):
         :param res_type: Type of response.
         :type res_type: str, optional
 
+        :param resp_version: Version of the response format.
+        :type resp_version: int, optional
+
         :param series: List of timeseries queried.
         :type series: [MetricsQueryMetadata], optional
 
         :param status: Status of the query.
         :type status: str, optional
 
+        :param times: Legacy field, always returned as an empty list. Timestamps are returned
+            in the ``pointlist`` of each entry of ``series``.
+        :type times: [bool, date, datetime, dict, float, int, list, str, UUID, none_type], optional
+
         :param to_date: End of requested time window, milliseconds since Unix epoch.
         :type to_date: int, optional
+
+        :param values: Legacy field, always returned as an empty list. Timeseries values are
+            returned in the ``pointlist`` of each entry of ``series``.
+        :type values: [bool, date, datetime, dict, float, int, list, str, UUID, none_type], optional
         """
         if error is not unset:
             kwargs["error"] = error
@@ -112,10 +139,16 @@ class MetricsQueryResponse(ModelNormal):
             kwargs["query"] = query
         if res_type is not unset:
             kwargs["res_type"] = res_type
+        if resp_version is not unset:
+            kwargs["resp_version"] = resp_version
         if series is not unset:
             kwargs["series"] = series
         if status is not unset:
             kwargs["status"] = status
+        if times is not unset:
+            kwargs["times"] = times
         if to_date is not unset:
             kwargs["to_date"] = to_date
+        if values is not unset:
+            kwargs["values"] = values
         super().__init__(kwargs)
