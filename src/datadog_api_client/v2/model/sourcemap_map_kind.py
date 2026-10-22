@@ -16,7 +16,7 @@ class SourcemapMapKind(ModelSimple):
     """
     The type of source map.
 
-    :param value: Must be one of ["js", "jvm", "ios", "react", "flutter", "elf", "ndk", "il2cpp"].
+    :param value: Must be one of ["js", "jvm", "ios", "react", "flutter", "elf", "ndk", "il2cpp", "wasm", "portable_pdb"].
     :type value: str
     """
 
@@ -29,6 +29,8 @@ class SourcemapMapKind(ModelSimple):
         "elf",
         "ndk",
         "il2cpp",
+        "wasm",
+        "portable_pdb",
     }
     JS: ClassVar["SourcemapMapKind"]
     JVM: ClassVar["SourcemapMapKind"]
@@ -38,6 +40,8 @@ class SourcemapMapKind(ModelSimple):
     ELF: ClassVar["SourcemapMapKind"]
     NDK: ClassVar["SourcemapMapKind"]
     IL2CPP: ClassVar["SourcemapMapKind"]
+    WASM: ClassVar["SourcemapMapKind"]
+    PORTABLE_PDB: ClassVar["SourcemapMapKind"]
 
     @cached_property
     def openapi_types(_):
@@ -54,3 +58,5 @@ SourcemapMapKind.FLUTTER = SourcemapMapKind("flutter")
 SourcemapMapKind.ELF = SourcemapMapKind("elf")
 SourcemapMapKind.NDK = SourcemapMapKind("ndk")
 SourcemapMapKind.IL2CPP = SourcemapMapKind("il2cpp")
+SourcemapMapKind.WASM = SourcemapMapKind("wasm")
+SourcemapMapKind.PORTABLE_PDB = SourcemapMapKind("portable_pdb")
