@@ -18,7 +18,7 @@ from datadog_api_client.v2.model.logs_archive_integration_azure import LogsArchi
 body = LogsArchiveCreateRequest(
     data=LogsArchiveCreateRequestDefinition(
         attributes=LogsArchiveCreateRequestAttributes(
-            compression_method=LogsArchiveAttributesCompressionMethod.GZIP,
+            compression_method=LogsArchiveAttributesCompressionMethod.ZSTD,
             destination=LogsArchiveDestinationAzure(
                 container="container-name",
                 integration=LogsArchiveIntegrationAzure(
