@@ -980,6 +980,7 @@ Feature: Metrics
     And body with value {"data": {"attributes": {"formulas": [{"formula": "a", "limit": {"count": 10, "order": "desc"}}], "from": {{ timestamp('now - 1h') }}000, "interval": 5000, "queries": [{"data_source": "metrics", "query": "avg:datadog.estimated_usage.metrics.custom{*}", "name": "a"}], "to": {{ timestamp('now') }}000}, "type": "timeseries_request"}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.id" is equal to "0"
     And the response "data.type" is equal to "timeseries_response"
 
   @skip-validation @team:ddoghq/timeseries-query
