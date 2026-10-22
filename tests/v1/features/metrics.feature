@@ -93,6 +93,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 OK
     And the response "status" is equal to "ok"
+    And the response "resp_version" is equal to 1
     And the response "query" is equal to "system.cpu.idle{*}"
 
   @generated @skip @team:ddoghq/metrics-experience @team:ddoghq/metrics-index @team:ddoghq/metrics-intake @team:ddoghq/timeseries-query

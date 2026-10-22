@@ -3,14 +3,17 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import Any, Dict, List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    date,
+    datetime,
     none_type,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -34,6 +37,22 @@ class MetricsQueryMetadata(ModelNormal):
 
         return {
             "aggr": (str, none_type),
+            "attributes": (
+                {
+                    str: (
+                        bool,
+                        date,
+                        datetime,
+                        dict,
+                        float,
+                        int,
+                        list,
+                        str,
+                        UUID,
+                        none_type,
+                    )
+                },
+            ),
             "display_name": (str,),
             "end": (int,),
             "expression": (str,),
@@ -50,6 +69,7 @@ class MetricsQueryMetadata(ModelNormal):
 
     attribute_map = {
         "aggr": "aggr",
+        "attributes": "attributes",
         "display_name": "display_name",
         "end": "end",
         "expression": "expression",
@@ -65,6 +85,7 @@ class MetricsQueryMetadata(ModelNormal):
     }
     read_only_vars = {
         "aggr",
+        "attributes",
         "display_name",
         "end",
         "expression",
@@ -82,6 +103,7 @@ class MetricsQueryMetadata(ModelNormal):
     def __init__(
         self_,
         aggr: Union[str, none_type, UnsetType] = unset,
+        attributes: Union[Dict[str, Any], UnsetType] = unset,
         display_name: Union[str, UnsetType] = unset,
         end: Union[int, UnsetType] = unset,
         expression: Union[str, UnsetType] = unset,
@@ -101,6 +123,9 @@ class MetricsQueryMetadata(ModelNormal):
 
         :param aggr: Aggregation type.
         :type aggr: str, none_type, optional
+
+        :param attributes: Additional read-only attributes returned for the series.
+        :type attributes: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
         :param display_name: Display name of the metric.
         :type display_name: str, optional
@@ -143,6 +168,8 @@ class MetricsQueryMetadata(ModelNormal):
         """
         if aggr is not unset:
             kwargs["aggr"] = aggr
+        if attributes is not unset:
+            kwargs["attributes"] = attributes
         if display_name is not unset:
             kwargs["display_name"] = display_name
         if end is not unset:
