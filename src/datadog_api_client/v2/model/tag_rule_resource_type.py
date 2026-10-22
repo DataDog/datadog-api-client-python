@@ -14,16 +14,18 @@ from typing import ClassVar
 
 class TagRuleResourceType(ModelSimple):
     """
-    JSON:API resource type for a tag rule.
+    JSON:API resource type for a tag rule. Responses use the legacy `tag_policy` value.
 
-    :param value: If omitted defaults to "tag_rule". Must be one of ["tag_rule"].
+    :param value: Must be one of ["tag_rule", "tag_policy"].
     :type value: str
     """
 
     allowed_values = {
         "tag_rule",
+        "tag_policy",
     }
     TAG_RULE: ClassVar["TagRuleResourceType"]
+    TAG_POLICY: ClassVar["TagRuleResourceType"]
 
     @cached_property
     def openapi_types(_):
@@ -33,3 +35,4 @@ class TagRuleResourceType(ModelSimple):
 
 
 TagRuleResourceType.TAG_RULE = TagRuleResourceType("tag_rule")
+TagRuleResourceType.TAG_POLICY = TagRuleResourceType("tag_policy")
