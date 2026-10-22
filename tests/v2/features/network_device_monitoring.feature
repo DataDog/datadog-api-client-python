@@ -142,6 +142,14 @@ Feature: Network Device Monitoring
     And the response "data.attributes.tags[0]" is equal to "tag:test"
     And the response "data.attributes.tags[1]" is equal to "tag:testbis"
 
+  @generated @skip @team:ddoghq/network-device-monitoring
+  Scenario: Update the tags for a device returns "Bad Request" response
+    Given new "UpdateDeviceUserTags" request
+    And request contains "device_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"tags": ["tag:test", "tag:testbis"]}, "id": "example:1.2.3.4"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
   @replay-only @team:ddoghq/network-device-monitoring
   Scenario: Update the tags for a device returns "Not Found" response
     Given new "UpdateDeviceUserTags" request
@@ -161,6 +169,14 @@ Feature: Network Device Monitoring
     And the response "data.type" is equal to "tags"
     And the response "data.attributes.tags[0]" is equal to "tag:test"
     And the response "data.attributes.tags[1]" is equal to "tag:testbis"
+
+  @generated @skip @team:ddoghq/network-device-monitoring
+  Scenario: Update the tags for an interface returns "Bad Request" response
+    Given new "UpdateInterfaceUserTags" request
+    And request contains "interface_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"tags": ["tag:test", "tag:testbis"]}, "id": "example:1.2.3.4:1"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
 
   @replay-only @team:ddoghq/network-device-monitoring
   Scenario: Update the tags for an interface returns "Not Found" response

@@ -2381,6 +2381,18 @@ components:
           schema:
             $ref: "#/components/schemas/HTTPCDRulesNotFoundResponse"
       description: Deployment rule not found.
+    NDMBadRequestResponse:
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/JSONAPIErrorResponse"
+      description: Bad Request
+    NDMNotFoundResponse:
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/JSONAPIErrorResponse"
+      description: Not Found
     NotAuthorizedResponse:
       content:
         "application/json":
@@ -203419,7 +203431,7 @@ paths:
       parameters:
         - $ref: "#/components/parameters/NDMPageSize"
         - $ref: "#/components/parameters/NDMPageNumber"
-        - description: The field to sort the devices by. Defaults to `name`.
+        - description: The field to sort devices by. Defaults to `name`. Prefix the field with `-` to sort in descending order, for example, `-name`.
           example: status
           in: query
           name: sort
@@ -203457,7 +203469,7 @@ paths:
                 $ref: "#/components/schemas/ListDevicesResponse"
           description: OK
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/NDMBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "429":
@@ -203505,7 +203517,7 @@ paths:
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/NDMNotFoundResponse"
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: Get the device details
@@ -203602,7 +203614,7 @@ paths:
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/NDMNotFoundResponse"
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: Get the list of tags for a device
@@ -203654,10 +203666,12 @@ paths:
               schema:
                 $ref: "#/components/schemas/ListTagsResponse"
           description: OK
+        "400":
+          $ref: "#/components/responses/NDMBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/NDMNotFoundResponse"
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: Update the tags for a device
@@ -203695,7 +203709,7 @@ paths:
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/NDMNotFoundResponse"
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: List tags for an interface
@@ -203745,10 +203759,12 @@ paths:
               schema:
                 $ref: "#/components/schemas/ListInterfaceTagsResponse"
           description: OK
+        "400":
+          $ref: "#/components/responses/NDMBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/NDMNotFoundResponse"
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: Update the tags for an interface

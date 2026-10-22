@@ -275,7 +275,7 @@ class NetworkDeviceMonitoringApi:
         :type page_size: int, optional
         :param page_number: Specific page number to return. Defaults to 0.
         :type page_number: int, optional
-        :param sort: The field to sort the devices by. Defaults to ``name``.
+        :param sort: The field to sort devices by. Defaults to ``name``. Prefix the field with ``-`` to sort in descending order, for example, ``-name``.
         :type sort: str, optional
         :param filter_tag: Filter devices by tag.
         :type filter_tag: str, optional
@@ -312,7 +312,7 @@ class NetworkDeviceMonitoringApi:
         :type page_size: int, optional
         :param page_number: Specific page number to return. Defaults to 0.
         :type page_number: int, optional
-        :param sort: The field to sort the devices by. Defaults to ``name``.
+        :param sort: The field to sort devices by. Defaults to ``name``. Prefix the field with ``-`` to sort in descending order, for example, ``-name``.
         :type sort: str, optional
         :param filter_tag: Filter devices by tag.
         :type filter_tag: str, optional
