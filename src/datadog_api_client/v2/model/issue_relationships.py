@@ -16,6 +16,7 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.issue_assignee_relationship import IssueAssigneeRelationship
     from datadog_api_client.v2.model.issue_case_relationship import IssueCaseRelationship
+    from datadog_api_client.v2.model.issue_samples_relationship import IssueSamplesRelationship
     from datadog_api_client.v2.model.issue_team_owners_relationship import IssueTeamOwnersRelationship
 
 
@@ -24,17 +25,20 @@ class IssueRelationships(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v2.model.issue_assignee_relationship import IssueAssigneeRelationship
         from datadog_api_client.v2.model.issue_case_relationship import IssueCaseRelationship
+        from datadog_api_client.v2.model.issue_samples_relationship import IssueSamplesRelationship
         from datadog_api_client.v2.model.issue_team_owners_relationship import IssueTeamOwnersRelationship
 
         return {
             "assignee": (IssueAssigneeRelationship,),
             "case": (IssueCaseRelationship,),
+            "samples": (IssueSamplesRelationship,),
             "team_owners": (IssueTeamOwnersRelationship,),
         }
 
     attribute_map = {
         "assignee": "assignee",
         "case": "case",
+        "samples": "samples",
         "team_owners": "team_owners",
     }
 
@@ -42,6 +46,7 @@ class IssueRelationships(ModelNormal):
         self_,
         assignee: Union[IssueAssigneeRelationship, UnsetType] = unset,
         case: Union[IssueCaseRelationship, UnsetType] = unset,
+        samples: Union[IssueSamplesRelationship, UnsetType] = unset,
         team_owners: Union[IssueTeamOwnersRelationship, UnsetType] = unset,
         **kwargs,
     ):
@@ -54,6 +59,9 @@ class IssueRelationships(ModelNormal):
         :param case: Relationship between the issue and case.
         :type case: IssueCaseRelationship, optional
 
+        :param samples: Relationship between the issue and its curated error samples.
+        :type samples: IssueSamplesRelationship, optional
+
         :param team_owners: Relationship between the issue and teams.
         :type team_owners: IssueTeamOwnersRelationship, optional
         """
@@ -61,6 +69,8 @@ class IssueRelationships(ModelNormal):
             kwargs["assignee"] = assignee
         if case is not unset:
             kwargs["case"] = case
+        if samples is not unset:
+            kwargs["samples"] = samples
         if team_owners is not unset:
             kwargs["team_owners"] = team_owners
         super().__init__(kwargs)

@@ -162,6 +162,79 @@
     },
     {
       "feature": "Error Tracking",
+      "frozen_at": "2026-10-22T13:29:57.649Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "from": 1791379797000,
+                    "query": "service:synthetics-browser",
+                    "to": 1792675797000,
+                    "track": "rum"
+                  },
+                  "type": "search_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/error-tracking/issues/search",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"d3ab59c6-84ee-11f0-87bb-da7ad0900002\",\"type\":\"error_tracking_search_result\",\"attributes\":{\"impacted_sessions\":4439,\"impacted_users\":4307,\"total_count\":8644},\"relationships\":{\"issue\":{\"data\":{\"id\":\"d3ab59c6-84ee-11f0-87bb-da7ad0900002\",\"type\":\"issue\"}}}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/error-tracking/issues/d3ab59c6-84ee-11f0-87bb-da7ad0900002",
+            "query": [
+              [
+                "filter[samples.biases]",
+                "latest"
+              ],
+              [
+                "include",
+                "samples"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"d3ab59c6-84ee-11f0-87bb-da7ad0900002\",\"type\":\"issue\",\"attributes\":{\"error_message\":\"Expected unhandled error\",\"error_type\":\"Error\",\"file_path\":\"\",\"first_seen\":1756482172021,\"first_seen_version\":\"1.2.4\",\"function_name\":\"\",\"is_crash\":false,\"languages\":[\"JAVASCRIPT\"],\"last_seen\":1792675673414,\"last_seen_version\":\"1.2.4\",\"platform\":\"BROWSER\",\"service\":\"synthetics-browser\",\"state\":\"RESOLVED\"},\"relationships\":{\"case\":{\"data\":{\"id\":\"7afc10c8-4096-4af1-9ccf-ec0df3a2f63b\",\"type\":\"case\"}},\"samples\":{\"data\":[{\"id\":\"AwAAAaFjy_VGe8BwpwAAABhBYUZqeV9ldEFBRENrVFVtSDhUeXh5LWgAAAAkZjFhMTYzY2ItZmE4Ni00NTJkLWFhYTktY2NiNTdiNDFlMWMzAAAAAA\",\"type\":\"error_tracking_issue_sample\"}]}}},\"included\":[{\"id\":\"AwAAAaFjy_VGe8BwpwAAABhBYUZqeV9ldEFBRENrVFVtSDhUeXh5LWgAAAAkZjFhMTYzY2ItZmE4Ni00NTJkLWFhYTktY2NiNTdiNDFlMWMzAAAAAA\",\"type\":\"error_tracking_issue_sample\",\"attributes\":{\"application_id\":\"ce9843b0-7a45-453c-a831-55dd15f85141\",\"biases\":[\"latest\"],\"data_source\":\"RUM\",\"error_source_type\":\"browser\",\"error_stack\":{},\"event\":{\"application\":{\"id\":\"ce9843b0-7a45-453c-a831-55dd15f85141\"},\"browser\":{\"name\":\"Chrome\"},\"client_time\":1792675673113,\"custom\":{\"action\":{\"id\":[\"ad28f5eb-18c2-4b6b-af6e-7105fa397416\",\"d635ecc8-754f-4a3e-8a68-9e63e9718a23\"]},\"application\":{\"id\":\"ce9843b0-7a45-453c-a831-55dd15f85141\",\"name\":\"Synthetic Tests Default Application\",\"short_name\":\"synthetic_tests_default_applicat\"},\"browser\":{\"name\":\"Chrome\",\"version\":\"153.0.8010.52\",\"version_major\":\"153\"},\"connectivity\":{\"effective_type\":\"4g\",\"status\":\"connected\"},\"context\":{\"test_playground\":true},\"dd-request-id\":\"be2e1f89-b150-43c9-90b6-9d359a86c46f\",\"device\":{\"name\":\"Other\",\"type\":\"Desktop\"},\"display\":{\"viewport\":{\"height\":1100.0,\"width\":1440.0}},\"error\":{\"fingerprint\":\"v12.5C419EBEBB729FD7865074A8EECBA01A\",\"handling\":\"unhandled\",\"id\":\"a047c907-eae5-432e-a51d-897f6adb5413\",\"message\":\"Expected unhandled error\",\"source\":\"source\",\"source_type\":\"browser\",\"stack\":\"Error: Expected unhandled error\\n  at HTMLButtonElement.<anonymous> @ https://datadoghq.dev/browser-sdk-test-playground/index.js:107:11\",\"type\":\"Error\"},\"execution_context\":{\"id\":\"5c0b86d1-f50b-4651-bbc9-770d12a1b544\"},\"geo\":{\"as\":{\"domain\":\"amazon.com\",\"name\":\"Amazon.com, Inc.\",\"type\":\"hosting\"},\"city\":\"Paris\",\"continent\":\"Europe\",\"continent_code\":\"EU\",\"country\":\"France\",\"country_iso_code\":\"FR\",\"country_subdivision\":\"\\u00cele-de-France\",\"country_subdivision_iso_code\":\"FR-IDF\",\"latitude\":48.85341,\"location\":[2.3488,48.85341],\"longitude\":2.3488},\"issue\":{\"age\":36193502350.0,\"first_seen\":1756482172021.0,\"first_seen_version\":\"1.2.4\",\"id\":\"d3ab59c6-84ee-11f0-87bb-da7ad0900002\"},\"os\":{\"name\":\"Linux\"},\"profiling\":{\"has_profile\":false},\"service\":\"synthetics-browser\",\"session\":{\"has_replay\":true,\"id\":\"2a1174ab-a9b7-4b82-babc-f9040c7a79a6\",\"ip\":\"0.0.0.0\",\"is_replay_available\":true,\"matching_retention_filter\":{\"id\":\"default_synthetics\",\"name\":\"Synthetics Sessions\"},\"retention_reason\":\"rum_retention_filter\",\"type\":\"synthetics\",\"useragent\":\"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.8010.52 Safari/537.36 DatadogSynthetics\"},\"synthetics\":{\"creator\":\"Camille Jouan\",\"injected\":false,\"result_id\":\"4682046062890721601\",\"run_type\":\"scheduled\",\"tag\":{\"env\":[\"prod\"],\"team\":[\"error-tracking\"]},\"tags\":{\"env\":[\"prod\"],\"team\":[\"error-tracking\"]},\"test_id\":\"zck-vrb-2um\"},\"tab\":{\"id\":\"5c0b86d1-f50b-4651-bbc9-770d12a1b544\"},\"type\":\"error\",\"usr\":{\"anonymous_id\":\"28520368-547f-47d4-852c-eb68b216109a\",\"email\":\"email-1ul6hq1909u@example.com\",\"id\":\"1ul6hq1909u\",\"name\":\"name-1ul6hq1909u\"},\"view\":{\"id\":\"4c7fc22e-6946-4f7f-acfe-e6734dc423a5\",\"in_foreground\":true,\"name\":\"/browser-sdk-test-playground\",\"referrer\":\"\",\"url\":\"https://datadoghq.dev/browser-sdk-test-playground/?site=datadoghq.com&application_id=ce9843b0-7a45-453c-a831-55dd15f85141&client_token=pub00000000000000000000000000000000&service=synthetics-browser&env=prod&version=1.2.4\",\"url_host\":\"datadoghq.dev\",\"url_path\":\"/browser-sdk-test-playground\",\"url_path_group\":\"/browser-sdk-test-playground\",\"url_query\":{\"application_id\":\"ce9843b0-7a45-453c-a831-55dd15f85141\",\"client_token\":\"pub00000000000000000000000000000000\",\"env\":\"prod\",\"service\":\"synthetics-browser\",\"site\":\"datadoghq.com\",\"version\":\"1.2.4\"},\"url_scheme\":\"https\"}},\"device\":{\"type\":\"Desktop\"},\"discovery_timestamp\":1792675674029,\"env\":\"prod\",\"error\":{\"handling\":\"unhandled\",\"message\":\"Expected unhandled error\",\"stack\":\"Error: Expected unhandled error\\n  at HTMLButtonElement.<anonymous> @ https://datadoghq.dev/browser-sdk-test-playground/index.js:107:11\",\"type\":\"Error\"},\"hashes\":{\"session\":{\"id\":2.7534693895717233e+18},\"usr\":{\"id\":-9.041965753311999e+18},\"view\":{\"id\":-5.780493576176677e+18}},\"host\":null,\"id\":\"AaFjy_etAADCkTUmH8Tyxy-h\",\"index_name\":\"errors\",\"ingest_size_in_bytes\":1812.0,\"intake_time\":1792675674029,\"issue\":{\"age\":36193502350.0,\"first_seen\":1756482172021.0,\"id\":\"d3ab59c6-84ee-11f0-87bb-da7ad0900002\",\"state\":\"RESOLVED\",\"type\":\"error_tracking\"},\"random_draw\":0.46394539784338096,\"sample_score\":0.49395908831389723,\"service\":\"synthetics-browser\",\"session\":{\"id\":\"2a1174ab-a9b7-4b82-babc-f9040c7a79a6\"},\"source\":\"browser\",\"source_fragment_id\":\"f1a163cb-fa86-452d-aaa9-ccb57b41e1c3\",\"tag\":{\"env\":\"prod\",\"first_version\":\"1.2.4\",\"sdk_version\":\"6.33.0\",\"service\":\"synthetics-browser\",\"source\":\"browser\",\"version\":\"1.2.4\"},\"tags\":[\"env:prod\",\"service:synthetics-browser\",\"sdk_version:6.33.0\",\"datadog.submission_auth:client_token\",\"version:1.2.4\",\"first_version:1.2.4\",\"source:browser\"],\"tiebreaker\":2076209319,\"timestamp\":\"2026-10-22T13:27:53.414Z\",\"usr\":{\"id\":\"1ul6hq1909u\",\"name\":\"name-1ul6hq1909u\"},\"version\":\"1.2.4\",\"view\":{\"url_path\":\"/browser-sdk-test-playground\"}},\"has_session_replay\":true,\"os_name\":\"Linux\",\"service\":\"synthetics-browser\",\"session_id\":\"2a1174ab-a9b7-4b82-babc-f9040c7a79a6\",\"timestamp\":\"2026-10-22T13:27:53.414Z\",\"version\":\"1.2.4\",\"view_id\":\"4c7fc22e-6946-4f7f-acfe-e6734dc423a5\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get the details of an error tracking issue with samples returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Error Tracking",
       "frozen_at": "2025-10-17T14:43:40.022Z",
       "interactions": [
         {
