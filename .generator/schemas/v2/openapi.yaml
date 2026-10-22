@@ -123321,6 +123321,8 @@ components:
         - elf
         - ndk
         - il2cpp
+        - wasm
+        - portable_pdb
       example: js
       type: string
       x-enum-varnames:
@@ -123332,6 +123334,8 @@ components:
         - ELF
         - NDK
         - IL2CPP
+        - WASM
+        - PORTABLE_PDB
     SourcemapSearchBy:
       description: The search mode for listing JavaScript source maps.
       enum:
@@ -236019,7 +236023,7 @@ paths:
       parameters:
         - description: |-
             The type of source map. Valid values are `js`, `jvm`, `ios`,
-            `react`, `flutter`, `elf`, `ndk`, `il2cpp`.
+            `react`, `flutter`, `elf`, `ndk`, `il2cpp`, `wasm`, `portable_pdb`.
           in: query
           name: mapkind
           required: true
@@ -236079,7 +236083,7 @@ paths:
               type: string
             type: array
           style: form
-        - description: Filter by build ID values (multiple values allowed). Supported for `jvm`, `ndk`, and `il2cpp`.
+        - description: Filter by build ID values (multiple values allowed). Supported for `jvm`, `ndk`, `il2cpp`, `wasm`, and `portable_pdb`.
           explode: true
           in: query
           name: filter[build_id]
@@ -236162,7 +236166,7 @@ paths:
               type: string
             type: array
           style: form
-        - description: Filter by filename (single value). Supported for `js`, `elf`, and `ndk`.
+        - description: Filter by filename (single value). Supported for `js`, `elf`, `ndk`, `wasm`, and `portable_pdb`.
           in: query
           name: filter[filename]
           schema:
@@ -236539,7 +236543,7 @@ paths:
               type: string
             type: array
           style: form
-        - description: Filter by build ID values (multiple values allowed). Supported for `jvm`, `ndk`, and `il2cpp`.
+        - description: Filter by build ID values (multiple values allowed). Supported for `jvm`, `ndk`, `il2cpp`, `wasm`, and `portable_pdb`.
           explode: true
           in: query
           name: filter[build_id]
@@ -236622,7 +236626,7 @@ paths:
               type: string
             type: array
           style: form
-        - description: Filter by filename (single value). Supported for `js`, `elf`, and `ndk`.
+        - description: Filter by filename (single value). Supported for `js`, `elf`, `ndk`, `wasm`, and `portable_pdb`.
           in: query
           name: filter[filename]
           schema:
@@ -236731,7 +236735,7 @@ paths:
       parameters:
         - description: |-
             The type of source map. Valid values are `js`, `jvm`, `ios`,
-            `react`, `flutter`, `elf`, `ndk`, `il2cpp`.
+            `react`, `flutter`, `elf`, `ndk`, `il2cpp`, `wasm`, `portable_pdb`.
           in: query
           name: mapkind
           required: true
@@ -236791,7 +236795,7 @@ paths:
               type: string
             type: array
           style: form
-        - description: Filter by build ID values (multiple values allowed). Supported for `jvm`, `ndk`, and `il2cpp`.
+        - description: Filter by build ID values (multiple values allowed). Supported for `jvm`, `ndk`, `il2cpp`, `wasm`, and `portable_pdb`.
           explode: true
           in: query
           name: filter[build_id]
@@ -236874,7 +236878,7 @@ paths:
               type: string
             type: array
           style: form
-        - description: Filter by filename (single value). Supported for `js`, `elf`, and `ndk`.
+        - description: Filter by filename (single value). Supported for `js`, `elf`, `ndk`, `wasm`, and `portable_pdb`.
           in: query
           name: filter[filename]
           schema:

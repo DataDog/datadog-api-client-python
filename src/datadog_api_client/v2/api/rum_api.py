@@ -795,7 +795,7 @@ class RUMApi:
         performing the actual deletion.
 
         :param mapkind: The type of source map. Valid values are ``js`` , ``jvm`` , ``ios`` ,
-            ``react`` , ``flutter`` , ``elf`` , ``ndk`` , ``il2cpp``.
+            ``react`` , ``flutter`` , ``elf`` , ``ndk`` , ``il2cpp`` , ``wasm`` , ``portable_pdb``.
         :type mapkind: SourcemapMapKind
         :param dry_run: When set to ``true`` , returns the source maps that would be deleted
             without performing the actual deletion. When set to ``false`` ,
@@ -811,7 +811,7 @@ class RUMApi:
         :type filter_variant: [str], optional
         :param filter_id: Filter by source map ID values (multiple values allowed). Supported for all map kinds.
         :type filter_id: [str], optional
-        :param filter_build_id: Filter by build ID values (multiple values allowed). Supported for ``jvm`` , ``ndk`` , and ``il2cpp``.
+        :param filter_build_id: Filter by build ID values (multiple values allowed). Supported for ``jvm`` , ``ndk`` , ``il2cpp`` , ``wasm`` , and ``portable_pdb``.
         :type filter_build_id: [str], optional
         :param filter_uuid: Filter by UUID values (multiple values allowed). Supported for ``ios``.
         :type filter_uuid: [str], optional
@@ -830,7 +830,7 @@ class RUMApi:
         :type filter_origin: [str], optional
         :param filter_origin_version: Filter by origin version values (multiple values allowed). Supported for ``elf``.
         :type filter_origin_version: [str], optional
-        :param filter_filename: Filter by filename (single value). Supported for ``js`` , ``elf`` , and ``ndk``.
+        :param filter_filename: Filter by filename (single value). Supported for ``js`` , ``elf`` , ``ndk`` , ``wasm`` , and ``portable_pdb``.
         :type filter_filename: str, optional
         :param filter_debug_id: Filter by debug ID (single value). Supported for ``react``.
         :type filter_debug_id: str, optional
@@ -1274,7 +1274,7 @@ class RUMApi:
         :type filter_variant: [str], optional
         :param filter_id: Filter by source map ID values (multiple values allowed). Supported for all map kinds.
         :type filter_id: [str], optional
-        :param filter_build_id: Filter by build ID values (multiple values allowed). Supported for ``jvm`` , ``ndk`` , and ``il2cpp``.
+        :param filter_build_id: Filter by build ID values (multiple values allowed). Supported for ``jvm`` , ``ndk`` , ``il2cpp`` , ``wasm`` , and ``portable_pdb``.
         :type filter_build_id: [str], optional
         :param filter_uuid: Filter by UUID values (multiple values allowed). Supported for ``ios``.
         :type filter_uuid: [str], optional
@@ -1293,7 +1293,7 @@ class RUMApi:
         :type filter_origin: [str], optional
         :param filter_origin_version: Filter by origin version values (multiple values allowed). Supported for ``elf``.
         :type filter_origin_version: [str], optional
-        :param filter_filename: Filter by filename (single value). Supported for ``js`` , ``elf`` , and ``ndk``.
+        :param filter_filename: Filter by filename (single value). Supported for ``js`` , ``elf`` , ``ndk`` , ``wasm`` , and ``portable_pdb``.
         :type filter_filename: str, optional
         :param filter_debug_id: Filter by a single debug ID in UUID format. Supported for ``js`` and ``react``.
             For ``js`` , the lookup returns at most one result and does not require
@@ -1410,7 +1410,7 @@ class RUMApi:
         restored without performing the actual restoration.
 
         :param mapkind: The type of source map. Valid values are ``js`` , ``jvm`` , ``ios`` ,
-            ``react`` , ``flutter`` , ``elf`` , ``ndk`` , ``il2cpp``.
+            ``react`` , ``flutter`` , ``elf`` , ``ndk`` , ``il2cpp`` , ``wasm`` , ``portable_pdb``.
         :type mapkind: SourcemapMapKind
         :param dry_run: When set to ``true`` , returns the source maps that would be restored
             without performing the actual restoration. When set to ``false`` ,
@@ -1426,7 +1426,7 @@ class RUMApi:
         :type filter_variant: [str], optional
         :param filter_id: Filter by source map ID values (multiple values allowed). Supported for all map kinds.
         :type filter_id: [str], optional
-        :param filter_build_id: Filter by build ID values (multiple values allowed). Supported for ``jvm`` , ``ndk`` , and ``il2cpp``.
+        :param filter_build_id: Filter by build ID values (multiple values allowed). Supported for ``jvm`` , ``ndk`` , ``il2cpp`` , ``wasm`` , and ``portable_pdb``.
         :type filter_build_id: [str], optional
         :param filter_uuid: Filter by UUID values (multiple values allowed). Supported for ``ios``.
         :type filter_uuid: [str], optional
@@ -1445,7 +1445,7 @@ class RUMApi:
         :type filter_origin: [str], optional
         :param filter_origin_version: Filter by origin version values (multiple values allowed). Supported for ``elf``.
         :type filter_origin_version: [str], optional
-        :param filter_filename: Filter by filename (single value). Supported for ``js`` , ``elf`` , and ``ndk``.
+        :param filter_filename: Filter by filename (single value). Supported for ``js`` , ``elf`` , ``ndk`` , ``wasm`` , and ``portable_pdb``.
         :type filter_filename: str, optional
         :param filter_debug_id: Filter by debug ID (single value). Supported for ``react``.
         :type filter_debug_id: str, optional
