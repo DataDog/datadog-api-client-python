@@ -211,9 +211,7 @@ class EventsApi:
 
         **Important:** Upgrade to the latest client library version to use the updated endpoint at ``https://event-management-intake.{site}/api/v2/events``. Older client library versions of the Post an event (v2) API send requests to a deprecated endpoint ( ``https://api.{site}/api/v2/events`` ).
 
-        ✅ **Only events with the change or alert category** are in General Availability. For change events, see `Change Tracking <https://docs.datadoghq.com/change_tracking>`_ for more details.
-
-        ❌ For use cases involving other event categories, use the V1 endpoint or reach out to `support <https://www.datadoghq.com/support/>`_.
+        Supported event categories are ``change`` and ``alert``. For more information about change events, see `Change Tracking <https://docs.datadoghq.com/change_tracking>`_.
 
         :param body: Event creation request payload.
         :type body: EventCreateRequestPayload

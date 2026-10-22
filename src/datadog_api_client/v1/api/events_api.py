@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 from typing import Any, Dict, Union
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -139,7 +140,9 @@ class EventsApi:
         self,
         body: EventCreateRequest,
     ) -> EventCreateResponse:
-        """Post an event.
+        """Post an event. **Deprecated**.
+
+        This endpoint is deprecated and is available only to organizations that have previously used it. Use the V2 endpoint instead.
 
         This endpoint allows you to post events to the stream.
         Tag them, set priority and event aggregate them with other events.
@@ -151,6 +154,7 @@ class EventsApi:
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
+        warnings.warn("create_event is deprecated", DeprecationWarning, stacklevel=2)
         return self._create_event_endpoint.call_with_http_info(**kwargs)
 
     def get_event(
