@@ -26,12 +26,14 @@ class LogsListResponse(ModelNormal):
         return {
             "logs": ([Log],),
             "next_log_id": (str, none_type),
+            "request_id": (str,),
             "status": (str,),
         }
 
     attribute_map = {
         "logs": "logs",
         "next_log_id": "nextLogId",
+        "request_id": "requestId",
         "status": "status",
     }
 
@@ -39,6 +41,7 @@ class LogsListResponse(ModelNormal):
         self_,
         logs: Union[List[Log], UnsetType] = unset,
         next_log_id: Union[str, none_type, UnsetType] = unset,
+        request_id: Union[str, UnsetType] = unset,
         status: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -52,6 +55,9 @@ class LogsListResponse(ModelNormal):
             This parameter is used for the pagination feature.
         :type next_log_id: str, none_type, optional
 
+        :param request_id: Unique identifier of the request.
+        :type request_id: str, optional
+
         :param status: Status of the response.
         :type status: str, optional
         """
@@ -59,6 +65,8 @@ class LogsListResponse(ModelNormal):
             kwargs["logs"] = logs
         if next_log_id is not unset:
             kwargs["next_log_id"] = next_log_id
+        if request_id is not unset:
+            kwargs["request_id"] = request_id
         if status is not unset:
             kwargs["status"] = status
         super().__init__(kwargs)
