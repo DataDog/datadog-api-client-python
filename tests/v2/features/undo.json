@@ -2980,10 +2980,67 @@
       "type": "safe"
     }
   },
+  "CreateExperimentProtocol": {
+    "tag": "Experiments",
+    "undo": {
+      "operationId": "DeleteExperimentProtocol",
+      "parameters": [
+        {
+          "name": "protocol_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteExperimentProtocol": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetExperimentProtocol": {
     "tag": "Experiments",
     "undo": {
       "type": "safe"
+    }
+  },
+  "PatchExperimentProtocol": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ReplaceExperimentProtocol": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ArchiveExperimentProtocol": {
+    "tag": "Experiments",
+    "undo": {
+      "operationId": "DeleteExperimentProtocol",
+      "parameters": [
+        {
+          "name": "protocol_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "PublishExperimentProtocol": {
+    "tag": "Experiments",
+    "undo": {
+      "operationId": "DeleteExperimentProtocol",
+      "parameters": [
+        {
+          "name": "protocol_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
     }
   },
   "RefreshExperimentResultsForOrg": {

@@ -1,0 +1,51 @@
+{
+  "api": "Experiments",
+  "expected_status": 200,
+  "feature": "Experiments",
+  "id": "v2/Experiments/Update experiment protocol returns \"OK\" response",
+  "operation_id": "PatchExperimentProtocol",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ExperimentsPatchExperimentProtocolRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "description": "Updated protocol description."
+          },
+          "id": "{{ experiment_protocol.data.id }}",
+          "type": "protocols"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "protocol_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "experiment_protocol.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/experiments/protocols/{protocol_id}"
+  },
+  "scenario": "Update experiment protocol returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

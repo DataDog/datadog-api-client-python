@@ -9,6 +9,40 @@ Feature: Experiments
     And an instance of "Experiments" API
 
   @generated @skip @team:ddoghq/experimentation
+  Scenario: Archive experiment protocol returns "Invalid request or protocol settings." response
+    Given new "ArchiveExperimentProtocol" request
+    And request contains "protocol_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Invalid request or protocol settings.
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Archive experiment protocol returns "No protocol with this ID exists in the organization." response
+    Given new "ArchiveExperimentProtocol" request
+    And request contains "protocol_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 No protocol with this ID exists in the organization.
+
+  @team:ddoghq/experimentation
+  Scenario: Archive experiment protocol returns "OK" response
+    Given new "ArchiveExperimentProtocol" request
+    And there is a valid "experiment_protocol" in the system
+    And request contains "protocol_id" parameter from "experiment_protocol.data.id"
+    And request contains "expected_updated_at" parameter from "experiment_protocol.data.attributes.updated_at"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.status" is equal to "ARCHIVED"
+    And the response "data.attributes.experiment_count" is equal to 0
+    And the response "data.attributes" has field "created_at"
+    And the response "data.attributes" has field "archived_at"
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Archive experiment protocol returns "The protocol is already archived or expected_updated_at is stale." response
+    Given new "ArchiveExperimentProtocol" request
+    And request contains "protocol_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 409 The protocol is already archived or expected_updated_at is stale.
+
+  @generated @skip @team:ddoghq/experimentation
   Scenario: Archive exposure SQL model returns "Malformed exposure SQL model ID (not a valid UUID)." response
     Given new "ArchiveExposureSQLModel" request
     And request contains "exposure_sql_model_id" parameter from "REPLACE.ME"
@@ -172,6 +206,38 @@ Feature: Experiments
     And body with value {"data": {"attributes": {"metrics": [{"metric_id": "550e8400-e29b-41d4-a716-446655440021"}], "name": "Diagnostics"}, "type": "experiment-metric-groups"}}
     When the request is sent
     Then the response status is 415 Request body sent with a media type other than application/json or application/vnd.api+json.
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Create experiment protocol returns "A protocol with this name already exists." response
+    Given new "CreateExperimentProtocol" request
+    And body with value {"data": {"attributes": {"description": null, "migration_metadata": null, "name": "Checkout conversion"}, "type": "protocols"}}
+    When the request is sent
+    Then the response status is 409 A protocol with this name already exists.
+
+  @team:ddoghq/experimentation
+  Scenario: Create experiment protocol returns "Created" response
+    Given new "CreateExperimentProtocol" request
+    And body with value {"data": {"type": "protocols", "attributes": {"name": "ex-protocol-{{ unique_hash }}", "description": "Protocol created by the API test."}}}
+    When the request is sent
+    Then the response status is 201 Created
+    And the response "data.attributes.status" is equal to "DRAFT"
+    And the response "data.attributes.experiment_count" is equal to 0
+    And the response "data.attributes" has field "created_at"
+    And the response "data.attributes" does not have field "archived_at"
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Create experiment protocol returns "Invalid request or protocol settings." response
+    Given new "CreateExperimentProtocol" request
+    And body with value {"data": {"attributes": {"description": null, "migration_metadata": null, "name": "Checkout conversion"}, "type": "protocols"}}
+    When the request is sent
+    Then the response status is 400 Invalid request or protocol settings.
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Create experiment protocol returns "Unsupported request content type." response
+    Given new "CreateExperimentProtocol" request
+    And body with value {"data": {"attributes": {"description": null, "migration_metadata": null, "name": "Checkout conversion"}, "type": "protocols"}}
+    When the request is sent
+    Then the response status is 415 Unsupported request content type.
 
   @team:ddoghq/experimentation
   Scenario: Create experiment returns "Created" response
@@ -372,6 +438,36 @@ Feature: Experiments
     Then the response status is 404 Not Found
 
   @generated @skip @team:ddoghq/experimentation
+  Scenario: Delete experiment protocol returns "Invalid request or protocol settings." response
+    Given new "DeleteExperimentProtocol" request
+    And request contains "protocol_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Invalid request or protocol settings.
+
+  @team:ddoghq/experimentation
+  Scenario: Delete experiment protocol returns "No Content" response
+    Given new "DeleteExperimentProtocol" request
+    And there is a valid "experiment_protocol" in the system
+    And request contains "protocol_id" parameter from "experiment_protocol.data.id"
+    And request contains "expected_updated_at" parameter from "experiment_protocol.data.attributes.updated_at"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Delete experiment protocol returns "No protocol with this ID exists in the organization." response
+    Given new "DeleteExperimentProtocol" request
+    And request contains "protocol_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 No protocol with this ID exists in the organization.
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Delete experiment protocol returns "The protocol has linked experiments or expected_updated_at is stale." response
+    Given new "DeleteExperimentProtocol" request
+    And request contains "protocol_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 409 The protocol has linked experiments or expected_updated_at is stale.
+
+  @generated @skip @team:ddoghq/experimentation
   Scenario: Delete experiment returns "Malformed experiment ID (not a valid UUID)." response
     Given new "DeleteExperiment" request
     And request contains "experiment_id" parameter from "REPLACE.ME"
@@ -556,12 +652,15 @@ Feature: Experiments
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:ddoghq/experimentation
+  @team:ddoghq/experimentation
   Scenario: Get experiment protocol returns "OK" response
     Given new "GetExperimentProtocol" request
-    And request contains "protocol_id" parameter from "REPLACE.ME"
+    And there is a valid "experiment_protocol" in the system
+    And request contains "protocol_id" parameter from "experiment_protocol.data.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.id" has the same value as "experiment_protocol.data.id"
+    And the response "data.attributes.status" is equal to "DRAFT"
 
   @generated @skip @team:ddoghq/experimentation
   Scenario: Get experiment results returns "Malformed experiment ID (not a valid UUID), or the experiment is not configured for analysis." response
@@ -794,8 +893,13 @@ Feature: Experiments
   @team:ddoghq/experimentation
   Scenario: List experiment protocols returns "OK" response
     Given new "ListExperimentProtocols" request
+    And there is a valid "experiment_protocol" in the system
+    And request contains "filter[status]" parameter with value ["DRAFT"]
+    And request contains "filter[query]" parameter from "experiment_protocol.data.attributes.name"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data[0].id" has the same value as "experiment_protocol.data.id"
+    And the response "data[0].attributes.status" is equal to "DRAFT"
 
   @generated @skip @team:ddoghq/experimentation
   Scenario: List experiments returns "Invalid query parameter: bad page[offset]/page[limit], unknown sort field, invalid status, malformed protocol_id UUID, invalid result timestamp range, or a timestamp filter that is not RFC3339." response
@@ -937,6 +1041,38 @@ Feature: Experiments
     Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/experimentation
+  Scenario: Publish experiment protocol returns "Invalid request or protocol settings." response
+    Given new "PublishExperimentProtocol" request
+    And request contains "protocol_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Invalid request or protocol settings.
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Publish experiment protocol returns "No protocol with this ID exists in the organization." response
+    Given new "PublishExperimentProtocol" request
+    And request contains "protocol_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 No protocol with this ID exists in the organization.
+
+  @team:ddoghq/experimentation
+  Scenario: Publish experiment protocol returns "OK" response
+    Given new "PublishExperimentProtocol" request
+    And there is a valid "experiment_subject_type" in the system
+    And there is a valid "experiment_protocol" in the system
+    And there is a valid "configured_experiment_protocol" in the system
+    And request contains "protocol_id" parameter from "configured_experiment_protocol.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.status" is equal to "PUBLISHED"
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Publish experiment protocol returns "Only draft protocols can be published." response
+    Given new "PublishExperimentProtocol" request
+    And request contains "protocol_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 409 Only draft protocols can be published.
+
+  @generated @skip @team:ddoghq/experimentation
   Scenario: Refresh experiment results for org returns "Accepted" response
     Given new "RefreshExperimentResultsForOrg" request
     When the request is sent
@@ -975,6 +1111,53 @@ Feature: Experiments
     And request contains "experiment_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 No experiment with this ID exists for the organization.
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Replace experiment protocol returns "Invalid request or protocol settings." response
+    Given new "ReplaceExperimentProtocol" request
+    And request contains "protocol_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"analysis_plan": {"compute_cuped": null, "confidence_level": null, "multiple_testing_correction_method": null}, "assignment_source_default_properties": [{}], "assignment_source_id": "550e8400-e29b-41d4-a716-446655440000", "default_duration_days": null, "enforcement": {"confidence_interval_method": "LOCKED", "confidence_level": "EDITABLE", "cuped_calculation": "EDITABLE", "default_duration": "EDITABLE", "environment": "EDITABLE", "flag_source": "LOCKED", "multiple_testing_correction": "EDITABLE", "notifications": "EDITABLE", "primary_metric": "EDITABLE", "secondary_metrics": "EDITABLE", "split_by_exploration_dimensions": "EDITABLE", "subject_type": "LOCKED", "targeting_rules": "EDITABLE", "traffic_exposure": "EDITABLE", "warehouse_exposure_source": "EDITABLE"}, "environment_id": "550e8400-e29b-41d4-a716-446655440000", "exposure_schedule": {"guardrail_triggered_action": null, "rollout_steps": [{"grouped_step_index": null, "interval_ms": null}], "selection_interval_ms": null}, "is_duration_required_to_start": false, "is_equal_split_enforced": false, "is_metric_limit_enabled": false, "is_minimum_duration_enabled": false, "metric_groups": [], "metric_limit": null, "migration_metadata": null, "minimum_duration_unit": null, "minimum_duration_value": null, "primary_metric_id": "550e8400-e29b-41d4-a716-446655440000", "subject_type_id": "550e8400-e29b-41d4-a716-446655440000", "targeting_rules": [{"conditions": [{"saved_filter_id": null, "value": []}]}]}, "id": "550e8400-e29b-41d4-a716-446655440000", "type": "protocols"}}
+    When the request is sent
+    Then the response status is 400 Invalid request or protocol settings.
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Replace experiment protocol returns "No protocol with this ID exists in the organization." response
+    Given new "ReplaceExperimentProtocol" request
+    And request contains "protocol_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"analysis_plan": {"compute_cuped": null, "confidence_level": null, "multiple_testing_correction_method": null}, "assignment_source_default_properties": [{}], "assignment_source_id": "550e8400-e29b-41d4-a716-446655440000", "default_duration_days": null, "enforcement": {"confidence_interval_method": "LOCKED", "confidence_level": "EDITABLE", "cuped_calculation": "EDITABLE", "default_duration": "EDITABLE", "environment": "EDITABLE", "flag_source": "LOCKED", "multiple_testing_correction": "EDITABLE", "notifications": "EDITABLE", "primary_metric": "EDITABLE", "secondary_metrics": "EDITABLE", "split_by_exploration_dimensions": "EDITABLE", "subject_type": "LOCKED", "targeting_rules": "EDITABLE", "traffic_exposure": "EDITABLE", "warehouse_exposure_source": "EDITABLE"}, "environment_id": "550e8400-e29b-41d4-a716-446655440000", "exposure_schedule": {"guardrail_triggered_action": null, "rollout_steps": [{"grouped_step_index": null, "interval_ms": null}], "selection_interval_ms": null}, "is_duration_required_to_start": false, "is_equal_split_enforced": false, "is_metric_limit_enabled": false, "is_minimum_duration_enabled": false, "metric_groups": [], "metric_limit": null, "migration_metadata": null, "minimum_duration_unit": null, "minimum_duration_value": null, "primary_metric_id": "550e8400-e29b-41d4-a716-446655440000", "subject_type_id": "550e8400-e29b-41d4-a716-446655440000", "targeting_rules": [{"conditions": [{"saved_filter_id": null, "value": []}]}]}, "id": "550e8400-e29b-41d4-a716-446655440000", "type": "protocols"}}
+    When the request is sent
+    Then the response status is 404 No protocol with this ID exists in the organization.
+
+  @team:ddoghq/experimentation
+  Scenario: Replace experiment protocol returns "OK" response
+    Given new "ReplaceExperimentProtocol" request
+    And there is a valid "experiment_subject_type" in the system
+    And there is a valid "experiment_protocol" in the system
+    And there is a valid "configured_experiment_protocol" in the system
+    And there is a valid "published_protocol" in the system
+    And request contains "protocol_id" parameter from "published_protocol.data.id"
+    And request contains "expected_updated_at" parameter from "published_protocol.data.attributes.updated_at"
+    And body with value {"data": {"type": "protocols", "id": "{{ published_protocol.data.id }}", "attributes": {"subject_type_id": "{{ experiment_subject_type.data.id }}", "is_equal_split_enforced": false, "is_minimum_duration_enabled": false, "is_duration_required_to_start": false, "is_metric_limit_enabled": false, "metric_groups": [], "default_duration_days": 14}}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.status" is equal to "PUBLISHED"
+    And the response "data.attributes.default_duration_days" is equal to 14
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Replace experiment protocol returns "The protocol is not published or expected_updated_at is stale." response
+    Given new "ReplaceExperimentProtocol" request
+    And request contains "protocol_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"analysis_plan": {"compute_cuped": null, "confidence_level": null, "multiple_testing_correction_method": null}, "assignment_source_default_properties": [{}], "assignment_source_id": "550e8400-e29b-41d4-a716-446655440000", "default_duration_days": null, "enforcement": {"confidence_interval_method": "LOCKED", "confidence_level": "EDITABLE", "cuped_calculation": "EDITABLE", "default_duration": "EDITABLE", "environment": "EDITABLE", "flag_source": "LOCKED", "multiple_testing_correction": "EDITABLE", "notifications": "EDITABLE", "primary_metric": "EDITABLE", "secondary_metrics": "EDITABLE", "split_by_exploration_dimensions": "EDITABLE", "subject_type": "LOCKED", "targeting_rules": "EDITABLE", "traffic_exposure": "EDITABLE", "warehouse_exposure_source": "EDITABLE"}, "environment_id": "550e8400-e29b-41d4-a716-446655440000", "exposure_schedule": {"guardrail_triggered_action": null, "rollout_steps": [{"grouped_step_index": null, "interval_ms": null}], "selection_interval_ms": null}, "is_duration_required_to_start": false, "is_equal_split_enforced": false, "is_metric_limit_enabled": false, "is_minimum_duration_enabled": false, "metric_groups": [], "metric_limit": null, "migration_metadata": null, "minimum_duration_unit": null, "minimum_duration_value": null, "primary_metric_id": "550e8400-e29b-41d4-a716-446655440000", "subject_type_id": "550e8400-e29b-41d4-a716-446655440000", "targeting_rules": [{"conditions": [{"saved_filter_id": null, "value": []}]}]}, "id": "550e8400-e29b-41d4-a716-446655440000", "type": "protocols"}}
+    When the request is sent
+    Then the response status is 409 The protocol is not published or expected_updated_at is stale.
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Replace experiment protocol returns "Unsupported request content type." response
+    Given new "ReplaceExperimentProtocol" request
+    And request contains "protocol_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"analysis_plan": {"compute_cuped": null, "confidence_level": null, "multiple_testing_correction_method": null}, "assignment_source_default_properties": [{}], "assignment_source_id": "550e8400-e29b-41d4-a716-446655440000", "default_duration_days": null, "enforcement": {"confidence_interval_method": "LOCKED", "confidence_level": "EDITABLE", "cuped_calculation": "EDITABLE", "default_duration": "EDITABLE", "environment": "EDITABLE", "flag_source": "LOCKED", "multiple_testing_correction": "EDITABLE", "notifications": "EDITABLE", "primary_metric": "EDITABLE", "secondary_metrics": "EDITABLE", "split_by_exploration_dimensions": "EDITABLE", "subject_type": "LOCKED", "targeting_rules": "EDITABLE", "traffic_exposure": "EDITABLE", "warehouse_exposure_source": "EDITABLE"}, "environment_id": "550e8400-e29b-41d4-a716-446655440000", "exposure_schedule": {"guardrail_triggered_action": null, "rollout_steps": [{"grouped_step_index": null, "interval_ms": null}], "selection_interval_ms": null}, "is_duration_required_to_start": false, "is_equal_split_enforced": false, "is_metric_limit_enabled": false, "is_minimum_duration_enabled": false, "metric_groups": [], "metric_limit": null, "migration_metadata": null, "minimum_duration_unit": null, "minimum_duration_value": null, "primary_metric_id": "550e8400-e29b-41d4-a716-446655440000", "subject_type_id": "550e8400-e29b-41d4-a716-446655440000", "targeting_rules": [{"conditions": [{"saved_filter_id": null, "value": []}]}]}, "id": "550e8400-e29b-41d4-a716-446655440000", "type": "protocols"}}
+    When the request is sent
+    Then the response status is 415 Unsupported request content type.
 
   @generated @skip @team:ddoghq/experimentation
   Scenario: Set default subject type returns "Malformed subject type ID (not a valid UUID)." response
@@ -1146,6 +1329,49 @@ Feature: Experiments
     And body with value {"data": {"attributes": {"metrics": [{"metric_id": "550e8400-e29b-41d4-a716-446655440021"}], "name": "Reliability"}, "id": "550e8400-e29b-41d4-a716-446655440022", "type": "experiment-metric-groups"}}
     When the request is sent
     Then the response status is 415 Request body sent with a media type other than application/json or application/vnd.api+json.
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Update experiment protocol returns "Invalid request or protocol settings." response
+    Given new "PatchExperimentProtocol" request
+    And request contains "protocol_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"analysis_plan": {"compute_cuped": null, "confidence_interval_method": null, "confidence_level": null, "multiple_testing_correction_method": null}, "assignment_source_default_properties": [{}], "assignment_source_id": null, "default_duration_days": null, "description": null, "enforcement": {"confidence_interval_method": null, "confidence_level": null, "cuped_calculation": null, "default_duration": null, "environment": null, "flag_source": null, "multiple_testing_correction": null, "notifications": null, "primary_metric": null, "secondary_metrics": null, "split_by_exploration_dimensions": null, "subject_type": null, "targeting_rules": null, "traffic_exposure": null, "warehouse_exposure_source": null}, "environment_id": null, "exposure_schedule": {"autostart": null, "guardrail_triggered_action": null, "rollout_steps": [{"grouped_step_index": null, "interval_ms": null}], "selection_interval_ms": null, "strategy": null}, "is_duration_required_to_start": false, "is_equal_split_enforced": false, "is_metric_limit_enabled": false, "is_minimum_duration_enabled": false, "metric_groups": [{"metrics": [{"metric_id": "550e8400-e29b-41d4-a716-446655440000"}]}], "metric_limit": null, "migration_metadata": null, "minimum_duration_unit": null, "minimum_duration_value": null, "name": "Checkout conversion", "primary_metric_id": null, "subject_type_id": null, "targeting_rules": [{"conditions": [{"saved_filter_id": null, "value": []}]}]}, "id": "550e8400-e29b-41d4-a716-446655440000", "type": "protocols"}}
+    When the request is sent
+    Then the response status is 400 Invalid request or protocol settings.
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Update experiment protocol returns "No protocol with this ID exists in the organization." response
+    Given new "PatchExperimentProtocol" request
+    And request contains "protocol_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"analysis_plan": {"compute_cuped": null, "confidence_interval_method": null, "confidence_level": null, "multiple_testing_correction_method": null}, "assignment_source_default_properties": [{}], "assignment_source_id": null, "default_duration_days": null, "description": null, "enforcement": {"confidence_interval_method": null, "confidence_level": null, "cuped_calculation": null, "default_duration": null, "environment": null, "flag_source": null, "multiple_testing_correction": null, "notifications": null, "primary_metric": null, "secondary_metrics": null, "split_by_exploration_dimensions": null, "subject_type": null, "targeting_rules": null, "traffic_exposure": null, "warehouse_exposure_source": null}, "environment_id": null, "exposure_schedule": {"autostart": null, "guardrail_triggered_action": null, "rollout_steps": [{"grouped_step_index": null, "interval_ms": null}], "selection_interval_ms": null, "strategy": null}, "is_duration_required_to_start": false, "is_equal_split_enforced": false, "is_metric_limit_enabled": false, "is_minimum_duration_enabled": false, "metric_groups": [{"metrics": [{"metric_id": "550e8400-e29b-41d4-a716-446655440000"}]}], "metric_limit": null, "migration_metadata": null, "minimum_duration_unit": null, "minimum_duration_value": null, "name": "Checkout conversion", "primary_metric_id": null, "subject_type_id": null, "targeting_rules": [{"conditions": [{"saved_filter_id": null, "value": []}]}]}, "id": "550e8400-e29b-41d4-a716-446655440000", "type": "protocols"}}
+    When the request is sent
+    Then the response status is 404 No protocol with this ID exists in the organization.
+
+  @team:ddoghq/experimentation
+  Scenario: Update experiment protocol returns "OK" response
+    Given new "PatchExperimentProtocol" request
+    And there is a valid "experiment_protocol" in the system
+    And request contains "protocol_id" parameter from "experiment_protocol.data.id"
+    And body with value {"data": {"type": "protocols", "id": "{{ experiment_protocol.data.id }}", "attributes": {"description": "Updated protocol description."}}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.description" is equal to "Updated protocol description."
+    And the response "data.attributes.status" is equal to "DRAFT"
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Update experiment protocol returns "The protocol is archived, a published protocol receives settings changes, or the name is already in use." response
+    Given new "PatchExperimentProtocol" request
+    And request contains "protocol_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"analysis_plan": {"compute_cuped": null, "confidence_interval_method": null, "confidence_level": null, "multiple_testing_correction_method": null}, "assignment_source_default_properties": [{}], "assignment_source_id": null, "default_duration_days": null, "description": null, "enforcement": {"confidence_interval_method": null, "confidence_level": null, "cuped_calculation": null, "default_duration": null, "environment": null, "flag_source": null, "multiple_testing_correction": null, "notifications": null, "primary_metric": null, "secondary_metrics": null, "split_by_exploration_dimensions": null, "subject_type": null, "targeting_rules": null, "traffic_exposure": null, "warehouse_exposure_source": null}, "environment_id": null, "exposure_schedule": {"autostart": null, "guardrail_triggered_action": null, "rollout_steps": [{"grouped_step_index": null, "interval_ms": null}], "selection_interval_ms": null, "strategy": null}, "is_duration_required_to_start": false, "is_equal_split_enforced": false, "is_metric_limit_enabled": false, "is_minimum_duration_enabled": false, "metric_groups": [{"metrics": [{"metric_id": "550e8400-e29b-41d4-a716-446655440000"}]}], "metric_limit": null, "migration_metadata": null, "minimum_duration_unit": null, "minimum_duration_value": null, "name": "Checkout conversion", "primary_metric_id": null, "subject_type_id": null, "targeting_rules": [{"conditions": [{"saved_filter_id": null, "value": []}]}]}, "id": "550e8400-e29b-41d4-a716-446655440000", "type": "protocols"}}
+    When the request is sent
+    Then the response status is 409 The protocol is archived, a published protocol receives settings changes, or the name is already in use.
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Update experiment protocol returns "Unsupported request content type." response
+    Given new "PatchExperimentProtocol" request
+    And request contains "protocol_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"analysis_plan": {"compute_cuped": null, "confidence_interval_method": null, "confidence_level": null, "multiple_testing_correction_method": null}, "assignment_source_default_properties": [{}], "assignment_source_id": null, "default_duration_days": null, "description": null, "enforcement": {"confidence_interval_method": null, "confidence_level": null, "cuped_calculation": null, "default_duration": null, "environment": null, "flag_source": null, "multiple_testing_correction": null, "notifications": null, "primary_metric": null, "secondary_metrics": null, "split_by_exploration_dimensions": null, "subject_type": null, "targeting_rules": null, "traffic_exposure": null, "warehouse_exposure_source": null}, "environment_id": null, "exposure_schedule": {"autostart": null, "guardrail_triggered_action": null, "rollout_steps": [{"grouped_step_index": null, "interval_ms": null}], "selection_interval_ms": null, "strategy": null}, "is_duration_required_to_start": false, "is_equal_split_enforced": false, "is_metric_limit_enabled": false, "is_minimum_duration_enabled": false, "metric_groups": [{"metrics": [{"metric_id": "550e8400-e29b-41d4-a716-446655440000"}]}], "metric_limit": null, "migration_metadata": null, "minimum_duration_unit": null, "minimum_duration_value": null, "name": "Checkout conversion", "primary_metric_id": null, "subject_type_id": null, "targeting_rules": [{"conditions": [{"saved_filter_id": null, "value": []}]}]}, "id": "550e8400-e29b-41d4-a716-446655440000", "type": "protocols"}}
+    When the request is sent
+    Then the response status is 415 Unsupported request content type.
 
   @generated @skip @team:ddoghq/experimentation
   Scenario: Update exposure SQL model returns "Malformed exposure SQL model ID, malformed body, validation failure, or the SQL was rejected by the warehouse validator." response

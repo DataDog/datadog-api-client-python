@@ -53,6 +53,15 @@ from datadog_api_client.v2.model.experiments_public_protocol_response_data_attri
     ExperimentsPublicProtocolResponseDataAttributesStatus,
 )
 from datadog_api_client.v2.model.experiments_public_protocol_response import ExperimentsPublicProtocolResponse
+from datadog_api_client.v2.model.experiments_create_experiment_protocol_request import (
+    ExperimentsCreateExperimentProtocolRequest,
+)
+from datadog_api_client.v2.model.experiments_patch_experiment_protocol_request import (
+    ExperimentsPatchExperimentProtocolRequest,
+)
+from datadog_api_client.v2.model.experiments_replace_experiment_protocol_request import (
+    ExperimentsReplaceExperimentProtocolRequest,
+)
 from datadog_api_client.v2.model.experiments_refresh_experiment_results_v2_dto_array import (
     ExperimentsRefreshExperimentResultsV2DTOArray,
 )
@@ -101,6 +110,34 @@ class ExperimentsApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._archive_experiment_protocol_endpoint = _Endpoint(
+            settings={
+                "response_type": (ExperimentsPublicProtocolResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/experiments/protocols/{protocol_id}/archive",
+                "operation_id": "archive_experiment_protocol",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "protocol_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "protocol_id",
+                    "location": "path",
+                },
+                "expected_updated_at": {
+                    "openapi_types": (str,),
+                    "attribute": "expected_updated_at",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
 
         self._archive_exposure_sql_model_endpoint = _Endpoint(
             settings={
@@ -252,6 +289,26 @@ class ExperimentsApi:
             api_client=api_client,
         )
 
+        self._create_experiment_protocol_endpoint = _Endpoint(
+            settings={
+                "response_type": (ExperimentsPublicProtocolResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/experiments/protocols",
+                "operation_id": "create_experiment_protocol",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (ExperimentsCreateExperimentProtocolRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._create_exposure_sql_model_endpoint = _Endpoint(
             settings={
                 "response_type": (ExperimentsExposureSQLModelV2DTO,),
@@ -396,6 +453,34 @@ class ExperimentsApi:
                     "openapi_types": (UUID,),
                     "attribute": "metric_group_id",
                     "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_experiment_protocol_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/experiments/protocols/{protocol_id}",
+                "operation_id": "delete_experiment_protocol",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "protocol_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "protocol_id",
+                    "location": "path",
+                },
+                "expected_updated_at": {
+                    "openapi_types": (str,),
+                    "attribute": "expected_updated_at",
+                    "location": "query",
                 },
             },
             headers_map={
@@ -1140,6 +1225,32 @@ class ExperimentsApi:
             api_client=api_client,
         )
 
+        self._patch_experiment_protocol_endpoint = _Endpoint(
+            settings={
+                "response_type": (ExperimentsPublicProtocolResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/experiments/protocols/{protocol_id}",
+                "operation_id": "patch_experiment_protocol",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "protocol_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "protocol_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (ExperimentsPatchExperimentProtocolRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._patch_subject_type_endpoint = _Endpoint(
             settings={
                 "response_type": (ExperimentsSubjectTypeV2DTO,),
@@ -1163,6 +1274,29 @@ class ExperimentsApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._publish_experiment_protocol_endpoint = _Endpoint(
+            settings={
+                "response_type": (ExperimentsPublicProtocolResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/experiments/protocols/{protocol_id}/publish",
+                "operation_id": "publish_experiment_protocol",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "protocol_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "protocol_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
             api_client=api_client,
         )
 
@@ -1213,6 +1347,37 @@ class ExperimentsApi:
             headers_map={
                 "accept": ["application/json"],
             },
+            api_client=api_client,
+        )
+
+        self._replace_experiment_protocol_endpoint = _Endpoint(
+            settings={
+                "response_type": (ExperimentsPublicProtocolResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/experiments/protocols/{protocol_id}",
+                "operation_id": "replace_experiment_protocol",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "protocol_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "protocol_id",
+                    "location": "path",
+                },
+                "expected_updated_at": {
+                    "openapi_types": (str,),
+                    "attribute": "expected_updated_at",
+                    "location": "query",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (ExperimentsReplaceExperimentProtocolRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -1455,6 +1620,30 @@ class ExperimentsApi:
             api_client=api_client,
         )
 
+    def archive_experiment_protocol(
+        self,
+        protocol_id: UUID,
+        *,
+        expected_updated_at: Union[str, UnsetType] = unset,
+    ) -> ExperimentsPublicProtocolResponse:
+        """Archive experiment protocol.
+
+        Archive a draft or published protocol. Archived protocols cannot be edited or used to create new experiments. Existing experiments keep their settings. Archiving an already archived protocol returns 409.
+
+        :param protocol_id: The UUID of the protocol.
+        :type protocol_id: UUID
+        :param expected_updated_at: The updated_at value from the last read. Include the full timestamp, with fractional seconds. Returns 409 if another write changed the protocol. Omit to skip this check.
+        :type expected_updated_at: str, optional
+        :rtype: ExperimentsPublicProtocolResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["protocol_id"] = protocol_id
+
+        if expected_updated_at is not unset:
+            kwargs["expected_updated_at"] = expected_updated_at
+
+        return self._archive_experiment_protocol_endpoint.call_with_http_info(**kwargs)
+
     def archive_exposure_sql_model(
         self,
         exposure_sql_model_id: UUID,
@@ -1579,6 +1768,22 @@ class ExperimentsApi:
 
         return self._create_experiment_metric_group_from_collection_endpoint.call_with_http_info(**kwargs)
 
+    def create_experiment_protocol(
+        self,
+        body: ExperimentsCreateExperimentProtocolRequest,
+    ) -> ExperimentsPublicProtocolResponse:
+        """Create experiment protocol.
+
+        Create a draft protocol with a name and optional description and migration metadata. The organization's default subject type is selected. Use PATCH to configure the draft, then publish it before creating experiments from it.
+
+        :type body: ExperimentsCreateExperimentProtocolRequest
+        :rtype: ExperimentsPublicProtocolResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_experiment_protocol_endpoint.call_with_http_info(**kwargs)
+
     def create_exposure_sql_model(
         self,
         body: ExperimentsCreateExposureSQLModelV2Request,
@@ -1697,6 +1902,30 @@ class ExperimentsApi:
         kwargs["metric_group_id"] = metric_group_id
 
         return self._delete_experiment_metric_group_endpoint.call_with_http_info(**kwargs)
+
+    def delete_experiment_protocol(
+        self,
+        protocol_id: UUID,
+        *,
+        expected_updated_at: Union[str, UnsetType] = unset,
+    ) -> None:
+        """Delete experiment protocol.
+
+        Delete a protocol with no linked experiments. Draft, published, and archived protocols can be deleted. Returns 204 with no response body.
+
+        :param protocol_id: The UUID of the protocol.
+        :type protocol_id: UUID
+        :param expected_updated_at: The updated_at value from the last read. Include the full timestamp, with fractional seconds. Returns 409 if another write changed the protocol. Omit to skip this check.
+        :type expected_updated_at: str, optional
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["protocol_id"] = protocol_id
+
+        if expected_updated_at is not unset:
+            kwargs["expected_updated_at"] = expected_updated_at
+
+        return self._delete_experiment_protocol_endpoint.call_with_http_info(**kwargs)
 
     def delete_metric(
         self,
@@ -2425,6 +2654,29 @@ class ExperimentsApi:
 
         return self._patch_experiment_endpoint.call_with_http_info(**kwargs)
 
+    def patch_experiment_protocol(
+        self,
+        protocol_id: UUID,
+        body: ExperimentsPatchExperimentProtocolRequest,
+    ) -> ExperimentsPublicProtocolResponse:
+        """Update experiment protocol.
+
+        Update the supplied fields of a draft protocol. Published protocols accept only name, description, and migration_metadata changes through PATCH. Use PUT to replace their settings. Archived protocols cannot be edited.
+
+        Omitted fields keep their current values, including fields inside analysis_plan, exposure_schedule, and enforcement. Arrays replace the stored arrays. Supported null values clear fields; see the request schema. Use primary_metric_id to select the primary metric and default_duration_days to set the experiment analysis duration. Nested metric is_primary and analysis_plan.target_duration_days fields are rejected.
+
+        :param protocol_id: The UUID of the protocol.
+        :type protocol_id: UUID
+        :type body: ExperimentsPatchExperimentProtocolRequest
+        :rtype: ExperimentsPublicProtocolResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["protocol_id"] = protocol_id
+
+        kwargs["body"] = body
+
+        return self._patch_experiment_protocol_endpoint.call_with_http_info(**kwargs)
+
     def patch_subject_type(
         self,
         subject_type_id: UUID,
@@ -2445,6 +2697,25 @@ class ExperimentsApi:
         kwargs["body"] = body
 
         return self._patch_subject_type_endpoint.call_with_http_info(**kwargs)
+
+    def publish_experiment_protocol(
+        self,
+        protocol_id: UUID,
+    ) -> ExperimentsPublicProtocolResponse:
+        """Publish experiment protocol.
+
+        Publish a valid draft protocol. The protocol must have a name and subject type. Supplied references and settings must be valid. An exposure schedule or targeting rules require an environment. Enabled limits require their values. Configurable template fields must have a value before they can be locked.
+
+        Independent configuration errors are returned together in the JSON:API errors array with source.pointer values that identify the fields. Earlier request and reference checks can stop on the first error. A failed request leaves the protocol unchanged.
+
+        :param protocol_id: The UUID of the protocol.
+        :type protocol_id: UUID
+        :rtype: ExperimentsPublicProtocolResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["protocol_id"] = protocol_id
+
+        return self._publish_experiment_protocol_endpoint.call_with_http_info(**kwargs)
 
     def refresh_experiment_results(
         self,
@@ -2488,6 +2759,38 @@ class ExperimentsApi:
             kwargs["full_refresh"] = full_refresh
 
         return self._refresh_experiment_results_for_org_endpoint.call_with_http_info(**kwargs)
+
+    def replace_experiment_protocol(
+        self,
+        protocol_id: UUID,
+        body: ExperimentsReplaceExperimentProtocolRequest,
+        *,
+        expected_updated_at: Union[str, UnsetType] = unset,
+    ) -> ExperimentsPublicProtocolResponse:
+        """Replace experiment protocol.
+
+        Replace the template of a published protocol. Draft and archived protocols return 409. Send subject_type_id, all four required boolean settings, and metric_groups. Omitted optional template fields are cleared. Omitted enforcement keeps the existing locks.
+
+        Use primary_metric_id to select the primary metric. Use default_duration_days to set target_duration_days on experiments created from the protocol. The nested metric is_primary and analysis_plan.target_duration_days fields are rejected. An unchanged GET response can be sent as the request body. Response-only fields are ignored.
+
+        Independent configuration errors are returned together in the JSON:API errors array. Each error identifies the field in source.pointer. Earlier request and reference checks can stop on the first error. A failed request leaves the protocol unchanged. Changes apply to future experiments; existing experiments keep their settings.
+
+        :param protocol_id: The UUID of the protocol.
+        :type protocol_id: UUID
+        :type body: ExperimentsReplaceExperimentProtocolRequest
+        :param expected_updated_at: The updated_at value from the last read. Include the full timestamp, with fractional seconds. Returns 409 if another write changed the protocol. Omit to skip this check.
+        :type expected_updated_at: str, optional
+        :rtype: ExperimentsPublicProtocolResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["protocol_id"] = protocol_id
+
+        if expected_updated_at is not unset:
+            kwargs["expected_updated_at"] = expected_updated_at
+
+        kwargs["body"] = body
+
+        return self._replace_experiment_protocol_endpoint.call_with_http_info(**kwargs)
 
     def set_default_subject_type(
         self,

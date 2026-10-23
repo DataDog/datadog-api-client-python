@@ -5589,6 +5589,13 @@
     {
       "feature": "Experiments",
       "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/archive-experiment-protocol-returns-ok-response.json",
+      "scenario": "Archive experiment protocol returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
       "file": "v2/experiments/cancel-experiment-returns-the-experiment-was-canceled-and-unlinked-from-its-feature-flag-allocations-response.json",
       "scenario": "Cancel experiment returns \"The experiment was canceled and unlinked from its feature flag allocations.\" response",
       "version": "v2"
@@ -5605,6 +5612,13 @@
       "feature_file": "../../v2/features/experiments.feature",
       "file": "v2/experiments/create-experiment-metric-group-returns-created-response.json",
       "scenario": "Create experiment metric group returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/create-experiment-protocol-returns-created-response.json",
+      "scenario": "Create experiment protocol returns \"Created\" response",
       "version": "v2"
     },
     {
@@ -5640,6 +5654,13 @@
       "feature_file": "../../v2/features/experiments.feature",
       "file": "v2/experiments/delete-experiment-metric-group-returns-no-content-response.json",
       "scenario": "Delete experiment metric group returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/delete-experiment-protocol-returns-no-content-response.json",
+      "scenario": "Delete experiment protocol returns \"No Content\" response",
       "version": "v2"
     },
     {
@@ -5682,6 +5703,13 @@
       "feature_file": "../../v2/features/experiments.feature",
       "file": "v2/experiments/get-experiment-diagnostics-returns-ok-response.json",
       "scenario": "Get experiment diagnostics returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/get-experiment-protocol-returns-ok-response.json",
+      "scenario": "Get experiment protocol returns \"OK\" response",
       "version": "v2"
     },
     {
@@ -5792,6 +5820,20 @@
     {
       "feature": "Experiments",
       "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/publish-experiment-protocol-returns-ok-response.json",
+      "scenario": "Publish experiment protocol returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/replace-experiment-protocol-returns-ok-response.json",
+      "scenario": "Replace experiment protocol returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
       "file": "v2/experiments/start-experiment-returns-the-experiment-was-started-response.json",
       "scenario": "Start experiment returns \"The experiment was started.\" response",
       "version": "v2"
@@ -5808,6 +5850,13 @@
       "feature_file": "../../v2/features/experiments.feature",
       "file": "v2/experiments/update-experiment-metric-group-returns-ok-response.json",
       "scenario": "Update experiment metric group returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/update-experiment-protocol-returns-ok-response.json",
+      "scenario": "Update experiment protocol returns \"OK\" response",
       "version": "v2"
     },
     {
