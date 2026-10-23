@@ -142,8 +142,10 @@ Feature: Scorecards
   @team:ddoghq/idp
   Scenario: List all rule outcomes returns "OK" response
     Given new "ListScorecardOutcomes" request
+    And request contains "filter[rule][id]" parameter with value "00000000-0000-0000-0000-000000000000"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data" has length 0
 
   @replay-only @skip-validation @team:ddoghq/idp @with-pagination
   Scenario: List all rule outcomes returns "OK" response with pagination
