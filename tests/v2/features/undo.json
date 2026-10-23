@@ -9961,24 +9961,6 @@
       "type": "unsafe"
     }
   },
-  "GetSPARecommendationsV2": {
-    "tag": "Spa",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "GetSPARecommendations": {
-    "tag": "Spa",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "GetSPARecommendationsWithShard": {
-    "tag": "Spa",
-    "undo": {
-      "type": "safe"
-    }
-  },
   "AggregateSpans": {
     "tag": "Spans",
     "undo": {
