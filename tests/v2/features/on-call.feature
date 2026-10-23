@@ -427,6 +427,32 @@ Feature: On-Call
     Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/on-call
+  Scenario: List On-Call escalation policies returns "Bad Request" response
+    Given new "ListOnCallEscalationPolicies" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:ddoghq/on-call
+  Scenario: List On-Call escalation policies returns "OK" response
+    Given new "ListOnCallEscalationPolicies" request
+    And there is a valid "user" in the system
+    And there is a valid "dd_team" in the system
+    And there is a valid "schedule" in the system
+    And there is a valid "escalation_policy" in the system
+    And request contains "filter[schedule_id]" parameter from "schedule.data.id"
+    And request contains "include" parameter with value "steps.targets"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 1
+    And the response "data[0].id" is equal to "{{ escalation_policy.data.id }}"
+
+  @generated @skip @team:ddoghq/on-call @with-pagination
+  Scenario: List On-Call escalation policies returns "OK" response with pagination
+    Given new "ListOnCallEscalationPolicies" request
+    When the request with pagination is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/on-call
   Scenario: List On-Call notification channels for a user returns "Bad Request" response
     Given new "ListUserNotificationChannels" request
     And request contains "user_id" parameter from "REPLACE.ME"
