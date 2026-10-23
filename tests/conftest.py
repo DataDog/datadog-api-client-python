@@ -625,6 +625,7 @@ def api(context, package_name, client, name):
     package = generated_api_module(package_name, name)
     context["api"] = {
         "api": generated_api_class(package, name)(client),
+        "name": name,
         "package": package_name,
         "calls": [],
     }
@@ -647,6 +648,31 @@ def api_request(configuration, context, name):
     context["api_request"] = {
         "api": api["api"],
         "request": getattr(api["api"], operation_name),
+        "args": [],
+        "kwargs": {},
+        "response": (None, None, None),
+    }
+
+
+@given(parsers.parse('new "{name}" with version "{version}" request'))
+def versioned_api_request(context, client, api_version, name, version):
+    """Call an endpoint using its versioned client namespace."""
+    api_name = context["api"]["name"]
+    package_name = "datadog_api_client.{}_{}".format(api_version, version.replace("-", ""))
+    package = generated_api_module(package_name, api_name)
+    api_instance = generated_api_class(package, api_name)(client)
+    context["api"] = {
+        "api": api_instance,
+        "name": api_name,
+        "package": package_name,
+        "calls": [],
+    }
+    if test_runner_enabled():
+        return
+    operation_name = generated_operation_name(api_instance, name)
+    context["api_request"] = {
+        "api": api_instance,
+        "request": getattr(api_instance, operation_name),
         "args": [],
         "kwargs": {},
         "response": (None, None, None),
