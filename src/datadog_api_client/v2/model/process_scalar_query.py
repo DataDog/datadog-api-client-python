@@ -73,7 +73,8 @@ class ProcessScalarQuery(ModelNormal):
         **kwargs,
     ):
         """
-        A query for host-level process metrics such as CPU and memory usage.
+        Per-process metrics from Live Processes. Queries without ``aggregator`` fail. To scope to one process,
+        set ``tag_filters`` to its ``identifying_tags`` from ``GET /api/v2/processes``.
 
         :param aggregator: The type of aggregation that can be performed on metrics-based queries.
         :type aggregator: MetricsAggregator, optional
@@ -87,10 +88,12 @@ class ProcessScalarQuery(ModelNormal):
         :param is_normalized_cpu: Whether CPU metrics should be normalized by core count.
         :type is_normalized_cpu: bool, optional
 
-        :param limit: Maximum number of results to return.
+        :param limit: Maximum number of processes or groups to return. Large values can fail with an ``Unprocessable
+            Content`` error. If so, retry with a smaller limit.
         :type limit: int, optional
 
-        :param metric: The process metric to query.
+        :param metric: The process metric to query, such as ``process.stat.cpu.total_pct`` , ``process.stat.memory.rss`` , or
+            ``process.stat.memory.vms``.
         :type metric: str
 
         :param name: The variable name for use in formulas.
@@ -99,7 +102,8 @@ class ProcessScalarQuery(ModelNormal):
         :param sort: Direction of sort.
         :type sort: QuerySortOrder, optional
 
-        :param tag_filters: Tag filters to narrow down processes.
+        :param tag_filters: Tags to narrow down processes. To scope to one process, use its ``identifying_tags`` from
+            ``GET /api/v2/processes`` , for example ``host:web-01`` and ``pid:1234``.
         :type tag_filters: [str], optional
 
         :param text_filter: A full-text search filter to match process names or commands.
