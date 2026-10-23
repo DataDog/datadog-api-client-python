@@ -140,6 +140,7 @@ Feature: Sensitive Data Scanner
     Given new "ListStandardPatterns" request
     When the request is sent
     Then the response status is 200 OK
+    And the response "data[0].attributes" has field "suppressions"
 
   @team:ddoghq/sensitive-data-scanner
   Scenario: Reorder Groups returns "Bad Request" response
