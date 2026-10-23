@@ -29,6 +29,7 @@ class RoleUpdateAttributes(ModelNormal):
             "modified_at": (datetime,),
             "name": (str,),
             "receives_permissions_from": ([str],),
+            "team_count": (int,),
             "user_count": (int,),
         }
 
@@ -38,11 +39,13 @@ class RoleUpdateAttributes(ModelNormal):
         "modified_at": "modified_at",
         "name": "name",
         "receives_permissions_from": "receives_permissions_from",
+        "team_count": "team_count",
         "user_count": "user_count",
     }
     read_only_vars = {
         "created_at",
         "modified_at",
+        "team_count",
     }
 
     def __init__(
@@ -52,6 +55,7 @@ class RoleUpdateAttributes(ModelNormal):
         modified_at: Union[datetime, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         receives_permissions_from: Union[List[str], UnsetType] = unset,
+        team_count: Union[int, UnsetType] = unset,
         user_count: Union[int, UnsetType] = unset,
         **kwargs,
     ):
@@ -77,6 +81,9 @@ class RoleUpdateAttributes(ModelNormal):
             If empty or not specified, the role does not automatically inherit permissions from any managed role.
         :type receives_permissions_from: [str], optional
 
+        :param team_count: Number of teams with that role.
+        :type team_count: int, optional
+
         :param user_count: The user count.
         :type user_count: int, optional
         """
@@ -90,6 +97,8 @@ class RoleUpdateAttributes(ModelNormal):
             kwargs["name"] = name
         if receives_permissions_from is not unset:
             kwargs["receives_permissions_from"] = receives_permissions_from
+        if team_count is not unset:
+            kwargs["team_count"] = team_count
         if user_count is not unset:
             kwargs["user_count"] = user_count
         super().__init__(kwargs)
