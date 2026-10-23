@@ -74,7 +74,7 @@ class ExperimentsPublicProtocolResponseDataAttributesEnforcement(ModelNormal):
         """
         Controls that determine which protocol settings can be changed in an experiment.
 
-        :param confidence_interval_method: LOCKED prevents changes to confidence interval method. EDITABLE permits changes.
+        :param confidence_interval_method: Always LOCKED. The server keeps this setting locked regardless of the supplied value.
         :type confidence_interval_method: str, optional
 
         :param confidence_level: LOCKED prevents changes to confidence level. EDITABLE permits changes.
@@ -89,7 +89,7 @@ class ExperimentsPublicProtocolResponseDataAttributesEnforcement(ModelNormal):
         :param environment: LOCKED prevents changes to environment. EDITABLE permits changes.
         :type environment: str, optional
 
-        :param flag_source: LOCKED prevents changes to feature flag source. EDITABLE permits changes.
+        :param flag_source: Always LOCKED. The server keeps this setting locked regardless of the supplied value.
         :type flag_source: str, optional
 
         :param multiple_testing_correction: LOCKED prevents changes to multiple testing correction. EDITABLE permits changes.
@@ -107,7 +107,7 @@ class ExperimentsPublicProtocolResponseDataAttributesEnforcement(ModelNormal):
         :param split_by_exploration_dimensions: LOCKED prevents changes to result exploration dimensions. EDITABLE permits changes.
         :type split_by_exploration_dimensions: str, optional
 
-        :param subject_type: LOCKED prevents changes to subject type. EDITABLE permits changes.
+        :param subject_type: Always LOCKED. The server keeps this setting locked regardless of the supplied value.
         :type subject_type: str, optional
 
         :param targeting_rules: LOCKED prevents changes to targeting rules. EDITABLE permits changes.
