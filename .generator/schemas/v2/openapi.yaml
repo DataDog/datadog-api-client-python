@@ -130840,13 +130840,15 @@ components:
           $ref: "#/components/schemas/TagRuleScoreRelationship"
       type: object
     TagRuleResourceType:
-      description: JSON:API resource type for a tag rule.
+      description: JSON:API resource type for a tag rule. Responses use the legacy `tag_policy` value.
       enum:
         - tag_rule
+        - tag_policy
       example: "tag_rule"
       type: string
       x-enum-varnames:
         - TAG_RULE
+        - TAG_POLICY
     TagRuleResponse:
       description: A single tag rule.
       properties:
@@ -130927,13 +130929,15 @@ components:
         - id
       type: object
     TagRuleScoreResourceType:
-      description: JSON:API resource type for a tag rule compliance score.
+      description: JSON:API resource type for a tag rule compliance score. Responses use the legacy `tag_policy_score` value.
       enum:
         - tag_rule_score
+        - tag_policy_score
       example: "tag_rule_score"
       type: string
       x-enum-varnames:
         - TAG_RULE_SCORE
+        - TAG_POLICY_SCORE
     TagRuleScoreResponse:
       description: A tag rule compliance score.
       properties:
@@ -177251,8 +177255,8 @@ paths:
                           score:
                             data:
                               id: "123-v1-1779315066097-1779401466097"
-                              type: "tag_rule_score"
-                        type: "tag_rule"
+                              type: "tag_policy_score"
+                        type: "tag_policy"
                     included:
                       - attributes:
                           score: 80
@@ -177260,7 +177264,7 @@ paths:
                           ts_start: 1779315066097
                           version: 1
                         id: "123-v1-1779315066097-1779401466097"
-                        type: "tag_rule_score"
+                        type: "tag_policy_score"
               schema:
                 $ref: "#/components/schemas/TagRulesListResponse"
           description: OK
@@ -177354,7 +177358,7 @@ paths:
                           - "web"
                         version: 1
                       id: "123"
-                      type: "tag_rule"
+                      type: "tag_policy"
               schema:
                 $ref: "#/components/schemas/TagRuleResponse"
           description: Created
@@ -177530,8 +177534,8 @@ paths:
                         score:
                           data:
                             id: "123-v1-1779315066097-1779401466097"
-                            type: "tag_rule_score"
-                      type: "tag_rule"
+                            type: "tag_policy_score"
+                      type: "tag_policy"
                     included:
                       - attributes:
                           score: 80
@@ -177539,7 +177543,7 @@ paths:
                           ts_start: 1779315066097
                           version: 1
                         id: "123-v1-1779315066097-1779401466097"
-                        type: "tag_rule_score"
+                        type: "tag_policy_score"
               schema:
                 $ref: "#/components/schemas/TagRuleResponse"
           description: OK
@@ -177639,7 +177643,7 @@ paths:
                           - "web"
                         version: 2
                       id: "123"
-                      type: "tag_rule"
+                      type: "tag_policy"
               schema:
                 $ref: "#/components/schemas/TagRuleResponse"
           description: OK
@@ -177729,7 +177733,7 @@ paths:
                         ts_start: 1779315066097
                         version: 1
                       id: "123-v1-1779315066097-1779401466097"
-                      type: "tag_rule_score"
+                      type: "tag_policy_score"
               schema:
                 $ref: "#/components/schemas/TagRuleScoreResponse"
           description: OK
