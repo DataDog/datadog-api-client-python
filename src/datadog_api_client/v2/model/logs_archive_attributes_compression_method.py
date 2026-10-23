@@ -16,7 +16,7 @@ class LogsArchiveAttributesCompressionMethod(ModelSimple):
     """
     The type of compression for the archive.
 
-    :param value: If omitted defaults to "GZIP". Must be one of ["GZIP", "ZSTD"].
+    :param value: If omitted defaults to "ZSTD". Must be one of ["GZIP", "ZSTD"].
     :type value: str
     """
 
