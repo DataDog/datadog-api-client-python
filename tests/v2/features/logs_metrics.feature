@@ -12,14 +12,14 @@ Feature: Logs Metrics
   @generated @skip @team:ddoghq/logs-backend @team:ddoghq/logs-federated-search @team:ddoghq/logs-routing
   Scenario: Create a log-based metric returns "Bad Request" response
     Given new "CreateLogsMetric" request
-    And body with value {"data": {"attributes": {"compute": {"aggregation_type": "distribution", "include_percentiles": true, "path": "@duration"}, "filter": {"query": "service:web* AND @http.status_code:[200 TO 299]"}, "group_by": [{"path": "@http.status_code", "tag_name": "status_code"}]}, "id": "logs.page.load.count", "type": "logs_metrics"}}
+    And body with value {"data": {"attributes": {"compute": {"aggregation_type": "distribution", "include_percentiles": true, "path": "@duration"}, "filter": {"query": "service:web-api AND @http.status_code:[200 TO 299]"}, "group_by": [{"path": "@http.status_code", "tag_name": "status_code"}]}, "id": "logs.page.load.count", "type": "logs_metrics"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:ddoghq/logs-backend @team:ddoghq/logs-federated-search @team:ddoghq/logs-routing
   Scenario: Create a log-based metric returns "Conflict" response
     Given new "CreateLogsMetric" request
-    And body with value {"data": {"attributes": {"compute": {"aggregation_type": "distribution", "include_percentiles": true, "path": "@duration"}, "filter": {"query": "service:web* AND @http.status_code:[200 TO 299]"}, "group_by": [{"path": "@http.status_code", "tag_name": "status_code"}]}, "id": "logs.page.load.count", "type": "logs_metrics"}}
+    And body with value {"data": {"attributes": {"compute": {"aggregation_type": "distribution", "include_percentiles": true, "path": "@duration"}, "filter": {"query": "service:web-api AND @http.status_code:[200 TO 299]"}, "group_by": [{"path": "@http.status_code", "tag_name": "status_code"}]}, "id": "logs.page.load.count", "type": "logs_metrics"}}
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -77,7 +77,7 @@ Feature: Logs Metrics
   Scenario: Update a log-based metric returns "Bad Request" response
     Given new "UpdateLogsMetric" request
     And request contains "metric_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"compute": {"include_percentiles": true}, "filter": {"query": "service:web* AND @http.status_code:[200 TO 299]"}, "group_by": [{"path": "@http.status_code", "tag_name": "status_code"}]}, "type": "logs_metrics"}}
+    And body with value {"data": {"attributes": {"compute": {"include_percentiles": true}, "filter": {"query": "service:web-api AND @http.status_code:[200 TO 299]"}, "group_by": [{"path": "@http.status_code", "tag_name": "status_code"}]}, "type": "logs_metrics"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -85,7 +85,7 @@ Feature: Logs Metrics
   Scenario: Update a log-based metric returns "Not Found" response
     Given new "UpdateLogsMetric" request
     And request contains "metric_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"compute": {"include_percentiles": true}, "filter": {"query": "service:web* AND @http.status_code:[200 TO 299]"}, "group_by": [{"path": "@http.status_code", "tag_name": "status_code"}]}, "type": "logs_metrics"}}
+    And body with value {"data": {"attributes": {"compute": {"include_percentiles": true}, "filter": {"query": "service:web-api AND @http.status_code:[200 TO 299]"}, "group_by": [{"path": "@http.status_code", "tag_name": "status_code"}]}, "type": "logs_metrics"}}
     When the request is sent
     Then the response status is 404 Not Found
 

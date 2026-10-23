@@ -76857,10 +76857,10 @@ components:
           type: string
         limit:
           default: 10
-          description: Maximum number of logs in the response.
+          description: Requested maximum number of logs in the response.
           example: 25
           format: int32
-          maximum: 1000
+          maximum: 5000
           type: integer
       type: object
     LogsListResponse:
@@ -76955,7 +76955,7 @@ components:
         query:
           default: "*"
           description: The search query - following the log search syntax.
-          example: "service:web* AND @http.status_code:[200 TO 299]"
+          example: "service:web-api AND @http.status_code:[200 TO 299]"
           type: string
       type: object
     LogsMetricGroupBy:
@@ -77028,7 +77028,7 @@ components:
       properties:
         query:
           description: The search query - following the log search syntax.
-          example: "service:web* AND @http.status_code:[200 TO 299]"
+          example: "service:web-api AND @http.status_code:[200 TO 299]"
           type: string
       type: object
     LogsMetricResponseGroupBy:
@@ -77117,7 +77117,7 @@ components:
         query:
           default: "*"
           description: The search query - following the log search syntax.
-          example: "service:web* AND @http.status_code:[200 TO 299]"
+          example: "service:web-api AND @http.status_code:[200 TO 299]"
           type: string
         storage_tier:
           $ref: "#/components/schemas/LogsStorageTier"
@@ -197132,7 +197132,7 @@ paths:
                     indexes:
                       - main
                       - web
-                    query: service:web* AND @http.status_code:[200 TO 299]
+                    query: service:web-api AND @http.status_code:[200 TO 299]
                     storage_tier: indexes
                     to: now
                   group_by:
@@ -198225,7 +198225,7 @@ paths:
                             include_percentiles: true
                             path: "@duration"
                           filter:
-                            query: "service:web* AND @http.status_code:[200 TO 299]"
+                            query: "service:web-api AND @http.status_code:[200 TO 299]"
                           group_by:
                             - path: "@http.status_code"
                               tag_name: status_code
@@ -198263,7 +198263,7 @@ paths:
                         include_percentiles: true
                         path: "@duration"
                       filter:
-                        query: service:web* AND @http.status_code:[200 TO 299]
+                        query: service:web-api AND @http.status_code:[200 TO 299]
                       group_by:
                         - path: "@http.status_code"
                           tag_name: status_code
@@ -198287,7 +198287,7 @@ paths:
                           include_percentiles: true
                           path: "@duration"
                         filter:
-                          query: "service:web* AND @http.status_code:[200 TO 299]"
+                          query: "service:web-api AND @http.status_code:[200 TO 299]"
                         group_by:
                           - path: "@http.status_code"
                             tag_name: status_code
@@ -198353,7 +198353,7 @@ paths:
                           include_percentiles: true
                           path: "@duration"
                         filter:
-                          query: "service:web* AND @http.status_code:[200 TO 299]"
+                          query: "service:web-api AND @http.status_code:[200 TO 299]"
                         group_by:
                           - path: "@http.status_code"
                             tag_name: status_code
@@ -198393,7 +198393,7 @@ paths:
                       compute:
                         include_percentiles: true
                       filter:
-                        query: service:web* AND @http.status_code:[200 TO 299]
+                        query: service:web-api AND @http.status_code:[200 TO 299]
                       group_by:
                         - path: "@http.status_code"
                           tag_name: status_code
@@ -198416,7 +198416,7 @@ paths:
                           include_percentiles: true
                           path: "@duration"
                         filter:
-                          query: "service:web* AND @http.status_code:[200 TO 299]"
+                          query: "service:web-api AND @http.status_code:[200 TO 299]"
                         group_by:
                           - path: "@http.status_code"
                             tag_name: status_code
@@ -199108,7 +199108,7 @@ paths:
           schema:
             default: 10
             format: int32
-            maximum: 1000
+            maximum: 5000
             type: integer
       responses:
         "200":
@@ -199175,7 +199175,7 @@ paths:
                     indexes:
                       - main
                       - web
-                    query: service:web* AND @http.status_code:[200 TO 299]
+                    query: service:web-api AND @http.status_code:[200 TO 299]
                     storage_tier: indexes
                     to: now
                   options:

@@ -30,7 +30,7 @@ Feature: Logs
   Scenario: Aggregate events returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "AggregateLogs" request
-    And body with value {"compute": [{"aggregation": "pc90", "interval": "5m", "metric": "@duration", "type": "total"}], "filter": {"from": "now-15m", "indexes": ["main", "web"], "query": "service:web* AND @http.status_code:[200 TO 299]", "storage_tier": "indexes", "to": "now"}, "group_by": [{"facet": "host", "histogram": {"interval": 10, "max": 100, "min": 50}, "limit": 10, "sort": {"aggregation": "count", "order": "asc"}, "total": false}], "options": {"timezone": "GMT"}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ=="}}
+    And body with value {"compute": [{"aggregation": "pc90", "interval": "5m", "metric": "@duration", "type": "total"}], "filter": {"from": "now-15m", "indexes": ["main", "web"], "query": "service:web-api AND @http.status_code:[200 TO 299]", "storage_tier": "indexes", "to": "now"}, "group_by": [{"facet": "host", "histogram": {"interval": 10, "max": 100, "min": 50}, "limit": 10, "sort": {"aggregation": "count", "order": "asc"}, "total": false}], "options": {"timezone": "GMT"}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ=="}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -86,11 +86,24 @@ Feature: Logs
     When the request with pagination is sent
     Then the response status is 200 OK
 
+  @team:ddoghq/logs-app
+  Scenario: Search logs (GET) with a page limit of 5000 returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "ListLogsGet" request
+    And request contains "filter[query]" parameter with value "datadog-agent"
+    And request contains "filter[indexes]" parameter with value ["main"]
+    And request contains "filter[from]" parameter with value "2020-09-17T11:48:36+01:00"
+    And request contains "filter[to]" parameter with value "2020-09-17T12:48:36+01:00"
+    And request contains "page[limit]" parameter with value 5000
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 0
+
   @generated @skip @team:ddoghq/logs-app
   Scenario: Search logs (POST) returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And new "ListLogs" request
-    And body with value {"filter": {"from": "now-15m", "indexes": ["main", "web"], "query": "service:web* AND @http.status_code:[200 TO 299]", "storage_tier": "indexes", "to": "now"}, "options": {"timezone": "GMT"}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "timestamp"}
+    And body with value {"filter": {"from": "now-15m", "indexes": ["main", "web"], "query": "service:web-api AND @http.status_code:[200 TO 299]", "storage_tier": "indexes", "to": "now"}, "options": {"timezone": "GMT"}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "timestamp"}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -98,7 +111,7 @@ Feature: Logs
   Scenario: Search logs (POST) returns "OK" response
     Given a valid "appKeyAuth" key in the system
     And new "ListLogs" request
-    And body with value {"filter": {"from": "now-15m", "indexes": ["main", "web"], "query": "service:web* AND @http.status_code:[200 TO 299]", "storage_tier": "indexes", "to": "now"}, "options": {"timezone": "GMT"}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "timestamp"}
+    And body with value {"filter": {"from": "now-15m", "indexes": ["main", "web"], "query": "service:web-api AND @http.status_code:[200 TO 299]", "storage_tier": "indexes", "to": "now"}, "options": {"timezone": "GMT"}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "timestamp"}
     When the request is sent
     Then the response status is 200 OK
 
@@ -106,7 +119,7 @@ Feature: Logs
   Scenario: Search logs (POST) returns "OK" response with pagination
     Given a valid "appKeyAuth" key in the system
     And new "ListLogs" request
-    And body with value {"filter": {"from": "now-15m", "indexes": ["main", "web"], "query": "service:web* AND @http.status_code:[200 TO 299]", "storage_tier": "indexes", "to": "now"}, "options": {"timezone": "GMT"}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "timestamp"}
+    And body with value {"filter": {"from": "now-15m", "indexes": ["main", "web"], "query": "service:web-api AND @http.status_code:[200 TO 299]", "storage_tier": "indexes", "to": "now"}, "options": {"timezone": "GMT"}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}, "sort": "timestamp"}
     When the request with pagination is sent
     Then the response status is 200 OK
 
@@ -127,6 +140,15 @@ Feature: Logs
     When the request with pagination is sent
     Then the response status is 200 OK
     And the response has 3 items
+
+  @team:ddoghq/logs-app
+  Scenario: Search logs with a page limit above 1000 returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And new "ListLogs" request
+    And body with value {"filter": {"query": "datadog-agent", "indexes": ["main"], "from": "2020-09-17T11:48:36+01:00", "to": "2020-09-17T12:48:36+01:00"}, "sort": "timestamp", "page": {"limit": 5000}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 0
 
   @integration-only @skip-terraform-config @skip-validation @team:ddoghq/event-platform-intake @team:ddoghq/logs-backend @team:ddoghq/logs-federated-search @team:ddoghq/logs-routing
   Scenario: Send deflate logs returns "Request accepted for processing (always 202 empty JSON)." response

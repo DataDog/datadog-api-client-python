@@ -301,6 +301,58 @@
     },
     {
       "feature": "Logs",
+      "frozen_at": "2026-10-23T14:37:30.525Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/logs/events",
+            "query": [
+              [
+                "filter[from]",
+                "2020-09-17T11:48:36+01:00"
+              ],
+              [
+                "filter[indexes]",
+                "main"
+              ],
+              [
+                "filter[query]",
+                "datadog-agent"
+              ],
+              [
+                "filter[to]",
+                "2020-09-17T12:48:36+01:00"
+              ],
+              [
+                "page[limit]",
+                "5000"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[],\"meta\":{\"elapsed\":15,\"request_id\":\"pddv1ChZnR2hvYWh3c1JHUzNNeUVPVVVObUFBIiwKHOCXKxzHqMFtzjcE7bymTTBh6cdIHOd21M44oCsSDEnIaTJ-zW3JfOOUFQ\",\"status\":\"done\"}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Search logs (GET) with a page limit of 5000 returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs",
       "frozen_at": "2024-10-01T15:36:43.434Z",
       "interactions": [
         {
@@ -465,6 +517,50 @@
         }
       ],
       "scenario": "Search logs returns \"OK\" response with pagination",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs",
+      "frozen_at": "2026-10-20T15:48:33.672Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "filter": {
+                  "from": "2020-09-17T11:48:36+01:00",
+                  "indexes": [
+                    "main"
+                  ],
+                  "query": "datadog-agent",
+                  "to": "2020-09-17T12:48:36+01:00"
+                },
+                "page": {
+                  "limit": 5000
+                },
+                "sort": "timestamp"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/logs/events/search",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[],\"meta\":{\"elapsed\":18,\"request_id\":\"pddv1ChZBSmZLWHpjbVJSR1g3M3lROVU5a2FRIi0KHZeBL8XKykh5It8ImVi31FNZvxmHR9Mx2XFSiqL0Egyoeu2HNERQ747rLgg\",\"status\":\"done\"}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Search logs with a page limit above 1000 returns \"OK\" response",
       "version": "v2"
     },
     {

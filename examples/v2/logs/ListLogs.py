@@ -19,7 +19,7 @@ body = LogsListRequest(
             "main",
             "web",
         ],
-        query="service:web* AND @http.status_code:[200 TO 299]",
+        query="service:web-api AND @http.status_code:[200 TO 299]",
         storage_tier=LogsStorageTier.INDEXES,
         to="now",
     ),
