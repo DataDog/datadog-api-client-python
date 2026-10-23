@@ -7708,6 +7708,36 @@ from datadog_api_client.v2.model.observability_pipeline_source_valid_token_field
 )
 from datadog_api_client.v2.model.observability_pipeline_spec import ObservabilityPipelineSpec
 from datadog_api_client.v2.model.observability_pipeline_spec_data import ObservabilityPipelineSpecData
+from datadog_api_client.v2.model.observability_pipeline_spike_protection_processor import (
+    ObservabilityPipelineSpikeProtectionProcessor,
+)
+from datadog_api_client.v2.model.observability_pipeline_spike_protection_processor_action_when_missing_partitions import (
+    ObservabilityPipelineSpikeProtectionProcessorActionWhenMissingPartitions,
+)
+from datadog_api_client.v2.model.observability_pipeline_spike_protection_processor_minimal_threshold import (
+    ObservabilityPipelineSpikeProtectionProcessorMinimalThreshold,
+)
+from datadog_api_client.v2.model.observability_pipeline_spike_protection_processor_minimal_threshold_always_keep import (
+    ObservabilityPipelineSpikeProtectionProcessorMinimalThresholdAlwaysKeep,
+)
+from datadog_api_client.v2.model.observability_pipeline_spike_protection_processor_minimal_threshold_always_keep_type import (
+    ObservabilityPipelineSpikeProtectionProcessorMinimalThresholdAlwaysKeepType,
+)
+from datadog_api_client.v2.model.observability_pipeline_spike_protection_processor_minimal_threshold_bytes import (
+    ObservabilityPipelineSpikeProtectionProcessorMinimalThresholdBytes,
+)
+from datadog_api_client.v2.model.observability_pipeline_spike_protection_processor_minimal_threshold_bytes_type import (
+    ObservabilityPipelineSpikeProtectionProcessorMinimalThresholdBytesType,
+)
+from datadog_api_client.v2.model.observability_pipeline_spike_protection_processor_spike_action import (
+    ObservabilityPipelineSpikeProtectionProcessorSpikeAction,
+)
+from datadog_api_client.v2.model.observability_pipeline_spike_protection_processor_threshold_override import (
+    ObservabilityPipelineSpikeProtectionProcessorThresholdOverride,
+)
+from datadog_api_client.v2.model.observability_pipeline_spike_protection_processor_type import (
+    ObservabilityPipelineSpikeProtectionProcessorType,
+)
 from datadog_api_client.v2.model.observability_pipeline_split_array_processor import (
     ObservabilityPipelineSplitArrayProcessor,
 )
@@ -18008,6 +18038,16 @@ __all__ = [
     "ObservabilityPipelineSourceValidTokenFieldToAdd",
     "ObservabilityPipelineSpec",
     "ObservabilityPipelineSpecData",
+    "ObservabilityPipelineSpikeProtectionProcessor",
+    "ObservabilityPipelineSpikeProtectionProcessorActionWhenMissingPartitions",
+    "ObservabilityPipelineSpikeProtectionProcessorMinimalThreshold",
+    "ObservabilityPipelineSpikeProtectionProcessorMinimalThresholdAlwaysKeep",
+    "ObservabilityPipelineSpikeProtectionProcessorMinimalThresholdAlwaysKeepType",
+    "ObservabilityPipelineSpikeProtectionProcessorMinimalThresholdBytes",
+    "ObservabilityPipelineSpikeProtectionProcessorMinimalThresholdBytesType",
+    "ObservabilityPipelineSpikeProtectionProcessorSpikeAction",
+    "ObservabilityPipelineSpikeProtectionProcessorThresholdOverride",
+    "ObservabilityPipelineSpikeProtectionProcessorType",
     "ObservabilityPipelineSplitArrayProcessor",
     "ObservabilityPipelineSplitArrayProcessorArrayConfig",
     "ObservabilityPipelineSplitArrayProcessorType",
