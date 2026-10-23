@@ -48,6 +48,8 @@ class SpansCompute(ModelNormal):
     ):
         """
         A compute rule to compute metrics or timeseries.
+        All computes in a request must have the same ``type`` , and ``timeseries`` computes must use the same ``interval``.
+        To get both totals and timeseries, send separate requests.
 
         :param aggregation: An aggregation function.
         :type aggregation: SpansAggregationFunction

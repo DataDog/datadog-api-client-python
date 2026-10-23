@@ -8,6 +8,14 @@ Feature: APM Trace
     And an instance of "APMTrace" API
 
   @generated @skip @team:ddoghq/apm-reliability
+  Scenario: Get a pruned trace by ID returns "Bad Request" response
+    Given operation "GetPrunedTraceByID" enabled
+    And new "GetPrunedTraceByID" request
+    And request contains "trace_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/apm-reliability
   Scenario: Get a pruned trace by ID returns "Not Found" response
     Given operation "GetPrunedTraceByID" enabled
     And new "GetPrunedTraceByID" request
@@ -22,6 +30,14 @@ Feature: APM Trace
     And request contains "trace_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/apm-reliability
+  Scenario: Get a trace by ID returns "Bad Request" response
+    Given operation "GetTraceByID" enabled
+    And new "GetTraceByID" request
+    And request contains "trace_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
 
   @generated @skip @team:ddoghq/apm-reliability
   Scenario: Get a trace by ID returns "Not Found" response

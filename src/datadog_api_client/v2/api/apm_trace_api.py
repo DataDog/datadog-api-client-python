@@ -37,6 +37,7 @@ class APMTraceApi:
             params_map={
                 "trace_id": {
                     "required": True,
+                    "validation": {},
                     "openapi_types": (str,),
                     "attribute": "trace_id",
                     "location": "path",
@@ -101,6 +102,7 @@ class APMTraceApi:
             params_map={
                 "trace_id": {
                     "required": True,
+                    "validation": {},
                     "openapi_types": (str,),
                     "attribute": "trace_id",
                     "location": "path",
@@ -135,10 +137,16 @@ class APMTraceApi:
         Retrieve a pruned, hierarchical view of an APM trace by its trace ID.
         The trace is summarized as a tree of spans rooted at the trace root and reduced in size
         to keep rendering large traces in the UI practical.
+        A ``400 Bad Request`` response means the trace ID is malformed. A ``404 Not Found`` response means
+        no trace with this ID is available, for example because the trace is outside the retention period.
         This endpoint is rate limited to ``60`` requests per minute per organization.
 
-        :param trace_id: The trace ID. Accepts either a 32-character hexadecimal string (128-bit trace ID)
-            or a decimal string of up to 39 digits.
+        :param trace_id: The trace ID. Accepts either a hexadecimal string of up to 32 characters (128-bit trace ID)
+            or a decimal string of up to 39 digits. Hexadecimal IDs are case-insensitive, and shorter
+            values are left-padded with zeros.
+            Use the ``trace_id`` attribute of a span returned by the search spans or list spans endpoints.
+            Values in any other format, such as UUIDs, return ``400 Bad Request``. A well-formed ID with
+            no matching trace returns ``404 Not Found``.
         :type trace_id: str
         :param expand_span_id: Span ID to expand and preserve in the pruned tree even when its branch would
             normally be summarized.
@@ -198,10 +206,16 @@ class APMTraceApi:
 
         Retrieve a full APM trace by its trace ID, including every span in the trace.
         Traces are returned from live storage when available and fall back to longer-term storage.
+        A ``400 Bad Request`` response means the trace ID is malformed. A ``404 Not Found`` response means
+        no trace with this ID is available, for example because the trace is outside the retention period.
         This endpoint is rate limited to ``60`` requests per minute per organization.
 
-        :param trace_id: The trace ID. Accepts either a 32-character hexadecimal string (128-bit trace ID)
-            or a decimal string of up to 39 digits.
+        :param trace_id: The trace ID. Accepts either a hexadecimal string of up to 32 characters (128-bit trace ID)
+            or a decimal string of up to 39 digits. Hexadecimal IDs are case-insensitive, and shorter
+            values are left-padded with zeros.
+            Use the ``trace_id`` attribute of a span returned by the search spans or list spans endpoints.
+            Values in any other format, such as UUIDs, return ``400 Bad Request``. A well-formed ID with
+            no matching trace returns ``404 Not Found``.
         :type trace_id: str
         :param include_fields: List of span fields to include in the response. When omitted, every available field is returned.
             Values may be passed as repeated query parameters or as a single comma-separated value.
