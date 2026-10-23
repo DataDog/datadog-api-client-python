@@ -727,6 +727,11 @@ class RolesApi:
         such as Dashboards Read and Monitors Read, remain on the role by default, even if they are omitted from
         the request. To exclude them, set ``default_permissions_opt_out`` to ``true``.
 
+        Omitting the ``permissions`` relationship from the request leaves the role's existing permissions
+        unchanged. Sending ``"permissions": {"data": []}`` removes all permissions except restricted default
+        permissions, which remain unless ``default_permissions_opt_out`` is ``true``. Some restricted permissions
+        can only be excluded after Minimal Access Roles is enabled for the organization.
+
         :param role_id: The unique identifier of the role.
         :type role_id: str
         :type body: RoleUpdateRequest
