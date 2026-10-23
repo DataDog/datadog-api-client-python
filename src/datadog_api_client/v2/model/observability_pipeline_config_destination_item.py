@@ -123,6 +123,14 @@ class ObservabilityPipelineConfigDestinationItem(ModelComposed):
             Defaults to `DESTINATION_AZURE_DATA_EXPLORER_INGESTION_ENDPOINT` (prefixed with `DD_OP_` at runtime).
         :type ingestion_endpoint_key: str, optional
 
+        :param ingestion_mode: The ingestion method used to send data to Azure Data Explorer.
+
+            - `streaming`: Sends events directly to the table using streaming ingestion.
+            - `queue`: Sends events through queued (batched) ingestion.
+
+            Defaults to `streaming`.
+        :type ingestion_mode: ObservabilityPipelineAzureDataExplorerDestinationIngestionMode, optional
+
         :param mapping_reference: The name of a pre-created ingestion mapping on the table used to map incoming events to columns. Supports template syntax.
         :type mapping_reference: str, none_type, optional
 
