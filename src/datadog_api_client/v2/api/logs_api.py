@@ -123,7 +123,7 @@ class LogsApi:
                 },
                 "page_limit": {
                     "validation": {
-                        "inclusive_maximum": 1000,
+                        "inclusive_maximum": 5000,
                     },
                     "openapi_types": (int,),
                     "attribute": "page[limit]",

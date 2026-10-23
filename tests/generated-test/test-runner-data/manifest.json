@@ -7031,6 +7031,13 @@
     {
       "feature": "Logs",
       "feature_file": "../../v2/features/logs.feature",
+      "file": "v2/logs/search-logs-get-with-a-page-limit-of-5000-returns-ok-response.json",
+      "scenario": "Search logs (GET) with a page limit of 5000 returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs",
+      "feature_file": "../../v2/features/logs.feature",
       "file": "v2/logs/search-logs-returns-ok-response.json",
       "scenario": "Search logs returns \"OK\" response",
       "version": "v2"
@@ -7040,6 +7047,13 @@
       "feature_file": "../../v2/features/logs.feature",
       "file": "v2/logs/search-logs-returns-ok-response-with-pagination.json",
       "scenario": "Search logs returns \"OK\" response with pagination",
+      "version": "v2"
+    },
+    {
+      "feature": "Logs",
+      "feature_file": "../../v2/features/logs.feature",
+      "file": "v2/logs/search-logs-with-a-page-limit-above-1000-returns-ok-response.json",
+      "scenario": "Search logs with a page limit above 1000 returns \"OK\" response",
       "version": "v2"
     },
     {

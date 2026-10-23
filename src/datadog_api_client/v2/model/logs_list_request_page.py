@@ -16,7 +16,7 @@ from datadog_api_client.model_utils import (
 class LogsListRequestPage(ModelNormal):
     validations = {
         "limit": {
-            "inclusive_maximum": 1000,
+            "inclusive_maximum": 5000,
         },
     }
 
@@ -39,7 +39,7 @@ class LogsListRequestPage(ModelNormal):
         :param cursor: List following results with a cursor provided in the previous query.
         :type cursor: str, optional
 
-        :param limit: Maximum number of logs in the response.
+        :param limit: Requested maximum number of logs in the response.
         :type limit: int, optional
         """
         if cursor is not unset:

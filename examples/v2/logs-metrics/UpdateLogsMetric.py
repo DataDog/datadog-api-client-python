@@ -20,7 +20,7 @@ body = LogsMetricUpdateRequest(
         type=LogsMetricType.LOGS_METRICS,
         attributes=LogsMetricUpdateAttributes(
             filter=LogsMetricFilter(
-                query="service:web* AND @http.status_code:[200 TO 299]-updated",
+                query="service:web-api AND @http.status_code:[200 TO 299]-updated",
             ),
         ),
     ),
