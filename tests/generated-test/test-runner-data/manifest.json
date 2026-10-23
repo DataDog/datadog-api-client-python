@@ -12295,6 +12295,90 @@
     {
       "feature": "Teams",
       "feature_file": "../../v2/features/teams.feature",
+      "file": "v2/teams/get-team-hierarchy-members-deduplicates-direct-and-inherited-membership.json",
+      "scenario": "Get team hierarchy members deduplicates direct and inherited membership",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
+      "feature_file": "../../v2/features/teams.feature",
+      "file": "v2/teams/get-team-hierarchy-members-filters-direct-members.json",
+      "scenario": "Get team hierarchy members filters direct members",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
+      "feature_file": "../../v2/features/teams.feature",
+      "file": "v2/teams/get-team-hierarchy-members-filters-names-case-insensitively.json",
+      "scenario": "Get team hierarchy members filters names case insensitively",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
+      "feature_file": "../../v2/features/teams.feature",
+      "file": "v2/teams/get-team-hierarchy-members-includes-inherited-users-with-null-root-membership-attributes.json",
+      "scenario": "Get team hierarchy members includes inherited users with null root membership attributes",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
+      "feature_file": "../../v2/features/teams.feature",
+      "file": "v2/teams/get-team-hierarchy-members-paginates-by-number-and-size.json",
+      "scenario": "Get team hierarchy members paginates by number and size",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
+      "feature_file": "../../v2/features/teams.feature",
+      "file": "v2/teams/get-team-hierarchy-members-rejects-unsupported-includes.json",
+      "scenario": "Get team hierarchy members rejects unsupported includes",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
+      "feature_file": "../../v2/features/teams.feature",
+      "file": "v2/teams/get-team-hierarchy-members-returns-bad-request-response.json",
+      "scenario": "Get team hierarchy members returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
+      "feature_file": "../../v2/features/teams.feature",
+      "file": "v2/teams/get-team-hierarchy-members-returns-not-found-response.json",
+      "scenario": "Get team hierarchy members returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
+      "feature_file": "../../v2/features/teams.feature",
+      "file": "v2/teams/get-team-hierarchy-members-returns-ok-response.json",
+      "scenario": "Get team hierarchy members returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
+      "feature_file": "../../v2/features/teams.feature",
+      "file": "v2/teams/get-team-hierarchy-members-returns-ok-response-with-pagination.json",
+      "scenario": "Get team hierarchy members returns \"OK\" response with pagination",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
+      "feature_file": "../../v2/features/teams.feature",
+      "file": "v2/teams/get-team-hierarchy-members-returns-empty-results.json",
+      "scenario": "Get team hierarchy members returns empty results",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
+      "feature_file": "../../v2/features/teams.feature",
+      "file": "v2/teams/get-team-hierarchy-members-sorts-inherited-members-before-direct-members.json",
+      "scenario": "Get team hierarchy members sorts inherited members before direct members",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
+      "feature_file": "../../v2/features/teams.feature",
       "file": "v2/teams/get-team-memberships-returns-api-error-response-response.json",
       "scenario": "Get team memberships returns \"API error response.\" response",
       "version": "v2"

@@ -38,6 +38,8 @@ from datadog_api_client.v2.model.team_update_request import TeamUpdateRequest
 from datadog_api_client.v2.model.team_links_response import TeamLinksResponse
 from datadog_api_client.v2.model.team_link_response import TeamLinkResponse
 from datadog_api_client.v2.model.team_link_create_request import TeamLinkCreateRequest
+from datadog_api_client.v2.model.team_hierarchy_members_response import TeamHierarchyMembersResponse
+from datadog_api_client.v2.model.team_hierarchy_member import TeamHierarchyMember
 from datadog_api_client.v2.model.user_teams_response import UserTeamsResponse
 from datadog_api_client.v2.model.get_team_memberships_sort import GetTeamMembershipsSort
 from datadog_api_client.v2.model.user_team import UserTeam
@@ -736,6 +738,65 @@ class TeamsApi:
                 "filter_sub_team": {
                     "openapi_types": (str,),
                     "attribute": "filter[sub_team]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_team_hierarchy_members_endpoint = _Endpoint(
+            settings={
+                "response_type": (TeamHierarchyMembersResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/team/{team_id}/members",
+                "operation_id": "list_team_hierarchy_members",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "team_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "team_id",
+                    "location": "path",
+                },
+                "filter_is_direct_only": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[is_direct_only]",
+                    "location": "query",
+                },
+                "filter_include_service_accounts": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[include_service_accounts]",
+                    "location": "query",
+                },
+                "filter_keyword": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[keyword]",
+                    "location": "query",
+                },
+                "include": {
+                    "validation": {},
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "sort": {
+                    "openapi_types": (str,),
+                    "attribute": "sort",
+                    "location": "query",
+                },
+                "page_number": {
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
+                },
+                "page_size": {
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
                     "location": "query",
                 },
             },
@@ -1794,6 +1855,145 @@ class TeamsApi:
 
         local_page_size = get_attribute_from_path(kwargs, "page_size", 10)
         endpoint = self._list_team_hierarchy_links_endpoint
+        set_attribute_from_path(kwargs, "page_size", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "page_param": "page_number",
+            "page_start": 0,
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
+
+    def list_team_hierarchy_members(
+        self,
+        team_id: str,
+        *,
+        filter_is_direct_only: Union[bool, UnsetType] = unset,
+        filter_include_service_accounts: Union[bool, UnsetType] = unset,
+        filter_keyword: Union[str, UnsetType] = unset,
+        include: Union[str, UnsetType] = unset,
+        sort: Union[str, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+    ) -> TeamHierarchyMembersResponse:
+        """Get team hierarchy members.
+
+        List the direct and inherited members of a team, deduplicated by user.
+        Members of descendant teams are included unless ``filter[is_direct_only]`` is true.
+        Datadog support users are always excluded.
+
+        Use ``page[number]`` and ``page[size]`` to paginate through the results.
+        Invalid query parameters return a JSON:API error with status 400.
+        Invalid or unknown team UUIDs return status 404.
+
+        :param team_id: UUID of the requested root team.
+        :type team_id: str
+        :param filter_is_direct_only: Return only direct members. By default, members inherited from descendant teams are also returned.
+        :type filter_is_direct_only: bool, optional
+        :param filter_include_service_accounts: Include service accounts. Datadog support users are always excluded.
+        :type filter_include_service_accounts: bool, optional
+        :param filter_keyword: Filter by a case-insensitive substring of the user name, handle, or email.
+        :type filter_keyword: str, optional
+        :param include: Comma-separated resources to include: ``user`` and ``team``. The included team is the requested team. Whitespace is trimmed, and duplicate or empty entries are ignored.
+        :type include: str, optional
+        :param sort: Comma-separated sort fields: ``name`` , ``handle`` , ``is_direct`` , and ``provisioned_by``. Fields are applied in order, each optionally prefixed with ``-`` for descending order. By default, team admins come first, followed by other direct members, then inherited members, sorted by name within each group.
+        :type sort: str, optional
+        :param page_number: Zero-based page number. Negative values become 0. Defaults to 0.
+        :type page_number: int, optional
+        :param page_size: Requested number of members per page. Defaults to and maxes out at 100.
+        :type page_size: int, optional
+        :rtype: TeamHierarchyMembersResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["team_id"] = team_id
+
+        if filter_is_direct_only is not unset:
+            kwargs["filter_is_direct_only"] = filter_is_direct_only
+
+        if filter_include_service_accounts is not unset:
+            kwargs["filter_include_service_accounts"] = filter_include_service_accounts
+
+        if filter_keyword is not unset:
+            kwargs["filter_keyword"] = filter_keyword
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        return self._list_team_hierarchy_members_endpoint.call_with_http_info(**kwargs)
+
+    def list_team_hierarchy_members_with_pagination(
+        self,
+        team_id: str,
+        *,
+        filter_is_direct_only: Union[bool, UnsetType] = unset,
+        filter_include_service_accounts: Union[bool, UnsetType] = unset,
+        filter_keyword: Union[str, UnsetType] = unset,
+        include: Union[str, UnsetType] = unset,
+        sort: Union[str, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+    ) -> collections.abc.Iterable[TeamHierarchyMember]:
+        """Get team hierarchy members.
+
+        Provide a paginated version of :meth:`list_team_hierarchy_members`, returning all items.
+
+        :param team_id: UUID of the requested root team.
+        :type team_id: str
+        :param filter_is_direct_only: Return only direct members. By default, members inherited from descendant teams are also returned.
+        :type filter_is_direct_only: bool, optional
+        :param filter_include_service_accounts: Include service accounts. Datadog support users are always excluded.
+        :type filter_include_service_accounts: bool, optional
+        :param filter_keyword: Filter by a case-insensitive substring of the user name, handle, or email.
+        :type filter_keyword: str, optional
+        :param include: Comma-separated resources to include: ``user`` and ``team``. The included team is the requested team. Whitespace is trimmed, and duplicate or empty entries are ignored.
+        :type include: str, optional
+        :param sort: Comma-separated sort fields: ``name`` , ``handle`` , ``is_direct`` , and ``provisioned_by``. Fields are applied in order, each optionally prefixed with ``-`` for descending order. By default, team admins come first, followed by other direct members, then inherited members, sorted by name within each group.
+        :type sort: str, optional
+        :param page_number: Zero-based page number. Negative values become 0. Defaults to 0.
+        :type page_number: int, optional
+        :param page_size: Requested number of members per page. Defaults to and maxes out at 100.
+        :type page_size: int, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[TeamHierarchyMember]
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["team_id"] = team_id
+
+        if filter_is_direct_only is not unset:
+            kwargs["filter_is_direct_only"] = filter_is_direct_only
+
+        if filter_include_service_accounts is not unset:
+            kwargs["filter_include_service_accounts"] = filter_include_service_accounts
+
+        if filter_keyword is not unset:
+            kwargs["filter_keyword"] = filter_keyword
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        local_page_size = get_attribute_from_path(kwargs, "page_size", 100)
+        endpoint = self._list_team_hierarchy_members_endpoint
         set_attribute_from_path(kwargs, "page_size", local_page_size, endpoint.params_map)
         pagination = {
             "limit_value": local_page_size,

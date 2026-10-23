@@ -11848,6 +11848,27 @@ from datadog_api_client.v2.model.team_hierarchy_link_team_attributes import Team
 from datadog_api_client.v2.model.team_hierarchy_link_team_relationship import TeamHierarchyLinkTeamRelationship
 from datadog_api_client.v2.model.team_hierarchy_link_type import TeamHierarchyLinkType
 from datadog_api_client.v2.model.team_hierarchy_links_response import TeamHierarchyLinksResponse
+from datadog_api_client.v2.model.team_hierarchy_member import TeamHierarchyMember
+from datadog_api_client.v2.model.team_hierarchy_member_attributes import TeamHierarchyMemberAttributes
+from datadog_api_client.v2.model.team_hierarchy_member_included import TeamHierarchyMemberIncluded
+from datadog_api_client.v2.model.team_hierarchy_member_relationships import TeamHierarchyMemberRelationships
+from datadog_api_client.v2.model.team_hierarchy_member_team import TeamHierarchyMemberTeam
+from datadog_api_client.v2.model.team_hierarchy_member_team_attributes import TeamHierarchyMemberTeamAttributes
+from datadog_api_client.v2.model.team_hierarchy_member_team_data import TeamHierarchyMemberTeamData
+from datadog_api_client.v2.model.team_hierarchy_member_team_relationship import TeamHierarchyMemberTeamRelationship
+from datadog_api_client.v2.model.team_hierarchy_member_team_type import TeamHierarchyMemberTeamType
+from datadog_api_client.v2.model.team_hierarchy_member_type import TeamHierarchyMemberType
+from datadog_api_client.v2.model.team_hierarchy_member_user import TeamHierarchyMemberUser
+from datadog_api_client.v2.model.team_hierarchy_member_user_data import TeamHierarchyMemberUserData
+from datadog_api_client.v2.model.team_hierarchy_member_user_relationship import TeamHierarchyMemberUserRelationship
+from datadog_api_client.v2.model.team_hierarchy_members_number_page import TeamHierarchyMembersNumberPage
+from datadog_api_client.v2.model.team_hierarchy_members_number_page_type import TeamHierarchyMembersNumberPageType
+from datadog_api_client.v2.model.team_hierarchy_members_offset_page import TeamHierarchyMembersOffsetPage
+from datadog_api_client.v2.model.team_hierarchy_members_offset_page_type import TeamHierarchyMembersOffsetPageType
+from datadog_api_client.v2.model.team_hierarchy_members_page import TeamHierarchyMembersPage
+from datadog_api_client.v2.model.team_hierarchy_members_response import TeamHierarchyMembersResponse
+from datadog_api_client.v2.model.team_hierarchy_members_response_links import TeamHierarchyMembersResponseLinks
+from datadog_api_client.v2.model.team_hierarchy_members_response_meta import TeamHierarchyMembersResponseMeta
 from datadog_api_client.v2.model.team_included import TeamIncluded
 from datadog_api_client.v2.model.team_link import TeamLink
 from datadog_api_client.v2.model.team_link_attributes import TeamLinkAttributes
@@ -20754,6 +20775,27 @@ __all__ = [
     "TeamHierarchyLinkTeamRelationship",
     "TeamHierarchyLinkType",
     "TeamHierarchyLinksResponse",
+    "TeamHierarchyMember",
+    "TeamHierarchyMemberAttributes",
+    "TeamHierarchyMemberIncluded",
+    "TeamHierarchyMemberRelationships",
+    "TeamHierarchyMemberTeam",
+    "TeamHierarchyMemberTeamAttributes",
+    "TeamHierarchyMemberTeamData",
+    "TeamHierarchyMemberTeamRelationship",
+    "TeamHierarchyMemberTeamType",
+    "TeamHierarchyMemberType",
+    "TeamHierarchyMemberUser",
+    "TeamHierarchyMemberUserData",
+    "TeamHierarchyMemberUserRelationship",
+    "TeamHierarchyMembersNumberPage",
+    "TeamHierarchyMembersNumberPageType",
+    "TeamHierarchyMembersOffsetPage",
+    "TeamHierarchyMembersOffsetPageType",
+    "TeamHierarchyMembersPage",
+    "TeamHierarchyMembersResponse",
+    "TeamHierarchyMembersResponseLinks",
+    "TeamHierarchyMembersResponseMeta",
     "TeamIncluded",
     "TeamLink",
     "TeamLinkAttributes",
