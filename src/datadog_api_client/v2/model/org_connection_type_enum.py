@@ -16,7 +16,7 @@ class OrgConnectionTypeEnum(ModelSimple):
     """
     Available connection types between organizations.
 
-    :param value: Must be one of ["logs", "metrics", "audit"].
+    :param value: Must be one of ["logs", "metrics", "audit", "ci_pipelines", "ci_tests"].
     :type value: str
     """
 
@@ -24,10 +24,14 @@ class OrgConnectionTypeEnum(ModelSimple):
         "logs",
         "metrics",
         "audit",
+        "ci_pipelines",
+        "ci_tests",
     }
     LOGS: ClassVar["OrgConnectionTypeEnum"]
     METRICS: ClassVar["OrgConnectionTypeEnum"]
     AUDIT: ClassVar["OrgConnectionTypeEnum"]
+    CI_PIPELINES: ClassVar["OrgConnectionTypeEnum"]
+    CI_TESTS: ClassVar["OrgConnectionTypeEnum"]
 
     @cached_property
     def openapi_types(_):
@@ -39,3 +43,5 @@ class OrgConnectionTypeEnum(ModelSimple):
 OrgConnectionTypeEnum.LOGS = OrgConnectionTypeEnum("logs")
 OrgConnectionTypeEnum.METRICS = OrgConnectionTypeEnum("metrics")
 OrgConnectionTypeEnum.AUDIT = OrgConnectionTypeEnum("audit")
+OrgConnectionTypeEnum.CI_PIPELINES = OrgConnectionTypeEnum("ci_pipelines")
+OrgConnectionTypeEnum.CI_TESTS = OrgConnectionTypeEnum("ci_tests")
