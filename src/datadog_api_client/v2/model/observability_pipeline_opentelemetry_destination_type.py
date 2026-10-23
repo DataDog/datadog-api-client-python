@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class ObservabilityPipelineOpentelemetryMetricsDestinationType(ModelSimple):
+class ObservabilityPipelineOpentelemetryDestinationType(ModelSimple):
     """
     The destination type. Always `opentelemetry`.
 
@@ -23,7 +23,7 @@ class ObservabilityPipelineOpentelemetryMetricsDestinationType(ModelSimple):
     allowed_values = {
         "opentelemetry",
     }
-    OPENTELEMETRY: ClassVar["ObservabilityPipelineOpentelemetryMetricsDestinationType"]
+    OPENTELEMETRY: ClassVar["ObservabilityPipelineOpentelemetryDestinationType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,6 +32,6 @@ class ObservabilityPipelineOpentelemetryMetricsDestinationType(ModelSimple):
         }
 
 
-ObservabilityPipelineOpentelemetryMetricsDestinationType.OPENTELEMETRY = (
-    ObservabilityPipelineOpentelemetryMetricsDestinationType("opentelemetry")
+ObservabilityPipelineOpentelemetryDestinationType.OPENTELEMETRY = ObservabilityPipelineOpentelemetryDestinationType(
+    "opentelemetry"
 )

@@ -24,7 +24,7 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         :param id: The unique identifier for this component. Used in other parts of the pipeline to reference this component (for example, as the `input` to downstream components).
         :type id: str
 
-        :param include: A Datadog search query used to determine which logs/metrics should pass through the filter. Logs/metrics that match this query continue to downstream components; others are dropped.
+        :param include: A Datadog search query used to determine which events should pass through the filter. Events that match this query continue to downstream components; others are dropped.
         :type include: str
 
         :param type: The processor type. The value should always be `filter`.
@@ -35,9 +35,6 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
 
         :param fields: A list of static fields (key-value pairs) that is added to each log event processed by this component.
         :type fields: [ObservabilityPipelineFieldValue]
-
-        :param remaps: Array of VRL remap rules.
-        :type remaps: [ObservabilityPipelineCustomProcessorRemap]
 
         :param action: The action to take on tags with matching keys.
         :type action: ObservabilityPipelineDatadogTagsProcessorAction
@@ -65,9 +62,6 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
 
         :param metrics: Configuration for generating individual metrics.
         :type metrics: [ObservabilityPipelineGeneratedMetric], optional
-
-        :param enabled_metric_aggregation: [Recommended] Indicates whether generated metrics are automatically aggregated and enriched with the `worker_uuid` tag before being sent to the metric destination.
-        :type enabled_metric_aggregation: bool, optional
 
         :param keep_unmatched: Whether to keep an event that does not match any of the mapping filters.
         :type keep_unmatched: bool, optional
@@ -145,9 +139,6 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         :param merge_strategies: List of merge strategies defining how values from grouped events should be combined.
         :type merge_strategies: [ObservabilityPipelineReduceProcessorMergeStrategy]
 
-        :param percentage: The percentage of logs to sample.
-        :type percentage: float
-
         :param arrays: A list of array split configurations.
         :type arrays: [ObservabilityPipelineSplitArrayProcessorArrayConfig]
 
@@ -156,6 +147,15 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
 
         :param window: The time window in seconds over which the threshold applies.
         :type window: float
+
+        :param remaps: Array of VRL remap rules.
+        :type remaps: [ObservabilityPipelineCustomProcessorRemap]
+
+        :param enabled_metric_aggregation: [Recommended] Indicates whether generated metrics are automatically aggregated and enriched with the `worker_uuid` tag before being sent to the metric destination.
+        :type enabled_metric_aggregation: bool, optional
+
+        :param percentage: The percentage of events to sample.
+        :type percentage: float
 
         :param tags: A list of static tags (key-value pairs) added to each metric processed by this component.
         :type tags: [ObservabilityPipelineFieldValue]
@@ -201,9 +201,6 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_add_hostname_processor import (
             ObservabilityPipelineAddHostnameProcessor,
         )
-        from datadog_api_client.v2.model.observability_pipeline_custom_processor import (
-            ObservabilityPipelineCustomProcessor,
-        )
         from datadog_api_client.v2.model.observability_pipeline_datadog_tags_processor import (
             ObservabilityPipelineDatadogTagsProcessor,
         )
@@ -215,9 +212,6 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         )
         from datadog_api_client.v2.model.observability_pipeline_generate_metrics_processor import (
             ObservabilityPipelineGenerateMetricsProcessor,
-        )
-        from datadog_api_client.v2.model.observability_pipeline_generate_metrics_v2_processor import (
-            ObservabilityPipelineGenerateMetricsV2Processor,
         )
         from datadog_api_client.v2.model.observability_pipeline_ocsf_mapper_processor import (
             ObservabilityPipelineOcsfMapperProcessor,
@@ -243,17 +237,23 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_rename_fields_processor import (
             ObservabilityPipelineRenameFieldsProcessor,
         )
-        from datadog_api_client.v2.model.observability_pipeline_sample_processor import (
-            ObservabilityPipelineSampleProcessor,
-        )
-        from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor import (
-            ObservabilityPipelineSensitiveDataScannerProcessor,
-        )
         from datadog_api_client.v2.model.observability_pipeline_split_array_processor import (
             ObservabilityPipelineSplitArrayProcessor,
         )
         from datadog_api_client.v2.model.observability_pipeline_throttle_processor import (
             ObservabilityPipelineThrottleProcessor,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_custom_processor import (
+            ObservabilityPipelineCustomProcessor,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_generate_metrics_v2_processor import (
+            ObservabilityPipelineGenerateMetricsV2Processor,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_sample_processor import (
+            ObservabilityPipelineSampleProcessor,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor import (
+            ObservabilityPipelineSensitiveDataScannerProcessor,
         )
         from datadog_api_client.v2.model.observability_pipeline_add_metric_tags_processor import (
             ObservabilityPipelineAddMetricTagsProcessor,
@@ -280,12 +280,10 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
                 ObservabilityPipelineAddEnvVarsProcessor,
                 ObservabilityPipelineAddFieldsProcessor,
                 ObservabilityPipelineAddHostnameProcessor,
-                ObservabilityPipelineCustomProcessor,
                 ObservabilityPipelineDatadogTagsProcessor,
                 ObservabilityPipelineDedupeProcessor,
                 ObservabilityPipelineEnrichmentTableProcessor,
                 ObservabilityPipelineGenerateMetricsProcessor,
-                ObservabilityPipelineGenerateMetricsV2Processor,
                 ObservabilityPipelineOcsfMapperProcessor,
                 ObservabilityPipelineParseGrokProcessor,
                 ObservabilityPipelineParseJSONProcessor,
@@ -294,10 +292,12 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
                 ObservabilityPipelineReduceProcessor,
                 ObservabilityPipelineRemoveFieldsProcessor,
                 ObservabilityPipelineRenameFieldsProcessor,
-                ObservabilityPipelineSampleProcessor,
-                ObservabilityPipelineSensitiveDataScannerProcessor,
                 ObservabilityPipelineSplitArrayProcessor,
                 ObservabilityPipelineThrottleProcessor,
+                ObservabilityPipelineCustomProcessor,
+                ObservabilityPipelineGenerateMetricsV2Processor,
+                ObservabilityPipelineSampleProcessor,
+                ObservabilityPipelineSensitiveDataScannerProcessor,
                 ObservabilityPipelineAddMetricTagsProcessor,
                 ObservabilityPipelineAggregateProcessor,
                 ObservabilityPipelineMetricEnrichmentTableProcessor,

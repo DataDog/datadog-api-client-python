@@ -36,9 +36,9 @@ class ObservabilityPipelineGeneratedMetricIncrementByField(ModelNormal):
 
     def __init__(self_, field: str, strategy: ObservabilityPipelineGeneratedMetricIncrementByFieldStrategy, **kwargs):
         """
-        Strategy that increments a generated metric based on the value of a log field.
+        Strategy that increments a generated metric based on the value of an event field.
 
-        :param field: Name of the log field containing the numeric value to increment the metric by.
+        :param field: Name of the field containing the numeric value to increment the metric by.
         :type field: str
 
         :param strategy: Uses a numeric field in the log event as the metric increment.

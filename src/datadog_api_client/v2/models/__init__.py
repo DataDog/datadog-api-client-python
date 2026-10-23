@@ -7066,6 +7066,12 @@ from datadog_api_client.v2.model.observability_pipeline_datadog_tags_processor_m
 from datadog_api_client.v2.model.observability_pipeline_datadog_tags_processor_type import (
     ObservabilityPipelineDatadogTagsProcessorType,
 )
+from datadog_api_client.v2.model.observability_pipeline_datadog_traces_destination import (
+    ObservabilityPipelineDatadogTracesDestination,
+)
+from datadog_api_client.v2.model.observability_pipeline_datadog_traces_destination_type import (
+    ObservabilityPipelineDatadogTracesDestinationType,
+)
 from datadog_api_client.v2.model.observability_pipeline_decoding import ObservabilityPipelineDecoding
 from datadog_api_client.v2.model.observability_pipeline_dedupe_processor import ObservabilityPipelineDedupeProcessor
 from datadog_api_client.v2.model.observability_pipeline_dedupe_processor_cache import (
@@ -7414,11 +7420,11 @@ from datadog_api_client.v2.model.observability_pipeline_open_search_destination_
 from datadog_api_client.v2.model.observability_pipeline_open_search_destination_type import (
     ObservabilityPipelineOpenSearchDestinationType,
 )
-from datadog_api_client.v2.model.observability_pipeline_opentelemetry_metrics_destination import (
-    ObservabilityPipelineOpentelemetryMetricsDestination,
+from datadog_api_client.v2.model.observability_pipeline_opentelemetry_destination import (
+    ObservabilityPipelineOpentelemetryDestination,
 )
-from datadog_api_client.v2.model.observability_pipeline_opentelemetry_metrics_destination_type import (
-    ObservabilityPipelineOpentelemetryMetricsDestinationType,
+from datadog_api_client.v2.model.observability_pipeline_opentelemetry_destination_type import (
+    ObservabilityPipelineOpentelemetryDestinationType,
 )
 from datadog_api_client.v2.model.observability_pipeline_opentelemetry_source import (
     ObservabilityPipelineOpentelemetrySource,
@@ -17782,6 +17788,8 @@ __all__ = [
     "ObservabilityPipelineDatadogTagsProcessorAction",
     "ObservabilityPipelineDatadogTagsProcessorMode",
     "ObservabilityPipelineDatadogTagsProcessorType",
+    "ObservabilityPipelineDatadogTracesDestination",
+    "ObservabilityPipelineDatadogTracesDestinationType",
     "ObservabilityPipelineDecoding",
     "ObservabilityPipelineDedupeProcessor",
     "ObservabilityPipelineDedupeProcessorCache",
@@ -17910,8 +17918,8 @@ __all__ = [
     "ObservabilityPipelineOpenSearchDestination",
     "ObservabilityPipelineOpenSearchDestinationDataStream",
     "ObservabilityPipelineOpenSearchDestinationType",
-    "ObservabilityPipelineOpentelemetryMetricsDestination",
-    "ObservabilityPipelineOpentelemetryMetricsDestinationType",
+    "ObservabilityPipelineOpentelemetryDestination",
+    "ObservabilityPipelineOpentelemetryDestinationType",
     "ObservabilityPipelineOpentelemetrySource",
     "ObservabilityPipelineOpentelemetrySourceType",
     "ObservabilityPipelineParseGrokProcessor",

@@ -62,12 +62,12 @@ class ObservabilityPipelineGenerateMetricsV2Processor(ModelNormal):
         **kwargs,
     ):
         """
-        The ``generate_metrics`` processor creates custom metrics from logs.
-        Metrics can be counters, gauges, or distributions and optionally grouped by log fields.
+        The ``generate_metrics`` processor creates custom metrics from logs or traces.
+        Metrics can be counters, gauges, or distributions and optionally grouped by event fields.
 
-        There must be a destination whose ``inputs`` reference this processor with the ``<processor-id>.metrics`` suffix to route the generated metrics. All destination types normally supported for ``metrics`` pipelines are also supported as metrics destinations in ``logs`` pipelines.
+        There must be a destination whose ``inputs`` reference this processor with the ``<processor-id>.metrics`` suffix to route the generated metrics. All destination types normally supported for ``metrics`` pipelines are also supported as metrics destinations in ``logs`` and ``traces`` pipelines.
 
-        **Supported pipeline types:** logs
+        **Supported pipeline types:** logs, traces
 
         :param display_name: The display name for a component.
         :type display_name: str, optional
@@ -81,7 +81,7 @@ class ObservabilityPipelineGenerateMetricsV2Processor(ModelNormal):
         :param id: The unique identifier for this component. Used to reference this component in other parts of the pipeline.
         :type id: str
 
-        :param include: A Datadog search query used to determine which logs this processor targets.
+        :param include: A Datadog search query used to determine which events this processor targets.
         :type include: str, optional
 
         :param metrics: Configuration for generating individual metrics.

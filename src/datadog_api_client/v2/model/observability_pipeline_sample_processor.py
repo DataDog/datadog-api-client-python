@@ -64,9 +64,9 @@ class ObservabilityPipelineSampleProcessor(ModelNormal):
         **kwargs,
     ):
         """
-        The ``sample`` processor allows probabilistic sampling of logs at a fixed rate.
+        The ``sample`` processor allows probabilistic sampling of logs or traces at a fixed rate.
 
-        **Supported pipeline types:** logs
+        **Supported pipeline types:** logs, traces
 
         :param display_name: The display name for a component.
         :type display_name: str, optional
@@ -80,10 +80,10 @@ class ObservabilityPipelineSampleProcessor(ModelNormal):
         :param id: The unique identifier for this component. Used in other parts of the pipeline to reference this component (for example, as the ``input`` to downstream components).
         :type id: str
 
-        :param include: A Datadog search query used to determine which logs this processor targets.
+        :param include: A Datadog search query used to determine which events this processor targets.
         :type include: str
 
-        :param percentage: The percentage of logs to sample.
+        :param percentage: The percentage of events to sample.
         :type percentage: float
 
         :param type: The processor type. The value should always be ``sample``.

@@ -27,7 +27,6 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_add_hostname_processor import (
         ObservabilityPipelineAddHostnameProcessor,
     )
-    from datadog_api_client.v2.model.observability_pipeline_custom_processor import ObservabilityPipelineCustomProcessor
     from datadog_api_client.v2.model.observability_pipeline_datadog_tags_processor import (
         ObservabilityPipelineDatadogTagsProcessor,
     )
@@ -37,9 +36,6 @@ if TYPE_CHECKING:
     )
     from datadog_api_client.v2.model.observability_pipeline_generate_metrics_processor import (
         ObservabilityPipelineGenerateMetricsProcessor,
-    )
-    from datadog_api_client.v2.model.observability_pipeline_generate_metrics_v2_processor import (
-        ObservabilityPipelineGenerateMetricsV2Processor,
     )
     from datadog_api_client.v2.model.observability_pipeline_ocsf_mapper_processor import (
         ObservabilityPipelineOcsfMapperProcessor,
@@ -61,15 +57,19 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_rename_fields_processor import (
         ObservabilityPipelineRenameFieldsProcessor,
     )
-    from datadog_api_client.v2.model.observability_pipeline_sample_processor import ObservabilityPipelineSampleProcessor
-    from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor import (
-        ObservabilityPipelineSensitiveDataScannerProcessor,
-    )
     from datadog_api_client.v2.model.observability_pipeline_split_array_processor import (
         ObservabilityPipelineSplitArrayProcessor,
     )
     from datadog_api_client.v2.model.observability_pipeline_throttle_processor import (
         ObservabilityPipelineThrottleProcessor,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_custom_processor import ObservabilityPipelineCustomProcessor
+    from datadog_api_client.v2.model.observability_pipeline_generate_metrics_v2_processor import (
+        ObservabilityPipelineGenerateMetricsV2Processor,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_sample_processor import ObservabilityPipelineSampleProcessor
+    from datadog_api_client.v2.model.observability_pipeline_sensitive_data_scanner_processor import (
+        ObservabilityPipelineSensitiveDataScannerProcessor,
     )
     from datadog_api_client.v2.model.observability_pipeline_add_metric_tags_processor import (
         ObservabilityPipelineAddMetricTagsProcessor,
@@ -129,12 +129,10 @@ class ObservabilityPipelineConfigProcessorGroup(ModelNormal):
                 ObservabilityPipelineAddEnvVarsProcessor,
                 ObservabilityPipelineAddFieldsProcessor,
                 ObservabilityPipelineAddHostnameProcessor,
-                ObservabilityPipelineCustomProcessor,
                 ObservabilityPipelineDatadogTagsProcessor,
                 ObservabilityPipelineDedupeProcessor,
                 ObservabilityPipelineEnrichmentTableProcessor,
                 ObservabilityPipelineGenerateMetricsProcessor,
-                ObservabilityPipelineGenerateMetricsV2Processor,
                 ObservabilityPipelineOcsfMapperProcessor,
                 ObservabilityPipelineParseGrokProcessor,
                 ObservabilityPipelineParseJSONProcessor,
@@ -143,10 +141,12 @@ class ObservabilityPipelineConfigProcessorGroup(ModelNormal):
                 ObservabilityPipelineReduceProcessor,
                 ObservabilityPipelineRemoveFieldsProcessor,
                 ObservabilityPipelineRenameFieldsProcessor,
-                ObservabilityPipelineSampleProcessor,
-                ObservabilityPipelineSensitiveDataScannerProcessor,
                 ObservabilityPipelineSplitArrayProcessor,
                 ObservabilityPipelineThrottleProcessor,
+                ObservabilityPipelineCustomProcessor,
+                ObservabilityPipelineGenerateMetricsV2Processor,
+                ObservabilityPipelineSampleProcessor,
+                ObservabilityPipelineSensitiveDataScannerProcessor,
                 ObservabilityPipelineAddMetricTagsProcessor,
                 ObservabilityPipelineAggregateProcessor,
                 ObservabilityPipelineMetricEnrichmentTableProcessor,
