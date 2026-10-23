@@ -128,7 +128,7 @@ Feature: Logs
     Then the response status is 200 OK
     And the response has 3 items
 
-  @integration-only @skip-terraform-config @skip-validation @team:ddoghq/event-platform-intake @team:ddoghq/logs-backend @team:ddoghq/logs-ingestion
+  @integration-only @skip-terraform-config @skip-validation @team:ddoghq/event-platform-intake @team:ddoghq/logs-backend @team:ddoghq/logs-federated-search @team:ddoghq/logs-routing
   Scenario: Send deflate logs returns "Request accepted for processing (always 202 empty JSON)." response
     Given new "SubmitLog" request
     And body with value [{"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment"}]
@@ -136,7 +136,7 @@ Feature: Logs
     When the request is sent
     Then the response status is 202 Response from server (always 202 empty JSON).
 
-  @skip-terraform-config @skip-validation @team:ddoghq/event-platform-intake @team:ddoghq/logs-backend @team:ddoghq/logs-ingestion
+  @skip-terraform-config @skip-validation @team:ddoghq/event-platform-intake @team:ddoghq/logs-backend @team:ddoghq/logs-federated-search @team:ddoghq/logs-routing
   Scenario: Send deflate logs with explicit compression returns "Request accepted for processing (always 202 empty JSON)." response
     Given new "SubmitLog" request
     And body with value [{"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment"}]
@@ -145,7 +145,7 @@ Feature: Logs
     Then the response status is 202 Response from server (always 202 empty JSON).
     And the request uses "deflate" compression
 
-  @integration-only @skip-terraform-config @skip-validation @team:ddoghq/event-platform-intake @team:ddoghq/logs-backend @team:ddoghq/logs-ingestion
+  @integration-only @skip-terraform-config @skip-validation @team:ddoghq/event-platform-intake @team:ddoghq/logs-backend @team:ddoghq/logs-federated-search @team:ddoghq/logs-routing
   Scenario: Send gzip logs returns "Request accepted for processing (always 202 empty JSON)." response
     Given new "SubmitLog" request
     And body with value [{"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment"}]
@@ -153,7 +153,7 @@ Feature: Logs
     When the request is sent
     Then the response status is 202 Request accepted for processing (always 202 empty JSON).
 
-  @skip-terraform-config @skip-validation @team:ddoghq/event-platform-intake @team:ddoghq/logs-backend @team:ddoghq/logs-ingestion
+  @skip-terraform-config @skip-validation @team:ddoghq/event-platform-intake @team:ddoghq/logs-backend @team:ddoghq/logs-federated-search @team:ddoghq/logs-routing
   Scenario: Send gzip logs with explicit compression returns "Request accepted for processing (always 202 empty JSON)." response
     Given new "SubmitLog" request
     And body with value [{"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment"}]
@@ -162,28 +162,28 @@ Feature: Logs
     Then the response status is 202 Request accepted for processing (always 202 empty JSON).
     And the request uses "gzip" compression
 
-  @generated @skip @team:ddoghq/event-platform-intake @team:ddoghq/logs-backend @team:ddoghq/logs-ingestion
+  @generated @skip @team:ddoghq/event-platform-intake @team:ddoghq/logs-backend @team:ddoghq/logs-federated-search @team:ddoghq/logs-routing
   Scenario: Send logs returns "Bad Request" response
     Given new "SubmitLog" request
     And body with value [{"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment"}]
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:ddoghq/event-platform-intake @team:ddoghq/logs-backend @team:ddoghq/logs-ingestion
+  @generated @skip @team:ddoghq/event-platform-intake @team:ddoghq/logs-backend @team:ddoghq/logs-federated-search @team:ddoghq/logs-routing
   Scenario: Send logs returns "Payload Too Large" response
     Given new "SubmitLog" request
     And body with value [{"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment"}]
     When the request is sent
     Then the response status is 413 Payload Too Large
 
-  @generated @skip @team:ddoghq/event-platform-intake @team:ddoghq/logs-backend @team:ddoghq/logs-ingestion
+  @generated @skip @team:ddoghq/event-platform-intake @team:ddoghq/logs-backend @team:ddoghq/logs-federated-search @team:ddoghq/logs-routing
   Scenario: Send logs returns "Request Timeout" response
     Given new "SubmitLog" request
     And body with value [{"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment"}]
     When the request is sent
     Then the response status is 408 Request Timeout
 
-  @team:ddoghq/event-platform-intake @team:ddoghq/logs-backend @team:ddoghq/logs-ingestion
+  @team:ddoghq/event-platform-intake @team:ddoghq/logs-backend @team:ddoghq/logs-federated-search @team:ddoghq/logs-routing
   Scenario: Send logs returns "Request accepted for processing (always 202 empty JSON)." response
     Given new "SubmitLog" request
     And body with value [{"ddsource": "nginx", "ddtags": "env:staging,version:5.1", "hostname": "i-012345678", "message": "2019-11-19T14:37:58,995 INFO [process.name][20081] Hello World", "service": "payment", "status": "info"}]
