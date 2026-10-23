@@ -25,6 +25,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_azure_storage_destination_compression_gzip import (
         ObservabilityPipelineAzureStorageDestinationCompressionGzip,
     )
+    from datadog_api_client.v2.model.observability_pipeline_azure_data_explorer_destination_ingestion_mode import (
+        ObservabilityPipelineAzureDataExplorerDestinationIngestionMode,
+    )
     from datadog_api_client.v2.model.observability_pipeline_azure_data_explorer_destination_type import (
         ObservabilityPipelineAzureDataExplorerDestinationType,
     )
@@ -70,6 +73,9 @@ class ObservabilityPipelineAzureDataExplorerDestination(ModelNormal):
         from datadog_api_client.v2.model.observability_pipeline_azure_storage_destination_compression_gzip import (
             ObservabilityPipelineAzureStorageDestinationCompressionGzip,
         )
+        from datadog_api_client.v2.model.observability_pipeline_azure_data_explorer_destination_ingestion_mode import (
+            ObservabilityPipelineAzureDataExplorerDestinationIngestionMode,
+        )
         from datadog_api_client.v2.model.observability_pipeline_azure_data_explorer_destination_type import (
             ObservabilityPipelineAzureDataExplorerDestinationType,
         )
@@ -82,6 +88,7 @@ class ObservabilityPipelineAzureDataExplorerDestination(ModelNormal):
             "database": (str,),
             "id": (str,),
             "ingestion_endpoint_key": (str,),
+            "ingestion_mode": (ObservabilityPipelineAzureDataExplorerDestinationIngestionMode,),
             "inputs": ([str],),
             "mapping_reference": (str, none_type),
             "table": (str,),
@@ -97,6 +104,7 @@ class ObservabilityPipelineAzureDataExplorerDestination(ModelNormal):
         "database": "database",
         "id": "id",
         "ingestion_endpoint_key": "ingestion_endpoint_key",
+        "ingestion_mode": "ingestion_mode",
         "inputs": "inputs",
         "mapping_reference": "mapping_reference",
         "table": "table",
@@ -130,6 +138,7 @@ class ObservabilityPipelineAzureDataExplorerDestination(ModelNormal):
         ] = unset,
         compression: Union[ObservabilityPipelineAzureStorageDestinationCompressionGzip, UnsetType] = unset,
         ingestion_endpoint_key: Union[str, UnsetType] = unset,
+        ingestion_mode: Union[ObservabilityPipelineAzureDataExplorerDestinationIngestionMode, UnsetType] = unset,
         mapping_reference: Union[str, none_type, UnsetType] = unset,
         token_scope: Union[str, UnsetType] = unset,
         **kwargs,
@@ -161,6 +170,14 @@ class ObservabilityPipelineAzureDataExplorerDestination(ModelNormal):
             Defaults to ``DESTINATION_AZURE_DATA_EXPLORER_INGESTION_ENDPOINT`` (prefixed with ``DD_OP_`` at runtime).
         :type ingestion_endpoint_key: str, optional
 
+        :param ingestion_mode: The ingestion method used to send data to Azure Data Explorer.
+
+            * ``streaming`` : Sends events directly to the table using streaming ingestion.
+            * ``queue`` : Sends events through queued (batched) ingestion.
+
+            Defaults to ``streaming``.
+        :type ingestion_mode: ObservabilityPipelineAzureDataExplorerDestinationIngestionMode, optional
+
         :param inputs: A list of component IDs whose output is used as the ``input`` for this component.
         :type inputs: [str]
 
@@ -185,6 +202,8 @@ class ObservabilityPipelineAzureDataExplorerDestination(ModelNormal):
             kwargs["compression"] = compression
         if ingestion_endpoint_key is not unset:
             kwargs["ingestion_endpoint_key"] = ingestion_endpoint_key
+        if ingestion_mode is not unset:
+            kwargs["ingestion_mode"] = ingestion_mode
         if mapping_reference is not unset:
             kwargs["mapping_reference"] = mapping_reference
         if token_scope is not unset:

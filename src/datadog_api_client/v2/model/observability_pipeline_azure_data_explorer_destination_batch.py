@@ -16,7 +16,7 @@ from datadog_api_client.model_utils import (
 class ObservabilityPipelineAzureDataExplorerDestinationBatch(ModelNormal):
     validations = {
         "max_bytes": {
-            "inclusive_maximum": 4000000,
+            "inclusive_maximum": 1000000000,
             "inclusive_minimum": 1,
         },
         "max_events": {
