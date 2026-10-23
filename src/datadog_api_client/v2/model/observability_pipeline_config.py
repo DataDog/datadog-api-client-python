@@ -103,17 +103,23 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.observability_pipeline_datadog_metrics_destination import (
         ObservabilityPipelineDatadogMetricsDestination,
     )
-    from datadog_api_client.v2.model.observability_pipeline_opentelemetry_metrics_destination import (
-        ObservabilityPipelineOpentelemetryMetricsDestination,
-    )
     from datadog_api_client.v2.model.observability_pipeline_prometheus_remote_write_destination import (
         ObservabilityPipelinePrometheusRemoteWriteDestination,
     )
     from datadog_api_client.v2.model.observability_pipeline_splunk_hec_metrics_destination import (
         ObservabilityPipelineSplunkHecMetricsDestination,
     )
+    from datadog_api_client.v2.model.observability_pipeline_opentelemetry_destination import (
+        ObservabilityPipelineOpentelemetryDestination,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_datadog_traces_destination import (
+        ObservabilityPipelineDatadogTracesDestination,
+    )
     from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source import (
         ObservabilityPipelineDatadogAgentSource,
+    )
+    from datadog_api_client.v2.model.observability_pipeline_opentelemetry_source import (
+        ObservabilityPipelineOpentelemetrySource,
     )
     from datadog_api_client.v2.model.observability_pipeline_amazon_data_firehose_source import (
         ObservabilityPipelineAmazonDataFirehoseSource,
@@ -147,9 +153,6 @@ if TYPE_CHECKING:
     )
     from datadog_api_client.v2.model.observability_pipeline_syslog_ng_source import ObservabilityPipelineSyslogNgSource
     from datadog_api_client.v2.model.observability_pipeline_websocket_source import ObservabilityPipelineWebsocketSource
-    from datadog_api_client.v2.model.observability_pipeline_opentelemetry_source import (
-        ObservabilityPipelineOpentelemetrySource,
-    )
     from datadog_api_client.v2.model.observability_pipeline_prometheus_remote_write_source import (
         ObservabilityPipelinePrometheusRemoteWriteSource,
     )
@@ -221,15 +224,17 @@ class ObservabilityPipelineConfig(ModelNormal):
                 ObservabilityPipelineSyslogNgDestination,
                 ObservabilityPipelineDatabricksZerobusDestination,
                 ObservabilityPipelineDatadogMetricsDestination,
-                ObservabilityPipelineOpentelemetryMetricsDestination,
                 ObservabilityPipelinePrometheusRemoteWriteDestination,
                 ObservabilityPipelineSplunkHecMetricsDestination,
+                ObservabilityPipelineOpentelemetryDestination,
+                ObservabilityPipelineDatadogTracesDestination,
             ]
         ],
         sources: List[
             Union[
                 ObservabilityPipelineConfigSourceItem,
                 ObservabilityPipelineDatadogAgentSource,
+                ObservabilityPipelineOpentelemetrySource,
                 ObservabilityPipelineAmazonDataFirehoseSource,
                 ObservabilityPipelineAmazonS3Source,
                 ObservabilityPipelineFluentBitSource,
@@ -246,7 +251,6 @@ class ObservabilityPipelineConfig(ModelNormal):
                 ObservabilityPipelineSumoLogicSource,
                 ObservabilityPipelineSyslogNgSource,
                 ObservabilityPipelineWebsocketSource,
-                ObservabilityPipelineOpentelemetrySource,
                 ObservabilityPipelinePrometheusRemoteWriteSource,
             ]
         ],
@@ -279,7 +283,7 @@ class ObservabilityPipelineConfig(ModelNormal):
         :param use_legacy_search_syntax: Set to ``true`` to continue using the legacy search syntax while migrating filter queries. After migrating all queries to the new syntax, set to ``false``.
             The legacy syntax is deprecated and will eventually be removed.
             Requires Observability Pipelines Worker 2.11 or later.
-            Only applies to ``logs`` pipelines. This field is ignored for ``metrics`` pipelines.
+            Only applies to ``logs`` pipelines. This field is ignored for ``metrics`` and ``traces`` pipelines.
             See `Upgrade Your Filter Queries to the New Search Syntax <https://docs.datadoghq.com/observability_pipelines/guide/upgrade_your_filter_queries_to_the_new_search_syntax/>`_ for more information.
         :type use_legacy_search_syntax: bool, optional
         """

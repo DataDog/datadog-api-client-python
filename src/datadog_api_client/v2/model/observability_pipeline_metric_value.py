@@ -18,7 +18,7 @@ class ObservabilityPipelineMetricValue(ModelComposed):
         :param strategy: Increments the metric by 1 for each matching event.
         :type strategy: ObservabilityPipelineGeneratedMetricIncrementByOneStrategy
 
-        :param field: Name of the log field containing the numeric value to increment the metric by.
+        :param field: Name of the field containing the numeric value to increment the metric by.
         :type field: str
         """
         super().__init__(kwargs)

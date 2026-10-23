@@ -68,7 +68,7 @@ class ObservabilityPipelineCustomProcessor(ModelNormal):
         """
         The ``custom_processor`` processor transforms events using `Vector Remap Language (VRL) <https://vector.dev/docs/reference/vrl/>`_ scripts with advanced filtering capabilities.
 
-        **Supported pipeline types:** logs
+        **Supported pipeline types:** logs, traces
 
         :param display_name: The display name for a component.
         :type display_name: str, optional
@@ -79,7 +79,7 @@ class ObservabilityPipelineCustomProcessor(ModelNormal):
         :param id: The unique identifier for this processor.
         :type id: str
 
-        :param include: A Datadog search query used to determine which logs this processor targets. This field should always be set to ``*`` for the custom_processor processor.
+        :param include: A Datadog search query used to determine which events this processor targets. This field should always be set to ``*`` for the custom_processor processor.
         :type include: str
 
         :param remaps: Array of VRL remap rules.

@@ -64,13 +64,13 @@ class ObservabilityPipelineGeneratedMetric(ModelNormal):
         **kwargs,
     ):
         """
-        Defines a log-based custom metric, including its name, type, filter, value computation strategy,
+        Defines a custom metric generated from logs or traces, including its name, type, filter, value computation strategy,
         and optional grouping fields.
 
         :param group_by: Optional fields used to group the metric series.
         :type group_by: [str], optional
 
-        :param include: Datadog filter query to match logs for metric generation.
+        :param include: Datadog filter query to match events for metric generation.
         :type include: str
 
         :param metric_type: Type of metric to create.

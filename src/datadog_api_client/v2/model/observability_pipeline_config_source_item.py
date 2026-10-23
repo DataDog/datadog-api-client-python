@@ -27,6 +27,12 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
         :param type: The source type. The value should always be `datadog_agent`.
         :type type: ObservabilityPipelineDatadogAgentSourceType
 
+        :param grpc_address_key: Environment variable name containing the gRPC server address for receiving OTLP data. Must be a valid environment variable name (alphanumeric characters and underscores only).
+        :type grpc_address_key: str, optional
+
+        :param http_address_key: Environment variable name containing the HTTP server address for receiving OTLP data. Must be a valid environment variable name (alphanumeric characters and underscores only).
+        :type http_address_key: str, optional
+
         :param auth: AWS authentication credentials used for accessing AWS services such as S3.
             If omitted, the system’s default credentials are used (for example, the IAM role and environment variables).
         :type auth: ObservabilityPipelineAwsAuth, optional
@@ -109,12 +115,6 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
         :param uri_key: Name of the environment variable or secret that holds the WebSocket server URI (`ws://` or `wss://`).
         :type uri_key: str, optional
 
-        :param grpc_address_key: Environment variable name containing the gRPC server address for receiving OTLP data. Must be a valid environment variable name (alphanumeric characters and underscores only).
-        :type grpc_address_key: str, optional
-
-        :param http_address_key: Environment variable name containing the HTTP server address for receiving OTLP data. Must be a valid environment variable name (alphanumeric characters and underscores only).
-        :type http_address_key: str, optional
-
         :param path: The HTTP path on which the source listens for incoming Prometheus Remote Write requests.
         :type path: str
         """
@@ -131,6 +131,9 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
         # loading
         from datadog_api_client.v2.model.observability_pipeline_datadog_agent_source import (
             ObservabilityPipelineDatadogAgentSource,
+        )
+        from datadog_api_client.v2.model.observability_pipeline_opentelemetry_source import (
+            ObservabilityPipelineOpentelemetrySource,
         )
         from datadog_api_client.v2.model.observability_pipeline_amazon_data_firehose_source import (
             ObservabilityPipelineAmazonDataFirehoseSource,
@@ -172,9 +175,6 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_websocket_source import (
             ObservabilityPipelineWebsocketSource,
         )
-        from datadog_api_client.v2.model.observability_pipeline_opentelemetry_source import (
-            ObservabilityPipelineOpentelemetrySource,
-        )
         from datadog_api_client.v2.model.observability_pipeline_prometheus_remote_write_source import (
             ObservabilityPipelinePrometheusRemoteWriteSource,
         )
@@ -182,6 +182,7 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
         return {
             "oneOf": [
                 ObservabilityPipelineDatadogAgentSource,
+                ObservabilityPipelineOpentelemetrySource,
                 ObservabilityPipelineAmazonDataFirehoseSource,
                 ObservabilityPipelineAmazonS3Source,
                 ObservabilityPipelineFluentBitSource,
@@ -198,7 +199,6 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
                 ObservabilityPipelineSumoLogicSource,
                 ObservabilityPipelineSyslogNgSource,
                 ObservabilityPipelineWebsocketSource,
-                ObservabilityPipelineOpentelemetrySource,
                 ObservabilityPipelinePrometheusRemoteWriteSource,
             ],
         }

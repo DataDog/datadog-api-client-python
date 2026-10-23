@@ -16,16 +16,18 @@ class ObservabilityPipelineConfigPipelineType(ModelSimple):
     """
     The type of data being ingested. Defaults to `logs` if not specified.
 
-    :param value: If omitted defaults to "logs". Must be one of ["logs", "metrics"].
+    :param value: If omitted defaults to "logs". Must be one of ["logs", "metrics", "traces"].
     :type value: str
     """
 
     allowed_values = {
         "logs",
         "metrics",
+        "traces",
     }
     LOGS: ClassVar["ObservabilityPipelineConfigPipelineType"]
     METRICS: ClassVar["ObservabilityPipelineConfigPipelineType"]
+    TRACES: ClassVar["ObservabilityPipelineConfigPipelineType"]
 
     @cached_property
     def openapi_types(_):
@@ -36,3 +38,4 @@ class ObservabilityPipelineConfigPipelineType(ModelSimple):
 
 ObservabilityPipelineConfigPipelineType.LOGS = ObservabilityPipelineConfigPipelineType("logs")
 ObservabilityPipelineConfigPipelineType.METRICS = ObservabilityPipelineConfigPipelineType("metrics")
+ObservabilityPipelineConfigPipelineType.TRACES = ObservabilityPipelineConfigPipelineType("traces")
