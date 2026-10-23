@@ -272,6 +272,22 @@ Feature: On-Call
     When the request is sent
     Then the response status is 200 OK
 
+  @team:ddoghq/on-call
+  Scenario: Get On-Call page returns "Not Found" response
+    Given new "GetOnCallPage" request
+    And request contains "page_id" parameter with value "00000000-0000-0000-0000-000000000000"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @replay-only @team:ddoghq/on-call
+  Scenario: Get On-Call page returns "OK" response
+    Given new "GetOnCallPage" request
+    And request contains "page_id" parameter with value "f63eb677-07ce-46ab-b2e0-80ca1ffe91bf"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" is equal to "f63eb677-07ce-46ab-b2e0-80ca1ffe91bf"
+    And the response "data.type" is equal to "pages"
+
   @generated @skip @team:ddoghq/on-call
   Scenario: Get On-Call schedule returns "Not Found" response
     Given new "GetOnCallSchedule" request
@@ -504,6 +520,33 @@ Feature: On-Call
     Then the response status is 200 OK
     And the response "data" has length 1
     And the response "included" has length 1
+
+  @generated @skip @team:ddoghq/on-call
+  Scenario: List On-Call pages returns "Bad Request" response
+    Given new "ListOnCallPages" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/on-call
+  Scenario: List On-Call pages returns "Not Found" response
+    Given new "ListOnCallPages" request
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @replay-only @team:ddoghq/on-call
+  Scenario: List On-Call pages returns "OK" response
+    Given new "ListOnCallPages" request
+    And request contains "filter[query]" parameter with value "key:1"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 1
+    And the response "data[0].id" is equal to "f63eb677-07ce-46ab-b2e0-80ca1ffe91bf"
+
+  @generated @skip @team:ddoghq/on-call @with-pagination
+  Scenario: List On-Call pages returns "OK" response with pagination
+    Given new "ListOnCallPages" request
+    When the request with pagination is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/on-call
   Scenario: List On-Call schedule overrides returns "Bad Request" response

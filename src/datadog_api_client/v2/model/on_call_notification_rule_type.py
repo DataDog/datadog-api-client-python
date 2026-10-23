@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class OnCallNotificationRuleType(ModelSimple):
     """
-    Indicates that the resource is of type 'notification_rules'.
+    Indicates that the resource is of type `notification_rules`.
 
     :param value: If omitted defaults to "notification_rules". Must be one of ["notification_rules"].
     :type value: str

@@ -39,7 +39,7 @@ class ShiftDataRelationshipsUserData(ModelNormal):
         :param id: Specifies the unique identifier of the user.
         :type id: str
 
-        :param type: Indicates that the related resource is of type 'users'.
+        :param type: Indicates that the related resource is of type ``users``.
         :type type: ShiftDataRelationshipsUserDataType
         """
         super().__init__(kwargs)

@@ -37,7 +37,7 @@ class OverrideRelationshipsUserData(ModelNormal):
         :param id: The unique identifier of the user.
         :type id: str
 
-        :param type: Indicates that the related resource is of type 'users'.
+        :param type: Indicates that the related resource is of type ``users``.
         :type type: OverrideRelationshipsUserDataType
         """
         super().__init__(kwargs)

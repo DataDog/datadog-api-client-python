@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class ShiftDataType(ModelSimple):
     """
-    Indicates that the resource is of type 'shifts'.
+    Indicates that the resource is of type `shifts`.
 
     :param value: If omitted defaults to "shifts". Must be one of ["shifts"].
     :type value: str

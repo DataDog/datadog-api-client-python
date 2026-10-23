@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class OverrideRelationshipsScheduleDataType(ModelSimple):
     """
-    Indicates that the related resource is of type 'schedules'.
+    Indicates that the related resource is of type `schedules`.
 
     :param value: If omitted defaults to "schedules". Must be one of ["schedules"].
     :type value: str

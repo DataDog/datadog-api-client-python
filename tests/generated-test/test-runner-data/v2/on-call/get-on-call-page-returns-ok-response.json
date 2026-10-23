@@ -1,0 +1,35 @@
+{
+  "api": "On-Call",
+  "expected_status": 200,
+  "feature": "On-Call",
+  "id": "v2/On-Call/Get On-Call page returns \"OK\" response",
+  "operation_id": "GetOnCallPage",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "page_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "f63eb677-07ce-46ab-b2e0-80ca1ffe91bf"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/on-call/pages/{page_id}"
+  },
+  "scenario": "Get On-Call page returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

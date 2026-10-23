@@ -8949,6 +8949,20 @@
     {
       "feature": "On-Call",
       "feature_file": "../../v2/features/on-call.feature",
+      "file": "v2/on-call/get-on-call-page-returns-not-found-response.json",
+      "scenario": "Get On-Call page returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "feature_file": "../../v2/features/on-call.feature",
+      "file": "v2/on-call/get-on-call-page-returns-ok-response.json",
+      "scenario": "Get On-Call page returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "feature_file": "../../v2/features/on-call.feature",
       "file": "v2/on-call/get-on-call-schedule-returns-ok-response.json",
       "scenario": "Get On-Call schedule returns \"OK\" response",
       "version": "v2"
@@ -9007,6 +9021,13 @@
       "feature_file": "../../v2/features/on-call.feature",
       "file": "v2/on-call/list-on-call-notification-rules-for-a-user-returns-ok-response.json",
       "scenario": "List On-Call notification rules for a user returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "feature_file": "../../v2/features/on-call.feature",
+      "file": "v2/on-call/list-on-call-pages-returns-ok-response.json",
+      "scenario": "List On-Call pages returns \"OK\" response",
       "version": "v2"
     },
     {

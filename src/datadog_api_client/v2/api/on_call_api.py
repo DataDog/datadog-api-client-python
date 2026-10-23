@@ -21,6 +21,10 @@ from datadog_api_client.v2.model.escalation_policy_list_item import EscalationPo
 from datadog_api_client.v2.model.escalation_policy import EscalationPolicy
 from datadog_api_client.v2.model.escalation_policy_create_request import EscalationPolicyCreateRequest
 from datadog_api_client.v2.model.escalation_policy_update_request import EscalationPolicyUpdateRequest
+from datadog_api_client.v2.model.on_call_pages_response import OnCallPagesResponse
+from datadog_api_client.v2.model.on_call_pages_sort import OnCallPagesSort
+from datadog_api_client.v2.model.on_call_page_data import OnCallPageData
+from datadog_api_client.v2.model.on_call_page_response import OnCallPageResponse
 from datadog_api_client.v2.model.schedules import Schedules
 from datadog_api_client.v2.model.schedule_list_item import ScheduleListItem
 from datadog_api_client.v2.model.schedule import Schedule
@@ -349,6 +353,29 @@ class OnCallApi:
             api_client=api_client,
         )
 
+        self._get_on_call_page_endpoint = _Endpoint(
+            settings={
+                "response_type": (OnCallPageResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/on-call/pages/{page_id}",
+                "operation_id": "get_on_call_page",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "page_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_on_call_schedule_endpoint = _Endpoint(
             settings={
                 "response_type": (Schedule,),
@@ -623,6 +650,49 @@ class OnCallApi:
                 "include": {
                     "openapi_types": (str,),
                     "attribute": "include",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_on_call_pages_endpoint = _Endpoint(
+            settings={
+                "response_type": (OnCallPagesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/on-call/pages",
+                "operation_id": "list_on_call_pages",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_size": {
+                    "validation": {
+                        "inclusive_maximum": 1000,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+                "page_number": {
+                    "validation": {
+                        "inclusive_minimum": 0,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
+                },
+                "filter_query": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[query]",
+                    "location": "query",
+                },
+                "sort": {
+                    "openapi_types": (OnCallPagesSort,),
+                    "attribute": "sort",
                     "location": "query",
                 },
             },
@@ -1143,6 +1213,23 @@ class OnCallApi:
 
         return self._get_on_call_escalation_policy_endpoint.call_with_http_info(**kwargs)
 
+    def get_on_call_page(
+        self,
+        page_id: str,
+    ) -> OnCallPageResponse:
+        """Get On-Call page.
+
+        Get the details of an On-Call page.
+
+        :param page_id: The ID of the page, or its key.
+        :type page_id: str
+        :rtype: OnCallPageResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["page_id"] = page_id
+
+        return self._get_on_call_page_endpoint.call_with_http_info(**kwargs)
+
     def get_on_call_schedule(
         self,
         schedule_id: str,
@@ -1469,6 +1556,93 @@ class OnCallApi:
 
         local_page_size = get_attribute_from_path(kwargs, "page_size", 20)
         endpoint = self._list_on_call_escalation_policies_endpoint
+        set_attribute_from_path(kwargs, "page_size", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "page_param": "page_number",
+            "page_start": 0,
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
+
+    def list_on_call_pages(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        filter_query: Union[str, UnsetType] = unset,
+        sort: Union[OnCallPagesSort, UnsetType] = unset,
+    ) -> OnCallPagesResponse:
+        """List On-Call pages.
+
+        Retrieve a paginated list of On-Call pages, optionally filtered by a search query and sorted.
+
+        :param page_size: Number of On-Call Pages to return per page of results. The maximum allowed value is 1000.
+        :type page_size: int, optional
+        :param page_number: Page of results to return, starting at 0. ``page[number]`` multiplied by ``page[size]`` must be less than 50000.
+        :type page_number: int, optional
+        :param filter_query: Search query to filter pages. Supports filters such as ``status`` , ``urgency`` , ``team`` , ``service`` , and ``tags`` , for example ``status:triggered``.
+        :type filter_query: str, optional
+        :param sort: Sort pages by the given field. Only one field is allowed.
+        :type sort: OnCallPagesSort, optional
+        :rtype: OnCallPagesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if filter_query is not unset:
+            kwargs["filter_query"] = filter_query
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        return self._list_on_call_pages_endpoint.call_with_http_info(**kwargs)
+
+    def list_on_call_pages_with_pagination(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        filter_query: Union[str, UnsetType] = unset,
+        sort: Union[OnCallPagesSort, UnsetType] = unset,
+    ) -> collections.abc.Iterable[OnCallPageData]:
+        """List On-Call pages.
+
+        Provide a paginated version of :meth:`list_on_call_pages`, returning all items.
+
+        :param page_size: Number of On-Call Pages to return per page of results. The maximum allowed value is 1000.
+        :type page_size: int, optional
+        :param page_number: Page of results to return, starting at 0. ``page[number]`` multiplied by ``page[size]`` must be less than 50000.
+        :type page_number: int, optional
+        :param filter_query: Search query to filter pages. Supports filters such as ``status`` , ``urgency`` , ``team`` , ``service`` , and ``tags`` , for example ``status:triggered``.
+        :type filter_query: str, optional
+        :param sort: Sort pages by the given field. Only one field is allowed.
+        :type sort: OnCallPagesSort, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[OnCallPageData]
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if filter_query is not unset:
+            kwargs["filter_query"] = filter_query
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        local_page_size = get_attribute_from_path(kwargs, "page_size", 100)
+        endpoint = self._list_on_call_pages_endpoint
         set_attribute_from_path(kwargs, "page_size", local_page_size, endpoint.params_map)
         pagination = {
             "limit_value": local_page_size,

@@ -54,7 +54,7 @@ class CreateOverrideRequestData(ModelNormal):
         :param relationships: Relationships to set when creating an on-call schedule override.
         :type relationships: CreateOverrideRequestRelationships, optional
 
-        :param type: Indicates that the resource is of type 'overrides'.
+        :param type: Indicates that the resource is of type ``overrides``.
         :type type: OverrideDataType
         """
         if relationships is not unset:
