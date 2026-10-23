@@ -3732,6 +3732,3654 @@
     },
     {
       "feature": "Teams",
+      "frozen_at": "2026-10-20T16:17:15.165Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "handle": "test-handle-c36a7248a9067833",
+                    "name": "test-name-c36a7248a9067833"
+                  },
+                  "type": "team"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"c431b345-4b84-4c7b-a4f2-a3bd3773a0bc\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":14,\"created_at\":\"2026-10-20T16:17:17.323875+00:00\",\"description\":null,\"handle\":\"test-handle-c36a7248a9067833\",\"hidden_modules\":null,\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-10-20T16:17:17.323876+00:00\",\"name\":\"test-name-c36a7248a9067833\",\"summary\":null,\"user_count\":0,\"visible_modules\":null},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/c431b345-4b84-4c7b-a4f2-a3bd3773a0bc/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/c431b345-4b84-4c7b-a4f2-a3bd3773a0bc/permission-settings\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "handle": "test-handle-2-c36a7248a9067833",
+                    "name": "test-name-2-c36a7248a9067833"
+                  },
+                  "type": "team"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"c8984857-6077-47d3-a2e0-6ecd0ad002ef\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":9,\"created_at\":\"2026-10-20T16:17:17.572334+00:00\",\"description\":null,\"handle\":\"test-handle-2-c36a7248a9067833\",\"hidden_modules\":null,\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-10-20T16:17:17.572334+00:00\",\"name\":\"test-name-2-c36a7248a9067833\",\"summary\":null,\"user_count\":0,\"visible_modules\":null},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/c8984857-6077-47d3-a2e0-6ecd0ad002ef/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/c8984857-6077-47d3-a2e0-6ecd0ad002ef/permission-settings\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "relationships": {
+                    "parent_team": {
+                      "data": {
+                        "id": "c431b345-4b84-4c7b-a4f2-a3bd3773a0bc",
+                        "type": "team"
+                      }
+                    },
+                    "sub_team": {
+                      "data": {
+                        "id": "c8984857-6077-47d3-a2e0-6ecd0ad002ef",
+                        "type": "team"
+                      }
+                    }
+                  },
+                  "type": "team_hierarchy_links"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team-hierarchy-links",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"41879250-c4f4-4751-a484-f1a092959af9\",\"type\":\"team_hierarchy_links\",\"attributes\":{\"created_at\":\"2026-10-20T16:17:17.838807089Z\",\"provisioned_by\":\"\"},\"relationships\":{\"parent_team\":{\"data\":{\"id\":\"c431b345-4b84-4c7b-a4f2-a3bd3773a0bc\",\"type\":\"team\"}},\"sub_team\":{\"data\":{\"id\":\"c8984857-6077-47d3-a2e0-6ecd0ad002ef\",\"type\":\"team\"}}}},\"included\":[{\"id\":\"c431b345-4b84-4c7b-a4f2-a3bd3773a0bc\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":14,\"handle\":\"test-handle-c36a7248a9067833\",\"is_managed\":false,\"is_open_membership\":false,\"link_count\":0,\"name\":\"test-name-c36a7248a9067833\",\"summary\":null,\"user_count\":0}},{\"id\":\"c8984857-6077-47d3-a2e0-6ecd0ad002ef\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":9,\"handle\":\"test-handle-2-c36a7248a9067833\",\"is_managed\":false,\"is_open_membership\":false,\"link_count\":0,\"name\":\"test-name-2-c36a7248a9067833\",\"summary\":null,\"user_count\":0}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "hierarchy-Test-Get_team_hierarchy_members_deduplicates_direct_and_inherited_membership-1792513035@datadoghq.com",
+                    "name": "Hierarchy member"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"e7e78653-ee88-4e6d-8803-79156009e862\",\"attributes\":{\"uuid\":\"e7e78653-ee88-4e6d-8803-79156009e862\",\"name\":\"Hierarchy member\",\"handle\":\"hierarchy-test-get_team_hierarchy_members_deduplicates_direct_and_inherited_membership-1792513035@datadoghq.com\",\"created_at\":\"2026-10-20T16:17:18.106492+00:00\",\"modified_at\":\"2026-10-20T16:17:18.106492+00:00\",\"email\":\"hierarchy-test-get_team_hierarchy_members_deduplicates_direct_and_inherited_membership-1792513035@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/47d6d66718b8406d16643547000c8f67?s=48&d=retro\",\"title\":null,\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "role": "admin"
+                  },
+                  "relationships": {
+                    "user": {
+                      "data": {
+                        "id": "e7e78653-ee88-4e6d-8803-79156009e862",
+                        "type": "users"
+                      }
+                    }
+                  },
+                  "type": "team_memberships"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team/c8984857-6077-47d3-a2e0-6ecd0ad002ef/memberships",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"TeamMembership-c8984857-6077-47d3-a2e0-6ecd0ad002ef-71947471\",\"type\":\"team_memberships\",\"attributes\":{\"provisioned_by\":null,\"provisioned_by_id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"role\":\"admin\"},\"relationships\":{\"user\":{\"data\":{\"id\":\"e7e78653-ee88-4e6d-8803-79156009e862\",\"type\":\"users\"}}}},\"included\":[{\"id\":\"e7e78653-ee88-4e6d-8803-79156009e862\",\"type\":\"users\",\"attributes\":{\"disabled\":false,\"email\":\"hierarchy-test-get_team_hierarchy_members_deduplicates_direct_and_inherited_membership-1792513035@datadoghq.com\",\"handle\":\"hierarchy-test-get_team_hierarchy_members_deduplicates_direct_and_inherited_membership-1792513035@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/47d6d66718b8406d16643547000c8f67?d=retro\\u0026s=48\",\"name\":\"Hierarchy member\",\"service_account\":false,\"status\":\"Pending\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Get_team_hierarchy_members_deduplicates_direct_and_inherited_membership-1792513035@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"b10d80ab-e01d-4f3d-8bee-e0ba5996bf55\",\"attributes\":{\"uuid\":\"b10d80ab-e01d-4f3d-8bee-e0ba5996bf55\",\"name\":null,\"handle\":\"test-get_team_hierarchy_members_deduplicates_direct_and_inherited_membership-1792513035@datadoghq.com\",\"created_at\":\"2026-10-20T16:17:18.678850+00:00\",\"modified_at\":\"2026-10-20T16:17:18.678850+00:00\",\"email\":\"test-get_team_hierarchy_members_deduplicates_direct_and_inherited_membership-1792513035@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/ab8e1e28a33de20e8b414c085889b815?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "role": "admin"
+                  },
+                  "relationships": {
+                    "user": {
+                      "data": {
+                        "id": "b10d80ab-e01d-4f3d-8bee-e0ba5996bf55",
+                        "type": "users"
+                      }
+                    }
+                  },
+                  "type": "team_memberships"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team/c431b345-4b84-4c7b-a4f2-a3bd3773a0bc/memberships",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"TeamMembership-c431b345-4b84-4c7b-a4f2-a3bd3773a0bc-71947472\",\"type\":\"team_memberships\",\"attributes\":{\"provisioned_by\":null,\"provisioned_by_id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"role\":\"admin\"},\"relationships\":{\"user\":{\"data\":{\"id\":\"b10d80ab-e01d-4f3d-8bee-e0ba5996bf55\",\"type\":\"users\"}}}},\"included\":[{\"id\":\"b10d80ab-e01d-4f3d-8bee-e0ba5996bf55\",\"type\":\"users\",\"attributes\":{\"disabled\":false,\"email\":\"test-get_team_hierarchy_members_deduplicates_direct_and_inherited_membership-1792513035@datadoghq.com\",\"handle\":\"test-get_team_hierarchy_members_deduplicates_direct_and_inherited_membership-1792513035@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/ab8e1e28a33de20e8b414c085889b815?d=retro\\u0026s=48\",\"name\":null,\"service_account\":false,\"status\":\"Pending\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "role": "admin"
+                  },
+                  "relationships": {
+                    "user": {
+                      "data": {
+                        "id": "b10d80ab-e01d-4f3d-8bee-e0ba5996bf55",
+                        "type": "users"
+                      }
+                    }
+                  },
+                  "type": "team_memberships"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team/c8984857-6077-47d3-a2e0-6ecd0ad002ef/memberships",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"TeamMembership-c8984857-6077-47d3-a2e0-6ecd0ad002ef-71947472\",\"type\":\"team_memberships\",\"attributes\":{\"provisioned_by\":null,\"provisioned_by_id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"role\":\"admin\"},\"relationships\":{\"user\":{\"data\":{\"id\":\"b10d80ab-e01d-4f3d-8bee-e0ba5996bf55\",\"type\":\"users\"}}}},\"included\":[{\"id\":\"b10d80ab-e01d-4f3d-8bee-e0ba5996bf55\",\"type\":\"users\",\"attributes\":{\"disabled\":false,\"email\":\"test-get_team_hierarchy_members_deduplicates_direct_and_inherited_membership-1792513035@datadoghq.com\",\"handle\":\"test-get_team_hierarchy_members_deduplicates_direct_and_inherited_membership-1792513035@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/ab8e1e28a33de20e8b414c085889b815?d=retro\\u0026s=48\",\"name\":null,\"service_account\":false,\"status\":\"Pending\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/team/c431b345-4b84-4c7b-a4f2-a3bd3773a0bc/members",
+            "query": [
+              [
+                "filter[keyword]",
+                "Test-Get_team_hierarchy_members_deduplicates_direct_and_inherited_membership-1792513035"
+              ],
+              [
+                "include",
+                "team"
+              ],
+              [
+                "sort",
+                "-is_direct,handle"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"UserTeamRelationship:c431b345-4b84-4c7b-a4f2-a3bd3773a0bc:b10d80ab-e01d-4f3d-8bee-e0ba5996bf55\",\"type\":\"user_team_relationship\",\"attributes\":{\"direct_role\":\"admin\",\"is_direct\":true,\"provisioned_by\":null,\"provisioned_by_id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\"},\"relationships\":{\"team\":{\"data\":{\"id\":\"c431b345-4b84-4c7b-a4f2-a3bd3773a0bc\",\"type\":\"teams\"}},\"user\":{\"data\":{\"id\":\"b10d80ab-e01d-4f3d-8bee-e0ba5996bf55\",\"type\":\"users\"}}}},{\"id\":\"UserTeamRelationship:c431b345-4b84-4c7b-a4f2-a3bd3773a0bc:e7e78653-ee88-4e6d-8803-79156009e862\",\"type\":\"user_team_relationship\",\"attributes\":{\"direct_role\":null,\"is_direct\":false,\"provisioned_by\":null,\"provisioned_by_id\":null},\"relationships\":{\"team\":{\"data\":{\"id\":\"c431b345-4b84-4c7b-a4f2-a3bd3773a0bc\",\"type\":\"teams\"}},\"user\":{\"data\":{\"id\":\"e7e78653-ee88-4e6d-8803-79156009e862\",\"type\":\"users\"}}}}],\"meta\":{\"page\":{\"type\":\"offset_limit\",\"offset\":0,\"limit\":100,\"total\":2,\"first_offset\":0,\"prev_offset\":null,\"next_offset\":null,\"last_offset\":0}},\"links\":{\"self\":\"https://api.datadoghq.com/api/v2/team/c431b345-4b84-4c7b-a4f2-a3bd3773a0bc/members?filter%5Bkeyword%5D=Test-Get_team_hierarchy_members_deduplicates_direct_and_inherited_membership-1792513035\\u0026sort=-is_direct%2Chandle\\u0026include=team\",\"first\":\"https://api.datadoghq.com/api/v2/team/c431b345-4b84-4c7b-a4f2-a3bd3773a0bc/members?filter[keyword]=Test-Get_team_hierarchy_members_deduplicates_direct_and_inherited_membership-1792513035\\u0026include=team\\u0026page[limit]=100\\u0026page[offset]=0\\u0026sort=-is_direct,handle\",\"last\":\"https://api.datadoghq.com/api/v2/team/c431b345-4b84-4c7b-a4f2-a3bd3773a0bc/members?filter[keyword]=Test-Get_team_hierarchy_members_deduplicates_direct_and_inherited_membership-1792513035\\u0026include=team\\u0026page[limit]=100\\u0026page[offset]=0\\u0026sort=-is_direct,handle\"},\"included\":[{\"id\":\"c431b345-4b84-4c7b-a4f2-a3bd3773a0bc\",\"type\":\"teams\",\"attributes\":{\"handle\":\"test-handle-c36a7248a9067833\",\"name\":\"test-name-c36a7248a9067833\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/c8984857-6077-47d3-a2e0-6ecd0ad002ef/memberships/b10d80ab-e01d-4f3d-8bee-e0ba5996bf55",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/c431b345-4b84-4c7b-a4f2-a3bd3773a0bc/memberships/b10d80ab-e01d-4f3d-8bee-e0ba5996bf55",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/b10d80ab-e01d-4f3d-8bee-e0ba5996bf55",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/c8984857-6077-47d3-a2e0-6ecd0ad002ef/memberships/e7e78653-ee88-4e6d-8803-79156009e862",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/e7e78653-ee88-4e6d-8803-79156009e862",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team-hierarchy-links/41879250-c4f4-4751-a484-f1a092959af9",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/c8984857-6077-47d3-a2e0-6ecd0ad002ef",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/c431b345-4b84-4c7b-a4f2-a3bd3773a0bc",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get team hierarchy members deduplicates direct and inherited membership",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
+      "frozen_at": "2026-10-20T16:17:22.023Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "handle": "test-handle-6e5570209bc2c8a9",
+                    "name": "test-name-6e5570209bc2c8a9"
+                  },
+                  "type": "team"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"68621a1f-67f2-4203-a614-485d8dc94985\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":9,\"created_at\":\"2026-10-20T16:17:22.206891+00:00\",\"description\":null,\"handle\":\"test-handle-6e5570209bc2c8a9\",\"hidden_modules\":null,\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-10-20T16:17:22.206891+00:00\",\"name\":\"test-name-6e5570209bc2c8a9\",\"summary\":null,\"user_count\":0,\"visible_modules\":null},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/68621a1f-67f2-4203-a614-485d8dc94985/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/68621a1f-67f2-4203-a614-485d8dc94985/permission-settings\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "handle": "test-handle-2-6e5570209bc2c8a9",
+                    "name": "test-name-2-6e5570209bc2c8a9"
+                  },
+                  "type": "team"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"e87e3abc-f0dd-4761-adfd-abcf6ff91406\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":5,\"created_at\":\"2026-10-20T16:17:22.460938+00:00\",\"description\":null,\"handle\":\"test-handle-2-6e5570209bc2c8a9\",\"hidden_modules\":null,\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-10-20T16:17:22.460938+00:00\",\"name\":\"test-name-2-6e5570209bc2c8a9\",\"summary\":null,\"user_count\":0,\"visible_modules\":null},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/e87e3abc-f0dd-4761-adfd-abcf6ff91406/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/e87e3abc-f0dd-4761-adfd-abcf6ff91406/permission-settings\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "relationships": {
+                    "parent_team": {
+                      "data": {
+                        "id": "68621a1f-67f2-4203-a614-485d8dc94985",
+                        "type": "team"
+                      }
+                    },
+                    "sub_team": {
+                      "data": {
+                        "id": "e87e3abc-f0dd-4761-adfd-abcf6ff91406",
+                        "type": "team"
+                      }
+                    }
+                  },
+                  "type": "team_hierarchy_links"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team-hierarchy-links",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"f0f518b0-1c4d-4381-9cec-29c1e3a1ebe3\",\"type\":\"team_hierarchy_links\",\"attributes\":{\"created_at\":\"2026-10-20T16:17:22.742932483Z\",\"provisioned_by\":\"\"},\"relationships\":{\"parent_team\":{\"data\":{\"id\":\"68621a1f-67f2-4203-a614-485d8dc94985\",\"type\":\"team\"}},\"sub_team\":{\"data\":{\"id\":\"e87e3abc-f0dd-4761-adfd-abcf6ff91406\",\"type\":\"team\"}}}},\"included\":[{\"id\":\"68621a1f-67f2-4203-a614-485d8dc94985\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":9,\"handle\":\"test-handle-6e5570209bc2c8a9\",\"is_managed\":false,\"is_open_membership\":false,\"link_count\":0,\"name\":\"test-name-6e5570209bc2c8a9\",\"summary\":null,\"user_count\":0}},{\"id\":\"e87e3abc-f0dd-4761-adfd-abcf6ff91406\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":5,\"handle\":\"test-handle-2-6e5570209bc2c8a9\",\"is_managed\":false,\"is_open_membership\":false,\"link_count\":0,\"name\":\"test-name-2-6e5570209bc2c8a9\",\"summary\":null,\"user_count\":0}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "hierarchy-Test-Get_team_hierarchy_members_filters_direct_members-1792513042@datadoghq.com",
+                    "name": "Hierarchy member"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"0a768693-26ef-4763-b13b-194713d13160\",\"attributes\":{\"uuid\":\"0a768693-26ef-4763-b13b-194713d13160\",\"name\":\"Hierarchy member\",\"handle\":\"hierarchy-test-get_team_hierarchy_members_filters_direct_members-1792513042@datadoghq.com\",\"created_at\":\"2026-10-20T16:17:23.005450+00:00\",\"modified_at\":\"2026-10-20T16:17:23.005450+00:00\",\"email\":\"hierarchy-test-get_team_hierarchy_members_filters_direct_members-1792513042@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/e35521be35d41b1b7dce0e437f5259cc?s=48&d=retro\",\"title\":null,\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "role": "admin"
+                  },
+                  "relationships": {
+                    "user": {
+                      "data": {
+                        "id": "0a768693-26ef-4763-b13b-194713d13160",
+                        "type": "users"
+                      }
+                    }
+                  },
+                  "type": "team_memberships"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team/e87e3abc-f0dd-4761-adfd-abcf6ff91406/memberships",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"TeamMembership-e87e3abc-f0dd-4761-adfd-abcf6ff91406-71947473\",\"type\":\"team_memberships\",\"attributes\":{\"provisioned_by\":null,\"provisioned_by_id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"role\":\"admin\"},\"relationships\":{\"user\":{\"data\":{\"id\":\"0a768693-26ef-4763-b13b-194713d13160\",\"type\":\"users\"}}}},\"included\":[{\"id\":\"0a768693-26ef-4763-b13b-194713d13160\",\"type\":\"users\",\"attributes\":{\"disabled\":false,\"email\":\"hierarchy-test-get_team_hierarchy_members_filters_direct_members-1792513042@datadoghq.com\",\"handle\":\"hierarchy-test-get_team_hierarchy_members_filters_direct_members-1792513042@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/e35521be35d41b1b7dce0e437f5259cc?d=retro\\u0026s=48\",\"name\":\"Hierarchy member\",\"service_account\":false,\"status\":\"Pending\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Get_team_hierarchy_members_filters_direct_members-1792513042@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"010ada19-6be1-4c9f-a69d-74aed601d1b9\",\"attributes\":{\"uuid\":\"010ada19-6be1-4c9f-a69d-74aed601d1b9\",\"name\":null,\"handle\":\"test-get_team_hierarchy_members_filters_direct_members-1792513042@datadoghq.com\",\"created_at\":\"2026-10-20T16:17:23.555103+00:00\",\"modified_at\":\"2026-10-20T16:17:23.555103+00:00\",\"email\":\"test-get_team_hierarchy_members_filters_direct_members-1792513042@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/1e9425084b3d8211180a2ba1b9027b0f?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "role": "admin"
+                  },
+                  "relationships": {
+                    "user": {
+                      "data": {
+                        "id": "010ada19-6be1-4c9f-a69d-74aed601d1b9",
+                        "type": "users"
+                      }
+                    }
+                  },
+                  "type": "team_memberships"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team/68621a1f-67f2-4203-a614-485d8dc94985/memberships",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"TeamMembership-68621a1f-67f2-4203-a614-485d8dc94985-71947474\",\"type\":\"team_memberships\",\"attributes\":{\"provisioned_by\":null,\"provisioned_by_id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"role\":\"admin\"},\"relationships\":{\"user\":{\"data\":{\"id\":\"010ada19-6be1-4c9f-a69d-74aed601d1b9\",\"type\":\"users\"}}}},\"included\":[{\"id\":\"010ada19-6be1-4c9f-a69d-74aed601d1b9\",\"type\":\"users\",\"attributes\":{\"disabled\":false,\"email\":\"test-get_team_hierarchy_members_filters_direct_members-1792513042@datadoghq.com\",\"handle\":\"test-get_team_hierarchy_members_filters_direct_members-1792513042@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/1e9425084b3d8211180a2ba1b9027b0f?d=retro\\u0026s=48\",\"name\":null,\"service_account\":false,\"status\":\"Pending\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/team/68621a1f-67f2-4203-a614-485d8dc94985/members",
+            "query": [
+              [
+                "filter[include_service_accounts]",
+                "false"
+              ],
+              [
+                "filter[is_direct_only]",
+                "true"
+              ],
+              [
+                "filter[keyword]",
+                "Test-Get_team_hierarchy_members_filters_direct_members-1792513042"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"UserTeamRelationship:68621a1f-67f2-4203-a614-485d8dc94985:010ada19-6be1-4c9f-a69d-74aed601d1b9\",\"type\":\"user_team_relationship\",\"attributes\":{\"direct_role\":\"admin\",\"is_direct\":true,\"provisioned_by\":null,\"provisioned_by_id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\"},\"relationships\":{\"team\":{\"data\":{\"id\":\"68621a1f-67f2-4203-a614-485d8dc94985\",\"type\":\"teams\"}},\"user\":{\"data\":{\"id\":\"010ada19-6be1-4c9f-a69d-74aed601d1b9\",\"type\":\"users\"}}}}],\"meta\":{\"page\":{\"type\":\"offset_limit\",\"offset\":0,\"limit\":100,\"total\":1,\"first_offset\":0,\"prev_offset\":null,\"next_offset\":null,\"last_offset\":0}},\"links\":{\"self\":\"https://api.datadoghq.com/api/v2/team/68621a1f-67f2-4203-a614-485d8dc94985/members?filter%5Bkeyword%5D=Test-Get_team_hierarchy_members_filters_direct_members-1792513042\\u0026filter%5Bis_direct_only%5D=true\\u0026filter%5Binclude_service_accounts%5D=false\",\"first\":\"https://api.datadoghq.com/api/v2/team/68621a1f-67f2-4203-a614-485d8dc94985/members?filter[include_service_accounts]=false\\u0026filter[is_direct_only]=true\\u0026filter[keyword]=Test-Get_team_hierarchy_members_filters_direct_members-1792513042\\u0026page[limit]=100\\u0026page[offset]=0\",\"last\":\"https://api.datadoghq.com/api/v2/team/68621a1f-67f2-4203-a614-485d8dc94985/members?filter[include_service_accounts]=false\\u0026filter[is_direct_only]=true\\u0026filter[keyword]=Test-Get_team_hierarchy_members_filters_direct_members-1792513042\\u0026page[limit]=100\\u0026page[offset]=0\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/68621a1f-67f2-4203-a614-485d8dc94985/memberships/010ada19-6be1-4c9f-a69d-74aed601d1b9",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/010ada19-6be1-4c9f-a69d-74aed601d1b9",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/e87e3abc-f0dd-4761-adfd-abcf6ff91406/memberships/0a768693-26ef-4763-b13b-194713d13160",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/0a768693-26ef-4763-b13b-194713d13160",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team-hierarchy-links/f0f518b0-1c4d-4381-9cec-29c1e3a1ebe3",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/e87e3abc-f0dd-4761-adfd-abcf6ff91406",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/68621a1f-67f2-4203-a614-485d8dc94985",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get team hierarchy members filters direct members",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
+      "frozen_at": "2026-10-20T16:17:26.511Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "handle": "test-handle-9fa8b295281a71b5",
+                    "name": "test-name-9fa8b295281a71b5"
+                  },
+                  "type": "team"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"e4ac0cab-3371-4195-9f62-97d89ce8616c\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":5,\"created_at\":\"2026-10-20T16:17:26.702617+00:00\",\"description\":null,\"handle\":\"test-handle-9fa8b295281a71b5\",\"hidden_modules\":null,\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-10-20T16:17:26.702617+00:00\",\"name\":\"test-name-9fa8b295281a71b5\",\"summary\":null,\"user_count\":0,\"visible_modules\":null},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/e4ac0cab-3371-4195-9f62-97d89ce8616c/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/e4ac0cab-3371-4195-9f62-97d89ce8616c/permission-settings\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "handle": "test-handle-2-9fa8b295281a71b5",
+                    "name": "test-name-2-9fa8b295281a71b5"
+                  },
+                  "type": "team"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"0c63ab5a-cef0-4717-9a2b-27381e95744a\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":11,\"created_at\":\"2026-10-20T16:17:26.935127+00:00\",\"description\":null,\"handle\":\"test-handle-2-9fa8b295281a71b5\",\"hidden_modules\":null,\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-10-20T16:17:26.935127+00:00\",\"name\":\"test-name-2-9fa8b295281a71b5\",\"summary\":null,\"user_count\":0,\"visible_modules\":null},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/0c63ab5a-cef0-4717-9a2b-27381e95744a/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/0c63ab5a-cef0-4717-9a2b-27381e95744a/permission-settings\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "relationships": {
+                    "parent_team": {
+                      "data": {
+                        "id": "e4ac0cab-3371-4195-9f62-97d89ce8616c",
+                        "type": "team"
+                      }
+                    },
+                    "sub_team": {
+                      "data": {
+                        "id": "0c63ab5a-cef0-4717-9a2b-27381e95744a",
+                        "type": "team"
+                      }
+                    }
+                  },
+                  "type": "team_hierarchy_links"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team-hierarchy-links",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"dba101c0-a9de-4fc3-8c5e-8454f661b59e\",\"type\":\"team_hierarchy_links\",\"attributes\":{\"created_at\":\"2026-10-20T16:17:27.20080516Z\",\"provisioned_by\":\"\"},\"relationships\":{\"parent_team\":{\"data\":{\"id\":\"e4ac0cab-3371-4195-9f62-97d89ce8616c\",\"type\":\"team\"}},\"sub_team\":{\"data\":{\"id\":\"0c63ab5a-cef0-4717-9a2b-27381e95744a\",\"type\":\"team\"}}}},\"included\":[{\"id\":\"e4ac0cab-3371-4195-9f62-97d89ce8616c\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":5,\"handle\":\"test-handle-9fa8b295281a71b5\",\"is_managed\":false,\"is_open_membership\":false,\"link_count\":0,\"name\":\"test-name-9fa8b295281a71b5\",\"summary\":null,\"user_count\":0}},{\"id\":\"0c63ab5a-cef0-4717-9a2b-27381e95744a\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":11,\"handle\":\"test-handle-2-9fa8b295281a71b5\",\"is_managed\":false,\"is_open_membership\":false,\"link_count\":0,\"name\":\"test-name-2-9fa8b295281a71b5\",\"summary\":null,\"user_count\":0}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "hierarchy-Test-Get_team_hierarchy_members_filters_names_case_insensitively-1792513046@datadoghq.com",
+                    "name": "Hierarchy member"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"501785dc-53da-49f8-ab50-8f375044cfa6\",\"attributes\":{\"uuid\":\"501785dc-53da-49f8-ab50-8f375044cfa6\",\"name\":\"Hierarchy member\",\"handle\":\"hierarchy-test-get_team_hierarchy_members_filters_names_case_insensitively-1792513046@datadoghq.com\",\"created_at\":\"2026-10-20T16:17:27.467467+00:00\",\"modified_at\":\"2026-10-20T16:17:27.467467+00:00\",\"email\":\"hierarchy-test-get_team_hierarchy_members_filters_names_case_insensitively-1792513046@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/f40c9dc213ecd8a3c70c46f605ac25f6?s=48&d=retro\",\"title\":null,\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "role": "admin"
+                  },
+                  "relationships": {
+                    "user": {
+                      "data": {
+                        "id": "501785dc-53da-49f8-ab50-8f375044cfa6",
+                        "type": "users"
+                      }
+                    }
+                  },
+                  "type": "team_memberships"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team/0c63ab5a-cef0-4717-9a2b-27381e95744a/memberships",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"TeamMembership-0c63ab5a-cef0-4717-9a2b-27381e95744a-71947475\",\"type\":\"team_memberships\",\"attributes\":{\"provisioned_by\":null,\"provisioned_by_id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"role\":\"admin\"},\"relationships\":{\"user\":{\"data\":{\"id\":\"501785dc-53da-49f8-ab50-8f375044cfa6\",\"type\":\"users\"}}}},\"included\":[{\"id\":\"501785dc-53da-49f8-ab50-8f375044cfa6\",\"type\":\"users\",\"attributes\":{\"disabled\":false,\"email\":\"hierarchy-test-get_team_hierarchy_members_filters_names_case_insensitively-1792513046@datadoghq.com\",\"handle\":\"hierarchy-test-get_team_hierarchy_members_filters_names_case_insensitively-1792513046@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/f40c9dc213ecd8a3c70c46f605ac25f6?d=retro\\u0026s=48\",\"name\":\"Hierarchy member\",\"service_account\":false,\"status\":\"Pending\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/team/e4ac0cab-3371-4195-9f62-97d89ce8616c/members",
+            "query": [
+              [
+                "filter[keyword]",
+                "hIeRaRcHy MeMbEr"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"UserTeamRelationship:e4ac0cab-3371-4195-9f62-97d89ce8616c:501785dc-53da-49f8-ab50-8f375044cfa6\",\"type\":\"user_team_relationship\",\"attributes\":{\"direct_role\":null,\"is_direct\":false,\"provisioned_by\":null,\"provisioned_by_id\":null},\"relationships\":{\"team\":{\"data\":{\"id\":\"e4ac0cab-3371-4195-9f62-97d89ce8616c\",\"type\":\"teams\"}},\"user\":{\"data\":{\"id\":\"501785dc-53da-49f8-ab50-8f375044cfa6\",\"type\":\"users\"}}}}],\"meta\":{\"page\":{\"type\":\"offset_limit\",\"offset\":0,\"limit\":100,\"total\":1,\"first_offset\":0,\"prev_offset\":null,\"next_offset\":null,\"last_offset\":0}},\"links\":{\"self\":\"https://api.datadoghq.com/api/v2/team/e4ac0cab-3371-4195-9f62-97d89ce8616c/members?filter%5Bkeyword%5D=hIeRaRcHy%20MeMbEr\",\"first\":\"https://api.datadoghq.com/api/v2/team/e4ac0cab-3371-4195-9f62-97d89ce8616c/members?filter[keyword]=hIeRaRcHy MeMbEr\\u0026page[limit]=100\\u0026page[offset]=0\",\"last\":\"https://api.datadoghq.com/api/v2/team/e4ac0cab-3371-4195-9f62-97d89ce8616c/members?filter[keyword]=hIeRaRcHy MeMbEr\\u0026page[limit]=100\\u0026page[offset]=0\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/0c63ab5a-cef0-4717-9a2b-27381e95744a/memberships/501785dc-53da-49f8-ab50-8f375044cfa6",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/501785dc-53da-49f8-ab50-8f375044cfa6",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team-hierarchy-links/dba101c0-a9de-4fc3-8c5e-8454f661b59e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/0c63ab5a-cef0-4717-9a2b-27381e95744a",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/e4ac0cab-3371-4195-9f62-97d89ce8616c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get team hierarchy members filters names case insensitively",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
+      "frozen_at": "2026-10-20T16:17:29.748Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "handle": "test-handle-ee75adac6bb6b536",
+                    "name": "test-name-ee75adac6bb6b536"
+                  },
+                  "type": "team"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a91b02e6-085c-4ac9-9289-58cd9ef4de65\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":3,\"created_at\":\"2026-10-20T16:17:29.934951+00:00\",\"description\":null,\"handle\":\"test-handle-ee75adac6bb6b536\",\"hidden_modules\":null,\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-10-20T16:17:29.934951+00:00\",\"name\":\"test-name-ee75adac6bb6b536\",\"summary\":null,\"user_count\":0,\"visible_modules\":null},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/a91b02e6-085c-4ac9-9289-58cd9ef4de65/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/a91b02e6-085c-4ac9-9289-58cd9ef4de65/permission-settings\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "handle": "test-handle-2-ee75adac6bb6b536",
+                    "name": "test-name-2-ee75adac6bb6b536"
+                  },
+                  "type": "team"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"cd9f6e4d-8c6c-4588-9b9d-3713d5e8f3f5\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":0,\"created_at\":\"2026-10-20T16:17:30.166541+00:00\",\"description\":null,\"handle\":\"test-handle-2-ee75adac6bb6b536\",\"hidden_modules\":null,\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-10-20T16:17:30.166541+00:00\",\"name\":\"test-name-2-ee75adac6bb6b536\",\"summary\":null,\"user_count\":0,\"visible_modules\":null},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/cd9f6e4d-8c6c-4588-9b9d-3713d5e8f3f5/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/cd9f6e4d-8c6c-4588-9b9d-3713d5e8f3f5/permission-settings\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "relationships": {
+                    "parent_team": {
+                      "data": {
+                        "id": "a91b02e6-085c-4ac9-9289-58cd9ef4de65",
+                        "type": "team"
+                      }
+                    },
+                    "sub_team": {
+                      "data": {
+                        "id": "cd9f6e4d-8c6c-4588-9b9d-3713d5e8f3f5",
+                        "type": "team"
+                      }
+                    }
+                  },
+                  "type": "team_hierarchy_links"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team-hierarchy-links",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"8a9c48f0-2635-4c6c-b908-b9d2719b782f\",\"type\":\"team_hierarchy_links\",\"attributes\":{\"created_at\":\"2026-10-20T16:17:30.450855109Z\",\"provisioned_by\":\"\"},\"relationships\":{\"parent_team\":{\"data\":{\"id\":\"a91b02e6-085c-4ac9-9289-58cd9ef4de65\",\"type\":\"team\"}},\"sub_team\":{\"data\":{\"id\":\"cd9f6e4d-8c6c-4588-9b9d-3713d5e8f3f5\",\"type\":\"team\"}}}},\"included\":[{\"id\":\"a91b02e6-085c-4ac9-9289-58cd9ef4de65\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":3,\"handle\":\"test-handle-ee75adac6bb6b536\",\"is_managed\":false,\"is_open_membership\":false,\"link_count\":0,\"name\":\"test-name-ee75adac6bb6b536\",\"summary\":null,\"user_count\":0}},{\"id\":\"cd9f6e4d-8c6c-4588-9b9d-3713d5e8f3f5\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":0,\"handle\":\"test-handle-2-ee75adac6bb6b536\",\"is_managed\":false,\"is_open_membership\":false,\"link_count\":0,\"name\":\"test-name-2-ee75adac6bb6b536\",\"summary\":null,\"user_count\":0}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "hierarchy-Test-Get_team_hierarchy_members_includes_inherited_users_with_null_root_membership_attributes-1792513049@datadoghq.com",
+                    "name": "Hierarchy member"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"807ce33a-757e-4558-ae87-d6e9b804c061\",\"attributes\":{\"uuid\":\"807ce33a-757e-4558-ae87-d6e9b804c061\",\"name\":\"Hierarchy member\",\"handle\":\"hierarchy-test-get_team_hierarchy_members_includes_inherited_users_with_null_root_membership_attributes-1792513049@datadoghq.com\",\"created_at\":\"2026-10-20T16:17:30.727618+00:00\",\"modified_at\":\"2026-10-20T16:17:30.727618+00:00\",\"email\":\"hierarchy-test-get_team_hierarchy_members_includes_inherited_users_with_null_root_membership_attributes-1792513049@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/2dcff54befe8933b11038dea8aeafd3e?s=48&d=retro\",\"title\":null,\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "role": "admin"
+                  },
+                  "relationships": {
+                    "user": {
+                      "data": {
+                        "id": "807ce33a-757e-4558-ae87-d6e9b804c061",
+                        "type": "users"
+                      }
+                    }
+                  },
+                  "type": "team_memberships"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team/cd9f6e4d-8c6c-4588-9b9d-3713d5e8f3f5/memberships",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"TeamMembership-cd9f6e4d-8c6c-4588-9b9d-3713d5e8f3f5-71947476\",\"type\":\"team_memberships\",\"attributes\":{\"provisioned_by\":null,\"provisioned_by_id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"role\":\"admin\"},\"relationships\":{\"user\":{\"data\":{\"id\":\"807ce33a-757e-4558-ae87-d6e9b804c061\",\"type\":\"users\"}}}},\"included\":[{\"id\":\"807ce33a-757e-4558-ae87-d6e9b804c061\",\"type\":\"users\",\"attributes\":{\"disabled\":false,\"email\":\"hierarchy-test-get_team_hierarchy_members_includes_inherited_users_with_null_root_membership_attributes-1792513049@datadoghq.com\",\"handle\":\"hierarchy-test-get_team_hierarchy_members_includes_inherited_users_with_null_root_membership_attributes-1792513049@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/2dcff54befe8933b11038dea8aeafd3e?d=retro\\u0026s=48\",\"name\":\"Hierarchy member\",\"service_account\":false,\"status\":\"Pending\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/team/a91b02e6-085c-4ac9-9289-58cd9ef4de65/members",
+            "query": [
+              [
+                "filter[keyword]",
+                "Test-Get_team_hierarchy_members_includes_inherited_users_with_null_root_membership_attributes-1792513049"
+              ],
+              [
+                "include",
+                "user,team"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"UserTeamRelationship:a91b02e6-085c-4ac9-9289-58cd9ef4de65:807ce33a-757e-4558-ae87-d6e9b804c061\",\"type\":\"user_team_relationship\",\"attributes\":{\"direct_role\":null,\"is_direct\":false,\"provisioned_by\":null,\"provisioned_by_id\":null},\"relationships\":{\"team\":{\"data\":{\"id\":\"a91b02e6-085c-4ac9-9289-58cd9ef4de65\",\"type\":\"teams\"}},\"user\":{\"data\":{\"id\":\"807ce33a-757e-4558-ae87-d6e9b804c061\",\"type\":\"users\"}}}}],\"meta\":{\"page\":{\"type\":\"offset_limit\",\"offset\":0,\"limit\":100,\"total\":1,\"first_offset\":0,\"prev_offset\":null,\"next_offset\":null,\"last_offset\":0}},\"links\":{\"self\":\"https://api.datadoghq.com/api/v2/team/a91b02e6-085c-4ac9-9289-58cd9ef4de65/members?filter%5Bkeyword%5D=Test-Get_team_hierarchy_members_includes_inherited_users_with_null_root_membership_attributes-1792513049\\u0026include=user%2Cteam\",\"first\":\"https://api.datadoghq.com/api/v2/team/a91b02e6-085c-4ac9-9289-58cd9ef4de65/members?filter[keyword]=Test-Get_team_hierarchy_members_includes_inherited_users_with_null_root_membership_attributes-1792513049\\u0026include=user,team\\u0026page[limit]=100\\u0026page[offset]=0\",\"last\":\"https://api.datadoghq.com/api/v2/team/a91b02e6-085c-4ac9-9289-58cd9ef4de65/members?filter[keyword]=Test-Get_team_hierarchy_members_includes_inherited_users_with_null_root_membership_attributes-1792513049\\u0026include=user,team\\u0026page[limit]=100\\u0026page[offset]=0\"},\"included\":[{\"id\":\"807ce33a-757e-4558-ae87-d6e9b804c061\",\"type\":\"users\",\"attributes\":{\"created_at\":\"2026-10-20T16:17:30.727618+00:00\",\"disabled\":false,\"email\":\"hierarchy-test-get_team_hierarchy_members_includes_inherited_users_with_null_root_membership_attributes-1792513049@datadoghq.com\",\"handle\":\"hierarchy-test-get_team_hierarchy_members_includes_inherited_users_with_null_root_membership_attributes-1792513049@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/2dcff54befe8933b11038dea8aeafd3e?d=retro\\u0026s=48\",\"modified_at\":\"2026-10-20T16:17:30.727618+00:00\",\"name\":\"Hierarchy member\",\"service_account\":false,\"status\":\"Pending\",\"title\":null,\"verified\":false}},{\"id\":\"a91b02e6-085c-4ac9-9289-58cd9ef4de65\",\"type\":\"teams\",\"attributes\":{\"handle\":\"test-handle-ee75adac6bb6b536\",\"name\":\"test-name-ee75adac6bb6b536\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/cd9f6e4d-8c6c-4588-9b9d-3713d5e8f3f5/memberships/807ce33a-757e-4558-ae87-d6e9b804c061",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/807ce33a-757e-4558-ae87-d6e9b804c061",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team-hierarchy-links/8a9c48f0-2635-4c6c-b908-b9d2719b782f",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/cd9f6e4d-8c6c-4588-9b9d-3713d5e8f3f5",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/a91b02e6-085c-4ac9-9289-58cd9ef4de65",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get team hierarchy members includes inherited users with null root membership attributes",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
+      "frozen_at": "2026-10-20T16:17:32.939Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "handle": "test-handle-3e67528452a8070e",
+                    "name": "test-name-3e67528452a8070e"
+                  },
+                  "type": "team"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"c3124fd1-8eae-456c-b095-5a895db68088\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":11,\"created_at\":\"2026-10-20T16:17:33.132728+00:00\",\"description\":null,\"handle\":\"test-handle-3e67528452a8070e\",\"hidden_modules\":null,\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-10-20T16:17:33.132729+00:00\",\"name\":\"test-name-3e67528452a8070e\",\"summary\":null,\"user_count\":0,\"visible_modules\":null},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/c3124fd1-8eae-456c-b095-5a895db68088/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/c3124fd1-8eae-456c-b095-5a895db68088/permission-settings\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "handle": "test-handle-2-3e67528452a8070e",
+                    "name": "test-name-2-3e67528452a8070e"
+                  },
+                  "type": "team"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"9e4773ce-3c0d-4a75-b7f9-9c02d15fc28e\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":5,\"created_at\":\"2026-10-20T16:17:33.386817+00:00\",\"description\":null,\"handle\":\"test-handle-2-3e67528452a8070e\",\"hidden_modules\":null,\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-10-20T16:17:33.386817+00:00\",\"name\":\"test-name-2-3e67528452a8070e\",\"summary\":null,\"user_count\":0,\"visible_modules\":null},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/9e4773ce-3c0d-4a75-b7f9-9c02d15fc28e/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/9e4773ce-3c0d-4a75-b7f9-9c02d15fc28e/permission-settings\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "relationships": {
+                    "parent_team": {
+                      "data": {
+                        "id": "c3124fd1-8eae-456c-b095-5a895db68088",
+                        "type": "team"
+                      }
+                    },
+                    "sub_team": {
+                      "data": {
+                        "id": "9e4773ce-3c0d-4a75-b7f9-9c02d15fc28e",
+                        "type": "team"
+                      }
+                    }
+                  },
+                  "type": "team_hierarchy_links"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team-hierarchy-links",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"3461c720-496e-4460-95a6-ffa94eed2cf7\",\"type\":\"team_hierarchy_links\",\"attributes\":{\"created_at\":\"2026-10-20T16:17:33.668267849Z\",\"provisioned_by\":\"\"},\"relationships\":{\"parent_team\":{\"data\":{\"id\":\"c3124fd1-8eae-456c-b095-5a895db68088\",\"type\":\"team\"}},\"sub_team\":{\"data\":{\"id\":\"9e4773ce-3c0d-4a75-b7f9-9c02d15fc28e\",\"type\":\"team\"}}}},\"included\":[{\"id\":\"c3124fd1-8eae-456c-b095-5a895db68088\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":11,\"handle\":\"test-handle-3e67528452a8070e\",\"is_managed\":false,\"is_open_membership\":false,\"link_count\":0,\"name\":\"test-name-3e67528452a8070e\",\"summary\":null,\"user_count\":0}},{\"id\":\"9e4773ce-3c0d-4a75-b7f9-9c02d15fc28e\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":5,\"handle\":\"test-handle-2-3e67528452a8070e\",\"is_managed\":false,\"is_open_membership\":false,\"link_count\":0,\"name\":\"test-name-2-3e67528452a8070e\",\"summary\":null,\"user_count\":0}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "hierarchy-Test-Get_team_hierarchy_members_paginates_by_number_and_size-1792513052@datadoghq.com",
+                    "name": "Hierarchy member"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"2be6a556-0719-4824-9f49-b4ec431a5132\",\"attributes\":{\"uuid\":\"2be6a556-0719-4824-9f49-b4ec431a5132\",\"name\":\"Hierarchy member\",\"handle\":\"hierarchy-test-get_team_hierarchy_members_paginates_by_number_and_size-1792513052@datadoghq.com\",\"created_at\":\"2026-10-20T16:17:33.995050+00:00\",\"modified_at\":\"2026-10-20T16:17:33.995050+00:00\",\"email\":\"hierarchy-test-get_team_hierarchy_members_paginates_by_number_and_size-1792513052@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/1f79bbc3a890dff5a6cf4fc912ef725d?s=48&d=retro\",\"title\":null,\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "role": "admin"
+                  },
+                  "relationships": {
+                    "user": {
+                      "data": {
+                        "id": "2be6a556-0719-4824-9f49-b4ec431a5132",
+                        "type": "users"
+                      }
+                    }
+                  },
+                  "type": "team_memberships"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team/9e4773ce-3c0d-4a75-b7f9-9c02d15fc28e/memberships",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"TeamMembership-9e4773ce-3c0d-4a75-b7f9-9c02d15fc28e-71947478\",\"type\":\"team_memberships\",\"attributes\":{\"provisioned_by\":null,\"provisioned_by_id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"role\":\"admin\"},\"relationships\":{\"user\":{\"data\":{\"id\":\"2be6a556-0719-4824-9f49-b4ec431a5132\",\"type\":\"users\"}}}},\"included\":[{\"id\":\"2be6a556-0719-4824-9f49-b4ec431a5132\",\"type\":\"users\",\"attributes\":{\"disabled\":false,\"email\":\"hierarchy-test-get_team_hierarchy_members_paginates_by_number_and_size-1792513052@datadoghq.com\",\"handle\":\"hierarchy-test-get_team_hierarchy_members_paginates_by_number_and_size-1792513052@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/1f79bbc3a890dff5a6cf4fc912ef725d?d=retro\\u0026s=48\",\"name\":\"Hierarchy member\",\"service_account\":false,\"status\":\"Pending\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Get_team_hierarchy_members_paginates_by_number_and_size-1792513052@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"2b1b56ec-9ae6-4ac7-acb5-f7ef7f576369\",\"attributes\":{\"uuid\":\"2b1b56ec-9ae6-4ac7-acb5-f7ef7f576369\",\"name\":null,\"handle\":\"test-get_team_hierarchy_members_paginates_by_number_and_size-1792513052@datadoghq.com\",\"created_at\":\"2026-10-20T16:17:34.571437+00:00\",\"modified_at\":\"2026-10-20T16:17:34.571437+00:00\",\"email\":\"test-get_team_hierarchy_members_paginates_by_number_and_size-1792513052@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/13facc5110340fafbef1c40dde1fdf48?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "role": "admin"
+                  },
+                  "relationships": {
+                    "user": {
+                      "data": {
+                        "id": "2b1b56ec-9ae6-4ac7-acb5-f7ef7f576369",
+                        "type": "users"
+                      }
+                    }
+                  },
+                  "type": "team_memberships"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team/c3124fd1-8eae-456c-b095-5a895db68088/memberships",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"TeamMembership-c3124fd1-8eae-456c-b095-5a895db68088-71947479\",\"type\":\"team_memberships\",\"attributes\":{\"provisioned_by\":null,\"provisioned_by_id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"role\":\"admin\"},\"relationships\":{\"user\":{\"data\":{\"id\":\"2b1b56ec-9ae6-4ac7-acb5-f7ef7f576369\",\"type\":\"users\"}}}},\"included\":[{\"id\":\"2b1b56ec-9ae6-4ac7-acb5-f7ef7f576369\",\"type\":\"users\",\"attributes\":{\"disabled\":false,\"email\":\"test-get_team_hierarchy_members_paginates_by_number_and_size-1792513052@datadoghq.com\",\"handle\":\"test-get_team_hierarchy_members_paginates_by_number_and_size-1792513052@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/13facc5110340fafbef1c40dde1fdf48?d=retro\\u0026s=48\",\"name\":null,\"service_account\":false,\"status\":\"Pending\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/team/c3124fd1-8eae-456c-b095-5a895db68088/members",
+            "query": [
+              [
+                "filter[keyword]",
+                "Test-Get_team_hierarchy_members_paginates_by_number_and_size-1792513052"
+              ],
+              [
+                "page[number]",
+                "1"
+              ],
+              [
+                "page[size]",
+                "1"
+              ],
+              [
+                "sort",
+                "-is_direct"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"UserTeamRelationship:c3124fd1-8eae-456c-b095-5a895db68088:2be6a556-0719-4824-9f49-b4ec431a5132\",\"type\":\"user_team_relationship\",\"attributes\":{\"direct_role\":null,\"is_direct\":false,\"provisioned_by\":null,\"provisioned_by_id\":null},\"relationships\":{\"team\":{\"data\":{\"id\":\"c3124fd1-8eae-456c-b095-5a895db68088\",\"type\":\"teams\"}},\"user\":{\"data\":{\"id\":\"2be6a556-0719-4824-9f49-b4ec431a5132\",\"type\":\"users\"}}}}],\"meta\":{\"page\":{\"type\":\"number_size\",\"number\":1,\"size\":1,\"total\":2,\"first_number\":0,\"prev_number\":0,\"next_number\":null,\"last_number\":1}},\"links\":{\"self\":\"https://api.datadoghq.com/api/v2/team/c3124fd1-8eae-456c-b095-5a895db68088/members?filter%5Bkeyword%5D=Test-Get_team_hierarchy_members_paginates_by_number_and_size-1792513052\\u0026sort=-is_direct\\u0026page%5Bnumber%5D=1\\u0026page%5Bsize%5D=1\",\"first\":\"https://api.datadoghq.com/api/v2/team/c3124fd1-8eae-456c-b095-5a895db68088/members?filter[keyword]=Test-Get_team_hierarchy_members_paginates_by_number_and_size-1792513052\\u0026page[number]=0\\u0026page[size]=1\\u0026sort=-is_direct\",\"last\":\"https://api.datadoghq.com/api/v2/team/c3124fd1-8eae-456c-b095-5a895db68088/members?filter[keyword]=Test-Get_team_hierarchy_members_paginates_by_number_and_size-1792513052\\u0026page[number]=1\\u0026page[size]=1\\u0026sort=-is_direct\",\"prev\":\"https://api.datadoghq.com/api/v2/team/c3124fd1-8eae-456c-b095-5a895db68088/members?filter[keyword]=Test-Get_team_hierarchy_members_paginates_by_number_and_size-1792513052\\u0026page[number]=0\\u0026page[size]=1\\u0026sort=-is_direct\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/c3124fd1-8eae-456c-b095-5a895db68088/memberships/2b1b56ec-9ae6-4ac7-acb5-f7ef7f576369",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/2b1b56ec-9ae6-4ac7-acb5-f7ef7f576369",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/9e4773ce-3c0d-4a75-b7f9-9c02d15fc28e/memberships/2be6a556-0719-4824-9f49-b4ec431a5132",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/2be6a556-0719-4824-9f49-b4ec431a5132",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team-hierarchy-links/3461c720-496e-4460-95a6-ffa94eed2cf7",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/9e4773ce-3c0d-4a75-b7f9-9c02d15fc28e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/c3124fd1-8eae-456c-b095-5a895db68088",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get team hierarchy members paginates by number and size",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
+      "frozen_at": "2026-10-20T16:17:38.097Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "handle": "test-handle-d99fb67a9032e747",
+                    "name": "test-name-d99fb67a9032e747"
+                  },
+                  "type": "team"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"94df68fe-05bb-466e-9d5f-c469ec3da203\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":9,\"created_at\":\"2026-10-20T16:17:38.275526+00:00\",\"description\":null,\"handle\":\"test-handle-d99fb67a9032e747\",\"hidden_modules\":null,\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-10-20T16:17:38.275526+00:00\",\"name\":\"test-name-d99fb67a9032e747\",\"summary\":null,\"user_count\":0,\"visible_modules\":null},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/94df68fe-05bb-466e-9d5f-c469ec3da203/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/94df68fe-05bb-466e-9d5f-c469ec3da203/permission-settings\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/team/94df68fe-05bb-466e-9d5f-c469ec3da203/members",
+            "query": [
+              [
+                "include",
+                "descendants"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Invalid Parameter\",\"detail\":\"'descendants' is not a valid value for include. Supported values are: [user, team]\",\"source\":{\"parameter\":\"include\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/94df68fe-05bb-466e-9d5f-c469ec3da203",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get team hierarchy members rejects unsupported includes",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
+      "frozen_at": "2026-10-20T16:17:38.859Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "handle": "test-handle-940bd9caf95f93ca",
+                    "name": "test-name-940bd9caf95f93ca"
+                  },
+                  "type": "team"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"94164ef6-ed82-41af-a152-9d5a5b540a92\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":3,\"created_at\":\"2026-10-20T16:17:39.041449+00:00\",\"description\":null,\"handle\":\"test-handle-940bd9caf95f93ca\",\"hidden_modules\":null,\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-10-20T16:17:39.041449+00:00\",\"name\":\"test-name-940bd9caf95f93ca\",\"summary\":null,\"user_count\":0,\"visible_modules\":null},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/94164ef6-ed82-41af-a152-9d5a5b540a92/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/94164ef6-ed82-41af-a152-9d5a5b540a92/permission-settings\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/team/94164ef6-ed82-41af-a152-9d5a5b540a92/members",
+            "query": [
+              [
+                "sort",
+                "invalid"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Invalid Parameter\",\"detail\":\"'invalid' is not a valid sort parameter. Supported sort parameters are: [name, handle, is_direct, provisioned_by]\",\"source\":{\"parameter\":\"sort\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/94164ef6-ed82-41af-a152-9d5a5b540a92",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get team hierarchy members returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
+      "frozen_at": "2026-10-20T16:17:39.613Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/team/00000000-0000-4000-8000-000000000000/members",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"no team found (teamId=00000000-0000-4000-8000-000000000000)\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get team hierarchy members returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
+      "frozen_at": "2026-10-20T16:17:39.824Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "handle": "test-handle-21fa5a1bbb13a2ca",
+                    "name": "test-name-21fa5a1bbb13a2ca"
+                  },
+                  "type": "team"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"02d2a4eb-5ead-425c-8950-07a4b01bec2c\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":10,\"created_at\":\"2026-10-20T16:17:40.006116+00:00\",\"description\":null,\"handle\":\"test-handle-21fa5a1bbb13a2ca\",\"hidden_modules\":null,\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-10-20T16:17:40.006116+00:00\",\"name\":\"test-name-21fa5a1bbb13a2ca\",\"summary\":null,\"user_count\":0,\"visible_modules\":null},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/02d2a4eb-5ead-425c-8950-07a4b01bec2c/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/02d2a4eb-5ead-425c-8950-07a4b01bec2c/permission-settings\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Get_team_hierarchy_members_returns_OK_response-1792513059@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"a7b523b6-c43f-4435-8e0e-066635294c54\",\"attributes\":{\"uuid\":\"a7b523b6-c43f-4435-8e0e-066635294c54\",\"name\":null,\"handle\":\"test-get_team_hierarchy_members_returns_ok_response-1792513059@datadoghq.com\",\"created_at\":\"2026-10-20T16:17:40.294873+00:00\",\"modified_at\":\"2026-10-20T16:17:40.294873+00:00\",\"email\":\"test-get_team_hierarchy_members_returns_ok_response-1792513059@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/98de8457708c5ef1a3fdbdb16833255f?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "role": "admin"
+                  },
+                  "relationships": {
+                    "user": {
+                      "data": {
+                        "id": "a7b523b6-c43f-4435-8e0e-066635294c54",
+                        "type": "users"
+                      }
+                    }
+                  },
+                  "type": "team_memberships"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team/02d2a4eb-5ead-425c-8950-07a4b01bec2c/memberships",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"TeamMembership-02d2a4eb-5ead-425c-8950-07a4b01bec2c-71947480\",\"type\":\"team_memberships\",\"attributes\":{\"provisioned_by\":null,\"provisioned_by_id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"role\":\"admin\"},\"relationships\":{\"user\":{\"data\":{\"id\":\"a7b523b6-c43f-4435-8e0e-066635294c54\",\"type\":\"users\"}}}},\"included\":[{\"id\":\"a7b523b6-c43f-4435-8e0e-066635294c54\",\"type\":\"users\",\"attributes\":{\"disabled\":false,\"email\":\"test-get_team_hierarchy_members_returns_ok_response-1792513059@datadoghq.com\",\"handle\":\"test-get_team_hierarchy_members_returns_ok_response-1792513059@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/98de8457708c5ef1a3fdbdb16833255f?d=retro\\u0026s=48\",\"name\":null,\"service_account\":false,\"status\":\"Pending\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/team/02d2a4eb-5ead-425c-8950-07a4b01bec2c/members",
+            "query": [
+              [
+                "filter[keyword]",
+                "test-get_team_hierarchy_members_returns_ok_response-1792513059@datadoghq.com"
+              ],
+              [
+                "include",
+                "user,team"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"UserTeamRelationship:02d2a4eb-5ead-425c-8950-07a4b01bec2c:a7b523b6-c43f-4435-8e0e-066635294c54\",\"type\":\"user_team_relationship\",\"attributes\":{\"direct_role\":\"admin\",\"is_direct\":true,\"provisioned_by\":null,\"provisioned_by_id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\"},\"relationships\":{\"team\":{\"data\":{\"id\":\"02d2a4eb-5ead-425c-8950-07a4b01bec2c\",\"type\":\"teams\"}},\"user\":{\"data\":{\"id\":\"a7b523b6-c43f-4435-8e0e-066635294c54\",\"type\":\"users\"}}}}],\"meta\":{\"page\":{\"type\":\"offset_limit\",\"offset\":0,\"limit\":100,\"total\":1,\"first_offset\":0,\"prev_offset\":null,\"next_offset\":null,\"last_offset\":0}},\"links\":{\"self\":\"https://api.datadoghq.com/api/v2/team/02d2a4eb-5ead-425c-8950-07a4b01bec2c/members?filter%5Bkeyword%5D=test-get_team_hierarchy_members_returns_ok_response-1792513059%40datadoghq.com\\u0026include=user%2Cteam\",\"first\":\"https://api.datadoghq.com/api/v2/team/02d2a4eb-5ead-425c-8950-07a4b01bec2c/members?filter[keyword]=test-get_team_hierarchy_members_returns_ok_response-1792513059@datadoghq.com\\u0026include=user,team\\u0026page[limit]=100\\u0026page[offset]=0\",\"last\":\"https://api.datadoghq.com/api/v2/team/02d2a4eb-5ead-425c-8950-07a4b01bec2c/members?filter[keyword]=test-get_team_hierarchy_members_returns_ok_response-1792513059@datadoghq.com\\u0026include=user,team\\u0026page[limit]=100\\u0026page[offset]=0\"},\"included\":[{\"id\":\"a7b523b6-c43f-4435-8e0e-066635294c54\",\"type\":\"users\",\"attributes\":{\"created_at\":\"2026-10-20T16:17:40.294873+00:00\",\"disabled\":false,\"email\":\"test-get_team_hierarchy_members_returns_ok_response-1792513059@datadoghq.com\",\"handle\":\"test-get_team_hierarchy_members_returns_ok_response-1792513059@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/98de8457708c5ef1a3fdbdb16833255f?d=retro\\u0026s=48\",\"modified_at\":\"2026-10-20T16:17:40.294873+00:00\",\"name\":null,\"service_account\":false,\"status\":\"Pending\",\"title\":\"user title\",\"verified\":false}},{\"id\":\"02d2a4eb-5ead-425c-8950-07a4b01bec2c\",\"type\":\"teams\",\"attributes\":{\"handle\":\"test-handle-21fa5a1bbb13a2ca\",\"name\":\"test-name-21fa5a1bbb13a2ca\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/02d2a4eb-5ead-425c-8950-07a4b01bec2c/memberships/a7b523b6-c43f-4435-8e0e-066635294c54",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/a7b523b6-c43f-4435-8e0e-066635294c54",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/02d2a4eb-5ead-425c-8950-07a4b01bec2c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get team hierarchy members returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
+      "frozen_at": "2026-10-21T18:20:16.586Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "handle": "test-handle-63ea1132a02fda4d",
+                    "name": "test-name-63ea1132a02fda4d"
+                  },
+                  "type": "team"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"4aa6a28c-26fb-4835-a93c-a7afbf705ac1\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":14,\"created_at\":\"2026-10-21T18:20:18.752288+00:00\",\"description\":null,\"handle\":\"test-handle-63ea1132a02fda4d\",\"hidden_modules\":null,\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-10-21T18:20:18.752288+00:00\",\"name\":\"test-name-63ea1132a02fda4d\",\"summary\":null,\"user_count\":0,\"visible_modules\":null},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/4aa6a28c-26fb-4835-a93c-a7afbf705ac1/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/4aa6a28c-26fb-4835-a93c-a7afbf705ac1/permission-settings\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "handle": "test-handle-2-63ea1132a02fda4d",
+                    "name": "test-name-2-63ea1132a02fda4d"
+                  },
+                  "type": "team"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"b44fa329-8ba1-4302-a15e-a7fa51cd29b1\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":2,\"created_at\":\"2026-10-21T18:20:18.847457+00:00\",\"description\":null,\"handle\":\"test-handle-2-63ea1132a02fda4d\",\"hidden_modules\":null,\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-10-21T18:20:18.847457+00:00\",\"name\":\"test-name-2-63ea1132a02fda4d\",\"summary\":null,\"user_count\":0,\"visible_modules\":null},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/b44fa329-8ba1-4302-a15e-a7fa51cd29b1/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/b44fa329-8ba1-4302-a15e-a7fa51cd29b1/permission-settings\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "relationships": {
+                    "parent_team": {
+                      "data": {
+                        "id": "4aa6a28c-26fb-4835-a93c-a7afbf705ac1",
+                        "type": "team"
+                      }
+                    },
+                    "sub_team": {
+                      "data": {
+                        "id": "b44fa329-8ba1-4302-a15e-a7fa51cd29b1",
+                        "type": "team"
+                      }
+                    }
+                  },
+                  "type": "team_hierarchy_links"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team-hierarchy-links",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"7da37475-d6ed-42c1-ac7f-1dc7fec6f47b\",\"type\":\"team_hierarchy_links\",\"attributes\":{\"created_at\":\"2026-10-21T18:20:18.985967055Z\",\"provisioned_by\":\"\"},\"relationships\":{\"parent_team\":{\"data\":{\"id\":\"4aa6a28c-26fb-4835-a93c-a7afbf705ac1\",\"type\":\"team\"}},\"sub_team\":{\"data\":{\"id\":\"b44fa329-8ba1-4302-a15e-a7fa51cd29b1\",\"type\":\"team\"}}}},\"included\":[{\"id\":\"4aa6a28c-26fb-4835-a93c-a7afbf705ac1\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":14,\"handle\":\"test-handle-63ea1132a02fda4d\",\"is_managed\":false,\"is_open_membership\":false,\"link_count\":0,\"name\":\"test-name-63ea1132a02fda4d\",\"summary\":null,\"user_count\":0}},{\"id\":\"b44fa329-8ba1-4302-a15e-a7fa51cd29b1\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":2,\"handle\":\"test-handle-2-63ea1132a02fda4d\",\"is_managed\":false,\"is_open_membership\":false,\"link_count\":0,\"name\":\"test-name-2-63ea1132a02fda4d\",\"summary\":null,\"user_count\":0}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "hierarchy-Test-Get_team_hierarchy_members_returns_OK_response_with_pagination-1792606816@datadoghq.com",
+                    "name": "Hierarchy member"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"332ea5af-400d-44a9-b41e-a5050b389474\",\"attributes\":{\"uuid\":\"332ea5af-400d-44a9-b41e-a5050b389474\",\"name\":\"Hierarchy member\",\"handle\":\"hierarchy-test-get_team_hierarchy_members_returns_ok_response_with_pagination-1792606816@datadoghq.com\",\"created_at\":\"2026-10-21T18:20:19.092003+00:00\",\"modified_at\":\"2026-10-21T18:20:19.092003+00:00\",\"email\":\"hierarchy-test-get_team_hierarchy_members_returns_ok_response_with_pagination-1792606816@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/e5b9ac26b0638c99cd37f45dfe223311?s=48&d=retro\",\"title\":null,\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "role": "admin"
+                  },
+                  "relationships": {
+                    "user": {
+                      "data": {
+                        "id": "332ea5af-400d-44a9-b41e-a5050b389474",
+                        "type": "users"
+                      }
+                    }
+                  },
+                  "type": "team_memberships"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team/b44fa329-8ba1-4302-a15e-a7fa51cd29b1/memberships",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"TeamMembership-b44fa329-8ba1-4302-a15e-a7fa51cd29b1-71972306\",\"type\":\"team_memberships\",\"attributes\":{\"provisioned_by\":null,\"provisioned_by_id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"role\":\"admin\"},\"relationships\":{\"user\":{\"data\":{\"id\":\"332ea5af-400d-44a9-b41e-a5050b389474\",\"type\":\"users\"}}}},\"included\":[{\"id\":\"332ea5af-400d-44a9-b41e-a5050b389474\",\"type\":\"users\",\"attributes\":{\"disabled\":false,\"email\":\"hierarchy-test-get_team_hierarchy_members_returns_ok_response_with_pagination-1792606816@datadoghq.com\",\"handle\":\"hierarchy-test-get_team_hierarchy_members_returns_ok_response_with_pagination-1792606816@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/e5b9ac26b0638c99cd37f45dfe223311?d=retro\\u0026s=48\",\"name\":\"Hierarchy member\",\"service_account\":false,\"status\":\"Pending\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Get_team_hierarchy_members_returns_OK_response_with_pagination-1792606816@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"5e946e21-2624-4259-8251-6e7ad76b5a2e\",\"attributes\":{\"uuid\":\"5e946e21-2624-4259-8251-6e7ad76b5a2e\",\"name\":null,\"handle\":\"test-get_team_hierarchy_members_returns_ok_response_with_pagination-1792606816@datadoghq.com\",\"created_at\":\"2026-10-21T18:20:19.353764+00:00\",\"modified_at\":\"2026-10-21T18:20:19.353764+00:00\",\"email\":\"test-get_team_hierarchy_members_returns_ok_response_with_pagination-1792606816@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/138b79b2d02fad9102b8cb5ef1ab21c9?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "role": "admin"
+                  },
+                  "relationships": {
+                    "user": {
+                      "data": {
+                        "id": "5e946e21-2624-4259-8251-6e7ad76b5a2e",
+                        "type": "users"
+                      }
+                    }
+                  },
+                  "type": "team_memberships"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team/4aa6a28c-26fb-4835-a93c-a7afbf705ac1/memberships",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"TeamMembership-4aa6a28c-26fb-4835-a93c-a7afbf705ac1-71972307\",\"type\":\"team_memberships\",\"attributes\":{\"provisioned_by\":null,\"provisioned_by_id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"role\":\"admin\"},\"relationships\":{\"user\":{\"data\":{\"id\":\"5e946e21-2624-4259-8251-6e7ad76b5a2e\",\"type\":\"users\"}}}},\"included\":[{\"id\":\"5e946e21-2624-4259-8251-6e7ad76b5a2e\",\"type\":\"users\",\"attributes\":{\"disabled\":false,\"email\":\"test-get_team_hierarchy_members_returns_ok_response_with_pagination-1792606816@datadoghq.com\",\"handle\":\"test-get_team_hierarchy_members_returns_ok_response_with_pagination-1792606816@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/138b79b2d02fad9102b8cb5ef1ab21c9?d=retro\\u0026s=48\",\"name\":null,\"service_account\":false,\"status\":\"Pending\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/team/4aa6a28c-26fb-4835-a93c-a7afbf705ac1/members",
+            "query": [
+              [
+                "filter[keyword]",
+                "Test-Get_team_hierarchy_members_returns_OK_response_with_pagination-1792606816"
+              ],
+              [
+                "page[number]",
+                "0"
+              ],
+              [
+                "page[size]",
+                "1"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"UserTeamRelationship:4aa6a28c-26fb-4835-a93c-a7afbf705ac1:5e946e21-2624-4259-8251-6e7ad76b5a2e\",\"type\":\"user_team_relationship\",\"attributes\":{\"direct_role\":\"admin\",\"is_direct\":true,\"provisioned_by\":null,\"provisioned_by_id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\"},\"relationships\":{\"team\":{\"data\":{\"id\":\"4aa6a28c-26fb-4835-a93c-a7afbf705ac1\",\"type\":\"teams\"}},\"user\":{\"data\":{\"id\":\"5e946e21-2624-4259-8251-6e7ad76b5a2e\",\"type\":\"users\"}}}}],\"meta\":{\"page\":{\"type\":\"number_size\",\"number\":0,\"size\":1,\"total\":2,\"first_number\":0,\"prev_number\":null,\"next_number\":1,\"last_number\":1}},\"links\":{\"self\":\"https://api.datadoghq.com/api/v2/team/4aa6a28c-26fb-4835-a93c-a7afbf705ac1/members?filter%5Bkeyword%5D=Test-Get_team_hierarchy_members_returns_OK_response_with_pagination-1792606816\\u0026page%5Bsize%5D=1\\u0026page%5Bnumber%5D=0\",\"first\":\"https://api.datadoghq.com/api/v2/team/4aa6a28c-26fb-4835-a93c-a7afbf705ac1/members?filter[keyword]=Test-Get_team_hierarchy_members_returns_OK_response_with_pagination-1792606816\\u0026page[number]=0\\u0026page[size]=1\",\"last\":\"https://api.datadoghq.com/api/v2/team/4aa6a28c-26fb-4835-a93c-a7afbf705ac1/members?filter[keyword]=Test-Get_team_hierarchy_members_returns_OK_response_with_pagination-1792606816\\u0026page[number]=1\\u0026page[size]=1\",\"next\":\"https://api.datadoghq.com/api/v2/team/4aa6a28c-26fb-4835-a93c-a7afbf705ac1/members?filter[keyword]=Test-Get_team_hierarchy_members_returns_OK_response_with_pagination-1792606816\\u0026page[number]=1\\u0026page[size]=1\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/team/4aa6a28c-26fb-4835-a93c-a7afbf705ac1/members",
+            "query": [
+              [
+                "filter[keyword]",
+                "Test-Get_team_hierarchy_members_returns_OK_response_with_pagination-1792606816"
+              ],
+              [
+                "page[number]",
+                "1"
+              ],
+              [
+                "page[size]",
+                "1"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"UserTeamRelationship:4aa6a28c-26fb-4835-a93c-a7afbf705ac1:332ea5af-400d-44a9-b41e-a5050b389474\",\"type\":\"user_team_relationship\",\"attributes\":{\"direct_role\":null,\"is_direct\":false,\"provisioned_by\":null,\"provisioned_by_id\":null},\"relationships\":{\"team\":{\"data\":{\"id\":\"4aa6a28c-26fb-4835-a93c-a7afbf705ac1\",\"type\":\"teams\"}},\"user\":{\"data\":{\"id\":\"332ea5af-400d-44a9-b41e-a5050b389474\",\"type\":\"users\"}}}}],\"meta\":{\"page\":{\"type\":\"number_size\",\"number\":1,\"size\":1,\"total\":2,\"first_number\":0,\"prev_number\":0,\"next_number\":null,\"last_number\":1}},\"links\":{\"self\":\"https://api.datadoghq.com/api/v2/team/4aa6a28c-26fb-4835-a93c-a7afbf705ac1/members?filter%5Bkeyword%5D=Test-Get_team_hierarchy_members_returns_OK_response_with_pagination-1792606816\\u0026page%5Bsize%5D=1\\u0026page%5Bnumber%5D=1\",\"first\":\"https://api.datadoghq.com/api/v2/team/4aa6a28c-26fb-4835-a93c-a7afbf705ac1/members?filter[keyword]=Test-Get_team_hierarchy_members_returns_OK_response_with_pagination-1792606816\\u0026page[number]=0\\u0026page[size]=1\",\"last\":\"https://api.datadoghq.com/api/v2/team/4aa6a28c-26fb-4835-a93c-a7afbf705ac1/members?filter[keyword]=Test-Get_team_hierarchy_members_returns_OK_response_with_pagination-1792606816\\u0026page[number]=1\\u0026page[size]=1\",\"prev\":\"https://api.datadoghq.com/api/v2/team/4aa6a28c-26fb-4835-a93c-a7afbf705ac1/members?filter[keyword]=Test-Get_team_hierarchy_members_returns_OK_response_with_pagination-1792606816\\u0026page[number]=0\\u0026page[size]=1\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/team/4aa6a28c-26fb-4835-a93c-a7afbf705ac1/members",
+            "query": [
+              [
+                "filter[keyword]",
+                "Test-Get_team_hierarchy_members_returns_OK_response_with_pagination-1792606816"
+              ],
+              [
+                "page[number]",
+                "2"
+              ],
+              [
+                "page[size]",
+                "1"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[],\"meta\":{\"page\":{\"type\":\"number_size\",\"number\":2,\"size\":1,\"total\":2,\"first_number\":0,\"prev_number\":1,\"next_number\":null,\"last_number\":1}},\"links\":{\"self\":\"https://api.datadoghq.com/api/v2/team/4aa6a28c-26fb-4835-a93c-a7afbf705ac1/members?filter%5Bkeyword%5D=Test-Get_team_hierarchy_members_returns_OK_response_with_pagination-1792606816\\u0026page%5Bsize%5D=1\\u0026page%5Bnumber%5D=2\",\"first\":\"https://api.datadoghq.com/api/v2/team/4aa6a28c-26fb-4835-a93c-a7afbf705ac1/members?filter[keyword]=Test-Get_team_hierarchy_members_returns_OK_response_with_pagination-1792606816\\u0026page[number]=0\\u0026page[size]=1\",\"last\":\"https://api.datadoghq.com/api/v2/team/4aa6a28c-26fb-4835-a93c-a7afbf705ac1/members?filter[keyword]=Test-Get_team_hierarchy_members_returns_OK_response_with_pagination-1792606816\\u0026page[number]=1\\u0026page[size]=1\",\"prev\":\"https://api.datadoghq.com/api/v2/team/4aa6a28c-26fb-4835-a93c-a7afbf705ac1/members?filter[keyword]=Test-Get_team_hierarchy_members_returns_OK_response_with_pagination-1792606816\\u0026page[number]=1\\u0026page[size]=1\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/4aa6a28c-26fb-4835-a93c-a7afbf705ac1/memberships/5e946e21-2624-4259-8251-6e7ad76b5a2e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/5e946e21-2624-4259-8251-6e7ad76b5a2e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/b44fa329-8ba1-4302-a15e-a7fa51cd29b1/memberships/332ea5af-400d-44a9-b41e-a5050b389474",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/332ea5af-400d-44a9-b41e-a5050b389474",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team-hierarchy-links/7da37475-d6ed-42c1-ac7f-1dc7fec6f47b",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/b44fa329-8ba1-4302-a15e-a7fa51cd29b1",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/4aa6a28c-26fb-4835-a93c-a7afbf705ac1",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get team hierarchy members returns \"OK\" response with pagination",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
+      "frozen_at": "2026-10-20T16:17:41.933Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "handle": "test-handle-ec9daca7dd9a1540",
+                    "name": "test-name-ec9daca7dd9a1540"
+                  },
+                  "type": "team"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"8c0b2465-ebba-491a-ac4c-20134ed219a5\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":5,\"created_at\":\"2026-10-20T16:17:42.121783+00:00\",\"description\":null,\"handle\":\"test-handle-ec9daca7dd9a1540\",\"hidden_modules\":null,\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-10-20T16:17:42.121783+00:00\",\"name\":\"test-name-ec9daca7dd9a1540\",\"summary\":null,\"user_count\":0,\"visible_modules\":null},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/8c0b2465-ebba-491a-ac4c-20134ed219a5/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/8c0b2465-ebba-491a-ac4c-20134ed219a5/permission-settings\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "handle": "test-handle-2-ec9daca7dd9a1540",
+                    "name": "test-name-2-ec9daca7dd9a1540"
+                  },
+                  "type": "team"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"e978614e-5d76-4908-98e7-2903bfcccdba\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":8,\"created_at\":\"2026-10-20T16:17:42.368024+00:00\",\"description\":null,\"handle\":\"test-handle-2-ec9daca7dd9a1540\",\"hidden_modules\":null,\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-10-20T16:17:42.368024+00:00\",\"name\":\"test-name-2-ec9daca7dd9a1540\",\"summary\":null,\"user_count\":0,\"visible_modules\":null},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/e978614e-5d76-4908-98e7-2903bfcccdba/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/e978614e-5d76-4908-98e7-2903bfcccdba/permission-settings\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "relationships": {
+                    "parent_team": {
+                      "data": {
+                        "id": "8c0b2465-ebba-491a-ac4c-20134ed219a5",
+                        "type": "team"
+                      }
+                    },
+                    "sub_team": {
+                      "data": {
+                        "id": "e978614e-5d76-4908-98e7-2903bfcccdba",
+                        "type": "team"
+                      }
+                    }
+                  },
+                  "type": "team_hierarchy_links"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team-hierarchy-links",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"f24c2d02-2043-4b18-980a-a7f7da74865f\",\"type\":\"team_hierarchy_links\",\"attributes\":{\"created_at\":\"2026-10-20T16:17:42.660142606Z\",\"provisioned_by\":\"\"},\"relationships\":{\"parent_team\":{\"data\":{\"id\":\"8c0b2465-ebba-491a-ac4c-20134ed219a5\",\"type\":\"team\"}},\"sub_team\":{\"data\":{\"id\":\"e978614e-5d76-4908-98e7-2903bfcccdba\",\"type\":\"team\"}}}},\"included\":[{\"id\":\"8c0b2465-ebba-491a-ac4c-20134ed219a5\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":5,\"handle\":\"test-handle-ec9daca7dd9a1540\",\"is_managed\":false,\"is_open_membership\":false,\"link_count\":0,\"name\":\"test-name-ec9daca7dd9a1540\",\"summary\":null,\"user_count\":0}},{\"id\":\"e978614e-5d76-4908-98e7-2903bfcccdba\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":8,\"handle\":\"test-handle-2-ec9daca7dd9a1540\",\"is_managed\":false,\"is_open_membership\":false,\"link_count\":0,\"name\":\"test-name-2-ec9daca7dd9a1540\",\"summary\":null,\"user_count\":0}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "hierarchy-Test-Get_team_hierarchy_members_returns_empty_results-1792513061@datadoghq.com",
+                    "name": "Hierarchy member"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"afff5e9a-383d-4642-a062-4c3ea544f977\",\"attributes\":{\"uuid\":\"afff5e9a-383d-4642-a062-4c3ea544f977\",\"name\":\"Hierarchy member\",\"handle\":\"hierarchy-test-get_team_hierarchy_members_returns_empty_results-1792513061@datadoghq.com\",\"created_at\":\"2026-10-20T16:17:42.933104+00:00\",\"modified_at\":\"2026-10-20T16:17:42.933104+00:00\",\"email\":\"hierarchy-test-get_team_hierarchy_members_returns_empty_results-1792513061@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/c1f0829035833d29dcc79619ead1d412?s=48&d=retro\",\"title\":null,\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "role": "admin"
+                  },
+                  "relationships": {
+                    "user": {
+                      "data": {
+                        "id": "afff5e9a-383d-4642-a062-4c3ea544f977",
+                        "type": "users"
+                      }
+                    }
+                  },
+                  "type": "team_memberships"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team/e978614e-5d76-4908-98e7-2903bfcccdba/memberships",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"TeamMembership-e978614e-5d76-4908-98e7-2903bfcccdba-71947481\",\"type\":\"team_memberships\",\"attributes\":{\"provisioned_by\":null,\"provisioned_by_id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"role\":\"admin\"},\"relationships\":{\"user\":{\"data\":{\"id\":\"afff5e9a-383d-4642-a062-4c3ea544f977\",\"type\":\"users\"}}}},\"included\":[{\"id\":\"afff5e9a-383d-4642-a062-4c3ea544f977\",\"type\":\"users\",\"attributes\":{\"disabled\":false,\"email\":\"hierarchy-test-get_team_hierarchy_members_returns_empty_results-1792513061@datadoghq.com\",\"handle\":\"hierarchy-test-get_team_hierarchy_members_returns_empty_results-1792513061@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/c1f0829035833d29dcc79619ead1d412?d=retro\\u0026s=48\",\"name\":\"Hierarchy member\",\"service_account\":false,\"status\":\"Pending\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/team/8c0b2465-ebba-491a-ac4c-20134ed219a5/members",
+            "query": [
+              [
+                "filter[keyword]",
+                "no-matching-member-Test-Get_team_hierarchy_members_returns_empty_results-1792513061"
+              ],
+              [
+                "include",
+                "user,team"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[],\"meta\":{\"page\":{\"type\":\"offset_limit\",\"offset\":0,\"limit\":100,\"total\":0,\"first_offset\":0,\"prev_offset\":null,\"next_offset\":null,\"last_offset\":0}},\"links\":{\"self\":\"https://api.datadoghq.com/api/v2/team/8c0b2465-ebba-491a-ac4c-20134ed219a5/members?filter%5Bkeyword%5D=no-matching-member-Test-Get_team_hierarchy_members_returns_empty_results-1792513061\\u0026include=user%2Cteam\",\"first\":\"https://api.datadoghq.com/api/v2/team/8c0b2465-ebba-491a-ac4c-20134ed219a5/members?filter[keyword]=no-matching-member-Test-Get_team_hierarchy_members_returns_empty_results-1792513061\\u0026include=user,team\\u0026page[limit]=100\\u0026page[offset]=0\",\"last\":\"https://api.datadoghq.com/api/v2/team/8c0b2465-ebba-491a-ac4c-20134ed219a5/members?filter[keyword]=no-matching-member-Test-Get_team_hierarchy_members_returns_empty_results-1792513061\\u0026include=user,team\\u0026page[limit]=100\\u0026page[offset]=0\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/e978614e-5d76-4908-98e7-2903bfcccdba/memberships/afff5e9a-383d-4642-a062-4c3ea544f977",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/afff5e9a-383d-4642-a062-4c3ea544f977",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team-hierarchy-links/f24c2d02-2043-4b18-980a-a7f7da74865f",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/e978614e-5d76-4908-98e7-2903bfcccdba",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/8c0b2465-ebba-491a-ac4c-20134ed219a5",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get team hierarchy members returns empty results",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
+      "frozen_at": "2026-10-20T16:17:46.133Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "handle": "test-handle-16f197d2db3daaf0",
+                    "name": "test-name-16f197d2db3daaf0"
+                  },
+                  "type": "team"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"6fa845c4-6c51-48d9-a26d-a6652963d3d7\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":5,\"created_at\":\"2026-10-20T16:17:46.313985+00:00\",\"description\":null,\"handle\":\"test-handle-16f197d2db3daaf0\",\"hidden_modules\":null,\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-10-20T16:17:46.313985+00:00\",\"name\":\"test-name-16f197d2db3daaf0\",\"summary\":null,\"user_count\":0,\"visible_modules\":null},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/6fa845c4-6c51-48d9-a26d-a6652963d3d7/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/6fa845c4-6c51-48d9-a26d-a6652963d3d7/permission-settings\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "handle": "test-handle-2-16f197d2db3daaf0",
+                    "name": "test-name-2-16f197d2db3daaf0"
+                  },
+                  "type": "team"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"eb2f597e-e374-495b-bc3b-50c26fcee0ee\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":5,\"created_at\":\"2026-10-20T16:17:46.560941+00:00\",\"description\":null,\"handle\":\"test-handle-2-16f197d2db3daaf0\",\"hidden_modules\":null,\"is_managed\":false,\"link_count\":0,\"modified_at\":\"2026-10-20T16:17:46.560941+00:00\",\"name\":\"test-name-2-16f197d2db3daaf0\",\"summary\":null,\"user_count\":0,\"visible_modules\":null},\"relationships\":{\"team_links\":{\"data\":[],\"links\":{\"related\":\"/api/v2/team/eb2f597e-e374-495b-bc3b-50c26fcee0ee/links\"}},\"user_team_permissions\":{\"data\":null,\"links\":{\"related\":\"/api/v2/team/eb2f597e-e374-495b-bc3b-50c26fcee0ee/permission-settings\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "relationships": {
+                    "parent_team": {
+                      "data": {
+                        "id": "6fa845c4-6c51-48d9-a26d-a6652963d3d7",
+                        "type": "team"
+                      }
+                    },
+                    "sub_team": {
+                      "data": {
+                        "id": "eb2f597e-e374-495b-bc3b-50c26fcee0ee",
+                        "type": "team"
+                      }
+                    }
+                  },
+                  "type": "team_hierarchy_links"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team-hierarchy-links",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"5793ec72-5e73-46ca-b0c3-6a74e1d64a42\",\"type\":\"team_hierarchy_links\",\"attributes\":{\"created_at\":\"2026-10-20T16:17:46.859388416Z\",\"provisioned_by\":\"\"},\"relationships\":{\"parent_team\":{\"data\":{\"id\":\"6fa845c4-6c51-48d9-a26d-a6652963d3d7\",\"type\":\"team\"}},\"sub_team\":{\"data\":{\"id\":\"eb2f597e-e374-495b-bc3b-50c26fcee0ee\",\"type\":\"team\"}}}},\"included\":[{\"id\":\"6fa845c4-6c51-48d9-a26d-a6652963d3d7\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":5,\"handle\":\"test-handle-16f197d2db3daaf0\",\"is_managed\":false,\"is_open_membership\":false,\"link_count\":0,\"name\":\"test-name-16f197d2db3daaf0\",\"summary\":null,\"user_count\":0}},{\"id\":\"eb2f597e-e374-495b-bc3b-50c26fcee0ee\",\"type\":\"team\",\"attributes\":{\"avatar\":null,\"banner\":5,\"handle\":\"test-handle-2-16f197d2db3daaf0\",\"is_managed\":false,\"is_open_membership\":false,\"link_count\":0,\"name\":\"test-name-2-16f197d2db3daaf0\",\"summary\":null,\"user_count\":0}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "hierarchy-Test-Get_team_hierarchy_members_sorts_inherited_members_before_direct_members-1792513066@datadoghq.com",
+                    "name": "Hierarchy member"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"7ac4c748-1222-4b8e-962b-a6470458bee1\",\"attributes\":{\"uuid\":\"7ac4c748-1222-4b8e-962b-a6470458bee1\",\"name\":\"Hierarchy member\",\"handle\":\"hierarchy-test-get_team_hierarchy_members_sorts_inherited_members_before_direct_members-1792513066@datadoghq.com\",\"created_at\":\"2026-10-20T16:17:47.351948+00:00\",\"modified_at\":\"2026-10-20T16:17:47.351948+00:00\",\"email\":\"hierarchy-test-get_team_hierarchy_members_sorts_inherited_members_before_direct_members-1792513066@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/3efe3bed3f3e2280994c99d58611d129?s=48&d=retro\",\"title\":null,\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "role": "admin"
+                  },
+                  "relationships": {
+                    "user": {
+                      "data": {
+                        "id": "7ac4c748-1222-4b8e-962b-a6470458bee1",
+                        "type": "users"
+                      }
+                    }
+                  },
+                  "type": "team_memberships"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team/eb2f597e-e374-495b-bc3b-50c26fcee0ee/memberships",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"TeamMembership-eb2f597e-e374-495b-bc3b-50c26fcee0ee-71947482\",\"type\":\"team_memberships\",\"attributes\":{\"provisioned_by\":null,\"provisioned_by_id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"role\":\"admin\"},\"relationships\":{\"user\":{\"data\":{\"id\":\"7ac4c748-1222-4b8e-962b-a6470458bee1\",\"type\":\"users\"}}}},\"included\":[{\"id\":\"7ac4c748-1222-4b8e-962b-a6470458bee1\",\"type\":\"users\",\"attributes\":{\"disabled\":false,\"email\":\"hierarchy-test-get_team_hierarchy_members_sorts_inherited_members_before_direct_members-1792513066@datadoghq.com\",\"handle\":\"hierarchy-test-get_team_hierarchy_members_sorts_inherited_members_before_direct_members-1792513066@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/3efe3bed3f3e2280994c99d58611d129?d=retro\\u0026s=48\",\"name\":\"Hierarchy member\",\"service_account\":false,\"status\":\"Pending\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Get_team_hierarchy_members_sorts_inherited_members_before_direct_members-1792513066@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"49945882-0401-4210-82ca-d248e90069dc\",\"attributes\":{\"uuid\":\"49945882-0401-4210-82ca-d248e90069dc\",\"name\":null,\"handle\":\"test-get_team_hierarchy_members_sorts_inherited_members_before_direct_members-1792513066@datadoghq.com\",\"created_at\":\"2026-10-20T16:17:47.899573+00:00\",\"modified_at\":\"2026-10-20T16:17:47.899573+00:00\",\"email\":\"test-get_team_hierarchy_members_sorts_inherited_members_before_direct_members-1792513066@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/daaffb4fa55f118ee9b31eb5e0ee2d79?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "role": "admin"
+                  },
+                  "relationships": {
+                    "user": {
+                      "data": {
+                        "id": "49945882-0401-4210-82ca-d248e90069dc",
+                        "type": "users"
+                      }
+                    }
+                  },
+                  "type": "team_memberships"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/team/6fa845c4-6c51-48d9-a26d-a6652963d3d7/memberships",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"TeamMembership-6fa845c4-6c51-48d9-a26d-a6652963d3d7-71947483\",\"type\":\"team_memberships\",\"attributes\":{\"provisioned_by\":null,\"provisioned_by_id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"role\":\"admin\"},\"relationships\":{\"user\":{\"data\":{\"id\":\"49945882-0401-4210-82ca-d248e90069dc\",\"type\":\"users\"}}}},\"included\":[{\"id\":\"49945882-0401-4210-82ca-d248e90069dc\",\"type\":\"users\",\"attributes\":{\"disabled\":false,\"email\":\"test-get_team_hierarchy_members_sorts_inherited_members_before_direct_members-1792513066@datadoghq.com\",\"handle\":\"test-get_team_hierarchy_members_sorts_inherited_members_before_direct_members-1792513066@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/daaffb4fa55f118ee9b31eb5e0ee2d79?d=retro\\u0026s=48\",\"name\":null,\"service_account\":false,\"status\":\"Pending\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/team/6fa845c4-6c51-48d9-a26d-a6652963d3d7/members",
+            "query": [
+              [
+                "filter[keyword]",
+                "Test-Get_team_hierarchy_members_sorts_inherited_members_before_direct_members-1792513066"
+              ],
+              [
+                "sort",
+                "is_direct,-name"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"UserTeamRelationship:6fa845c4-6c51-48d9-a26d-a6652963d3d7:7ac4c748-1222-4b8e-962b-a6470458bee1\",\"type\":\"user_team_relationship\",\"attributes\":{\"direct_role\":null,\"is_direct\":false,\"provisioned_by\":null,\"provisioned_by_id\":null},\"relationships\":{\"team\":{\"data\":{\"id\":\"6fa845c4-6c51-48d9-a26d-a6652963d3d7\",\"type\":\"teams\"}},\"user\":{\"data\":{\"id\":\"7ac4c748-1222-4b8e-962b-a6470458bee1\",\"type\":\"users\"}}}},{\"id\":\"UserTeamRelationship:6fa845c4-6c51-48d9-a26d-a6652963d3d7:49945882-0401-4210-82ca-d248e90069dc\",\"type\":\"user_team_relationship\",\"attributes\":{\"direct_role\":\"admin\",\"is_direct\":true,\"provisioned_by\":null,\"provisioned_by_id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\"},\"relationships\":{\"team\":{\"data\":{\"id\":\"6fa845c4-6c51-48d9-a26d-a6652963d3d7\",\"type\":\"teams\"}},\"user\":{\"data\":{\"id\":\"49945882-0401-4210-82ca-d248e90069dc\",\"type\":\"users\"}}}}],\"meta\":{\"page\":{\"type\":\"offset_limit\",\"offset\":0,\"limit\":100,\"total\":2,\"first_offset\":0,\"prev_offset\":null,\"next_offset\":null,\"last_offset\":0}},\"links\":{\"self\":\"https://api.datadoghq.com/api/v2/team/6fa845c4-6c51-48d9-a26d-a6652963d3d7/members?filter%5Bkeyword%5D=Test-Get_team_hierarchy_members_sorts_inherited_members_before_direct_members-1792513066\\u0026sort=is_direct%2C-name\",\"first\":\"https://api.datadoghq.com/api/v2/team/6fa845c4-6c51-48d9-a26d-a6652963d3d7/members?filter[keyword]=Test-Get_team_hierarchy_members_sorts_inherited_members_before_direct_members-1792513066\\u0026page[limit]=100\\u0026page[offset]=0\\u0026sort=is_direct,-name\",\"last\":\"https://api.datadoghq.com/api/v2/team/6fa845c4-6c51-48d9-a26d-a6652963d3d7/members?filter[keyword]=Test-Get_team_hierarchy_members_sorts_inherited_members_before_direct_members-1792513066\\u0026page[limit]=100\\u0026page[offset]=0\\u0026sort=is_direct,-name\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/6fa845c4-6c51-48d9-a26d-a6652963d3d7/memberships/49945882-0401-4210-82ca-d248e90069dc",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/49945882-0401-4210-82ca-d248e90069dc",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/eb2f597e-e374-495b-bc3b-50c26fcee0ee/memberships/7ac4c748-1222-4b8e-962b-a6470458bee1",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/7ac4c748-1222-4b8e-962b-a6470458bee1",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team-hierarchy-links/5793ec72-5e73-46ca-b0c3-6a74e1d64a42",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/eb2f597e-e374-495b-bc3b-50c26fcee0ee",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/6fa845c4-6c51-48d9-a26d-a6652963d3d7",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get team hierarchy members sorts inherited members before direct members",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
       "frozen_at": "2023-08-21T19:44:49.337Z",
       "interactions": [
         {

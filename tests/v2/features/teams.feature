@@ -379,6 +379,233 @@ Feature: Teams
     Then the response status is 200 OK
 
   @team:ddoghq/teams-and-ownership
+  Scenario: Get team hierarchy members deduplicates direct and inherited membership
+    Given operation "ListTeamHierarchyMembers" enabled
+    And new "ListTeamHierarchyMembers" request
+    And there is a valid "dd_team" in the system
+    And there is a valid "dd_team_2" in the system
+    And there is a valid "team_hierarchy_link" in the system
+    And there is a valid "team_hierarchy_user" in the system
+    And there is a valid "team_hierarchy_child_membership" in the system
+    And there is a valid "user" in the system
+    And there is a valid "team_membership" in the system
+    And there is a valid "team_hierarchy_duplicate_membership" in the system
+    And request contains "team_id" parameter from "dd_team.data.id"
+    And request contains "filter[keyword]" parameter with value "{{ unique }}"
+    And request contains "sort" parameter with value "-is_direct,handle"
+    And request contains "include" parameter with value "team"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 2
+    And the response "meta.page.total" is equal to 2
+    And the response "data[0].relationships.user.data.id" is equal to "{{ user.data.id }}"
+    And the response "data[0].attributes.is_direct" is equal to true
+    And the response "data[0].attributes.direct_role" is equal to "admin"
+    And the response "data[1].relationships.user.data.id" is equal to "{{ team_hierarchy_user.data.id }}"
+    And the response "data[1].attributes.is_direct" is equal to false
+    And the response "included" has length 1
+    And the response "included[0].id" is equal to "{{ dd_team.data.id }}"
+
+  @team:ddoghq/teams-and-ownership
+  Scenario: Get team hierarchy members filters direct members
+    Given operation "ListTeamHierarchyMembers" enabled
+    And new "ListTeamHierarchyMembers" request
+    And there is a valid "dd_team" in the system
+    And there is a valid "dd_team_2" in the system
+    And there is a valid "team_hierarchy_link" in the system
+    And there is a valid "team_hierarchy_user" in the system
+    And there is a valid "team_hierarchy_child_membership" in the system
+    And there is a valid "user" in the system
+    And there is a valid "team_membership" in the system
+    And request contains "team_id" parameter from "dd_team.data.id"
+    And request contains "filter[keyword]" parameter with value "{{ unique }}"
+    And request contains "filter[is_direct_only]" parameter with value true
+    And request contains "filter[include_service_accounts]" parameter with value false
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 1
+    And the response "data[0].relationships.user.data.id" is equal to "{{ user.data.id }}"
+    And the response "data[0].attributes.is_direct" is equal to true
+
+  @team:ddoghq/teams-and-ownership
+  Scenario: Get team hierarchy members filters names case insensitively
+    Given operation "ListTeamHierarchyMembers" enabled
+    And new "ListTeamHierarchyMembers" request
+    And there is a valid "dd_team" in the system
+    And there is a valid "dd_team_2" in the system
+    And there is a valid "team_hierarchy_link" in the system
+    And there is a valid "team_hierarchy_user" in the system
+    And there is a valid "team_hierarchy_child_membership" in the system
+    And request contains "team_id" parameter from "dd_team.data.id"
+    And request contains "filter[keyword]" parameter with value "hIeRaRcHy MeMbEr"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 1
+    And the response "data[0].relationships.user.data.id" is equal to "{{ team_hierarchy_user.data.id }}"
+
+  @team:ddoghq/teams-and-ownership
+  Scenario: Get team hierarchy members includes inherited users with null root membership attributes
+    Given operation "ListTeamHierarchyMembers" enabled
+    And new "ListTeamHierarchyMembers" request
+    And there is a valid "dd_team" in the system
+    And there is a valid "dd_team_2" in the system
+    And there is a valid "team_hierarchy_link" in the system
+    And there is a valid "team_hierarchy_user" in the system
+    And there is a valid "team_hierarchy_child_membership" in the system
+    And request contains "team_id" parameter from "dd_team.data.id"
+    And request contains "filter[keyword]" parameter with value "{{ unique }}"
+    And request contains "include" parameter with value "user,team"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 1
+    And the response "data[0].attributes.is_direct" is equal to false
+    And the response "data[0].attributes.direct_role" is equal to null
+    And the response "data[0].attributes.provisioned_by" is equal to null
+    And the response "data[0].attributes.provisioned_by_id" is equal to null
+    And the response "data[0].relationships.user.data.id" is equal to "{{ team_hierarchy_user.data.id }}"
+    And the response "data[0].relationships.team.data.id" is equal to "{{ dd_team.data.id }}"
+    And the response "included" has length 2
+    And the response "included" has item with field "id" with value "{{ dd_team.data.id }}"
+
+  @team:ddoghq/teams-and-ownership
+  Scenario: Get team hierarchy members paginates by number and size
+    Given operation "ListTeamHierarchyMembers" enabled
+    And new "ListTeamHierarchyMembers" request
+    And there is a valid "dd_team" in the system
+    And there is a valid "dd_team_2" in the system
+    And there is a valid "team_hierarchy_link" in the system
+    And there is a valid "team_hierarchy_user" in the system
+    And there is a valid "team_hierarchy_child_membership" in the system
+    And there is a valid "user" in the system
+    And there is a valid "team_membership" in the system
+    And request contains "team_id" parameter from "dd_team.data.id"
+    And request contains "filter[keyword]" parameter with value "{{ unique }}"
+    And request contains "sort" parameter with value "-is_direct"
+    And request contains "page[number]" parameter with value 1
+    And request contains "page[size]" parameter with value 1
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 1
+    And the response "data[0].attributes.is_direct" is equal to false
+    And the response "meta.page.type" is equal to "number_size"
+    And the response "meta.page.number" is equal to 1
+    And the response "meta.page.size" is equal to 1
+    And the response "meta.page.total" is equal to 2
+
+  @skip-ruby @team:ddoghq/teams-and-ownership
+  Scenario: Get team hierarchy members rejects unsupported includes
+    Given operation "ListTeamHierarchyMembers" enabled
+    And new "ListTeamHierarchyMembers" request
+    And there is a valid "dd_team" in the system
+    And request contains "team_id" parameter from "dd_team.data.id"
+    And request contains "include" parameter with value "descendants"
+    When the request is sent
+    Then the response status is 400 Bad Request
+    And the response "errors[0].status" is equal to "400"
+
+  @team:ddoghq/teams-and-ownership
+  Scenario: Get team hierarchy members returns "Bad Request" response
+    Given operation "ListTeamHierarchyMembers" enabled
+    And new "ListTeamHierarchyMembers" request
+    And there is a valid "dd_team" in the system
+    And request contains "team_id" parameter from "dd_team.data.id"
+    And request contains "sort" parameter with value "invalid"
+    When the request is sent
+    Then the response status is 400 Bad Request
+    And the response "errors[0].status" is equal to "400"
+
+  @team:ddoghq/teams-and-ownership
+  Scenario: Get team hierarchy members returns "Not Found" response
+    Given operation "ListTeamHierarchyMembers" enabled
+    And new "ListTeamHierarchyMembers" request
+    And request contains "team_id" parameter with value "00000000-0000-4000-8000-000000000000"
+    When the request is sent
+    Then the response status is 404 Not Found
+    And the response "errors[0].status" is equal to "404"
+
+  @team:ddoghq/teams-and-ownership
+  Scenario: Get team hierarchy members returns "OK" response
+    Given operation "ListTeamHierarchyMembers" enabled
+    And new "ListTeamHierarchyMembers" request
+    And there is a valid "dd_team" in the system
+    And there is a valid "user" in the system
+    And there is a valid "team_membership" in the system
+    And request contains "team_id" parameter from "dd_team.data.id"
+    And request contains "filter[keyword]" parameter with value "{{ user.data.attributes.email }}"
+    And request contains "include" parameter with value "user,team"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 1
+    And the response "data[0].id" is equal to "UserTeamRelationship:{{ dd_team.data.id }}:{{ user.data.id }}"
+    And the response "data[0].type" is equal to "user_team_relationship"
+    And the response "data[0].attributes.is_direct" is equal to true
+    And the response "data[0].attributes.direct_role" is equal to "admin"
+    And the response "data[0].relationships.user.data.type" is equal to "users"
+    And the response "data[0].relationships.team.data.type" is equal to "teams"
+    And the response "data[0].relationships.team.data.id" is equal to "{{ dd_team.data.id }}"
+    And the response "included" has length 2
+    And the response "included" has item with field "id" with value "{{ user.data.id }}"
+    And the response "included" has item with field "id" with value "{{ dd_team.data.id }}"
+    And the response "meta.page.type" is equal to "offset_limit"
+    And the response "meta.page.limit" is equal to 100
+    And the response "meta.page.total" is equal to 1
+
+  @team:ddoghq/teams-and-ownership @with-pagination
+  Scenario: Get team hierarchy members returns "OK" response with pagination
+    Given operation "ListTeamHierarchyMembers" enabled
+    And new "ListTeamHierarchyMembers" request
+    And there is a valid "dd_team" in the system
+    And there is a valid "dd_team_2" in the system
+    And there is a valid "team_hierarchy_link" in the system
+    And there is a valid "team_hierarchy_user" in the system
+    And there is a valid "team_hierarchy_child_membership" in the system
+    And there is a valid "user" in the system
+    And there is a valid "team_membership" in the system
+    And request contains "team_id" parameter from "dd_team.data.id"
+    And request contains "filter[keyword]" parameter with value "{{ unique }}"
+    And request contains "page[size]" parameter with value 1
+    When the request with pagination is sent
+    Then the response status is 200 OK
+    And the response has 2 items
+
+  @team:ddoghq/teams-and-ownership
+  Scenario: Get team hierarchy members returns empty results
+    Given operation "ListTeamHierarchyMembers" enabled
+    And new "ListTeamHierarchyMembers" request
+    And there is a valid "dd_team" in the system
+    And there is a valid "dd_team_2" in the system
+    And there is a valid "team_hierarchy_link" in the system
+    And there is a valid "team_hierarchy_user" in the system
+    And there is a valid "team_hierarchy_child_membership" in the system
+    And request contains "team_id" parameter from "dd_team.data.id"
+    And request contains "filter[keyword]" parameter with value "no-matching-member-{{ unique }}"
+    And request contains "include" parameter with value "user,team"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 0
+    And the response "meta.page.total" is equal to 0
+
+  @team:ddoghq/teams-and-ownership
+  Scenario: Get team hierarchy members sorts inherited members before direct members
+    Given operation "ListTeamHierarchyMembers" enabled
+    And new "ListTeamHierarchyMembers" request
+    And there is a valid "dd_team" in the system
+    And there is a valid "dd_team_2" in the system
+    And there is a valid "team_hierarchy_link" in the system
+    And there is a valid "team_hierarchy_user" in the system
+    And there is a valid "team_hierarchy_child_membership" in the system
+    And there is a valid "user" in the system
+    And there is a valid "team_membership" in the system
+    And request contains "team_id" parameter from "dd_team.data.id"
+    And request contains "filter[keyword]" parameter with value "{{ unique }}"
+    And request contains "sort" parameter with value "is_direct,-name"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 2
+    And the response "data[0].relationships.user.data.id" is equal to "{{ team_hierarchy_user.data.id }}"
+    And the response "data[1].relationships.user.data.id" is equal to "{{ user.data.id }}"
+
+  @team:ddoghq/teams-and-ownership
   Scenario: Get team memberships returns "API error response." response
     Given new "GetTeamMemberships" request
     And request contains "team_id" parameter with value "REPLACE.ME"
