@@ -7875,7 +7875,72 @@ from datadog_api_client.v2.model.on_call_notification_rule_request_attributes im
 )
 from datadog_api_client.v2.model.on_call_notification_rule_type import OnCallNotificationRuleType
 from datadog_api_client.v2.model.on_call_notification_rules_included import OnCallNotificationRulesIncluded
+from datadog_api_client.v2.model.on_call_page_author_relationship import OnCallPageAuthorRelationship
+from datadog_api_client.v2.model.on_call_page_author_relationship_data import OnCallPageAuthorRelationshipData
+from datadog_api_client.v2.model.on_call_page_data import OnCallPageData
+from datadog_api_client.v2.model.on_call_page_data_attributes import OnCallPageDataAttributes
+from datadog_api_client.v2.model.on_call_page_data_relationships import OnCallPageDataRelationships
+from datadog_api_client.v2.model.on_call_page_data_type import OnCallPageDataType
+from datadog_api_client.v2.model.on_call_page_jira_issue_relationship import OnCallPageJiraIssueRelationship
+from datadog_api_client.v2.model.on_call_page_jira_issue_relationship_data import OnCallPageJiraIssueRelationshipData
+from datadog_api_client.v2.model.on_call_page_jira_issue_type import OnCallPageJiraIssueType
+from datadog_api_client.v2.model.on_call_page_link import OnCallPageLink
+from datadog_api_client.v2.model.on_call_page_link_attributes import OnCallPageLinkAttributes
+from datadog_api_client.v2.model.on_call_page_link_entity_type import OnCallPageLinkEntityType
+from datadog_api_client.v2.model.on_call_page_link_relationship_data import OnCallPageLinkRelationshipData
+from datadog_api_client.v2.model.on_call_page_link_relationship_type import OnCallPageLinkRelationshipType
+from datadog_api_client.v2.model.on_call_page_link_type import OnCallPageLinkType
+from datadog_api_client.v2.model.on_call_page_links_relationship import OnCallPageLinksRelationship
+from datadog_api_client.v2.model.on_call_page_live_call import OnCallPageLiveCall
+from datadog_api_client.v2.model.on_call_page_live_call_outcome import OnCallPageLiveCallOutcome
+from datadog_api_client.v2.model.on_call_page_live_call_over import OnCallPageLiveCallOver
+from datadog_api_client.v2.model.on_call_page_release_origin import OnCallPageReleaseOrigin
+from datadog_api_client.v2.model.on_call_page_responders_relationship import OnCallPageRespondersRelationship
+from datadog_api_client.v2.model.on_call_page_response import OnCallPageResponse
+from datadog_api_client.v2.model.on_call_page_scheduled_action import OnCallPageScheduledAction
+from datadog_api_client.v2.model.on_call_page_scheduled_action_attributes import OnCallPageScheduledActionAttributes
+from datadog_api_client.v2.model.on_call_page_scheduled_action_attributes_type import (
+    OnCallPageScheduledActionAttributesType,
+)
+from datadog_api_client.v2.model.on_call_page_scheduled_action_relationship import OnCallPageScheduledActionRelationship
+from datadog_api_client.v2.model.on_call_page_scheduled_action_relationship_data import (
+    OnCallPageScheduledActionRelationshipData,
+)
+from datadog_api_client.v2.model.on_call_page_scheduled_action_relationships import (
+    OnCallPageScheduledActionRelationships,
+)
+from datadog_api_client.v2.model.on_call_page_scheduled_action_relationships_schedules import (
+    OnCallPageScheduledActionRelationshipsSchedules,
+)
+from datadog_api_client.v2.model.on_call_page_scheduled_action_relationships_schedules_data import (
+    OnCallPageScheduledActionRelationshipsSchedulesData,
+)
+from datadog_api_client.v2.model.on_call_page_scheduled_action_relationships_users import (
+    OnCallPageScheduledActionRelationshipsUsers,
+)
+from datadog_api_client.v2.model.on_call_page_scheduled_action_type import OnCallPageScheduledActionType
+from datadog_api_client.v2.model.on_call_page_service_now_incident_relationship import (
+    OnCallPageServiceNowIncidentRelationship,
+)
+from datadog_api_client.v2.model.on_call_page_service_now_incident_relationship_data import (
+    OnCallPageServiceNowIncidentRelationshipData,
+)
+from datadog_api_client.v2.model.on_call_page_service_now_incident_type import OnCallPageServiceNowIncidentType
+from datadog_api_client.v2.model.on_call_page_status import OnCallPageStatus
+from datadog_api_client.v2.model.on_call_page_target_relationship import OnCallPageTargetRelationship
+from datadog_api_client.v2.model.on_call_page_target_relationship_data import OnCallPageTargetRelationshipData
+from datadog_api_client.v2.model.on_call_page_target_relationship_data_type import OnCallPageTargetRelationshipDataType
 from datadog_api_client.v2.model.on_call_page_target_type import OnCallPageTargetType
+from datadog_api_client.v2.model.on_call_page_team_routing_rule_relationship import (
+    OnCallPageTeamRoutingRuleRelationship,
+)
+from datadog_api_client.v2.model.on_call_page_team_routing_rule_relationship_data import (
+    OnCallPageTeamRoutingRuleRelationshipData,
+)
+from datadog_api_client.v2.model.on_call_page_user_relationship_data import OnCallPageUserRelationshipData
+from datadog_api_client.v2.model.on_call_pages_included import OnCallPagesIncluded
+from datadog_api_client.v2.model.on_call_pages_response import OnCallPagesResponse
+from datadog_api_client.v2.model.on_call_pages_sort import OnCallPagesSort
 from datadog_api_client.v2.model.on_call_phone_notification_rule_method import OnCallPhoneNotificationRuleMethod
 from datadog_api_client.v2.model.on_call_phone_notification_rule_settings import OnCallPhoneNotificationRuleSettings
 from datadog_api_client.v2.model.on_call_shift_change_trigger import OnCallShiftChangeTrigger
@@ -18099,7 +18164,52 @@ __all__ = [
     "OnCallNotificationRuleRequestAttributes",
     "OnCallNotificationRuleType",
     "OnCallNotificationRulesIncluded",
+    "OnCallPageAuthorRelationship",
+    "OnCallPageAuthorRelationshipData",
+    "OnCallPageData",
+    "OnCallPageDataAttributes",
+    "OnCallPageDataRelationships",
+    "OnCallPageDataType",
+    "OnCallPageJiraIssueRelationship",
+    "OnCallPageJiraIssueRelationshipData",
+    "OnCallPageJiraIssueType",
+    "OnCallPageLink",
+    "OnCallPageLinkAttributes",
+    "OnCallPageLinkEntityType",
+    "OnCallPageLinkRelationshipData",
+    "OnCallPageLinkRelationshipType",
+    "OnCallPageLinkType",
+    "OnCallPageLinksRelationship",
+    "OnCallPageLiveCall",
+    "OnCallPageLiveCallOutcome",
+    "OnCallPageLiveCallOver",
+    "OnCallPageReleaseOrigin",
+    "OnCallPageRespondersRelationship",
+    "OnCallPageResponse",
+    "OnCallPageScheduledAction",
+    "OnCallPageScheduledActionAttributes",
+    "OnCallPageScheduledActionAttributesType",
+    "OnCallPageScheduledActionRelationship",
+    "OnCallPageScheduledActionRelationshipData",
+    "OnCallPageScheduledActionRelationships",
+    "OnCallPageScheduledActionRelationshipsSchedules",
+    "OnCallPageScheduledActionRelationshipsSchedulesData",
+    "OnCallPageScheduledActionRelationshipsUsers",
+    "OnCallPageScheduledActionType",
+    "OnCallPageServiceNowIncidentRelationship",
+    "OnCallPageServiceNowIncidentRelationshipData",
+    "OnCallPageServiceNowIncidentType",
+    "OnCallPageStatus",
+    "OnCallPageTargetRelationship",
+    "OnCallPageTargetRelationshipData",
+    "OnCallPageTargetRelationshipDataType",
     "OnCallPageTargetType",
+    "OnCallPageTeamRoutingRuleRelationship",
+    "OnCallPageTeamRoutingRuleRelationshipData",
+    "OnCallPageUserRelationshipData",
+    "OnCallPagesIncluded",
+    "OnCallPagesResponse",
+    "OnCallPagesSort",
     "OnCallPhoneNotificationRuleMethod",
     "OnCallPhoneNotificationRuleSettings",
     "OnCallShiftChangeTrigger",

@@ -6693,11 +6693,23 @@
       "type": "idempotent"
     }
   },
+  "ListOnCallPages": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateOnCallPage": {
     "tag": "On-Call Paging",
     "undo": {
       "parameters": [],
       "type": "unsafe"
+    }
+  },
+  "GetOnCallPage": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "safe"
     }
   },
   "AcknowledgeOnCallPage": {

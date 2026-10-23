@@ -10,29 +10,29 @@ Feature: On-Call Paging
     And an instance of "On-CallPaging" API
 
   @generated @skip @team:ddoghq/on-call
-  Scenario: Acknowledge On-Call Page returns "Accepted." response
+  Scenario: Acknowledge On-Call Page returns "No Content." response
     Given new "AcknowledgeOnCallPage" request
     And request contains "page_id" parameter from "REPLACE.ME"
     When the request is sent
-    Then the response status is 202 Accepted.
+    Then the response status is 204 No Content.
 
   @generated @skip @team:ddoghq/on-call
-  Scenario: Create On-Call Page returns "OK." response
+  Scenario: Create On-Call Page returns "Created." response
     Given new "CreateOnCallPage" request
     And body with value {"data": {"attributes": {"description": "Page details.", "tags": ["service:test"], "target": {"identifier": "my-team", "type": "team_handle"}, "title": "Page title", "urgency": "low"}, "type": "pages"}}
     When the request is sent
-    Then the response status is 200 OK.
+    Then the response status is 201 Created.
 
   @generated @skip @team:ddoghq/on-call
-  Scenario: Escalate On-Call Page returns "Accepted." response
+  Scenario: Escalate On-Call Page returns "No Content." response
     Given new "EscalateOnCallPage" request
     And request contains "page_id" parameter from "REPLACE.ME"
     When the request is sent
-    Then the response status is 202 Accepted.
+    Then the response status is 204 No Content.
 
   @generated @skip @team:ddoghq/on-call
-  Scenario: Resolve On-Call Page returns "Accepted." response
+  Scenario: Resolve On-Call Page returns "No Content." response
     Given new "ResolveOnCallPage" request
     And request contains "page_id" parameter from "REPLACE.ME"
     When the request is sent
-    Then the response status is 202 Accepted.
+    Then the response status is 204 No Content.

@@ -48,7 +48,7 @@ class CreateNotificationChannelData(ModelNormal):
         :param attributes: Attributes for creating an on-call notification channel.
         :type attributes: CreateNotificationChannelAttributes, optional
 
-        :param type: Indicates that the resource is of type 'notification_channels'.
+        :param type: Indicates that the resource is of type ``notification_channels``.
         :type type: NotificationChannelType
         """
         if attributes is not unset:

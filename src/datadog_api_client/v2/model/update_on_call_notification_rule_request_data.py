@@ -66,7 +66,7 @@ class UpdateOnCallNotificationRuleRequestData(ModelNormal):
         :param relationships: Relationship object for creating a notification rule
         :type relationships: OnCallNotificationRuleRelationships, optional
 
-        :param type: Indicates that the resource is of type 'notification_rules'.
+        :param type: Indicates that the resource is of type ``notification_rules``.
         :type type: OnCallNotificationRuleType
         """
         if attributes is not unset:

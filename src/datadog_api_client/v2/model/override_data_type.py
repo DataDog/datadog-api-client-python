@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class OverrideDataType(ModelSimple):
     """
-    Indicates that the resource is of type 'overrides'.
+    Indicates that the resource is of type `overrides`.
 
     :param value: If omitted defaults to "overrides". Must be one of ["overrides"].
     :type value: str
