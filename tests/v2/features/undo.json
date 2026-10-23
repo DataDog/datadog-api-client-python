@@ -4269,6 +4269,43 @@
       "type": "idempotent"
     }
   },
+  "ListTemporalCloudOpenMetricsIntegrationAccounts": {
+    "tag": "Temporal Cloud OpenMetrics Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateTemporalCloudOpenMetricsIntegrationAccount": {
+    "tag": "Temporal Cloud OpenMetrics Integration",
+    "undo": {
+      "operationId": "DeleteTemporalCloudOpenMetricsIntegrationAccount",
+      "parameters": [
+        {
+          "name": "account_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteTemporalCloudOpenMetricsIntegrationAccount": {
+    "tag": "Temporal Cloud OpenMetrics Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetTemporalCloudOpenMetricsIntegrationAccount": {
+    "tag": "Temporal Cloud OpenMetrics Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateTemporalCloudOpenMetricsIntegrationAccount": {
+    "tag": "Temporal Cloud OpenMetrics Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListTwilioIntegrationAccounts": {
     "tag": "Twilio Integration",
     "undo": {
