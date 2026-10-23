@@ -41,11 +41,13 @@ class IssueIncluded(ModelComposed):
         from datadog_api_client.v2.model.issue_case import IssueCase
         from datadog_api_client.v2.model.issue_user import IssueUser
         from datadog_api_client.v2.model.issue_team import IssueTeam
+        from datadog_api_client.v2.model.issue_sample import IssueSample
 
         return {
             "oneOf": [
                 IssueCase,
                 IssueUser,
                 IssueTeam,
+                IssueSample,
             ],
         }

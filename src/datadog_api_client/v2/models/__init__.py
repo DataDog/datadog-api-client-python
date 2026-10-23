@@ -5263,6 +5263,19 @@ from datadog_api_client.v2.model.issue_reference import IssueReference
 from datadog_api_client.v2.model.issue_regression import IssueRegression
 from datadog_api_client.v2.model.issue_relationships import IssueRelationships
 from datadog_api_client.v2.model.issue_response import IssueResponse
+from datadog_api_client.v2.model.issue_sample import IssueSample
+from datadog_api_client.v2.model.issue_sample_attributes import IssueSampleAttributes
+from datadog_api_client.v2.model.issue_sample_bias import IssueSampleBias
+from datadog_api_client.v2.model.issue_sample_code_snippet import IssueSampleCodeSnippet
+from datadog_api_client.v2.model.issue_sample_data_source import IssueSampleDataSource
+from datadog_api_client.v2.model.issue_sample_error_stack import IssueSampleErrorStack
+from datadog_api_client.v2.model.issue_sample_event import IssueSampleEvent
+from datadog_api_client.v2.model.issue_sample_frame_link import IssueSampleFrameLink
+from datadog_api_client.v2.model.issue_sample_git_file_location import IssueSampleGitFileLocation
+from datadog_api_client.v2.model.issue_sample_reference import IssueSampleReference
+from datadog_api_client.v2.model.issue_sample_stack_frame import IssueSampleStackFrame
+from datadog_api_client.v2.model.issue_sample_type import IssueSampleType
+from datadog_api_client.v2.model.issue_samples_relationship import IssueSamplesRelationship
 from datadog_api_client.v2.model.issue_state import IssueState
 from datadog_api_client.v2.model.issue_team import IssueTeam
 from datadog_api_client.v2.model.issue_team_attributes import IssueTeamAttributes
@@ -16565,6 +16578,19 @@ __all__ = [
     "IssueRegression",
     "IssueRelationships",
     "IssueResponse",
+    "IssueSample",
+    "IssueSampleAttributes",
+    "IssueSampleBias",
+    "IssueSampleCodeSnippet",
+    "IssueSampleDataSource",
+    "IssueSampleErrorStack",
+    "IssueSampleEvent",
+    "IssueSampleFrameLink",
+    "IssueSampleGitFileLocation",
+    "IssueSampleReference",
+    "IssueSampleStackFrame",
+    "IssueSampleType",
+    "IssueSamplesRelationship",
     "IssueState",
     "IssueTeam",
     "IssueTeamAttributes",
