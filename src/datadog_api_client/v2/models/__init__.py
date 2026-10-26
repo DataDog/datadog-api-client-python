@@ -11826,8 +11826,10 @@ from datadog_api_client.v2.model.tag_indexing_rule_exemption_create_data import 
 from datadog_api_client.v2.model.tag_indexing_rule_exemption_create_request import TagIndexingRuleExemptionCreateRequest
 from datadog_api_client.v2.model.tag_indexing_rule_exemption_data import TagIndexingRuleExemptionData
 from datadog_api_client.v2.model.tag_indexing_rule_exemption_response import TagIndexingRuleExemptionResponse
+from datadog_api_client.v2.model.tag_indexing_rule_exemption_sort import TagIndexingRuleExemptionSort
 from datadog_api_client.v2.model.tag_indexing_rule_exemption_type import TagIndexingRuleExemptionType
 from datadog_api_client.v2.model.tag_indexing_rule_exemption_volume_status import TagIndexingRuleExemptionVolumeStatus
+from datadog_api_client.v2.model.tag_indexing_rule_exemptions_response import TagIndexingRuleExemptionsResponse
 from datadog_api_client.v2.model.tag_indexing_rule_metric_match import TagIndexingRuleMetricMatch
 from datadog_api_client.v2.model.tag_indexing_rule_options import TagIndexingRuleOptions
 from datadog_api_client.v2.model.tag_indexing_rule_options_data import TagIndexingRuleOptionsData
@@ -20776,8 +20778,10 @@ __all__ = [
     "TagIndexingRuleExemptionCreateRequest",
     "TagIndexingRuleExemptionData",
     "TagIndexingRuleExemptionResponse",
+    "TagIndexingRuleExemptionSort",
     "TagIndexingRuleExemptionType",
     "TagIndexingRuleExemptionVolumeStatus",
+    "TagIndexingRuleExemptionsResponse",
     "TagIndexingRuleMetricMatch",
     "TagIndexingRuleOptions",
     "TagIndexingRuleOptionsData",

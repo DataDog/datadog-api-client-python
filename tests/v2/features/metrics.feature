@@ -583,6 +583,30 @@ Feature: Metrics
     Then the response status is 200 Success
     And the response "data.id" has the same value as "metric_tag_configuration.data.id"
 
+  @generated @skip @team:ddoghq/metrics-experience
+  Scenario: List tag indexing rule exemptions returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "ListTagIndexingRuleExemptions" enabled
+    And new "ListTagIndexingRuleExemptions" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/metrics-experience
+  Scenario: List tag indexing rule exemptions returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "ListTagIndexingRuleExemptions" enabled
+    And new "ListTagIndexingRuleExemptions" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/metrics-experience @with-pagination
+  Scenario: List tag indexing rule exemptions returns "OK" response with pagination
+    Given a valid "appKeyAuth" key in the system
+    And operation "ListTagIndexingRuleExemptions" enabled
+    And new "ListTagIndexingRuleExemptions" request
+    When the request with pagination is sent
+    Then the response status is 200 OK
+
   @team:ddoghq/metrics-experience
   Scenario: List tag indexing rules for a metric returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system

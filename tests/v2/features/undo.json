@@ -6210,6 +6210,12 @@
       "type": "safe"
     }
   },
+  "ListTagIndexingRuleExemptions": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListTagIndexingRules": {
     "tag": "Metrics",
     "undo": {

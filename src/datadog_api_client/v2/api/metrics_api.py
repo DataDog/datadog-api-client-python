@@ -14,6 +14,7 @@ from datadog_api_client.model_utils import (
     get_attribute_from_path,
     UnsetType,
     unset,
+    UUID,
 )
 from datadog_api_client.v2.model.metrics_and_metric_tag_configurations_response import (
     MetricsAndMetricTagConfigurationsResponse,
@@ -31,6 +32,9 @@ from datadog_api_client.v2.model.historical_metrics_configuration_response impor
 from datadog_api_client.v2.model.historical_metrics_configuration_create_request import (
     HistoricalMetricsConfigurationCreateRequest,
 )
+from datadog_api_client.v2.model.tag_indexing_rule_exemptions_response import TagIndexingRuleExemptionsResponse
+from datadog_api_client.v2.model.tag_indexing_rule_exemption_sort import TagIndexingRuleExemptionSort
+from datadog_api_client.v2.model.tag_indexing_rule_exemption_data import TagIndexingRuleExemptionData
 from datadog_api_client.v2.model.tag_indexing_rules_response import TagIndexingRulesResponse
 from datadog_api_client.v2.model.tag_indexing_rule_response import TagIndexingRuleResponse
 from datadog_api_client.v2.model.tag_indexing_rule_create_request import TagIndexingRuleCreateRequest
@@ -677,6 +681,57 @@ class MetricsApi:
                     },
                     "openapi_types": (int,),
                     "attribute": "window[seconds]",
+                    "location": "query",
+                },
+                "page_size": {
+                    "validation": {
+                        "inclusive_maximum": 10000,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+                "page_cursor": {
+                    "openapi_types": (str,),
+                    "attribute": "page[cursor]",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_tag_indexing_rule_exemptions_endpoint = _Endpoint(
+            settings={
+                "response_type": (TagIndexingRuleExemptionsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/metrics/list-tag-indexing-rule-exemptions",
+                "operation_id": "list_tag_indexing_rule_exemptions",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "filter_metric_prefix": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[metric_prefix]",
+                    "location": "query",
+                },
+                "filter_safe": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[safe]",
+                    "location": "query",
+                },
+                "filter_tag_indexing_rule_id": {
+                    "openapi_types": (UUID,),
+                    "attribute": "filter[tag_indexing_rule_id]",
+                    "location": "query",
+                },
+                "sort": {
+                    "openapi_types": (TagIndexingRuleExemptionSort,),
+                    "attribute": "sort",
                     "location": "query",
                 },
                 "page_size": {
@@ -1651,6 +1706,131 @@ class MetricsApi:
 
         local_page_size = get_attribute_from_path(kwargs, "page_size", 10000)
         endpoint = self._list_tag_configurations_endpoint
+        set_attribute_from_path(kwargs, "page_size", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "cursor_param": "page_cursor",
+            "cursor_path": "meta.pagination.next_cursor",
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
+
+    def list_tag_indexing_rule_exemptions(
+        self,
+        *,
+        filter_metric_prefix: Union[str, UnsetType] = unset,
+        filter_safe: Union[bool, UnsetType] = unset,
+        filter_tag_indexing_rule_id: Union[UUID, UnsetType] = unset,
+        sort: Union[TagIndexingRuleExemptionSort, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+        page_cursor: Union[str, UnsetType] = unset,
+    ) -> TagIndexingRuleExemptionsResponse:
+        """List tag indexing rule exemptions.
+
+        Returns explicit exemptions and legacy tag configurations that exclude metrics from tag indexing rules.
+        You can filter results by metric name prefix, whether an exemption is safe to remove, or the UUID of a matching
+        tag indexing rule. You can sort results by metric name or by estimated change in indexed volume.
+
+        :param filter_metric_prefix: Filter exemptions to metrics whose names start with this literal prefix.
+            Matching is case-sensitive. Wildcard characters are treated literally.
+        :type filter_metric_prefix: str, optional
+        :param filter_safe: Filter exemptions by whether they are safe to remove. An exemption is considered safe when a fresh, usable
+            estimate indicates that removing it would not increase indexed volume and would not drop tags used to query
+            the metric in monitors, dashboards, notebooks, or SLOs. Set to ``true`` to return safe-to-remove exemptions,
+            or ``false`` to return all other exemptions, including those with unavailable or stale estimates.
+        :type filter_safe: bool, optional
+        :param filter_tag_indexing_rule_id: Filter exemptions to metrics matched by the tag indexing rule with this UUID.
+        :type filter_tag_indexing_rule_id: UUID, optional
+        :param sort: Sort field. Prefix the field with ``-`` for descending order. The default is ``estimated_change_in_volume`` in ascending order, with the largest reductions (most negative values) first.
+        :type sort: TagIndexingRuleExemptionSort, optional
+        :param page_size: Maximum number of results per page. Defaults to 10000; accepts values from 1 to 10000. If
+            ``meta.pagination.next_cursor`` is non-null, request the next page by passing that value as ``page[cursor]``.
+            Continue until ``next_cursor`` is null.
+        :type page_size: int, optional
+        :param page_cursor: Cursor for pagination. Use ``page[size]`` to opt-in to pagination and get the first page; for subsequent pages, use the value from ``meta.pagination.next_cursor`` in the response. Pagination is complete when ``next_cursor`` is null.
+        :type page_cursor: str, optional
+        :rtype: TagIndexingRuleExemptionsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if filter_metric_prefix is not unset:
+            kwargs["filter_metric_prefix"] = filter_metric_prefix
+
+        if filter_safe is not unset:
+            kwargs["filter_safe"] = filter_safe
+
+        if filter_tag_indexing_rule_id is not unset:
+            kwargs["filter_tag_indexing_rule_id"] = filter_tag_indexing_rule_id
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
+        return self._list_tag_indexing_rule_exemptions_endpoint.call_with_http_info(**kwargs)
+
+    def list_tag_indexing_rule_exemptions_with_pagination(
+        self,
+        *,
+        filter_metric_prefix: Union[str, UnsetType] = unset,
+        filter_safe: Union[bool, UnsetType] = unset,
+        filter_tag_indexing_rule_id: Union[UUID, UnsetType] = unset,
+        sort: Union[TagIndexingRuleExemptionSort, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+        page_cursor: Union[str, UnsetType] = unset,
+    ) -> collections.abc.Iterable[TagIndexingRuleExemptionData]:
+        """List tag indexing rule exemptions.
+
+        Provide a paginated version of :meth:`list_tag_indexing_rule_exemptions`, returning all items.
+
+        :param filter_metric_prefix: Filter exemptions to metrics whose names start with this literal prefix.
+            Matching is case-sensitive. Wildcard characters are treated literally.
+        :type filter_metric_prefix: str, optional
+        :param filter_safe: Filter exemptions by whether they are safe to remove. An exemption is considered safe when a fresh, usable
+            estimate indicates that removing it would not increase indexed volume and would not drop tags used to query
+            the metric in monitors, dashboards, notebooks, or SLOs. Set to ``true`` to return safe-to-remove exemptions,
+            or ``false`` to return all other exemptions, including those with unavailable or stale estimates.
+        :type filter_safe: bool, optional
+        :param filter_tag_indexing_rule_id: Filter exemptions to metrics matched by the tag indexing rule with this UUID.
+        :type filter_tag_indexing_rule_id: UUID, optional
+        :param sort: Sort field. Prefix the field with ``-`` for descending order. The default is ``estimated_change_in_volume`` in ascending order, with the largest reductions (most negative values) first.
+        :type sort: TagIndexingRuleExemptionSort, optional
+        :param page_size: Maximum number of results per page. Defaults to 10000; accepts values from 1 to 10000. If
+            ``meta.pagination.next_cursor`` is non-null, request the next page by passing that value as ``page[cursor]``.
+            Continue until ``next_cursor`` is null.
+        :type page_size: int, optional
+        :param page_cursor: Cursor for pagination. Use ``page[size]`` to opt-in to pagination and get the first page; for subsequent pages, use the value from ``meta.pagination.next_cursor`` in the response. Pagination is complete when ``next_cursor`` is null.
+        :type page_cursor: str, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[TagIndexingRuleExemptionData]
+        """
+        kwargs: Dict[str, Any] = {}
+        if filter_metric_prefix is not unset:
+            kwargs["filter_metric_prefix"] = filter_metric_prefix
+
+        if filter_safe is not unset:
+            kwargs["filter_safe"] = filter_safe
+
+        if filter_tag_indexing_rule_id is not unset:
+            kwargs["filter_tag_indexing_rule_id"] = filter_tag_indexing_rule_id
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_cursor is not unset:
+            kwargs["page_cursor"] = page_cursor
+
+        local_page_size = get_attribute_from_path(kwargs, "page_size", 10000)
+        endpoint = self._list_tag_indexing_rule_exemptions_endpoint
         set_attribute_from_path(kwargs, "page_size", local_page_size, endpoint.params_map)
         pagination = {
             "limit_value": local_page_size,
