@@ -20,12 +20,14 @@ class SensitiveDataScannerSuppressions(ModelNormal):
             "ends_with": ([str],),
             "exact_match": ([str],),
             "starts_with": ([str],),
+            "use_recommended_suppressions": (bool,),
         }
 
     attribute_map = {
         "ends_with": "ends_with",
         "exact_match": "exact_match",
         "starts_with": "starts_with",
+        "use_recommended_suppressions": "use_recommended_suppressions",
     }
 
     def __init__(
@@ -33,10 +35,13 @@ class SensitiveDataScannerSuppressions(ModelNormal):
         ends_with: Union[List[str], UnsetType] = unset,
         exact_match: Union[List[str], UnsetType] = unset,
         starts_with: Union[List[str], UnsetType] = unset,
+        use_recommended_suppressions: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
-        Object describing the suppressions for a rule. There are three types of suppressions, ``starts_with`` , ``ends_with`` , and ``exact_match``.
+        Object describing suppressions for a rule, or the recommended suppression lists published by a standard pattern.
+        There are three types of suppressions, ``starts_with`` , ``ends_with`` , and ``exact_match``.
+        Rules based on the Datadog library can use recommended or custom suppressions. Custom rules can only use custom suppressions.
         Suppressed matches are not obfuscated, counted in metrics, or displayed in the Findings page.
 
         :param ends_with: List of strings to use for suppression of matches ending with these strings.
@@ -47,6 +52,10 @@ class SensitiveDataScannerSuppressions(ModelNormal):
 
         :param starts_with: List of strings to use for suppression of matches starting with these strings.
         :type starts_with: [str], optional
+
+        :param use_recommended_suppressions: Should the rule use the underlying standard pattern suppression configuration. If set to ``true`` , the rule must be tied
+            to a standard pattern. If set to ``false`` , the specified suppressions are applied.
+        :type use_recommended_suppressions: bool, optional
         """
         if ends_with is not unset:
             kwargs["ends_with"] = ends_with
@@ -54,4 +63,6 @@ class SensitiveDataScannerSuppressions(ModelNormal):
             kwargs["exact_match"] = exact_match
         if starts_with is not unset:
             kwargs["starts_with"] = starts_with
+        if use_recommended_suppressions is not unset:
+            kwargs["use_recommended_suppressions"] = use_recommended_suppressions
         super().__init__(kwargs)

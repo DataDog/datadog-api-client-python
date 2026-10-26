@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -11,6 +11,10 @@ from datadog_api_client.model_utils import (
     unset,
     UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.sensitive_data_scanner_suppressions import SensitiveDataScannerSuppressions
 
 
 class SensitiveDataScannerStandardPatternAttributes(ModelNormal):
@@ -23,12 +27,15 @@ class SensitiveDataScannerStandardPatternAttributes(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.sensitive_data_scanner_suppressions import SensitiveDataScannerSuppressions
+
         return {
             "description": (str,),
             "included_keywords": ([str],),
             "name": (str,),
             "pattern": (str,),
             "priority": (int,),
+            "suppressions": (SensitiveDataScannerSuppressions,),
             "tags": ([str],),
         }
 
@@ -38,6 +45,7 @@ class SensitiveDataScannerStandardPatternAttributes(ModelNormal):
         "name": "name",
         "pattern": "pattern",
         "priority": "priority",
+        "suppressions": "suppressions",
         "tags": "tags",
     }
 
@@ -48,6 +56,7 @@ class SensitiveDataScannerStandardPatternAttributes(ModelNormal):
         name: Union[str, UnsetType] = unset,
         pattern: Union[str, UnsetType] = unset,
         priority: Union[int, UnsetType] = unset,
+        suppressions: Union[SensitiveDataScannerSuppressions, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
@@ -69,6 +78,12 @@ class SensitiveDataScannerStandardPatternAttributes(ModelNormal):
         :param priority: Integer from 1 (high) to 5 (low) indicating standard pattern issue severity.
         :type priority: int, optional
 
+        :param suppressions: Object describing suppressions for a rule, or the recommended suppression lists published by a standard pattern.
+            There are three types of suppressions, ``starts_with`` , ``ends_with`` , and ``exact_match``.
+            Rules based on the Datadog library can use recommended or custom suppressions. Custom rules can only use custom suppressions.
+            Suppressed matches are not obfuscated, counted in metrics, or displayed in the Findings page.
+        :type suppressions: SensitiveDataScannerSuppressions, optional
+
         :param tags: List of tags.
         :type tags: [str], optional
         """
@@ -82,6 +97,8 @@ class SensitiveDataScannerStandardPatternAttributes(ModelNormal):
             kwargs["pattern"] = pattern
         if priority is not unset:
             kwargs["priority"] = priority
+        if suppressions is not unset:
+            kwargs["suppressions"] = suppressions
         if tags is not unset:
             kwargs["tags"] = tags
         super().__init__(kwargs)
