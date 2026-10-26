@@ -503,6 +503,46 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\"data\": {\"type\": \"protocols\", \"attributes\": {\"name\": \"ex-protocol-{{ unique_hash }}\"}}}"
+      }
+    ],
+    "step": "there is a valid \"experiment_protocol\" in the system",
+    "key": "experiment_protocol",
+    "tag": "Experiments",
+    "operationId": "CreateExperimentProtocol"
+  },
+  {
+    "parameters": [
+      {
+        "name": "protocol_id",
+        "value": "\"{{ experiment_protocol.data.id }}\""
+      },
+      {
+        "name": "body",
+        "value": "{\"data\": {\"type\": \"protocols\", \"id\": \"{{ experiment_protocol.data.id }}\", \"attributes\": {\"subject_type_id\": \"{{ experiment_subject_type.data.id }}\"}}}"
+      }
+    ],
+    "step": "there is a valid \"configured_experiment_protocol\" in the system",
+    "key": "configured_experiment_protocol",
+    "tag": "Experiments",
+    "operationId": "PatchExperimentProtocol"
+  },
+  {
+    "parameters": [
+      {
+        "name": "protocol_id",
+        "value": "\"{{ configured_experiment_protocol.data.id }}\""
+      }
+    ],
+    "step": "there is a valid \"published_protocol\" in the system",
+    "key": "published_protocol",
+    "tag": "Experiments",
+    "operationId": "PublishExperimentProtocol"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\"data\": {\"type\": \"subject-types\", \"attributes\": {\"name\": \"ex-{{ unique_hash }}\", \"product_analytics_attribute\": \"@account.id\", \"warehouse_column_names\": [\"account_id\"]}}}"
       }
     ],

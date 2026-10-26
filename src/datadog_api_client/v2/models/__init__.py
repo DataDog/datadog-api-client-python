@@ -3395,6 +3395,15 @@ from datadog_api_client.v2.model.experiments_create_experiment_metric_group_v2_r
 from datadog_api_client.v2.model.experiments_create_experiment_metric_group_v2_request_data_attributes_metrics_items import (
     ExperimentsCreateExperimentMetricGroupV2RequestDataAttributesMetricsItems,
 )
+from datadog_api_client.v2.model.experiments_create_experiment_protocol_request import (
+    ExperimentsCreateExperimentProtocolRequest,
+)
+from datadog_api_client.v2.model.experiments_create_experiment_protocol_request_data import (
+    ExperimentsCreateExperimentProtocolRequestData,
+)
+from datadog_api_client.v2.model.experiments_create_experiment_protocol_request_data_attributes import (
+    ExperimentsCreateExperimentProtocolRequestDataAttributes,
+)
 from datadog_api_client.v2.model.experiments_create_experiment_v2_request import ExperimentsCreateExperimentV2Request
 from datadog_api_client.v2.model.experiments_create_experiment_v2_request_data import (
     ExperimentsCreateExperimentV2RequestData,
@@ -3669,6 +3678,15 @@ from datadog_api_client.v2.model.experiments_patch_experiment_metric_group_v2_re
 from datadog_api_client.v2.model.experiments_patch_experiment_metric_group_v2_request_data_type import (
     ExperimentsPatchExperimentMetricGroupV2RequestDataType,
 )
+from datadog_api_client.v2.model.experiments_patch_experiment_protocol_request import (
+    ExperimentsPatchExperimentProtocolRequest,
+)
+from datadog_api_client.v2.model.experiments_patch_experiment_protocol_request_data import (
+    ExperimentsPatchExperimentProtocolRequestData,
+)
+from datadog_api_client.v2.model.experiments_patch_experiment_protocol_request_data_attributes import (
+    ExperimentsPatchExperimentProtocolRequestDataAttributes,
+)
 from datadog_api_client.v2.model.experiments_patch_experiment_v2_meta_dto import ExperimentsPatchExperimentV2MetaDTO
 from datadog_api_client.v2.model.experiments_patch_experiment_v2_meta_dto_warnings_items import (
     ExperimentsPatchExperimentV2MetaDTOWarningsItems,
@@ -3723,6 +3741,15 @@ from datadog_api_client.v2.model.experiments_patch_metric_collection_v2_request_
 from datadog_api_client.v2.model.experiments_patch_metric_collection_v2_request_data_type import (
     ExperimentsPatchMetricCollectionV2RequestDataType,
 )
+from datadog_api_client.v2.model.experiments_patch_protocol_analysis_plan_input import (
+    ExperimentsPatchProtocolAnalysisPlanInput,
+)
+from datadog_api_client.v2.model.experiments_patch_protocol_enforcement_input import (
+    ExperimentsPatchProtocolEnforcementInput,
+)
+from datadog_api_client.v2.model.experiments_patch_protocol_exposure_schedule_input import (
+    ExperimentsPatchProtocolExposureScheduleInput,
+)
 from datadog_api_client.v2.model.experiments_patch_subject_type_v2_request import ExperimentsPatchSubjectTypeV2Request
 from datadog_api_client.v2.model.experiments_patch_subject_type_v2_request_data import (
     ExperimentsPatchSubjectTypeV2RequestData,
@@ -3735,6 +3762,15 @@ from datadog_api_client.v2.model.experiments_property_null_filter_input import E
 from datadog_api_client.v2.model.experiments_property_null_filter_input_operation import (
     ExperimentsPropertyNullFilterInputOperation,
 )
+from datadog_api_client.v2.model.experiments_protocol_analysis_plan_input import ExperimentsProtocolAnalysisPlanInput
+from datadog_api_client.v2.model.experiments_protocol_condition_input import ExperimentsProtocolConditionInput
+from datadog_api_client.v2.model.experiments_protocol_exposure_schedule_input import (
+    ExperimentsProtocolExposureScheduleInput,
+)
+from datadog_api_client.v2.model.experiments_protocol_exposure_step_input import ExperimentsProtocolExposureStepInput
+from datadog_api_client.v2.model.experiments_protocol_metric_group_input import ExperimentsProtocolMetricGroupInput
+from datadog_api_client.v2.model.experiments_protocol_metric_input import ExperimentsProtocolMetricInput
+from datadog_api_client.v2.model.experiments_protocol_targeting_rule_input import ExperimentsProtocolTargetingRuleInput
 from datadog_api_client.v2.model.experiments_public_protocol_list_response_array import (
     ExperimentsPublicProtocolListResponseArray,
 )
@@ -3805,6 +3841,18 @@ from datadog_api_client.v2.model.experiments_refresh_experiment_results_v2_dto_d
 )
 from datadog_api_client.v2.model.experiments_refresh_experiment_results_v2_dto_data_type import (
     ExperimentsRefreshExperimentResultsV2DTODataType,
+)
+from datadog_api_client.v2.model.experiments_replace_experiment_protocol_request import (
+    ExperimentsReplaceExperimentProtocolRequest,
+)
+from datadog_api_client.v2.model.experiments_replace_experiment_protocol_request_data import (
+    ExperimentsReplaceExperimentProtocolRequestData,
+)
+from datadog_api_client.v2.model.experiments_replace_experiment_protocol_request_data_attributes import (
+    ExperimentsReplaceExperimentProtocolRequestDataAttributes,
+)
+from datadog_api_client.v2.model.experiments_replace_protocol_enforcement_input import (
+    ExperimentsReplaceProtocolEnforcementInput,
 )
 from datadog_api_client.v2.model.experiments_sql_model_property_input import ExperimentsSQLModelPropertyInput
 from datadog_api_client.v2.model.experiments_saved_filter_condition import ExperimentsSavedFilterCondition
@@ -15351,6 +15399,9 @@ __all__ = [
     "ExperimentsCreateExperimentMetricGroupV2RequestData",
     "ExperimentsCreateExperimentMetricGroupV2RequestDataAttributes",
     "ExperimentsCreateExperimentMetricGroupV2RequestDataAttributesMetricsItems",
+    "ExperimentsCreateExperimentProtocolRequest",
+    "ExperimentsCreateExperimentProtocolRequestData",
+    "ExperimentsCreateExperimentProtocolRequestDataAttributes",
     "ExperimentsCreateExperimentV2Request",
     "ExperimentsCreateExperimentV2RequestData",
     "ExperimentsCreateExperimentV2RequestDataAttributes",
@@ -15463,6 +15514,9 @@ __all__ = [
     "ExperimentsPatchExperimentMetricGroupV2RequestData",
     "ExperimentsPatchExperimentMetricGroupV2RequestDataAttributes",
     "ExperimentsPatchExperimentMetricGroupV2RequestDataType",
+    "ExperimentsPatchExperimentProtocolRequest",
+    "ExperimentsPatchExperimentProtocolRequestData",
+    "ExperimentsPatchExperimentProtocolRequestDataAttributes",
     "ExperimentsPatchExperimentV2MetaDTO",
     "ExperimentsPatchExperimentV2MetaDTOWarningsItems",
     "ExperimentsPatchExperimentV2Request",
@@ -15483,12 +15537,22 @@ __all__ = [
     "ExperimentsPatchMetricCollectionV2RequestData",
     "ExperimentsPatchMetricCollectionV2RequestDataAttributes",
     "ExperimentsPatchMetricCollectionV2RequestDataType",
+    "ExperimentsPatchProtocolAnalysisPlanInput",
+    "ExperimentsPatchProtocolEnforcementInput",
+    "ExperimentsPatchProtocolExposureScheduleInput",
     "ExperimentsPatchSubjectTypeV2Request",
     "ExperimentsPatchSubjectTypeV2RequestData",
     "ExperimentsPatchSubjectTypeV2RequestDataAttributes",
     "ExperimentsPropertyFilterInput",
     "ExperimentsPropertyNullFilterInput",
     "ExperimentsPropertyNullFilterInputOperation",
+    "ExperimentsProtocolAnalysisPlanInput",
+    "ExperimentsProtocolConditionInput",
+    "ExperimentsProtocolExposureScheduleInput",
+    "ExperimentsProtocolExposureStepInput",
+    "ExperimentsProtocolMetricGroupInput",
+    "ExperimentsProtocolMetricInput",
+    "ExperimentsProtocolTargetingRuleInput",
     "ExperimentsPublicProtocolListResponseArray",
     "ExperimentsPublicProtocolListResponseData",
     "ExperimentsPublicProtocolListResponseDataAttributes",
@@ -15514,6 +15578,10 @@ __all__ = [
     "ExperimentsRefreshExperimentResultsV2DTOData",
     "ExperimentsRefreshExperimentResultsV2DTODataAttributes",
     "ExperimentsRefreshExperimentResultsV2DTODataType",
+    "ExperimentsReplaceExperimentProtocolRequest",
+    "ExperimentsReplaceExperimentProtocolRequestData",
+    "ExperimentsReplaceExperimentProtocolRequestDataAttributes",
+    "ExperimentsReplaceProtocolEnforcementInput",
     "ExperimentsSQLModelPropertyInput",
     "ExperimentsSavedFilterCondition",
     "ExperimentsStartExperimentV2Request",
