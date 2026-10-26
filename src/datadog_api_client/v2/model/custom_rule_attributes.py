@@ -14,18 +14,22 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.custom_rule_nullable_revision_embedded import CustomRuleNullableRevisionEmbedded
     from datadog_api_client.v2.model.custom_rule_revision_embedded import CustomRuleRevisionEmbedded
 
 
 class CustomRuleAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.custom_rule_nullable_revision_embedded import (
+            CustomRuleNullableRevisionEmbedded,
+        )
         from datadog_api_client.v2.model.custom_rule_revision_embedded import CustomRuleRevisionEmbedded
 
         return {
             "created_at": (datetime,),
             "created_by": (str,),
-            "last_revision": (CustomRuleRevisionEmbedded,),
+            "last_revision": (CustomRuleNullableRevisionEmbedded,),
             "name": (str,),
             "revisions": ([CustomRuleRevisionEmbedded], none_type),
         }
@@ -42,7 +46,7 @@ class CustomRuleAttributes(ModelNormal):
         self_,
         created_at: datetime,
         created_by: str,
-        last_revision: CustomRuleRevisionEmbedded,
+        last_revision: Union[CustomRuleNullableRevisionEmbedded, none_type],
         name: str,
         revisions: Union[List[CustomRuleRevisionEmbedded], none_type],
         **kwargs,
@@ -56,8 +60,8 @@ class CustomRuleAttributes(ModelNormal):
         :param created_by: Creator identifier
         :type created_by: str
 
-        :param last_revision: A revision of a custom static analysis rule as embedded in a rule or ruleset response.
-        :type last_revision: CustomRuleRevisionEmbedded
+        :param last_revision: The most recent revision of the rule, or null when the rule has no revisions.
+        :type last_revision: CustomRuleNullableRevisionEmbedded, none_type
 
         :param name: Rule name
         :type name: str

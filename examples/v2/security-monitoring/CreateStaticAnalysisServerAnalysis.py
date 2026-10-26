@@ -9,6 +9,7 @@ from datadog_api_client.v2.model.analysis_request import AnalysisRequest
 from datadog_api_client.v2.model.analysis_request_data import AnalysisRequestData
 from datadog_api_client.v2.model.analysis_request_data_attributes import AnalysisRequestDataAttributes
 from datadog_api_client.v2.model.analysis_request_data_type import AnalysisRequestDataType
+from datadog_api_client.v2.model.analysis_request_options import AnalysisRequestOptions
 from datadog_api_client.v2.model.analysis_request_rule import AnalysisRequestRule
 from datadog_api_client.v2.model.analysis_request_rule_argument import AnalysisRequestRuleArgument
 from datadog_api_client.v2.model.analysis_request_rule_test import AnalysisRequestRuleTest
@@ -20,6 +21,10 @@ body = AnalysisRequest(
             file_encoding="utf-8",
             filename="test.py",
             language="python",
+            options=AnalysisRequestOptions(
+                log_output=True,
+                use_tree_sitter=True,
+            ),
             rules=[
                 AnalysisRequestRule(
                     arguments=[
