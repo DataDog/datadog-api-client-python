@@ -881,6 +881,7 @@ class Configuration:
                 "v2.update_custom_ruleset": False,
                 "v2.add_member_team": False,
                 "v2.list_member_teams": False,
+                "v2.list_team_hierarchy_members": False,
                 "v2.remove_member_team": False,
                 "v2.create_timeseries_anomaly_investigation": False,
                 "v2.create_web_integration_account": False,

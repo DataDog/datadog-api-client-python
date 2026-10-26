@@ -1,0 +1,67 @@
+{
+  "api": "Teams",
+  "expected_status": 200,
+  "feature": "Teams",
+  "id": "v2/Teams/Get team hierarchy members returns \"OK\" response",
+  "operation_id": "ListTeamHierarchyMembers",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "team_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "dd_team.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[keyword]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "{{ user.data.attributes.email }}"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "include",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "user,team"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/team/{team_id}/members"
+  },
+  "scenario": "Get team hierarchy members returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
