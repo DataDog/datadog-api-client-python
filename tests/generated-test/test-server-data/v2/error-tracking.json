@@ -162,6 +162,79 @@
     },
     {
       "feature": "Error Tracking",
+      "frozen_at": "2026-10-22T13:29:57.649Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "from": 1791379797000,
+                    "query": "service:synthetics-browser",
+                    "to": 1792675797000,
+                    "track": "rum"
+                  },
+                  "type": "search_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/error-tracking/issues/search",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"d3ab59c6-84ee-11f0-87bb-da7ad0900002\",\"type\":\"error_tracking_search_result\",\"attributes\":{\"impacted_sessions\":4439,\"impacted_users\":4307,\"total_count\":8644},\"relationships\":{\"issue\":{\"data\":{\"id\":\"d3ab59c6-84ee-11f0-87bb-da7ad0900002\",\"type\":\"issue\"}}}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/error-tracking/issues/d3ab59c6-84ee-11f0-87bb-da7ad0900002",
+            "query": [
+              [
+                "filter[samples.biases]",
+                "latest"
+              ],
+              [
+                "include",
+                "samples"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"d3ab59c6-84ee-11f0-87bb-da7ad0900002\",\"type\":\"issue\",\"attributes\":{\"error_message\":\"Expected unhandled error\",\"error_type\":\"Error\",\"file_path\":\"\",\"first_seen\":1756482172021,\"first_seen_version\":\"1.2.4\",\"function_name\":\"\",\"is_crash\":false,\"languages\":[\"JAVASCRIPT\"],\"last_seen\":1792675673414,\"last_seen_version\":\"1.2.4\",\"platform\":\"BROWSER\",\"service\":\"synthetics-browser\",\"state\":\"RESOLVED\"},\"relationships\":{\"case\":{\"data\":{\"id\":\"7afc10c8-4096-4af1-9ccf-ec0df3a2f63b\",\"type\":\"case\"}},\"samples\":{\"data\":[{\"id\":\"AwAAAaFjy_VGe8BwpwAAABhBYUZqeV9ldEFBRENrVFVtSDhUeXh5LWgAAAAkZjFhMTYzY2ItZmE4Ni00NTJkLWFhYTktY2NiNTdiNDFlMWMzAAAAAA\",\"type\":\"error_tracking_issue_sample\"}]}}},\"included\":[{\"id\":\"AwAAAaFjy_VGe8BwpwAAABhBYUZqeV9ldEFBRENrVFVtSDhUeXh5LWgAAAAkZjFhMTYzY2ItZmE4Ni00NTJkLWFhYTktY2NiNTdiNDFlMWMzAAAAAA\",\"type\":\"error_tracking_issue_sample\",\"attributes\":{\"application_id\":\"ce9843b0-7a45-453c-a831-55dd15f85141\",\"biases\":[\"latest\"],\"data_source\":\"RUM\",\"error_source_type\":\"browser\",\"error_stack\":{},\"event\":{\"service\":\"synthetics-browser\",\"source\":\"browser\",\"error\":{\"type\":\"Error\",\"message\":\"Expected unhandled error\",\"source_type\":\"browser\"}},\"has_session_replay\":true,\"os_name\":\"Linux\",\"service\":\"synthetics-browser\",\"session_id\":\"2a1174ab-a9b7-4b82-babc-f9040c7a79a6\",\"timestamp\":\"2026-10-22T13:27:53.414Z\",\"version\":\"1.2.4\",\"view_id\":\"4c7fc22e-6946-4f7f-acfe-e6734dc423a5\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get the details of an error tracking issue with samples returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Error Tracking",
       "frozen_at": "2025-10-17T14:43:40.022Z",
       "interactions": [
         {

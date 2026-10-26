@@ -16,6 +16,7 @@ from datadog_api_client.v2.model.search_issues_include_query_parameter_item impo
 from datadog_api_client.v2.model.issues_search_request import IssuesSearchRequest
 from datadog_api_client.v2.model.issue_response import IssueResponse
 from datadog_api_client.v2.model.get_issue_include_query_parameter_item import GetIssueIncludeQueryParameterItem
+from datadog_api_client.v2.model.issue_sample_bias import IssueSampleBias
 from datadog_api_client.v2.model.issue_update_assignee_request import IssueUpdateAssigneeRequest
 from datadog_api_client.v2.model.issue_update_state_request import IssueUpdateStateRequest
 
@@ -72,6 +73,12 @@ class ErrorTrackingApi:
                 "include": {
                     "openapi_types": ([GetIssueIncludeQueryParameterItem],),
                     "attribute": "include",
+                    "location": "query",
+                    "collection_format": "csv",
+                },
+                "filter_samples_biases": {
+                    "openapi_types": ([IssueSampleBias],),
+                    "attribute": "filter[samples.biases]",
                     "location": "query",
                     "collection_format": "csv",
                 },
@@ -182,6 +189,7 @@ class ErrorTrackingApi:
         issue_id: str,
         *,
         include: Union[List[GetIssueIncludeQueryParameterItem], UnsetType] = unset,
+        filter_samples_biases: Union[List[IssueSampleBias], UnsetType] = unset,
     ) -> IssueResponse:
         """Get the details of an error tracking issue.
 
@@ -189,8 +197,12 @@ class ErrorTrackingApi:
 
         :param issue_id: The identifier of the issue.
         :type issue_id: str
-        :param include: Comma-separated list of relationship objects that should be included in the response. Possible values are ``assignee`` , ``case`` , and ``team_owners``.
+        :param include: Comma-separated list of relationship objects that should be included in the response.
+            Possible values are ``assignee`` , ``case`` , ``team_owners`` , and ``samples``.
         :type include: [GetIssueIncludeQueryParameterItem], optional
+        :param filter_samples_biases: Comma-separated list of biases used to pick the samples returned with ``include=samples``.
+            Requires ``include=samples``. Defaults to all biases.
+        :type filter_samples_biases: [IssueSampleBias], optional
         :rtype: IssueResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -198,6 +210,9 @@ class ErrorTrackingApi:
 
         if include is not unset:
             kwargs["include"] = include
+
+        if filter_samples_biases is not unset:
+            kwargs["filter_samples_biases"] = filter_samples_biases
 
         return self._get_issue_endpoint.call_with_http_info(**kwargs)
 

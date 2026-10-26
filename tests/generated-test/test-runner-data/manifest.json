@@ -5372,6 +5372,13 @@
     {
       "feature": "Error Tracking",
       "feature_file": "../../v2/features/error_tracking.feature",
+      "file": "v2/error-tracking/get-the-details-of-an-error-tracking-issue-with-samples-returns-ok-response.json",
+      "scenario": "Get the details of an error tracking issue with samples returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Error Tracking",
+      "feature_file": "../../v2/features/error_tracking.feature",
       "file": "v2/error-tracking/remove-the-assignee-of-an-issue-returns-no-content-response.json",
       "scenario": "Remove the assignee of an issue returns \"No Content\" response",
       "version": "v2"
