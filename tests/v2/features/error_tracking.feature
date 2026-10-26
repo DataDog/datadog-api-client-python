@@ -32,6 +32,18 @@ Feature: Error Tracking
     Then the response status is 200 OK
     And the response "data.id" is equal to "{{ issue.id }}"
 
+  @replay-only @team:ddoghq/error-tracking
+  Scenario: Get the details of an error tracking issue with samples returns "OK" response
+    Given new "GetIssue" request
+    And there is a valid "issue" in the system
+    And request contains "issue_id" parameter from "issue.id"
+    And request contains "include" parameter with value ["samples"]
+    And request contains "filter[samples.biases]" parameter with value ["latest"]
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" is equal to "{{ issue.id }}"
+    And the response "data.relationships" has field "samples"
+
   @generated @skip @team:ddoghq/error-tracking
   Scenario: Remove the assignee of an issue returns "Bad Request" response
     Given new "DeleteIssueAssignee" request

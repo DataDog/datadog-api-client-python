@@ -19,6 +19,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.issue_case import IssueCase
     from datadog_api_client.v2.model.issue_user import IssueUser
     from datadog_api_client.v2.model.issue_team import IssueTeam
+    from datadog_api_client.v2.model.issue_sample import IssueSample
 
 
 class IssueResponse(ModelNormal):
@@ -40,7 +41,7 @@ class IssueResponse(ModelNormal):
     def __init__(
         self_,
         data: Union[Issue, UnsetType] = unset,
-        included: Union[List[Union[IssueIncluded, IssueCase, IssueUser, IssueTeam]], UnsetType] = unset,
+        included: Union[List[Union[IssueIncluded, IssueCase, IssueUser, IssueTeam, IssueSample]], UnsetType] = unset,
         **kwargs,
     ):
         """

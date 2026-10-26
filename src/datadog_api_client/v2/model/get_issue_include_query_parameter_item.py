@@ -16,7 +16,7 @@ class GetIssueIncludeQueryParameterItem(ModelSimple):
     """
     Relationship object that should be included in the response.
 
-    :param value: Must be one of ["assignee", "case", "team_owners"].
+    :param value: Must be one of ["assignee", "case", "team_owners", "samples"].
     :type value: str
     """
 
@@ -24,10 +24,12 @@ class GetIssueIncludeQueryParameterItem(ModelSimple):
         "assignee",
         "case",
         "team_owners",
+        "samples",
     }
     ASSIGNEE: ClassVar["GetIssueIncludeQueryParameterItem"]
     CASE: ClassVar["GetIssueIncludeQueryParameterItem"]
     TEAM_OWNERS: ClassVar["GetIssueIncludeQueryParameterItem"]
+    SAMPLES: ClassVar["GetIssueIncludeQueryParameterItem"]
 
     @cached_property
     def openapi_types(_):
@@ -39,3 +41,4 @@ class GetIssueIncludeQueryParameterItem(ModelSimple):
 GetIssueIncludeQueryParameterItem.ASSIGNEE = GetIssueIncludeQueryParameterItem("assignee")
 GetIssueIncludeQueryParameterItem.CASE = GetIssueIncludeQueryParameterItem("case")
 GetIssueIncludeQueryParameterItem.TEAM_OWNERS = GetIssueIncludeQueryParameterItem("team_owners")
+GetIssueIncludeQueryParameterItem.SAMPLES = GetIssueIncludeQueryParameterItem("samples")
