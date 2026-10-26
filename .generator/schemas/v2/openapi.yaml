@@ -7039,6 +7039,8 @@ components:
           description: The programming language of the source code.
           example: python
           type: string
+        options:
+          $ref: "#/components/schemas/AnalysisRequestOptions"
         rules:
           description: The list of static analysis rules to apply during analysis.
           items:
@@ -7060,6 +7062,20 @@ components:
       type: string
       x-enum-varnames:
         - ANALYSIS_REQUEST
+    AnalysisRequestOptions:
+      description: |-
+        Analyzer options sent by browser-based clients. Accepted but ignored: the API always runs
+        the analysis with tree-sitter enabled and rule output logged.
+      properties:
+        log_output:
+          description: Whether to capture the output logged by rules during execution. Ignored by this operation.
+          example: true
+          type: boolean
+        use_tree_sitter:
+          description: Whether to use tree-sitter to parse the source code. Ignored by this operation.
+          example: true
+          type: boolean
+      type: object
     AnalysisRequestRule:
       additionalProperties: {}
       description: |-
@@ -29880,9 +29896,7 @@ components:
           example: foobarbaz
           type: string
         last_revision:
-          $ref: "#/components/schemas/CustomRuleRevisionEmbedded"
-          description: Most recent revision of the rule, or null when the rule has no revisions.
-          nullable: true
+          $ref: "#/components/schemas/CustomRuleNullableRevisionEmbedded"
         name:
           description: Rule name
           example: my-rule
@@ -29907,6 +29921,125 @@ components:
       type: string
       x-enum-varnames:
         - CUSTOM_RULE
+    CustomRuleNullableRevisionEmbedded:
+      description: The most recent revision of the rule, or null when the rule has no revisions.
+      nullable: true
+      properties:
+        arguments:
+          description: Rule arguments
+          items:
+            $ref: "#/components/schemas/Argument"
+          nullable: true
+          type: array
+        category:
+          $ref: "#/components/schemas/CustomRuleRevisionAttributesCategory"
+        checksum:
+          description: Code checksum
+          example: 8a66c4e4e631099ad71be3c1ea3ea8fc2d57193e56db2c296e2dd8a508b26b99
+          type: string
+        code:
+          description: Rule code
+          example: Y29uZHVjdG9yOgogICAgLSBkZXBsb3lfb25seTogdHJ1ZQ==
+          type: string
+        created_at:
+          description: Creation timestamp
+          example: "2026-01-09T13:00:57.473141Z"
+          format: date-time
+          type: string
+        created_by:
+          description: Creator identifier
+          example: foobarbaz
+          type: string
+        creation_message:
+          description: Revision creation message
+          example: Initial revision
+          type: string
+        cve:
+          description: Associated CVE. Omitted when the revision has no associated CVE.
+          example: CVE-2024-1234
+          type: string
+        cwe:
+          description: Associated CWE. Omitted when the revision has no associated CWE.
+          example: CWE-79
+          type: string
+        description:
+          description: Full description
+          example: bG9uZyBkZXNjcmlwdGlvbg==
+          type: string
+        documentation_url:
+          description: Documentation URL. Omitted when the revision has no documentation URL.
+          example: https://docs.example.com/rules/my-rule
+          type: string
+        id:
+          description: Revision identifier
+          example: revision-123
+          type: string
+        is_published:
+          description: Whether the revision is published
+          example: false
+          type: boolean
+        is_testing:
+          description: Whether this is a testing revision
+          example: false
+          type: boolean
+        language:
+          $ref: "#/components/schemas/Language"
+        severity:
+          $ref: "#/components/schemas/CustomRuleRevisionAttributesSeverity"
+        short_description:
+          description: Short description
+          example: c2hvcnQgZGVzY3JpcHRpb24=
+          type: string
+        should_use_ai_fix:
+          description: Whether to use AI for fixes
+          example: false
+          type: boolean
+        tags:
+          description: Rule tags
+          example:
+            - security
+            - custom
+          items:
+            description: A tag attached to the rule.
+            type: string
+          nullable: true
+          type: array
+        tests:
+          description: Rule tests
+          items:
+            $ref: "#/components/schemas/CustomRuleRevisionTest"
+          nullable: true
+          type: array
+        tree_sitter_query:
+          description: Tree-sitter query
+          example: Y29uZHVjdG9yOgogICAgLSBkZXBsb3lfb25seTogdHJ1ZQ==
+          type: string
+        version_id:
+          description: Monotonically increasing version number of the revision.
+          example: 1
+          format: int64
+          type: integer
+      required:
+        - id
+        - version_id
+        - creation_message
+        - short_description
+        - description
+        - code
+        - checksum
+        - language
+        - tree_sitter_query
+        - created_at
+        - created_by
+        - severity
+        - category
+        - arguments
+        - tests
+        - tags
+        - is_published
+        - should_use_ai_fix
+        - is_testing
+      type: object
     CustomRuleRequest:
       description: Request body for creating or updating a custom rule.
       properties:
@@ -30673,9 +30806,7 @@ components:
           example: my-rule
           type: string
         last_revision:
-          $ref: "#/components/schemas/CustomRuleRevisionEmbedded"
-          description: Most recent revision of the rule, or null when the rule has no revisions.
-          nullable: true
+          $ref: "#/components/schemas/CustomRuleNullableRevisionEmbedded"
         name:
           description: Rule name
           example: my-rule

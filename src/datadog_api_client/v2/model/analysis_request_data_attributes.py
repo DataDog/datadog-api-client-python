@@ -3,21 +3,25 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.analysis_request_options import AnalysisRequestOptions
     from datadog_api_client.v2.model.analysis_request_rule import AnalysisRequestRule
 
 
 class AnalysisRequestDataAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.analysis_request_options import AnalysisRequestOptions
         from datadog_api_client.v2.model.analysis_request_rule import AnalysisRequestRule
 
         return {
@@ -25,6 +29,7 @@ class AnalysisRequestDataAttributes(ModelNormal):
             "file_encoding": (str,),
             "filename": (str,),
             "language": (str,),
+            "options": (AnalysisRequestOptions,),
             "rules": ([AnalysisRequestRule],),
         }
 
@@ -33,11 +38,19 @@ class AnalysisRequestDataAttributes(ModelNormal):
         "file_encoding": "file_encoding",
         "filename": "filename",
         "language": "language",
+        "options": "options",
         "rules": "rules",
     }
 
     def __init__(
-        self_, code: str, file_encoding: str, filename: str, language: str, rules: List[AnalysisRequestRule], **kwargs
+        self_,
+        code: str,
+        file_encoding: str,
+        filename: str,
+        language: str,
+        rules: List[AnalysisRequestRule],
+        options: Union[AnalysisRequestOptions, UnsetType] = unset,
+        **kwargs,
     ):
         """
         The attributes of the analysis request, containing the source code and rules to apply.
@@ -54,9 +67,15 @@ class AnalysisRequestDataAttributes(ModelNormal):
         :param language: The programming language of the source code.
         :type language: str
 
+        :param options: Analyzer options sent by browser-based clients. Accepted but ignored: the API always runs
+            the analysis with tree-sitter enabled and rule output logged.
+        :type options: AnalysisRequestOptions, optional
+
         :param rules: The list of static analysis rules to apply during analysis.
         :type rules: [AnalysisRequestRule]
         """
+        if options is not unset:
+            kwargs["options"] = options
         super().__init__(kwargs)
 
         self_.code = code

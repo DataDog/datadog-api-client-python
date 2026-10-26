@@ -324,6 +324,7 @@ from datadog_api_client.v2.model.analysis_request import AnalysisRequest
 from datadog_api_client.v2.model.analysis_request_data import AnalysisRequestData
 from datadog_api_client.v2.model.analysis_request_data_attributes import AnalysisRequestDataAttributes
 from datadog_api_client.v2.model.analysis_request_data_type import AnalysisRequestDataType
+from datadog_api_client.v2.model.analysis_request_options import AnalysisRequestOptions
 from datadog_api_client.v2.model.analysis_request_rule import AnalysisRequestRule
 from datadog_api_client.v2.model.analysis_request_rule_argument import AnalysisRequestRuleArgument
 from datadog_api_client.v2.model.analysis_request_rule_test import AnalysisRequestRuleTest
@@ -2234,6 +2235,7 @@ from datadog_api_client.v2.model.custom_framework_without_requirements import Cu
 from datadog_api_client.v2.model.custom_rule import CustomRule
 from datadog_api_client.v2.model.custom_rule_attributes import CustomRuleAttributes
 from datadog_api_client.v2.model.custom_rule_data_type import CustomRuleDataType
+from datadog_api_client.v2.model.custom_rule_nullable_revision_embedded import CustomRuleNullableRevisionEmbedded
 from datadog_api_client.v2.model.custom_rule_request import CustomRuleRequest
 from datadog_api_client.v2.model.custom_rule_request_data import CustomRuleRequestData
 from datadog_api_client.v2.model.custom_rule_request_data_attributes import CustomRuleRequestDataAttributes
@@ -13250,6 +13252,7 @@ __all__ = [
     "AnalysisRequestData",
     "AnalysisRequestDataAttributes",
     "AnalysisRequestDataType",
+    "AnalysisRequestOptions",
     "AnalysisRequestRule",
     "AnalysisRequestRuleArgument",
     "AnalysisRequestRuleTest",
@@ -14622,6 +14625,7 @@ __all__ = [
     "CustomRule",
     "CustomRuleAttributes",
     "CustomRuleDataType",
+    "CustomRuleNullableRevisionEmbedded",
     "CustomRuleRequest",
     "CustomRuleRequestData",
     "CustomRuleRequestDataAttributes",
