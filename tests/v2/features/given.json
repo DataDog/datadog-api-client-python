@@ -1174,7 +1174,7 @@
     "parameters": [
       {
         "name": "metric_name",
-        "value": "\"{{ unique_metric_name }}\""
+        "value": "\"test.exemption.{{ unique_lower_alnum }}\""
       },
       {
         "name": "body",

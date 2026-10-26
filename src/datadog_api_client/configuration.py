@@ -732,6 +732,7 @@ class Configuration:
                 "v2.get_historical_metrics_configuration": False,
                 "v2.get_tag_indexing_rule": False,
                 "v2.get_tag_indexing_rule_exemption": False,
+                "v2.list_tag_indexing_rule_exemptions": False,
                 "v2.list_tag_indexing_rules": False,
                 "v2.list_tag_indexing_rules_for_metric": False,
                 "v2.reorder_tag_indexing_rules": False,
