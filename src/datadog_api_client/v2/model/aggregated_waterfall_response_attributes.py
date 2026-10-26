@@ -37,7 +37,7 @@ class AggregatedWaterfallResponseAttributes(ModelNormal):
             "application_id": (str,),
             "criteria": (AggregatedWaterfallResponseAttributesCriteria,),
             "_from": (int,),
-            "resources": ([AggregatedResource],),
+            "resources": ([AggregatedResource], none_type),
             "sampled_view_ids": ([str],),
             "to": (int,),
             "total_cache_hit_rate_pct": (float,),
@@ -62,7 +62,7 @@ class AggregatedWaterfallResponseAttributes(ModelNormal):
         application_id: str,
         criteria: Union[AggregatedWaterfallResponseAttributesCriteria, none_type],
         _from: int,
-        resources: List[AggregatedResource],
+        resources: Union[List[AggregatedResource], none_type],
         sampled_view_ids: List[str],
         to: int,
         total_cache_hit_rate_pct: float,
@@ -82,8 +82,8 @@ class AggregatedWaterfallResponseAttributes(ModelNormal):
         :param _from: Start of the analyzed time range as a Unix timestamp in seconds.
         :type _from: int
 
-        :param resources: Network resources in chronological waterfall order.
-        :type resources: [AggregatedResource]
+        :param resources: Network resources in chronological waterfall order, or null when the sampled views have no resources in their initial load window.
+        :type resources: [AggregatedResource], none_type
 
         :param sampled_view_ids: List of RUM view IDs sampled for this aggregation, capped at 50.
         :type sampled_view_ids: [str]
