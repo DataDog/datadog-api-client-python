@@ -6332,6 +6332,12 @@
       "type": "unsafe"
     }
   },
+  "UpdateTagIndexingRuleExemption": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListTagIndexingRulesForMetric": {
     "tag": "Metrics",
     "undo": {

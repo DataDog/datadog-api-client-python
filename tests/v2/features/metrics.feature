@@ -1240,6 +1240,48 @@ Feature: Metrics
     When the request is sent
     Then the response status is 422 Unprocessable Entity
 
+  @generated @skip @team:ddoghq/metrics-experience
+  Scenario: Update a tag indexing rule exemption returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "UpdateTagIndexingRuleExemption" enabled
+    And new "UpdateTagIndexingRuleExemption" request
+    And request contains "metric_name" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"reason": "This metric must remain exempt because of its query requirements."}, "type": "tag_indexing_rule_exemptions"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/metrics-experience
+  Scenario: Update a tag indexing rule exemption returns "Not Found" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "UpdateTagIndexingRuleExemption" enabled
+    And new "UpdateTagIndexingRuleExemption" request
+    And request contains "metric_name" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"reason": "This metric must remain exempt because of its query requirements."}, "type": "tag_indexing_rule_exemptions"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/metrics-experience
+  Scenario: Update a tag indexing rule exemption returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "UpdateTagIndexingRuleExemption" enabled
+    And new "UpdateTagIndexingRuleExemption" request
+    And request contains "metric_name" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"reason": "This metric must remain exempt because of its query requirements."}, "type": "tag_indexing_rule_exemptions"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @skip @team:ddoghq/metrics-experience
+  Scenario: Update a tag indexing rule exemption with only a legacy tag configuration returns "Not Found" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "UpdateTagIndexingRuleExemption" enabled
+    And there is a valid "metric" in the system
+    And there is a valid "metric_tag_configuration" in the system
+    And new "UpdateTagIndexingRuleExemption" request
+    And request contains "metric_name" parameter from "metric_tag_configuration.data.id"
+    And body with value {"data": {"attributes": {"reason": "This metric must remain exempt because of its query requirements."}, "type": "tag_indexing_rule_exemptions"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @team:ddoghq/metrics-experience
   Scenario: Update a tag indexing rule returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
