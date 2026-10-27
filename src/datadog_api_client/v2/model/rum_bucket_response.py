@@ -14,6 +14,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.rum_bucket_group_by_value import RUMBucketGroupByValue
     from datadog_api_client.v2.model.rum_aggregate_bucket_value import RUMAggregateBucketValue
     from datadog_api_client.v2.model.rum_aggregate_bucket_value_timeseries import RUMAggregateBucketValueTimeseries
 
@@ -21,10 +22,11 @@ if TYPE_CHECKING:
 class RUMBucketResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.rum_bucket_group_by_value import RUMBucketGroupByValue
         from datadog_api_client.v2.model.rum_aggregate_bucket_value import RUMAggregateBucketValue
 
         return {
-            "by": ({str: (str,)},),
+            "by": ({str: (RUMBucketGroupByValue,)},),
             "computes": ({str: (RUMAggregateBucketValue,)},),
         }
 
@@ -35,7 +37,7 @@ class RUMBucketResponse(ModelNormal):
 
     def __init__(
         self_,
-        by: Union[Dict[str, str], UnsetType] = unset,
+        by: Union[Dict[str, Union[RUMBucketGroupByValue, str, float]], UnsetType] = unset,
         computes: Union[
             Dict[str, Union[RUMAggregateBucketValue, str, float, RUMAggregateBucketValueTimeseries]], UnsetType
         ] = unset,
@@ -45,7 +47,7 @@ class RUMBucketResponse(ModelNormal):
         Bucket values.
 
         :param by: The key-value pairs for each group-by.
-        :type by: {str: (str,)}, optional
+        :type by: {str: (RUMBucketGroupByValue,)}, optional
 
         :param computes: A map of the metric name to value for regular compute, or a list of values for a timeseries.
         :type computes: {str: (RUMAggregateBucketValue,)}, optional

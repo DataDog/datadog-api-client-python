@@ -102121,6 +102121,15 @@ components:
           format: int32
           maximum: 2147483647
           type: integer
+        apm_rum_flat_sampling_replay_enabled:
+          description: Indicates if flat sampling of Session Replay for APM-correlated RUM sessions is enabled.
+          example: false
+          type: boolean
+        apm_rum_flat_sampling_replay_sample_rate:
+          description: Sample rate (0-100) of Session Replay for APM-correlated RUM sessions when flat sampling is enabled.
+          example: 0
+          format: double
+          type: number
         application_id:
           description: ID of the RUM application.
           example: abcd1234-0000-0000-abcd-1234abcd5678
@@ -102138,6 +102147,27 @@ components:
           description: Handle of the creator user.
           example: john.doe
           type: string
+        disabled_at:
+          description: Timestamp in ms of the date the RUM application was disabled. Only present if the application was disabled.
+          example: 1659479836169
+          format: int64
+          type: integer
+        disabled_by_handle:
+          description: Handle of the user who disabled the RUM application. Only present if the application was disabled.
+          example: jane.doe
+          type: string
+        error_tracking_exclusion_filter_enabled:
+          description: Indicates if Error Tracking exclusion filters are enabled for the application.
+          example: false
+          type: boolean
+        external_feeds:
+          description: Non-native ingestion paths the RUM application sends its data through. `otel` means the application sends RUM data through OpenTelemetry instead of the Datadog RUM SDK.
+          example:
+            - otel
+          items:
+            description: External feed name.
+            type: string
+          type: array
         hash:
           description: Hash of the RUM application. Optional.
           type: string
@@ -102149,9 +102179,23 @@ components:
           description: Name of the RUM application.
           example: my_rum_application
           type: string
+        ootb_metrics_installed:
+          description: Indicates if the out-of-the-box RUM metrics are installed for the application.
+          example: true
+          type: boolean
         org_id:
           description: Org ID of the RUM application.
           example: 999
+          format: int32
+          maximum: 2147483647
+          type: integer
+        product_analytics_preview_disabled:
+          description: Indicates that the Product Analytics preview is disabled for the application. Only present (and `true`) when the Product Analytics retention state is not preview.
+          example: true
+          type: boolean
+        product_analytics_replay_sample_rate:
+          description: Sample rate (0-100) of Session Replay for Product Analytics sessions.
+          example: 0
           format: int32
           maximum: 2147483647
           type: integer
@@ -102161,6 +102205,18 @@ components:
           description: ID of the RUM SDK remote configuration for the application, if one exists.
           example: abc12345-1234-5678-abcd-ef1234567890
           type: string
+        short_name:
+          description: Short name of the RUM application.
+          example: my_rum_application
+          type: string
+        tags:
+          description: List of tags associated with the RUM application.
+          example:
+            - "team:rum"
+          items:
+            description: Tag associated with the RUM application.
+            type: string
+          type: array
         type:
           description: "Type of the RUM application. Supported values are `browser`, `ios`, `android`, `react-native`, `flutter`, `roku`, `electron`, `unity`, `kotlin-multiplatform`."
           example: browser
@@ -102257,6 +102313,21 @@ components:
     RUMApplicationListAttributes:
       description: RUM application list attributes.
       properties:
+        api_key_id:
+          description: ID of the API key associated with the application.
+          example: 123456789
+          format: int32
+          maximum: 2147483647
+          type: integer
+        apm_rum_flat_sampling_replay_enabled:
+          description: Indicates if flat sampling of Session Replay for APM-correlated RUM sessions is enabled.
+          example: false
+          type: boolean
+        apm_rum_flat_sampling_replay_sample_rate:
+          description: Sample rate (0-100) of Session Replay for APM-correlated RUM sessions when flat sampling is enabled.
+          example: 0
+          format: double
+          type: number
         application_id:
           description: ID of the RUM application.
           example: abcd1234-0000-0000-abcd-1234abcd5678
@@ -102270,6 +102341,27 @@ components:
           description: Handle of the creator user.
           example: john.doe
           type: string
+        disabled_at:
+          description: Timestamp in ms of the date the RUM application was disabled. Only present if the application was disabled.
+          example: 1659479836169
+          format: int64
+          type: integer
+        disabled_by_handle:
+          description: Handle of the user who disabled the RUM application. Only present if the application was disabled.
+          example: jane.doe
+          type: string
+        error_tracking_exclusion_filter_enabled:
+          description: Indicates if Error Tracking exclusion filters are enabled for the application.
+          example: false
+          type: boolean
+        external_feeds:
+          description: Non-native ingestion paths the RUM application sends its data through. `otel` means the application sends RUM data through OpenTelemetry instead of the Datadog RUM SDK.
+          example:
+            - otel
+          items:
+            description: External feed name.
+            type: string
+          type: array
         hash:
           description: Hash of the RUM application. Optional.
           type: string
@@ -102281,14 +102373,44 @@ components:
           description: Name of the RUM application.
           example: my_rum_application
           type: string
+        ootb_metrics_installed:
+          description: Indicates if the out-of-the-box RUM metrics are installed for the application.
+          example: true
+          type: boolean
         org_id:
           description: Org ID of the RUM application.
           example: 999
           format: int32
           maximum: 2147483647
           type: integer
+        product_analytics_preview_disabled:
+          description: Indicates that the Product Analytics preview is disabled for the application. Only present (and `true`) when the Product Analytics retention state is not preview.
+          example: true
+          type: boolean
+        product_analytics_replay_sample_rate:
+          description: Sample rate (0-100) of Session Replay for Product Analytics sessions.
+          example: 0
+          format: int32
+          maximum: 2147483647
+          type: integer
         product_scales:
           $ref: "#/components/schemas/RUMProductScales"
+        remote_config_id:
+          description: ID of the RUM SDK remote configuration for the application, if one exists.
+          example: abc12345-1234-5678-abcd-ef1234567890
+          type: string
+        short_name:
+          description: Short name of the RUM application.
+          example: my_rum_application
+          type: string
+        tags:
+          description: List of tags associated with the RUM application.
+          example:
+            - "team:rum"
+          items:
+            description: Tag associated with the RUM application.
+            type: string
+          type: array
         type:
           description: Type of the RUM application. Supported values are `browser`, `ios`, `android`, `react-native`, `flutter`, `roku`, `electron`, `unity`, `kotlin-multiplatform`.
           example: browser
@@ -102393,15 +102515,20 @@ components:
             $ref: "#/components/schemas/RUMApplicationList"
           type: array
       type: object
+    RUMBucketGroupByValue:
+      description: The value of a group-by facet for this bucket. A string for string facets, a number for numeric facets and histograms.
+      oneOf:
+        - type: string
+        - format: double
+          type: number
     RUMBucketResponse:
       description: Bucket values.
       properties:
         by:
           additionalProperties:
-            description: The values for each group-by.
-            type: string
+            $ref: "#/components/schemas/RUMBucketGroupByValue"
           description: The key-value pairs for each group-by.
-          example: {"@session.type": "user", "@type": "view"}
+          example: {"@session.type": "user", "@view.time_spent": 1000000000}
           type: object
         computes:
           additionalProperties:
@@ -220460,7 +220587,11 @@ paths:
         "204":
           description: No Content
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Not Found
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: Delete a RUM application
@@ -220503,7 +220634,11 @@ paths:
                 $ref: "#/components/schemas/RUMApplicationResponse"
           description: OK
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Not Found
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: Get a RUM application
@@ -220565,7 +220700,11 @@ paths:
         "400":
           $ref: "#/components/responses/BadRequestResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Not Found
         "422":
           content:
             application/json:
