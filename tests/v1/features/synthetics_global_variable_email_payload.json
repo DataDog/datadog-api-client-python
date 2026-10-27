@@ -1,0 +1,6 @@
+{
+  "name": "PERSISTENT_EMAIL_{{ unique_upper_alnum }}",
+  "description": "Persistent email variable",
+  "tags": [],
+  "is_email": true
+}
