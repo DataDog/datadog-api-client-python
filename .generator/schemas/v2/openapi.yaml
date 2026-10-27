@@ -26937,6 +26937,9 @@ components:
           description: The name of the status page.
           example: Status Page US1
           type: string
+        rss_feed_enabled:
+          description: Whether the RSS feed is enabled for the status page.
+          type: boolean
         slack_app_icon:
           description: The Slack app icon URL for the status page.
           type: string
@@ -96541,6 +96544,9 @@ components:
           description: The name of the status page.
           example: Status Page US1
           type: string
+        rss_feed_enabled:
+          description: Whether the RSS feed is enabled for the status page.
+          type: boolean
         slack_app_icon:
           description: The Slack app icon URL for the status page.
           type: string
@@ -126189,6 +126195,9 @@ components:
         page_url:
           description: The url that the status page is accessible at.
           type: string
+        rss_feed_enabled:
+          description: Whether the RSS feed is enabled for the status page.
+          type: boolean
         slack_app_icon:
           description: The Slack app icon URL for the status page.
           type: string
@@ -126363,6 +126372,9 @@ components:
         page_url:
           description: The url that the status page is accessible at.
           type: string
+        rss_feed_enabled:
+          description: Whether the RSS feed is enabled for the status page.
+          type: boolean
         slack_app_icon:
           description: The Slack app icon URL for the status page.
           type: string
