@@ -5860,6 +5860,12 @@
       "type": "safe"
     }
   },
+  "ListArchiveSearches": {
+    "tag": "Logs Archive Searches",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateArchiveSearch": {
     "tag": "Logs Archive Searches",
     "undo": {
@@ -5870,6 +5876,18 @@
     "tag": "Logs Archive Searches",
     "undo": {
       "type": "safe"
+    }
+  },
+  "RehydrateArchiveSearch": {
+    "tag": "Logs Archive Searches",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "CancelArchiveSearch": {
+    "tag": "Logs Archive Searches",
+    "undo": {
+      "type": "unsafe"
     }
   },
   "GetLogsArchiveOrder": {
