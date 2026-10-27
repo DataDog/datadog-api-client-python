@@ -8900,6 +8900,20 @@
     {
       "feature": "Observability Pipelines",
       "feature_file": "../../v2/features/observability_pipelines.feature",
+      "file": "v2/observability-pipelines/validate-an-observability-pipeline-with-spike-protection-processor-returns-ok-response.json",
+      "scenario": "Validate an observability pipeline with spike protection processor returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "feature_file": "../../v2/features/observability_pipelines.feature",
+      "file": "v2/observability-pipelines/validate-an-observability-pipeline-with-spike-protection-processor-threshold-overrides-returns-ok-response.json",
+      "scenario": "Validate an observability pipeline with spike protection processor threshold overrides returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "feature_file": "../../v2/features/observability_pipelines.feature",
       "file": "v2/observability-pipelines/validate-an-observability-pipeline-with-websocket-source-bearer-auth-returns-ok-response.json",
       "scenario": "Validate an observability pipeline with websocket source bearer auth returns \"OK\" response",
       "version": "v2"

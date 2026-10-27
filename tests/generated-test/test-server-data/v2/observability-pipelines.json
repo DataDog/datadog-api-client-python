@@ -3298,6 +3298,187 @@
     },
     {
       "feature": "Observability Pipelines",
+      "frozen_at": "2026-10-21T09:12:44.167Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "id": "spike-protection-processor",
+                              "include": "*",
+                              "minimal_threshold": 107374182400,
+                              "name": "MySpikeProtection",
+                              "spike_action": "drop",
+                              "spike_threshold": 5,
+                              "type": "spike_protection"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Pipeline with Spike Protection"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate an observability pipeline with spike protection processor returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-10-21T09:12:44.469Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "action_when_missing_partitions": "default_bucket",
+                              "enabled": true,
+                              "id": "spike-protection-processor",
+                              "include": "*",
+                              "minimal_threshold_overrides": [
+                                {
+                                  "fields": [
+                                    {
+                                      "name": "service",
+                                      "value": "checkout"
+                                    }
+                                  ],
+                                  "minimal_threshold": {
+                                    "bytes": 53687091200,
+                                    "type": "threshold"
+                                  }
+                                },
+                                {
+                                  "fields": [
+                                    {
+                                      "name": "service",
+                                      "value": "payments"
+                                    }
+                                  ],
+                                  "minimal_threshold": {
+                                    "type": "always_keep"
+                                  }
+                                }
+                              ],
+                              "name": "MyPartitionedSpikeProtection",
+                              "partition_fields": [
+                                "service"
+                              ],
+                              "spike_action": "no_action",
+                              "type": "spike_protection"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Pipeline with Spike Protection Threshold Overrides"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate an observability pipeline with spike protection processor threshold overrides returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
       "frozen_at": "2026-06-22T19:51:31.598Z",
       "interactions": [
         {
