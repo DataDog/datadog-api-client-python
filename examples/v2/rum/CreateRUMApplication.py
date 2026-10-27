@@ -1,5 +1,5 @@
 """
-Create a new RUM application returns "OK" response
+Create a new RUM application returns "Created" response
 """
 
 from os import environ

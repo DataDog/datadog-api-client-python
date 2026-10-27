@@ -1,5 +1,5 @@
 """
-Create a new RUM application with Product Scales returns "OK" response
+Create a new RUM application without default retention filters returns "Created" response
 """
 
 from os import environ
@@ -9,16 +9,13 @@ from datadog_api_client.v2.model.rum_application_create import RUMApplicationCre
 from datadog_api_client.v2.model.rum_application_create_attributes import RUMApplicationCreateAttributes
 from datadog_api_client.v2.model.rum_application_create_request import RUMApplicationCreateRequest
 from datadog_api_client.v2.model.rum_application_create_type import RUMApplicationCreateType
-from datadog_api_client.v2.model.rum_event_processing_state import RUMEventProcessingState
-from datadog_api_client.v2.model.rum_product_analytics_retention_state import RUMProductAnalyticsRetentionState
 
 body = RUMApplicationCreateRequest(
     data=RUMApplicationCreate(
         attributes=RUMApplicationCreateAttributes(
-            name="test-rum-with-product-scales-5c67ebb32077e1d9",
+            name="test-rum-no-default-rf-5c67ebb32077e1d9",
             type="browser",
-            rum_event_processing_state=RUMEventProcessingState.ERROR_FOCUSED_MODE,
-            product_analytics_retention_state=RUMProductAnalyticsRetentionState.NONE,
+            create_default_retention_filters=False,
         ),
         type=RUMApplicationCreateType.RUM_APPLICATION_CREATE,
     ),

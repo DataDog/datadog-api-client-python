@@ -9586,15 +9586,22 @@
     {
       "feature": "RUM",
       "feature_file": "../../v2/features/rum.feature",
-      "file": "v2/rum/create-a-new-rum-application-returns-ok-response.json",
-      "scenario": "Create a new RUM application returns \"OK\" response",
+      "file": "v2/rum/create-a-new-rum-application-returns-created-response.json",
+      "scenario": "Create a new RUM application returns \"Created\" response",
       "version": "v2"
     },
     {
       "feature": "RUM",
       "feature_file": "../../v2/features/rum.feature",
-      "file": "v2/rum/create-a-new-rum-application-with-product-scales-returns-ok-response.json",
-      "scenario": "Create a new RUM application with Product Scales returns \"OK\" response",
+      "file": "v2/rum/create-a-new-rum-application-with-product-scales-returns-created-response.json",
+      "scenario": "Create a new RUM application with Product Scales returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM",
+      "feature_file": "../../v2/features/rum.feature",
+      "file": "v2/rum/create-a-new-rum-application-without-default-retention-filters-returns-created-response.json",
+      "scenario": "Create a new RUM application without default retention filters returns \"Created\" response",
       "version": "v2"
     },
     {

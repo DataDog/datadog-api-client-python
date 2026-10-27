@@ -34,11 +34,11 @@ Feature: RUM
     Then the response status is 400 Bad Request
 
   @skip-validation @team:ddoghq/rum-backend
-  Scenario: Create a new RUM application returns "OK" response
+  Scenario: Create a new RUM application returns "Created" response
     Given new "CreateRUMApplication" request
     And body with value {"data": {"attributes": {"name": "test-rum-{{ unique_hash }}", "type": "ios"}, "type": "rum_application_create"}}
     When the request is sent
-    Then the response status is 200 RUM application.
+    Then the response status is 201 Created
     And the response "data.type" is equal to "rum_application"
     And the response "data.attributes.type" is equal to "ios"
     And the response "data.attributes.name" is equal to "test-rum-{{ unique_hash }}"
@@ -48,17 +48,27 @@ Feature: RUM
     And the response "data.attributes.product_scales.product_analytics_retention_scale" has field "last_modified_at"
 
   @skip-validation @team:ddoghq/rum-backend
-  Scenario: Create a new RUM application with Product Scales returns "OK" response
+  Scenario: Create a new RUM application with Product Scales returns "Created" response
     Given new "CreateRUMApplication" request
     And body with value {"data": {"attributes": {"name": "test-rum-with-product-scales-{{ unique_hash }}", "type": "browser", "rum_event_processing_state": "ERROR_FOCUSED_MODE", "product_analytics_retention_state": "NONE"}, "type": "rum_application_create"}}
     When the request is sent
-    Then the response status is 200 OK
+    Then the response status is 201 Created
     And the response "data.type" is equal to "rum_application"
     And the response "data.attributes.name" is equal to "test-rum-with-product-scales-{{ unique_hash }}"
     And the response "data.attributes.product_scales.rum_event_processing_scale.state" is equal to "ERROR_FOCUSED_MODE"
     And the response "data.attributes.product_scales.product_analytics_retention_scale.state" is equal to "NONE"
     And the response "data.attributes.product_scales.rum_event_processing_scale" has field "last_modified_at"
     And the response "data.attributes.product_scales.product_analytics_retention_scale" has field "last_modified_at"
+
+  @skip-validation @team:ddoghq/rum-backend
+  Scenario: Create a new RUM application without default retention filters returns "Created" response
+    Given new "CreateRUMApplication" request
+    And body with value {"data": {"attributes": {"name": "test-rum-no-default-rf-{{ unique_hash }}", "type": "browser", "create_default_retention_filters": false}, "type": "rum_application_create"}}
+    When the request is sent
+    Then the response status is 201 Created
+    And the response "data.type" is equal to "rum_application"
+    And the response "data.attributes.name" is equal to "test-rum-no-default-rf-{{ unique_hash }}"
+    And the response "data.attributes.type" is equal to "browser"
 
   @skip-validation @team:ddoghq/rum-backend
   Scenario: Delete a RUM application returns "No Content" response
