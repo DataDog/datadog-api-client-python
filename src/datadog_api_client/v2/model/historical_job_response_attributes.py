@@ -14,12 +14,14 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.historical_job_failure import HistoricalJobFailure
     from datadog_api_client.v2.model.job_definition import JobDefinition
 
 
 class HistoricalJobResponseAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.historical_job_failure import HistoricalJobFailure
         from datadog_api_client.v2.model.job_definition import JobDefinition
 
         return {
@@ -27,6 +29,7 @@ class HistoricalJobResponseAttributes(ModelNormal):
             "created_by_handle": (str,),
             "created_by_name": (str,),
             "created_from_rule_id": (str,),
+            "failure": (HistoricalJobFailure,),
             "job_definition": (JobDefinition,),
             "job_name": (str,),
             "job_status": (str,),
@@ -40,6 +43,7 @@ class HistoricalJobResponseAttributes(ModelNormal):
         "created_by_handle": "createdByHandle",
         "created_by_name": "createdByName",
         "created_from_rule_id": "createdFromRuleId",
+        "failure": "failure",
         "job_definition": "jobDefinition",
         "job_name": "jobName",
         "job_status": "jobStatus",
@@ -54,6 +58,7 @@ class HistoricalJobResponseAttributes(ModelNormal):
         created_by_handle: Union[str, UnsetType] = unset,
         created_by_name: Union[str, UnsetType] = unset,
         created_from_rule_id: Union[str, UnsetType] = unset,
+        failure: Union[HistoricalJobFailure, UnsetType] = unset,
         job_definition: Union[JobDefinition, UnsetType] = unset,
         job_name: Union[str, UnsetType] = unset,
         job_status: Union[str, UnsetType] = unset,
@@ -76,6 +81,9 @@ class HistoricalJobResponseAttributes(ModelNormal):
 
         :param created_from_rule_id: ID of the rule used to create the job (if it is created from a rule).
         :type created_from_rule_id: str, optional
+
+        :param failure: Details about why the job failed. Only present when the job has failed and won't be retried.
+        :type failure: HistoricalJobFailure, optional
 
         :param job_definition: Definition of a historical job.
         :type job_definition: JobDefinition, optional
@@ -103,6 +111,8 @@ class HistoricalJobResponseAttributes(ModelNormal):
             kwargs["created_by_name"] = created_by_name
         if created_from_rule_id is not unset:
             kwargs["created_from_rule_id"] = created_from_rule_id
+        if failure is not unset:
+            kwargs["failure"] = failure
         if job_definition is not unset:
             kwargs["job_definition"] = job_definition
         if job_name is not unset:

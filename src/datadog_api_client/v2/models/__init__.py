@@ -4657,6 +4657,8 @@ from datadog_api_client.v2.model.hamr_org_connection_response import HamrOrgConn
 from datadog_api_client.v2.model.hamr_org_connection_status import HamrOrgConnectionStatus
 from datadog_api_client.v2.model.hamr_org_connection_type import HamrOrgConnectionType
 from datadog_api_client.v2.model.historical_job_data_type import HistoricalJobDataType
+from datadog_api_client.v2.model.historical_job_failure import HistoricalJobFailure
+from datadog_api_client.v2.model.historical_job_failure_reason import HistoricalJobFailureReason
 from datadog_api_client.v2.model.historical_job_list_meta import HistoricalJobListMeta
 from datadog_api_client.v2.model.historical_job_options import HistoricalJobOptions
 from datadog_api_client.v2.model.historical_job_query import HistoricalJobQuery
@@ -16244,6 +16246,8 @@ __all__ = [
     "HamrOrgConnectionStatus",
     "HamrOrgConnectionType",
     "HistoricalJobDataType",
+    "HistoricalJobFailure",
+    "HistoricalJobFailureReason",
     "HistoricalJobListMeta",
     "HistoricalJobOptions",
     "HistoricalJobQuery",
