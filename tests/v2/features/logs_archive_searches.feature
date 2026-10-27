@@ -17,6 +17,30 @@ Feature: Logs Archive Searches
     And an instance of "LogsArchiveSearches" API
 
   @generated @skip @team:ddoghq/logs-backend @team:ddoghq/logs-federated-search @team:ddoghq/logs-routing
+  Scenario: Cancel an Archive Search returns "Bad Request" response
+    Given operation "CancelArchiveSearch" enabled
+    And new "CancelArchiveSearch" request
+    And request contains "archive_search_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/logs-backend @team:ddoghq/logs-federated-search @team:ddoghq/logs-routing
+  Scenario: Cancel an Archive Search returns "Not Found" response
+    Given operation "CancelArchiveSearch" enabled
+    And new "CancelArchiveSearch" request
+    And request contains "archive_search_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/logs-backend @team:ddoghq/logs-federated-search @team:ddoghq/logs-routing
+  Scenario: Cancel an Archive Search returns "OK" response
+    Given operation "CancelArchiveSearch" enabled
+    And new "CancelArchiveSearch" request
+    And request contains "archive_search_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/logs-backend @team:ddoghq/logs-federated-search @team:ddoghq/logs-routing
   Scenario: Create an Archive Search returns "Bad Request" response
     Given operation "CreateArchiveSearch" enabled
     And new "CreateArchiveSearch" request
@@ -63,3 +87,46 @@ Feature: Logs Archive Searches
     And request contains "archive_search_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/logs-backend @team:ddoghq/logs-federated-search @team:ddoghq/logs-routing
+  Scenario: List Archive Searches returns "OK" response
+    Given operation "ListArchiveSearches" enabled
+    And new "ListArchiveSearches" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/logs-backend @team:ddoghq/logs-federated-search @team:ddoghq/logs-routing
+  Scenario: Rehydrate an Archive Search returns "Bad Request" response
+    Given operation "RehydrateArchiveSearch" enabled
+    And new "RehydrateArchiveSearch" request
+    And request contains "archive_search_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"rehydration": {"retention_days": 15, "tier": "standard"}}, "type": "archive_search"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/logs-backend @team:ddoghq/logs-federated-search @team:ddoghq/logs-routing
+  Scenario: Rehydrate an Archive Search returns "Not Found" response
+    Given operation "RehydrateArchiveSearch" enabled
+    And new "RehydrateArchiveSearch" request
+    And request contains "archive_search_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"rehydration": {"retention_days": 15, "tier": "standard"}}, "type": "archive_search"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/logs-backend @team:ddoghq/logs-federated-search @team:ddoghq/logs-routing
+  Scenario: Rehydrate an Archive Search returns "OK" response
+    Given operation "RehydrateArchiveSearch" enabled
+    And new "RehydrateArchiveSearch" request
+    And request contains "archive_search_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"rehydration": {"retention_days": 15, "tier": "standard"}}, "type": "archive_search"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/logs-backend @team:ddoghq/logs-federated-search @team:ddoghq/logs-routing
+  Scenario: Rehydrate an Archive Search returns "Precondition Failed" response
+    Given operation "RehydrateArchiveSearch" enabled
+    And new "RehydrateArchiveSearch" request
+    And request contains "archive_search_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"rehydration": {"retention_days": 15, "tier": "standard"}}, "type": "archive_search"}}
+    When the request is sent
+    Then the response status is 412 Precondition Failed

@@ -625,6 +625,16 @@ from datadog_api_client.v2.model.archive_search_create_rehydration import Archiv
 from datadog_api_client.v2.model.archive_search_create_request import ArchiveSearchCreateRequest
 from datadog_api_client.v2.model.archive_search_create_request_attributes import ArchiveSearchCreateRequestAttributes
 from datadog_api_client.v2.model.archive_search_create_request_data import ArchiveSearchCreateRequestData
+from datadog_api_client.v2.model.archive_search_list_response import ArchiveSearchListResponse
+from datadog_api_client.v2.model.archive_search_list_response_meta import ArchiveSearchListResponseMeta
+from datadog_api_client.v2.model.archive_search_rehydrate_request import ArchiveSearchRehydrateRequest
+from datadog_api_client.v2.model.archive_search_rehydrate_request_attributes import (
+    ArchiveSearchRehydrateRequestAttributes,
+)
+from datadog_api_client.v2.model.archive_search_rehydrate_request_data import ArchiveSearchRehydrateRequestData
+from datadog_api_client.v2.model.archive_search_rehydrate_request_rehydration import (
+    ArchiveSearchRehydrateRequestRehydration,
+)
 from datadog_api_client.v2.model.archive_search_rehydration import ArchiveSearchRehydration
 from datadog_api_client.v2.model.archive_search_rehydration_tier import ArchiveSearchRehydrationTier
 from datadog_api_client.v2.model.archive_search_response import ArchiveSearchResponse
@@ -13471,6 +13481,12 @@ __all__ = [
     "ArchiveSearchCreateRequest",
     "ArchiveSearchCreateRequestAttributes",
     "ArchiveSearchCreateRequestData",
+    "ArchiveSearchListResponse",
+    "ArchiveSearchListResponseMeta",
+    "ArchiveSearchRehydrateRequest",
+    "ArchiveSearchRehydrateRequestAttributes",
+    "ArchiveSearchRehydrateRequestData",
+    "ArchiveSearchRehydrateRequestRehydration",
     "ArchiveSearchRehydration",
     "ArchiveSearchRehydrationTier",
     "ArchiveSearchResponse",
