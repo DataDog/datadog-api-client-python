@@ -737,6 +737,7 @@ class Configuration:
                 "v2.list_tag_indexing_rules_for_metric": False,
                 "v2.reorder_tag_indexing_rules": False,
                 "v2.update_tag_indexing_rule": False,
+                "v2.update_tag_indexing_rule_exemption": False,
                 "v2.delete_model_lab_run": False,
                 "v2.get_model_lab_artifact_content": False,
                 "v2.get_model_lab_project": False,

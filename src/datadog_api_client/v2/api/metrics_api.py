@@ -49,6 +49,7 @@ from datadog_api_client.v2.model.metric_estimate_response import MetricEstimateR
 from datadog_api_client.v2.model.metric_tag_cardinalities_response import MetricTagCardinalitiesResponse
 from datadog_api_client.v2.model.tag_indexing_rule_exemption_response import TagIndexingRuleExemptionResponse
 from datadog_api_client.v2.model.tag_indexing_rule_exemption_create_request import TagIndexingRuleExemptionCreateRequest
+from datadog_api_client.v2.model.tag_indexing_rule_exemption_update_request import TagIndexingRuleExemptionUpdateRequest
 from datadog_api_client.v2.model.metric_tag_configuration_response import MetricTagConfigurationResponse
 from datadog_api_client.v2.model.metric_tag_configuration_update_request import MetricTagConfigurationUpdateRequest
 from datadog_api_client.v2.model.metric_tag_configuration_create_request import MetricTagConfigurationCreateRequest
@@ -1051,6 +1052,32 @@ class MetricsApi:
                 "body": {
                     "required": True,
                     "openapi_types": (TagIndexingRuleUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_tag_indexing_rule_exemption_endpoint = _Endpoint(
+            settings={
+                "response_type": (TagIndexingRuleExemptionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/metrics/{metric_name}/tag-indexing-rule-exemptions",
+                "operation_id": "update_tag_indexing_rule_exemption",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "metric_name": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "metric_name",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (TagIndexingRuleExemptionUpdateRequest,),
                     "location": "body",
                 },
             },
@@ -2137,3 +2164,26 @@ class MetricsApi:
         kwargs["body"] = body
 
         return self._update_tag_indexing_rule_endpoint.call_with_http_info(**kwargs)
+
+    def update_tag_indexing_rule_exemption(
+        self,
+        metric_name: str,
+        body: TagIndexingRuleExemptionUpdateRequest,
+    ) -> TagIndexingRuleExemptionResponse:
+        """Update a tag indexing rule exemption.
+
+        Update the reason for an explicit tag indexing rule exemption. The exemption's ``created_at`` and
+        ``created_by_handle`` values remain unchanged. Returns 404 when the metric has no explicit exemption or has
+        only a legacy tag configuration. Requires the ``Manage Tags for Metrics`` permission.
+
+        :param metric_name: The name of the metric.
+        :type metric_name: str
+        :type body: TagIndexingRuleExemptionUpdateRequest
+        :rtype: TagIndexingRuleExemptionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["metric_name"] = metric_name
+
+        kwargs["body"] = body
+
+        return self._update_tag_indexing_rule_exemption_endpoint.call_with_http_info(**kwargs)
