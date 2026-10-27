@@ -1471,7 +1471,6 @@ from datadog_api_client.v2.model.component_grid_properties_is_visible import Com
 from datadog_api_client.v2.model.component_grid_type import ComponentGridType
 from datadog_api_client.v2.model.component_properties import ComponentProperties
 from datadog_api_client.v2.model.component_properties_is_visible import ComponentPropertiesIsVisible
-from datadog_api_client.v2.model.component_recommendation import ComponentRecommendation
 from datadog_api_client.v2.model.component_type import ComponentType
 from datadog_api_client.v2.model.condition import Condition
 from datadog_api_client.v2.model.condition_operator import ConditionOperator
@@ -1661,7 +1660,6 @@ from datadog_api_client.v2.model.coverage_summary_data import CoverageSummaryDat
 from datadog_api_client.v2.model.coverage_summary_response import CoverageSummaryResponse
 from datadog_api_client.v2.model.coverage_summary_service_stats import CoverageSummaryServiceStats
 from datadog_api_client.v2.model.coverage_summary_type import CoverageSummaryType
-from datadog_api_client.v2.model.cpu import Cpu
 from datadog_api_client.v2.model.create_action_connection_request import CreateActionConnectionRequest
 from datadog_api_client.v2.model.create_action_connection_response import CreateActionConnectionResponse
 from datadog_api_client.v2.model.create_allocations_request import CreateAllocationsRequest
@@ -3256,7 +3254,6 @@ from datadog_api_client.v2.model.escalation_relationships_responders_data_items_
 from datadog_api_client.v2.model.escalation_target import EscalationTarget
 from datadog_api_client.v2.model.escalation_targets import EscalationTargets
 from datadog_api_client.v2.model.escalation_type import EscalationType
-from datadog_api_client.v2.model.estimation import Estimation
 from datadog_api_client.v2.model.event import Event
 from datadog_api_client.v2.model.event_attributes import EventAttributes
 from datadog_api_client.v2.model.event_category import EventCategory
@@ -9075,14 +9072,6 @@ from datadog_api_client.v2.model.react_native_sourcemap_map_kind import ReactNat
 from datadog_api_client.v2.model.readiness_gate import ReadinessGate
 from datadog_api_client.v2.model.readiness_gate_threshold_type import ReadinessGateThresholdType
 from datadog_api_client.v2.model.recently_updated_entities_response import RecentlyUpdatedEntitiesResponse
-from datadog_api_client.v2.model.recommendation_attributes import RecommendationAttributes
-from datadog_api_client.v2.model.recommendation_data import RecommendationData
-from datadog_api_client.v2.model.recommendation_document import RecommendationDocument
-from datadog_api_client.v2.model.recommendation_type import RecommendationType
-from datadog_api_client.v2.model.recommendation_v2_request_attributes import RecommendationV2RequestAttributes
-from datadog_api_client.v2.model.recommendation_v2_request_body import RecommendationV2RequestBody
-from datadog_api_client.v2.model.recommendation_v2_request_data import RecommendationV2RequestData
-from datadog_api_client.v2.model.recommendation_v2_request_type import RecommendationV2RequestType
 from datadog_api_client.v2.model.recommendations_filter_request import RecommendationsFilterRequest
 from datadog_api_client.v2.model.recommendations_filter_request_data import RecommendationsFilterRequestData
 from datadog_api_client.v2.model.recommendations_filter_request_data_attributes import (
@@ -14156,7 +14145,6 @@ __all__ = [
     "ComponentGridType",
     "ComponentProperties",
     "ComponentPropertiesIsVisible",
-    "ComponentRecommendation",
     "ComponentType",
     "Condition",
     "ConditionOperator",
@@ -14326,7 +14314,6 @@ __all__ = [
     "CoverageSummaryResponse",
     "CoverageSummaryServiceStats",
     "CoverageSummaryType",
-    "Cpu",
     "CreateActionConnectionRequest",
     "CreateActionConnectionResponse",
     "CreateAllocationsRequest",
@@ -15357,7 +15344,6 @@ __all__ = [
     "EscalationTarget",
     "EscalationTargets",
     "EscalationType",
-    "Estimation",
     "Event",
     "EventAttributes",
     "EventCategory",
@@ -19062,14 +19048,6 @@ __all__ = [
     "ReadinessGate",
     "ReadinessGateThresholdType",
     "RecentlyUpdatedEntitiesResponse",
-    "RecommendationAttributes",
-    "RecommendationData",
-    "RecommendationDocument",
-    "RecommendationType",
-    "RecommendationV2RequestAttributes",
-    "RecommendationV2RequestBody",
-    "RecommendationV2RequestData",
-    "RecommendationV2RequestType",
     "RecommendationsFilterRequest",
     "RecommendationsFilterRequestData",
     "RecommendationsFilterRequestDataAttributes",
