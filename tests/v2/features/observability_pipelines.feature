@@ -352,6 +352,22 @@ Feature: Observability Pipelines
     And the response "errors" has length 0
 
   @team:ddoghq/observability-pipelines
+  Scenario: Validate an observability pipeline with spike protection processor returns "OK" response
+    Given new "ValidatePipeline" request
+    And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "spike-protection-processor", "include": "*", "type": "spike_protection", "name": "MySpikeProtection", "spike_action": "drop", "spike_threshold": 5, "minimal_threshold": 107374182400}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with Spike Protection"}, "type": "pipelines"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "errors" has length 0
+
+  @team:ddoghq/observability-pipelines
+  Scenario: Validate an observability pipeline with spike protection processor threshold overrides returns "OK" response
+    Given new "ValidatePipeline" request
+    And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "spike-protection-processor", "include": "*", "type": "spike_protection", "name": "MyPartitionedSpikeProtection", "spike_action": "no_action", "partition_fields": ["service"], "action_when_missing_partitions": "default_bucket", "minimal_threshold_overrides": [{"fields": [{"name": "service", "value": "checkout"}], "minimal_threshold": {"type": "threshold", "bytes": 53687091200}}, {"fields": [{"name": "service", "value": "payments"}], "minimal_threshold": {"type": "always_keep"}}]}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with Spike Protection Threshold Overrides"}, "type": "pipelines"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "errors" has length 0
+
+  @team:ddoghq/observability-pipelines
   Scenario: Validate an observability pipeline with websocket source bearer auth returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["websocket-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "websocket-source", "type": "websocket", "decoding": "json", "auth_strategy": "bearer", "token_key": "WS_BEARER_TOKEN", "uri_key": "WS_URI", "tls": {"mode": "enabled"}}]}, "name": "Pipeline with WebSocket Source"}, "type": "pipelines"}}

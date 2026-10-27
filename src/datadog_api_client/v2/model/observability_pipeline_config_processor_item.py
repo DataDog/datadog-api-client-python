@@ -139,6 +139,28 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         :param merge_strategies: List of merge strategies defining how values from grouped events should be combined.
         :type merge_strategies: [ObservabilityPipelineReduceProcessorMergeStrategy]
 
+        :param action_when_missing_partitions: How to handle logs that are missing one of the `partition_fields`. Options:
+            - `ignore`: Forward the event without applying spike protection.
+            - `default_bucket`: Assign the event to a default partition.
+        :type action_when_missing_partitions: ObservabilityPipelineSpikeProtectionProcessorActionWhenMissingPartitions, optional
+
+        :param minimal_threshold: The minimum volume, in bytes, that must be observed within 24 hours before spike protection can activate. Defaults to 100 GiB.
+        :type minimal_threshold: int, optional
+
+        :param minimal_threshold_overrides: A list of per-partition overrides for the minimal threshold, identified by matching field values. Requires `partition_fields` to be set.
+        :type minimal_threshold_overrides: [ObservabilityPipelineSpikeProtectionProcessorThresholdOverride], optional
+
+        :param spike_action: The action to take with matching logs while spike protection is active. Options:
+            - `drop`: Drop the event.
+            - `no_action`: Let the event pass through.
+            - `overflow_routing`: Route to an overflow destination.
+
+            When `overflow_routing` is used, there must be a destination whose `inputs` reference this processor with the `<processor-id>.overflow_events` suffix to route the overflowing events.
+        :type spike_action: ObservabilityPipelineSpikeProtectionProcessorSpikeAction
+
+        :param spike_threshold: The number of standard deviations above the learned mean volume that must be exceeded before a spike is detected. Defaults to `5`.
+        :type spike_threshold: float, optional
+
         :param arrays: A list of array split configurations.
         :type arrays: [ObservabilityPipelineSplitArrayProcessorArrayConfig]
 
@@ -237,6 +259,9 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_rename_fields_processor import (
             ObservabilityPipelineRenameFieldsProcessor,
         )
+        from datadog_api_client.v2.model.observability_pipeline_spike_protection_processor import (
+            ObservabilityPipelineSpikeProtectionProcessor,
+        )
         from datadog_api_client.v2.model.observability_pipeline_split_array_processor import (
             ObservabilityPipelineSplitArrayProcessor,
         )
@@ -292,6 +317,7 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
                 ObservabilityPipelineReduceProcessor,
                 ObservabilityPipelineRemoveFieldsProcessor,
                 ObservabilityPipelineRenameFieldsProcessor,
+                ObservabilityPipelineSpikeProtectionProcessor,
                 ObservabilityPipelineSplitArrayProcessor,
                 ObservabilityPipelineThrottleProcessor,
                 ObservabilityPipelineCustomProcessor,
