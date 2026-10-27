@@ -8995,6 +8995,7 @@ from datadog_api_client.v2.model.rum_application_update_attributes import RUMApp
 from datadog_api_client.v2.model.rum_application_update_request import RUMApplicationUpdateRequest
 from datadog_api_client.v2.model.rum_application_update_type import RUMApplicationUpdateType
 from datadog_api_client.v2.model.rum_applications_response import RUMApplicationsResponse
+from datadog_api_client.v2.model.rum_bucket_group_by_value import RUMBucketGroupByValue
 from datadog_api_client.v2.model.rum_bucket_response import RUMBucketResponse
 from datadog_api_client.v2.model.rum_compute import RUMCompute
 from datadog_api_client.v2.model.rum_compute_type import RUMComputeType
@@ -18994,6 +18995,7 @@ __all__ = [
     "RUMApplicationUpdateRequest",
     "RUMApplicationUpdateType",
     "RUMApplicationsResponse",
+    "RUMBucketGroupByValue",
     "RUMBucketResponse",
     "RUMCompute",
     "RUMComputeType",

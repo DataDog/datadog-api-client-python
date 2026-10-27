@@ -324,7 +324,7 @@
     },
     {
       "feature": "RUM",
-      "frozen_at": "2024-12-10T15:40:42.789Z",
+      "frozen_at": "2026-10-26T14:43:44.844Z",
       "interactions": [
         {
           "request": {
@@ -340,10 +340,10 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"errors\":[\"Application Not Found not found\"]}"
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Application not found\"}]}"
             },
             "headers": {
-              "content-type": "application/json"
+              "content-type": "application/vnd.api+json"
             },
             "reason": "Not Found",
             "status": 404
@@ -355,7 +355,7 @@
     },
     {
       "feature": "RUM",
-      "frozen_at": "2024-12-10T15:40:43.241Z",
+      "frozen_at": "2026-10-26T14:43:46.554Z",
       "interactions": [
         {
           "request": {
@@ -371,10 +371,10 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"errors\":[\"Application Not Found not found\"]}"
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Application not found\"}]}"
             },
             "headers": {
-              "content-type": "application/json"
+              "content-type": "application/vnd.api+json"
             },
             "reason": "Not Found",
             "status": 404
