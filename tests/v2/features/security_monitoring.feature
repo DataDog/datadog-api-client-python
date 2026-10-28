@@ -2173,6 +2173,33 @@ Feature: Security Monitoring
     Then the response status is 200 OK
     And the response has 3 items
 
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Get a rule proposal returns "Bad Request" response
+    Given operation "GetSecurityMonitoringRuleProposal" enabled
+    And new "GetSecurityMonitoringRuleProposal" request
+    And request contains "proposal_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Get a rule proposal returns "Not Found" response
+    Given operation "GetSecurityMonitoringRuleProposal" enabled
+    And new "GetSecurityMonitoringRuleProposal" request
+    And request contains "proposal_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:ddoghq/cloud-siem
+  Scenario: Get a rule proposal returns "OK" response
+    Given operation "GetSecurityMonitoringRuleProposal" enabled
+    And there is a valid "rule_proposal" in the system
+    And new "GetSecurityMonitoringRuleProposal" request
+    And request contains "proposal_id" parameter from "rule_proposal.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" has the same value as "rule_proposal.data.id"
+    And the response "data.type" is equal to "rule_proposals"
+
   @team:ddoghq/cloud-siem
   Scenario: Get a rule's details returns "Not Found" response
     Given new "GetSecurityMonitoringRule" request
@@ -3743,6 +3770,24 @@ Feature: Security Monitoring
     And request contains "batch_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
+
+  @team:ddoghq/cloud-siem
+  Scenario: Start a rule proposal returns "Accepted" response
+    Given operation "StartSecurityMonitoringRuleProposal" enabled
+    And new "StartSecurityMonitoringRuleProposal" request
+    And body with value {"data": {"type": "rule_proposals", "attributes": {"inputType": "natural_language", "input": "Detect repeated failed Okta logins followed by a successful login from the same IP."}}}
+    When the request is sent
+    Then the response status is 202 Accepted
+    And the response "data.type" is equal to "rule_proposals"
+    And the response "data.attributes.status" is equal to "pending"
+
+  @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Start a rule proposal returns "Bad Request" response
+    Given operation "StartSecurityMonitoringRuleProposal" enabled
+    And new "StartSecurityMonitoringRuleProposal" request
+    And body with value {"data": {"attributes": {"input": "Detect repeated failed Okta logins followed by a successful login from the same IP.", "inputType": "natural_language"}, "type": "rule_proposals"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
 
   @generated @skip @team:ddoghq/cloud-siem
   Scenario: Subscribe to sample log generation returns "Bad Request" response

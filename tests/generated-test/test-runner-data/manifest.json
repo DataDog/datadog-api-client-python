@@ -10797,6 +10797,13 @@
     {
       "feature": "Security Monitoring",
       "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/get-a-rule-proposal-returns-ok-response.json",
+      "scenario": "Get a rule proposal returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
       "file": "v2/security-monitoring/get-a-rule-s-details-returns-not-found-response.json",
       "scenario": "Get a rule's details returns \"Not Found\" response",
       "version": "v2"
@@ -11366,6 +11373,13 @@
       "feature_file": "../../v2/features/security_monitoring.feature",
       "file": "v2/security-monitoring/search-security-findings-returns-ok-response-with-pagination.json",
       "scenario": "Search security findings returns \"OK\" response with pagination",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/start-a-rule-proposal-returns-accepted-response.json",
+      "scenario": "Start a rule proposal returns \"Accepted\" response",
       "version": "v2"
     },
     {

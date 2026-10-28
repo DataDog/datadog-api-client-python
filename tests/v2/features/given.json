@@ -1818,6 +1818,18 @@
   {
     "parameters": [
       {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"rule_proposals\",\n    \"attributes\": {\n      \"inputType\": \"natural_language\",\n      \"input\": \"Detect repeated failed Okta logins followed by a successful login from the same IP.\"\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"rule_proposal\" in the system",
+    "key": "rule_proposal",
+    "tag": "Security Monitoring",
+    "operationId": "StartSecurityMonitoringRuleProposal"
+  },
+  {
+    "parameters": [
+      {
         "name": "rule_id",
         "source": "security_rule.id"
       },

@@ -9603,6 +9603,18 @@
       "type": "safe"
     }
   },
+  "StartSecurityMonitoringRuleProposal": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetSecurityMonitoringRuleProposal": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "TestSecurityMonitoringRule": {
     "tag": "Security Monitoring",
     "undo": {

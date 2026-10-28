@@ -10536,6 +10536,38 @@ from datadog_api_client.v2.model.security_monitoring_rule_new_value_options_lear
     SecurityMonitoringRuleNewValueOptionsLearningThreshold,
 )
 from datadog_api_client.v2.model.security_monitoring_rule_options import SecurityMonitoringRuleOptions
+from datadog_api_client.v2.model.security_monitoring_rule_proposal_error import SecurityMonitoringRuleProposalError
+from datadog_api_client.v2.model.security_monitoring_rule_proposal_input_type import (
+    SecurityMonitoringRuleProposalInputType,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_proposal_response import (
+    SecurityMonitoringRuleProposalResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_proposal_response_attributes import (
+    SecurityMonitoringRuleProposalResponseAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_proposal_response_data import (
+    SecurityMonitoringRuleProposalResponseData,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_proposal_start_request import (
+    SecurityMonitoringRuleProposalStartRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_proposal_start_request_attributes import (
+    SecurityMonitoringRuleProposalStartRequestAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_proposal_start_request_data import (
+    SecurityMonitoringRuleProposalStartRequestData,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_proposal_start_response import (
+    SecurityMonitoringRuleProposalStartResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_proposal_start_response_attributes import (
+    SecurityMonitoringRuleProposalStartResponseAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_proposal_start_response_data import (
+    SecurityMonitoringRuleProposalStartResponseData,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_proposal_type import SecurityMonitoringRuleProposalType
 from datadog_api_client.v2.model.security_monitoring_rule_query import SecurityMonitoringRuleQuery
 from datadog_api_client.v2.model.security_monitoring_rule_query_aggregation import (
     SecurityMonitoringRuleQueryAggregation,
@@ -20004,6 +20036,18 @@ __all__ = [
     "SecurityMonitoringRuleNewValueOptionsLearningMethod",
     "SecurityMonitoringRuleNewValueOptionsLearningThreshold",
     "SecurityMonitoringRuleOptions",
+    "SecurityMonitoringRuleProposalError",
+    "SecurityMonitoringRuleProposalInputType",
+    "SecurityMonitoringRuleProposalResponse",
+    "SecurityMonitoringRuleProposalResponseAttributes",
+    "SecurityMonitoringRuleProposalResponseData",
+    "SecurityMonitoringRuleProposalStartRequest",
+    "SecurityMonitoringRuleProposalStartRequestAttributes",
+    "SecurityMonitoringRuleProposalStartRequestData",
+    "SecurityMonitoringRuleProposalStartResponse",
+    "SecurityMonitoringRuleProposalStartResponseAttributes",
+    "SecurityMonitoringRuleProposalStartResponseData",
+    "SecurityMonitoringRuleProposalType",
     "SecurityMonitoringRuleQuery",
     "SecurityMonitoringRuleQueryAggregation",
     "SecurityMonitoringRuleQueryPayload",

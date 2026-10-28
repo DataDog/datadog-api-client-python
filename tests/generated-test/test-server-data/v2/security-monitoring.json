@@ -7532,6 +7532,68 @@
     },
     {
       "feature": "Security Monitoring",
+      "frozen_at": "2026-10-28T09:56:29.502Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "input": "Detect repeated failed Okta logins followed by a successful login from the same IP.",
+                    "inputType": "natural_language"
+                  },
+                  "type": "rule_proposals"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/security_monitoring/rules/proposals",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"f4e95a96-51e3-4914-b68b-ef9a82044cb2\",\"type\":\"rule_proposals\",\"attributes\":{\"status\":\"pending\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Accepted",
+            "status": 202
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/security_monitoring/rules/proposals/f4e95a96-51e3-4914-b68b-ef9a82044cb2",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"f4e95a96-51e3-4914-b68b-ef9a82044cb2\",\"type\":\"rule_proposals\",\"attributes\":{\"status\":\"pending\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get a rule proposal returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
       "frozen_at": "2024-05-10T16:34:43.147Z",
       "interactions": [
         {
@@ -13370,6 +13432,45 @@
         }
       ],
       "scenario": "Search security findings returns \"OK\" response with pagination",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "frozen_at": "2026-10-28T09:56:32.110Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "input": "Detect repeated failed Okta logins followed by a successful login from the same IP.",
+                    "inputType": "natural_language"
+                  },
+                  "type": "rule_proposals"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/security_monitoring/rules/proposals",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"05761b35-c9c1-4503-9071-dccb12cdf3fd\",\"type\":\"rule_proposals\",\"attributes\":{\"status\":\"pending\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Accepted",
+            "status": 202
+          }
+        }
+      ],
+      "scenario": "Start a rule proposal returns \"Accepted\" response",
       "version": "v2"
     },
     {
