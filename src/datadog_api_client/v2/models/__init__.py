@@ -2374,6 +2374,9 @@ from datadog_api_client.v2.model.data_deletion_response_item import DataDeletion
 from datadog_api_client.v2.model.data_deletion_response_item_attributes import DataDeletionResponseItemAttributes
 from datadog_api_client.v2.model.data_deletion_response_meta import DataDeletionResponseMeta
 from datadog_api_client.v2.model.data_export_config import DataExportConfig
+from datadog_api_client.v2.model.data_observability_monitor_group_by_values import DataObservabilityMonitorGroupByValues
+from datadog_api_client.v2.model.data_observability_monitor_group_status import DataObservabilityMonitorGroupStatus
+from datadog_api_client.v2.model.data_observability_monitor_run_group import DataObservabilityMonitorRunGroup
 from datadog_api_client.v2.model.data_observability_monitor_run_status import DataObservabilityMonitorRunStatus
 from datadog_api_client.v2.model.data_observability_monitor_run_type import DataObservabilityMonitorRunType
 from datadog_api_client.v2.model.data_relationships_teams import DataRelationshipsTeams
@@ -14828,6 +14831,9 @@ __all__ = [
     "DataDeletionResponseItemAttributes",
     "DataDeletionResponseMeta",
     "DataExportConfig",
+    "DataObservabilityMonitorGroupByValues",
+    "DataObservabilityMonitorGroupStatus",
+    "DataObservabilityMonitorRunGroup",
     "DataObservabilityMonitorRunStatus",
     "DataObservabilityMonitorRunType",
     "DataRelationshipsTeams",
