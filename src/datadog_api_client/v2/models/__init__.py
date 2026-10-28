@@ -6983,6 +6983,9 @@ from datadog_api_client.v2.model.observability_pipeline_azure_data_explorer_dest
 from datadog_api_client.v2.model.observability_pipeline_azure_data_explorer_destination_batch import (
     ObservabilityPipelineAzureDataExplorerDestinationBatch,
 )
+from datadog_api_client.v2.model.observability_pipeline_azure_data_explorer_destination_ingestion_mode import (
+    ObservabilityPipelineAzureDataExplorerDestinationIngestionMode,
+)
 from datadog_api_client.v2.model.observability_pipeline_azure_data_explorer_destination_managed_identity_id_type import (
     ObservabilityPipelineAzureDataExplorerDestinationManagedIdentityIdType,
 )
@@ -17897,6 +17900,7 @@ __all__ = [
     "ObservabilityPipelineAzureDataExplorerDestinationAuthWorkloadIdentity",
     "ObservabilityPipelineAzureDataExplorerDestinationAuthWorkloadIdentityKind",
     "ObservabilityPipelineAzureDataExplorerDestinationBatch",
+    "ObservabilityPipelineAzureDataExplorerDestinationIngestionMode",
     "ObservabilityPipelineAzureDataExplorerDestinationManagedIdentityIdType",
     "ObservabilityPipelineAzureDataExplorerDestinationType",
     "ObservabilityPipelineAzureDataExplorerManagedIdentityClientAssertion",

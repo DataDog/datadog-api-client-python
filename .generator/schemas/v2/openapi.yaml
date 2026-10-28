@@ -85302,6 +85302,8 @@ components:
             Defaults to `DESTINATION_AZURE_DATA_EXPLORER_INGESTION_ENDPOINT` (prefixed with `DD_OP_` at runtime).
           example: AZURE_DATA_EXPLORER_INGESTION_ENDPOINT
           type: string
+        ingestion_mode:
+          $ref: "#/components/schemas/ObservabilityPipelineAzureDataExplorerDestinationIngestionMode"
         inputs:
           description: A list of component IDs whose output is used as the `input` for this component.
           example: ["filter-processor"]
@@ -85493,22 +85495,35 @@ components:
           description: Maximum batch size in bytes.
           example: 2000000
           format: int64
-          maximum: 4000000
-          minimum: 1
           type: integer
         max_events:
           description: Maximum number of events per batch before it is flushed.
           example: 1000
           format: int64
-          minimum: 1
           type: integer
         timeout_secs:
           description: Maximum number of seconds to wait before flushing a partial batch.
           example: 1
           format: int64
-          minimum: 1
           type: integer
       type: object
+    ObservabilityPipelineAzureDataExplorerDestinationIngestionMode:
+      default: streaming
+      description: |-
+        The ingestion method used to send data to Azure Data Explorer.
+
+        - `streaming`: Sends events directly to the table using streaming ingestion.
+        - `queue`: Sends events through queued (batched) ingestion.
+
+        Defaults to `streaming`.
+      enum:
+        - streaming
+        - queue
+      example: queue
+      type: string
+      x-enum-varnames:
+        - STREAMING
+        - QUEUE
     ObservabilityPipelineAzureDataExplorerDestinationManagedIdentityIdType:
       description: The type of the user-assigned managed identity ID.
       enum:
