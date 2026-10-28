@@ -9,7 +9,6 @@ from typing import Any, Dict, List, Union
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
-    datetime,
     set_attribute_from_path,
     get_attribute_from_path,
     UnsetType,
@@ -19,6 +18,8 @@ from datadog_api_client.model_utils import (
 from datadog_api_client.v2.model.rum_analytics_aggregate_response import RUMAnalyticsAggregateResponse
 from datadog_api_client.v2.model.rum_aggregate_request import RUMAggregateRequest
 from datadog_api_client.v2.model.rum_applications_response import RUMApplicationsResponse
+from datadog_api_client.v2.model.rum_event_processing_state import RUMEventProcessingState
+from datadog_api_client.v2.model.rum_product_analytics_retention_state import RUMProductAnalyticsRetentionState
 from datadog_api_client.v2.model.rum_application_response import RUMApplicationResponse
 from datadog_api_client.v2.model.rum_application_create_request import RUMApplicationCreateRequest
 from datadog_api_client.v2.model.rum_application_update_request import RUMApplicationUpdateRequest
@@ -97,6 +98,7 @@ class RUMApi:
             params_map={
                 "id": {
                     "required": True,
+                    "validation": {},
                     "openapi_types": (str,),
                     "attribute": "id",
                     "location": "path",
@@ -252,6 +254,7 @@ class RUMApi:
             params_map={
                 "id": {
                     "required": True,
+                    "validation": {},
                     "openapi_types": (str,),
                     "attribute": "id",
                     "location": "path",
@@ -272,7 +275,38 @@ class RUMApi:
                 "http_method": "GET",
                 "version": "v2",
             },
-            params_map={},
+            params_map={
+                "filter_rum_enabled": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[rum_enabled]",
+                    "location": "query",
+                },
+                "filter_product_analytics_enabled": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[product_analytics_enabled]",
+                    "location": "query",
+                },
+                "filter_error_focused_mode_enabled": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[error_focused_mode_enabled]",
+                    "location": "query",
+                },
+                "filter_remote_config_enabled": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[remote_config_enabled]",
+                    "location": "query",
+                },
+                "filter_rum_event_processing_state": {
+                    "openapi_types": (RUMEventProcessingState,),
+                    "attribute": "filter[rum_event_processing_state]",
+                    "location": "query",
+                },
+                "filter_product_analytics_retention_state": {
+                    "openapi_types": (RUMProductAnalyticsRetentionState,),
+                    "attribute": "filter[product_analytics_retention_state]",
+                    "location": "query",
+                },
+            },
             headers_map={
                 "accept": ["application/json"],
             },
@@ -352,12 +386,12 @@ class RUMApi:
                     "location": "query",
                 },
                 "filter_from": {
-                    "openapi_types": (datetime,),
+                    "openapi_types": (str,),
                     "attribute": "filter[from]",
                     "location": "query",
                 },
                 "filter_to": {
-                    "openapi_types": (datetime,),
+                    "openapi_types": (str,),
                     "attribute": "filter[to]",
                     "location": "query",
                 },
@@ -701,6 +735,7 @@ class RUMApi:
             params_map={
                 "id": {
                     "required": True,
+                    "validation": {},
                     "openapi_types": (str,),
                     "attribute": "id",
                     "location": "path",
@@ -721,7 +756,9 @@ class RUMApi:
     ) -> RUMAnalyticsAggregateResponse:
         """Aggregate RUM events.
 
-        The API endpoint to aggregate RUM events into buckets of computed metrics and timeseries.
+        Aggregate RUM events into buckets of computed metrics and timeseries. Use this endpoint for counts, percentiles, top-N breakdowns and timeseries. To read individual events, use ``SearchRUMEvents`` or ``ListRUMEvents``.
+
+        ``filter`` selects the events with the `RUM search syntax <https://docs.datadoghq.com/real_user_monitoring/explorer/search_syntax/>`_ and a time range ( ``from`` and ``to`` accept date math such as ``now-15m`` , ISO 8601 dates and timestamps in milliseconds). Each ``compute`` rule produces one value ( ``type: total`` ) or one list of time points ( ``type: timeseries`` ) per bucket, keyed ``c0`` , ``c1``... in the response. Each ``group_by`` rule splits the events into buckets by a facet, returned in ``by``. Use ``histogram`` on a numeric facet to bucket it by ranges.
 
         :type body: RUMAggregateRequest
         :rtype: RUMAnalyticsAggregateResponse
@@ -738,6 +775,8 @@ class RUMApi:
         """Create a new RUM application.
 
         Create a new RUM application in your organization.
+        The application ID is generated by Datadog and returned in ``data.attributes.application_id``. A client token is created with the application and returned in ``data.attributes.client_token`` , use both to initialize the RUM SDK.
+        The application is created with the default retention filters unless ``create_default_retention_filters`` is ``false``.
 
         :type body: RUMApplicationCreateRequest
         :rtype: RUMApplicationResponse
@@ -754,8 +793,10 @@ class RUMApi:
         """Delete a RUM application.
 
         Delete an existing RUM application in your organization.
+        The application is disabled and its client token is revoked, so the RUM SDK stops sending events for it. The application ID cannot be reused or re-enabled through the API.
+        Deleting an application with Product Analytics enabled requires the ``product_analytics_apps_write`` permission.
 
-        :param id: RUM application ID.
+        :param id: ID of the RUM application, returned as ``application_id`` by ``GetRUMApplications`` and ``CreateRUMApplication``.
         :type id: str
         :rtype: None
         """
@@ -910,8 +951,9 @@ class RUMApi:
         """Get a RUM application.
 
         Get the RUM application with given ID in your organization.
+        Unlike ``GetRUMApplications`` , the response includes the ``client_token`` used to initialize the RUM SDK.
 
-        :param id: RUM application ID.
+        :param id: ID of the RUM application, returned as ``application_id`` by ``GetRUMApplications`` and ``CreateRUMApplication``.
         :type id: str
         :rtype: RUMApplicationResponse
         """
@@ -922,14 +964,53 @@ class RUMApi:
 
     def get_rum_applications(
         self,
+        *,
+        filter_rum_enabled: Union[bool, UnsetType] = unset,
+        filter_product_analytics_enabled: Union[bool, UnsetType] = unset,
+        filter_error_focused_mode_enabled: Union[bool, UnsetType] = unset,
+        filter_remote_config_enabled: Union[bool, UnsetType] = unset,
+        filter_rum_event_processing_state: Union[RUMEventProcessingState, UnsetType] = unset,
+        filter_product_analytics_retention_state: Union[RUMProductAnalyticsRetentionState, UnsetType] = unset,
     ) -> RUMApplicationsResponse:
         """List all the RUM applications.
 
-        List all the RUM applications in your organization.
+        List the enabled RUM applications of your organization. Applications deleted with ``DeleteRUMApplication`` are not returned.
+        The response is not paginated and does not include the ``client_token`` , use ``GetRUMApplication`` to retrieve it.
+        Use the ``application_id`` of an item as the ``id`` path parameter of the other application operations, and as ``@application.id`` in RUM event queries.
 
+        :param filter_rum_enabled: Only return applications for which RUM event processing is enabled ( ``true`` ) or not ( ``false`` ).
+        :type filter_rum_enabled: bool, optional
+        :param filter_product_analytics_enabled: Only return applications for which Product Analytics is enabled ( ``true`` ) or not ( ``false`` ).
+        :type filter_product_analytics_enabled: bool, optional
+        :param filter_error_focused_mode_enabled: Only return applications that run in error focused mode ( ``true`` ) or not ( ``false`` ).
+        :type filter_error_focused_mode_enabled: bool, optional
+        :param filter_remote_config_enabled: Only return applications that have an SDK remote configuration ( ``true`` ) or not ( ``false`` ).
+        :type filter_remote_config_enabled: bool, optional
+        :param filter_rum_event_processing_state: Only return applications with this RUM event processing state.
+        :type filter_rum_event_processing_state: RUMEventProcessingState, optional
+        :param filter_product_analytics_retention_state: Only return applications with this Product Analytics retention state.
+        :type filter_product_analytics_retention_state: RUMProductAnalyticsRetentionState, optional
         :rtype: RUMApplicationsResponse
         """
         kwargs: Dict[str, Any] = {}
+        if filter_rum_enabled is not unset:
+            kwargs["filter_rum_enabled"] = filter_rum_enabled
+
+        if filter_product_analytics_enabled is not unset:
+            kwargs["filter_product_analytics_enabled"] = filter_product_analytics_enabled
+
+        if filter_error_focused_mode_enabled is not unset:
+            kwargs["filter_error_focused_mode_enabled"] = filter_error_focused_mode_enabled
+
+        if filter_remote_config_enabled is not unset:
+            kwargs["filter_remote_config_enabled"] = filter_remote_config_enabled
+
+        if filter_rum_event_processing_state is not unset:
+            kwargs["filter_rum_event_processing_state"] = filter_rum_event_processing_state
+
+        if filter_product_analytics_retention_state is not unset:
+            kwargs["filter_product_analytics_retention_state"] = filter_product_analytics_retention_state
+
         return self._get_rum_applications_endpoint.call_with_http_info(**kwargs)
 
     def get_service_repository_info(
@@ -1022,30 +1103,31 @@ class RUMApi:
         self,
         *,
         filter_query: Union[str, UnsetType] = unset,
-        filter_from: Union[datetime, UnsetType] = unset,
-        filter_to: Union[datetime, UnsetType] = unset,
+        filter_from: Union[str, UnsetType] = unset,
+        filter_to: Union[str, UnsetType] = unset,
         sort: Union[RUMSort, UnsetType] = unset,
         page_cursor: Union[str, UnsetType] = unset,
         page_limit: Union[int, UnsetType] = unset,
     ) -> RUMEventsResponse:
         """Get a list of RUM events.
 
-        List endpoint returns events that match a RUM search query.
-        `Results are paginated <https://docs.datadoghq.com/logs/guide/collect-multiple-logs-with-pagination>`_.
+        Returns the RUM events that match a RUM search query within a time range. Use this endpoint to see your latest RUM events with a simple query. For long filters, use ``SearchRUMEvents``. To compute counts, percentiles or timeseries, use ``AggregateRUMEvents``.
 
-        Use this endpoint to see your latest RUM events.
+        The query follows the `RUM search syntax <https://docs.datadoghq.com/real_user_monitoring/explorer/search_syntax/>`_. Without ``filter[from]`` and ``filter[to]`` , the last 15 minutes are searched.
 
-        :param filter_query: Search query following RUM syntax.
+        `Results are paginated <https://docs.datadoghq.com/logs/guide/collect-multiple-logs-with-pagination>`_ : ``page[limit]`` is at most 1000 (default 10). When more results are available, the response contains ``meta.page.after`` and ``links.next``. Request ``links.next`` , or send ``meta.page.after`` as ``page[cursor]`` with the same other parameters, and repeat until they are absent.
+
+        :param filter_query: Search query following the `RUM search syntax <https://docs.datadoghq.com/real_user_monitoring/explorer/search_syntax/>`_. Defaults to ``*``.
         :type filter_query: str, optional
-        :param filter_from: Minimum timestamp for requested events.
-        :type filter_from: datetime, optional
-        :param filter_to: Maximum timestamp for requested events.
-        :type filter_to: datetime, optional
-        :param sort: Order of events in results.
+        :param filter_from: Minimum time for requested events, inclusive. Accepts date math (for example ``now-15m`` ), an ISO 8601 date, or a timestamp in milliseconds. Defaults to ``now-15m``.
+        :type filter_from: str, optional
+        :param filter_to: Maximum time for requested events. Accepts the same formats as ``filter[from]``. Defaults to ``now``.
+        :type filter_to: str, optional
+        :param sort: Order of events in results, by event timestamp.
         :type sort: RUMSort, optional
-        :param page_cursor: List following results with a cursor provided in the previous query.
+        :param page_cursor: Cursor to get the next page of results, taken from ``meta.page.after`` or ``links.next`` of the previous response. Use it with the same other parameters.
         :type page_cursor: str, optional
-        :param page_limit: Maximum number of events in the response.
+        :param page_limit: Maximum number of events in the response. Between 1 and 1000.
         :type page_limit: int, optional
         :rtype: RUMEventsResponse
         """
@@ -1074,8 +1156,8 @@ class RUMApi:
         self,
         *,
         filter_query: Union[str, UnsetType] = unset,
-        filter_from: Union[datetime, UnsetType] = unset,
-        filter_to: Union[datetime, UnsetType] = unset,
+        filter_from: Union[str, UnsetType] = unset,
+        filter_to: Union[str, UnsetType] = unset,
         sort: Union[RUMSort, UnsetType] = unset,
         page_cursor: Union[str, UnsetType] = unset,
         page_limit: Union[int, UnsetType] = unset,
@@ -1084,17 +1166,17 @@ class RUMApi:
 
         Provide a paginated version of :meth:`list_rum_events`, returning all items.
 
-        :param filter_query: Search query following RUM syntax.
+        :param filter_query: Search query following the `RUM search syntax <https://docs.datadoghq.com/real_user_monitoring/explorer/search_syntax/>`_. Defaults to ``*``.
         :type filter_query: str, optional
-        :param filter_from: Minimum timestamp for requested events.
-        :type filter_from: datetime, optional
-        :param filter_to: Maximum timestamp for requested events.
-        :type filter_to: datetime, optional
-        :param sort: Order of events in results.
+        :param filter_from: Minimum time for requested events, inclusive. Accepts date math (for example ``now-15m`` ), an ISO 8601 date, or a timestamp in milliseconds. Defaults to ``now-15m``.
+        :type filter_from: str, optional
+        :param filter_to: Maximum time for requested events. Accepts the same formats as ``filter[from]``. Defaults to ``now``.
+        :type filter_to: str, optional
+        :param sort: Order of events in results, by event timestamp.
         :type sort: RUMSort, optional
-        :param page_cursor: List following results with a cursor provided in the previous query.
+        :param page_cursor: Cursor to get the next page of results, taken from ``meta.page.after`` or ``links.next`` of the previous response. Use it with the same other parameters.
         :type page_cursor: str, optional
-        :param page_limit: Maximum number of events in the response.
+        :param page_limit: Maximum number of events in the response. Between 1 and 1000.
         :type page_limit: int, optional
 
         :return: A generator of paginated results.
@@ -1524,10 +1606,11 @@ class RUMApi:
     ) -> RUMEventsResponse:
         """Search RUM events.
 
-        List endpoint returns RUM events that match a RUM search query.
-        `Results are paginated <https://docs.datadoghq.com/logs/guide/collect-multiple-logs-with-pagination>`_.
+        Returns the RUM events that match a RUM search query within a time range, as a list of individual events. Use this endpoint when the filter is too long for a query string, or to set ``options``. To compute counts, percentiles or timeseries instead of reading events, use ``AggregateRUMEvents``.
 
-        Use this endpoint to build complex RUM events filtering and search.
+        The query follows the `RUM search syntax <https://docs.datadoghq.com/real_user_monitoring/explorer/search_syntax/>`_. ``filter.from`` and ``filter.to`` accept date math ( ``now-15m`` ), ISO 8601 dates and timestamps in milliseconds.
+
+        `Results are paginated <https://docs.datadoghq.com/logs/guide/collect-multiple-logs-with-pagination>`_ : ``page.limit`` is at most 1000 (default 10). When more results are available, the response contains ``meta.page.after``. Send it as ``page.cursor`` , with the same ``filter`` and ``sort`` , to get the next page, and repeat until ``meta.page.after`` is absent.
 
         :type body: RUMSearchEventsRequest
         :rtype: RUMEventsResponse
@@ -1574,8 +1657,9 @@ class RUMApi:
         """Update a RUM application.
 
         Update the RUM application with given ID in your organization.
+        This is a partial update: only the attributes present in the request are changed. ``data.id`` must match the ``id`` path parameter.
 
-        :param id: RUM application ID.
+        :param id: ID of the RUM application, returned as ``application_id`` by ``GetRUMApplications`` and ``CreateRUMApplication``.
         :type id: str
         :type body: RUMApplicationUpdateRequest
         :rtype: RUMApplicationResponse

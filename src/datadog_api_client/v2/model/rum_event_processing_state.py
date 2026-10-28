@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class RUMEventProcessingState(ModelSimple):
     """
-    Configures which RUM events are processed and stored for the application.
+    Configures which RUM events are processed and stored for the application. Defaults to `ALL` when creating an application.
 
     :param value: Must be one of ["ALL", "ERROR_FOCUSED_MODE", "NONE"].
     :type value: str

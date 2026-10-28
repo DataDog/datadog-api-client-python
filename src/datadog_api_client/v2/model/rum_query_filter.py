@@ -38,13 +38,13 @@ class RUMQueryFilter(ModelNormal):
         """
         The search and filter query settings.
 
-        :param _from: The minimum time for the requested events; supports date (in `ISO 8601 <https://www.w3.org/TR/NOTE-datetime>`_ format with full date, hours, minutes, and the ``Z`` UTC indicator - seconds and fractional seconds are optional), math, and regular timestamps (in milliseconds).
+        :param _from: The minimum time for the requested events, inclusive. Accepts date math relative to now (for example ``now-15m`` , ``now-1h`` , ``now-7d`` ), an absolute date in `ISO 8601 <https://www.w3.org/TR/NOTE-datetime>`_ format with full date, hours, minutes, and the ``Z`` UTC indicator (seconds and fractional seconds are optional), or a timestamp in milliseconds since the Unix epoch.
         :type _from: str, optional
 
-        :param query: The search query following the RUM search syntax.
+        :param query: The search query following the `RUM search syntax <https://docs.datadoghq.com/real_user_monitoring/explorer/search_syntax/>`_. Filter on attributes with ``@attribute:value`` , for example ``@type:view @application.id:<application_id> @view.name:"/checkout"`` , and combine terms with ``AND`` , ``OR`` and ``-`` (negation). Event types are ``session`` , ``view`` , ``action`` , ``resource`` , ``error`` , ``long_task`` and ``vital``.
         :type query: str, optional
 
-        :param to: The maximum time for the requested events; supports date (in `ISO 8601 <https://www.w3.org/TR/NOTE-datetime>`_ format with full date, hours, minutes, and the ``Z`` UTC indicator - seconds and fractional seconds are optional), math, and regular timestamps (in milliseconds).
+        :param to: The maximum time for the requested events. Accepts the same formats as ``from``.
         :type to: str, optional
         """
         if _from is not unset:

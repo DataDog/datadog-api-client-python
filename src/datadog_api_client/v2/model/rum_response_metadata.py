@@ -63,7 +63,7 @@ class RUMResponseMetadata(ModelNormal):
         :param request_id: The identifier of the request.
         :type request_id: str, optional
 
-        :param status: The status of the response.
+        :param status: The status of the response. ``timeout`` means the query did not complete in time and the results are partial.
         :type status: RUMResponseStatus, optional
 
         :param warnings: A list of warnings (non-fatal errors) encountered. Partial results may return if
