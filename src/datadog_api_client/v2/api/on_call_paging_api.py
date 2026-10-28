@@ -12,6 +12,7 @@ from datadog_api_client.model_utils import (
 )
 from datadog_api_client.v2.model.create_page_response import CreatePageResponse
 from datadog_api_client.v2.model.create_page_request import CreatePageRequest
+from datadog_api_client.v2.model.reroute_on_call_page_request import RerouteOnCallPageRequest
 
 
 class OnCallPagingApi:
@@ -295,6 +296,100 @@ class OnCallPagingApi:
             api_client=api_client,
         )
 
+        self._reroute_on_call_page_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/on-call/pages/{page_id}/reroute",
+                "operation_id": "reroute_on_call_page",
+                "http_method": "POST",
+                "version": "v2",
+                "servers": [
+                    {
+                        "url": "https://{site}",
+                        "variables": {
+                            "site": {
+                                "description": "The globally available endpoint for On-Call.",
+                                "default_value": "navy.oncall.datadoghq.com",
+                                "enum_values": [
+                                    "lava.oncall.datadoghq.com",
+                                    "saffron.oncall.datadoghq.com",
+                                    "navy.oncall.datadoghq.com",
+                                    "coral.oncall.datadoghq.com",
+                                    "teal.oncall.datadoghq.com",
+                                    "beige.oncall.datadoghq.eu",
+                                    "scarlet.oncall.datadoghq.com",
+                                ],
+                            },
+                        },
+                    },
+                    {
+                        "url": "{protocol}://{name}",
+                        "variables": {
+                            "name": {
+                                "description": "The full DNS name of the On-Call paging endpoint.",
+                                "default_value": "navy.oncall.datadoghq.com",
+                                "enum_values": [
+                                    "lava.oncall.datadoghq.com",
+                                    "saffron.oncall.datadoghq.com",
+                                    "navy.oncall.datadoghq.com",
+                                    "coral.oncall.datadoghq.com",
+                                    "teal.oncall.datadoghq.com",
+                                    "beige.oncall.datadoghq.eu",
+                                    "scarlet.oncall.datadoghq.com",
+                                ],
+                            },
+                            "protocol": {
+                                "description": "The protocol for accessing the API.",
+                                "default_value": "https",
+                            },
+                        },
+                    },
+                    {
+                        "url": "https://{subdomain}.{site}",
+                        "variables": {
+                            "site": {
+                                "description": "The Datadog site where the On-Call paging endpoint is deployed.",
+                                "default_value": "datadoghq.com",
+                                "enum_values": [
+                                    "datadoghq.com",
+                                    "datadoghq.eu",
+                                ],
+                            },
+                            "subdomain": {
+                                "description": "The On-Call paging subdomain.",
+                                "default_value": "navy.oncall",
+                                "enum_values": [
+                                    "lava.oncall",
+                                    "saffron.oncall",
+                                    "navy.oncall",
+                                    "coral.oncall",
+                                    "teal.oncall",
+                                    "beige.oncall",
+                                    "scarlet.oncall",
+                                ],
+                            },
+                        },
+                    },
+                ],
+            },
+            params_map={
+                "page_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "page_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (RerouteOnCallPageRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._resolve_on_call_page_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -435,6 +530,27 @@ class OnCallPagingApi:
         kwargs["page_id"] = page_id
 
         return self._escalate_on_call_page_endpoint.call_with_http_info(**kwargs)
+
+    def reroute_on_call_page(
+        self,
+        page_id: UUID,
+        body: RerouteOnCallPageRequest,
+    ) -> None:
+        """Reroute On-Call Page.
+
+        Reroutes an On-Call Page.
+
+        :param page_id: The page ID.
+        :type page_id: UUID
+        :type body: RerouteOnCallPageRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["page_id"] = page_id
+
+        kwargs["body"] = body
+
+        return self._reroute_on_call_page_endpoint.call_with_http_info(**kwargs)
 
     def resolve_on_call_page(
         self,

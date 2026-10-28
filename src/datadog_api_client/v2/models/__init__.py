@@ -9239,6 +9239,12 @@ from datadog_api_client.v2.model.report_schedule_toggle_request import ReportSch
 from datadog_api_client.v2.model.report_schedule_toggle_request_attributes import ReportScheduleToggleRequestAttributes
 from datadog_api_client.v2.model.report_schedule_toggle_request_data import ReportScheduleToggleRequestData
 from datadog_api_client.v2.model.report_schedule_type import ReportScheduleType
+from datadog_api_client.v2.model.reroute_on_call_page_request import RerouteOnCallPageRequest
+from datadog_api_client.v2.model.reroute_on_call_page_request_data import RerouteOnCallPageRequestData
+from datadog_api_client.v2.model.reroute_on_call_page_request_data_attributes import (
+    RerouteOnCallPageRequestDataAttributes,
+)
+from datadog_api_client.v2.model.reroute_on_call_page_request_data_type import RerouteOnCallPageRequestDataType
 from datadog_api_client.v2.model.resolve_vulnerable_symbols_request import ResolveVulnerableSymbolsRequest
 from datadog_api_client.v2.model.resolve_vulnerable_symbols_request_data import ResolveVulnerableSymbolsRequestData
 from datadog_api_client.v2.model.resolve_vulnerable_symbols_request_data_attributes import (
@@ -19202,6 +19208,10 @@ __all__ = [
     "ReportScheduleToggleRequestAttributes",
     "ReportScheduleToggleRequestData",
     "ReportScheduleType",
+    "RerouteOnCallPageRequest",
+    "RerouteOnCallPageRequestData",
+    "RerouteOnCallPageRequestDataAttributes",
+    "RerouteOnCallPageRequestDataType",
     "ResolveVulnerableSymbolsRequest",
     "ResolveVulnerableSymbolsRequestData",
     "ResolveVulnerableSymbolsRequestDataAttributes",
