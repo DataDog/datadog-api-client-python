@@ -120,6 +120,7 @@ from datadog_api_client.v2.model.incident_todo_response import IncidentTodoRespo
 from datadog_api_client.v2.model.incident_todo_create_request import IncidentTodoCreateRequest
 from datadog_api_client.v2.model.incident_todo_patch_request import IncidentTodoPatchRequest
 from datadog_api_client.v2.model.incident_responders_response import IncidentRespondersResponse
+from datadog_api_client.v2.model.incident_responder_related_object import IncidentResponderRelatedObject
 from datadog_api_client.v2.model.incident_responder_response import IncidentResponderResponse
 from datadog_api_client.v2.model.incident_responder_request import IncidentResponderRequest
 from datadog_api_client.v2.model.incident_service_now_record_request import IncidentServiceNowRecordRequest
@@ -1728,6 +1729,25 @@ class IncidentsApi:
                     "openapi_types": (str,),
                     "attribute": "incident_id",
                     "location": "path",
+                },
+                "include": {
+                    "openapi_types": ([IncidentResponderRelatedObject],),
+                    "attribute": "include",
+                    "location": "query",
+                    "collection_format": "csv",
+                },
+                "page_limit": {
+                    "validation": {
+                        "inclusive_maximum": 1000,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
+                    "location": "query",
+                },
+                "page_offset": {
+                    "openapi_types": (int,),
+                    "attribute": "page[offset]",
+                    "location": "query",
                 },
             },
             headers_map={
@@ -3882,6 +3902,10 @@ class IncidentsApi:
     def list_incident_responders(
         self,
         incident_id: str,
+        *,
+        include: Union[List[IncidentResponderRelatedObject], UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+        page_offset: Union[int, UnsetType] = unset,
     ) -> IncidentRespondersResponse:
         """List incident responders.
 
@@ -3889,10 +3913,25 @@ class IncidentsApi:
 
         :param incident_id: The UUID of the incident.
         :type incident_id: str
+        :param include: Comma-separated related resource types to include. Supported values are ``users`` and ``role_assignments``.
+        :type include: [IncidentResponderRelatedObject], optional
+        :param page_limit: Maximum number of responders to return per page.
+        :type page_limit: int, optional
+        :param page_offset: The offset of the first responder to return.
+        :type page_offset: int, optional
         :rtype: IncidentRespondersResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["incident_id"] = incident_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
 
         return self._list_incident_responders_endpoint.call_with_http_info(**kwargs)
 

@@ -19,6 +19,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRelationshipToUser
     from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
     from datadog_api_client.v2.model.relationship_to_incident_impacts import RelationshipToIncidentImpacts
+    from datadog_api_client.v2.model.relationship_to_incident_type import RelationshipToIncidentType
     from datadog_api_client.v2.model.relationship_to_incident_integration_metadatas import (
         RelationshipToIncidentIntegrationMetadatas,
     )
@@ -35,6 +36,7 @@ class IncidentResponseRelationships(ModelNormal):
         from datadog_api_client.v2.model.nullable_relationship_to_user import NullableRelationshipToUser
         from datadog_api_client.v2.model.relationship_to_user import RelationshipToUser
         from datadog_api_client.v2.model.relationship_to_incident_impacts import RelationshipToIncidentImpacts
+        from datadog_api_client.v2.model.relationship_to_incident_type import RelationshipToIncidentType
         from datadog_api_client.v2.model.relationship_to_incident_integration_metadatas import (
             RelationshipToIncidentIntegrationMetadatas,
         )
@@ -49,6 +51,7 @@ class IncidentResponseRelationships(ModelNormal):
             "created_by_user": (RelationshipToUser,),
             "declared_by_user": (RelationshipToUser,),
             "impacts": (RelationshipToIncidentImpacts,),
+            "incident_type": (RelationshipToIncidentType,),
             "integrations": (RelationshipToIncidentIntegrationMetadatas,),
             "last_modified_by_user": (RelationshipToUser,),
             "responders": (RelationshipToIncidentResponders,),
@@ -61,6 +64,7 @@ class IncidentResponseRelationships(ModelNormal):
         "created_by_user": "created_by_user",
         "declared_by_user": "declared_by_user",
         "impacts": "impacts",
+        "incident_type": "incident_type",
         "integrations": "integrations",
         "last_modified_by_user": "last_modified_by_user",
         "responders": "responders",
@@ -74,6 +78,7 @@ class IncidentResponseRelationships(ModelNormal):
         created_by_user: Union[RelationshipToUser, UnsetType] = unset,
         declared_by_user: Union[RelationshipToUser, UnsetType] = unset,
         impacts: Union[RelationshipToIncidentImpacts, UnsetType] = unset,
+        incident_type: Union[RelationshipToIncidentType, UnsetType] = unset,
         integrations: Union[RelationshipToIncidentIntegrationMetadatas, UnsetType] = unset,
         last_modified_by_user: Union[RelationshipToUser, UnsetType] = unset,
         responders: Union[RelationshipToIncidentResponders, UnsetType] = unset,
@@ -98,6 +103,9 @@ class IncidentResponseRelationships(ModelNormal):
         :param impacts: Relationship to impacts.
         :type impacts: RelationshipToIncidentImpacts, optional
 
+        :param incident_type: Relationship to an incident type.
+        :type incident_type: RelationshipToIncidentType, optional
+
         :param integrations: A relationship reference for multiple integration metadata objects.
         :type integrations: RelationshipToIncidentIntegrationMetadatas, optional
 
@@ -120,6 +128,8 @@ class IncidentResponseRelationships(ModelNormal):
             kwargs["declared_by_user"] = declared_by_user
         if impacts is not unset:
             kwargs["impacts"] = impacts
+        if incident_type is not unset:
+            kwargs["incident_type"] = incident_type
         if integrations is not unset:
             kwargs["integrations"] = integrations
         if last_modified_by_user is not unset:

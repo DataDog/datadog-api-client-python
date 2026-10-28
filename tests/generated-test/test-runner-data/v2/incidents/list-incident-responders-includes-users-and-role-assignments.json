@@ -1,0 +1,59 @@
+{
+  "api": "Incidents",
+  "expected_status": 200,
+  "feature": "Incidents",
+  "id": "v2/Incidents/List incident responders includes users and role assignments",
+  "operation_id": "ListIncidentResponders",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "incident_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "incident_with_commander.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": false,
+        "in": "query",
+        "name": "include",
+        "required": false,
+        "schema": {
+          "format": null,
+          "items": {
+            "format": null,
+            "ref": "IncidentResponderRelatedObject",
+            "type": "string"
+          },
+          "ref": null,
+          "type": "array"
+        },
+        "source": {
+          "type": "literal",
+          "value": [
+            "users",
+            "role_assignments"
+          ]
+        },
+        "style": "form"
+      }
+    ],
+    "path": "/api/v2/incidents/{incident_id}/responders"
+  },
+  "scenario": "List incident responders includes users and role assignments",
+  "schema_version": 1,
+  "version": "v2"
+}

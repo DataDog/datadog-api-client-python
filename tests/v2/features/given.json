@@ -739,6 +739,18 @@
     "operationId": "CreateIncident"
   },
   {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\"data\":{\"type\":\"incidents\",\"attributes\":{\"title\":\"{{ unique }}\",\"customer_impacted\":false},\"relationships\":{\"commander_user\":{\"data\":{\"id\":\"{{ user.data.id }}\",\"type\":\"users\"}}}}}"
+      }
+    ],
+    "step": "there is a valid \"incident_with_commander\" in the system",
+    "key": "incident_with_commander",
+    "tag": "Incidents",
+    "operationId": "CreateIncident"
+  },
+  {
     "operationId": "CreateIncidentNotificationRule",
     "parameters": [
       {
