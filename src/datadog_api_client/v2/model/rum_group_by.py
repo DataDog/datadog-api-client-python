@@ -59,7 +59,7 @@ class RUMGroupBy(ModelNormal):
         """
         A group-by rule.
 
-        :param facet: The name of the facet to use (required).
+        :param facet: The attribute to group by, for example ``@view.name`` or ``@session.type`` (required).
         :type facet: str
 
         :param histogram: Used to perform a histogram computation (only for measure facets).
@@ -69,7 +69,7 @@ class RUMGroupBy(ModelNormal):
         :param limit: The maximum buckets to return for this group-by.
         :type limit: int, optional
 
-        :param missing: The value to use for logs that don't have the facet used to group by.
+        :param missing: The value to use for events that don't have the facet used to group by.
         :type missing: RUMGroupByMissing, optional
 
         :param sort: A sort rule.

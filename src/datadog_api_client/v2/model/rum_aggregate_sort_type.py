@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class RUMAggregateSortType(ModelSimple):
     """
-    The type of sorting algorithm.
+    The type of sorting algorithm. `alphabetical` sorts buckets by the facet value, `measure` sorts them by a computed aggregation.
 
     :param value: If omitted defaults to "alphabetical". Must be one of ["alphabetical", "measure"].
     :type value: str
