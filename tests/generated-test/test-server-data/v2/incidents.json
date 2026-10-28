@@ -4118,6 +4118,154 @@
     },
     {
       "feature": "Incidents",
+      "frozen_at": "2026-10-26T18:25:38.922Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-List_incident_responders_includes_users_and_role_assignments-1793039138@datadoghq.com",
+                    "title": "user title"
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/users",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"59b0865d-569a-4e8c-bf20-082d6b9d04b5\",\"attributes\":{\"uuid\":\"59b0865d-569a-4e8c-bf20-082d6b9d04b5\",\"name\":null,\"handle\":\"test-list_incident_responders_includes_users_and_role_assignments-1793039138@datadoghq.com\",\"created_at\":\"2026-10-26T18:25:40.973286+00:00\",\"modified_at\":\"2026-10-26T18:25:40.973286+00:00\",\"email\":\"test-list_incident_responders_includes_users_and_role_assignments-1793039138@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/363c5a1b731e4c8877fb5b13df6819f1?s=48&d=retro\",\"title\":\"user title\",\"verified\":false,\"service_account\":false,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Pending\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "customer_impacted": false,
+                    "title": "Test-List_incident_responders_includes_users_and_role_assignments-1793039138"
+                  },
+                  "relationships": {
+                    "commander_user": {
+                      "data": {
+                        "id": "59b0865d-569a-4e8c-bf20-082d6b9d04b5",
+                        "type": "users"
+                      }
+                    }
+                  },
+                  "type": "incidents"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/incidents",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"7f2dae66-cde0-4662-b36e-4d33505dc14e\",\"type\":\"incidents\",\"attributes\":{\"case_id\":null,\"created\":\"2026-10-26T18:25:41.068723Z\",\"created_by_uuid\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"creation_idempotency_key\":null,\"customer_impact_duration\":0,\"customer_impact_end\":null,\"customer_impact_scope\":null,\"customer_impact_start\":null,\"customer_impacted\":false,\"declared\":\"2026-10-26T18:25:41.068723Z\",\"declared_by_uuid\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"detected\":\"2026-10-26T18:25:41.068723Z\",\"field_analytics\":null,\"fields\":{\"detection_method\":{\"type\":\"dropdown\",\"value\":\"unknown\"},\"root_cause\":{\"type\":\"textbox\",\"value\":null},\"services\":{\"type\":\"autocomplete\",\"value\":null},\"severity\":{\"type\":\"dropdown\",\"value\":\"UNKNOWN\"},\"slug\":{\"type\":\"textbox\",\"value\":\"IR-384168\"},\"state\":{\"type\":\"dropdown\",\"value\":\"active\"},\"state_category\":{\"type\":\"dropdown\",\"value\":\"live\"},\"summary\":{\"type\":\"textbox\",\"value\":null},\"teams\":{\"type\":\"autocomplete\",\"value\":null}},\"incident_type_uuid\":\"41d2e10b-4108-4736-92d7-791d00ea0702\",\"is_test\":false,\"last_modified_by_uuid\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"modified\":\"2026-10-26T18:25:41.068723Z\",\"non_datadog_creator\":null,\"notification_handles\":null,\"public_id\":384168,\"resolved\":null,\"severity\":\"UNKNOWN\",\"state\":\"active\",\"time_from_detect_to_resolve\":0,\"time_to_detect\":0,\"time_to_internal_response\":0,\"time_to_repair\":0,\"time_to_resolve\":0,\"title\":\"Test-List_incident_responders_includes_users_and_role_assignments-1793039138\",\"visibility\":\"organization\"},\"relationships\":{\"attachments\":{\"data\":[]},\"commander_user\":{\"data\":{\"id\":\"59b0865d-569a-4e8c-bf20-082d6b9d04b5\",\"type\":\"users\"}},\"created_by_user\":{\"data\":{\"id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"type\":\"users\"}},\"declared_by_user\":{\"data\":{\"id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"type\":\"users\"}},\"impacts\":{\"data\":[]},\"incident_type\":{\"data\":{\"id\":\"41d2e10b-4108-4736-92d7-791d00ea0702\",\"type\":\"incident_types\"}},\"integrations\":{\"data\":[]},\"last_modified_by_user\":{\"data\":{\"id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"type\":\"users\"}},\"responders\":{\"data\":[{\"id\":\"3fe10d30-0416-475b-8c4d-d4b11de61b38\",\"type\":\"incident_responders\"}]},\"user_defined_fields\":{\"data\":[{\"id\":\"706cbbab-4951-4b12-8ab1-8de176b0b8ad\",\"type\":\"user_defined_field\"},{\"id\":\"33457d2a-570c-5567-b4af-979a2a8f1164\",\"type\":\"user_defined_field\"},{\"id\":\"1ddff6f6-cb1f-51a0-9d81-dc18ef52cc9d\",\"type\":\"user_defined_field\"},{\"id\":\"39044b03-cee4-555f-b1e0-3eb3aa759a86\",\"type\":\"user_defined_field\"},{\"id\":\"2b9f1063-b915-4c7a-8bbd-fc3940245529\",\"type\":\"user_defined_field\"},{\"id\":\"d003693c-bee9-5420-8d46-859269c20914\",\"type\":\"user_defined_field\"},{\"id\":\"6bc9d32b-c2cd-591e-9b7a-74c886a5ddcf\",\"type\":\"user_defined_field\"},{\"id\":\"95c53547-2ba3-5d8a-9c3b-cf245bc0c629\",\"type\":\"user_defined_field\"},{\"id\":\"3cbe9e60-d794-532c-acc0-73641f782813\",\"type\":\"user_defined_field\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/incidents/7f2dae66-cde0-4662-b36e-4d33505dc14e/responders",
+            "query": [
+              [
+                "include",
+                "users,role_assignments"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"3fe10d30-0416-475b-8c4d-d4b11de61b38\",\"type\":\"incident_responders\",\"attributes\":{\"created\":\"2026-10-26T18:25:41.068723Z\",\"external_id\":null,\"external_source\":null,\"is_billable\":false,\"last_active\":null,\"meta\":null,\"modified\":\"2026-10-26T18:25:41.068723Z\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"type\":\"users\"}},\"last_modified_by\":{\"data\":{\"id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"type\":\"users\"}},\"role_assignments\":{\"data\":[{\"id\":\"a7fcc9d3-2702-474f-9f8a-8c5e70cb5400\",\"type\":\"incident_role_assignments\"}]},\"user\":{\"data\":{\"id\":\"59b0865d-569a-4e8c-bf20-082d6b9d04b5\",\"type\":\"users\"}}}}],\"meta\":{\"pagination\":{\"type\":\"offset_limit\",\"offset\":0,\"limit\":25,\"total\":null,\"first_offset\":0,\"prev_offset\":null,\"next_offset\":25,\"last_offset\":null}},\"links\":{\"self\":\"https://api.datadoghq.com/api/v2/incidents/7f2dae66-cde0-4662-b36e-4d33505dc14e/responders?include=users%2Crole_assignments\",\"first\":\"https://api.datadoghq.com/api/v2/incidents/7f2dae66-cde0-4662-b36e-4d33505dc14e/responders?include=users,role_assignments&page[limit]=25&page[offset]=0\",\"next\":\"https://api.datadoghq.com/api/v2/incidents/7f2dae66-cde0-4662-b36e-4d33505dc14e/responders?include=users,role_assignments&page[limit]=25&page[offset]=25\"},\"included\":[{\"id\":\"a7fcc9d3-2702-474f-9f8a-8c5e70cb5400\",\"type\":\"incident_role_assignments\",\"attributes\":{\"created\":\"2026-10-26T18:25:41.068723Z\",\"deleted\":\"0001-01-01T00:00:00Z\",\"modified\":\"2026-10-26T18:25:41.068723Z\",\"responder_type\":\"Incident Commander\",\"role\":\"Incident Commander\"},\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"type\":\"users\"}},\"last_modified_by_user\":{\"data\":{\"id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"type\":\"users\"}},\"reserved_role\":{\"data\":{\"id\":\"14fd9cd1-5c99-4d94-9d78-d017810d9d80\",\"type\":\"incident_reserved_roles\"}},\"responder\":{\"data\":{\"id\":\"3fe10d30-0416-475b-8c4d-d4b11de61b38\",\"type\":\"incident_responders\"}},\"user_defined_role\":{\"data\":null}}},{\"id\":\"59b0865d-569a-4e8c-bf20-082d6b9d04b5\",\"type\":\"users\",\"attributes\":{\"email\":\"test-list_incident_responders_includes_users_and_role_assignments-1793039138@datadoghq.com\",\"handle\":\"test-list_incident_responders_includes_users_and_role_assignments-1793039138@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/363c5a1b731e4c8877fb5b13df6819f1?d=retro&s=48\",\"name\":\"\",\"uuid\":\"59b0865d-569a-4e8c-bf20-082d6b9d04b5\"}},{\"id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"type\":\"users\",\"attributes\":{\"email\":\"recorded-user@example.com\",\"handle\":\"recorded-user@example.com\",\"icon\":\"https://example.com/avatar.png\",\"name\":\"Example User\",\"uuid\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/incidents/7f2dae66-cde0-4662-b36e-4d33505dc14e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/59b0865d-569a-4e8c-bf20-082d6b9d04b5",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "List incident responders includes users and role assignments",
+      "version": "v2"
+    },
+    {
+      "feature": "Incidents",
       "frozen_at": "2026-02-23T14:06:50.098Z",
       "interactions": [
         {

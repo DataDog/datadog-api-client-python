@@ -5045,6 +5045,8 @@ from datadog_api_client.v2.model.incident_responder_data_attributes_response imp
 )
 from datadog_api_client.v2.model.incident_responder_data_request import IncidentResponderDataRequest
 from datadog_api_client.v2.model.incident_responder_data_response import IncidentResponderDataResponse
+from datadog_api_client.v2.model.incident_responder_included_item import IncidentResponderIncludedItem
+from datadog_api_client.v2.model.incident_responder_related_object import IncidentResponderRelatedObject
 from datadog_api_client.v2.model.incident_responder_relationships import IncidentResponderRelationships
 from datadog_api_client.v2.model.incident_responder_relationships_request import IncidentResponderRelationshipsRequest
 from datadog_api_client.v2.model.incident_responder_request import IncidentResponderRequest
@@ -5058,7 +5060,10 @@ from datadog_api_client.v2.model.incident_responder_role_assignments_relationshi
 from datadog_api_client.v2.model.incident_responder_type import IncidentResponderType
 from datadog_api_client.v2.model.incident_responder_user_relationship import IncidentResponderUserRelationship
 from datadog_api_client.v2.model.incident_responder_user_relationship_data import IncidentResponderUserRelationshipData
+from datadog_api_client.v2.model.incident_responders_pagination import IncidentRespondersPagination
 from datadog_api_client.v2.model.incident_responders_response import IncidentRespondersResponse
+from datadog_api_client.v2.model.incident_responders_response_meta import IncidentRespondersResponseMeta
+from datadog_api_client.v2.model.incident_responders_response_meta_page import IncidentRespondersResponseMetaPage
 from datadog_api_client.v2.model.incident_responders_type import IncidentRespondersType
 from datadog_api_client.v2.model.incident_response import IncidentResponse
 from datadog_api_client.v2.model.incident_response_attributes import IncidentResponseAttributes
@@ -5067,6 +5072,26 @@ from datadog_api_client.v2.model.incident_response_included_item import Incident
 from datadog_api_client.v2.model.incident_response_meta import IncidentResponseMeta
 from datadog_api_client.v2.model.incident_response_meta_pagination import IncidentResponseMetaPagination
 from datadog_api_client.v2.model.incident_response_relationships import IncidentResponseRelationships
+from datadog_api_client.v2.model.incident_role_assignment_data_attributes_response import (
+    IncidentRoleAssignmentDataAttributesResponse,
+)
+from datadog_api_client.v2.model.incident_role_assignment_data_response import IncidentRoleAssignmentDataResponse
+from datadog_api_client.v2.model.incident_role_assignment_relationships_response import (
+    IncidentRoleAssignmentRelationshipsResponse,
+)
+from datadog_api_client.v2.model.incident_role_assignment_responder_relationship import (
+    IncidentRoleAssignmentResponderRelationship,
+)
+from datadog_api_client.v2.model.incident_role_assignment_responder_relationship_data import (
+    IncidentRoleAssignmentResponderRelationshipData,
+)
+from datadog_api_client.v2.model.incident_role_assignment_role_relationship import (
+    IncidentRoleAssignmentRoleRelationship,
+)
+from datadog_api_client.v2.model.incident_role_assignment_role_relationship_data import (
+    IncidentRoleAssignmentRoleRelationshipData,
+)
+from datadog_api_client.v2.model.incident_role_assignment_type import IncidentRoleAssignmentType
 from datadog_api_client.v2.model.incident_rule_condition import IncidentRuleCondition
 from datadog_api_client.v2.model.incident_rule_data_attributes_request import IncidentRuleDataAttributesRequest
 from datadog_api_client.v2.model.incident_rule_data_attributes_response import IncidentRuleDataAttributesResponse
@@ -16514,6 +16539,8 @@ __all__ = [
     "IncidentResponderDataAttributesResponse",
     "IncidentResponderDataRequest",
     "IncidentResponderDataResponse",
+    "IncidentResponderIncludedItem",
+    "IncidentResponderRelatedObject",
     "IncidentResponderRelationships",
     "IncidentResponderRelationshipsRequest",
     "IncidentResponderRequest",
@@ -16523,7 +16550,10 @@ __all__ = [
     "IncidentResponderType",
     "IncidentResponderUserRelationship",
     "IncidentResponderUserRelationshipData",
+    "IncidentRespondersPagination",
     "IncidentRespondersResponse",
+    "IncidentRespondersResponseMeta",
+    "IncidentRespondersResponseMetaPage",
     "IncidentRespondersType",
     "IncidentResponse",
     "IncidentResponseAttributes",
@@ -16532,6 +16562,14 @@ __all__ = [
     "IncidentResponseMeta",
     "IncidentResponseMetaPagination",
     "IncidentResponseRelationships",
+    "IncidentRoleAssignmentDataAttributesResponse",
+    "IncidentRoleAssignmentDataResponse",
+    "IncidentRoleAssignmentRelationshipsResponse",
+    "IncidentRoleAssignmentResponderRelationship",
+    "IncidentRoleAssignmentResponderRelationshipData",
+    "IncidentRoleAssignmentRoleRelationship",
+    "IncidentRoleAssignmentRoleRelationshipData",
+    "IncidentRoleAssignmentType",
     "IncidentRuleCondition",
     "IncidentRuleDataAttributesRequest",
     "IncidentRuleDataAttributesResponse",

@@ -6758,6 +6758,13 @@
     {
       "feature": "Incidents",
       "feature_file": "../../v2/features/incidents.feature",
+      "file": "v2/incidents/list-incident-responders-includes-users-and-role-assignments.json",
+      "scenario": "List incident responders includes users and role assignments",
+      "version": "v2"
+    },
+    {
+      "feature": "Incidents",
+      "feature_file": "../../v2/features/incidents.feature",
       "file": "v2/incidents/remove-commander-from-an-incident-returns-ok-response.json",
       "scenario": "Remove commander from an incident returns \"OK\" response",
       "version": "v2"

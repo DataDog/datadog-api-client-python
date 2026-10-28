@@ -4215,6 +4215,41 @@
       "type": "idempotent"
     }
   },
+  "ListIncidentResponders": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateIncidentResponder": {
+    "tag": "Incidents",
+    "undo": {
+      "operationId": "DeleteIncidentResponder",
+      "parameters": [
+        {
+          "name": "incident_id",
+          "source": "data.relationships.incident.data.id"
+        },
+        {
+          "name": "responder_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteIncidentResponder": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetIncidentResponder": {
+    "tag": "Incidents",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListDatabricksIntegrationAccounts": {
     "tag": "Databricks Integration",
     "undo": {

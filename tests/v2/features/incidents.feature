@@ -107,6 +107,33 @@ Feature: Incidents
     Then the response status is 404 Not Found
 
   @generated @skip @team:ddoghq/incident-app
+  Scenario: Create an incident responder returns "Bad Request" response
+    Given operation "CreateIncidentResponder" enabled
+    And new "CreateIncidentResponder" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"relationships": {"user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}}, "type": "incident_responders"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/incident-app
+  Scenario: Create an incident responder returns "Created" response
+    Given operation "CreateIncidentResponder" enabled
+    And new "CreateIncidentResponder" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"relationships": {"user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}}, "type": "incident_responders"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:ddoghq/incident-app
+  Scenario: Create an incident responder returns "Not Found" response
+    Given operation "CreateIncidentResponder" enabled
+    And new "CreateIncidentResponder" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"relationships": {"user": {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "users"}}}, "type": "incident_responders"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Create an incident returns "Bad Request" response
     Given operation "CreateIncident" enabled
     And new "CreateIncident" request
@@ -469,6 +496,33 @@ Feature: Incidents
     Then the response status is 404 Not Found
 
   @generated @skip @team:ddoghq/incident-app
+  Scenario: Delete an incident responder returns "Bad Request" response
+    Given operation "DeleteIncidentResponder" enabled
+    And new "DeleteIncidentResponder" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "responder_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/incident-app
+  Scenario: Delete an incident responder returns "No Content" response
+    Given operation "DeleteIncidentResponder" enabled
+    And new "DeleteIncidentResponder" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "responder_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:ddoghq/incident-app
+  Scenario: Delete an incident responder returns "Not Found" response
+    Given operation "DeleteIncidentResponder" enabled
+    And new "DeleteIncidentResponder" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "responder_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/incident-app
   Scenario: Delete an incident todo returns "Bad Request" response
     Given operation "DeleteIncidentTodo" enabled
     And new "DeleteIncidentTodo" request
@@ -802,6 +856,33 @@ Feature: Incidents
     Given operation "GetIncidentNotificationRule" enabled
     And new "GetIncidentNotificationRule" request
     And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/incident-app
+  Scenario: Get an incident responder returns "Bad Request" response
+    Given operation "GetIncidentResponder" enabled
+    And new "GetIncidentResponder" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "responder_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/incident-app
+  Scenario: Get an incident responder returns "Not Found" response
+    Given operation "GetIncidentResponder" enabled
+    And new "GetIncidentResponder" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "responder_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/incident-app
+  Scenario: Get an incident responder returns "OK" response
+    Given operation "GetIncidentResponder" enabled
+    And new "GetIncidentResponder" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    And request contains "responder_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -1171,6 +1252,45 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
     And the response "data" has length 0
+
+  @team:ddoghq/incident-app
+  Scenario: List incident responders includes users and role assignments
+    Given operation "CreateIncident" enabled
+    And operation "ListIncidentResponders" enabled
+    And there is a valid "user" in the system
+    And there is a valid "incident_with_commander" in the system
+    And new "ListIncidentResponders" request
+    And request contains "incident_id" parameter from "incident_with_commander.data.id"
+    And request contains "include" parameter with value ["users", "role_assignments"]
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "included" has item with field "type" with value "users"
+    And the response "included" has item with field "type" with value "incident_role_assignments"
+    And the response "included" has item with field "id" with value "{{ user.data.id }}"
+
+  @generated @skip @team:ddoghq/incident-app
+  Scenario: List incident responders returns "Bad Request" response
+    Given operation "ListIncidentResponders" enabled
+    And new "ListIncidentResponders" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/incident-app
+  Scenario: List incident responders returns "Not Found" response
+    Given operation "ListIncidentResponders" enabled
+    And new "ListIncidentResponders" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/incident-app
+  Scenario: List incident responders returns "OK" response
+    Given operation "ListIncidentResponders" enabled
+    And new "ListIncidentResponders" request
+    And request contains "incident_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/incident-app
   Scenario: List incident user-defined roles returns "Bad Request" response
