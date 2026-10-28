@@ -218231,6 +218231,10 @@ paths:
       summary: List replay heatmap snapshots
       tags:
         - Rum Replay Heatmaps
+      x-permission:
+        operator: OR
+        permissions:
+          - rum_session_replay_read
     post:
       description: Create a heatmap snapshot.
       operationId: CreateReplayHeatmapSnapshot
@@ -220403,6 +220407,10 @@ paths:
       summary: Get all RUM retention filters
       tags:
         - Rum Retention Filters
+      x-permission:
+        operator: OR
+        permissions:
+          - rum_retention_filters_read
     post:
       description: |-
         Create a RUM retention filter for a RUM application.
@@ -220506,6 +220514,10 @@ paths:
       summary: Get all RUM exclusion filters
       tags:
         - Rum Retention Filters
+      x-permission:
+        operator: OR
+        permissions:
+          - rum_retention_filters_read
     post:
       description: |-
         Create an exclusion filter for a RUM application.
@@ -220623,6 +220635,10 @@ paths:
       summary: Get a RUM exclusion filter
       tags:
         - Rum Retention Filters
+      x-permission:
+        operator: OR
+        permissions:
+          - rum_retention_filters_read
     patch:
       description: |-
         Update an exclusion filter for a RUM application.
@@ -220744,6 +220760,10 @@ paths:
       summary: Get all permanent RUM retention filters
       tags:
         - Rum Retention Filters
+      x-permission:
+        operator: OR
+        permissions:
+          - rum_retention_filters_read
   /api/v2/rum/applications/{app_id}/retention_filters/permanent/{permanent_rf_id}:
     get:
       description: Get a permanent RUM retention filter for a RUM application by its identifier.
@@ -220781,6 +220801,10 @@ paths:
       summary: Get a permanent RUM retention filter
       tags:
         - Rum Retention Filters
+      x-permission:
+        operator: OR
+        permissions:
+          - rum_retention_filters_read
     patch:
       description: |-
         Update the cross-product sampling configuration of a permanent RUM retention filter for a RUM application.
@@ -220896,6 +220920,10 @@ paths:
       summary: Get a RUM retention filter
       tags:
         - Rum Retention Filters
+      x-permission:
+        operator: OR
+        permissions:
+          - rum_retention_filters_read
     patch:
       description: |-
         Update a RUM retention filter for a RUM application.
@@ -221142,6 +221170,10 @@ paths:
       summary: Get the RUM configuration
       tags:
         - RUM Config
+      x-permission:
+        operator: OR
+        permissions:
+          - rum_apps_read
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -221292,6 +221324,10 @@ paths:
       summary: Get all RUM-based metrics
       tags:
         - Rum Metrics
+      x-permission:
+        operator: OR
+        permissions:
+          - rum_apps_read
     post:
       description: |-
         Create a metric based on your organization's RUM data.
@@ -221419,6 +221455,10 @@ paths:
       summary: Get a RUM-based metric
       tags:
         - Rum Metrics
+      x-permission:
+        operator: OR
+        permissions:
+          - rum_apps_read
     patch:
       description: |-
         Update a specific RUM-based metric from your organization.
@@ -221720,6 +221760,10 @@ paths:
       summary: List teams ownership mappings
       tags:
         - Rum Teams Ownership
+      x-permission:
+        operator: OR
+        permissions:
+          - rum_apps_read
       x-unstable: |-
         **Note**: This endpoint is in Preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -221933,6 +221977,10 @@ paths:
       summary: Get a teams ownership mapping
       tags:
         - Rum Teams Ownership
+      x-permission:
+        operator: OR
+        permissions:
+          - rum_apps_read
       x-unstable: |-
         **Note**: This endpoint is in Preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -221978,6 +222026,10 @@ paths:
       summary: List teams ownership rules
       tags:
         - Rum Teams Ownership
+      x-permission:
+        operator: OR
+        permissions:
+          - rum_apps_read
       x-unstable: |-
         **Note**: This endpoint is in Preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -222299,6 +222351,10 @@ paths:
       summary: Get a RUM operation by name
       tags:
         - RUM Operations
+      x-permission:
+        operator: OR
+        permissions:
+          - rum_apps_read
   /api/v2/rum/operations/search:
     get:
       description: |-
@@ -222423,6 +222479,10 @@ paths:
       summary: Search RUM operations
       tags:
         - RUM Operations
+      x-permission:
+        operator: OR
+        permissions:
+          - rum_apps_read
   /api/v2/rum/operations/strong_links:
     get:
       description: |-
@@ -222499,6 +222559,10 @@ paths:
       summary: List RUM operation links
       tags:
         - RUM Operations
+      x-permission:
+        operator: OR
+        permissions:
+          - rum_apps_read
     post:
       description: |-
         Create a link between a RUM operation and a journey, confirming that the journey
@@ -222755,6 +222819,10 @@ paths:
       summary: Get a RUM operation
       tags:
         - RUM Operations
+      x-permission:
+        operator: OR
+        permissions:
+          - rum_apps_read
     put:
       description: |-
         Update an existing RUM operation. Fields omitted from the request body keep their existing value,
@@ -223111,6 +223179,10 @@ paths:
       summary: List RUM replay playlists
       tags:
         - Rum Replay Playlists
+      x-permission:
+        operator: OR
+        permissions:
+          - rum_session_replay_read
     post:
       description: Create a playlist.
       operationId: CreateRumReplayPlaylist
@@ -223216,6 +223288,10 @@ paths:
       summary: Get RUM replay playlist
       tags:
         - Rum Replay Playlists
+      x-permission:
+        operator: OR
+        permissions:
+          - rum_session_replay_read
     put:
       description: Update a playlist.
       operationId: UpdateRumReplayPlaylist
@@ -223356,6 +223432,10 @@ paths:
       summary: List RUM replay playlist sessions
       tags:
         - Rum Replay Playlists
+      x-permission:
+        operator: OR
+        permissions:
+          - rum_session_replay_read
   /api/v2/rum/replay/playlists/{playlist_id}/sessions/{session_id}:
     delete:
       description: Remove a session from a playlist.
@@ -223516,6 +223596,10 @@ paths:
       summary: Get segments
       tags:
         - Rum Replay Sessions
+      x-permission:
+        operator: OR
+        permissions:
+          - rum_session_replay_read
   /api/v2/rum/replay/sessions/{session_id}/watchers:
     get:
       description: List session watchers.
@@ -223568,6 +223652,10 @@ paths:
       summary: List RUM replay session watchers
       tags:
         - Rum Replay Viewership
+      x-permission:
+        operator: OR
+        permissions:
+          - rum_session_replay_read
   /api/v2/rum/replay/sessions/{session_id}/watches:
     delete:
       description: Delete session watch history.
@@ -223719,6 +223807,10 @@ paths:
       summary: List RUM replay viewership history sessions
       tags:
         - Rum Replay Viewership
+      x-permission:
+        operator: OR
+        permissions:
+          - rum_session_replay_read
   /api/v2/saml_configurations:
     get:
       description: Get the list of SAML configurations for the current organization. An organization has at most one SAML configuration.
