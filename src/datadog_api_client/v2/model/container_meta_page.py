@@ -64,16 +64,17 @@ class ContainerMetaPage(ModelNormal):
         :param cursor: The cursor used to get the current results, if any.
         :type cursor: str, optional
 
-        :param limit: Number of results returned
+        :param limit: Maximum number of results requested.
         :type limit: int, optional
 
-        :param next_cursor: The cursor used to get the next results, if any.
+        :param next_cursor: The cursor used to get the next results, if any. To make the next request, use the same
+            parameters with the addition of the ``page[cursor]``. Empty for grouped results.
         :type next_cursor: str, optional
 
         :param prev_cursor: The cursor used to get the previous results, if any.
         :type prev_cursor: str, none_type, optional
 
-        :param total: Total number of records that match the query.
+        :param total: Total number of containers that match the query. Always ``0`` for grouped results.
         :type total: int, optional
 
         :param type: Type of Container pagination.

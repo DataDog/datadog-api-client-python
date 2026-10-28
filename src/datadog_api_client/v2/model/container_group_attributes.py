@@ -30,7 +30,7 @@ class ContainerGroupAttributes(ModelNormal):
         """
         Attributes for a container group.
 
-        :param count: Number of containers in the group.
+        :param count: Number of containers in the group. A container with multiple values for a grouping tag can appear in multiple groups. Summing group counts can overcount distinct containers.
         :type count: int, optional
 
         :param tags: Tags from the group name parsed in key/value format.
