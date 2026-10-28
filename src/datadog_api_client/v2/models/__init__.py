@@ -9065,6 +9065,7 @@ from datadog_api_client.v2.model.rum_operation_update_request import RUMOperatio
 from datadog_api_client.v2.model.rum_operation_update_request_data import RUMOperationUpdateRequestData
 from datadog_api_client.v2.model.rum_operation_user import RUMOperationUser
 from datadog_api_client.v2.model.rum_operations_list_response import RUMOperationsListResponse
+from datadog_api_client.v2.model.rum_operations_list_response_links import RUMOperationsListResponseLinks
 from datadog_api_client.v2.model.rum_operations_list_response_meta import RUMOperationsListResponseMeta
 from datadog_api_client.v2.model.rum_operations_list_response_meta_page import RUMOperationsListResponseMetaPage
 from datadog_api_client.v2.model.rum_product_analytics_retention_scale import RUMProductAnalyticsRetentionScale
@@ -9488,7 +9489,11 @@ from datadog_api_client.v2.model.rum_retention_filter_create_data import RumRete
 from datadog_api_client.v2.model.rum_retention_filter_create_request import RumRetentionFilterCreateRequest
 from datadog_api_client.v2.model.rum_retention_filter_data import RumRetentionFilterData
 from datadog_api_client.v2.model.rum_retention_filter_event_type import RumRetentionFilterEventType
+from datadog_api_client.v2.model.rum_retention_filter_meta import RumRetentionFilterMeta
+from datadog_api_client.v2.model.rum_retention_filter_meta_edition_mode import RumRetentionFilterMetaEditionMode
+from datadog_api_client.v2.model.rum_retention_filter_meta_source import RumRetentionFilterMetaSource
 from datadog_api_client.v2.model.rum_retention_filter_response import RumRetentionFilterResponse
+from datadog_api_client.v2.model.rum_retention_filter_track import RumRetentionFilterTrack
 from datadog_api_client.v2.model.rum_retention_filter_type import RumRetentionFilterType
 from datadog_api_client.v2.model.rum_retention_filter_update_attributes import RumRetentionFilterUpdateAttributes
 from datadog_api_client.v2.model.rum_retention_filter_update_data import RumRetentionFilterUpdateData
@@ -19054,6 +19059,7 @@ __all__ = [
     "RUMOperationUpdateRequestData",
     "RUMOperationUser",
     "RUMOperationsListResponse",
+    "RUMOperationsListResponseLinks",
     "RUMOperationsListResponseMeta",
     "RUMOperationsListResponseMetaPage",
     "RUMProductAnalyticsRetentionScale",
@@ -19409,7 +19415,11 @@ __all__ = [
     "RumRetentionFilterCreateRequest",
     "RumRetentionFilterData",
     "RumRetentionFilterEventType",
+    "RumRetentionFilterMeta",
+    "RumRetentionFilterMetaEditionMode",
+    "RumRetentionFilterMetaSource",
     "RumRetentionFilterResponse",
+    "RumRetentionFilterTrack",
     "RumRetentionFilterType",
     "RumRetentionFilterUpdateAttributes",
     "RumRetentionFilterUpdateData",

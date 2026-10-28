@@ -16,7 +16,7 @@ class RumRetentionFilterEventType(ModelSimple):
     """
     The type of RUM events to filter on.
 
-    :param value: Must be one of ["session", "view", "action", "error", "resource", "long_task", "vital"].
+    :param value: Must be one of ["session", "view", "action", "error", "resource", "long_task", "vital", "operation", "execution_context"].
     :type value: str
     """
 
@@ -28,6 +28,8 @@ class RumRetentionFilterEventType(ModelSimple):
         "resource",
         "long_task",
         "vital",
+        "operation",
+        "execution_context",
     }
     SESSION: ClassVar["RumRetentionFilterEventType"]
     VIEW: ClassVar["RumRetentionFilterEventType"]
@@ -36,6 +38,8 @@ class RumRetentionFilterEventType(ModelSimple):
     RESOURCE: ClassVar["RumRetentionFilterEventType"]
     LONG_TASK: ClassVar["RumRetentionFilterEventType"]
     VITAL: ClassVar["RumRetentionFilterEventType"]
+    OPERATION: ClassVar["RumRetentionFilterEventType"]
+    EXECUTION_CONTEXT: ClassVar["RumRetentionFilterEventType"]
 
     @cached_property
     def openapi_types(_):
@@ -51,3 +55,5 @@ RumRetentionFilterEventType.ERROR = RumRetentionFilterEventType("error")
 RumRetentionFilterEventType.RESOURCE = RumRetentionFilterEventType("resource")
 RumRetentionFilterEventType.LONG_TASK = RumRetentionFilterEventType("long_task")
 RumRetentionFilterEventType.VITAL = RumRetentionFilterEventType("vital")
+RumRetentionFilterEventType.OPERATION = RumRetentionFilterEventType("operation")
+RumRetentionFilterEventType.EXECUTION_CONTEXT = RumRetentionFilterEventType("execution_context")

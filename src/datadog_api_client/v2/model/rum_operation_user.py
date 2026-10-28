@@ -14,6 +14,8 @@ from datadog_api_client.model_utils import (
 
 
 class RUMOperationUser(ModelNormal):
+    _nullable = True
+
     @cached_property
     def openapi_types(_):
         return {
@@ -45,7 +47,7 @@ class RUMOperationUser(ModelNormal):
         **kwargs,
     ):
         """
-        A Datadog user referenced by a RUM operation.
+        A Datadog user referenced by a RUM operation. ``null`` when the user could not be resolved.
 
         :param email: The email of the user.
         :type email: str, optional

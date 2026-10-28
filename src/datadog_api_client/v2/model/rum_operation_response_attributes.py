@@ -34,11 +34,11 @@ class RUMOperationResponseAttributes(ModelNormal):
             "created_by": (RUMOperationUser,),
             "description": (str, none_type),
             "display_name": (str,),
-            "feature_ids": ([str],),
+            "feature_ids": ([str], none_type),
             "journey_rum": (RUMOperationJourneyRum,),
             "name": (str,),
             "org_id": (int,),
-            "tags": ([str],),
+            "tags": ([str], none_type),
             "updated_at": (datetime, none_type),
             "updated_by": (RUMOperationUser,),
         }
@@ -68,17 +68,17 @@ class RUMOperationResponseAttributes(ModelNormal):
         self_,
         journey_rum: RUMOperationJourneyRum,
         name: str,
-        tags: List[str],
+        tags: Union[List[str], none_type],
         application_id: Union[UUID, none_type, UnsetType] = unset,
         category: Union[str, none_type, UnsetType] = unset,
         created_at: Union[datetime, UnsetType] = unset,
-        created_by: Union[RUMOperationUser, UnsetType] = unset,
+        created_by: Union[RUMOperationUser, none_type, UnsetType] = unset,
         description: Union[str, none_type, UnsetType] = unset,
         display_name: Union[str, UnsetType] = unset,
-        feature_ids: Union[List[str], UnsetType] = unset,
+        feature_ids: Union[List[str], none_type, UnsetType] = unset,
         org_id: Union[int, UnsetType] = unset,
         updated_at: Union[datetime, none_type, UnsetType] = unset,
-        updated_by: Union[RUMOperationUser, UnsetType] = unset,
+        updated_by: Union[RUMOperationUser, none_type, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -93,8 +93,8 @@ class RUMOperationResponseAttributes(ModelNormal):
         :param created_at: The timestamp when the RUM operation was created.
         :type created_at: datetime, optional
 
-        :param created_by: A Datadog user referenced by a RUM operation.
-        :type created_by: RUMOperationUser, optional
+        :param created_by: A Datadog user referenced by a RUM operation. ``null`` when the user could not be resolved.
+        :type created_by: RUMOperationUser, none_type, optional
 
         :param description: A description of the RUM operation.
         :type description: str, none_type, optional
@@ -103,7 +103,7 @@ class RUMOperationResponseAttributes(ModelNormal):
         :type display_name: str, optional
 
         :param feature_ids: The list of journey IDs associated with the RUM operation.
-        :type feature_ids: [str], optional
+        :type feature_ids: [str], none_type, optional
 
         :param journey_rum: The definition of a RUM operation's journey, used to detect it from RUM events.
         :type journey_rum: RUMOperationJourneyRum
@@ -115,13 +115,13 @@ class RUMOperationResponseAttributes(ModelNormal):
         :type org_id: int, optional
 
         :param tags: A list of tags associated with the RUM operation.
-        :type tags: [str]
+        :type tags: [str], none_type
 
         :param updated_at: The timestamp when the RUM operation was last updated.
         :type updated_at: datetime, none_type, optional
 
-        :param updated_by: A Datadog user referenced by a RUM operation.
-        :type updated_by: RUMOperationUser, optional
+        :param updated_by: A Datadog user referenced by a RUM operation. ``null`` when the user could not be resolved.
+        :type updated_by: RUMOperationUser, none_type, optional
         """
         if application_id is not unset:
             kwargs["application_id"] = application_id
