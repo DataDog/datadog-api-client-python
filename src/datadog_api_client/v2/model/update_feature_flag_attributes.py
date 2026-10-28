@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
+from typing import List, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -15,18 +15,26 @@ from datadog_api_client.model_utils import (
 
 
 class UpdateFeatureFlagAttributes(ModelNormal):
+    validations = {
+        "tags": {
+            "max_items": 100,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         return {
             "description": (str,),
             "json_schema": (str, none_type),
             "name": (str,),
+            "tags": ([str],),
         }
 
     attribute_map = {
         "description": "description",
         "json_schema": "json_schema",
         "name": "name",
+        "tags": "tags",
     }
 
     def __init__(
@@ -34,6 +42,7 @@ class UpdateFeatureFlagAttributes(ModelNormal):
         description: Union[str, UnsetType] = unset,
         json_schema: Union[str, none_type, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -47,6 +56,12 @@ class UpdateFeatureFlagAttributes(ModelNormal):
 
         :param name: The name of the feature flag.
         :type name: str, optional
+
+        :param tags: Tags associated with the feature flag. This field replaces the full set of
+            existing tags; omit it to leave tags unchanged, or pass an empty array to
+            clear all tags. The owning team is set by including a tag of the form
+            ``team:<team-handle>`` in this array.
+        :type tags: [str], optional
         """
         if description is not unset:
             kwargs["description"] = description
@@ -54,4 +69,6 @@ class UpdateFeatureFlagAttributes(ModelNormal):
             kwargs["json_schema"] = json_schema
         if name is not unset:
             kwargs["name"] = name
+        if tags is not unset:
+            kwargs["tags"] = tags
         super().__init__(kwargs)
