@@ -44,7 +44,7 @@ class CloudAuthenticationApi:
             settings={
                 "response_type": (AWSCloudAuthPersonaMappingResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/cloud_auth/aws/persona_mapping",
+                "endpoint_path": "/api/v2/wif/aws/persona_mapping",
                 "operation_id": "create_aws_cloud_auth_persona_mapping",
                 "http_method": "POST",
                 "version": "v2",
@@ -64,7 +64,7 @@ class CloudAuthenticationApi:
             settings={
                 "response_type": (GitHubCloudAuthIntakeMappingResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/cloud_auth/github/intake_mapping",
+                "endpoint_path": "/api/v2/wif/github/intake_mapping",
                 "operation_id": "create_git_hub_cloud_auth_intake_mapping",
                 "http_method": "POST",
                 "version": "v2",
@@ -84,7 +84,7 @@ class CloudAuthenticationApi:
             settings={
                 "response_type": (GitHubCloudAuthPersonaMappingResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/cloud_auth/github/persona_mapping",
+                "endpoint_path": "/api/v2/wif/github/persona_mapping",
                 "operation_id": "create_git_hub_cloud_auth_persona_mapping",
                 "http_method": "POST",
                 "version": "v2",
@@ -104,7 +104,7 @@ class CloudAuthenticationApi:
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/cloud_auth/aws/persona_mapping/{persona_mapping_id}",
+                "endpoint_path": "/api/v2/wif/aws/persona_mapping/{persona_mapping_id}",
                 "operation_id": "delete_aws_cloud_auth_persona_mapping",
                 "http_method": "DELETE",
                 "version": "v2",
@@ -127,7 +127,7 @@ class CloudAuthenticationApi:
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/cloud_auth/github/intake_mapping/{intake_mapping_id}",
+                "endpoint_path": "/api/v2/wif/github/intake_mapping/{intake_mapping_id}",
                 "operation_id": "delete_git_hub_cloud_auth_intake_mapping",
                 "http_method": "DELETE",
                 "version": "v2",
@@ -150,7 +150,7 @@ class CloudAuthenticationApi:
             settings={
                 "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/cloud_auth/github/persona_mapping/{persona_mapping_id}",
+                "endpoint_path": "/api/v2/wif/github/persona_mapping/{persona_mapping_id}",
                 "operation_id": "delete_git_hub_cloud_auth_persona_mapping",
                 "http_method": "DELETE",
                 "version": "v2",
@@ -173,7 +173,7 @@ class CloudAuthenticationApi:
             settings={
                 "response_type": (AWSCloudAuthPersonaMappingResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/cloud_auth/aws/persona_mapping/{persona_mapping_id}",
+                "endpoint_path": "/api/v2/wif/aws/persona_mapping/{persona_mapping_id}",
                 "operation_id": "get_aws_cloud_auth_persona_mapping",
                 "http_method": "GET",
                 "version": "v2",
@@ -196,7 +196,7 @@ class CloudAuthenticationApi:
             settings={
                 "response_type": (GitHubCloudAuthIntakeMappingResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/cloud_auth/github/intake_mapping/{intake_mapping_id}",
+                "endpoint_path": "/api/v2/wif/github/intake_mapping/{intake_mapping_id}",
                 "operation_id": "get_git_hub_cloud_auth_intake_mapping",
                 "http_method": "GET",
                 "version": "v2",
@@ -219,7 +219,7 @@ class CloudAuthenticationApi:
             settings={
                 "response_type": (GitHubCloudAuthPersonaMappingResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/cloud_auth/github/persona_mapping/{persona_mapping_id}",
+                "endpoint_path": "/api/v2/wif/github/persona_mapping/{persona_mapping_id}",
                 "operation_id": "get_git_hub_cloud_auth_persona_mapping",
                 "http_method": "GET",
                 "version": "v2",
@@ -242,7 +242,7 @@ class CloudAuthenticationApi:
             settings={
                 "response_type": (AWSCloudAuthPersonaMappingsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/cloud_auth/aws/persona_mapping",
+                "endpoint_path": "/api/v2/wif/aws/persona_mapping",
                 "operation_id": "list_aws_cloud_auth_persona_mappings",
                 "http_method": "GET",
                 "version": "v2",
@@ -258,7 +258,7 @@ class CloudAuthenticationApi:
             settings={
                 "response_type": (GitHubCloudAuthIntakeMappingsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/cloud_auth/github/intake_mapping",
+                "endpoint_path": "/api/v2/wif/github/intake_mapping",
                 "operation_id": "list_git_hub_cloud_auth_intake_mappings",
                 "http_method": "GET",
                 "version": "v2",
@@ -274,7 +274,7 @@ class CloudAuthenticationApi:
             settings={
                 "response_type": (GitHubCloudAuthPersonaMappingsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/cloud_auth/github/persona_mapping",
+                "endpoint_path": "/api/v2/wif/github/persona_mapping",
                 "operation_id": "list_git_hub_cloud_auth_persona_mappings",
                 "http_method": "GET",
                 "version": "v2",
