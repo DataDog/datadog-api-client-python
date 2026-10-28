@@ -59,6 +59,7 @@ class RecommendationsFilterRequestDataAttributes(ModelNormal):
         :type filter: str, optional
 
         :param scope: Recommendations scope. Defaults to ``ccm`` ; use ``experiment`` for experimental recommendations or ``*`` for both.
+            An empty value is treated as ``ccm``.
         :type scope: RecommendationsFilterRequestScope, optional
 
         :param sort: Ordered list of sort clauses applied to the result set.
