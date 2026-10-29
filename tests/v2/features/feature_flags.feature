@@ -269,6 +269,18 @@ Feature: Feature Flags
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Export feature flag change history returns "Bad Request" response
+    Given new "ExportFeatureFlagHistory" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Export feature flag change history returns "OK" response
+    Given new "ExportFeatureFlagHistory" request
+    When the request is sent
+    Then the response status is 200 OK
+
   @skip @team:ddoghq/feature-flags
   Scenario: Get a feature flag returns "Not Found" response
     Given new "GetFeatureFlag" request
@@ -357,6 +369,18 @@ Feature: Feature Flags
   @skip @team:ddoghq/feature-flags
   Scenario: List environments returns "OK" response
     Given new "ListFeatureFlagsEnvironments" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: List feature flag change history returns "Bad Request" response
+    Given new "ListFeatureFlagHistory" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: List feature flag change history returns "OK" response
+    Given new "ListFeatureFlagHistory" request
     When the request is sent
     Then the response status is 200 OK
 

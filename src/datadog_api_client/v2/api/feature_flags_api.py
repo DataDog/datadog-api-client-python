@@ -8,6 +8,7 @@ from typing import Any, Dict, List, Union
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
+    datetime,
     UnsetType,
     unset,
     UUID,
@@ -24,6 +25,7 @@ from datadog_api_client.v2.model.environment_response import EnvironmentResponse
 from datadog_api_client.v2.model.create_environment_request import CreateEnvironmentRequest
 from datadog_api_client.v2.model.update_environment_request import UpdateEnvironmentRequest
 from datadog_api_client.v2.model.allocation_exposure_schedule_response import AllocationExposureScheduleResponse
+from datadog_api_client.v2.model.list_feature_flag_history_response import ListFeatureFlagHistoryResponse
 from datadog_api_client.v2.model.saved_filter_response import SavedFilterResponse
 from datadog_api_client.v2.model.patch_saved_filter_request import PatchSavedFilterRequest
 from datadog_api_client.v2.model.update_feature_flag_request import UpdateFeatureFlagRequest
@@ -277,6 +279,60 @@ class FeatureFlagsApi:
             api_client=api_client,
         )
 
+        self._export_feature_flag_history_endpoint = _Endpoint(
+            settings={
+                "response_type": (str,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/feature-flags/history/export",
+                "operation_id": "export_feature_flag_history",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "start_date": {
+                    "openapi_types": (datetime,),
+                    "attribute": "start_date",
+                    "location": "query",
+                },
+                "end_date": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_date",
+                    "location": "query",
+                },
+                "teams": {
+                    "openapi_types": ([str],),
+                    "attribute": "teams",
+                    "location": "query",
+                    "collection_format": "multi",
+                },
+                "tags": {
+                    "openapi_types": ([str],),
+                    "attribute": "tags",
+                    "location": "query",
+                    "collection_format": "multi",
+                },
+                "feature_flag_id": {
+                    "openapi_types": (UUID,),
+                    "attribute": "feature_flag_id",
+                    "location": "query",
+                },
+                "environment_id": {
+                    "openapi_types": (UUID,),
+                    "attribute": "environment_id",
+                    "location": "query",
+                },
+                "include_suggestion_events": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_suggestion_events",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["text/csv", "application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_feature_flag_endpoint = _Endpoint(
             settings={
                 "response_type": (FeatureFlagResponse,),
@@ -338,6 +394,77 @@ class FeatureFlagsApi:
                     "openapi_types": (UUID,),
                     "attribute": "saved_filter_id",
                     "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_feature_flag_history_endpoint = _Endpoint(
+            settings={
+                "response_type": (ListFeatureFlagHistoryResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/feature-flags/history",
+                "operation_id": "list_feature_flag_history",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "start_date": {
+                    "openapi_types": (datetime,),
+                    "attribute": "start_date",
+                    "location": "query",
+                },
+                "end_date": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end_date",
+                    "location": "query",
+                },
+                "teams": {
+                    "openapi_types": ([str],),
+                    "attribute": "teams",
+                    "location": "query",
+                    "collection_format": "multi",
+                },
+                "tags": {
+                    "openapi_types": ([str],),
+                    "attribute": "tags",
+                    "location": "query",
+                    "collection_format": "multi",
+                },
+                "feature_flag_id": {
+                    "openapi_types": (UUID,),
+                    "attribute": "feature_flag_id",
+                    "location": "query",
+                },
+                "environment_id": {
+                    "openapi_types": (UUID,),
+                    "attribute": "environment_id",
+                    "location": "query",
+                },
+                "include_suggestion_events": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_suggestion_events",
+                    "location": "query",
+                },
+                "page_limit": {
+                    "validation": {
+                        "inclusive_maximum": 50,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
+                    "location": "query",
+                },
+                "page_offset": {
+                    "validation": {
+                        "inclusive_minimum": 0,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[offset]",
+                    "location": "query",
                 },
             },
             headers_map={
@@ -962,6 +1089,68 @@ class FeatureFlagsApi:
 
         return self._enable_feature_flag_environment_endpoint.call_with_http_info(**kwargs)
 
+    def export_feature_flag_history(
+        self,
+        *,
+        start_date: Union[datetime, UnsetType] = unset,
+        end_date: Union[datetime, UnsetType] = unset,
+        teams: Union[List[str], UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
+        feature_flag_id: Union[UUID, UnsetType] = unset,
+        environment_id: Union[UUID, UnsetType] = unset,
+        include_suggestion_events: Union[bool, UnsetType] = unset,
+    ) -> str:
+        """Export feature flag change history.
+
+        Exports the organization's feature flag change events as a CSV file, newest first, without pagination.
+        It accepts the same filters as the List feature flag change history endpoint, and its columns match the CSV export on the flag history page:
+        Flag Version, Flag Name, Flag Key, Flag UUID, Action, User Name, User Email, User Type, Environment, and Timestamp.
+
+        If an export fails before the file starts, the response is a JSON:API error. Large exports stream as they are read.
+        If an export fails after streaming starts, the connection closes before the file ends, so the download fails instead of
+        returning a file with missing rows. An export must finish within the 60-second request timeout. If an export times out,
+        narrow the date range.
+
+        :param start_date: Only include changes made after this time, for example ``2026-01-01T00:00:00Z``. Omit for no lower bound.
+        :type start_date: datetime, optional
+        :param end_date: Only include changes made before this time, for example ``2026-02-01T00:00:00Z``. Omit for no upper bound. Must be after ``start_date`` when both are set.
+        :type end_date: datetime, optional
+        :param teams: Only include changes to flags that belong to at least one of these teams. Use team handles without the ``team:`` prefix, as repeated parameters, such as ``teams=checkout&teams=payments``. Handles from ``teams`` and ``team:<handle>`` values from ``tags`` are treated as one set. Handles that are empty, have surrounding white space, or include the ``team:`` prefix return a ``400 Bad Request`` error.
+        :type teams: [str], optional
+        :param tags: Only include changes to flags that have all of these exact tags, as repeated parameters, such as ``tags=env:prod&tags=tier:1``. Values of the form ``team:<handle>`` match any selected team and are combined with ``teams``. Empty values are ignored.
+        :type tags: [str], optional
+        :param feature_flag_id: Only include changes to this feature flag.
+        :type feature_flag_id: UUID, optional
+        :param environment_id: Only include changes to this environment. Changes to the flag itself, which have no environment, are always included.
+        :type environment_id: UUID, optional
+        :param include_suggestion_events: Also include review events for change requests that needed approval: rejected requests and requests still pending review. Applies only to organizations with flag approvals enabled.
+        :type include_suggestion_events: bool, optional
+        :rtype: str
+        """
+        kwargs: Dict[str, Any] = {}
+        if start_date is not unset:
+            kwargs["start_date"] = start_date
+
+        if end_date is not unset:
+            kwargs["end_date"] = end_date
+
+        if teams is not unset:
+            kwargs["teams"] = teams
+
+        if tags is not unset:
+            kwargs["tags"] = tags
+
+        if feature_flag_id is not unset:
+            kwargs["feature_flag_id"] = feature_flag_id
+
+        if environment_id is not unset:
+            kwargs["environment_id"] = environment_id
+
+        if include_suggestion_events is not unset:
+            kwargs["include_suggestion_events"] = include_suggestion_events
+
+        return self._export_feature_flag_history_endpoint.call_with_http_info(**kwargs)
+
     def get_feature_flag(
         self,
         feature_flag_id: UUID,
@@ -1017,6 +1206,76 @@ class FeatureFlagsApi:
         kwargs["saved_filter_id"] = saved_filter_id
 
         return self._get_saved_filter_endpoint.call_with_http_info(**kwargs)
+
+    def list_feature_flag_history(
+        self,
+        *,
+        start_date: Union[datetime, UnsetType] = unset,
+        end_date: Union[datetime, UnsetType] = unset,
+        teams: Union[List[str], UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
+        feature_flag_id: Union[UUID, UnsetType] = unset,
+        environment_id: Union[UUID, UnsetType] = unset,
+        include_suggestion_events: Union[bool, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+        page_offset: Union[int, UnsetType] = unset,
+    ) -> ListFeatureFlagHistoryResponse:
+        """List feature flag change history.
+
+        Returns the organization's feature flag change events, newest first.
+        Each event includes a readable description of the change.
+        All filters are optional, and events must match every filter you set. Without a date range, the whole history is listed.
+        Results are paginated with ``page[limit]`` and ``page[offset]`` ; follow ``links.next`` to read further back.
+
+        :param start_date: Only include changes made after this time, for example ``2026-01-01T00:00:00Z``. Omit for no lower bound.
+        :type start_date: datetime, optional
+        :param end_date: Only include changes made before this time, for example ``2026-02-01T00:00:00Z``. Omit for no upper bound. Must be after ``start_date`` when both are set.
+        :type end_date: datetime, optional
+        :param teams: Only include changes to flags that belong to at least one of these teams. Use team handles without the ``team:`` prefix, as repeated parameters, such as ``teams=checkout&teams=payments``. Handles from ``teams`` and ``team:<handle>`` values from ``tags`` are treated as one set. Handles that are empty, have surrounding white space, or include the ``team:`` prefix return a ``400 Bad Request`` error.
+        :type teams: [str], optional
+        :param tags: Only include changes to flags that have all of these exact tags, as repeated parameters, such as ``tags=env:prod&tags=tier:1``. Values of the form ``team:<handle>`` match any selected team and are combined with ``teams``. Empty values are ignored.
+        :type tags: [str], optional
+        :param feature_flag_id: Only include changes to this feature flag.
+        :type feature_flag_id: UUID, optional
+        :param environment_id: Only include changes to this environment. Changes to the flag itself, which have no environment, are always included.
+        :type environment_id: UUID, optional
+        :param include_suggestion_events: Also include review events for change requests that needed approval: rejected requests and requests still pending review. Applies only to organizations with flag approvals enabled.
+        :type include_suggestion_events: bool, optional
+        :param page_limit: Maximum number of events to return. Defaults to ``25``. Values above ``50`` return ``50`` events. Non-positive or empty values use the default. A non-integer value returns a ``400 Bad Request`` error.
+        :type page_limit: int, optional
+        :param page_offset: Number of matching events to skip before returning results. Defaults to ``0``. Negative or empty values are set to ``0``. A non-integer value returns a ``400 Bad Request`` error.
+        :type page_offset: int, optional
+        :rtype: ListFeatureFlagHistoryResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if start_date is not unset:
+            kwargs["start_date"] = start_date
+
+        if end_date is not unset:
+            kwargs["end_date"] = end_date
+
+        if teams is not unset:
+            kwargs["teams"] = teams
+
+        if tags is not unset:
+            kwargs["tags"] = tags
+
+        if feature_flag_id is not unset:
+            kwargs["feature_flag_id"] = feature_flag_id
+
+        if environment_id is not unset:
+            kwargs["environment_id"] = environment_id
+
+        if include_suggestion_events is not unset:
+            kwargs["include_suggestion_events"] = include_suggestion_events
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
+
+        return self._list_feature_flag_history_endpoint.call_with_http_info(**kwargs)
 
     def list_feature_flags(
         self,
