@@ -2192,24 +2192,21 @@ Feature: Security Monitoring
 
   @generated @skip @team:ddoghq/cloud-siem
   Scenario: Get a rule's version history returns "Bad Request" response
-    Given operation "GetRuleVersionHistory" enabled
-    And new "GetRuleVersionHistory" request
+    Given new "GetRuleVersionHistory" request
     And request contains "rule_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:ddoghq/cloud-siem
   Scenario: Get a rule's version history returns "Not Found" response
-    Given operation "GetRuleVersionHistory" enabled
-    And new "GetRuleVersionHistory" request
+    Given new "GetRuleVersionHistory" request
     And request contains "rule_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:ddoghq/cloud-siem
   Scenario: Get a rule's version history returns "OK" response
-    Given operation "GetRuleVersionHistory" enabled
-    And new "GetRuleVersionHistory" request
+    Given new "GetRuleVersionHistory" request
     And request contains "rule_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
@@ -2718,8 +2715,7 @@ Feature: Security Monitoring
 
   @skip-go @skip-java @skip-ruby @team:ddoghq/cloud-siem
   Scenario: Get rule version history returns "OK" response
-    Given operation "GetRuleVersionHistory" enabled
-    And new "GetRuleVersionHistory" request
+    Given new "GetRuleVersionHistory" request
     And there is a valid "security_rule" in the system
     And request contains "rule_id" parameter from "security_rule.id"
     When the request is sent
@@ -3585,8 +3581,7 @@ Feature: Security Monitoring
 
   @generated @skip @team:ddoghq/cloud-siem
   Scenario: Restore a rule to a historical version returns "Bad Request" response
-    Given operation "RestoreSecurityMonitoringRule" enabled
-    And new "RestoreSecurityMonitoringRule" request
+    Given new "RestoreSecurityMonitoringRule" request
     And request contains "rule_id" parameter from "REPLACE.ME"
     And request contains "version" parameter from "REPLACE.ME"
     When the request is sent
@@ -3594,8 +3589,7 @@ Feature: Security Monitoring
 
   @team:ddoghq/cloud-siem
   Scenario: Restore a rule to a historical version returns "Conflict" response
-    Given operation "RestoreSecurityMonitoringRule" enabled
-    And there is a valid "security_rule" in the system
+    Given there is a valid "security_rule" in the system
     And there is a valid "security_rule_updated" in the system
     And new "RestoreSecurityMonitoringRule" request
     And request contains "rule_id" parameter from "security_rule.id"
@@ -3605,8 +3599,7 @@ Feature: Security Monitoring
 
   @team:ddoghq/cloud-siem
   Scenario: Restore a rule to a historical version returns "Not Found" response
-    Given operation "RestoreSecurityMonitoringRule" enabled
-    And there is a valid "security_rule" in the system
+    Given there is a valid "security_rule" in the system
     And new "RestoreSecurityMonitoringRule" request
     And request contains "rule_id" parameter from "security_rule.id"
     And request contains "version" parameter with value 9999
@@ -3615,8 +3608,7 @@ Feature: Security Monitoring
 
   @skip-validation @team:ddoghq/cloud-siem
   Scenario: Restore a rule to a historical version returns "OK" response
-    Given operation "RestoreSecurityMonitoringRule" enabled
-    And there is a valid "security_rule" in the system
+    Given there is a valid "security_rule" in the system
     And there is a valid "security_rule_updated" in the system
     And new "RestoreSecurityMonitoringRule" request
     And request contains "rule_id" parameter from "security_rule.id"

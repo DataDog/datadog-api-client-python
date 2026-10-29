@@ -11,7 +11,6 @@ SECURITY_RULE_ID = environ["SECURITY_RULE_ID"]
 
 configuration = Configuration()
 configuration.access_token = environ["DD_BEARER_TOKEN"]
-configuration.unstable_operations["restore_security_monitoring_rule"] = True
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)
     response = api_instance.restore_security_monitoring_rule(
