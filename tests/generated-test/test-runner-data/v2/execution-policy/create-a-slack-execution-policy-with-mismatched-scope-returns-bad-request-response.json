@@ -1,0 +1,51 @@
+{
+  "api": "ExecutionPolicy",
+  "expected_status": 400,
+  "feature": "Execution Policy",
+  "id": "v2/Execution Policy/Create a Slack execution policy with mismatched scope returns \"Bad Request\" response",
+  "operation_id": "CreateExecutionPolicy",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ExecutionPolicyCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "action_pattern": {
+              "action_fqns": [
+                "com.datadoghq.slack.*"
+              ],
+              "integration": "INTEGRATION_SLACK"
+            },
+            "effect": "allow",
+            "name": "Cassette Execution Policy {{ unique_lower_alnum }}",
+            "scope": {
+              "scripts": {
+                "rules": [
+                  {
+                    "target_script_names": [
+                      "restart_service.sh"
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          "type": "execution_policy"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/actions/execution-policies"
+  },
+  "scenario": "Create a Slack execution policy with mismatched scope returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

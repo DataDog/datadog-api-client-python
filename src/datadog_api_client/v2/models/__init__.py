@@ -3342,6 +3342,8 @@ from datadog_api_client.v2.model.execution_policy_response_data import Execution
 from datadog_api_client.v2.model.execution_policy_scope import ExecutionPolicyScope
 from datadog_api_client.v2.model.execution_policy_script_scope import ExecutionPolicyScriptScope
 from datadog_api_client.v2.model.execution_policy_script_scope_rule import ExecutionPolicyScriptScopeRule
+from datadog_api_client.v2.model.execution_policy_slack_scope import ExecutionPolicySlackScope
+from datadog_api_client.v2.model.execution_policy_slack_scope_rule import ExecutionPolicySlackScopeRule
 from datadog_api_client.v2.model.execution_policy_target import ExecutionPolicyTarget
 from datadog_api_client.v2.model.execution_policy_type import ExecutionPolicyType
 from datadog_api_client.v2.model.execution_policy_update_request import ExecutionPolicyUpdateRequest
@@ -15501,6 +15503,8 @@ __all__ = [
     "ExecutionPolicyScope",
     "ExecutionPolicyScriptScope",
     "ExecutionPolicyScriptScopeRule",
+    "ExecutionPolicySlackScope",
+    "ExecutionPolicySlackScopeRule",
     "ExecutionPolicyTarget",
     "ExecutionPolicyType",
     "ExecutionPolicyUpdateRequest",

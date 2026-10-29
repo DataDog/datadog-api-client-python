@@ -3,6 +3,267 @@
   "recordings": [
     {
       "feature": "Execution Policy",
+      "frozen_at": "2026-10-28T14:08:54.779Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action_pattern": {
+                      "action_fqns": [
+                        "com.datadoghq.slack.*"
+                      ],
+                      "integration": "INTEGRATION_SLACK"
+                    },
+                    "effect": "allow",
+                    "name": "Cassette Execution Policy testcreateaslackexecutionpolicyreturnscreatedresponse1793196534"
+                  },
+                  "type": "execution_policy"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/execution-policies",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"1eca132c-5b3d-482a-a282-07393abdc9d5\",\"type\":\"execution_policy\",\"attributes\":{\"action_pattern\":{\"integration\":\"INTEGRATION_SLACK\",\"action_fqns\":[\"com.datadoghq.slack.*\"]},\"created_at\":\"2026-10-28T14:08:56Z\",\"created_by\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"effect\":\"allow\",\"name\":\"Cassette Execution Policy testcreateaslackexecutionpolicyreturnscreatedresponse1793196534\",\"targets\":[],\"updated_at\":\"2026-10-28T14:08:56Z\",\"updated_by\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"version\":1}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/actions/execution-policies/1eca132c-5b3d-482a-a282-07393abdc9d5",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a Slack execution policy returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "frozen_at": "2026-10-28T14:08:56.579Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action_pattern": {
+                      "action_fqns": [
+                        "com.datadoghq.slack.*"
+                      ],
+                      "integration": "INTEGRATION_SLACK"
+                    },
+                    "effect": "allow",
+                    "name": "Cassette Execution Policy testcreateaslackexecutionpolicywithemptychannelselectorsreturnsbadrequestresponse1793196536",
+                    "scope": {
+                      "slack": {
+                        "rules": [
+                          {
+                            "channel_name_selectors": []
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "type": "execution_policy"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/execution-policies",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"error creating execution policy\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create a Slack execution policy with empty channel selectors returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "frozen_at": "2026-10-28T14:08:56.677Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action_pattern": {
+                      "action_fqns": [
+                        "com.datadoghq.slack.*"
+                      ],
+                      "integration": "INTEGRATION_SLACK"
+                    },
+                    "effect": "allow",
+                    "name": "Cassette Execution Policy testcreateaslackexecutionpolicywithmismatchedscopereturnsbadrequestresponse1793196536",
+                    "scope": {
+                      "scripts": {
+                        "rules": [
+                          {
+                            "target_script_names": [
+                              "restart_service.sh"
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "type": "execution_policy"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/execution-policies",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"error creating execution policy\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create a Slack execution policy with mismatched scope returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "frozen_at": "2026-10-28T14:08:56.739Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action_pattern": {
+                      "action_fqns": [
+                        "com.datadoghq.slack.*"
+                      ],
+                      "integration": "INTEGRATION_SLACK"
+                    },
+                    "effect": "allow",
+                    "name": "Cassette Execution Policy testcreateaslackexecutionpolicywithscopeandtargetsreturnscreatedresponse1793196536",
+                    "scope": {
+                      "slack": {
+                        "rules": [
+                          {
+                            "channel_name_selectors": [
+                              "incident-*"
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    "targets": [
+                      {
+                        "agent_tags": [
+                          "slack_workspace_id:T01234567"
+                        ],
+                        "name": "Incident workspace"
+                      }
+                    ]
+                  },
+                  "type": "execution_policy"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/execution-policies",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"071e5ba3-ba19-4334-adf5-2da5298565f2\",\"type\":\"execution_policy\",\"attributes\":{\"action_pattern\":{\"integration\":\"INTEGRATION_SLACK\",\"action_fqns\":[\"com.datadoghq.slack.*\"]},\"created_at\":\"2026-10-28T14:08:56Z\",\"created_by\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"effect\":\"allow\",\"name\":\"Cassette Execution Policy testcreateaslackexecutionpolicywithscopeandtargetsreturnscreatedresponse1793196536\",\"scope\":{\"slack\":{\"rules\":[{\"channel_name_selectors\":[\"incident-*\"]}]}},\"targets\":[{\"agent_tags\":[\"slack_workspace_id:T01234567\"],\"name\":\"Incident workspace\"}],\"updated_at\":\"2026-10-28T14:08:56Z\",\"updated_by\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"version\":1}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/actions/execution-policies/071e5ba3-ba19-4334-adf5-2da5298565f2",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a Slack execution policy with scope and targets returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
       "frozen_at": "2026-08-14T09:13:38.368Z",
       "interactions": [
         {
@@ -435,6 +696,42 @@
         }
       ],
       "scenario": "Get an execution policy returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "frozen_at": "2026-10-28T14:08:56.947Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/actions/execution-policies",
+            "query": [
+              [
+                "filter[integration]",
+                "INTEGRATION_SLACK"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[],\"meta\":{\"page\":{\"total\":0}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "List execution policies filtered by Slack returns \"OK\" response",
       "version": "v2"
     },
     {
@@ -936,6 +1233,129 @@
         }
       ],
       "scenario": "Update an execution policy returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "frozen_at": "2026-10-28T14:08:57.019Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action_pattern": {
+                      "action_fqns": [
+                        "com.datadoghq.script.*"
+                      ],
+                      "integration": "INTEGRATION_SCRIPT"
+                    },
+                    "effect": "allow",
+                    "name": "Cassette Execution Policy testupdateanexecutionpolicytoslackwithscopeandtargetsreturnsokresponse1793196537"
+                  },
+                  "type": "execution_policy"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/execution-policies",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"010051ac-04d3-4852-8598-fc620a84ef45\",\"type\":\"execution_policy\",\"attributes\":{\"action_pattern\":{\"integration\":\"INTEGRATION_SCRIPT\",\"action_fqns\":[\"com.datadoghq.script.*\"]},\"created_at\":\"2026-10-28T14:08:57Z\",\"created_by\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"effect\":\"allow\",\"name\":\"Cassette Execution Policy testupdateanexecutionpolicytoslackwithscopeandtargetsreturnsokresponse1793196537\",\"targets\":[],\"updated_at\":\"2026-10-28T14:08:57Z\",\"updated_by\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"version\":1}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "action_pattern": {
+                      "action_fqns": [
+                        "*"
+                      ],
+                      "integration": "INTEGRATION_SLACK"
+                    },
+                    "effect": "deny",
+                    "name": "Cassette Execution Policy Updated",
+                    "scope": {
+                      "slack": {
+                        "rules": [
+                          {
+                            "channel_name_selectors": [
+                              "incident-denied"
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    "targets": [
+                      {
+                        "agent_tags": [
+                          "slack_workspace_id:T01234567"
+                        ],
+                        "name": "Incident workspace"
+                      }
+                    ]
+                  },
+                  "id": "010051ac-04d3-4852-8598-fc620a84ef45",
+                  "type": "execution_policy"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/actions/execution-policies/010051ac-04d3-4852-8598-fc620a84ef45",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"010051ac-04d3-4852-8598-fc620a84ef45\",\"type\":\"execution_policy\",\"attributes\":{\"action_pattern\":{\"integration\":\"INTEGRATION_SLACK\",\"action_fqns\":[\"*\"]},\"created_at\":\"2026-10-28T14:08:57Z\",\"created_by\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"effect\":\"deny\",\"name\":\"Cassette Execution Policy Updated\",\"scope\":{\"slack\":{\"rules\":[{\"channel_name_selectors\":[\"incident-denied\"]}]}},\"targets\":[{\"agent_tags\":[\"slack_workspace_id:T01234567\"],\"name\":\"Incident workspace\"}],\"updated_at\":\"2026-10-28T14:08:57Z\",\"updated_by\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"version\":2}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/actions/execution-policies/010051ac-04d3-4852-8598-fc620a84ef45",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update an execution policy to Slack with scope and targets returns \"OK\" response",
       "version": "v2"
     }
   ],

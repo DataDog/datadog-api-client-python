@@ -29,9 +29,9 @@ class ExecutionPolicyTarget(ModelNormal):
 
     def __init__(self_, agent_tags: List[str], name: Union[str, none_type, UnsetType] = unset, **kwargs):
         """
-        A target this policy is scoped to, expressed as a set of Agent tags.
+        A target this policy is scoped to, expressed as a set of tags.
 
-        :param agent_tags: The Agent tags identifying the target.
+        :param agent_tags: The tags identifying the target.
         :type agent_tags: [str]
 
         :param name: A human-readable name for the target.

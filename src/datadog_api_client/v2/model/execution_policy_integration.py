@@ -16,7 +16,7 @@ class ExecutionPolicyIntegration(ModelSimple):
     """
     The integration the action pattern applies to.
 
-    :param value: Must be one of ["INTEGRATION_KUBERNETES", "INTEGRATION_SCRIPT", "INTEGRATION_REMOTE_ACTION"].
+    :param value: Must be one of ["INTEGRATION_KUBERNETES", "INTEGRATION_SCRIPT", "INTEGRATION_REMOTE_ACTION", "INTEGRATION_SLACK"].
     :type value: str
     """
 
@@ -24,10 +24,12 @@ class ExecutionPolicyIntegration(ModelSimple):
         "INTEGRATION_KUBERNETES",
         "INTEGRATION_SCRIPT",
         "INTEGRATION_REMOTE_ACTION",
+        "INTEGRATION_SLACK",
     }
     INTEGRATION_KUBERNETES: ClassVar["ExecutionPolicyIntegration"]
     INTEGRATION_SCRIPT: ClassVar["ExecutionPolicyIntegration"]
     INTEGRATION_REMOTE_ACTION: ClassVar["ExecutionPolicyIntegration"]
+    INTEGRATION_SLACK: ClassVar["ExecutionPolicyIntegration"]
 
     @cached_property
     def openapi_types(_):
@@ -39,3 +41,4 @@ class ExecutionPolicyIntegration(ModelSimple):
 ExecutionPolicyIntegration.INTEGRATION_KUBERNETES = ExecutionPolicyIntegration("INTEGRATION_KUBERNETES")
 ExecutionPolicyIntegration.INTEGRATION_SCRIPT = ExecutionPolicyIntegration("INTEGRATION_SCRIPT")
 ExecutionPolicyIntegration.INTEGRATION_REMOTE_ACTION = ExecutionPolicyIntegration("INTEGRATION_REMOTE_ACTION")
+ExecutionPolicyIntegration.INTEGRATION_SLACK = ExecutionPolicyIntegration("INTEGRATION_SLACK")

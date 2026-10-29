@@ -5505,6 +5505,34 @@
     {
       "feature": "Execution Policy",
       "feature_file": "../../v2/features/execution_policy.feature",
+      "file": "v2/execution-policy/create-a-slack-execution-policy-returns-created-response.json",
+      "scenario": "Create a Slack execution policy returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "feature_file": "../../v2/features/execution_policy.feature",
+      "file": "v2/execution-policy/create-a-slack-execution-policy-with-empty-channel-selectors-returns-bad-request-response.json",
+      "scenario": "Create a Slack execution policy with empty channel selectors returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "feature_file": "../../v2/features/execution_policy.feature",
+      "file": "v2/execution-policy/create-a-slack-execution-policy-with-mismatched-scope-returns-bad-request-response.json",
+      "scenario": "Create a Slack execution policy with mismatched scope returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "feature_file": "../../v2/features/execution_policy.feature",
+      "file": "v2/execution-policy/create-a-slack-execution-policy-with-scope-and-targets-returns-created-response.json",
+      "scenario": "Create a Slack execution policy with scope and targets returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "feature_file": "../../v2/features/execution_policy.feature",
       "file": "v2/execution-policy/create-an-execution-policy-returns-bad-request-response.json",
       "scenario": "Create an execution policy returns \"Bad Request\" response",
       "version": "v2"
@@ -5554,6 +5582,13 @@
     {
       "feature": "Execution Policy",
       "feature_file": "../../v2/features/execution_policy.feature",
+      "file": "v2/execution-policy/list-execution-policies-filtered-by-slack-returns-ok-response.json",
+      "scenario": "List execution policies filtered by Slack returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "feature_file": "../../v2/features/execution_policy.feature",
       "file": "v2/execution-policy/list-execution-policies-returns-bad-request-response.json",
       "scenario": "List execution policies returns \"Bad Request\" response",
       "version": "v2"
@@ -5591,6 +5626,13 @@
       "feature_file": "../../v2/features/execution_policy.feature",
       "file": "v2/execution-policy/update-an-execution-policy-returns-ok-response.json",
       "scenario": "Update an execution policy returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Execution Policy",
+      "feature_file": "../../v2/features/execution_policy.feature",
+      "file": "v2/execution-policy/update-an-execution-policy-to-slack-with-scope-and-targets-returns-ok-response.json",
+      "scenario": "Update an execution policy to Slack with scope and targets returns \"OK\" response",
       "version": "v2"
     },
     {

@@ -1,0 +1,42 @@
+{
+  "api": "ExecutionPolicy",
+  "expected_status": 200,
+  "feature": "Execution Policy",
+  "id": "v2/Execution Policy/List execution policies filtered by Slack returns \"OK\" response",
+  "operation_id": "ListExecutionPolicies",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": true,
+        "in": "query",
+        "name": "filter[integration]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "items": {
+            "format": null,
+            "ref": "ExecutionPolicyIntegration",
+            "type": "string"
+          },
+          "ref": null,
+          "type": "array"
+        },
+        "source": {
+          "type": "literal",
+          "value": [
+            "INTEGRATION_SLACK"
+          ]
+        },
+        "style": "form"
+      }
+    ],
+    "path": "/api/v2/actions/execution-policies"
+  },
+  "scenario": "List execution policies filtered by Slack returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
