@@ -10825,6 +10825,9 @@ from datadog_api_client.v2.model.security_trigger_wrapper import SecurityTrigger
 from datadog_api_client.v2.model.selectors import Selectors
 from datadog_api_client.v2.model.self_service_trigger_wrapper import SelfServiceTriggerWrapper
 from datadog_api_client.v2.model.send_slack_message_action import SendSlackMessageAction
+from datadog_api_client.v2.model.send_slack_message_action_customizable_content import (
+    SendSlackMessageActionCustomizableContent,
+)
 from datadog_api_client.v2.model.send_slack_message_action_type import SendSlackMessageActionType
 from datadog_api_client.v2.model.send_teams_message_action import SendTeamsMessageAction
 from datadog_api_client.v2.model.send_teams_message_action_type import SendTeamsMessageActionType
@@ -20180,6 +20183,7 @@ __all__ = [
     "Selectors",
     "SelfServiceTriggerWrapper",
     "SendSlackMessageAction",
+    "SendSlackMessageActionCustomizableContent",
     "SendSlackMessageActionType",
     "SendTeamsMessageAction",
     "SendTeamsMessageActionType",
