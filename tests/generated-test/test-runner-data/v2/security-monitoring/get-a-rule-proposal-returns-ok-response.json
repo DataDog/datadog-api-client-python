@@ -1,0 +1,35 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 200,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Get a rule proposal returns \"OK\" response",
+  "operation_id": "GetSecurityMonitoringRuleProposal",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "proposal_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "rule_proposal.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security_monitoring/rules/proposals/{proposal_id}"
+  },
+  "scenario": "Get a rule proposal returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

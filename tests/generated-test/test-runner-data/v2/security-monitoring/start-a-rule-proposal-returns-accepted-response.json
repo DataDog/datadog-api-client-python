@@ -1,0 +1,34 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 202,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Start a rule proposal returns \"Accepted\" response",
+  "operation_id": "StartSecurityMonitoringRuleProposal",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "SecurityMonitoringRuleProposalStartRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "input": "Detect repeated failed Okta logins followed by a successful login from the same IP.",
+            "inputType": "natural_language"
+          },
+          "type": "rule_proposals"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/security_monitoring/rules/proposals"
+  },
+  "scenario": "Start a rule proposal returns \"Accepted\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

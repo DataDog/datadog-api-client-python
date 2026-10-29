@@ -261,6 +261,15 @@ from datadog_api_client.v2.model.security_monitoring_signal_rule_payload import 
 from datadog_api_client.v2.model.security_monitoring_rule_convert_bulk_payload import (
     SecurityMonitoringRuleConvertBulkPayload,
 )
+from datadog_api_client.v2.model.security_monitoring_rule_proposal_start_response import (
+    SecurityMonitoringRuleProposalStartResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_proposal_start_request import (
+    SecurityMonitoringRuleProposalStartRequest,
+)
+from datadog_api_client.v2.model.security_monitoring_rule_proposal_response import (
+    SecurityMonitoringRuleProposalResponse,
+)
 from datadog_api_client.v2.model.security_monitoring_rule_test_response import SecurityMonitoringRuleTestResponse
 from datadog_api_client.v2.model.security_monitoring_rule_test_request import SecurityMonitoringRuleTestRequest
 from datadog_api_client.v2.model.security_monitoring_rule_validate_payload import SecurityMonitoringRuleValidatePayload
@@ -2825,6 +2834,29 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._get_security_monitoring_rule_proposal_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringRuleProposalResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/rules/proposals/{proposal_id}",
+                "operation_id": "get_security_monitoring_rule_proposal",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "proposal_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "proposal_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_security_monitoring_signal_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringSignalResponse,),
@@ -4914,6 +4946,26 @@ class SecurityMonitoringApi:
             api_client=api_client,
         )
 
+        self._start_security_monitoring_rule_proposal_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringRuleProposalStartResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/rules/proposals",
+                "operation_id": "start_security_monitoring_rule_proposal",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityMonitoringRuleProposalStartRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._test_existing_security_monitoring_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (SecurityMonitoringRuleTestResponse,),
@@ -6121,6 +6173,7 @@ class SecurityMonitoringApi:
         rule. To load more rules, add them with the add resources endpoint before starting the
         batch migration. A batch migration can hold up to 1000 resources. The response does not
         include the created resources: list the resources of the batch migration to retrieve them.
+        Alternatively, use the start-a-rule-proposal endpoint to get a single proposed rule.
 
         :type body: SecurityMonitoringBatchMigrationCreateRequest
         :rtype: SecurityMonitoringBatchMigrationResponse
@@ -7601,6 +7654,30 @@ class SecurityMonitoringApi:
         kwargs["rule_id"] = rule_id
 
         return self._get_security_monitoring_rule_endpoint.call_with_http_info(**kwargs)
+
+    def get_security_monitoring_rule_proposal(
+        self,
+        proposal_id: UUID,
+    ) -> SecurityMonitoringRuleProposalResponse:
+        """Get a rule proposal.
+
+        Get the status of a rule proposal started with the start-a-rule-proposal endpoint.
+        While the status is ``pending`` or ``in_progress`` , the proposed rule is still being
+        generated. Poll this endpoint again later. If the status is ``completed`` , the response's ``rule`` field contains
+        the proposed Cloud SIEM detection rule. If the status is ``failed`` , the response's ``error`` field contains
+        the reason a rule could not be generated.
+
+        This endpoint does not create or modify any detection rules in Cloud SIEM. To create the
+        proposed rule, use the create-a-detection-rule endpoint.
+
+        :param proposal_id: The ID of the rule proposal, returned by the start a rule proposal endpoint.
+        :type proposal_id: UUID
+        :rtype: SecurityMonitoringRuleProposalResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["proposal_id"] = proposal_id
+
+        return self._get_security_monitoring_rule_proposal_endpoint.call_with_http_info(**kwargs)
 
     def get_security_monitoring_signal(
         self,
@@ -10098,6 +10175,33 @@ class SecurityMonitoringApi:
         kwargs["batch_id"] = batch_id
 
         return self._start_security_monitoring_batch_migration_endpoint.call_with_http_info(**kwargs)
+
+    def start_security_monitoring_rule_proposal(
+        self,
+        body: SecurityMonitoringRuleProposalStartRequest,
+    ) -> SecurityMonitoringRuleProposalStartResponse:
+        """Start a rule proposal.
+
+        Start generating a proposed Cloud SIEM detection rule from a natural-language
+        description, or from an SPL or KQL rule. The proposal is based on your organization's
+        log sources, log fields, and existing detection rules. When logs from the matching
+        source are available, the proposed query is tested against your recent logs.
+
+        The proposed rule is generated asynchronously. This endpoint returns a proposal ``id``
+        with the status ``pending``. To get the proposed rule, pass this ``id`` to the get-a-rule-proposal
+        endpoint and poll the endpoint until the status is ``completed`` or ``failed``. A proposal
+        usually takes a few minutes, and up to 10 minutes.
+
+        This endpoint does not create or modify any detection rules in Cloud SIEM. To translate
+        many rules at once, use batch migrations instead.
+
+        :type body: SecurityMonitoringRuleProposalStartRequest
+        :rtype: SecurityMonitoringRuleProposalStartResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._start_security_monitoring_rule_proposal_endpoint.call_with_http_info(**kwargs)
 
     def test_existing_security_monitoring_rule(
         self,
