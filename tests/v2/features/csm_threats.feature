@@ -13,27 +13,24 @@ Feature: CSM Threats
     And a valid "appKeyAuth" key in the system
     And an instance of "CSMThreats" API
 
-  @replay-only @team:ddoghq/k9-cws-backend
+  @generated @skip @team:ddoghq/k9-cws-backend
   Scenario: Create a Workload Protection agent rule (US1-FED) returns "Bad Request" response
-    Given there is a valid "policy_rc" in the system
-    And new "CreateCloudWorkloadSecurityAgentRule" request
-    And body with value {"data": {"attributes": {"description": "My Agent rule", "enabled": true, "expression": "exec.file.name", "filters": [], "name": "my_agent_rule"}, "type": "agent_rule"}}
+    Given new "CreateCloudWorkloadSecurityAgentRule" request
+    And body with value {"data": {"attributes": {"actions": [{"coredump": {}, "disabled": false, "hash": {}, "kill": {}, "log": {}, "metadata": {}, "network_filter": {}, "set": {}}], "blocking": [], "description": "My Agent rule", "disabled": [], "enabled": true, "expression": "exec.file.name == \"sh\"", "filters": [], "monitoring": [], "name": "my_agent_rule", "policy_id": "a8c8e364-6556-434d-b798-a4c23de29c0b", "product_tags": [], "silent": false}, "type": "agent_rule"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:ddoghq/k9-cws-backend
+  @generated @skip @team:ddoghq/k9-cws-backend
   Scenario: Create a Workload Protection agent rule (US1-FED) returns "Conflict" response
-    Given there is a valid "policy_rc" in the system
-    And new "CreateCloudWorkloadSecurityAgentRule" request
-    And body with value {"data": {"attributes": {"description": "My Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\"", "filters": [], "name": "my_agent_rule"}, "type": "agent_rule"}}
+    Given new "CreateCloudWorkloadSecurityAgentRule" request
+    And body with value {"data": {"attributes": {"actions": [{"coredump": {}, "disabled": false, "hash": {}, "kill": {}, "log": {}, "metadata": {}, "network_filter": {}, "set": {}}], "blocking": [], "description": "My Agent rule", "disabled": [], "enabled": true, "expression": "exec.file.name == \"sh\"", "filters": [], "monitoring": [], "name": "my_agent_rule", "policy_id": "a8c8e364-6556-434d-b798-a4c23de29c0b", "product_tags": [], "silent": false}, "type": "agent_rule"}}
     When the request is sent
     Then the response status is 409 Conflict
 
-  @replay-only @team:ddoghq/k9-cws-backend
+  @generated @skip @team:ddoghq/k9-cws-backend
   Scenario: Create a Workload Protection agent rule (US1-FED) returns "OK" response
-    Given there is a valid "policy_rc" in the system
-    And new "CreateCloudWorkloadSecurityAgentRule" request
-    And body with value {"data": {"attributes": {"description": "My Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\"", "filters": [], "name": "{{ unique_lower_alnum }}"}, "type": "agent_rule"}}
+    Given new "CreateCloudWorkloadSecurityAgentRule" request
+    And body with value {"data": {"attributes": {"actions": [{"coredump": {}, "disabled": false, "hash": {}, "kill": {}, "log": {}, "metadata": {}, "network_filter": {}, "set": {}}], "blocking": [], "description": "My Agent rule", "disabled": [], "enabled": true, "expression": "exec.file.name == \"sh\"", "filters": [], "monitoring": [], "name": "my_agent_rule", "policy_id": "a8c8e364-6556-434d-b798-a4c23de29c0b", "product_tags": [], "silent": false}, "type": "agent_rule"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -98,18 +95,17 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 201 Created
 
-  @replay-only @team:ddoghq/k9-cws-backend
+  @generated @skip @team:ddoghq/k9-cws-backend
   Scenario: Delete a Workload Protection agent rule (US1-FED) returns "Not Found" response
     Given new "DeleteCloudWorkloadSecurityAgentRule" request
-    And request contains "agent_rule_id" parameter with value "non-existent-rule-id"
+    And request contains "agent_rule_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:ddoghq/k9-cws-backend
+  @generated @skip @team:ddoghq/k9-cws-backend
   Scenario: Delete a Workload Protection agent rule (US1-FED) returns "OK" response
-    Given there is a valid "agent_rule" in the system
-    And new "DeleteCloudWorkloadSecurityAgentRule" request
-    And request contains "agent_rule_id" parameter from "agent_rule.data.id"
+    Given new "DeleteCloudWorkloadSecurityAgentRule" request
+    And request contains "agent_rule_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 OK
 
@@ -164,11 +160,10 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:ddoghq/k9-cws-backend
+  @generated @skip @team:ddoghq/k9-cws-backend
   Scenario: Get a Workload Protection agent rule (US1-FED) returns "OK" response
-    Given there is a valid "agent_rule" in the system
-    And new "GetCloudWorkloadSecurityAgentRule" request
-    And request contains "agent_rule_id" parameter from "agent_rule.data.id"
+    Given new "GetCloudWorkloadSecurityAgentRule" request
+    And request contains "agent_rule_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -222,38 +217,35 @@ Feature: CSM Threats
     When the request is sent
     Then the response status is 200 OK
 
-  @replay-only @team:ddoghq/k9-cws-backend
+  @generated @skip @team:ddoghq/k9-cws-backend
   Scenario: Update a Workload Protection agent rule (US1-FED) returns "Bad Request" response
-    Given there is a valid "agent_rule" in the system
-    And new "UpdateCloudWorkloadSecurityAgentRule" request
-    And request contains "agent_rule_id" parameter from "agent_rule.data.id"
-    And body with value {"data": {"attributes": {"description": "My Agent rule", "enabled": true, "expression": "exec.file.name"}, "id": "{{ agent_rule.data.id }}", "type": "agent_rule"}}
+    Given new "UpdateCloudWorkloadSecurityAgentRule" request
+    And request contains "agent_rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"actions": [{"coredump": {}, "disabled": false, "hash": {}, "kill": {}, "log": {}, "metadata": {}, "network_filter": {}, "set": {}}], "blocking": [], "description": "My Agent rule", "disabled": [], "enabled": true, "expression": "exec.file.name == \"sh\"", "monitoring": [], "policy_id": "a8c8e364-6556-434d-b798-a4c23de29c0b", "product_tags": [], "silent": false}, "id": "3dd-0uc-h1s", "type": "agent_rule"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @skip @team:ddoghq/k9-cws-backend
+  @generated @skip @team:ddoghq/k9-cws-backend
   Scenario: Update a Workload Protection agent rule (US1-FED) returns "Concurrent Modification" response
-    Given there is a valid "agent_rule" in the system
-    And new "UpdateCloudWorkloadSecurityAgentRule" request
-    And request contains "agent_rule_id" parameter from "agent_rule.data.id"
-    And body with value {"data": {"attributes": {"description": "My Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\""}, "id": "{{ agent_rule.data.id }}", "type": "agent_rule"}}
+    Given new "UpdateCloudWorkloadSecurityAgentRule" request
+    And request contains "agent_rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"actions": [{"coredump": {}, "disabled": false, "hash": {}, "kill": {}, "log": {}, "metadata": {}, "network_filter": {}, "set": {}}], "blocking": [], "description": "My Agent rule", "disabled": [], "enabled": true, "expression": "exec.file.name == \"sh\"", "monitoring": [], "policy_id": "a8c8e364-6556-434d-b798-a4c23de29c0b", "product_tags": [], "silent": false}, "id": "3dd-0uc-h1s", "type": "agent_rule"}}
     When the request is sent
     Then the response status is 409 Concurrent Modification
 
-  @replay-only @team:ddoghq/k9-cws-backend
+  @generated @skip @team:ddoghq/k9-cws-backend
   Scenario: Update a Workload Protection agent rule (US1-FED) returns "Not Found" response
     Given new "UpdateCloudWorkloadSecurityAgentRule" request
-    And request contains "agent_rule_id" parameter with value "non-existent-rule-id"
-    And body with value {"data": {"attributes": {"description": "My Agent rule", "enabled": true, "expression": "exec.file.name == \"sh\""}, "id": "invalid-agent-rule-id", "type": "agent_rule"}}
+    And request contains "agent_rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"actions": [{"coredump": {}, "disabled": false, "hash": {}, "kill": {}, "log": {}, "metadata": {}, "network_filter": {}, "set": {}}], "blocking": [], "description": "My Agent rule", "disabled": [], "enabled": true, "expression": "exec.file.name == \"sh\"", "monitoring": [], "policy_id": "a8c8e364-6556-434d-b798-a4c23de29c0b", "product_tags": [], "silent": false}, "id": "3dd-0uc-h1s", "type": "agent_rule"}}
     When the request is sent
     Then the response status is 404 Not Found
 
-  @replay-only @team:ddoghq/k9-cws-backend
+  @generated @skip @team:ddoghq/k9-cws-backend
   Scenario: Update a Workload Protection agent rule (US1-FED) returns "OK" response
-    Given there is a valid "agent_rule" in the system
-    And new "UpdateCloudWorkloadSecurityAgentRule" request
-    And request contains "agent_rule_id" parameter from "agent_rule.data.id"
-    And body with value {"data": {"attributes": {"description": "Updated Agent rule", "expression": "exec.file.name == \"sh\""}, "id": "{{ agent_rule.data.id }}", "type": "agent_rule"}}
+    Given new "UpdateCloudWorkloadSecurityAgentRule" request
+    And request contains "agent_rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"actions": [{"coredump": {}, "disabled": false, "hash": {}, "kill": {}, "log": {}, "metadata": {}, "network_filter": {}, "set": {}}], "blocking": [], "description": "My Agent rule", "disabled": [], "enabled": true, "expression": "exec.file.name == \"sh\"", "monitoring": [], "policy_id": "a8c8e364-6556-434d-b798-a4c23de29c0b", "product_tags": [], "silent": false}, "id": "3dd-0uc-h1s", "type": "agent_rule"}}
     When the request is sent
     Then the response status is 200 OK
 
