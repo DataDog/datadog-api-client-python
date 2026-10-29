@@ -60,7 +60,7 @@ class ShiftData(ModelNormal):
         :param relationships: Relationships for an on-call shift.
         :type relationships: ShiftDataRelationships, optional
 
-        :param type: Indicates that the resource is of type 'shifts'.
+        :param type: Indicates that the resource is of type ``shifts``.
         :type type: ShiftDataType
         """
         if attributes is not unset:

@@ -41,7 +41,7 @@ class OverrideRelationshipsScheduleData(ModelNormal):
         :param id: The unique identifier of the schedule.
         :type id: str
 
-        :param type: Indicates that the related resource is of type 'schedules'.
+        :param type: Indicates that the related resource is of type ``schedules``.
         :type type: OverrideRelationshipsScheduleDataType
         """
         super().__init__(kwargs)

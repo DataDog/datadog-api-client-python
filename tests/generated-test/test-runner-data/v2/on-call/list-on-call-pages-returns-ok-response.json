@@ -1,0 +1,35 @@
+{
+  "api": "On-Call",
+  "expected_status": 200,
+  "feature": "On-Call",
+  "id": "v2/On-Call/List On-Call Pages returns \"OK\" response",
+  "operation_id": "ListOnCallPages",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[query]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "key:1"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/on-call/pages"
+  },
+  "scenario": "List On-Call Pages returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

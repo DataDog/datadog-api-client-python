@@ -41,7 +41,7 @@ class TeamRoutingRulesDataRelationshipsRulesDataItems(ModelNormal):
         :param id: Specifies the unique identifier for the related routing rule.
         :type id: str
 
-        :param type: Indicates that the resource is of type 'team_routing_rules'.
+        :param type: Indicates that the resource is of type ``team_routing_rules``.
         :type type: TeamRoutingRulesDataRelationshipsRulesDataItemsType
         """
         super().__init__(kwargs)

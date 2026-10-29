@@ -41,7 +41,7 @@ class OnCallNotificationRuleChannelRelationshipData(ModelNormal):
         :param id: ID of the notification channel
         :type id: str, optional
 
-        :param type: Indicates that the resource is of type 'notification_channels'.
+        :param type: Indicates that the resource is of type ``notification_channels``.
         :type type: NotificationChannelType, optional
         """
         if id is not unset:

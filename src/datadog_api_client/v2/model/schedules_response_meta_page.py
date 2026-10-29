@@ -52,7 +52,7 @@ class SchedulesResponseMetaPage(ModelNormal):
         **kwargs,
     ):
         """
-        Metadata related to paging information that is included in the response when listing schedules.
+        Metadata related to pagination information that is included in the response when listing On-Call resources.
 
         :param first_number: First page number.
         :type first_number: int, optional

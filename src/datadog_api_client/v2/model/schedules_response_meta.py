@@ -32,9 +32,9 @@ class SchedulesResponseMeta(ModelNormal):
 
     def __init__(self_, page: Union[SchedulesResponseMetaPage, UnsetType] = unset, **kwargs):
         """
-        Metadata that is included in the response when listing schedules.
+        Metadata that is included in the response when listing On-Call resources.
 
-        :param page: Metadata related to paging information that is included in the response when listing schedules.
+        :param page: Metadata related to pagination information that is included in the response when listing On-Call resources.
         :type page: SchedulesResponseMetaPage, optional
         """
         if page is not unset:

@@ -52,7 +52,7 @@ class NotificationChannelData(ModelNormal):
         :param id: Unique identifier for the channel
         :type id: str, optional
 
-        :param type: Indicates that the resource is of type 'notification_channels'.
+        :param type: Indicates that the resource is of type ``notification_channels``.
         :type type: NotificationChannelType
         """
         if attributes is not unset:

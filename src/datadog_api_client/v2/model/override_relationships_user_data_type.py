@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class OverrideRelationshipsUserDataType(ModelSimple):
     """
-    Indicates that the related resource is of type 'users'.
+    Indicates that the related resource is of type `users`.
 
     :param value: If omitted defaults to "users". Must be one of ["users"].
     :type value: str

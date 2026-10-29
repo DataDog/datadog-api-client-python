@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class TeamRoutingRulesDataRelationshipsRulesDataItemsType(ModelSimple):
     """
-    Indicates that the resource is of type 'team_routing_rules'.
+    Indicates that the resource is of type `team_routing_rules`.
 
     :param value: If omitted defaults to "team_routing_rules". Must be one of ["team_routing_rules"].
     :type value: str
