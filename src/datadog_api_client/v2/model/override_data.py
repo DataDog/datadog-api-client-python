@@ -60,7 +60,7 @@ class OverrideData(ModelNormal):
         :param relationships: Relationships for an on-call schedule override.
         :type relationships: OverrideRelationships, optional
 
-        :param type: Indicates that the resource is of type 'overrides'.
+        :param type: Indicates that the resource is of type ``overrides``.
         :type type: OverrideDataType
         """
         if attributes is not unset:

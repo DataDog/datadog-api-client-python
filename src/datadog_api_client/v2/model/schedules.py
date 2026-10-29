@@ -54,7 +54,7 @@ class Schedules(ModelNormal):
         :param included: Any additional resources related to the schedules, such as teams.
         :type included: [TeamReference], optional
 
-        :param meta: Metadata that is included in the response when listing schedules.
+        :param meta: Metadata that is included in the response when listing On-Call resources.
         :type meta: SchedulesResponseMeta, optional
         """
         if data is not unset:

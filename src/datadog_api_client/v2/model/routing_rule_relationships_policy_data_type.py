@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class RoutingRuleRelationshipsPolicyDataType(ModelSimple):
     """
-    Indicates that the resource is of type 'policies'.
+    Indicates that the resource is of type `policies`.
 
     :param value: If omitted defaults to "policies". Must be one of ["policies"].
     :type value: str

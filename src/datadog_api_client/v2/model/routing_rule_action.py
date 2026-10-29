@@ -33,7 +33,7 @@ class RoutingRuleAction(ModelComposed):
         :param handle: The handle of the Workflow Automation to trigger.
         :type handle: str
 
-        :param ack_timeout_minutes: The number of minutes before an acknowledged page is re-triggered.
+        :param ack_timeout_minutes: The number of minutes before an acknowledged Page is re-triggered.
         :type ack_timeout_minutes: int, optional
 
         :param policy_id: The ID of the escalation policy to route to.
@@ -45,7 +45,7 @@ class RoutingRuleAction(ModelComposed):
         :param urgency: Specifies the level of urgency for a routing rule (low, high, or dynamic).
         :type urgency: Urgency, optional
 
-        :param destination_team_id: The ID of the team to reroute the page to.
+        :param destination_team_id: The ID of the team to reroute the Page to.
         :type destination_team_id: UUID
         """
         super().__init__(kwargs)

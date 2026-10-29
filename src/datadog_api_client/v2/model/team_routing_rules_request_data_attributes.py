@@ -34,7 +34,7 @@ class TeamRoutingRulesRequestDataAttributes(ModelNormal):
         """
         Represents the attributes of a request to update or create team routing rules.
 
-        :param rules: A list of routing rule items that define how incoming pages should be handled.
+        :param rules: A list of routing rule items that define how incoming Pages should be handled.
         :type rules: [TeamRoutingRulesRequestRule], optional
         """
         if rules is not unset:

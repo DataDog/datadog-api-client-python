@@ -9019,6 +9019,20 @@
     {
       "feature": "On-Call",
       "feature_file": "../../v2/features/on-call.feature",
+      "file": "v2/on-call/get-on-call-page-returns-not-found-response.json",
+      "scenario": "Get On-Call Page returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "feature_file": "../../v2/features/on-call.feature",
+      "file": "v2/on-call/get-on-call-page-returns-ok-response.json",
+      "scenario": "Get On-Call Page returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "feature_file": "../../v2/features/on-call.feature",
       "file": "v2/on-call/get-on-call-escalation-policy-returns-ok-response.json",
       "scenario": "Get On-Call escalation policy returns \"OK\" response",
       "version": "v2"
@@ -9063,6 +9077,13 @@
       "feature_file": "../../v2/features/on-call.feature",
       "file": "v2/on-call/get-team-on-call-users-returns-ok-response.json",
       "scenario": "Get team on-call users returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "feature_file": "../../v2/features/on-call.feature",
+      "file": "v2/on-call/list-on-call-pages-returns-ok-response.json",
+      "scenario": "List On-Call Pages returns \"OK\" response",
       "version": "v2"
     },
     {

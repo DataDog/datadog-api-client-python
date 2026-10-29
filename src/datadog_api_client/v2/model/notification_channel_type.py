@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class NotificationChannelType(ModelSimple):
     """
-    Indicates that the resource is of type 'notification_channels'.
+    Indicates that the resource is of type `notification_channels`.
 
     :param value: If omitted defaults to "notification_channels". Must be one of ["notification_channels"].
     :type value: str

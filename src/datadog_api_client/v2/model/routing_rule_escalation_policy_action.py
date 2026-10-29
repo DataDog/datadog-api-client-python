@@ -62,7 +62,7 @@ class RoutingRuleEscalationPolicyAction(ModelNormal):
         """
         Triggers an escalation policy.
 
-        :param ack_timeout_minutes: The number of minutes before an acknowledged page is re-triggered.
+        :param ack_timeout_minutes: The number of minutes before an acknowledged Page is re-triggered.
         :type ack_timeout_minutes: int, optional
 
         :param policy_id: The ID of the escalation policy to route to.

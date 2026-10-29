@@ -21,7 +21,7 @@ class OnCallNotificationRulesIncluded(ModelComposed):
         :param id: Unique identifier for the channel
         :type id: str, optional
 
-        :param type: Indicates that the resource is of type 'notification_channels'.
+        :param type: Indicates that the resource is of type `notification_channels`.
         :type type: NotificationChannelType
         """
         super().__init__(kwargs)

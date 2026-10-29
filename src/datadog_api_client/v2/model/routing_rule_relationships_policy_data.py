@@ -41,7 +41,7 @@ class RoutingRuleRelationshipsPolicyData(ModelNormal):
         :param id: Specifies the unique identifier of the policy.
         :type id: str
 
-        :param type: Indicates that the resource is of type 'policies'.
+        :param type: Indicates that the resource is of type ``policies``.
         :type type: RoutingRuleRelationshipsPolicyDataType
         """
         super().__init__(kwargs)

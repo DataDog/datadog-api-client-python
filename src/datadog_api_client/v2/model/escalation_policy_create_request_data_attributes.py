@@ -68,7 +68,7 @@ class EscalationPolicyCreateRequestDataAttributes(ModelNormal):
         :param name: Specifies the name for the new escalation policy.
         :type name: str
 
-        :param resolve_page_on_policy_end: Indicates whether the page is automatically resolved when the policy ends.
+        :param resolve_page_on_policy_end: Indicates whether the Page is automatically resolved when the policy ends.
         :type resolve_page_on_policy_end: bool, optional
 
         :param retries: Specifies how many times the escalation sequence is retried if there is no response.

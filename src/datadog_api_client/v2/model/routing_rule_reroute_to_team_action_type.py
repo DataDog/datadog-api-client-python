@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class RoutingRuleRerouteToTeamActionType(ModelSimple):
     """
-    Indicates that the action reroutes the page to another team's routing rules.
+    Indicates that the action reroutes the Page to another team's routing rules.
 
     :param value: If omitted defaults to "reroute_to_team". Must be one of ["reroute_to_team"].
     :type value: str
