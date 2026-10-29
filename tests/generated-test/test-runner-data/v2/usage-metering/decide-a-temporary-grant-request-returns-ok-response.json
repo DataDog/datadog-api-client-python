@@ -1,0 +1,51 @@
+{
+  "api": "UsageMetering",
+  "expected_status": 200,
+  "feature": "Usage Metering",
+  "id": "v2/Usage Metering/Decide a temporary grant request returns \"OK\" response",
+  "operation_id": "UpdateTemporaryGrantRequest",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "TemporaryGrantRequestDecisionRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "decision": "denied"
+          },
+          "id": "{{ temporary_grant_request.data.id }}",
+          "type": "temporary_grant_requests"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "request_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "temporary_grant_request.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/usage/admin/temporary-grant-requests/{request_id}/decision"
+  },
+  "scenario": "Decide a temporary grant request returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -12757,6 +12757,13 @@
     {
       "feature": "Usage Metering",
       "feature_file": "../../v2/features/usage_metering.feature",
+      "file": "v2/usage-metering/decide-a-temporary-grant-request-returns-ok-response.json",
+      "scenario": "Decide a temporary grant request returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
+      "feature_file": "../../v2/features/usage_metering.feature",
       "file": "v2/usage-metering/get-monthly-cost-attribution-returns-bad-request-response.json",
       "scenario": "Get Monthly Cost Attribution returns \"Bad Request\" response",
       "version": "v2"
@@ -12773,6 +12780,13 @@
       "feature_file": "../../v2/features/usage_metering.feature",
       "file": "v2/usage-metering/get-active-billing-dimensions-for-cost-attribution-returns-ok-response.json",
       "scenario": "Get active billing dimensions for cost attribution returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
+      "feature_file": "../../v2/features/usage_metering.feature",
+      "file": "v2/usage-metering/get-an-organization-temporary-grant-request-returns-ok-response.json",
+      "scenario": "Get an organization temporary grant request returns \"OK\" response",
       "version": "v2"
     },
     {
@@ -12815,6 +12829,13 @@
       "feature_file": "../../v2/features/usage_metering.feature",
       "file": "v2/usage-metering/get-projected-cost-across-your-account-returns-ok-response.json",
       "scenario": "Get projected cost across your account returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
+      "feature_file": "../../v2/features/usage_metering.feature",
+      "file": "v2/usage-metering/get-your-temporary-grant-request-returns-ok-response.json",
+      "scenario": "Get your temporary grant request returns \"OK\" response",
       "version": "v2"
     },
     {

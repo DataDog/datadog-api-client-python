@@ -42,6 +42,70 @@ Feature: Usage Metering
     Then the response status is 404 Not Found
 
   @generated @skip @team:ddoghq/billing-hub
+  Scenario: Cancel your temporary grant request returns "Bad Request" response
+    Given operation "DeleteTemporaryGrantRequest" enabled
+    And new "DeleteTemporaryGrantRequest" request
+    And request contains "request_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/billing-hub
+  Scenario: Cancel your temporary grant request returns "Conflict" response
+    Given operation "DeleteTemporaryGrantRequest" enabled
+    And new "DeleteTemporaryGrantRequest" request
+    And request contains "request_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:ddoghq/billing-hub
+  Scenario: Cancel your temporary grant request returns "No Content" response
+    Given operation "DeleteTemporaryGrantRequest" enabled
+    And new "DeleteTemporaryGrantRequest" request
+    And request contains "request_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:ddoghq/billing-hub
+  Scenario: Cancel your temporary grant request returns "Not Found" response
+    Given operation "DeleteTemporaryGrantRequest" enabled
+    And new "DeleteTemporaryGrantRequest" request
+    And request contains "request_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/billing-hub
+  Scenario: Create a temporary grant request returns "Bad Request" response
+    Given operation "CreateTemporaryGrantRequest" enabled
+    And new "CreateTemporaryGrantRequest" request
+    And body with value {"data": {"attributes": {"expires_at": "2028-02-16T00:00:00Z", "justification": "Credits needed to finish the incident investigation.", "total": 200}, "type": "temporary_grant_requests"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/billing-hub
+  Scenario: Create a temporary grant request returns "Conflict" response
+    Given operation "CreateTemporaryGrantRequest" enabled
+    And new "CreateTemporaryGrantRequest" request
+    And body with value {"data": {"attributes": {"expires_at": "2028-02-16T00:00:00Z", "justification": "Credits needed to finish the incident investigation.", "total": 200}, "type": "temporary_grant_requests"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:ddoghq/billing-hub
+  Scenario: Create a temporary grant request returns "Created" response
+    Given operation "CreateTemporaryGrantRequest" enabled
+    And new "CreateTemporaryGrantRequest" request
+    And body with value {"data": {"attributes": {"expires_at": "2028-02-16T00:00:00Z", "justification": "Credits needed to finish the incident investigation.", "total": 200}, "type": "temporary_grant_requests"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:ddoghq/billing-hub
+  Scenario: Create a temporary grant request returns "Not Found" response
+    Given operation "CreateTemporaryGrantRequest" enabled
+    And new "CreateTemporaryGrantRequest" request
+    And body with value {"data": {"attributes": {"expires_at": "2028-02-16T00:00:00Z", "justification": "Credits needed to finish the incident investigation.", "total": 200}, "type": "temporary_grant_requests"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/billing-hub
   Scenario: Create or update usage quotas returns "Bad Request. Returned if the request is malformed, including when an item sets `pending_usage_limit` on a scoped quota, provides `enforced` without `usage_limit`, or provides neither limit. A pending-only item for a quota that does not exist is reported in that item's `error`; when only the caller's organization is targeted, this failure returns `400`." response
     Given operation "CreateQuotas" enabled
     And new "CreateQuotas" request
@@ -58,6 +122,44 @@ Feature: Usage Metering
     And body with value {"data": [{"attributes": {"enforced": true, "pending_usage_limit": 100000, "usage_limit": 600000}, "type": "quotas"}]}
     When the request is sent
     Then the response status is 200 OK. The response includes each item's result; see each item's `error` attribute for any that failed to write.
+
+  @generated @skip @team:ddoghq/billing-hub
+  Scenario: Decide a temporary grant request returns "Bad Request" response
+    Given operation "UpdateTemporaryGrantRequest" enabled
+    And new "UpdateTemporaryGrantRequest" request
+    And request contains "request_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"decision": "approved"}, "id": "12345678-1234-1234-1234-123456789012", "type": "temporary_grant_requests"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/billing-hub
+  Scenario: Decide a temporary grant request returns "Conflict" response
+    Given operation "UpdateTemporaryGrantRequest" enabled
+    And new "UpdateTemporaryGrantRequest" request
+    And request contains "request_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"decision": "approved"}, "id": "12345678-1234-1234-1234-123456789012", "type": "temporary_grant_requests"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:ddoghq/billing-hub
+  Scenario: Decide a temporary grant request returns "Not Found" response
+    Given operation "UpdateTemporaryGrantRequest" enabled
+    And new "UpdateTemporaryGrantRequest" request
+    And request contains "request_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"decision": "approved"}, "id": "12345678-1234-1234-1234-123456789012", "type": "temporary_grant_requests"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:ddoghq/billing-hub
+  Scenario: Decide a temporary grant request returns "OK" response
+    Given operation "UpdateTemporaryGrantRequest" enabled
+    And there is a valid "temporary_grant_request" in the system
+    And new "UpdateTemporaryGrantRequest" request
+    And request contains "request_id" parameter from "temporary_grant_request.data.id"
+    And body with value {"data": {"attributes": {"decision": "denied"}, "id": "{{ temporary_grant_request.data.id }}", "type": "temporary_grant_requests"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" has the same value as "temporary_grant_request.data.id"
 
   @generated @skip @team:ddoghq/billing-hub
   Scenario: Delete a usage quota returns "No Content" response
@@ -106,6 +208,40 @@ Feature: Usage Metering
     Given new "GetActiveBillingDimensions" request
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/billing-hub
+  Scenario: Get an organization temporary grant request returns "Bad Request" response
+    Given operation "GetTemporaryGrantRequest" enabled
+    And new "GetTemporaryGrantRequest" request
+    And request contains "request_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/billing-hub
+  Scenario: Get an organization temporary grant request returns "Conflict" response
+    Given operation "GetTemporaryGrantRequest" enabled
+    And new "GetTemporaryGrantRequest" request
+    And request contains "request_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:ddoghq/billing-hub
+  Scenario: Get an organization temporary grant request returns "Not Found" response
+    Given operation "GetTemporaryGrantRequest" enabled
+    And new "GetTemporaryGrantRequest" request
+    And request contains "request_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:ddoghq/billing-hub
+  Scenario: Get an organization temporary grant request returns "OK" response
+    Given operation "GetTemporaryGrantRequest" enabled
+    And there is a valid "temporary_grant_request" in the system
+    And new "GetTemporaryGrantRequest" request
+    And request contains "request_id" parameter from "temporary_grant_request.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" has the same value as "temporary_grant_request.data.id"
 
   @team:ddoghq/billing-hub
   Scenario: Get available fields for usage summary returns "Bad Request" response
@@ -289,6 +425,40 @@ Feature: Usage Metering
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:ddoghq/billing-hub
+  Scenario: Get your temporary grant request returns "Bad Request" response
+    Given operation "GetMyTemporaryGrantRequest" enabled
+    And new "GetMyTemporaryGrantRequest" request
+    And request contains "request_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/billing-hub
+  Scenario: Get your temporary grant request returns "Conflict" response
+    Given operation "GetMyTemporaryGrantRequest" enabled
+    And new "GetMyTemporaryGrantRequest" request
+    And request contains "request_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:ddoghq/billing-hub
+  Scenario: Get your temporary grant request returns "Not Found" response
+    Given operation "GetMyTemporaryGrantRequest" enabled
+    And new "GetMyTemporaryGrantRequest" request
+    And request contains "request_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:ddoghq/billing-hub
+  Scenario: Get your temporary grant request returns "OK" response
+    Given operation "GetMyTemporaryGrantRequest" enabled
+    And there is a valid "temporary_grant_request" in the system
+    And new "GetMyTemporaryGrantRequest" request
+    And request contains "request_id" parameter from "temporary_grant_request.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" has the same value as "temporary_grant_request.data.id"
+
   @team:ddoghq/billing-hub
   Scenario: GetEstimatedCostByOrg with both start_month and start_date returns "Bad Request" response
     Given new "GetEstimatedCostByOrg" request
@@ -304,6 +474,41 @@ Feature: Usage Metering
     And request contains "view" parameter with value "sub-org"
     And request contains "start_month" parameter with value "{{ timeISO('now') }}"
     When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/billing-hub
+  Scenario: List organization temporary grant requests returns "Bad Request" response
+    Given operation "ListTemporaryGrantRequests" enabled
+    And new "ListTemporaryGrantRequests" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/billing-hub
+  Scenario: List organization temporary grant requests returns "Conflict" response
+    Given operation "ListTemporaryGrantRequests" enabled
+    And new "ListTemporaryGrantRequests" request
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:ddoghq/billing-hub
+  Scenario: List organization temporary grant requests returns "Not Found" response
+    Given operation "ListTemporaryGrantRequests" enabled
+    And new "ListTemporaryGrantRequests" request
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/billing-hub
+  Scenario: List organization temporary grant requests returns "OK" response
+    Given operation "ListTemporaryGrantRequests" enabled
+    And new "ListTemporaryGrantRequests" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/billing-hub @with-pagination
+  Scenario: List organization temporary grant requests returns "OK" response with pagination
+    Given operation "ListTemporaryGrantRequests" enabled
+    And new "ListTemporaryGrantRequests" request
+    When the request with pagination is sent
     Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/billing-hub
@@ -329,6 +534,73 @@ Feature: Usage Metering
     And request contains "quota_namespace" parameter from "REPLACE.ME"
     When the request with pagination is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/billing-hub
+  Scenario: List your temporary grant requests returns "Bad Request" response
+    Given operation "ListMyTemporaryGrantRequests" enabled
+    And new "ListMyTemporaryGrantRequests" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/billing-hub
+  Scenario: List your temporary grant requests returns "Conflict" response
+    Given operation "ListMyTemporaryGrantRequests" enabled
+    And new "ListMyTemporaryGrantRequests" request
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:ddoghq/billing-hub
+  Scenario: List your temporary grant requests returns "Not Found" response
+    Given operation "ListMyTemporaryGrantRequests" enabled
+    And new "ListMyTemporaryGrantRequests" request
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/billing-hub
+  Scenario: List your temporary grant requests returns "OK" response
+    Given operation "ListMyTemporaryGrantRequests" enabled
+    And new "ListMyTemporaryGrantRequests" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/billing-hub @with-pagination
+  Scenario: List your temporary grant requests returns "OK" response with pagination
+    Given operation "ListMyTemporaryGrantRequests" enabled
+    And new "ListMyTemporaryGrantRequests" request
+    When the request with pagination is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/billing-hub
+  Scenario: Revoke a requested temporary grant returns "Bad Request" response
+    Given operation "DeleteRequestedTemporaryGrant" enabled
+    And new "DeleteRequestedTemporaryGrant" request
+    And request contains "request_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/billing-hub
+  Scenario: Revoke a requested temporary grant returns "Conflict" response
+    Given operation "DeleteRequestedTemporaryGrant" enabled
+    And new "DeleteRequestedTemporaryGrant" request
+    And request contains "request_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:ddoghq/billing-hub
+  Scenario: Revoke a requested temporary grant returns "No Content" response
+    Given operation "DeleteRequestedTemporaryGrant" enabled
+    And new "DeleteRequestedTemporaryGrant" request
+    And request contains "request_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:ddoghq/billing-hub
+  Scenario: Revoke a requested temporary grant returns "Not Found" response
+    Given operation "DeleteRequestedTemporaryGrant" enabled
+    And new "DeleteRequestedTemporaryGrant" request
+    And request contains "request_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
 
   @generated @skip @team:ddoghq/billing-hub
   Scenario: Update a usage quota returns "Bad Request. Returned if the request is malformed, if the `id` in the request body does not match the `id` in the request path, if none of `usage_limit`, `enforced`, or `pending_usage_limit` is provided, or if `pending_usage_limit` is set on a scoped quota." response

@@ -12248,6 +12248,24 @@ from datadog_api_client.v2.model.teams_response import TeamsResponse
 from datadog_api_client.v2.model.teams_response_links import TeamsResponseLinks
 from datadog_api_client.v2.model.teams_response_meta import TeamsResponseMeta
 from datadog_api_client.v2.model.teams_response_meta_pagination import TeamsResponseMetaPagination
+from datadog_api_client.v2.model.temporary_grant_request_attributes import TemporaryGrantRequestAttributes
+from datadog_api_client.v2.model.temporary_grant_request_create_attributes import TemporaryGrantRequestCreateAttributes
+from datadog_api_client.v2.model.temporary_grant_request_create_data import TemporaryGrantRequestCreateData
+from datadog_api_client.v2.model.temporary_grant_request_create_request import TemporaryGrantRequestCreateRequest
+from datadog_api_client.v2.model.temporary_grant_request_data import TemporaryGrantRequestData
+from datadog_api_client.v2.model.temporary_grant_request_decision import TemporaryGrantRequestDecision
+from datadog_api_client.v2.model.temporary_grant_request_decision_attributes import (
+    TemporaryGrantRequestDecisionAttributes,
+)
+from datadog_api_client.v2.model.temporary_grant_request_decision_data import TemporaryGrantRequestDecisionData
+from datadog_api_client.v2.model.temporary_grant_request_decision_request import TemporaryGrantRequestDecisionRequest
+from datadog_api_client.v2.model.temporary_grant_request_grant_state import TemporaryGrantRequestGrantState
+from datadog_api_client.v2.model.temporary_grant_request_list_meta import TemporaryGrantRequestListMeta
+from datadog_api_client.v2.model.temporary_grant_request_list_response import TemporaryGrantRequestListResponse
+from datadog_api_client.v2.model.temporary_grant_request_page import TemporaryGrantRequestPage
+from datadog_api_client.v2.model.temporary_grant_request_response import TemporaryGrantRequestResponse
+from datadog_api_client.v2.model.temporary_grant_request_status import TemporaryGrantRequestStatus
+from datadog_api_client.v2.model.temporary_grant_request_type import TemporaryGrantRequestType
 from datadog_api_client.v2.model.tenancy_config import TenancyConfig
 from datadog_api_client.v2.model.tenancy_config_data import TenancyConfigData
 from datadog_api_client.v2.model.tenancy_config_data_attributes import TenancyConfigDataAttributes
@@ -21256,6 +21274,22 @@ __all__ = [
     "TeamsResponseLinks",
     "TeamsResponseMeta",
     "TeamsResponseMetaPagination",
+    "TemporaryGrantRequestAttributes",
+    "TemporaryGrantRequestCreateAttributes",
+    "TemporaryGrantRequestCreateData",
+    "TemporaryGrantRequestCreateRequest",
+    "TemporaryGrantRequestData",
+    "TemporaryGrantRequestDecision",
+    "TemporaryGrantRequestDecisionAttributes",
+    "TemporaryGrantRequestDecisionData",
+    "TemporaryGrantRequestDecisionRequest",
+    "TemporaryGrantRequestGrantState",
+    "TemporaryGrantRequestListMeta",
+    "TemporaryGrantRequestListResponse",
+    "TemporaryGrantRequestPage",
+    "TemporaryGrantRequestResponse",
+    "TemporaryGrantRequestStatus",
+    "TemporaryGrantRequestType",
     "TenancyConfig",
     "TenancyConfigData",
     "TenancyConfigDataAttributes",
