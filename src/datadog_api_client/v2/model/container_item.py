@@ -15,7 +15,8 @@ class ContainerItem(ModelComposed):
         """
         Possible Container models.
 
-        :param attributes: Attributes for a container.
+        :param attributes: Attributes for a container. For CPU or memory metrics, use its full `container_id` as
+            `container_id:<container_id>` in `tag_filters` with the `container` data source.
         :type attributes: ContainerAttributes, optional
 
         :param id: Container ID.

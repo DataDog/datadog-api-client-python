@@ -50,7 +50,7 @@ class ContainersResponse(ModelNormal):
         """
         List of containers.
 
-        :param data: Array of Container objects.
+        :param data: Array of containers or container group objects.
         :type data: [ContainerItem], optional
 
         :param links: Pagination links.
