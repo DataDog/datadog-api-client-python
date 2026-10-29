@@ -16,6 +16,7 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.aws_metric_name_filters import AWSMetricNameFilters
     from datadog_api_client.v2.model.aws_namespace_filters import AWSNamespaceFilters
+    from datadog_api_client.v2.model.aws_resource_type_tag_filter import AWSResourceTypeTagFilter
     from datadog_api_client.v2.model.aws_namespace_tag_filter import AWSNamespaceTagFilter
     from datadog_api_client.v2.model.aws_metric_name_filters_include_only import AWSMetricNameFiltersIncludeOnly
     from datadog_api_client.v2.model.aws_metric_name_filters_exclude_only import AWSMetricNameFiltersExcludeOnly
@@ -28,6 +29,7 @@ class AWSMetricsConfig(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v2.model.aws_metric_name_filters import AWSMetricNameFilters
         from datadog_api_client.v2.model.aws_namespace_filters import AWSNamespaceFilters
+        from datadog_api_client.v2.model.aws_resource_type_tag_filter import AWSResourceTypeTagFilter
         from datadog_api_client.v2.model.aws_namespace_tag_filter import AWSNamespaceTagFilter
 
         return {
@@ -38,6 +40,7 @@ class AWSMetricsConfig(ModelNormal):
             "enabled": (bool,),
             "metric_name_filters": ([AWSMetricNameFilters],),
             "namespace_filters": (AWSNamespaceFilters,),
+            "resource_type_tag_filters": ([AWSResourceTypeTagFilter],),
             "tag_filters": ([AWSNamespaceTagFilter],),
         }
 
@@ -49,6 +52,7 @@ class AWSMetricsConfig(ModelNormal):
         "enabled": "enabled",
         "metric_name_filters": "metric_name_filters",
         "namespace_filters": "namespace_filters",
+        "resource_type_tag_filters": "resource_type_tag_filters",
         "tag_filters": "tag_filters",
     }
 
@@ -66,6 +70,7 @@ class AWSMetricsConfig(ModelNormal):
         namespace_filters: Union[
             AWSNamespaceFilters, AWSNamespaceFiltersExcludeOnly, AWSNamespaceFiltersIncludeOnly, UnsetType
         ] = unset,
+        resource_type_tag_filters: Union[List[AWSResourceTypeTagFilter], UnsetType] = unset,
         tag_filters: Union[List[AWSNamespaceTagFilter], UnsetType] = unset,
         **kwargs,
     ):
@@ -94,7 +99,11 @@ class AWSMetricsConfig(ModelNormal):
         :param namespace_filters: AWS Metrics namespace filters. Defaults to ``exclude_only``.
         :type namespace_filters: AWSNamespaceFilters, optional
 
+        :param resource_type_tag_filters: AWS Metrics collection resource type tag filters list. Defaults to ``[]``.
+        :type resource_type_tag_filters: [AWSResourceTypeTagFilter], optional
+
         :param tag_filters: AWS Metrics collection tag filters list. Defaults to ``[]``.
+            Deprecated in favor of ``resource_type_tag_filters``. The two fields are mutually exclusive on an account. **Deprecated**.
         :type tag_filters: [AWSNamespaceTagFilter], optional
         """
         if automute_enabled is not unset:
@@ -111,6 +120,8 @@ class AWSMetricsConfig(ModelNormal):
             kwargs["metric_name_filters"] = metric_name_filters
         if namespace_filters is not unset:
             kwargs["namespace_filters"] = namespace_filters
+        if resource_type_tag_filters is not unset:
+            kwargs["resource_type_tag_filters"] = resource_type_tag_filters
         if tag_filters is not unset:
             kwargs["tag_filters"] = tag_filters
         super().__init__(kwargs)
