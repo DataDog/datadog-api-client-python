@@ -51,7 +51,7 @@ class ServiceRepositoryInfoResponseData(ModelNormal):
         :param attributes: Attributes of the service repository information.
         :type attributes: ServiceRepositoryInfoResponseAttributes
 
-        :param id: The identifier composed of the service name and version.
+        :param id: The identifier composed of the service name and version, or the debug ID when the lookup was made by debug ID.
         :type id: str
 
         :param type: The resource type for service repository info objects.

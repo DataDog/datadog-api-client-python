@@ -85,6 +85,59 @@ Feature: RUM
     When the request is sent
     Then the response status is 404 Not Found
 
+  @generated @skip @team:ddoghq/rum-backend
+  Scenario: Delete source maps returns "Bad Request" response
+    Given operation "DeleteSourcemaps" enabled
+    And new "DeleteSourcemaps" request
+    And request contains "mapkind" parameter from "REPLACE.ME"
+    And request contains "dry_run" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/rum-backend
+  Scenario: Delete source maps returns "Not Found" response
+    Given operation "DeleteSourcemaps" enabled
+    And new "DeleteSourcemaps" request
+    And request contains "mapkind" parameter from "REPLACE.ME"
+    And request contains "dry_run" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:ddoghq/rum-backend
+  Scenario: Delete source maps returns "OK" response
+    Given operation "DeleteSourcemaps" enabled
+    And new "DeleteSourcemaps" request
+    And request contains "mapkind" parameter with value "wasm"
+    And request contains "dry_run" parameter with value true
+    And request contains "symbol_type" parameter with value "sourcemap"
+    And request contains "filter[service]" parameter with value ["nonexistent-svc"]
+    And request contains "filter[version]" parameter with value ["0.0.0-none"]
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 0
+
+  @generated @skip @team:ddoghq/rum-backend
+  Scenario: Get a JavaScript source map returns "Bad Request" response
+    Given operation "GetSourcemaps" enabled
+    And new "GetSourcemaps" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:ddoghq/rum-backend
+  Scenario: Get a JavaScript source map returns "Not Found" response
+    Given operation "GetSourcemaps" enabled
+    And new "GetSourcemaps" request
+    And request contains "debug_id" parameter with value "00000000-0000-4000-8000-000000000001"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/rum-backend
+  Scenario: Get a JavaScript source map returns "OK" response
+    Given operation "GetSourcemaps" enabled
+    And new "GetSourcemaps" request
+    When the request is sent
+    Then the response status is 200 OK
+
   @team:ddoghq/rum-backend
   Scenario: Get a RUM application returns "Not Found" response
     Given new "GetRUMApplication" request
@@ -124,6 +177,23 @@ Feature: RUM
     Then the response status is 200 OK
     And the response has 3 items
 
+  @team:ddoghq/rum-backend
+  Scenario: Get service repository information returns "Bad Request" response
+    Given operation "GetServiceRepositoryInfo" enabled
+    And new "GetServiceRepositoryInfo" request
+    And body with value {"data": {"attributes": {"service": "my-web-service"}, "type": "service_repository_info"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:ddoghq/rum-backend
+  Scenario: Get service repository information returns "OK" response
+    Given operation "GetServiceRepositoryInfo" enabled
+    And new "GetServiceRepositoryInfo" request
+    And body with value {"data": {"attributes": {"debug_id": "00000000-0000-4000-8000-000000000001"}, "type": "service_repository_info"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" is equal to "00000000-0000-4000-8000-000000000001"
+
   @generated @skip @team:ddoghq/rum-backend
   Scenario: List all the RUM applications returns "Not Found" response
     Given new "GetRUMApplications" request
@@ -139,6 +209,65 @@ Feature: RUM
     And the response "data" has item with field "attributes.application_id" with value "{{ rum_application.data.id }}"
     And the response "data" has item with field "attributes.product_scales.rum_event_processing_scale.state" with value "ALL"
     And the response "data" has item with field "attributes.product_scales.product_analytics_retention_scale.state" with value "NONE"
+
+  @team:ddoghq/rum-backend
+  Scenario: List source maps returns "Bad Request" response
+    Given operation "ListSourcemaps" enabled
+    And new "ListSourcemaps" request
+    And request contains "mapkind" parameter with value "js"
+    And request contains "symbol_type" parameter with value "sourcemap"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:ddoghq/rum-backend
+  Scenario: List source maps returns "OK" response
+    Given operation "ListSourcemaps" enabled
+    And new "ListSourcemaps" request
+    And request contains "mapkind" parameter with value "wasm"
+    And request contains "symbol_type" parameter with value "sourcemap"
+    And request contains "filter[service]" parameter with value ["my-wasm-app"]
+    And request contains "filter[version]" parameter with value ["1.0.0"]
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 0
+
+  @generated @skip @team:ddoghq/rum-backend
+  Scenario: List source maps returns "Request Entity Too Large" response
+    Given operation "ListSourcemaps" enabled
+    And new "ListSourcemaps" request
+    When the request is sent
+    Then the response status is 413 Request Entity Too Large
+
+  @generated @skip @team:ddoghq/rum-backend
+  Scenario: Restore source maps returns "Bad Request" response
+    Given operation "RestoreSourcemaps" enabled
+    And new "RestoreSourcemaps" request
+    And request contains "mapkind" parameter from "REPLACE.ME"
+    And request contains "dry_run" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/rum-backend
+  Scenario: Restore source maps returns "Not Found" response
+    Given operation "RestoreSourcemaps" enabled
+    And new "RestoreSourcemaps" request
+    And request contains "mapkind" parameter from "REPLACE.ME"
+    And request contains "dry_run" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:ddoghq/rum-backend
+  Scenario: Restore source maps returns "OK" response
+    Given operation "RestoreSourcemaps" enabled
+    And new "RestoreSourcemaps" request
+    And request contains "mapkind" parameter with value "wasm"
+    And request contains "dry_run" parameter with value true
+    And request contains "symbol_type" parameter with value "sourcemap"
+    And request contains "filter[service]" parameter with value ["nonexistent-svc"]
+    And request contains "filter[version]" parameter with value ["0.0.0-none"]
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 0
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: Search RUM events returns "Bad Request" response

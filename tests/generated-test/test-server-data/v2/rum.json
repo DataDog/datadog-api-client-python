@@ -355,6 +355,94 @@
     },
     {
       "feature": "RUM",
+      "frozen_at": "2026-10-27T21:41:28.057Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/sourcemaps",
+            "query": [
+              [
+                "dry_run",
+                "true"
+              ],
+              [
+                "filter[service]",
+                "nonexistent-svc"
+              ],
+              [
+                "filter[version]",
+                "0.0.0-none"
+              ],
+              [
+                "mapkind",
+                "wasm"
+              ],
+              [
+                "symbol_type",
+                "sourcemap"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Delete source maps returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM",
+      "frozen_at": "2026-10-27T21:41:30.244Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/sourcemaps",
+            "query": [
+              [
+                "debug_id",
+                "00000000-0000-4000-8000-000000000001"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get a JavaScript source map returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM",
       "frozen_at": "2026-10-26T14:43:46.554Z",
       "interactions": [
         {
@@ -600,6 +688,82 @@
     },
     {
       "feature": "RUM",
+      "frozen_at": "2026-10-27T16:59:58.595Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "service": "my-web-service"
+                  },
+                  "type": "service_repository_info"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/sourcemaps/service_repository_info",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"debug_id or both service and version are required\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Get service repository information returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM",
+      "frozen_at": "2026-10-27T16:22:23.688Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "debug_id": "00000000-0000-4000-8000-000000000001"
+                  },
+                  "type": "service_repository_info"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/sourcemaps/service_repository_info",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"00000000-0000-4000-8000-000000000001\",\"type\":\"service_repository_info\",\"attributes\":{\"status\":\"not_found\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get service repository information returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM",
       "frozen_at": "2026-10-26T09:30:04.707Z",
       "interactions": [
         {
@@ -679,6 +843,146 @@
         }
       ],
       "scenario": "List all the RUM applications returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM",
+      "frozen_at": "2026-10-27T16:22:23.933Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/sourcemaps/list",
+            "query": [
+              [
+                "mapkind",
+                "js"
+              ],
+              [
+                "symbol_type",
+                "sourcemap"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"symbol_type is only supported for mapkind=wasm\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "List source maps returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM",
+      "frozen_at": "2026-10-27T16:22:24.136Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/sourcemaps/list",
+            "query": [
+              [
+                "filter[service]",
+                "my-wasm-app"
+              ],
+              [
+                "filter[version]",
+                "1.0.0"
+              ],
+              [
+                "mapkind",
+                "wasm"
+              ],
+              [
+                "symbol_type",
+                "sourcemap"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[],\"meta\":{\"page\":{\"total_filtered_count\":0,\"has_more_results\":false}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "List source maps returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM",
+      "frozen_at": "2026-10-27T21:41:30.450Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "PATCH",
+            "path": "/api/v2/sourcemaps/restore",
+            "query": [
+              [
+                "dry_run",
+                "true"
+              ],
+              [
+                "filter[service]",
+                "nonexistent-svc"
+              ],
+              [
+                "filter[version]",
+                "0.0.0-none"
+              ],
+              [
+                "mapkind",
+                "wasm"
+              ],
+              [
+                "symbol_type",
+                "sourcemap"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Restore source maps returns \"OK\" response",
       "version": "v2"
     },
     {

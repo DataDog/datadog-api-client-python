@@ -1,0 +1,51 @@
+{
+  "api": "RUM",
+  "expected_status": 400,
+  "feature": "RUM",
+  "id": "v2/RUM/List source maps returns \"Bad Request\" response",
+  "operation_id": "ListSourcemaps",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "mapkind",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": "SourcemapMapKind",
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "js"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "symbol_type",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": "SourcemapSymbolType",
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "sourcemap"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/sourcemaps/list"
+  },
+  "scenario": "List source maps returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

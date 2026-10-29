@@ -1,0 +1,33 @@
+{
+  "api": "RUM",
+  "expected_status": 400,
+  "feature": "RUM",
+  "id": "v2/RUM/Get service repository information returns \"Bad Request\" response",
+  "operation_id": "GetServiceRepositoryInfo",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ServiceRepositoryInfoRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "service": "my-web-service"
+          },
+          "type": "service_repository_info"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/sourcemaps/service_repository_info"
+  },
+  "scenario": "Get service repository information returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -28,6 +28,7 @@ from datadog_api_client.v2.model.rum_event import RUMEvent
 from datadog_api_client.v2.model.rum_search_events_request import RUMSearchEventsRequest
 from datadog_api_client.v2.model.sourcemaps_response import SourcemapsResponse
 from datadog_api_client.v2.model.sourcemap_map_kind import SourcemapMapKind
+from datadog_api_client.v2.model.sourcemap_symbol_type import SourcemapSymbolType
 from datadog_api_client.v2.model.sourcemap_file_response import SourcemapFileResponse
 from datadog_api_client.v2.model.list_sourcemaps_response import ListSourcemapsResponse
 from datadog_api_client.v2.model.sourcemap_search_by import SourcemapSearchBy
@@ -122,6 +123,11 @@ class RUMApi:
                     "required": True,
                     "openapi_types": (SourcemapMapKind,),
                     "attribute": "mapkind",
+                    "location": "query",
+                },
+                "symbol_type": {
+                    "openapi_types": (SourcemapSymbolType,),
+                    "attribute": "symbol_type",
                     "location": "query",
                 },
                 "dry_run": {
@@ -406,6 +412,11 @@ class RUMApi:
                     "attribute": "mapkind",
                     "location": "query",
                 },
+                "symbol_type": {
+                    "openapi_types": (SourcemapSymbolType,),
+                    "attribute": "symbol_type",
+                    "location": "query",
+                },
                 "page_after": {
                     "openapi_types": (str,),
                     "attribute": "page[after]",
@@ -551,6 +562,11 @@ class RUMApi:
                     "required": True,
                     "openapi_types": (SourcemapMapKind,),
                     "attribute": "mapkind",
+                    "location": "query",
+                },
+                "symbol_type": {
+                    "openapi_types": (SourcemapSymbolType,),
+                    "attribute": "symbol_type",
                     "location": "query",
                 },
                 "dry_run": {
@@ -769,6 +785,7 @@ class RUMApi:
         mapkind: SourcemapMapKind,
         dry_run: bool,
         *,
+        symbol_type: Union[SourcemapSymbolType, UnsetType] = unset,
         filter_service: Union[List[str], UnsetType] = unset,
         filter_version: Union[List[str], UnsetType] = unset,
         filter_variant: Union[List[str], UnsetType] = unset,
@@ -801,17 +818,25 @@ class RUMApi:
             without performing the actual deletion. When set to ``false`` ,
             performs the deletion.
         :type dry_run: bool
+        :param symbol_type: WASM symbol representation. Only supported for ``mapkind=wasm``.
+            Defaults to ``dwarf`` , which requires ``filter[build_id]``. ``sourcemap``
+            requires ``filter[service]`` and ``filter[version]``.
+        :type symbol_type: SourcemapSymbolType, optional
         :param filter_service: Filter by service names (multiple values allowed). Required for
-            ``js`` , ``jvm`` , ``react`` , and ``flutter`` map kinds.
+            ``js`` , ``jvm`` , ``react`` , and ``flutter`` map kinds, and for ``wasm`` with
+            ``symbol_type=sourcemap``.
         :type filter_service: [str], optional
         :param filter_version: Filter by version values (multiple values allowed, maximum 10).
-            Required for ``js`` , ``jvm`` , ``react`` , and ``flutter`` map kinds.
+            Required for ``js`` , ``jvm`` , ``react`` , and ``flutter`` map kinds, and for
+            ``wasm`` with ``symbol_type=sourcemap``.
         :type filter_version: [str], optional
         :param filter_variant: Filter by variant values (multiple values allowed). Supported for ``jvm``.
         :type filter_variant: [str], optional
         :param filter_id: Filter by source map ID values (multiple values allowed). Supported for all map kinds.
         :type filter_id: [str], optional
-        :param filter_build_id: Filter by build ID values (multiple values allowed). Supported for ``jvm`` , ``ndk`` , ``il2cpp`` , ``wasm`` , and ``portable_pdb``.
+        :param filter_build_id: Filter by build ID values (multiple values allowed). Supported for ``jvm`` ,
+            ``ndk`` , ``il2cpp`` , ``wasm`` , and ``portable_pdb``. Required for ``wasm`` with
+            ``symbol_type=dwarf``.
         :type filter_build_id: [str], optional
         :param filter_uuid: Filter by UUID values (multiple values allowed). Supported for ``ios``.
         :type filter_uuid: [str], optional
@@ -844,6 +869,9 @@ class RUMApi:
         """
         kwargs: Dict[str, Any] = {}
         kwargs["mapkind"] = mapkind
+
+        if symbol_type is not unset:
+            kwargs["symbol_type"] = symbol_type
 
         kwargs["dry_run"] = dry_run
 
@@ -938,7 +966,8 @@ class RUMApi:
     ) -> ServiceRepositoryInfoResponse:
         """Get service repository information.
 
-        Returns the repository URL and commit SHA associated with a given service and version.
+        Returns the repository URL and commit SHA associated with a debug ID or a given service and version.
+        Provide either ``debug_id`` , or both ``service`` and ``version``. When ``debug_id`` is set, it takes precedence.
 
         :type body: ServiceRepositoryInfoRequest
         :rtype: ServiceRepositoryInfoResponse
@@ -1137,6 +1166,7 @@ class RUMApi:
         *,
         search_by: Union[SourcemapSearchBy, UnsetType] = unset,
         mapkind: Union[SourcemapMapKind, UnsetType] = unset,
+        symbol_type: Union[SourcemapSymbolType, UnsetType] = unset,
         page_after: Union[str, UnsetType] = unset,
         page_size: Union[int, UnsetType] = unset,
         page_number: Union[int, UnsetType] = unset,
@@ -1251,6 +1281,10 @@ class RUMApi:
         :type search_by: SourcemapSearchBy, optional
         :param mapkind: The type of source map. Defaults to ``js``.
         :type mapkind: SourcemapMapKind, optional
+        :param symbol_type: WASM symbol representation. Only supported for ``mapkind=wasm``.
+            Defaults to ``dwarf`` , which requires ``filter[build_id]``. ``sourcemap``
+            requires ``filter[service]`` and ``filter[version]``.
+        :type symbol_type: SourcemapSymbolType, optional
         :param page_after: Cursor for the next page of a JavaScript listing. Use the value from
             ``meta.page.next_cursor`` and keep the same search mode and filters.
             Omit on the first request. Not supported for other map kinds or for
@@ -1263,18 +1297,22 @@ class RUMApi:
             default to page 1 when pagination parameters are omitted.
         :type page_number: int, optional
         :param filter_service: Filter by service names (multiple values allowed). Required for
-            ``jvm`` , ``react`` , and ``flutter`` map kinds. Also required for ``js`` unless
+            ``jvm`` , ``react`` , and ``flutter`` map kinds, and for ``wasm`` with
+            ``symbol_type=sourcemap``. Also required for ``js`` unless
             searching by ``filter[debug_id]`` or browsing with ``search_by=debug_id``.
         :type filter_service: [str], optional
         :param filter_version: Filter by version values (multiple values allowed). Required for
-            ``jvm`` , ``react`` , and ``flutter`` map kinds. Also required for ``js`` unless
+            ``jvm`` , ``react`` , and ``flutter`` map kinds, and for ``wasm`` with
+            ``symbol_type=sourcemap``. Also required for ``js`` unless
             searching by ``filter[debug_id]`` or browsing with ``search_by=debug_id``.
         :type filter_version: [str], optional
         :param filter_variant: Filter by variant values (multiple values allowed). Supported for ``jvm``.
         :type filter_variant: [str], optional
         :param filter_id: Filter by source map ID values (multiple values allowed). Supported for all map kinds.
         :type filter_id: [str], optional
-        :param filter_build_id: Filter by build ID values (multiple values allowed). Supported for ``jvm`` , ``ndk`` , ``il2cpp`` , ``wasm`` , and ``portable_pdb``.
+        :param filter_build_id: Filter by build ID values (multiple values allowed). Supported for ``jvm`` ,
+            ``ndk`` , ``il2cpp`` , ``wasm`` , and ``portable_pdb``. Required for ``wasm`` with
+            ``symbol_type=dwarf``.
         :type filter_build_id: [str], optional
         :param filter_uuid: Filter by UUID values (multiple values allowed). Supported for ``ios``.
         :type filter_uuid: [str], optional
@@ -1313,6 +1351,9 @@ class RUMApi:
 
         if mapkind is not unset:
             kwargs["mapkind"] = mapkind
+
+        if symbol_type is not unset:
+            kwargs["symbol_type"] = symbol_type
 
         if page_after is not unset:
             kwargs["page_after"] = page_after
@@ -1384,6 +1425,7 @@ class RUMApi:
         mapkind: SourcemapMapKind,
         dry_run: bool,
         *,
+        symbol_type: Union[SourcemapSymbolType, UnsetType] = unset,
         filter_service: Union[List[str], UnsetType] = unset,
         filter_version: Union[List[str], UnsetType] = unset,
         filter_variant: Union[List[str], UnsetType] = unset,
@@ -1416,17 +1458,25 @@ class RUMApi:
             without performing the actual restoration. When set to ``false`` ,
             performs the restoration.
         :type dry_run: bool
+        :param symbol_type: WASM symbol representation. Only supported for ``mapkind=wasm``.
+            Defaults to ``dwarf`` , which requires ``filter[build_id]``. ``sourcemap``
+            requires ``filter[service]`` and ``filter[version]``.
+        :type symbol_type: SourcemapSymbolType, optional
         :param filter_service: Filter by service names (multiple values allowed). Required for
-            ``js`` , ``jvm`` , ``react`` , and ``flutter`` map kinds.
+            ``js`` , ``jvm`` , ``react`` , and ``flutter`` map kinds, and for ``wasm`` with
+            ``symbol_type=sourcemap``.
         :type filter_service: [str], optional
         :param filter_version: Filter by version values (multiple values allowed, maximum 10).
-            Required for ``js`` , ``jvm`` , ``react`` , and ``flutter`` map kinds.
+            Required for ``js`` , ``jvm`` , ``react`` , and ``flutter`` map kinds, and for
+            ``wasm`` with ``symbol_type=sourcemap``.
         :type filter_version: [str], optional
         :param filter_variant: Filter by variant values (multiple values allowed). Supported for ``jvm``.
         :type filter_variant: [str], optional
         :param filter_id: Filter by source map ID values (multiple values allowed). Supported for all map kinds.
         :type filter_id: [str], optional
-        :param filter_build_id: Filter by build ID values (multiple values allowed). Supported for ``jvm`` , ``ndk`` , ``il2cpp`` , ``wasm`` , and ``portable_pdb``.
+        :param filter_build_id: Filter by build ID values (multiple values allowed). Supported for ``jvm`` ,
+            ``ndk`` , ``il2cpp`` , ``wasm`` , and ``portable_pdb``. Required for ``wasm`` with
+            ``symbol_type=dwarf``.
         :type filter_build_id: [str], optional
         :param filter_uuid: Filter by UUID values (multiple values allowed). Supported for ``ios``.
         :type filter_uuid: [str], optional
@@ -1459,6 +1509,9 @@ class RUMApi:
         """
         kwargs: Dict[str, Any] = {}
         kwargs["mapkind"] = mapkind
+
+        if symbol_type is not unset:
+            kwargs["symbol_type"] = symbol_type
 
         kwargs["dry_run"] = dry_run
 

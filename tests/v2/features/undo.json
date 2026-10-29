@@ -10008,6 +10008,36 @@
       "type": "unsafe"
     }
   },
+  "DeleteSourcemaps": {
+    "tag": "RUM",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetSourcemaps": {
+    "tag": "RUM",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListSourcemaps": {
+    "tag": "RUM",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "RestoreSourcemaps": {
+    "tag": "RUM",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetServiceRepositoryInfo": {
+    "tag": "RUM",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "AggregateSpans": {
     "tag": "Spans",
     "undo": {
