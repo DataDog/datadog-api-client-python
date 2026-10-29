@@ -93,9 +93,9 @@ class ExecutionPolicyAttributes(ModelNormal):
         :param name: The name of the execution policy.
         :type name: str
 
-        :param scope: Restricts where the policy applies. At most one of ``kubernetes`` , ``scripts`` ,
-            or ``remote_action_rshell`` can be set. An empty object means the policy has
-            no scope restriction.
+        :param scope: Restricts where the policy applies. At most one scope type can be set,
+            and it must match the action pattern's integration. An empty object means
+            the policy has no scope restriction.
         :type scope: ExecutionPolicyScope, optional
 
         :param targets: The targets this policy applies to.

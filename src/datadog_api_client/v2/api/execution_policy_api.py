@@ -22,9 +22,8 @@ from datadog_api_client.v2.model.execution_policy_update_request import Executio
 class ExecutionPolicyApi:
     """
     Execution policies control which actions Datadog Action Platform is allowed to run
-    against your infrastructure, and where. Each policy pairs an effect (allow or deny)
-    with a pattern of actions, and can scope that decision to specific Kubernetes
-    namespaces, scripts, or remote shell paths.
+    and where. Each policy pairs an effect (allow or deny) with a pattern of actions,
+    and can scope that decision to specific resources.
     """
 
     def __init__(self, api_client=None):

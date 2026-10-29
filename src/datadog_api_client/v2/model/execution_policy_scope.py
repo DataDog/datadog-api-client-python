@@ -19,6 +19,7 @@ if TYPE_CHECKING:
         ExecutionPolicyRemoteActionRshellScope,
     )
     from datadog_api_client.v2.model.execution_policy_script_scope import ExecutionPolicyScriptScope
+    from datadog_api_client.v2.model.execution_policy_slack_scope import ExecutionPolicySlackScope
 
 
 class ExecutionPolicyScope(ModelNormal):
@@ -29,17 +30,20 @@ class ExecutionPolicyScope(ModelNormal):
             ExecutionPolicyRemoteActionRshellScope,
         )
         from datadog_api_client.v2.model.execution_policy_script_scope import ExecutionPolicyScriptScope
+        from datadog_api_client.v2.model.execution_policy_slack_scope import ExecutionPolicySlackScope
 
         return {
             "kubernetes": (ExecutionPolicyKubernetesScope,),
             "remote_action_rshell": (ExecutionPolicyRemoteActionRshellScope,),
             "scripts": (ExecutionPolicyScriptScope,),
+            "slack": (ExecutionPolicySlackScope,),
         }
 
     attribute_map = {
         "kubernetes": "kubernetes",
         "remote_action_rshell": "remote_action_rshell",
         "scripts": "scripts",
+        "slack": "slack",
     }
 
     def __init__(
@@ -47,12 +51,13 @@ class ExecutionPolicyScope(ModelNormal):
         kubernetes: Union[ExecutionPolicyKubernetesScope, UnsetType] = unset,
         remote_action_rshell: Union[ExecutionPolicyRemoteActionRshellScope, UnsetType] = unset,
         scripts: Union[ExecutionPolicyScriptScope, UnsetType] = unset,
+        slack: Union[ExecutionPolicySlackScope, UnsetType] = unset,
         **kwargs,
     ):
         """
-        Restricts where the policy applies. At most one of ``kubernetes`` , ``scripts`` ,
-        or ``remote_action_rshell`` can be set. An empty object means the policy has
-        no scope restriction.
+        Restricts where the policy applies. At most one scope type can be set,
+        and it must match the action pattern's integration. An empty object means
+        the policy has no scope restriction.
 
         :param kubernetes: Restricts the policy to specific Kubernetes namespaces.
         :type kubernetes: ExecutionPolicyKubernetesScope, optional
@@ -62,6 +67,9 @@ class ExecutionPolicyScope(ModelNormal):
 
         :param scripts: Restricts the policy to specific scripts.
         :type scripts: ExecutionPolicyScriptScope, optional
+
+        :param slack: Restricts the policy to specific Slack private channel names.
+        :type slack: ExecutionPolicySlackScope, optional
         """
         if kubernetes is not unset:
             kwargs["kubernetes"] = kubernetes
@@ -69,4 +77,6 @@ class ExecutionPolicyScope(ModelNormal):
             kwargs["remote_action_rshell"] = remote_action_rshell
         if scripts is not unset:
             kwargs["scripts"] = scripts
+        if slack is not unset:
+            kwargs["slack"] = slack
         super().__init__(kwargs)
