@@ -18,7 +18,7 @@ from datadog_api_client.v2.model.aws_lambda_forwarder_config_log_source_config i
 from datadog_api_client.v2.model.aws_log_source_tag_filter import AWSLogSourceTagFilter
 from datadog_api_client.v2.model.aws_logs_config import AWSLogsConfig
 from datadog_api_client.v2.model.aws_metrics_config import AWSMetricsConfig
-from datadog_api_client.v2.model.aws_namespace_tag_filter import AWSNamespaceTagFilter
+from datadog_api_client.v2.model.aws_resource_type_tag_filter import AWSResourceTypeTagFilter
 from datadog_api_client.v2.model.aws_resources_config import AWSResourcesConfig
 from datadog_api_client.v2.model.aws_traces_config import AWSTracesConfig
 
@@ -61,12 +61,13 @@ body = AWSAccountUpdateRequest(
                 collect_cloudwatch_alarms=True,
                 collect_custom_metrics=True,
                 enabled=True,
-                tag_filters=[
-                    AWSNamespaceTagFilter(
-                        namespace="AWS/EC2",
-                        tags=[
-                            "key:value",
+                resource_type_tag_filters=[
+                    AWSResourceTypeTagFilter(
+                        service="ec2",
+                        resource_types=[
+                            "instance",
                         ],
+                        expression="env:staging",
                     ),
                 ],
             ),

@@ -165,6 +165,7 @@ from datadog_api_client.v2.model.aws_new_external_id_response_data_type import A
 from datadog_api_client.v2.model.aws_regions import AWSRegions
 from datadog_api_client.v2.model.aws_regions_include_all import AWSRegionsIncludeAll
 from datadog_api_client.v2.model.aws_regions_include_only import AWSRegionsIncludeOnly
+from datadog_api_client.v2.model.aws_resource_type_tag_filter import AWSResourceTypeTagFilter
 from datadog_api_client.v2.model.aws_resources_config import AWSResourcesConfig
 from datadog_api_client.v2.model.aws_traces_config import AWSTracesConfig
 from datadog_api_client.v2.model.access_token_list_item import AccessTokenListItem
@@ -13281,6 +13282,7 @@ __all__ = [
     "AWSRegions",
     "AWSRegionsIncludeAll",
     "AWSRegionsIncludeOnly",
+    "AWSResourceTypeTagFilter",
     "AWSResourcesConfig",
     "AWSTracesConfig",
     "AccessTokenListItem",
