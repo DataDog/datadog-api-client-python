@@ -34,7 +34,7 @@ class SensitiveDataScannerReorderGroupsResponse(ModelNormal):
         """
         Group reorder response.
 
-        :param meta: Meta response containing information about the API.
+        :param meta: Meta response. Always an empty object.
         :type meta: SensitiveDataScannerMeta, optional
         """
         if meta is not unset:
