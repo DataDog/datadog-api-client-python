@@ -1966,6 +1966,9 @@ from datadog_api_client.v2.model.create_status_page_request_data_attributes_comp
 from datadog_api_client.v2.model.create_status_page_request_data_attributes_type import (
     CreateStatusPageRequestDataAttributesType,
 )
+from datadog_api_client.v2.model.create_status_page_request_data_attributes_visualization_layout import (
+    CreateStatusPageRequestDataAttributesVisualizationLayout,
+)
 from datadog_api_client.v2.model.create_status_page_request_data_attributes_visualization_type import (
     CreateStatusPageRequestDataAttributesVisualizationType,
 )
@@ -14638,6 +14641,7 @@ __all__ = [
     "CreateStatusPageRequestDataAttributesComponentsItems",
     "CreateStatusPageRequestDataAttributesComponentsItemsComponentsItems",
     "CreateStatusPageRequestDataAttributesType",
+    "CreateStatusPageRequestDataAttributesVisualizationLayout",
     "CreateStatusPageRequestDataAttributesVisualizationType",
     "CreateTableRequest",
     "CreateTableRequestData",

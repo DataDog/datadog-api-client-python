@@ -27049,6 +27049,9 @@ components:
         type:
           $ref: "#/components/schemas/CreateStatusPageRequestDataAttributesType"
           example: public
+        visualization_layout:
+          $ref: "#/components/schemas/CreateStatusPageRequestDataAttributesVisualizationLayout"
+          example: list
         visualization_type:
           $ref: "#/components/schemas/CreateStatusPageRequestDataAttributesVisualizationType"
           example: bars_and_uptime_percentage
@@ -27113,6 +27116,16 @@ components:
       x-enum-varnames:
         - PUBLIC
         - INTERNAL
+    CreateStatusPageRequestDataAttributesVisualizationLayout:
+      description: The layout of components on the status page. Defaults to `list`. `grid` requires `visualization_type` to be `component_name_only`; changing `visualization_type` to any other value resets the layout to `list`.
+      enum:
+        - list
+        - grid
+      example: list
+      type: string
+      x-enum-varnames:
+        - LIST
+        - GRID
     CreateStatusPageRequestDataAttributesVisualizationType:
       description: The visualization type of the status page.
       enum:
@@ -97391,6 +97404,9 @@ components:
         type:
           $ref: "#/components/schemas/CreateStatusPageRequestDataAttributesType"
           example: public
+        visualization_layout:
+          $ref: "#/components/schemas/CreateStatusPageRequestDataAttributesVisualizationLayout"
+          example: list
         visualization_type:
           $ref: "#/components/schemas/CreateStatusPageRequestDataAttributesVisualizationType"
           example: bars_and_uptime_percentage
@@ -127272,6 +127288,8 @@ components:
           type: boolean
         type:
           $ref: "#/components/schemas/CreateStatusPageRequestDataAttributesType"
+        visualization_layout:
+          $ref: "#/components/schemas/CreateStatusPageRequestDataAttributesVisualizationLayout"
         visualization_type:
           $ref: "#/components/schemas/CreateStatusPageRequestDataAttributesVisualizationType"
       type: object
@@ -127446,6 +127464,8 @@ components:
           type: boolean
         type:
           $ref: "#/components/schemas/CreateStatusPageRequestDataAttributesType"
+        visualization_layout:
+          $ref: "#/components/schemas/CreateStatusPageRequestDataAttributesVisualizationLayout"
         visualization_type:
           $ref: "#/components/schemas/CreateStatusPageRequestDataAttributesVisualizationType"
       type: object
