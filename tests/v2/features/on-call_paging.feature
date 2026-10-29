@@ -31,6 +31,22 @@ Feature: On-Call Paging
     Then the response status is 202 Accepted.
 
   @generated @skip @team:ddoghq/on-call
+  Scenario: Reroute On-Call Page returns "Bad Request" response
+    Given new "RerouteOnCallPage" request
+    And request contains "page_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"comment": "Rerouting to the database team.", "target": {"identifier": "my-team", "type": "team_handle"}}, "type": "reroute"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/on-call
+  Scenario: Reroute On-Call Page returns "No Content." response
+    Given new "RerouteOnCallPage" request
+    And request contains "page_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"comment": "Rerouting to the database team.", "target": {"identifier": "my-team", "type": "team_handle"}}, "type": "reroute"}}
+    When the request is sent
+    Then the response status is 204 No Content.
+
+  @generated @skip @team:ddoghq/on-call
   Scenario: Resolve On-Call Page returns "Accepted." response
     Given new "ResolveOnCallPage" request
     And request contains "page_id" parameter from "REPLACE.ME"

@@ -6707,6 +6707,12 @@
       "type": "unsafe"
     }
   },
+  "RerouteOnCallPage": {
+    "tag": "On-Call Paging",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ResolveOnCallPage": {
     "tag": "On-Call Paging",
     "undo": {
