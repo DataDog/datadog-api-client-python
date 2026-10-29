@@ -1219,6 +1219,22 @@ Feature: Dashboards
     And the response "widgets[0].definition.requests[0].sort.order_by[0].index" is equal to 0
 
   @team:ddoghq/dashboards-backend
+  Scenario: Create a new dashboard with topology_map custom widget
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/topology_map_widget_custom.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "topology_map"
+    And the response "widgets[0].definition.layout.type" is equal to "hierarchical"
+    And the response "widgets[0].definition.layout.direction" is equal to "left-to-right"
+    And the response "widgets[0].definition.data.nodes.columns[0].id" is equal to "id"
+    And the response "widgets[0].definition.data.nodes.columns[2].meta.unit.unit_name" is equal to "second"
+    And the response "widgets[0].definition.data.edges.columns[1].values" is equal to ["service:db"]
+    And the response "widgets[0].definition.requests[0].response_format" is equal to "scalar"
+    And the response "widgets[0].definition.requests[0].projection.type" is equal to "custom_topology_map_node"
+    And the response "widgets[0].definition.requests[0].projection.dimensions[0].dimension" is equal to "values[0]"
+
+  @team:ddoghq/dashboards-backend
   Scenario: Create a new dashboard with topology_map data_streams widget
     Given new "CreateDashboard" request
     And body from file "dashboards_json_payload/topology_map_widget_data_streams.json"

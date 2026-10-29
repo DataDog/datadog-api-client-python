@@ -843,6 +843,13 @@
     {
       "feature": "Dashboards",
       "feature_file": "../../v1/features/dashboards.feature",
+      "file": "v1/dashboards/create-a-new-dashboard-with-topology-map-custom-widget.json",
+      "scenario": "Create a new dashboard with topology_map custom widget",
+      "version": "v1"
+    },
+    {
+      "feature": "Dashboards",
+      "feature_file": "../../v1/features/dashboards.feature",
       "file": "v1/dashboards/create-a-new-dashboard-with-topology-map-data-streams-widget.json",
       "scenario": "Create a new dashboard with topology_map data_streams widget",
       "version": "v1"

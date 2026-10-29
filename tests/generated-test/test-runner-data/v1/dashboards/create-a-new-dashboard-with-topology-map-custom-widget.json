@@ -1,0 +1,133 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a new dashboard with topology_map custom widget",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "dashboards_json_payload/topology_map_widget_custom.json",
+      "value": {
+        "description": "",
+        "layout_type": "free",
+        "notify_list": [],
+        "template_variables": [],
+        "title": "{{ unique }}",
+        "widgets": [
+          {
+            "definition": {
+              "data": {
+                "edges": {
+                  "columns": [
+                    {
+                      "id": "source",
+                      "kind": "string",
+                      "values": [
+                        "service:web"
+                      ]
+                    },
+                    {
+                      "id": "target",
+                      "kind": "string",
+                      "values": [
+                        "service:db"
+                      ]
+                    }
+                  ]
+                },
+                "nodes": {
+                  "columns": [
+                    {
+                      "id": "id",
+                      "kind": "string",
+                      "values": [
+                        "service:web",
+                        "service:db"
+                      ]
+                    },
+                    {
+                      "id": "subtitle",
+                      "kind": "string",
+                      "values": [
+                        "api-team",
+                        null
+                      ]
+                    },
+                    {
+                      "id": "values[1]",
+                      "kind": "scalar",
+                      "meta": {
+                        "unit": {
+                          "type": "canonical_unit",
+                          "unit_name": "second"
+                        }
+                      },
+                      "values": [
+                        1.5,
+                        null
+                      ]
+                    }
+                  ]
+                }
+              },
+              "layout": {
+                "direction": "left-to-right",
+                "type": "hierarchical"
+              },
+              "requests": [
+                {
+                  "formulas": [
+                    {
+                      "formula": "a"
+                    }
+                  ],
+                  "projection": {
+                    "dimensions": [
+                      {
+                        "column": "a",
+                        "dimension": "values[0]"
+                      }
+                    ],
+                    "type": "custom_topology_map_node"
+                  },
+                  "queries": [
+                    {
+                      "aggregator": "avg",
+                      "data_source": "metrics",
+                      "name": "a",
+                      "query": "avg:system.cpu.user{*} by {service}"
+                    }
+                  ],
+                  "response_format": "scalar"
+                }
+              ],
+              "title": "",
+              "title_align": "left",
+              "title_size": "16",
+              "type": "topology_map"
+            },
+            "layout": {
+              "height": 15,
+              "width": 47,
+              "x": 0,
+              "y": 0
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a new dashboard with topology_map custom widget",
+  "schema_version": 1,
+  "version": "v1"
+}
