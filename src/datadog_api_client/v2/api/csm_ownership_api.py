@@ -41,7 +41,7 @@ class CSMOwnershipApi:
             settings={
                 "response_type": (OwnershipFeedbackResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/csm/ownership/{resource_id}/{owner_type}/feedback",
+                "endpoint_path": "/api/v2/security/ownership/{resource_id}/{owner_type}/feedback",
                 "operation_id": "create_ownership_feedback",
                 "http_method": "POST",
                 "version": "v2",
@@ -73,7 +73,7 @@ class CSMOwnershipApi:
             settings={
                 "response_type": (OwnershipEvidenceResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/csm/ownership/{resource_id}/{owner_type}/evidence",
+                "endpoint_path": "/api/v2/security/ownership/{resource_id}/{owner_type}/evidence",
                 "operation_id": "get_ownership_evidence",
                 "http_method": "GET",
                 "version": "v2",
@@ -107,7 +107,7 @@ class CSMOwnershipApi:
             settings={
                 "response_type": (OwnershipInferenceResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/csm/ownership/{resource_id}/{owner_type}",
+                "endpoint_path": "/api/v2/security/ownership/{resource_id}/{owner_type}",
                 "operation_id": "get_ownership_inference",
                 "http_method": "GET",
                 "version": "v2",
@@ -173,7 +173,7 @@ class CSMOwnershipApi:
             settings={
                 "response_type": (OwnershipHistoryResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/csm/ownership/{resource_id}/history",
+                "endpoint_path": "/api/v2/security/ownership/{resource_id}/history",
                 "operation_id": "list_ownership_history",
                 "http_method": "GET",
                 "version": "v2",
@@ -210,7 +210,7 @@ class CSMOwnershipApi:
             settings={
                 "response_type": (OwnershipHistoryResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/csm/ownership/{resource_id}/{owner_type}/history",
+                "endpoint_path": "/api/v2/security/ownership/{resource_id}/{owner_type}/history",
                 "operation_id": "list_ownership_history_by_owner_type",
                 "http_method": "GET",
                 "version": "v2",
@@ -253,7 +253,7 @@ class CSMOwnershipApi:
             settings={
                 "response_type": (OwnershipInferenceListResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/csm/ownership/{resource_id}",
+                "endpoint_path": "/api/v2/security/ownership/{resource_id}",
                 "operation_id": "list_ownership_inferences",
                 "http_method": "GET",
                 "version": "v2",
