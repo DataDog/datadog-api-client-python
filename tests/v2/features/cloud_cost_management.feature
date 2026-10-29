@@ -1021,6 +1021,14 @@ Feature: Cloud Cost Management
     Then the response status is 204 Successfully reordered rulesets
 
   @generated @skip @team:ddoghq/ccm-optimize
+  Scenario: Search cost recommendations returns "Bad Request" response
+    Given operation "SearchCostRecommendations" enabled
+    And new "SearchCostRecommendations" request
+    And body with value {"data": {"attributes": {"scope": "ccm", "sort": [{"expression": "@potential_daily_savings", "order": "DESC"}]}, "id": "@resource_table:aws_ec2_instance", "type": "recommendations_filter"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/ccm-optimize
   Scenario: Search cost recommendations returns "OK" response
     Given operation "SearchCostRecommendations" enabled
     And new "SearchCostRecommendations" request
