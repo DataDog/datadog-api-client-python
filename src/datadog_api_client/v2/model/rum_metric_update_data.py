@@ -19,6 +19,12 @@ if TYPE_CHECKING:
 
 
 class RumMetricUpdateData(ModelNormal):
+    validations = {
+        "id": {
+            "max_length": 200,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.rum_metric_update_attributes import RumMetricUpdateAttributes
@@ -40,15 +46,17 @@ class RumMetricUpdateData(ModelNormal):
         self_, attributes: RumMetricUpdateAttributes, type: RumMetricType, id: Union[str, UnsetType] = unset, **kwargs
     ):
         """
-        The new RUM-based metric properties.
+        The RUM-based metric properties to update. ``id`` is required by the API and must match the ``metric_id`` path parameter.
 
-        :param attributes: The RUM-based metric properties that will be updated.
+        :param attributes: The RUM-based metric properties that will be updated. Omitted properties keep their current value.
         :type attributes: RumMetricUpdateAttributes
 
         :param id: The name of the RUM-based metric.
+            On creation, it must be 1 to 200 characters long, contain only ASCII letters, digits, underscores, and periods, start with a letter, and not start with ``rum.measure`` or ``rum.investigate``.
+            It cannot be changed after creation.
         :type id: str, optional
 
-        :param type: The type of the resource. The value should always be rum_metrics.
+        :param type: The type of the resource. The value must be ``rum_metrics``.
         :type type: RumMetricType
         """
         if id is not unset:

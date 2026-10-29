@@ -15,6 +15,7 @@ from typing import ClassVar
 class RumMetricComputeAggregationType(ModelSimple):
     """
     The type of aggregation to use.
+        `count` counts the matching events. `distribution` aggregates the values found at `path`.
 
     :param value: Must be one of ["count", "distribution"].
     :type value: str

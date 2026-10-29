@@ -30,9 +30,9 @@ class RumMetricUpdateRequest(ModelNormal):
 
     def __init__(self_, data: RumMetricUpdateData, **kwargs):
         """
-        The new RUM-based metric body.
+        The RUM-based metric update body.
 
-        :param data: The new RUM-based metric properties.
+        :param data: The RUM-based metric properties to update. ``id`` is required by the API and must match the ``metric_id`` path parameter.
         :type data: RumMetricUpdateData
         """
         super().__init__(kwargs)

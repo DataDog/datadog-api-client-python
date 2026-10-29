@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class RumMetricEventType(ModelSimple):
     """
-    The type of RUM events to filter on.
+    The type of RUM events the metric is generated from. It is set at creation and cannot be changed.
 
     :param value: Must be one of ["session", "view", "action", "error", "resource", "long_task", "vital"].
     :type value: str

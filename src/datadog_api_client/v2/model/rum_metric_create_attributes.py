@@ -58,19 +58,20 @@ class RumMetricCreateAttributes(ModelNormal):
         """
         The object describing the Datadog RUM-based metric to create.
 
-        :param compute: The compute rule to compute the RUM-based metric.
+        :param compute: The compute rule to compute the RUM-based metric. It is set at creation and only ``include_percentiles`` can be updated afterwards.
         :type compute: RumMetricCompute
 
-        :param event_type: The type of RUM events to filter on.
+        :param event_type: The type of RUM events the metric is generated from. It is set at creation and cannot be changed.
         :type event_type: RumMetricEventType
 
-        :param filter: The RUM-based metric filter. Events matching this filter will be aggregated in this metric.
+        :param filter: The RUM-based metric filter. Events matching this filter will be aggregated in this metric. The ``event_type`` filter is added automatically.
         :type filter: RumMetricFilter, optional
 
-        :param group_by: The rules for the group by.
+        :param group_by: The rules to group the metric by. Each rule creates a tag on the generated metric. If omitted, the metric is not grouped.
         :type group_by: [RumMetricGroupBy], optional
 
-        :param uniqueness: The rule to count updatable events. Is only set if ``event_type`` is ``sessions`` or ``views``.
+        :param uniqueness: The rule to count updatable events.
+            Required when ``event_type`` is ``session`` or ``view`` , and must be omitted for other event types. It cannot be changed after creation.
         :type uniqueness: RumMetricUniqueness, optional
         """
         if filter is not unset:

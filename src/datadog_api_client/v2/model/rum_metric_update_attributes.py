@@ -46,15 +46,15 @@ class RumMetricUpdateAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        The RUM-based metric properties that will be updated.
+        The RUM-based metric properties that will be updated. Omitted properties keep their current value.
 
-        :param compute: The compute rule to compute the RUM-based metric.
+        :param compute: The compute rule properties that can be updated. Only valid for metrics whose ``aggregation_type`` is ``distribution``.
         :type compute: RumMetricUpdateCompute, optional
 
-        :param filter: The RUM-based metric filter. Events matching this filter will be aggregated in this metric.
+        :param filter: The RUM-based metric filter. Events matching this filter will be aggregated in this metric. The ``event_type`` filter is added automatically.
         :type filter: RumMetricFilter, optional
 
-        :param group_by: The rules for the group by.
+        :param group_by: The rules to group the metric by. When provided, replaces all the existing group by rules.
         :type group_by: [RumMetricGroupBy], optional
         """
         if compute is not unset:

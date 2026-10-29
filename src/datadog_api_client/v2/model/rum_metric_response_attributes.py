@@ -58,19 +58,19 @@ class RumMetricResponseAttributes(ModelNormal):
         """
         The object describing a Datadog RUM-based metric.
 
-        :param compute: The compute rule to compute the RUM-based metric.
+        :param compute: The compute rule of the RUM-based metric.
         :type compute: RumMetricResponseCompute, optional
 
-        :param event_type: The type of RUM events to filter on.
+        :param event_type: The type of RUM events the metric is generated from. It is set at creation and cannot be changed.
         :type event_type: RumMetricEventType, optional
 
-        :param filter: The RUM-based metric filter. RUM events matching this filter will be aggregated in this metric.
+        :param filter: The RUM-based metric filter. RUM events matching this filter are aggregated in this metric. Omitted if the metric only filters on the event type.
         :type filter: RumMetricResponseFilter, optional
 
-        :param group_by: The rules for the group by.
+        :param group_by: The rules the metric is grouped by. Omitted if the metric is not grouped.
         :type group_by: [RumMetricResponseGroupBy], optional
 
-        :param uniqueness: The rule to count updatable events. Is only set if ``event_type`` is ``session`` or ``view``.
+        :param uniqueness: The rule to count updatable events. Only present if ``event_type`` is ``session`` or ``view`` , and absent on older metrics created before this setting existed.
         :type uniqueness: RumMetricResponseUniqueness, optional
         """
         if compute is not unset:

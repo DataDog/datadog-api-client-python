@@ -138,7 +138,12 @@ class RumMetricsApi:
         """Create a RUM-based metric.
 
         Create a metric based on your organization's RUM data.
-        Returns the RUM-based metric object from the request body when the request is successful.
+        The metric name is set in ``data.id`` , is unique within your organization, and cannot be changed after creation.
+        The ``event_type`` , ``compute`` , and ``uniqueness`` settings cannot be changed after creation either. Only ``filter`` , ``group_by`` , and ``compute.include_percentiles`` can be changed with ``UpdateRumMetric``.
+        ``uniqueness`` is required when ``event_type`` is ``session`` or ``view`` , and must be omitted for any other event type.
+        When ``aggregation_type`` is ``distribution`` , ``include_percentiles`` is required. When it is ``count`` , ``include_percentiles`` and ``path`` must be omitted.
+        Returns the created RUM-based metric when the request is successful.
+        The request returns a ``409 Conflict`` error if a metric with the same name already exists.
 
         :param body: The definition of the new RUM-based metric.
         :type body: RumMetricCreateRequest
@@ -156,8 +161,9 @@ class RumMetricsApi:
         """Delete a RUM-based metric.
 
         Delete a specific RUM-based metric from your organization.
+        Metric data that was already generated is not deleted. Deleting a metric cannot be undone.
 
-        :param metric_id: The name of the RUM-based metric.
+        :param metric_id: The name of the RUM-based metric, as returned in ``data.id`` by ``ListRumMetrics``.
         :type metric_id: str
         :rtype: None
         """
@@ -173,8 +179,9 @@ class RumMetricsApi:
         """Get a RUM-based metric.
 
         Get a specific RUM-based metric from your organization.
+        The ``metric_id`` is the metric name returned in ``data.id`` by ``ListRumMetrics`` and ``CreateRumMetric``.
 
-        :param metric_id: The name of the RUM-based metric.
+        :param metric_id: The name of the RUM-based metric, as returned in ``data.id`` by ``ListRumMetrics``.
         :type metric_id: str
         :rtype: RumMetricResponse
         """
@@ -188,7 +195,10 @@ class RumMetricsApi:
     ) -> RumMetricsResponse:
         """Get all RUM-based metrics.
 
-        Get the list of configured RUM-based metrics with their definitions.
+        Get the list of all RUM-based metrics configured for your organization, with their definitions.
+        The list is not paginated.
+        Metrics whose stored definition cannot be converted to the RUM format are omitted from the list.
+        To retrieve a single metric, use ``GetRumMetric``.
 
         :rtype: RumMetricsResponse
         """
@@ -203,9 +213,13 @@ class RumMetricsApi:
         """Update a RUM-based metric.
 
         Update a specific RUM-based metric from your organization.
-        Returns the RUM-based metric object from the request body when the request is successful.
+        Only ``filter`` , ``group_by`` , and ``compute.include_percentiles`` can be updated. ``event_type`` , ``uniqueness`` , ``compute.aggregation_type`` , ``compute.path`` , and the metric name are immutable. To change them, delete the metric and create a new one.
+        Omitted attributes keep their current value. When provided, ``filter.query`` replaces the whole filter query (an empty query is ignored) and ``group_by`` replaces the whole list of group by rules.
+        ``data.id`` is required and must match the ``metric_id`` path parameter, otherwise the request returns a ``409 Conflict`` error.
+        The request also returns a ``409 Conflict`` error when ``compute.include_percentiles`` is set on a metric whose ``aggregation_type`` is not ``distribution``.
+        Returns the updated RUM-based metric when the request is successful.
 
-        :param metric_id: The name of the RUM-based metric.
+        :param metric_id: The name of the RUM-based metric, as returned in ``data.id`` by ``ListRumMetrics``.
         :type metric_id: str
         :param body: New definition of the RUM-based metric.
         :type body: RumMetricUpdateRequest
