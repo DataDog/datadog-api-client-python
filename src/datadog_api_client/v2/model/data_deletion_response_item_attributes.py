@@ -28,6 +28,7 @@ class DataDeletionResponseItemAttributes(ModelNormal):
             "org_id": (int,),
             "product": (str,),
             "query": (str,),
+            "recoverable_until": (str,),
             "source": (str,),
             "starting_at": (str,),
             "status": (str,),
@@ -48,6 +49,7 @@ class DataDeletionResponseItemAttributes(ModelNormal):
         "org_id": "org_id",
         "product": "product",
         "query": "query",
+        "recoverable_until": "recoverable_until",
         "source": "source",
         "starting_at": "starting_at",
         "status": "status",
@@ -74,6 +76,7 @@ class DataDeletionResponseItemAttributes(ModelNormal):
         customer_message: Union[str, UnsetType] = unset,
         error_category: Union[str, UnsetType] = unset,
         indexes: Union[List[str], UnsetType] = unset,
+        recoverable_until: Union[str, UnsetType] = unset,
         source: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -113,6 +116,9 @@ class DataDeletionResponseItemAttributes(ModelNormal):
         :param query: Query for creating a data deletion request.
         :type query: str
 
+        :param recoverable_until: Time when the recovery period for the deletion request ends. Before this time, you can cancel the request and recover the data. After this time, permanent deletion begins, and the status changes to ``deleting`` within a few minutes. This field is returned only for ``in_progress`` requests when listing deletion requests, and is omitted if the value cannot be determined.
+        :type recoverable_until: str, optional
+
         :param source: The source of the deletion request.
         :type source: str, optional
 
@@ -137,6 +143,8 @@ class DataDeletionResponseItemAttributes(ModelNormal):
             kwargs["error_category"] = error_category
         if indexes is not unset:
             kwargs["indexes"] = indexes
+        if recoverable_until is not unset:
+            kwargs["recoverable_until"] = recoverable_until
         if source is not unset:
             kwargs["source"] = source
         super().__init__(kwargs)

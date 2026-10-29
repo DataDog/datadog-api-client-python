@@ -17,16 +17,20 @@ class DataDeletionResponseMeta(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "available_slots": (int,),
             "count_product": ({str: (int,)},),
             "count_status": ({str: (int,)},),
+            "max_concurrent_requests": (int,),
             "next_page": (str,),
             "product": (str,),
             "request_status": (str,),
         }
 
     attribute_map = {
+        "available_slots": "available_slots",
         "count_product": "count_product",
         "count_status": "count_status",
+        "max_concurrent_requests": "max_concurrent_requests",
         "next_page": "next_page",
         "product": "product",
         "request_status": "request_status",
@@ -34,8 +38,10 @@ class DataDeletionResponseMeta(ModelNormal):
 
     def __init__(
         self_,
+        available_slots: Union[int, UnsetType] = unset,
         count_product: Union[Dict[str, int], UnsetType] = unset,
         count_status: Union[Dict[str, int], UnsetType] = unset,
+        max_concurrent_requests: Union[int, UnsetType] = unset,
         next_page: Union[str, UnsetType] = unset,
         product: Union[str, UnsetType] = unset,
         request_status: Union[str, UnsetType] = unset,
@@ -44,11 +50,17 @@ class DataDeletionResponseMeta(ModelNormal):
         """
         The metadata of the data deletion response.
 
+        :param available_slots: Number of additional deletion requests the current organization can create before reaching the concurrency limit. Requests with a ``pending`` , ``in_progress`` , or ``deleting`` status count toward the limit. This field is returned only when listing deletion requests, and is omitted if the value cannot be determined.
+        :type available_slots: int, optional
+
         :param count_product: The total deletion requests created by product.
         :type count_product: {str: (int,)}, optional
 
         :param count_status: The total deletion requests created by status.
         :type count_status: {str: (int,)}, optional
+
+        :param max_concurrent_requests: Maximum number of deletion requests with a ``pending`` , ``in_progress`` , or ``deleting`` status that the current organization can have at the same time. This field is returned only when listing deletion requests, and is omitted if the value cannot be determined.
+        :type max_concurrent_requests: int, optional
 
         :param next_page: The next page when searching deletion requests created in the current organization.
         :type next_page: str, optional
@@ -59,10 +71,14 @@ class DataDeletionResponseMeta(ModelNormal):
         :param request_status: The status of the executed request.
         :type request_status: str, optional
         """
+        if available_slots is not unset:
+            kwargs["available_slots"] = available_slots
         if count_product is not unset:
             kwargs["count_product"] = count_product
         if count_status is not unset:
             kwargs["count_status"] = count_status
+        if max_concurrent_requests is not unset:
+            kwargs["max_concurrent_requests"] = max_concurrent_requests
         if next_page is not unset:
             kwargs["next_page"] = next_page
         if product is not unset:
