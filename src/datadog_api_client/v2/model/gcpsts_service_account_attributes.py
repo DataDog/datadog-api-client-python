@@ -101,7 +101,7 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
             **Note:** This field is deprecated. Instead, use ``monitored_resource_configs`` with ``type=gce_instance`` **Deprecated**.
         :type host_filters: [str], optional
 
-        :param is_cspm_enabled: When enabled, Datadog will activate the Cloud Security Monitoring product for this service account. Note: This requires resource_collection_enabled to be set to true.
+        :param is_cspm_enabled: When enabled, Datadog will activate the Cloud Security Monitoring product for this service account. Note: This requires resource_collection_enabled or is_org_folder_resource_collection_enabled to be set to true.
         :type is_cspm_enabled: bool, optional
 
         :param is_global_location_enabled: When enabled, Datadog collects metrics where location is explicitly stated as "global" or where location information cannot be deduced from GCP labels.
