@@ -9642,6 +9642,20 @@
     {
       "feature": "RUM",
       "feature_file": "../../v2/features/rum.feature",
+      "file": "v2/rum/delete-source-maps-returns-ok-response.json",
+      "scenario": "Delete source maps returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM",
+      "feature_file": "../../v2/features/rum.feature",
+      "file": "v2/rum/get-a-javascript-source-map-returns-not-found-response.json",
+      "scenario": "Get a JavaScript source map returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM",
+      "feature_file": "../../v2/features/rum.feature",
       "file": "v2/rum/get-a-rum-application-returns-not-found-response.json",
       "scenario": "Get a RUM application returns \"Not Found\" response",
       "version": "v2"
@@ -9670,8 +9684,43 @@
     {
       "feature": "RUM",
       "feature_file": "../../v2/features/rum.feature",
+      "file": "v2/rum/get-service-repository-information-returns-bad-request-response.json",
+      "scenario": "Get service repository information returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM",
+      "feature_file": "../../v2/features/rum.feature",
+      "file": "v2/rum/get-service-repository-information-returns-ok-response.json",
+      "scenario": "Get service repository information returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM",
+      "feature_file": "../../v2/features/rum.feature",
       "file": "v2/rum/list-all-the-rum-applications-returns-ok-response.json",
       "scenario": "List all the RUM applications returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM",
+      "feature_file": "../../v2/features/rum.feature",
+      "file": "v2/rum/list-source-maps-returns-bad-request-response.json",
+      "scenario": "List source maps returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM",
+      "feature_file": "../../v2/features/rum.feature",
+      "file": "v2/rum/list-source-maps-returns-ok-response.json",
+      "scenario": "List source maps returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM",
+      "feature_file": "../../v2/features/rum.feature",
+      "file": "v2/rum/restore-source-maps-returns-ok-response.json",
+      "scenario": "Restore source maps returns \"OK\" response",
       "version": "v2"
     },
     {

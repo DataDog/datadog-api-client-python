@@ -1,0 +1,113 @@
+{
+  "api": "RUM",
+  "expected_status": 200,
+  "feature": "RUM",
+  "id": "v2/RUM/Delete source maps returns \"OK\" response",
+  "operation_id": "DeleteSourcemaps",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "mapkind",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": "SourcemapMapKind",
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "wasm"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "dry_run",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "boolean"
+        },
+        "source": {
+          "type": "literal",
+          "value": true
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "symbol_type",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": "SourcemapSymbolType",
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "sourcemap"
+        },
+        "style": null
+      },
+      {
+        "explode": true,
+        "in": "query",
+        "name": "filter[service]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "items": {
+            "format": null,
+            "ref": null,
+            "type": "string"
+          },
+          "ref": null,
+          "type": "array"
+        },
+        "source": {
+          "type": "literal",
+          "value": [
+            "nonexistent-svc"
+          ]
+        },
+        "style": "form"
+      },
+      {
+        "explode": true,
+        "in": "query",
+        "name": "filter[version]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "items": {
+            "format": null,
+            "ref": null,
+            "type": "string"
+          },
+          "ref": null,
+          "type": "array"
+        },
+        "source": {
+          "type": "literal",
+          "value": [
+            "0.0.0-none"
+          ]
+        },
+        "style": "form"
+      }
+    ],
+    "path": "/api/v2/sourcemaps"
+  },
+  "scenario": "Delete source maps returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

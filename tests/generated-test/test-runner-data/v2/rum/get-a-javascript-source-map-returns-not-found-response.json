@@ -1,0 +1,35 @@
+{
+  "api": "RUM",
+  "expected_status": 404,
+  "feature": "RUM",
+  "id": "v2/RUM/Get a JavaScript source map returns \"Not Found\" response",
+  "operation_id": "GetSourcemaps",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "debug_id",
+        "required": false,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "00000000-0000-4000-8000-000000000001"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/sourcemaps"
+  },
+  "scenario": "Get a JavaScript source map returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -11342,6 +11342,7 @@ from datadog_api_client.v2.model.sourcemap_file_response import SourcemapFileRes
 from datadog_api_client.v2.model.sourcemap_item import SourcemapItem
 from datadog_api_client.v2.model.sourcemap_map_kind import SourcemapMapKind
 from datadog_api_client.v2.model.sourcemap_search_by import SourcemapSearchBy
+from datadog_api_client.v2.model.sourcemap_symbol_type import SourcemapSymbolType
 from datadog_api_client.v2.model.sourcemaps_list_meta import SourcemapsListMeta
 from datadog_api_client.v2.model.sourcemaps_list_meta_page import SourcemapsListMetaPage
 from datadog_api_client.v2.model.sourcemaps_response import SourcemapsResponse
@@ -20492,6 +20493,7 @@ __all__ = [
     "SourcemapItem",
     "SourcemapMapKind",
     "SourcemapSearchBy",
+    "SourcemapSymbolType",
     "SourcemapsListMeta",
     "SourcemapsListMetaPage",
     "SourcemapsResponse",
