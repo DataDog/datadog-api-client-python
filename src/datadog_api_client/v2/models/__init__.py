@@ -6416,18 +6416,6 @@ from datadog_api_client.v2.model.metric_asset_response_relationships import Metr
 from datadog_api_client.v2.model.metric_asset_slo_relationship import MetricAssetSLORelationship
 from datadog_api_client.v2.model.metric_asset_slo_relationships import MetricAssetSLORelationships
 from datadog_api_client.v2.model.metric_assets_response import MetricAssetsResponse
-from datadog_api_client.v2.model.metric_bulk_configure_tags_type import MetricBulkConfigureTagsType
-from datadog_api_client.v2.model.metric_bulk_tag_config_create import MetricBulkTagConfigCreate
-from datadog_api_client.v2.model.metric_bulk_tag_config_create_attributes import MetricBulkTagConfigCreateAttributes
-from datadog_api_client.v2.model.metric_bulk_tag_config_create_request import MetricBulkTagConfigCreateRequest
-from datadog_api_client.v2.model.metric_bulk_tag_config_delete import MetricBulkTagConfigDelete
-from datadog_api_client.v2.model.metric_bulk_tag_config_delete_attributes import MetricBulkTagConfigDeleteAttributes
-from datadog_api_client.v2.model.metric_bulk_tag_config_delete_request import MetricBulkTagConfigDeleteRequest
-from datadog_api_client.v2.model.metric_bulk_tag_config_email_list import MetricBulkTagConfigEmailList
-from datadog_api_client.v2.model.metric_bulk_tag_config_response import MetricBulkTagConfigResponse
-from datadog_api_client.v2.model.metric_bulk_tag_config_status import MetricBulkTagConfigStatus
-from datadog_api_client.v2.model.metric_bulk_tag_config_status_attributes import MetricBulkTagConfigStatusAttributes
-from datadog_api_client.v2.model.metric_bulk_tag_config_tag_name_list import MetricBulkTagConfigTagNameList
 from datadog_api_client.v2.model.metric_content_encoding import MetricContentEncoding
 from datadog_api_client.v2.model.metric_custom_aggregation import MetricCustomAggregation
 from datadog_api_client.v2.model.metric_custom_aggregations import MetricCustomAggregations
@@ -17605,18 +17593,6 @@ __all__ = [
     "MetricAssetSLORelationship",
     "MetricAssetSLORelationships",
     "MetricAssetsResponse",
-    "MetricBulkConfigureTagsType",
-    "MetricBulkTagConfigCreate",
-    "MetricBulkTagConfigCreateAttributes",
-    "MetricBulkTagConfigCreateRequest",
-    "MetricBulkTagConfigDelete",
-    "MetricBulkTagConfigDeleteAttributes",
-    "MetricBulkTagConfigDeleteRequest",
-    "MetricBulkTagConfigEmailList",
-    "MetricBulkTagConfigResponse",
-    "MetricBulkTagConfigStatus",
-    "MetricBulkTagConfigStatusAttributes",
-    "MetricBulkTagConfigTagNameList",
     "MetricContentEncoding",
     "MetricCustomAggregation",
     "MetricCustomAggregations",

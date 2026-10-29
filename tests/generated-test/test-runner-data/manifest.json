@@ -7486,13 +7486,6 @@
     {
       "feature": "Metrics",
       "feature_file": "../../v2/features/metrics.feature",
-      "file": "v2/metrics/configure-tags-for-multiple-metrics-returns-accepted-response.json",
-      "scenario": "Configure tags for multiple metrics returns \"Accepted\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "Metrics",
-      "feature_file": "../../v2/features/metrics.feature",
       "file": "v2/metrics/create-a-derived-metric-returns-bad-request-response.json",
       "scenario": "Create a derived metric returns \"Bad Request\" response",
       "version": "v2"
