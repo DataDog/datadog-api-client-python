@@ -4532,20 +4532,6 @@
     {
       "feature": "CSM Threats",
       "feature_file": "../../v2/features/csm_threats.feature",
-      "file": "v2/csm-threats/create-a-workload-protection-agent-rule-us1-fed-returns-bad-request-response.json",
-      "scenario": "Create a Workload Protection agent rule (US1-FED) returns \"Bad Request\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "CSM Threats",
-      "feature_file": "../../v2/features/csm_threats.feature",
-      "file": "v2/csm-threats/create-a-workload-protection-agent-rule-us1-fed-returns-ok-response.json",
-      "scenario": "Create a Workload Protection agent rule (US1-FED) returns \"OK\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "CSM Threats",
-      "feature_file": "../../v2/features/csm_threats.feature",
       "file": "v2/csm-threats/create-a-workload-protection-agent-rule-returns-bad-request-response.json",
       "scenario": "Create a Workload Protection agent rule returns \"Bad Request\" response",
       "version": "v2"
@@ -4583,20 +4569,6 @@
       "feature_file": "../../v2/features/csm_threats.feature",
       "file": "v2/csm-threats/create-a-workload-protection-policy-returns-created-response.json",
       "scenario": "Create a Workload Protection policy returns \"Created\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "CSM Threats",
-      "feature_file": "../../v2/features/csm_threats.feature",
-      "file": "v2/csm-threats/delete-a-workload-protection-agent-rule-us1-fed-returns-not-found-response.json",
-      "scenario": "Delete a Workload Protection agent rule (US1-FED) returns \"Not Found\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "CSM Threats",
-      "feature_file": "../../v2/features/csm_threats.feature",
-      "file": "v2/csm-threats/delete-a-workload-protection-agent-rule-us1-fed-returns-ok-response.json",
-      "scenario": "Delete a Workload Protection agent rule (US1-FED) returns \"OK\" response",
       "version": "v2"
     },
     {
@@ -4651,13 +4623,6 @@
     {
       "feature": "CSM Threats",
       "feature_file": "../../v2/features/csm_threats.feature",
-      "file": "v2/csm-threats/get-a-workload-protection-agent-rule-us1-fed-returns-ok-response.json",
-      "scenario": "Get a Workload Protection agent rule (US1-FED) returns \"OK\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "CSM Threats",
-      "feature_file": "../../v2/features/csm_threats.feature",
       "file": "v2/csm-threats/get-a-workload-protection-agent-rule-returns-not-found-response.json",
       "scenario": "Get a Workload Protection agent rule returns \"Not Found\" response",
       "version": "v2"
@@ -4702,27 +4667,6 @@
       "feature_file": "../../v2/features/csm_threats.feature",
       "file": "v2/csm-threats/get-all-workload-protection-policies-returns-ok-response.json",
       "scenario": "Get all Workload Protection policies returns \"OK\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "CSM Threats",
-      "feature_file": "../../v2/features/csm_threats.feature",
-      "file": "v2/csm-threats/update-a-workload-protection-agent-rule-us1-fed-returns-bad-request-response.json",
-      "scenario": "Update a Workload Protection agent rule (US1-FED) returns \"Bad Request\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "CSM Threats",
-      "feature_file": "../../v2/features/csm_threats.feature",
-      "file": "v2/csm-threats/update-a-workload-protection-agent-rule-us1-fed-returns-not-found-response.json",
-      "scenario": "Update a Workload Protection agent rule (US1-FED) returns \"Not Found\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "CSM Threats",
-      "feature_file": "../../v2/features/csm_threats.feature",
-      "file": "v2/csm-threats/update-a-workload-protection-agent-rule-us1-fed-returns-ok-response.json",
-      "scenario": "Update a Workload Protection agent rule (US1-FED) returns \"OK\" response",
       "version": "v2"
     },
     {
