@@ -62,7 +62,7 @@ class SensitiveDataScannerGetConfigResponse(ModelNormal):
         :param included: Included objects from relationships.
         :type included: SensitiveDataScannerGetConfigIncludedArray, optional
 
-        :param meta: Meta response containing information about the API.
+        :param meta: Meta response. Always an empty object.
         :type meta: SensitiveDataScannerMeta, optional
         """
         if data is not unset:

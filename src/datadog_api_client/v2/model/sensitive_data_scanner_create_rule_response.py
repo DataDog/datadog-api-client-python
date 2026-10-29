@@ -15,20 +15,18 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.sensitive_data_scanner_rule_response import SensitiveDataScannerRuleResponse
-    from datadog_api_client.v2.model.sensitive_data_scanner_meta_version_only import SensitiveDataScannerMetaVersionOnly
+    from datadog_api_client.v2.model.sensitive_data_scanner_meta import SensitiveDataScannerMeta
 
 
 class SensitiveDataScannerCreateRuleResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.sensitive_data_scanner_rule_response import SensitiveDataScannerRuleResponse
-        from datadog_api_client.v2.model.sensitive_data_scanner_meta_version_only import (
-            SensitiveDataScannerMetaVersionOnly,
-        )
+        from datadog_api_client.v2.model.sensitive_data_scanner_meta import SensitiveDataScannerMeta
 
         return {
             "data": (SensitiveDataScannerRuleResponse,),
-            "meta": (SensitiveDataScannerMetaVersionOnly,),
+            "meta": (SensitiveDataScannerMeta,),
         }
 
     attribute_map = {
@@ -39,7 +37,7 @@ class SensitiveDataScannerCreateRuleResponse(ModelNormal):
     def __init__(
         self_,
         data: Union[SensitiveDataScannerRuleResponse, UnsetType] = unset,
-        meta: Union[SensitiveDataScannerMetaVersionOnly, UnsetType] = unset,
+        meta: Union[SensitiveDataScannerMeta, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -48,8 +46,8 @@ class SensitiveDataScannerCreateRuleResponse(ModelNormal):
         :param data: Response data related to the creation of a rule.
         :type data: SensitiveDataScannerRuleResponse, optional
 
-        :param meta: Meta payload containing information about the API.
-        :type meta: SensitiveDataScannerMetaVersionOnly, optional
+        :param meta: Meta response. Always an empty object.
+        :type meta: SensitiveDataScannerMeta, optional
         """
         if data is not unset:
             kwargs["data"] = data

@@ -60,6 +60,8 @@ Feature: Sensitive Data Scanner
     Then the response status is 201 OK
     And the response "data.type" is equal to "sensitive_data_scanner_rule"
     And the response "data.attributes.name" is equal to "{{ unique }}"
+    And the response "data.attributes.namespaces" is equal to []
+    And the response "data.attributes.excluded_namespaces" is equal to []
 
   @generated @skip @team:ddoghq/sensitive-data-scanner
   Scenario: Delete Scanning Group returns "Bad Request" response
