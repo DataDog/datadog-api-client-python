@@ -16,7 +16,7 @@ from datadog_api_client.model_utils import (
 class RecommendationsPageMetaPage(ModelNormal):
     validations = {
         "page_size": {
-            "inclusive_maximum": 10000,
+            "inclusive_maximum": 5000,
             "inclusive_minimum": 1,
         },
     }
@@ -54,7 +54,7 @@ class RecommendationsPageMetaPage(ModelNormal):
         :param next_page_token: Opaque token used to fetch the next page; absent on the last page.
         :type next_page_token: str, optional
 
-        :param page_size: Number of items returned in this page (1–10000).
+        :param page_size: Number of items returned in this page (1–5000).
         :type page_size: int, optional
 
         :param page_token: Pagination token echoed back from the request.

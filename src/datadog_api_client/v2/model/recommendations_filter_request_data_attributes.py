@@ -58,13 +58,15 @@ class RecommendationsFilterRequestDataAttributes(ModelNormal):
             is empty, it defaults to ``*``. Scope, view, and pagination still apply.
         :type filter: str, optional
 
-        :param scope: Recommendations scope. Defaults to ``ccm`` ; use ``experiment`` for experimental recommendations or ``*`` for both.
+        :param scope: Recommendations scope. Defaults to ``ccm`` ; use ``experiment`` for experimental recommendations
+            or ``*`` for both.
         :type scope: RecommendationsFilterRequestScope, optional
 
         :param sort: Ordered list of sort clauses applied to the result set.
         :type sort: [RecommendationsFilterRequestSortItems], optional
 
-        :param view: Active view name (for example, ``active`` , ``dismissed`` , ``open`` , ``in-progress`` , or ``completed`` ).
+        :param view: Status view to return: ``all`` , ``active`` (not dismissed), ``dismissed`` , ``open`` , ``in-progress`` ,
+            or ``completed``. Defaults to ``all`` , which returns recommendations in every status.
         :type view: str, optional
         """
         if filter is not unset:

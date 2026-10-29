@@ -14,7 +14,8 @@ from typing import ClassVar
 
 class RecommendationsFilterRequestScope(ModelSimple):
     """
-    Recommendations scope. Defaults to `ccm`; use `experiment` for experimental recommendations or `*` for both.
+    Recommendations scope. Defaults to `ccm`; use `experiment` for experimental recommendations
+        or `*` for both.
 
     :param value: Must be one of ["ccm", "experiment", "*"].
     :type value: str

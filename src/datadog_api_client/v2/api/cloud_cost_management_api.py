@@ -1836,7 +1836,11 @@ class CloudCostManagementApi:
             },
             params_map={
                 "page_size": {
-                    "openapi_types": (str,),
+                    "validation": {
+                        "inclusive_maximum": 5000,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
                     "attribute": "page[size]",
                     "location": "query",
                 },
@@ -3653,7 +3657,7 @@ class CloudCostManagementApi:
         self,
         body: RecommendationsFilterRequest,
         *,
-        page_size: Union[str, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
         page_token: Union[str, UnsetType] = unset,
     ) -> CostRecommendationArray:
         """Search cost recommendations.
@@ -3661,8 +3665,8 @@ class CloudCostManagementApi:
         List cost recommendations matching a filter, with pagination and sorting.
 
         :type body: RecommendationsFilterRequest
-        :param page_size: Number of results per page (1–10000).
-        :type page_size: str, optional
+        :param page_size: Number of results per page, from 1 to 5000. Defaults to 50.
+        :type page_size: int, optional
         :param page_token: Pagination token from a previous response.
         :type page_token: str, optional
         :rtype: CostRecommendationArray
