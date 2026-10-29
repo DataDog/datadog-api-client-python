@@ -6059,25 +6059,6 @@
       "type": "safe"
     }
   },
-  "DeleteBulkTagsMetricsConfiguration": {
-    "tag": "Metrics",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "CreateBulkTagsMetricsConfiguration": {
-    "tag": "Metrics",
-    "undo": {
-      "operationId": "DeleteBulkTagsMetricsConfiguration",
-      "parameters": [
-        {
-          "name": "body",
-          "template": "{\n  \"data\": {\n    \"id\":\"{{ data.id }}\",\n    \"type\":\"metric_bulk_configure_tags\",\n    \"attributes\": {\n      \"emails\": [\"{{ data.attributes.emails[0] }}\"]\n    }\n  }\n}"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
   "CreateDerivedMetric": {
     "tag": "Metrics",
     "undo": {

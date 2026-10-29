@@ -15,31 +15,6 @@ Feature: Metrics
     Given a valid "apiKeyAuth" key in the system
     And an instance of "Metrics" API
 
-  @skip-typescript @team:ddoghq/metrics-experience
-  Scenario: Configure tags for multiple metrics returns "Accepted" response
-    Given a valid "appKeyAuth" key in the system
-    And there is a valid "user" in the system
-    And new "CreateBulkTagsMetricsConfiguration" request
-    And body with value {"data": {"attributes": {"emails": ["{{ user.data.attributes.email }}"], "tags": ["test", "{{ unique_lower_alnum }}"]}, "id": "system.load.1", "type": "metric_bulk_configure_tags"}}
-    When the request is sent
-    Then the response status is 202 Accepted
-
-  @generated @skip @team:ddoghq/metrics-experience
-  Scenario: Configure tags for multiple metrics returns "Bad Request" response
-    Given a valid "appKeyAuth" key in the system
-    And new "CreateBulkTagsMetricsConfiguration" request
-    And body with value {"data": {"attributes": {"emails": ["sue@example.com", "bob@example.com"], "tags": ["host", "pod_name", "is_shadow"]}, "id": "kafka.lag", "type": "metric_bulk_configure_tags"}}
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:ddoghq/metrics-experience
-  Scenario: Configure tags for multiple metrics returns "Not Found" response
-    Given a valid "appKeyAuth" key in the system
-    And new "CreateBulkTagsMetricsConfiguration" request
-    And body with value {"data": {"attributes": {"emails": ["sue@example.com", "bob@example.com"], "tags": ["host", "pod_name", "is_shadow"]}, "id": "kafka.lag", "type": "metric_bulk_configure_tags"}}
-    When the request is sent
-    Then the response status is 404 Not Found
-
   @team:ddoghq/metrics-experience
   Scenario: Create a derived metric returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
@@ -262,30 +237,6 @@ Feature: Metrics
     And request contains "id" parameter from "tag_indexing_rule.data.id"
     When the request is sent
     Then the response status is 204 No Content
-
-  @generated @skip @team:ddoghq/metrics-experience
-  Scenario: Delete tags for multiple metrics returns "Accepted" response
-    Given a valid "appKeyAuth" key in the system
-    And new "DeleteBulkTagsMetricsConfiguration" request
-    And body with value {"data": {"attributes": {"emails": ["sue@example.com", "bob@example.com"]}, "id": "kafka.lag", "type": "metric_bulk_configure_tags"}}
-    When the request is sent
-    Then the response status is 202 Accepted
-
-  @generated @skip @team:ddoghq/metrics-experience
-  Scenario: Delete tags for multiple metrics returns "Bad Request" response
-    Given a valid "appKeyAuth" key in the system
-    And new "DeleteBulkTagsMetricsConfiguration" request
-    And body with value {"data": {"attributes": {"emails": ["sue@example.com", "bob@example.com"]}, "id": "kafka.lag", "type": "metric_bulk_configure_tags"}}
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:ddoghq/metrics-experience
-  Scenario: Delete tags for multiple metrics returns "Not Found" response
-    Given a valid "appKeyAuth" key in the system
-    And new "DeleteBulkTagsMetricsConfiguration" request
-    And body with value {"data": {"attributes": {"emails": ["sue@example.com", "bob@example.com"]}, "id": "kafka.lag", "type": "metric_bulk_configure_tags"}}
-    When the request is sent
-    Then the response status is 404 Not Found
 
   @generated @skip @team:ddoghq/metrics-experience
   Scenario: Enable historical metrics ingestion returns "Bad Request" response

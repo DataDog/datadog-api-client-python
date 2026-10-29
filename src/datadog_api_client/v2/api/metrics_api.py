@@ -5,7 +5,6 @@ from __future__ import annotations
 
 import collections
 from typing import Any, Dict, Union
-import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -23,9 +22,6 @@ from datadog_api_client.v2.model.metric_tag_configuration_metric_type_category i
     MetricTagConfigurationMetricTypeCategory,
 )
 from datadog_api_client.v2.model.metrics_and_metric_tag_configurations import MetricsAndMetricTagConfigurations
-from datadog_api_client.v2.model.metric_bulk_tag_config_response import MetricBulkTagConfigResponse
-from datadog_api_client.v2.model.metric_bulk_tag_config_delete_request import MetricBulkTagConfigDeleteRequest
-from datadog_api_client.v2.model.metric_bulk_tag_config_create_request import MetricBulkTagConfigCreateRequest
 from datadog_api_client.v2.model.derived_metric_response import DerivedMetricResponse
 from datadog_api_client.v2.model.derived_metric_create_request import DerivedMetricCreateRequest
 from datadog_api_client.v2.model.historical_metrics_configuration_response import HistoricalMetricsConfigurationResponse
@@ -86,26 +82,6 @@ class MetricsApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
-
-        self._create_bulk_tags_metrics_configuration_endpoint = _Endpoint(
-            settings={
-                "response_type": (MetricBulkTagConfigResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/metrics/config/bulk-tags",
-                "operation_id": "create_bulk_tags_metrics_configuration",
-                "http_method": "POST",
-                "version": "v2",
-            },
-            params_map={
-                "body": {
-                    "required": True,
-                    "openapi_types": (MetricBulkTagConfigCreateRequest,),
-                    "location": "body",
-                },
-            },
-            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
-            api_client=api_client,
-        )
 
         self._create_derived_metric_endpoint = _Endpoint(
             settings={
@@ -212,26 +188,6 @@ class MetricsApi:
                 "body": {
                     "required": True,
                     "openapi_types": (TagIndexingRuleExemptionCreateRequest,),
-                    "location": "body",
-                },
-            },
-            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
-            api_client=api_client,
-        )
-
-        self._delete_bulk_tags_metrics_configuration_endpoint = _Endpoint(
-            settings={
-                "response_type": (MetricBulkTagConfigResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/metrics/config/bulk-tags",
-                "operation_id": "delete_bulk_tags_metrics_configuration",
-                "http_method": "DELETE",
-                "version": "v2",
-            },
-            params_map={
-                "body": {
-                    "required": True,
-                    "openapi_types": (MetricBulkTagConfigDeleteRequest,),
                     "location": "body",
                 },
             },
@@ -1085,31 +1041,6 @@ class MetricsApi:
             api_client=api_client,
         )
 
-    def create_bulk_tags_metrics_configuration(
-        self,
-        body: MetricBulkTagConfigCreateRequest,
-    ) -> MetricBulkTagConfigResponse:
-        """Configure tags for multiple metrics. **Deprecated**.
-
-        **Note** : This endpoint is deprecated. Use `Tag Indexing Rules </api/latest/metrics/#create-a-tag-indexing-rule>`_ ( ``POST /api/v2/metrics/tag-indexing-rules`` ) instead.
-
-        Create and define a list of queryable tag keys for a set of existing count, gauge, rate, and distribution metrics.
-        Metrics are selected by passing a metric name prefix. Use the Delete method of this API path to remove tag configurations.
-        Results can be sent to a set of account email addresses, just like the same operation in the Datadog web app.
-        If multiple calls include the same metric, the last configuration applied (not by submit order) is used, do not
-        expect deterministic ordering of concurrent calls. The ``exclude_tags_mode`` value will set all metrics that match the prefix to
-        the same exclusion state, metric tag configurations do not support mixed inclusion and exclusion for tags on the same metric.
-        Can only be used with application keys of users with the ``Manage Tags for Metrics`` permission.
-
-        :type body: MetricBulkTagConfigCreateRequest
-        :rtype: MetricBulkTagConfigResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["body"] = body
-
-        warnings.warn("create_bulk_tags_metrics_configuration is deprecated", DeprecationWarning, stacklevel=2)
-        return self._create_bulk_tags_metrics_configuration_endpoint.call_with_http_info(**kwargs)
-
     def create_derived_metric(
         self,
         body: DerivedMetricCreateRequest,
@@ -1211,28 +1142,6 @@ class MetricsApi:
         kwargs["body"] = body
 
         return self._create_tag_indexing_rule_exemption_endpoint.call_with_http_info(**kwargs)
-
-    def delete_bulk_tags_metrics_configuration(
-        self,
-        body: MetricBulkTagConfigDeleteRequest,
-    ) -> MetricBulkTagConfigResponse:
-        """Delete tags for multiple metrics. **Deprecated**.
-
-        **Note** : This endpoint is deprecated. Use `Tag Indexing Rules </api/latest/metrics/#create-a-tag-indexing-rule>`_ ( ``POST /api/v2/metrics/tag-indexing-rules`` ) instead.
-
-        Delete all custom lists of queryable tag keys for a set of existing count, gauge, rate, and distribution metrics.
-        Metrics are selected by passing a metric name prefix.
-        Results can be sent to a set of account email addresses, just like the same operation in the Datadog web app.
-        Can only be used with application keys of users with the ``Manage Tags for Metrics`` permission.
-
-        :type body: MetricBulkTagConfigDeleteRequest
-        :rtype: MetricBulkTagConfigResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["body"] = body
-
-        warnings.warn("delete_bulk_tags_metrics_configuration is deprecated", DeprecationWarning, stacklevel=2)
-        return self._delete_bulk_tags_metrics_configuration_endpoint.call_with_http_info(**kwargs)
 
     def delete_derived_metric(
         self,
