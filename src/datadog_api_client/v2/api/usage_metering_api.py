@@ -889,6 +889,34 @@ class UsageMeteringApi:
         accompany an immediate limit or update an existing quota by itself.
         Scheduled changes follow ``include_descendants`` like the other fields. Requires the ``billing_edit`` permission.
 
+        **Quota namespaces and scope keys**
+
+        The ``quota_namespace`` path parameter selects the product whose usage quotas are managed. Each namespace
+        supports its own scope keys, described below. Omit ``scope`` for the organization-wide quota.
+
+        **ai_credits scope keys**
+
+        Each item's ``scope`` contains exactly one of the following keys.
+
+        **user_handle**
+
+        * **Value:** The handle of a user, for example ``jane@example.com`` , or ``"*"`` for the default quota applied to
+          users without a specific quota. User handles are returned in the ``data[].attributes.handle`` field by the
+          `Users API <https://docs.datadoghq.com/api/latest/users/#list-all-users>`_.
+        * **Validation:** A specific handle must identify an existing user in the caller's organization when
+          ``include_descendants`` is false. When ``include_descendants`` is true, the handle must exist in the caller's
+          organization or in at least one targeted descendant organization. The quota is then applied only to the
+          organizations where the handle exists, and the item fails only if the handle exists in none of them.
+
+        **role_uuid**
+
+        * **Value:** The UUID of a role, for example ``12345678-1234-1234-1234-123456789012``. ``"*"`` is not accepted
+          because there is no default role quota. Role UUIDs are returned in the ``data[].id`` field by the
+          `Roles API <https://docs.datadoghq.com/api/latest/roles/#list-roles>`_.
+        * **Validation:** The role must exist in the caller's organization. Role UUIDs are unique, so
+          ``include_descendants`` has no effect on a ``role_uuid`` scope: the role is validated against the caller's
+          organization only.
+
         :param quota_namespace: The product-specific namespace whose usage quotas are being managed.
         :type quota_namespace: str
         :param body: The usage quotas to create or update.
