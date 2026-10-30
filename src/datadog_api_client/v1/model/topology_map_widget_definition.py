@@ -38,6 +38,12 @@ class TopologyMapWidgetDefinition(ModelComposed):
 
         :param type: Type of the topology map widget.
         :type type: TopologyMapWidgetDefinitionType
+
+        :param data: Static nodes and edges, stored in columns. Within a table, every column must have the same number of values and a unique `id`.
+        :type data: TopologyMapInlineData, optional
+
+        :param layout: Algorithm that positions nodes and edges. The `hierarchical` layout places nodes in ranks so edges flow in one direction.
+        :type layout: TopologyMapLayout
         """
         super().__init__(kwargs)
 
@@ -56,10 +62,12 @@ class TopologyMapWidgetDefinition(ModelComposed):
         from datadog_api_client.v1.model.topology_map_widget_definition_service_map import (
             TopologyMapWidgetDefinitionServiceMap,
         )
+        from datadog_api_client.v1.model.topology_map_widget_definition_custom import TopologyMapWidgetDefinitionCustom
 
         return {
             "oneOf": [
                 TopologyMapWidgetDefinitionDataStreams,
                 TopologyMapWidgetDefinitionServiceMap,
+                TopologyMapWidgetDefinitionCustom,
             ],
         }

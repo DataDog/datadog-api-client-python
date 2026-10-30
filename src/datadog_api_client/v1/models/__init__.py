@@ -1297,7 +1297,25 @@ from datadog_api_client.v1.model.toplist_widget_scaling import ToplistWidgetScal
 from datadog_api_client.v1.model.toplist_widget_stacked import ToplistWidgetStacked
 from datadog_api_client.v1.model.toplist_widget_stacked_type import ToplistWidgetStackedType
 from datadog_api_client.v1.model.toplist_widget_style import ToplistWidgetStyle
+from datadog_api_client.v1.model.topology_map_inline_column_kind_scalar import TopologyMapInlineColumnKindScalar
+from datadog_api_client.v1.model.topology_map_inline_column_kind_string import TopologyMapInlineColumnKindString
+from datadog_api_client.v1.model.topology_map_inline_data import TopologyMapInlineData
+from datadog_api_client.v1.model.topology_map_inline_edge_column import TopologyMapInlineEdgeColumn
+from datadog_api_client.v1.model.topology_map_inline_edge_column_id import TopologyMapInlineEdgeColumnId
+from datadog_api_client.v1.model.topology_map_inline_edges_data import TopologyMapInlineEdgesData
+from datadog_api_client.v1.model.topology_map_inline_node_column import TopologyMapInlineNodeColumn
+from datadog_api_client.v1.model.topology_map_inline_node_id_column import TopologyMapInlineNodeIdColumn
+from datadog_api_client.v1.model.topology_map_inline_node_id_column_id import TopologyMapInlineNodeIdColumnId
+from datadog_api_client.v1.model.topology_map_inline_node_string_column import TopologyMapInlineNodeStringColumn
+from datadog_api_client.v1.model.topology_map_inline_node_string_column_id import TopologyMapInlineNodeStringColumnId
+from datadog_api_client.v1.model.topology_map_inline_node_value_column import TopologyMapInlineNodeValueColumn
+from datadog_api_client.v1.model.topology_map_inline_node_value_column_meta import TopologyMapInlineNodeValueColumnMeta
+from datadog_api_client.v1.model.topology_map_inline_nodes_data import TopologyMapInlineNodesData
+from datadog_api_client.v1.model.topology_map_layout import TopologyMapLayout
+from datadog_api_client.v1.model.topology_map_layout_direction import TopologyMapLayoutDirection
+from datadog_api_client.v1.model.topology_map_layout_type import TopologyMapLayoutType
 from datadog_api_client.v1.model.topology_map_widget_definition import TopologyMapWidgetDefinition
+from datadog_api_client.v1.model.topology_map_widget_definition_custom import TopologyMapWidgetDefinitionCustom
 from datadog_api_client.v1.model.topology_map_widget_definition_data_streams import (
     TopologyMapWidgetDefinitionDataStreams,
 )
@@ -1307,6 +1325,13 @@ from datadog_api_client.v1.model.topology_query_data_streams import TopologyQuer
 from datadog_api_client.v1.model.topology_query_data_streams_data_source import TopologyQueryDataStreamsDataSource
 from datadog_api_client.v1.model.topology_query_service_map import TopologyQueryServiceMap
 from datadog_api_client.v1.model.topology_query_service_map_data_source import TopologyQueryServiceMapDataSource
+from datadog_api_client.v1.model.topology_request_custom import TopologyRequestCustom
+from datadog_api_client.v1.model.topology_request_custom_projection import TopologyRequestCustomProjection
+from datadog_api_client.v1.model.topology_request_custom_projection_dimension import (
+    TopologyRequestCustomProjectionDimension,
+)
+from datadog_api_client.v1.model.topology_request_custom_projection_type import TopologyRequestCustomProjectionType
+from datadog_api_client.v1.model.topology_request_custom_response_format import TopologyRequestCustomResponseFormat
 from datadog_api_client.v1.model.topology_request_data_streams import TopologyRequestDataStreams
 from datadog_api_client.v1.model.topology_request_service_map import TopologyRequestServiceMap
 from datadog_api_client.v1.model.topology_request_type import TopologyRequestType
@@ -2534,7 +2559,25 @@ __all__ = [
     "ToplistWidgetStacked",
     "ToplistWidgetStackedType",
     "ToplistWidgetStyle",
+    "TopologyMapInlineColumnKindScalar",
+    "TopologyMapInlineColumnKindString",
+    "TopologyMapInlineData",
+    "TopologyMapInlineEdgeColumn",
+    "TopologyMapInlineEdgeColumnId",
+    "TopologyMapInlineEdgesData",
+    "TopologyMapInlineNodeColumn",
+    "TopologyMapInlineNodeIdColumn",
+    "TopologyMapInlineNodeIdColumnId",
+    "TopologyMapInlineNodeStringColumn",
+    "TopologyMapInlineNodeStringColumnId",
+    "TopologyMapInlineNodeValueColumn",
+    "TopologyMapInlineNodeValueColumnMeta",
+    "TopologyMapInlineNodesData",
+    "TopologyMapLayout",
+    "TopologyMapLayoutDirection",
+    "TopologyMapLayoutType",
     "TopologyMapWidgetDefinition",
+    "TopologyMapWidgetDefinitionCustom",
     "TopologyMapWidgetDefinitionDataStreams",
     "TopologyMapWidgetDefinitionServiceMap",
     "TopologyMapWidgetDefinitionType",
@@ -2542,6 +2585,11 @@ __all__ = [
     "TopologyQueryDataStreamsDataSource",
     "TopologyQueryServiceMap",
     "TopologyQueryServiceMapDataSource",
+    "TopologyRequestCustom",
+    "TopologyRequestCustomProjection",
+    "TopologyRequestCustomProjectionDimension",
+    "TopologyRequestCustomProjectionType",
+    "TopologyRequestCustomResponseFormat",
     "TopologyRequestDataStreams",
     "TopologyRequestServiceMap",
     "TopologyRequestType",
