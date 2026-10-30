@@ -26,7 +26,7 @@ class DashboardListItem(ModelNormal):
             "inclusive_maximum": 5,
         },
         "tags": {
-            "max_items": 5,
+            "max_items": 7,
         },
     }
 
@@ -133,7 +133,7 @@ class DashboardListItem(ModelNormal):
         :param popularity: Popularity of the dashboard.
         :type popularity: int, optional
 
-        :param tags: List of team names representing ownership of a dashboard.
+        :param tags: Tags associated with the dashboard. Supports up to five team tags and two AI tags.
         :type tags: [str], none_type, optional
 
         :param title: Title of the dashboard.
