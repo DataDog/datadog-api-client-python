@@ -56,7 +56,7 @@ class ContainerImageFlavor(ModelNormal):
         :param os_version: Operating System version supported by the Container Image.
         :type os_version: str, optional
 
-        :param size: Size of the platform-specific Container Image.
+        :param size: Size of the platform-specific Container Image in bytes.
         :type size: int, optional
         """
         if built_at is not unset:
