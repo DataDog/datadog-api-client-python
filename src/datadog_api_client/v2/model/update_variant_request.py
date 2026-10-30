@@ -3,41 +3,38 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.update_variant_data import UpdateVariantData
 
 
 class UpdateVariantRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.update_variant_data import UpdateVariantData
+
         return {
-            "name": (str,),
-            "value": (str,),
+            "data": (UpdateVariantData,),
         }
 
     attribute_map = {
-        "name": "name",
-        "value": "value",
+        "data": "data",
     }
 
-    def __init__(self_, name: Union[str, UnsetType] = unset, value: Union[str, UnsetType] = unset, **kwargs):
+    def __init__(self_, data: UpdateVariantData, **kwargs):
         """
         Request to update an existing variant's name and value.
 
-        :param name: The display name of the variant.
-        :type name: str, optional
-
-        :param value: The value of the variant as a string.
-        :type value: str, optional
+        :param data: Data for updating a variant.
+        :type data: UpdateVariantData
         """
-        if name is not unset:
-            kwargs["name"] = name
-        if value is not unset:
-            kwargs["value"] = value
         super().__init__(kwargs)
+
+        self_.data = data

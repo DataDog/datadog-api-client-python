@@ -31,8 +31,8 @@ from datadog_api_client.v2.model.allocation_response import AllocationResponse
 from datadog_api_client.v2.model.create_allocations_request import CreateAllocationsRequest
 from datadog_api_client.v2.model.list_allocations_response import ListAllocationsResponse
 from datadog_api_client.v2.model.overwrite_allocations_request import OverwriteAllocationsRequest
-from datadog_api_client.v2.model.variant import Variant
-from datadog_api_client.v2.model.create_variant import CreateVariant
+from datadog_api_client.v2.model.variant_response import VariantResponse
+from datadog_api_client.v2.model.create_variant_request import CreateVariantRequest
 from datadog_api_client.v2.model.update_variant_request import UpdateVariantRequest
 
 
@@ -143,7 +143,7 @@ class FeatureFlagsApi:
 
         self._create_variant_for_feature_flag_endpoint = _Endpoint(
             settings={
-                "response_type": (Variant,),
+                "response_type": (VariantResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/feature-flags/{feature_flag_id}/variants",
                 "operation_id": "create_variant_for_feature_flag",
@@ -159,7 +159,7 @@ class FeatureFlagsApi:
                 },
                 "body": {
                     "required": True,
-                    "openapi_types": (CreateVariant,),
+                    "openapi_types": (CreateVariantRequest,),
                     "location": "body",
                 },
             },
@@ -744,7 +744,7 @@ class FeatureFlagsApi:
 
         self._update_variant_for_feature_flag_endpoint = _Endpoint(
             settings={
-                "response_type": (Variant,),
+                "response_type": None,
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/feature-flags/{feature_flag_id}/variants/{variant_id}",
                 "operation_id": "update_variant_for_feature_flag",
@@ -770,7 +770,7 @@ class FeatureFlagsApi:
                     "location": "body",
                 },
             },
-            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -853,8 +853,8 @@ class FeatureFlagsApi:
     def create_variant_for_feature_flag(
         self,
         feature_flag_id: UUID,
-        body: CreateVariant,
-    ) -> Variant:
+        body: CreateVariantRequest,
+    ) -> VariantResponse:
         """Add a variant to a feature flag.
 
         Adds a single new variant to an existing feature flag. This endpoint is
@@ -867,8 +867,8 @@ class FeatureFlagsApi:
 
         :param feature_flag_id: The ID of the feature flag.
         :type feature_flag_id: UUID
-        :type body: CreateVariant
-        :rtype: Variant
+        :type body: CreateVariantRequest
+        :rtype: VariantResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["feature_flag_id"] = feature_flag_id
@@ -1374,7 +1374,7 @@ class FeatureFlagsApi:
         feature_flag_id: UUID,
         variant_id: UUID,
         body: UpdateVariantRequest,
-    ) -> Variant:
+    ) -> None:
         """Update a variant.
 
         Updates the name and value of an existing variant on a feature flag.
@@ -1386,7 +1386,7 @@ class FeatureFlagsApi:
         :param variant_id: The ID of the variant.
         :type variant_id: UUID
         :type body: UpdateVariantRequest
-        :rtype: Variant
+        :rtype: None
         """
         kwargs: Dict[str, Any] = {}
         kwargs["feature_flag_id"] = feature_flag_id

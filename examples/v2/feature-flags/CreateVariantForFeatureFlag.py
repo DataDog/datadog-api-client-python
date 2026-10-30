@@ -6,12 +6,20 @@ from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.feature_flags_api import FeatureFlagsApi
 from datadog_api_client.v2.model.create_variant import CreateVariant
+from datadog_api_client.v2.model.create_variant_data import CreateVariantData
+from datadog_api_client.v2.model.create_variant_request import CreateVariantRequest
+from datadog_api_client.v2.model.variant_data_type import VariantDataType
 from uuid import UUID
 
-body = CreateVariant(
-    key="variant-abc123",
-    name="Variant ABC123",
-    value="true",
+body = CreateVariantRequest(
+    data=CreateVariantData(
+        attributes=CreateVariant(
+            key="variant-abc123",
+            name="Variant ABC123",
+            value="true",
+        ),
+        type=VariantDataType.VARIANTS,
+    ),
 )
 
 configuration = Configuration()
