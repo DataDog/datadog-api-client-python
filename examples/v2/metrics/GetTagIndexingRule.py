@@ -11,7 +11,6 @@ TAG_INDEXING_RULE_DATA_ID = environ["TAG_INDEXING_RULE_DATA_ID"]
 
 configuration = Configuration()
 configuration.access_token = environ["DD_BEARER_TOKEN"]
-configuration.unstable_operations["get_tag_indexing_rule"] = True
 with ApiClient(configuration) as api_client:
     api_instance = MetricsApi(api_client)
     response = api_instance.get_tag_indexing_rule(
