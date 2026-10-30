@@ -45,6 +45,7 @@ class CreateStatusPageRequestDataAttributes(ModelNormal):
             "email_header_image": (str,),
             "favicon": (str,),
             "name": (str,),
+            "rss_feed_enabled": (bool,),
             "slack_app_icon": (str,),
             "slack_subscriptions_enabled": (bool,),
             "subscriptions_enabled": (bool,),
@@ -59,6 +60,7 @@ class CreateStatusPageRequestDataAttributes(ModelNormal):
         "email_header_image": "email_header_image",
         "favicon": "favicon",
         "name": "name",
+        "rss_feed_enabled": "rss_feed_enabled",
         "slack_app_icon": "slack_app_icon",
         "slack_subscriptions_enabled": "slack_subscriptions_enabled",
         "subscriptions_enabled": "subscriptions_enabled",
@@ -76,6 +78,7 @@ class CreateStatusPageRequestDataAttributes(ModelNormal):
         components: Union[List[CreateStatusPageRequestDataAttributesComponentsItems], UnsetType] = unset,
         email_header_image: Union[str, UnsetType] = unset,
         favicon: Union[str, UnsetType] = unset,
+        rss_feed_enabled: Union[bool, UnsetType] = unset,
         slack_app_icon: Union[str, UnsetType] = unset,
         slack_subscriptions_enabled: Union[bool, UnsetType] = unset,
         subscriptions_enabled: Union[bool, UnsetType] = unset,
@@ -102,6 +105,9 @@ class CreateStatusPageRequestDataAttributes(ModelNormal):
         :param name: The name of the status page.
         :type name: str
 
+        :param rss_feed_enabled: Whether the RSS feed is enabled for the status page.
+        :type rss_feed_enabled: bool, optional
+
         :param slack_app_icon: The Slack app icon URL for the status page.
         :type slack_app_icon: str, optional
 
@@ -125,6 +131,8 @@ class CreateStatusPageRequestDataAttributes(ModelNormal):
             kwargs["email_header_image"] = email_header_image
         if favicon is not unset:
             kwargs["favicon"] = favicon
+        if rss_feed_enabled is not unset:
+            kwargs["rss_feed_enabled"] = rss_feed_enabled
         if slack_app_icon is not unset:
             kwargs["slack_app_icon"] = slack_app_icon
         if slack_subscriptions_enabled is not unset:

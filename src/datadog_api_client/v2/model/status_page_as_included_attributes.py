@@ -52,6 +52,7 @@ class StatusPageAsIncludedAttributes(ModelNormal):
             "modified_at": (datetime,),
             "name": (str,),
             "page_url": (str,),
+            "rss_feed_enabled": (bool,),
             "slack_app_icon": (str,),
             "slack_subscriptions_enabled": (bool,),
             "subscriptions_enabled": (bool,),
@@ -72,6 +73,7 @@ class StatusPageAsIncludedAttributes(ModelNormal):
         "modified_at": "modified_at",
         "name": "name",
         "page_url": "page_url",
+        "rss_feed_enabled": "rss_feed_enabled",
         "slack_app_icon": "slack_app_icon",
         "slack_subscriptions_enabled": "slack_subscriptions_enabled",
         "subscriptions_enabled": "subscriptions_enabled",
@@ -93,6 +95,7 @@ class StatusPageAsIncludedAttributes(ModelNormal):
         modified_at: Union[datetime, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         page_url: Union[str, UnsetType] = unset,
+        rss_feed_enabled: Union[bool, UnsetType] = unset,
         slack_app_icon: Union[str, UnsetType] = unset,
         slack_subscriptions_enabled: Union[bool, UnsetType] = unset,
         subscriptions_enabled: Union[bool, UnsetType] = unset,
@@ -139,6 +142,9 @@ class StatusPageAsIncludedAttributes(ModelNormal):
         :param page_url: The url that the status page is accessible at.
         :type page_url: str, optional
 
+        :param rss_feed_enabled: Whether the RSS feed is enabled for the status page.
+        :type rss_feed_enabled: bool, optional
+
         :param slack_app_icon: The Slack app icon URL for the status page.
         :type slack_app_icon: str, optional
 
@@ -178,6 +184,8 @@ class StatusPageAsIncludedAttributes(ModelNormal):
             kwargs["name"] = name
         if page_url is not unset:
             kwargs["page_url"] = page_url
+        if rss_feed_enabled is not unset:
+            kwargs["rss_feed_enabled"] = rss_feed_enabled
         if slack_app_icon is not unset:
             kwargs["slack_app_icon"] = slack_app_icon
         if slack_subscriptions_enabled is not unset:
