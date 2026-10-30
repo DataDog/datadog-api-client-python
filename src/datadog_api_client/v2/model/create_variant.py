@@ -27,7 +27,7 @@ class CreateVariant(ModelNormal):
 
     def __init__(self_, key: str, name: str, value: str, **kwargs):
         """
-        Request to create a variant.
+        Attributes for creating a variant.
 
         :param key: The unique key of the variant.
         :type key: str

@@ -11,7 +11,7 @@ Feature: Feature Flags
   Scenario: Add a variant to a feature flag returns "Bad Request" response
     Given new "CreateVariantForFeatureFlag" request
     And request contains "feature_flag_id" parameter from "REPLACE.ME"
-    And body with value {"key": "variant-abc123", "name": "Variant ABC123", "value": "true"}
+    And body with value {"data": {"attributes": {"key": "variant-abc123", "name": "Variant ABC123", "value": "true"}, "type": "variants"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -19,7 +19,7 @@ Feature: Feature Flags
   Scenario: Add a variant to a feature flag returns "Conflict - A variant with this key already exists on the flag." response
     Given new "CreateVariantForFeatureFlag" request
     And request contains "feature_flag_id" parameter from "REPLACE.ME"
-    And body with value {"key": "variant-abc123", "name": "Variant ABC123", "value": "true"}
+    And body with value {"data": {"attributes": {"key": "variant-abc123", "name": "Variant ABC123", "value": "true"}, "type": "variants"}}
     When the request is sent
     Then the response status is 409 Conflict - A variant with this key already exists on the flag.
 
@@ -27,7 +27,7 @@ Feature: Feature Flags
   Scenario: Add a variant to a feature flag returns "Created" response
     Given new "CreateVariantForFeatureFlag" request
     And request contains "feature_flag_id" parameter from "REPLACE.ME"
-    And body with value {"key": "variant-abc123", "name": "Variant ABC123", "value": "true"}
+    And body with value {"data": {"attributes": {"key": "variant-abc123", "name": "Variant ABC123", "value": "true"}, "type": "variants"}}
     When the request is sent
     Then the response status is 201 Created
 
@@ -35,7 +35,7 @@ Feature: Feature Flags
   Scenario: Add a variant to a feature flag returns "Not Found" response
     Given new "CreateVariantForFeatureFlag" request
     And request contains "feature_flag_id" parameter from "REPLACE.ME"
-    And body with value {"key": "variant-abc123", "name": "Variant ABC123", "value": "true"}
+    And body with value {"data": {"attributes": {"key": "variant-abc123", "name": "Variant ABC123", "value": "true"}, "type": "variants"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -1092,7 +1092,7 @@ Feature: Feature Flags
     Given new "UpdateVariantForFeatureFlag" request
     And request contains "feature_flag_id" parameter from "REPLACE.ME"
     And request contains "variant_id" parameter from "REPLACE.ME"
-    And body with value {"name": "Variant ABC123 Updated", "value": "new_value"}
+    And body with value {"data": {"attributes": {"name": "Variant ABC123 Updated", "value": "new_value"}, "id": "550e8400-e29b-41d4-a716-446655440002", "type": "variants"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -1101,7 +1101,7 @@ Feature: Feature Flags
     Given new "UpdateVariantForFeatureFlag" request
     And request contains "feature_flag_id" parameter from "REPLACE.ME"
     And request contains "variant_id" parameter from "REPLACE.ME"
-    And body with value {"name": "Variant ABC123 Updated", "value": "new_value"}
+    And body with value {"data": {"attributes": {"name": "Variant ABC123 Updated", "value": "new_value"}, "id": "550e8400-e29b-41d4-a716-446655440002", "type": "variants"}}
     When the request is sent
     Then the response status is 409 Conflict - A pending suggestion already exists for this property.
 
@@ -1110,7 +1110,7 @@ Feature: Feature Flags
     Given new "UpdateVariantForFeatureFlag" request
     And request contains "feature_flag_id" parameter from "REPLACE.ME"
     And request contains "variant_id" parameter from "REPLACE.ME"
-    And body with value {"name": "Variant ABC123 Updated", "value": "new_value"}
+    And body with value {"data": {"attributes": {"name": "Variant ABC123 Updated", "value": "new_value"}, "id": "550e8400-e29b-41d4-a716-446655440002", "type": "variants"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -1119,7 +1119,7 @@ Feature: Feature Flags
     Given new "UpdateVariantForFeatureFlag" request
     And request contains "feature_flag_id" parameter from "REPLACE.ME"
     And request contains "variant_id" parameter from "REPLACE.ME"
-    And body with value {"name": "Variant ABC123 Updated", "value": "new_value"}
+    And body with value {"data": {"attributes": {"name": "Variant ABC123 Updated", "value": "new_value"}, "id": "550e8400-e29b-41d4-a716-446655440002", "type": "variants"}}
     When the request is sent
     Then the response status is 200 OK
 

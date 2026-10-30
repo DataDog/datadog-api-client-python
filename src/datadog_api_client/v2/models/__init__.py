@@ -2053,6 +2053,8 @@ from datadog_api_client.v2.model.create_upload_response_data_attributes import C
 from datadog_api_client.v2.model.create_upload_response_data_type import CreateUploadResponseDataType
 from datadog_api_client.v2.model.create_user_notification_channel_request import CreateUserNotificationChannelRequest
 from datadog_api_client.v2.model.create_variant import CreateVariant
+from datadog_api_client.v2.model.create_variant_data import CreateVariantData
+from datadog_api_client.v2.model.create_variant_request import CreateVariantRequest
 from datadog_api_client.v2.model.create_workflow_request import CreateWorkflowRequest
 from datadog_api_client.v2.model.create_workflow_response import CreateWorkflowResponse
 from datadog_api_client.v2.model.creator import Creator
@@ -12826,6 +12828,8 @@ from datadog_api_client.v2.model.update_tenancy_config_data_attributes_regions_c
 from datadog_api_client.v2.model.update_tenancy_config_data_type import UpdateTenancyConfigDataType
 from datadog_api_client.v2.model.update_tenancy_config_request import UpdateTenancyConfigRequest
 from datadog_api_client.v2.model.update_user_identity_providers_request import UpdateUserIdentityProvidersRequest
+from datadog_api_client.v2.model.update_variant_attributes import UpdateVariantAttributes
+from datadog_api_client.v2.model.update_variant_data import UpdateVariantData
 from datadog_api_client.v2.model.update_variant_request import UpdateVariantRequest
 from datadog_api_client.v2.model.update_workflow_request import UpdateWorkflowRequest
 from datadog_api_client.v2.model.update_workflow_response import UpdateWorkflowResponse
@@ -13011,6 +13015,10 @@ from datadog_api_client.v2.model.validation_error_meta import ValidationErrorMet
 from datadog_api_client.v2.model.validation_response import ValidationResponse
 from datadog_api_client.v2.model.value_type import ValueType
 from datadog_api_client.v2.model.variant import Variant
+from datadog_api_client.v2.model.variant_data_type import VariantDataType
+from datadog_api_client.v2.model.variant_response import VariantResponse
+from datadog_api_client.v2.model.variant_response_attributes import VariantResponseAttributes
+from datadog_api_client.v2.model.variant_response_data import VariantResponseData
 from datadog_api_client.v2.model.variant_weight import VariantWeight
 from datadog_api_client.v2.model.variant_weight_request import VariantWeightRequest
 from datadog_api_client.v2.model.version_history_update import VersionHistoryUpdate
@@ -14725,6 +14733,8 @@ __all__ = [
     "CreateUploadResponseDataType",
     "CreateUserNotificationChannelRequest",
     "CreateVariant",
+    "CreateVariantData",
+    "CreateVariantRequest",
     "CreateWorkflowRequest",
     "CreateWorkflowResponse",
     "Creator",
@@ -21624,6 +21634,8 @@ __all__ = [
     "UpdateTenancyConfigDataType",
     "UpdateTenancyConfigRequest",
     "UpdateUserIdentityProvidersRequest",
+    "UpdateVariantAttributes",
+    "UpdateVariantData",
     "UpdateVariantRequest",
     "UpdateWorkflowRequest",
     "UpdateWorkflowResponse",
@@ -21771,6 +21783,10 @@ __all__ = [
     "ValidationResponse",
     "ValueType",
     "Variant",
+    "VariantDataType",
+    "VariantResponse",
+    "VariantResponseAttributes",
+    "VariantResponseData",
     "VariantWeight",
     "VariantWeightRequest",
     "VersionHistoryUpdate",
