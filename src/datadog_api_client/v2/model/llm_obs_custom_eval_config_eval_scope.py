@@ -14,19 +14,21 @@ from typing import ClassVar
 
 class LLMObsCustomEvalConfigEvalScope(ModelSimple):
     """
-    Scope at which to evaluate spans.
+    Scope at which to evaluate spans. `trace_fan_out` requires `llm_judge_config.target_query`.
 
-    :param value: Must be one of ["span", "trace", "session"].
+    :param value: Must be one of ["span", "trace", "trace_fan_out", "session"].
     :type value: str
     """
 
     allowed_values = {
         "span",
         "trace",
+        "trace_fan_out",
         "session",
     }
     SPAN: ClassVar["LLMObsCustomEvalConfigEvalScope"]
     TRACE: ClassVar["LLMObsCustomEvalConfigEvalScope"]
+    TRACE_FAN_OUT: ClassVar["LLMObsCustomEvalConfigEvalScope"]
     SESSION: ClassVar["LLMObsCustomEvalConfigEvalScope"]
 
     @cached_property
@@ -38,4 +40,5 @@ class LLMObsCustomEvalConfigEvalScope(ModelSimple):
 
 LLMObsCustomEvalConfigEvalScope.SPAN = LLMObsCustomEvalConfigEvalScope("span")
 LLMObsCustomEvalConfigEvalScope.TRACE = LLMObsCustomEvalConfigEvalScope("trace")
+LLMObsCustomEvalConfigEvalScope.TRACE_FAN_OUT = LLMObsCustomEvalConfigEvalScope("trace_fan_out")
 LLMObsCustomEvalConfigEvalScope.SESSION = LLMObsCustomEvalConfigEvalScope("session")

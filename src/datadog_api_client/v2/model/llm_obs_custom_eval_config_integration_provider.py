@@ -14,19 +14,24 @@ from typing import ClassVar
 
 class LLMObsCustomEvalConfigIntegrationProvider(ModelSimple):
     """
-    Name of the LLM integration provider.
+    Name of the LLM integration provider. Use `deterministic` for a code evaluator, which runs `llm_judge_config.user_specified_json_post_processing_function` instead of calling an LLM. `insights_sponsored` is returned for evaluators that Datadog manages and cannot be set.
 
-    :param value: Must be one of ["openai", "amazon-bedrock", "anthropic", "azure-openai", "vertex-ai", "llm-proxy"].
+    :param value: Must be one of ["openai", "amazon_bedrock", "anthropic", "azure_openai", "vertex_ai", "llmproxy", "deterministic", "typesafe", "datadog", "datadog_ai_gateway", "insights_sponsored"].
     :type value: str
     """
 
     allowed_values = {
         "openai",
-        "amazon-bedrock",
+        "amazon_bedrock",
         "anthropic",
-        "azure-openai",
-        "vertex-ai",
-        "llm-proxy",
+        "azure_openai",
+        "vertex_ai",
+        "llmproxy",
+        "deterministic",
+        "typesafe",
+        "datadog",
+        "datadog_ai_gateway",
+        "insights_sponsored",
     }
     OPENAI: ClassVar["LLMObsCustomEvalConfigIntegrationProvider"]
     AMAZON_BEDROCK: ClassVar["LLMObsCustomEvalConfigIntegrationProvider"]
@@ -34,6 +39,11 @@ class LLMObsCustomEvalConfigIntegrationProvider(ModelSimple):
     AZURE_OPENAI: ClassVar["LLMObsCustomEvalConfigIntegrationProvider"]
     VERTEX_AI: ClassVar["LLMObsCustomEvalConfigIntegrationProvider"]
     LLM_PROXY: ClassVar["LLMObsCustomEvalConfigIntegrationProvider"]
+    DETERMINISTIC: ClassVar["LLMObsCustomEvalConfigIntegrationProvider"]
+    TYPESAFE: ClassVar["LLMObsCustomEvalConfigIntegrationProvider"]
+    DATADOG: ClassVar["LLMObsCustomEvalConfigIntegrationProvider"]
+    DATADOG_AI_GATEWAY: ClassVar["LLMObsCustomEvalConfigIntegrationProvider"]
+    INSIGHTS_SPONSORED: ClassVar["LLMObsCustomEvalConfigIntegrationProvider"]
 
     @cached_property
     def openapi_types(_):
@@ -43,8 +53,17 @@ class LLMObsCustomEvalConfigIntegrationProvider(ModelSimple):
 
 
 LLMObsCustomEvalConfigIntegrationProvider.OPENAI = LLMObsCustomEvalConfigIntegrationProvider("openai")
-LLMObsCustomEvalConfigIntegrationProvider.AMAZON_BEDROCK = LLMObsCustomEvalConfigIntegrationProvider("amazon-bedrock")
+LLMObsCustomEvalConfigIntegrationProvider.AMAZON_BEDROCK = LLMObsCustomEvalConfigIntegrationProvider("amazon_bedrock")
 LLMObsCustomEvalConfigIntegrationProvider.ANTHROPIC = LLMObsCustomEvalConfigIntegrationProvider("anthropic")
-LLMObsCustomEvalConfigIntegrationProvider.AZURE_OPENAI = LLMObsCustomEvalConfigIntegrationProvider("azure-openai")
-LLMObsCustomEvalConfigIntegrationProvider.VERTEX_AI = LLMObsCustomEvalConfigIntegrationProvider("vertex-ai")
-LLMObsCustomEvalConfigIntegrationProvider.LLM_PROXY = LLMObsCustomEvalConfigIntegrationProvider("llm-proxy")
+LLMObsCustomEvalConfigIntegrationProvider.AZURE_OPENAI = LLMObsCustomEvalConfigIntegrationProvider("azure_openai")
+LLMObsCustomEvalConfigIntegrationProvider.VERTEX_AI = LLMObsCustomEvalConfigIntegrationProvider("vertex_ai")
+LLMObsCustomEvalConfigIntegrationProvider.LLM_PROXY = LLMObsCustomEvalConfigIntegrationProvider("llmproxy")
+LLMObsCustomEvalConfigIntegrationProvider.DETERMINISTIC = LLMObsCustomEvalConfigIntegrationProvider("deterministic")
+LLMObsCustomEvalConfigIntegrationProvider.TYPESAFE = LLMObsCustomEvalConfigIntegrationProvider("typesafe")
+LLMObsCustomEvalConfigIntegrationProvider.DATADOG = LLMObsCustomEvalConfigIntegrationProvider("datadog")
+LLMObsCustomEvalConfigIntegrationProvider.DATADOG_AI_GATEWAY = LLMObsCustomEvalConfigIntegrationProvider(
+    "datadog_ai_gateway"
+)
+LLMObsCustomEvalConfigIntegrationProvider.INSIGHTS_SPONSORED = LLMObsCustomEvalConfigIntegrationProvider(
+    "insights_sponsored"
+)
