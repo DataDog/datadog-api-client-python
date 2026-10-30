@@ -20,6 +20,7 @@ class Unit(ModelNormal):
     def openapi_types(_):
         return {
             "family": (str,),
+            "id": (int,),
             "name": (str,),
             "plural": (str,),
             "scale_factor": (float,),
@@ -28,6 +29,7 @@ class Unit(ModelNormal):
 
     attribute_map = {
         "family": "family",
+        "id": "id",
         "name": "name",
         "plural": "plural",
         "scale_factor": "scale_factor",
@@ -37,6 +39,7 @@ class Unit(ModelNormal):
     def __init__(
         self_,
         family: Union[str, UnsetType] = unset,
+        id: Union[int, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         plural: Union[str, UnsetType] = unset,
         scale_factor: Union[float, UnsetType] = unset,
@@ -49,7 +52,10 @@ class Unit(ModelNormal):
         :param family: Unit family, allows for conversion between units of the same family, for scaling.
         :type family: str, optional
 
-        :param name: Unit name
+        :param id: The identifier of the unit.
+        :type id: int, optional
+
+        :param name: Unit name.
         :type name: str, optional
 
         :param plural: Plural form of the unit name.
@@ -63,6 +69,8 @@ class Unit(ModelNormal):
         """
         if family is not unset:
             kwargs["family"] = family
+        if id is not unset:
+            kwargs["id"] = id
         if name is not unset:
             kwargs["name"] = name
         if plural is not unset:
