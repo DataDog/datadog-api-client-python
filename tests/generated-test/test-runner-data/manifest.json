@@ -8410,6 +8410,13 @@
     {
       "feature": "Monitors",
       "feature_file": "../../v2/features/monitors.feature",
+      "file": "v2/monitors/create-a-monitor-notification-rule-with-rule-options-returns-ok-response.json",
+      "scenario": "Create a monitor notification rule with rule options returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "feature_file": "../../v2/features/monitors.feature",
       "file": "v2/monitors/create-a-monitor-notification-rule-with-scope-returns-ok-response.json",
       "scenario": "Create a monitor notification rule with scope returns \"OK\" response",
       "version": "v2"
@@ -8587,6 +8594,13 @@
       "feature_file": "../../v2/features/monitors.feature",
       "file": "v2/monitors/update-a-monitor-notification-rule-with-conditional-recipients-returns-ok-response.json",
       "scenario": "Update a monitor notification rule with conditional_recipients returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "feature_file": "../../v2/features/monitors.feature",
+      "file": "v2/monitors/update-a-monitor-notification-rule-with-rule-options-returns-ok-response.json",
+      "scenario": "Update a monitor notification rule with rule options returns \"OK\" response",
       "version": "v2"
     },
     {
