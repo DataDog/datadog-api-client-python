@@ -120,19 +120,19 @@ class LLMObsCustomEvalConfigLLMJudgeConfig(ModelNormal):
         :param modified_library_prompt_template: Whether the library prompt template was modified.
         :type modified_library_prompt_template: bool, none_type, optional
 
-        :param output_schema: JSON schema describing the expected output format of the LLM judge.
+        :param output_schema: JSON schema describing the expected output format of the LLM judge. Omit for a ``deterministic`` evaluator.
         :type output_schema: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, none_type, optional
 
         :param parsing_type: Output parsing type for a custom LLM judge evaluator.
         :type parsing_type: LLMObsCustomEvalConfigParsingType, optional
 
-        :param prompt_template: List of messages forming the LLM judge prompt template.
+        :param prompt_template: List of messages forming the LLM judge prompt template. Omit for a ``deterministic`` evaluator.
         :type prompt_template: [LLMObsCustomEvalConfigPromptMessage], optional
 
         :param target_query: Query used to extract the target value to evaluate.
         :type target_query: str, none_type, optional
 
-        :param user_specified_json_post_processing_function: User-provided function applied to post-process the JSON output of the LLM judge.
+        :param user_specified_json_post_processing_function: User-provided JavaScript function applied to post-process the JSON output of the LLM judge. For a ``deterministic`` evaluator it is the evaluator itself: it receives the evaluated span (span scope), ``{spans}`` (trace scope), or ``{session_id, traces}`` (session scope), and its return value sets the result. A boolean, number, string or object becomes a boolean, score, categorical or JSON metric; ``null`` skips the evaluation; and ``{value, assessment, reasoning, metadata}`` also sets pass or fail, reasoning, and metadata.
         :type user_specified_json_post_processing_function: str, none_type, optional
         """
         if assessment_criteria is not unset:

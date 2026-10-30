@@ -72,10 +72,10 @@ class LLMObsCustomEvalConfigLLMProvider(ModelNormal):
         :param integration_account_id: Integration account identifier.
         :type integration_account_id: str, optional
 
-        :param integration_provider: Name of the LLM integration provider.
+        :param integration_provider: Name of the LLM integration provider. Use ``deterministic`` for a code evaluator, which runs ``llm_judge_config.user_specified_json_post_processing_function`` instead of calling an LLM. ``insights_sponsored`` is returned for evaluators that Datadog manages and cannot be set.
         :type integration_provider: LLMObsCustomEvalConfigIntegrationProvider, optional
 
-        :param model_name: Name of the LLM model.
+        :param model_name: Name of the LLM model. Use ``javascript`` for a ``deterministic`` evaluator.
         :type model_name: str, optional
 
         :param vertex_ai: Google Vertex AI-specific options for LLM provider configuration.
