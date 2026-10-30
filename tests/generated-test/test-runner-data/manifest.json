@@ -4012,6 +4012,62 @@
       "version": "v2"
     },
     {
+      "feature": "Cloud Authentication",
+      "feature_file": "../../v2/features/cloud_authentication.feature",
+      "file": "v2/cloud-authentication/create-an-aws-cloud-authentication-intake-mapping-returns-bad-request-response.json",
+      "scenario": "Create an AWS cloud authentication intake mapping returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "feature_file": "../../v2/features/cloud_authentication.feature",
+      "file": "v2/cloud-authentication/create-an-aws-cloud-authentication-intake-mapping-returns-conflict-response.json",
+      "scenario": "Create an AWS cloud authentication intake mapping returns \"Conflict\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "feature_file": "../../v2/features/cloud_authentication.feature",
+      "file": "v2/cloud-authentication/create-an-aws-cloud-authentication-intake-mapping-returns-created-response.json",
+      "scenario": "Create an AWS cloud authentication intake mapping returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "feature_file": "../../v2/features/cloud_authentication.feature",
+      "file": "v2/cloud-authentication/delete-an-aws-cloud-authentication-intake-mapping-returns-no-content-response.json",
+      "scenario": "Delete an AWS cloud authentication intake mapping returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "feature_file": "../../v2/features/cloud_authentication.feature",
+      "file": "v2/cloud-authentication/delete-an-aws-cloud-authentication-intake-mapping-returns-not-found-response.json",
+      "scenario": "Delete an AWS cloud authentication intake mapping returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "feature_file": "../../v2/features/cloud_authentication.feature",
+      "file": "v2/cloud-authentication/get-an-aws-cloud-authentication-intake-mapping-returns-not-found-response.json",
+      "scenario": "Get an AWS cloud authentication intake mapping returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "feature_file": "../../v2/features/cloud_authentication.feature",
+      "file": "v2/cloud-authentication/get-an-aws-cloud-authentication-intake-mapping-returns-ok-response.json",
+      "scenario": "Get an AWS cloud authentication intake mapping returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "feature_file": "../../v2/features/cloud_authentication.feature",
+      "file": "v2/cloud-authentication/list-aws-cloud-authentication-intake-mappings-returns-ok-response.json",
+      "scenario": "List AWS cloud authentication intake mappings returns \"OK\" response",
+      "version": "v2"
+    },
+    {
       "feature": "Cloud Cost Management",
       "feature_file": "../../v2/features/cloud_cost_management.feature",
       "file": "v2/cloud-cost-management/create-cloud-cost-management-aws-cur-config-returns-ok-response.json",

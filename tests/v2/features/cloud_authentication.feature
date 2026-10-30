@@ -56,6 +56,36 @@ Feature: Cloud Authentication
     When the request is sent
     Then the response status is 201 Created
 
+  @team:ddoghq/team-aaaauthn
+  Scenario: Create an AWS cloud authentication intake mapping returns "Bad Request" response
+    Given operation "CreateAWSCloudAuthIntakeMapping" enabled
+    And new "CreateAWSCloudAuthIntakeMapping" request
+    And body with value {"data": {"attributes": {"arn_pattern": "not-an-arn"}, "type": "aws_cloud_auth_intake_mapping"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:ddoghq/team-aaaauthn
+  Scenario: Create an AWS cloud authentication intake mapping returns "Conflict" response
+    Given there is an integrated AWS test account for WIF
+    And there is a valid "aws_cloud_auth_intake_mapping" in the system
+    And operation "CreateAWSCloudAuthIntakeMapping" enabled
+    And new "CreateAWSCloudAuthIntakeMapping" request
+    And body with value {"data":{"type":"aws_cloud_auth_intake_mapping","attributes":{"arn_pattern":"arn:aws:sts::{{ aws_wif_account_v2.data[0].attributes.aws_account_id }}:assumed-role/DatadogAgent-{{ unique_hash }}/*"}}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @team:ddoghq/team-aaaauthn
+  Scenario: Create an AWS cloud authentication intake mapping returns "Created" response
+    Given there is an integrated AWS test account for WIF
+    And operation "CreateAWSCloudAuthIntakeMapping" enabled
+    And new "CreateAWSCloudAuthIntakeMapping" request
+    And body with value {"data":{"type":"aws_cloud_auth_intake_mapping","attributes":{"arn_pattern":"arn:aws:sts::{{ aws_wif_account_v2.data[0].attributes.aws_account_id }}:assumed-role/DatadogAgent-{{ unique_hash }}/*"}}}
+    When the request is sent
+    Then the response status is 201 Created
+    And the response "data.type" is equal to "aws_cloud_auth_intake_mapping"
+    And the response "data" has field "id"
+    And the response "data.attributes.arn_pattern" is equal to "arn:aws:sts::{{ aws_wif_account_v2.data[0].attributes.aws_account_id }}:assumed-role/DatadogAgent-{{ unique_hash }}/*"
+
   @generated @skip @team:ddoghq/team-aaaauthn
   Scenario: Create an AWS cloud authentication persona mapping returns "Bad Request" response
     Given operation "CreateAWSCloudAuthPersonaMapping" enabled
@@ -112,6 +142,24 @@ Feature: Cloud Authentication
     When the request is sent
     Then the response status is 404 Not Found
 
+  @team:ddoghq/team-aaaauthn
+  Scenario: Delete an AWS cloud authentication intake mapping returns "No Content" response
+    Given there is an integrated AWS test account for WIF
+    And there is a valid "aws_cloud_auth_intake_mapping" in the system
+    And operation "DeleteAWSCloudAuthIntakeMapping" enabled
+    And new "DeleteAWSCloudAuthIntakeMapping" request
+    And request contains "intake_mapping_id" parameter from "aws_cloud_auth_intake_mapping.data.id"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @team:ddoghq/team-aaaauthn
+  Scenario: Delete an AWS cloud authentication intake mapping returns "Not Found" response
+    Given operation "DeleteAWSCloudAuthIntakeMapping" enabled
+    And new "DeleteAWSCloudAuthIntakeMapping" request
+    And request contains "intake_mapping_id" parameter with value "00000000-0000-0000-0000-000000000000"
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @generated @skip @team:ddoghq/team-aaaauthn
   Scenario: Delete an AWS cloud authentication persona mapping returns "No Content" response
     Given operation "DeleteAWSCloudAuthPersonaMapping" enabled
@@ -160,6 +208,26 @@ Feature: Cloud Authentication
     When the request is sent
     Then the response status is 200 OK
 
+  @team:ddoghq/team-aaaauthn
+  Scenario: Get an AWS cloud authentication intake mapping returns "Not Found" response
+    Given operation "GetAWSCloudAuthIntakeMapping" enabled
+    And new "GetAWSCloudAuthIntakeMapping" request
+    And request contains "intake_mapping_id" parameter with value "00000000-0000-0000-0000-000000000000"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:ddoghq/team-aaaauthn
+  Scenario: Get an AWS cloud authentication intake mapping returns "OK" response
+    Given there is an integrated AWS test account for WIF
+    And there is a valid "aws_cloud_auth_intake_mapping" in the system
+    And operation "GetAWSCloudAuthIntakeMapping" enabled
+    And new "GetAWSCloudAuthIntakeMapping" request
+    And request contains "intake_mapping_id" parameter from "aws_cloud_auth_intake_mapping.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" has the same value as "aws_cloud_auth_intake_mapping.data.id"
+    And the response "data.attributes.arn_pattern" is equal to "arn:aws:sts::{{ aws_wif_account_v2.data[0].attributes.aws_account_id }}:assumed-role/DatadogAgent-{{ unique_hash }}/*"
+
   @generated @skip @team:ddoghq/team-aaaauthn
   Scenario: Get an AWS cloud authentication persona mapping returns "Not Found" response
     Given operation "GetAWSCloudAuthPersonaMapping" enabled
@@ -175,6 +243,23 @@ Feature: Cloud Authentication
     And request contains "persona_mapping_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/team-aaaauthn
+  Scenario: List AWS cloud authentication intake mappings returns "Bad Request" response
+    Given operation "ListAWSCloudAuthIntakeMappings" enabled
+    And new "ListAWSCloudAuthIntakeMappings" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:ddoghq/team-aaaauthn
+  Scenario: List AWS cloud authentication intake mappings returns "OK" response
+    Given there is an integrated AWS test account for WIF
+    And there is a valid "aws_cloud_auth_intake_mapping" in the system
+    And operation "ListAWSCloudAuthIntakeMappings" enabled
+    And new "ListAWSCloudAuthIntakeMappings" request
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has item with field "id" with value "{{ aws_cloud_auth_intake_mapping.data.id }}"
 
   @generated @skip @team:ddoghq/team-aaaauthn
   Scenario: List AWS cloud authentication persona mappings returns "Bad Request" response

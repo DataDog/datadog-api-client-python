@@ -221,6 +221,11 @@
       "version": "v2"
     },
     {
+      "feature": "Cloud Authentication",
+      "file": "v2/cloud-authentication.json",
+      "version": "v2"
+    },
+    {
       "feature": "Cloud Cost Management",
       "file": "v2/cloud-cost-management.json",
       "version": "v2"

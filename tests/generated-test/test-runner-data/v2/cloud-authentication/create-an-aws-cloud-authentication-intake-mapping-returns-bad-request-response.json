@@ -1,0 +1,33 @@
+{
+  "api": "CloudAuthentication",
+  "expected_status": 400,
+  "feature": "Cloud Authentication",
+  "id": "v2/Cloud Authentication/Create an AWS cloud authentication intake mapping returns \"Bad Request\" response",
+  "operation_id": "CreateAWSCloudAuthIntakeMapping",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "AWSCloudAuthIntakeMappingCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "arn_pattern": "not-an-arn"
+          },
+          "type": "aws_cloud_auth_intake_mapping"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/wif/aws/intake_mapping"
+  },
+  "scenario": "Create an AWS cloud authentication intake mapping returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

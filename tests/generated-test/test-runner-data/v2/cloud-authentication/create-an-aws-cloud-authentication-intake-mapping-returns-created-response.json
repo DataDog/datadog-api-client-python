@@ -1,0 +1,33 @@
+{
+  "api": "CloudAuthentication",
+  "expected_status": 201,
+  "feature": "Cloud Authentication",
+  "id": "v2/Cloud Authentication/Create an AWS cloud authentication intake mapping returns \"Created\" response",
+  "operation_id": "CreateAWSCloudAuthIntakeMapping",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "AWSCloudAuthIntakeMappingCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "arn_pattern": "arn:aws:sts::{{ aws_wif_account_v2.data[0].attributes.aws_account_id }}:assumed-role/DatadogAgent-{{ unique_hash }}/*"
+          },
+          "type": "aws_cloud_auth_intake_mapping"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/wif/aws/intake_mapping"
+  },
+  "scenario": "Create an AWS cloud authentication intake mapping returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

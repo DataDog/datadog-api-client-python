@@ -1,0 +1,18 @@
+{
+  "api": "CloudAuthentication",
+  "expected_status": 200,
+  "feature": "Cloud Authentication",
+  "id": "v2/Cloud Authentication/List AWS cloud authentication intake mappings returns \"OK\" response",
+  "operation_id": "ListAWSCloudAuthIntakeMappings",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/wif/aws/intake_mapping"
+  },
+  "scenario": "List AWS cloud authentication intake mappings returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
