@@ -42,17 +42,18 @@ class RumMetricCompute(ModelNormal):
         **kwargs,
     ):
         """
-        The compute rule to compute the RUM-based metric.
+        The compute rule to compute the RUM-based metric. It is set at creation and only ``include_percentiles`` can be updated afterwards.
 
         :param aggregation_type: The type of aggregation to use.
+            ``count`` counts the matching events. ``distribution`` aggregates the values found at ``path``.
         :type aggregation_type: RumMetricComputeAggregationType
 
-        :param include_percentiles: Toggle to include or exclude percentile aggregations for distribution metrics.
-            Only present when ``aggregation_type`` is ``distribution``.
+        :param include_percentiles: Toggle to include or exclude percentile aggregations (p50, p75, p90, p95, p99) for distribution metrics.
+            Required when ``aggregation_type`` is ``distribution`` , and must be omitted otherwise.
         :type include_percentiles: bool, optional
 
-        :param path: The path to the value the RUM-based metric will aggregate on.
-            Only present when ``aggregation_type`` is ``distribution``.
+        :param path: The path of the numeric RUM event attribute the metric aggregates on.
+            Only valid when ``aggregation_type`` is ``distribution``.
         :type path: str, optional
         """
         if include_percentiles is not unset:

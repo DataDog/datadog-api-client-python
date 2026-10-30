@@ -26,10 +26,10 @@ class RumMetricUpdateCompute(ModelNormal):
 
     def __init__(self_, include_percentiles: Union[bool, UnsetType] = unset, **kwargs):
         """
-        The compute rule to compute the RUM-based metric.
+        The compute rule properties that can be updated. Only valid for metrics whose ``aggregation_type`` is ``distribution``.
 
-        :param include_percentiles: Toggle to include or exclude percentile aggregations for distribution metrics.
-            Only present when ``aggregation_type`` is ``distribution``.
+        :param include_percentiles: Toggle to include or exclude percentile aggregations (p50, p75, p90, p95, p99) for distribution metrics.
+            Required when ``aggregation_type`` is ``distribution`` , and must be omitted otherwise.
         :type include_percentiles: bool, optional
         """
         if include_percentiles is not unset:

@@ -23,9 +23,12 @@ class RumMetricFilter(ModelNormal):
 
     def __init__(self_, **kwargs):
         """
-        The RUM-based metric filter. Events matching this filter will be aggregated in this metric.
+        The RUM-based metric filter. Events matching this filter will be aggregated in this metric. The ``event_type`` filter is added automatically.
 
-        :param query: The search query - following the RUM search syntax.
+        :param query: The search query, following the `RUM search syntax <https://docs.datadoghq.com/real_user_monitoring/explorer/search_syntax/>`_.
+            Do not include a ``@type`` filter, it is derived from ``event_type``.
+            It must not contain invisible or control characters such as non-breaking or zero-width spaces.
+            When updating a metric, an empty query leaves the filter unchanged.
         :type query: str
         """
         super().__init__(kwargs)

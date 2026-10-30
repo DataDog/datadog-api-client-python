@@ -26,9 +26,9 @@ class RumMetricResponseFilter(ModelNormal):
 
     def __init__(self_, query: Union[str, UnsetType] = unset, **kwargs):
         """
-        The RUM-based metric filter. RUM events matching this filter will be aggregated in this metric.
+        The RUM-based metric filter. RUM events matching this filter are aggregated in this metric. Omitted if the metric only filters on the event type.
 
-        :param query: The search query - following the RUM search syntax.
+        :param query: The search query, following the `RUM search syntax <https://docs.datadoghq.com/real_user_monitoring/explorer/search_syntax/>`_. It does not include the event type filter.
         :type query: str, optional
         """
         if query is not unset:
