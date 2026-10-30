@@ -355,6 +355,17 @@ from datadog_api_client.v1.model.idp_response import IdpResponse
 from datadog_api_client.v1.model.image_widget_definition import ImageWidgetDefinition
 from datadog_api_client.v1.model.image_widget_definition_type import ImageWidgetDefinitionType
 from datadog_api_client.v1.model.intake_payload_accepted import IntakePayloadAccepted
+from datadog_api_client.v1.model.journey_map_conversion_type import JourneyMapConversionType
+from datadog_api_client.v1.model.journey_map_counting_method import JourneyMapCountingMethod
+from datadog_api_client.v1.model.journey_map_expanded_prefix import JourneyMapExpandedPrefix
+from datadog_api_client.v1.model.journey_map_group_by import JourneyMapGroupBy
+from datadog_api_client.v1.model.journey_map_group_by_audience import JourneyMapGroupByAudience
+from datadog_api_client.v1.model.journey_map_query import JourneyMapQuery
+from datadog_api_client.v1.model.journey_map_request_type import JourneyMapRequestType
+from datadog_api_client.v1.model.journey_map_target import JourneyMapTarget
+from datadog_api_client.v1.model.journey_map_widget_definition import JourneyMapWidgetDefinition
+from datadog_api_client.v1.model.journey_map_widget_definition_type import JourneyMapWidgetDefinitionType
+from datadog_api_client.v1.model.journey_map_widget_request import JourneyMapWidgetRequest
 from datadog_api_client.v1.model.list_stream_column import ListStreamColumn
 from datadog_api_client.v1.model.list_stream_column_width import ListStreamColumnWidth
 from datadog_api_client.v1.model.list_stream_compute_aggregation import ListStreamComputeAggregation
@@ -1800,6 +1811,17 @@ __all__ = [
     "ImageWidgetDefinition",
     "ImageWidgetDefinitionType",
     "IntakePayloadAccepted",
+    "JourneyMapConversionType",
+    "JourneyMapCountingMethod",
+    "JourneyMapExpandedPrefix",
+    "JourneyMapGroupBy",
+    "JourneyMapGroupByAudience",
+    "JourneyMapQuery",
+    "JourneyMapRequestType",
+    "JourneyMapTarget",
+    "JourneyMapWidgetDefinition",
+    "JourneyMapWidgetDefinitionType",
+    "JourneyMapWidgetRequest",
     "ListStreamColumn",
     "ListStreamColumnWidth",
     "ListStreamComputeAggregation",
