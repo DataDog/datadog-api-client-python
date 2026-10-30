@@ -18,6 +18,9 @@ class RoutingRuleAction(ModelComposed):
         :param channel: The channel ID.
         :type channel: str
 
+        :param customizable_content: Options that customize the content of the Slack message sent for a Page.
+        :type customizable_content: SendSlackMessageActionCustomizableContent, optional
+
         :param type: Indicates that the action is a send Slack message action.
         :type type: SendSlackMessageActionType
 
