@@ -1,0 +1,45 @@
+{
+  "api": "AIGuard",
+  "expected_status": 400,
+  "feature": "AI Guard",
+  "id": "v2/AI Guard/Evaluate an AI Guard request rejects image parts without a URL",
+  "operation_id": "EvaluateAIGuardRequest",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "AIGuardEvaluateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "messages": [
+              {
+                "content": [
+                  {
+                    "image_url": {
+                      "url": ""
+                    },
+                    "type": "image_url"
+                  }
+                ],
+                "role": "user"
+              }
+            ]
+          },
+          "type": "evaluations"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/ai-guard/evaluate"
+  },
+  "scenario": "Evaluate an AI Guard request rejects image parts without a URL",
+  "schema_version": 1,
+  "version": "v2"
+}

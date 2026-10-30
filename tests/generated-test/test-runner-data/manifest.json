@@ -2794,6 +2794,55 @@
       "version": "v2"
     },
     {
+      "feature": "AI Guard",
+      "feature_file": "../../v2/features/ai_guard.feature",
+      "file": "v2/ai-guard/evaluate-an-ai-guard-request-rejects-empty-multipart-user-content.json",
+      "scenario": "Evaluate an AI Guard request rejects empty multipart user content",
+      "version": "v2"
+    },
+    {
+      "feature": "AI Guard",
+      "feature_file": "../../v2/features/ai_guard.feature",
+      "file": "v2/ai-guard/evaluate-an-ai-guard-request-rejects-image-parts-without-a-url.json",
+      "scenario": "Evaluate an AI Guard request rejects image parts without a URL",
+      "version": "v2"
+    },
+    {
+      "feature": "AI Guard",
+      "feature_file": "../../v2/features/ai_guard.feature",
+      "file": "v2/ai-guard/evaluate-an-ai-guard-request-rejects-text-parts-without-text.json",
+      "scenario": "Evaluate an AI Guard request rejects text parts without text",
+      "version": "v2"
+    },
+    {
+      "feature": "AI Guard",
+      "feature_file": "../../v2/features/ai_guard.feature",
+      "file": "v2/ai-guard/evaluate-an-ai-guard-request-returns-bad-request-response.json",
+      "scenario": "Evaluate an AI Guard request returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "AI Guard",
+      "feature_file": "../../v2/features/ai_guard.feature",
+      "file": "v2/ai-guard/evaluate-an-ai-guard-request-returns-ok-response.json",
+      "scenario": "Evaluate an AI Guard request returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "AI Guard",
+      "feature_file": "../../v2/features/ai_guard.feature",
+      "file": "v2/ai-guard/evaluate-an-ai-guard-request-with-a-numeric-confidence-threshold.json",
+      "scenario": "Evaluate an AI Guard request with a numeric confidence threshold",
+      "version": "v2"
+    },
+    {
+      "feature": "AI Guard",
+      "feature_file": "../../v2/features/ai_guard.feature",
+      "file": "v2/ai-guard/evaluate-an-ai-guard-request-with-per-category-confidence-thresholds.json",
+      "scenario": "Evaluate an AI Guard request with per-category confidence thresholds",
+      "version": "v2"
+    },
+    {
       "feature": "Annotations",
       "feature_file": "../../v2/features/annotations.feature",
       "file": "v2/annotations/create-an-annotation-returns-ok-response.json",

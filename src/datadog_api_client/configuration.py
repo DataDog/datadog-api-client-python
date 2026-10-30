@@ -341,6 +341,7 @@ class Configuration:
                 "v2.get_execution_policy": False,
                 "v2.list_execution_policies": False,
                 "v2.update_execution_policy": False,
+                "v2.evaluate_ai_guard_request": False,
                 "v2.create_annotation": False,
                 "v2.delete_annotation": False,
                 "v2.get_page_annotations": False,

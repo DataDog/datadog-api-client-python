@@ -1,0 +1,331 @@
+{
+  "feature": "AI Guard",
+  "recordings": [
+    {
+      "feature": "AI Guard",
+      "frozen_at": "2026-10-26T11:41:08.575Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "messages": [
+                      {
+                        "content": [],
+                        "role": "user"
+                      }
+                    ]
+                  },
+                  "type": "evaluations"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/ai-guard/evaluate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"content parts cannot be empty array for user messages\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Evaluate an AI Guard request rejects empty multipart user content",
+      "version": "v2"
+    },
+    {
+      "feature": "AI Guard",
+      "frozen_at": "2026-10-26T11:41:08.682Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "messages": [
+                      {
+                        "content": [
+                          {
+                            "image_url": {
+                              "url": ""
+                            },
+                            "type": "image_url"
+                          }
+                        ],
+                        "role": "user"
+                      }
+                    ]
+                  },
+                  "type": "evaluations"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/ai-guard/evaluate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"content part 0: image_url is required when type is 'image_url'\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Evaluate an AI Guard request rejects image parts without a URL",
+      "version": "v2"
+    },
+    {
+      "feature": "AI Guard",
+      "frozen_at": "2026-10-26T11:41:08.732Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "messages": [
+                      {
+                        "content": [
+                          {
+                            "type": "text"
+                          }
+                        ],
+                        "role": "user"
+                      }
+                    ]
+                  },
+                  "type": "evaluations"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/ai-guard/evaluate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"content part 0: text is required when type is 'text'\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Evaluate an AI Guard request rejects text parts without text",
+      "version": "v2"
+    },
+    {
+      "feature": "AI Guard",
+      "frozen_at": "2026-10-26T11:41:08.777Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "messages": [
+                      {
+                        "role": "user"
+                      }
+                    ]
+                  },
+                  "type": "evaluations"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/ai-guard/evaluate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"content is required for user messages\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Evaluate an AI Guard request returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "AI Guard",
+      "frozen_at": "2026-10-26T11:41:08.830Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "messages": [
+                      {
+                        "content": "Hello world!",
+                        "role": "user"
+                      }
+                    ],
+                    "meta": {
+                      "confidence_threshold": 0.8
+                    }
+                  },
+                  "type": "evaluations"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/ai-guard/evaluate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a76a703c-324f-42ed-af33-9b17d65e28af\",\"type\":\"evaluations\",\"attributes\":{\"action\":\"ALLOW\",\"global_prob\":0.005218505859375,\"is_blocking_enabled\":false,\"reason\":\"No rule match.\",\"tag_probs\":null,\"tags\":[]}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Evaluate an AI Guard request returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "AI Guard",
+      "frozen_at": "2026-10-26T11:41:08.905Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "messages": [
+                      {
+                        "content": "Hello world!",
+                        "role": "user"
+                      }
+                    ],
+                    "meta": {
+                      "confidence_threshold": 0.8
+                    }
+                  },
+                  "type": "evaluations"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/ai-guard/evaluate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"645e547e-1430-41df-a7e5-7cee63a8110e\",\"type\":\"evaluations\",\"attributes\":{\"action\":\"ALLOW\",\"global_prob\":0.005218505859375,\"is_blocking_enabled\":false,\"reason\":\"No rule match.\",\"tag_probs\":null,\"tags\":[]}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Evaluate an AI Guard request with a numeric confidence threshold",
+      "version": "v2"
+    },
+    {
+      "feature": "AI Guard",
+      "frozen_at": "2026-10-26T11:41:08.982Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "messages": [
+                      {
+                        "content": "Hello world!",
+                        "role": "user"
+                      }
+                    ],
+                    "meta": {
+                      "confidence_threshold": {
+                        "flagging_global": 0.6,
+                        "indirect-prompt-injection": 0.4,
+                        "policy-evasion": 0.9
+                      }
+                    }
+                  },
+                  "type": "evaluations"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/ai-guard/evaluate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"aeeb0cb1-32e2-4efa-82d9-3d8ce357ec72\",\"type\":\"evaluations\",\"attributes\":{\"action\":\"ALLOW\",\"global_prob\":0.005218505859375,\"is_blocking_enabled\":false,\"reason\":\"No rule match.\",\"tag_probs\":null,\"tags\":[]}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Evaluate an AI Guard request with per-category confidence thresholds",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}
