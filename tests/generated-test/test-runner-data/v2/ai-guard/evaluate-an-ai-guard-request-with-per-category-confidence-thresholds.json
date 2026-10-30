@@ -1,0 +1,45 @@
+{
+  "api": "AIGuard",
+  "expected_status": 200,
+  "feature": "AI Guard",
+  "id": "v2/AI Guard/Evaluate an AI Guard request with per-category confidence thresholds",
+  "operation_id": "EvaluateAIGuardRequest",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "AIGuardEvaluateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "messages": [
+              {
+                "content": "Hello world!",
+                "role": "user"
+              }
+            ],
+            "meta": {
+              "confidence_threshold": {
+                "flagging_global": 0.6,
+                "indirect-prompt-injection": 0.4,
+                "policy-evasion": 0.9
+              }
+            }
+          },
+          "type": "evaluations"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/ai-guard/evaluate"
+  },
+  "scenario": "Evaluate an AI Guard request with per-category confidence thresholds",
+  "schema_version": 1,
+  "version": "v2"
+}

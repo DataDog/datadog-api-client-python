@@ -1,3 +1,30 @@
+from datadog_api_client.v2.model.ai_guard_action import AIGuardAction
+from datadog_api_client.v2.model.ai_guard_confidence_threshold import AIGuardConfidenceThreshold
+from datadog_api_client.v2.model.ai_guard_confidence_threshold_override import AIGuardConfidenceThresholdOverride
+from datadog_api_client.v2.model.ai_guard_content_part import AIGuardContentPart
+from datadog_api_client.v2.model.ai_guard_content_part_type import AIGuardContentPartType
+from datadog_api_client.v2.model.ai_guard_evaluate_attributes_response import AIGuardEvaluateAttributesResponse
+from datadog_api_client.v2.model.ai_guard_evaluate_data_response import AIGuardEvaluateDataResponse
+from datadog_api_client.v2.model.ai_guard_evaluate_request import AIGuardEvaluateRequest
+from datadog_api_client.v2.model.ai_guard_evaluate_request_data import AIGuardEvaluateRequestData
+from datadog_api_client.v2.model.ai_guard_evaluate_request_data_attributes import AIGuardEvaluateRequestDataAttributes
+from datadog_api_client.v2.model.ai_guard_evaluate_response import AIGuardEvaluateResponse
+from datadog_api_client.v2.model.ai_guard_evaluation_type import AIGuardEvaluationType
+from datadog_api_client.v2.model.ai_guard_image_url import AIGuardImageURL
+from datadog_api_client.v2.model.ai_guard_message import AIGuardMessage
+from datadog_api_client.v2.model.ai_guard_message_content import AIGuardMessageContent
+from datadog_api_client.v2.model.ai_guard_message_role import AIGuardMessageRole
+from datadog_api_client.v2.model.ai_guard_meta import AIGuardMeta
+from datadog_api_client.v2.model.ai_guard_redaction_replacement import AIGuardRedactionReplacement
+from datadog_api_client.v2.model.ai_guard_scfw_findings import AIGuardScfwFindings
+from datadog_api_client.v2.model.ai_guard_scfw_matched_rule import AIGuardScfwMatchedRule
+from datadog_api_client.v2.model.ai_guard_scfw_outcome import AIGuardScfwOutcome
+from datadog_api_client.v2.model.ai_guard_scfw_package_finding import AIGuardScfwPackageFinding
+from datadog_api_client.v2.model.ai_guard_sds_finding import AIGuardSdsFinding
+from datadog_api_client.v2.model.ai_guard_sds_finding_location import AIGuardSdsFindingLocation
+from datadog_api_client.v2.model.ai_guard_tool_call import AIGuardToolCall
+from datadog_api_client.v2.model.ai_guard_tool_call_function import AIGuardToolCallFunction
+from datadog_api_client.v2.model.ai_guard_tool_policy_action import AIGuardToolPolicyAction
 from datadog_api_client.v2.model.ai_impact_user_activity_attributes import AIImpactUserActivityAttributes
 from datadog_api_client.v2.model.ai_impact_user_activity_data import AIImpactUserActivityData
 from datadog_api_client.v2.model.ai_impact_user_activity_request import AIImpactUserActivityRequest
@@ -13149,6 +13176,33 @@ from datadog_api_client.v2.model.zoom_configuration_reference import ZoomConfigu
 from datadog_api_client.v2.model.zoom_configuration_reference_data import ZoomConfigurationReferenceData
 
 __all__ = [
+    "AIGuardAction",
+    "AIGuardConfidenceThreshold",
+    "AIGuardConfidenceThresholdOverride",
+    "AIGuardContentPart",
+    "AIGuardContentPartType",
+    "AIGuardEvaluateAttributesResponse",
+    "AIGuardEvaluateDataResponse",
+    "AIGuardEvaluateRequest",
+    "AIGuardEvaluateRequestData",
+    "AIGuardEvaluateRequestDataAttributes",
+    "AIGuardEvaluateResponse",
+    "AIGuardEvaluationType",
+    "AIGuardImageURL",
+    "AIGuardMessage",
+    "AIGuardMessageContent",
+    "AIGuardMessageRole",
+    "AIGuardMeta",
+    "AIGuardRedactionReplacement",
+    "AIGuardScfwFindings",
+    "AIGuardScfwMatchedRule",
+    "AIGuardScfwOutcome",
+    "AIGuardScfwPackageFinding",
+    "AIGuardSdsFinding",
+    "AIGuardSdsFindingLocation",
+    "AIGuardToolCall",
+    "AIGuardToolCallFunction",
+    "AIGuardToolPolicyAction",
     "AIImpactUserActivityAttributes",
     "AIImpactUserActivityData",
     "AIImpactUserActivityRequest",

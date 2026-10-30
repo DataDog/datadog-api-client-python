@@ -374,6 +374,12 @@
       "type": "safe"
     }
   },
+  "EvaluateAIGuardRequest": {
+    "tag": "AI Guard",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "CreateAIImpactUserActivity": {
     "tag": "Delivery Performance",
     "undo": {

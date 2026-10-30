@@ -116,6 +116,11 @@
       "version": "v1"
     },
     {
+      "feature": "AI Guard",
+      "file": "v2/ai-guard.json",
+      "version": "v2"
+    },
+    {
       "feature": "APM Retention Filters",
       "file": "v2/apm-retention-filters.json",
       "version": "v2"
