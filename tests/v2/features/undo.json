@@ -3185,6 +3185,18 @@
       "type": "idempotent"
     }
   },
+  "ListFeatureFlagHistory": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ExportFeatureFlagHistory": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetSavedFilter": {
     "tag": "Feature Flags",
     "undo": {

@@ -4019,9 +4019,28 @@ from datadog_api_client.v2.model.fastly_service_type import FastlyServiceType
 from datadog_api_client.v2.model.fastly_services_response import FastlyServicesResponse
 from datadog_api_client.v2.model.feature_flag import FeatureFlag
 from datadog_api_client.v2.model.feature_flag_attributes import FeatureFlagAttributes
+from datadog_api_client.v2.model.feature_flag_change_event import FeatureFlagChangeEvent
+from datadog_api_client.v2.model.feature_flag_change_event_action import FeatureFlagChangeEventAction
+from datadog_api_client.v2.model.feature_flag_change_event_attributes import FeatureFlagChangeEventAttributes
+from datadog_api_client.v2.model.feature_flag_change_event_creation_source import FeatureFlagChangeEventCreationSource
+from datadog_api_client.v2.model.feature_flag_change_event_environment import FeatureFlagChangeEventEnvironment
+from datadog_api_client.v2.model.feature_flag_change_event_flag import FeatureFlagChangeEventFlag
+from datadog_api_client.v2.model.feature_flag_change_event_property import FeatureFlagChangeEventProperty
+from datadog_api_client.v2.model.feature_flag_change_event_suggestion_lifecycle_status import (
+    FeatureFlagChangeEventSuggestionLifecycleStatus,
+)
+from datadog_api_client.v2.model.feature_flag_change_event_suggestion_review import (
+    FeatureFlagChangeEventSuggestionReview,
+)
+from datadog_api_client.v2.model.feature_flag_change_event_suggestion_status import (
+    FeatureFlagChangeEventSuggestionStatus,
+)
+from datadog_api_client.v2.model.feature_flag_change_event_type import FeatureFlagChangeEventType
 from datadog_api_client.v2.model.feature_flag_distribution_channel import FeatureFlagDistributionChannel
 from datadog_api_client.v2.model.feature_flag_environment import FeatureFlagEnvironment
 from datadog_api_client.v2.model.feature_flag_environment_list_item import FeatureFlagEnvironmentListItem
+from datadog_api_client.v2.model.feature_flag_history_pagination_meta import FeatureFlagHistoryPaginationMeta
+from datadog_api_client.v2.model.feature_flag_history_pagination_meta_page import FeatureFlagHistoryPaginationMetaPage
 from datadog_api_client.v2.model.feature_flag_list_item import FeatureFlagListItem
 from datadog_api_client.v2.model.feature_flag_list_item_attributes import FeatureFlagListItemAttributes
 from datadog_api_client.v2.model.feature_flag_production_status import FeatureFlagProductionStatus
@@ -6145,6 +6164,7 @@ from datadog_api_client.v2.model.list_entity_catalog_response import ListEntityC
 from datadog_api_client.v2.model.list_entity_catalog_response_included_item import ListEntityCatalogResponseIncludedItem
 from datadog_api_client.v2.model.list_entity_catalog_response_links import ListEntityCatalogResponseLinks
 from datadog_api_client.v2.model.list_environments_response import ListEnvironmentsResponse
+from datadog_api_client.v2.model.list_feature_flag_history_response import ListFeatureFlagHistoryResponse
 from datadog_api_client.v2.model.list_feature_flags_response import ListFeatureFlagsResponse
 from datadog_api_client.v2.model.list_findings_meta import ListFindingsMeta
 from datadog_api_client.v2.model.list_findings_page import ListFindingsPage
@@ -15862,9 +15882,22 @@ __all__ = [
     "FastlyServicesResponse",
     "FeatureFlag",
     "FeatureFlagAttributes",
+    "FeatureFlagChangeEvent",
+    "FeatureFlagChangeEventAction",
+    "FeatureFlagChangeEventAttributes",
+    "FeatureFlagChangeEventCreationSource",
+    "FeatureFlagChangeEventEnvironment",
+    "FeatureFlagChangeEventFlag",
+    "FeatureFlagChangeEventProperty",
+    "FeatureFlagChangeEventSuggestionLifecycleStatus",
+    "FeatureFlagChangeEventSuggestionReview",
+    "FeatureFlagChangeEventSuggestionStatus",
+    "FeatureFlagChangeEventType",
     "FeatureFlagDistributionChannel",
     "FeatureFlagEnvironment",
     "FeatureFlagEnvironmentListItem",
+    "FeatureFlagHistoryPaginationMeta",
+    "FeatureFlagHistoryPaginationMetaPage",
     "FeatureFlagListItem",
     "FeatureFlagListItemAttributes",
     "FeatureFlagProductionStatus",
@@ -17438,6 +17471,7 @@ __all__ = [
     "ListEntityCatalogResponseIncludedItem",
     "ListEntityCatalogResponseLinks",
     "ListEnvironmentsResponse",
+    "ListFeatureFlagHistoryResponse",
     "ListFeatureFlagsResponse",
     "ListFindingsMeta",
     "ListFindingsPage",
