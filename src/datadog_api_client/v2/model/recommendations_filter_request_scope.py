@@ -15,9 +15,9 @@ from typing import ClassVar
 class RecommendationsFilterRequestScope(ModelSimple):
     """
     Recommendations scope. Defaults to `ccm`; use `experiment` for experimental recommendations
-        or `*` for both.
+        or `*` for both. An empty value is treated as `ccm`.
 
-    :param value: Must be one of ["ccm", "experiment", "*"].
+    :param value: Must be one of ["ccm", "experiment", "*", ""].
     :type value: str
     """
 
@@ -25,10 +25,12 @@ class RecommendationsFilterRequestScope(ModelSimple):
         "ccm",
         "experiment",
         "*",
+        "",
     }
     CCM: ClassVar["RecommendationsFilterRequestScope"]
     EXPERIMENT: ClassVar["RecommendationsFilterRequestScope"]
     ALL: ClassVar["RecommendationsFilterRequestScope"]
+    EMPTY: ClassVar["RecommendationsFilterRequestScope"]
 
     @cached_property
     def openapi_types(_):
@@ -40,3 +42,4 @@ class RecommendationsFilterRequestScope(ModelSimple):
 RecommendationsFilterRequestScope.CCM = RecommendationsFilterRequestScope("ccm")
 RecommendationsFilterRequestScope.EXPERIMENT = RecommendationsFilterRequestScope("experiment")
 RecommendationsFilterRequestScope.ALL = RecommendationsFilterRequestScope("*")
+RecommendationsFilterRequestScope.EMPTY = RecommendationsFilterRequestScope("")
