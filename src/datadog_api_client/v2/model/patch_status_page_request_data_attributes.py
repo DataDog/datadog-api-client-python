@@ -17,6 +17,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.create_status_page_request_data_attributes_type import (
         CreateStatusPageRequestDataAttributesType,
     )
+    from datadog_api_client.v2.model.create_status_page_request_data_attributes_visualization_layout import (
+        CreateStatusPageRequestDataAttributesVisualizationLayout,
+    )
     from datadog_api_client.v2.model.create_status_page_request_data_attributes_visualization_type import (
         CreateStatusPageRequestDataAttributesVisualizationType,
     )
@@ -27,6 +30,9 @@ class PatchStatusPageRequestDataAttributes(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v2.model.create_status_page_request_data_attributes_type import (
             CreateStatusPageRequestDataAttributesType,
+        )
+        from datadog_api_client.v2.model.create_status_page_request_data_attributes_visualization_layout import (
+            CreateStatusPageRequestDataAttributesVisualizationLayout,
         )
         from datadog_api_client.v2.model.create_status_page_request_data_attributes_visualization_type import (
             CreateStatusPageRequestDataAttributesVisualizationType,
@@ -42,6 +48,7 @@ class PatchStatusPageRequestDataAttributes(ModelNormal):
             "slack_subscriptions_enabled": (bool,),
             "subscriptions_enabled": (bool,),
             "type": (CreateStatusPageRequestDataAttributesType,),
+            "visualization_layout": (CreateStatusPageRequestDataAttributesVisualizationLayout,),
             "visualization_type": (CreateStatusPageRequestDataAttributesVisualizationType,),
         }
 
@@ -55,6 +62,7 @@ class PatchStatusPageRequestDataAttributes(ModelNormal):
         "slack_subscriptions_enabled": "slack_subscriptions_enabled",
         "subscriptions_enabled": "subscriptions_enabled",
         "type": "type",
+        "visualization_layout": "visualization_layout",
         "visualization_type": "visualization_type",
     }
 
@@ -69,6 +77,7 @@ class PatchStatusPageRequestDataAttributes(ModelNormal):
         slack_subscriptions_enabled: Union[bool, UnsetType] = unset,
         subscriptions_enabled: Union[bool, UnsetType] = unset,
         type: Union[CreateStatusPageRequestDataAttributesType, UnsetType] = unset,
+        visualization_layout: Union[CreateStatusPageRequestDataAttributesVisualizationLayout, UnsetType] = unset,
         visualization_type: Union[CreateStatusPageRequestDataAttributesVisualizationType, UnsetType] = unset,
         **kwargs,
     ):
@@ -102,6 +111,9 @@ class PatchStatusPageRequestDataAttributes(ModelNormal):
         :param type: The type of the status page controlling how the status page is accessed.
         :type type: CreateStatusPageRequestDataAttributesType, optional
 
+        :param visualization_layout: The layout of components on the status page. Defaults to ``list``. ``grid`` requires ``visualization_type`` to be ``component_name_only`` ; changing ``visualization_type`` to any other value resets the layout to ``list``.
+        :type visualization_layout: CreateStatusPageRequestDataAttributesVisualizationLayout, optional
+
         :param visualization_type: The visualization type of the status page.
         :type visualization_type: CreateStatusPageRequestDataAttributesVisualizationType, optional
         """
@@ -123,6 +135,8 @@ class PatchStatusPageRequestDataAttributes(ModelNormal):
             kwargs["subscriptions_enabled"] = subscriptions_enabled
         if type is not unset:
             kwargs["type"] = type
+        if visualization_layout is not unset:
+            kwargs["visualization_layout"] = visualization_layout
         if visualization_type is not unset:
             kwargs["visualization_type"] = visualization_type
         super().__init__(kwargs)
