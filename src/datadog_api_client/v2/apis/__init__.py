@@ -119,7 +119,6 @@ from datadog_api_client.v2.api.rum_replay_sessions_api import RumReplaySessionsA
 from datadog_api_client.v2.api.rum_replay_viewership_api import RumReplayViewershipApi
 from datadog_api_client.v2.api.rum_retention_filters_api import RumRetentionFiltersApi
 from datadog_api_client.v2.api.rum_teams_ownership_api import RumTeamsOwnershipApi
-from datadog_api_client.v2.api.salesforce_integration_api import SalesforceIntegrationApi
 from datadog_api_client.v2.api.scorecards_api import ScorecardsApi
 from datadog_api_client.v2.api.seats_api import SeatsApi
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
@@ -276,7 +275,6 @@ __all__ = [
     "RumReplayViewershipApi",
     "RumRetentionFiltersApi",
     "RumTeamsOwnershipApi",
-    "SalesforceIntegrationApi",
     "ScorecardsApi",
     "SeatsApi",
     "SecurityMonitoringApi",
