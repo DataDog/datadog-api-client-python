@@ -48,7 +48,8 @@ class ContainerImageVulnerabilities(ModelNormal):
         **kwargs,
     ):
         """
-        Vulnerability counts associated with the Container Image.
+        Vulnerability counts by severity, when available. An absent ``vulnerability_count`` does not mean
+        the image has no vulnerabilities.
 
         :param asset_id: ID of the Container Image.
         :type asset_id: str, optional

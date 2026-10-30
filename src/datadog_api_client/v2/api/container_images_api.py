@@ -85,19 +85,36 @@ class ContainerImagesApi:
     ) -> ContainerImagesResponse:
         """Get all Container Images.
 
-        Get all Container Images for your organization.
+        Get all container images for your organization. This endpoint queries current
+        inventory and does not support time-range parameters.
+
+        Use ``group_by`` to return image groups with counts. Grouped results are limited
+        by ``page[size]`` , may be incomplete, and do not support pagination.
+
         **Note** : To enrich the data returned by this endpoint with security scans, see the new `api/v2/security/scanned-assets-metadata <https://docs.datadoghq.com/api/latest/security-monitoring/#list-scanned-assets-metadata>`_ endpoint.
 
-        :param filter_tags: Comma-separated list of tags to filter Container Images by.
+        :param filter_tags: Comma-separated ``key:value`` tags. An image must match every tag. Wildcards, negation
+            ( ``-key:value`` ), spaces, and ``IN (...)`` are not supported. Use keys such as ``image_registry``
+            and ``image_tag``. To match any of several values of the same key, make one request per value.
         :type filter_tags: str, optional
-        :param group_by: Comma-separated list of tags to group Container Images by.
+        :param group_by: Comma-separated list of up to three tag keys, such as ``image_registry,image_tag``. Returns
+            ``container_image_group`` objects with counts and tags. Grouped results ignore ``sort`` and do
+            not support pagination. Images missing a grouping key are excluded. An image with multiple
+            values for a grouping tag can appear in multiple groups. Grouped results may be incomplete.
+            Compare counts only within the returned groups; they do not establish the most common tags
+            or proportions across the inventory. For inventory-wide comparisons, omit ``group_by`` , keep the
+            same filters, paginate all results, and deduplicate by returned image ID. For an inventory total,
+            use ``meta.pagination.total`` from a query without grouping.
         :type group_by: str, optional
-        :param sort: Attribute to sort Container Images by.
+        :param sort: Attribute to sort individual images by, such as ``size`` or ``container_count``.
+            Defaults to ``image_name`` in ascending order. Prefix the attribute with ``-`` for
+            descending order, such as ``-size``. Ignored when ``group_by`` is specified.
         :type sort: str, optional
-        :param page_size: Maximum number of results returned.
+        :param page_size: Maximum number of results returned. Grouped queries default to ``100`` , with a maximum of ``1000`` groups.
+            Without grouping, queries default to ``1000`` , with a maximum of ``10000`` images. Minimum is ``1``.
         :type page_size: int, optional
-        :param page_cursor: String to query the next page of results.
-            This key is provided with each valid response from the API in ``meta.pagination.next_cursor``.
+        :param page_cursor: Opaque cursor from ``meta.pagination.next_cursor`` for individual images. Keep the same filters
+            and sort order. Stop when absent or empty. Grouped queries do not support pagination.
         :type page_cursor: str, optional
         :rtype: ContainerImagesResponse
         """
@@ -132,16 +149,28 @@ class ContainerImagesApi:
 
         Provide a paginated version of :meth:`list_container_images`, returning all items.
 
-        :param filter_tags: Comma-separated list of tags to filter Container Images by.
+        :param filter_tags: Comma-separated ``key:value`` tags. An image must match every tag. Wildcards, negation
+            ( ``-key:value`` ), spaces, and ``IN (...)`` are not supported. Use keys such as ``image_registry``
+            and ``image_tag``. To match any of several values of the same key, make one request per value.
         :type filter_tags: str, optional
-        :param group_by: Comma-separated list of tags to group Container Images by.
+        :param group_by: Comma-separated list of up to three tag keys, such as ``image_registry,image_tag``. Returns
+            ``container_image_group`` objects with counts and tags. Grouped results ignore ``sort`` and do
+            not support pagination. Images missing a grouping key are excluded. An image with multiple
+            values for a grouping tag can appear in multiple groups. Grouped results may be incomplete.
+            Compare counts only within the returned groups; they do not establish the most common tags
+            or proportions across the inventory. For inventory-wide comparisons, omit ``group_by`` , keep the
+            same filters, paginate all results, and deduplicate by returned image ID. For an inventory total,
+            use ``meta.pagination.total`` from a query without grouping.
         :type group_by: str, optional
-        :param sort: Attribute to sort Container Images by.
+        :param sort: Attribute to sort individual images by, such as ``size`` or ``container_count``.
+            Defaults to ``image_name`` in ascending order. Prefix the attribute with ``-`` for
+            descending order, such as ``-size``. Ignored when ``group_by`` is specified.
         :type sort: str, optional
-        :param page_size: Maximum number of results returned.
+        :param page_size: Maximum number of results returned. Grouped queries default to ``100`` , with a maximum of ``1000`` groups.
+            Without grouping, queries default to ``1000`` , with a maximum of ``10000`` images. Minimum is ``1``.
         :type page_size: int, optional
-        :param page_cursor: String to query the next page of results.
-            This key is provided with each valid response from the API in ``meta.pagination.next_cursor``.
+        :param page_cursor: Opaque cursor from ``meta.pagination.next_cursor`` for individual images. Keep the same filters
+            and sort order. Stop when absent or empty. Grouped queries do not support pagination.
         :type page_cursor: str, optional
 
         :return: A generator of paginated results.

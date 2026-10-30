@@ -28,7 +28,9 @@ class ContainerImageGroupRelationshipsLinks(ModelNormal):
         """
         Links attributes.
 
-        :param related: Link to related Container Images.
+        :param related: Link containing the original filters combined with the group tags, without ``group_by``.
+            Use its ``filter[tags]`` value in a new request to your site's API host. The tags must satisfy
+            ``filter[tags]`` syntax restrictions.
         :type related: str, optional
         """
         if related is not unset:
