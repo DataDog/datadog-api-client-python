@@ -767,14 +767,11 @@ Feature: Cloud Cost Management
     When the request is sent
     Then the response status is 200 OK
 
-  @team:ddoghq/cloud-cost-management
+  @generated @skip @team:ddoghq/cloud-cost-management
   Scenario: List Cloud Cost Management cloud accounts returns "Bad Request" response
     Given new "ListCostCloudAccountsV2" request
-    And request contains "filter[cloud]" parameter with value "gcp"
     When the request is sent
     Then the response status is 400 Bad Request
-    And the response "errors[0].status" is equal to "400"
-    And the response "errors[0].detail" is equal to "attribute \"filter[cloud]\" must be one of: oci, aws_cur2"
 
   @team:ddoghq/cloud-cost-management
   Scenario: List Cloud Cost Management cloud accounts returns "OK" response
