@@ -3,6 +3,99 @@
   "recordings": [
     {
       "feature": "Usage Metering",
+      "frozen_at": "2026-10-29T18:06:54.122Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "justification": "Credits needed for Test-Decide_a_temporary_grant_request_returns_OK_response-1793297214.",
+                    "total": 200
+                  },
+                  "type": "temporary_grant_requests"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/usage/temporary-grant-requests",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"5c05597a-04d0-4b95-969e-6bad0108f4e1\",\"type\":\"temporary_grant_requests\",\"attributes\":{\"created_at\":\"2026-10-29T18:06:56.353756Z\",\"entity_key\":\"user_handle:cedric.vanrompay@datadoghq.com\",\"expires_at\":\"2026-11-01T00:00:00Z\",\"justification\":\"Credits needed for Test-Decide_a_temporary_grant_request_returns_OK_response-1793297214.\",\"quota_namespace\":\"ai_credits\",\"requested_by_user_id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"status\":\"pending\",\"total\":200}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "decision": "denied"
+                  },
+                  "id": "5c05597a-04d0-4b95-969e-6bad0108f4e1",
+                  "type": "temporary_grant_requests"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/usage/admin/temporary-grant-requests/5c05597a-04d0-4b95-969e-6bad0108f4e1/decision",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"5c05597a-04d0-4b95-969e-6bad0108f4e1\",\"type\":\"temporary_grant_requests\",\"attributes\":{\"created_at\":\"2026-10-29T18:06:56.353756Z\",\"decided_at\":\"2026-10-29T18:06:56.430411Z\",\"decided_by_user_id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"entity_key\":\"user_handle:cedric.vanrompay@datadoghq.com\",\"expires_at\":\"2026-11-01T00:00:00Z\",\"justification\":\"Credits needed for Test-Decide_a_temporary_grant_request_returns_OK_response-1793297214.\",\"quota_namespace\":\"ai_credits\",\"requested_by_user_id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"status\":\"denied\",\"total\":200}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/usage/temporary-grant-requests/5c05597a-04d0-4b95-969e-6bad0108f4e1",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"temporary grant request is no longer pending or has expired\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Conflict",
+            "status": 409
+          }
+        }
+      ],
+      "scenario": "Decide a temporary grant request returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
       "frozen_at": "2023-11-16T19:41:02.013Z",
       "interactions": [
         {
@@ -118,6 +211,89 @@
         }
       ],
       "scenario": "Get active billing dimensions for cost attribution returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
+      "frozen_at": "2026-10-29T18:06:56.505Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "justification": "Credits needed for Test-Get_an_organization_temporary_grant_request_returns_OK_response-1793297216.",
+                    "total": 200
+                  },
+                  "type": "temporary_grant_requests"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/usage/temporary-grant-requests",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"5c0e85a8-8def-4a55-ba83-17b30be04b21\",\"type\":\"temporary_grant_requests\",\"attributes\":{\"created_at\":\"2026-10-29T18:06:56.559013Z\",\"entity_key\":\"user_handle:cedric.vanrompay@datadoghq.com\",\"expires_at\":\"2026-11-01T00:00:00Z\",\"justification\":\"Credits needed for Test-Get_an_organization_temporary_grant_request_returns_OK_response-1793297216.\",\"quota_namespace\":\"ai_credits\",\"requested_by_user_id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"status\":\"pending\",\"total\":200}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/usage/admin/temporary-grant-requests/5c0e85a8-8def-4a55-ba83-17b30be04b21",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"5c0e85a8-8def-4a55-ba83-17b30be04b21\",\"type\":\"temporary_grant_requests\",\"attributes\":{\"created_at\":\"2026-10-29T18:06:56.559013Z\",\"entity_key\":\"user_handle:cedric.vanrompay@datadoghq.com\",\"expires_at\":\"2026-11-01T00:00:00Z\",\"justification\":\"Credits needed for Test-Get_an_organization_temporary_grant_request_returns_OK_response-1793297216.\",\"quota_namespace\":\"ai_credits\",\"requested_by_user_id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"status\":\"pending\",\"total\":200}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/usage/temporary-grant-requests/5c0e85a8-8def-4a55-ba83-17b30be04b21",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get an organization temporary grant request returns \"OK\" response",
       "version": "v2"
     },
     {
@@ -696,6 +872,89 @@
         }
       ],
       "scenario": "Get projected cost across your account returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Usage Metering",
+      "frozen_at": "2026-10-29T18:06:56.719Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "justification": "Credits needed for Test-Get_your_temporary_grant_request_returns_OK_response-1793297216.",
+                    "total": 200
+                  },
+                  "type": "temporary_grant_requests"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/usage/temporary-grant-requests",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"7b02f423-50da-4694-a06f-fc850bed6e79\",\"type\":\"temporary_grant_requests\",\"attributes\":{\"created_at\":\"2026-10-29T18:06:56.825991Z\",\"entity_key\":\"user_handle:cedric.vanrompay@datadoghq.com\",\"expires_at\":\"2026-11-01T00:00:00Z\",\"justification\":\"Credits needed for Test-Get_your_temporary_grant_request_returns_OK_response-1793297216.\",\"quota_namespace\":\"ai_credits\",\"requested_by_user_id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"status\":\"pending\",\"total\":200}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/usage/temporary-grant-requests/7b02f423-50da-4694-a06f-fc850bed6e79",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"7b02f423-50da-4694-a06f-fc850bed6e79\",\"type\":\"temporary_grant_requests\",\"attributes\":{\"created_at\":\"2026-10-29T18:06:56.825991Z\",\"entity_key\":\"user_handle:cedric.vanrompay@datadoghq.com\",\"expires_at\":\"2026-11-01T00:00:00Z\",\"justification\":\"Credits needed for Test-Get_your_temporary_grant_request_returns_OK_response-1793297216.\",\"quota_namespace\":\"ai_credits\",\"requested_by_user_id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"status\":\"pending\",\"total\":200}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/usage/temporary-grant-requests/7b02f423-50da-4694-a06f-fc850bed6e79",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get your temporary grant request returns \"OK\" response",
       "version": "v2"
     },
     {
