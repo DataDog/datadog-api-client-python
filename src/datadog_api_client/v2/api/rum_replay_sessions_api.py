@@ -15,7 +15,8 @@ from datadog_api_client.model_utils import (
 
 class RumReplaySessionsApi:
     """
-    Retrieve segments for RUM replay sessions. Access session replay data stored in event platform or blob storage.
+    Retrieve segments for RUM replay sessions.
+    Access session replay data stored in event platform or blob storage.
     """
 
     def __init__(self, api_client=None):
@@ -96,7 +97,8 @@ class RumReplaySessionsApi:
         :type ts: int, optional
         :param max_list_size: Maximum size in bytes for the segment list.
         :type max_list_size: int, optional
-        :param paging: Paging token for pagination.
+        :param paging: Token of the next page from the ``X-Paging`` header of the previous response.
+            Send it without changes, URL-encoded in the query string. Omit it to get the first page.
         :type paging: str, optional
         :rtype: None
         """
