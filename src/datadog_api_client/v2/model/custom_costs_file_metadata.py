@@ -25,6 +25,7 @@ class CustomCostsFileMetadata(ModelNormal):
         from datadog_api_client.v2.model.custom_costs_user import CustomCostsUser
 
         return {
+            "ai_provider": (bool,),
             "billed_cost": (float,),
             "billing_currency": (str,),
             "charge_period": (CustomCostsFileUsageChargePeriod,),
@@ -36,6 +37,7 @@ class CustomCostsFileMetadata(ModelNormal):
         }
 
     attribute_map = {
+        "ai_provider": "ai_provider",
         "billed_cost": "billed_cost",
         "billing_currency": "billing_currency",
         "charge_period": "charge_period",
@@ -48,6 +50,7 @@ class CustomCostsFileMetadata(ModelNormal):
 
     def __init__(
         self_,
+        ai_provider: Union[bool, UnsetType] = unset,
         billed_cost: Union[float, UnsetType] = unset,
         billing_currency: Union[str, UnsetType] = unset,
         charge_period: Union[CustomCostsFileUsageChargePeriod, UnsetType] = unset,
@@ -60,6 +63,9 @@ class CustomCostsFileMetadata(ModelNormal):
     ):
         """
         Schema of a Custom Costs metadata.
+
+        :param ai_provider: Whether the Custom Costs file contains the costs of an AI provider.
+        :type ai_provider: bool, optional
 
         :param billed_cost: Total cost in the cost file.
         :type billed_cost: float, optional
@@ -85,6 +91,8 @@ class CustomCostsFileMetadata(ModelNormal):
         :param uploaded_by: Metadata of the user that has uploaded the Custom Costs file.
         :type uploaded_by: CustomCostsUser, optional
         """
+        if ai_provider is not unset:
+            kwargs["ai_provider"] = ai_provider
         if billed_cost is not unset:
             kwargs["billed_cost"] = billed_cost
         if billing_currency is not unset:
