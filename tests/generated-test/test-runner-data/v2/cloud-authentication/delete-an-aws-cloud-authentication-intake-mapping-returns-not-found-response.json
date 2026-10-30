@@ -1,0 +1,35 @@
+{
+  "api": "CloudAuthentication",
+  "expected_status": 404,
+  "feature": "Cloud Authentication",
+  "id": "v2/Cloud Authentication/Delete an AWS cloud authentication intake mapping returns \"Not Found\" response",
+  "operation_id": "DeleteAWSCloudAuthIntakeMapping",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "intake_mapping_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "00000000-0000-0000-0000-000000000000"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/wif/aws/intake_mapping/{intake_mapping_id}"
+  },
+  "scenario": "Delete an AWS cloud authentication intake mapping returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

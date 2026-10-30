@@ -1,0 +1,616 @@
+{
+  "feature": "Cloud Authentication",
+  "recordings": [
+    {
+      "feature": "Cloud Authentication",
+      "frozen_at": "2026-10-29T17:41:58.788Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "arn_pattern": "not-an-arn"
+                  },
+                  "type": "aws_cloud_auth_intake_mapping"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/wif/aws/intake_mapping",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"invalid ARN pattern format\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create an AWS cloud authentication intake mapping returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "frozen_at": "2026-10-29T17:41:58.958Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/integration/aws/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"00000000-0000-4000-8000-000000000001\",\"type\":\"account\",\"attributes\":{\"account_tags\":[],\"auth_config\":{\"role_name\":\"DatadogIntegrationRole\",\"external_id\":\"00000000000000000000000000000000\"},\"aws_account_id\":\"123456789012\",\"aws_partition\":\"aws\",\"aws_regions\":{\"include_all\":true},\"created_at\":\"2026-07-29T13:00:24.231898Z\",\"logs_config\":{\"lambda_forwarder\":{\"lambdas\":[],\"sources\":[],\"log_source_config\":{\"tag_filters\":[]}}},\"metrics_config\":{\"enabled\":true,\"automute_enabled\":true,\"collect_custom_metrics\":false,\"collect_cloudwatch_alarms\":false,\"tag_filters\":[],\"namespace_filters\":{\"exclude_only\":[\"AWS/SQS\",\"AWS/ElasticMapReduce\",\"AWS/Usage\"]}},\"modified_at\":\"2026-07-29T13:00:24.231898Z\",\"resources_config\":{\"cloud_security_posture_management_collection\":false,\"extended_collection\":true},\"traces_config\":{\"xray_services\":{\"include_only\":[]}}}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "arn_pattern": "arn:aws:sts::123456789012:assumed-role/DatadogAgent-1577729b51a75aae/*"
+                  },
+                  "type": "aws_cloud_auth_intake_mapping"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/wif/aws/intake_mapping",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"f4f3ca19-91bf-4e21-9424-ade6e1f26ff5\",\"type\":\"aws_cloud_auth_intake_mapping\",\"attributes\":{\"arn_pattern\":\"arn:aws:sts::123456789012:assumed-role/DatadogAgent-1577729b51a75aae/*\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "arn_pattern": "arn:aws:sts::123456789012:assumed-role/DatadogAgent-1577729b51a75aae/*"
+                  },
+                  "type": "aws_cloud_auth_intake_mapping"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/wif/aws/intake_mapping",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"ARN pattern already exists in intake mapping\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Conflict",
+            "status": 409
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/wif/aws/intake_mapping/f4f3ca19-91bf-4e21-9424-ade6e1f26ff5",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create an AWS cloud authentication intake mapping returns \"Conflict\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "frozen_at": "2026-10-29T17:41:59.581Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/integration/aws/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"00000000-0000-4000-8000-000000000001\",\"type\":\"account\",\"attributes\":{\"account_tags\":[],\"auth_config\":{\"role_name\":\"DatadogIntegrationRole\",\"external_id\":\"00000000000000000000000000000000\"},\"aws_account_id\":\"123456789012\",\"aws_partition\":\"aws\",\"aws_regions\":{\"include_all\":true},\"created_at\":\"2026-07-29T13:00:24.231898Z\",\"logs_config\":{\"lambda_forwarder\":{\"lambdas\":[],\"sources\":[],\"log_source_config\":{\"tag_filters\":[]}}},\"metrics_config\":{\"enabled\":true,\"automute_enabled\":true,\"collect_custom_metrics\":false,\"collect_cloudwatch_alarms\":false,\"tag_filters\":[],\"namespace_filters\":{\"exclude_only\":[\"AWS/SQS\",\"AWS/ElasticMapReduce\",\"AWS/Usage\"]}},\"modified_at\":\"2026-07-29T13:00:24.231898Z\",\"resources_config\":{\"cloud_security_posture_management_collection\":false,\"extended_collection\":true},\"traces_config\":{\"xray_services\":{\"include_only\":[]}}}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "arn_pattern": "arn:aws:sts::123456789012:assumed-role/DatadogAgent-484d2c17a502b020/*"
+                  },
+                  "type": "aws_cloud_auth_intake_mapping"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/wif/aws/intake_mapping",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"6b882892-4b24-48cc-ae5a-951a868cf4f1\",\"type\":\"aws_cloud_auth_intake_mapping\",\"attributes\":{\"arn_pattern\":\"arn:aws:sts::123456789012:assumed-role/DatadogAgent-484d2c17a502b020/*\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/wif/aws/intake_mapping/6b882892-4b24-48cc-ae5a-951a868cf4f1",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create an AWS cloud authentication intake mapping returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "frozen_at": "2026-10-29T17:42:00.102Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/integration/aws/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"00000000-0000-4000-8000-000000000001\",\"type\":\"account\",\"attributes\":{\"account_tags\":[],\"auth_config\":{\"role_name\":\"DatadogIntegrationRole\",\"external_id\":\"00000000000000000000000000000000\"},\"aws_account_id\":\"123456789012\",\"aws_partition\":\"aws\",\"aws_regions\":{\"include_all\":true},\"created_at\":\"2026-07-29T13:00:24.231898Z\",\"logs_config\":{\"lambda_forwarder\":{\"lambdas\":[],\"sources\":[],\"log_source_config\":{\"tag_filters\":[]}}},\"metrics_config\":{\"enabled\":true,\"automute_enabled\":true,\"collect_custom_metrics\":false,\"collect_cloudwatch_alarms\":false,\"tag_filters\":[],\"namespace_filters\":{\"exclude_only\":[\"AWS/SQS\",\"AWS/ElasticMapReduce\",\"AWS/Usage\"]}},\"modified_at\":\"2026-07-29T13:00:24.231898Z\",\"resources_config\":{\"cloud_security_posture_management_collection\":false,\"extended_collection\":true},\"traces_config\":{\"xray_services\":{\"include_only\":[]}}}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "arn_pattern": "arn:aws:sts::123456789012:assumed-role/DatadogAgent-e42cabb82e76a0b0/*"
+                  },
+                  "type": "aws_cloud_auth_intake_mapping"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/wif/aws/intake_mapping",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"5f939215-97b2-41e9-930e-f0527336b0aa\",\"type\":\"aws_cloud_auth_intake_mapping\",\"attributes\":{\"arn_pattern\":\"arn:aws:sts::123456789012:assumed-role/DatadogAgent-e42cabb82e76a0b0/*\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/wif/aws/intake_mapping/5f939215-97b2-41e9-930e-f0527336b0aa",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/wif/aws/intake_mapping/5f939215-97b2-41e9-930e-f0527336b0aa",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete an AWS cloud authentication intake mapping returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "frozen_at": "2026-10-29T17:42:00.690Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/wif/aws/intake_mapping/00000000-0000-0000-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete an AWS cloud authentication intake mapping returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "frozen_at": "2026-10-29T17:42:00.815Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/wif/aws/intake_mapping/00000000-0000-0000-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get an AWS cloud authentication intake mapping returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "frozen_at": "2026-10-29T17:42:00.943Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/integration/aws/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"00000000-0000-4000-8000-000000000001\",\"type\":\"account\",\"attributes\":{\"account_tags\":[],\"auth_config\":{\"role_name\":\"DatadogIntegrationRole\",\"external_id\":\"00000000000000000000000000000000\"},\"aws_account_id\":\"123456789012\",\"aws_partition\":\"aws\",\"aws_regions\":{\"include_all\":true},\"created_at\":\"2026-07-29T13:00:24.231898Z\",\"logs_config\":{\"lambda_forwarder\":{\"lambdas\":[],\"sources\":[],\"log_source_config\":{\"tag_filters\":[]}}},\"metrics_config\":{\"enabled\":true,\"automute_enabled\":true,\"collect_custom_metrics\":false,\"collect_cloudwatch_alarms\":false,\"tag_filters\":[],\"namespace_filters\":{\"exclude_only\":[\"AWS/SQS\",\"AWS/ElasticMapReduce\",\"AWS/Usage\"]}},\"modified_at\":\"2026-07-29T13:00:24.231898Z\",\"resources_config\":{\"cloud_security_posture_management_collection\":false,\"extended_collection\":true},\"traces_config\":{\"xray_services\":{\"include_only\":[]}}}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "arn_pattern": "arn:aws:sts::123456789012:assumed-role/DatadogAgent-9f53d5ba800a7fdb/*"
+                  },
+                  "type": "aws_cloud_auth_intake_mapping"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/wif/aws/intake_mapping",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"5283249d-a3a6-4291-88b6-e155bda4ab65\",\"type\":\"aws_cloud_auth_intake_mapping\",\"attributes\":{\"arn_pattern\":\"arn:aws:sts::123456789012:assumed-role/DatadogAgent-9f53d5ba800a7fdb/*\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/wif/aws/intake_mapping/5283249d-a3a6-4291-88b6-e155bda4ab65",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"5283249d-a3a6-4291-88b6-e155bda4ab65\",\"type\":\"aws_cloud_auth_intake_mapping\",\"attributes\":{\"arn_pattern\":\"arn:aws:sts::123456789012:assumed-role/DatadogAgent-9f53d5ba800a7fdb/*\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/wif/aws/intake_mapping/5283249d-a3a6-4291-88b6-e155bda4ab65",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get an AWS cloud authentication intake mapping returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "frozen_at": "2026-10-29T17:42:01.510Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/integration/aws/accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"00000000-0000-4000-8000-000000000001\",\"type\":\"account\",\"attributes\":{\"account_tags\":[],\"auth_config\":{\"role_name\":\"DatadogIntegrationRole\",\"external_id\":\"00000000000000000000000000000000\"},\"aws_account_id\":\"123456789012\",\"aws_partition\":\"aws\",\"aws_regions\":{\"include_all\":true},\"created_at\":\"2026-07-29T13:00:24.231898Z\",\"logs_config\":{\"lambda_forwarder\":{\"lambdas\":[],\"sources\":[],\"log_source_config\":{\"tag_filters\":[]}}},\"metrics_config\":{\"enabled\":true,\"automute_enabled\":true,\"collect_custom_metrics\":false,\"collect_cloudwatch_alarms\":false,\"tag_filters\":[],\"namespace_filters\":{\"exclude_only\":[\"AWS/SQS\",\"AWS/ElasticMapReduce\",\"AWS/Usage\"]}},\"modified_at\":\"2026-07-29T13:00:24.231898Z\",\"resources_config\":{\"cloud_security_posture_management_collection\":false,\"extended_collection\":true},\"traces_config\":{\"xray_services\":{\"include_only\":[]}}}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "arn_pattern": "arn:aws:sts::123456789012:assumed-role/DatadogAgent-ddf9858670106ffb/*"
+                  },
+                  "type": "aws_cloud_auth_intake_mapping"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/wif/aws/intake_mapping",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"80586b57-c847-4a6d-8e02-2e2c185996d0\",\"type\":\"aws_cloud_auth_intake_mapping\",\"attributes\":{\"arn_pattern\":\"arn:aws:sts::123456789012:assumed-role/DatadogAgent-ddf9858670106ffb/*\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/wif/aws/intake_mapping",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"80586b57-c847-4a6d-8e02-2e2c185996d0\",\"type\":\"aws_cloud_auth_intake_mapping\",\"attributes\":{\"arn_pattern\":\"arn:aws:sts::123456789012:assumed-role/DatadogAgent-ddf9858670106ffb/*\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/wif/aws/intake_mapping/80586b57-c847-4a6d-8e02-2e2c185996d0",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "List AWS cloud authentication intake mappings returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

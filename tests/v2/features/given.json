@@ -851,6 +851,12 @@
     "operationId": "CreateIncidentTodo"
   },
   {
+    "step": "there is an integrated AWS test account for WIF",
+    "key": "aws_wif_account_v2",
+    "tag": "AWS Integration",
+    "operationId": "ListAWSAccounts"
+  },
+  {
     "parameters": [
       {
         "name": "body",
@@ -2190,6 +2196,18 @@
     "key": "web_integration_account",
     "tag": "Web Integrations",
     "operationId": "CreateWebIntegrationAccount"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\"data\":{\"type\":\"aws_cloud_auth_intake_mapping\",\"attributes\":{\"arn_pattern\":\"arn:aws:sts::{{ aws_wif_account_v2.data[0].attributes.aws_account_id }}:assumed-role/DatadogAgent-{{ unique_hash }}/*\"}}}"
+      }
+    ],
+    "step": "there is a valid \"aws_cloud_auth_intake_mapping\" in the system",
+    "key": "aws_cloud_auth_intake_mapping",
+    "tag": "Cloud Authentication",
+    "operationId": "CreateAWSCloudAuthIntakeMapping"
   },
   {
     "parameters": [

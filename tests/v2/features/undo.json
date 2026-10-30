@@ -11513,6 +11513,37 @@
       "type": "safe"
     }
   },
+  "ListAWSCloudAuthIntakeMappings": {
+    "tag": "Cloud Authentication",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateAWSCloudAuthIntakeMapping": {
+    "tag": "Cloud Authentication",
+    "undo": {
+      "operationId": "DeleteAWSCloudAuthIntakeMapping",
+      "parameters": [
+        {
+          "name": "intake_mapping_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteAWSCloudAuthIntakeMapping": {
+    "tag": "Cloud Authentication",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetAWSCloudAuthIntakeMapping": {
+    "tag": "Cloud Authentication",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListAWSCloudAuthPersonaMappings": {
     "tag": "Cloud Authentication",
     "undo": {
