@@ -26,18 +26,18 @@ class RecommendationsFilterRequestSortItems(ModelNormal):
         "order": "order",
     }
 
-    def __init__(self_, expression: Union[str, UnsetType] = unset, order: Union[str, UnsetType] = unset, **kwargs):
+    def __init__(self_, order: str, expression: Union[str, UnsetType] = unset, **kwargs):
         """
         A single sort clause applied to the cost recommendations result set.
 
         :param expression: Field to sort by (for example, ``@potential_daily_savings`` ).
         :type expression: str, optional
 
-        :param order: Sort direction, either ``ASC`` or ``DESC``.
-        :type order: str, optional
+        :param order: Sort direction, either ``ASC`` or ``DESC`` (case-insensitive).
+        :type order: str
         """
         if expression is not unset:
             kwargs["expression"] = expression
-        if order is not unset:
-            kwargs["order"] = order
         super().__init__(kwargs)
+
+        self_.order = order
