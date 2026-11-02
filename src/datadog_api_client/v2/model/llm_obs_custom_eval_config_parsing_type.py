@@ -16,7 +16,7 @@ class LLMObsCustomEvalConfigParsingType(ModelSimple):
     """
     Output parsing type for a custom LLM judge evaluator.
 
-    :param value: Must be one of ["structured_output", "json", "keyword_search"].
+    :param value: Must be one of ["structured_output", "json", "keyword_search", "typed_questions"].
     :type value: str
     """
 
@@ -24,10 +24,12 @@ class LLMObsCustomEvalConfigParsingType(ModelSimple):
         "structured_output",
         "json",
         "keyword_search",
+        "typed_questions",
     }
     STRUCTURED_OUTPUT: ClassVar["LLMObsCustomEvalConfigParsingType"]
     JSON: ClassVar["LLMObsCustomEvalConfigParsingType"]
     KEYWORD_SEARCH: ClassVar["LLMObsCustomEvalConfigParsingType"]
+    TYPED_QUESTIONS: ClassVar["LLMObsCustomEvalConfigParsingType"]
 
     @cached_property
     def openapi_types(_):
@@ -39,3 +41,4 @@ class LLMObsCustomEvalConfigParsingType(ModelSimple):
 LLMObsCustomEvalConfigParsingType.STRUCTURED_OUTPUT = LLMObsCustomEvalConfigParsingType("structured_output")
 LLMObsCustomEvalConfigParsingType.JSON = LLMObsCustomEvalConfigParsingType("json")
 LLMObsCustomEvalConfigParsingType.KEYWORD_SEARCH = LLMObsCustomEvalConfigParsingType("keyword_search")
+LLMObsCustomEvalConfigParsingType.TYPED_QUESTIONS = LLMObsCustomEvalConfigParsingType("typed_questions")

@@ -64,7 +64,7 @@ class LLMObsCustomEvalConfigTarget(ModelNormal):
         :param enabled: Whether the evaluator is active for the target application.
         :type enabled: bool
 
-        :param eval_scope: Scope at which to evaluate spans.
+        :param eval_scope: Scope at which to evaluate spans. ``trace_fan_out`` requires ``llm_judge_config.target_query``.
         :type eval_scope: LLMObsCustomEvalConfigEvalScope, optional
 
         :param experiment_project_ids: Experiment project IDs this evaluator is scoped to.
