@@ -48,9 +48,9 @@ class ContainerImagesResponse(ModelNormal):
         **kwargs,
     ):
         """
-        List of Container Images.
+        List of Container Images or Container Image groups.
 
-        :param data: Array of Container Image objects.
+        :param data: Array of ``container_image`` objects, or ``container_image_group`` objects when ``group_by`` is specified.
         :type data: [ContainerImageItem], optional
 
         :param links: Pagination links.
