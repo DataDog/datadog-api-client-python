@@ -38,6 +38,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.host_map_widget_definition import HostMapWidgetDefinition
     from datadog_api_client.v1.model.i_frame_widget_definition import IFrameWidgetDefinition
     from datadog_api_client.v1.model.image_widget_definition import ImageWidgetDefinition
+    from datadog_api_client.v1.model.journey_map_widget_definition import JourneyMapWidgetDefinition
     from datadog_api_client.v1.model.list_stream_widget_definition import ListStreamWidgetDefinition
     from datadog_api_client.v1.model.log_stream_widget_definition import LogStreamWidgetDefinition
     from datadog_api_client.v1.model.monitor_summary_widget_definition import MonitorSummaryWidgetDefinition
@@ -105,6 +106,7 @@ class Widget(ModelNormal):
             HostMapWidgetDefinition,
             IFrameWidgetDefinition,
             ImageWidgetDefinition,
+            JourneyMapWidgetDefinition,
             ListStreamWidgetDefinition,
             LogStreamWidgetDefinition,
             MonitorSummaryWidgetDefinition,
