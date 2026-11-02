@@ -2242,6 +2242,51 @@
     },
     {
       "feature": "Cloud Cost Management",
+      "frozen_at": "2026-11-02T15:43:51.566Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": [
+                {
+                  "BilledCost": 250,
+                  "BillingCurrency": "USD",
+                  "ChargeDescription": "my_description",
+                  "ChargePeriodEnd": "2026-10-31",
+                  "ChargePeriodStart": "2026-10-01",
+                  "ProviderName": "my_ai_provider"
+                }
+              ]
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/cost/custom_costs",
+            "query": [
+              [
+                "ai_provider",
+                "true"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"495fb2db-ee1e-4656-8914-6db06370bf74\",\"type\":\"cost_metadata\",\"attributes\":{\"ai_provider\":true,\"billed_cost\":250,\"billing_currency\":\"USD\",\"charge_period\":{\"start\":1790812800000,\"end\":1793404800000},\"name\":\"data.json\",\"provider_names\":[\"my_ai_provider\"],\"status\":\"UPLOADING\",\"uploaded_at\":1793634232151,\"uploaded_by\":{\"name\":\"C\u00e9dric Van Rompay\",\"icon\":\"https://secure.gravatar.com/avatar/fb5991514ab909a799dd362ad990f4f8?d=retro\\u0026s=48\",\"email\":\"cedric.vanrompay@datadoghq.com\"}}},\"meta\":{\"version\":\"1.0\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Accepted",
+            "status": 202
+          }
+        }
+      ],
+      "scenario": "Upload Custom Costs file marked as an AI provider file returns \"Accepted\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
       "frozen_at": "2025-08-13T18:09:22.298Z",
       "interactions": [
         {
