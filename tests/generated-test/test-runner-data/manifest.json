@@ -4434,6 +4434,13 @@
     {
       "feature": "Cloud Cost Management",
       "feature_file": "../../v2/features/cloud_cost_management.feature",
+      "file": "v2/cloud-cost-management/upload-custom-costs-file-marked-as-an-ai-provider-file-returns-accepted-response.json",
+      "scenario": "Upload Custom Costs file marked as an AI provider file returns \"Accepted\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "feature_file": "../../v2/features/cloud_cost_management.feature",
       "file": "v2/cloud-cost-management/upload-custom-costs-file-returns-bad-request-response.json",
       "scenario": "Upload Custom Costs file returns \"Bad Request\" response",
       "version": "v2"

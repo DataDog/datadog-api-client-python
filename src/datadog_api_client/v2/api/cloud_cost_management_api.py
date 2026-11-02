@@ -2051,6 +2051,11 @@ class CloudCostManagementApi:
                 "version": "v2",
             },
             params_map={
+                "ai_provider": {
+                    "openapi_types": (bool,),
+                    "attribute": "ai_provider",
+                    "location": "query",
+                },
                 "body": {
                     "required": True,
                     "openapi_types": ([CustomCostsFileLineItem],),
@@ -3847,15 +3852,22 @@ class CloudCostManagementApi:
     def upload_custom_costs_file(
         self,
         body: List[CustomCostsFileLineItem],
+        *,
+        ai_provider: Union[bool, UnsetType] = unset,
     ) -> CustomCostsFileUploadResponse:
         """Upload Custom Costs file.
 
         Upload a Custom Costs file.
 
         :type body: [CustomCostsFileLineItem]
+        :param ai_provider: Whether the uploaded file contains the costs of an AI provider.
+        :type ai_provider: bool, optional
         :rtype: CustomCostsFileUploadResponse
         """
         kwargs: Dict[str, Any] = {}
+        if ai_provider is not unset:
+            kwargs["ai_provider"] = ai_provider
+
         kwargs["body"] = body
 
         return self._upload_custom_costs_file_endpoint.call_with_http_info(**kwargs)

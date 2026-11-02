@@ -1186,6 +1186,15 @@ Feature: Cloud Cost Management
     Then the response status is 202 Accepted
     And the response "data.attributes.name" is equal to "data.json"
 
+  @team:ddoghq/cloud-cost-management
+  Scenario: Upload Custom Costs file marked as an AI provider file returns "Accepted" response
+    Given new "UploadCustomCostsFile" request
+    And request contains "ai_provider" parameter with value true
+    And body with value [{"ProviderName": "my_ai_provider", "ChargePeriodStart": "2026-10-01", "ChargePeriodEnd": "2026-10-31", "ChargeDescription": "my_description", "BilledCost": 250, "BillingCurrency": "USD"}]
+    When the request is sent
+    Then the response status is 202 Accepted
+    And the response "data.attributes.ai_provider" is equal to true
+
   @generated @skip @team:ddoghq/cloud-cost-management
   Scenario: Upload Custom Costs file returns "Accepted" response
     Given new "UploadCustomCostsFile" request
