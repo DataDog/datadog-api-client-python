@@ -52,7 +52,7 @@ class FacetInfoRequestData(ModelNormal):
         :param id: Unique identifier for the facet info request resource.
         :type id: str, optional
 
-        :param type: Users facet info request resource type.
+        :param type: Facet info request resource type.
         :type type: FacetInfoRequestDataType
         """
         if attributes is not unset:

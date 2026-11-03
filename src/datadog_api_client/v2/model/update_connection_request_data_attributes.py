@@ -23,6 +23,12 @@ if TYPE_CHECKING:
 
 
 class UpdateConnectionRequestDataAttributes(ModelNormal):
+    validations = {
+        "name": {
+            "max_length": 255,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.create_connection_request_data_attributes_fields_items import (
@@ -36,12 +42,14 @@ class UpdateConnectionRequestDataAttributes(ModelNormal):
             "fields_to_add": ([CreateConnectionRequestDataAttributesFieldsItems],),
             "fields_to_delete": ([str],),
             "fields_to_update": ([UpdateConnectionRequestDataAttributesFieldsToUpdateItems],),
+            "name": (str,),
         }
 
     attribute_map = {
         "fields_to_add": "fields_to_add",
         "fields_to_delete": "fields_to_delete",
         "fields_to_update": "fields_to_update",
+        "name": "name",
     }
 
     def __init__(
@@ -49,6 +57,7 @@ class UpdateConnectionRequestDataAttributes(ModelNormal):
         fields_to_add: Union[List[CreateConnectionRequestDataAttributesFieldsItems], UnsetType] = unset,
         fields_to_delete: Union[List[str], UnsetType] = unset,
         fields_to_update: Union[List[UpdateConnectionRequestDataAttributesFieldsToUpdateItems], UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -62,6 +71,9 @@ class UpdateConnectionRequestDataAttributes(ModelNormal):
 
         :param fields_to_update: Existing fields with updated metadata to apply to the connection.
         :type fields_to_update: [UpdateConnectionRequestDataAttributesFieldsToUpdateItems], optional
+
+        :param name: New display name for the connection.
+        :type name: str, optional
         """
         if fields_to_add is not unset:
             kwargs["fields_to_add"] = fields_to_add
@@ -69,4 +81,6 @@ class UpdateConnectionRequestDataAttributes(ModelNormal):
             kwargs["fields_to_delete"] = fields_to_delete
         if fields_to_update is not unset:
             kwargs["fields_to_update"] = fields_to_update
+        if name is not unset:
+            kwargs["name"] = name
         super().__init__(kwargs)

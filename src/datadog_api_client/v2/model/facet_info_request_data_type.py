@@ -14,16 +14,18 @@ from typing import ClassVar
 
 class FacetInfoRequestDataType(ModelSimple):
     """
-    Users facet info request resource type.
+    Facet info request resource type.
 
-    :param value: If omitted defaults to "users_facet_info_request". Must be one of ["users_facet_info_request"].
+    :param value: If omitted defaults to "users_facet_info_request". Must be one of ["users_facet_info_request", "accounts_facet_info_request"].
     :type value: str
     """
 
     allowed_values = {
         "users_facet_info_request",
+        "accounts_facet_info_request",
     }
     USERS_FACET_INFO_REQUEST: ClassVar["FacetInfoRequestDataType"]
+    ACCOUNTS_FACET_INFO_REQUEST: ClassVar["FacetInfoRequestDataType"]
 
     @cached_property
     def openapi_types(_):
@@ -33,3 +35,4 @@ class FacetInfoRequestDataType(ModelSimple):
 
 
 FacetInfoRequestDataType.USERS_FACET_INFO_REQUEST = FacetInfoRequestDataType("users_facet_info_request")
+FacetInfoRequestDataType.ACCOUNTS_FACET_INFO_REQUEST = FacetInfoRequestDataType("accounts_facet_info_request")
