@@ -6720,6 +6720,7 @@ from datadog_api_client.v2.model.monitor_notification_rule_filter import Monitor
 from datadog_api_client.v2.model.monitor_notification_rule_filter_scope import MonitorNotificationRuleFilterScope
 from datadog_api_client.v2.model.monitor_notification_rule_filter_tags import MonitorNotificationRuleFilterTags
 from datadog_api_client.v2.model.monitor_notification_rule_list_response import MonitorNotificationRuleListResponse
+from datadog_api_client.v2.model.monitor_notification_rule_options import MonitorNotificationRuleOptions
 from datadog_api_client.v2.model.monitor_notification_rule_relationships import MonitorNotificationRuleRelationships
 from datadog_api_client.v2.model.monitor_notification_rule_relationships_created_by import (
     MonitorNotificationRuleRelationshipsCreatedBy,
@@ -17949,6 +17950,7 @@ __all__ = [
     "MonitorNotificationRuleFilterScope",
     "MonitorNotificationRuleFilterTags",
     "MonitorNotificationRuleListResponse",
+    "MonitorNotificationRuleOptions",
     "MonitorNotificationRuleRelationships",
     "MonitorNotificationRuleRelationshipsCreatedBy",
     "MonitorNotificationRuleRelationshipsCreatedByData",
