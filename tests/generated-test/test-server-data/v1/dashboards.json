@@ -887,6 +887,134 @@
     },
     {
       "feature": "Dashboards",
+      "frozen_at": "2026-11-02T20:37:43.231Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "layout_type": "ordered",
+                "title": "Test-Create_a_heatgrid_widget_with_bin_labels_and_formatted_row_labels-1793651863",
+                "widgets": [
+                  {
+                    "definition": {
+                      "color": {
+                        "bins": [
+                          {
+                            "color": "#00FF00",
+                            "label": "Normal"
+                          },
+                          {
+                            "color": "#FF0000",
+                            "label": "High",
+                            "lower_bound": 80
+                          }
+                        ],
+                        "mode": "discrete",
+                        "source": "custom"
+                      },
+                      "label_column": {
+                        "text_formats": [
+                          {
+                            "match": {
+                              "type": "starts_with",
+                              "value": "api-"
+                            },
+                            "replace": {
+                              "substring": "api-",
+                              "type": "substring",
+                              "with": ""
+                            }
+                          },
+                          {
+                            "match": {
+                              "type": "is",
+                              "value": "unknown"
+                            },
+                            "replace": {
+                              "type": "all",
+                              "with": "Other"
+                            }
+                          }
+                        ]
+                      },
+                      "requests": [
+                        {
+                          "formulas": [
+                            {
+                              "formula": "query1"
+                            }
+                          ],
+                          "queries": [
+                            {
+                              "data_source": "metrics",
+                              "name": "query1",
+                              "query": "avg:system.cpu.user{*} by {host}"
+                            }
+                          ],
+                          "response_format": "timeseries"
+                        }
+                      ],
+                      "sort": {
+                        "nesting_display": "flat",
+                        "sort_by": {
+                          "order": "asc",
+                          "property": "label"
+                        }
+                      },
+                      "type": "heatgrid"
+                    }
+                  }
+                ]
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/dashboard",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":\"6tq-fme-ndk\",\"title\":\"Test-Create_a_heatgrid_widget_with_bin_labels_and_formatted_row_labels-1793651863\",\"description\":null,\"author_handle\":\"cedric.vanrompay@datadoghq.com\",\"author_name\":\"C\u00e9dric Van Rompay\",\"layout_type\":\"ordered\",\"url\":\"/dashboard/6tq-fme-ndk/test-createaheatgridwidgetwithbinlabelsandformattedrowlabels-1793651863\",\"template_variables\":null,\"widgets\":[{\"definition\":{\"color\":{\"bins\":[{\"color\":\"#00FF00\",\"label\":\"Normal\"},{\"color\":\"#FF0000\",\"label\":\"High\",\"lower_bound\":80}],\"mode\":\"discrete\",\"source\":\"custom\"},\"label_column\":{\"text_formats\":[{\"match\":{\"type\":\"starts_with\",\"value\":\"api-\"},\"replace\":{\"substring\":\"api-\",\"type\":\"substring\",\"with\":\"\"}},{\"match\":{\"type\":\"is\",\"value\":\"unknown\"},\"replace\":{\"type\":\"all\",\"with\":\"Other\"}}]},\"requests\":[{\"formulas\":[{\"formula\":\"query1\"}],\"queries\":[{\"data_source\":\"metrics\",\"name\":\"query1\",\"query\":\"avg:system.cpu.user{*} by {host}\"}],\"response_format\":\"timeseries\"}],\"sort\":{\"nesting_display\":\"flat\",\"sort_by\":{\"order\":\"asc\",\"property\":\"label\"}},\"type\":\"heatgrid\"},\"id\":1095468656102212}],\"notify_list\":null,\"created_at\":\"2026-11-02T20:37:43.411584+00:00\",\"modified_at\":\"2026-11-02T20:37:43.411584+00:00\",\"experience_type\":\"default\",\"restricted_roles\":[]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/dashboard/6tq-fme-ndk",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_dashboard_id\":\"6tq-fme-ndk\"}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a heatgrid widget with bin labels and formatted row labels",
+      "version": "v1"
+    },
+    {
+      "feature": "Dashboards",
       "frozen_at": "2026-10-08T20:45:29.961Z",
       "interactions": [
         {

@@ -114,6 +114,21 @@ Feature: Dashboards
     And the response "widgets[0].definition.label_column.width" is equal to "m"
 
   @team:ddoghq/dashboards-backend
+  Scenario: Create a heatgrid widget with bin labels and formatted row labels
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/heatgrid_text_formats_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.color.bins[0].label" is equal to "Normal"
+    And the response "widgets[0].definition.color.bins[1].label" is equal to "High"
+    And the response "widgets[0].definition.label_column" does not have field "width"
+    And the response "widgets[0].definition.label_column.text_formats[0].match.type" is equal to "starts_with"
+    And the response "widgets[0].definition.label_column.text_formats[0].replace.type" is equal to "substring"
+    And the response "widgets[0].definition.label_column.text_formats[0].replace.substring" is equal to "api-"
+    And the response "widgets[0].definition.label_column.text_formats[1].replace.type" is equal to "all"
+    And the response "widgets[0].definition.label_column.text_formats[1].replace.with" is equal to "Other"
+
+  @team:ddoghq/dashboards-backend
   Scenario: Create a heatgrid widget with custom discrete thresholds
     Given new "CreateDashboard" request
     And body with value {"title": "{{ unique }}", "layout_type": "ordered", "widgets": [{"definition": {"type": "heatgrid", "requests": [{"response_format": "timeseries", "queries": [{"data_source": "metrics", "name": "query1", "query": "avg:system.cpu.user{*} by {host}"}], "formulas": [{"formula": "query1"}]}], "sort": {"nesting_display": "flat", "sort_by": {"property": "label", "order": "asc"}}, "color": {"mode": "discrete", "source": "custom", "bins": [{"color": "#00FF00"}, {"color": "#FF0000", "lower_bound": 80}]}, "legend": {"show_caption": true}, "label_column": {"width": "m"}}}]}

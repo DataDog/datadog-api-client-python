@@ -135,7 +135,7 @@ class WidgetDefinition(ModelComposed):
         :param widgets: List of widget groups.
         :type widgets: [Widget]
 
-        :param label_column: Configuration of the group label column.
+        :param label_column: Configuration of the group label column. Its width is sized automatically when omitted.
         :type label_column: HeatgridLabelColumn, optional
 
         :param legend: Legend configuration for the heatgrid widget.

@@ -120,7 +120,7 @@ class HeatgridWidgetDefinition(ModelNormal):
         :param description: Description of the widget.
         :type description: str, optional
 
-        :param label_column: Configuration of the group label column.
+        :param label_column: Configuration of the group label column. Its width is sized automatically when omitted.
         :type label_column: HeatgridLabelColumn, optional
 
         :param legend: Legend configuration for the heatgrid widget.
