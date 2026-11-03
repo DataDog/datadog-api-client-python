@@ -97,7 +97,7 @@ class FeatureFlagEnvironment(ModelNormal):
         :param allocations: Allocation metadata for this environment.
         :type allocations: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, none_type, optional
 
-        :param default_allocation_key: The allocation key used for the default variant.
+        :param default_allocation_key: A system-generated allocation key, in the format ``allocation-default-<hash>`` , that SDKs report in flag evaluation results and exposure events when a subject receives the environment's default variant because no targeting rule matched. It has no corresponding allocation ID and cannot be used with the allocation endpoints.
         :type default_allocation_key: str, optional
 
         :param default_variant_id: The ID of the default variant for this environment.
@@ -118,7 +118,7 @@ class FeatureFlagEnvironment(ModelNormal):
         :param observe_full_evaluation_data: Indicates whether feature flag evaluation events include original targeting identifiers and full evaluation context.
         :type observe_full_evaluation_data: bool, optional
 
-        :param override_allocation_key: The allocation key used for the override variant.
+        :param override_allocation_key: A system-generated allocation key, in the format ``allocation-override-<hash>`` , that SDKs report in flag evaluation results and exposure events when the environment's override variant is served. It has no corresponding allocation ID and cannot be used with the allocation endpoints.
         :type override_allocation_key: str, optional
 
         :param override_variant_id: The ID of the override variant for this environment.

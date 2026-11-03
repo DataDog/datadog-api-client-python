@@ -61,7 +61,7 @@ class ExperimentsPatchExperimentV2ResponseDataAttributesDatadogFlagConfiguration
         """
         Feature flag, environment, and targeting configuration for the experiment.
 
-        :param allocation_key: Key of the feature flag allocation linked to the experiment.
+        :param allocation_key: Key of the feature flag allocation linked to the experiment. Matches the allocation key that SDKs report in flag evaluation results and exposure events.
         :type allocation_key: str, optional
 
         :param entry_point: Datadog measure and filters used to select analyzed subjects.

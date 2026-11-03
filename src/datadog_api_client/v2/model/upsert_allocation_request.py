@@ -81,10 +81,10 @@ class UpsertAllocationRequest(ModelNormal):
         :param guardrail_metrics: Guardrail metrics used to monitor and auto-pause or abort.
         :type guardrail_metrics: [GuardrailMetricRequest], optional
 
-        :param id: The unique identifier of the targeting rule allocation.
+        :param id: The unique identifier of the targeting rule allocation. Use this ID with the allocation management endpoints, such as ``/api/v2/allocations/{allocation_id}``. It is not included in SDK evaluation results or exposure events.
         :type id: UUID, optional
 
-        :param key: The unique key of the targeting rule allocation.
+        :param key: The unique key of the targeting rule allocation. SDKs report this key in flag evaluation results and exposure events to indicate which targeting rule assigned the variant. Use it to match evaluation or experiment data to this rule.
         :type key: str
 
         :param name: The display name of the targeting rule.

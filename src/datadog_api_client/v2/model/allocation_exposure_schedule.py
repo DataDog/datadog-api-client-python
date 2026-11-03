@@ -75,7 +75,7 @@ class AllocationExposureSchedule(ModelNormal):
         :param absolute_start_time: The absolute UTC start time for this schedule.
         :type absolute_start_time: datetime, none_type, optional
 
-        :param allocation_id: The targeting rule allocation ID this progressive rollout belongs to.
+        :param allocation_id: The unique identifier (UUID) of the targeting rule allocation this progressive rollout belongs to. This is not the allocation key that SDKs report in evaluation results and exposure events.
         :type allocation_id: UUID
 
         :param control_variant_id: The control variant ID used for experiment comparisons.
