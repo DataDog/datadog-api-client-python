@@ -42,7 +42,7 @@ class AllocationDataResponse(ModelNormal):
         :param attributes: Targeting rule (allocation) details for a feature flag environment.
         :type attributes: Allocation
 
-        :param id: The unique identifier of the targeting rule allocation.
+        :param id: The unique identifier of the targeting rule allocation. Use this ID with the allocation management endpoints, such as ``/api/v2/allocations/{allocation_id}``. It is not included in SDK evaluation results or exposure events.
         :type id: UUID
 
         :param type: The resource type.
