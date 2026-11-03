@@ -142,7 +142,7 @@ Feature: Cloud Authentication
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:ddoghq/team-aaaauthn
+  @skip-terraform-config @team:ddoghq/team-aaaauthn
   Scenario: Delete an AWS cloud authentication intake mapping returns "No Content" response
     Given there is an integrated AWS test account for WIF
     And there is a valid "aws_cloud_auth_intake_mapping" in the system
@@ -216,7 +216,7 @@ Feature: Cloud Authentication
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:ddoghq/team-aaaauthn
+  @skip-terraform-config @team:ddoghq/team-aaaauthn
   Scenario: Get an AWS cloud authentication intake mapping returns "OK" response
     Given there is an integrated AWS test account for WIF
     And there is a valid "aws_cloud_auth_intake_mapping" in the system
@@ -251,7 +251,7 @@ Feature: Cloud Authentication
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:ddoghq/team-aaaauthn
+  @skip-terraform-config @team:ddoghq/team-aaaauthn
   Scenario: List AWS cloud authentication intake mappings returns "OK" response
     Given there is an integrated AWS test account for WIF
     And there is a valid "aws_cloud_auth_intake_mapping" in the system
