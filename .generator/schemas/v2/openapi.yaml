@@ -61454,8 +61454,14 @@ components:
       description: "Trigger a workflow when an incident is declared."
       properties:
         incidentType:
-          description: "The type of incident that triggers the workflow."
+          deprecated: true
+          description: "The type of incident that triggers the workflow. Deprecated. Use `incidentTypes` instead."
           type: string
+        incidentTypes:
+          description: "The types of incidents that trigger the workflow."
+          items:
+            type: string
+          type: array
         tagCondition:
           $ref: "#/components/schemas/IncidentCondition"
       type: object
@@ -62154,8 +62160,14 @@ components:
         executionLimit:
           $ref: "#/components/schemas/ExecutionLimit"
         incidentType:
-          description: "The type of incident that triggers the workflow."
+          deprecated: true
+          description: "The type of incident that triggers the workflow. Deprecated. Use `incidentTypes` instead."
           type: string
+        incidentTypes:
+          description: "The types of incidents that trigger the workflow."
+          items:
+            type: string
+          type: array
         tagCondition:
           $ref: "#/components/schemas/IncidentCondition"
       type: object
@@ -62473,8 +62485,14 @@ components:
         executionLimit:
           $ref: "#/components/schemas/ExecutionLimit"
         incidentType:
-          description: "The type of incident that triggers the workflow."
+          deprecated: true
+          description: "The type of incident that triggers the workflow. Deprecated. Use `incidentTypes` instead."
           type: string
+        incidentTypes:
+          description: "The types of incidents that trigger the workflow."
+          items:
+            type: string
+          type: array
         tagCondition:
           $ref: "#/components/schemas/IncidentCondition"
       type: object
@@ -63715,8 +63733,14 @@ components:
         executionLimit:
           $ref: "#/components/schemas/ExecutionLimit"
         incidentType:
-          description: "The type of incident that triggers the workflow."
+          deprecated: true
+          description: "The type of incident that triggers the workflow. Deprecated. Use `incidentTypes` instead."
           type: string
+        incidentTypes:
+          description: "The types of incidents that trigger the workflow."
+          items:
+            type: string
+          type: array
         tagCondition:
           $ref: "#/components/schemas/IncidentCondition"
       type: object
@@ -63766,8 +63790,14 @@ components:
         executionLimit:
           $ref: "#/components/schemas/ExecutionLimit"
         incidentType:
-          description: "The type of incident that triggers the workflow."
+          deprecated: true
+          description: "The type of incident that triggers the workflow. Deprecated. Use `incidentTypes` instead."
           type: string
+        incidentTypes:
+          description: "The types of incidents that trigger the workflow."
+          items:
+            type: string
+          type: array
         tagCondition:
           $ref: "#/components/schemas/IncidentCondition"
       type: object
@@ -64751,8 +64781,14 @@ components:
         executionLimit:
           $ref: "#/components/schemas/ExecutionLimit"
         incidentType:
-          description: "The type of incident that triggers the workflow."
+          deprecated: true
+          description: "The type of incident that triggers the workflow. Deprecated. Use `incidentTypes` instead."
           type: string
+        incidentTypes:
+          description: "The types of incidents that trigger the workflow."
+          items:
+            type: string
+          type: array
         serialExecution:
           $ref: "#/components/schemas/SerialExecution"
         tagCondition:
@@ -64772,8 +64808,14 @@ components:
       description: "Trigger a workflow on a schedule for an incident."
       properties:
         incidentType:
-          description: "The type of incident that triggers the workflow."
+          deprecated: true
+          description: "The type of incident that triggers the workflow. Deprecated. Use `incidentTypes` instead."
           type: string
+        incidentTypes:
+          description: "The types of incidents that trigger the workflow."
+          items:
+            type: string
+          type: array
         rrule:
           description: "The recurrence rule for the schedule, expressed as an iCalendar `RRULE` string."
           example: "DTSTART:20241220T151700Z\nRRULE:FREQ=MONTHLY"
@@ -83346,6 +83388,8 @@ components:
           $ref: "#/components/schemas/MonitorNotificationRuleName"
         recipients:
           $ref: "#/components/schemas/MonitorNotificationRuleRecipients"
+        rule_options:
+          $ref: "#/components/schemas/MonitorNotificationRuleOptions"
       required: [name]
       type: object
     MonitorNotificationRuleBundleConfig:
@@ -83486,6 +83530,17 @@ components:
       maxLength: 1000
       minLength: 1
       type: string
+    MonitorNotificationRuleOptions:
+      description: Additional options for the monitor notification rule.
+      properties:
+        is_threaded:
+          description: |-
+            Whether notifications from this rule are threaded. When `true`, follow-up notifications for the same monitor alert are posted in Slack as replies to the first notification.
+            Cannot be `true` when `bundle_config` is set.
+          example: true
+          type: boolean
+      required: [is_threaded]
+      type: object
     MonitorNotificationRuleRecipients:
       description: |-
         A list of recipients to notify. Uses the same format as the monitor `message` field. Must not start with an '@'. Cannot be used with `conditional_recipients`.
@@ -83563,6 +83618,8 @@ components:
           $ref: "#/components/schemas/MonitorNotificationRuleName"
         recipients:
           $ref: "#/components/schemas/MonitorNotificationRuleRecipients"
+        rule_options:
+          $ref: "#/components/schemas/MonitorNotificationRuleOptions"
       type: object
     MonitorNotificationRuleResponseIncludedItem:
       description: An object related to a monitor notification rule.
