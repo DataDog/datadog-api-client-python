@@ -15,6 +15,9 @@ class NotificationChannelConfig(ModelComposed):
         """
         Defines the configuration for an On-Call notification channel
 
+        :param available_notification_types: Notification methods currently available for this phone number. Omitted when no methods are available.
+        :type available_notification_types: [OnCallPhoneNotificationRuleMethod], optional
+
         :param formatted_number: The formatted international version of Number (e.g. +33 7 1 23 45 67).
         :type formatted_number: str
 

@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -30,12 +32,14 @@ class NotificationChannelEmailConfig(ModelNormal):
             "address": (str,),
             "formats": ([NotificationChannelEmailFormatType],),
             "type": (NotificationChannelEmailConfigType,),
+            "verified": (bool,),
         }
 
     attribute_map = {
         "address": "address",
         "formats": "formats",
         "type": "type",
+        "verified": "verified",
     }
 
     def __init__(
@@ -43,6 +47,7 @@ class NotificationChannelEmailConfig(ModelNormal):
         address: str,
         formats: List[NotificationChannelEmailFormatType],
         type: NotificationChannelEmailConfigType,
+        verified: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -56,7 +61,12 @@ class NotificationChannelEmailConfig(ModelNormal):
 
         :param type: Indicates that the notification channel is an e-mail address
         :type type: NotificationChannelEmailConfigType
+
+        :param verified: Whether this email address has been verified.
+        :type verified: bool, optional
         """
+        if verified is not unset:
+            kwargs["verified"] = verified
         super().__init__(kwargs)
 
         self_.address = address

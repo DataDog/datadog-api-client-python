@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -16,17 +16,20 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.on_call_phone_notification_rule_method import OnCallPhoneNotificationRuleMethod
     from datadog_api_client.v2.model.notification_channel_phone_config_type import NotificationChannelPhoneConfigType
 
 
 class NotificationChannelPhoneConfig(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.on_call_phone_notification_rule_method import OnCallPhoneNotificationRuleMethod
         from datadog_api_client.v2.model.notification_channel_phone_config_type import (
             NotificationChannelPhoneConfigType,
         )
 
         return {
+            "available_notification_types": ([OnCallPhoneNotificationRuleMethod],),
             "formatted_number": (str,),
             "number": (str,),
             "region": (str,),
@@ -36,6 +39,7 @@ class NotificationChannelPhoneConfig(ModelNormal):
         }
 
     attribute_map = {
+        "available_notification_types": "available_notification_types",
         "formatted_number": "formatted_number",
         "number": "number",
         "region": "region",
@@ -51,11 +55,15 @@ class NotificationChannelPhoneConfig(ModelNormal):
         region: str,
         type: NotificationChannelPhoneConfigType,
         verified: bool,
+        available_notification_types: Union[List[OnCallPhoneNotificationRuleMethod], UnsetType] = unset,
         sms_subscribed_at: Union[datetime, none_type, UnsetType] = unset,
         **kwargs,
     ):
         """
         Phone notification channel configuration
+
+        :param available_notification_types: Notification methods currently available for this phone number. Omitted when no methods are available.
+        :type available_notification_types: [OnCallPhoneNotificationRuleMethod], optional
 
         :param formatted_number: The formatted international version of Number (e.g. +33 7 1 23 45 67).
         :type formatted_number: str
@@ -75,6 +83,8 @@ class NotificationChannelPhoneConfig(ModelNormal):
         :param verified: Indicates whether this phone has been verified by the user in Datadog On-Call
         :type verified: bool
         """
+        if available_notification_types is not unset:
+            kwargs["available_notification_types"] = available_notification_types
         if sms_subscribed_at is not unset:
             kwargs["sms_subscribed_at"] = sms_subscribed_at
         super().__init__(kwargs)
