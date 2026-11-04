@@ -17,6 +17,6 @@ class UsageQuotaRequestScope(ModelNormal):
 
     def __init__(self_, **kwargs):
         """
-        A namespace-specific key and value identifying what the quota applies to within an organization. The object must contain exactly one entry. Use ``"*"`` as the value for the default quota applied to entities without a specific quota, or omit the scope for an organization-wide quota. A specific value must identify an existing user handle in the caller's organization when ``include_descendants`` is false. When ``include_descendants`` is true, the handle must exist in the caller's organization or in at least one targeted descendant organization; the quota is then applied only to the organizations where that handle exists, and the request fails only if the handle exists in none of them.
+        A namespace-specific key and value identifying what the quota applies to within an organization. See the endpoint description for the supported scope keys, values, and validation rules.
         """
         super().__init__(kwargs)

@@ -71,7 +71,7 @@ class UsageQuotaResponseAttributes(ModelNormal):
             fields are omitted. Omitted when no change is scheduled.
         :type pending_usage_limit: float, optional
 
-        :param scope: A namespace-specific key and value identifying what the quota applies to within an organization. The object contains exactly one entry. A value of ``"*"`` identifies the default quota applied to entities without a specific quota. This field is omitted for an organization-wide quota.
+        :param scope: A namespace-specific key and value identifying what the quota applies to within an organization. The object contains exactly one entry. A ``user_handle`` value of ``"*"`` identifies the default quota applied to users without a specific quota. This field is omitted for an organization-wide quota.
         :type scope: UsageQuotaResponseScope, optional
 
         :param usage_limit: The quota limit in the usage units defined by the quota namespace. May be fractional for quotas configured before public writes required whole units.
