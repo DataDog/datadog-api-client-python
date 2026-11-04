@@ -2301,7 +2301,7 @@
     },
     {
       "feature": "Metrics",
-      "frozen_at": "2024-03-25T19:28:00.854Z",
+      "frozen_at": "2026-10-22T15:05:21.723Z",
       "interactions": [
         {
           "request": {
@@ -2319,7 +2319,7 @@
                         }
                       }
                     ],
-                    "from": 1711391280000,
+                    "from": 1792677921000,
                     "queries": [
                       {
                         "aggregator": "avg",
@@ -2328,7 +2328,7 @@
                         "query": "avg:system.cpu.user{*}"
                       }
                     ],
-                    "to": 1711394880000
+                    "to": 1792681521000
                   },
                   "type": "scalar_request"
                 }
@@ -2342,10 +2342,10 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"type\":\"scalar_response\",\"attributes\":{\"columns\":[{\"values\":[6.368151928283307],\"name\":\"a\",\"meta\":{\"unit\":[{\"short_name\":\"%\",\"id\":17,\"plural\":\"percent\",\"name\":\"percent\",\"family\":\"percentage\",\"scale_factor\":1.0},null]},\"type\":\"number\"}]}}}"
+              "value": "{\"data\":{\"id\":\"0\",\"type\":\"scalar_response\",\"attributes\":{\"columns\":[{\"name\":\"a\",\"values\":[0.5286438660222104],\"type\":\"number\",\"meta\":{\"unit\":[{\"family\":\"percentage\",\"name\":\"percent\",\"plural\":\"percent\",\"scale_factor\":1.0,\"short_name\":\"%\",\"id\":17},null]}}]}}}"
             },
             "headers": {
-              "content-type": "application/json"
+              "content-type": "application/vnd.api+json"
             },
             "reason": "OK",
             "status": 200
