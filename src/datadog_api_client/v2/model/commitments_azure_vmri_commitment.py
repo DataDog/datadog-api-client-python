@@ -28,10 +28,11 @@ class CommitmentsAzureVMRICommitment(ModelNormal):
             "expiration_date": (str,),
             "instance_type": (str,),
             "meter_sub_category": (str,),
+            "product": (str,),
             "region": (str,),
             "start_date": (str,),
             "status": (CommitmentsAzureVMRIStatus,),
-            "term_length": (float,),
+            "term_length_months": (int,),
             "utilization": (float,),
         }
 
@@ -41,10 +42,11 @@ class CommitmentsAzureVMRICommitment(ModelNormal):
         "expiration_date": "expiration_date",
         "instance_type": "instance_type",
         "meter_sub_category": "meter_sub_category",
+        "product": "product",
         "region": "region",
         "start_date": "start_date",
         "status": "status",
-        "term_length": "term_length",
+        "term_length_months": "term_length_months",
         "utilization": "utilization",
     }
 
@@ -57,8 +59,9 @@ class CommitmentsAzureVMRICommitment(ModelNormal):
         region: str,
         status: CommitmentsAzureVMRIStatus,
         expiration_date: Union[str, UnsetType] = unset,
+        product: Union[str, UnsetType] = unset,
         start_date: Union[str, UnsetType] = unset,
-        term_length: Union[float, UnsetType] = unset,
+        term_length_months: Union[int, UnsetType] = unset,
         utilization: Union[float, UnsetType] = unset,
         **kwargs,
     ):
@@ -80,6 +83,9 @@ class CommitmentsAzureVMRICommitment(ModelNormal):
         :param meter_sub_category: The Azure meter sub-category for the reservation.
         :type meter_sub_category: str
 
+        :param product: The Azure product of the reservation. Omitted when it cannot be classified.
+        :type product: str, optional
+
         :param region: The Azure region of the Reserved Instance.
         :type region: str
 
@@ -89,18 +95,20 @@ class CommitmentsAzureVMRICommitment(ModelNormal):
         :param status: Status of an Azure VM Reserved Instance.
         :type status: CommitmentsAzureVMRIStatus
 
-        :param term_length: The term length in years.
-        :type term_length: float, optional
+        :param term_length_months: The commitment term in whole months. Omitted when the term is unknown.
+        :type term_length_months: int, optional
 
-        :param utilization: The utilization percentage of the commitment.
+        :param utilization: The utilization percentage of the commitment, from 0 to 100.
         :type utilization: float, optional
         """
         if expiration_date is not unset:
             kwargs["expiration_date"] = expiration_date
+        if product is not unset:
+            kwargs["product"] = product
         if start_date is not unset:
             kwargs["start_date"] = start_date
-        if term_length is not unset:
-            kwargs["term_length"] = term_length
+        if term_length_months is not unset:
+            kwargs["term_length_months"] = term_length_months
         if utilization is not unset:
             kwargs["utilization"] = utilization
         super().__init__(kwargs)

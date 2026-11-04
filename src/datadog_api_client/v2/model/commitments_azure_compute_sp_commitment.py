@@ -21,8 +21,9 @@ class CommitmentsAzureComputeSPCommitment(ModelNormal):
             "commitment_id": (str,),
             "committed_spend_per_hour": (float,),
             "expiration_date": (str,),
+            "savings_plan_type": (str,),
             "start_date": (str,),
-            "term_length": (float,),
+            "term_length_months": (int,),
             "utilization": (float,),
         }
 
@@ -31,8 +32,9 @@ class CommitmentsAzureComputeSPCommitment(ModelNormal):
         "commitment_id": "commitment_id",
         "committed_spend_per_hour": "committed_spend_per_hour",
         "expiration_date": "expiration_date",
+        "savings_plan_type": "savings_plan_type",
         "start_date": "start_date",
-        "term_length": "term_length",
+        "term_length_months": "term_length_months",
         "utilization": "utilization",
     }
 
@@ -42,8 +44,9 @@ class CommitmentsAzureComputeSPCommitment(ModelNormal):
         commitment_id: str,
         committed_spend_per_hour: Union[float, UnsetType] = unset,
         expiration_date: Union[str, UnsetType] = unset,
+        savings_plan_type: Union[str, UnsetType] = unset,
         start_date: Union[str, UnsetType] = unset,
-        term_length: Union[float, UnsetType] = unset,
+        term_length_months: Union[int, UnsetType] = unset,
         utilization: Union[float, UnsetType] = unset,
         **kwargs,
     ):
@@ -62,23 +65,29 @@ class CommitmentsAzureComputeSPCommitment(ModelNormal):
         :param expiration_date: The expiration date of the commitment.
         :type expiration_date: str, optional
 
+        :param savings_plan_type: The Azure Savings Plan type, ``Compute`` or ``Database`` , based on the product order name. Omitted when
+            the type can't be classified.
+        :type savings_plan_type: str, optional
+
         :param start_date: The start date of the commitment.
         :type start_date: str, optional
 
-        :param term_length: The term length in years.
-        :type term_length: float, optional
+        :param term_length_months: The commitment term in whole months. Omitted when the term is unknown.
+        :type term_length_months: int, optional
 
-        :param utilization: The utilization percentage of the commitment.
+        :param utilization: The utilization percentage of the commitment, from 0 to 100.
         :type utilization: float, optional
         """
         if committed_spend_per_hour is not unset:
             kwargs["committed_spend_per_hour"] = committed_spend_per_hour
         if expiration_date is not unset:
             kwargs["expiration_date"] = expiration_date
+        if savings_plan_type is not unset:
+            kwargs["savings_plan_type"] = savings_plan_type
         if start_date is not unset:
             kwargs["start_date"] = start_date
-        if term_length is not unset:
-            kwargs["term_length"] = term_length
+        if term_length_months is not unset:
+            kwargs["term_length_months"] = term_length_months
         if utilization is not unset:
             kwargs["utilization"] = utilization
         super().__init__(kwargs)

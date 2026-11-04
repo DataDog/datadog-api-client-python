@@ -549,27 +549,31 @@ Feature: Cloud Cost Management
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:ddoghq/cloud-cost-management
+  @team:ddoghq/cloud-cost-management
   Scenario: Get commitments list returns "Bad Request" response
     Given operation "GetCommitmentsCommitmentList" enabled
     And new "GetCommitmentsCommitmentList" request
-    And request contains "provider" parameter from "REPLACE.ME"
-    And request contains "product" parameter from "REPLACE.ME"
-    And request contains "start" parameter from "REPLACE.ME"
-    And request contains "end" parameter from "REPLACE.ME"
+    And request contains "provider" parameter with value "aws"
+    And request contains "product" parameter with value "invalid-product"
+    And request contains "start" parameter with value 1788220800000
+    And request contains "end" parameter with value 1790812799000
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:ddoghq/cloud-cost-management
+  @team:ddoghq/cloud-cost-management
   Scenario: Get commitments list returns "OK" response
     Given operation "GetCommitmentsCommitmentList" enabled
     And new "GetCommitmentsCommitmentList" request
-    And request contains "provider" parameter from "REPLACE.ME"
-    And request contains "product" parameter from "REPLACE.ME"
-    And request contains "start" parameter from "REPLACE.ME"
-    And request contains "end" parameter from "REPLACE.ME"
+    And request contains "provider" parameter with value "aws"
+    And request contains "product" parameter with value "ec2"
+    And request contains "start" parameter with value 1788220800000
+    And request contains "end" parameter with value 1790812799000
+    And request contains "commitmentType" parameter with value "ri"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "commitments_list_response"
+    And the response "data.id" is equal to "commitments_list_response"
+    And the response "data.attributes" has field "commitments"
 
   @generated @skip @team:ddoghq/cloud-cost-management
   Scenario: Get commitments on-demand hot spots (scalar) returns "Bad Request" response

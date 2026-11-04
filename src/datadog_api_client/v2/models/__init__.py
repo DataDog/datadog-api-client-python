@@ -1500,11 +1500,19 @@ from datadog_api_client.v2.model.commitments_coverage_timeseries_response import
 from datadog_api_client.v2.model.commitments_list_item import CommitmentsListItem
 from datadog_api_client.v2.model.commitments_list_meta import CommitmentsListMeta
 from datadog_api_client.v2.model.commitments_list_response import CommitmentsListResponse
+from datadog_api_client.v2.model.commitments_list_response_attributes import CommitmentsListResponseAttributes
+from datadog_api_client.v2.model.commitments_list_response_data import CommitmentsListResponseData
+from datadog_api_client.v2.model.commitments_list_response_type import CommitmentsListResponseType
 from datadog_api_client.v2.model.commitments_on_demand_hotspots_scalar_meta import CommitmentsOnDemandHotspotsScalarMeta
 from datadog_api_client.v2.model.commitments_on_demand_hotspots_scalar_response import (
     CommitmentsOnDemandHotspotsScalarResponse,
 )
 from datadog_api_client.v2.model.commitments_provider import CommitmentsProvider
+from datadog_api_client.v2.model.commitments_query_definition import CommitmentsQueryDefinition
+from datadog_api_client.v2.model.commitments_query_definition_aggregator import CommitmentsQueryDefinitionAggregator
+from datadog_api_client.v2.model.commitments_query_definition_data_source import CommitmentsQueryDefinitionDataSource
+from datadog_api_client.v2.model.commitments_query_definition_formula import CommitmentsQueryDefinitionFormula
+from datadog_api_client.v2.model.commitments_query_definition_query import CommitmentsQueryDefinitionQuery
 from datadog_api_client.v2.model.commitments_savings_scalar_response import CommitmentsSavingsScalarResponse
 from datadog_api_client.v2.model.commitments_savings_timeseries_response import CommitmentsSavingsTimeseriesResponse
 from datadog_api_client.v2.model.commitments_scalar_column import CommitmentsScalarColumn
@@ -14355,9 +14363,17 @@ __all__ = [
     "CommitmentsListItem",
     "CommitmentsListMeta",
     "CommitmentsListResponse",
+    "CommitmentsListResponseAttributes",
+    "CommitmentsListResponseData",
+    "CommitmentsListResponseType",
     "CommitmentsOnDemandHotspotsScalarMeta",
     "CommitmentsOnDemandHotspotsScalarResponse",
     "CommitmentsProvider",
+    "CommitmentsQueryDefinition",
+    "CommitmentsQueryDefinitionAggregator",
+    "CommitmentsQueryDefinitionDataSource",
+    "CommitmentsQueryDefinitionFormula",
+    "CommitmentsQueryDefinitionQuery",
     "CommitmentsSavingsScalarResponse",
     "CommitmentsSavingsTimeseriesResponse",
     "CommitmentsScalarColumn",

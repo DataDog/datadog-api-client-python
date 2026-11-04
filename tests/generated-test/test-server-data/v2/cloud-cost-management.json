@@ -924,6 +924,106 @@
     },
     {
       "feature": "Cloud Cost Management",
+      "frozen_at": "2026-11-03T12:39:03.354Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/cost/commitments/commitment-list",
+            "query": [
+              [
+                "end",
+                "1790812799000"
+              ],
+              [
+                "product",
+                "invalid-product"
+              ],
+              [
+                "provider",
+                "aws"
+              ],
+              [
+                "start",
+                "1788220800000"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"product 'invalid-product' not supported by cloud provider 'aws'\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Get commitments list returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2026-11-03T12:39:04.251Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/cost/commitments/commitment-list",
+            "query": [
+              [
+                "commitmentType",
+                "ri"
+              ],
+              [
+                "end",
+                "1790812799000"
+              ],
+              [
+                "product",
+                "ec2"
+              ],
+              [
+                "provider",
+                "aws"
+              ],
+              [
+                "start",
+                "1788220800000"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"commitments_list_response\",\"type\":\"commitments_list_response\",\"attributes\":{\"commitments\":[]}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get commitments list returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
       "frozen_at": "2025-09-11T19:58:54.699Z",
       "interactions": [
         {
