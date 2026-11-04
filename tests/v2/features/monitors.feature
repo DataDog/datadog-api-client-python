@@ -71,6 +71,15 @@ Feature: Monitors
     And the response "data.attributes.name" is equal to "test rule"
 
   @team:ddoghq/monitor-app
+  Scenario: Create a monitor notification rule with rule options returns "OK" response
+    Given new "CreateMonitorNotificationRule" request
+    And body with value {"data": {"attributes": {"filter": {"tags": ["test:{{ unique_lower }}"]}, "name": "test rule", "recipients": ["slack-test-channel"], "rule_options": {"is_threaded": true}}, "type": "monitor-notification-rule"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.name" is equal to "test rule"
+    And the response "data.attributes.rule_options.is_threaded" is equal to true
+
+  @team:ddoghq/monitor-app
   Scenario: Create a monitor notification rule with scope returns "OK" response
     Given new "CreateMonitorNotificationRule" request
     And body with value {"data": {"attributes": {"filter": {"scope": "test:{{ unique_lower }}"}, "name": "test rule", "recipients": ["slack-test-channel", "jira-test"]}, "type": "monitor-notification-rule"}}
@@ -310,6 +319,17 @@ Feature: Monitors
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.name" is equal to "updated rule"
+
+  @team:ddoghq/monitor-app
+  Scenario: Update a monitor notification rule with rule options returns "OK" response
+    Given there is a valid "monitor_notification_rule" in the system
+    And new "UpdateMonitorNotificationRule" request
+    And request contains "rule_id" parameter from "monitor_notification_rule.data.id"
+    And body with value {"data": {"attributes": {"filter": {"tags": ["test:{{ unique_lower }}"]}, "name": "updated rule", "recipients": ["slack-test-channel"], "rule_options": {"is_threaded": false}}, "id": "{{ monitor_notification_rule.data.id }}", "type": "monitor-notification-rule"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.name" is equal to "updated rule"
+    And the response "data.attributes.rule_options.is_threaded" is equal to false
 
   @team:ddoghq/monitor-app
   Scenario: Update a monitor notification rule with scope returns "OK" response

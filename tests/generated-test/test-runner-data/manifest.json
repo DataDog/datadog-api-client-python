@@ -4238,6 +4238,20 @@
     {
       "feature": "Cloud Cost Management",
       "feature_file": "../../v2/features/cloud_cost_management.feature",
+      "file": "v2/cloud-cost-management/get-commitments-list-returns-bad-request-response.json",
+      "scenario": "Get commitments list returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "feature_file": "../../v2/features/cloud_cost_management.feature",
+      "file": "v2/cloud-cost-management/get-commitments-list-returns-ok-response.json",
+      "scenario": "Get commitments list returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "feature_file": "../../v2/features/cloud_cost_management.feature",
       "file": "v2/cloud-cost-management/get-cost-aws-cur-config-returns-ok-response.json",
       "scenario": "Get cost AWS CUR config returns \"OK\" response",
       "version": "v2"
@@ -8417,6 +8431,13 @@
     {
       "feature": "Monitors",
       "feature_file": "../../v2/features/monitors.feature",
+      "file": "v2/monitors/create-a-monitor-notification-rule-with-rule-options-returns-ok-response.json",
+      "scenario": "Create a monitor notification rule with rule options returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "feature_file": "../../v2/features/monitors.feature",
       "file": "v2/monitors/create-a-monitor-notification-rule-with-scope-returns-ok-response.json",
       "scenario": "Create a monitor notification rule with scope returns \"OK\" response",
       "version": "v2"
@@ -8594,6 +8615,13 @@
       "feature_file": "../../v2/features/monitors.feature",
       "file": "v2/monitors/update-a-monitor-notification-rule-with-conditional-recipients-returns-ok-response.json",
       "scenario": "Update a monitor notification rule with conditional_recipients returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Monitors",
+      "feature_file": "../../v2/features/monitors.feature",
+      "file": "v2/monitors/update-a-monitor-notification-rule-with-rule-options-returns-ok-response.json",
+      "scenario": "Update a monitor notification rule with rule options returns \"OK\" response",
       "version": "v2"
     },
     {

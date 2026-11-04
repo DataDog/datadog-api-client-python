@@ -24,19 +24,32 @@ class CommitmentsListMeta(ModelNormal):
 
         return {
             "committed_spend_unit": (CommitmentsUnit,),
+            "unused_cost_unavailable": (bool,),
         }
 
     attribute_map = {
         "committed_spend_unit": "committed_spend_unit",
+        "unused_cost_unavailable": "unused_cost_unavailable",
     }
 
-    def __init__(self_, committed_spend_unit: Union[CommitmentsUnit, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        committed_spend_unit: Union[CommitmentsUnit, UnsetType] = unset,
+        unused_cost_unavailable: Union[bool, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         Metadata for a commitments list response.
 
         :param committed_spend_unit: Unit metadata for a numeric metric.
         :type committed_spend_unit: CommitmentsUnit, optional
+
+        :param unused_cost_unavailable: Whether Azure cost data lacks the unused cost of some commitments, for example when an export is
+            scoped below the billing profile. When ``true`` , utilization is overstated.
+        :type unused_cost_unavailable: bool, optional
         """
         if committed_spend_unit is not unset:
             kwargs["committed_spend_unit"] = committed_spend_unit
+        if unused_cost_unavailable is not unset:
+            kwargs["unused_cost_unavailable"] = unused_cost_unavailable
         super().__init__(kwargs)

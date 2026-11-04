@@ -28,10 +28,10 @@ class CommitmentsListItem(ModelComposed):
         :type instance_type: str
 
         :param number_of_nfus: The number of Normalized Capacity Units.
-        :type number_of_nfus: float, optional
+        :type number_of_nfus: float, none_type, optional
 
         :param number_of_reservations: The number of reserved instances.
-        :type number_of_reservations: float, optional
+        :type number_of_reservations: float, none_type, optional
 
         :param offering_class: The offering class of the Reserved Instance.
         :type offering_class: str
@@ -48,10 +48,10 @@ class CommitmentsListItem(ModelComposed):
         :param start_date: The start date of the commitment.
         :type start_date: str, optional
 
-        :param term_length: The term length in years.
-        :type term_length: float, optional
+        :param term_length_months: The commitment term in whole months. Omitted when the term is unknown.
+        :type term_length_months: int, optional
 
-        :param utilization: The utilization percentage of the commitment.
+        :param utilization: The utilization percentage of the commitment, from 0 to 100.
         :type utilization: float, optional
 
         :param database_engine: The database engine of the Reserved Instance.
@@ -66,6 +66,9 @@ class CommitmentsListItem(ModelComposed):
         :param committed_spend_per_hour: The hourly committed spend for the Savings Plan.
         :type committed_spend_per_hour: float, optional
 
+        :param instance_type_family: The EC2 instance family covered by the Savings Plan. Returned only for EC2 Instance Savings Plans.
+        :type instance_type_family: str, optional
+
         :param savings_plan_type: The Savings Plan type.
         :type savings_plan_type: str
 
@@ -74,6 +77,9 @@ class CommitmentsListItem(ModelComposed):
 
         :param meter_sub_category: The Azure meter sub-category for the reservation.
         :type meter_sub_category: str
+
+        :param product: The Azure product of the reservation. Omitted when it cannot be classified.
+        :type product: str, optional
 
         :param status: Status of an Azure VM Reserved Instance.
         :type status: CommitmentsAzureVMRIStatus

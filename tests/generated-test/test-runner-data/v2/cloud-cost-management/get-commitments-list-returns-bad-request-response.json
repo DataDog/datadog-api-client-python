@@ -1,0 +1,83 @@
+{
+  "api": "CloudCostManagement",
+  "expected_status": 400,
+  "feature": "Cloud Cost Management",
+  "id": "v2/Cloud Cost Management/Get commitments list returns \"Bad Request\" response",
+  "operation_id": "GetCommitmentsCommitmentList",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "provider",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": "CommitmentsProvider",
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "aws"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "product",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "invalid-product"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "start",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 1788220800000
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "end",
+        "required": true,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 1790812799000
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/cost/commitments/commitment-list"
+  },
+  "scenario": "Get commitments list returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

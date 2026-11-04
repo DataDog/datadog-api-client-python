@@ -8,6 +8,7 @@ from typing import Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -21,14 +22,14 @@ class CommitmentsAwsEC2RICommitment(ModelNormal):
             "commitment_id": (str,),
             "expiration_date": (str,),
             "instance_type": (str,),
-            "number_of_nfus": (float,),
-            "number_of_reservations": (float,),
+            "number_of_nfus": (float, none_type),
+            "number_of_reservations": (float, none_type),
             "offering_class": (str,),
             "operating_system": (str,),
             "purchase_option": (str,),
             "region": (str,),
             "start_date": (str,),
-            "term_length": (float,),
+            "term_length_months": (int,),
             "utilization": (float,),
         }
 
@@ -44,7 +45,7 @@ class CommitmentsAwsEC2RICommitment(ModelNormal):
         "purchase_option": "purchase_option",
         "region": "region",
         "start_date": "start_date",
-        "term_length": "term_length",
+        "term_length_months": "term_length_months",
         "utilization": "utilization",
     }
 
@@ -58,10 +59,10 @@ class CommitmentsAwsEC2RICommitment(ModelNormal):
         region: str,
         availability_zone: Union[str, UnsetType] = unset,
         expiration_date: Union[str, UnsetType] = unset,
-        number_of_nfus: Union[float, UnsetType] = unset,
-        number_of_reservations: Union[float, UnsetType] = unset,
+        number_of_nfus: Union[float, none_type, UnsetType] = unset,
+        number_of_reservations: Union[float, none_type, UnsetType] = unset,
         start_date: Union[str, UnsetType] = unset,
-        term_length: Union[float, UnsetType] = unset,
+        term_length_months: Union[int, UnsetType] = unset,
         utilization: Union[float, UnsetType] = unset,
         **kwargs,
     ):
@@ -81,10 +82,10 @@ class CommitmentsAwsEC2RICommitment(ModelNormal):
         :type instance_type: str
 
         :param number_of_nfus: The number of Normalized Capacity Units.
-        :type number_of_nfus: float, optional
+        :type number_of_nfus: float, none_type, optional
 
         :param number_of_reservations: The number of reserved instances.
-        :type number_of_reservations: float, optional
+        :type number_of_reservations: float, none_type, optional
 
         :param offering_class: The offering class of the Reserved Instance.
         :type offering_class: str
@@ -101,10 +102,10 @@ class CommitmentsAwsEC2RICommitment(ModelNormal):
         :param start_date: The start date of the commitment.
         :type start_date: str, optional
 
-        :param term_length: The term length in years.
-        :type term_length: float, optional
+        :param term_length_months: The commitment term in whole months. Omitted when the term is unknown.
+        :type term_length_months: int, optional
 
-        :param utilization: The utilization percentage of the commitment.
+        :param utilization: The utilization percentage of the commitment, from 0 to 100.
         :type utilization: float, optional
         """
         if availability_zone is not unset:
@@ -117,8 +118,8 @@ class CommitmentsAwsEC2RICommitment(ModelNormal):
             kwargs["number_of_reservations"] = number_of_reservations
         if start_date is not unset:
             kwargs["start_date"] = start_date
-        if term_length is not unset:
-            kwargs["term_length"] = term_length
+        if term_length_months is not unset:
+            kwargs["term_length_months"] = term_length_months
         if utilization is not unset:
             kwargs["utilization"] = utilization
         super().__init__(kwargs)
