@@ -51,7 +51,7 @@ class RUMAggregateSort(ModelNormal):
         """
         A sort rule.
 
-        :param aggregation: An aggregation function.
+        :param aggregation: An aggregation function. ``count`` counts events and needs no metric. ``cardinality`` counts the distinct values of the metric. ``sum`` , ``min`` , ``max`` , ``avg`` , ``median`` and the percentiles ( ``pc75`` to ``pc99`` ) apply to a numeric metric such as ``@view.loading_time``.
         :type aggregation: RUMAggregationFunction, optional
 
         :param metric: The metric to sort by (only used for ``type=measure`` ).
@@ -60,7 +60,7 @@ class RUMAggregateSort(ModelNormal):
         :param order: The order to use, ascending or descending.
         :type order: RUMSortOrder, optional
 
-        :param type: The type of sorting algorithm.
+        :param type: The type of sorting algorithm. ``alphabetical`` sorts buckets by the facet value, ``measure`` sorts them by a computed aggregation.
         :type type: RUMAggregateSortType, optional
         """
         if aggregation is not unset:

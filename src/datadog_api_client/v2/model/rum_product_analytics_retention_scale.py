@@ -45,6 +45,7 @@ class RUMProductAnalyticsRetentionScale(ModelNormal):
         :type last_modified_at: int, optional
 
         :param state: Controls the retention policy for Product Analytics data derived from RUM events.
+            Requests also accept ``PREVIEW`` (the initial state of a new application, reported as ``NONE`` in responses). Setting ``MAX`` requires the ``product_analytics_apps_write`` permission.
         :type state: RUMProductAnalyticsRetentionState, optional
         """
         if last_modified_at is not unset:

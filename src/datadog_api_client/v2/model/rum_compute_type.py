@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class RUMComputeType(ModelSimple):
     """
-    The type of compute.
+    The type of compute. `total` returns one value per bucket, `timeseries` returns a list of time points per bucket.
 
     :param value: If omitted defaults to "total". Must be one of ["timeseries", "total"].
     :type value: str

@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class RUMResponseStatus(ModelSimple):
     """
-    The status of the response.
+    The status of the response. `timeout` means the query did not complete in time and the results are partial.
 
     :param value: Must be one of ["done", "timeout"].
     :type value: str

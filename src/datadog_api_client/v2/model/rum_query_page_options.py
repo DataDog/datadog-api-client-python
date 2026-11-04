@@ -36,10 +36,10 @@ class RUMQueryPageOptions(ModelNormal):
         """
         Paging attributes for listing events.
 
-        :param cursor: List following results with a cursor provided in the previous query.
+        :param cursor: Cursor to get the next page of results, taken from ``meta.page.after`` of the previous response. Send it with the same ``filter`` and ``sort`` as the request that returned it.
         :type cursor: str, optional
 
-        :param limit: Maximum number of events in the response.
+        :param limit: Maximum number of events in the response. Between 1 and 1000.
         :type limit: int, optional
         """
         if cursor is not unset:
