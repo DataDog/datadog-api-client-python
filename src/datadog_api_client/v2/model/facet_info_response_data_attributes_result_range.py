@@ -8,6 +8,7 @@ from typing import Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -17,8 +18,8 @@ class FacetInfoResponseDataAttributesResultRange(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "max": (dict,),
-            "min": (dict,),
+            "max": (float, none_type),
+            "min": (float, none_type),
         }
 
     attribute_map = {
@@ -26,15 +27,20 @@ class FacetInfoResponseDataAttributesResultRange(ModelNormal):
         "min": "min",
     }
 
-    def __init__(self_, max: Union[dict, UnsetType] = unset, min: Union[dict, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        max: Union[float, none_type, UnsetType] = unset,
+        min: Union[float, none_type, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The numeric range of a facet attribute, representing the minimum and maximum observed values.
 
-        :param max: The maximum observed value for the numeric facet attribute.
-        :type max: dict, optional
+        :param max: The maximum observed value for the numeric facet attribute. Null when no records match.
+        :type max: float, none_type, optional
 
-        :param min: The minimum observed value for the numeric facet attribute.
-        :type min: dict, optional
+        :param min: The minimum observed value for the numeric facet attribute. Null when no records match.
+        :type min: float, none_type, optional
         """
         if max is not unset:
             kwargs["max"] = max

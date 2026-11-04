@@ -6173,6 +6173,15 @@ from datadog_api_client.v2.model.list_connections_response_data_attributes impor
 from datadog_api_client.v2.model.list_connections_response_data_attributes_connections_items import (
     ListConnectionsResponseDataAttributesConnectionsItems,
 )
+from datadog_api_client.v2.model.list_connections_response_data_attributes_connections_items_details import (
+    ListConnectionsResponseDataAttributesConnectionsItemsDetails,
+)
+from datadog_api_client.v2.model.list_connections_response_data_attributes_connections_items_details_ref_table import (
+    ListConnectionsResponseDataAttributesConnectionsItemsDetailsRefTable,
+)
+from datadog_api_client.v2.model.list_connections_response_data_attributes_connections_items_details_snowflake import (
+    ListConnectionsResponseDataAttributesConnectionsItemsDetailsSnowflake,
+)
 from datadog_api_client.v2.model.list_connections_response_data_attributes_connections_items_join import (
     ListConnectionsResponseDataAttributesConnectionsItemsJoin,
 )
@@ -17533,6 +17542,9 @@ __all__ = [
     "ListConnectionsResponseData",
     "ListConnectionsResponseDataAttributes",
     "ListConnectionsResponseDataAttributesConnectionsItems",
+    "ListConnectionsResponseDataAttributesConnectionsItemsDetails",
+    "ListConnectionsResponseDataAttributesConnectionsItemsDetailsRefTable",
+    "ListConnectionsResponseDataAttributesConnectionsItemsDetailsSnowflake",
     "ListConnectionsResponseDataAttributesConnectionsItemsJoin",
     "ListConnectionsResponseDataType",
     "ListDashboardsUsageResponse",

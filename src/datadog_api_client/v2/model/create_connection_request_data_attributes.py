@@ -14,31 +14,47 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.list_connections_response_data_attributes_connections_items_details import (
+        ListConnectionsResponseDataAttributesConnectionsItemsDetails,
+    )
     from datadog_api_client.v2.model.create_connection_request_data_attributes_fields_items import (
         CreateConnectionRequestDataAttributesFieldsItems,
     )
 
 
 class CreateConnectionRequestDataAttributes(ModelNormal):
+    validations = {
+        "name": {
+            "max_length": 255,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.list_connections_response_data_attributes_connections_items_details import (
+            ListConnectionsResponseDataAttributesConnectionsItemsDetails,
+        )
         from datadog_api_client.v2.model.create_connection_request_data_attributes_fields_items import (
             CreateConnectionRequestDataAttributesFieldsItems,
         )
 
         return {
+            "details": (ListConnectionsResponseDataAttributesConnectionsItemsDetails,),
             "fields": ([CreateConnectionRequestDataAttributesFieldsItems],),
             "join_attribute": (str,),
             "join_type": (str,),
             "metadata": ({str: (str,)},),
+            "name": (str,),
             "type": (str,),
         }
 
     attribute_map = {
+        "details": "details",
         "fields": "fields",
         "join_attribute": "join_attribute",
         "join_type": "join_type",
         "metadata": "metadata",
+        "name": "name",
         "type": "type",
     }
 
@@ -47,12 +63,17 @@ class CreateConnectionRequestDataAttributes(ModelNormal):
         join_attribute: str,
         join_type: str,
         type: str,
+        details: Union[ListConnectionsResponseDataAttributesConnectionsItemsDetails, UnsetType] = unset,
         fields: Union[List[CreateConnectionRequestDataAttributesFieldsItems], UnsetType] = unset,
         metadata: Union[Dict[str, str], UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
         Attributes defining the data source connection, including join configuration and custom fields.
+
+        :param details: Type-specific configuration of the connection. Only the field matching the connection type is set.
+        :type details: ListConnectionsResponseDataAttributesConnectionsItemsDetails, optional
 
         :param fields: List of custom attribute fields to import from the data source.
         :type fields: [CreateConnectionRequestDataAttributesFieldsItems], optional
@@ -66,13 +87,20 @@ class CreateConnectionRequestDataAttributes(ModelNormal):
         :param metadata: Additional key-value metadata associated with the connection.
         :type metadata: {str: (str,)}, optional
 
+        :param name: Display name of the connection.
+        :type name: str, optional
+
         :param type: The type of data source connection (for example, ref_table).
         :type type: str
         """
+        if details is not unset:
+            kwargs["details"] = details
         if fields is not unset:
             kwargs["fields"] = fields
         if metadata is not unset:
             kwargs["metadata"] = metadata
+        if name is not unset:
+            kwargs["name"] = name
         super().__init__(kwargs)
 
         self_.join_attribute = join_attribute
