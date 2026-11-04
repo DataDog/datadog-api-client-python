@@ -17,6 +17,12 @@ if TYPE_CHECKING:
 
 
 class RumMetricCreateData(ModelNormal):
+    validations = {
+        "id": {
+            "max_length": 200,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.rum_metric_create_attributes import RumMetricCreateAttributes
@@ -42,9 +48,11 @@ class RumMetricCreateData(ModelNormal):
         :type attributes: RumMetricCreateAttributes
 
         :param id: The name of the RUM-based metric.
+            On creation, it must be 1 to 200 characters long, contain only ASCII letters, digits, underscores, and periods, start with a letter, and not start with ``rum.measure`` or ``rum.investigate``.
+            It cannot be changed after creation.
         :type id: str
 
-        :param type: The type of the resource. The value should always be rum_metrics.
+        :param type: The type of the resource. The value must be ``rum_metrics``.
         :type type: RumMetricType
         """
         super().__init__(kwargs)

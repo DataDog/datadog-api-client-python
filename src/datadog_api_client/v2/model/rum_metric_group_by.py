@@ -14,6 +14,12 @@ from datadog_api_client.model_utils import (
 
 
 class RumMetricGroupBy(ModelNormal):
+    validations = {
+        "tag_name": {
+            "max_length": 200,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         return {
@@ -30,10 +36,11 @@ class RumMetricGroupBy(ModelNormal):
         """
         A group by rule.
 
-        :param path: The path to the value the RUM-based metric will be aggregated over.
+        :param path: The path of the RUM event attribute to group the metric by.
         :type path: str
 
-        :param tag_name: Eventual name of the tag that gets created. By default, ``path`` is used as the tag name.
+        :param tag_name: Name of the tag that gets created on the metric. By default, ``path`` is used as the tag name.
+            It must be at most 200 characters long, start with a letter, and contain only lowercase letters, digits, underscores, hyphens, colons, periods, and slashes.
         :type tag_name: str, optional
         """
         if tag_name is not unset:

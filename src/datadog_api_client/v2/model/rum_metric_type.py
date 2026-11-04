@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class RumMetricType(ModelSimple):
     """
-    The type of the resource. The value should always be rum_metrics.
+    The type of the resource. The value must be `rum_metrics`.
 
     :param value: If omitted defaults to "rum_metrics". Must be one of ["rum_metrics"].
     :type value: str
