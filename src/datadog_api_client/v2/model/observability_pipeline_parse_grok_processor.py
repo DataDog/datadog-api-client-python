@@ -65,17 +65,20 @@ class ObservabilityPipelineParseGrokProcessor(ModelNormal):
         enabled: bool,
         id: str,
         include: str,
-        rules: List[
-            Union[
-                ObservabilityPipelineParseGrokProcessorRuleItem,
-                ObservabilityPipelineParseGrokProcessorRule,
-                ObservabilityPipelineParseGrokProcessorIncludeRule,
-            ]
-        ],
         type: ObservabilityPipelineParseGrokProcessorType,
         disable_library_rules: Union[bool, UnsetType] = unset,
         display_name: Union[str, UnsetType] = unset,
         field: Union[str, UnsetType] = unset,
+        rules: Union[
+            List[
+                Union[
+                    ObservabilityPipelineParseGrokProcessorRuleItem,
+                    ObservabilityPipelineParseGrokProcessorRule,
+                    ObservabilityPipelineParseGrokProcessorIncludeRule,
+                ]
+            ],
+            UnsetType,
+        ] = unset,
         **kwargs,
     ):
         """
@@ -101,8 +104,8 @@ class ObservabilityPipelineParseGrokProcessor(ModelNormal):
         :param include: A Datadog search query used to determine which logs this processor targets.
         :type include: str
 
-        :param rules: The list of Grok parsing rules selected by either source field or include query.
-        :type rules: [ObservabilityPipelineParseGrokProcessorRuleItem]
+        :param rules: The list of custom Grok parsing rules selected by either source field or include query. Omit to use only the Datadog library rules.
+        :type rules: [ObservabilityPipelineParseGrokProcessorRuleItem], optional
 
         :param type: The processor type. The value should always be ``parse_grok``.
         :type type: ObservabilityPipelineParseGrokProcessorType
@@ -113,10 +116,11 @@ class ObservabilityPipelineParseGrokProcessor(ModelNormal):
             kwargs["display_name"] = display_name
         if field is not unset:
             kwargs["field"] = field
+        if rules is not unset:
+            kwargs["rules"] = rules
         super().__init__(kwargs)
 
         self_.enabled = enabled
         self_.id = id
         self_.include = include
-        self_.rules = rules
         self_.type = type

@@ -75,8 +75,8 @@ class ObservabilityPipelineConfigProcessorItem(ModelComposed):
         :param field: The log field to parse with the Grok rules.
         :type field: str, optional
 
-        :param rules: The list of Grok parsing rules selected by either source field or include query.
-        :type rules: [ObservabilityPipelineParseGrokProcessorRuleItem]
+        :param rules: The list of custom Grok parsing rules selected by either source field or include query. Omit to use only the Datadog library rules.
+        :type rules: [ObservabilityPipelineParseGrokProcessorRuleItem], optional
 
         :param always_use_text_key: Whether to always use a text key for element content.
         :type always_use_text_key: bool, optional

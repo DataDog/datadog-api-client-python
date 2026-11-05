@@ -125,41 +125,44 @@ class ObservabilityPipelineConfigProcessorGroup(ModelNormal):
         id: str,
         include: str,
         inputs: List[str],
-        processors: List[
-            Union[
-                ObservabilityPipelineConfigProcessorItem,
-                ObservabilityPipelineFilterProcessor,
-                ObservabilityPipelineAddEnvVarsProcessor,
-                ObservabilityPipelineAddFieldsProcessor,
-                ObservabilityPipelineAddHostnameProcessor,
-                ObservabilityPipelineDatadogTagsProcessor,
-                ObservabilityPipelineDedupeProcessor,
-                ObservabilityPipelineEnrichmentTableProcessor,
-                ObservabilityPipelineGenerateMetricsProcessor,
-                ObservabilityPipelineOcsfMapperProcessor,
-                ObservabilityPipelineParseGrokProcessor,
-                ObservabilityPipelineParseJSONProcessor,
-                ObservabilityPipelineParseXMLProcessor,
-                ObservabilityPipelineQuotaProcessor,
-                ObservabilityPipelineReduceProcessor,
-                ObservabilityPipelineRemoveFieldsProcessor,
-                ObservabilityPipelineRenameFieldsProcessor,
-                ObservabilityPipelineSpikeProtectionProcessor,
-                ObservabilityPipelineSplitArrayProcessor,
-                ObservabilityPipelineThrottleProcessor,
-                ObservabilityPipelineCustomProcessor,
-                ObservabilityPipelineGenerateMetricsV2Processor,
-                ObservabilityPipelineSampleProcessor,
-                ObservabilityPipelineSensitiveDataScannerProcessor,
-                ObservabilityPipelineAddMetricTagsProcessor,
-                ObservabilityPipelineAggregateProcessor,
-                ObservabilityPipelineMetricEnrichmentTableProcessor,
-                ObservabilityPipelineMetricTagsProcessor,
-                ObservabilityPipelineRenameMetricTagsProcessor,
-                ObservabilityPipelineTagCardinalityLimitProcessor,
-            ]
-        ],
         display_name: Union[str, UnsetType] = unset,
+        processors: Union[
+            List[
+                Union[
+                    ObservabilityPipelineConfigProcessorItem,
+                    ObservabilityPipelineFilterProcessor,
+                    ObservabilityPipelineAddEnvVarsProcessor,
+                    ObservabilityPipelineAddFieldsProcessor,
+                    ObservabilityPipelineAddHostnameProcessor,
+                    ObservabilityPipelineDatadogTagsProcessor,
+                    ObservabilityPipelineDedupeProcessor,
+                    ObservabilityPipelineEnrichmentTableProcessor,
+                    ObservabilityPipelineGenerateMetricsProcessor,
+                    ObservabilityPipelineOcsfMapperProcessor,
+                    ObservabilityPipelineParseGrokProcessor,
+                    ObservabilityPipelineParseJSONProcessor,
+                    ObservabilityPipelineParseXMLProcessor,
+                    ObservabilityPipelineQuotaProcessor,
+                    ObservabilityPipelineReduceProcessor,
+                    ObservabilityPipelineRemoveFieldsProcessor,
+                    ObservabilityPipelineRenameFieldsProcessor,
+                    ObservabilityPipelineSpikeProtectionProcessor,
+                    ObservabilityPipelineSplitArrayProcessor,
+                    ObservabilityPipelineThrottleProcessor,
+                    ObservabilityPipelineCustomProcessor,
+                    ObservabilityPipelineGenerateMetricsV2Processor,
+                    ObservabilityPipelineSampleProcessor,
+                    ObservabilityPipelineSensitiveDataScannerProcessor,
+                    ObservabilityPipelineAddMetricTagsProcessor,
+                    ObservabilityPipelineAggregateProcessor,
+                    ObservabilityPipelineMetricEnrichmentTableProcessor,
+                    ObservabilityPipelineMetricTagsProcessor,
+                    ObservabilityPipelineRenameMetricTagsProcessor,
+                    ObservabilityPipelineTagCardinalityLimitProcessor,
+                ]
+            ],
+            UnsetType,
+        ] = unset,
         **kwargs,
     ):
         """
@@ -180,15 +183,16 @@ class ObservabilityPipelineConfigProcessorGroup(ModelNormal):
         :param inputs: A list of IDs for components whose output is used as the input for this processor group.
         :type inputs: [str]
 
-        :param processors: Processors applied sequentially within this group. Events flow through each processor in order.
-        :type processors: [ObservabilityPipelineConfigProcessorItem]
+        :param processors: Processors applied sequentially within this group. Events flow through each processor in order. Omit or use an empty array for a group without processors.
+        :type processors: [ObservabilityPipelineConfigProcessorItem], optional
         """
         if display_name is not unset:
             kwargs["display_name"] = display_name
+        if processors is not unset:
+            kwargs["processors"] = processors
         super().__init__(kwargs)
 
         self_.enabled = enabled
         self_.id = id
         self_.include = include
         self_.inputs = inputs
-        self_.processors = processors
