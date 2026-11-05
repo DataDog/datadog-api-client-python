@@ -12281,6 +12281,72 @@ from datadog_api_client.v2.model.teams_response import TeamsResponse
 from datadog_api_client.v2.model.teams_response_links import TeamsResponseLinks
 from datadog_api_client.v2.model.teams_response_meta import TeamsResponseMeta
 from datadog_api_client.v2.model.teams_response_meta_pagination import TeamsResponseMetaPagination
+from datadog_api_client.v2.model.temporal_cloud_open_metrics_integration_account_authentication_request import (
+    TemporalCloudOpenMetricsIntegrationAccountAuthenticationRequest,
+)
+from datadog_api_client.v2.model.temporal_cloud_open_metrics_integration_account_authentication_response import (
+    TemporalCloudOpenMetricsIntegrationAccountAuthenticationResponse,
+)
+from datadog_api_client.v2.model.temporal_cloud_open_metrics_integration_account_authentication_update import (
+    TemporalCloudOpenMetricsIntegrationAccountAuthenticationUpdate,
+)
+from datadog_api_client.v2.model.temporal_cloud_open_metrics_integration_account_bearer_token_auth_request import (
+    TemporalCloudOpenMetricsIntegrationAccountBearerTokenAuthRequest,
+)
+from datadog_api_client.v2.model.temporal_cloud_open_metrics_integration_account_bearer_token_auth_response import (
+    TemporalCloudOpenMetricsIntegrationAccountBearerTokenAuthResponse,
+)
+from datadog_api_client.v2.model.temporal_cloud_open_metrics_integration_account_bearer_token_auth_type import (
+    TemporalCloudOpenMetricsIntegrationAccountBearerTokenAuthType,
+)
+from datadog_api_client.v2.model.temporal_cloud_open_metrics_integration_account_bearer_token_auth_update import (
+    TemporalCloudOpenMetricsIntegrationAccountBearerTokenAuthUpdate,
+)
+from datadog_api_client.v2.model.temporal_cloud_open_metrics_integration_account_create_attributes import (
+    TemporalCloudOpenMetricsIntegrationAccountCreateAttributes,
+)
+from datadog_api_client.v2.model.temporal_cloud_open_metrics_integration_account_create_data import (
+    TemporalCloudOpenMetricsIntegrationAccountCreateData,
+)
+from datadog_api_client.v2.model.temporal_cloud_open_metrics_integration_account_create_request import (
+    TemporalCloudOpenMetricsIntegrationAccountCreateRequest,
+)
+from datadog_api_client.v2.model.temporal_cloud_open_metrics_integration_account_response import (
+    TemporalCloudOpenMetricsIntegrationAccountResponse,
+)
+from datadog_api_client.v2.model.temporal_cloud_open_metrics_integration_account_response_attributes import (
+    TemporalCloudOpenMetricsIntegrationAccountResponseAttributes,
+)
+from datadog_api_client.v2.model.temporal_cloud_open_metrics_integration_account_response_data import (
+    TemporalCloudOpenMetricsIntegrationAccountResponseData,
+)
+from datadog_api_client.v2.model.temporal_cloud_open_metrics_integration_account_settings_request import (
+    TemporalCloudOpenMetricsIntegrationAccountSettingsRequest,
+)
+from datadog_api_client.v2.model.temporal_cloud_open_metrics_integration_account_settings_response import (
+    TemporalCloudOpenMetricsIntegrationAccountSettingsResponse,
+)
+from datadog_api_client.v2.model.temporal_cloud_open_metrics_integration_account_settings_update import (
+    TemporalCloudOpenMetricsIntegrationAccountSettingsUpdate,
+)
+from datadog_api_client.v2.model.temporal_cloud_open_metrics_integration_account_update_attributes import (
+    TemporalCloudOpenMetricsIntegrationAccountUpdateAttributes,
+)
+from datadog_api_client.v2.model.temporal_cloud_open_metrics_integration_account_update_data import (
+    TemporalCloudOpenMetricsIntegrationAccountUpdateData,
+)
+from datadog_api_client.v2.model.temporal_cloud_open_metrics_integration_account_update_request import (
+    TemporalCloudOpenMetricsIntegrationAccountUpdateRequest,
+)
+from datadog_api_client.v2.model.temporal_cloud_open_metrics_integration_accounts_response import (
+    TemporalCloudOpenMetricsIntegrationAccountsResponse,
+)
+from datadog_api_client.v2.model.temporal_cloud_open_metrics_integration_dataflows_response import (
+    TemporalCloudOpenMetricsIntegrationDataflowsResponse,
+)
+from datadog_api_client.v2.model.temporal_cloud_open_metrics_metrics_integration_dataflow_response import (
+    TemporalCloudOpenMetricsMetricsIntegrationDataflowResponse,
+)
 from datadog_api_client.v2.model.temporary_grant_request_attributes import TemporaryGrantRequestAttributes
 from datadog_api_client.v2.model.temporary_grant_request_create_attributes import TemporaryGrantRequestCreateAttributes
 from datadog_api_client.v2.model.temporary_grant_request_create_data import TemporaryGrantRequestCreateData
@@ -21348,6 +21414,28 @@ __all__ = [
     "TeamsResponseLinks",
     "TeamsResponseMeta",
     "TeamsResponseMetaPagination",
+    "TemporalCloudOpenMetricsIntegrationAccountAuthenticationRequest",
+    "TemporalCloudOpenMetricsIntegrationAccountAuthenticationResponse",
+    "TemporalCloudOpenMetricsIntegrationAccountAuthenticationUpdate",
+    "TemporalCloudOpenMetricsIntegrationAccountBearerTokenAuthRequest",
+    "TemporalCloudOpenMetricsIntegrationAccountBearerTokenAuthResponse",
+    "TemporalCloudOpenMetricsIntegrationAccountBearerTokenAuthType",
+    "TemporalCloudOpenMetricsIntegrationAccountBearerTokenAuthUpdate",
+    "TemporalCloudOpenMetricsIntegrationAccountCreateAttributes",
+    "TemporalCloudOpenMetricsIntegrationAccountCreateData",
+    "TemporalCloudOpenMetricsIntegrationAccountCreateRequest",
+    "TemporalCloudOpenMetricsIntegrationAccountResponse",
+    "TemporalCloudOpenMetricsIntegrationAccountResponseAttributes",
+    "TemporalCloudOpenMetricsIntegrationAccountResponseData",
+    "TemporalCloudOpenMetricsIntegrationAccountSettingsRequest",
+    "TemporalCloudOpenMetricsIntegrationAccountSettingsResponse",
+    "TemporalCloudOpenMetricsIntegrationAccountSettingsUpdate",
+    "TemporalCloudOpenMetricsIntegrationAccountUpdateAttributes",
+    "TemporalCloudOpenMetricsIntegrationAccountUpdateData",
+    "TemporalCloudOpenMetricsIntegrationAccountUpdateRequest",
+    "TemporalCloudOpenMetricsIntegrationAccountsResponse",
+    "TemporalCloudOpenMetricsIntegrationDataflowsResponse",
+    "TemporalCloudOpenMetricsMetricsIntegrationDataflowResponse",
     "TemporaryGrantRequestAttributes",
     "TemporaryGrantRequestCreateAttributes",
     "TemporaryGrantRequestCreateData",
