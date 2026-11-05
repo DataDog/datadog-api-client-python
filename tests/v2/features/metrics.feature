@@ -695,6 +695,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 OK
     And the response "data.type" is equal to "scalar_response"
+    And the response "data" has field "id"
     And the response "data.attributes.columns[0].name" is equal to "a"
 
   @skip-validation @team:ddoghq/timeseries-query

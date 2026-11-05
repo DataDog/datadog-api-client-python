@@ -26,17 +26,20 @@ class ScalarResponse(ModelNormal):
 
         return {
             "attributes": (ScalarFormulaResponseAtrributes,),
+            "id": (str,),
             "type": (ScalarFormulaResponseType,),
         }
 
     attribute_map = {
         "attributes": "attributes",
+        "id": "id",
         "type": "type",
     }
 
     def __init__(
         self_,
         attributes: Union[ScalarFormulaResponseAtrributes, UnsetType] = unset,
+        id: Union[str, UnsetType] = unset,
         type: Union[ScalarFormulaResponseType, UnsetType] = unset,
         **kwargs,
     ):
@@ -46,11 +49,16 @@ class ScalarResponse(ModelNormal):
         :param attributes: The object describing a scalar response.
         :type attributes: ScalarFormulaResponseAtrributes, optional
 
+        :param id: The identifier of the scalar response resource.
+        :type id: str, optional
+
         :param type: The type of the resource. The value should always be scalar_response.
         :type type: ScalarFormulaResponseType, optional
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes
+        if id is not unset:
+            kwargs["id"] = id
         if type is not unset:
             kwargs["type"] = type
         super().__init__(kwargs)
