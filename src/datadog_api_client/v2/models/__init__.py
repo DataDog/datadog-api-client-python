@@ -10045,6 +10045,55 @@ from datadog_api_client.v2.model.secure_embed_update_response_data import Secure
 from datadog_api_client.v2.model.secure_embed_update_response_type import SecureEmbedUpdateResponseType
 from datadog_api_client.v2.model.secure_embed_viewing_preferences import SecureEmbedViewingPreferences
 from datadog_api_client.v2.model.secure_embed_viewing_preferences_theme import SecureEmbedViewingPreferencesTheme
+from datadog_api_client.v2.model.security_agent_investigation_attributes import SecurityAgentInvestigationAttributes
+from datadog_api_client.v2.model.security_agent_investigation_count import SecurityAgentInvestigationCount
+from datadog_api_client.v2.model.security_agent_investigation_count_field import SecurityAgentInvestigationCountField
+from datadog_api_client.v2.model.security_agent_investigation_counts_attributes import (
+    SecurityAgentInvestigationCountsAttributes,
+)
+from datadog_api_client.v2.model.security_agent_investigation_counts_data import SecurityAgentInvestigationCountsData
+from datadog_api_client.v2.model.security_agent_investigation_counts_response import (
+    SecurityAgentInvestigationCountsResponse,
+)
+from datadog_api_client.v2.model.security_agent_investigation_counts_type import SecurityAgentInvestigationCountsType
+from datadog_api_client.v2.model.security_agent_investigation_data import SecurityAgentInvestigationData
+from datadog_api_client.v2.model.security_agent_investigation_entity import SecurityAgentInvestigationEntity
+from datadog_api_client.v2.model.security_agent_investigation_field import SecurityAgentInvestigationField
+from datadog_api_client.v2.model.security_agent_investigation_key_entities import SecurityAgentInvestigationKeyEntities
+from datadog_api_client.v2.model.security_agent_investigation_key_evidence import SecurityAgentInvestigationKeyEvidence
+from datadog_api_client.v2.model.security_agent_investigation_list_item import SecurityAgentInvestigationListItem
+from datadog_api_client.v2.model.security_agent_investigation_list_item_attributes import (
+    SecurityAgentInvestigationListItemAttributes,
+)
+from datadog_api_client.v2.model.security_agent_investigation_mitigation_action import (
+    SecurityAgentInvestigationMitigationAction,
+)
+from datadog_api_client.v2.model.security_agent_investigation_mitigation_suggestion import (
+    SecurityAgentInvestigationMitigationSuggestion,
+)
+from datadog_api_client.v2.model.security_agent_investigation_no_run_reason import SecurityAgentInvestigationNoRunReason
+from datadog_api_client.v2.model.security_agent_investigation_response import SecurityAgentInvestigationResponse
+from datadog_api_client.v2.model.security_agent_investigation_response_suggestions import (
+    SecurityAgentInvestigationResponseSuggestions,
+)
+from datadog_api_client.v2.model.security_agent_investigation_rule_tuning_condition import (
+    SecurityAgentInvestigationRuleTuningCondition,
+)
+from datadog_api_client.v2.model.security_agent_investigation_rule_tuning_suggestion import (
+    SecurityAgentInvestigationRuleTuningSuggestion,
+)
+from datadog_api_client.v2.model.security_agent_investigation_rule_tuning_suggestions import (
+    SecurityAgentInvestigationRuleTuningSuggestions,
+)
+from datadog_api_client.v2.model.security_agent_investigation_signal import SecurityAgentInvestigationSignal
+from datadog_api_client.v2.model.security_agent_investigation_state import SecurityAgentInvestigationState
+from datadog_api_client.v2.model.security_agent_investigation_step import SecurityAgentInvestigationStep
+from datadog_api_client.v2.model.security_agent_investigation_type import SecurityAgentInvestigationType
+from datadog_api_client.v2.model.security_agent_investigation_verdict import SecurityAgentInvestigationVerdict
+from datadog_api_client.v2.model.security_agent_investigations_list_meta import SecurityAgentInvestigationsListMeta
+from datadog_api_client.v2.model.security_agent_investigations_list_response import (
+    SecurityAgentInvestigationsListResponse,
+)
 from datadog_api_client.v2.model.security_automation_rules_links import SecurityAutomationRulesLinks
 from datadog_api_client.v2.model.security_automation_rules_meta import SecurityAutomationRulesMeta
 from datadog_api_client.v2.model.security_automation_rules_page_info import SecurityAutomationRulesPageInfo
@@ -20046,6 +20095,35 @@ __all__ = [
     "SecureEmbedUpdateResponseType",
     "SecureEmbedViewingPreferences",
     "SecureEmbedViewingPreferencesTheme",
+    "SecurityAgentInvestigationAttributes",
+    "SecurityAgentInvestigationCount",
+    "SecurityAgentInvestigationCountField",
+    "SecurityAgentInvestigationCountsAttributes",
+    "SecurityAgentInvestigationCountsData",
+    "SecurityAgentInvestigationCountsResponse",
+    "SecurityAgentInvestigationCountsType",
+    "SecurityAgentInvestigationData",
+    "SecurityAgentInvestigationEntity",
+    "SecurityAgentInvestigationField",
+    "SecurityAgentInvestigationKeyEntities",
+    "SecurityAgentInvestigationKeyEvidence",
+    "SecurityAgentInvestigationListItem",
+    "SecurityAgentInvestigationListItemAttributes",
+    "SecurityAgentInvestigationMitigationAction",
+    "SecurityAgentInvestigationMitigationSuggestion",
+    "SecurityAgentInvestigationNoRunReason",
+    "SecurityAgentInvestigationResponse",
+    "SecurityAgentInvestigationResponseSuggestions",
+    "SecurityAgentInvestigationRuleTuningCondition",
+    "SecurityAgentInvestigationRuleTuningSuggestion",
+    "SecurityAgentInvestigationRuleTuningSuggestions",
+    "SecurityAgentInvestigationSignal",
+    "SecurityAgentInvestigationState",
+    "SecurityAgentInvestigationStep",
+    "SecurityAgentInvestigationType",
+    "SecurityAgentInvestigationVerdict",
+    "SecurityAgentInvestigationsListMeta",
+    "SecurityAgentInvestigationsListResponse",
     "SecurityAutomationRulesLinks",
     "SecurityAutomationRulesMeta",
     "SecurityAutomationRulesPageInfo",

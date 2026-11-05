@@ -9606,6 +9606,24 @@
       "type": "idempotent"
     }
   },
+  "ListSecurityAgentInvestigations": {
+    "tag": "Bits Security Analyst",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CountSecurityAgentInvestigations": {
+    "tag": "Bits Security Analyst",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetSecurityAgentInvestigation": {
+    "tag": "Bits Security Analyst",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListSecurityMonitoringSignals": {
     "tag": "Security Monitoring",
     "undo": {
