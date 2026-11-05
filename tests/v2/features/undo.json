@@ -10373,6 +10373,35 @@
       "type": "idempotent"
     }
   },
+  "ListEmailAccessPolicies": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateEmailAccessPolicy": {
+    "tag": "Status Pages",
+    "undo": {
+      "operationId": "DeleteEmailAccessPolicy",
+      "parameters": [
+        {
+          "name": "page_id",
+          "source": "data.relationships.status_page.data.id"
+        },
+        {
+          "name": "policy_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteEmailAccessPolicy": {
+    "tag": "Status Pages",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListComponents": {
     "tag": "Status Pages",
     "undo": {
