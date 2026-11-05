@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -12,19 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.service_now_basic_auth_instance import ServiceNowBasicAuthInstance
+    from datadog_api_client.v2.model.service_now_basic_auth_password import ServiceNowBasicAuthPassword
     from datadog_api_client.v2.model.service_now_basic_auth_type import ServiceNowBasicAuthType
+    from datadog_api_client.v2.model.service_now_basic_auth_username import ServiceNowBasicAuthUsername
+    from datadog_api_client.v2.model.action_connection_aws_secrets_manager_reference import (
+        ActionConnectionAWSSecretsManagerReference,
+    )
 
 
 class ServiceNowBasicAuth(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.service_now_basic_auth_instance import ServiceNowBasicAuthInstance
+        from datadog_api_client.v2.model.service_now_basic_auth_password import ServiceNowBasicAuthPassword
         from datadog_api_client.v2.model.service_now_basic_auth_type import ServiceNowBasicAuthType
+        from datadog_api_client.v2.model.service_now_basic_auth_username import ServiceNowBasicAuthUsername
 
         return {
-            "instance": (str,),
-            "password": (str,),
+            "instance": (ServiceNowBasicAuthInstance,),
+            "password": (ServiceNowBasicAuthPassword,),
             "type": (ServiceNowBasicAuthType,),
-            "username": (str,),
+            "username": (ServiceNowBasicAuthUsername,),
         }
 
     attribute_map = {
@@ -34,21 +43,28 @@ class ServiceNowBasicAuth(ModelNormal):
         "username": "username",
     }
 
-    def __init__(self_, instance: str, password: str, type: ServiceNowBasicAuthType, username: str, **kwargs):
+    def __init__(
+        self_,
+        instance: Union[ServiceNowBasicAuthInstance, str, ActionConnectionAWSSecretsManagerReference],
+        password: Union[ServiceNowBasicAuthPassword, str, ActionConnectionAWSSecretsManagerReference],
+        type: ServiceNowBasicAuthType,
+        username: Union[ServiceNowBasicAuthUsername, str, ActionConnectionAWSSecretsManagerReference],
+        **kwargs,
+    ):
         """
         The definition of the ``ServiceNowBasicAuth`` object.
 
         :param instance: The ``ServiceNowBasicAuth`` ``instance``.
-        :type instance: str
+        :type instance: ServiceNowBasicAuthInstance
 
         :param password: The ``ServiceNowBasicAuth`` ``password``.
-        :type password: str
+        :type password: ServiceNowBasicAuthPassword
 
         :param type: The definition of the ``ServiceNowBasicAuth`` object.
         :type type: ServiceNowBasicAuthType
 
         :param username: The ``ServiceNowBasicAuth`` ``username``.
-        :type username: str
+        :type username: ServiceNowBasicAuthUsername
         """
         super().__init__(kwargs)
 

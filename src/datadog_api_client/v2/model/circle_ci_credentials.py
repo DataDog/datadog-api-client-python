@@ -16,7 +16,7 @@ class CircleCICredentials(ModelComposed):
         The definition of the ``CircleCICredentials`` object.
 
         :param api_token: The `CircleCIAPIKey` `api_token`.
-        :type api_token: str
+        :type api_token: CircleCIAPIKeyApiToken
 
         :param type: The definition of the `CircleCIAPIKey` object.
         :type type: CircleCIAPIKeyType

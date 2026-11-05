@@ -16,10 +16,10 @@ class FreshserviceCredentialsUpdate(ModelComposed):
         The definition of the ``FreshserviceCredentialsUpdate`` object.
 
         :param api_key: The `FreshserviceAPIKeyUpdate` `api_key`.
-        :type api_key: str, optional
+        :type api_key: FreshserviceAPIKeyUpdateApiKey, optional
 
         :param domain: The `FreshserviceAPIKeyUpdate` `domain`.
-        :type domain: str, optional
+        :type domain: FreshserviceAPIKeyUpdateDomain, optional
 
         :param type: The definition of the `FreshserviceAPIKey` object.
         :type type: FreshserviceAPIKeyType

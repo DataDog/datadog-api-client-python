@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -13,6 +13,10 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.token_type import TokenType
+    from datadog_api_client.v2.model.http_token_value import HTTPTokenValue
+    from datadog_api_client.v2.model.action_connection_aws_secrets_manager_reference import (
+        ActionConnectionAWSSecretsManagerReference,
+    )
 
 
 class HTTPToken(ModelNormal):
@@ -23,11 +27,12 @@ class HTTPToken(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.token_type import TokenType
+        from datadog_api_client.v2.model.http_token_value import HTTPTokenValue
 
         return {
             "name": (str,),
             "type": (TokenType,),
-            "value": (str,),
+            "value": (HTTPTokenValue,),
         }
 
     attribute_map = {
@@ -36,7 +41,13 @@ class HTTPToken(ModelNormal):
         "value": "value",
     }
 
-    def __init__(self_, name: str, type: TokenType, value: str, **kwargs):
+    def __init__(
+        self_,
+        name: str,
+        type: TokenType,
+        value: Union[HTTPTokenValue, str, ActionConnectionAWSSecretsManagerReference],
+        **kwargs,
+    ):
         """
         The definition of ``HTTPToken`` object.
 
@@ -47,7 +58,7 @@ class HTTPToken(ModelNormal):
         :type type: TokenType
 
         :param value: The ``HTTPToken`` ``value``.
-        :type value: str
+        :type value: HTTPTokenValue
         """
         super().__init__(kwargs)
 

@@ -14,18 +14,27 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.config_cat_sdk_key_update_api_password import ConfigCatSDKKeyUpdateApiPassword
+    from datadog_api_client.v2.model.config_cat_sdk_key_update_api_username import ConfigCatSDKKeyUpdateApiUsername
+    from datadog_api_client.v2.model.config_cat_sdk_key_update_sdk_key import ConfigCatSDKKeyUpdateSdkKey
     from datadog_api_client.v2.model.config_cat_sdk_key_type import ConfigCatSDKKeyType
+    from datadog_api_client.v2.model.action_connection_aws_secrets_manager_reference import (
+        ActionConnectionAWSSecretsManagerReference,
+    )
 
 
 class ConfigCatSDKKeyUpdate(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.config_cat_sdk_key_update_api_password import ConfigCatSDKKeyUpdateApiPassword
+        from datadog_api_client.v2.model.config_cat_sdk_key_update_api_username import ConfigCatSDKKeyUpdateApiUsername
+        from datadog_api_client.v2.model.config_cat_sdk_key_update_sdk_key import ConfigCatSDKKeyUpdateSdkKey
         from datadog_api_client.v2.model.config_cat_sdk_key_type import ConfigCatSDKKeyType
 
         return {
-            "api_password": (str,),
-            "api_username": (str,),
-            "sdk_key": (str,),
+            "api_password": (ConfigCatSDKKeyUpdateApiPassword,),
+            "api_username": (ConfigCatSDKKeyUpdateApiUsername,),
+            "sdk_key": (ConfigCatSDKKeyUpdateSdkKey,),
             "type": (ConfigCatSDKKeyType,),
         }
 
@@ -39,22 +48,26 @@ class ConfigCatSDKKeyUpdate(ModelNormal):
     def __init__(
         self_,
         type: ConfigCatSDKKeyType,
-        api_password: Union[str, UnsetType] = unset,
-        api_username: Union[str, UnsetType] = unset,
-        sdk_key: Union[str, UnsetType] = unset,
+        api_password: Union[
+            ConfigCatSDKKeyUpdateApiPassword, str, ActionConnectionAWSSecretsManagerReference, UnsetType
+        ] = unset,
+        api_username: Union[
+            ConfigCatSDKKeyUpdateApiUsername, str, ActionConnectionAWSSecretsManagerReference, UnsetType
+        ] = unset,
+        sdk_key: Union[ConfigCatSDKKeyUpdateSdkKey, str, ActionConnectionAWSSecretsManagerReference, UnsetType] = unset,
         **kwargs,
     ):
         """
         The definition of the ``ConfigCatSDKKey`` object.
 
         :param api_password: The ``ConfigCatSDKKeyUpdate`` ``api_password``.
-        :type api_password: str, optional
+        :type api_password: ConfigCatSDKKeyUpdateApiPassword, optional
 
         :param api_username: The ``ConfigCatSDKKeyUpdate`` ``api_username``.
-        :type api_username: str, optional
+        :type api_username: ConfigCatSDKKeyUpdateApiUsername, optional
 
         :param sdk_key: The ``ConfigCatSDKKeyUpdate`` ``sdk_key``.
-        :type sdk_key: str, optional
+        :type sdk_key: ConfigCatSDKKeyUpdateSdkKey, optional
 
         :param type: The definition of the ``ConfigCatSDKKey`` object.
         :type type: ConfigCatSDKKeyType

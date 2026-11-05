@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -12,17 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.cloudflare_global_api_token_auth_email import CloudflareGlobalAPITokenAuthEmail
+    from datadog_api_client.v2.model.cloudflare_global_api_token_global_api_key import (
+        CloudflareGlobalAPITokenGlobalApiKey,
+    )
     from datadog_api_client.v2.model.cloudflare_global_api_token_type import CloudflareGlobalAPITokenType
+    from datadog_api_client.v2.model.action_connection_aws_secrets_manager_reference import (
+        ActionConnectionAWSSecretsManagerReference,
+    )
 
 
 class CloudflareGlobalAPIToken(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.cloudflare_global_api_token_auth_email import CloudflareGlobalAPITokenAuthEmail
+        from datadog_api_client.v2.model.cloudflare_global_api_token_global_api_key import (
+            CloudflareGlobalAPITokenGlobalApiKey,
+        )
         from datadog_api_client.v2.model.cloudflare_global_api_token_type import CloudflareGlobalAPITokenType
 
         return {
-            "auth_email": (str,),
-            "global_api_key": (str,),
+            "auth_email": (CloudflareGlobalAPITokenAuthEmail,),
+            "global_api_key": (CloudflareGlobalAPITokenGlobalApiKey,),
             "type": (CloudflareGlobalAPITokenType,),
         }
 
@@ -32,15 +43,21 @@ class CloudflareGlobalAPIToken(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, auth_email: str, global_api_key: str, type: CloudflareGlobalAPITokenType, **kwargs):
+    def __init__(
+        self_,
+        auth_email: Union[CloudflareGlobalAPITokenAuthEmail, str, ActionConnectionAWSSecretsManagerReference],
+        global_api_key: Union[CloudflareGlobalAPITokenGlobalApiKey, str, ActionConnectionAWSSecretsManagerReference],
+        type: CloudflareGlobalAPITokenType,
+        **kwargs,
+    ):
         """
         The definition of the ``CloudflareGlobalAPIToken`` object.
 
         :param auth_email: The ``CloudflareGlobalAPIToken`` ``auth_email``.
-        :type auth_email: str
+        :type auth_email: CloudflareGlobalAPITokenAuthEmail
 
         :param global_api_key: The ``CloudflareGlobalAPIToken`` ``global_api_key``.
-        :type global_api_key: str
+        :type global_api_key: CloudflareGlobalAPITokenGlobalApiKey
 
         :param type: The definition of the ``CloudflareGlobalAPIToken`` object.
         :type type: CloudflareGlobalAPITokenType

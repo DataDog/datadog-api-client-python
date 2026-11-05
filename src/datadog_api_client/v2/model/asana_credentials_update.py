@@ -16,7 +16,7 @@ class AsanaCredentialsUpdate(ModelComposed):
         The definition of the ``AsanaCredentialsUpdate`` object.
 
         :param access_token: The `AsanaAccessTokenUpdate` `access_token`.
-        :type access_token: str, optional
+        :type access_token: AsanaAccessTokenUpdateAccessToken, optional
 
         :param type: The definition of the `AsanaAccessToken` object.
         :type type: AsanaAccessTokenType

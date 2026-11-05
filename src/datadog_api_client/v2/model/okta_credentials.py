@@ -16,10 +16,10 @@ class OktaCredentials(ModelComposed):
         The definition of the ``OktaCredentials`` object.
 
         :param api_token: The `OktaAPIToken` `api_token`.
-        :type api_token: str
+        :type api_token: OktaAPITokenApiToken
 
         :param domain: The `OktaAPIToken` `domain`.
-        :type domain: str
+        :type domain: OktaAPITokenDomain
 
         :param type: The definition of the `OktaAPIToken` object.
         :type type: OktaAPITokenType

@@ -14,17 +14,24 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.freshservice_api_key_update_api_key import FreshserviceAPIKeyUpdateApiKey
+    from datadog_api_client.v2.model.freshservice_api_key_update_domain import FreshserviceAPIKeyUpdateDomain
     from datadog_api_client.v2.model.freshservice_api_key_type import FreshserviceAPIKeyType
+    from datadog_api_client.v2.model.action_connection_aws_secrets_manager_reference import (
+        ActionConnectionAWSSecretsManagerReference,
+    )
 
 
 class FreshserviceAPIKeyUpdate(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.freshservice_api_key_update_api_key import FreshserviceAPIKeyUpdateApiKey
+        from datadog_api_client.v2.model.freshservice_api_key_update_domain import FreshserviceAPIKeyUpdateDomain
         from datadog_api_client.v2.model.freshservice_api_key_type import FreshserviceAPIKeyType
 
         return {
-            "api_key": (str,),
-            "domain": (str,),
+            "api_key": (FreshserviceAPIKeyUpdateApiKey,),
+            "domain": (FreshserviceAPIKeyUpdateDomain,),
             "type": (FreshserviceAPIKeyType,),
         }
 
@@ -37,18 +44,22 @@ class FreshserviceAPIKeyUpdate(ModelNormal):
     def __init__(
         self_,
         type: FreshserviceAPIKeyType,
-        api_key: Union[str, UnsetType] = unset,
-        domain: Union[str, UnsetType] = unset,
+        api_key: Union[
+            FreshserviceAPIKeyUpdateApiKey, str, ActionConnectionAWSSecretsManagerReference, UnsetType
+        ] = unset,
+        domain: Union[
+            FreshserviceAPIKeyUpdateDomain, str, ActionConnectionAWSSecretsManagerReference, UnsetType
+        ] = unset,
         **kwargs,
     ):
         """
         The definition of the ``FreshserviceAPIKey`` object.
 
         :param api_key: The ``FreshserviceAPIKeyUpdate`` ``api_key``.
-        :type api_key: str, optional
+        :type api_key: FreshserviceAPIKeyUpdateApiKey, optional
 
         :param domain: The ``FreshserviceAPIKeyUpdate`` ``domain``.
-        :type domain: str, optional
+        :type domain: FreshserviceAPIKeyUpdateDomain, optional
 
         :param type: The definition of the ``FreshserviceAPIKey`` object.
         :type type: FreshserviceAPIKeyType

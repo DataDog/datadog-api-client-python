@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -12,17 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.gcp_service_account_private_key import GCPServiceAccountPrivateKey
+    from datadog_api_client.v2.model.gcp_service_account_service_account_email import (
+        GCPServiceAccountServiceAccountEmail,
+    )
     from datadog_api_client.v2.model.gcp_service_account_credential_type import GCPServiceAccountCredentialType
+    from datadog_api_client.v2.model.action_connection_aws_secrets_manager_reference import (
+        ActionConnectionAWSSecretsManagerReference,
+    )
 
 
 class GCPServiceAccount(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.gcp_service_account_private_key import GCPServiceAccountPrivateKey
+        from datadog_api_client.v2.model.gcp_service_account_service_account_email import (
+            GCPServiceAccountServiceAccountEmail,
+        )
         from datadog_api_client.v2.model.gcp_service_account_credential_type import GCPServiceAccountCredentialType
 
         return {
-            "private_key": (str,),
-            "service_account_email": (str,),
+            "private_key": (GCPServiceAccountPrivateKey,),
+            "service_account_email": (GCPServiceAccountServiceAccountEmail,),
             "type": (GCPServiceAccountCredentialType,),
         }
 
@@ -32,15 +43,23 @@ class GCPServiceAccount(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, private_key: str, service_account_email: str, type: GCPServiceAccountCredentialType, **kwargs):
+    def __init__(
+        self_,
+        private_key: Union[GCPServiceAccountPrivateKey, str, ActionConnectionAWSSecretsManagerReference],
+        service_account_email: Union[
+            GCPServiceAccountServiceAccountEmail, str, ActionConnectionAWSSecretsManagerReference
+        ],
+        type: GCPServiceAccountCredentialType,
+        **kwargs,
+    ):
         """
         The definition of the ``GCPServiceAccount`` object.
 
         :param private_key: The ``GCPServiceAccount`` ``private_key``.
-        :type private_key: str
+        :type private_key: GCPServiceAccountPrivateKey
 
         :param service_account_email: The ``GCPServiceAccount`` ``service_account_email``.
-        :type service_account_email: str
+        :type service_account_email: GCPServiceAccountServiceAccountEmail
 
         :param type: The definition of the ``GCPServiceAccount`` object.
         :type type: GCPServiceAccountCredentialType

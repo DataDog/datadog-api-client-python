@@ -14,19 +14,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.service_now_basic_auth_update_instance import ServiceNowBasicAuthUpdateInstance
+    from datadog_api_client.v2.model.service_now_basic_auth_update_password import ServiceNowBasicAuthUpdatePassword
     from datadog_api_client.v2.model.service_now_basic_auth_type import ServiceNowBasicAuthType
+    from datadog_api_client.v2.model.service_now_basic_auth_update_username import ServiceNowBasicAuthUpdateUsername
+    from datadog_api_client.v2.model.action_connection_aws_secrets_manager_reference import (
+        ActionConnectionAWSSecretsManagerReference,
+    )
 
 
 class ServiceNowBasicAuthUpdate(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.service_now_basic_auth_update_instance import ServiceNowBasicAuthUpdateInstance
+        from datadog_api_client.v2.model.service_now_basic_auth_update_password import ServiceNowBasicAuthUpdatePassword
         from datadog_api_client.v2.model.service_now_basic_auth_type import ServiceNowBasicAuthType
+        from datadog_api_client.v2.model.service_now_basic_auth_update_username import ServiceNowBasicAuthUpdateUsername
 
         return {
-            "instance": (str,),
-            "password": (str,),
+            "instance": (ServiceNowBasicAuthUpdateInstance,),
+            "password": (ServiceNowBasicAuthUpdatePassword,),
             "type": (ServiceNowBasicAuthType,),
-            "username": (str,),
+            "username": (ServiceNowBasicAuthUpdateUsername,),
         }
 
     attribute_map = {
@@ -39,25 +48,31 @@ class ServiceNowBasicAuthUpdate(ModelNormal):
     def __init__(
         self_,
         type: ServiceNowBasicAuthType,
-        instance: Union[str, UnsetType] = unset,
-        password: Union[str, UnsetType] = unset,
-        username: Union[str, UnsetType] = unset,
+        instance: Union[
+            ServiceNowBasicAuthUpdateInstance, str, ActionConnectionAWSSecretsManagerReference, UnsetType
+        ] = unset,
+        password: Union[
+            ServiceNowBasicAuthUpdatePassword, str, ActionConnectionAWSSecretsManagerReference, UnsetType
+        ] = unset,
+        username: Union[
+            ServiceNowBasicAuthUpdateUsername, str, ActionConnectionAWSSecretsManagerReference, UnsetType
+        ] = unset,
         **kwargs,
     ):
         """
         The definition of the ``ServiceNowBasicAuth`` object.
 
         :param instance: The ``ServiceNowBasicAuthUpdate`` ``instance``.
-        :type instance: str, optional
+        :type instance: ServiceNowBasicAuthUpdateInstance, optional
 
         :param password: The ``ServiceNowBasicAuthUpdate`` ``password``.
-        :type password: str, optional
+        :type password: ServiceNowBasicAuthUpdatePassword, optional
 
         :param type: The definition of the ``ServiceNowBasicAuth`` object.
         :type type: ServiceNowBasicAuthType
 
         :param username: The ``ServiceNowBasicAuthUpdate`` ``username``.
-        :type username: str, optional
+        :type username: ServiceNowBasicAuthUpdateUsername, optional
         """
         if instance is not unset:
             kwargs["instance"] = instance

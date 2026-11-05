@@ -14,16 +14,21 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.asana_access_token_update_access_token import AsanaAccessTokenUpdateAccessToken
     from datadog_api_client.v2.model.asana_access_token_type import AsanaAccessTokenType
+    from datadog_api_client.v2.model.action_connection_aws_secrets_manager_reference import (
+        ActionConnectionAWSSecretsManagerReference,
+    )
 
 
 class AsanaAccessTokenUpdate(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.asana_access_token_update_access_token import AsanaAccessTokenUpdateAccessToken
         from datadog_api_client.v2.model.asana_access_token_type import AsanaAccessTokenType
 
         return {
-            "access_token": (str,),
+            "access_token": (AsanaAccessTokenUpdateAccessToken,),
             "type": (AsanaAccessTokenType,),
         }
 
@@ -32,12 +37,19 @@ class AsanaAccessTokenUpdate(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, type: AsanaAccessTokenType, access_token: Union[str, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        type: AsanaAccessTokenType,
+        access_token: Union[
+            AsanaAccessTokenUpdateAccessToken, str, ActionConnectionAWSSecretsManagerReference, UnsetType
+        ] = unset,
+        **kwargs,
+    ):
         """
         The definition of the ``AsanaAccessToken`` object.
 
         :param access_token: The ``AsanaAccessTokenUpdate`` ``access_token``.
-        :type access_token: str, optional
+        :type access_token: AsanaAccessTokenUpdateAccessToken, optional
 
         :param type: The definition of the ``AsanaAccessToken`` object.
         :type type: AsanaAccessTokenType

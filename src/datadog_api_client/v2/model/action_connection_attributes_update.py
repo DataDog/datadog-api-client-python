@@ -8,12 +8,14 @@ from typing import List, Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.action_connection_aws_secrets_manager import ActionConnectionAWSSecretsManager
     from datadog_api_client.v2.model.action_connection_integration_update import ActionConnectionIntegrationUpdate
     from datadog_api_client.v2.model.aws_integration_update import AWSIntegrationUpdate
     from datadog_api_client.v2.model.anthropic_integration_update import AnthropicIntegrationUpdate
@@ -44,15 +46,18 @@ if TYPE_CHECKING:
 class ActionConnectionAttributesUpdate(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.action_connection_aws_secrets_manager import ActionConnectionAWSSecretsManager
         from datadog_api_client.v2.model.action_connection_integration_update import ActionConnectionIntegrationUpdate
 
         return {
+            "external_secrets_manager": (ActionConnectionAWSSecretsManager,),
             "integration": (ActionConnectionIntegrationUpdate,),
             "name": (str,),
             "tags": ([str],),
         }
 
     attribute_map = {
+        "external_secrets_manager": "external_secrets_manager",
         "integration": "integration",
         "name": "name",
         "tags": "tags",
@@ -60,6 +65,7 @@ class ActionConnectionAttributesUpdate(ModelNormal):
 
     def __init__(
         self_,
+        external_secrets_manager: Union[ActionConnectionAWSSecretsManager, none_type, UnsetType] = unset,
         integration: Union[
             ActionConnectionIntegrationUpdate,
             AWSIntegrationUpdate,
@@ -95,6 +101,9 @@ class ActionConnectionAttributesUpdate(ModelNormal):
         """
         The definition of ``ActionConnectionAttributesUpdate`` object.
 
+        :param external_secrets_manager: AWS Secrets Manager settings shared by the credential references on a ``DATACENTER`` connection. These settings are required whenever a field uses an AWS Secrets Manager reference.
+        :type external_secrets_manager: ActionConnectionAWSSecretsManager, none_type, optional
+
         :param integration: The definition of ``ActionConnectionIntegrationUpdate`` object.
         :type integration: ActionConnectionIntegrationUpdate, optional
 
@@ -105,6 +114,8 @@ class ActionConnectionAttributesUpdate(ModelNormal):
             The ``default`` tag key is reserved.
         :type tags: [str], optional
         """
+        if external_secrets_manager is not unset:
+            kwargs["external_secrets_manager"] = external_secrets_manager
         if integration is not unset:
             kwargs["integration"] = integration
         if name is not unset:

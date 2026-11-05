@@ -16,7 +16,7 @@ class FastlyCredentialsUpdate(ModelComposed):
         The definition of the ``FastlyCredentialsUpdate`` object.
 
         :param api_key: The `FastlyAPIKeyUpdate` `api_key`.
-        :type api_key: str, optional
+        :type api_key: FastlyAPIKeyUpdateApiKey, optional
 
         :param type: The definition of the `FastlyAPIKey` object.
         :type type: FastlyAPIKeyType

@@ -14,16 +14,21 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.gemini_api_key_update_api_key import GeminiAPIKeyUpdateApiKey
     from datadog_api_client.v2.model.gemini_api_key_type import GeminiAPIKeyType
+    from datadog_api_client.v2.model.action_connection_aws_secrets_manager_reference import (
+        ActionConnectionAWSSecretsManagerReference,
+    )
 
 
 class GeminiAPIKeyUpdate(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.gemini_api_key_update_api_key import GeminiAPIKeyUpdateApiKey
         from datadog_api_client.v2.model.gemini_api_key_type import GeminiAPIKeyType
 
         return {
-            "api_key": (str,),
+            "api_key": (GeminiAPIKeyUpdateApiKey,),
             "type": (GeminiAPIKeyType,),
         }
 
@@ -32,12 +37,17 @@ class GeminiAPIKeyUpdate(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, type: GeminiAPIKeyType, api_key: Union[str, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        type: GeminiAPIKeyType,
+        api_key: Union[GeminiAPIKeyUpdateApiKey, str, ActionConnectionAWSSecretsManagerReference, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The definition of the ``GeminiAPIKey`` object.
 
         :param api_key: The ``GeminiAPIKeyUpdate`` ``api_key``.
-        :type api_key: str, optional
+        :type api_key: GeminiAPIKeyUpdateApiKey, optional
 
         :param type: The definition of the ``GeminiAPIKey`` object.
         :type type: GeminiAPIKeyType

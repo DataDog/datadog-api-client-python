@@ -16,7 +16,7 @@ class OpenAICredentials(ModelComposed):
         The definition of the ``OpenAICredentials`` object.
 
         :param api_token: The `OpenAIAPIKey` `api_token`.
-        :type api_token: str
+        :type api_token: OpenAIAPIKeyApiToken
 
         :param type: The definition of the `OpenAIAPIKey` object.
         :type type: OpenAIAPIKeyType

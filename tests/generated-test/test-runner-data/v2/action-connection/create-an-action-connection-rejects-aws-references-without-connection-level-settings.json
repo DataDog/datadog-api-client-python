@@ -1,0 +1,44 @@
+{
+  "api": "ActionConnection",
+  "expected_status": 400,
+  "feature": "Action Connection",
+  "id": "v2/Action Connection/Create an Action Connection rejects AWS references without connection-level settings",
+  "operation_id": "CreateActionConnection",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateActionConnectionRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "integration": {
+              "credentials": {
+                "api_token": {
+                  "key": "api_token",
+                  "secret_id": "example/anthropic",
+                  "type": "aws_secrets_manager"
+                },
+                "type": "AnthropicAPIKey"
+              },
+              "type": "Anthropic"
+            },
+            "name": "Missing Secrets Manager Settings {{ unique_lower_alnum }}"
+          },
+          "type": "action_connection"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/actions/connections"
+  },
+  "scenario": "Create an Action Connection rejects AWS references without connection-level settings",
+  "schema_version": 1,
+  "version": "v2"
+}

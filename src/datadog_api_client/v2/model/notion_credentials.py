@@ -16,7 +16,7 @@ class NotionCredentials(ModelComposed):
         The definition of the ``NotionCredentials`` object.
 
         :param api_token: The `NotionAPIKey` `api_token`.
-        :type api_token: str
+        :type api_token: NotionAPIKeyApiToken
 
         :param type: The definition of the `NotionAPIKey` object.
         :type type: NotionAPIKeyType

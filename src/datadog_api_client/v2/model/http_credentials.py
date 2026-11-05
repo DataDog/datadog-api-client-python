@@ -21,6 +21,9 @@ class HTTPCredentials(ModelComposed):
         :param headers: The `HTTPTokenAuth` `headers`.
         :type headers: [HTTPHeader], optional
 
+        :param http_tokens: HTTP authentication tokens returned by the API. Use `tokens` when creating or updating tokens.
+        :type http_tokens: [HTTPTokenResponse], optional
+
         :param tokens: The `HTTPTokenAuth` `tokens`.
         :type tokens: [HTTPToken], optional
 

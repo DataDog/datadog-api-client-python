@@ -16,16 +16,16 @@ class CloudflareCredentialsUpdate(ModelComposed):
         The definition of the ``CloudflareCredentialsUpdate`` object.
 
         :param api_token: The `CloudflareAPITokenUpdate` `api_token`.
-        :type api_token: str, optional
+        :type api_token: CloudflareAPITokenUpdateApiToken, optional
 
         :param type: The definition of the `CloudflareAPIToken` object.
         :type type: CloudflareAPITokenType
 
         :param auth_email: The `CloudflareGlobalAPITokenUpdate` `auth_email`.
-        :type auth_email: str, optional
+        :type auth_email: CloudflareGlobalAPITokenUpdateAuthEmail, optional
 
         :param global_api_key: The `CloudflareGlobalAPITokenUpdate` `global_api_key`.
-        :type global_api_key: str, optional
+        :type global_api_key: CloudflareGlobalAPITokenUpdateGlobalApiKey, optional
         """
         super().__init__(kwargs)
 

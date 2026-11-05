@@ -3,6 +3,145 @@
   "recordings": [
     {
       "feature": "Action Connection",
+      "frozen_at": "2026-11-04T17:36:16.440Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "integration": {
+                      "credentials": {
+                        "account_id": "123456789123",
+                        "role": "MyRole",
+                        "type": "AWSAssumeRole"
+                      },
+                      "type": "AWS"
+                    },
+                    "name": "Cassette Connection testcreateagcpactionconnectionwithawssecretsmanagerreferences1793813776"
+                  },
+                  "type": "action_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"16285b12-4344-4969-844b-399b8fd5628a\",\"type\":\"action_connection\",\"attributes\":{\"acting_user_can_resolve\":false,\"environment\":\"DATACENTER\",\"external_secrets_manager\":null,\"integration\":{\"credentials\":{\"account_id\":\"123456789123\",\"external_id\":\"f5ad51a31e6f40138b2ec1a2955b9f8c\",\"principal_id\":\"464622532012\",\"role\":\"MyRole\",\"type\":\"AWSAssumeRole\"},\"type\":\"AWS\"},\"is_favorite\":false,\"name\":\"Cassette Connection testcreateagcpactionconnectionwithawssecretsmanagerreferences1793813776\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "external_secrets_manager": {
+                      "connection_id": "16285b12-4344-4969-844b-399b8fd5628a",
+                      "region": "us-east-1",
+                      "type": "aws_secrets_manager"
+                    },
+                    "integration": {
+                      "credentials": {
+                        "private_key": {
+                          "key": "private_key",
+                          "secret_id": "example/gcp/service-account",
+                          "type": "aws_secrets_manager"
+                        },
+                        "service_account_email": {
+                          "key": "client_email",
+                          "secret_id": "example/gcp/service-account",
+                          "type": "aws_secrets_manager"
+                        },
+                        "type": "GCPServiceAccount"
+                      },
+                      "type": "GCP"
+                    },
+                    "name": "GCP Secrets Manager Connection testcreateagcpactionconnectionwithawssecretsmanagerreferences1793813776"
+                  },
+                  "type": "action_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"6fb06828-94d4-477b-9c2a-125a0b20b50b\",\"type\":\"action_connection\",\"attributes\":{\"acting_user_can_resolve\":false,\"environment\":\"DATACENTER\",\"external_secrets_manager\":{\"type\":\"aws_secrets_manager\",\"connection_id\":\"16285b12-4344-4969-844b-399b8fd5628a\",\"region\":\"us-east-1\"},\"integration\":{\"credentials\":{\"private_key\":{\"type\":\"aws_secrets_manager\",\"secret_id\":\"example/gcp/service-account\",\"key\":\"private_key\"},\"service_account_email\":{\"type\":\"aws_secrets_manager\",\"secret_id\":\"example/gcp/service-account\",\"key\":\"client_email\"},\"type\":\"GCPServiceAccount\"},\"type\":\"GCP\"},\"is_favorite\":false,\"name\":\"GCP Secrets Manager Connection testcreateagcpactionconnectionwithawssecretsmanagerreferences1793813776\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/actions/connections/6fb06828-94d4-477b-9c2a-125a0b20b50b",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/actions/connections/16285b12-4344-4969-844b-399b8fd5628a",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a GCP Action Connection with AWS Secrets Manager references",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
       "frozen_at": "2025-03-26T20:24:59.622Z",
       "interactions": [
         {
@@ -112,6 +251,461 @@
         }
       ],
       "scenario": "Create a new Action Connection returns \"Successfully created Action Connection\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
+      "frozen_at": "2026-11-04T17:36:17.607Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "integration": {
+                      "credentials": {
+                        "api_token": {
+                          "key": "api_token",
+                          "secret_id": "example/anthropic",
+                          "type": "aws_secrets_manager"
+                        },
+                        "type": "AnthropicAPIKey"
+                      },
+                      "type": "Anthropic"
+                    },
+                    "name": "Missing Secrets Manager Settings testcreateanactionconnectionrejectsawsreferenceswithoutconnectionlevelsettings1793813777"
+                  },
+                  "type": "action_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"error creating connection: failed to unmarshal property: api_token: secret backend \\\"aws_secrets_manager\\\" requires the connection's external_secrets_manager settings\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create an Action Connection rejects AWS references without connection-level settings",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
+      "frozen_at": "2026-11-04T17:36:17.892Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "integration": {
+                      "credentials": {
+                        "account_id": "123456789123",
+                        "role": "MyRole",
+                        "type": "AWSAssumeRole"
+                      },
+                      "type": "AWS"
+                    },
+                    "name": "Cassette Connection testcreateanactionconnectionrejectsconflictingawssecretversionselectors1793813777"
+                  },
+                  "type": "action_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"7421d8d2-b0b7-4e71-a3d0-1358b2778c1f\",\"type\":\"action_connection\",\"attributes\":{\"acting_user_can_resolve\":false,\"environment\":\"DATACENTER\",\"external_secrets_manager\":null,\"integration\":{\"credentials\":{\"account_id\":\"123456789123\",\"external_id\":\"88f6fb0618d94675a25ec5fad793df11\",\"principal_id\":\"464622532012\",\"role\":\"MyRole\",\"type\":\"AWSAssumeRole\"},\"type\":\"AWS\"},\"is_favorite\":false,\"name\":\"Cassette Connection testcreateanactionconnectionrejectsconflictingawssecretversionselectors1793813777\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "external_secrets_manager": {
+                      "connection_id": "7421d8d2-b0b7-4e71-a3d0-1358b2778c1f",
+                      "region": "us-east-1",
+                      "type": "aws_secrets_manager"
+                    },
+                    "integration": {
+                      "credentials": {
+                        "api_token": {
+                          "key": "api_token",
+                          "secret_id": "example/anthropic",
+                          "type": "aws_secrets_manager",
+                          "version_id": "example-version",
+                          "version_stage": "AWSCURRENT"
+                        },
+                        "type": "AnthropicAPIKey"
+                      },
+                      "type": "Anthropic"
+                    },
+                    "name": "Conflicting Secrets Manager Versions testcreateanactionconnectionrejectsconflictingawssecretversionselectors1793813777"
+                  },
+                  "type": "action_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"error creating connection: failed to unmarshal property: api_token: secret backend \\\"aws_secrets_manager\\\" accepts \\\"version_id\\\" or \\\"version_stage\\\", not both\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/actions/connections/7421d8d2-b0b7-4e71-a3d0-1358b2778c1f",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create an Action Connection rejects conflicting AWS secret version selectors",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
+      "frozen_at": "2026-11-04T17:36:18.822Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "integration": {
+                      "credentials": {
+                        "account_id": "123456789123",
+                        "role": "MyRole",
+                        "type": "AWSAssumeRole"
+                      },
+                      "type": "AWS"
+                    },
+                    "name": "Cassette Connection testcreateananthropicactionconnectionwithanawssecretsmanagerapitoken1793813778"
+                  },
+                  "type": "action_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"33762af9-cb56-4e96-b110-ea3404de12c4\",\"type\":\"action_connection\",\"attributes\":{\"acting_user_can_resolve\":false,\"environment\":\"DATACENTER\",\"external_secrets_manager\":null,\"integration\":{\"credentials\":{\"account_id\":\"123456789123\",\"external_id\":\"b7ab416bbc5242f3bb57a4430b611415\",\"principal_id\":\"464622532012\",\"role\":\"MyRole\",\"type\":\"AWSAssumeRole\"},\"type\":\"AWS\"},\"is_favorite\":false,\"name\":\"Cassette Connection testcreateananthropicactionconnectionwithanawssecretsmanagerapitoken1793813778\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "external_secrets_manager": {
+                      "connection_id": "33762af9-cb56-4e96-b110-ea3404de12c4",
+                      "region": "us-east-1",
+                      "type": "aws_secrets_manager"
+                    },
+                    "integration": {
+                      "credentials": {
+                        "api_token": {
+                          "key": "api_token",
+                          "secret_id": "example/anthropic",
+                          "type": "aws_secrets_manager"
+                        },
+                        "type": "AnthropicAPIKey"
+                      },
+                      "type": "Anthropic"
+                    },
+                    "name": "Anthropic Secrets Manager Connection testcreateananthropicactionconnectionwithanawssecretsmanagerapitoken1793813778"
+                  },
+                  "type": "action_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"22ec59d2-048f-49ae-9f95-42dc5ba85f2d\",\"type\":\"action_connection\",\"attributes\":{\"acting_user_can_resolve\":false,\"environment\":\"DATACENTER\",\"external_secrets_manager\":{\"type\":\"aws_secrets_manager\",\"connection_id\":\"33762af9-cb56-4e96-b110-ea3404de12c4\",\"region\":\"us-east-1\"},\"integration\":{\"credentials\":{\"api_token\":{\"type\":\"aws_secrets_manager\",\"secret_id\":\"example/anthropic\",\"key\":\"api_token\"},\"type\":\"AnthropicAPIKey\"},\"type\":\"Anthropic\"},\"is_favorite\":false,\"name\":\"Anthropic Secrets Manager Connection testcreateananthropicactionconnectionwithanawssecretsmanagerapitoken1793813778\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/actions/connections/22ec59d2-048f-49ae-9f95-42dc5ba85f2d",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/actions/connections/33762af9-cb56-4e96-b110-ea3404de12c4",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create an Anthropic Action Connection with an AWS Secrets Manager API token",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
+      "frozen_at": "2026-11-04T17:36:20.097Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "integration": {
+                      "credentials": {
+                        "account_id": "123456789123",
+                        "role": "MyRole",
+                        "type": "AWSAssumeRole"
+                      },
+                      "type": "AWS"
+                    },
+                    "name": "Cassette Connection testcreateanhttpactionconnectionwithanawssecretsmanagertoken1793813780"
+                  },
+                  "type": "action_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"ec728a53-f24a-47f5-b3ff-629649fe7243\",\"type\":\"action_connection\",\"attributes\":{\"acting_user_can_resolve\":false,\"environment\":\"DATACENTER\",\"external_secrets_manager\":null,\"integration\":{\"credentials\":{\"account_id\":\"123456789123\",\"external_id\":\"74215d6fad64427badcff94ad3f57bc2\",\"principal_id\":\"464622532012\",\"role\":\"MyRole\",\"type\":\"AWSAssumeRole\"},\"type\":\"AWS\"},\"is_favorite\":false,\"name\":\"Cassette Connection testcreateanhttpactionconnectionwithanawssecretsmanagertoken1793813780\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "external_secrets_manager": {
+                      "connection_id": "ec728a53-f24a-47f5-b3ff-629649fe7243",
+                      "region": "us-east-1",
+                      "type": "aws_secrets_manager"
+                    },
+                    "integration": {
+                      "base_url": "https://example.com",
+                      "credentials": {
+                        "body": {
+                          "content": "{\"example\":\"literal\"}",
+                          "content_type": "application/json"
+                        },
+                        "headers": [
+                          {
+                            "name": "ApiKey",
+                            "value": "literal-value"
+                          }
+                        ],
+                        "tokens": [
+                          {
+                            "name": "token",
+                            "type": "SECRET",
+                            "value": {
+                              "key": "token",
+                              "secret_id": "example/http",
+                              "type": "aws_secrets_manager"
+                            }
+                          }
+                        ],
+                        "type": "HTTPTokenAuth",
+                        "url_parameters": [
+                          {
+                            "name": "apiKey",
+                            "value": "literal-value"
+                          }
+                        ]
+                      },
+                      "type": "HTTP"
+                    },
+                    "name": "HTTP Secrets Manager Connection testcreateanhttpactionconnectionwithanawssecretsmanagertoken1793813780"
+                  },
+                  "type": "action_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"dac8f688-e57e-4285-ab5d-dfe96fe3f49c\",\"type\":\"action_connection\",\"attributes\":{\"acting_user_can_resolve\":false,\"environment\":\"DATACENTER\",\"external_secrets_manager\":{\"type\":\"aws_secrets_manager\",\"connection_id\":\"ec728a53-f24a-47f5-b3ff-629649fe7243\",\"region\":\"us-east-1\"},\"integration\":{\"base_url\":\"https://example.com\",\"credentials\":{\"body\":{\"content\":\"{\\\"example\\\":\\\"literal\\\"}\",\"content_type\":\"application/json\"},\"headers\":[{\"name\":\"ApiKey\",\"value\":\"literal-value\"}],\"http_tokens\":[{\"name\":\"token\",\"value\":{\"type\":\"aws_secrets_manager\",\"secret_id\":\"example/http\",\"key\":\"token\"}}],\"type\":\"HTTPTokenAuth\",\"url_parameters\":[{\"name\":\"apiKey\",\"value\":\"literal-value\"}]},\"testing\":{},\"type\":\"HTTP\"},\"is_favorite\":false,\"name\":\"HTTP Secrets Manager Connection testcreateanhttpactionconnectionwithanawssecretsmanagertoken1793813780\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/actions/connections/dac8f688-e57e-4285-ab5d-dfe96fe3f49c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/actions/connections/ec728a53-f24a-47f5-b3ff-629649fe7243",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create an HTTP Action Connection with an AWS Secrets Manager token",
       "version": "v2"
     },
     {
@@ -323,6 +917,168 @@
         }
       ],
       "scenario": "Delete an existing Action Connection returns \"The resource was deleted successfully.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
+      "frozen_at": "2026-11-04T17:36:21.394Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "integration": {
+                      "credentials": {
+                        "account_id": "123456789123",
+                        "role": "MyRole",
+                        "type": "AWSAssumeRole"
+                      },
+                      "type": "AWS"
+                    },
+                    "name": "Cassette Connection testgetagcpactionconnectionpreservesawssecretsmanagerreferences1793813781"
+                  },
+                  "type": "action_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"b82305cf-0fdb-4e70-bb5d-9b36dce0db8c\",\"type\":\"action_connection\",\"attributes\":{\"acting_user_can_resolve\":false,\"environment\":\"DATACENTER\",\"external_secrets_manager\":null,\"integration\":{\"credentials\":{\"account_id\":\"123456789123\",\"external_id\":\"ccbe077e89354310ba02f52d05a61f28\",\"principal_id\":\"464622532012\",\"role\":\"MyRole\",\"type\":\"AWSAssumeRole\"},\"type\":\"AWS\"},\"is_favorite\":false,\"name\":\"Cassette Connection testgetagcpactionconnectionpreservesawssecretsmanagerreferences1793813781\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "external_secrets_manager": {
+                      "connection_id": "b82305cf-0fdb-4e70-bb5d-9b36dce0db8c",
+                      "region": "us-east-1",
+                      "type": "aws_secrets_manager"
+                    },
+                    "integration": {
+                      "credentials": {
+                        "private_key": {
+                          "key": "private_key",
+                          "secret_id": "example/gcp/service-account",
+                          "type": "aws_secrets_manager"
+                        },
+                        "service_account_email": {
+                          "key": "client_email",
+                          "secret_id": "example/gcp/service-account",
+                          "type": "aws_secrets_manager"
+                        },
+                        "type": "GCPServiceAccount"
+                      },
+                      "type": "GCP"
+                    },
+                    "name": "GCP Secrets Manager Connection testgetagcpactionconnectionpreservesawssecretsmanagerreferences1793813781"
+                  },
+                  "type": "action_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"f0ad07f0-e57d-4830-9943-4f516d9c575f\",\"type\":\"action_connection\",\"attributes\":{\"acting_user_can_resolve\":false,\"environment\":\"DATACENTER\",\"external_secrets_manager\":{\"type\":\"aws_secrets_manager\",\"connection_id\":\"b82305cf-0fdb-4e70-bb5d-9b36dce0db8c\",\"region\":\"us-east-1\"},\"integration\":{\"credentials\":{\"private_key\":{\"type\":\"aws_secrets_manager\",\"secret_id\":\"example/gcp/service-account\",\"key\":\"private_key\"},\"service_account_email\":{\"type\":\"aws_secrets_manager\",\"secret_id\":\"example/gcp/service-account\",\"key\":\"client_email\"},\"type\":\"GCPServiceAccount\"},\"type\":\"GCP\"},\"is_favorite\":false,\"name\":\"GCP Secrets Manager Connection testgetagcpactionconnectionpreservesawssecretsmanagerreferences1793813781\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/actions/connections/f0ad07f0-e57d-4830-9943-4f516d9c575f",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"f0ad07f0-e57d-4830-9943-4f516d9c575f\",\"type\":\"action_connection\",\"attributes\":{\"acting_user_can_resolve\":true,\"created_at\":\"2026-11-04 17:36:22.420788 +0000 UTC\",\"environment\":\"DATACENTER\",\"external_secrets_manager\":{\"type\":\"aws_secrets_manager\",\"connection_id\":\"b82305cf-0fdb-4e70-bb5d-9b36dce0db8c\",\"region\":\"us-east-1\"},\"integration\":{\"credentials\":{\"private_key\":{\"type\":\"aws_secrets_manager\",\"secret_id\":\"example/gcp/service-account\",\"key\":\"private_key\"},\"service_account_email\":{\"type\":\"aws_secrets_manager\",\"secret_id\":\"example/gcp/service-account\",\"key\":\"client_email\"},\"type\":\"GCPServiceAccount\"},\"type\":\"GCP\"},\"is_favorite\":false,\"last_updated\":\"2026-11-04 17:36:22.420788 +0000 UTC\",\"name\":\"GCP Secrets Manager Connection testgetagcpactionconnectionpreservesawssecretsmanagerreferences1793813781\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"created_by\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/actions/connections/f0ad07f0-e57d-4830-9943-4f516d9c575f",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/actions/connections/b82305cf-0fdb-4e70-bb5d-9b36dce0db8c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get a GCP Action Connection preserves AWS Secrets Manager references",
       "version": "v2"
     },
     {
@@ -664,6 +1420,196 @@
         }
       ],
       "scenario": "Unregister an App Key returns \"Not found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
+      "frozen_at": "2026-11-04T17:36:23.044Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "integration": {
+                      "credentials": {
+                        "account_id": "123456789123",
+                        "role": "MyRole",
+                        "type": "AWSAssumeRole"
+                      },
+                      "type": "AWS"
+                    },
+                    "name": "Cassette Connection testupdateagcpactionconnectionwithaversionedawssecretsmanagerreference1793813783"
+                  },
+                  "type": "action_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"04a464b2-ad07-4fcd-ab75-6204e72cdbcc\",\"type\":\"action_connection\",\"attributes\":{\"acting_user_can_resolve\":false,\"environment\":\"DATACENTER\",\"external_secrets_manager\":null,\"integration\":{\"credentials\":{\"account_id\":\"123456789123\",\"external_id\":\"a914cb3f791f40f5996a10c44e224efe\",\"principal_id\":\"464622532012\",\"role\":\"MyRole\",\"type\":\"AWSAssumeRole\"},\"type\":\"AWS\"},\"is_favorite\":false,\"name\":\"Cassette Connection testupdateagcpactionconnectionwithaversionedawssecretsmanagerreference1793813783\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "external_secrets_manager": {
+                      "connection_id": "04a464b2-ad07-4fcd-ab75-6204e72cdbcc",
+                      "region": "us-east-1",
+                      "type": "aws_secrets_manager"
+                    },
+                    "integration": {
+                      "credentials": {
+                        "private_key": {
+                          "key": "private_key",
+                          "secret_id": "example/gcp/service-account",
+                          "type": "aws_secrets_manager"
+                        },
+                        "service_account_email": {
+                          "key": "client_email",
+                          "secret_id": "example/gcp/service-account",
+                          "type": "aws_secrets_manager"
+                        },
+                        "type": "GCPServiceAccount"
+                      },
+                      "type": "GCP"
+                    },
+                    "name": "GCP Secrets Manager Connection testupdateagcpactionconnectionwithaversionedawssecretsmanagerreference1793813783"
+                  },
+                  "type": "action_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"24752e26-a728-4c52-a795-39086e2669a6\",\"type\":\"action_connection\",\"attributes\":{\"acting_user_can_resolve\":false,\"environment\":\"DATACENTER\",\"external_secrets_manager\":{\"type\":\"aws_secrets_manager\",\"connection_id\":\"04a464b2-ad07-4fcd-ab75-6204e72cdbcc\",\"region\":\"us-east-1\"},\"integration\":{\"credentials\":{\"private_key\":{\"type\":\"aws_secrets_manager\",\"secret_id\":\"example/gcp/service-account\",\"key\":\"private_key\"},\"service_account_email\":{\"type\":\"aws_secrets_manager\",\"secret_id\":\"example/gcp/service-account\",\"key\":\"client_email\"},\"type\":\"GCPServiceAccount\"},\"type\":\"GCP\"},\"is_favorite\":false,\"name\":\"GCP Secrets Manager Connection testupdateagcpactionconnectionwithaversionedawssecretsmanagerreference1793813783\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "external_secrets_manager": {
+                      "connection_id": "04a464b2-ad07-4fcd-ab75-6204e72cdbcc",
+                      "region": "us-east-1",
+                      "type": "aws_secrets_manager"
+                    },
+                    "integration": {
+                      "credentials": {
+                        "private_key": {
+                          "key": "private_key",
+                          "secret_id": "example/gcp/service-account",
+                          "type": "aws_secrets_manager",
+                          "version_stage": "AWSCURRENT"
+                        },
+                        "service_account_email": {
+                          "key": "client_email",
+                          "secret_id": "example/gcp/service-account",
+                          "type": "aws_secrets_manager"
+                        },
+                        "type": "GCPServiceAccount"
+                      },
+                      "type": "GCP"
+                    }
+                  },
+                  "type": "action_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/actions/connections/24752e26-a728-4c52-a795-39086e2669a6",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"24752e26-a728-4c52-a795-39086e2669a6\",\"type\":\"action_connection\",\"attributes\":{\"acting_user_can_resolve\":false,\"created_at\":\"2026-11-04 17:36:24.057283 +0000 UTC\",\"environment\":\"DATACENTER\",\"external_secrets_manager\":{\"type\":\"aws_secrets_manager\",\"connection_id\":\"04a464b2-ad07-4fcd-ab75-6204e72cdbcc\",\"region\":\"us-east-1\"},\"integration\":{\"credentials\":{\"private_key\":{\"type\":\"aws_secrets_manager\",\"secret_id\":\"example/gcp/service-account\",\"key\":\"private_key\",\"version_stage\":\"AWSCURRENT\"},\"service_account_email\":{\"type\":\"aws_secrets_manager\",\"secret_id\":\"example/gcp/service-account\",\"key\":\"client_email\"},\"type\":\"GCPServiceAccount\"},\"type\":\"GCP\"},\"is_favorite\":false,\"last_updated\":\"2026-11-04 17:36:24.406864 +0000 UTC\",\"name\":\"GCP Secrets Manager Connection testupdateagcpactionconnectionwithaversionedawssecretsmanagerreference1793813783\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"created_by\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/actions/connections/24752e26-a728-4c52-a795-39086e2669a6",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/actions/connections/04a464b2-ad07-4fcd-ab75-6204e72cdbcc",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a GCP Action Connection with a versioned AWS Secrets Manager reference",
       "version": "v2"
     },
     {

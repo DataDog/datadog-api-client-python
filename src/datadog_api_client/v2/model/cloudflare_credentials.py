@@ -16,16 +16,16 @@ class CloudflareCredentials(ModelComposed):
         The definition of the ``CloudflareCredentials`` object.
 
         :param api_token: The `CloudflareAPIToken` `api_token`.
-        :type api_token: str
+        :type api_token: CloudflareAPITokenApiToken
 
         :param type: The definition of the `CloudflareAPIToken` object.
         :type type: CloudflareAPITokenType
 
         :param auth_email: The `CloudflareGlobalAPIToken` `auth_email`.
-        :type auth_email: str
+        :type auth_email: CloudflareGlobalAPITokenAuthEmail
 
         :param global_api_key: The `CloudflareGlobalAPIToken` `global_api_key`.
-        :type global_api_key: str
+        :type global_api_key: CloudflareGlobalAPITokenGlobalApiKey
         """
         super().__init__(kwargs)
 

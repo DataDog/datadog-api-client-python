@@ -16,7 +16,7 @@ class AsanaCredentials(ModelComposed):
         The definition of the ``AsanaCredentials`` object.
 
         :param access_token: The `AsanaAccessToken` `access_token`.
-        :type access_token: str
+        :type access_token: AsanaAccessTokenAccessToken
 
         :param type: The definition of the `AsanaAccessToken` object.
         :type type: AsanaAccessTokenType

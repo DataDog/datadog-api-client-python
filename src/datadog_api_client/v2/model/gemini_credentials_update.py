@@ -16,7 +16,7 @@ class GeminiCredentialsUpdate(ModelComposed):
         The definition of the ``GeminiCredentialsUpdate`` object.
 
         :param api_key: The `GeminiAPIKeyUpdate` `api_key`.
-        :type api_key: str, optional
+        :type api_key: GeminiAPIKeyUpdateApiKey, optional
 
         :param type: The definition of the `GeminiAPIKey` object.
         :type type: GeminiAPIKeyType

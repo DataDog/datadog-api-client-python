@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -12,16 +12,21 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.cloudflare_api_token_api_token import CloudflareAPITokenApiToken
     from datadog_api_client.v2.model.cloudflare_api_token_type import CloudflareAPITokenType
+    from datadog_api_client.v2.model.action_connection_aws_secrets_manager_reference import (
+        ActionConnectionAWSSecretsManagerReference,
+    )
 
 
 class CloudflareAPIToken(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.cloudflare_api_token_api_token import CloudflareAPITokenApiToken
         from datadog_api_client.v2.model.cloudflare_api_token_type import CloudflareAPITokenType
 
         return {
-            "api_token": (str,),
+            "api_token": (CloudflareAPITokenApiToken,),
             "type": (CloudflareAPITokenType,),
         }
 
@@ -30,12 +35,17 @@ class CloudflareAPIToken(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, api_token: str, type: CloudflareAPITokenType, **kwargs):
+    def __init__(
+        self_,
+        api_token: Union[CloudflareAPITokenApiToken, str, ActionConnectionAWSSecretsManagerReference],
+        type: CloudflareAPITokenType,
+        **kwargs,
+    ):
         """
         The definition of the ``CloudflareAPIToken`` object.
 
         :param api_token: The ``CloudflareAPIToken`` ``api_token``.
-        :type api_token: str
+        :type api_token: CloudflareAPITokenApiToken
 
         :param type: The definition of the ``CloudflareAPIToken`` object.
         :type type: CloudflareAPITokenType

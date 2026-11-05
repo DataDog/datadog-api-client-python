@@ -16,10 +16,10 @@ class GCPCredentials(ModelComposed):
         The definition of the ``GCPCredentials`` object.
 
         :param private_key: The `GCPServiceAccount` `private_key`.
-        :type private_key: str
+        :type private_key: GCPServiceAccountPrivateKey
 
         :param service_account_email: The `GCPServiceAccount` `service_account_email`.
-        :type service_account_email: str
+        :type service_account_email: GCPServiceAccountServiceAccountEmail
 
         :param type: The definition of the `GCPServiceAccount` object.
         :type type: GCPServiceAccountCredentialType

@@ -16,16 +16,16 @@ class ServiceNowCredentialsUpdate(ModelComposed):
         The definition of the ``ServiceNowCredentialsUpdate`` object.
 
         :param instance: The `ServiceNowBasicAuthUpdate` `instance`.
-        :type instance: str, optional
+        :type instance: ServiceNowBasicAuthUpdateInstance, optional
 
         :param password: The `ServiceNowBasicAuthUpdate` `password`.
-        :type password: str, optional
+        :type password: ServiceNowBasicAuthUpdatePassword, optional
 
         :param type: The definition of the `ServiceNowBasicAuth` object.
         :type type: ServiceNowBasicAuthType
 
         :param username: The `ServiceNowBasicAuthUpdate` `username`.
-        :type username: str, optional
+        :type username: ServiceNowBasicAuthUpdateUsername, optional
         """
         super().__init__(kwargs)
 

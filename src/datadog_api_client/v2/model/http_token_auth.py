@@ -16,6 +16,7 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.http_body import HTTPBody
     from datadog_api_client.v2.model.http_header import HTTPHeader
+    from datadog_api_client.v2.model.http_token_response import HTTPTokenResponse
     from datadog_api_client.v2.model.http_token import HTTPToken
     from datadog_api_client.v2.model.http_token_auth_type import HTTPTokenAuthType
     from datadog_api_client.v2.model.url_param import UrlParam
@@ -26,6 +27,7 @@ class HTTPTokenAuth(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v2.model.http_body import HTTPBody
         from datadog_api_client.v2.model.http_header import HTTPHeader
+        from datadog_api_client.v2.model.http_token_response import HTTPTokenResponse
         from datadog_api_client.v2.model.http_token import HTTPToken
         from datadog_api_client.v2.model.http_token_auth_type import HTTPTokenAuthType
         from datadog_api_client.v2.model.url_param import UrlParam
@@ -33,6 +35,7 @@ class HTTPTokenAuth(ModelNormal):
         return {
             "body": (HTTPBody,),
             "headers": ([HTTPHeader],),
+            "http_tokens": ([HTTPTokenResponse],),
             "tokens": ([HTTPToken],),
             "type": (HTTPTokenAuthType,),
             "url_parameters": ([UrlParam],),
@@ -41,9 +44,13 @@ class HTTPTokenAuth(ModelNormal):
     attribute_map = {
         "body": "body",
         "headers": "headers",
+        "http_tokens": "http_tokens",
         "tokens": "tokens",
         "type": "type",
         "url_parameters": "url_parameters",
+    }
+    read_only_vars = {
+        "http_tokens",
     }
 
     def __init__(
@@ -51,6 +58,7 @@ class HTTPTokenAuth(ModelNormal):
         type: HTTPTokenAuthType,
         body: Union[HTTPBody, UnsetType] = unset,
         headers: Union[List[HTTPHeader], UnsetType] = unset,
+        http_tokens: Union[List[HTTPTokenResponse], UnsetType] = unset,
         tokens: Union[List[HTTPToken], UnsetType] = unset,
         url_parameters: Union[List[UrlParam], UnsetType] = unset,
         **kwargs,
@@ -63,6 +71,9 @@ class HTTPTokenAuth(ModelNormal):
 
         :param headers: The ``HTTPTokenAuth`` ``headers``.
         :type headers: [HTTPHeader], optional
+
+        :param http_tokens: HTTP authentication tokens returned by the API. Use ``tokens`` when creating or updating tokens.
+        :type http_tokens: [HTTPTokenResponse], optional
 
         :param tokens: The ``HTTPTokenAuth`` ``tokens``.
         :type tokens: [HTTPToken], optional
@@ -77,6 +88,8 @@ class HTTPTokenAuth(ModelNormal):
             kwargs["body"] = body
         if headers is not unset:
             kwargs["headers"] = headers
+        if http_tokens is not unset:
+            kwargs["http_tokens"] = http_tokens
         if tokens is not unset:
             kwargs["tokens"] = tokens
         if url_parameters is not unset:

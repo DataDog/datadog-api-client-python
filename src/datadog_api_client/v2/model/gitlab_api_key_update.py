@@ -14,16 +14,21 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.gitlab_api_key_update_api_token import GitlabAPIKeyUpdateApiToken
     from datadog_api_client.v2.model.gitlab_api_key_type import GitlabAPIKeyType
+    from datadog_api_client.v2.model.action_connection_aws_secrets_manager_reference import (
+        ActionConnectionAWSSecretsManagerReference,
+    )
 
 
 class GitlabAPIKeyUpdate(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.gitlab_api_key_update_api_token import GitlabAPIKeyUpdateApiToken
         from datadog_api_client.v2.model.gitlab_api_key_type import GitlabAPIKeyType
 
         return {
-            "api_token": (str,),
+            "api_token": (GitlabAPIKeyUpdateApiToken,),
             "type": (GitlabAPIKeyType,),
         }
 
@@ -32,12 +37,19 @@ class GitlabAPIKeyUpdate(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, type: GitlabAPIKeyType, api_token: Union[str, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        type: GitlabAPIKeyType,
+        api_token: Union[
+            GitlabAPIKeyUpdateApiToken, str, ActionConnectionAWSSecretsManagerReference, UnsetType
+        ] = unset,
+        **kwargs,
+    ):
         """
         The definition of the ``GitlabAPIKey`` object.
 
         :param api_token: The ``GitlabAPIKeyUpdate`` ``api_token``.
-        :type api_token: str, optional
+        :type api_token: GitlabAPIKeyUpdateApiToken, optional
 
         :param type: The definition of the ``GitlabAPIKey`` object.
         :type type: GitlabAPIKeyType

@@ -16,16 +16,16 @@ class DatadogCredentials(ModelComposed):
         The definition of the ``DatadogCredentials`` object.
 
         :param api_key: The `DatadogAPIKey` `api_key`.
-        :type api_key: str
+        :type api_key: DatadogAPIKeyApiKey
 
         :param app_key: The `DatadogAPIKey` `app_key`.
-        :type app_key: str
+        :type app_key: DatadogAPIKeyAppKey
 
         :param datacenter: The `DatadogAPIKey` `datacenter`.
-        :type datacenter: str
+        :type datacenter: DatadogAPIKeyDatacenter
 
         :param subdomain: Custom subdomain used for Datadog URLs generated with this Connection. For example, if this org uses `https://acme.datadoghq.com` to access Datadog, set this field to `acme`. If this field is omitted, generated URLs will use the default site URL for its datacenter (see [https://docs.datadoghq.com/getting_started/site](https://docs.datadoghq.com/getting_started/site)).
-        :type subdomain: str, optional
+        :type subdomain: DatadogAPIKeySubdomain, optional
 
         :param type: The definition of the `DatadogAPIKey` object.
         :type type: DatadogAPIKeyType
