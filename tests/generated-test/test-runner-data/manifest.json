@@ -2850,6 +2850,69 @@
       "version": "v2"
     },
     {
+      "feature": "AI Gateway",
+      "feature_file": "../../v2/features/ai_gateway.feature",
+      "file": "v2/ai-gateway/get-ai-gateway-governance-controls-returns-ok-response.json",
+      "scenario": "Get AI Gateway governance controls returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "AI Gateway",
+      "feature_file": "../../v2/features/ai_gateway.feature",
+      "file": "v2/ai-gateway/get-the-ai-gateway-data-capture-configuration-returns-ok-response.json",
+      "scenario": "Get the AI Gateway data capture configuration returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "AI Gateway",
+      "feature_file": "../../v2/features/ai_gateway.feature",
+      "file": "v2/ai-gateway/list-ai-gateway-budgets-returns-ok-response.json",
+      "scenario": "List AI Gateway budgets returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "AI Gateway",
+      "feature_file": "../../v2/features/ai_gateway.feature",
+      "file": "v2/ai-gateway/list-ai-gateway-model-groups-returns-ok-response.json",
+      "scenario": "List AI Gateway model groups returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "AI Gateway",
+      "feature_file": "../../v2/features/ai_gateway.feature",
+      "file": "v2/ai-gateway/list-ai-gateway-models-by-canonical-id-returns-ok-response.json",
+      "scenario": "List AI Gateway models by canonical ID returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "AI Gateway",
+      "feature_file": "../../v2/features/ai_gateway.feature",
+      "file": "v2/ai-gateway/list-ai-gateway-providers-returns-ok-response.json",
+      "scenario": "List AI Gateway providers returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "AI Gateway",
+      "feature_file": "../../v2/features/ai_gateway.feature",
+      "file": "v2/ai-gateway/list-ai-gateway-rate-limits-returns-ok-response.json",
+      "scenario": "List AI Gateway rate limits returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "AI Gateway",
+      "feature_file": "../../v2/features/ai_gateway.feature",
+      "file": "v2/ai-gateway/list-ai-gateway-routing-policies-returns-ok-response.json",
+      "scenario": "List AI Gateway routing policies returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "AI Gateway",
+      "feature_file": "../../v2/features/ai_gateway.feature",
+      "file": "v2/ai-gateway/list-ai-gateway-routing-rules-returns-ok-response.json",
+      "scenario": "List AI Gateway routing rules returns \"OK\" response",
+      "version": "v2"
+    },
+    {
       "feature": "AI Guard",
       "feature_file": "../../v2/features/ai_guard.feature",
       "file": "v2/ai-guard/evaluate-an-ai-guard-request-rejects-empty-multipart-user-content.json",

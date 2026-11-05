@@ -820,6 +820,72 @@
       "type": "safe"
     }
   },
+  "ListAiGatewayBudgets": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateAiGatewayBudget": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "DeleteAiGatewayBudget": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetAiGatewayBudget": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateAiGatewayBudget": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetAiGatewayBudgetCurrentPeriod": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListAiGatewayBudgetInstances": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "OverrideAiGatewayBudgetInstanceCapacity": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListAiGatewayBudgetInstanceDimensions": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ResetAiGatewayBudgetInstanceSpend": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetAiGatewayBudgetInstancesSummary": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "SearchCases": {
     "tag": "Case Management",
     "undo": {
@@ -2259,6 +2325,37 @@
       "type": "safe"
     }
   },
+  "GetAiGatewayDataCaptureConfiguration": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateAiGatewayDataCaptureOverride": {
+    "tag": "AI Gateway",
+    "undo": {
+      "operationId": "DeleteAiGatewayDataCaptureOverride",
+      "parameters": [
+        {
+          "name": "id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteAiGatewayDataCaptureOverride": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateAiGatewayDataCaptureOverride": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetAllDatasets": {
     "tag": "Datasets",
     "undo": {
@@ -3442,6 +3539,18 @@
     "tag": "Organizations",
     "undo": {
       "type": "safe"
+    }
+  },
+  "GetAiGatewayGovernance": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateAiGatewayGovernance": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "idempotent"
     }
   },
   "GetGovernanceConfig": {
@@ -6268,6 +6377,36 @@
       "type": "safe"
     }
   },
+  "ListAiGatewayModelGroups": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateAiGatewayModelGroup": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "DeleteAiGatewayModelGroup": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetAiGatewayModelGroup": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateAiGatewayModelGroup": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetModelLabArtifactContent": {
     "tag": "Model Lab API",
     "undo": {
@@ -6378,6 +6517,12 @@
         }
       ],
       "type": "unsafe"
+    }
+  },
+  "ListAiGatewayModelsByCanonical": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "safe"
     }
   },
   "GetMonitorNotificationRules": {
@@ -7193,6 +7338,30 @@
       "type": "idempotent"
     }
   },
+  "ListAiGatewayPolicies": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpsertAiGatewayPolicy": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteAiGatewayPolicy": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetAiGatewayPolicy": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListFindings": {
     "tag": "Security Monitoring",
     "undo": {
@@ -7413,6 +7582,90 @@
       "type": "safe"
     }
   },
+  "ListAiGatewayProviderModels": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListAiGatewayProviders": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateAiGatewayProvider": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "DeleteAiGatewayProvider": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetAiGatewayProvider": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateAiGatewayProvider": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListAiGatewayModels": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateAiGatewayModel": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "BulkCreateAiGatewayModels": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "DeleteAiGatewayModel": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateAiGatewayModel": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteAiGatewayModelPricing": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetAiGatewayModelPricing": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateAiGatewayModelPricing": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetPrunedTraceByID": {
     "tag": "APM Trace",
     "undo": {
@@ -7427,6 +7680,42 @@
   },
   "QueryTimeseriesData": {
     "tag": "Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListAiGatewayRateLimits": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateAiGatewayRateLimit": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetAiGatewayRateLimitUsage": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteAiGatewayRateLimit": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetAiGatewayRateLimit": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateAiGatewayRateLimit": {
+    "tag": "AI Gateway",
     "undo": {
       "type": "idempotent"
     }
@@ -7909,6 +8198,36 @@
   },
   "AddUserToRole": {
     "tag": "Roles",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteAiGatewayRoutingRule": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListAiGatewayRoutingRules": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateAiGatewayRoutingRule": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "UpdateAiGatewayRoutingRule": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetAiGatewayRoutingRule": {
+    "tag": "AI Gateway",
     "undo": {
       "type": "safe"
     }

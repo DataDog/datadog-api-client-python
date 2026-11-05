@@ -116,6 +116,11 @@
       "version": "v1"
     },
     {
+      "feature": "AI Gateway",
+      "file": "v2/ai-gateway.json",
+      "version": "v2"
+    },
+    {
       "feature": "AI Guard",
       "file": "v2/ai-guard.json",
       "version": "v2"

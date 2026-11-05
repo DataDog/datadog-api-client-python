@@ -1,0 +1,286 @@
+{
+  "feature": "AI Gateway",
+  "recordings": [
+    {
+      "feature": "AI Gateway",
+      "frozen_at": "2026-11-03T05:18:20.832Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/governance",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"organization\",\"type\":\"governance\",\"attributes\":{\"data_capture_mode\":\"metadata_only\",\"zdr_mode\":\"off\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get AI Gateway governance controls returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "AI Gateway",
+      "frozen_at": "2026-11-03T05:18:21.249Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/data-capture/configuration",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"organization\",\"type\":\"data-capture-configurations\",\"attributes\":{\"configuration_revision\":\"11afe2915c16d2d927dfcaa90d423005579292f36b98f14d572671333f1ffed0\",\"default_mode\":\"metadata_only\",\"overrides\":[]}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get the AI Gateway data capture configuration returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "AI Gateway",
+      "frozen_at": "2026-11-03T05:18:21.398Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/budgets",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "List AI Gateway budgets returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "AI Gateway",
+      "frozen_at": "2026-11-05T20:04:02.701Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/model-groups",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"default\",\"type\":\"model-groups\",\"attributes\":{\"allow_fast_mode\":true,\"created_at\":\"0001-01-01T00:00:00Z\",\"max_reasoning_level\":null,\"model_ids\":[],\"models\":[],\"name\":\"Org-wide access\",\"provider_ids\":[],\"providers\":[],\"revision\":0,\"routing_rules\":[],\"updated_at\":\"0001-01-01T00:00:00Z\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "List AI Gateway model groups returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "AI Gateway",
+      "frozen_at": "2026-11-03T05:18:21.687Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/models",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "List AI Gateway models by canonical ID returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "AI Gateway",
+      "frozen_at": "2026-11-03T05:18:21.837Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/providers",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "List AI Gateway providers returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "AI Gateway",
+      "frozen_at": "2026-11-03T05:18:21.989Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/rate-limits",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "List AI Gateway rate limits returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "AI Gateway",
+      "frozen_at": "2026-11-03T05:18:22.128Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/policies",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "List AI Gateway routing policies returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "AI Gateway",
+      "frozen_at": "2026-11-03T05:18:22.271Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/routing-rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "List AI Gateway routing rules returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}
