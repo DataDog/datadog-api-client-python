@@ -53,9 +53,11 @@ class StatusPageAsIncludedAttributes(ModelNormal):
             "custom_domain_enabled": (bool,),
             "domain_prefix": (str,),
             "email_header_image": (str,),
+            "email_notifications_enabled": (bool,),
             "enabled": (bool,),
             "favicon": (str,),
             "modified_at": (datetime,),
+            "ms_teams_subscriptions_enabled": (bool,),
             "name": (str,),
             "page_url": (str,),
             "rss_feed_enabled": (bool,),
@@ -75,9 +77,11 @@ class StatusPageAsIncludedAttributes(ModelNormal):
         "custom_domain_enabled": "custom_domain_enabled",
         "domain_prefix": "domain_prefix",
         "email_header_image": "email_header_image",
+        "email_notifications_enabled": "email_notifications_enabled",
         "enabled": "enabled",
         "favicon": "favicon",
         "modified_at": "modified_at",
+        "ms_teams_subscriptions_enabled": "ms_teams_subscriptions_enabled",
         "name": "name",
         "page_url": "page_url",
         "rss_feed_enabled": "rss_feed_enabled",
@@ -98,9 +102,11 @@ class StatusPageAsIncludedAttributes(ModelNormal):
         custom_domain_enabled: Union[bool, UnsetType] = unset,
         domain_prefix: Union[str, UnsetType] = unset,
         email_header_image: Union[str, UnsetType] = unset,
+        email_notifications_enabled: Union[bool, UnsetType] = unset,
         enabled: Union[bool, UnsetType] = unset,
         favicon: Union[str, UnsetType] = unset,
         modified_at: Union[datetime, UnsetType] = unset,
+        ms_teams_subscriptions_enabled: Union[bool, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         page_url: Union[str, UnsetType] = unset,
         rss_feed_enabled: Union[bool, UnsetType] = unset,
@@ -136,6 +142,9 @@ class StatusPageAsIncludedAttributes(ModelNormal):
         :param email_header_image: Base64-encoded image data included in email notifications sent to status page subscribers.
         :type email_header_image: str, optional
 
+        :param email_notifications_enabled: Whether email notifications are enabled for the status page. Must be enabled when ``subscriptions_enabled`` is ``true``.
+        :type email_notifications_enabled: bool, optional
+
         :param enabled: Whether the status page is enabled.
         :type enabled: bool, optional
 
@@ -144,6 +153,9 @@ class StatusPageAsIncludedAttributes(ModelNormal):
 
         :param modified_at: Timestamp of when the status page was last modified.
         :type modified_at: datetime, optional
+
+        :param ms_teams_subscriptions_enabled: Whether Microsoft Teams subscriptions are enabled for the status page.
+        :type ms_teams_subscriptions_enabled: bool, optional
 
         :param name: The name of the status page.
         :type name: str, optional
@@ -186,12 +198,16 @@ class StatusPageAsIncludedAttributes(ModelNormal):
             kwargs["domain_prefix"] = domain_prefix
         if email_header_image is not unset:
             kwargs["email_header_image"] = email_header_image
+        if email_notifications_enabled is not unset:
+            kwargs["email_notifications_enabled"] = email_notifications_enabled
         if enabled is not unset:
             kwargs["enabled"] = enabled
         if favicon is not unset:
             kwargs["favicon"] = favicon
         if modified_at is not unset:
             kwargs["modified_at"] = modified_at
+        if ms_teams_subscriptions_enabled is not unset:
+            kwargs["ms_teams_subscriptions_enabled"] = ms_teams_subscriptions_enabled
         if name is not unset:
             kwargs["name"] = name
         if page_url is not unset:
