@@ -2802,6 +2802,71 @@
     },
     {
       "feature": "Observability Pipelines",
+      "frozen_at": "2026-11-04T14:33:27.305Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "*",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Pipeline with Empty Processor Group"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate an observability pipeline with an empty processor group returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
       "frozen_at": "2026-05-21T09:58:44.439Z",
       "interactions": [
         {
@@ -3047,6 +3112,79 @@
         }
       ],
       "scenario": "Validate an observability pipeline with enrichment table secret field lookup returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "frozen_at": "2026-11-04T14:33:27.650Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "*",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "id": "parse-grok-processor",
+                              "include": "*",
+                              "type": "parse_grok"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Pipeline with Grok Library Rules"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate an observability pipeline with grok library rules returns \"OK\" response",
       "version": "v2"
     },
     {

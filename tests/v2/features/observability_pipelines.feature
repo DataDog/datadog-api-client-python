@@ -14,6 +14,8 @@ Feature: Observability Pipelines
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "unknown-processor", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Main Observability Pipeline"}, "type": "pipelines"}}
     When the request is sent
     Then the response status is 400 Bad Request
+    And the response "errors[0].title" is equal to "Component with ID my-processor-group is an unknown component"
+    And the response "errors[0].meta.message" is equal to "Component with ID my-processor-group is an unknown component"
 
   @generated @skip @team:ddoghq/observability-pipelines
   Scenario: Create a new pipeline returns "Conflict" response
@@ -303,6 +305,14 @@ Feature: Observability Pipelines
     Then the response status is 200 OK
     And the response "errors" has length 0
 
+  @team:ddoghq/observability-pipelines
+  Scenario: Validate an observability pipeline with an empty processor group returns "OK" response
+    Given new "ValidatePipeline" request
+    And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "*", "inputs": ["datadog-agent-source"]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with Empty Processor Group"}, "type": "pipelines"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "errors" has length 0
+
   @skip @team:ddoghq/observability-pipelines
   Scenario: Validate an observability pipeline with cloud_prem destination buffer returns "OK" response
     Given new "ValidatePipeline" request
@@ -323,6 +333,14 @@ Feature: Observability Pipelines
   Scenario: Validate an observability pipeline with enrichment table secret field lookup returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "enrichment-processor", "include": "*", "target": "enriched", "type": "enrichment_table", "file": {"encoding": {"delimiter": ",", "type": "csv", "includes_headers": true}, "key": [{"column": "user_id", "comparison": "equals", "field": {"secret": "LOOKUP_KEY_SECRET"}}], "path": "/etc/enrichment/lookup.csv", "schema": [{"column": "user_id", "type": "string"}]}}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with Enrichment Table Secret Field Lookup"}, "type": "pipelines"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "errors" has length 0
+
+  @team:ddoghq/observability-pipelines
+  Scenario: Validate an observability pipeline with grok library rules returns "OK" response
+    Given new "ValidatePipeline" request
+    And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "*", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "parse-grok-processor", "include": "*", "type": "parse_grok"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with Grok Library Rules"}, "type": "pipelines"}}
     When the request is sent
     Then the response status is 200 OK
     And the response "errors" has length 0

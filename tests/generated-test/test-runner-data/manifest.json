@@ -8998,6 +8998,13 @@
     {
       "feature": "Observability Pipelines",
       "feature_file": "../../v2/features/observability_pipelines.feature",
+      "file": "v2/observability-pipelines/validate-an-observability-pipeline-with-an-empty-processor-group-returns-ok-response.json",
+      "scenario": "Validate an observability pipeline with an empty processor group returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "feature_file": "../../v2/features/observability_pipelines.feature",
       "file": "v2/observability-pipelines/validate-an-observability-pipeline-with-destination-secret-key-returns-ok-response.json",
       "scenario": "Validate an observability pipeline with destination secret key returns \"OK\" response",
       "version": "v2"
@@ -9007,6 +9014,13 @@
       "feature_file": "../../v2/features/observability_pipelines.feature",
       "file": "v2/observability-pipelines/validate-an-observability-pipeline-with-enrichment-table-secret-field-lookup-returns-ok-response.json",
       "scenario": "Validate an observability pipeline with enrichment table secret field lookup returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "feature_file": "../../v2/features/observability_pipelines.feature",
+      "file": "v2/observability-pipelines/validate-an-observability-pipeline-with-grok-library-rules-returns-ok-response.json",
+      "scenario": "Validate an observability pipeline with grok library rules returns \"OK\" response",
       "version": "v2"
     },
     {
