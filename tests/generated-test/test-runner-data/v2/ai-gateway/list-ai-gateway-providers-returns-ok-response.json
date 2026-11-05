@@ -1,0 +1,18 @@
+{
+  "api": "AIGateway",
+  "expected_status": 200,
+  "feature": "AI Gateway",
+  "id": "v2/AI Gateway/List AI Gateway providers returns \"OK\" response",
+  "operation_id": "ListAiGatewayProviders",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/providers"
+  },
+  "scenario": "List AI Gateway providers returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

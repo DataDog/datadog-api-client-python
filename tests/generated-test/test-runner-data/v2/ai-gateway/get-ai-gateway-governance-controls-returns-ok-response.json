@@ -1,0 +1,18 @@
+{
+  "api": "AIGateway",
+  "expected_status": 200,
+  "feature": "AI Gateway",
+  "id": "v2/AI Gateway/Get AI Gateway governance controls returns \"OK\" response",
+  "operation_id": "GetAiGatewayGovernance",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/governance"
+  },
+  "scenario": "Get AI Gateway governance controls returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

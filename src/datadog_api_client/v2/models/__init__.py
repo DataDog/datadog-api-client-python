@@ -324,6 +324,321 @@ from datadog_api_client.v2.model.ai_custom_ruleset_update_attributes import AiCu
 from datadog_api_client.v2.model.ai_custom_ruleset_update_data import AiCustomRulesetUpdateData
 from datadog_api_client.v2.model.ai_custom_ruleset_update_request import AiCustomRulesetUpdateRequest
 from datadog_api_client.v2.model.ai_custom_rulesets_response import AiCustomRulesetsResponse
+from datadog_api_client.v2.model.ai_gateway_budget_attributes import AiGatewayBudgetAttributes
+from datadog_api_client.v2.model.ai_gateway_budget_create_attributes import AiGatewayBudgetCreateAttributes
+from datadog_api_client.v2.model.ai_gateway_budget_create_data import AiGatewayBudgetCreateData
+from datadog_api_client.v2.model.ai_gateway_budget_create_request import AiGatewayBudgetCreateRequest
+from datadog_api_client.v2.model.ai_gateway_budget_enforcement import AiGatewayBudgetEnforcement
+from datadog_api_client.v2.model.ai_gateway_budget_instance_attributes import AiGatewayBudgetInstanceAttributes
+from datadog_api_client.v2.model.ai_gateway_budget_instance_capacity_override_attributes import (
+    AiGatewayBudgetInstanceCapacityOverrideAttributes,
+)
+from datadog_api_client.v2.model.ai_gateway_budget_instance_capacity_override_data import (
+    AiGatewayBudgetInstanceCapacityOverrideData,
+)
+from datadog_api_client.v2.model.ai_gateway_budget_instance_capacity_override_request import (
+    AiGatewayBudgetInstanceCapacityOverrideRequest,
+)
+from datadog_api_client.v2.model.ai_gateway_budget_instance_dimension_attributes import (
+    AiGatewayBudgetInstanceDimensionAttributes,
+)
+from datadog_api_client.v2.model.ai_gateway_budget_instance_dimension_list_response import (
+    AiGatewayBudgetInstanceDimensionListResponse,
+)
+from datadog_api_client.v2.model.ai_gateway_budget_instance_dimension_resource import (
+    AiGatewayBudgetInstanceDimensionResource,
+)
+from datadog_api_client.v2.model.ai_gateway_budget_instance_dimension_type import AiGatewayBudgetInstanceDimensionType
+from datadog_api_client.v2.model.ai_gateway_budget_instance_dimension_value import AiGatewayBudgetInstanceDimensionValue
+from datadog_api_client.v2.model.ai_gateway_budget_instance_list_response import AiGatewayBudgetInstanceListResponse
+from datadog_api_client.v2.model.ai_gateway_budget_instance_reset_attributes import (
+    AiGatewayBudgetInstanceResetAttributes,
+)
+from datadog_api_client.v2.model.ai_gateway_budget_instance_reset_data import AiGatewayBudgetInstanceResetData
+from datadog_api_client.v2.model.ai_gateway_budget_instance_reset_request import AiGatewayBudgetInstanceResetRequest
+from datadog_api_client.v2.model.ai_gateway_budget_instance_resource import AiGatewayBudgetInstanceResource
+from datadog_api_client.v2.model.ai_gateway_budget_instance_response import AiGatewayBudgetInstanceResponse
+from datadog_api_client.v2.model.ai_gateway_budget_instance_sort import AiGatewayBudgetInstanceSort
+from datadog_api_client.v2.model.ai_gateway_budget_instance_type import AiGatewayBudgetInstanceType
+from datadog_api_client.v2.model.ai_gateway_budget_instances_summary_attributes import (
+    AiGatewayBudgetInstancesSummaryAttributes,
+)
+from datadog_api_client.v2.model.ai_gateway_budget_instances_summary_resource import (
+    AiGatewayBudgetInstancesSummaryResource,
+)
+from datadog_api_client.v2.model.ai_gateway_budget_instances_summary_response import (
+    AiGatewayBudgetInstancesSummaryResponse,
+)
+from datadog_api_client.v2.model.ai_gateway_budget_instances_summary_type import AiGatewayBudgetInstancesSummaryType
+from datadog_api_client.v2.model.ai_gateway_budget_list_attributes import AiGatewayBudgetListAttributes
+from datadog_api_client.v2.model.ai_gateway_budget_list_resource import AiGatewayBudgetListResource
+from datadog_api_client.v2.model.ai_gateway_budget_list_response import AiGatewayBudgetListResponse
+from datadog_api_client.v2.model.ai_gateway_budget_period_attributes import AiGatewayBudgetPeriodAttributes
+from datadog_api_client.v2.model.ai_gateway_budget_period_resource import AiGatewayBudgetPeriodResource
+from datadog_api_client.v2.model.ai_gateway_budget_period_response import AiGatewayBudgetPeriodResponse
+from datadog_api_client.v2.model.ai_gateway_budget_period_type import AiGatewayBudgetPeriodType
+from datadog_api_client.v2.model.ai_gateway_budget_resource import AiGatewayBudgetResource
+from datadog_api_client.v2.model.ai_gateway_budget_response import AiGatewayBudgetResponse
+from datadog_api_client.v2.model.ai_gateway_budget_selector_entry import AiGatewayBudgetSelectorEntry
+from datadog_api_client.v2.model.ai_gateway_budget_tags import AiGatewayBudgetTags
+from datadog_api_client.v2.model.ai_gateway_budget_type import AiGatewayBudgetType
+from datadog_api_client.v2.model.ai_gateway_budget_update_attributes import AiGatewayBudgetUpdateAttributes
+from datadog_api_client.v2.model.ai_gateway_budget_update_data import AiGatewayBudgetUpdateData
+from datadog_api_client.v2.model.ai_gateway_budget_update_request import AiGatewayBudgetUpdateRequest
+from datadog_api_client.v2.model.ai_gateway_budget_window_policy import AiGatewayBudgetWindowPolicy
+from datadog_api_client.v2.model.ai_gateway_capture_configuration_response import AiGatewayCaptureConfigurationResponse
+from datadog_api_client.v2.model.ai_gateway_capture_configuration_response_data import (
+    AiGatewayCaptureConfigurationResponseData,
+)
+from datadog_api_client.v2.model.ai_gateway_capture_configuration_response_data_attributes import (
+    AiGatewayCaptureConfigurationResponseDataAttributes,
+)
+from datadog_api_client.v2.model.ai_gateway_capture_configuration_response_data_attributes_default_mode import (
+    AiGatewayCaptureConfigurationResponseDataAttributesDefaultMode,
+)
+from datadog_api_client.v2.model.ai_gateway_capture_configuration_response_data_type import (
+    AiGatewayCaptureConfigurationResponseDataType,
+)
+from datadog_api_client.v2.model.ai_gateway_capture_create_request import AiGatewayCaptureCreateRequest
+from datadog_api_client.v2.model.ai_gateway_capture_create_request_data import AiGatewayCaptureCreateRequestData
+from datadog_api_client.v2.model.ai_gateway_capture_create_request_data_attributes import (
+    AiGatewayCaptureCreateRequestDataAttributes,
+)
+from datadog_api_client.v2.model.ai_gateway_capture_create_request_data_attributes_mode import (
+    AiGatewayCaptureCreateRequestDataAttributesMode,
+)
+from datadog_api_client.v2.model.ai_gateway_capture_create_request_data_attributes_operation import (
+    AiGatewayCaptureCreateRequestDataAttributesOperation,
+)
+from datadog_api_client.v2.model.ai_gateway_capture_create_request_data_type import (
+    AiGatewayCaptureCreateRequestDataType,
+)
+from datadog_api_client.v2.model.ai_gateway_capture_delete_request import AiGatewayCaptureDeleteRequest
+from datadog_api_client.v2.model.ai_gateway_capture_delete_request_data import AiGatewayCaptureDeleteRequestData
+from datadog_api_client.v2.model.ai_gateway_capture_delete_request_data_attributes import (
+    AiGatewayCaptureDeleteRequestDataAttributes,
+)
+from datadog_api_client.v2.model.ai_gateway_capture_delete_request_data_attributes_mode import (
+    AiGatewayCaptureDeleteRequestDataAttributesMode,
+)
+from datadog_api_client.v2.model.ai_gateway_capture_delete_request_data_attributes_operation import (
+    AiGatewayCaptureDeleteRequestDataAttributesOperation,
+)
+from datadog_api_client.v2.model.ai_gateway_capture_delete_request_data_type import (
+    AiGatewayCaptureDeleteRequestDataType,
+)
+from datadog_api_client.v2.model.ai_gateway_capture_override import AiGatewayCaptureOverride
+from datadog_api_client.v2.model.ai_gateway_capture_override_mode import AiGatewayCaptureOverrideMode
+from datadog_api_client.v2.model.ai_gateway_capture_override_response import AiGatewayCaptureOverrideResponse
+from datadog_api_client.v2.model.ai_gateway_capture_override_response_data import AiGatewayCaptureOverrideResponseData
+from datadog_api_client.v2.model.ai_gateway_capture_override_response_data_attributes import (
+    AiGatewayCaptureOverrideResponseDataAttributes,
+)
+from datadog_api_client.v2.model.ai_gateway_capture_override_response_data_attributes_mode import (
+    AiGatewayCaptureOverrideResponseDataAttributesMode,
+)
+from datadog_api_client.v2.model.ai_gateway_capture_override_response_data_type import (
+    AiGatewayCaptureOverrideResponseDataType,
+)
+from datadog_api_client.v2.model.ai_gateway_capture_response_scope import AiGatewayCaptureResponseScope
+from datadog_api_client.v2.model.ai_gateway_capture_scope import AiGatewayCaptureScope
+from datadog_api_client.v2.model.ai_gateway_capture_update_request import AiGatewayCaptureUpdateRequest
+from datadog_api_client.v2.model.ai_gateway_capture_update_request_data import AiGatewayCaptureUpdateRequestData
+from datadog_api_client.v2.model.ai_gateway_capture_update_request_data_attributes import (
+    AiGatewayCaptureUpdateRequestDataAttributes,
+)
+from datadog_api_client.v2.model.ai_gateway_capture_update_request_data_attributes_mode import (
+    AiGatewayCaptureUpdateRequestDataAttributesMode,
+)
+from datadog_api_client.v2.model.ai_gateway_capture_update_request_data_attributes_operation import (
+    AiGatewayCaptureUpdateRequestDataAttributesOperation,
+)
+from datadog_api_client.v2.model.ai_gateway_capture_update_request_data_type import (
+    AiGatewayCaptureUpdateRequestDataType,
+)
+from datadog_api_client.v2.model.ai_gateway_custom_provider_supported_operation import (
+    AiGatewayCustomProviderSupportedOperation,
+)
+from datadog_api_client.v2.model.ai_gateway_data_capture_mode import AiGatewayDataCaptureMode
+from datadog_api_client.v2.model.ai_gateway_discovered_model_attributes import AiGatewayDiscoveredModelAttributes
+from datadog_api_client.v2.model.ai_gateway_discovered_model_list_response import AiGatewayDiscoveredModelListResponse
+from datadog_api_client.v2.model.ai_gateway_discovered_model_resource import AiGatewayDiscoveredModelResource
+from datadog_api_client.v2.model.ai_gateway_discovered_model_type import AiGatewayDiscoveredModelType
+from datadog_api_client.v2.model.ai_gateway_governance_attributes import AiGatewayGovernanceAttributes
+from datadog_api_client.v2.model.ai_gateway_governance_replace_attributes import AiGatewayGovernanceReplaceAttributes
+from datadog_api_client.v2.model.ai_gateway_governance_replace_data import AiGatewayGovernanceReplaceData
+from datadog_api_client.v2.model.ai_gateway_governance_replace_request import AiGatewayGovernanceReplaceRequest
+from datadog_api_client.v2.model.ai_gateway_governance_resource import AiGatewayGovernanceResource
+from datadog_api_client.v2.model.ai_gateway_governance_response import AiGatewayGovernanceResponse
+from datadog_api_client.v2.model.ai_gateway_governance_type import AiGatewayGovernanceType
+from datadog_api_client.v2.model.ai_gateway_known_provider import AiGatewayKnownProvider
+from datadog_api_client.v2.model.ai_gateway_max_reasoning_level import AiGatewayMaxReasoningLevel
+from datadog_api_client.v2.model.ai_gateway_metadata_capture_item import AiGatewayMetadataCaptureItem
+from datadog_api_client.v2.model.ai_gateway_model_capabilities import AiGatewayModelCapabilities
+from datadog_api_client.v2.model.ai_gateway_model_catalog_entry_attributes import AiGatewayModelCatalogEntryAttributes
+from datadog_api_client.v2.model.ai_gateway_model_catalog_entry_identifier import AiGatewayModelCatalogEntryIdentifier
+from datadog_api_client.v2.model.ai_gateway_model_catalog_entry_list_response import (
+    AiGatewayModelCatalogEntryListResponse,
+)
+from datadog_api_client.v2.model.ai_gateway_model_catalog_entry_resource import AiGatewayModelCatalogEntryResource
+from datadog_api_client.v2.model.ai_gateway_model_catalog_entry_response import AiGatewayModelCatalogEntryResponse
+from datadog_api_client.v2.model.ai_gateway_model_catalog_entry_type import AiGatewayModelCatalogEntryType
+from datadog_api_client.v2.model.ai_gateway_model_create_attributes import AiGatewayModelCreateAttributes
+from datadog_api_client.v2.model.ai_gateway_model_create_data import AiGatewayModelCreateData
+from datadog_api_client.v2.model.ai_gateway_model_create_request import AiGatewayModelCreateRequest
+from datadog_api_client.v2.model.ai_gateway_model_group_attributes import AiGatewayModelGroupAttributes
+from datadog_api_client.v2.model.ai_gateway_model_group_binding import AiGatewayModelGroupBinding
+from datadog_api_client.v2.model.ai_gateway_model_group_binding_relation import AiGatewayModelGroupBindingRelation
+from datadog_api_client.v2.model.ai_gateway_model_group_create_attributes import AiGatewayModelGroupCreateAttributes
+from datadog_api_client.v2.model.ai_gateway_model_group_create_data import AiGatewayModelGroupCreateData
+from datadog_api_client.v2.model.ai_gateway_model_group_create_request import AiGatewayModelGroupCreateRequest
+from datadog_api_client.v2.model.ai_gateway_model_group_list_response import AiGatewayModelGroupListResponse
+from datadog_api_client.v2.model.ai_gateway_model_group_model import AiGatewayModelGroupModel
+from datadog_api_client.v2.model.ai_gateway_model_group_provider import AiGatewayModelGroupProvider
+from datadog_api_client.v2.model.ai_gateway_model_group_resource import AiGatewayModelGroupResource
+from datadog_api_client.v2.model.ai_gateway_model_group_response import AiGatewayModelGroupResponse
+from datadog_api_client.v2.model.ai_gateway_model_group_routing_rule import AiGatewayModelGroupRoutingRule
+from datadog_api_client.v2.model.ai_gateway_model_group_type import AiGatewayModelGroupType
+from datadog_api_client.v2.model.ai_gateway_model_group_update_attributes import AiGatewayModelGroupUpdateAttributes
+from datadog_api_client.v2.model.ai_gateway_model_group_update_data import AiGatewayModelGroupUpdateData
+from datadog_api_client.v2.model.ai_gateway_model_group_update_request import AiGatewayModelGroupUpdateRequest
+from datadog_api_client.v2.model.ai_gateway_model_input import AiGatewayModelInput
+from datadog_api_client.v2.model.ai_gateway_model_limits import AiGatewayModelLimits
+from datadog_api_client.v2.model.ai_gateway_model_metadata import AiGatewayModelMetadata
+from datadog_api_client.v2.model.ai_gateway_model_metadata_kind import AiGatewayModelMetadataKind
+from datadog_api_client.v2.model.ai_gateway_model_metadata_lifecycle import AiGatewayModelMetadataLifecycle
+from datadog_api_client.v2.model.ai_gateway_model_metadata_source import AiGatewayModelMetadataSource
+from datadog_api_client.v2.model.ai_gateway_model_metadata_source_matched_by import (
+    AiGatewayModelMetadataSourceMatchedBy,
+)
+from datadog_api_client.v2.model.ai_gateway_model_metadata_status import AiGatewayModelMetadataStatus
+from datadog_api_client.v2.model.ai_gateway_model_modalities import AiGatewayModelModalities
+from datadog_api_client.v2.model.ai_gateway_model_pricing_attributes import AiGatewayModelPricingAttributes
+from datadog_api_client.v2.model.ai_gateway_model_pricing_catalog_request_config import (
+    AiGatewayModelPricingCatalogRequestConfig,
+)
+from datadog_api_client.v2.model.ai_gateway_model_pricing_catalog_request_source import (
+    AiGatewayModelPricingCatalogRequestSource,
+)
+from datadog_api_client.v2.model.ai_gateway_model_pricing_catalog_request_source_type import (
+    AiGatewayModelPricingCatalogRequestSourceType,
+)
+from datadog_api_client.v2.model.ai_gateway_model_pricing_config import AiGatewayModelPricingConfig
+from datadog_api_client.v2.model.ai_gateway_model_pricing_custom_request_config import (
+    AiGatewayModelPricingCustomRequestConfig,
+)
+from datadog_api_client.v2.model.ai_gateway_model_pricing_custom_request_source import (
+    AiGatewayModelPricingCustomRequestSource,
+)
+from datadog_api_client.v2.model.ai_gateway_model_pricing_custom_request_source_type import (
+    AiGatewayModelPricingCustomRequestSourceType,
+)
+from datadog_api_client.v2.model.ai_gateway_model_pricing_effective_source import AiGatewayModelPricingEffectiveSource
+from datadog_api_client.v2.model.ai_gateway_model_pricing_rates import AiGatewayModelPricingRates
+from datadog_api_client.v2.model.ai_gateway_model_pricing_request import AiGatewayModelPricingRequest
+from datadog_api_client.v2.model.ai_gateway_model_pricing_request_attributes import (
+    AiGatewayModelPricingRequestAttributes,
+)
+from datadog_api_client.v2.model.ai_gateway_model_pricing_request_config import AiGatewayModelPricingRequestConfig
+from datadog_api_client.v2.model.ai_gateway_model_pricing_request_data import AiGatewayModelPricingRequestData
+from datadog_api_client.v2.model.ai_gateway_model_pricing_required_rates import AiGatewayModelPricingRequiredRates
+from datadog_api_client.v2.model.ai_gateway_model_pricing_response import AiGatewayModelPricingResponse
+from datadog_api_client.v2.model.ai_gateway_model_pricing_response_data import AiGatewayModelPricingResponseData
+from datadog_api_client.v2.model.ai_gateway_model_pricing_source import AiGatewayModelPricingSource
+from datadog_api_client.v2.model.ai_gateway_model_pricing_source_type import AiGatewayModelPricingSourceType
+from datadog_api_client.v2.model.ai_gateway_model_pricing_type import AiGatewayModelPricingType
+from datadog_api_client.v2.model.ai_gateway_model_reasoning import AiGatewayModelReasoning
+from datadog_api_client.v2.model.ai_gateway_model_reasoning_control import AiGatewayModelReasoningControl
+from datadog_api_client.v2.model.ai_gateway_model_reasoning_control_type import AiGatewayModelReasoningControlType
+from datadog_api_client.v2.model.ai_gateway_model_reference_price import AiGatewayModelReferencePrice
+from datadog_api_client.v2.model.ai_gateway_model_source import AiGatewayModelSource
+from datadog_api_client.v2.model.ai_gateway_model_update_attributes import AiGatewayModelUpdateAttributes
+from datadog_api_client.v2.model.ai_gateway_model_update_data import AiGatewayModelUpdateData
+from datadog_api_client.v2.model.ai_gateway_model_update_request import AiGatewayModelUpdateRequest
+from datadog_api_client.v2.model.ai_gateway_models_bulk_create_attributes import AiGatewayModelsBulkCreateAttributes
+from datadog_api_client.v2.model.ai_gateway_models_bulk_create_data import AiGatewayModelsBulkCreateData
+from datadog_api_client.v2.model.ai_gateway_models_bulk_create_request import AiGatewayModelsBulkCreateRequest
+from datadog_api_client.v2.model.ai_gateway_models_by_canonical_attributes import AiGatewayModelsByCanonicalAttributes
+from datadog_api_client.v2.model.ai_gateway_models_by_canonical_list_response import (
+    AiGatewayModelsByCanonicalListResponse,
+)
+from datadog_api_client.v2.model.ai_gateway_models_by_canonical_resource import AiGatewayModelsByCanonicalResource
+from datadog_api_client.v2.model.ai_gateway_models_by_canonical_type import AiGatewayModelsByCanonicalType
+from datadog_api_client.v2.model.ai_gateway_nullable_max_reasoning_level import AiGatewayNullableMaxReasoningLevel
+from datadog_api_client.v2.model.ai_gateway_nullable_routing_rule_tier_ordering import (
+    AiGatewayNullableRoutingRuleTierOrdering,
+)
+from datadog_api_client.v2.model.ai_gateway_policy_attributes import AiGatewayPolicyAttributes
+from datadog_api_client.v2.model.ai_gateway_policy_list_response import AiGatewayPolicyListResponse
+from datadog_api_client.v2.model.ai_gateway_policy_request import AiGatewayPolicyRequest
+from datadog_api_client.v2.model.ai_gateway_policy_request_attributes import AiGatewayPolicyRequestAttributes
+from datadog_api_client.v2.model.ai_gateway_policy_request_data import AiGatewayPolicyRequestData
+from datadog_api_client.v2.model.ai_gateway_policy_resource import AiGatewayPolicyResource
+from datadog_api_client.v2.model.ai_gateway_policy_response import AiGatewayPolicyResponse
+from datadog_api_client.v2.model.ai_gateway_policy_target import AiGatewayPolicyTarget
+from datadog_api_client.v2.model.ai_gateway_policy_target_request import AiGatewayPolicyTargetRequest
+from datadog_api_client.v2.model.ai_gateway_policy_tier import AiGatewayPolicyTier
+from datadog_api_client.v2.model.ai_gateway_policy_tier_request import AiGatewayPolicyTierRequest
+from datadog_api_client.v2.model.ai_gateway_policy_type import AiGatewayPolicyType
+from datadog_api_client.v2.model.ai_gateway_provider_attributes import AiGatewayProviderAttributes
+from datadog_api_client.v2.model.ai_gateway_provider_create_attributes import AiGatewayProviderCreateAttributes
+from datadog_api_client.v2.model.ai_gateway_provider_create_data import AiGatewayProviderCreateData
+from datadog_api_client.v2.model.ai_gateway_provider_create_request import AiGatewayProviderCreateRequest
+from datadog_api_client.v2.model.ai_gateway_provider_initial_binding import AiGatewayProviderInitialBinding
+from datadog_api_client.v2.model.ai_gateway_provider_initial_binding_relation import (
+    AiGatewayProviderInitialBindingRelation,
+)
+from datadog_api_client.v2.model.ai_gateway_provider_integration_config import AiGatewayProviderIntegrationConfig
+from datadog_api_client.v2.model.ai_gateway_provider_list_response import AiGatewayProviderListResponse
+from datadog_api_client.v2.model.ai_gateway_provider_model_entry import AiGatewayProviderModelEntry
+from datadog_api_client.v2.model.ai_gateway_provider_models_relationship import AiGatewayProviderModelsRelationship
+from datadog_api_client.v2.model.ai_gateway_provider_relationships import AiGatewayProviderRelationships
+from datadog_api_client.v2.model.ai_gateway_provider_resource import AiGatewayProviderResource
+from datadog_api_client.v2.model.ai_gateway_provider_response import AiGatewayProviderResponse
+from datadog_api_client.v2.model.ai_gateway_provider_type import AiGatewayProviderType
+from datadog_api_client.v2.model.ai_gateway_provider_update_attributes import AiGatewayProviderUpdateAttributes
+from datadog_api_client.v2.model.ai_gateway_provider_update_data import AiGatewayProviderUpdateData
+from datadog_api_client.v2.model.ai_gateway_provider_update_request import AiGatewayProviderUpdateRequest
+from datadog_api_client.v2.model.ai_gateway_rate_limit_attributes import AiGatewayRateLimitAttributes
+from datadog_api_client.v2.model.ai_gateway_rate_limit_create_attributes import AiGatewayRateLimitCreateAttributes
+from datadog_api_client.v2.model.ai_gateway_rate_limit_create_data import AiGatewayRateLimitCreateData
+from datadog_api_client.v2.model.ai_gateway_rate_limit_create_request import AiGatewayRateLimitCreateRequest
+from datadog_api_client.v2.model.ai_gateway_rate_limit_list_response import AiGatewayRateLimitListResponse
+from datadog_api_client.v2.model.ai_gateway_rate_limit_mode import AiGatewayRateLimitMode
+from datadog_api_client.v2.model.ai_gateway_rate_limit_resource import AiGatewayRateLimitResource
+from datadog_api_client.v2.model.ai_gateway_rate_limit_response import AiGatewayRateLimitResponse
+from datadog_api_client.v2.model.ai_gateway_rate_limit_type import AiGatewayRateLimitType
+from datadog_api_client.v2.model.ai_gateway_rate_limit_update_attributes import AiGatewayRateLimitUpdateAttributes
+from datadog_api_client.v2.model.ai_gateway_rate_limit_update_data import AiGatewayRateLimitUpdateData
+from datadog_api_client.v2.model.ai_gateway_rate_limit_update_request import AiGatewayRateLimitUpdateRequest
+from datadog_api_client.v2.model.ai_gateway_rate_limit_usage_attributes import AiGatewayRateLimitUsageAttributes
+from datadog_api_client.v2.model.ai_gateway_rate_limit_usage_list_response import AiGatewayRateLimitUsageListResponse
+from datadog_api_client.v2.model.ai_gateway_rate_limit_usage_resource import AiGatewayRateLimitUsageResource
+from datadog_api_client.v2.model.ai_gateway_rate_limit_usage_type import AiGatewayRateLimitUsageType
+from datadog_api_client.v2.model.ai_gateway_restricted_details_meta import AiGatewayRestrictedDetailsMeta
+from datadog_api_client.v2.model.ai_gateway_routing_reasoning_level import AiGatewayRoutingReasoningLevel
+from datadog_api_client.v2.model.ai_gateway_routing_rule_attributes import AiGatewayRoutingRuleAttributes
+from datadog_api_client.v2.model.ai_gateway_routing_rule_create_attributes import AiGatewayRoutingRuleCreateAttributes
+from datadog_api_client.v2.model.ai_gateway_routing_rule_create_data import AiGatewayRoutingRuleCreateData
+from datadog_api_client.v2.model.ai_gateway_routing_rule_create_request import AiGatewayRoutingRuleCreateRequest
+from datadog_api_client.v2.model.ai_gateway_routing_rule_list_response import AiGatewayRoutingRuleListResponse
+from datadog_api_client.v2.model.ai_gateway_routing_rule_replace_attributes import AiGatewayRoutingRuleReplaceAttributes
+from datadog_api_client.v2.model.ai_gateway_routing_rule_replace_data import AiGatewayRoutingRuleReplaceData
+from datadog_api_client.v2.model.ai_gateway_routing_rule_replace_request import AiGatewayRoutingRuleReplaceRequest
+from datadog_api_client.v2.model.ai_gateway_routing_rule_resource import AiGatewayRoutingRuleResource
+from datadog_api_client.v2.model.ai_gateway_routing_rule_response import AiGatewayRoutingRuleResponse
+from datadog_api_client.v2.model.ai_gateway_routing_rule_target import AiGatewayRoutingRuleTarget
+from datadog_api_client.v2.model.ai_gateway_routing_rule_target_request import AiGatewayRoutingRuleTargetRequest
+from datadog_api_client.v2.model.ai_gateway_routing_rule_target_type import AiGatewayRoutingRuleTargetType
+from datadog_api_client.v2.model.ai_gateway_routing_rule_tier import AiGatewayRoutingRuleTier
+from datadog_api_client.v2.model.ai_gateway_routing_rule_tier_ordering import AiGatewayRoutingRuleTierOrdering
+from datadog_api_client.v2.model.ai_gateway_routing_rule_tier_ordering_issue import (
+    AiGatewayRoutingRuleTierOrderingIssue,
+)
+from datadog_api_client.v2.model.ai_gateway_routing_rule_tier_request import AiGatewayRoutingRuleTierRequest
+from datadog_api_client.v2.model.ai_gateway_routing_rule_type import AiGatewayRoutingRuleType
+from datadog_api_client.v2.model.ai_gateway_supported_operation import AiGatewaySupportedOperation
+from datadog_api_client.v2.model.ai_gateway_zdr_mode import AiGatewayZDRMode
 from datadog_api_client.v2.model.ai_memory_violation_result_data_type import AiMemoryViolationResultDataType
 from datadog_api_client.v2.model.ai_memory_violation_result_request import AiMemoryViolationResultRequest
 from datadog_api_client.v2.model.ai_memory_violation_result_request_attributes import (
@@ -13673,6 +13988,235 @@ __all__ = [
     "AiCustomRulesetUpdateData",
     "AiCustomRulesetUpdateRequest",
     "AiCustomRulesetsResponse",
+    "AiGatewayBudgetAttributes",
+    "AiGatewayBudgetCreateAttributes",
+    "AiGatewayBudgetCreateData",
+    "AiGatewayBudgetCreateRequest",
+    "AiGatewayBudgetEnforcement",
+    "AiGatewayBudgetInstanceAttributes",
+    "AiGatewayBudgetInstanceCapacityOverrideAttributes",
+    "AiGatewayBudgetInstanceCapacityOverrideData",
+    "AiGatewayBudgetInstanceCapacityOverrideRequest",
+    "AiGatewayBudgetInstanceDimensionAttributes",
+    "AiGatewayBudgetInstanceDimensionListResponse",
+    "AiGatewayBudgetInstanceDimensionResource",
+    "AiGatewayBudgetInstanceDimensionType",
+    "AiGatewayBudgetInstanceDimensionValue",
+    "AiGatewayBudgetInstanceListResponse",
+    "AiGatewayBudgetInstanceResetAttributes",
+    "AiGatewayBudgetInstanceResetData",
+    "AiGatewayBudgetInstanceResetRequest",
+    "AiGatewayBudgetInstanceResource",
+    "AiGatewayBudgetInstanceResponse",
+    "AiGatewayBudgetInstanceSort",
+    "AiGatewayBudgetInstanceType",
+    "AiGatewayBudgetInstancesSummaryAttributes",
+    "AiGatewayBudgetInstancesSummaryResource",
+    "AiGatewayBudgetInstancesSummaryResponse",
+    "AiGatewayBudgetInstancesSummaryType",
+    "AiGatewayBudgetListAttributes",
+    "AiGatewayBudgetListResource",
+    "AiGatewayBudgetListResponse",
+    "AiGatewayBudgetPeriodAttributes",
+    "AiGatewayBudgetPeriodResource",
+    "AiGatewayBudgetPeriodResponse",
+    "AiGatewayBudgetPeriodType",
+    "AiGatewayBudgetResource",
+    "AiGatewayBudgetResponse",
+    "AiGatewayBudgetSelectorEntry",
+    "AiGatewayBudgetTags",
+    "AiGatewayBudgetType",
+    "AiGatewayBudgetUpdateAttributes",
+    "AiGatewayBudgetUpdateData",
+    "AiGatewayBudgetUpdateRequest",
+    "AiGatewayBudgetWindowPolicy",
+    "AiGatewayCaptureConfigurationResponse",
+    "AiGatewayCaptureConfigurationResponseData",
+    "AiGatewayCaptureConfigurationResponseDataAttributes",
+    "AiGatewayCaptureConfigurationResponseDataAttributesDefaultMode",
+    "AiGatewayCaptureConfigurationResponseDataType",
+    "AiGatewayCaptureCreateRequest",
+    "AiGatewayCaptureCreateRequestData",
+    "AiGatewayCaptureCreateRequestDataAttributes",
+    "AiGatewayCaptureCreateRequestDataAttributesMode",
+    "AiGatewayCaptureCreateRequestDataAttributesOperation",
+    "AiGatewayCaptureCreateRequestDataType",
+    "AiGatewayCaptureDeleteRequest",
+    "AiGatewayCaptureDeleteRequestData",
+    "AiGatewayCaptureDeleteRequestDataAttributes",
+    "AiGatewayCaptureDeleteRequestDataAttributesMode",
+    "AiGatewayCaptureDeleteRequestDataAttributesOperation",
+    "AiGatewayCaptureDeleteRequestDataType",
+    "AiGatewayCaptureOverride",
+    "AiGatewayCaptureOverrideMode",
+    "AiGatewayCaptureOverrideResponse",
+    "AiGatewayCaptureOverrideResponseData",
+    "AiGatewayCaptureOverrideResponseDataAttributes",
+    "AiGatewayCaptureOverrideResponseDataAttributesMode",
+    "AiGatewayCaptureOverrideResponseDataType",
+    "AiGatewayCaptureResponseScope",
+    "AiGatewayCaptureScope",
+    "AiGatewayCaptureUpdateRequest",
+    "AiGatewayCaptureUpdateRequestData",
+    "AiGatewayCaptureUpdateRequestDataAttributes",
+    "AiGatewayCaptureUpdateRequestDataAttributesMode",
+    "AiGatewayCaptureUpdateRequestDataAttributesOperation",
+    "AiGatewayCaptureUpdateRequestDataType",
+    "AiGatewayCustomProviderSupportedOperation",
+    "AiGatewayDataCaptureMode",
+    "AiGatewayDiscoveredModelAttributes",
+    "AiGatewayDiscoveredModelListResponse",
+    "AiGatewayDiscoveredModelResource",
+    "AiGatewayDiscoveredModelType",
+    "AiGatewayGovernanceAttributes",
+    "AiGatewayGovernanceReplaceAttributes",
+    "AiGatewayGovernanceReplaceData",
+    "AiGatewayGovernanceReplaceRequest",
+    "AiGatewayGovernanceResource",
+    "AiGatewayGovernanceResponse",
+    "AiGatewayGovernanceType",
+    "AiGatewayKnownProvider",
+    "AiGatewayMaxReasoningLevel",
+    "AiGatewayMetadataCaptureItem",
+    "AiGatewayModelCapabilities",
+    "AiGatewayModelCatalogEntryAttributes",
+    "AiGatewayModelCatalogEntryIdentifier",
+    "AiGatewayModelCatalogEntryListResponse",
+    "AiGatewayModelCatalogEntryResource",
+    "AiGatewayModelCatalogEntryResponse",
+    "AiGatewayModelCatalogEntryType",
+    "AiGatewayModelCreateAttributes",
+    "AiGatewayModelCreateData",
+    "AiGatewayModelCreateRequest",
+    "AiGatewayModelGroupAttributes",
+    "AiGatewayModelGroupBinding",
+    "AiGatewayModelGroupBindingRelation",
+    "AiGatewayModelGroupCreateAttributes",
+    "AiGatewayModelGroupCreateData",
+    "AiGatewayModelGroupCreateRequest",
+    "AiGatewayModelGroupListResponse",
+    "AiGatewayModelGroupModel",
+    "AiGatewayModelGroupProvider",
+    "AiGatewayModelGroupResource",
+    "AiGatewayModelGroupResponse",
+    "AiGatewayModelGroupRoutingRule",
+    "AiGatewayModelGroupType",
+    "AiGatewayModelGroupUpdateAttributes",
+    "AiGatewayModelGroupUpdateData",
+    "AiGatewayModelGroupUpdateRequest",
+    "AiGatewayModelInput",
+    "AiGatewayModelLimits",
+    "AiGatewayModelMetadata",
+    "AiGatewayModelMetadataKind",
+    "AiGatewayModelMetadataLifecycle",
+    "AiGatewayModelMetadataSource",
+    "AiGatewayModelMetadataSourceMatchedBy",
+    "AiGatewayModelMetadataStatus",
+    "AiGatewayModelModalities",
+    "AiGatewayModelPricingAttributes",
+    "AiGatewayModelPricingCatalogRequestConfig",
+    "AiGatewayModelPricingCatalogRequestSource",
+    "AiGatewayModelPricingCatalogRequestSourceType",
+    "AiGatewayModelPricingConfig",
+    "AiGatewayModelPricingCustomRequestConfig",
+    "AiGatewayModelPricingCustomRequestSource",
+    "AiGatewayModelPricingCustomRequestSourceType",
+    "AiGatewayModelPricingEffectiveSource",
+    "AiGatewayModelPricingRates",
+    "AiGatewayModelPricingRequest",
+    "AiGatewayModelPricingRequestAttributes",
+    "AiGatewayModelPricingRequestConfig",
+    "AiGatewayModelPricingRequestData",
+    "AiGatewayModelPricingRequiredRates",
+    "AiGatewayModelPricingResponse",
+    "AiGatewayModelPricingResponseData",
+    "AiGatewayModelPricingSource",
+    "AiGatewayModelPricingSourceType",
+    "AiGatewayModelPricingType",
+    "AiGatewayModelReasoning",
+    "AiGatewayModelReasoningControl",
+    "AiGatewayModelReasoningControlType",
+    "AiGatewayModelReferencePrice",
+    "AiGatewayModelSource",
+    "AiGatewayModelUpdateAttributes",
+    "AiGatewayModelUpdateData",
+    "AiGatewayModelUpdateRequest",
+    "AiGatewayModelsBulkCreateAttributes",
+    "AiGatewayModelsBulkCreateData",
+    "AiGatewayModelsBulkCreateRequest",
+    "AiGatewayModelsByCanonicalAttributes",
+    "AiGatewayModelsByCanonicalListResponse",
+    "AiGatewayModelsByCanonicalResource",
+    "AiGatewayModelsByCanonicalType",
+    "AiGatewayNullableMaxReasoningLevel",
+    "AiGatewayNullableRoutingRuleTierOrdering",
+    "AiGatewayPolicyAttributes",
+    "AiGatewayPolicyListResponse",
+    "AiGatewayPolicyRequest",
+    "AiGatewayPolicyRequestAttributes",
+    "AiGatewayPolicyRequestData",
+    "AiGatewayPolicyResource",
+    "AiGatewayPolicyResponse",
+    "AiGatewayPolicyTarget",
+    "AiGatewayPolicyTargetRequest",
+    "AiGatewayPolicyTier",
+    "AiGatewayPolicyTierRequest",
+    "AiGatewayPolicyType",
+    "AiGatewayProviderAttributes",
+    "AiGatewayProviderCreateAttributes",
+    "AiGatewayProviderCreateData",
+    "AiGatewayProviderCreateRequest",
+    "AiGatewayProviderInitialBinding",
+    "AiGatewayProviderInitialBindingRelation",
+    "AiGatewayProviderIntegrationConfig",
+    "AiGatewayProviderListResponse",
+    "AiGatewayProviderModelEntry",
+    "AiGatewayProviderModelsRelationship",
+    "AiGatewayProviderRelationships",
+    "AiGatewayProviderResource",
+    "AiGatewayProviderResponse",
+    "AiGatewayProviderType",
+    "AiGatewayProviderUpdateAttributes",
+    "AiGatewayProviderUpdateData",
+    "AiGatewayProviderUpdateRequest",
+    "AiGatewayRateLimitAttributes",
+    "AiGatewayRateLimitCreateAttributes",
+    "AiGatewayRateLimitCreateData",
+    "AiGatewayRateLimitCreateRequest",
+    "AiGatewayRateLimitListResponse",
+    "AiGatewayRateLimitMode",
+    "AiGatewayRateLimitResource",
+    "AiGatewayRateLimitResponse",
+    "AiGatewayRateLimitType",
+    "AiGatewayRateLimitUpdateAttributes",
+    "AiGatewayRateLimitUpdateData",
+    "AiGatewayRateLimitUpdateRequest",
+    "AiGatewayRateLimitUsageAttributes",
+    "AiGatewayRateLimitUsageListResponse",
+    "AiGatewayRateLimitUsageResource",
+    "AiGatewayRateLimitUsageType",
+    "AiGatewayRestrictedDetailsMeta",
+    "AiGatewayRoutingReasoningLevel",
+    "AiGatewayRoutingRuleAttributes",
+    "AiGatewayRoutingRuleCreateAttributes",
+    "AiGatewayRoutingRuleCreateData",
+    "AiGatewayRoutingRuleCreateRequest",
+    "AiGatewayRoutingRuleListResponse",
+    "AiGatewayRoutingRuleReplaceAttributes",
+    "AiGatewayRoutingRuleReplaceData",
+    "AiGatewayRoutingRuleReplaceRequest",
+    "AiGatewayRoutingRuleResource",
+    "AiGatewayRoutingRuleResponse",
+    "AiGatewayRoutingRuleTarget",
+    "AiGatewayRoutingRuleTargetRequest",
+    "AiGatewayRoutingRuleTargetType",
+    "AiGatewayRoutingRuleTier",
+    "AiGatewayRoutingRuleTierOrdering",
+    "AiGatewayRoutingRuleTierOrderingIssue",
+    "AiGatewayRoutingRuleTierRequest",
+    "AiGatewayRoutingRuleType",
+    "AiGatewaySupportedOperation",
+    "AiGatewayZDRMode",
     "AiMemoryViolationResultDataType",
     "AiMemoryViolationResultRequest",
     "AiMemoryViolationResultRequestAttributes",
