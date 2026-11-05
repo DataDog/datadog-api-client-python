@@ -16,7 +16,7 @@ class LaunchDarklyCredentialsUpdate(ModelComposed):
         The definition of the ``LaunchDarklyCredentialsUpdate`` object.
 
         :param api_token: The `LaunchDarklyAPIKeyUpdate` `api_token`.
-        :type api_token: str, optional
+        :type api_token: LaunchDarklyAPIKeyUpdateApiToken, optional
 
         :param type: The definition of the `LaunchDarklyAPIKey` object.
         :type type: LaunchDarklyAPIKeyType

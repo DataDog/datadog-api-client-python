@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -12,18 +12,27 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.config_cat_sdk_key_api_password import ConfigCatSDKKeyApiPassword
+    from datadog_api_client.v2.model.config_cat_sdk_key_api_username import ConfigCatSDKKeyApiUsername
+    from datadog_api_client.v2.model.config_cat_sdk_key_sdk_key import ConfigCatSDKKeySdkKey
     from datadog_api_client.v2.model.config_cat_sdk_key_type import ConfigCatSDKKeyType
+    from datadog_api_client.v2.model.action_connection_aws_secrets_manager_reference import (
+        ActionConnectionAWSSecretsManagerReference,
+    )
 
 
 class ConfigCatSDKKey(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.config_cat_sdk_key_api_password import ConfigCatSDKKeyApiPassword
+        from datadog_api_client.v2.model.config_cat_sdk_key_api_username import ConfigCatSDKKeyApiUsername
+        from datadog_api_client.v2.model.config_cat_sdk_key_sdk_key import ConfigCatSDKKeySdkKey
         from datadog_api_client.v2.model.config_cat_sdk_key_type import ConfigCatSDKKeyType
 
         return {
-            "api_password": (str,),
-            "api_username": (str,),
-            "sdk_key": (str,),
+            "api_password": (ConfigCatSDKKeyApiPassword,),
+            "api_username": (ConfigCatSDKKeyApiUsername,),
+            "sdk_key": (ConfigCatSDKKeySdkKey,),
             "type": (ConfigCatSDKKeyType,),
         }
 
@@ -34,18 +43,25 @@ class ConfigCatSDKKey(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, api_password: str, api_username: str, sdk_key: str, type: ConfigCatSDKKeyType, **kwargs):
+    def __init__(
+        self_,
+        api_password: Union[ConfigCatSDKKeyApiPassword, str, ActionConnectionAWSSecretsManagerReference],
+        api_username: Union[ConfigCatSDKKeyApiUsername, str, ActionConnectionAWSSecretsManagerReference],
+        sdk_key: Union[ConfigCatSDKKeySdkKey, str, ActionConnectionAWSSecretsManagerReference],
+        type: ConfigCatSDKKeyType,
+        **kwargs,
+    ):
         """
         The definition of the ``ConfigCatSDKKey`` object.
 
         :param api_password: The ``ConfigCatSDKKey`` ``api_password``.
-        :type api_password: str
+        :type api_password: ConfigCatSDKKeyApiPassword
 
         :param api_username: The ``ConfigCatSDKKey`` ``api_username``.
-        :type api_username: str
+        :type api_username: ConfigCatSDKKeyApiUsername
 
         :param sdk_key: The ``ConfigCatSDKKey`` ``sdk_key``.
-        :type sdk_key: str
+        :type sdk_key: ConfigCatSDKKeySdkKey
 
         :param type: The definition of the ``ConfigCatSDKKey`` object.
         :type type: ConfigCatSDKKeyType

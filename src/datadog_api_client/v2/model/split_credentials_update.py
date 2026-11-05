@@ -16,7 +16,7 @@ class SplitCredentialsUpdate(ModelComposed):
         The definition of the ``SplitCredentialsUpdate`` object.
 
         :param api_key: The `SplitAPIKeyUpdate` `api_key`.
-        :type api_key: str, optional
+        :type api_key: SplitAPIKeyUpdateApiKey, optional
 
         :param type: The definition of the `SplitAPIKey` object.
         :type type: SplitAPIKeyType

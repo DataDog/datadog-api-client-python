@@ -16,7 +16,7 @@ class SplitCredentials(ModelComposed):
         The definition of the ``SplitCredentials`` object.
 
         :param api_key: The `SplitAPIKey` `api_key`.
-        :type api_key: str
+        :type api_key: SplitAPIKeyApiKey
 
         :param type: The definition of the `SplitAPIKey` object.
         :type type: SplitAPIKeyType

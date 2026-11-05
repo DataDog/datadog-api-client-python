@@ -14,16 +14,21 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.grey_noise_api_key_update_api_key import GreyNoiseAPIKeyUpdateApiKey
     from datadog_api_client.v2.model.grey_noise_api_key_type import GreyNoiseAPIKeyType
+    from datadog_api_client.v2.model.action_connection_aws_secrets_manager_reference import (
+        ActionConnectionAWSSecretsManagerReference,
+    )
 
 
 class GreyNoiseAPIKeyUpdate(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.grey_noise_api_key_update_api_key import GreyNoiseAPIKeyUpdateApiKey
         from datadog_api_client.v2.model.grey_noise_api_key_type import GreyNoiseAPIKeyType
 
         return {
-            "api_key": (str,),
+            "api_key": (GreyNoiseAPIKeyUpdateApiKey,),
             "type": (GreyNoiseAPIKeyType,),
         }
 
@@ -32,12 +37,17 @@ class GreyNoiseAPIKeyUpdate(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, type: GreyNoiseAPIKeyType, api_key: Union[str, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        type: GreyNoiseAPIKeyType,
+        api_key: Union[GreyNoiseAPIKeyUpdateApiKey, str, ActionConnectionAWSSecretsManagerReference, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The definition of the ``GreyNoiseAPIKey`` object.
 
         :param api_key: The ``GreyNoiseAPIKeyUpdate`` ``api_key``.
-        :type api_key: str, optional
+        :type api_key: GreyNoiseAPIKeyUpdateApiKey, optional
 
         :param type: The definition of the ``GreyNoiseAPIKey`` object.
         :type type: GreyNoiseAPIKeyType

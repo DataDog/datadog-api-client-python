@@ -16,7 +16,7 @@ class AnthropicCredentials(ModelComposed):
         The definition of the ``AnthropicCredentials`` object.
 
         :param api_token: The `AnthropicAPIKey` `api_token`.
-        :type api_token: str
+        :type api_token: AnthropicAPIKeyApiToken
 
         :param type: The definition of the `AnthropicAPIKey` object.
         :type type: AnthropicAPIKeyType

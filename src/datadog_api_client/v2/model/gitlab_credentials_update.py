@@ -16,7 +16,7 @@ class GitlabCredentialsUpdate(ModelComposed):
         The definition of the ``GitlabCredentialsUpdate`` object.
 
         :param api_token: The `GitlabAPIKeyUpdate` `api_token`.
-        :type api_token: str, optional
+        :type api_token: GitlabAPIKeyUpdateApiToken, optional
 
         :param type: The definition of the `GitlabAPIKey` object.
         :type type: GitlabAPIKeyType

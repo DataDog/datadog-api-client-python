@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -12,16 +12,21 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.notion_api_key_api_token import NotionAPIKeyApiToken
     from datadog_api_client.v2.model.notion_api_key_type import NotionAPIKeyType
+    from datadog_api_client.v2.model.action_connection_aws_secrets_manager_reference import (
+        ActionConnectionAWSSecretsManagerReference,
+    )
 
 
 class NotionAPIKey(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.notion_api_key_api_token import NotionAPIKeyApiToken
         from datadog_api_client.v2.model.notion_api_key_type import NotionAPIKeyType
 
         return {
-            "api_token": (str,),
+            "api_token": (NotionAPIKeyApiToken,),
             "type": (NotionAPIKeyType,),
         }
 
@@ -30,12 +35,17 @@ class NotionAPIKey(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, api_token: str, type: NotionAPIKeyType, **kwargs):
+    def __init__(
+        self_,
+        api_token: Union[NotionAPIKeyApiToken, str, ActionConnectionAWSSecretsManagerReference],
+        type: NotionAPIKeyType,
+        **kwargs,
+    ):
         """
         The definition of the ``NotionAPIKey`` object.
 
         :param api_token: The ``NotionAPIKey`` ``api_token``.
-        :type api_token: str
+        :type api_token: NotionAPIKeyApiToken
 
         :param type: The definition of the ``NotionAPIKey`` object.
         :type type: NotionAPIKeyType

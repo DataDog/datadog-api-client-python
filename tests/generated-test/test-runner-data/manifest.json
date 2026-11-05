@@ -2271,6 +2271,13 @@
     {
       "feature": "Action Connection",
       "feature_file": "../../v2/features/action_connection.feature",
+      "file": "v2/action-connection/create-a-gcp-action-connection-with-aws-secrets-manager-references.json",
+      "scenario": "Create a GCP Action Connection with AWS Secrets Manager references",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
+      "feature_file": "../../v2/features/action_connection.feature",
       "file": "v2/action-connection/create-a-new-action-connection-returns-bad-request-response.json",
       "scenario": "Create a new Action Connection returns \"Bad Request\" response",
       "version": "v2"
@@ -2285,6 +2292,34 @@
     {
       "feature": "Action Connection",
       "feature_file": "../../v2/features/action_connection.feature",
+      "file": "v2/action-connection/create-an-action-connection-rejects-aws-references-without-connection-level-settings.json",
+      "scenario": "Create an Action Connection rejects AWS references without connection-level settings",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
+      "feature_file": "../../v2/features/action_connection.feature",
+      "file": "v2/action-connection/create-an-action-connection-rejects-conflicting-aws-secret-version-selectors.json",
+      "scenario": "Create an Action Connection rejects conflicting AWS secret version selectors",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
+      "feature_file": "../../v2/features/action_connection.feature",
+      "file": "v2/action-connection/create-an-anthropic-action-connection-with-an-aws-secrets-manager-api-token.json",
+      "scenario": "Create an Anthropic Action Connection with an AWS Secrets Manager API token",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
+      "feature_file": "../../v2/features/action_connection.feature",
+      "file": "v2/action-connection/create-an-http-action-connection-with-an-aws-secrets-manager-token.json",
+      "scenario": "Create an HTTP Action Connection with an AWS Secrets Manager token",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
+      "feature_file": "../../v2/features/action_connection.feature",
       "file": "v2/action-connection/delete-an-existing-action-connection-returns-not-found-response.json",
       "scenario": "Delete an existing Action Connection returns \"Not Found\" response",
       "version": "v2"
@@ -2294,6 +2329,13 @@
       "feature_file": "../../v2/features/action_connection.feature",
       "file": "v2/action-connection/delete-an-existing-action-connection-returns-the-resource-was-deleted-successfully-response.json",
       "scenario": "Delete an existing Action Connection returns \"The resource was deleted successfully.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
+      "feature_file": "../../v2/features/action_connection.feature",
+      "file": "v2/action-connection/get-a-gcp-action-connection-preserves-aws-secrets-manager-references.json",
+      "scenario": "Get a GCP Action Connection preserves AWS Secrets Manager references",
       "version": "v2"
     },
     {
@@ -2371,6 +2413,13 @@
       "feature_file": "../../v2/features/action_connection.feature",
       "file": "v2/action-connection/unregister-an-app-key-returns-not-found-response.json",
       "scenario": "Unregister an App Key returns \"Not found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
+      "feature_file": "../../v2/features/action_connection.feature",
+      "file": "v2/action-connection/update-a-gcp-action-connection-with-a-versioned-aws-secrets-manager-reference.json",
+      "scenario": "Update a GCP Action Connection with a versioned AWS Secrets Manager reference",
       "version": "v2"
     },
     {

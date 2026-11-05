@@ -16,16 +16,16 @@ class DatadogCredentialsUpdate(ModelComposed):
         The definition of the ``DatadogCredentialsUpdate`` object.
 
         :param api_key: The `DatadogAPIKeyUpdate` `api_key`.
-        :type api_key: str, optional
+        :type api_key: DatadogAPIKeyUpdateApiKey, optional
 
         :param app_key: The `DatadogAPIKeyUpdate` `app_key`.
-        :type app_key: str, optional
+        :type app_key: DatadogAPIKeyUpdateAppKey, optional
 
         :param datacenter: The `DatadogAPIKeyUpdate` `datacenter`.
-        :type datacenter: str, optional
+        :type datacenter: DatadogAPIKeyUpdateDatacenter, optional
 
         :param subdomain: Custom subdomain used for Datadog URLs generated with this Connection. For example, if this org uses `https://acme.datadoghq.com` to access Datadog, set this field to `acme`. If this field is omitted, generated URLs will use the default site URL for its datacenter (see [https://docs.datadoghq.com/getting_started/site](https://docs.datadoghq.com/getting_started/site)).
-        :type subdomain: str, optional
+        :type subdomain: DatadogAPIKeySubdomain, optional
 
         :param type: The definition of the `DatadogAPIKey` object.
         :type type: DatadogAPIKeyType

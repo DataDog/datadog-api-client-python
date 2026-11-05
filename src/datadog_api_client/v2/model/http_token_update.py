@@ -15,6 +15,10 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.token_type import TokenType
+    from datadog_api_client.v2.model.http_token_value import HTTPTokenValue
+    from datadog_api_client.v2.model.action_connection_aws_secrets_manager_reference import (
+        ActionConnectionAWSSecretsManagerReference,
+    )
 
 
 class HTTPTokenUpdate(ModelNormal):
@@ -25,12 +29,13 @@ class HTTPTokenUpdate(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.token_type import TokenType
+        from datadog_api_client.v2.model.http_token_value import HTTPTokenValue
 
         return {
             "deleted": (bool,),
             "name": (str,),
             "type": (TokenType,),
-            "value": (str,),
+            "value": (HTTPTokenValue,),
         }
 
     attribute_map = {
@@ -40,7 +45,14 @@ class HTTPTokenUpdate(ModelNormal):
         "value": "value",
     }
 
-    def __init__(self_, name: str, type: TokenType, value: str, deleted: Union[bool, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        name: str,
+        type: TokenType,
+        value: Union[HTTPTokenValue, str, ActionConnectionAWSSecretsManagerReference],
+        deleted: Union[bool, UnsetType] = unset,
+        **kwargs,
+    ):
         """
         The definition of ``HTTPTokenUpdate`` object.
 
@@ -54,7 +66,7 @@ class HTTPTokenUpdate(ModelNormal):
         :type type: TokenType
 
         :param value: The ``HTTPToken`` ``value``.
-        :type value: str
+        :type value: HTTPTokenValue
         """
         if deleted is not unset:
             kwargs["deleted"] = deleted

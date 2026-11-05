@@ -14,17 +14,24 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.okta_api_token_update_api_token import OktaAPITokenUpdateApiToken
+    from datadog_api_client.v2.model.okta_api_token_update_domain import OktaAPITokenUpdateDomain
     from datadog_api_client.v2.model.okta_api_token_type import OktaAPITokenType
+    from datadog_api_client.v2.model.action_connection_aws_secrets_manager_reference import (
+        ActionConnectionAWSSecretsManagerReference,
+    )
 
 
 class OktaAPITokenUpdate(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.okta_api_token_update_api_token import OktaAPITokenUpdateApiToken
+        from datadog_api_client.v2.model.okta_api_token_update_domain import OktaAPITokenUpdateDomain
         from datadog_api_client.v2.model.okta_api_token_type import OktaAPITokenType
 
         return {
-            "api_token": (str,),
-            "domain": (str,),
+            "api_token": (OktaAPITokenUpdateApiToken,),
+            "domain": (OktaAPITokenUpdateDomain,),
             "type": (OktaAPITokenType,),
         }
 
@@ -37,18 +44,20 @@ class OktaAPITokenUpdate(ModelNormal):
     def __init__(
         self_,
         type: OktaAPITokenType,
-        api_token: Union[str, UnsetType] = unset,
-        domain: Union[str, UnsetType] = unset,
+        api_token: Union[
+            OktaAPITokenUpdateApiToken, str, ActionConnectionAWSSecretsManagerReference, UnsetType
+        ] = unset,
+        domain: Union[OktaAPITokenUpdateDomain, str, ActionConnectionAWSSecretsManagerReference, UnsetType] = unset,
         **kwargs,
     ):
         """
         The definition of the ``OktaAPIToken`` object.
 
         :param api_token: The ``OktaAPITokenUpdate`` ``api_token``.
-        :type api_token: str, optional
+        :type api_token: OktaAPITokenUpdateApiToken, optional
 
         :param domain: The ``OktaAPITokenUpdate`` ``domain``.
-        :type domain: str, optional
+        :type domain: OktaAPITokenUpdateDomain, optional
 
         :param type: The definition of the ``OktaAPIToken`` object.
         :type type: OktaAPITokenType

@@ -16,7 +16,7 @@ class ClickupCredentials(ModelComposed):
         The definition of the ``ClickupCredentials`` object.
 
         :param api_token: The `ClickupAPIKey` `api_token`.
-        :type api_token: str
+        :type api_token: ClickupAPIKeyApiToken
 
         :param type: The definition of the `ClickupAPIKey` object.
         :type type: ClickupAPIKeyType

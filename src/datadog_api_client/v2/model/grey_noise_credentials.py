@@ -16,7 +16,7 @@ class GreyNoiseCredentials(ModelComposed):
         The definition of the ``GreyNoiseCredentials`` object.
 
         :param api_key: The `GreyNoiseAPIKey` `api_key`.
-        :type api_key: str
+        :type api_key: GreyNoiseAPIKeyApiKey
 
         :param type: The definition of the `GreyNoiseAPIKey` object.
         :type type: GreyNoiseAPIKeyType

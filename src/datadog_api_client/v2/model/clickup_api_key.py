@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -12,16 +12,21 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.clickup_api_key_api_token import ClickupAPIKeyApiToken
     from datadog_api_client.v2.model.clickup_api_key_type import ClickupAPIKeyType
+    from datadog_api_client.v2.model.action_connection_aws_secrets_manager_reference import (
+        ActionConnectionAWSSecretsManagerReference,
+    )
 
 
 class ClickupAPIKey(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.clickup_api_key_api_token import ClickupAPIKeyApiToken
         from datadog_api_client.v2.model.clickup_api_key_type import ClickupAPIKeyType
 
         return {
-            "api_token": (str,),
+            "api_token": (ClickupAPIKeyApiToken,),
             "type": (ClickupAPIKeyType,),
         }
 
@@ -30,12 +35,17 @@ class ClickupAPIKey(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, api_token: str, type: ClickupAPIKeyType, **kwargs):
+    def __init__(
+        self_,
+        api_token: Union[ClickupAPIKeyApiToken, str, ActionConnectionAWSSecretsManagerReference],
+        type: ClickupAPIKeyType,
+        **kwargs,
+    ):
         """
         The definition of the ``ClickupAPIKey`` object.
 
         :param api_token: The ``ClickupAPIKey`` ``api_token``.
-        :type api_token: str
+        :type api_token: ClickupAPIKeyApiToken
 
         :param type: The definition of the ``ClickupAPIKey`` object.
         :type type: ClickupAPIKeyType

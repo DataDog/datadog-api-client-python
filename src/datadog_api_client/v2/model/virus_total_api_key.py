@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -12,16 +12,21 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.virus_total_api_key_api_key import VirusTotalAPIKeyApiKey
     from datadog_api_client.v2.model.virus_total_api_key_type import VirusTotalAPIKeyType
+    from datadog_api_client.v2.model.action_connection_aws_secrets_manager_reference import (
+        ActionConnectionAWSSecretsManagerReference,
+    )
 
 
 class VirusTotalAPIKey(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.virus_total_api_key_api_key import VirusTotalAPIKeyApiKey
         from datadog_api_client.v2.model.virus_total_api_key_type import VirusTotalAPIKeyType
 
         return {
-            "api_key": (str,),
+            "api_key": (VirusTotalAPIKeyApiKey,),
             "type": (VirusTotalAPIKeyType,),
         }
 
@@ -30,12 +35,17 @@ class VirusTotalAPIKey(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, api_key: str, type: VirusTotalAPIKeyType, **kwargs):
+    def __init__(
+        self_,
+        api_key: Union[VirusTotalAPIKeyApiKey, str, ActionConnectionAWSSecretsManagerReference],
+        type: VirusTotalAPIKeyType,
+        **kwargs,
+    ):
         """
         The definition of the ``VirusTotalAPIKey`` object.
 
         :param api_key: The ``VirusTotalAPIKey`` ``api_key``.
-        :type api_key: str
+        :type api_key: VirusTotalAPIKeyApiKey
 
         :param type: The definition of the ``VirusTotalAPIKey`` object.
         :type type: VirusTotalAPIKeyType

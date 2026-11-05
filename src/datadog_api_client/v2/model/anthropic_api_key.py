@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -12,16 +12,21 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.anthropic_api_key_api_token import AnthropicAPIKeyApiToken
     from datadog_api_client.v2.model.anthropic_api_key_type import AnthropicAPIKeyType
+    from datadog_api_client.v2.model.action_connection_aws_secrets_manager_reference import (
+        ActionConnectionAWSSecretsManagerReference,
+    )
 
 
 class AnthropicAPIKey(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.anthropic_api_key_api_token import AnthropicAPIKeyApiToken
         from datadog_api_client.v2.model.anthropic_api_key_type import AnthropicAPIKeyType
 
         return {
-            "api_token": (str,),
+            "api_token": (AnthropicAPIKeyApiToken,),
             "type": (AnthropicAPIKeyType,),
         }
 
@@ -30,12 +35,17 @@ class AnthropicAPIKey(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, api_token: str, type: AnthropicAPIKeyType, **kwargs):
+    def __init__(
+        self_,
+        api_token: Union[AnthropicAPIKeyApiToken, str, ActionConnectionAWSSecretsManagerReference],
+        type: AnthropicAPIKeyType,
+        **kwargs,
+    ):
         """
         The definition of the ``AnthropicAPIKey`` object.
 
         :param api_token: The ``AnthropicAPIKey`` ``api_token``.
-        :type api_token: str
+        :type api_token: AnthropicAPIKeyApiToken
 
         :param type: The definition of the ``AnthropicAPIKey`` object.
         :type type: AnthropicAPIKeyType

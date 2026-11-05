@@ -16,13 +16,13 @@ class ConfigCatCredentialsUpdate(ModelComposed):
         The definition of the ``ConfigCatCredentialsUpdate`` object.
 
         :param api_password: The `ConfigCatSDKKeyUpdate` `api_password`.
-        :type api_password: str, optional
+        :type api_password: ConfigCatSDKKeyUpdateApiPassword, optional
 
         :param api_username: The `ConfigCatSDKKeyUpdate` `api_username`.
-        :type api_username: str, optional
+        :type api_username: ConfigCatSDKKeyUpdateApiUsername, optional
 
         :param sdk_key: The `ConfigCatSDKKeyUpdate` `sdk_key`.
-        :type sdk_key: str, optional
+        :type sdk_key: ConfigCatSDKKeyUpdateSdkKey, optional
 
         :param type: The definition of the `ConfigCatSDKKey` object.
         :type type: ConfigCatSDKKeyType

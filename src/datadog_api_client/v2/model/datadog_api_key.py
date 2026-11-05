@@ -14,19 +14,30 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.datadog_api_key_api_key import DatadogAPIKeyApiKey
+    from datadog_api_client.v2.model.datadog_api_key_app_key import DatadogAPIKeyAppKey
+    from datadog_api_client.v2.model.datadog_api_key_datacenter import DatadogAPIKeyDatacenter
+    from datadog_api_client.v2.model.datadog_api_key_subdomain import DatadogAPIKeySubdomain
     from datadog_api_client.v2.model.datadog_api_key_type import DatadogAPIKeyType
+    from datadog_api_client.v2.model.action_connection_aws_secrets_manager_reference import (
+        ActionConnectionAWSSecretsManagerReference,
+    )
 
 
 class DatadogAPIKey(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.datadog_api_key_api_key import DatadogAPIKeyApiKey
+        from datadog_api_client.v2.model.datadog_api_key_app_key import DatadogAPIKeyAppKey
+        from datadog_api_client.v2.model.datadog_api_key_datacenter import DatadogAPIKeyDatacenter
+        from datadog_api_client.v2.model.datadog_api_key_subdomain import DatadogAPIKeySubdomain
         from datadog_api_client.v2.model.datadog_api_key_type import DatadogAPIKeyType
 
         return {
-            "api_key": (str,),
-            "app_key": (str,),
-            "datacenter": (str,),
-            "subdomain": (str,),
+            "api_key": (DatadogAPIKeyApiKey,),
+            "app_key": (DatadogAPIKeyAppKey,),
+            "datacenter": (DatadogAPIKeyDatacenter,),
+            "subdomain": (DatadogAPIKeySubdomain,),
             "type": (DatadogAPIKeyType,),
         }
 
@@ -40,27 +51,27 @@ class DatadogAPIKey(ModelNormal):
 
     def __init__(
         self_,
-        api_key: str,
-        app_key: str,
-        datacenter: str,
+        api_key: Union[DatadogAPIKeyApiKey, str, ActionConnectionAWSSecretsManagerReference],
+        app_key: Union[DatadogAPIKeyAppKey, str, ActionConnectionAWSSecretsManagerReference],
+        datacenter: Union[DatadogAPIKeyDatacenter, str, ActionConnectionAWSSecretsManagerReference],
         type: DatadogAPIKeyType,
-        subdomain: Union[str, UnsetType] = unset,
+        subdomain: Union[DatadogAPIKeySubdomain, str, ActionConnectionAWSSecretsManagerReference, UnsetType] = unset,
         **kwargs,
     ):
         """
         The definition of the ``DatadogAPIKey`` object.
 
         :param api_key: The ``DatadogAPIKey`` ``api_key``.
-        :type api_key: str
+        :type api_key: DatadogAPIKeyApiKey
 
         :param app_key: The ``DatadogAPIKey`` ``app_key``.
-        :type app_key: str
+        :type app_key: DatadogAPIKeyAppKey
 
         :param datacenter: The ``DatadogAPIKey`` ``datacenter``.
-        :type datacenter: str
+        :type datacenter: DatadogAPIKeyDatacenter
 
         :param subdomain: Custom subdomain used for Datadog URLs generated with this Connection. For example, if this org uses ``https://acme.datadoghq.com`` to access Datadog, set this field to ``acme``. If this field is omitted, generated URLs will use the default site URL for its datacenter (see `https://docs.datadoghq.com/getting_started/site <https://docs.datadoghq.com/getting_started/site>`_ ).
-        :type subdomain: str, optional
+        :type subdomain: DatadogAPIKeySubdomain, optional
 
         :param type: The definition of the ``DatadogAPIKey`` object.
         :type type: DatadogAPIKeyType

@@ -16,7 +16,7 @@ class OpenAICredentialsUpdate(ModelComposed):
         The definition of the ``OpenAICredentialsUpdate`` object.
 
         :param api_token: The `OpenAIAPIKeyUpdate` `api_token`.
-        :type api_token: str, optional
+        :type api_token: OpenAIAPIKeyUpdateApiToken, optional
 
         :param type: The definition of the `OpenAIAPIKey` object.
         :type type: OpenAIAPIKeyType

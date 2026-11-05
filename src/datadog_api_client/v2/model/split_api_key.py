@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -12,16 +12,21 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.split_api_key_api_key import SplitAPIKeyApiKey
     from datadog_api_client.v2.model.split_api_key_type import SplitAPIKeyType
+    from datadog_api_client.v2.model.action_connection_aws_secrets_manager_reference import (
+        ActionConnectionAWSSecretsManagerReference,
+    )
 
 
 class SplitAPIKey(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.split_api_key_api_key import SplitAPIKeyApiKey
         from datadog_api_client.v2.model.split_api_key_type import SplitAPIKeyType
 
         return {
-            "api_key": (str,),
+            "api_key": (SplitAPIKeyApiKey,),
             "type": (SplitAPIKeyType,),
         }
 
@@ -30,12 +35,17 @@ class SplitAPIKey(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, api_key: str, type: SplitAPIKeyType, **kwargs):
+    def __init__(
+        self_,
+        api_key: Union[SplitAPIKeyApiKey, str, ActionConnectionAWSSecretsManagerReference],
+        type: SplitAPIKeyType,
+        **kwargs,
+    ):
         """
         The definition of the ``SplitAPIKey`` object.
 
         :param api_key: The ``SplitAPIKey`` ``api_key``.
-        :type api_key: str
+        :type api_key: SplitAPIKeyApiKey
 
         :param type: The definition of the ``SplitAPIKey`` object.
         :type type: SplitAPIKeyType

@@ -16,7 +16,7 @@ class StatsigCredentialsUpdate(ModelComposed):
         The definition of the ``StatsigCredentialsUpdate`` object.
 
         :param api_key: The `StatsigAPIKeyUpdate` `api_key`.
-        :type api_key: str, optional
+        :type api_key: StatsigAPIKeyUpdateApiKey, optional
 
         :param type: The definition of the `StatsigAPIKey` object.
         :type type: StatsigAPIKeyType

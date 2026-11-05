@@ -16,7 +16,7 @@ class NotionCredentialsUpdate(ModelComposed):
         The definition of the ``NotionCredentialsUpdate`` object.
 
         :param api_token: The `NotionAPIKeyUpdate` `api_token`.
-        :type api_token: str, optional
+        :type api_token: NotionAPIKeyUpdateApiToken, optional
 
         :param type: The definition of the `NotionAPIKey` object.
         :type type: NotionAPIKeyType

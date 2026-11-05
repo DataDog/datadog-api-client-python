@@ -16,7 +16,7 @@ class AnthropicCredentialsUpdate(ModelComposed):
         The definition of the ``AnthropicCredentialsUpdate`` object.
 
         :param api_token: The `AnthropicAPIKeyUpdate` `api_token`.
-        :type api_token: str, optional
+        :type api_token: AnthropicAPIKeyUpdateApiToken, optional
 
         :param type: The definition of the `AnthropicAPIKey` object.
         :type type: AnthropicAPIKeyType

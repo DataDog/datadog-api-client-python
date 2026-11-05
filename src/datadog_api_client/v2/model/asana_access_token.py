@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -12,16 +12,21 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.asana_access_token_access_token import AsanaAccessTokenAccessToken
     from datadog_api_client.v2.model.asana_access_token_type import AsanaAccessTokenType
+    from datadog_api_client.v2.model.action_connection_aws_secrets_manager_reference import (
+        ActionConnectionAWSSecretsManagerReference,
+    )
 
 
 class AsanaAccessToken(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.asana_access_token_access_token import AsanaAccessTokenAccessToken
         from datadog_api_client.v2.model.asana_access_token_type import AsanaAccessTokenType
 
         return {
-            "access_token": (str,),
+            "access_token": (AsanaAccessTokenAccessToken,),
             "type": (AsanaAccessTokenType,),
         }
 
@@ -30,12 +35,17 @@ class AsanaAccessToken(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, access_token: str, type: AsanaAccessTokenType, **kwargs):
+    def __init__(
+        self_,
+        access_token: Union[AsanaAccessTokenAccessToken, str, ActionConnectionAWSSecretsManagerReference],
+        type: AsanaAccessTokenType,
+        **kwargs,
+    ):
         """
         The definition of the ``AsanaAccessToken`` object.
 
         :param access_token: The ``AsanaAccessToken`` ``access_token``.
-        :type access_token: str
+        :type access_token: AsanaAccessTokenAccessToken
 
         :param type: The definition of the ``AsanaAccessToken`` object.
         :type type: AsanaAccessTokenType

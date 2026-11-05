@@ -16,10 +16,10 @@ class GCPCredentialsUpdate(ModelComposed):
         The definition of the ``GCPCredentialsUpdate`` object.
 
         :param private_key: The `GCPServiceAccountUpdate` `private_key`.
-        :type private_key: str, optional
+        :type private_key: GCPServiceAccountUpdatePrivateKey, optional
 
         :param service_account_email: The `GCPServiceAccountUpdate` `service_account_email`.
-        :type service_account_email: str, optional
+        :type service_account_email: GCPServiceAccountUpdateServiceAccountEmail, optional
 
         :param type: The definition of the `GCPServiceAccount` object.
         :type type: GCPServiceAccountCredentialType

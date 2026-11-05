@@ -16,7 +16,7 @@ class CircleCICredentialsUpdate(ModelComposed):
         The definition of the ``CircleCICredentialsUpdate`` object.
 
         :param api_token: The `CircleCIAPIKeyUpdate` `api_token`.
-        :type api_token: str, optional
+        :type api_token: CircleCIAPIKeyUpdateApiToken, optional
 
         :param type: The definition of the `CircleCIAPIKey` object.
         :type type: CircleCIAPIKeyType

@@ -16,16 +16,16 @@ class ServiceNowCredentials(ModelComposed):
         The definition of the ``ServiceNowCredentials`` object.
 
         :param instance: The `ServiceNowBasicAuth` `instance`.
-        :type instance: str
+        :type instance: ServiceNowBasicAuthInstance
 
         :param password: The `ServiceNowBasicAuth` `password`.
-        :type password: str
+        :type password: ServiceNowBasicAuthPassword
 
         :param type: The definition of the `ServiceNowBasicAuth` object.
         :type type: ServiceNowBasicAuthType
 
         :param username: The `ServiceNowBasicAuth` `username`.
-        :type username: str
+        :type username: ServiceNowBasicAuthUsername
         """
         super().__init__(kwargs)
 

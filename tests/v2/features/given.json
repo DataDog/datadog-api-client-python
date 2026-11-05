@@ -56,6 +56,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"action_connection\",\n    \"attributes\": {\n      \"name\": \"GCP Secrets Manager Connection {{ unique_lower_alnum }}\",\n      \"external_secrets_manager\": {\n        \"type\": \"aws_secrets_manager\",\n        \"connection_id\": \"{{ action_connection.data.id }}\",\n        \"region\": \"us-east-1\"\n      },\n      \"integration\": {\n        \"type\": \"GCP\",\n        \"credentials\": {\n          \"type\": \"GCPServiceAccount\",\n          \"private_key\": {\n            \"type\": \"aws_secrets_manager\",\n            \"secret_id\": \"example/gcp/service-account\",\n            \"key\": \"private_key\"\n          },\n          \"service_account_email\": {\n            \"type\": \"aws_secrets_manager\",\n            \"secret_id\": \"example/gcp/service-account\",\n            \"key\": \"client_email\"\n          }\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"gcp_action_connection\" in the system",
+    "key": "gcp_action_connection",
+    "tag": "Action Connection",
+    "operationId": "CreateActionConnection"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"execution_policy\",\n    \"attributes\": {\n      \"name\": \"Cassette Execution Policy {{ unique_lower_alnum }}\",\n      \"effect\": \"allow\",\n      \"action_pattern\": {\n        \"integration\": \"INTEGRATION_SCRIPT\",\n        \"action_fqns\": [\"com.datadoghq.script.*\"]\n      }\n    }\n  }\n}"
       }
     ],

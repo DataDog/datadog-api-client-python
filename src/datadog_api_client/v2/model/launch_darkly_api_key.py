@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -12,16 +12,21 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.launch_darkly_api_key_api_token import LaunchDarklyAPIKeyApiToken
     from datadog_api_client.v2.model.launch_darkly_api_key_type import LaunchDarklyAPIKeyType
+    from datadog_api_client.v2.model.action_connection_aws_secrets_manager_reference import (
+        ActionConnectionAWSSecretsManagerReference,
+    )
 
 
 class LaunchDarklyAPIKey(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.launch_darkly_api_key_api_token import LaunchDarklyAPIKeyApiToken
         from datadog_api_client.v2.model.launch_darkly_api_key_type import LaunchDarklyAPIKeyType
 
         return {
-            "api_token": (str,),
+            "api_token": (LaunchDarklyAPIKeyApiToken,),
             "type": (LaunchDarklyAPIKeyType,),
         }
 
@@ -30,12 +35,17 @@ class LaunchDarklyAPIKey(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, api_token: str, type: LaunchDarklyAPIKeyType, **kwargs):
+    def __init__(
+        self_,
+        api_token: Union[LaunchDarklyAPIKeyApiToken, str, ActionConnectionAWSSecretsManagerReference],
+        type: LaunchDarklyAPIKeyType,
+        **kwargs,
+    ):
         """
         The definition of the ``LaunchDarklyAPIKey`` object.
 
         :param api_token: The ``LaunchDarklyAPIKey`` ``api_token``.
-        :type api_token: str
+        :type api_token: LaunchDarklyAPIKeyApiToken
 
         :param type: The definition of the ``LaunchDarklyAPIKey`` object.
         :type type: LaunchDarklyAPIKeyType

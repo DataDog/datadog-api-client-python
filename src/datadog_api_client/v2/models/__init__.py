@@ -225,6 +225,11 @@ from datadog_api_client.v2.model.account_filters_patch_request_attributes import
 from datadog_api_client.v2.model.account_filters_patch_request_type import AccountFiltersPatchRequestType
 from datadog_api_client.v2.model.account_filters_response import AccountFiltersResponse
 from datadog_api_client.v2.model.account_filters_type import AccountFiltersType
+from datadog_api_client.v2.model.action_connection_aws_secrets_manager import ActionConnectionAWSSecretsManager
+from datadog_api_client.v2.model.action_connection_aws_secrets_manager_reference import (
+    ActionConnectionAWSSecretsManagerReference,
+)
+from datadog_api_client.v2.model.action_connection_aws_secrets_manager_type import ActionConnectionAWSSecretsManagerType
 from datadog_api_client.v2.model.action_connection_attributes import ActionConnectionAttributes
 from datadog_api_client.v2.model.action_connection_attributes_update import ActionConnectionAttributesUpdate
 from datadog_api_client.v2.model.action_connection_data import ActionConnectionData
@@ -405,8 +410,10 @@ from datadog_api_client.v2.model.anonymize_users_response_attributes import Anon
 from datadog_api_client.v2.model.anonymize_users_response_data import AnonymizeUsersResponseData
 from datadog_api_client.v2.model.anonymize_users_response_type import AnonymizeUsersResponseType
 from datadog_api_client.v2.model.anthropic_api_key import AnthropicAPIKey
+from datadog_api_client.v2.model.anthropic_api_key_api_token import AnthropicAPIKeyApiToken
 from datadog_api_client.v2.model.anthropic_api_key_type import AnthropicAPIKeyType
 from datadog_api_client.v2.model.anthropic_api_key_update import AnthropicAPIKeyUpdate
+from datadog_api_client.v2.model.anthropic_api_key_update_api_token import AnthropicAPIKeyUpdateApiToken
 from datadog_api_client.v2.model.anthropic_credentials import AnthropicCredentials
 from datadog_api_client.v2.model.anthropic_credentials_update import AnthropicCredentialsUpdate
 from datadog_api_client.v2.model.anthropic_integration import AnthropicIntegration
@@ -688,8 +695,10 @@ from datadog_api_client.v2.model.archive_search_status import ArchiveSearchStatu
 from datadog_api_client.v2.model.archive_search_type import ArchiveSearchType
 from datadog_api_client.v2.model.argument import Argument
 from datadog_api_client.v2.model.asana_access_token import AsanaAccessToken
+from datadog_api_client.v2.model.asana_access_token_access_token import AsanaAccessTokenAccessToken
 from datadog_api_client.v2.model.asana_access_token_type import AsanaAccessTokenType
 from datadog_api_client.v2.model.asana_access_token_update import AsanaAccessTokenUpdate
+from datadog_api_client.v2.model.asana_access_token_update_access_token import AsanaAccessTokenUpdateAccessToken
 from datadog_api_client.v2.model.asana_credentials import AsanaCredentials
 from datadog_api_client.v2.model.asana_credentials_update import AsanaCredentialsUpdate
 from datadog_api_client.v2.model.asana_integration import AsanaIntegration
@@ -1309,16 +1318,20 @@ from datadog_api_client.v2.model.change_request_user_relationship import ChangeR
 from datadog_api_client.v2.model.change_request_user_relationship_data import ChangeRequestUserRelationshipData
 from datadog_api_client.v2.model.chargeback_breakdown import ChargebackBreakdown
 from datadog_api_client.v2.model.circle_ciapi_key import CircleCIAPIKey
+from datadog_api_client.v2.model.circle_ciapi_key_api_token import CircleCIAPIKeyApiToken
 from datadog_api_client.v2.model.circle_ciapi_key_type import CircleCIAPIKeyType
 from datadog_api_client.v2.model.circle_ciapi_key_update import CircleCIAPIKeyUpdate
+from datadog_api_client.v2.model.circle_ciapi_key_update_api_token import CircleCIAPIKeyUpdateApiToken
 from datadog_api_client.v2.model.circle_ci_credentials import CircleCICredentials
 from datadog_api_client.v2.model.circle_ci_credentials_update import CircleCICredentialsUpdate
 from datadog_api_client.v2.model.circle_ci_integration import CircleCIIntegration
 from datadog_api_client.v2.model.circle_ci_integration_type import CircleCIIntegrationType
 from datadog_api_client.v2.model.circle_ci_integration_update import CircleCIIntegrationUpdate
 from datadog_api_client.v2.model.clickup_api_key import ClickupAPIKey
+from datadog_api_client.v2.model.clickup_api_key_api_token import ClickupAPIKeyApiToken
 from datadog_api_client.v2.model.clickup_api_key_type import ClickupAPIKeyType
 from datadog_api_client.v2.model.clickup_api_key_update import ClickupAPIKeyUpdate
+from datadog_api_client.v2.model.clickup_api_key_update_api_token import ClickupAPIKeyUpdateApiToken
 from datadog_api_client.v2.model.clickup_credentials import ClickupCredentials
 from datadog_api_client.v2.model.clickup_credentials_update import ClickupCredentialsUpdate
 from datadog_api_client.v2.model.clickup_integration import ClickupIntegration
@@ -1455,8 +1468,10 @@ from datadog_api_client.v2.model.cloud_workload_security_agent_rules_list_respon
     CloudWorkloadSecurityAgentRulesListResponse,
 )
 from datadog_api_client.v2.model.cloudflare_api_token import CloudflareAPIToken
+from datadog_api_client.v2.model.cloudflare_api_token_api_token import CloudflareAPITokenApiToken
 from datadog_api_client.v2.model.cloudflare_api_token_type import CloudflareAPITokenType
 from datadog_api_client.v2.model.cloudflare_api_token_update import CloudflareAPITokenUpdate
+from datadog_api_client.v2.model.cloudflare_api_token_update_api_token import CloudflareAPITokenUpdateApiToken
 from datadog_api_client.v2.model.cloudflare_account_create_request import CloudflareAccountCreateRequest
 from datadog_api_client.v2.model.cloudflare_account_create_request_attributes import (
     CloudflareAccountCreateRequestAttributes,
@@ -1475,8 +1490,16 @@ from datadog_api_client.v2.model.cloudflare_accounts_response import CloudflareA
 from datadog_api_client.v2.model.cloudflare_credentials import CloudflareCredentials
 from datadog_api_client.v2.model.cloudflare_credentials_update import CloudflareCredentialsUpdate
 from datadog_api_client.v2.model.cloudflare_global_api_token import CloudflareGlobalAPIToken
+from datadog_api_client.v2.model.cloudflare_global_api_token_auth_email import CloudflareGlobalAPITokenAuthEmail
+from datadog_api_client.v2.model.cloudflare_global_api_token_global_api_key import CloudflareGlobalAPITokenGlobalApiKey
 from datadog_api_client.v2.model.cloudflare_global_api_token_type import CloudflareGlobalAPITokenType
 from datadog_api_client.v2.model.cloudflare_global_api_token_update import CloudflareGlobalAPITokenUpdate
+from datadog_api_client.v2.model.cloudflare_global_api_token_update_auth_email import (
+    CloudflareGlobalAPITokenUpdateAuthEmail,
+)
+from datadog_api_client.v2.model.cloudflare_global_api_token_update_global_api_key import (
+    CloudflareGlobalAPITokenUpdateGlobalApiKey,
+)
 from datadog_api_client.v2.model.cloudflare_integration import CloudflareIntegration
 from datadog_api_client.v2.model.cloudflare_integration_type import CloudflareIntegrationType
 from datadog_api_client.v2.model.cloudflare_integration_update import CloudflareIntegrationUpdate
@@ -1548,8 +1571,14 @@ from datadog_api_client.v2.model.config_cat_integration import ConfigCatIntegrat
 from datadog_api_client.v2.model.config_cat_integration_type import ConfigCatIntegrationType
 from datadog_api_client.v2.model.config_cat_integration_update import ConfigCatIntegrationUpdate
 from datadog_api_client.v2.model.config_cat_sdk_key import ConfigCatSDKKey
+from datadog_api_client.v2.model.config_cat_sdk_key_api_password import ConfigCatSDKKeyApiPassword
+from datadog_api_client.v2.model.config_cat_sdk_key_api_username import ConfigCatSDKKeyApiUsername
+from datadog_api_client.v2.model.config_cat_sdk_key_sdk_key import ConfigCatSDKKeySdkKey
 from datadog_api_client.v2.model.config_cat_sdk_key_type import ConfigCatSDKKeyType
 from datadog_api_client.v2.model.config_cat_sdk_key_update import ConfigCatSDKKeyUpdate
+from datadog_api_client.v2.model.config_cat_sdk_key_update_api_password import ConfigCatSDKKeyUpdateApiPassword
+from datadog_api_client.v2.model.config_cat_sdk_key_update_api_username import ConfigCatSDKKeyUpdateApiUsername
+from datadog_api_client.v2.model.config_cat_sdk_key_update_sdk_key import ConfigCatSDKKeyUpdateSdkKey
 from datadog_api_client.v2.model.configured_schedule import ConfiguredSchedule
 from datadog_api_client.v2.model.configured_schedule_target import ConfiguredScheduleTarget
 from datadog_api_client.v2.model.configured_schedule_target_attributes import ConfiguredScheduleTargetAttributes
@@ -2563,8 +2592,15 @@ from datadog_api_client.v2.model.databricks_model_serving_metrics_integration_da
     DatabricksModelServingMetricsIntegrationDataflowResponse,
 )
 from datadog_api_client.v2.model.datadog_api_key import DatadogAPIKey
+from datadog_api_client.v2.model.datadog_api_key_api_key import DatadogAPIKeyApiKey
+from datadog_api_client.v2.model.datadog_api_key_app_key import DatadogAPIKeyAppKey
+from datadog_api_client.v2.model.datadog_api_key_datacenter import DatadogAPIKeyDatacenter
+from datadog_api_client.v2.model.datadog_api_key_subdomain import DatadogAPIKeySubdomain
 from datadog_api_client.v2.model.datadog_api_key_type import DatadogAPIKeyType
 from datadog_api_client.v2.model.datadog_api_key_update import DatadogAPIKeyUpdate
+from datadog_api_client.v2.model.datadog_api_key_update_api_key import DatadogAPIKeyUpdateApiKey
+from datadog_api_client.v2.model.datadog_api_key_update_app_key import DatadogAPIKeyUpdateAppKey
+from datadog_api_client.v2.model.datadog_api_key_update_datacenter import DatadogAPIKeyUpdateDatacenter
 from datadog_api_client.v2.model.datadog_credentials import DatadogCredentials
 from datadog_api_client.v2.model.datadog_credentials_update import DatadogCredentialsUpdate
 from datadog_api_client.v2.model.datadog_integration import DatadogIntegration
@@ -4048,8 +4084,10 @@ from datadog_api_client.v2.model.facet_info_response_data_attributes_result_valu
 )
 from datadog_api_client.v2.model.facet_info_response_data_type import FacetInfoResponseDataType
 from datadog_api_client.v2.model.fastly_api_key import FastlyAPIKey
+from datadog_api_client.v2.model.fastly_api_key_api_key import FastlyAPIKeyApiKey
 from datadog_api_client.v2.model.fastly_api_key_type import FastlyAPIKeyType
 from datadog_api_client.v2.model.fastly_api_key_update import FastlyAPIKeyUpdate
+from datadog_api_client.v2.model.fastly_api_key_update_api_key import FastlyAPIKeyUpdateApiKey
 from datadog_api_client.v2.model.fastly_accoun_response_attributes import FastlyAccounResponseAttributes
 from datadog_api_client.v2.model.fastly_account_create_request import FastlyAccountCreateRequest
 from datadog_api_client.v2.model.fastly_account_create_request_attributes import FastlyAccountCreateRequestAttributes
@@ -4275,8 +4313,12 @@ from datadog_api_client.v2.model.forms_response import FormsResponse
 from datadog_api_client.v2.model.formula_limit import FormulaLimit
 from datadog_api_client.v2.model.framework_handle_and_version_response_data import FrameworkHandleAndVersionResponseData
 from datadog_api_client.v2.model.freshservice_api_key import FreshserviceAPIKey
+from datadog_api_client.v2.model.freshservice_api_key_api_key import FreshserviceAPIKeyApiKey
+from datadog_api_client.v2.model.freshservice_api_key_domain import FreshserviceAPIKeyDomain
 from datadog_api_client.v2.model.freshservice_api_key_type import FreshserviceAPIKeyType
 from datadog_api_client.v2.model.freshservice_api_key_update import FreshserviceAPIKeyUpdate
+from datadog_api_client.v2.model.freshservice_api_key_update_api_key import FreshserviceAPIKeyUpdateApiKey
+from datadog_api_client.v2.model.freshservice_api_key_update_domain import FreshserviceAPIKeyUpdateDomain
 from datadog_api_client.v2.model.freshservice_credentials import FreshserviceCredentials
 from datadog_api_client.v2.model.freshservice_credentials_update import FreshserviceCredentialsUpdate
 from datadog_api_client.v2.model.freshservice_integration import FreshserviceIntegration
@@ -4317,8 +4359,14 @@ from datadog_api_client.v2.model.gcpsts_service_accounts_response import GCPSTSS
 from datadog_api_client.v2.model.gcp_service_account import GCPServiceAccount
 from datadog_api_client.v2.model.gcp_service_account_credential_type import GCPServiceAccountCredentialType
 from datadog_api_client.v2.model.gcp_service_account_meta import GCPServiceAccountMeta
+from datadog_api_client.v2.model.gcp_service_account_private_key import GCPServiceAccountPrivateKey
+from datadog_api_client.v2.model.gcp_service_account_service_account_email import GCPServiceAccountServiceAccountEmail
 from datadog_api_client.v2.model.gcp_service_account_type import GCPServiceAccountType
 from datadog_api_client.v2.model.gcp_service_account_update import GCPServiceAccountUpdate
+from datadog_api_client.v2.model.gcp_service_account_update_private_key import GCPServiceAccountUpdatePrivateKey
+from datadog_api_client.v2.model.gcp_service_account_update_service_account_email import (
+    GCPServiceAccountUpdateServiceAccountEmail,
+)
 from datadog_api_client.v2.model.gcp_usage_cost_config import GCPUsageCostConfig
 from datadog_api_client.v2.model.gcp_usage_cost_config_attributes import GCPUsageCostConfigAttributes
 from datadog_api_client.v2.model.gcp_usage_cost_config_patch_data import GCPUsageCostConfigPatchData
@@ -4352,8 +4400,10 @@ from datadog_api_client.v2.model.gcp_uc_config_response_data import GcpUcConfigR
 from datadog_api_client.v2.model.gcp_uc_config_response_data_attributes import GcpUcConfigResponseDataAttributes
 from datadog_api_client.v2.model.gcp_uc_config_response_data_type import GcpUcConfigResponseDataType
 from datadog_api_client.v2.model.gemini_api_key import GeminiAPIKey
+from datadog_api_client.v2.model.gemini_api_key_api_key import GeminiAPIKeyApiKey
 from datadog_api_client.v2.model.gemini_api_key_type import GeminiAPIKeyType
 from datadog_api_client.v2.model.gemini_api_key_update import GeminiAPIKeyUpdate
+from datadog_api_client.v2.model.gemini_api_key_update_api_key import GeminiAPIKeyUpdateApiKey
 from datadog_api_client.v2.model.gemini_credentials import GeminiCredentials
 from datadog_api_client.v2.model.gemini_credentials_update import GeminiCredentialsUpdate
 from datadog_api_client.v2.model.gemini_integration import GeminiIntegration
@@ -4507,8 +4557,10 @@ from datadog_api_client.v2.model.git_hub_oidc_claim_patterns import GitHubOIDCCl
 from datadog_api_client.v2.model.github_webhook_trigger import GithubWebhookTrigger
 from datadog_api_client.v2.model.github_webhook_trigger_wrapper import GithubWebhookTriggerWrapper
 from datadog_api_client.v2.model.gitlab_api_key import GitlabAPIKey
+from datadog_api_client.v2.model.gitlab_api_key_api_token import GitlabAPIKeyApiToken
 from datadog_api_client.v2.model.gitlab_api_key_type import GitlabAPIKeyType
 from datadog_api_client.v2.model.gitlab_api_key_update import GitlabAPIKeyUpdate
+from datadog_api_client.v2.model.gitlab_api_key_update_api_token import GitlabAPIKeyUpdateApiToken
 from datadog_api_client.v2.model.gitlab_credentials import GitlabCredentials
 from datadog_api_client.v2.model.gitlab_credentials_update import GitlabCredentialsUpdate
 from datadog_api_client.v2.model.gitlab_integration import GitlabIntegration
@@ -4685,8 +4737,10 @@ from datadog_api_client.v2.model.governance_notification_settings_update_request
     GovernanceNotificationSettingsUpdateRequest,
 )
 from datadog_api_client.v2.model.grey_noise_api_key import GreyNoiseAPIKey
+from datadog_api_client.v2.model.grey_noise_api_key_api_key import GreyNoiseAPIKeyApiKey
 from datadog_api_client.v2.model.grey_noise_api_key_type import GreyNoiseAPIKeyType
 from datadog_api_client.v2.model.grey_noise_api_key_update import GreyNoiseAPIKeyUpdate
+from datadog_api_client.v2.model.grey_noise_api_key_update_api_key import GreyNoiseAPIKeyUpdateApiKey
 from datadog_api_client.v2.model.grey_noise_credentials import GreyNoiseCredentials
 from datadog_api_client.v2.model.grey_noise_credentials_update import GreyNoiseCredentialsUpdate
 from datadog_api_client.v2.model.grey_noise_integration import GreyNoiseIntegration
@@ -4718,7 +4772,10 @@ from datadog_api_client.v2.model.http_token import HTTPToken
 from datadog_api_client.v2.model.http_token_auth import HTTPTokenAuth
 from datadog_api_client.v2.model.http_token_auth_type import HTTPTokenAuthType
 from datadog_api_client.v2.model.http_token_auth_update import HTTPTokenAuthUpdate
+from datadog_api_client.v2.model.http_token_response import HTTPTokenResponse
+from datadog_api_client.v2.model.http_token_response_value import HTTPTokenResponseValue
 from datadog_api_client.v2.model.http_token_update import HTTPTokenUpdate
+from datadog_api_client.v2.model.http_token_value import HTTPTokenValue
 from datadog_api_client.v2.model.hamr_org_connection_attributes_request import HamrOrgConnectionAttributesRequest
 from datadog_api_client.v2.model.hamr_org_connection_attributes_response import HamrOrgConnectionAttributesResponse
 from datadog_api_client.v2.model.hamr_org_connection_data_request import HamrOrgConnectionDataRequest
@@ -6124,8 +6181,10 @@ from datadog_api_client.v2.model.llm_obs_vertex_ai_metadata import LLMObsVertexA
 from datadog_api_client.v2.model.language import Language
 from datadog_api_client.v2.model.latest_version_match_policy import LatestVersionMatchPolicy
 from datadog_api_client.v2.model.launch_darkly_api_key import LaunchDarklyAPIKey
+from datadog_api_client.v2.model.launch_darkly_api_key_api_token import LaunchDarklyAPIKeyApiToken
 from datadog_api_client.v2.model.launch_darkly_api_key_type import LaunchDarklyAPIKeyType
 from datadog_api_client.v2.model.launch_darkly_api_key_update import LaunchDarklyAPIKeyUpdate
+from datadog_api_client.v2.model.launch_darkly_api_key_update_api_token import LaunchDarklyAPIKeyUpdateApiToken
 from datadog_api_client.v2.model.launch_darkly_credentials import LaunchDarklyCredentials
 from datadog_api_client.v2.model.launch_darkly_credentials_update import LaunchDarklyCredentialsUpdate
 from datadog_api_client.v2.model.launch_darkly_integration import LaunchDarklyIntegration
@@ -6846,8 +6905,10 @@ from datadog_api_client.v2.model.notification_rule_routing_mode import Notificat
 from datadog_api_client.v2.model.notification_rules_list_response import NotificationRulesListResponse
 from datadog_api_client.v2.model.notification_rules_type import NotificationRulesType
 from datadog_api_client.v2.model.notion_api_key import NotionAPIKey
+from datadog_api_client.v2.model.notion_api_key_api_token import NotionAPIKeyApiToken
 from datadog_api_client.v2.model.notion_api_key_type import NotionAPIKeyType
 from datadog_api_client.v2.model.notion_api_key_update import NotionAPIKeyUpdate
+from datadog_api_client.v2.model.notion_api_key_update_api_token import NotionAPIKeyUpdateApiToken
 from datadog_api_client.v2.model.notion_credentials import NotionCredentials
 from datadog_api_client.v2.model.notion_credentials_update import NotionCredentialsUpdate
 from datadog_api_client.v2.model.notion_integration import NotionIntegration
@@ -8030,8 +8091,12 @@ from datadog_api_client.v2.model.observability_pipeline_websocket_source_type im
     ObservabilityPipelineWebsocketSourceType,
 )
 from datadog_api_client.v2.model.okta_api_token import OktaAPIToken
+from datadog_api_client.v2.model.okta_api_token_api_token import OktaAPITokenApiToken
+from datadog_api_client.v2.model.okta_api_token_domain import OktaAPITokenDomain
 from datadog_api_client.v2.model.okta_api_token_type import OktaAPITokenType
 from datadog_api_client.v2.model.okta_api_token_update import OktaAPITokenUpdate
+from datadog_api_client.v2.model.okta_api_token_update_api_token import OktaAPITokenUpdateApiToken
+from datadog_api_client.v2.model.okta_api_token_update_domain import OktaAPITokenUpdateDomain
 from datadog_api_client.v2.model.okta_account import OktaAccount
 from datadog_api_client.v2.model.okta_account_attributes import OktaAccountAttributes
 from datadog_api_client.v2.model.okta_account_request import OktaAccountRequest
@@ -8141,8 +8206,10 @@ from datadog_api_client.v2.model.on_demand_concurrency_cap_attributes import OnD
 from datadog_api_client.v2.model.on_demand_concurrency_cap_response import OnDemandConcurrencyCapResponse
 from datadog_api_client.v2.model.on_demand_concurrency_cap_type import OnDemandConcurrencyCapType
 from datadog_api_client.v2.model.open_aiapi_key import OpenAIAPIKey
+from datadog_api_client.v2.model.open_aiapi_key_api_token import OpenAIAPIKeyApiToken
 from datadog_api_client.v2.model.open_aiapi_key_type import OpenAIAPIKeyType
 from datadog_api_client.v2.model.open_aiapi_key_update import OpenAIAPIKeyUpdate
+from datadog_api_client.v2.model.open_aiapi_key_update_api_token import OpenAIAPIKeyUpdateApiToken
 from datadog_api_client.v2.model.open_ai_credentials import OpenAICredentials
 from datadog_api_client.v2.model.open_ai_credentials_update import OpenAICredentialsUpdate
 from datadog_api_client.v2.model.open_ai_integration import OpenAIIntegration
@@ -11115,8 +11182,14 @@ from datadog_api_client.v2.model.service_now_assignment_group_data import Servic
 from datadog_api_client.v2.model.service_now_assignment_group_type import ServiceNowAssignmentGroupType
 from datadog_api_client.v2.model.service_now_assignment_groups_response import ServiceNowAssignmentGroupsResponse
 from datadog_api_client.v2.model.service_now_basic_auth import ServiceNowBasicAuth
+from datadog_api_client.v2.model.service_now_basic_auth_instance import ServiceNowBasicAuthInstance
+from datadog_api_client.v2.model.service_now_basic_auth_password import ServiceNowBasicAuthPassword
 from datadog_api_client.v2.model.service_now_basic_auth_type import ServiceNowBasicAuthType
 from datadog_api_client.v2.model.service_now_basic_auth_update import ServiceNowBasicAuthUpdate
+from datadog_api_client.v2.model.service_now_basic_auth_update_instance import ServiceNowBasicAuthUpdateInstance
+from datadog_api_client.v2.model.service_now_basic_auth_update_password import ServiceNowBasicAuthUpdatePassword
+from datadog_api_client.v2.model.service_now_basic_auth_update_username import ServiceNowBasicAuthUpdateUsername
+from datadog_api_client.v2.model.service_now_basic_auth_username import ServiceNowBasicAuthUsername
 from datadog_api_client.v2.model.service_now_business_service_attributes import ServiceNowBusinessServiceAttributes
 from datadog_api_client.v2.model.service_now_business_service_data import ServiceNowBusinessServiceData
 from datadog_api_client.v2.model.service_now_business_service_type import ServiceNowBusinessServiceType
@@ -11536,8 +11609,10 @@ from datadog_api_client.v2.model.spans_warning import SpansWarning
 from datadog_api_client.v2.model.spec import Spec
 from datadog_api_client.v2.model.spec_version import SpecVersion
 from datadog_api_client.v2.model.split_api_key import SplitAPIKey
+from datadog_api_client.v2.model.split_api_key_api_key import SplitAPIKeyApiKey
 from datadog_api_client.v2.model.split_api_key_type import SplitAPIKeyType
 from datadog_api_client.v2.model.split_api_key_update import SplitAPIKeyUpdate
+from datadog_api_client.v2.model.split_api_key_update_api_key import SplitAPIKeyUpdateApiKey
 from datadog_api_client.v2.model.split_credentials import SplitCredentials
 from datadog_api_client.v2.model.split_credentials_update import SplitCredentialsUpdate
 from datadog_api_client.v2.model.split_integration import SplitIntegration
@@ -11548,8 +11623,10 @@ from datadog_api_client.v2.model.state_variable import StateVariable
 from datadog_api_client.v2.model.state_variable_properties import StateVariableProperties
 from datadog_api_client.v2.model.state_variable_type import StateVariableType
 from datadog_api_client.v2.model.statsig_api_key import StatsigAPIKey
+from datadog_api_client.v2.model.statsig_api_key_api_key import StatsigAPIKeyApiKey
 from datadog_api_client.v2.model.statsig_api_key_type import StatsigAPIKeyType
 from datadog_api_client.v2.model.statsig_api_key_update import StatsigAPIKeyUpdate
+from datadog_api_client.v2.model.statsig_api_key_update_api_key import StatsigAPIKeyUpdateApiKey
 from datadog_api_client.v2.model.statsig_credentials import StatsigCredentials
 from datadog_api_client.v2.model.statsig_credentials_update import StatsigCredentialsUpdate
 from datadog_api_client.v2.model.statsig_integration import StatsigIntegration
@@ -13051,8 +13128,10 @@ from datadog_api_client.v2.model.viewership_history_session_data_attributes impo
 )
 from datadog_api_client.v2.model.viewership_history_session_data_type import ViewershipHistorySessionDataType
 from datadog_api_client.v2.model.virus_total_api_key import VirusTotalAPIKey
+from datadog_api_client.v2.model.virus_total_api_key_api_key import VirusTotalAPIKeyApiKey
 from datadog_api_client.v2.model.virus_total_api_key_type import VirusTotalAPIKeyType
 from datadog_api_client.v2.model.virus_total_api_key_update import VirusTotalAPIKeyUpdate
+from datadog_api_client.v2.model.virus_total_api_key_update_api_key import VirusTotalAPIKeyUpdateApiKey
 from datadog_api_client.v2.model.virus_total_credentials import VirusTotalCredentials
 from datadog_api_client.v2.model.virus_total_credentials_update import VirusTotalCredentialsUpdate
 from datadog_api_client.v2.model.virus_total_integration import VirusTotalIntegration
@@ -13390,6 +13469,9 @@ __all__ = [
     "AccountFiltersPatchRequestType",
     "AccountFiltersResponse",
     "AccountFiltersType",
+    "ActionConnectionAWSSecretsManager",
+    "ActionConnectionAWSSecretsManagerReference",
+    "ActionConnectionAWSSecretsManagerType",
     "ActionConnectionAttributes",
     "ActionConnectionAttributesUpdate",
     "ActionConnectionData",
@@ -13556,8 +13638,10 @@ __all__ = [
     "AnonymizeUsersResponseData",
     "AnonymizeUsersResponseType",
     "AnthropicAPIKey",
+    "AnthropicAPIKeyApiToken",
     "AnthropicAPIKeyType",
     "AnthropicAPIKeyUpdate",
+    "AnthropicAPIKeyUpdateApiToken",
     "AnthropicCredentials",
     "AnthropicCredentialsUpdate",
     "AnthropicIntegration",
@@ -13719,8 +13803,10 @@ __all__ = [
     "ArchiveSearchType",
     "Argument",
     "AsanaAccessToken",
+    "AsanaAccessTokenAccessToken",
     "AsanaAccessTokenType",
     "AsanaAccessTokenUpdate",
+    "AsanaAccessTokenUpdateAccessToken",
     "AsanaCredentials",
     "AsanaCredentialsUpdate",
     "AsanaIntegration",
@@ -14248,16 +14334,20 @@ __all__ = [
     "ChangeRequestUserRelationshipData",
     "ChargebackBreakdown",
     "CircleCIAPIKey",
+    "CircleCIAPIKeyApiToken",
     "CircleCIAPIKeyType",
     "CircleCIAPIKeyUpdate",
+    "CircleCIAPIKeyUpdateApiToken",
     "CircleCICredentials",
     "CircleCICredentialsUpdate",
     "CircleCIIntegration",
     "CircleCIIntegrationType",
     "CircleCIIntegrationUpdate",
     "ClickupAPIKey",
+    "ClickupAPIKeyApiToken",
     "ClickupAPIKeyType",
     "ClickupAPIKeyUpdate",
+    "ClickupAPIKeyUpdateApiToken",
     "ClickupCredentials",
     "ClickupCredentialsUpdate",
     "ClickupIntegration",
@@ -14324,8 +14414,10 @@ __all__ = [
     "CloudWorkloadSecurityAgentRuleUpdaterAttributes",
     "CloudWorkloadSecurityAgentRulesListResponse",
     "CloudflareAPIToken",
+    "CloudflareAPITokenApiToken",
     "CloudflareAPITokenType",
     "CloudflareAPITokenUpdate",
+    "CloudflareAPITokenUpdateApiToken",
     "CloudflareAccountCreateRequest",
     "CloudflareAccountCreateRequestAttributes",
     "CloudflareAccountCreateRequestData",
@@ -14340,8 +14432,12 @@ __all__ = [
     "CloudflareCredentials",
     "CloudflareCredentialsUpdate",
     "CloudflareGlobalAPIToken",
+    "CloudflareGlobalAPITokenAuthEmail",
+    "CloudflareGlobalAPITokenGlobalApiKey",
     "CloudflareGlobalAPITokenType",
     "CloudflareGlobalAPITokenUpdate",
+    "CloudflareGlobalAPITokenUpdateAuthEmail",
+    "CloudflareGlobalAPITokenUpdateGlobalApiKey",
     "CloudflareIntegration",
     "CloudflareIntegrationType",
     "CloudflareIntegrationUpdate",
@@ -14405,8 +14501,14 @@ __all__ = [
     "ConfigCatIntegrationType",
     "ConfigCatIntegrationUpdate",
     "ConfigCatSDKKey",
+    "ConfigCatSDKKeyApiPassword",
+    "ConfigCatSDKKeyApiUsername",
+    "ConfigCatSDKKeySdkKey",
     "ConfigCatSDKKeyType",
     "ConfigCatSDKKeyUpdate",
+    "ConfigCatSDKKeyUpdateApiPassword",
+    "ConfigCatSDKKeyUpdateApiUsername",
+    "ConfigCatSDKKeyUpdateSdkKey",
     "ConfiguredSchedule",
     "ConfiguredScheduleTarget",
     "ConfiguredScheduleTargetAttributes",
@@ -15080,8 +15182,15 @@ __all__ = [
     "DatabricksModelServingMetricsIntegrationDataflowRequest",
     "DatabricksModelServingMetricsIntegrationDataflowResponse",
     "DatadogAPIKey",
+    "DatadogAPIKeyApiKey",
+    "DatadogAPIKeyAppKey",
+    "DatadogAPIKeyDatacenter",
+    "DatadogAPIKeySubdomain",
     "DatadogAPIKeyType",
     "DatadogAPIKeyUpdate",
+    "DatadogAPIKeyUpdateApiKey",
+    "DatadogAPIKeyUpdateAppKey",
+    "DatadogAPIKeyUpdateDatacenter",
     "DatadogCredentials",
     "DatadogCredentialsUpdate",
     "DatadogIntegration",
@@ -15937,8 +16046,10 @@ __all__ = [
     "FacetInfoResponseDataAttributesResultValuesItems",
     "FacetInfoResponseDataType",
     "FastlyAPIKey",
+    "FastlyAPIKeyApiKey",
     "FastlyAPIKeyType",
     "FastlyAPIKeyUpdate",
+    "FastlyAPIKeyUpdateApiKey",
     "FastlyAccounResponseAttributes",
     "FastlyAccountCreateRequest",
     "FastlyAccountCreateRequestAttributes",
@@ -16150,8 +16261,12 @@ __all__ = [
     "FormulaLimit",
     "FrameworkHandleAndVersionResponseData",
     "FreshserviceAPIKey",
+    "FreshserviceAPIKeyApiKey",
+    "FreshserviceAPIKeyDomain",
     "FreshserviceAPIKeyType",
     "FreshserviceAPIKeyUpdate",
+    "FreshserviceAPIKeyUpdateApiKey",
+    "FreshserviceAPIKeyUpdateDomain",
     "FreshserviceCredentials",
     "FreshserviceCredentialsUpdate",
     "FreshserviceIntegration",
@@ -16192,8 +16307,12 @@ __all__ = [
     "GCPServiceAccount",
     "GCPServiceAccountCredentialType",
     "GCPServiceAccountMeta",
+    "GCPServiceAccountPrivateKey",
+    "GCPServiceAccountServiceAccountEmail",
     "GCPServiceAccountType",
     "GCPServiceAccountUpdate",
+    "GCPServiceAccountUpdatePrivateKey",
+    "GCPServiceAccountUpdateServiceAccountEmail",
     "GCPUsageCostConfig",
     "GCPUsageCostConfigAttributes",
     "GCPUsageCostConfigPatchData",
@@ -16221,8 +16340,10 @@ __all__ = [
     "GcpUcConfigResponseDataAttributes",
     "GcpUcConfigResponseDataType",
     "GeminiAPIKey",
+    "GeminiAPIKeyApiKey",
     "GeminiAPIKeyType",
     "GeminiAPIKeyUpdate",
+    "GeminiAPIKeyUpdateApiKey",
     "GeminiCredentials",
     "GeminiCredentialsUpdate",
     "GeminiIntegration",
@@ -16320,8 +16441,10 @@ __all__ = [
     "GithubWebhookTrigger",
     "GithubWebhookTriggerWrapper",
     "GitlabAPIKey",
+    "GitlabAPIKeyApiToken",
     "GitlabAPIKeyType",
     "GitlabAPIKeyUpdate",
+    "GitlabAPIKeyUpdateApiToken",
     "GitlabCredentials",
     "GitlabCredentialsUpdate",
     "GitlabIntegration",
@@ -16444,8 +16567,10 @@ __all__ = [
     "GovernanceNotificationSettingsUpdateData",
     "GovernanceNotificationSettingsUpdateRequest",
     "GreyNoiseAPIKey",
+    "GreyNoiseAPIKeyApiKey",
     "GreyNoiseAPIKeyType",
     "GreyNoiseAPIKeyUpdate",
+    "GreyNoiseAPIKeyUpdateApiKey",
     "GreyNoiseCredentials",
     "GreyNoiseCredentialsUpdate",
     "GreyNoiseIntegration",
@@ -16477,7 +16602,10 @@ __all__ = [
     "HTTPTokenAuth",
     "HTTPTokenAuthType",
     "HTTPTokenAuthUpdate",
+    "HTTPTokenResponse",
+    "HTTPTokenResponseValue",
     "HTTPTokenUpdate",
+    "HTTPTokenValue",
     "HamrOrgConnectionAttributesRequest",
     "HamrOrgConnectionAttributesResponse",
     "HamrOrgConnectionDataRequest",
@@ -17475,8 +17603,10 @@ __all__ = [
     "Language",
     "LatestVersionMatchPolicy",
     "LaunchDarklyAPIKey",
+    "LaunchDarklyAPIKeyApiToken",
     "LaunchDarklyAPIKeyType",
     "LaunchDarklyAPIKeyUpdate",
+    "LaunchDarklyAPIKeyUpdateApiToken",
     "LaunchDarklyCredentials",
     "LaunchDarklyCredentialsUpdate",
     "LaunchDarklyIntegration",
@@ -18035,8 +18165,10 @@ __all__ = [
     "NotificationRulesListResponse",
     "NotificationRulesType",
     "NotionAPIKey",
+    "NotionAPIKeyApiToken",
     "NotionAPIKeyType",
     "NotionAPIKeyUpdate",
+    "NotionAPIKeyUpdateApiToken",
     "NotionCredentials",
     "NotionCredentialsUpdate",
     "NotionIntegration",
@@ -18481,8 +18613,12 @@ __all__ = [
     "ObservabilityPipelineWebsocketSourceTlsWithClientCertMode",
     "ObservabilityPipelineWebsocketSourceType",
     "OktaAPIToken",
+    "OktaAPITokenApiToken",
+    "OktaAPITokenDomain",
     "OktaAPITokenType",
     "OktaAPITokenUpdate",
+    "OktaAPITokenUpdateApiToken",
+    "OktaAPITokenUpdateDomain",
     "OktaAccount",
     "OktaAccountAttributes",
     "OktaAccountRequest",
@@ -18566,8 +18702,10 @@ __all__ = [
     "OnDemandConcurrencyCapResponse",
     "OnDemandConcurrencyCapType",
     "OpenAIAPIKey",
+    "OpenAIAPIKeyApiToken",
     "OpenAIAPIKeyType",
     "OpenAIAPIKeyUpdate",
+    "OpenAIAPIKeyUpdateApiToken",
     "OpenAICredentials",
     "OpenAICredentialsUpdate",
     "OpenAIIntegration",
@@ -20506,8 +20644,14 @@ __all__ = [
     "ServiceNowAssignmentGroupType",
     "ServiceNowAssignmentGroupsResponse",
     "ServiceNowBasicAuth",
+    "ServiceNowBasicAuthInstance",
+    "ServiceNowBasicAuthPassword",
     "ServiceNowBasicAuthType",
     "ServiceNowBasicAuthUpdate",
+    "ServiceNowBasicAuthUpdateInstance",
+    "ServiceNowBasicAuthUpdatePassword",
+    "ServiceNowBasicAuthUpdateUsername",
+    "ServiceNowBasicAuthUsername",
     "ServiceNowBusinessServiceAttributes",
     "ServiceNowBusinessServiceData",
     "ServiceNowBusinessServiceType",
@@ -20795,8 +20939,10 @@ __all__ = [
     "Spec",
     "SpecVersion",
     "SplitAPIKey",
+    "SplitAPIKeyApiKey",
     "SplitAPIKeyType",
     "SplitAPIKeyUpdate",
+    "SplitAPIKeyUpdateApiKey",
     "SplitCredentials",
     "SplitCredentialsUpdate",
     "SplitIntegration",
@@ -20807,8 +20953,10 @@ __all__ = [
     "StateVariableProperties",
     "StateVariableType",
     "StatsigAPIKey",
+    "StatsigAPIKeyApiKey",
     "StatsigAPIKeyType",
     "StatsigAPIKeyUpdate",
+    "StatsigAPIKeyUpdateApiKey",
     "StatsigCredentials",
     "StatsigCredentialsUpdate",
     "StatsigIntegration",
@@ -21838,8 +21986,10 @@ __all__ = [
     "ViewershipHistorySessionDataAttributes",
     "ViewershipHistorySessionDataType",
     "VirusTotalAPIKey",
+    "VirusTotalAPIKeyApiKey",
     "VirusTotalAPIKeyType",
     "VirusTotalAPIKeyUpdate",
+    "VirusTotalAPIKeyUpdateApiKey",
     "VirusTotalCredentials",
     "VirusTotalCredentialsUpdate",
     "VirusTotalIntegration",

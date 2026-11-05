@@ -14,16 +14,21 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.cloudflare_api_token_update_api_token import CloudflareAPITokenUpdateApiToken
     from datadog_api_client.v2.model.cloudflare_api_token_type import CloudflareAPITokenType
+    from datadog_api_client.v2.model.action_connection_aws_secrets_manager_reference import (
+        ActionConnectionAWSSecretsManagerReference,
+    )
 
 
 class CloudflareAPITokenUpdate(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.cloudflare_api_token_update_api_token import CloudflareAPITokenUpdateApiToken
         from datadog_api_client.v2.model.cloudflare_api_token_type import CloudflareAPITokenType
 
         return {
-            "api_token": (str,),
+            "api_token": (CloudflareAPITokenUpdateApiToken,),
             "type": (CloudflareAPITokenType,),
         }
 
@@ -32,12 +37,19 @@ class CloudflareAPITokenUpdate(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, type: CloudflareAPITokenType, api_token: Union[str, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        type: CloudflareAPITokenType,
+        api_token: Union[
+            CloudflareAPITokenUpdateApiToken, str, ActionConnectionAWSSecretsManagerReference, UnsetType
+        ] = unset,
+        **kwargs,
+    ):
         """
         The definition of the ``CloudflareAPIToken`` object.
 
         :param api_token: The ``CloudflareAPITokenUpdate`` ``api_token``.
-        :type api_token: str, optional
+        :type api_token: CloudflareAPITokenUpdateApiToken, optional
 
         :param type: The definition of the ``CloudflareAPIToken`` object.
         :type type: CloudflareAPITokenType

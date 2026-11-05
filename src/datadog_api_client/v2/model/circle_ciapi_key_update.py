@@ -14,16 +14,21 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.circle_ciapi_key_update_api_token import CircleCIAPIKeyUpdateApiToken
     from datadog_api_client.v2.model.circle_ciapi_key_type import CircleCIAPIKeyType
+    from datadog_api_client.v2.model.action_connection_aws_secrets_manager_reference import (
+        ActionConnectionAWSSecretsManagerReference,
+    )
 
 
 class CircleCIAPIKeyUpdate(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.circle_ciapi_key_update_api_token import CircleCIAPIKeyUpdateApiToken
         from datadog_api_client.v2.model.circle_ciapi_key_type import CircleCIAPIKeyType
 
         return {
-            "api_token": (str,),
+            "api_token": (CircleCIAPIKeyUpdateApiToken,),
             "type": (CircleCIAPIKeyType,),
         }
 
@@ -32,12 +37,19 @@ class CircleCIAPIKeyUpdate(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, type: CircleCIAPIKeyType, api_token: Union[str, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        type: CircleCIAPIKeyType,
+        api_token: Union[
+            CircleCIAPIKeyUpdateApiToken, str, ActionConnectionAWSSecretsManagerReference, UnsetType
+        ] = unset,
+        **kwargs,
+    ):
         """
         The definition of the ``CircleCIAPIKey`` object.
 
         :param api_token: The ``CircleCIAPIKeyUpdate`` ``api_token``.
-        :type api_token: str, optional
+        :type api_token: CircleCIAPIKeyUpdateApiToken, optional
 
         :param type: The definition of the ``CircleCIAPIKey`` object.
         :type type: CircleCIAPIKeyType

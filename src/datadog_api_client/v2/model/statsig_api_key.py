@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -12,16 +12,21 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.statsig_api_key_api_key import StatsigAPIKeyApiKey
     from datadog_api_client.v2.model.statsig_api_key_type import StatsigAPIKeyType
+    from datadog_api_client.v2.model.action_connection_aws_secrets_manager_reference import (
+        ActionConnectionAWSSecretsManagerReference,
+    )
 
 
 class StatsigAPIKey(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.statsig_api_key_api_key import StatsigAPIKeyApiKey
         from datadog_api_client.v2.model.statsig_api_key_type import StatsigAPIKeyType
 
         return {
-            "api_key": (str,),
+            "api_key": (StatsigAPIKeyApiKey,),
             "type": (StatsigAPIKeyType,),
         }
 
@@ -30,12 +35,17 @@ class StatsigAPIKey(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, api_key: str, type: StatsigAPIKeyType, **kwargs):
+    def __init__(
+        self_,
+        api_key: Union[StatsigAPIKeyApiKey, str, ActionConnectionAWSSecretsManagerReference],
+        type: StatsigAPIKeyType,
+        **kwargs,
+    ):
         """
         The definition of the ``StatsigAPIKey`` object.
 
         :param api_key: The ``StatsigAPIKey`` ``api_key``.
-        :type api_key: str
+        :type api_key: StatsigAPIKeyApiKey
 
         :param type: The definition of the ``StatsigAPIKey`` object.
         :type type: StatsigAPIKeyType

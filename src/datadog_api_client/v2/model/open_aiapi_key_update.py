@@ -14,16 +14,21 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.open_aiapi_key_update_api_token import OpenAIAPIKeyUpdateApiToken
     from datadog_api_client.v2.model.open_aiapi_key_type import OpenAIAPIKeyType
+    from datadog_api_client.v2.model.action_connection_aws_secrets_manager_reference import (
+        ActionConnectionAWSSecretsManagerReference,
+    )
 
 
 class OpenAIAPIKeyUpdate(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.open_aiapi_key_update_api_token import OpenAIAPIKeyUpdateApiToken
         from datadog_api_client.v2.model.open_aiapi_key_type import OpenAIAPIKeyType
 
         return {
-            "api_token": (str,),
+            "api_token": (OpenAIAPIKeyUpdateApiToken,),
             "type": (OpenAIAPIKeyType,),
         }
 
@@ -32,12 +37,19 @@ class OpenAIAPIKeyUpdate(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, type: OpenAIAPIKeyType, api_token: Union[str, UnsetType] = unset, **kwargs):
+    def __init__(
+        self_,
+        type: OpenAIAPIKeyType,
+        api_token: Union[
+            OpenAIAPIKeyUpdateApiToken, str, ActionConnectionAWSSecretsManagerReference, UnsetType
+        ] = unset,
+        **kwargs,
+    ):
         """
         The definition of the ``OpenAIAPIKey`` object.
 
         :param api_token: The ``OpenAIAPIKeyUpdate`` ``api_token``.
-        :type api_token: str, optional
+        :type api_token: OpenAIAPIKeyUpdateApiToken, optional
 
         :param type: The definition of the ``OpenAIAPIKey`` object.
         :type type: OpenAIAPIKeyType

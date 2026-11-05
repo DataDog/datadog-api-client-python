@@ -16,7 +16,7 @@ class VirusTotalCredentialsUpdate(ModelComposed):
         The definition of the ``VirusTotalCredentialsUpdate`` object.
 
         :param api_key: The `VirusTotalAPIKeyUpdate` `api_key`.
-        :type api_key: str, optional
+        :type api_key: VirusTotalAPIKeyUpdateApiKey, optional
 
         :param type: The definition of the `VirusTotalAPIKey` object.
         :type type: VirusTotalAPIKeyType
