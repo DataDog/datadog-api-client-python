@@ -1,0 +1,83 @@
+{
+  "api": "RUMRecovery",
+  "expected_status": 200,
+  "feature": "RUM Recovery",
+  "id": "v2/RUM Recovery/List batch history filters request creation time independently of session time",
+  "operation_id": "ListRUMRecoveryBatchRequests",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "type",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": "RumRecoveryBatchRequestType",
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "batch"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "from",
+        "required": false,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 1
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "to",
+        "required": false,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 2
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "query",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "service:rum18600-fixture AND @usr.id:(123 OR 456)"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/recover/requests"
+  },
+  "scenario": "List batch history filters request creation time independently of session time",
+  "schema_version": 1,
+  "version": "v2"
+}

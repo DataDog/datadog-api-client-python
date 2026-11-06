@@ -1,0 +1,35 @@
+{
+  "api": "RUMManagedArchives",
+  "expected_status": 400,
+  "feature": "RUM Managed Archives",
+  "id": "v2/RUM Managed Archives/List archive configurations rejects an invalid page size",
+  "operation_id": "ListRUMArchiveConfigs",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "page[size]",
+        "required": false,
+        "schema": {
+          "format": "int32",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 101
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/config/archive"
+  },
+  "scenario": "List archive configurations rejects an invalid page size",
+  "schema_version": 1,
+  "version": "v2"
+}

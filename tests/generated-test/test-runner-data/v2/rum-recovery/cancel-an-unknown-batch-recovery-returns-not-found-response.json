@@ -1,0 +1,50 @@
+{
+  "api": "RUMRecovery",
+  "expected_status": 404,
+  "feature": "RUM Recovery",
+  "id": "v2/RUM Recovery/Cancel an unknown batch recovery returns \"Not Found\" response",
+  "operation_id": "UpdateRUMRecoveryBatchRequest",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RumRecoveryCancelRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "status": "cancelled"
+          },
+          "type": "rum_recovery_request"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "request_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "{{ uuid }}"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/recover/requests/{request_id}"
+  },
+  "scenario": "Cancel an unknown batch recovery returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

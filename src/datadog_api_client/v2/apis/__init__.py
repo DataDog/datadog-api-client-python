@@ -105,7 +105,9 @@ from datadog_api_client.v2.api.product_catalog_api import ProductCatalogApi
 from datadog_api_client.v2.api.rum_api import RUMApi
 from datadog_api_client.v2.api.rum_config_api import RUMConfigApi
 from datadog_api_client.v2.api.rum_insights_api import RUMInsightsApi
+from datadog_api_client.v2.api.rum_managed_archives_api import RUMManagedArchivesApi
 from datadog_api_client.v2.api.rum_operations_api import RUMOperationsApi
+from datadog_api_client.v2.api.rum_recovery_api import RUMRecoveryApi
 from datadog_api_client.v2.api.rum_remote_config_api import RUMRemoteConfigApi
 from datadog_api_client.v2.api.rum_retention_quotas_api import RUMRetentionQuotasApi
 from datadog_api_client.v2.api.reference_tables_api import ReferenceTablesApi
@@ -264,7 +266,9 @@ __all__ = [
     "RUMApi",
     "RUMConfigApi",
     "RUMInsightsApi",
+    "RUMManagedArchivesApi",
     "RUMOperationsApi",
+    "RUMRecoveryApi",
     "RUMRemoteConfigApi",
     "RUMRetentionQuotasApi",
     "ReferenceTablesApi",

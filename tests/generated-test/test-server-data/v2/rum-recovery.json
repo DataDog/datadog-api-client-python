@@ -1,0 +1,488 @@
+{
+  "feature": "RUM Recovery",
+  "recordings": [
+    {
+      "feature": "RUM Recovery",
+      "frozen_at": "2026-11-05T16:00:18.593Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "status": "cancelled"
+                  },
+                  "type": "rum_recovery_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/rum/recover/requests/17938944-0000-0000-0000-179389441800",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"batch recovery request not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Cancel an unknown batch recovery returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Recovery",
+      "frozen_at": "2026-11-05T16:00:18.702Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "from": 1778342418000,
+                    "query": "service:rum18600-fixture",
+                    "to": 1793894418000
+                  },
+                  "type": "rum_recovery_count"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/recover/count",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"count\",\"type\":\"rum_recovery_count\",\"attributes\":{\"estimated_count\":0,\"max_recoverable_sessions\":100000}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Count recoverable sessions accepts exactly 180 days",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Recovery",
+      "frozen_at": "2026-11-05T16:00:21.115Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "from": 1778256021000,
+                    "query": "service:rum18600-fixture",
+                    "to": 1793894421000
+                  },
+                  "type": "rum_recovery_count"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/recover/count",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"time range cannot exceed 180 days\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Count recoverable sessions rejects a range wider than 180 days",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Recovery",
+      "frozen_at": "2026-11-05T16:00:21.255Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "from": 1778256021000,
+                    "query": "service:rum18600-fixture",
+                    "request_type": "batch",
+                    "to": 1793894421000
+                  },
+                  "type": "rum_recovery_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/recover/requests",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"time range cannot exceed 180 days\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create batch recovery rejects a range wider than 180 days",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Recovery",
+      "frozen_at": "2026-11-05T16:00:21.407Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "sessions": []
+                  },
+                  "type": "rum_recovery_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/recover/requests",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"sessions array is required and cannot be empty\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create targeted recovery rejects an empty sessions array",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Recovery",
+      "frozen_at": "2026-11-05T16:00:21.550Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/rum/recover/requests/17938944-0000-0000-0000-179389442100",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"rehydration request not found: 17938944-0000-0000-0000-179389442100\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get an unknown recovery request returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Recovery",
+      "frozen_at": "2026-11-05T16:00:21.704Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/rum/recover/requests",
+            "query": [
+              [
+                "from",
+                "1"
+              ],
+              [
+                "query",
+                "service:rum18600-fixture AND @usr.id:(123 OR 456)"
+              ],
+              [
+                "to",
+                "2"
+              ],
+              [
+                "type",
+                "batch"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[],\"meta\":{}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "List batch history filters request creation time independently of session time",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Recovery",
+      "frozen_at": "2026-11-05T16:00:21.844Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/rum/recover/requests",
+            "query": [
+              [
+                "query",
+                "service:web OR @usr.id:123"
+              ],
+              [
+                "type",
+                "batch"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"unsupported filter: OR between terms\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "List batch history rejects OR between filter terms",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Recovery",
+      "frozen_at": "2026-11-05T16:00:21.939Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/rum/recover/requests",
+            "query": [
+              [
+                "cursor",
+                "invalid"
+              ],
+              [
+                "type",
+                "batch"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"invalid cursor: invalid character '\\\\x8a' looking for beginning of value\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "List batch history rejects an invalid cursor",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Recovery",
+      "frozen_at": "2026-11-05T16:00:22.079Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/rum/recover/requests",
+            "query": [
+              [
+                "from",
+                "1789905600000"
+              ],
+              [
+                "to",
+                "1789905600000"
+              ],
+              [
+                "type",
+                "batch"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"from must be before to\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "List batch history rejects equal creation-time bounds",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Recovery",
+      "frozen_at": "2026-11-05T16:00:22.212Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "from": 1789905600000,
+                    "query": "",
+                    "to": 1789992000000
+                  },
+                  "type": "rum_archive_sessions_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/recover/sessions",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"query is required\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Search archived sessions rejects an empty query",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Recovery",
+      "frozen_at": "2026-11-05T16:00:22.317Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "from": 1793289622000,
+                    "limit": 1,
+                    "query": "service:rum18600-fixture",
+                    "to": 1793894422000
+                  },
+                  "type": "rum_archive_sessions_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/recover/sessions",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[],\"meta\":{\"page\":{\"total_count\":0}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Search archived sessions returns canonical data and first-page metadata",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

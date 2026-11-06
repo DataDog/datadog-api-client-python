@@ -10109,6 +10109,48 @@
       "version": "v2"
     },
     {
+      "feature": "RUM Managed Archives",
+      "feature_file": "../../v2/features/rum_managed_archives.feature",
+      "file": "v2/rum-managed-archives/delete-an-unknown-archive-configuration-returns-not-found-response.json",
+      "scenario": "Delete an unknown archive configuration returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Managed Archives",
+      "feature_file": "../../v2/features/rum_managed_archives.feature",
+      "file": "v2/rum-managed-archives/get-an-unknown-archive-configuration-returns-not-found-response.json",
+      "scenario": "Get an unknown archive configuration returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Managed Archives",
+      "feature_file": "../../v2/features/rum_managed_archives.feature",
+      "file": "v2/rum-managed-archives/get-archive-configuration-rejects-an-invalid-application-id.json",
+      "scenario": "Get archive configuration rejects an invalid application ID",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Managed Archives",
+      "feature_file": "../../v2/features/rum_managed_archives.feature",
+      "file": "v2/rum-managed-archives/list-archive-configurations-rejects-an-invalid-page-size.json",
+      "scenario": "List archive configurations rejects an invalid page size",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Managed Archives",
+      "feature_file": "../../v2/features/rum_managed_archives.feature",
+      "file": "v2/rum-managed-archives/list-archive-configurations-returns-ok-response.json",
+      "scenario": "List archive configurations returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Managed Archives",
+      "feature_file": "../../v2/features/rum_managed_archives.feature",
+      "file": "v2/rum-managed-archives/update-archive-configuration-with-unsupported-enabled-retention-returns-bad-request-response.json",
+      "scenario": "Update archive configuration with unsupported enabled retention returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
       "feature": "Rum Metrics",
       "feature_file": "../../v2/features/rum_metrics.feature",
       "file": "v2/rum-metrics/create-a-rum-based-metric-returns-bad-request-response.json",
@@ -10190,6 +10232,90 @@
       "feature_file": "../../v2/features/rum_metrics.feature",
       "file": "v2/rum-metrics/update-a-rum-based-metric-returns-ok-response.json",
       "scenario": "Update a RUM-based metric returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Recovery",
+      "feature_file": "../../v2/features/rum_recovery.feature",
+      "file": "v2/rum-recovery/cancel-an-unknown-batch-recovery-returns-not-found-response.json",
+      "scenario": "Cancel an unknown batch recovery returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Recovery",
+      "feature_file": "../../v2/features/rum_recovery.feature",
+      "file": "v2/rum-recovery/count-recoverable-sessions-accepts-exactly-180-days.json",
+      "scenario": "Count recoverable sessions accepts exactly 180 days",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Recovery",
+      "feature_file": "../../v2/features/rum_recovery.feature",
+      "file": "v2/rum-recovery/count-recoverable-sessions-rejects-a-range-wider-than-180-days.json",
+      "scenario": "Count recoverable sessions rejects a range wider than 180 days",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Recovery",
+      "feature_file": "../../v2/features/rum_recovery.feature",
+      "file": "v2/rum-recovery/create-batch-recovery-rejects-a-range-wider-than-180-days.json",
+      "scenario": "Create batch recovery rejects a range wider than 180 days",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Recovery",
+      "feature_file": "../../v2/features/rum_recovery.feature",
+      "file": "v2/rum-recovery/create-targeted-recovery-rejects-an-empty-sessions-array.json",
+      "scenario": "Create targeted recovery rejects an empty sessions array",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Recovery",
+      "feature_file": "../../v2/features/rum_recovery.feature",
+      "file": "v2/rum-recovery/get-an-unknown-recovery-request-returns-not-found-response.json",
+      "scenario": "Get an unknown recovery request returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Recovery",
+      "feature_file": "../../v2/features/rum_recovery.feature",
+      "file": "v2/rum-recovery/list-batch-history-filters-request-creation-time-independently-of-session-time.json",
+      "scenario": "List batch history filters request creation time independently of session time",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Recovery",
+      "feature_file": "../../v2/features/rum_recovery.feature",
+      "file": "v2/rum-recovery/list-batch-history-rejects-or-between-filter-terms.json",
+      "scenario": "List batch history rejects OR between filter terms",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Recovery",
+      "feature_file": "../../v2/features/rum_recovery.feature",
+      "file": "v2/rum-recovery/list-batch-history-rejects-an-invalid-cursor.json",
+      "scenario": "List batch history rejects an invalid cursor",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Recovery",
+      "feature_file": "../../v2/features/rum_recovery.feature",
+      "file": "v2/rum-recovery/list-batch-history-rejects-equal-creation-time-bounds.json",
+      "scenario": "List batch history rejects equal creation-time bounds",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Recovery",
+      "feature_file": "../../v2/features/rum_recovery.feature",
+      "file": "v2/rum-recovery/search-archived-sessions-rejects-an-empty-query.json",
+      "scenario": "Search archived sessions rejects an empty query",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Recovery",
+      "feature_file": "../../v2/features/rum_recovery.feature",
+      "file": "v2/rum-recovery/search-archived-sessions-returns-canonical-data-and-first-page-metadata.json",
+      "scenario": "Search archived sessions returns canonical data and first-page metadata",
       "version": "v2"
     },
     {

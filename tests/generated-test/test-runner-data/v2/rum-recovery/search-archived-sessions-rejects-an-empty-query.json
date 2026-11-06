@@ -1,0 +1,35 @@
+{
+  "api": "RUMRecovery",
+  "expected_status": 400,
+  "feature": "RUM Recovery",
+  "id": "v2/RUM Recovery/Search archived sessions rejects an empty query",
+  "operation_id": "SearchRUMArchiveSessions",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RumArchiveSessionsSearchRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "from": 1789905600000,
+            "query": "",
+            "to": 1789992000000
+          },
+          "type": "rum_archive_sessions_request"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/rum/recover/sessions"
+  },
+  "scenario": "Search archived sessions rejects an empty query",
+  "schema_version": 1,
+  "version": "v2"
+}

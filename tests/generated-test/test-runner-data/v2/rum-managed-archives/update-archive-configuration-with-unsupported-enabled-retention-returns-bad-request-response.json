@@ -1,0 +1,52 @@
+{
+  "api": "RUMManagedArchives",
+  "expected_status": 400,
+  "feature": "RUM Managed Archives",
+  "id": "v2/RUM Managed Archives/Update archive configuration with unsupported enabled retention returns \"Bad Request\" response",
+  "operation_id": "UpdateRUMArchiveConfig",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RumArchiveConfigUpsertRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "enabled": true,
+            "retention_days": 31
+          },
+          "id": "{{ rum_application.data.id }}",
+          "type": "rum_archive_config"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "app_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "{{ rum_application.data.id }}"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/config/archive/{app_id}"
+  },
+  "scenario": "Update archive configuration with unsupported enabled retention returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

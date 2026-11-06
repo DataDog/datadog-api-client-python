@@ -1,0 +1,35 @@
+{
+  "api": "RUMManagedArchives",
+  "expected_status": 404,
+  "feature": "RUM Managed Archives",
+  "id": "v2/RUM Managed Archives/Delete an unknown archive configuration returns \"Not Found\" response",
+  "operation_id": "DeleteRUMArchiveConfig",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "app_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "{{ uuid }}"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/config/archive/{app_id}"
+  },
+  "scenario": "Delete an unknown archive configuration returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

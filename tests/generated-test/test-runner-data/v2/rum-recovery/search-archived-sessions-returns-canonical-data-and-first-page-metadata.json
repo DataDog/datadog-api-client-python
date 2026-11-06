@@ -1,0 +1,28 @@
+{
+  "api": "RUMRecovery",
+  "expected_status": 200,
+  "feature": "RUM Recovery",
+  "id": "v2/RUM Recovery/Search archived sessions returns canonical data and first-page metadata",
+  "operation_id": "SearchRUMArchiveSessions",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RumArchiveSessionsSearchRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "$openapi_transformer_template": "{\"data\":{\"type\":\"rum_archive_sessions_request\",\"attributes\":{\"query\":\"service:rum18600-fixture\",\"from\":{{ timestamp(\"now - 7d\") }}000,\"to\":{{ timestamp(\"now\") }}000,\"limit\":1}}}"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/rum/recover/sessions"
+  },
+  "scenario": "Search archived sessions returns canonical data and first-page metadata",
+  "schema_version": 1,
+  "version": "v2"
+}

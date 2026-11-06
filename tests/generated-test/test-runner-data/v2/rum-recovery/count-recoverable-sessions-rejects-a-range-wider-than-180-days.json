@@ -1,0 +1,28 @@
+{
+  "api": "RUMRecovery",
+  "expected_status": 400,
+  "feature": "RUM Recovery",
+  "id": "v2/RUM Recovery/Count recoverable sessions rejects a range wider than 180 days",
+  "operation_id": "GetRUMRecoverySessionCount",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RumRecoveryCountRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "$openapi_transformer_template": "{\"data\":{\"type\":\"rum_recovery_count\",\"attributes\":{\"query\":\"service:rum18600-fixture\",\"from\":{{ timestamp(\"now - 181d\") }}000,\"to\":{{ timestamp(\"now\") }}000}}}"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/rum/recover/count"
+  },
+  "scenario": "Count recoverable sessions rejects a range wider than 180 days",
+  "schema_version": 1,
+  "version": "v2"
+}
