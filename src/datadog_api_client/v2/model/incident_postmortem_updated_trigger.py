@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -27,12 +27,14 @@ class IncidentPostmortemUpdatedTrigger(ModelNormal):
         return {
             "execution_limit": (ExecutionLimit,),
             "incident_type": (str,),
+            "incident_types": ([str],),
             "tag_condition": (IncidentCondition,),
         }
 
     attribute_map = {
         "execution_limit": "executionLimit",
         "incident_type": "incidentType",
+        "incident_types": "incidentTypes",
         "tag_condition": "tagCondition",
     }
 
@@ -40,6 +42,7 @@ class IncidentPostmortemUpdatedTrigger(ModelNormal):
         self_,
         execution_limit: Union[ExecutionLimit, UnsetType] = unset,
         incident_type: Union[str, UnsetType] = unset,
+        incident_types: Union[List[str], UnsetType] = unset,
         tag_condition: Union[IncidentCondition, UnsetType] = unset,
         **kwargs,
     ):
@@ -49,8 +52,11 @@ class IncidentPostmortemUpdatedTrigger(ModelNormal):
         :param execution_limit: The maximum number of times to execute a workflow for an incident.
         :type execution_limit: ExecutionLimit, optional
 
-        :param incident_type: The type of incident that triggers the workflow.
+        :param incident_type: The type of incident that triggers the workflow. Deprecated. Use ``incidentTypes`` instead. **Deprecated**.
         :type incident_type: str, optional
+
+        :param incident_types: The types of incidents that trigger the workflow.
+        :type incident_types: [str], optional
 
         :param tag_condition: Conditions that determine which incidents trigger the workflow.
         :type tag_condition: IncidentCondition, optional
@@ -59,6 +65,8 @@ class IncidentPostmortemUpdatedTrigger(ModelNormal):
             kwargs["execution_limit"] = execution_limit
         if incident_type is not unset:
             kwargs["incident_type"] = incident_type
+        if incident_types is not unset:
+            kwargs["incident_types"] = incident_types
         if tag_condition is not unset:
             kwargs["tag_condition"] = tag_condition
         super().__init__(kwargs)

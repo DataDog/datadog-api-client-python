@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -29,6 +29,7 @@ class IncidentSavedTrigger(ModelNormal):
         return {
             "execution_limit": (ExecutionLimit,),
             "incident_type": (str,),
+            "incident_types": ([str],),
             "serial_execution": (SerialExecution,),
             "tag_condition": (IncidentCondition,),
         }
@@ -36,6 +37,7 @@ class IncidentSavedTrigger(ModelNormal):
     attribute_map = {
         "execution_limit": "executionLimit",
         "incident_type": "incidentType",
+        "incident_types": "incidentTypes",
         "serial_execution": "serialExecution",
         "tag_condition": "tagCondition",
     }
@@ -44,6 +46,7 @@ class IncidentSavedTrigger(ModelNormal):
         self_,
         execution_limit: Union[ExecutionLimit, UnsetType] = unset,
         incident_type: Union[str, UnsetType] = unset,
+        incident_types: Union[List[str], UnsetType] = unset,
         serial_execution: Union[SerialExecution, UnsetType] = unset,
         tag_condition: Union[IncidentCondition, UnsetType] = unset,
         **kwargs,
@@ -54,8 +57,11 @@ class IncidentSavedTrigger(ModelNormal):
         :param execution_limit: The maximum number of times to execute a workflow for an incident.
         :type execution_limit: ExecutionLimit, optional
 
-        :param incident_type: The type of incident that triggers the workflow.
+        :param incident_type: The type of incident that triggers the workflow. Deprecated. Use ``incidentTypes`` instead. **Deprecated**.
         :type incident_type: str, optional
+
+        :param incident_types: The types of incidents that trigger the workflow.
+        :type incident_types: [str], optional
 
         :param serial_execution: Whether to execute the workflow serially for an incident.
         :type serial_execution: SerialExecution, optional
@@ -67,6 +73,8 @@ class IncidentSavedTrigger(ModelNormal):
             kwargs["execution_limit"] = execution_limit
         if incident_type is not unset:
             kwargs["incident_type"] = incident_type
+        if incident_types is not unset:
+            kwargs["incident_types"] = incident_types
         if serial_execution is not unset:
             kwargs["serial_execution"] = serial_execution
         if tag_condition is not unset:
