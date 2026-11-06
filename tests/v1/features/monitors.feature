@@ -184,6 +184,17 @@ Feature: Monitors
     And the response "query" is equal to "logs(\"service:foo AND type:error\").index(\"main\").rollup(\"count\").by(\"source\").last(\"5m\") > 2"
 
   @team:ddoghq/monitor-app
+  Scenario: Create a monitor with a metrics formula variable returns "OK" response
+    Given new "CreateMonitor" request
+    And body with value {"name": "{{ unique }}", "type": "query alert", "query": "formula(\"query1 / query2\").rollup(\"avg\").last(\"5m\") > threshold", "message": "some message Notify: @hipchat-channel", "tags": ["test:{{ unique_lower_alnum }}", "env:ci"], "options": {"thresholds": {"critical_query": "formula(\"query1 / query2\").rollup(\"p99\").last(\"1w\").multiplier(1.5)"}, "variables": [{"name": "query1", "data_source": "metrics", "query": "sum:trace.http.request.errors{*}.as_count()"}, {"name": "query2", "data_source": "metrics", "query": "sum:trace.http.request.hits{*}.as_count()"}]}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "options.variables[0].data_source" is equal to "metrics"
+    And the response "options.variables[0].name" is equal to "query1"
+    And the response "options.variables[1].data_source" is equal to "metrics"
+    And the response "options.variables[1].name" is equal to "query2"
+
+  @team:ddoghq/monitor-app
   Scenario: Create a monitor with aggregate augmented query variables returns "OK" response
     Given new "CreateMonitor" request
     And body with value {"name":"{{ unique }}","type":"query alert","query":"formula(\"query1\").rollup(\"sum\").last(\"5m\") > 124","message":"test message","options":{"thresholds":{"critical":124},"variables":[{"data_source":"aggregate_augmented_query","name":"query1","group_by":[{"facet":"org_id"},{"facet":"name"}],"compute":[{"name":"compute_result","aggregation":"max"}],"augment_query":{"name":"filter_query","data_source":"reference_table","table_name":"test_table","columns":[{"name":"org_id"},{"name":"name"}]},"base_query":{"data_source":"metrics","name":"query1","query":"avg:dd{*} by {org_id}.as_count()"},"join_condition":{"augment_attribute":"org_id","base_attribute":"org_id","join_type":"inner"}}]}}

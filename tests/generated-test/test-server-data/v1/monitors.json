@@ -1358,6 +1358,86 @@
     },
     {
       "feature": "Monitors",
+      "frozen_at": "2026-11-04T18:40:04.101Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "message": "some message Notify: @hipchat-channel",
+                "name": "Test-Create_a_monitor_with_a_metrics_formula_variable_returns_OK_response-1793817604",
+                "options": {
+                  "thresholds": {
+                    "critical_query": "formula(\"query1 / query2\").rollup(\"p99\").last(\"1w\").multiplier(1.5)"
+                  },
+                  "variables": [
+                    {
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "sum:trace.http.request.errors{*}.as_count()"
+                    },
+                    {
+                      "data_source": "metrics",
+                      "name": "query2",
+                      "query": "sum:trace.http.request.hits{*}.as_count()"
+                    }
+                  ]
+                },
+                "query": "formula(\"query1 / query2\").rollup(\"avg\").last(\"5m\") > threshold",
+                "tags": [
+                  "test:testcreateamonitorwithametricsformulavariablereturnsokresponse1793817604",
+                  "env:ci"
+                ],
+                "type": "query alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":340860437,\"org_id\":321813,\"type\":\"metric alert\",\"name\":\"Test-Create_a_monitor_with_a_metrics_formula_variable_returns_OK_response-1793817604\",\"message\":\"some message Notify: @hipchat-channel\",\"tags\":[\"test:testcreateamonitorwithametricsformulavariablereturnsokresponse1793817604\",\"env:ci\"],\"query\":\"formula(\\\"query1 / query2\\\").rollup(\\\"avg\\\").last(\\\"5m\\\") > threshold\",\"options\":{\"thresholds\":{\"critical_query\":\"formula(\\\"query1 / query2\\\").rollup(\\\"p99\\\").last(\\\"1w\\\").multiplier(1.5)\"},\"variables\":[{\"data_source\":\"metrics\",\"name\":\"query1\",\"query\":\"sum:trace.http.request.errors{*}.as_count()\"},{\"data_source\":\"metrics\",\"name\":\"query2\",\"query\":\"sum:trace.http.request.hits{*}.as_count()\"}],\"notify_no_data\":false,\"notify_audit\":false,\"new_host_delay\":300,\"include_tags\":true,\"silenced\":{}},\"multi\":false,\"created_at\":1793817604000,\"created\":\"2026-11-04T18:40:04.341345+00:00\",\"modified\":\"2026-11-04T18:40:04.341345+00:00\",\"deleted\":null,\"priority\":null,\"restricted_roles\":null,\"restriction_policy\":null,\"draft_status\":\"published\",\"assets\":[],\"overall_state_modified\":null,\"overall_state\":\"No Data\",\"creator\":{\"name\":\"Jasmine Zhang\",\"handle\":\"jasmine.zhang@datadoghq.com\",\"email\":\"jasmine.zhang@datadoghq.com\",\"id\":72175821}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/monitor/340860437",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_monitor_id\":340860437}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a monitor with a metrics formula variable returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
       "frozen_at": "2026-03-04T20:59:52.837Z",
       "interactions": [
         {

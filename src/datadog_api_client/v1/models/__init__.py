@@ -602,6 +602,12 @@ from datadog_api_client.v1.model.monitor_formula_and_function_event_query_group_
 from datadog_api_client.v1.model.monitor_formula_and_function_events_data_source import (
     MonitorFormulaAndFunctionEventsDataSource,
 )
+from datadog_api_client.v1.model.monitor_formula_and_function_metric_query_data_source import (
+    MonitorFormulaAndFunctionMetricQueryDataSource,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_metric_query_definition import (
+    MonitorFormulaAndFunctionMetricQueryDefinition,
+)
 from datadog_api_client.v1.model.monitor_formula_and_function_metrics_aggregator import (
     MonitorFormulaAndFunctionMetricsAggregator,
 )
@@ -2011,6 +2017,8 @@ __all__ = [
     "MonitorFormulaAndFunctionEventQueryGroupBy",
     "MonitorFormulaAndFunctionEventQueryGroupBySort",
     "MonitorFormulaAndFunctionEventsDataSource",
+    "MonitorFormulaAndFunctionMetricQueryDataSource",
+    "MonitorFormulaAndFunctionMetricQueryDefinition",
     "MonitorFormulaAndFunctionMetricsAggregator",
     "MonitorFormulaAndFunctionMetricsDataSource",
     "MonitorFormulaAndFunctionMetricsQueryDefinition",

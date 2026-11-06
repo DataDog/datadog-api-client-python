@@ -114,6 +114,9 @@ class MonitorFormulaAndFunctionQueryDefinition(ModelComposed):
         from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_filtered_query_definition import (
             MonitorFormulaAndFunctionAggregateFilteredQueryDefinition,
         )
+        from datadog_api_client.v1.model.monitor_formula_and_function_metric_query_definition import (
+            MonitorFormulaAndFunctionMetricQueryDefinition,
+        )
 
         return {
             "oneOf": [
@@ -123,5 +126,6 @@ class MonitorFormulaAndFunctionQueryDefinition(ModelComposed):
                 MonitorFormulaAndFunctionDataJobsQueryDefinition,
                 MonitorFormulaAndFunctionAggregateAugmentedQueryDefinition,
                 MonitorFormulaAndFunctionAggregateFilteredQueryDefinition,
+                MonitorFormulaAndFunctionMetricQueryDefinition,
             ],
         }

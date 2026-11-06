@@ -16,16 +16,14 @@ class MonitorFormulaAndFunctionCostDataSource(ModelSimple):
     """
     Data source for cost queries.
 
-    :param value: Must be one of ["metrics", "cloud_cost", "datadog_usage"].
+    :param value: Must be one of ["cloud_cost", "datadog_usage"].
     :type value: str
     """
 
     allowed_values = {
-        "metrics",
         "cloud_cost",
         "datadog_usage",
     }
-    METRICS: ClassVar["MonitorFormulaAndFunctionCostDataSource"]
     CLOUD_COST: ClassVar["MonitorFormulaAndFunctionCostDataSource"]
     DATADOG_USAGE: ClassVar["MonitorFormulaAndFunctionCostDataSource"]
 
@@ -36,6 +34,5 @@ class MonitorFormulaAndFunctionCostDataSource(ModelSimple):
         }
 
 
-MonitorFormulaAndFunctionCostDataSource.METRICS = MonitorFormulaAndFunctionCostDataSource("metrics")
 MonitorFormulaAndFunctionCostDataSource.CLOUD_COST = MonitorFormulaAndFunctionCostDataSource("cloud_cost")
 MonitorFormulaAndFunctionCostDataSource.DATADOG_USAGE = MonitorFormulaAndFunctionCostDataSource("datadog_usage")
