@@ -34,9 +34,9 @@ class CreatePageResponseData(ModelNormal):
 
     def __init__(self_, type: CreatePageResponseDataType, id: Union[str, UnsetType] = unset, **kwargs):
         """
-        The information returned after successfully creating a page.
+        The information returned after successfully creating a Page.
 
-        :param id: The unique ID of the created page.
+        :param id: The unique ID of the created Page.
         :type id: str, optional
 
         :param type: The type of resource used when creating an On-Call Page.
