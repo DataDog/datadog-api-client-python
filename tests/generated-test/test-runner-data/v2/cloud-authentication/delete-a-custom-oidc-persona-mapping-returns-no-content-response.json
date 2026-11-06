@@ -1,0 +1,35 @@
+{
+  "api": "CloudAuthentication",
+  "expected_status": 204,
+  "feature": "Cloud Authentication",
+  "id": "v2/Cloud Authentication/Delete a Custom OIDC persona mapping returns \"No Content\" response",
+  "operation_id": "DeleteOIDCCloudAuthPersonaMapping",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "persona_mapping_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "oidc_cloud_auth_persona_mapping.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/wif/oidc/persona_mapping/{persona_mapping_id}"
+  },
+  "scenario": "Delete a Custom OIDC persona mapping returns \"No Content\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

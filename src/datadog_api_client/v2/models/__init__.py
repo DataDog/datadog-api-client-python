@@ -7254,6 +7254,39 @@ from datadog_api_client.v2.model.oci_config import OCIConfig
 from datadog_api_client.v2.model.oci_config_attributes import OCIConfigAttributes
 from datadog_api_client.v2.model.oci_config_type import OCIConfigType
 from datadog_api_client.v2.model.oci_configs_response import OCIConfigsResponse
+from datadog_api_client.v2.model.oidc_cloud_auth_claim_match_mode import OIDCCloudAuthClaimMatchMode
+from datadog_api_client.v2.model.oidc_cloud_auth_claim_matcher import OIDCCloudAuthClaimMatcher
+from datadog_api_client.v2.model.oidc_cloud_auth_claim_matcher_create import OIDCCloudAuthClaimMatcherCreate
+from datadog_api_client.v2.model.oidc_cloud_auth_discovery_type import OIDCCloudAuthDiscoveryType
+from datadog_api_client.v2.model.oidc_cloud_auth_org_uuid_source import OIDCCloudAuthOrgUUIDSource
+from datadog_api_client.v2.model.oidc_cloud_auth_persona_mapping_attributes_response import (
+    OIDCCloudAuthPersonaMappingAttributesResponse,
+)
+from datadog_api_client.v2.model.oidc_cloud_auth_persona_mapping_create_attributes import (
+    OIDCCloudAuthPersonaMappingCreateAttributes,
+)
+from datadog_api_client.v2.model.oidc_cloud_auth_persona_mapping_create_data import (
+    OIDCCloudAuthPersonaMappingCreateData,
+)
+from datadog_api_client.v2.model.oidc_cloud_auth_persona_mapping_create_request import (
+    OIDCCloudAuthPersonaMappingCreateRequest,
+)
+from datadog_api_client.v2.model.oidc_cloud_auth_persona_mapping_data_response import (
+    OIDCCloudAuthPersonaMappingDataResponse,
+)
+from datadog_api_client.v2.model.oidc_cloud_auth_persona_mapping_response import OIDCCloudAuthPersonaMappingResponse
+from datadog_api_client.v2.model.oidc_cloud_auth_persona_mapping_type import OIDCCloudAuthPersonaMappingType
+from datadog_api_client.v2.model.oidc_cloud_auth_persona_mappings_response import OIDCCloudAuthPersonaMappingsResponse
+from datadog_api_client.v2.model.oidc_cloud_auth_provider_attributes_response import (
+    OIDCCloudAuthProviderAttributesResponse,
+)
+from datadog_api_client.v2.model.oidc_cloud_auth_provider_create_attributes import OIDCCloudAuthProviderCreateAttributes
+from datadog_api_client.v2.model.oidc_cloud_auth_provider_create_data import OIDCCloudAuthProviderCreateData
+from datadog_api_client.v2.model.oidc_cloud_auth_provider_create_request import OIDCCloudAuthProviderCreateRequest
+from datadog_api_client.v2.model.oidc_cloud_auth_provider_data_response import OIDCCloudAuthProviderDataResponse
+from datadog_api_client.v2.model.oidc_cloud_auth_provider_response import OIDCCloudAuthProviderResponse
+from datadog_api_client.v2.model.oidc_cloud_auth_provider_type import OIDCCloudAuthProviderType
+from datadog_api_client.v2.model.oidc_cloud_auth_providers_response import OIDCCloudAuthProvidersResponse
 from datadog_api_client.v2.model.oidc_discovery_document import OIDCDiscoveryDocument
 from datadog_api_client.v2.model.observability_pipeline import ObservabilityPipeline
 from datadog_api_client.v2.model.observability_pipeline_add_env_vars_processor import (
@@ -18856,6 +18889,27 @@ __all__ = [
     "OCIConfigAttributes",
     "OCIConfigType",
     "OCIConfigsResponse",
+    "OIDCCloudAuthClaimMatchMode",
+    "OIDCCloudAuthClaimMatcher",
+    "OIDCCloudAuthClaimMatcherCreate",
+    "OIDCCloudAuthDiscoveryType",
+    "OIDCCloudAuthOrgUUIDSource",
+    "OIDCCloudAuthPersonaMappingAttributesResponse",
+    "OIDCCloudAuthPersonaMappingCreateAttributes",
+    "OIDCCloudAuthPersonaMappingCreateData",
+    "OIDCCloudAuthPersonaMappingCreateRequest",
+    "OIDCCloudAuthPersonaMappingDataResponse",
+    "OIDCCloudAuthPersonaMappingResponse",
+    "OIDCCloudAuthPersonaMappingType",
+    "OIDCCloudAuthPersonaMappingsResponse",
+    "OIDCCloudAuthProviderAttributesResponse",
+    "OIDCCloudAuthProviderCreateAttributes",
+    "OIDCCloudAuthProviderCreateData",
+    "OIDCCloudAuthProviderCreateRequest",
+    "OIDCCloudAuthProviderDataResponse",
+    "OIDCCloudAuthProviderResponse",
+    "OIDCCloudAuthProviderType",
+    "OIDCCloudAuthProvidersResponse",
     "OIDCDiscoveryDocument",
     "ObservabilityPipeline",
     "ObservabilityPipelineAddEnvVarsProcessor",

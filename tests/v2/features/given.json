@@ -1894,6 +1894,18 @@
   {
     "parameters": [
       {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"users\",\n    \"attributes\": {\n      \"email\": \"{{ unique }}@datadoghq.com\",\n      \"service_account\": true\n    },\n    \"relationships\": {\n      \"roles\": {\"data\": [{\"type\": \"roles\", \"id\": \"{{ role.data.id }}\"}]}\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"service_account_user_with_role\" in the system",
+    "key": "service_account_user_with_role",
+    "tag": "Service Accounts",
+    "operationId": "CreateServiceAccount"
+  },
+  {
+    "parameters": [
+      {
         "name": "service_account_id",
         "value": "\"{{ service_account_user.data.id }}\""
       },
@@ -2208,6 +2220,30 @@
     "key": "aws_cloud_auth_intake_mapping",
     "tag": "Cloud Authentication",
     "operationId": "CreateAWSCloudAuthIntakeMapping"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\"data\": {\"type\": \"custom_oidc_identity_mapping\", \"attributes\": {\"provider_id\": \"{{ oidc_cloud_auth_provider.data.id }}\", \"account_uuid\": \"{{ service_account_user_with_role.data.id }}\", \"claim_matchers\": [{\"claim\": \"sub\", \"mode\": \"exact\", \"values\": [\"system:serviceaccount:controllers:example-controller\"]}]}}}"
+      }
+    ],
+    "step": "there is a valid \"oidc_cloud_auth_persona_mapping\" in the system",
+    "key": "oidc_cloud_auth_persona_mapping",
+    "tag": "Cloud Authentication",
+    "operationId": "CreateOIDCCloudAuthPersonaMapping"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\"data\": {\"type\": \"custom_oidc_provider_config\", \"attributes\": {\"provider_name\": \"oidc-{{ unique_hash }}\", \"issuer_url\": \"https://oidc-{{ unique_hash }}.example.com\", \"discovery_type\": \"oidc_discovery\", \"audiences\": [\"sdk-test\"]}}}"
+      }
+    ],
+    "step": "there is a valid \"oidc_cloud_auth_provider\" in the system",
+    "key": "oidc_cloud_auth_provider",
+    "tag": "Cloud Authentication",
+    "operationId": "CreateOIDCCloudAuthProvider"
   },
   {
     "parameters": [
