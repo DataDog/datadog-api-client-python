@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Dict, Union, TYPE_CHECKING
+from typing import Dict, List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -18,6 +18,7 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.ai_gateway_rate_limit_mode import AiGatewayRateLimitMode
+    from datadog_api_client.v2.model.ai_gateway_rate_limit_selector_entry import AiGatewayRateLimitSelectorEntry
 
 
 class AiGatewayRateLimitAttributes(ModelNormal):
@@ -39,6 +40,7 @@ class AiGatewayRateLimitAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.ai_gateway_rate_limit_mode import AiGatewayRateLimitMode
+        from datadog_api_client.v2.model.ai_gateway_rate_limit_selector_entry import AiGatewayRateLimitSelectorEntry
 
         return {
             "created_at": (datetime,),
@@ -52,6 +54,7 @@ class AiGatewayRateLimitAttributes(ModelNormal):
             "requests_per_minute": (int, none_type),
             "revision": (int,),
             "scope_restricted": (bool,),
+            "selector": ([AiGatewayRateLimitSelectorEntry],),
             "tags": ({str: (str,)},),
             "team_id": (UUID, none_type),
             "updated_at": (datetime,),
@@ -71,6 +74,7 @@ class AiGatewayRateLimitAttributes(ModelNormal):
         "requests_per_minute": "requests_per_minute",
         "revision": "revision",
         "scope_restricted": "scope_restricted",
+        "selector": "selector",
         "tags": "tags",
         "team_id": "team_id",
         "updated_at": "updated_at",
@@ -94,6 +98,7 @@ class AiGatewayRateLimitAttributes(ModelNormal):
         monitor_id: Union[int, none_type, UnsetType] = unset,
         output_tokens_per_minute: Union[int, none_type, UnsetType] = unset,
         requests_per_minute: Union[int, none_type, UnsetType] = unset,
+        selector: Union[List[AiGatewayRateLimitSelectorEntry], none_type, UnsetType] = unset,
         team_id: Union[UUID, none_type, UnsetType] = unset,
         user_id: Union[UUID, none_type, UnsetType] = unset,
         **kwargs,
@@ -110,7 +115,7 @@ class AiGatewayRateLimitAttributes(ModelNormal):
         :param enabled: Whether this rate limit is active.
         :type enabled: bool
 
-        :param input_tokens_per_minute: Maximum input tokens per rolling minute shared by all matching traffic. Null when this rule does not limit input tokens.
+        :param input_tokens_per_minute: Maximum input tokens per rolling minute shared by all matching traffic, or per counter for a template rate limit. Null when this rule does not limit input tokens.
         :type input_tokens_per_minute: int, none_type, optional
 
         :param mode: Action taken when request rate exceeds the limit.
@@ -122,10 +127,10 @@ class AiGatewayRateLimitAttributes(ModelNormal):
         :param name: Rate limit name.
         :type name: str
 
-        :param output_tokens_per_minute: Maximum output tokens per rolling minute shared by all matching traffic. Null when this rule does not limit output tokens.
+        :param output_tokens_per_minute: Maximum output tokens per rolling minute shared by all matching traffic, or per counter for a template rate limit. Null when this rule does not limit output tokens.
         :type output_tokens_per_minute: int, none_type, optional
 
-        :param requests_per_minute: Maximum requests per rolling minute shared by all matching traffic. Null when this rule does not limit requests.
+        :param requests_per_minute: Maximum requests per rolling minute shared by all matching traffic, or per counter for a template rate limit. Null when this rule does not limit requests.
         :type requests_per_minute: int, none_type, optional
 
         :param revision: Increases on every change to the definition.
@@ -133,6 +138,9 @@ class AiGatewayRateLimitAttributes(ModelNormal):
 
         :param scope_restricted: Whether provider or model scope metadata was withheld. Omit unchanged scope fields on an unrelated update to preserve their saved values.
         :type scope_restricted: bool
+
+        :param selector: Dimension rules for a template rate limit, which gives each matched user, Team, or value its own allowance with the rule's limits. Can't be combined with user_id, team_id, or tags, and can't be changed after creation. Omit for a rule with one shared allowance.
+        :type selector: [AiGatewayRateLimitSelectorEntry], none_type, optional
 
         :param tags: Optional scope tags, such as provider, model, ml_app, or custom dimensions. A request matches when it has all of these tags.
         :type tags: {str: (str,)}
@@ -157,6 +165,8 @@ class AiGatewayRateLimitAttributes(ModelNormal):
             kwargs["output_tokens_per_minute"] = output_tokens_per_minute
         if requests_per_minute is not unset:
             kwargs["requests_per_minute"] = requests_per_minute
+        if selector is not unset:
+            kwargs["selector"] = selector
         if team_id is not unset:
             kwargs["team_id"] = team_id
         if user_id is not unset:
