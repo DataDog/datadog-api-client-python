@@ -184,22 +184,6 @@ class CSMThreatsApi:
             api_client=api_client,
         )
 
-        self._download_cloud_workload_policy_file_endpoint = _Endpoint(
-            settings={
-                "response_type": (file_type,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/security/cloud_workload/policy/download",
-                "operation_id": "download_cloud_workload_policy_file",
-                "http_method": "GET",
-                "version": "v2",
-            },
-            params_map={},
-            headers_map={
-                "accept": ["application/yaml", "application/json"],
-            },
-            api_client=api_client,
-        )
-
         self._download_csm_threats_policy_endpoint = _Endpoint(
             settings={
                 "response_type": (file_type,),
@@ -547,22 +531,6 @@ class CSMThreatsApi:
             kwargs["policy_id"] = policy_id
 
         return self._delete_csm_threats_agent_rule_endpoint.call_with_http_info(**kwargs)
-
-    def download_cloud_workload_policy_file(
-        self,
-    ) -> file_type:
-        """Download the Workload Protection policy (US1-FED).
-
-        The download endpoint generates a Workload Protection policy file from your currently active
-        Workload Protection agent rules, and downloads them as a ``.policy`` file. This file can then be deployed to
-        your agents to update the policy running in your environment.
-
-        **Note** : This endpoint should only be used for the Government (US1-FED) site.
-
-        :rtype: file_type
-        """
-        kwargs: Dict[str, Any] = {}
-        return self._download_cloud_workload_policy_file_endpoint.call_with_http_info(**kwargs)
 
     def download_csm_threats_policy(
         self,
