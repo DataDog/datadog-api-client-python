@@ -466,6 +466,16 @@
       "version": "v2"
     },
     {
+      "feature": "RUM Managed Archives",
+      "file": "v2/rum-managed-archives.json",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Recovery",
+      "file": "v2/rum-recovery.json",
+      "version": "v2"
+    },
+    {
       "feature": "RUM Remote Config",
       "file": "v2/rum-remote-config.json",
       "version": "v2"

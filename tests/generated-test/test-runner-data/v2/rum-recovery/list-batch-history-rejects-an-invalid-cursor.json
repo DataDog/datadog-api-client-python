@@ -1,0 +1,51 @@
+{
+  "api": "RUMRecovery",
+  "expected_status": 400,
+  "feature": "RUM Recovery",
+  "id": "v2/RUM Recovery/List batch history rejects an invalid cursor",
+  "operation_id": "ListRUMRecoveryBatchRequests",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "type",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": "RumRecoveryBatchRequestType",
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "batch"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "cursor",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "invalid"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/recover/requests"
+  },
+  "scenario": "List batch history rejects an invalid cursor",
+  "schema_version": 1,
+  "version": "v2"
+}

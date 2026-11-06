@@ -8377,6 +8377,30 @@
       "type": "idempotent"
     }
   },
+  "ListRUMArchiveConfigs": {
+    "tag": "RUM Managed Archives",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "DeleteRUMArchiveConfig": {
+    "tag": "RUM Managed Archives",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetRUMArchiveConfig": {
+    "tag": "RUM Managed Archives",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateRUMArchiveConfig": {
+    "tag": "RUM Managed Archives",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListRumMetrics": {
     "tag": "Rum Metrics",
     "undo": {
@@ -8562,6 +8586,42 @@
   },
   "QueryAggregatedWaterfall": {
     "tag": "RUM Insights",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetRUMRecoverySessionCount": {
+    "tag": "RUM Recovery",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListRUMRecoveryBatchRequests": {
+    "tag": "RUM Recovery",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateRUMRecoveryRequest": {
+    "tag": "RUM Recovery",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "GetRUMRecoveryRequest": {
+    "tag": "RUM Recovery",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateRUMRecoveryBatchRequest": {
+    "tag": "RUM Recovery",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "SearchRUMArchiveSessions": {
+    "tag": "RUM Recovery",
     "undo": {
       "type": "safe"
     }

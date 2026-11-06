@@ -1,0 +1,35 @@
+{
+  "api": "RUMRecovery",
+  "expected_status": 404,
+  "feature": "RUM Recovery",
+  "id": "v2/RUM Recovery/Get an unknown recovery request returns \"Not Found\" response",
+  "operation_id": "GetRUMRecoveryRequest",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "request_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "{{ uuid }}"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/recover/requests/{request_id}"
+  },
+  "scenario": "Get an unknown recovery request returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

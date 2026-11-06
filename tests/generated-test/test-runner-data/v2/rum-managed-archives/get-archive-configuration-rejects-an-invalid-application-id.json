@@ -1,0 +1,35 @@
+{
+  "api": "RUMManagedArchives",
+  "expected_status": 400,
+  "feature": "RUM Managed Archives",
+  "id": "v2/RUM Managed Archives/Get archive configuration rejects an invalid application ID",
+  "operation_id": "GetRUMArchiveConfig",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "app_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "invalid"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/config/archive/{app_id}"
+  },
+  "scenario": "Get archive configuration rejects an invalid application ID",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -9985,6 +9985,26 @@ from datadog_api_client.v2.model.ruleset_status_resp_array import RulesetStatusR
 from datadog_api_client.v2.model.ruleset_status_resp_data import RulesetStatusRespData
 from datadog_api_client.v2.model.ruleset_status_resp_data_attributes import RulesetStatusRespDataAttributes
 from datadog_api_client.v2.model.ruleset_status_resp_data_type import RulesetStatusRespDataType
+from datadog_api_client.v2.model.rum_archive_config import RumArchiveConfig
+from datadog_api_client.v2.model.rum_archive_config_attributes import RumArchiveConfigAttributes
+from datadog_api_client.v2.model.rum_archive_config_list_response import RumArchiveConfigListResponse
+from datadog_api_client.v2.model.rum_archive_config_meta import RumArchiveConfigMeta
+from datadog_api_client.v2.model.rum_archive_config_page import RumArchiveConfigPage
+from datadog_api_client.v2.model.rum_archive_config_response import RumArchiveConfigResponse
+from datadog_api_client.v2.model.rum_archive_config_type import RumArchiveConfigType
+from datadog_api_client.v2.model.rum_archive_config_upsert_attributes import RumArchiveConfigUpsertAttributes
+from datadog_api_client.v2.model.rum_archive_config_upsert_data import RumArchiveConfigUpsertData
+from datadog_api_client.v2.model.rum_archive_config_upsert_request import RumArchiveConfigUpsertRequest
+from datadog_api_client.v2.model.rum_archive_session import RumArchiveSession
+from datadog_api_client.v2.model.rum_archive_session_attributes import RumArchiveSessionAttributes
+from datadog_api_client.v2.model.rum_archive_session_recovery_status import RumArchiveSessionRecoveryStatus
+from datadog_api_client.v2.model.rum_archive_session_type import RumArchiveSessionType
+from datadog_api_client.v2.model.rum_archive_sessions_meta import RumArchiveSessionsMeta
+from datadog_api_client.v2.model.rum_archive_sessions_page import RumArchiveSessionsPage
+from datadog_api_client.v2.model.rum_archive_sessions_response import RumArchiveSessionsResponse
+from datadog_api_client.v2.model.rum_archive_sessions_search_attributes import RumArchiveSessionsSearchAttributes
+from datadog_api_client.v2.model.rum_archive_sessions_search_data import RumArchiveSessionsSearchData
+from datadog_api_client.v2.model.rum_archive_sessions_search_request import RumArchiveSessionsSearchRequest
 from datadog_api_client.v2.model.rum_config_attributes import RumConfigAttributes
 from datadog_api_client.v2.model.rum_config_create_attributes import RumConfigCreateAttributes
 from datadog_api_client.v2.model.rum_config_create_data import RumConfigCreateData
@@ -10011,6 +10031,7 @@ from datadog_api_client.v2.model.rum_exclusion_filter_update_attributes import R
 from datadog_api_client.v2.model.rum_exclusion_filter_update_data import RumExclusionFilterUpdateData
 from datadog_api_client.v2.model.rum_exclusion_filter_update_request import RumExclusionFilterUpdateRequest
 from datadog_api_client.v2.model.rum_exclusion_filters_response import RumExclusionFiltersResponse
+from datadog_api_client.v2.model.rum_managed_archive_error_response import RumManagedArchiveErrorResponse
 from datadog_api_client.v2.model.rum_metric_compute import RumMetricCompute
 from datadog_api_client.v2.model.rum_metric_compute_aggregation_type import RumMetricComputeAggregationType
 from datadog_api_client.v2.model.rum_metric_create_attributes import RumMetricCreateAttributes
@@ -10050,6 +10071,44 @@ from datadog_api_client.v2.model.rum_permanent_retention_filter_update_request i
     RumPermanentRetentionFilterUpdateRequest,
 )
 from datadog_api_client.v2.model.rum_permanent_retention_filters_response import RumPermanentRetentionFiltersResponse
+from datadog_api_client.v2.model.rum_recovered_session import RumRecoveredSession
+from datadog_api_client.v2.model.rum_recovery_batch_create_attributes import RumRecoveryBatchCreateAttributes
+from datadog_api_client.v2.model.rum_recovery_batch_list_attributes import RumRecoveryBatchListAttributes
+from datadog_api_client.v2.model.rum_recovery_batch_list_data import RumRecoveryBatchListData
+from datadog_api_client.v2.model.rum_recovery_batch_list_data_type import RumRecoveryBatchListDataType
+from datadog_api_client.v2.model.rum_recovery_batch_list_meta import RumRecoveryBatchListMeta
+from datadog_api_client.v2.model.rum_recovery_batch_list_response import RumRecoveryBatchListResponse
+from datadog_api_client.v2.model.rum_recovery_batch_request_type import RumRecoveryBatchRequestType
+from datadog_api_client.v2.model.rum_recovery_cancel_attributes import RumRecoveryCancelAttributes
+from datadog_api_client.v2.model.rum_recovery_cancel_data import RumRecoveryCancelData
+from datadog_api_client.v2.model.rum_recovery_cancel_request import RumRecoveryCancelRequest
+from datadog_api_client.v2.model.rum_recovery_cancel_response import RumRecoveryCancelResponse
+from datadog_api_client.v2.model.rum_recovery_cancel_response_attributes import RumRecoveryCancelResponseAttributes
+from datadog_api_client.v2.model.rum_recovery_cancel_response_data import RumRecoveryCancelResponseData
+from datadog_api_client.v2.model.rum_recovery_cancel_status import RumRecoveryCancelStatus
+from datadog_api_client.v2.model.rum_recovery_count_attributes import RumRecoveryCountAttributes
+from datadog_api_client.v2.model.rum_recovery_count_request import RumRecoveryCountRequest
+from datadog_api_client.v2.model.rum_recovery_count_request_data import RumRecoveryCountRequestData
+from datadog_api_client.v2.model.rum_recovery_count_response import RumRecoveryCountResponse
+from datadog_api_client.v2.model.rum_recovery_count_response_attributes import RumRecoveryCountResponseAttributes
+from datadog_api_client.v2.model.rum_recovery_count_response_data import RumRecoveryCountResponseData
+from datadog_api_client.v2.model.rum_recovery_count_response_data_type import RumRecoveryCountResponseDataType
+from datadog_api_client.v2.model.rum_recovery_create_attributes import RumRecoveryCreateAttributes
+from datadog_api_client.v2.model.rum_recovery_create_data import RumRecoveryCreateData
+from datadog_api_client.v2.model.rum_recovery_create_request import RumRecoveryCreateRequest
+from datadog_api_client.v2.model.rum_recovery_create_response import RumRecoveryCreateResponse
+from datadog_api_client.v2.model.rum_recovery_create_response_attributes import RumRecoveryCreateResponseAttributes
+from datadog_api_client.v2.model.rum_recovery_create_response_data import RumRecoveryCreateResponseData
+from datadog_api_client.v2.model.rum_recovery_discovery_status import RumRecoveryDiscoveryStatus
+from datadog_api_client.v2.model.rum_recovery_request_attributes import RumRecoveryRequestAttributes
+from datadog_api_client.v2.model.rum_recovery_request_data import RumRecoveryRequestData
+from datadog_api_client.v2.model.rum_recovery_request_response import RumRecoveryRequestResponse
+from datadog_api_client.v2.model.rum_recovery_request_status import RumRecoveryRequestStatus
+from datadog_api_client.v2.model.rum_recovery_request_type import RumRecoveryRequestType
+from datadog_api_client.v2.model.rum_recovery_session_input import RumRecoverySessionInput
+from datadog_api_client.v2.model.rum_recovery_session_status import RumRecoverySessionStatus
+from datadog_api_client.v2.model.rum_recovery_sessions_create_attributes import RumRecoverySessionsCreateAttributes
+from datadog_api_client.v2.model.rum_recovery_sessions_request_type import RumRecoverySessionsRequestType
 from datadog_api_client.v2.model.rum_retention_filter_attributes import RumRetentionFilterAttributes
 from datadog_api_client.v2.model.rum_retention_filter_create_attributes import RumRetentionFilterCreateAttributes
 from datadog_api_client.v2.model.rum_retention_filter_create_data import RumRetentionFilterCreateData
@@ -20474,6 +20533,26 @@ __all__ = [
     "RulesetStatusRespData",
     "RulesetStatusRespDataAttributes",
     "RulesetStatusRespDataType",
+    "RumArchiveConfig",
+    "RumArchiveConfigAttributes",
+    "RumArchiveConfigListResponse",
+    "RumArchiveConfigMeta",
+    "RumArchiveConfigPage",
+    "RumArchiveConfigResponse",
+    "RumArchiveConfigType",
+    "RumArchiveConfigUpsertAttributes",
+    "RumArchiveConfigUpsertData",
+    "RumArchiveConfigUpsertRequest",
+    "RumArchiveSession",
+    "RumArchiveSessionAttributes",
+    "RumArchiveSessionRecoveryStatus",
+    "RumArchiveSessionType",
+    "RumArchiveSessionsMeta",
+    "RumArchiveSessionsPage",
+    "RumArchiveSessionsResponse",
+    "RumArchiveSessionsSearchAttributes",
+    "RumArchiveSessionsSearchData",
+    "RumArchiveSessionsSearchRequest",
     "RumConfigAttributes",
     "RumConfigCreateAttributes",
     "RumConfigCreateData",
@@ -20500,6 +20579,7 @@ __all__ = [
     "RumExclusionFilterUpdateData",
     "RumExclusionFilterUpdateRequest",
     "RumExclusionFiltersResponse",
+    "RumManagedArchiveErrorResponse",
     "RumMetricCompute",
     "RumMetricComputeAggregationType",
     "RumMetricCreateAttributes",
@@ -20533,6 +20613,44 @@ __all__ = [
     "RumPermanentRetentionFilterUpdateData",
     "RumPermanentRetentionFilterUpdateRequest",
     "RumPermanentRetentionFiltersResponse",
+    "RumRecoveredSession",
+    "RumRecoveryBatchCreateAttributes",
+    "RumRecoveryBatchListAttributes",
+    "RumRecoveryBatchListData",
+    "RumRecoveryBatchListDataType",
+    "RumRecoveryBatchListMeta",
+    "RumRecoveryBatchListResponse",
+    "RumRecoveryBatchRequestType",
+    "RumRecoveryCancelAttributes",
+    "RumRecoveryCancelData",
+    "RumRecoveryCancelRequest",
+    "RumRecoveryCancelResponse",
+    "RumRecoveryCancelResponseAttributes",
+    "RumRecoveryCancelResponseData",
+    "RumRecoveryCancelStatus",
+    "RumRecoveryCountAttributes",
+    "RumRecoveryCountRequest",
+    "RumRecoveryCountRequestData",
+    "RumRecoveryCountResponse",
+    "RumRecoveryCountResponseAttributes",
+    "RumRecoveryCountResponseData",
+    "RumRecoveryCountResponseDataType",
+    "RumRecoveryCreateAttributes",
+    "RumRecoveryCreateData",
+    "RumRecoveryCreateRequest",
+    "RumRecoveryCreateResponse",
+    "RumRecoveryCreateResponseAttributes",
+    "RumRecoveryCreateResponseData",
+    "RumRecoveryDiscoveryStatus",
+    "RumRecoveryRequestAttributes",
+    "RumRecoveryRequestData",
+    "RumRecoveryRequestResponse",
+    "RumRecoveryRequestStatus",
+    "RumRecoveryRequestType",
+    "RumRecoverySessionInput",
+    "RumRecoverySessionStatus",
+    "RumRecoverySessionsCreateAttributes",
+    "RumRecoverySessionsRequestType",
     "RumRetentionFilterAttributes",
     "RumRetentionFilterCreateAttributes",
     "RumRetentionFilterCreateData",

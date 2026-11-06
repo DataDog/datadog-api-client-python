@@ -1,0 +1,33 @@
+{
+  "api": "RUMRecovery",
+  "expected_status": 400,
+  "feature": "RUM Recovery",
+  "id": "v2/RUM Recovery/Create targeted recovery rejects an empty sessions array",
+  "operation_id": "CreateRUMRecoveryRequest",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RumRecoveryCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "sessions": []
+          },
+          "type": "rum_recovery_request"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/rum/recover/requests"
+  },
+  "scenario": "Create targeted recovery rejects an empty sessions array",
+  "schema_version": 1,
+  "version": "v2"
+}

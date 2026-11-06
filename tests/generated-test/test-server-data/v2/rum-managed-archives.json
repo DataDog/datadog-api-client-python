@@ -1,0 +1,268 @@
+{
+  "feature": "RUM Managed Archives",
+  "recordings": [
+    {
+      "feature": "RUM Managed Archives",
+      "frozen_at": "2026-11-05T16:00:15.805Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/config/archive/17938944-0000-0000-0000-179389441500",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"managed archive configuration not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete an unknown archive configuration returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Managed Archives",
+      "frozen_at": "2026-11-05T16:00:17.317Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/rum/config/archive/17938944-0000-0000-0000-179389441700",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"managed archive configuration not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get an unknown archive configuration returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Managed Archives",
+      "frozen_at": "2026-11-05T16:00:17.455Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/rum/config/archive/invalid",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"appId must be a valid UUID: invalid\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Get archive configuration rejects an invalid application ID",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Managed Archives",
+      "frozen_at": "2026-11-05T16:00:17.585Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/rum/config/archive",
+            "query": [
+              [
+                "page[size]",
+                "101"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"page[size] must be between 1 and 100\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "List archive configurations rejects an invalid page size",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Managed Archives",
+      "frozen_at": "2026-11-05T16:00:17.721Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/rum/config/archive",
+            "query": [
+              [
+                "page[number]",
+                "0"
+              ],
+              [
+                "page[size]",
+                "1"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[],\"meta\":{\"page\":{\"total_filtered_count\":0}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "List archive configurations returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Managed Archives",
+      "frozen_at": "2026-11-05T16:00:17.874Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "test-rum-e61d4487abf1d589",
+                    "type": "ios"
+                  },
+                  "type": "rum_application_create"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/applications",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"25bed905-f5bf-4823-850f-337a5398190c\",\"type\":\"rum_application\",\"attributes\":{\"api_key_id\":2297205,\"apm_rum_flat_sampling_replay_enabled\":true,\"apm_rum_flat_sampling_replay_sample_rate\":1,\"application_id\":\"25bed905-f5bf-4823-850f-337a5398190c\",\"client_token\":\"pub00000000000000000000000000000000\",\"created_at\":1793894418177,\"created_by_handle\":\"test@example.com\",\"error_tracking_exclusion_filter_enabled\":false,\"external_feeds\":[],\"is_active\":false,\"name\":\"test-rum-e61d4487abf1d589\",\"ootb_metrics_installed\":false,\"org_id\":321813,\"product_analytics_replay_sample_rate\":100,\"product_scales\":{\"rum_event_processing_scale\":{\"state\":\"ALL\",\"last_modified_at\":1793894418177},\"product_analytics_retention_scale\":{\"state\":\"NONE\",\"last_modified_at\":1793894418177}},\"short_name\":\"test_rum_e61d4487abf1d589\",\"tags\":[],\"type\":\"ios\",\"updated_at\":1793894418177,\"updated_by_handle\":\"test@example.com\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": true,
+                    "retention_days": 31
+                  },
+                  "id": "25bed905-f5bf-4823-850f-337a5398190c",
+                  "type": "rum_archive_config"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/rum/config/archive/25bed905-f5bf-4823-850f-337a5398190c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"retention_days must be one of: 30, 90, 180. Received: 31\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/applications/25bed905-f5bf-4823-850f-337a5398190c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update archive configuration with unsupported enabled retention returns \"Bad Request\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}
