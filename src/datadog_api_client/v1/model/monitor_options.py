@@ -44,6 +44,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.monitor_formula_and_function_aggregate_filtered_query_definition import (
         MonitorFormulaAndFunctionAggregateFilteredQueryDefinition,
     )
+    from datadog_api_client.v1.model.monitor_formula_and_function_metric_query_definition import (
+        MonitorFormulaAndFunctionMetricQueryDefinition,
+    )
 
 
 class MonitorOptions(ModelNormal):
@@ -189,6 +192,7 @@ class MonitorOptions(ModelNormal):
                     MonitorFormulaAndFunctionDataJobsQueryDefinition,
                     MonitorFormulaAndFunctionAggregateAugmentedQueryDefinition,
                     MonitorFormulaAndFunctionAggregateFilteredQueryDefinition,
+                    MonitorFormulaAndFunctionMetricQueryDefinition,
                 ]
             ],
             UnsetType,

@@ -1,0 +1,52 @@
+{
+  "api": "Monitors",
+  "expected_status": 200,
+  "feature": "Monitors",
+  "id": "v1/Monitors/Create a monitor with a metrics formula variable returns \"OK\" response",
+  "operation_id": "CreateMonitor",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Monitor",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "message": "some message Notify: @hipchat-channel",
+        "name": "{{ unique }}",
+        "options": {
+          "thresholds": {
+            "critical_query": "formula(\"query1 / query2\").rollup(\"p99\").last(\"1w\").multiplier(1.5)"
+          },
+          "variables": [
+            {
+              "data_source": "metrics",
+              "name": "query1",
+              "query": "sum:trace.http.request.errors{*}.as_count()"
+            },
+            {
+              "data_source": "metrics",
+              "name": "query2",
+              "query": "sum:trace.http.request.hits{*}.as_count()"
+            }
+          ]
+        },
+        "query": "formula(\"query1 / query2\").rollup(\"avg\").last(\"5m\") > threshold",
+        "tags": [
+          "test:{{ unique_lower_alnum }}",
+          "env:ci"
+        ],
+        "type": "query alert"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/monitor"
+  },
+  "scenario": "Create a monitor with a metrics formula variable returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

@@ -1522,6 +1522,13 @@
     {
       "feature": "Monitors",
       "feature_file": "../../v1/features/monitors.feature",
+      "file": "v1/monitors/create-a-monitor-with-a-metrics-formula-variable-returns-ok-response.json",
+      "scenario": "Create a monitor with a metrics formula variable returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "feature_file": "../../v1/features/monitors.feature",
       "file": "v1/monitors/create-a-monitor-with-aggregate-augmented-query-variables-returns-ok-response.json",
       "scenario": "Create a monitor with aggregate augmented query variables returns \"OK\" response",
       "version": "v1"
