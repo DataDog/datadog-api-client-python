@@ -45,11 +45,16 @@ class MonitorFormulaAndFunctionQueryDefinition(ModelComposed):
         :param measure: The data quality measure to query. Common values include:
             `bytes`, `cardinality`, `custom`, `freshness`, `max`, `mean`, `min`,
             `nullness`, `percent_negative`, `percent_zero`, `row_count`, `stddev`,
-            `sum`, `uniqueness`. Additional values may be supported.
+            `sum`, `uniqueness`. `data-jobs alert` job duration monitors use `duration`.
+            Additional values may be supported.
         :type measure: str
 
         :param monitor_options: Monitor configuration options for data quality queries.
         :type monitor_options: MonitorFormulaAndFunctionDataQualityMonitorOptions, optional
+
+        :param run_filter: Optional filter on individual runs, using metrics filter syntax.
+            Only supported by `data-jobs alert` job duration monitors.
+        :type run_filter: str, optional
 
         :param schema_version: Schema version for the data quality query.
         :type schema_version: str, optional
@@ -59,15 +64,17 @@ class MonitorFormulaAndFunctionQueryDefinition(ModelComposed):
         :type scope: str, optional
 
         :param job_type: The type of job being monitored. Valid values include:
-            `databricks.job`, `spark.application`, `airflow.dag`,
-            `dbt.job`, `dbt.model`, `dbt.test`, `glue.job`.
+            `databricks.job`, `spark.application`, `airflow.dag`, `dbt.job`, `glue.job`, `adf.pipeline`.
+            The `aastra` dialect also accepts `airflow.job`, `dbt.model`, and `dbt.test`.
             Custom job types are supported with the `custom.ol.` prefix.
         :type job_type: str
 
-        :param jobs_query: Filter expression used to select the jobs to monitor.
+        :param jobs_query: Filter expression used to select the jobs to monitor. Its syntax depends on `query_dialect`:
+            a metric tag filter such as `job_name:smoke*` for `metric`, or an Aastra entity search
+            such as ``search for databricks_job where `@team:data-eng` `` for `aastra`.
         :type jobs_query: str
 
-        :param query_dialect: Query dialect for data jobs queries. Currently only `metric` is supported.
+        :param query_dialect: Query dialect for data jobs queries. Valid values are `metric` and `aastra`.
         :type query_dialect: str
 
         :param augment_query: Augment query for aggregate augmented queries. Can be an events query or a reference table query.
