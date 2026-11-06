@@ -603,10 +603,30 @@ from datadog_api_client.v2.model.ai_gateway_rate_limit_attributes import AiGatew
 from datadog_api_client.v2.model.ai_gateway_rate_limit_create_attributes import AiGatewayRateLimitCreateAttributes
 from datadog_api_client.v2.model.ai_gateway_rate_limit_create_data import AiGatewayRateLimitCreateData
 from datadog_api_client.v2.model.ai_gateway_rate_limit_create_request import AiGatewayRateLimitCreateRequest
+from datadog_api_client.v2.model.ai_gateway_rate_limit_instance_attributes import AiGatewayRateLimitInstanceAttributes
+from datadog_api_client.v2.model.ai_gateway_rate_limit_instance_list_response import (
+    AiGatewayRateLimitInstanceListResponse,
+)
+from datadog_api_client.v2.model.ai_gateway_rate_limit_instance_resource import AiGatewayRateLimitInstanceResource
+from datadog_api_client.v2.model.ai_gateway_rate_limit_instance_sort import AiGatewayRateLimitInstanceSort
+from datadog_api_client.v2.model.ai_gateway_rate_limit_instance_type import AiGatewayRateLimitInstanceType
+from datadog_api_client.v2.model.ai_gateway_rate_limit_instances_summary_attributes import (
+    AiGatewayRateLimitInstancesSummaryAttributes,
+)
+from datadog_api_client.v2.model.ai_gateway_rate_limit_instances_summary_resource import (
+    AiGatewayRateLimitInstancesSummaryResource,
+)
+from datadog_api_client.v2.model.ai_gateway_rate_limit_instances_summary_response import (
+    AiGatewayRateLimitInstancesSummaryResponse,
+)
+from datadog_api_client.v2.model.ai_gateway_rate_limit_instances_summary_type import (
+    AiGatewayRateLimitInstancesSummaryType,
+)
 from datadog_api_client.v2.model.ai_gateway_rate_limit_list_response import AiGatewayRateLimitListResponse
 from datadog_api_client.v2.model.ai_gateway_rate_limit_mode import AiGatewayRateLimitMode
 from datadog_api_client.v2.model.ai_gateway_rate_limit_resource import AiGatewayRateLimitResource
 from datadog_api_client.v2.model.ai_gateway_rate_limit_response import AiGatewayRateLimitResponse
+from datadog_api_client.v2.model.ai_gateway_rate_limit_selector_entry import AiGatewayRateLimitSelectorEntry
 from datadog_api_client.v2.model.ai_gateway_rate_limit_type import AiGatewayRateLimitType
 from datadog_api_client.v2.model.ai_gateway_rate_limit_update_attributes import AiGatewayRateLimitUpdateAttributes
 from datadog_api_client.v2.model.ai_gateway_rate_limit_update_data import AiGatewayRateLimitUpdateData
@@ -14216,10 +14236,20 @@ __all__ = [
     "AiGatewayRateLimitCreateAttributes",
     "AiGatewayRateLimitCreateData",
     "AiGatewayRateLimitCreateRequest",
+    "AiGatewayRateLimitInstanceAttributes",
+    "AiGatewayRateLimitInstanceListResponse",
+    "AiGatewayRateLimitInstanceResource",
+    "AiGatewayRateLimitInstanceSort",
+    "AiGatewayRateLimitInstanceType",
+    "AiGatewayRateLimitInstancesSummaryAttributes",
+    "AiGatewayRateLimitInstancesSummaryResource",
+    "AiGatewayRateLimitInstancesSummaryResponse",
+    "AiGatewayRateLimitInstancesSummaryType",
     "AiGatewayRateLimitListResponse",
     "AiGatewayRateLimitMode",
     "AiGatewayRateLimitResource",
     "AiGatewayRateLimitResponse",
+    "AiGatewayRateLimitSelectorEntry",
     "AiGatewayRateLimitType",
     "AiGatewayRateLimitUpdateAttributes",
     "AiGatewayRateLimitUpdateData",
