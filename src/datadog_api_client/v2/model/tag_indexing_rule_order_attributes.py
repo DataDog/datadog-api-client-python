@@ -14,6 +14,12 @@ from datadog_api_client.model_utils import (
 
 
 class TagIndexingRuleOrderAttributes(ModelNormal):
+    validations = {
+        "rule_ids": {
+            "max_items": 1000,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         return {
@@ -28,7 +34,7 @@ class TagIndexingRuleOrderAttributes(ModelNormal):
         """
         Attributes for the reorder operation.
 
-        :param rule_ids: Ordered list of tag indexing rule UUIDs. The server assigns rule_order 1, 2, … matching position in this list.
+        :param rule_ids: Ordered list of tag indexing rule UUIDs. The server assigns rule_order 1, 2, … matching position in this list. Must contain the UUID of every active rule in the org (at most 1,000); omitting any active rule returns a 400 error.
         :type rule_ids: [str], optional
         """
         if rule_ids is not unset:
