@@ -659,6 +659,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\"data\": {\"type\": \"environments\", \"attributes\": {\"name\": \"Full Evaluation Data {{ unique }}\", \"queries\": [\"full-evaluation-data-{{ unique_lower }}\"], \"is_production\": true, \"require_feature_flag_approval\": true, \"observe_full_evaluation_data\": true}}}"
+      }
+    ],
+    "step": "there is a valid \"environment_with_full_evaluation_data\" in the system",
+    "key": "environment_with_full_evaluation_data",
+    "tag": "Feature Flags",
+    "operationId": "CreateFeatureFlagsEnvironment"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\"data\": {\"type\": \"environments\", \"attributes\": {\"name\": \"List Production {{ unique }}\", \"queries\": [\"list-production-{{ unique_lower }}\"], \"is_production\": true, \"require_feature_flag_approval\": false}}}"
       }
     ],
