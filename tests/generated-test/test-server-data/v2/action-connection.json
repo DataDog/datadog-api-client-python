@@ -142,6 +142,234 @@
     },
     {
       "feature": "Action Connection",
+      "frozen_at": "2026-11-06T19:02:24.735Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "integration": {
+                      "credentials": {
+                        "github_app_id": "123456",
+                        "github_installation_id": "789012",
+                        "hostname": "github.example.com",
+                        "private_key": "example-private-key",
+                        "type": "GithubApp"
+                      },
+                      "type": "Github"
+                    },
+                    "name": "GitHub App Connection testcreateagithubappactionconnection1793991744"
+                  },
+                  "type": "action_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"2df82e11-87d1-4479-8272-ccb6bb4a49db\",\"type\":\"action_connection\",\"attributes\":{\"acting_user_can_resolve\":false,\"environment\":\"DATACENTER\",\"external_secrets_manager\":null,\"integration\":{\"credentials\":{\"github_app_id\":\"123456\",\"github_installation_id\":\"789012\",\"hostname\":\"github.example.com\",\"private_key\":\"\",\"type\":\"GithubApp\"},\"type\":\"Github\"},\"is_favorite\":false,\"name\":\"GitHub App Connection testcreateagithubappactionconnection1793991744\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/actions/connections/2df82e11-87d1-4479-8272-ccb6bb4a49db",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a GitHub App Action Connection",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
+      "frozen_at": "2026-11-06T19:02:25.305Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "integration": {
+                      "credentials": {
+                        "github_app_id": "123456",
+                        "github_installation_id": "789012",
+                        "hostname": "github.example.com",
+                        "type": "GithubApp"
+                      },
+                      "type": "Github"
+                    },
+                    "name": "GitHub App Missing Secret testcreateagithubappactionconnectionrejectsmissingcredentials1793991745"
+                  },
+                  "type": "action_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"error creating connection: failed to unmarshal property: missing required input: private_key\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create a GitHub App Action Connection rejects missing credentials",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
+      "frozen_at": "2026-11-06T19:02:25.431Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "integration": {
+                      "credentials": {
+                        "access_token": "example-token",
+                        "hostname": "github.example.com",
+                        "type": "GithubPersonalAccessToken"
+                      },
+                      "type": "Github"
+                    },
+                    "name": "GitHub personal access token Connection testcreateagithubpersonalaccesstokenactionconnection1793991745"
+                  },
+                  "type": "action_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"d6c11175-694e-403e-ac3b-eb8f1850548a\",\"type\":\"action_connection\",\"attributes\":{\"acting_user_can_resolve\":false,\"environment\":\"DATACENTER\",\"external_secrets_manager\":null,\"integration\":{\"credentials\":{\"access_token\":\"\",\"hostname\":\"github.example.com\",\"type\":\"GithubPersonalAccessToken\"},\"type\":\"Github\"},\"is_favorite\":false,\"name\":\"GitHub personal access token Connection testcreateagithubpersonalaccesstokenactionconnection1793991745\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/actions/connections/d6c11175-694e-403e-ac3b-eb8f1850548a",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a GitHub personal access token Action Connection",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
+      "frozen_at": "2026-11-06T19:02:25.845Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "integration": {
+                      "credentials": {
+                        "hostname": "github.example.com",
+                        "type": "GithubPersonalAccessToken"
+                      },
+                      "type": "Github"
+                    },
+                    "name": "GitHub personal access token Missing Secret testcreateagithubpersonalaccesstokenactionconnectionrejectsmissingcredentials1793991745"
+                  },
+                  "type": "action_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"error creating connection: failed to unmarshal property: missing required input: access_token\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create a GitHub personal access token Action Connection rejects missing credentials",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
       "frozen_at": "2025-03-26T20:24:59.622Z",
       "interactions": [
         {
@@ -1083,6 +1311,188 @@
     },
     {
       "feature": "Action Connection",
+      "frozen_at": "2026-11-06T19:02:25.996Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "integration": {
+                      "credentials": {
+                        "github_app_id": "123456",
+                        "github_installation_id": "789012",
+                        "hostname": "github.example.com",
+                        "private_key": "example-private-key",
+                        "type": "GithubApp"
+                      },
+                      "type": "Github"
+                    },
+                    "name": "GitHub App Connection testgetagithubappactionconnection1793991745"
+                  },
+                  "type": "action_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"9a69af26-9b2c-42d3-a8ae-1ae2a4dff12d\",\"type\":\"action_connection\",\"attributes\":{\"acting_user_can_resolve\":false,\"environment\":\"DATACENTER\",\"external_secrets_manager\":null,\"integration\":{\"credentials\":{\"github_app_id\":\"123456\",\"github_installation_id\":\"789012\",\"hostname\":\"github.example.com\",\"private_key\":\"\",\"type\":\"GithubApp\"},\"type\":\"Github\"},\"is_favorite\":false,\"name\":\"GitHub App Connection testgetagithubappactionconnection1793991745\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/actions/connections/9a69af26-9b2c-42d3-a8ae-1ae2a4dff12d",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"9a69af26-9b2c-42d3-a8ae-1ae2a4dff12d\",\"type\":\"action_connection\",\"attributes\":{\"acting_user_can_resolve\":true,\"created_at\":\"2026-11-06 19:02:26.185026 +0000 UTC\",\"environment\":\"DATACENTER\",\"external_secrets_manager\":null,\"integration\":{\"credentials\":{\"github_app_id\":\"123456\",\"github_installation_id\":\"789012\",\"hostname\":\"github.example.com\",\"private_key\":\"\",\"type\":\"GithubApp\"},\"type\":\"Github\"},\"is_favorite\":false,\"last_updated\":\"2026-11-06 19:02:26.185026 +0000 UTC\",\"name\":\"GitHub App Connection testgetagithubappactionconnection1793991745\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"type\":\"created_by\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/actions/connections/9a69af26-9b2c-42d3-a8ae-1ae2a4dff12d",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get a GitHub App Action Connection",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
+      "frozen_at": "2026-11-06T19:02:26.477Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "integration": {
+                      "credentials": {
+                        "access_token": "example-token",
+                        "hostname": "github.example.com",
+                        "type": "GithubPersonalAccessToken"
+                      },
+                      "type": "Github"
+                    },
+                    "name": "GitHub personal access token Connection testgetagithubpersonalaccesstokenactionconnection1793991746"
+                  },
+                  "type": "action_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"bf8b9b8c-5717-4b67-9233-faea4bf5ee08\",\"type\":\"action_connection\",\"attributes\":{\"acting_user_can_resolve\":false,\"environment\":\"DATACENTER\",\"external_secrets_manager\":null,\"integration\":{\"credentials\":{\"access_token\":\"\",\"hostname\":\"github.example.com\",\"type\":\"GithubPersonalAccessToken\"},\"type\":\"Github\"},\"is_favorite\":false,\"name\":\"GitHub personal access token Connection testgetagithubpersonalaccesstokenactionconnection1793991746\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/actions/connections/bf8b9b8c-5717-4b67-9233-faea4bf5ee08",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"bf8b9b8c-5717-4b67-9233-faea4bf5ee08\",\"type\":\"action_connection\",\"attributes\":{\"acting_user_can_resolve\":true,\"created_at\":\"2026-11-06 19:02:26.657486 +0000 UTC\",\"environment\":\"DATACENTER\",\"external_secrets_manager\":null,\"integration\":{\"credentials\":{\"access_token\":\"\",\"hostname\":\"github.example.com\",\"type\":\"GithubPersonalAccessToken\"},\"type\":\"Github\"},\"is_favorite\":false,\"last_updated\":\"2026-11-06 19:02:26.657486 +0000 UTC\",\"name\":\"GitHub personal access token Connection testgetagithubpersonalaccesstokenactionconnection1793991746\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"type\":\"created_by\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/actions/connections/bf8b9b8c-5717-4b67-9233-faea4bf5ee08",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get a GitHub personal access token Action Connection",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
       "frozen_at": "2025-03-26T20:25:01.150Z",
       "interactions": [
         {
@@ -1610,6 +2020,216 @@
         }
       ],
       "scenario": "Update a GCP Action Connection with a versioned AWS Secrets Manager reference",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
+      "frozen_at": "2026-11-06T19:02:27.044Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "integration": {
+                      "credentials": {
+                        "github_app_id": "123456",
+                        "github_installation_id": "789012",
+                        "hostname": "github.example.com",
+                        "private_key": "example-private-key",
+                        "type": "GithubApp"
+                      },
+                      "type": "Github"
+                    },
+                    "name": "GitHub App Connection testupdateagithubappactionconnectionwithoutreplacingitssecret1793991747"
+                  },
+                  "type": "action_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"7437dce6-87c3-4669-af71-8bcb04673648\",\"type\":\"action_connection\",\"attributes\":{\"acting_user_can_resolve\":false,\"environment\":\"DATACENTER\",\"external_secrets_manager\":null,\"integration\":{\"credentials\":{\"github_app_id\":\"123456\",\"github_installation_id\":\"789012\",\"hostname\":\"github.example.com\",\"private_key\":\"\",\"type\":\"GithubApp\"},\"type\":\"Github\"},\"is_favorite\":false,\"name\":\"GitHub App Connection testupdateagithubappactionconnectionwithoutreplacingitssecret1793991747\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "integration": {
+                      "credentials": {
+                        "hostname": "github.updated.example.com",
+                        "type": "GithubApp"
+                      },
+                      "type": "Github"
+                    },
+                    "name": "GitHub App Updated testupdateagithubappactionconnectionwithoutreplacingitssecret1793991747"
+                  },
+                  "type": "action_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/actions/connections/7437dce6-87c3-4669-af71-8bcb04673648",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"7437dce6-87c3-4669-af71-8bcb04673648\",\"type\":\"action_connection\",\"attributes\":{\"acting_user_can_resolve\":false,\"created_at\":\"2026-11-06 19:02:27.212067 +0000 UTC\",\"environment\":\"DATACENTER\",\"external_secrets_manager\":null,\"integration\":{\"credentials\":{\"github_app_id\":\"123456\",\"github_installation_id\":\"789012\",\"hostname\":\"github.updated.example.com\",\"private_key\":\"\",\"type\":\"GithubApp\"},\"type\":\"Github\"},\"is_favorite\":false,\"last_updated\":\"2026-11-06 19:02:27.398204 +0000 UTC\",\"name\":\"GitHub App Updated testupdateagithubappactionconnectionwithoutreplacingitssecret1793991747\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"type\":\"created_by\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/actions/connections/7437dce6-87c3-4669-af71-8bcb04673648",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a GitHub App Action Connection without replacing its secret",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
+      "frozen_at": "2026-11-06T19:02:27.586Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "integration": {
+                      "credentials": {
+                        "access_token": "example-token",
+                        "hostname": "github.example.com",
+                        "type": "GithubPersonalAccessToken"
+                      },
+                      "type": "Github"
+                    },
+                    "name": "GitHub personal access token Connection testupdateagithubpersonalaccesstokenactionconnectionwithoutreplacingitssecret1793991747"
+                  },
+                  "type": "action_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/actions/connections",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"43eabd4e-54a0-419a-bd36-2ffe3a46293e\",\"type\":\"action_connection\",\"attributes\":{\"acting_user_can_resolve\":false,\"environment\":\"DATACENTER\",\"external_secrets_manager\":null,\"integration\":{\"credentials\":{\"access_token\":\"\",\"hostname\":\"github.example.com\",\"type\":\"GithubPersonalAccessToken\"},\"type\":\"Github\"},\"is_favorite\":false,\"name\":\"GitHub personal access token Connection testupdateagithubpersonalaccesstokenactionconnectionwithoutreplacingitssecret1793991747\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "integration": {
+                      "credentials": {
+                        "hostname": "github.updated.example.com",
+                        "type": "GithubPersonalAccessToken"
+                      },
+                      "type": "Github"
+                    },
+                    "name": "GitHub personal access token Updated testupdateagithubpersonalaccesstokenactionconnectionwithoutreplacingitssecret1793991747"
+                  },
+                  "type": "action_connection"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/actions/connections/43eabd4e-54a0-419a-bd36-2ffe3a46293e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"43eabd4e-54a0-419a-bd36-2ffe3a46293e\",\"type\":\"action_connection\",\"attributes\":{\"acting_user_can_resolve\":false,\"created_at\":\"2026-11-06 19:02:27.772499 +0000 UTC\",\"environment\":\"DATACENTER\",\"external_secrets_manager\":null,\"integration\":{\"credentials\":{\"access_token\":\"\",\"hostname\":\"github.updated.example.com\",\"type\":\"GithubPersonalAccessToken\"},\"type\":\"Github\"},\"is_favorite\":false,\"last_updated\":\"2026-11-06 19:02:27.95058 +0000 UTC\",\"name\":\"GitHub personal access token Updated testupdateagithubpersonalaccesstokenactionconnectionwithoutreplacingitssecret1793991747\"},\"relationships\":{\"created_by\":{\"data\":{\"id\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"type\":\"created_by\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/actions/connections/43eabd4e-54a0-419a-bd36-2ffe3a46293e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a GitHub personal access token Action Connection without replacing its secret",
       "version": "v2"
     },
     {

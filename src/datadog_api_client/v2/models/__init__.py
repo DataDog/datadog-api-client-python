@@ -4869,6 +4869,33 @@ from datadog_api_client.v2.model.git_hub_cloud_auth_persona_mappings_response im
     GitHubCloudAuthPersonaMappingsResponse,
 )
 from datadog_api_client.v2.model.git_hub_oidc_claim_patterns import GitHubOIDCClaimPatterns
+from datadog_api_client.v2.model.github_app import GithubApp
+from datadog_api_client.v2.model.github_app_github_app_id import GithubAppGithubAppId
+from datadog_api_client.v2.model.github_app_github_installation_id import GithubAppGithubInstallationId
+from datadog_api_client.v2.model.github_app_hostname import GithubAppHostname
+from datadog_api_client.v2.model.github_app_private_key import GithubAppPrivateKey
+from datadog_api_client.v2.model.github_app_type import GithubAppType
+from datadog_api_client.v2.model.github_app_update import GithubAppUpdate
+from datadog_api_client.v2.model.github_app_update_github_app_id import GithubAppUpdateGithubAppId
+from datadog_api_client.v2.model.github_app_update_github_installation_id import GithubAppUpdateGithubInstallationId
+from datadog_api_client.v2.model.github_app_update_hostname import GithubAppUpdateHostname
+from datadog_api_client.v2.model.github_app_update_private_key import GithubAppUpdatePrivateKey
+from datadog_api_client.v2.model.github_credentials import GithubCredentials
+from datadog_api_client.v2.model.github_credentials_update import GithubCredentialsUpdate
+from datadog_api_client.v2.model.github_integration import GithubIntegration
+from datadog_api_client.v2.model.github_integration_type import GithubIntegrationType
+from datadog_api_client.v2.model.github_integration_update import GithubIntegrationUpdate
+from datadog_api_client.v2.model.github_personal_access_token import GithubPersonalAccessToken
+from datadog_api_client.v2.model.github_personal_access_token_access_token import GithubPersonalAccessTokenAccessToken
+from datadog_api_client.v2.model.github_personal_access_token_hostname import GithubPersonalAccessTokenHostname
+from datadog_api_client.v2.model.github_personal_access_token_type import GithubPersonalAccessTokenType
+from datadog_api_client.v2.model.github_personal_access_token_update import GithubPersonalAccessTokenUpdate
+from datadog_api_client.v2.model.github_personal_access_token_update_access_token import (
+    GithubPersonalAccessTokenUpdateAccessToken,
+)
+from datadog_api_client.v2.model.github_personal_access_token_update_hostname import (
+    GithubPersonalAccessTokenUpdateHostname,
+)
 from datadog_api_client.v2.model.github_webhook_trigger import GithubWebhookTrigger
 from datadog_api_client.v2.model.github_webhook_trigger_wrapper import GithubWebhookTriggerWrapper
 from datadog_api_client.v2.model.gitlab_api_key import GitlabAPIKey
@@ -17130,6 +17157,29 @@ __all__ = [
     "GitHubCloudAuthPersonaMappingType",
     "GitHubCloudAuthPersonaMappingsResponse",
     "GitHubOIDCClaimPatterns",
+    "GithubApp",
+    "GithubAppGithubAppId",
+    "GithubAppGithubInstallationId",
+    "GithubAppHostname",
+    "GithubAppPrivateKey",
+    "GithubAppType",
+    "GithubAppUpdate",
+    "GithubAppUpdateGithubAppId",
+    "GithubAppUpdateGithubInstallationId",
+    "GithubAppUpdateHostname",
+    "GithubAppUpdatePrivateKey",
+    "GithubCredentials",
+    "GithubCredentialsUpdate",
+    "GithubIntegration",
+    "GithubIntegrationType",
+    "GithubIntegrationUpdate",
+    "GithubPersonalAccessToken",
+    "GithubPersonalAccessTokenAccessToken",
+    "GithubPersonalAccessTokenHostname",
+    "GithubPersonalAccessTokenType",
+    "GithubPersonalAccessTokenUpdate",
+    "GithubPersonalAccessTokenUpdateAccessToken",
+    "GithubPersonalAccessTokenUpdateHostname",
     "GithubWebhookTrigger",
     "GithubWebhookTriggerWrapper",
     "GitlabAPIKey",

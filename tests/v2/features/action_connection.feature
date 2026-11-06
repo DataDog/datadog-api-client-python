@@ -6,8 +6,9 @@ Feature: Action Connection
   Integrations automatically provide authentication for Slack, Microsoft
   Teams, PagerDuty, Opsgenie, JIRA, GitHub, and Statuspage. You do not need
   additional connections in order to access these tools within Workflow
-  Automation and App Builder.  We offer granular access control for editing
-  and resolving connections.
+  Automation and App Builder.  To authenticate with your own GitHub App or
+  personal access token, create a GitHub connection.  We offer granular
+  access control for editing and resolving connections.
 
   Background:
     Given a valid "apiKeyAuth" key in the system
@@ -26,6 +27,42 @@ Feature: Action Connection
     And the response "data.attributes.integration.credentials.private_key.secret_id" is equal to "example/gcp/service-account"
     And the response "data.attributes.integration.credentials.private_key.key" is equal to "private_key"
     And the response "data.attributes.integration.credentials.service_account_email.key" is equal to "client_email"
+
+  @team:ddoghq/action-platform
+  Scenario: Create a GitHub App Action Connection
+    Given new "CreateActionConnection" request
+    And body with value {"data":{"type":"action_connection","attributes":{"name":"GitHub App Connection {{ unique_lower_alnum }}","integration":{"type":"Github","credentials":{"type":"GithubApp","github_app_id":"123456","github_installation_id":"789012","private_key":"example-private-key","hostname":"github.example.com"}}}}}
+    When the request is sent
+    Then the response status is 201 Successfully created Action Connection
+    And the response "data.attributes.integration.type" is equal to "Github"
+    And the response "data.attributes.integration.credentials.type" is equal to "GithubApp"
+    And the response "data.attributes.integration.credentials.hostname" is equal to "github.example.com"
+    And the response "data.attributes.integration.credentials.github_app_id" is equal to "123456"
+    And the response "data.attributes.integration.credentials.github_installation_id" is equal to "789012"
+
+  @team:ddoghq/action-platform
+  Scenario: Create a GitHub App Action Connection rejects missing credentials
+    Given new "CreateActionConnection" request
+    And body with value {"data":{"type":"action_connection","attributes":{"name":"GitHub App Missing Secret {{ unique_lower_alnum }}","integration":{"type":"Github","credentials":{"type":"GithubApp","github_app_id":"123456","github_installation_id":"789012","hostname":"github.example.com"}}}}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:ddoghq/action-platform
+  Scenario: Create a GitHub personal access token Action Connection
+    Given new "CreateActionConnection" request
+    And body with value {"data":{"type":"action_connection","attributes":{"name":"GitHub personal access token Connection {{ unique_lower_alnum }}","integration":{"type":"Github","credentials":{"type":"GithubPersonalAccessToken","access_token":"example-token","hostname":"github.example.com"}}}}}
+    When the request is sent
+    Then the response status is 201 Successfully created Action Connection
+    And the response "data.attributes.integration.type" is equal to "Github"
+    And the response "data.attributes.integration.credentials.type" is equal to "GithubPersonalAccessToken"
+    And the response "data.attributes.integration.credentials.hostname" is equal to "github.example.com"
+
+  @team:ddoghq/action-platform
+  Scenario: Create a GitHub personal access token Action Connection rejects missing credentials
+    Given new "CreateActionConnection" request
+    And body with value {"data":{"type":"action_connection","attributes":{"name":"GitHub personal access token Missing Secret {{ unique_lower_alnum }}","integration":{"type":"Github","credentials":{"type":"GithubPersonalAccessToken","hostname":"github.example.com"}}}}}
+    When the request is sent
+    Then the response status is 400 Bad Request
 
   @team:ddoghq/action-platform
   Scenario: Create a new Action Connection returns "Bad Request" response
@@ -106,6 +143,32 @@ Feature: Action Connection
     And the response "data.attributes.integration.credentials.private_key.type" is equal to "aws_secrets_manager"
     And the response "data.attributes.integration.credentials.private_key.key" is equal to "private_key"
     And the response "data.attributes.integration.credentials.service_account_email.key" is equal to "client_email"
+
+  @team:ddoghq/action-platform
+  Scenario: Get a GitHub App Action Connection
+    Given there is a valid "github_app_action_connection" in the system
+    And new "GetActionConnection" request
+    And request contains "connection_id" parameter from "github_app_action_connection.data.id"
+    When the request is sent
+    Then the response status is 200 Successfully get Action Connection
+    And the response "data.id" has the same value as "github_app_action_connection.data.id"
+    And the response "data.attributes.integration.type" is equal to "Github"
+    And the response "data.attributes.integration.credentials.type" is equal to "GithubApp"
+    And the response "data.attributes.integration.credentials.hostname" is equal to "github.example.com"
+    And the response "data.attributes.integration.credentials.github_app_id" is equal to "123456"
+    And the response "data.attributes.integration.credentials.github_installation_id" is equal to "789012"
+
+  @team:ddoghq/action-platform
+  Scenario: Get a GitHub personal access token Action Connection
+    Given there is a valid "github_pat_action_connection" in the system
+    And new "GetActionConnection" request
+    And request contains "connection_id" parameter from "github_pat_action_connection.data.id"
+    When the request is sent
+    Then the response status is 200 Successfully get Action Connection
+    And the response "data.id" has the same value as "github_pat_action_connection.data.id"
+    And the response "data.attributes.integration.type" is equal to "Github"
+    And the response "data.attributes.integration.credentials.type" is equal to "GithubPersonalAccessToken"
+    And the response "data.attributes.integration.credentials.hostname" is equal to "github.example.com"
 
   @team:ddoghq/action-platform
   Scenario: Get an existing Action Connection returns "Bad Request" response
@@ -210,6 +273,34 @@ Feature: Action Connection
     And the response "data.attributes.integration.credentials.private_key.version_stage" is equal to "AWSCURRENT"
     And the response "data.attributes.integration.credentials.private_key.key" is equal to "private_key"
     And the response "data.attributes.integration.credentials.service_account_email.key" is equal to "client_email"
+
+  @team:ddoghq/action-platform
+  Scenario: Update a GitHub App Action Connection without replacing its secret
+    Given there is a valid "github_app_action_connection" in the system
+    And new "UpdateActionConnection" request
+    And request contains "connection_id" parameter from "github_app_action_connection.data.id"
+    And body with value {"data":{"type":"action_connection","attributes":{"name":"GitHub App Updated {{ unique_lower_alnum }}","integration":{"type":"Github","credentials":{"type":"GithubApp","hostname":"github.updated.example.com"}}}}}
+    When the request is sent
+    Then the response status is 200 Successfully updated Action Connection
+    And the response "data.id" has the same value as "github_app_action_connection.data.id"
+    And the response "data.attributes.name" is equal to "GitHub App Updated {{ unique_lower_alnum }}"
+    And the response "data.attributes.integration.type" is equal to "Github"
+    And the response "data.attributes.integration.credentials.type" is equal to "GithubApp"
+    And the response "data.attributes.integration.credentials.hostname" is equal to "github.updated.example.com"
+
+  @team:ddoghq/action-platform
+  Scenario: Update a GitHub personal access token Action Connection without replacing its secret
+    Given there is a valid "github_pat_action_connection" in the system
+    And new "UpdateActionConnection" request
+    And request contains "connection_id" parameter from "github_pat_action_connection.data.id"
+    And body with value {"data":{"type":"action_connection","attributes":{"name":"GitHub personal access token Updated {{ unique_lower_alnum }}","integration":{"type":"Github","credentials":{"type":"GithubPersonalAccessToken","hostname":"github.updated.example.com"}}}}}
+    When the request is sent
+    Then the response status is 200 Successfully updated Action Connection
+    And the response "data.id" has the same value as "github_pat_action_connection.data.id"
+    And the response "data.attributes.name" is equal to "GitHub personal access token Updated {{ unique_lower_alnum }}"
+    And the response "data.attributes.integration.type" is equal to "Github"
+    And the response "data.attributes.integration.credentials.type" is equal to "GithubPersonalAccessToken"
+    And the response "data.attributes.integration.credentials.hostname" is equal to "github.updated.example.com"
 
   @team:ddoghq/action-platform
   Scenario: Update an existing Action Connection returns "Bad Request" response

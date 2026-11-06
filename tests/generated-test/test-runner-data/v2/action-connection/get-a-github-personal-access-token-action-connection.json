@@ -1,0 +1,35 @@
+{
+  "api": "ActionConnection",
+  "expected_status": 200,
+  "feature": "Action Connection",
+  "id": "v2/Action Connection/Get a GitHub personal access token Action Connection",
+  "operation_id": "GetActionConnection",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "connection_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "github_pat_action_connection.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/actions/connections/{connection_id}"
+  },
+  "scenario": "Get a GitHub personal access token Action Connection",
+  "schema_version": 1,
+  "version": "v2"
+}
