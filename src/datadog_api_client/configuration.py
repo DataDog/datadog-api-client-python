@@ -552,6 +552,7 @@ class Configuration:
                 "v2.delete_requested_temporary_grant": False,
                 "v2.delete_temporary_grant_request": False,
                 "v2.get_my_temporary_grant_request": False,
+                "v2.get_quota": False,
                 "v2.get_temporary_grant_request": False,
                 "v2.list_my_temporary_grant_requests": False,
                 "v2.list_quotas": False,

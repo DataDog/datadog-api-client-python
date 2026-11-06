@@ -11583,6 +11583,12 @@
       "type": "idempotent"
     }
   },
+  "GetQuota": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "UpdateQuota": {
     "tag": "Usage Metering",
     "undo": {
