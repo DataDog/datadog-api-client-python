@@ -112,7 +112,7 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 OK
 
-  @integration-only @skip-terraform-config @skip-validation @team:ddoghq/metrics-intake-edge
+  @integration-only @skip-terraform-config @skip-validation @team:ddoghq/metrics-intake-edge @team:ddoghq/metrics-intake-processing
   Scenario: Submit deflate distribution points returns "Payload accepted" response
     Given new "SubmitDistributionPoints" request
     And body with value {"series": [{"metric": "system.load.1.dist", "points": [[{{ timestamp("now") }}, [1.0, 2.0]]]}]}
@@ -128,28 +128,28 @@ Feature: Metrics
     When the request is sent
     Then the response status is 202 Payload accepted
 
-  @integration-only @skip-terraform-config @skip-validation @team:ddoghq/metrics-intake-edge
+  @integration-only @skip-terraform-config @skip-validation @team:ddoghq/metrics-intake-edge @team:ddoghq/metrics-intake-processing
   Scenario: Submit distribution points returns "Bad Request" response
     Given new "SubmitDistributionPoints" request
     And body with value {"series": [{"metric": "system.load.1.dist", "points": [[1475317847.0, 1.0]]}]}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @integration-only @skip-terraform-config @skip-validation @team:ddoghq/metrics-intake-edge
+  @integration-only @skip-terraform-config @skip-validation @team:ddoghq/metrics-intake-edge @team:ddoghq/metrics-intake-processing
   Scenario: Submit distribution points returns "Payload accepted" response
     Given new "SubmitDistributionPoints" request
     And body with value {"series": [{"metric": "system.load.1.dist", "points": [[{{ timestamp("now") }}, [1.0, 2.0]]]}]}
     When the request is sent
     Then the response status is 202 Payload accepted
 
-  @generated @skip @team:ddoghq/metrics-intake-edge
+  @generated @skip @team:ddoghq/metrics-intake-edge @team:ddoghq/metrics-intake-processing
   Scenario: Submit distribution points returns "Payload too large" response
     Given new "SubmitDistributionPoints" request
     And body with value {"series": [{"metric": "system.load.1", "points": [[1475317847.0, [1.0, 2.0]]]}]}
     When the request is sent
     Then the response status is 413 Payload too large
 
-  @generated @skip @team:ddoghq/metrics-intake-edge
+  @generated @skip @team:ddoghq/metrics-intake-edge @team:ddoghq/metrics-intake-processing
   Scenario: Submit distribution points returns "Request timeout" response
     Given new "SubmitDistributionPoints" request
     And body with value {"series": [{"metric": "system.load.1", "points": [[1475317847.0, [1.0, 2.0]]]}]}
