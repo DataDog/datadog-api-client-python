@@ -1975,6 +1975,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"A Private Status Page\",\n      \"domain_prefix\": \"private-{{ unique_hash }}\",\n      \"type\": \"private\",\n      \"visualization_type\": \"bars_and_uptime_percentage\"\n    },\n    \"type\": \"status_pages\"\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"private_status_page\" in the system",
+    "key": "private_status_page",
+    "tag": "Status Pages",
+    "operationId": "CreateStatusPage"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"A Status Page\",\n      \"domain_prefix\": \"{{ unique_hash }}\",\n      \"components\": [{\"name\": \"Application\", \"type\": \"group\", \"components\":[{\"name\": \"Login\", \"type\": \"component\", \"position\": 0},{\"name\": \"Settings\", \"type\": \"component\", \"position\": 1}]}],\n      \"type\": \"internal\",\n      \"visualization_type\": \"bars_and_uptime_percentage\"\n    },\n    \"type\": \"status_pages\"\n  }\n}"
       }
     ],
@@ -1982,6 +1994,22 @@
     "key": "status_page",
     "tag": "Status Pages",
     "operationId": "CreateStatusPage"
+  },
+  {
+    "parameters": [
+      {
+        "name": "page_id",
+        "value": "\"{{ private_status_page.data.id }}\""
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"email_access_policies\",\n    \"attributes\": {\n      \"effect\": \"allow\",\n      \"pattern\": \"@example.com\"\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"email_access_policy\" in the system",
+    "key": "email_access_policy",
+    "tag": "Status Pages",
+    "operationId": "CreateEmailAccessPolicy"
   },
   {
     "parameters": [

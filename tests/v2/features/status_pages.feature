@@ -10,6 +10,38 @@ Feature: Status Pages
     And a valid "appKeyAuth" key in the system
     And an instance of "StatusPages" API
 
+  @generated @skip @team:ddoghq/incident-app
+  Scenario: Create an email access policy returns "Bad Request" response
+    Given new "CreateEmailAccessPolicy" request
+    And request contains "page_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"effect": "allow", "pattern": "@example.com"}, "type": "email_access_policies"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/incident-app
+  Scenario: Create an email access policy returns "Conflict" response
+    Given new "CreateEmailAccessPolicy" request
+    And request contains "page_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"effect": "allow", "pattern": "@example.com"}, "type": "email_access_policies"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:ddoghq/incident-app
+  Scenario: Create an email access policy returns "Created" response
+    Given new "CreateEmailAccessPolicy" request
+    And request contains "page_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"effect": "allow", "pattern": "@example.com"}, "type": "email_access_policies"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:ddoghq/incident-app
+  Scenario: Create an email access policy returns "Not Found" response
+    Given new "CreateEmailAccessPolicy" request
+    And request contains "page_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"effect": "allow", "pattern": "@example.com"}, "type": "email_access_policies"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @team:ddoghq/incident-app
   Scenario: Create backfilled degradation returns "Created" response
     Given there is a valid "status_page" in the system
@@ -82,6 +114,30 @@ Feature: Status Pages
     And body with value {"data": {"attributes": {"name": "A Status Page", "domain_prefix": "{{ unique_hash }}", "components":[{"name": "Login", "type": "component", "position": 0},{"name": "Settings", "type": "component", "position": 1}], "type": "internal", "visualization_type": "bars_and_uptime_percentage"}, "type": "status_pages"}}
     When the request is sent
     Then the response status is 201 Created
+
+  @generated @skip @team:ddoghq/incident-app
+  Scenario: Delete an email access policy returns "Bad Request" response
+    Given new "DeleteEmailAccessPolicy" request
+    And request contains "page_id" parameter from "REPLACE.ME"
+    And request contains "policy_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/incident-app
+  Scenario: Delete an email access policy returns "No Content" response
+    Given new "DeleteEmailAccessPolicy" request
+    And request contains "page_id" parameter from "REPLACE.ME"
+    And request contains "policy_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:ddoghq/incident-app
+  Scenario: Delete an email access policy returns "Not Found" response
+    Given new "DeleteEmailAccessPolicy" request
+    And request contains "page_id" parameter from "REPLACE.ME"
+    And request contains "policy_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
 
   @team:ddoghq/incident-app
   Scenario: Delete component returns "No Content" response
@@ -219,6 +275,27 @@ Feature: Status Pages
     Given new "ListDegradations" request
     And there is a valid "status_page" in the system
     And there is a valid "degradation" in the system
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/incident-app
+  Scenario: List email access policies returns "Bad Request" response
+    Given new "ListEmailAccessPolicies" request
+    And request contains "page_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/incident-app
+  Scenario: List email access policies returns "Not Found" response
+    Given new "ListEmailAccessPolicies" request
+    And request contains "page_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/incident-app
+  Scenario: List email access policies returns "OK" response
+    Given new "ListEmailAccessPolicies" request
+    And request contains "page_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 

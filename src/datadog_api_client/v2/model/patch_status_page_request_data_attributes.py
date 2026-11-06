@@ -90,7 +90,7 @@ class PatchStatusPageRequestDataAttributes(ModelNormal):
         :param company_logo: The base64-encoded image data displayed on the status page.
         :type company_logo: str, optional
 
-        :param domain_prefix: The subdomain of the status page's url taking the form ``https://{domain_prefix}.statuspage.datadoghq.com``. Globally unique across Datadog Status Pages.
+        :param domain_prefix: The subdomain of the status page URL. Public pages use ``https://{domain_prefix}.statuspage.datadoghq.com`` , while private pages use ``https://{domain_prefix}.private.statuspage.datadoghq.com``. Globally unique across Datadog Status Pages.
         :type domain_prefix: str, optional
 
         :param email_header_image: The base64-encoded image data displayed in email notifications sent to status page subscribers.
@@ -114,7 +114,7 @@ class PatchStatusPageRequestDataAttributes(ModelNormal):
         :param subscriptions_enabled: Whether users can subscribe to the status page.
         :type subscriptions_enabled: bool, optional
 
-        :param type: The type of the status page controlling how the status page is accessed.
+        :param type: The type of the status page controlling how the status page is accessed. Public pages are accessible to anyone, internal pages are accessible to authenticated users in the Datadog organization, and private pages are accessible only to users matching an allow email access policy and no deny email access policy.
         :type type: CreateStatusPageRequestDataAttributesType, optional
 
         :param visualization_layout: The layout of components on the status page. Defaults to ``list``. ``grid`` requires ``visualization_type`` to be ``component_name_only`` ; changing ``visualization_type`` to any other value resets the layout to ``list``.

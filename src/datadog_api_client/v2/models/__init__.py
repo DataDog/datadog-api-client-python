@@ -2350,6 +2350,15 @@ from datadog_api_client.v2.model.create_snapshot_ttl import CreateSnapshotTTL
 from datadog_api_client.v2.model.create_snapshot_template_variable import CreateSnapshotTemplateVariable
 from datadog_api_client.v2.model.create_snapshot_timeseries_legend_type import CreateSnapshotTimeseriesLegendType
 from datadog_api_client.v2.model.create_snapshot_type import CreateSnapshotType
+from datadog_api_client.v2.model.create_status_page_email_access_policy_request import (
+    CreateStatusPageEmailAccessPolicyRequest,
+)
+from datadog_api_client.v2.model.create_status_page_email_access_policy_request_data import (
+    CreateStatusPageEmailAccessPolicyRequestData,
+)
+from datadog_api_client.v2.model.create_status_page_email_access_policy_request_data_attributes import (
+    CreateStatusPageEmailAccessPolicyRequestDataAttributes,
+)
 from datadog_api_client.v2.model.create_status_page_request import CreateStatusPageRequest
 from datadog_api_client.v2.model.create_status_page_request_data import CreateStatusPageRequestData
 from datadog_api_client.v2.model.create_status_page_request_data_attributes import CreateStatusPageRequestDataAttributes
@@ -12075,6 +12084,31 @@ from datadog_api_client.v2.model.status_page_data_relationships_last_modified_by
     StatusPageDataRelationshipsLastModifiedByUserData,
 )
 from datadog_api_client.v2.model.status_page_data_type import StatusPageDataType
+from datadog_api_client.v2.model.status_page_email_access_policy_array_response import (
+    StatusPageEmailAccessPolicyArrayResponse,
+)
+from datadog_api_client.v2.model.status_page_email_access_policy_data import StatusPageEmailAccessPolicyData
+from datadog_api_client.v2.model.status_page_email_access_policy_data_attributes import (
+    StatusPageEmailAccessPolicyDataAttributes,
+)
+from datadog_api_client.v2.model.status_page_email_access_policy_data_relationships import (
+    StatusPageEmailAccessPolicyDataRelationships,
+)
+from datadog_api_client.v2.model.status_page_email_access_policy_data_relationships_created_by_user import (
+    StatusPageEmailAccessPolicyDataRelationshipsCreatedByUser,
+)
+from datadog_api_client.v2.model.status_page_email_access_policy_data_relationships_created_by_user_data import (
+    StatusPageEmailAccessPolicyDataRelationshipsCreatedByUserData,
+)
+from datadog_api_client.v2.model.status_page_email_access_policy_data_relationships_status_page import (
+    StatusPageEmailAccessPolicyDataRelationshipsStatusPage,
+)
+from datadog_api_client.v2.model.status_page_email_access_policy_data_relationships_status_page_data import (
+    StatusPageEmailAccessPolicyDataRelationshipsStatusPageData,
+)
+from datadog_api_client.v2.model.status_page_email_access_policy_included import StatusPageEmailAccessPolicyIncluded
+from datadog_api_client.v2.model.status_page_email_access_policy_response import StatusPageEmailAccessPolicyResponse
+from datadog_api_client.v2.model.status_page_email_access_policy_type import StatusPageEmailAccessPolicyType
 from datadog_api_client.v2.model.status_pages_component import StatusPagesComponent
 from datadog_api_client.v2.model.status_pages_component_array import StatusPagesComponentArray
 from datadog_api_client.v2.model.status_pages_component_array_included import StatusPagesComponentArrayIncluded
@@ -15527,6 +15561,9 @@ __all__ = [
     "CreateSnapshotTemplateVariable",
     "CreateSnapshotTimeseriesLegendType",
     "CreateSnapshotType",
+    "CreateStatusPageEmailAccessPolicyRequest",
+    "CreateStatusPageEmailAccessPolicyRequestData",
+    "CreateStatusPageEmailAccessPolicyRequestDataAttributes",
     "CreateStatusPageRequest",
     "CreateStatusPageRequestData",
     "CreateStatusPageRequestDataAttributes",
@@ -21726,6 +21763,17 @@ __all__ = [
     "StatusPageDataRelationshipsLastModifiedByUser",
     "StatusPageDataRelationshipsLastModifiedByUserData",
     "StatusPageDataType",
+    "StatusPageEmailAccessPolicyArrayResponse",
+    "StatusPageEmailAccessPolicyData",
+    "StatusPageEmailAccessPolicyDataAttributes",
+    "StatusPageEmailAccessPolicyDataRelationships",
+    "StatusPageEmailAccessPolicyDataRelationshipsCreatedByUser",
+    "StatusPageEmailAccessPolicyDataRelationshipsCreatedByUserData",
+    "StatusPageEmailAccessPolicyDataRelationshipsStatusPage",
+    "StatusPageEmailAccessPolicyDataRelationshipsStatusPageData",
+    "StatusPageEmailAccessPolicyIncluded",
+    "StatusPageEmailAccessPolicyResponse",
+    "StatusPageEmailAccessPolicyType",
     "StatusPagesComponent",
     "StatusPagesComponentArray",
     "StatusPagesComponentArrayIncluded",
