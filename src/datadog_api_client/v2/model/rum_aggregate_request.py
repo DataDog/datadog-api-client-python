@@ -57,6 +57,7 @@ class RUMAggregateRequest(ModelNormal):
     ):
         """
         The object sent with the request to retrieve aggregation buckets of RUM events from your organization.
+        ``filter.indexes`` is not supported and ignored.
 
         :param compute: The list of metrics or timeseries to compute for the retrieved buckets.
         :type compute: [RUMCompute], optional

@@ -60,7 +60,8 @@ class RUMEventAttributes(ModelNormal):
         """
         JSON object containing all event attributes and their associated values.
 
-        :param attributes: JSON object of attributes from RUM events.
+        :param attributes: JSON object of attributes from RUM events. Attributes are nested by path: the facet ``@view.name`` used in queries is returned as ``attributes.view.name``.
+            Common attributes include ``type`` (the event type: ``session`` , ``view`` , ``action`` , ``resource`` , ``error`` , ``long_task`` or ``vital`` ), ``application.id`` , ``session.id`` , ``view.id`` , ``view.name`` and ``usr.id``. Durations such as ``view.time_spent`` , ``view.loading_time`` and ``resource.duration`` are in nanoseconds.
         :type attributes: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
         :param service: The name of the application or service generating RUM events.
@@ -68,10 +69,10 @@ class RUMEventAttributes(ModelNormal):
             value when you use both products.
         :type service: str, optional
 
-        :param tags: Array of tags associated with your event.
+        :param tags: Array of tags associated with your event, in ``key:value`` format.
         :type tags: [str], optional
 
-        :param timestamp: Timestamp of your event.
+        :param timestamp: Timestamp of your event, in ISO 8601 format.
         :type timestamp: datetime, optional
         """
         if attributes is not unset:
