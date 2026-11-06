@@ -4903,13 +4903,6 @@
     {
       "feature": "CSM Threats",
       "feature_file": "../../v2/features/csm_threats.feature",
-      "file": "v2/csm-threats/download-the-workload-protection-policy-us1-fed-returns-ok-response.json",
-      "scenario": "Download the Workload Protection policy (US1-FED) returns \"OK\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "CSM Threats",
-      "feature_file": "../../v2/features/csm_threats.feature",
       "file": "v2/csm-threats/download-the-workload-protection-policy-returns-ok-response.json",
       "scenario": "Download the Workload Protection policy returns \"OK\" response",
       "version": "v2"

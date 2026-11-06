@@ -142,12 +142,6 @@ Feature: CSM Threats
     Then the response status is 204 OK
 
   @team:ddoghq/k9-cws-backend
-  Scenario: Download the Workload Protection policy (US1-FED) returns "OK" response
-    Given new "DownloadCloudWorkloadPolicyFile" request
-    When the request is sent
-    Then the response status is 200 OK
-
-  @team:ddoghq/k9-cws-backend
   Scenario: Download the Workload Protection policy returns "OK" response
     Given new "DownloadCSMThreatsPolicy" request
     When the request is sent
