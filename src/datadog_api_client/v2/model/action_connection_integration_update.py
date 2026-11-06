@@ -48,6 +48,7 @@ class ActionConnectionIntegrationUpdate(ModelComposed):
         from datadog_api_client.v2.model.freshservice_integration_update import FreshserviceIntegrationUpdate
         from datadog_api_client.v2.model.gcp_integration_update import GCPIntegrationUpdate
         from datadog_api_client.v2.model.gemini_integration_update import GeminiIntegrationUpdate
+        from datadog_api_client.v2.model.github_integration_update import GithubIntegrationUpdate
         from datadog_api_client.v2.model.gitlab_integration_update import GitlabIntegrationUpdate
         from datadog_api_client.v2.model.grey_noise_integration_update import GreyNoiseIntegrationUpdate
         from datadog_api_client.v2.model.http_integration_update import HTTPIntegrationUpdate
@@ -75,6 +76,7 @@ class ActionConnectionIntegrationUpdate(ModelComposed):
                 FreshserviceIntegrationUpdate,
                 GCPIntegrationUpdate,
                 GeminiIntegrationUpdate,
+                GithubIntegrationUpdate,
                 GitlabIntegrationUpdate,
                 GreyNoiseIntegrationUpdate,
                 HTTPIntegrationUpdate,

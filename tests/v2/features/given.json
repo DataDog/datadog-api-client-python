@@ -68,6 +68,30 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"action_connection\",\n    \"attributes\": {\n      \"name\": \"GitHub App Connection {{ unique_lower_alnum }}\",\n      \"integration\": {\n        \"type\": \"Github\",\n        \"credentials\": {\n          \"type\": \"GithubApp\",\n          \"github_app_id\": \"123456\",\n          \"github_installation_id\": \"789012\",\n          \"private_key\": \"example-private-key\",\n          \"hostname\": \"github.example.com\"\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"github_app_action_connection\" in the system",
+    "key": "github_app_action_connection",
+    "tag": "Action Connection",
+    "operationId": "CreateActionConnection"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"action_connection\",\n    \"attributes\": {\n      \"name\": \"GitHub personal access token Connection {{ unique_lower_alnum }}\",\n      \"integration\": {\n        \"type\": \"Github\",\n        \"credentials\": {\n          \"type\": \"GithubPersonalAccessToken\",\n          \"access_token\": \"example-token\",\n          \"hostname\": \"github.example.com\"\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"github_pat_action_connection\" in the system",
+    "key": "github_pat_action_connection",
+    "tag": "Action Connection",
+    "operationId": "CreateActionConnection"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"execution_policy\",\n    \"attributes\": {\n      \"name\": \"Cassette Execution Policy {{ unique_lower_alnum }}\",\n      \"effect\": \"allow\",\n      \"action_pattern\": {\n        \"integration\": \"INTEGRATION_SCRIPT\",\n        \"action_fqns\": [\"com.datadoghq.script.*\"]\n      }\n    }\n  }\n}"
       }
     ],
