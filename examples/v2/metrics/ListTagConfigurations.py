@@ -1,5 +1,5 @@
 """
-Get a list of metrics returns "Success" response
+List all metrics with volumes and query activity returns "Success" response
 """
 
 from os import environ
@@ -10,6 +10,8 @@ configuration = Configuration()
 configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = MetricsApi(api_client)
-    response = api_instance.list_tag_configurations()
+    response = api_instance.list_tag_configurations(
+        page_size=100,
+    )
 
     print(response)

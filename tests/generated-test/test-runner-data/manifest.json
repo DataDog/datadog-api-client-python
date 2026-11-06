@@ -7941,6 +7941,27 @@
     {
       "feature": "Metrics",
       "feature_file": "../../v2/features/metrics.feature",
+      "file": "v2/metrics/list-all-metrics-with-volumes-and-query-activity-for-metrics-not-queried-in-the-last-30-days-returns-success-response.json",
+      "scenario": "List all metrics with volumes and query activity for metrics not queried in the last 30 days returns \"Success\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Metrics",
+      "feature_file": "../../v2/features/metrics.feature",
+      "file": "v2/metrics/list-all-metrics-with-volumes-and-query-activity-for-metrics-without-a-tag-configuration-returns-success-response.json",
+      "scenario": "List all metrics with volumes and query activity for metrics without a tag configuration returns \"Success\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Metrics",
+      "feature_file": "../../v2/features/metrics.feature",
+      "file": "v2/metrics/list-all-metrics-with-volumes-and-query-activity-for-top-metrics-by-indexed-volume-returns-success-response.json",
+      "scenario": "List all metrics with volumes and query activity for top metrics by indexed volume returns \"Success\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Metrics",
+      "feature_file": "../../v2/features/metrics.feature",
       "file": "v2/metrics/list-distinct-metric-volumes-by-metric-name-returns-success-response.json",
       "scenario": "List distinct metric volumes by metric name returns \"Success\" response",
       "version": "v2"
