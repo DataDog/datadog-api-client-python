@@ -156,6 +156,16 @@ Feature: Users
     And the response "data.type" is equal to "users"
     And the response "data.attributes.handle" is equal to "{{ unique_lower }}@datadoghq.com"
 
+  @team:ddoghq/org-management
+  Scenario: List all users filtered by handle returns "OK" response
+    Given there is a valid "user" in the system
+    And new "ListUsers" request
+    And request contains "filter[handle]" parameter from "user.data.attributes.handle"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "meta.page.total_filtered_count" is equal to 1
+    And the response "data[0].id" has the same value as "user.data.id"
+
   @generated @skip @team:ddoghq/org-management
   Scenario: List all users returns "Bad Request" response
     Given new "ListUsers" request
