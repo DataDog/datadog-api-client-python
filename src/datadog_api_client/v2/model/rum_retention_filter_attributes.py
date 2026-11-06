@@ -16,6 +16,7 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.rum_cross_product_sampling import RumCrossProductSampling
     from datadog_api_client.v2.model.rum_retention_filter_event_type import RumRetentionFilterEventType
+    from datadog_api_client.v2.model.rum_retention_filter_track import RumRetentionFilterTrack
 
 
 class RumRetentionFilterAttributes(ModelNormal):
@@ -30,6 +31,7 @@ class RumRetentionFilterAttributes(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v2.model.rum_cross_product_sampling import RumCrossProductSampling
         from datadog_api_client.v2.model.rum_retention_filter_event_type import RumRetentionFilterEventType
+        from datadog_api_client.v2.model.rum_retention_filter_track import RumRetentionFilterTrack
 
         return {
             "cross_product_sampling": (RumCrossProductSampling,),
@@ -38,6 +40,7 @@ class RumRetentionFilterAttributes(ModelNormal):
             "name": (str,),
             "query": (str,),
             "sample_rate": (float,),
+            "track": (RumRetentionFilterTrack,),
         }
 
     attribute_map = {
@@ -47,6 +50,7 @@ class RumRetentionFilterAttributes(ModelNormal):
         "name": "name",
         "query": "query",
         "sample_rate": "sample_rate",
+        "track": "track",
     }
 
     def __init__(
@@ -57,6 +61,7 @@ class RumRetentionFilterAttributes(ModelNormal):
         name: Union[str, UnsetType] = unset,
         query: Union[str, UnsetType] = unset,
         sample_rate: Union[float, UnsetType] = unset,
+        track: Union[RumRetentionFilterTrack, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -79,6 +84,9 @@ class RumRetentionFilterAttributes(ModelNormal):
 
         :param sample_rate: The sample rate for a RUM retention filter, between 0.1 and 100. Values are truncated to one decimal place.
         :type sample_rate: float, optional
+
+        :param track: The product track a RUM retention filter applies to.
+        :type track: RumRetentionFilterTrack, optional
         """
         if cross_product_sampling is not unset:
             kwargs["cross_product_sampling"] = cross_product_sampling
@@ -92,4 +100,6 @@ class RumRetentionFilterAttributes(ModelNormal):
             kwargs["query"] = query
         if sample_rate is not unset:
             kwargs["sample_rate"] = sample_rate
+        if track is not unset:
+            kwargs["track"] = track
         super().__init__(kwargs)

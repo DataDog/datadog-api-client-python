@@ -3,11 +3,12 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
 )
 
 
@@ -21,19 +22,20 @@ class RUMOperationJourneyRum(ModelNormal):
         from datadog_api_client.v2.model.rum_operation_journey_step import RUMOperationJourneyStep
 
         return {
-            "rum_steps": ([RUMOperationJourneyStep],),
+            "rum_steps": ([RUMOperationJourneyStep], none_type),
         }
 
     attribute_map = {
         "rum_steps": "rum_steps",
     }
 
-    def __init__(self_, rum_steps: List[RUMOperationJourneyStep], **kwargs):
+    def __init__(self_, rum_steps: Union[List[RUMOperationJourneyStep], none_type], **kwargs):
         """
         The definition of a RUM operation's journey, used to detect it from RUM events.
 
         :param rum_steps: The ordered list of steps composing the RUM journey.
-        :type rum_steps: [RUMOperationJourneyStep]
+            ``null`` in responses for operations that have no journey defined.
+        :type rum_steps: [RUMOperationJourneyStep], none_type
         """
         super().__init__(kwargs)
 
