@@ -290,6 +290,16 @@ from datadog_api_client.v1.model.heatgrid_sort_by_label_property import Heatgrid
 from datadog_api_client.v1.model.heatgrid_sort_by_value import HeatgridSortByValue
 from datadog_api_client.v1.model.heatgrid_sort_by_value_property import HeatgridSortByValueProperty
 from datadog_api_client.v1.model.heatgrid_sort_order import HeatgridSortOrder
+from datadog_api_client.v1.model.heatgrid_text_format_match import HeatgridTextFormatMatch
+from datadog_api_client.v1.model.heatgrid_text_format_match_type import HeatgridTextFormatMatchType
+from datadog_api_client.v1.model.heatgrid_text_format_replace import HeatgridTextFormatReplace
+from datadog_api_client.v1.model.heatgrid_text_format_replace_all import HeatgridTextFormatReplaceAll
+from datadog_api_client.v1.model.heatgrid_text_format_replace_all_type import HeatgridTextFormatReplaceAllType
+from datadog_api_client.v1.model.heatgrid_text_format_replace_substring import HeatgridTextFormatReplaceSubstring
+from datadog_api_client.v1.model.heatgrid_text_format_replace_substring_type import (
+    HeatgridTextFormatReplaceSubstringType,
+)
+from datadog_api_client.v1.model.heatgrid_text_format_rule import HeatgridTextFormatRule
 from datadog_api_client.v1.model.heatgrid_widget_definition import HeatgridWidgetDefinition
 from datadog_api_client.v1.model.heatgrid_widget_definition_type import HeatgridWidgetDefinitionType
 from datadog_api_client.v1.model.heatgrid_widget_formula import HeatgridWidgetFormula
@@ -1779,6 +1789,14 @@ __all__ = [
     "HeatgridSortByValue",
     "HeatgridSortByValueProperty",
     "HeatgridSortOrder",
+    "HeatgridTextFormatMatch",
+    "HeatgridTextFormatMatchType",
+    "HeatgridTextFormatReplace",
+    "HeatgridTextFormatReplaceAll",
+    "HeatgridTextFormatReplaceAllType",
+    "HeatgridTextFormatReplaceSubstring",
+    "HeatgridTextFormatReplaceSubstringType",
+    "HeatgridTextFormatRule",
     "HeatgridWidgetDefinition",
     "HeatgridWidgetDefinitionType",
     "HeatgridWidgetFormula",

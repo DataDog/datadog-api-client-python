@@ -18,6 +18,12 @@ if TYPE_CHECKING:
 
 
 class HeatgridColorBin(ModelNormal):
+    validations = {
+        "label": {
+            "max_length": 255,
+        },
+    }
+
     @cached_property
     def additional_properties_type(_):
         return None
@@ -28,26 +34,37 @@ class HeatgridColorBin(ModelNormal):
 
         return {
             "color": (HeatgridColor,),
+            "label": (str,),
             "lower_bound": (float,),
         }
 
     attribute_map = {
         "color": "color",
+        "label": "label",
         "lower_bound": "lower_bound",
     }
 
     def __init__(
-        self_, color: Union[HeatgridColor, str, List[str]], lower_bound: Union[float, UnsetType] = unset, **kwargs
+        self_,
+        color: Union[HeatgridColor, str, List[str]],
+        label: Union[str, UnsetType] = unset,
+        lower_bound: Union[float, UnsetType] = unset,
+        **kwargs,
     ):
         """
-        A color and optional lower threshold for a discrete bin.
+        A color, optional lower threshold, and optional label for a discrete bin.
 
         :param color: A color string, or two color strings for the light and dark themes, in that order.
         :type color: HeatgridColor
 
+        :param label: Name of the bin.
+        :type label: str, optional
+
         :param lower_bound: Inclusive lower bound. Omit for the first bin.
         :type lower_bound: float, optional
         """
+        if label is not unset:
+            kwargs["label"] = label
         if lower_bound is not unset:
             kwargs["lower_bound"] = lower_bound
         super().__init__(kwargs)
