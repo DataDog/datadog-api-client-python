@@ -37,7 +37,7 @@ class TagRuleScoreRelationshipData(ModelNormal):
         :param id: The unique identifier of the related compliance score resource.
         :type id: str
 
-        :param type: JSON:API resource type for a tag rule compliance score.
+        :param type: JSON:API resource type for a tag rule compliance score. Responses use the legacy ``tag_policy_score`` value.
         :type type: TagRuleScoreResourceType
         """
         super().__init__(kwargs)
