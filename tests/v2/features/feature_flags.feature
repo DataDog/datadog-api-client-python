@@ -100,19 +100,24 @@ Feature: Feature Flags
     When the request is sent
     Then the response status is 201 Created
 
-  @skip @team:ddoghq/feature-flags
+  @team:ddoghq/feature-flags
   Scenario: Create an environment returns "Bad Request" response
     Given new "CreateFeatureFlagsEnvironment" request
-    And body with value {"data": {"type": "environments", "attributes": {"description": "Staging environment for testing", "key": "staging", "name": "staging"}}}
+    And body with value {"data": {"type": "environments", "attributes": {"name": "Invalid Query {{ unique }}", "queries": ["staging-*"]}}}
     When the request is sent
     Then the response status is 400 Bad Request
+    And the response "errors[0].status" is equal to "400"
+    And the response "errors[0].title" is equal to "Bad Request"
 
-  @skip @team:ddoghq/feature-flags
+  @team:ddoghq/feature-flags
   Scenario: Create an environment returns "Conflict" response
-    Given new "CreateFeatureFlagsEnvironment" request
-    And body with value {"data": {"type": "environments", "attributes": {"description": "Staging environment for testing", "key": "staging", "name": "staging"}}}
+    Given there is a valid "environment" in the system
+    And new "CreateFeatureFlagsEnvironment" request
+    And body with value {"data": {"type": "environments", "attributes": {"name": "Duplicate Query {{ unique }}", "queries": ["{{ environment.data.attributes.queries[0] }}", "{{ environment.data.attributes.queries[1] }}"]}}}
     When the request is sent
     Then the response status is 409 Conflict
+    And the response "errors[0].status" is equal to "409"
+    And the response "errors[0].title" is equal to "Conflict"
 
   @team:ddoghq/feature-flags
   Scenario: Create an environment returns "Created" response
@@ -120,6 +125,23 @@ Feature: Feature Flags
     And body with value {"data": {"type": "environments", "attributes": {"name": "Test Environment {{ unique }}", "queries": ["test-{{ unique }}", "env-{{ unique }}"]}}}
     When the request is sent
     Then the response status is 201 Created
+    And the response "data.attributes.observe_full_evaluation_data" is equal to false
+
+  @team:ddoghq/feature-flags
+  Scenario: Create an environment with full evaluation data false returns "Created" response
+    Given new "CreateFeatureFlagsEnvironment" request
+    And body with value {"data": {"type": "environments", "attributes": {"name": "Evaluation Privacy {{ unique }}", "queries": ["privacy-{{ unique_lower }}"], "observe_full_evaluation_data": false}}}
+    When the request is sent
+    Then the response status is 201 Created
+    And the response "data.attributes.observe_full_evaluation_data" is equal to false
+
+  @team:ddoghq/feature-flags
+  Scenario: Create an environment with full evaluation data true returns "Created" response
+    Given new "CreateFeatureFlagsEnvironment" request
+    And body with value {"data": {"type": "environments", "attributes": {"name": "Evaluation Privacy {{ unique }}", "queries": ["privacy-{{ unique_lower }}"], "observe_full_evaluation_data": true}}}
+    When the request is sent
+    Then the response status is 201 Created
+    And the response "data.attributes.observe_full_evaluation_data" is equal to true
 
   @generated @skip @team:ddoghq/feature-flags
   Scenario: Create targeting rules for a flag env returns "Accepted - Approval required for this change" response
@@ -206,12 +228,14 @@ Feature: Feature Flags
     When the request is sent
     Then the response status is 204 No Content
 
-  @skip @team:ddoghq/feature-flags
+  @team:ddoghq/feature-flags
   Scenario: Delete an environment returns "Not Found" response
     Given new "DeleteFeatureFlagsEnvironment" request
     And request contains "environment_id" parameter with value "00000000-0000-0000-0000-000000000000"
     When the request is sent
     Then the response status is 404 Not Found
+    And the response "errors[0].status" is equal to "404"
+    And the response "errors[0].title" is equal to "Not Found"
 
   @skip @team:ddoghq/feature-flags
   Scenario: Disable a feature flag in an environment returns "Accepted - Approval required for this change" response
@@ -339,12 +363,14 @@ Feature: Feature Flags
     And the response "data.attributes.targeting_rules[0].conditions[0].operator" is equal to "ONE_OF"
     And the response "data.attributes.targeting_rules[0].conditions[0].value" is equal to ["test-user-1", "test-user-2"]
 
-  @skip @team:ddoghq/feature-flags
+  @team:ddoghq/feature-flags
   Scenario: Get an environment returns "Not Found" response
     Given new "GetFeatureFlagsEnvironment" request
     And request contains "environment_id" parameter with value "00000000-0000-0000-0000-000000000000"
     When the request is sent
     Then the response status is 404 Not Found
+    And the response "errors[0].status" is equal to "404"
+    And the response "errors[0].title" is equal to "Not Found"
 
   @skip @team:ddoghq/feature-flags
   Scenario: Get an environment returns "OK" response
@@ -1123,21 +1149,26 @@ Feature: Feature Flags
     When the request is sent
     Then the response status is 200 OK
 
-  @skip @team:ddoghq/feature-flags
+  @team:ddoghq/feature-flags
   Scenario: Update an environment returns "Bad Request" response
-    Given new "UpdateFeatureFlagsEnvironment" request
-    And request contains "environment_id" parameter with value "00000000-0000-0000-0000-000000000000"
-    And body with value {"data": {"type": "environments", "attributes": {"description": "Updated staging environment description", "name": "Updated Staging"}}}
+    Given there is a valid "environment" in the system
+    And new "UpdateFeatureFlagsEnvironment" request
+    And request contains "environment_id" parameter from "environment.data.id"
+    And body with value {"data": {"type": "environments", "attributes": {"name": "Missing Queries {{ unique }}"}}}
     When the request is sent
     Then the response status is 400 Bad Request
+    And the response "errors[0].status" is equal to "400"
+    And the response "errors[0].title" is equal to "Bad Request"
 
-  @skip @team:ddoghq/feature-flags
+  @team:ddoghq/feature-flags
   Scenario: Update an environment returns "Not Found" response
     Given new "UpdateFeatureFlagsEnvironment" request
     And request contains "environment_id" parameter with value "00000000-0000-0000-0000-000000000000"
-    And body with value {"data": {"type": "environments", "attributes": {"description": "Updated staging environment description", "name": "Updated Staging"}}}
+    And body with value {"data": {"type": "environments", "attributes": {"name": "Missing Environment {{ unique }}", "queries": ["missing-{{ unique_lower }}"]}}}
     When the request is sent
     Then the response status is 404 Not Found
+    And the response "errors[0].status" is equal to "404"
+    And the response "errors[0].title" is equal to "Not Found"
 
   @skip @team:ddoghq/feature-flags
   Scenario: Update an environment returns "OK" response
@@ -1147,6 +1178,59 @@ Feature: Feature Flags
     And body with value {"data": {"type": "environments", "attributes": {"name": "Updated Test Environment {{ unique }}", "queries": ["updated-{{ unique }}", "live-{{ unique }}"]}}}
     When the request is sent
     Then the response status is 200 OK
+
+  @team:ddoghq/feature-flags
+  Scenario: Update an environment to disable full evaluation data returns "OK" response
+    Given there is a valid "environment_with_full_evaluation_data" in the system
+    And new "UpdateFeatureFlagsEnvironment" request
+    And request contains "environment_id" parameter from "environment_with_full_evaluation_data.data.id"
+    And body with value {"data": {"type": "environments", "attributes": {"name": "Updated Privacy {{ unique }}", "queries": ["updated-privacy-{{ unique_lower }}"], "observe_full_evaluation_data": false}}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.observe_full_evaluation_data" is equal to false
+
+  @team:ddoghq/feature-flags
+  Scenario: Update an environment to enable full evaluation data returns "OK" response
+    Given there is a valid "environment" in the system
+    And new "UpdateFeatureFlagsEnvironment" request
+    And request contains "environment_id" parameter from "environment.data.id"
+    And body with value {"data": {"type": "environments", "attributes": {"name": "Updated Privacy {{ unique }}", "queries": ["updated-privacy-{{ unique_lower }}"], "observe_full_evaluation_data": true}}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.observe_full_evaluation_data" is equal to true
+
+  @team:ddoghq/feature-flags
+  Scenario: Update an environment to preserve disabled full evaluation data when omitted returns "OK" response
+    Given there is a valid "environment" in the system
+    And new "UpdateFeatureFlagsEnvironment" request
+    And request contains "environment_id" parameter from "environment.data.id"
+    And body with value {"data": {"type": "environments", "attributes": {"name": "Updated Privacy {{ unique }}", "queries": ["updated-privacy-{{ unique_lower }}"]}}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.observe_full_evaluation_data" is equal to false
+
+  @team:ddoghq/feature-flags
+  Scenario: Update an environment to preserve enabled full evaluation data when omitted returns "OK" response
+    Given there is a valid "environment_with_full_evaluation_data" in the system
+    And new "UpdateFeatureFlagsEnvironment" request
+    And request contains "environment_id" parameter from "environment_with_full_evaluation_data.data.id"
+    And body with value {"data": {"type": "environments", "attributes": {"name": "Updated Privacy {{ unique }}", "queries": ["updated-privacy-{{ unique_lower }}"]}}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.observe_full_evaluation_data" is equal to true
+    And the response "data.attributes.is_production" is equal to false
+    And the response "data.attributes.require_feature_flag_approval" is equal to false
+
+  @team:ddoghq/feature-flags
+  Scenario: Update an environment without a name returns "Bad Request" response
+    Given there is a valid "environment" in the system
+    And new "UpdateFeatureFlagsEnvironment" request
+    And request contains "environment_id" parameter from "environment.data.id"
+    And body with value {"data": {"type": "environments", "attributes": {"queries": ["missing-name-{{ unique_lower }}"], "observe_full_evaluation_data": true}}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+    And the response "errors[0].status" is equal to "400"
+    And the response "errors[0].title" is equal to "Bad Request"
 
   @team:ddoghq/feature-flags
   Scenario: Update targeting rules for a flag in an environment returns "OK" response

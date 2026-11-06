@@ -6219,8 +6219,43 @@
     {
       "feature": "Feature Flags",
       "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/create-an-environment-returns-bad-request-response.json",
+      "scenario": "Create an environment returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/create-an-environment-returns-conflict-response.json",
+      "scenario": "Create an environment returns \"Conflict\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
       "file": "v2/feature-flags/create-an-environment-returns-created-response.json",
       "scenario": "Create an environment returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/create-an-environment-with-full-evaluation-data-false-returns-created-response.json",
+      "scenario": "Create an environment with full evaluation data false returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/create-an-environment-with-full-evaluation-data-true-returns-created-response.json",
+      "scenario": "Create an environment with full evaluation data true returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/delete-an-environment-returns-not-found-response.json",
+      "scenario": "Delete an environment returns \"Not Found\" response",
       "version": "v2"
     },
     {
@@ -6249,6 +6284,13 @@
       "feature_file": "../../v2/features/feature_flags.feature",
       "file": "v2/feature-flags/get-a-saved-filter-returns-a-saved-list.json",
       "scenario": "Get a saved filter returns a saved list",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/get-an-environment-returns-not-found-response.json",
+      "scenario": "Get an environment returns \"Not Found\" response",
       "version": "v2"
     },
     {
@@ -6543,6 +6585,55 @@
       "feature_file": "../../v2/features/feature_flags.feature",
       "file": "v2/feature-flags/update-a-feature-flag-returns-ok-response.json",
       "scenario": "Update a feature flag returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/update-an-environment-returns-bad-request-response.json",
+      "scenario": "Update an environment returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/update-an-environment-returns-not-found-response.json",
+      "scenario": "Update an environment returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/update-an-environment-to-disable-full-evaluation-data-returns-ok-response.json",
+      "scenario": "Update an environment to disable full evaluation data returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/update-an-environment-to-enable-full-evaluation-data-returns-ok-response.json",
+      "scenario": "Update an environment to enable full evaluation data returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/update-an-environment-to-preserve-disabled-full-evaluation-data-when-omitted-returns-ok-response.json",
+      "scenario": "Update an environment to preserve disabled full evaluation data when omitted returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/update-an-environment-to-preserve-enabled-full-evaluation-data-when-omitted-returns-ok-response.json",
+      "scenario": "Update an environment to preserve enabled full evaluation data when omitted returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/update-an-environment-without-a-name-returns-bad-request-response.json",
+      "scenario": "Update an environment without a name returns \"Bad Request\" response",
       "version": "v2"
     },
     {
