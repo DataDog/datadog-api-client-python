@@ -4126,6 +4126,20 @@
     {
       "feature": "Cloud Authentication",
       "feature_file": "../../v2/features/cloud_authentication.feature",
+      "file": "v2/cloud-authentication/create-a-custom-oidc-persona-mapping-returns-created-response.json",
+      "scenario": "Create a Custom OIDC persona mapping returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "feature_file": "../../v2/features/cloud_authentication.feature",
+      "file": "v2/cloud-authentication/create-a-custom-oidc-provider-returns-created-response.json",
+      "scenario": "Create a Custom OIDC provider returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "feature_file": "../../v2/features/cloud_authentication.feature",
       "file": "v2/cloud-authentication/create-an-aws-cloud-authentication-intake-mapping-returns-bad-request-response.json",
       "scenario": "Create an AWS cloud authentication intake mapping returns \"Bad Request\" response",
       "version": "v2"
@@ -4147,6 +4161,20 @@
     {
       "feature": "Cloud Authentication",
       "feature_file": "../../v2/features/cloud_authentication.feature",
+      "file": "v2/cloud-authentication/delete-a-custom-oidc-persona-mapping-returns-no-content-response.json",
+      "scenario": "Delete a Custom OIDC persona mapping returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "feature_file": "../../v2/features/cloud_authentication.feature",
+      "file": "v2/cloud-authentication/delete-a-custom-oidc-provider-returns-no-content-response.json",
+      "scenario": "Delete a Custom OIDC provider returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "feature_file": "../../v2/features/cloud_authentication.feature",
       "file": "v2/cloud-authentication/delete-an-aws-cloud-authentication-intake-mapping-returns-no-content-response.json",
       "scenario": "Delete an AWS cloud authentication intake mapping returns \"No Content\" response",
       "version": "v2"
@@ -4156,6 +4184,20 @@
       "feature_file": "../../v2/features/cloud_authentication.feature",
       "file": "v2/cloud-authentication/delete-an-aws-cloud-authentication-intake-mapping-returns-not-found-response.json",
       "scenario": "Delete an AWS cloud authentication intake mapping returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "feature_file": "../../v2/features/cloud_authentication.feature",
+      "file": "v2/cloud-authentication/get-a-custom-oidc-persona-mapping-returns-ok-response.json",
+      "scenario": "Get a Custom OIDC persona mapping returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "feature_file": "../../v2/features/cloud_authentication.feature",
+      "file": "v2/cloud-authentication/get-a-custom-oidc-provider-returns-ok-response.json",
+      "scenario": "Get a Custom OIDC provider returns \"OK\" response",
       "version": "v2"
     },
     {
@@ -4177,6 +4219,20 @@
       "feature_file": "../../v2/features/cloud_authentication.feature",
       "file": "v2/cloud-authentication/list-aws-cloud-authentication-intake-mappings-returns-ok-response.json",
       "scenario": "List AWS cloud authentication intake mappings returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "feature_file": "../../v2/features/cloud_authentication.feature",
+      "file": "v2/cloud-authentication/list-all-custom-oidc-persona-mappings-returns-ok-response.json",
+      "scenario": "List all Custom OIDC persona mappings returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "feature_file": "../../v2/features/cloud_authentication.feature",
+      "file": "v2/cloud-authentication/list-all-custom-oidc-providers-returns-ok-response.json",
+      "scenario": "List all Custom OIDC providers returns \"OK\" response",
       "version": "v2"
     },
     {

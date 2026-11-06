@@ -1,0 +1,18 @@
+{
+  "api": "CloudAuthentication",
+  "expected_status": 200,
+  "feature": "Cloud Authentication",
+  "id": "v2/Cloud Authentication/List all Custom OIDC persona mappings returns \"OK\" response",
+  "operation_id": "ListOIDCCloudAuthPersonaMappings",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/wif/oidc/persona_mapping"
+  },
+  "scenario": "List all Custom OIDC persona mappings returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

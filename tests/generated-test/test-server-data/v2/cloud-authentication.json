@@ -3,6 +3,308 @@
   "recordings": [
     {
       "feature": "Cloud Authentication",
+      "frozen_at": "2026-11-05T21:32:15.740Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Create_a_Custom_OIDC_persona_mapping_returns_Created_response-1793914335"
+                  },
+                  "type": "roles"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/roles",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"ab697112-564d-5005-810f-2e4d7c79bfd0\",\"type\":\"roles\",\"attributes\":{\"created_at\":\"2026-11-05T21:32:20.885687Z\",\"modified_at\":\"2026-11-05T21:32:20.887247Z\",\"name\":\"Test-Create_a_Custom_OIDC_persona_mapping_returns_Created_response-1793914335\",\"team_count\":0,\"user_count\":0},\"relationships\":{\"permissions\":{\"data\":[{\"id\":\"de796e53-9bf5-521a-9f1b-607cb5144a04\",\"type\":\"permissions\"},{\"id\":\"e26672cd-7816-550f-ba6d-ef2ccd74a855\",\"type\":\"permissions\"},{\"id\":\"c25972d3-7b22-5549-8aef-2c6284156df8\",\"type\":\"permissions\"},{\"id\":\"47b95fa2-acb3-5cc9-ba59-aa9a9ea98482\",\"type\":\"permissions\"},{\"id\":\"62630f06-15f6-57ea-87a8-a2fafeef4390\",\"type\":\"permissions\"},{\"id\":\"ed6753a6-7596-5003-8817-32c4252118dc\",\"type\":\"permissions\"},{\"id\":\"959dd3c1-f6ac-540d-a554-fb505090228a\",\"type\":\"permissions\"},{\"id\":\"7898000c-4468-51f3-8663-abb02240568a\",\"type\":\"permissions\"},{\"id\":\"43e3923c-30d5-5063-9fe9-b5586613f61f\",\"type\":\"permissions\"},{\"id\":\"7a67188c-c249-55dc-b7f1-8c157a9cc009\",\"type\":\"permissions\"},{\"id\":\"800d49aa-2874-52fa-b04a-e7c315b90566\",\"type\":\"permissions\"},{\"id\":\"61db7ad1-dfbc-58ac-9715-8cb979d8ea5e\",\"type\":\"permissions\"},{\"id\":\"8e44d087-3fcf-572c-87ac-cdf13c5cd3d5\",\"type\":\"permissions\"},{\"id\":\"b3b4f318-1da7-5426-93b9-05b103faba58\",\"type\":\"permissions\"},{\"id\":\"d7d58ca3-ce77-510e-813a-1a6580655889\",\"type\":\"permissions\"},{\"id\":\"adbfd0d1-8f5b-58c2-889a-61bd2914e34f\",\"type\":\"permissions\"},{\"id\":\"c87e93d8-d078-5b87-a2e4-e0ff21a7bf0b\",\"type\":\"permissions\"},{\"id\":\"0353915b-c07e-5e9e-917e-e43d9faef377\",\"type\":\"permissions\"},{\"id\":\"75613a26-a865-5279-9c43-8379635f42a5\",\"type\":\"permissions\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Create_a_Custom_OIDC_persona_mapping_returns_Created_response-1793914335@datadoghq.com",
+                    "service_account": true
+                  },
+                  "relationships": {
+                    "roles": {
+                      "data": [
+                        {
+                          "id": "ab697112-564d-5005-810f-2e4d7c79bfd0",
+                          "type": "roles"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/service_accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"e47d0c8d-266c-5e75-b150-22b2bcaef29c\",\"attributes\":{\"uuid\":\"e47d0c8d-266c-5e75-b150-22b2bcaef29c\",\"name\":null,\"handle\":\"e47d0c8d-266c-5e75-b150-22b2bcaef29c\",\"created_at\":\"2026-11-05T21:32:26.144575+00:00\",\"modified_at\":\"2026-11-05T21:32:26.144575+00:00\",\"email\":\"test-create_a_custom_oidc_persona_mapping_returns_created_response-1793914335@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/c24ad5b10269bdff900c8542c47b11e2?s=48&d=retro\",\"title\":null,\"verified\":true,\"service_account\":true,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Active\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[{\"type\":\"roles\",\"id\":\"ab697112-564d-5005-810f-2e4d7c79bfd0\"}]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"f989be54-3c44-536d-b6a6-cce20ce9c70c\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "audiences": [
+                      "sdk-test"
+                    ],
+                    "discovery_type": "oidc_discovery",
+                    "issuer_url": "https://oidc-e3a0a619a3d493d3.example.com",
+                    "provider_name": "oidc-e3a0a619a3d493d3"
+                  },
+                  "type": "custom_oidc_provider_config"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/wif/oidc/provider",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"ba3d323b-94a0-5f53-9f3d-012fd2d63ed0\",\"type\":\"custom_oidc_provider_config\",\"attributes\":{\"audiences\":[\"sdk-test\"],\"created_at\":\"2026-11-05T21:32:31.517999009Z\",\"created_by\":\"4df2743e-002e-558d-8789-25ae05238231\",\"discovery_type\":\"oidc_discovery\",\"identity_claim_name\":\"sub\",\"issuer_url\":\"https://oidc-e3a0a619a3d493d3.example.com\",\"org_uuid_source\":\"dd_org_uuid\",\"provider_name\":\"oidc-e3a0a619a3d493d3\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "account_uuid": "e47d0c8d-266c-5e75-b150-22b2bcaef29c",
+                    "claim_matchers": [
+                      {
+                        "claim": "sub",
+                        "mode": "exact",
+                        "values": [
+                          "system:serviceaccount:controllers:example-controller"
+                        ]
+                      }
+                    ],
+                    "provider_id": "ba3d323b-94a0-5f53-9f3d-012fd2d63ed0"
+                  },
+                  "type": "custom_oidc_identity_mapping"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/wif/oidc/persona_mapping",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"138b4be7-1365-5744-b90c-3af0d2b9c474\",\"type\":\"custom_oidc_identity_mapping\",\"attributes\":{\"account_identifier\":\"e47d0c8d-266c-5e75-b150-22b2bcaef29c\",\"account_uuid\":\"e47d0c8d-266c-5e75-b150-22b2bcaef29c\",\"claim_matchers\":[{\"claim\":\"sub\",\"mode\":\"exact\",\"values\":[\"system:serviceaccount:controllers:example-controller\"]}],\"created_at\":\"2026-11-05T21:32:36.68186799Z\",\"created_by\":\"4df2743e-002e-558d-8789-25ae05238231\",\"provider_id\":\"ba3d323b-94a0-5f53-9f3d-012fd2d63ed0\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/wif/oidc/persona_mapping/138b4be7-1365-5744-b90c-3af0d2b9c474",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/wif/oidc/provider/ba3d323b-94a0-5f53-9f3d-012fd2d63ed0",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/e47d0c8d-266c-5e75-b150-22b2bcaef29c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/roles/ab697112-564d-5005-810f-2e4d7c79bfd0",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a Custom OIDC persona mapping returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "frozen_at": "2026-11-05T21:32:57.855Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "audiences": [
+                      "sdk-test"
+                    ],
+                    "discovery_type": "oidc_discovery",
+                    "issuer_url": "https://oidc-b5429c819ca435c7.example.com",
+                    "provider_name": "oidc-b5429c819ca435c7"
+                  },
+                  "type": "custom_oidc_provider_config"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/wif/oidc/provider",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"2c8dfc6f-d4c5-56c5-bd3e-ab481e3c3ff4\",\"type\":\"custom_oidc_provider_config\",\"attributes\":{\"audiences\":[\"sdk-test\"],\"created_at\":\"2026-11-05T21:33:02.989650701Z\",\"created_by\":\"4df2743e-002e-558d-8789-25ae05238231\",\"discovery_type\":\"oidc_discovery\",\"identity_claim_name\":\"sub\",\"issuer_url\":\"https://oidc-b5429c819ca435c7.example.com\",\"org_uuid_source\":\"dd_org_uuid\",\"provider_name\":\"oidc-b5429c819ca435c7\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/wif/oidc/provider/2c8dfc6f-d4c5-56c5-bd3e-ab481e3c3ff4",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a Custom OIDC provider returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
       "frozen_at": "2026-10-29T17:41:58.788Z",
       "interactions": [
         {
@@ -235,6 +537,354 @@
     },
     {
       "feature": "Cloud Authentication",
+      "frozen_at": "2026-11-05T21:33:08.190Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Delete_a_Custom_OIDC_persona_mapping_returns_No_Content_response-1793914388"
+                  },
+                  "type": "roles"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/roles",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"23cb8406-88e9-5ce7-9cbb-c17cefb2592e\",\"type\":\"roles\",\"attributes\":{\"created_at\":\"2026-11-05T21:33:13.307428Z\",\"modified_at\":\"2026-11-05T21:33:13.308543Z\",\"name\":\"Test-Delete_a_Custom_OIDC_persona_mapping_returns_No_Content_response-1793914388\",\"team_count\":0,\"user_count\":0},\"relationships\":{\"permissions\":{\"data\":[{\"id\":\"de796e53-9bf5-521a-9f1b-607cb5144a04\",\"type\":\"permissions\"},{\"id\":\"e26672cd-7816-550f-ba6d-ef2ccd74a855\",\"type\":\"permissions\"},{\"id\":\"c25972d3-7b22-5549-8aef-2c6284156df8\",\"type\":\"permissions\"},{\"id\":\"47b95fa2-acb3-5cc9-ba59-aa9a9ea98482\",\"type\":\"permissions\"},{\"id\":\"62630f06-15f6-57ea-87a8-a2fafeef4390\",\"type\":\"permissions\"},{\"id\":\"ed6753a6-7596-5003-8817-32c4252118dc\",\"type\":\"permissions\"},{\"id\":\"959dd3c1-f6ac-540d-a554-fb505090228a\",\"type\":\"permissions\"},{\"id\":\"7898000c-4468-51f3-8663-abb02240568a\",\"type\":\"permissions\"},{\"id\":\"43e3923c-30d5-5063-9fe9-b5586613f61f\",\"type\":\"permissions\"},{\"id\":\"7a67188c-c249-55dc-b7f1-8c157a9cc009\",\"type\":\"permissions\"},{\"id\":\"800d49aa-2874-52fa-b04a-e7c315b90566\",\"type\":\"permissions\"},{\"id\":\"61db7ad1-dfbc-58ac-9715-8cb979d8ea5e\",\"type\":\"permissions\"},{\"id\":\"8e44d087-3fcf-572c-87ac-cdf13c5cd3d5\",\"type\":\"permissions\"},{\"id\":\"b3b4f318-1da7-5426-93b9-05b103faba58\",\"type\":\"permissions\"},{\"id\":\"d7d58ca3-ce77-510e-813a-1a6580655889\",\"type\":\"permissions\"},{\"id\":\"adbfd0d1-8f5b-58c2-889a-61bd2914e34f\",\"type\":\"permissions\"},{\"id\":\"c87e93d8-d078-5b87-a2e4-e0ff21a7bf0b\",\"type\":\"permissions\"},{\"id\":\"0353915b-c07e-5e9e-917e-e43d9faef377\",\"type\":\"permissions\"},{\"id\":\"75613a26-a865-5279-9c43-8379635f42a5\",\"type\":\"permissions\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Delete_a_Custom_OIDC_persona_mapping_returns_No_Content_response-1793914388@datadoghq.com",
+                    "service_account": true
+                  },
+                  "relationships": {
+                    "roles": {
+                      "data": [
+                        {
+                          "id": "23cb8406-88e9-5ce7-9cbb-c17cefb2592e",
+                          "type": "roles"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/service_accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"6c8a55af-7e68-56e0-82e7-f2b4b820562e\",\"attributes\":{\"uuid\":\"6c8a55af-7e68-56e0-82e7-f2b4b820562e\",\"name\":null,\"handle\":\"6c8a55af-7e68-56e0-82e7-f2b4b820562e\",\"created_at\":\"2026-11-05T21:33:18.551443+00:00\",\"modified_at\":\"2026-11-05T21:33:18.551443+00:00\",\"email\":\"test-delete_a_custom_oidc_persona_mapping_returns_no_content_response-1793914388@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/f665ab53055f144d91d858fa49991f5d?s=48&d=retro\",\"title\":null,\"verified\":true,\"service_account\":true,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Active\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[{\"type\":\"roles\",\"id\":\"23cb8406-88e9-5ce7-9cbb-c17cefb2592e\"}]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"f989be54-3c44-536d-b6a6-cce20ce9c70c\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "audiences": [
+                      "sdk-test"
+                    ],
+                    "discovery_type": "oidc_discovery",
+                    "issuer_url": "https://oidc-e9207b15e2f2bf61.example.com",
+                    "provider_name": "oidc-e9207b15e2f2bf61"
+                  },
+                  "type": "custom_oidc_provider_config"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/wif/oidc/provider",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"4385b408-7e11-58d4-92ec-158a4cf499a6\",\"type\":\"custom_oidc_provider_config\",\"attributes\":{\"audiences\":[\"sdk-test\"],\"created_at\":\"2026-11-05T21:33:23.959776927Z\",\"created_by\":\"4df2743e-002e-558d-8789-25ae05238231\",\"discovery_type\":\"oidc_discovery\",\"identity_claim_name\":\"sub\",\"issuer_url\":\"https://oidc-e9207b15e2f2bf61.example.com\",\"org_uuid_source\":\"dd_org_uuid\",\"provider_name\":\"oidc-e9207b15e2f2bf61\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "account_uuid": "6c8a55af-7e68-56e0-82e7-f2b4b820562e",
+                    "claim_matchers": [
+                      {
+                        "claim": "sub",
+                        "mode": "exact",
+                        "values": [
+                          "system:serviceaccount:controllers:example-controller"
+                        ]
+                      }
+                    ],
+                    "provider_id": "4385b408-7e11-58d4-92ec-158a4cf499a6"
+                  },
+                  "type": "custom_oidc_identity_mapping"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/wif/oidc/persona_mapping",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"09086d40-9014-5f07-bc96-3d788cdb6e5f\",\"type\":\"custom_oidc_identity_mapping\",\"attributes\":{\"account_identifier\":\"6c8a55af-7e68-56e0-82e7-f2b4b820562e\",\"account_uuid\":\"6c8a55af-7e68-56e0-82e7-f2b4b820562e\",\"claim_matchers\":[{\"claim\":\"sub\",\"mode\":\"exact\",\"values\":[\"system:serviceaccount:controllers:example-controller\"]}],\"created_at\":\"2026-11-05T21:33:29.134831712Z\",\"created_by\":\"4df2743e-002e-558d-8789-25ae05238231\",\"provider_id\":\"4385b408-7e11-58d4-92ec-158a4cf499a6\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/wif/oidc/persona_mapping/09086d40-9014-5f07-bc96-3d788cdb6e5f",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/wif/oidc/persona_mapping/09086d40-9014-5f07-bc96-3d788cdb6e5f",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/wif/oidc/provider/4385b408-7e11-58d4-92ec-158a4cf499a6",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/6c8a55af-7e68-56e0-82e7-f2b4b820562e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/roles/23cb8406-88e9-5ce7-9cbb-c17cefb2592e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Delete a Custom OIDC persona mapping returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "frozen_at": "2026-11-05T21:33:55.587Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "audiences": [
+                      "sdk-test"
+                    ],
+                    "discovery_type": "oidc_discovery",
+                    "issuer_url": "https://oidc-5525743cbc1c8350.example.com",
+                    "provider_name": "oidc-5525743cbc1c8350"
+                  },
+                  "type": "custom_oidc_provider_config"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/wif/oidc/provider",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a3e19571-d076-5251-a0a2-f7693e1161dc\",\"type\":\"custom_oidc_provider_config\",\"attributes\":{\"audiences\":[\"sdk-test\"],\"created_at\":\"2026-11-05T21:34:00.685670358Z\",\"created_by\":\"4df2743e-002e-558d-8789-25ae05238231\",\"discovery_type\":\"oidc_discovery\",\"identity_claim_name\":\"sub\",\"issuer_url\":\"https://oidc-5525743cbc1c8350.example.com\",\"org_uuid_source\":\"dd_org_uuid\",\"provider_name\":\"oidc-5525743cbc1c8350\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/wif/oidc/provider/a3e19571-d076-5251-a0a2-f7693e1161dc",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/wif/oidc/provider/a3e19571-d076-5251-a0a2-f7693e1161dc",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a Custom OIDC provider returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
       "frozen_at": "2026-10-29T17:42:00.102Z",
       "interactions": [
         {
@@ -367,6 +1017,354 @@
         }
       ],
       "scenario": "Delete an AWS cloud authentication intake mapping returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "frozen_at": "2026-11-05T21:34:10.992Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Get_a_Custom_OIDC_persona_mapping_returns_OK_response-1793914450"
+                  },
+                  "type": "roles"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/roles",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"9a6cec11-eb7f-577d-aa46-04a9856388e7\",\"type\":\"roles\",\"attributes\":{\"created_at\":\"2026-11-05T21:34:16.120568Z\",\"modified_at\":\"2026-11-05T21:34:16.121791Z\",\"name\":\"Test-Get_a_Custom_OIDC_persona_mapping_returns_OK_response-1793914450\",\"team_count\":0,\"user_count\":0},\"relationships\":{\"permissions\":{\"data\":[{\"id\":\"de796e53-9bf5-521a-9f1b-607cb5144a04\",\"type\":\"permissions\"},{\"id\":\"e26672cd-7816-550f-ba6d-ef2ccd74a855\",\"type\":\"permissions\"},{\"id\":\"c25972d3-7b22-5549-8aef-2c6284156df8\",\"type\":\"permissions\"},{\"id\":\"47b95fa2-acb3-5cc9-ba59-aa9a9ea98482\",\"type\":\"permissions\"},{\"id\":\"62630f06-15f6-57ea-87a8-a2fafeef4390\",\"type\":\"permissions\"},{\"id\":\"ed6753a6-7596-5003-8817-32c4252118dc\",\"type\":\"permissions\"},{\"id\":\"959dd3c1-f6ac-540d-a554-fb505090228a\",\"type\":\"permissions\"},{\"id\":\"7898000c-4468-51f3-8663-abb02240568a\",\"type\":\"permissions\"},{\"id\":\"43e3923c-30d5-5063-9fe9-b5586613f61f\",\"type\":\"permissions\"},{\"id\":\"7a67188c-c249-55dc-b7f1-8c157a9cc009\",\"type\":\"permissions\"},{\"id\":\"800d49aa-2874-52fa-b04a-e7c315b90566\",\"type\":\"permissions\"},{\"id\":\"61db7ad1-dfbc-58ac-9715-8cb979d8ea5e\",\"type\":\"permissions\"},{\"id\":\"8e44d087-3fcf-572c-87ac-cdf13c5cd3d5\",\"type\":\"permissions\"},{\"id\":\"b3b4f318-1da7-5426-93b9-05b103faba58\",\"type\":\"permissions\"},{\"id\":\"d7d58ca3-ce77-510e-813a-1a6580655889\",\"type\":\"permissions\"},{\"id\":\"adbfd0d1-8f5b-58c2-889a-61bd2914e34f\",\"type\":\"permissions\"},{\"id\":\"c87e93d8-d078-5b87-a2e4-e0ff21a7bf0b\",\"type\":\"permissions\"},{\"id\":\"0353915b-c07e-5e9e-917e-e43d9faef377\",\"type\":\"permissions\"},{\"id\":\"75613a26-a865-5279-9c43-8379635f42a5\",\"type\":\"permissions\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Get_a_Custom_OIDC_persona_mapping_returns_OK_response-1793914450@datadoghq.com",
+                    "service_account": true
+                  },
+                  "relationships": {
+                    "roles": {
+                      "data": [
+                        {
+                          "id": "9a6cec11-eb7f-577d-aa46-04a9856388e7",
+                          "type": "roles"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/service_accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"7384ba20-e3d3-5c55-affb-8e9f6fe28ab9\",\"attributes\":{\"uuid\":\"7384ba20-e3d3-5c55-affb-8e9f6fe28ab9\",\"name\":null,\"handle\":\"7384ba20-e3d3-5c55-affb-8e9f6fe28ab9\",\"created_at\":\"2026-11-05T21:34:21.397051+00:00\",\"modified_at\":\"2026-11-05T21:34:21.397051+00:00\",\"email\":\"test-get_a_custom_oidc_persona_mapping_returns_ok_response-1793914450@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/456083358188b7d986f52665e202bf15?s=48&d=retro\",\"title\":null,\"verified\":true,\"service_account\":true,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Active\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[{\"type\":\"roles\",\"id\":\"9a6cec11-eb7f-577d-aa46-04a9856388e7\"}]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"f989be54-3c44-536d-b6a6-cce20ce9c70c\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "audiences": [
+                      "sdk-test"
+                    ],
+                    "discovery_type": "oidc_discovery",
+                    "issuer_url": "https://oidc-4556ea997dc115a2.example.com",
+                    "provider_name": "oidc-4556ea997dc115a2"
+                  },
+                  "type": "custom_oidc_provider_config"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/wif/oidc/provider",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"26fa1ee2-2a70-533c-9f28-6c19ca09e745\",\"type\":\"custom_oidc_provider_config\",\"attributes\":{\"audiences\":[\"sdk-test\"],\"created_at\":\"2026-11-05T21:34:26.812542823Z\",\"created_by\":\"4df2743e-002e-558d-8789-25ae05238231\",\"discovery_type\":\"oidc_discovery\",\"identity_claim_name\":\"sub\",\"issuer_url\":\"https://oidc-4556ea997dc115a2.example.com\",\"org_uuid_source\":\"dd_org_uuid\",\"provider_name\":\"oidc-4556ea997dc115a2\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "account_uuid": "7384ba20-e3d3-5c55-affb-8e9f6fe28ab9",
+                    "claim_matchers": [
+                      {
+                        "claim": "sub",
+                        "mode": "exact",
+                        "values": [
+                          "system:serviceaccount:controllers:example-controller"
+                        ]
+                      }
+                    ],
+                    "provider_id": "26fa1ee2-2a70-533c-9f28-6c19ca09e745"
+                  },
+                  "type": "custom_oidc_identity_mapping"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/wif/oidc/persona_mapping",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"93083fcc-9a3c-5c92-97b2-61007bb2d455\",\"type\":\"custom_oidc_identity_mapping\",\"attributes\":{\"account_identifier\":\"7384ba20-e3d3-5c55-affb-8e9f6fe28ab9\",\"account_uuid\":\"7384ba20-e3d3-5c55-affb-8e9f6fe28ab9\",\"claim_matchers\":[{\"claim\":\"sub\",\"mode\":\"exact\",\"values\":[\"system:serviceaccount:controllers:example-controller\"]}],\"created_at\":\"2026-11-05T21:34:31.981910134Z\",\"created_by\":\"4df2743e-002e-558d-8789-25ae05238231\",\"provider_id\":\"26fa1ee2-2a70-533c-9f28-6c19ca09e745\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/wif/oidc/persona_mapping/93083fcc-9a3c-5c92-97b2-61007bb2d455",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"93083fcc-9a3c-5c92-97b2-61007bb2d455\",\"type\":\"custom_oidc_identity_mapping\",\"attributes\":{\"account_identifier\":\"7384ba20-e3d3-5c55-affb-8e9f6fe28ab9\",\"account_uuid\":\"7384ba20-e3d3-5c55-affb-8e9f6fe28ab9\",\"claim_matchers\":[{\"claim\":\"sub\",\"mode\":\"exact\",\"values\":[\"system:serviceaccount:controllers:example-controller\"]}],\"created_at\":\"2026-11-05T21:34:31.981910134Z\",\"created_by\":\"4df2743e-002e-558d-8789-25ae05238231\",\"provider_id\":\"26fa1ee2-2a70-533c-9f28-6c19ca09e745\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/wif/oidc/persona_mapping/93083fcc-9a3c-5c92-97b2-61007bb2d455",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/wif/oidc/provider/26fa1ee2-2a70-533c-9f28-6c19ca09e745",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/7384ba20-e3d3-5c55-affb-8e9f6fe28ab9",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/roles/9a6cec11-eb7f-577d-aa46-04a9856388e7",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get a Custom OIDC persona mapping returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "frozen_at": "2026-11-05T21:34:58.147Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "audiences": [
+                      "sdk-test"
+                    ],
+                    "discovery_type": "oidc_discovery",
+                    "issuer_url": "https://oidc-dc0221816d457d05.example.com",
+                    "provider_name": "oidc-dc0221816d457d05"
+                  },
+                  "type": "custom_oidc_provider_config"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/wif/oidc/provider",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"bd99165d-6b00-5a96-9650-fe5d21d94157\",\"type\":\"custom_oidc_provider_config\",\"attributes\":{\"audiences\":[\"sdk-test\"],\"created_at\":\"2026-11-05T21:35:03.255756732Z\",\"created_by\":\"4df2743e-002e-558d-8789-25ae05238231\",\"discovery_type\":\"oidc_discovery\",\"identity_claim_name\":\"sub\",\"issuer_url\":\"https://oidc-dc0221816d457d05.example.com\",\"org_uuid_source\":\"dd_org_uuid\",\"provider_name\":\"oidc-dc0221816d457d05\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/wif/oidc/provider/bd99165d-6b00-5a96-9650-fe5d21d94157",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"bd99165d-6b00-5a96-9650-fe5d21d94157\",\"type\":\"custom_oidc_provider_config\",\"attributes\":{\"audiences\":[\"sdk-test\"],\"created_at\":\"2026-11-05T21:35:03.255756732Z\",\"created_by\":\"4df2743e-002e-558d-8789-25ae05238231\",\"discovery_type\":\"oidc_discovery\",\"identity_claim_name\":\"sub\",\"issuer_url\":\"https://oidc-dc0221816d457d05.example.com\",\"org_uuid_source\":\"dd_org_uuid\",\"provider_name\":\"oidc-dc0221816d457d05\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/wif/oidc/provider/bd99165d-6b00-5a96-9650-fe5d21d94157",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get a Custom OIDC provider returns \"OK\" response",
       "version": "v2"
     },
     {
@@ -608,6 +1606,354 @@
         }
       ],
       "scenario": "List AWS cloud authentication intake mappings returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "frozen_at": "2026-11-05T21:35:13.618Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-List_all_Custom_OIDC_persona_mappings_returns_OK_response-1793914513"
+                  },
+                  "type": "roles"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/roles",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"d1c38435-cac7-5b5f-ae6a-ad601dca2bb2\",\"type\":\"roles\",\"attributes\":{\"created_at\":\"2026-11-05T21:35:18.749023Z\",\"modified_at\":\"2026-11-05T21:35:18.750035Z\",\"name\":\"Test-List_all_Custom_OIDC_persona_mappings_returns_OK_response-1793914513\",\"team_count\":0,\"user_count\":0},\"relationships\":{\"permissions\":{\"data\":[{\"id\":\"de796e53-9bf5-521a-9f1b-607cb5144a04\",\"type\":\"permissions\"},{\"id\":\"e26672cd-7816-550f-ba6d-ef2ccd74a855\",\"type\":\"permissions\"},{\"id\":\"c25972d3-7b22-5549-8aef-2c6284156df8\",\"type\":\"permissions\"},{\"id\":\"47b95fa2-acb3-5cc9-ba59-aa9a9ea98482\",\"type\":\"permissions\"},{\"id\":\"62630f06-15f6-57ea-87a8-a2fafeef4390\",\"type\":\"permissions\"},{\"id\":\"ed6753a6-7596-5003-8817-32c4252118dc\",\"type\":\"permissions\"},{\"id\":\"959dd3c1-f6ac-540d-a554-fb505090228a\",\"type\":\"permissions\"},{\"id\":\"7898000c-4468-51f3-8663-abb02240568a\",\"type\":\"permissions\"},{\"id\":\"43e3923c-30d5-5063-9fe9-b5586613f61f\",\"type\":\"permissions\"},{\"id\":\"7a67188c-c249-55dc-b7f1-8c157a9cc009\",\"type\":\"permissions\"},{\"id\":\"800d49aa-2874-52fa-b04a-e7c315b90566\",\"type\":\"permissions\"},{\"id\":\"61db7ad1-dfbc-58ac-9715-8cb979d8ea5e\",\"type\":\"permissions\"},{\"id\":\"8e44d087-3fcf-572c-87ac-cdf13c5cd3d5\",\"type\":\"permissions\"},{\"id\":\"b3b4f318-1da7-5426-93b9-05b103faba58\",\"type\":\"permissions\"},{\"id\":\"d7d58ca3-ce77-510e-813a-1a6580655889\",\"type\":\"permissions\"},{\"id\":\"adbfd0d1-8f5b-58c2-889a-61bd2914e34f\",\"type\":\"permissions\"},{\"id\":\"c87e93d8-d078-5b87-a2e4-e0ff21a7bf0b\",\"type\":\"permissions\"},{\"id\":\"0353915b-c07e-5e9e-917e-e43d9faef377\",\"type\":\"permissions\"},{\"id\":\"75613a26-a865-5279-9c43-8379635f42a5\",\"type\":\"permissions\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-List_all_Custom_OIDC_persona_mappings_returns_OK_response-1793914513@datadoghq.com",
+                    "service_account": true
+                  },
+                  "relationships": {
+                    "roles": {
+                      "data": [
+                        {
+                          "id": "d1c38435-cac7-5b5f-ae6a-ad601dca2bb2",
+                          "type": "roles"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/service_accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"d331b580-ebf6-55c4-a82b-16ad9a1188a6\",\"attributes\":{\"uuid\":\"d331b580-ebf6-55c4-a82b-16ad9a1188a6\",\"name\":null,\"handle\":\"d331b580-ebf6-55c4-a82b-16ad9a1188a6\",\"created_at\":\"2026-11-05T21:35:24.011243+00:00\",\"modified_at\":\"2026-11-05T21:35:24.011243+00:00\",\"email\":\"test-list_all_custom_oidc_persona_mappings_returns_ok_response-1793914513@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/8ca8394a9ea43cc44a341c5d95307612?s=48&d=retro\",\"title\":null,\"verified\":true,\"service_account\":true,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Active\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[{\"type\":\"roles\",\"id\":\"d1c38435-cac7-5b5f-ae6a-ad601dca2bb2\"}]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"f989be54-3c44-536d-b6a6-cce20ce9c70c\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "audiences": [
+                      "sdk-test"
+                    ],
+                    "discovery_type": "oidc_discovery",
+                    "issuer_url": "https://oidc-3faf3ee154c2c092.example.com",
+                    "provider_name": "oidc-3faf3ee154c2c092"
+                  },
+                  "type": "custom_oidc_provider_config"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/wif/oidc/provider",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"ce9cbd47-32b3-570a-8c27-2242c148616c\",\"type\":\"custom_oidc_provider_config\",\"attributes\":{\"audiences\":[\"sdk-test\"],\"created_at\":\"2026-11-05T21:35:29.675797538Z\",\"created_by\":\"4df2743e-002e-558d-8789-25ae05238231\",\"discovery_type\":\"oidc_discovery\",\"identity_claim_name\":\"sub\",\"issuer_url\":\"https://oidc-3faf3ee154c2c092.example.com\",\"org_uuid_source\":\"dd_org_uuid\",\"provider_name\":\"oidc-3faf3ee154c2c092\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "account_uuid": "d331b580-ebf6-55c4-a82b-16ad9a1188a6",
+                    "claim_matchers": [
+                      {
+                        "claim": "sub",
+                        "mode": "exact",
+                        "values": [
+                          "system:serviceaccount:controllers:example-controller"
+                        ]
+                      }
+                    ],
+                    "provider_id": "ce9cbd47-32b3-570a-8c27-2242c148616c"
+                  },
+                  "type": "custom_oidc_identity_mapping"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/wif/oidc/persona_mapping",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"69b84e3a-5213-5424-b67c-13d7784c4dfd\",\"type\":\"custom_oidc_identity_mapping\",\"attributes\":{\"account_identifier\":\"d331b580-ebf6-55c4-a82b-16ad9a1188a6\",\"account_uuid\":\"d331b580-ebf6-55c4-a82b-16ad9a1188a6\",\"claim_matchers\":[{\"claim\":\"sub\",\"mode\":\"exact\",\"values\":[\"system:serviceaccount:controllers:example-controller\"]}],\"created_at\":\"2026-11-05T21:35:34.840415726Z\",\"created_by\":\"4df2743e-002e-558d-8789-25ae05238231\",\"provider_id\":\"ce9cbd47-32b3-570a-8c27-2242c148616c\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/wif/oidc/persona_mapping",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"69b84e3a-5213-5424-b67c-13d7784c4dfd\",\"type\":\"custom_oidc_identity_mapping\",\"attributes\":{\"account_identifier\":\"d331b580-ebf6-55c4-a82b-16ad9a1188a6\",\"account_uuid\":\"d331b580-ebf6-55c4-a82b-16ad9a1188a6\",\"claim_matchers\":[{\"claim\":\"sub\",\"mode\":\"exact\",\"values\":[\"system:serviceaccount:controllers:example-controller\"]}],\"created_at\":\"2026-11-05T21:35:34.840415726Z\",\"created_by\":\"4df2743e-002e-558d-8789-25ae05238231\",\"provider_id\":\"ce9cbd47-32b3-570a-8c27-2242c148616c\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/wif/oidc/persona_mapping/69b84e3a-5213-5424-b67c-13d7784c4dfd",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/wif/oidc/provider/ce9cbd47-32b3-570a-8c27-2242c148616c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/d331b580-ebf6-55c4-a82b-16ad9a1188a6",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/roles/d1c38435-cac7-5b5f-ae6a-ad601dca2bb2",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "List all Custom OIDC persona mappings returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "frozen_at": "2026-11-05T21:36:01.224Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "audiences": [
+                      "sdk-test"
+                    ],
+                    "discovery_type": "oidc_discovery",
+                    "issuer_url": "https://oidc-68ad4765405427f0.example.com",
+                    "provider_name": "oidc-68ad4765405427f0"
+                  },
+                  "type": "custom_oidc_provider_config"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/wif/oidc/provider",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"f2d7cc1c-69e2-5e8e-aff3-d06dfbf38a51\",\"type\":\"custom_oidc_provider_config\",\"attributes\":{\"audiences\":[\"sdk-test\"],\"created_at\":\"2026-11-05T21:36:06.327402478Z\",\"created_by\":\"4df2743e-002e-558d-8789-25ae05238231\",\"discovery_type\":\"oidc_discovery\",\"identity_claim_name\":\"sub\",\"issuer_url\":\"https://oidc-68ad4765405427f0.example.com\",\"org_uuid_source\":\"dd_org_uuid\",\"provider_name\":\"oidc-68ad4765405427f0\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/wif/oidc/provider",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"f2d7cc1c-69e2-5e8e-aff3-d06dfbf38a51\",\"type\":\"custom_oidc_provider_config\",\"attributes\":{\"audiences\":[\"sdk-test\"],\"created_at\":\"2026-11-05T21:36:06.327402478Z\",\"created_by\":\"4df2743e-002e-558d-8789-25ae05238231\",\"discovery_type\":\"oidc_discovery\",\"identity_claim_name\":\"sub\",\"issuer_url\":\"https://oidc-68ad4765405427f0.example.com\",\"org_uuid_source\":\"dd_org_uuid\",\"provider_name\":\"oidc-68ad4765405427f0\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/wif/oidc/provider/f2d7cc1c-69e2-5e8e-aff3-d06dfbf38a51",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "List all Custom OIDC providers returns \"OK\" response",
       "version": "v2"
     }
   ],

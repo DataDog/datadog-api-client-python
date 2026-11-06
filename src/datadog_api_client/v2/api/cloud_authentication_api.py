@@ -7,6 +7,9 @@ from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
+from datadog_api_client.model_utils import (
+    UUID,
+)
 from datadog_api_client.v2.model.aws_cloud_auth_intake_mappings_response import AWSCloudAuthIntakeMappingsResponse
 from datadog_api_client.v2.model.aws_cloud_auth_intake_mapping_response import AWSCloudAuthIntakeMappingResponse
 from datadog_api_client.v2.model.aws_cloud_auth_intake_mapping_create_request import (
@@ -33,11 +36,19 @@ from datadog_api_client.v2.model.git_hub_cloud_auth_persona_mapping_response imp
 from datadog_api_client.v2.model.git_hub_cloud_auth_persona_mapping_create_request import (
     GitHubCloudAuthPersonaMappingCreateRequest,
 )
+from datadog_api_client.v2.model.oidc_cloud_auth_persona_mappings_response import OIDCCloudAuthPersonaMappingsResponse
+from datadog_api_client.v2.model.oidc_cloud_auth_persona_mapping_response import OIDCCloudAuthPersonaMappingResponse
+from datadog_api_client.v2.model.oidc_cloud_auth_persona_mapping_create_request import (
+    OIDCCloudAuthPersonaMappingCreateRequest,
+)
+from datadog_api_client.v2.model.oidc_cloud_auth_providers_response import OIDCCloudAuthProvidersResponse
+from datadog_api_client.v2.model.oidc_cloud_auth_provider_response import OIDCCloudAuthProviderResponse
+from datadog_api_client.v2.model.oidc_cloud_auth_provider_create_request import OIDCCloudAuthProviderCreateRequest
 
 
 class CloudAuthenticationApi:
     """
-    Configure AWS and GitHub cloud authentication mappings for persona and intake authentication through the Datadog API.
+    Configure AWS, GitHub, and Custom OIDC cloud authentication for persona and intake authentication through the Datadog API.
     """
 
     def __init__(self, api_client=None):
@@ -118,6 +129,46 @@ class CloudAuthenticationApi:
                 "body": {
                     "required": True,
                     "openapi_types": (GitHubCloudAuthPersonaMappingCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_oidc_cloud_auth_persona_mapping_endpoint = _Endpoint(
+            settings={
+                "response_type": (OIDCCloudAuthPersonaMappingResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/wif/oidc/persona_mapping",
+                "operation_id": "create_oidc_cloud_auth_persona_mapping",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (OIDCCloudAuthPersonaMappingCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_oidc_cloud_auth_provider_endpoint = _Endpoint(
+            settings={
+                "response_type": (OIDCCloudAuthProviderResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/wif/oidc/provider",
+                "operation_id": "create_oidc_cloud_auth_provider",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (OIDCCloudAuthProviderCreateRequest,),
                     "location": "body",
                 },
             },
@@ -208,6 +259,52 @@ class CloudAuthenticationApi:
                     "required": True,
                     "openapi_types": (str,),
                     "attribute": "persona_mapping_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_oidc_cloud_auth_persona_mapping_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/wif/oidc/persona_mapping/{persona_mapping_id}",
+                "operation_id": "delete_oidc_cloud_auth_persona_mapping",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "persona_mapping_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "persona_mapping_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_oidc_cloud_auth_provider_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/wif/oidc/provider/{provider_id}",
+                "operation_id": "delete_oidc_cloud_auth_provider",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "provider_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "provider_id",
                     "location": "path",
                 },
             },
@@ -309,6 +406,52 @@ class CloudAuthenticationApi:
             api_client=api_client,
         )
 
+        self._get_oidc_cloud_auth_persona_mapping_endpoint = _Endpoint(
+            settings={
+                "response_type": (OIDCCloudAuthPersonaMappingResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/wif/oidc/persona_mapping/{persona_mapping_id}",
+                "operation_id": "get_oidc_cloud_auth_persona_mapping",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "persona_mapping_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "persona_mapping_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_oidc_cloud_auth_provider_endpoint = _Endpoint(
+            settings={
+                "response_type": (OIDCCloudAuthProviderResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/wif/oidc/provider/{provider_id}",
+                "operation_id": "get_oidc_cloud_auth_provider",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "provider_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "provider_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_aws_cloud_auth_intake_mappings_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSCloudAuthIntakeMappingsResponse,),
@@ -363,6 +506,38 @@ class CloudAuthenticationApi:
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/wif/github/persona_mapping",
                 "operation_id": "list_git_hub_cloud_auth_persona_mappings",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_oidc_cloud_auth_persona_mappings_endpoint = _Endpoint(
+            settings={
+                "response_type": (OIDCCloudAuthPersonaMappingsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/wif/oidc/persona_mapping",
+                "operation_id": "list_oidc_cloud_auth_persona_mappings",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_oidc_cloud_auth_providers_endpoint = _Endpoint(
+            settings={
+                "response_type": (OIDCCloudAuthProvidersResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/wif/oidc/provider",
+                "operation_id": "list_oidc_cloud_auth_providers",
                 "http_method": "GET",
                 "version": "v2",
             },
@@ -437,6 +612,38 @@ class CloudAuthenticationApi:
 
         return self._create_git_hub_cloud_auth_persona_mapping_endpoint.call_with_http_info(**kwargs)
 
+    def create_oidc_cloud_auth_persona_mapping(
+        self,
+        body: OIDCCloudAuthPersonaMappingCreateRequest,
+    ) -> OIDCCloudAuthPersonaMappingResponse:
+        """Create a Custom OIDC persona mapping.
+
+        Map token claims from a registered Custom OIDC provider to a Datadog user or service account. The caller must be authorized to map to the target account.
+
+        :type body: OIDCCloudAuthPersonaMappingCreateRequest
+        :rtype: OIDCCloudAuthPersonaMappingResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_oidc_cloud_auth_persona_mapping_endpoint.call_with_http_info(**kwargs)
+
+    def create_oidc_cloud_auth_provider(
+        self,
+        body: OIDCCloudAuthProviderCreateRequest,
+    ) -> OIDCCloudAuthProviderResponse:
+        """Create a Custom OIDC provider.
+
+        Register an OIDC issuer, signing-key discovery configuration, and accepted audiences. Provider names and issuer URLs must be unique within the organization.
+
+        :type body: OIDCCloudAuthProviderCreateRequest
+        :rtype: OIDCCloudAuthProviderResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_oidc_cloud_auth_provider_endpoint.call_with_http_info(**kwargs)
+
     def delete_aws_cloud_auth_intake_mapping(
         self,
         intake_mapping_id: str,
@@ -504,6 +711,40 @@ class CloudAuthenticationApi:
         kwargs["persona_mapping_id"] = persona_mapping_id
 
         return self._delete_git_hub_cloud_auth_persona_mapping_endpoint.call_with_http_info(**kwargs)
+
+    def delete_oidc_cloud_auth_persona_mapping(
+        self,
+        persona_mapping_id: UUID,
+    ) -> None:
+        """Delete a Custom OIDC persona mapping.
+
+        Delete a Custom OIDC persona mapping.
+
+        :param persona_mapping_id: UUID of the Custom OIDC persona mapping.
+        :type persona_mapping_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["persona_mapping_id"] = persona_mapping_id
+
+        return self._delete_oidc_cloud_auth_persona_mapping_endpoint.call_with_http_info(**kwargs)
+
+    def delete_oidc_cloud_auth_provider(
+        self,
+        provider_id: UUID,
+    ) -> None:
+        """Delete a Custom OIDC provider.
+
+        Delete a Custom OIDC provider. Delete all persona and intake mappings referencing it first; otherwise the request returns a conflict.
+
+        :param provider_id: UUID of the Custom OIDC provider.
+        :type provider_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["provider_id"] = provider_id
+
+        return self._delete_oidc_cloud_auth_provider_endpoint.call_with_http_info(**kwargs)
 
     def get_aws_cloud_auth_intake_mapping(
         self,
@@ -573,6 +814,40 @@ class CloudAuthenticationApi:
 
         return self._get_git_hub_cloud_auth_persona_mapping_endpoint.call_with_http_info(**kwargs)
 
+    def get_oidc_cloud_auth_persona_mapping(
+        self,
+        persona_mapping_id: UUID,
+    ) -> OIDCCloudAuthPersonaMappingResponse:
+        """Get a Custom OIDC persona mapping.
+
+        Get a Custom OIDC persona mapping by UUID.
+
+        :param persona_mapping_id: UUID of the Custom OIDC persona mapping.
+        :type persona_mapping_id: UUID
+        :rtype: OIDCCloudAuthPersonaMappingResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["persona_mapping_id"] = persona_mapping_id
+
+        return self._get_oidc_cloud_auth_persona_mapping_endpoint.call_with_http_info(**kwargs)
+
+    def get_oidc_cloud_auth_provider(
+        self,
+        provider_id: UUID,
+    ) -> OIDCCloudAuthProviderResponse:
+        """Get a Custom OIDC provider.
+
+        Get a Custom OIDC provider by UUID.
+
+        :param provider_id: UUID of the Custom OIDC provider.
+        :type provider_id: UUID
+        :rtype: OIDCCloudAuthProviderResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["provider_id"] = provider_id
+
+        return self._get_oidc_cloud_auth_provider_endpoint.call_with_http_info(**kwargs)
+
     def list_aws_cloud_auth_intake_mappings(
         self,
     ) -> AWSCloudAuthIntakeMappingsResponse:
@@ -620,3 +895,27 @@ class CloudAuthenticationApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._list_git_hub_cloud_auth_persona_mappings_endpoint.call_with_http_info(**kwargs)
+
+    def list_oidc_cloud_auth_persona_mappings(
+        self,
+    ) -> OIDCCloudAuthPersonaMappingsResponse:
+        """List all Custom OIDC persona mappings.
+
+        List all Custom OIDC persona mappings in the organization.
+
+        :rtype: OIDCCloudAuthPersonaMappingsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_oidc_cloud_auth_persona_mappings_endpoint.call_with_http_info(**kwargs)
+
+    def list_oidc_cloud_auth_providers(
+        self,
+    ) -> OIDCCloudAuthProvidersResponse:
+        """List all Custom OIDC providers.
+
+        List all Custom OIDC providers in the organization.
+
+        :rtype: OIDCCloudAuthProvidersResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_oidc_cloud_auth_providers_endpoint.call_with_http_info(**kwargs)

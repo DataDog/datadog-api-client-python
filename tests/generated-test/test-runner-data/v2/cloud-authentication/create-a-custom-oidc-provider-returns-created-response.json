@@ -1,0 +1,38 @@
+{
+  "api": "CloudAuthentication",
+  "expected_status": 201,
+  "feature": "Cloud Authentication",
+  "id": "v2/Cloud Authentication/Create a Custom OIDC provider returns \"Created\" response",
+  "operation_id": "CreateOIDCCloudAuthProvider",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "OIDCCloudAuthProviderCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "audiences": [
+              "sdk-test"
+            ],
+            "discovery_type": "oidc_discovery",
+            "issuer_url": "https://oidc-{{ unique_hash }}.example.com",
+            "provider_name": "oidc-{{ unique_hash }}"
+          },
+          "type": "custom_oidc_provider_config"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/wif/oidc/provider"
+  },
+  "scenario": "Create a Custom OIDC provider returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

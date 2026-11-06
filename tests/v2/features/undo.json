@@ -11968,6 +11968,68 @@
       "type": "safe"
     }
   },
+  "ListOIDCCloudAuthPersonaMappings": {
+    "tag": "Cloud Authentication",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateOIDCCloudAuthPersonaMapping": {
+    "tag": "Cloud Authentication",
+    "undo": {
+      "operationId": "DeleteOIDCCloudAuthPersonaMapping",
+      "parameters": [
+        {
+          "name": "persona_mapping_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteOIDCCloudAuthPersonaMapping": {
+    "tag": "Cloud Authentication",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetOIDCCloudAuthPersonaMapping": {
+    "tag": "Cloud Authentication",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListOIDCCloudAuthProviders": {
+    "tag": "Cloud Authentication",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateOIDCCloudAuthProvider": {
+    "tag": "Cloud Authentication",
+    "undo": {
+      "operationId": "DeleteOIDCCloudAuthProvider",
+      "parameters": [
+        {
+          "name": "provider_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteOIDCCloudAuthProvider": {
+    "tag": "Cloud Authentication",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetOIDCCloudAuthProvider": {
+    "tag": "Cloud Authentication",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListWorkflows": {
     "tag": "Workflow Automation",
     "undo": {

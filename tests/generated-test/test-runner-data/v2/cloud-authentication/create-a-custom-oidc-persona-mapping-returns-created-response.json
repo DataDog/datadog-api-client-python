@@ -1,0 +1,43 @@
+{
+  "api": "CloudAuthentication",
+  "expected_status": 201,
+  "feature": "Cloud Authentication",
+  "id": "v2/Cloud Authentication/Create a Custom OIDC persona mapping returns \"Created\" response",
+  "operation_id": "CreateOIDCCloudAuthPersonaMapping",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "OIDCCloudAuthPersonaMappingCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "account_uuid": "{{ service_account_user_with_role.data.id }}",
+            "claim_matchers": [
+              {
+                "claim": "sub",
+                "mode": "exact",
+                "values": [
+                  "system:serviceaccount:controllers:example-controller"
+                ]
+              }
+            ],
+            "provider_id": "{{ oidc_cloud_auth_provider.data.id }}"
+          },
+          "type": "custom_oidc_identity_mapping"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/wif/oidc/persona_mapping"
+  },
+  "scenario": "Create a Custom OIDC persona mapping returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
