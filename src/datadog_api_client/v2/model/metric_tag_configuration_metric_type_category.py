@@ -16,7 +16,7 @@ class MetricTagConfigurationMetricTypeCategory(ModelSimple):
     """
     The metric's type category.
 
-    :param value: If omitted defaults to "distribution". Must be one of ["non_distribution", "distribution", "exponential_histogram", "explicit_histogram"].
+    :param value: Must be one of ["non_distribution", "distribution", "exponential_histogram", "explicit_histogram"].
     :type value: str
     """
 

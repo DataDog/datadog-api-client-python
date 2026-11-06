@@ -1,0 +1,51 @@
+{
+  "api": "Metrics",
+  "expected_status": 200,
+  "feature": "Metrics",
+  "id": "v2/Metrics/List all metrics with volumes and query activity for metrics without a tag configuration returns \"Success\" response",
+  "operation_id": "ListTagConfigurations",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[configured]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "boolean"
+        },
+        "source": {
+          "type": "literal",
+          "value": false
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "page[size]",
+        "required": false,
+        "schema": {
+          "format": "int32",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 100
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/metrics"
+  },
+  "scenario": "List all metrics with volumes and query activity for metrics without a tag configuration returns \"Success\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

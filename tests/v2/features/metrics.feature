@@ -332,21 +332,6 @@ Feature: Metrics
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:ddoghq/metrics-experience
-  Scenario: Get a list of metrics returns "Bad Request" response
-    Given a valid "appKeyAuth" key in the system
-    And new "ListTagConfigurations" request
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @skip @team:ddoghq/metrics-experience
-  Scenario: Get a list of metrics returns "Success" response
-    Given a valid "appKeyAuth" key in the system
-    And there is a valid "metric_tag_configuration" in the system
-    And new "ListTagConfigurations" request
-    When the request is sent
-    Then the response status is 200 Success
-
   @replay-only @skip-validation @team:ddoghq/metrics-experience @with-pagination
   Scenario: Get a list of metrics returns "Success" response with pagination
     Given a valid "appKeyAuth" key in the system
@@ -476,6 +461,65 @@ Feature: Metrics
     Then the response status is 200 Success
     And the response "data.type" is equal to "actively_queried_configurations"
     And the response "data.id" is equal to "static_test_metric_donotdelete"
+
+  @team:ddoghq/metrics-experience
+  Scenario: List all metrics with volumes and query activity for metrics not queried in the last 30 days returns "Success" response
+    Given a valid "appKeyAuth" key in the system
+    And new "ListTagConfigurations" request
+    And request contains "filter[queried]" parameter with value false
+    And request contains "include" parameter with value "metric_volumes"
+    And request contains "page[size]" parameter with value 100
+    When the request is sent
+    Then the response status is 200 Success
+
+  @team:ddoghq/metrics-experience
+  Scenario: List all metrics with volumes and query activity for metrics without a tag configuration returns "Success" response
+    Given a valid "appKeyAuth" key in the system
+    And new "ListTagConfigurations" request
+    And request contains "filter[configured]" parameter with value false
+    And request contains "page[size]" parameter with value 100
+    When the request is sent
+    Then the response status is 200 Success
+
+  @team:ddoghq/metrics-experience
+  Scenario: List all metrics with volumes and query activity for top metrics by indexed volume returns "Success" response
+    Given a valid "appKeyAuth" key in the system
+    And new "ListTagConfigurations" request
+    And request contains "include" parameter with value "metric_volumes"
+    And request contains "sort" parameter with value "-metric_volumes.indexed_volume"
+    And request contains "page[size]" parameter with value 20
+    When the request is sent
+    Then the response status is 200 Success
+
+  @generated @skip @team:ddoghq/metrics-experience
+  Scenario: List all metrics with volumes and query activity returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And new "ListTagConfigurations" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/metrics-experience
+  Scenario: List all metrics with volumes and query activity returns "Gone" response
+    Given a valid "appKeyAuth" key in the system
+    And new "ListTagConfigurations" request
+    When the request is sent
+    Then the response status is 410 Gone
+
+  @skip @team:ddoghq/metrics-experience
+  Scenario: List all metrics with volumes and query activity returns "Success" response
+    Given a valid "appKeyAuth" key in the system
+    And there is a valid "metric_tag_configuration" in the system
+    And new "ListTagConfigurations" request
+    And request contains "page[size]" parameter with value 100
+    When the request is sent
+    Then the response status is 200 Success
+
+  @generated @skip @team:ddoghq/metrics-experience @with-pagination
+  Scenario: List all metrics with volumes and query activity returns "Success" response with pagination
+    Given a valid "appKeyAuth" key in the system
+    And new "ListTagConfigurations" request
+    When the request with pagination is sent
+    Then the response status is 200 Success
 
   @generated @skip @team:ddoghq/metrics-experience
   Scenario: List distinct metric volumes by metric name returns "Bad Request" response
