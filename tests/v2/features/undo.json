@@ -11628,13 +11628,31 @@
   "CreateQuotas": {
     "tag": "Usage Metering",
     "undo": {
-      "type": "idempotent"
+      "operationId": "DeleteQuota",
+      "parameters": [
+        {
+          "name": "quota_namespace",
+          "origin": "path",
+          "source": "quota_namespace"
+        },
+        {
+          "name": "id",
+          "source": "data[0].id"
+        }
+      ],
+      "type": "unsafe"
     }
   },
   "DeleteQuota": {
     "tag": "Usage Metering",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "GetQuota": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
     }
   },
   "UpdateQuota": {
