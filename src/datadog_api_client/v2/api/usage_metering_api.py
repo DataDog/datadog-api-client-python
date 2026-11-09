@@ -126,6 +126,11 @@ class UsageMeteringApi:
                 "version": "v2",
             },
             params_map={
+                "include_descendants": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_descendants",
+                    "location": "query",
+                },
                 "quota_namespace": {
                     "required": True,
                     "openapi_types": (str,),
@@ -155,6 +160,11 @@ class UsageMeteringApi:
                 "version": "v2",
             },
             params_map={
+                "include_descendants": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_descendants",
+                    "location": "query",
+                },
                 "quota_namespace": {
                     "required": True,
                     "openapi_types": (str,),
@@ -558,6 +568,40 @@ class UsageMeteringApi:
             api_client=api_client,
         )
 
+        self._get_quota_endpoint = _Endpoint(
+            settings={
+                "response_type": (UsageQuotaResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/usage/quotas/{quota_namespace}/{id}",
+                "operation_id": "get_quota",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "include_descendants": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_descendants",
+                    "location": "query",
+                },
+                "quota_namespace": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "quota_namespace",
+                    "location": "path",
+                },
+                "id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_temporary_grant_request_endpoint = _Endpoint(
             settings={
                 "response_type": (TemporaryGrantRequestResponse,),
@@ -826,6 +870,11 @@ class UsageMeteringApi:
                 "version": "v2",
             },
             params_map={
+                "include_descendants": {
+                    "openapi_types": (bool,),
+                    "attribute": "include_descendants",
+                    "location": "query",
+                },
                 "quota_namespace": {
                     "required": True,
                     "openapi_types": (str,),
@@ -921,7 +970,7 @@ class UsageMeteringApi:
         :type quota_namespace: str
         :param body: The usage quotas to create or update.
         :type body: UsageQuotasCreateRequest
-        :param include_descendants: Whether to write every item in the request to the caller's organization and all of its descendant organizations, instead of only the caller's organization. Only descendants in the same datacenter are supported. For a user-handle scope, the quota is applied only to the caller's organization and to descendant organizations where that user handle exists; the item fails only if the handle exists in none of them.
+        :param include_descendants: Whether to write every item in the request to the caller's organization and all of its descendant organizations, instead of only the caller's organization. Only descendants in the same data center are supported. For a user-handle scope, the quota is applied only to the caller's organization and to descendant organizations where that user handle exists; the item fails only if the handle exists in none of them.
         :type include_descendants: bool, optional
         :rtype: UsageQuotasBulkResponse
         """
@@ -955,6 +1004,8 @@ class UsageMeteringApi:
         self,
         quota_namespace: str,
         id: str,
+        *,
+        include_descendants: Union[bool, UnsetType] = unset,
     ) -> None:
         """Cancel a scheduled usage quota limit.
 
@@ -964,9 +1015,14 @@ class UsageMeteringApi:
         :type quota_namespace: str
         :param id: The opaque quota identifier returned by a previous list or create request. Clients must pass this value verbatim.
         :type id: str
+        :param include_descendants: Allow access to authorized descendant organizations in the same data center. When false, an identifier belonging to any other organization returns 403. Defaults to true for ID-based operations to preserve existing descendant access.
+        :type include_descendants: bool, optional
         :rtype: None
         """
         kwargs: Dict[str, Any] = {}
+        if include_descendants is not unset:
+            kwargs["include_descendants"] = include_descendants
+
         kwargs["quota_namespace"] = quota_namespace
 
         kwargs["id"] = id
@@ -977,6 +1033,8 @@ class UsageMeteringApi:
         self,
         quota_namespace: str,
         id: str,
+        *,
+        include_descendants: Union[bool, UnsetType] = unset,
     ) -> None:
         """Delete a usage quota.
 
@@ -986,9 +1044,14 @@ class UsageMeteringApi:
         :type quota_namespace: str
         :param id: The opaque quota identifier returned by a previous list or create request. Clients must pass this value verbatim.
         :type id: str
+        :param include_descendants: Allow access to authorized descendant organizations in the same data center. When false, an identifier belonging to any other organization returns 403. Defaults to true for ID-based operations to preserve existing descendant access.
+        :type include_descendants: bool, optional
         :rtype: None
         """
         kwargs: Dict[str, Any] = {}
+        if include_descendants is not unset:
+            kwargs["include_descendants"] = include_descendants
+
         kwargs["quota_namespace"] = quota_namespace
 
         kwargs["id"] = id
@@ -1401,6 +1464,39 @@ class UsageMeteringApi:
 
         return self._get_projected_cost_endpoint.call_with_http_info(**kwargs)
 
+    def get_quota(
+        self,
+        quota_namespace: str,
+        id: str,
+        *,
+        include_descendants: Union[bool, UnsetType] = unset,
+    ) -> UsageQuotaResponse:
+        """Get a usage quota.
+
+        Returns a usage quota's current configuration by its opaque identifier. Scheduled limits are returned separately until they take effect, after which they are returned as the current limit.
+
+        By default, you can retrieve quotas from your organization and authorized descendant organizations in the same data center. Set ``include_descendants=false`` to restrict access to your organization.
+
+        A quota remains readable after its associated user, role, or team is deleted. Requires ``billing_read`` or ``billing_edit``.
+
+        :param quota_namespace: The product-specific namespace whose usage quotas are being managed.
+        :type quota_namespace: str
+        :param id: The opaque quota identifier returned by a previous list or create request. Clients must pass this value verbatim.
+        :type id: str
+        :param include_descendants: Allow access to authorized descendant organizations in the same data center. When false, an identifier belonging to any other organization returns 403. Defaults to true for ID-based operations to preserve existing descendant access.
+        :type include_descendants: bool, optional
+        :rtype: UsageQuotaResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if include_descendants is not unset:
+            kwargs["include_descendants"] = include_descendants
+
+        kwargs["quota_namespace"] = quota_namespace
+
+        kwargs["id"] = id
+
+        return self._get_quota_endpoint.call_with_http_info(**kwargs)
+
     def get_temporary_grant_request(
         self,
         request_id: UUID,
@@ -1646,12 +1742,12 @@ class UsageMeteringApi:
         """List usage quotas.
 
         Lists usage quotas for the caller's organization in a quota namespace. You can optionally include
-        descendant organizations in the same datacenter as the caller. Requires the ``billing_read`` or
+        descendant organizations in the same data center as the caller. Requires the ``billing_read`` or
         ``billing_edit`` permission.
 
         :param quota_namespace: The product-specific namespace whose usage quotas are being managed.
         :type quota_namespace: str
-        :param include_descendants: Whether to include quotas configured on descendant organizations in the caller's organization hierarchy. Only descendants in the same datacenter are supported.
+        :param include_descendants: Whether to include quotas configured on descendant organizations in the caller's organization hierarchy. Only descendants in the same data center are supported.
         :type include_descendants: bool, optional
         :param page_cursor: An opaque cursor from a previous response's ``meta.page.next_cursor`` used to retrieve the next page.
         :type page_cursor: str, optional
@@ -1687,7 +1783,7 @@ class UsageMeteringApi:
 
         :param quota_namespace: The product-specific namespace whose usage quotas are being managed.
         :type quota_namespace: str
-        :param include_descendants: Whether to include quotas configured on descendant organizations in the caller's organization hierarchy. Only descendants in the same datacenter are supported.
+        :param include_descendants: Whether to include quotas configured on descendant organizations in the caller's organization hierarchy. Only descendants in the same data center are supported.
         :type include_descendants: bool, optional
         :param page_cursor: An opaque cursor from a previous response's ``meta.page.next_cursor`` used to retrieve the next page.
         :type page_cursor: str, optional
@@ -1814,10 +1910,12 @@ class UsageMeteringApi:
         quota_namespace: str,
         id: str,
         body: UsageQuotaUpdateRequest,
+        *,
+        include_descendants: Union[bool, UnsetType] = unset,
     ) -> UsageQuotaResponse:
         """Update a usage quota.
 
-        Updates the supplied fields on a usage quota and leaves omitted fields unchanged. For an organization-wide quota, ``pending_usage_limit`` schedules a limit for the next usage period. The quota must belong to the caller's organization or one of its descendants, and its opaque identifier must belong to the requested quota namespace. Requires the ``billing_edit`` permission.
+        Updates the supplied fields on a usage quota. Setting ``enforced=false`` clears any pending change atomically, including when enforcement is already disabled. Other immediate updates preserve future pending changes when ``pending_usage_limit`` is omitted. For an organization-wide quota, ``pending_usage_limit`` schedules a limit for the next usage period. The quota must belong to the caller's organization or one of its descendants, and its opaque identifier must belong to the requested quota namespace. Requires the ``billing_edit`` permission.
 
         :param quota_namespace: The product-specific namespace whose usage quotas are being managed.
         :type quota_namespace: str
@@ -1825,9 +1923,14 @@ class UsageMeteringApi:
         :type id: str
         :param body: The usage quota fields to update. Omitting an attribute leaves its current value unchanged.
         :type body: UsageQuotaUpdateRequest
+        :param include_descendants: Allow access to authorized descendant organizations in the same data center. When false, an identifier belonging to any other organization returns 403. Defaults to true for ID-based operations to preserve existing descendant access.
+        :type include_descendants: bool, optional
         :rtype: UsageQuotaResponse
         """
         kwargs: Dict[str, Any] = {}
+        if include_descendants is not unset:
+            kwargs["include_descendants"] = include_descendants
+
         kwargs["quota_namespace"] = quota_namespace
 
         kwargs["id"] = id

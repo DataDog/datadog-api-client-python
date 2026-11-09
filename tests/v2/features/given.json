@@ -2171,6 +2171,26 @@
   {
     "parameters": [
       {
+        "name": "quota_namespace",
+        "value": "\"ai_credits\""
+      },
+      {
+        "name": "include_descendants",
+        "value": "false"
+      },
+      {
+        "name": "body",
+        "value": "{\"data\": [{\"type\": \"quotas\", \"attributes\": {\"scope\": {\"role_uuid\": \"{{ role.data.id }}\"}, \"usage_limit\": 100, \"enforced\": false}}]}"
+      }
+    ],
+    "step": "there is a valid \"quota\" in the system",
+    "key": "quota",
+    "tag": "Usage Metering",
+    "operationId": "CreateQuotas"
+  },
+  {
+    "parameters": [
+      {
         "name": "body",
         "value": "{\"data\": {\"type\": \"temporary_grant_requests\", \"attributes\": {\"total\": 200, \"justification\": \"Credits needed for {{ unique }}.\"}}}"
       }
