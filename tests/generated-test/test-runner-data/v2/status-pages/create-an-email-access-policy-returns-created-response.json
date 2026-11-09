@@ -1,0 +1,51 @@
+{
+  "api": "StatusPages",
+  "expected_status": 201,
+  "feature": "Status Pages",
+  "id": "v2/Status Pages/Create an email access policy returns \"Created\" response",
+  "operation_id": "CreateEmailAccessPolicy",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateStatusPageEmailAccessPolicyRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "effect": "allow",
+            "pattern": "@example.com"
+          },
+          "type": "email_access_policies"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "page_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "private_status_page.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/statuspages/{page_id}/access_policies/email"
+  },
+  "scenario": "Create an email access policy returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -12568,6 +12568,13 @@
     {
       "feature": "Status Pages",
       "feature_file": "../../v2/features/status_pages.feature",
+      "file": "v2/status-pages/create-an-email-access-policy-returns-created-response.json",
+      "scenario": "Create an email access policy returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Status Pages",
+      "feature_file": "../../v2/features/status_pages.feature",
       "file": "v2/status-pages/create-backfilled-degradation-returns-created-response.json",
       "scenario": "Create backfilled degradation returns \"Created\" response",
       "version": "v2"
@@ -12605,6 +12612,13 @@
       "feature_file": "../../v2/features/status_pages.feature",
       "file": "v2/status-pages/create-status-page-returns-created-response.json",
       "scenario": "Create status page returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Status Pages",
+      "feature_file": "../../v2/features/status_pages.feature",
+      "file": "v2/status-pages/delete-an-email-access-policy-returns-no-content-response.json",
+      "scenario": "Delete an email access policy returns \"No Content\" response",
       "version": "v2"
     },
     {
@@ -12668,6 +12682,13 @@
       "feature_file": "../../v2/features/status_pages.feature",
       "file": "v2/status-pages/list-degradations-returns-ok-response.json",
       "scenario": "List degradations returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Status Pages",
+      "feature_file": "../../v2/features/status_pages.feature",
+      "file": "v2/status-pages/list-email-access-policies-returns-ok-response.json",
+      "scenario": "List email access policies returns \"OK\" response",
       "version": "v2"
     },
     {

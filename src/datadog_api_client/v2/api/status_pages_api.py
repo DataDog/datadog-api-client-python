@@ -18,6 +18,13 @@ from datadog_api_client.v2.model.create_status_page_request import CreateStatusP
 from datadog_api_client.v2.model.degradation_array import DegradationArray
 from datadog_api_client.v2.model.maintenance_array import MaintenanceArray
 from datadog_api_client.v2.model.patch_status_page_request import PatchStatusPageRequest
+from datadog_api_client.v2.model.status_page_email_access_policy_array_response import (
+    StatusPageEmailAccessPolicyArrayResponse,
+)
+from datadog_api_client.v2.model.status_page_email_access_policy_response import StatusPageEmailAccessPolicyResponse
+from datadog_api_client.v2.model.create_status_page_email_access_policy_request import (
+    CreateStatusPageEmailAccessPolicyRequest,
+)
 from datadog_api_client.v2.model.status_pages_component_array import StatusPagesComponentArray
 from datadog_api_client.v2.model.status_pages_component import StatusPagesComponent
 from datadog_api_client.v2.model.create_component_request import CreateComponentRequest
@@ -214,6 +221,37 @@ class StatusPagesApi:
             api_client=api_client,
         )
 
+        self._create_email_access_policy_endpoint = _Endpoint(
+            settings={
+                "response_type": (StatusPageEmailAccessPolicyResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/statuspages/{page_id}/access_policies/email",
+                "operation_id": "create_email_access_policy",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "page_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "page_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (CreateStatusPageEmailAccessPolicyRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._create_maintenance_endpoint = _Endpoint(
             settings={
                 "response_type": (Maintenance,),
@@ -384,6 +422,35 @@ class StatusPagesApi:
                     "required": True,
                     "openapi_types": (UUID,),
                     "attribute": "template_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_email_access_policy_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/statuspages/{page_id}/access_policies/email/{policy_id}",
+                "operation_id": "delete_email_access_policy",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "page_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "page_id",
+                    "location": "path",
+                },
+                "policy_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "policy_id",
                     "location": "path",
                 },
             },
@@ -786,6 +853,34 @@ class StatusPagesApi:
                     "openapi_types": (UUID,),
                     "attribute": "page_id",
                     "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_email_access_policies_endpoint = _Endpoint(
+            settings={
+                "response_type": (StatusPageEmailAccessPolicyArrayResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/statuspages/{page_id}/access_policies/email",
+                "operation_id": "list_email_access_policies",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "page_id",
+                    "location": "path",
+                },
+                "include": {
+                    "openapi_types": (str,),
+                    "attribute": "include",
+                    "location": "query",
                 },
             },
             headers_map={
@@ -1407,6 +1502,34 @@ class StatusPagesApi:
 
         return self._create_degradation_template_endpoint.call_with_http_info(**kwargs)
 
+    def create_email_access_policy(
+        self,
+        page_id: UUID,
+        body: CreateStatusPageEmailAccessPolicyRequest,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> StatusPageEmailAccessPolicyResponse:
+        """Create an email access policy.
+
+        Creates an email access policy for a private status page.
+
+        :param page_id: The ID of the private status page.
+        :type page_id: UUID
+        :type body: CreateStatusPageEmailAccessPolicyRequest
+        :param include: Comma-separated list of resources to include. Supported values: created_by_user, status_page.
+        :type include: str, optional
+        :rtype: StatusPageEmailAccessPolicyResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["page_id"] = page_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        kwargs["body"] = body
+
+        return self._create_email_access_policy_endpoint.call_with_http_info(**kwargs)
+
     def create_maintenance(
         self,
         page_id: UUID,
@@ -1557,6 +1680,28 @@ class StatusPagesApi:
         kwargs["template_id"] = template_id
 
         return self._delete_degradation_template_endpoint.call_with_http_info(**kwargs)
+
+    def delete_email_access_policy(
+        self,
+        page_id: UUID,
+        policy_id: UUID,
+    ) -> None:
+        """Delete an email access policy.
+
+        Deletes an email access policy from a private status page.
+
+        :param page_id: The ID of the private status page.
+        :type page_id: UUID
+        :param policy_id: The ID of the email access policy.
+        :type policy_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["page_id"] = page_id
+
+        kwargs["policy_id"] = policy_id
+
+        return self._delete_email_access_policy_endpoint.call_with_http_info(**kwargs)
 
     def delete_maintenance_template(
         self,
@@ -1907,6 +2052,30 @@ class StatusPagesApi:
 
         return self._list_degradation_templates_endpoint.call_with_http_info(**kwargs)
 
+    def list_email_access_policies(
+        self,
+        page_id: UUID,
+        *,
+        include: Union[str, UnsetType] = unset,
+    ) -> StatusPageEmailAccessPolicyArrayResponse:
+        """List email access policies.
+
+        Lists the email access policies for a private status page.
+
+        :param page_id: The ID of the private status page.
+        :type page_id: UUID
+        :param include: Comma-separated list of resources to include. Supported values: created_by_user, status_page.
+        :type include: str, optional
+        :rtype: StatusPageEmailAccessPolicyArrayResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["page_id"] = page_id
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        return self._list_email_access_policies_endpoint.call_with_http_info(**kwargs)
+
     def list_maintenances(
         self,
         *,
@@ -2060,7 +2229,7 @@ class StatusPagesApi:
     ) -> None:
         """Publish status page.
 
-        Publishes a status page. For pages of type ``public`` , makes the status page available on the public internet and requires the ``status_pages_public_page_publish`` permission. For pages of type ``internal`` , makes the status page available under the ``status-pages/$domain_prefix/view`` route within the Datadog organization and requires the ``status_pages_internal_page_publish`` permission.
+        Publishes a status page. For pages of type ``public`` , makes the status page available on the public internet and requires the ``status_pages_public_page_publish`` permission. For pages of type ``internal`` , makes the status page available under the ``status-pages/$domain_prefix/view`` route within the Datadog organization and requires the ``status_pages_internal_page_publish`` permission. For pages of type ``private`` , makes the status page available to users authorized by its email access policies and requires the ``status_pages_private_page_publish`` permission. A private status page must have at least one email access policy before it can be published.
 
         :param page_id: The ID of the status page.
         :type page_id: UUID
@@ -2104,7 +2273,7 @@ class StatusPagesApi:
     ) -> None:
         """Unpublish status page.
 
-        Unpublishes a status page. For pages of type ``public`` , removes the status page from the public internet and requires the ``status_pages_public_page_publish`` permission. For pages of type ``internal`` , removes the ``status-pages/$domain_prefix/view`` route from the Datadog organization and requires the ``status_pages_internal_page_publish`` permission.
+        Unpublishes a status page. For pages of type ``public`` , removes the status page from the public internet and requires the ``status_pages_public_page_publish`` permission. For pages of type ``internal`` , removes the ``status-pages/$domain_prefix/view`` route from the Datadog organization and requires the ``status_pages_internal_page_publish`` permission. For pages of type ``private`` , removes access to the private status page and requires the ``status_pages_private_page_publish`` permission.
 
         :param page_id: The ID of the status page.
         :type page_id: UUID
