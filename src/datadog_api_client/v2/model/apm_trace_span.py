@@ -133,7 +133,8 @@ class APMTraceSpan(ModelNormal):
         :param trace_id: The lower 64 bits of the trace ID, as an unsigned 64-bit integer.
         :type trace_id: int
 
-        :param trace_id_full: The full 128-bit trace ID, encoded as a 32-character hexadecimal string.
+        :param trace_id_full: The trace ID as requested: a decimal ID is returned unchanged, and a hexadecimal ID is lowercased and
+            left-padded with zeros to 32 characters.
         :type trace_id_full: str
 
         :param type: The type of the span (for example, ``web`` , ``db`` , or ``rpc`` ).

@@ -72,10 +72,11 @@ class SpansAggregateBucketAttributes(ModelNormal):
         :param by: The key, value pairs for each group by.
         :type by: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
-        :param compute: The compute data.
+        :param compute: Map of compute ID ( ``c0`` , ``c1`` , ... in request order) to the computed value, or to a list of
+            ``{time, value}`` points for a ``timeseries`` compute.
         :type compute: dict, optional
 
-        :param computes: A map of the metric name -> value for regular compute or list of values for a timeseries.
+        :param computes: Not returned by this endpoint. Read the values from ``compute`` instead.
         :type computes: {str: (SpansAggregateBucketValue,)}, optional
         """
         if by is not unset:

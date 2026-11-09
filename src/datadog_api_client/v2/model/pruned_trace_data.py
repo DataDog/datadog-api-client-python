@@ -41,7 +41,8 @@ class PrunedTraceData(ModelNormal):
         :param attributes: The attributes of a pruned trace returned by the Get pruned trace by ID endpoint.
         :type attributes: PrunedTraceAttributes
 
-        :param id: The full 128-bit trace ID, encoded as a 32-character hexadecimal string.
+        :param id: The trace ID as requested: a decimal ID is returned unchanged, and a hexadecimal ID is lowercased and
+            left-padded with zeros to 32 characters.
         :type id: str
 
         :param type: The type of the pruned trace resource. The value is always ``pruned_trace``.
