@@ -42,7 +42,9 @@ class PatchStatusPageRequestDataAttributes(ModelNormal):
             "company_logo": (str,),
             "domain_prefix": (str,),
             "email_header_image": (str,),
+            "email_notifications_enabled": (bool,),
             "favicon": (str,),
+            "ms_teams_subscriptions_enabled": (bool,),
             "name": (str,),
             "rss_feed_enabled": (bool,),
             "slack_app_icon": (str,),
@@ -57,7 +59,9 @@ class PatchStatusPageRequestDataAttributes(ModelNormal):
         "company_logo": "company_logo",
         "domain_prefix": "domain_prefix",
         "email_header_image": "email_header_image",
+        "email_notifications_enabled": "email_notifications_enabled",
         "favicon": "favicon",
+        "ms_teams_subscriptions_enabled": "ms_teams_subscriptions_enabled",
         "name": "name",
         "rss_feed_enabled": "rss_feed_enabled",
         "slack_app_icon": "slack_app_icon",
@@ -73,7 +77,9 @@ class PatchStatusPageRequestDataAttributes(ModelNormal):
         company_logo: Union[str, UnsetType] = unset,
         domain_prefix: Union[str, UnsetType] = unset,
         email_header_image: Union[str, UnsetType] = unset,
+        email_notifications_enabled: Union[bool, UnsetType] = unset,
         favicon: Union[str, UnsetType] = unset,
+        ms_teams_subscriptions_enabled: Union[bool, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         rss_feed_enabled: Union[bool, UnsetType] = unset,
         slack_app_icon: Union[str, UnsetType] = unset,
@@ -96,8 +102,14 @@ class PatchStatusPageRequestDataAttributes(ModelNormal):
         :param email_header_image: The base64-encoded image data displayed in email notifications sent to status page subscribers.
         :type email_header_image: str, optional
 
+        :param email_notifications_enabled: Whether email notifications are enabled for the status page. Must be enabled when ``subscriptions_enabled`` is ``true``.
+        :type email_notifications_enabled: bool, optional
+
         :param favicon: The base64-encoded image data displayed in the browser tab.
         :type favicon: str, optional
+
+        :param ms_teams_subscriptions_enabled: Whether Microsoft Teams subscriptions are enabled for the status page.
+        :type ms_teams_subscriptions_enabled: bool, optional
 
         :param name: The name of the status page.
         :type name: str, optional
@@ -105,7 +117,7 @@ class PatchStatusPageRequestDataAttributes(ModelNormal):
         :param rss_feed_enabled: Whether the RSS feed is enabled for the status page.
         :type rss_feed_enabled: bool, optional
 
-        :param slack_app_icon: The Slack app icon URL for the status page.
+        :param slack_app_icon: The base64-encoded image data used as the Slack app icon.
         :type slack_app_icon: str, optional
 
         :param slack_subscriptions_enabled: Whether Slack subscriptions are enabled for the status page.
@@ -129,8 +141,12 @@ class PatchStatusPageRequestDataAttributes(ModelNormal):
             kwargs["domain_prefix"] = domain_prefix
         if email_header_image is not unset:
             kwargs["email_header_image"] = email_header_image
+        if email_notifications_enabled is not unset:
+            kwargs["email_notifications_enabled"] = email_notifications_enabled
         if favicon is not unset:
             kwargs["favicon"] = favicon
+        if ms_teams_subscriptions_enabled is not unset:
+            kwargs["ms_teams_subscriptions_enabled"] = ms_teams_subscriptions_enabled
         if name is not unset:
             kwargs["name"] = name
         if rss_feed_enabled is not unset:
