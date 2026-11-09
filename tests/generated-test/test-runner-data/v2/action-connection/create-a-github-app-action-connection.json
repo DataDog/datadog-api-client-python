@@ -1,0 +1,43 @@
+{
+  "api": "ActionConnection",
+  "expected_status": 201,
+  "feature": "Action Connection",
+  "id": "v2/Action Connection/Create a GitHub App Action Connection",
+  "operation_id": "CreateActionConnection",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateActionConnectionRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "integration": {
+              "credentials": {
+                "github_app_id": "123456",
+                "github_installation_id": "789012",
+                "hostname": "github.example.com",
+                "private_key": "example-private-key",
+                "type": "GithubApp"
+              },
+              "type": "Github"
+            },
+            "name": "GitHub App Connection {{ unique_lower_alnum }}"
+          },
+          "type": "action_connection"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/actions/connections"
+  },
+  "scenario": "Create a GitHub App Action Connection",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -2285,6 +2285,34 @@
     {
       "feature": "Action Connection",
       "feature_file": "../../v2/features/action_connection.feature",
+      "file": "v2/action-connection/create-a-github-app-action-connection.json",
+      "scenario": "Create a GitHub App Action Connection",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
+      "feature_file": "../../v2/features/action_connection.feature",
+      "file": "v2/action-connection/create-a-github-app-action-connection-rejects-missing-credentials.json",
+      "scenario": "Create a GitHub App Action Connection rejects missing credentials",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
+      "feature_file": "../../v2/features/action_connection.feature",
+      "file": "v2/action-connection/create-a-github-personal-access-token-action-connection.json",
+      "scenario": "Create a GitHub personal access token Action Connection",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
+      "feature_file": "../../v2/features/action_connection.feature",
+      "file": "v2/action-connection/create-a-github-personal-access-token-action-connection-rejects-missing-credentials.json",
+      "scenario": "Create a GitHub personal access token Action Connection rejects missing credentials",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
+      "feature_file": "../../v2/features/action_connection.feature",
       "file": "v2/action-connection/create-a-new-action-connection-returns-bad-request-response.json",
       "scenario": "Create a new Action Connection returns \"Bad Request\" response",
       "version": "v2"
@@ -2343,6 +2371,20 @@
       "feature_file": "../../v2/features/action_connection.feature",
       "file": "v2/action-connection/get-a-gcp-action-connection-preserves-aws-secrets-manager-references.json",
       "scenario": "Get a GCP Action Connection preserves AWS Secrets Manager references",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
+      "feature_file": "../../v2/features/action_connection.feature",
+      "file": "v2/action-connection/get-a-github-app-action-connection.json",
+      "scenario": "Get a GitHub App Action Connection",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
+      "feature_file": "../../v2/features/action_connection.feature",
+      "file": "v2/action-connection/get-a-github-personal-access-token-action-connection.json",
+      "scenario": "Get a GitHub personal access token Action Connection",
       "version": "v2"
     },
     {
@@ -2427,6 +2469,20 @@
       "feature_file": "../../v2/features/action_connection.feature",
       "file": "v2/action-connection/update-a-gcp-action-connection-with-a-versioned-aws-secrets-manager-reference.json",
       "scenario": "Update a GCP Action Connection with a versioned AWS Secrets Manager reference",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
+      "feature_file": "../../v2/features/action_connection.feature",
+      "file": "v2/action-connection/update-a-github-app-action-connection-without-replacing-its-secret.json",
+      "scenario": "Update a GitHub App Action Connection without replacing its secret",
+      "version": "v2"
+    },
+    {
+      "feature": "Action Connection",
+      "feature_file": "../../v2/features/action_connection.feature",
+      "file": "v2/action-connection/update-a-github-personal-access-token-action-connection-without-replacing-its-secret.json",
+      "scenario": "Update a GitHub personal access token Action Connection without replacing its secret",
       "version": "v2"
     },
     {
