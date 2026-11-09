@@ -1888,6 +1888,7 @@ components:
         type: string
     ProductName:
       description: Name of the product to be deleted. Only `logs` is supported.
+      example: logs
       in: path
       name: product
       required: true
