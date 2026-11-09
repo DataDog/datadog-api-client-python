@@ -10,6 +10,7 @@ from datadog_api_client.model_utils import (
     cached_property,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -32,6 +33,7 @@ class GCPAccount(ModelNormal):
             "cloud_run_revision_filters": ([str],),
             "errors": ([str],),
             "host_filters": (str,),
+            "id": (UUID,),
             "is_cspm_enabled": (bool,),
             "is_resource_change_collection_enabled": (bool,),
             "is_security_command_center_enabled": (bool,),
@@ -54,6 +56,7 @@ class GCPAccount(ModelNormal):
         "cloud_run_revision_filters": "cloud_run_revision_filters",
         "errors": "errors",
         "host_filters": "host_filters",
+        "id": "id",
         "is_cspm_enabled": "is_cspm_enabled",
         "is_resource_change_collection_enabled": "is_resource_change_collection_enabled",
         "is_security_command_center_enabled": "is_security_command_center_enabled",
@@ -64,6 +67,9 @@ class GCPAccount(ModelNormal):
         "resource_collection_enabled": "resource_collection_enabled",
         "token_uri": "token_uri",
         "type": "type",
+    }
+    read_only_vars = {
+        "id",
     }
 
     def __init__(
@@ -77,6 +83,7 @@ class GCPAccount(ModelNormal):
         cloud_run_revision_filters: Union[List[str], UnsetType] = unset,
         errors: Union[List[str], UnsetType] = unset,
         host_filters: Union[str, UnsetType] = unset,
+        id: Union[UUID, UnsetType] = unset,
         is_cspm_enabled: Union[bool, UnsetType] = unset,
         is_resource_change_collection_enabled: Union[bool, UnsetType] = unset,
         is_security_command_center_enabled: Union[bool, UnsetType] = unset,
@@ -123,6 +130,9 @@ class GCPAccount(ModelNormal):
             Only VM instance resources that apply to specified filters are imported into Datadog.
             **Note:** This field is deprecated. Instead, use ``monitored_resource_configs`` with ``type=gce_instance`` **Deprecated**.
         :type host_filters: str, optional
+
+        :param id: The Datadog-assigned ID of the GCP integration account.
+        :type id: UUID, optional
 
         :param is_cspm_enabled: When enabled, Datadog will activate the Cloud Security Monitoring product for this service account. Note: This requires resource_collection_enabled to be set to true.
         :type is_cspm_enabled: bool, optional
@@ -172,6 +182,8 @@ class GCPAccount(ModelNormal):
             kwargs["errors"] = errors
         if host_filters is not unset:
             kwargs["host_filters"] = host_filters
+        if id is not unset:
+            kwargs["id"] = id
         if is_cspm_enabled is not unset:
             kwargs["is_cspm_enabled"] = is_cspm_enabled
         if is_resource_change_collection_enabled is not unset:
