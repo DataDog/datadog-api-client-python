@@ -8883,12 +8883,6 @@
       "type": "safe"
     }
   },
-  "DownloadCloudWorkloadPolicyFile": {
-    "tag": "CSM Threats",
-    "undo": {
-      "type": "safe"
-    }
-  },
   "ListSecurityFindings": {
     "tag": "Security Monitoring",
     "undo": {
