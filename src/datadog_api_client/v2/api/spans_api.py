@@ -211,7 +211,15 @@ class SpansApi:
         Use this endpoint to see your latest spans.
         This endpoint is rate limited to ``50`` requests per minute per organization.
 
-        :param filter_query: Search query following spans syntax.
+        :param filter_query: The search query, following the
+            `span search syntax <https://docs.datadoghq.com/tracing/trace_explorer/query_syntax/>`_.
+            Reserved fields ( ``service`` , ``env`` , ``version`` , ``resource_name`` , ``operation_name`` , ``status`` , ``span_id`` ,
+            ``trace_id`` , ``type`` ) take no ``@`` prefix, and neither do tags such as ``host`` or primary tags such as
+            ``datacenter``. Span attributes need one, for example ``@span.kind:server`` or ``@http.status_code:500``.
+            Wrap values that contain special characters such as ``:`` , ``{`` , ``}`` , ``(`` , ``)`` , or spaces in double quotes,
+            for example ``@http.route:"/api/v1/users/{id}"`` or ``resource_name:"GET /api/v1/users"``.
+            Wildcards do not work inside quotes, so to combine a wildcard with special characters, escape each one
+            with ``\\`` instead, for example ``resource_name:Clients\:\:*``.
         :type filter_query: str, optional
         :param filter_from: Minimum timestamp for requested spans. Supports date-time ISO8601, date math, and regular timestamps (milliseconds).
         :type filter_from: str, optional
@@ -260,7 +268,15 @@ class SpansApi:
 
         Provide a paginated version of :meth:`list_spans_get`, returning all items.
 
-        :param filter_query: Search query following spans syntax.
+        :param filter_query: The search query, following the
+            `span search syntax <https://docs.datadoghq.com/tracing/trace_explorer/query_syntax/>`_.
+            Reserved fields ( ``service`` , ``env`` , ``version`` , ``resource_name`` , ``operation_name`` , ``status`` , ``span_id`` ,
+            ``trace_id`` , ``type`` ) take no ``@`` prefix, and neither do tags such as ``host`` or primary tags such as
+            ``datacenter``. Span attributes need one, for example ``@span.kind:server`` or ``@http.status_code:500``.
+            Wrap values that contain special characters such as ``:`` , ``{`` , ``}`` , ``(`` , ``)`` , or spaces in double quotes,
+            for example ``@http.route:"/api/v1/users/{id}"`` or ``resource_name:"GET /api/v1/users"``.
+            Wildcards do not work inside quotes, so to combine a wildcard with special characters, escape each one
+            with ``\\`` instead, for example ``resource_name:Clients\:\:*``.
         :type filter_query: str, optional
         :param filter_from: Minimum timestamp for requested spans. Supports date-time ISO8601, date math, and regular timestamps (milliseconds).
         :type filter_from: str, optional

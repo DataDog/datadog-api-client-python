@@ -23,6 +23,13 @@ Feature: Spans
     And the response "meta.status" is equal to "done"
 
   @generated @skip @team:ddoghq/apm
+  Scenario: Aggregate spans returns "Request Timeout" response
+    Given new "AggregateSpans" request
+    And body with value {"data": {"attributes": {"compute": [{"aggregation": "pc90", "interval": "5m", "metric": "@duration", "type": "total"}], "filter": {"from": "now-15m", "query": "service:web* AND @http.status_code:[200 TO 299]", "to": "now"}, "group_by": [{"facet": "host", "histogram": {"interval": 10, "max": 100, "min": 50}, "limit": 10, "sort": {"aggregation": "pc90", "metric": "@duration", "order": "desc", "type": "measure"}, "total": false}], "options": {"timezone": "GMT"}}, "type": "aggregate_request"}}
+    When the request is sent
+    Then the response status is 408 Request Timeout
+
+  @generated @skip @team:ddoghq/apm
   Scenario: Get a list of spans returns "Bad Request." response
     Given new "ListSpansGet" request
     When the request is sent

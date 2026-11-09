@@ -161,7 +161,8 @@ class SpansAttributes(ModelNormal):
         :param tags: Array of tags associated with your span.
         :type tags: [str], optional
 
-        :param trace_id: Id of the trace to which the span belongs.
+        :param trace_id: ID of the trace to which the span belongs: a 32-character hexadecimal string for 128-bit trace IDs,
+            or a decimal string for 64-bit trace IDs. Pass it unchanged to Get a trace by ID.
         :type trace_id: str, optional
 
         :param type: The type of the span.
