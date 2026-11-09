@@ -1,0 +1,51 @@
+{
+  "api": "StatusPages",
+  "expected_status": 204,
+  "feature": "Status Pages",
+  "id": "v2/Status Pages/Delete an email access policy returns \"No Content\" response",
+  "operation_id": "DeleteEmailAccessPolicy",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "page_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "private_status_page.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "policy_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "email_access_policy.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/statuspages/{page_id}/access_policies/email/{policy_id}"
+  },
+  "scenario": "Delete an email access policy returns \"No Content\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

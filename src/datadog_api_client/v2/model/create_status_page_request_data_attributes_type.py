@@ -14,18 +14,20 @@ from typing import ClassVar
 
 class CreateStatusPageRequestDataAttributesType(ModelSimple):
     """
-    The type of the status page controlling how the status page is accessed.
+    The type of the status page controlling how the status page is accessed. Public pages are accessible to anyone, internal pages are accessible to authenticated users in the Datadog organization, and private pages are accessible only to users matching an allow email access policy and no deny email access policy.
 
-    :param value: Must be one of ["public", "internal"].
+    :param value: Must be one of ["public", "internal", "private"].
     :type value: str
     """
 
     allowed_values = {
         "public",
         "internal",
+        "private",
     }
     PUBLIC: ClassVar["CreateStatusPageRequestDataAttributesType"]
     INTERNAL: ClassVar["CreateStatusPageRequestDataAttributesType"]
+    PRIVATE: ClassVar["CreateStatusPageRequestDataAttributesType"]
 
     @cached_property
     def openapi_types(_):
@@ -36,3 +38,4 @@ class CreateStatusPageRequestDataAttributesType(ModelSimple):
 
 CreateStatusPageRequestDataAttributesType.PUBLIC = CreateStatusPageRequestDataAttributesType("public")
 CreateStatusPageRequestDataAttributesType.INTERNAL = CreateStatusPageRequestDataAttributesType("internal")
+CreateStatusPageRequestDataAttributesType.PRIVATE = CreateStatusPageRequestDataAttributesType("private")

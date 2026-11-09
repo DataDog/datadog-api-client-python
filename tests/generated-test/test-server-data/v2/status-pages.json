@@ -3,6 +3,120 @@
   "recordings": [
     {
       "feature": "Status Pages",
+      "frozen_at": "2026-11-09T20:00:30.155Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "domain_prefix": "private-ff5d0d55579dd97e",
+                    "name": "A Private Status Page",
+                    "type": "private",
+                    "visualization_type": "bars_and_uptime_percentage"
+                  },
+                  "type": "status_pages"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/statuspages",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a4e1c201-4c61-4da9-a929-1470d9e66417\",\"type\":\"status_pages\",\"attributes\":{\"company_logo\":null,\"components\":[],\"created_at\":\"2026-11-09T20:00:30.262802Z\",\"custom_domain\":null,\"custom_domain_enabled\":false,\"domain_prefix\":\"private-ff5d0d55579dd97e\",\"email_header_image\":null,\"email_notifications_enabled\":true,\"enabled\":false,\"favicon\":null,\"modified_at\":\"2026-11-09T20:00:30.262802Z\",\"ms_teams_subscriptions_enabled\":false,\"name\":\"A Private Status Page\",\"page_url\":\"https://private-ff5d0d55579dd97e.private.statuspage.datadoghq.com\",\"rss_feed_enabled\":false,\"slack_app_icon\":null,\"slack_subscriptions_enabled\":false,\"subscriptions_enabled\":false,\"type\":\"private\",\"visualization_layout\":\"list\",\"visualization_type\":\"bars_and_uptime_percentage\"},\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"users\"}},\"last_modified_by_user\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"users\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "effect": "allow",
+                    "pattern": "@example.com"
+                  },
+                  "type": "email_access_policies"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/statuspages/a4e1c201-4c61-4da9-a929-1470d9e66417/access_policies/email",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"8a7f8b1a-e42c-4265-8f51-d4f3a1ba7ee6\",\"type\":\"email_access_policies\",\"attributes\":{\"created_at\":\"2026-11-09T20:00:30.993828Z\",\"effect\":\"allow\",\"pattern\":\"@example.com\"},\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"users\"}},\"status_page\":{\"data\":{\"id\":\"a4e1c201-4c61-4da9-a929-1470d9e66417\",\"type\":\"status_pages\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/statuspages/a4e1c201-4c61-4da9-a929-1470d9e66417/access_policies/email/8a7f8b1a-e42c-4265-8f51-d4f3a1ba7ee6",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/statuspages/a4e1c201-4c61-4da9-a929-1470d9e66417",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create an email access policy returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Status Pages",
       "frozen_at": "2026-05-04T14:30:13.862Z",
       "interactions": [
         {
@@ -766,6 +880,143 @@
         }
       ],
       "scenario": "Create status page returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Status Pages",
+      "frozen_at": "2026-11-09T20:00:49.286Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "domain_prefix": "private-0b4fc65664dd3e87",
+                    "name": "A Private Status Page",
+                    "type": "private",
+                    "visualization_type": "bars_and_uptime_percentage"
+                  },
+                  "type": "status_pages"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/statuspages",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"22a7ed26-874a-4584-88e3-fa07d55bc202\",\"type\":\"status_pages\",\"attributes\":{\"company_logo\":null,\"components\":[],\"created_at\":\"2026-11-09T20:00:49.396441Z\",\"custom_domain\":null,\"custom_domain_enabled\":false,\"domain_prefix\":\"private-0b4fc65664dd3e87\",\"email_header_image\":null,\"email_notifications_enabled\":true,\"enabled\":false,\"favicon\":null,\"modified_at\":\"2026-11-09T20:00:49.396441Z\",\"ms_teams_subscriptions_enabled\":false,\"name\":\"A Private Status Page\",\"page_url\":\"https://private-0b4fc65664dd3e87.private.statuspage.datadoghq.com\",\"rss_feed_enabled\":false,\"slack_app_icon\":null,\"slack_subscriptions_enabled\":false,\"subscriptions_enabled\":false,\"type\":\"private\",\"visualization_layout\":\"list\",\"visualization_type\":\"bars_and_uptime_percentage\"},\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"users\"}},\"last_modified_by_user\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"users\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "effect": "allow",
+                    "pattern": "@example.com"
+                  },
+                  "type": "email_access_policies"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/statuspages/22a7ed26-874a-4584-88e3-fa07d55bc202/access_policies/email",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"e8a7cfc3-0103-4a68-9700-3354c101f137\",\"type\":\"email_access_policies\",\"attributes\":{\"created_at\":\"2026-11-09T20:00:49.957602Z\",\"effect\":\"allow\",\"pattern\":\"@example.com\"},\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"users\"}},\"status_page\":{\"data\":{\"id\":\"22a7ed26-874a-4584-88e3-fa07d55bc202\",\"type\":\"status_pages\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/statuspages/22a7ed26-874a-4584-88e3-fa07d55bc202/access_policies/email/e8a7cfc3-0103-4a68-9700-3354c101f137",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/statuspages/22a7ed26-874a-4584-88e3-fa07d55bc202/access_policies/email/e8a7cfc3-0103-4a68-9700-3354c101f137",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Not Found\",\"detail\":\"Email access policy not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/statuspages/22a7ed26-874a-4584-88e3-fa07d55bc202",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Delete an email access policy returns \"No Content\" response",
       "version": "v2"
     },
     {
@@ -1909,6 +2160,143 @@
         }
       ],
       "scenario": "List degradations returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Status Pages",
+      "frozen_at": "2026-11-09T20:01:07.784Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "domain_prefix": "private-c487bbcbee9a427d",
+                    "name": "A Private Status Page",
+                    "type": "private",
+                    "visualization_type": "bars_and_uptime_percentage"
+                  },
+                  "type": "status_pages"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/statuspages",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"87442022-940d-4f8a-afbe-21de27d9ef22\",\"type\":\"status_pages\",\"attributes\":{\"company_logo\":null,\"components\":[],\"created_at\":\"2026-11-09T20:01:07.892553Z\",\"custom_domain\":null,\"custom_domain_enabled\":false,\"domain_prefix\":\"private-c487bbcbee9a427d\",\"email_header_image\":null,\"email_notifications_enabled\":true,\"enabled\":false,\"favicon\":null,\"modified_at\":\"2026-11-09T20:01:07.892553Z\",\"ms_teams_subscriptions_enabled\":false,\"name\":\"A Private Status Page\",\"page_url\":\"https://private-c487bbcbee9a427d.private.statuspage.datadoghq.com\",\"rss_feed_enabled\":false,\"slack_app_icon\":null,\"slack_subscriptions_enabled\":false,\"subscriptions_enabled\":false,\"type\":\"private\",\"visualization_layout\":\"list\",\"visualization_type\":\"bars_and_uptime_percentage\"},\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"users\"}},\"last_modified_by_user\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"users\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "effect": "allow",
+                    "pattern": "@example.com"
+                  },
+                  "type": "email_access_policies"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/statuspages/87442022-940d-4f8a-afbe-21de27d9ef22/access_policies/email",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"22ac744d-3e3b-4ad0-a24a-664d51a246c4\",\"type\":\"email_access_policies\",\"attributes\":{\"created_at\":\"2026-11-09T20:01:08.552722Z\",\"effect\":\"allow\",\"pattern\":\"@example.com\"},\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"users\"}},\"status_page\":{\"data\":{\"id\":\"87442022-940d-4f8a-afbe-21de27d9ef22\",\"type\":\"status_pages\"}}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/statuspages/87442022-940d-4f8a-afbe-21de27d9ef22/access_policies/email",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"22ac744d-3e3b-4ad0-a24a-664d51a246c4\",\"type\":\"email_access_policies\",\"attributes\":{\"created_at\":\"2026-11-09T20:01:08.552722Z\",\"effect\":\"allow\",\"pattern\":\"@example.com\"},\"relationships\":{\"created_by_user\":{\"data\":{\"id\":\"3ad549bf-eba0-11e9-a77a-0705486660d0\",\"type\":\"users\"}},\"status_page\":{\"data\":{\"id\":\"87442022-940d-4f8a-afbe-21de27d9ef22\",\"type\":\"status_pages\"}}}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/statuspages/87442022-940d-4f8a-afbe-21de27d9ef22/access_policies/email/22ac744d-3e3b-4ad0-a24a-664d51a246c4",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/statuspages/87442022-940d-4f8a-afbe-21de27d9ef22",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "List email access policies returns \"OK\" response",
       "version": "v2"
     },
     {
