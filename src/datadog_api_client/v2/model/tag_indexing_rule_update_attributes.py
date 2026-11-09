@@ -18,6 +18,15 @@ if TYPE_CHECKING:
 
 
 class TagIndexingRuleUpdateAttributes(ModelNormal):
+    validations = {
+        "metric_name_matches": {
+            "max_items": 50,
+        },
+        "name": {
+            "max_length": 200,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.tag_indexing_rule_options import TagIndexingRuleOptions
@@ -62,10 +71,10 @@ class TagIndexingRuleUpdateAttributes(ModelNormal):
         :param ignored_metric_name_matches: Metric name prefixes excluded from the rule's scope.
         :type ignored_metric_name_matches: [str], optional
 
-        :param metric_name_matches: Metric name prefixes (glob patterns) this rule applies to.
+        :param metric_name_matches: Metric name prefixes (glob patterns) this rule applies to. At most 50 patterns, each at most 200 characters.
         :type metric_name_matches: [str], optional
 
-        :param name: Human-readable name for the rule.
+        :param name: Human-readable name for the rule. At most 200 characters.
         :type name: str, optional
 
         :param options: Versioned configuration options for a tag indexing rule.
