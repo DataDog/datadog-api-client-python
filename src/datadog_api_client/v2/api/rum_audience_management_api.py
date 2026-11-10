@@ -84,6 +84,29 @@ class RumAudienceManagementApi:
             api_client=api_client,
         )
 
+        self._delete_user_profile_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/product-analytics/users/{user_id}",
+                "operation_id": "delete_user_profile",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "user_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "user_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._get_account_facet_info_endpoint = _Endpoint(
             settings={
                 "response_type": (FacetInfoResponse,),
@@ -298,6 +321,25 @@ class RumAudienceManagementApi:
         kwargs["entity"] = entity
 
         return self._delete_connection_endpoint.call_with_http_info(**kwargs)
+
+    def delete_user_profile(
+        self,
+        user_id: str,
+    ) -> None:
+        """Delete a user profile.
+
+        Delete a Product Analytics user profile.
+        Deletion is asynchronous: the request is accepted and the profile is removed shortly after, usually within a few minutes.
+        This only deletes the user profile. To delete the RUM events of the user, use the RUM data deletion API.
+
+        :param user_id: The ID of the user to delete, as sent in the ``usr.id`` attribute.
+        :type user_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["user_id"] = user_id
+
+        return self._delete_user_profile_endpoint.call_with_http_info(**kwargs)
 
     def get_account_facet_info(
         self,

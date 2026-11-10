@@ -856,6 +856,7 @@ class Configuration:
                 "v2.query_product_analytics_sankey": False,
                 "v2.create_connection": False,
                 "v2.delete_connection": False,
+                "v2.delete_user_profile": False,
                 "v2.get_account_facet_info": False,
                 "v2.get_mapping": False,
                 "v2.get_user_facet_info": False,

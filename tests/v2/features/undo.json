@@ -7535,6 +7535,12 @@
       "type": "unsafe"
     }
   },
+  "DeleteUserProfile": {
+    "tag": "Rum Audience Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetMapping": {
     "tag": "Rum Audience Management",
     "undo": {
