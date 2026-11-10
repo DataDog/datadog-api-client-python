@@ -3088,6 +3088,14 @@ components:
       properties:
         action:
           $ref: "#/components/schemas/AIGuardAction"
+        extra_tags:
+          description: |-
+            The span tags that tracers should add to the `ai_guard` span. Each item contains a
+            backend-defined key and value, and clients should not assume a fixed set of keys.
+            Example keys include `ai_guard.evaluate_id` and `ai_guard.evaluation_context`.
+          items:
+            $ref: "#/components/schemas/AIGuardExtraTag"
+          type: array
         global_prob:
           description: The global threat probability, between `0` and `1`. Included only when computed.
           example: 0.005218505859375
@@ -3214,6 +3222,21 @@ components:
       type: string
       x-enum-varnames:
         - EVALUATIONS
+    AIGuardExtraTag:
+      description: A span tag for tracers to add to the `ai_guard` span.
+      properties:
+        key:
+          description: The span tag key.
+          example: ai_guard.evaluate_id
+          type: string
+        value:
+          description: The span tag value.
+          example: a76a703c-324f-42ed-af33-9b17d65e28af
+          type: string
+      required:
+        - key
+        - value
+      type: object
     AIGuardGlobalConfidenceThreshold:
       description: The global confidence threshold applied to every threat category.
       example: 0.8
@@ -158007,6 +158030,9 @@ paths:
                     data:
                       attributes:
                         action: ALLOW
+                        extra_tags:
+                          - key: ai_guard.evaluate_id
+                            value: a76a703c-324f-42ed-af33-9b17d65e28af
                         global_prob: 0.005218505859375
                         is_blocking_enabled: false
                         reason: No rule match.
