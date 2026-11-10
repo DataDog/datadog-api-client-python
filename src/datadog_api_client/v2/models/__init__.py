@@ -9664,6 +9664,7 @@ from datadog_api_client.v2.model.rum_operation_update_request import RUMOperatio
 from datadog_api_client.v2.model.rum_operation_update_request_data import RUMOperationUpdateRequestData
 from datadog_api_client.v2.model.rum_operation_user import RUMOperationUser
 from datadog_api_client.v2.model.rum_operations_list_response import RUMOperationsListResponse
+from datadog_api_client.v2.model.rum_operations_list_response_links import RUMOperationsListResponseLinks
 from datadog_api_client.v2.model.rum_operations_list_response_meta import RUMOperationsListResponseMeta
 from datadog_api_client.v2.model.rum_operations_list_response_meta_page import RUMOperationsListResponseMetaPage
 from datadog_api_client.v2.model.rum_product_analytics_retention_scale import RUMProductAnalyticsRetentionScale
@@ -20328,6 +20329,7 @@ __all__ = [
     "RUMOperationUpdateRequestData",
     "RUMOperationUser",
     "RUMOperationsListResponse",
+    "RUMOperationsListResponseLinks",
     "RUMOperationsListResponseMeta",
     "RUMOperationsListResponseMetaPage",
     "RUMProductAnalyticsRetentionScale",
