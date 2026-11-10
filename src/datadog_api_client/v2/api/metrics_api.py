@@ -361,6 +361,7 @@ class MetricsApi:
                 "filter_timespan_h": {
                     "validation": {
                         "inclusive_maximum": 2147483647,
+                        "inclusive_minimum": 1,
                     },
                     "openapi_types": (int,),
                     "attribute": "filter[timespan_h]",
@@ -1281,6 +1282,11 @@ class MetricsApi:
         To compare current volumes across many metrics, use ``GET /api/v2/metrics`` with ``include=metric_volumes``
         instead of calling this endpoint for each metric.
 
+        A ``404 Not Found`` response means that no metric with this name exists in your organization. A
+        ``400 Bad Request`` response means that a query parameter is invalid, or that the metric has no data in the
+        queried window. For no data, the error message says so and names the window that was queried, which can
+        differ from the requested one.
+
         :param metric_name: The name of the metric.
         :type metric_name: str
         :param filter_groups: Comma-separated list of tag keys that the metric is configured to query with. For example: ``filter[groups]=app,host``.
@@ -1288,13 +1294,14 @@ class MetricsApi:
         :param filter_exclude_tags_mode: When ``true`` , ``filter[groups]`` is treated as an exclude list instead of an include list. Defaults to ``false``.
         :type filter_exclude_tags_mode: bool, optional
         :param filter_hours_ago: The number of hours of look back (from now) to estimate cardinality with.
-            If unspecified, it defaults to 0 hours (the most recent data).
+            If unspecified, it defaults to 0 hours (the most recent data). Values below 0 return ``400 Bad Request``.
         :type filter_hours_ago: int, optional
         :param filter_num_aggregations: Deprecated. Number of aggregations has no impact on volume.
         :type filter_num_aggregations: int, optional
         :param filter_pct: Deprecated. This query parameter has no effect on the estimate.
         :type filter_pct: bool, optional
         :param filter_timespan_h: A window, in hours, from the look back to estimate cardinality with. The minimum and default is 1 hour.
+            Smaller values return ``400 Bad Request``.
         :type filter_timespan_h: int, optional
         :rtype: MetricEstimateResponse
         """
@@ -1465,9 +1472,9 @@ class MetricsApi:
 
         Returns the tag configuration for the given metric name.
 
-        A metric may exist and submit data without having a tag configuration. A ``404 Not Found`` response usually
-        means that the metric has no tag configuration, but it is also returned when no metric with this name exists
-        in your organization.
+        A metric may exist and submit data without having a tag configuration. Both cases return ``404 Not Found`` ,
+        with different messages: ``No tag configuration for <metric_name>`` when the metric exists without a tag
+        configuration, and ``<metric_name> not found`` when no metric with this name exists in your organization.
 
         To list tag configurations for many metrics, use ``GET /api/v2/metrics`` with ``filter[configured]=true``
         instead of calling this endpoint for each metric.
