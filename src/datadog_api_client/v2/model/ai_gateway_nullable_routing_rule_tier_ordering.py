@@ -14,18 +14,22 @@ from typing import ClassVar
 
 class AiGatewayNullableRoutingRuleTierOrdering(ModelSimple):
     """
-    How a tier orders its targets. Omitted or null defaults to configured, which preserves target order. The weighted_affinity ordering distributes first-choice assignments by relative target weights and accepts only model targets with an explicit provider, without repeated provider and model pairs in the same tier.
+    How a tier orders its targets. Omitted or null defaults to configured, which preserves target order. The weighted_affinity ordering distributes first-choice assignments by relative target weights and accepts only model targets with an explicit provider, without repeated provider and model pairs in the same tier. The classified ordering lets a decision model pick one destination for each request by its rubric. It is allowed only on the first tier, and it needs a classifier and exactly one default destination.
 
-    :param value: If omitted defaults to "configured". Must be one of ["configured", "weighted_affinity"].
+        **Note**: Classified routing is in Preview and may not be available for all organizations. Saving a classified tier returns 403 Forbidden unless the feature is enabled for your organization.
+
+    :param value: If omitted defaults to "configured". Must be one of ["configured", "weighted_affinity", "classified"].
     :type value: str
     """
 
     allowed_values = {
         "configured",
         "weighted_affinity",
+        "classified",
     }
     CONFIGURED: ClassVar["AiGatewayNullableRoutingRuleTierOrdering"]
     WEIGHTED_AFFINITY: ClassVar["AiGatewayNullableRoutingRuleTierOrdering"]
+    CLASSIFIED: ClassVar["AiGatewayNullableRoutingRuleTierOrdering"]
 
     _nullable = True
 
@@ -40,3 +44,4 @@ AiGatewayNullableRoutingRuleTierOrdering.CONFIGURED = AiGatewayNullableRoutingRu
 AiGatewayNullableRoutingRuleTierOrdering.WEIGHTED_AFFINITY = AiGatewayNullableRoutingRuleTierOrdering(
     "weighted_affinity"
 )
+AiGatewayNullableRoutingRuleTierOrdering.CLASSIFIED = AiGatewayNullableRoutingRuleTierOrdering("classified")

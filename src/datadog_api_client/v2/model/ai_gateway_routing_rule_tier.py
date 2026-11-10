@@ -14,6 +14,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.ai_gateway_routing_rule_classifier import AiGatewayRoutingRuleClassifier
     from datadog_api_client.v2.model.ai_gateway_routing_rule_tier_ordering import AiGatewayRoutingRuleTierOrdering
     from datadog_api_client.v2.model.ai_gateway_routing_rule_tier_ordering_issue import (
         AiGatewayRoutingRuleTierOrderingIssue,
@@ -30,6 +31,7 @@ class AiGatewayRoutingRuleTier(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.ai_gateway_routing_rule_classifier import AiGatewayRoutingRuleClassifier
         from datadog_api_client.v2.model.ai_gateway_routing_rule_tier_ordering import AiGatewayRoutingRuleTierOrdering
         from datadog_api_client.v2.model.ai_gateway_routing_rule_tier_ordering_issue import (
             AiGatewayRoutingRuleTierOrderingIssue,
@@ -37,12 +39,14 @@ class AiGatewayRoutingRuleTier(ModelNormal):
         from datadog_api_client.v2.model.ai_gateway_routing_rule_target import AiGatewayRoutingRuleTarget
 
         return {
+            "classifier": (AiGatewayRoutingRuleClassifier,),
             "ordering": (AiGatewayRoutingRuleTierOrdering,),
             "ordering_issue": (AiGatewayRoutingRuleTierOrderingIssue,),
             "targets": ([AiGatewayRoutingRuleTarget],),
         }
 
     attribute_map = {
+        "classifier": "classifier",
         "ordering": "ordering",
         "ordering_issue": "ordering_issue",
         "targets": "targets",
@@ -55,11 +59,15 @@ class AiGatewayRoutingRuleTier(ModelNormal):
         self_,
         ordering: AiGatewayRoutingRuleTierOrdering,
         targets: List[AiGatewayRoutingRuleTarget],
+        classifier: Union[AiGatewayRoutingRuleClassifier, UnsetType] = unset,
         ordering_issue: Union[AiGatewayRoutingRuleTierOrderingIssue, UnsetType] = unset,
         **kwargs,
     ):
         """
         Routing fallback tier containing targets and their effective ordering.
+
+        :param classifier: Decision model of a classified tier.
+        :type classifier: AiGatewayRoutingRuleClassifier, optional
 
         :param ordering: How a tier orders its targets.
         :type ordering: AiGatewayRoutingRuleTierOrdering
@@ -70,6 +78,8 @@ class AiGatewayRoutingRuleTier(ModelNormal):
         :param targets:
         :type targets: [AiGatewayRoutingRuleTarget]
         """
+        if classifier is not unset:
+            kwargs["classifier"] = classifier
         if ordering_issue is not unset:
             kwargs["ordering_issue"] = ordering_issue
         super().__init__(kwargs)

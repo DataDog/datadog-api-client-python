@@ -208,7 +208,7 @@ Feature: AI Gateway
   Scenario: Create an AI Gateway routing rule returns "Bad Request" response
     Given operation "CreateAiGatewayRoutingRule" enabled
     And new "CreateAiGatewayRoutingRule" request
-    And body with value {"data": {"attributes": {"slug": "coding", "tiers": [{"ordering": "configured", "targets": [{"id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "type": "routing-rules"}}
+    And body with value {"data": {"attributes": {"slug": "coding", "tiers": [{"classifier": {"confidence_threshold": 0.6, "context": "Requests come from the internal coding assistant.", "model": "gpt-6-luna", "provider": "prod-us"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Writing, reviewing, or debugging code.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "type": "routing-rules"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -216,7 +216,7 @@ Feature: AI Gateway
   Scenario: Create an AI Gateway routing rule returns "Conflict" response
     Given operation "CreateAiGatewayRoutingRule" enabled
     And new "CreateAiGatewayRoutingRule" request
-    And body with value {"data": {"attributes": {"slug": "coding", "tiers": [{"ordering": "configured", "targets": [{"id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "type": "routing-rules"}}
+    And body with value {"data": {"attributes": {"slug": "coding", "tiers": [{"classifier": {"confidence_threshold": 0.6, "context": "Requests come from the internal coding assistant.", "model": "gpt-6-luna", "provider": "prod-us"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Writing, reviewing, or debugging code.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "type": "routing-rules"}}
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -224,7 +224,7 @@ Feature: AI Gateway
   Scenario: Create an AI Gateway routing rule returns "Created" response
     Given operation "CreateAiGatewayRoutingRule" enabled
     And new "CreateAiGatewayRoutingRule" request
-    And body with value {"data": {"attributes": {"slug": "coding", "tiers": [{"ordering": "configured", "targets": [{"id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "type": "routing-rules"}}
+    And body with value {"data": {"attributes": {"slug": "coding", "tiers": [{"classifier": {"confidence_threshold": 0.6, "context": "Requests come from the internal coding assistant.", "model": "gpt-6-luna", "provider": "prod-us"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Writing, reviewing, or debugging code.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "type": "routing-rules"}}
     When the request is sent
     Then the response status is 201 Created
 
@@ -820,7 +820,7 @@ Feature: AI Gateway
     Given operation "UpdateAiGatewayRoutingRule" enabled
     And new "UpdateAiGatewayRoutingRule" request
     And request contains "slug" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"tiers": [{"ordering": "configured", "targets": [{"id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "id": "coding", "type": "routing-rules"}}
+    And body with value {"data": {"attributes": {"tiers": [{"classifier": {"confidence_threshold": 0.6, "context": "Requests come from the internal coding assistant.", "model": "gpt-6-luna", "provider": "prod-us"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Writing, reviewing, or debugging code.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "id": "coding", "type": "routing-rules"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -829,7 +829,7 @@ Feature: AI Gateway
     Given operation "UpdateAiGatewayRoutingRule" enabled
     And new "UpdateAiGatewayRoutingRule" request
     And request contains "slug" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"tiers": [{"ordering": "configured", "targets": [{"id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "id": "coding", "type": "routing-rules"}}
+    And body with value {"data": {"attributes": {"tiers": [{"classifier": {"confidence_threshold": 0.6, "context": "Requests come from the internal coding assistant.", "model": "gpt-6-luna", "provider": "prod-us"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Writing, reviewing, or debugging code.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "id": "coding", "type": "routing-rules"}}
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -838,7 +838,7 @@ Feature: AI Gateway
     Given operation "UpdateAiGatewayRoutingRule" enabled
     And new "UpdateAiGatewayRoutingRule" request
     And request contains "slug" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"tiers": [{"ordering": "configured", "targets": [{"id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "id": "coding", "type": "routing-rules"}}
+    And body with value {"data": {"attributes": {"tiers": [{"classifier": {"confidence_threshold": 0.6, "context": "Requests come from the internal coding assistant.", "model": "gpt-6-luna", "provider": "prod-us"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Writing, reviewing, or debugging code.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "id": "coding", "type": "routing-rules"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -847,7 +847,7 @@ Feature: AI Gateway
     Given operation "UpdateAiGatewayRoutingRule" enabled
     And new "UpdateAiGatewayRoutingRule" request
     And request contains "slug" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"tiers": [{"ordering": "configured", "targets": [{"id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "id": "coding", "type": "routing-rules"}}
+    And body with value {"data": {"attributes": {"tiers": [{"classifier": {"confidence_threshold": 0.6, "context": "Requests come from the internal coding assistant.", "model": "gpt-6-luna", "provider": "prod-us"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Writing, reviewing, or debugging code.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "id": "coding", "type": "routing-rules"}}
     When the request is sent
     Then the response status is 200 OK
 
