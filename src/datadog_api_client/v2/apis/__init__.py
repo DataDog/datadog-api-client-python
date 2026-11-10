@@ -67,6 +67,7 @@ from datadog_api_client.v2.api.feature_flags_api import FeatureFlagsApi
 from datadog_api_client.v2.api.fleet_automation_api import FleetAutomationApi
 from datadog_api_client.v2.api.forms_api import FormsApi
 from datadog_api_client.v2.api.gcp_integration_api import GCPIntegrationApi
+from datadog_api_client.v2.api.git_hub_costs_integration_api import GitHubCostsIntegrationApi
 from datadog_api_client.v2.api.google_chat_integration_api import GoogleChatIntegrationApi
 from datadog_api_client.v2.api.governance_console_api import GovernanceConsoleApi
 from datadog_api_client.v2.api.high_availability_multi_region_api import HighAvailabilityMultiRegionApi
@@ -228,6 +229,7 @@ __all__ = [
     "FleetAutomationApi",
     "FormsApi",
     "GCPIntegrationApi",
+    "GitHubCostsIntegrationApi",
     "GoogleChatIntegrationApi",
     "GovernanceConsoleApi",
     "HighAvailabilityMultiRegionApi",

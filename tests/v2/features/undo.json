@@ -4310,6 +4310,43 @@
       "type": "idempotent"
     }
   },
+  "ListGitHubCostsIntegrationAccounts": {
+    "tag": "GitHub Costs Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateGitHubCostsIntegrationAccount": {
+    "tag": "GitHub Costs Integration",
+    "undo": {
+      "operationId": "DeleteGitHubCostsIntegrationAccount",
+      "parameters": [
+        {
+          "name": "account_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteGitHubCostsIntegrationAccount": {
+    "tag": "GitHub Costs Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetGitHubCostsIntegrationAccount": {
+    "tag": "GitHub Costs Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateGitHubCostsIntegrationAccount": {
+    "tag": "GitHub Costs Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListSnowflakeIntegrationAccounts": {
     "tag": "Snowflake Integration",
     "undo": {
