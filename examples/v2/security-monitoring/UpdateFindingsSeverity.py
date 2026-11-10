@@ -45,7 +45,6 @@ body = SeverityOverrideRequest(
 
 configuration = Configuration()
 configuration.access_token = environ["DD_BEARER_TOKEN"]
-configuration.unstable_operations["update_findings_severity"] = True
 with ApiClient(configuration) as api_client:
     api_instance = SecurityMonitoringApi(api_client)
     response = api_instance.update_findings_severity(body=body)

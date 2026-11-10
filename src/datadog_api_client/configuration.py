@@ -509,8 +509,6 @@ class Configuration:
                 "v2.search_security_monitoring_histsignals": False,
                 "v2.start_security_monitoring_batch_migration": False,
                 "v2.start_security_monitoring_rule_proposal": False,
-                "v2.update_findings_assignee": False,
-                "v2.update_findings_severity": False,
                 "v2.update_security_findings_automation_due_date_rule": False,
                 "v2.update_security_findings_automation_inbox_rule": False,
                 "v2.update_security_findings_automation_mute_rule": False,

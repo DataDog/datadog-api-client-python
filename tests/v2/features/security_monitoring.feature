@@ -110,8 +110,7 @@ Feature: Security Monitoring
 
   @team:ddoghq/k9-investigation
   Scenario: Apply a severity override to security findings returns "Accepted" response
-    Given operation "UpdateFindingsSeverity" enabled
-    And new "UpdateFindingsSeverity" request
+    Given new "UpdateFindingsSeverity" request
     And body with value {"data": {"attributes": {"severity": {"action": "set", "description": "Database contains sensitive data.", "value": "high"}}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwMC0wYmd-MDE4NjcyMDJkMzE4MDE5ODY5MGE4ZmQ2MmFlMjg0Y2M=", "type": "findings"}]}}, "type": "severity_override"}}
     When the request is sent
     Then the response status is 202 Accepted
@@ -119,40 +118,35 @@ Feature: Security Monitoring
 
   @team:ddoghq/k9-investigation
   Scenario: Apply a severity override to security findings returns "Not Found" response
-    Given operation "UpdateFindingsSeverity" enabled
-    And new "UpdateFindingsSeverity" request
+    Given new "UpdateFindingsSeverity" request
     And body with value {"data": {"attributes": {"severity": {"action": "set", "value": "high"}}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}}, "type": "severity_override"}}
     When the request is sent
     Then the response status is 404 Not Found
 
   @skip-validation @team:ddoghq/k9-investigation
   Scenario: Apply a severity override to security findings returns "Unprocessable Entity" response
-    Given operation "UpdateFindingsSeverity" enabled
-    And new "UpdateFindingsSeverity" request
+    Given new "UpdateFindingsSeverity" request
     And body with value {"data": {"attributes": {"severity": {"action": "set"}}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}}, "type": "severity_override"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity
 
   @generated @skip @team:ddoghq/k9-investigation
   Scenario: Assign or unassign security findings returns "Accepted" response
-    Given operation "UpdateFindingsAssignee" enabled
-    And new "UpdateFindingsAssignee" request
+    Given new "UpdateFindingsAssignee" request
     And body with value {"data": {"attributes": {"assignee_id": "f315bdaf-9ee7-4808-a9c1-99c15bf0f4d0"}, "id": "00000000-0000-0000-0000-000000000001", "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}}, "type": "assignee"}}
     When the request is sent
     Then the response status is 202 Accepted
 
   @generated @skip @team:ddoghq/k9-investigation
   Scenario: Assign or unassign security findings returns "Bad Request" response
-    Given operation "UpdateFindingsAssignee" enabled
-    And new "UpdateFindingsAssignee" request
+    Given new "UpdateFindingsAssignee" request
     And body with value {"data": {"attributes": {"assignee_id": "f315bdaf-9ee7-4808-a9c1-99c15bf0f4d0"}, "id": "00000000-0000-0000-0000-000000000001", "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}}, "type": "assignee"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:ddoghq/k9-investigation
   Scenario: Assign or unassign security findings returns "Not Found" response
-    Given operation "UpdateFindingsAssignee" enabled
-    And new "UpdateFindingsAssignee" request
+    Given new "UpdateFindingsAssignee" request
     And body with value {"data": {"attributes": {"assignee_id": "f315bdaf-9ee7-4808-a9c1-99c15bf0f4d0"}, "id": "00000000-0000-0000-0000-000000000001", "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}}, "type": "assignee"}}
     When the request is sent
     Then the response status is 404 Not Found
@@ -513,8 +507,7 @@ Feature: Security Monitoring
 
   @team:ddoghq/k9-investigation
   Scenario: Clear the severity override of security findings returns "Accepted" response
-    Given operation "UpdateFindingsSeverity" enabled
-    And new "UpdateFindingsSeverity" request
+    Given new "UpdateFindingsSeverity" request
     And body with value {"data": {"attributes": {"severity": {"action": "clear"}}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwMC0wYmd-MDE4NjcyMDJkMzE4MDE5ODY5MGE4ZmQ2MmFlMjg0Y2M=", "type": "findings"}]}}, "type": "severity_override"}}
     When the request is sent
     Then the response status is 202 Accepted
@@ -3347,32 +3340,28 @@ Feature: Security Monitoring
 
   @generated @skip @team:ddoghq/k9-investigation
   Scenario: Override the severity of security findings returns "Accepted" response
-    Given operation "UpdateFindingsSeverity" enabled
-    And new "UpdateFindingsSeverity" request
+    Given new "UpdateFindingsSeverity" request
     And body with value {"data": {"attributes": {"severity": {"action": "set", "description": "Database contains sensitive data.", "value": "high"}}, "id": "00000000-0000-0000-0000-000000000001", "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}}, "type": "severity_override"}}
     When the request is sent
     Then the response status is 202 Accepted
 
   @generated @skip @team:ddoghq/k9-investigation
   Scenario: Override the severity of security findings returns "Bad Request" response
-    Given operation "UpdateFindingsSeverity" enabled
-    And new "UpdateFindingsSeverity" request
+    Given new "UpdateFindingsSeverity" request
     And body with value {"data": {"attributes": {"severity": {"action": "set", "description": "Database contains sensitive data.", "value": "high"}}, "id": "00000000-0000-0000-0000-000000000001", "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}}, "type": "severity_override"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:ddoghq/k9-investigation
   Scenario: Override the severity of security findings returns "Not Found" response
-    Given operation "UpdateFindingsSeverity" enabled
-    And new "UpdateFindingsSeverity" request
+    Given new "UpdateFindingsSeverity" request
     And body with value {"data": {"attributes": {"severity": {"action": "set", "description": "Database contains sensitive data.", "value": "high"}}, "id": "00000000-0000-0000-0000-000000000001", "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}}, "type": "severity_override"}}
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:ddoghq/k9-investigation
   Scenario: Override the severity of security findings returns "Unprocessable Entity" response
-    Given operation "UpdateFindingsSeverity" enabled
-    And new "UpdateFindingsSeverity" request
+    Given new "UpdateFindingsSeverity" request
     And body with value {"data": {"attributes": {"severity": {"action": "set", "description": "Database contains sensitive data.", "value": "high"}}, "id": "00000000-0000-0000-0000-000000000001", "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}}, "type": "severity_override"}}
     When the request is sent
     Then the response status is 422 Unprocessable Entity
