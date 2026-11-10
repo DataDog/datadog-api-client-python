@@ -106,13 +106,22 @@ Feature: Usage Metering
     Then the response status is 404 Not Found
 
   @generated @skip @team:ddoghq/billing-hub
-  Scenario: Create or update usage quotas returns "Bad Request. Returned if the request is malformed, including when an item sets `pending_usage_limit` on a scoped quota, provides `enforced` without `usage_limit`, or provides neither limit. A pending-only item for a quota that does not exist is reported in that item's `error`; when only the caller's organization is targeted, this failure returns `400`." response
+  Scenario: Create or update usage quotas returns "Bad Request. Returned when `create_only=true` is combined with multiple items, `pending_usage_limit`, or `include_descendants=true`, or when an item sets `pending_usage_limit` on a scoped quota, provides `enforced` without `usage_limit`, or provides neither limit. A pending-only item for a nonexistent quota reports an error in the item's `error` field. If only the caller's organization is targeted, this failure returns `400`." response
     Given operation "CreateQuotas" enabled
     And new "CreateQuotas" request
     And request contains "quota_namespace" parameter from "REPLACE.ME"
     And body with value {"data": [{"attributes": {"enforced": true, "pending_usage_limit": 100000, "usage_limit": 600000}, "type": "quotas"}]}
     When the request is sent
-    Then the response status is 400 Bad Request. Returned if the request is malformed, including when an item sets `pending_usage_limit` on a scoped quota, provides `enforced` without `usage_limit`, or provides neither limit. A pending-only item for a quota that does not exist is reported in that item's `error`; when only the caller's organization is targeted, this failure returns `400`.
+    Then the response status is 400 Bad Request. Returned when `create_only=true` is combined with multiple items, `pending_usage_limit`, or `include_descendants=true`, or when an item sets `pending_usage_limit` on a scoped quota, provides `enforced` without `usage_limit`, or provides neither limit. A pending-only item for a nonexistent quota reports an error in the item's `error` field. If only the caller's organization is targeted, this failure returns `400`.
+
+  @generated @skip @team:ddoghq/billing-hub
+  Scenario: Create or update usage quotas returns "Conflict. With `create_only=true`, a quota already exists for this namespace and scope in the caller's organization. The existing quota is unchanged. The error's `meta` contains `error_code` set to `already_exists` and `quota_id` set to the existing quota's opaque ID. Import the existing quota before managing it with Terraform." response
+    Given operation "CreateQuotas" enabled
+    And new "CreateQuotas" request
+    And request contains "quota_namespace" parameter from "REPLACE.ME"
+    And body with value {"data": [{"attributes": {"enforced": true, "pending_usage_limit": 100000, "usage_limit": 600000}, "type": "quotas"}]}
+    When the request is sent
+    Then the response status is 409 Conflict. With `create_only=true`, a quota already exists for this namespace and scope in the caller's organization. The existing quota is unchanged. The error's `meta` contains `error_code` set to `already_exists` and `quota_id` set to the existing quota's opaque ID. Import the existing quota before managing it with Terraform.
 
   @generated @skip @team:ddoghq/billing-hub
   Scenario: Create or update usage quotas returns "OK. The response includes each item's result; see each item's `error` attribute for any that failed to write." response
