@@ -30,6 +30,11 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.arbitrary_rule_response_data_attributes_strategy_evaluate_grouped_by_filters_items import (
         ArbitraryRuleResponseDataAttributesStrategyEvaluateGroupedByFiltersItems,
     )
+    from datadog_api_client.v2.model.arbitrary_rule_mapping_transform import ArbitraryRuleMappingTransform
+    from datadog_api_client.v2.model.arbitrary_rule_response_data_attributes_strategy_allocated_by_items_allocated_tags_items import (
+        ArbitraryRuleResponseDataAttributesStrategyAllocatedByItemsAllocatedTagsItems,
+    )
+    from datadog_api_client.v2.model.arbitrary_rule_tag_transforms import ArbitraryRuleTagTransforms
 
 
 class ArbitraryRuleResponseDataAttributesStrategy(ModelNormal):
@@ -47,6 +52,11 @@ class ArbitraryRuleResponseDataAttributesStrategy(ModelNormal):
         from datadog_api_client.v2.model.arbitrary_rule_response_data_attributes_strategy_evaluate_grouped_by_filters_items import (
             ArbitraryRuleResponseDataAttributesStrategyEvaluateGroupedByFiltersItems,
         )
+        from datadog_api_client.v2.model.arbitrary_rule_mapping_transform import ArbitraryRuleMappingTransform
+        from datadog_api_client.v2.model.arbitrary_rule_response_data_attributes_strategy_allocated_by_items_allocated_tags_items import (
+            ArbitraryRuleResponseDataAttributesStrategyAllocatedByItemsAllocatedTagsItems,
+        )
+        from datadog_api_client.v2.model.arbitrary_rule_tag_transforms import ArbitraryRuleTagTransforms
 
         return {
             "allocated_by": ([ArbitraryRuleResponseDataAttributesStrategyAllocatedByItems],),
@@ -74,7 +84,27 @@ class ArbitraryRuleResponseDataAttributesStrategy(ModelNormal):
             ),
             "evaluate_grouped_by_tag_keys": ([str],),
             "granularity": (str,),
+            "mapping_transform": (ArbitraryRuleMappingTransform,),
             "method": (str,),
+            "static_tags": ([ArbitraryRuleResponseDataAttributesStrategyAllocatedByItemsAllocatedTagsItems],),
+            "supporting_timeseries": (
+                {
+                    str: (
+                        bool,
+                        date,
+                        datetime,
+                        dict,
+                        float,
+                        int,
+                        list,
+                        str,
+                        UUID,
+                        none_type,
+                    )
+                },
+                none_type,
+            ),
+            "tag_transforms": (ArbitraryRuleTagTransforms,),
         }
 
     attribute_map = {
@@ -86,7 +116,11 @@ class ArbitraryRuleResponseDataAttributesStrategy(ModelNormal):
         "evaluate_grouped_by_filters": "evaluate_grouped_by_filters",
         "evaluate_grouped_by_tag_keys": "evaluate_grouped_by_tag_keys",
         "granularity": "granularity",
+        "mapping_transform": "mapping_transform",
         "method": "method",
+        "static_tags": "static_tags",
+        "supporting_timeseries": "supporting_timeseries",
+        "tag_transforms": "tag_transforms",
     }
 
     def __init__(
@@ -104,6 +138,12 @@ class ArbitraryRuleResponseDataAttributesStrategy(ModelNormal):
         ] = unset,
         evaluate_grouped_by_tag_keys: Union[List[str], UnsetType] = unset,
         granularity: Union[str, UnsetType] = unset,
+        mapping_transform: Union[ArbitraryRuleMappingTransform, UnsetType] = unset,
+        static_tags: Union[
+            List[ArbitraryRuleResponseDataAttributesStrategyAllocatedByItemsAllocatedTagsItems], UnsetType
+        ] = unset,
+        supporting_timeseries: Union[Dict[str, Any], none_type, UnsetType] = unset,
+        tag_transforms: Union[ArbitraryRuleTagTransforms, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -133,8 +173,20 @@ class ArbitraryRuleResponseDataAttributesStrategy(ModelNormal):
         :param granularity: The ``strategy`` ``granularity``.
         :type granularity: str, optional
 
+        :param mapping_transform: Only supported for ``proportional_timeseries`` and ``even_timeseries`` rules. Creates a synthetic tag from timeseries input rows before ``tag_transforms`` are applied.
+        :type mapping_transform: ArbitraryRuleMappingTransform, optional
+
         :param method: The ``strategy`` ``method``.
         :type method: str
+
+        :param static_tags: Tags added to every cost row allocated by the rule.
+        :type static_tags: [ArbitraryRuleResponseDataAttributesStrategyAllocatedByItemsAllocatedTagsItems], optional
+
+        :param supporting_timeseries: Integration metrics query used to calculate coverage.
+        :type supporting_timeseries: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, none_type, optional
+
+        :param tag_transforms: Only supported for ``proportional_timeseries`` and ``even_timeseries`` rules. Applies tag key renames and tag value transforms to timeseries input rows after ``mapping_transform``.
+        :type tag_transforms: ArbitraryRuleTagTransforms, optional
         """
         if allocated_by is not unset:
             kwargs["allocated_by"] = allocated_by
@@ -152,6 +204,14 @@ class ArbitraryRuleResponseDataAttributesStrategy(ModelNormal):
             kwargs["evaluate_grouped_by_tag_keys"] = evaluate_grouped_by_tag_keys
         if granularity is not unset:
             kwargs["granularity"] = granularity
+        if mapping_transform is not unset:
+            kwargs["mapping_transform"] = mapping_transform
+        if static_tags is not unset:
+            kwargs["static_tags"] = static_tags
+        if supporting_timeseries is not unset:
+            kwargs["supporting_timeseries"] = supporting_timeseries
+        if tag_transforms is not unset:
+            kwargs["tag_transforms"] = tag_transforms
         super().__init__(kwargs)
 
         self_.method = method

@@ -2771,6 +2771,18 @@
       "type": "idempotent"
     }
   },
+  "GetEUDMDevices": {
+    "tag": "End User Device Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetEUDMDevice": {
+    "tag": "End User Device Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListEvents": {
     "tag": "Events",
     "undo": {

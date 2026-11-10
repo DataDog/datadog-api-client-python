@@ -1245,6 +1245,6 @@ Feature: Cloud Cost Management
   @replay-only @team:ddoghq/cloud-cost-management
   Scenario: Validate query returns "OK" response
     Given new "ValidateQuery" request
-    And body with value {"data": {"attributes": {"Query": "example:query AND test:true"}, "type": "validate_query"}}
+    And body with value {"data": {"attributes": {"query": "example:query AND test:true"}, "type": "validate_query"}}
     When the request is sent
     Then the response status is 200 OK

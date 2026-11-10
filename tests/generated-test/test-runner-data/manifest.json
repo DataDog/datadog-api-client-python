@@ -5650,6 +5650,20 @@
       "version": "v2"
     },
     {
+      "feature": "End User Device Monitoring",
+      "feature_file": "../../v2/features/end_user_device_monitoring.feature",
+      "file": "v2/end-user-device-monitoring/get-a-device-returns-not-found-response.json",
+      "scenario": "Get a device returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "End User Device Monitoring",
+      "feature_file": "../../v2/features/end_user_device_monitoring.feature",
+      "file": "v2/end-user-device-monitoring/get-all-devices-returns-ok-response.json",
+      "scenario": "Get all devices returns \"OK\" response",
+      "version": "v2"
+    },
+    {
       "feature": "Error Tracking",
       "feature_file": "../../v2/features/error_tracking.feature",
       "file": "v2/error-tracking/get-the-details-of-an-error-tracking-issue-returns-bad-request-response.json",

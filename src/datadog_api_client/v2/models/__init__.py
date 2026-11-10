@@ -955,6 +955,7 @@ from datadog_api_client.v2.model.arbitrary_cost_upsert_request_data_attributes_s
     ArbitraryCostUpsertRequestDataAttributesStrategyEvaluateGroupedByFiltersItems,
 )
 from datadog_api_client.v2.model.arbitrary_cost_upsert_request_data_type import ArbitraryCostUpsertRequestDataType
+from datadog_api_client.v2.model.arbitrary_rule_mapping_transform import ArbitraryRuleMappingTransform
 from datadog_api_client.v2.model.arbitrary_rule_response import ArbitraryRuleResponse
 from datadog_api_client.v2.model.arbitrary_rule_response_array import ArbitraryRuleResponseArray
 from datadog_api_client.v2.model.arbitrary_rule_response_array_meta import ArbitraryRuleResponseArrayMeta
@@ -962,6 +963,9 @@ from datadog_api_client.v2.model.arbitrary_rule_response_data import ArbitraryRu
 from datadog_api_client.v2.model.arbitrary_rule_response_data_attributes import ArbitraryRuleResponseDataAttributes
 from datadog_api_client.v2.model.arbitrary_rule_response_data_attributes_costs_to_allocate_items import (
     ArbitraryRuleResponseDataAttributesCostsToAllocateItems,
+)
+from datadog_api_client.v2.model.arbitrary_rule_response_data_attributes_rule_category import (
+    ArbitraryRuleResponseDataAttributesRuleCategory,
 )
 from datadog_api_client.v2.model.arbitrary_rule_response_data_attributes_strategy import (
     ArbitraryRuleResponseDataAttributesStrategy,
@@ -988,6 +992,9 @@ from datadog_api_client.v2.model.arbitrary_rule_status_response_data_attributes 
     ArbitraryRuleStatusResponseDataAttributes,
 )
 from datadog_api_client.v2.model.arbitrary_rule_status_response_data_type import ArbitraryRuleStatusResponseDataType
+from datadog_api_client.v2.model.arbitrary_rule_tag_transforms import ArbitraryRuleTagTransforms
+from datadog_api_client.v2.model.arbitrary_rule_tag_value_transform import ArbitraryRuleTagValueTransform
+from datadog_api_client.v2.model.arbitrary_rule_tag_value_transform_type import ArbitraryRuleTagValueTransformType
 from datadog_api_client.v2.model.archive_search_create_rehydration import ArchiveSearchCreateRehydration
 from datadog_api_client.v2.model.archive_search_create_request import ArchiveSearchCreateRequest
 from datadog_api_client.v2.model.archive_search_create_request_attributes import ArchiveSearchCreateRequestAttributes
@@ -3270,6 +3277,19 @@ from datadog_api_client.v2.model.detailed_finding_attributes import DetailedFind
 from datadog_api_client.v2.model.detailed_finding_type import DetailedFindingType
 from datadog_api_client.v2.model.device_attributes import DeviceAttributes
 from datadog_api_client.v2.model.device_attributes_interface_statuses import DeviceAttributesInterfaceStatuses
+from datadog_api_client.v2.model.device_base_array import DeviceBaseArray
+from datadog_api_client.v2.model.device_base_array_links import DeviceBaseArrayLinks
+from datadog_api_client.v2.model.device_base_array_meta import DeviceBaseArrayMeta
+from datadog_api_client.v2.model.device_base_array_meta_page import DeviceBaseArrayMetaPage
+from datadog_api_client.v2.model.device_base_data import DeviceBaseData
+from datadog_api_client.v2.model.device_base_data_attributes import DeviceBaseDataAttributes
+from datadog_api_client.v2.model.device_details import DeviceDetails
+from datadog_api_client.v2.model.device_details_data import DeviceDetailsData
+from datadog_api_client.v2.model.device_details_data_attributes import DeviceDetailsDataAttributes
+from datadog_api_client.v2.model.device_details_data_type import DeviceDetailsDataType
+from datadog_api_client.v2.model.device_employee import DeviceEmployee
+from datadog_api_client.v2.model.device_geo_ip import DeviceGeoIP
+from datadog_api_client.v2.model.device_status import DeviceStatus
 from datadog_api_client.v2.model.device_tags_by_source import DeviceTagsBySource
 from datadog_api_client.v2.model.devices_list_data import DevicesListData
 from datadog_api_client.v2.model.dns_metric_key import DnsMetricKey
@@ -4663,6 +4683,7 @@ from datadog_api_client.v2.model.full_service_access_token_attributes import Ful
 from datadog_api_client.v2.model.full_service_access_token_relationships import FullServiceAccessTokenRelationships
 from datadog_api_client.v2.model.gcp_credentials import GCPCredentials
 from datadog_api_client.v2.model.gcp_credentials_update import GCPCredentialsUpdate
+from datadog_api_client.v2.model.gcp_cud_metadata_config import GCPCudMetadataConfig
 from datadog_api_client.v2.model.gcp_integration import GCPIntegration
 from datadog_api_client.v2.model.gcp_integration_type import GCPIntegrationType
 from datadog_api_client.v2.model.gcp_integration_update import GCPIntegrationUpdate
@@ -14601,12 +14622,14 @@ __all__ = [
     "ArbitraryCostUpsertRequestDataAttributesStrategyBasedOnCostsItems",
     "ArbitraryCostUpsertRequestDataAttributesStrategyEvaluateGroupedByFiltersItems",
     "ArbitraryCostUpsertRequestDataType",
+    "ArbitraryRuleMappingTransform",
     "ArbitraryRuleResponse",
     "ArbitraryRuleResponseArray",
     "ArbitraryRuleResponseArrayMeta",
     "ArbitraryRuleResponseData",
     "ArbitraryRuleResponseDataAttributes",
     "ArbitraryRuleResponseDataAttributesCostsToAllocateItems",
+    "ArbitraryRuleResponseDataAttributesRuleCategory",
     "ArbitraryRuleResponseDataAttributesStrategy",
     "ArbitraryRuleResponseDataAttributesStrategyAllocatedByFiltersItems",
     "ArbitraryRuleResponseDataAttributesStrategyAllocatedByItems",
@@ -14618,6 +14641,9 @@ __all__ = [
     "ArbitraryRuleStatusResponseData",
     "ArbitraryRuleStatusResponseDataAttributes",
     "ArbitraryRuleStatusResponseDataType",
+    "ArbitraryRuleTagTransforms",
+    "ArbitraryRuleTagValueTransform",
+    "ArbitraryRuleTagValueTransformType",
     "ArchiveSearchCreateRehydration",
     "ArchiveSearchCreateRequest",
     "ArchiveSearchCreateRequestAttributes",
@@ -16282,6 +16308,19 @@ __all__ = [
     "DetailedFindingType",
     "DeviceAttributes",
     "DeviceAttributesInterfaceStatuses",
+    "DeviceBaseArray",
+    "DeviceBaseArrayLinks",
+    "DeviceBaseArrayMeta",
+    "DeviceBaseArrayMetaPage",
+    "DeviceBaseData",
+    "DeviceBaseDataAttributes",
+    "DeviceDetails",
+    "DeviceDetailsData",
+    "DeviceDetailsDataAttributes",
+    "DeviceDetailsDataType",
+    "DeviceEmployee",
+    "DeviceGeoIP",
+    "DeviceStatus",
     "DeviceTagsBySource",
     "DevicesListData",
     "DnsMetricKey",
@@ -17123,6 +17162,7 @@ __all__ = [
     "FullServiceAccessTokenRelationships",
     "GCPCredentials",
     "GCPCredentialsUpdate",
+    "GCPCudMetadataConfig",
     "GCPIntegration",
     "GCPIntegrationType",
     "GCPIntegrationUpdate",

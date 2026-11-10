@@ -18,6 +18,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.arbitrary_rule_response_data_attributes_costs_to_allocate_items import (
         ArbitraryRuleResponseDataAttributesCostsToAllocateItems,
     )
+    from datadog_api_client.v2.model.arbitrary_rule_response_data_attributes_rule_category import (
+        ArbitraryRuleResponseDataAttributesRuleCategory,
+    )
     from datadog_api_client.v2.model.arbitrary_rule_response_data_attributes_strategy import (
         ArbitraryRuleResponseDataAttributesStrategy,
     )
@@ -35,6 +38,9 @@ class ArbitraryRuleResponseDataAttributes(ModelNormal):
         from datadog_api_client.v2.model.arbitrary_rule_response_data_attributes_costs_to_allocate_items import (
             ArbitraryRuleResponseDataAttributesCostsToAllocateItems,
         )
+        from datadog_api_client.v2.model.arbitrary_rule_response_data_attributes_rule_category import (
+            ArbitraryRuleResponseDataAttributesRuleCategory,
+        )
         from datadog_api_client.v2.model.arbitrary_rule_response_data_attributes_strategy import (
             ArbitraryRuleResponseDataAttributesStrategy,
         )
@@ -43,15 +49,19 @@ class ArbitraryRuleResponseDataAttributes(ModelNormal):
             "costs_to_allocate": ([ArbitraryRuleResponseDataAttributesCostsToAllocateItems],),
             "created": (datetime,),
             "enabled": (bool,),
+            "is_ootb": (bool,),
             "last_modified_user_uuid": (str,),
             "order_id": (int,),
             "processing_status": (str,),
             "provider": ([str],),
             "rejected": (bool,),
+            "rule_category": (ArbitraryRuleResponseDataAttributesRuleCategory,),
             "rule_name": (str,),
             "strategy": (ArbitraryRuleResponseDataAttributesStrategy,),
             "type": (str,),
             "updated": (datetime,),
+            "valid_from_date": (datetime,),
+            "valid_through_date": (datetime,),
             "version": (int,),
         }
 
@@ -59,15 +69,19 @@ class ArbitraryRuleResponseDataAttributes(ModelNormal):
         "costs_to_allocate": "costs_to_allocate",
         "created": "created",
         "enabled": "enabled",
+        "is_ootb": "is_ootb",
         "last_modified_user_uuid": "last_modified_user_uuid",
         "order_id": "order_id",
         "processing_status": "processing_status",
         "provider": "provider",
         "rejected": "rejected",
+        "rule_category": "rule_category",
         "rule_name": "rule_name",
         "strategy": "strategy",
         "type": "type",
         "updated": "updated",
+        "valid_from_date": "valid_from_date",
+        "valid_through_date": "valid_through_date",
         "version": "version",
     }
 
@@ -84,8 +98,12 @@ class ArbitraryRuleResponseDataAttributes(ModelNormal):
         type: str,
         updated: datetime,
         version: int,
+        is_ootb: Union[bool, UnsetType] = unset,
         processing_status: Union[str, UnsetType] = unset,
         rejected: Union[bool, UnsetType] = unset,
+        rule_category: Union[ArbitraryRuleResponseDataAttributesRuleCategory, UnsetType] = unset,
+        valid_from_date: Union[datetime, UnsetType] = unset,
+        valid_through_date: Union[datetime, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -99,6 +117,9 @@ class ArbitraryRuleResponseDataAttributes(ModelNormal):
 
         :param enabled: The ``attributes`` ``enabled``.
         :type enabled: bool
+
+        :param is_ootb: Whether the rule is an out-of-the-box rule provided by Datadog. Omitted when ``false``.
+        :type is_ootb: bool, optional
 
         :param last_modified_user_uuid: The ``attributes`` ``last_modified_user_uuid``.
         :type last_modified_user_uuid: str
@@ -115,6 +136,9 @@ class ArbitraryRuleResponseDataAttributes(ModelNormal):
         :param rejected: The ``attributes`` ``rejected``.
         :type rejected: bool, optional
 
+        :param rule_category: Rule category. Omitted for custom rules.
+        :type rule_category: ArbitraryRuleResponseDataAttributesRuleCategory, optional
+
         :param rule_name: The ``attributes`` ``rule_name``.
         :type rule_name: str
 
@@ -127,13 +151,27 @@ class ArbitraryRuleResponseDataAttributes(ModelNormal):
         :param updated: The ``attributes`` ``updated``.
         :type updated: datetime
 
+        :param valid_from_date: The first date the rule applies to. Omitted when the rule has no start date.
+        :type valid_from_date: datetime, optional
+
+        :param valid_through_date: The last date the rule applies to. Omitted when the rule has no end date.
+        :type valid_through_date: datetime, optional
+
         :param version: The ``attributes`` ``version``.
         :type version: int
         """
+        if is_ootb is not unset:
+            kwargs["is_ootb"] = is_ootb
         if processing_status is not unset:
             kwargs["processing_status"] = processing_status
         if rejected is not unset:
             kwargs["rejected"] = rejected
+        if rule_category is not unset:
+            kwargs["rule_category"] = rule_category
+        if valid_from_date is not unset:
+            kwargs["valid_from_date"] = valid_from_date
+        if valid_through_date is not unset:
+            kwargs["valid_through_date"] = valid_through_date
         super().__init__(kwargs)
 
         self_.costs_to_allocate = costs_to_allocate
