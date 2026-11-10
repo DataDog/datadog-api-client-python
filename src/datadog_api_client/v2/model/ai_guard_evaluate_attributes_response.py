@@ -16,6 +16,7 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.ai_guard_action import AIGuardAction
+    from datadog_api_client.v2.model.ai_guard_extra_tag import AIGuardExtraTag
     from datadog_api_client.v2.model.ai_guard_redaction_replacement import AIGuardRedactionReplacement
     from datadog_api_client.v2.model.ai_guard_scfw_findings import AIGuardScfwFindings
     from datadog_api_client.v2.model.ai_guard_sds_finding import AIGuardSdsFinding
@@ -25,12 +26,14 @@ class AIGuardEvaluateAttributesResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.ai_guard_action import AIGuardAction
+        from datadog_api_client.v2.model.ai_guard_extra_tag import AIGuardExtraTag
         from datadog_api_client.v2.model.ai_guard_redaction_replacement import AIGuardRedactionReplacement
         from datadog_api_client.v2.model.ai_guard_scfw_findings import AIGuardScfwFindings
         from datadog_api_client.v2.model.ai_guard_sds_finding import AIGuardSdsFinding
 
         return {
             "action": (AIGuardAction,),
+            "extra_tags": ([AIGuardExtraTag],),
             "global_prob": (float,),
             "is_blocking_enabled": (bool,),
             "reason": (str,),
@@ -43,6 +46,7 @@ class AIGuardEvaluateAttributesResponse(ModelNormal):
 
     attribute_map = {
         "action": "action",
+        "extra_tags": "extra_tags",
         "global_prob": "global_prob",
         "is_blocking_enabled": "is_blocking_enabled",
         "reason": "reason",
@@ -60,6 +64,7 @@ class AIGuardEvaluateAttributesResponse(ModelNormal):
         reason: str,
         tag_probs: Union[Dict[str, float], none_type],
         tags: List[str],
+        extra_tags: Union[List[AIGuardExtraTag], UnsetType] = unset,
         global_prob: Union[float, UnsetType] = unset,
         redaction_replacements: Union[List[AIGuardRedactionReplacement], UnsetType] = unset,
         scfw_findings: Union[AIGuardScfwFindings, UnsetType] = unset,
@@ -71,6 +76,11 @@ class AIGuardEvaluateAttributesResponse(ModelNormal):
 
         :param action: The recommended action for the evaluated conversation.
         :type action: AIGuardAction
+
+        :param extra_tags: The span tags that tracers should add to the ``ai_guard`` span. Each item contains a
+            backend-defined key and value, and clients should not assume a fixed set of keys.
+            Example keys include ``ai_guard.evaluate_id`` and ``ai_guard.evaluation_context``.
+        :type extra_tags: [AIGuardExtraTag], optional
 
         :param global_prob: The global threat probability, between ``0`` and ``1``. Included only when computed.
         :type global_prob: float, optional
@@ -110,6 +120,8 @@ class AIGuardEvaluateAttributesResponse(ModelNormal):
         :param tags: The threat tags detected in the conversation.
         :type tags: [str]
         """
+        if extra_tags is not unset:
+            kwargs["extra_tags"] = extra_tags
         if global_prob is not unset:
             kwargs["global_prob"] = global_prob
         if redaction_replacements is not unset:

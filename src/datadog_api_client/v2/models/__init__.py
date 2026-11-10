@@ -10,6 +10,7 @@ from datadog_api_client.v2.model.ai_guard_evaluate_request_data import AIGuardEv
 from datadog_api_client.v2.model.ai_guard_evaluate_request_data_attributes import AIGuardEvaluateRequestDataAttributes
 from datadog_api_client.v2.model.ai_guard_evaluate_response import AIGuardEvaluateResponse
 from datadog_api_client.v2.model.ai_guard_evaluation_type import AIGuardEvaluationType
+from datadog_api_client.v2.model.ai_guard_extra_tag import AIGuardExtraTag
 from datadog_api_client.v2.model.ai_guard_image_url import AIGuardImageURL
 from datadog_api_client.v2.model.ai_guard_message import AIGuardMessage
 from datadog_api_client.v2.model.ai_guard_message_content import AIGuardMessageContent
@@ -13880,6 +13881,7 @@ __all__ = [
     "AIGuardEvaluateRequestDataAttributes",
     "AIGuardEvaluateResponse",
     "AIGuardEvaluationType",
+    "AIGuardExtraTag",
     "AIGuardImageURL",
     "AIGuardMessage",
     "AIGuardMessageContent",
