@@ -1,0 +1,18 @@
+{
+  "api": "EndUserDeviceMonitoring",
+  "expected_status": 200,
+  "feature": "End User Device Monitoring",
+  "id": "v2/End User Device Monitoring/Get all devices returns \"OK\" response",
+  "operation_id": "GetEUDMDevices",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/eudm/devices"
+  },
+  "scenario": "Get all devices returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

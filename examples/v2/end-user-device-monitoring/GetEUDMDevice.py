@@ -1,0 +1,16 @@
+"""
+Get a device returns "OK" response
+"""
+
+from datadog_api_client import ApiClient, Configuration
+from datadog_api_client.v2.api.end_user_device_monitoring_api import EndUserDeviceMonitoringApi
+
+configuration = Configuration()
+configuration.unstable_operations["get_eudm_device"] = True
+with ApiClient(configuration) as api_client:
+    api_instance = EndUserDeviceMonitoringApi(api_client)
+    response = api_instance.get_eudm_device(
+        device_id="device_id",
+    )
+
+    print(response)

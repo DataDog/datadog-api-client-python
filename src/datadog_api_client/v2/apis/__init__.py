@@ -56,6 +56,7 @@ from datadog_api_client.v2.api.deployment_gates_api import DeploymentGatesApi
 from datadog_api_client.v2.api.domain_allowlist_api import DomainAllowlistApi
 from datadog_api_client.v2.api.downtimes_api import DowntimesApi
 from datadog_api_client.v2.api.elastic_cloud_integration_api import ElasticCloudIntegrationApi
+from datadog_api_client.v2.api.end_user_device_monitoring_api import EndUserDeviceMonitoringApi
 from datadog_api_client.v2.api.entity_integration_configs_api import EntityIntegrationConfigsApi
 from datadog_api_client.v2.api.entity_risk_scores_api import EntityRiskScoresApi
 from datadog_api_client.v2.api.error_tracking_api import ErrorTrackingApi
@@ -217,6 +218,7 @@ __all__ = [
     "DomainAllowlistApi",
     "DowntimesApi",
     "ElasticCloudIntegrationApi",
+    "EndUserDeviceMonitoringApi",
     "EntityIntegrationConfigsApi",
     "EntityRiskScoresApi",
     "ErrorTrackingApi",
