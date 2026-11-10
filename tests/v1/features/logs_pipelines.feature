@@ -29,6 +29,13 @@ Feature: Logs Pipelines
     Then the response status is 400 Bad Request
 
   @generated @skip @team:ddoghq/logs-onboarding
+  Scenario: Create a pipeline returns "Conflict" response
+    Given new "CreateLogsPipeline" request
+    And body with value {"filter": {"query": "source:python"}, "name": "", "processors": [{"grok": {"match_rules": "rule_name_1 foo\nrule_name_2 bar", "support_rules": "rule_name_1 foo\nrule_name_2 bar"}, "is_enabled": false, "samples": [], "source": "message", "type": "grok-parser"}], "tags": []}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:ddoghq/logs-onboarding
   Scenario: Create a pipeline returns "OK" response
     Given new "CreateLogsPipeline" request
     And body with value {"filter": {"query": "source:python"}, "name": "", "processors": [{"grok": {"match_rules": "rule_name_1 foo\nrule_name_2 bar", "support_rules": "rule_name_1 foo\nrule_name_2 bar"}, "is_enabled": false, "samples": [], "source": "message", "type": "grok-parser"}], "tags": []}
@@ -162,6 +169,13 @@ Feature: Logs Pipelines
     Then the response status is 400 Bad Request
 
   @generated @skip @team:ddoghq/logs-onboarding
+  Scenario: Delete a pipeline returns "Conflict" response
+    Given new "DeleteLogsPipeline" request
+    And request contains "pipeline_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:ddoghq/logs-onboarding
   Scenario: Delete a pipeline returns "OK" response
     Given new "DeleteLogsPipeline" request
     And request contains "pipeline_id" parameter from "REPLACE.ME"
@@ -203,6 +217,14 @@ Feature: Logs Pipelines
     Then the response status is 400 Bad Request
 
   @generated @skip @team:ddoghq/logs-onboarding
+  Scenario: Update a pipeline returns "Conflict" response
+    Given new "UpdateLogsPipeline" request
+    And request contains "pipeline_id" parameter from "REPLACE.ME"
+    And body with value {"filter": {"query": "source:python"}, "name": "", "processors": [{"grok": {"match_rules": "rule_name_1 foo\nrule_name_2 bar", "support_rules": "rule_name_1 foo\nrule_name_2 bar"}, "is_enabled": false, "samples": [], "source": "message", "type": "grok-parser"}], "tags": []}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:ddoghq/logs-onboarding
   Scenario: Update a pipeline returns "OK" response
     Given new "UpdateLogsPipeline" request
     And request contains "pipeline_id" parameter from "REPLACE.ME"
@@ -216,6 +238,13 @@ Feature: Logs Pipelines
     And body with value {"pipeline_ids": ["tags", "org_ids", "products"]}
     When the request is sent
     Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/logs-onboarding
+  Scenario: Update pipeline order returns "Conflict" response
+    Given new "UpdateLogsPipelineOrder" request
+    And body with value {"pipeline_ids": ["tags", "org_ids", "products"]}
+    When the request is sent
+    Then the response status is 409 Conflict
 
   @generated @skip @team:ddoghq/logs-onboarding
   Scenario: Update pipeline order returns "OK" response
