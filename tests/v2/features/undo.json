@@ -4310,6 +4310,43 @@
       "type": "idempotent"
     }
   },
+  "ListNebiusCloudIntegrationAccounts": {
+    "tag": "Nebius Cloud Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateNebiusCloudIntegrationAccount": {
+    "tag": "Nebius Cloud Integration",
+    "undo": {
+      "operationId": "DeleteNebiusCloudIntegrationAccount",
+      "parameters": [
+        {
+          "name": "account_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteNebiusCloudIntegrationAccount": {
+    "tag": "Nebius Cloud Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetNebiusCloudIntegrationAccount": {
+    "tag": "Nebius Cloud Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateNebiusCloudIntegrationAccount": {
+    "tag": "Nebius Cloud Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListSnowflakeIntegrationAccounts": {
     "tag": "Snowflake Integration",
     "undo": {
