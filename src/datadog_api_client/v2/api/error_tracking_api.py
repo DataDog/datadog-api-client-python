@@ -194,11 +194,12 @@ class ErrorTrackingApi:
         """Get the details of an error tracking issue.
 
         Retrieve the full details for a specific error tracking issue, including attributes and relationships.
+        Returns 403 if the caller lacks the ``error_tracking_read`` permission or does not have access to the issue's data.
 
         :param issue_id: The identifier of the issue.
         :type issue_id: str
-        :param include: Comma-separated list of relationship objects that should be included in the response.
-            Possible values are ``assignee`` , ``case`` , ``team_owners`` , and ``samples``.
+        :param include: Comma-separated list of relationship objects that should be included in the response. Possible values are ``assignee`` , ``bits_investigation`` , ``case`` , ``pull_requests`` , ``samples`` , ``team_owners`` , and ``watches``.
+            Values must not contain spaces. ``case`` and ``assignee`` return nothing, without an error, if the caller lacks the ``cases_read`` permission.
         :type include: [GetIssueIncludeQueryParameterItem], optional
         :param filter_samples_biases: Comma-separated list of biases used to pick the samples returned with ``include=samples``.
             Requires ``include=samples``. Defaults to all biases.
@@ -228,7 +229,7 @@ class ErrorTrackingApi:
 
         :param body: Search issues request payload.
         :type body: IssuesSearchRequest
-        :param include: Comma-separated list of relationship objects that should be included in the response. Possible values are ``issue`` , ``issue.assignee`` , ``issue.case`` , and ``issue.team_owners``.
+        :param include: Comma-separated list of relationship objects that should be included in the response. Possible values are ``issue`` , ``issue.assignee`` , ``issue.bits_investigation`` , ``issue.case`` , ``issue.impacted_sessions`` , ``issue.impacted_users`` , ``issue.pull_requests`` , ``issue.team_owners`` , and ``issue.watches``.
         :type include: [SearchIssuesIncludeQueryParameterItem], optional
         :rtype: IssuesSearchResponse
         """

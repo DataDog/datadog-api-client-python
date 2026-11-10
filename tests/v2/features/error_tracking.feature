@@ -32,6 +32,15 @@ Feature: Error Tracking
     Then the response status is 200 OK
     And the response "data.id" is equal to "{{ issue.id }}"
 
+  @team:ddoghq/error-tracking
+  Scenario: Get the details of an error tracking issue with a samples bias filter but no samples include returns "Bad Request" response
+    Given new "GetIssue" request
+    And there is a valid "issue" in the system
+    And request contains "issue_id" parameter from "issue.id"
+    And request contains "filter[samples.biases]" parameter with value ["latest"]
+    When the request is sent
+    Then the response status is 400 Bad Request
+
   @replay-only @team:ddoghq/error-tracking
   Scenario: Get the details of an error tracking issue with samples returns "OK" response
     Given new "GetIssue" request

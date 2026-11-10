@@ -5806,6 +5806,9 @@ from datadog_api_client.v2.model.io_c_triage_write_response_data import IoCTriag
 from datadog_api_client.v2.model.issue import Issue
 from datadog_api_client.v2.model.issue_assignee_relationship import IssueAssigneeRelationship
 from datadog_api_client.v2.model.issue_attributes import IssueAttributes
+from datadog_api_client.v2.model.issue_bits_investigation_reference import IssueBitsInvestigationReference
+from datadog_api_client.v2.model.issue_bits_investigation_relationship import IssueBitsInvestigationRelationship
+from datadog_api_client.v2.model.issue_bits_investigation_type import IssueBitsInvestigationType
 from datadog_api_client.v2.model.issue_case import IssueCase
 from datadog_api_client.v2.model.issue_case_attributes import IssueCaseAttributes
 from datadog_api_client.v2.model.issue_case_insight import IssueCaseInsight
@@ -5820,6 +5823,12 @@ from datadog_api_client.v2.model.issue_case_resource_type import IssueCaseResour
 from datadog_api_client.v2.model.issue_included import IssueIncluded
 from datadog_api_client.v2.model.issue_language import IssueLanguage
 from datadog_api_client.v2.model.issue_platform import IssuePlatform
+from datadog_api_client.v2.model.issue_pull_request import IssuePullRequest
+from datadog_api_client.v2.model.issue_pull_request_attributes import IssuePullRequestAttributes
+from datadog_api_client.v2.model.issue_pull_request_reason import IssuePullRequestReason
+from datadog_api_client.v2.model.issue_pull_request_reference import IssuePullRequestReference
+from datadog_api_client.v2.model.issue_pull_request_type import IssuePullRequestType
+from datadog_api_client.v2.model.issue_pull_requests_relationship import IssuePullRequestsRelationship
 from datadog_api_client.v2.model.issue_reference import IssueReference
 from datadog_api_client.v2.model.issue_regression import IssueRegression
 from datadog_api_client.v2.model.issue_relationships import IssueRelationships
@@ -5855,6 +5864,16 @@ from datadog_api_client.v2.model.issue_user import IssueUser
 from datadog_api_client.v2.model.issue_user_attributes import IssueUserAttributes
 from datadog_api_client.v2.model.issue_user_reference import IssueUserReference
 from datadog_api_client.v2.model.issue_user_type import IssueUserType
+from datadog_api_client.v2.model.issue_watch import IssueWatch
+from datadog_api_client.v2.model.issue_watch_action import IssueWatchAction
+from datadog_api_client.v2.model.issue_watch_action_kind import IssueWatchActionKind
+from datadog_api_client.v2.model.issue_watch_attributes import IssueWatchAttributes
+from datadog_api_client.v2.model.issue_watch_condition import IssueWatchCondition
+from datadog_api_client.v2.model.issue_watch_condition_kind import IssueWatchConditionKind
+from datadog_api_client.v2.model.issue_watch_reference import IssueWatchReference
+from datadog_api_client.v2.model.issue_watch_status import IssueWatchStatus
+from datadog_api_client.v2.model.issue_watch_type import IssueWatchType
+from datadog_api_client.v2.model.issue_watches_relationship import IssueWatchesRelationship
 from datadog_api_client.v2.model.issues_search_request import IssuesSearchRequest
 from datadog_api_client.v2.model.issues_search_request_data import IssuesSearchRequestData
 from datadog_api_client.v2.model.issues_search_request_data_attributes import IssuesSearchRequestDataAttributes
@@ -17927,6 +17946,9 @@ __all__ = [
     "Issue",
     "IssueAssigneeRelationship",
     "IssueAttributes",
+    "IssueBitsInvestigationReference",
+    "IssueBitsInvestigationRelationship",
+    "IssueBitsInvestigationType",
     "IssueCase",
     "IssueCaseAttributes",
     "IssueCaseInsight",
@@ -17941,6 +17963,12 @@ __all__ = [
     "IssueIncluded",
     "IssueLanguage",
     "IssuePlatform",
+    "IssuePullRequest",
+    "IssuePullRequestAttributes",
+    "IssuePullRequestReason",
+    "IssuePullRequestReference",
+    "IssuePullRequestType",
+    "IssuePullRequestsRelationship",
     "IssueReference",
     "IssueRegression",
     "IssueRelationships",
@@ -17976,6 +18004,16 @@ __all__ = [
     "IssueUserAttributes",
     "IssueUserReference",
     "IssueUserType",
+    "IssueWatch",
+    "IssueWatchAction",
+    "IssueWatchActionKind",
+    "IssueWatchAttributes",
+    "IssueWatchCondition",
+    "IssueWatchConditionKind",
+    "IssueWatchReference",
+    "IssueWatchStatus",
+    "IssueWatchType",
+    "IssueWatchesRelationship",
     "IssuesSearchRequest",
     "IssuesSearchRequestData",
     "IssuesSearchRequestDataAttributes",
