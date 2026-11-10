@@ -86,6 +86,11 @@ class UsageMeteringApi:
                     "attribute": "include_descendants",
                     "location": "query",
                 },
+                "create_only": {
+                    "openapi_types": (bool,),
+                    "attribute": "create_only",
+                    "location": "query",
+                },
                 "body": {
                     "required": True,
                     "openapi_types": (UsageQuotasCreateRequest,),
@@ -929,11 +934,16 @@ class UsageMeteringApi:
         body: UsageQuotasCreateRequest,
         *,
         include_descendants: Union[bool, UnsetType] = unset,
+        create_only: Union[bool, UnsetType] = unset,
     ) -> UsageQuotasBulkResponse:
         """Create or update usage quotas.
 
         Creates or updates one or more usage quotas by scope. If a quota already exists for a supplied scope, it is updated.
         Otherwise, a quota is created only when ``usage_limit`` and ``enforced`` are provided.
+        Set ``create_only=true`` to atomically create exactly one quota in the caller's organization and reject an
+        existing quota with ``409`` instead of updating it. This mode does not support pending limits or descendant writes.
+        Repeated create-only requests do not replay the original response. If a response is lost, a retry can return ``409``
+        even if the first request succeeded; reconcile the outcome before retrying or importing the quota.
         For the organization-wide quota, ``pending_usage_limit`` schedules a limit for the next usage period and can
         accompany an immediate limit or update an existing quota by itself.
         Scheduled changes follow ``include_descendants`` like the other fields. Requires the ``billing_edit`` permission.
@@ -972,6 +982,8 @@ class UsageMeteringApi:
         :type body: UsageQuotasCreateRequest
         :param include_descendants: Whether to write every item in the request to the caller's organization and all of its descendant organizations, instead of only the caller's organization. Only descendants in the same data center are supported. For a user-handle scope, the quota is applied only to the caller's organization and to descendant organizations where that user handle exists; the item fails only if the handle exists in none of them.
         :type include_descendants: bool, optional
+        :param create_only: Create one quota without updating an existing quota. Requires exactly one item that specifies ``usage_limit`` and ``enforced`` , omits ``pending_usage_limit`` , and sets ``include_descendants=false``. The quota belongs to the caller's organization. An existing quota returns ``409`` without being modified.
+        :type create_only: bool, optional
         :rtype: UsageQuotasBulkResponse
         """
         kwargs: Dict[str, Any] = {}
@@ -979,6 +991,9 @@ class UsageMeteringApi:
 
         if include_descendants is not unset:
             kwargs["include_descendants"] = include_descendants
+
+        if create_only is not unset:
+            kwargs["create_only"] = create_only
 
         kwargs["body"] = body
 
