@@ -21,7 +21,7 @@ class IssuesSearchResultIncluded(ModelComposed):
         :param id: Issue identifier.
         :type id: str
 
-        :param relationships: Relationship between the issue and an assignee, case and/or teams.
+        :param relationships: Relationship between the issue and other resources, such as an assignee, case, teams, pull requests, watches, samples, or a Bits AI investigation.
         :type relationships: IssueRelationships, optional
 
         :param type: Type of the object.
@@ -42,6 +42,8 @@ class IssuesSearchResultIncluded(ModelComposed):
         from datadog_api_client.v2.model.issue_case import IssueCase
         from datadog_api_client.v2.model.issue_user import IssueUser
         from datadog_api_client.v2.model.issue_team import IssueTeam
+        from datadog_api_client.v2.model.issue_pull_request import IssuePullRequest
+        from datadog_api_client.v2.model.issue_watch import IssueWatch
 
         return {
             "oneOf": [
@@ -49,5 +51,7 @@ class IssuesSearchResultIncluded(ModelComposed):
                 IssueCase,
                 IssueUser,
                 IssueTeam,
+                IssuePullRequest,
+                IssueWatch,
             ],
         }

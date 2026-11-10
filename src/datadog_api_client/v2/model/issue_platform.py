@@ -16,7 +16,7 @@ class IssuePlatform(ModelSimple):
     """
     Platform associated with the issue.
 
-    :param value: Must be one of ["ANDROID", "BACKEND", "BROWSER", "FLUTTER", "IOS", "REACT_NATIVE", "ROKU", "UNKNOWN"].
+    :param value: Must be one of ["ANDROID", "BACKEND", "BROWSER", "ELECTRON", "FLUTTER", "IOS", "REACT_NATIVE", "ROKU", "UNKNOWN"].
     :type value: str
     """
 
@@ -24,6 +24,7 @@ class IssuePlatform(ModelSimple):
         "ANDROID",
         "BACKEND",
         "BROWSER",
+        "ELECTRON",
         "FLUTTER",
         "IOS",
         "REACT_NATIVE",
@@ -33,6 +34,7 @@ class IssuePlatform(ModelSimple):
     ANDROID: ClassVar["IssuePlatform"]
     BACKEND: ClassVar["IssuePlatform"]
     BROWSER: ClassVar["IssuePlatform"]
+    ELECTRON: ClassVar["IssuePlatform"]
     FLUTTER: ClassVar["IssuePlatform"]
     IOS: ClassVar["IssuePlatform"]
     REACT_NATIVE: ClassVar["IssuePlatform"]
@@ -49,6 +51,7 @@ class IssuePlatform(ModelSimple):
 IssuePlatform.ANDROID = IssuePlatform("ANDROID")
 IssuePlatform.BACKEND = IssuePlatform("BACKEND")
 IssuePlatform.BROWSER = IssuePlatform("BROWSER")
+IssuePlatform.ELECTRON = IssuePlatform("ELECTRON")
 IssuePlatform.FLUTTER = IssuePlatform("FLUTTER")
 IssuePlatform.IOS = IssuePlatform("IOS")
 IssuePlatform.REACT_NATIVE = IssuePlatform("REACT_NATIVE")

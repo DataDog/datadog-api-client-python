@@ -57,7 +57,7 @@ class Issue(ModelNormal):
         :param id: Issue identifier.
         :type id: str
 
-        :param relationships: Relationship between the issue and an assignee, case and/or teams.
+        :param relationships: Relationship between the issue and other resources, such as an assignee, case, teams, pull requests, watches, samples, or a Bits AI investigation.
         :type relationships: IssueRelationships, optional
 
         :param type: Type of the object.

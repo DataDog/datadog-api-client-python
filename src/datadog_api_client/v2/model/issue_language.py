@@ -16,7 +16,7 @@ class IssueLanguage(ModelSimple):
     """
     Programming language associated with the issue.
 
-    :param value: Must be one of ["BRIGHTSCRIPT", "C", "C_PLUS_PLUS", "C_SHARP", "CLOJURE", "DOT_NET", "ELIXIR", "ERLANG", "GO", "GROOVY", "HASKELL", "HCL", "JAVA", "JAVASCRIPT", "JVM", "KOTLIN", "OBJECTIVE_C", "PERL", "PHP", "PYTHON", "RUBY", "RUST", "SCALA", "SWIFT", "TERRAFORM", "TYPESCRIPT", "UNKNOWN"].
+    :param value: Must be one of ["BRIGHTSCRIPT", "C", "C_PLUS_PLUS", "C_SHARP", "CLOJURE", "DOT_NET", "ELIXIR", "ERLANG", "GO", "GROOVY", "HASKELL", "HCL", "JAVA", "JAVASCRIPT", "JVM", "KOTLIN", "OBJECTIVE_C", "PERL", "PHP", "PYTHON", "RUBY", "RUST", "SCALA", "SWIFT", "TERRAFORM", "TF", "TYPESCRIPT", "UNKNOWN"].
     :type value: str
     """
 
@@ -46,6 +46,7 @@ class IssueLanguage(ModelSimple):
         "SCALA",
         "SWIFT",
         "TERRAFORM",
+        "TF",
         "TYPESCRIPT",
         "UNKNOWN",
     }
@@ -74,6 +75,7 @@ class IssueLanguage(ModelSimple):
     SCALA: ClassVar["IssueLanguage"]
     SWIFT: ClassVar["IssueLanguage"]
     TERRAFORM: ClassVar["IssueLanguage"]
+    TF: ClassVar["IssueLanguage"]
     TYPESCRIPT: ClassVar["IssueLanguage"]
     UNKNOWN: ClassVar["IssueLanguage"]
 
@@ -109,5 +111,6 @@ IssueLanguage.RUST = IssueLanguage("RUST")
 IssueLanguage.SCALA = IssueLanguage("SCALA")
 IssueLanguage.SWIFT = IssueLanguage("SWIFT")
 IssueLanguage.TERRAFORM = IssueLanguage("TERRAFORM")
+IssueLanguage.TF = IssueLanguage("TF")
 IssueLanguage.TYPESCRIPT = IssueLanguage("TYPESCRIPT")
 IssueLanguage.UNKNOWN = IssueLanguage("UNKNOWN")

@@ -5673,6 +5673,13 @@
     {
       "feature": "Error Tracking",
       "feature_file": "../../v2/features/error_tracking.feature",
+      "file": "v2/error-tracking/get-the-details-of-an-error-tracking-issue-with-a-samples-bias-filter-but-no-samples-include-returns-bad-request-response.json",
+      "scenario": "Get the details of an error tracking issue with a samples bias filter but no samples include returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Error Tracking",
+      "feature_file": "../../v2/features/error_tracking.feature",
       "file": "v2/error-tracking/get-the-details-of-an-error-tracking-issue-with-samples-returns-ok-response.json",
       "scenario": "Get the details of an error tracking issue with samples returns \"OK\" response",
       "version": "v2"

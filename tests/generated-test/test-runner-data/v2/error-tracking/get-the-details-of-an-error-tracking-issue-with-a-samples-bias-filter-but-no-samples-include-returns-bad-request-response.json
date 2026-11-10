@@ -1,0 +1,58 @@
+{
+  "api": "ErrorTracking",
+  "expected_status": 400,
+  "feature": "Error Tracking",
+  "id": "v2/Error Tracking/Get the details of an error tracking issue with a samples bias filter but no samples include returns \"Bad Request\" response",
+  "operation_id": "GetIssue",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "issue_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "issue.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": false,
+        "in": "query",
+        "name": "filter[samples.biases]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "items": {
+            "format": null,
+            "ref": "IssueSampleBias",
+            "type": "string"
+          },
+          "ref": null,
+          "type": "array"
+        },
+        "source": {
+          "type": "literal",
+          "value": [
+            "latest"
+          ]
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/error-tracking/issues/{issue_id}"
+  },
+  "scenario": "Get the details of an error tracking issue with a samples bias filter but no samples include returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

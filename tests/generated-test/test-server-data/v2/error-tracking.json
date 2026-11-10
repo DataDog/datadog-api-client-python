@@ -162,6 +162,75 @@
     },
     {
       "feature": "Error Tracking",
+      "frozen_at": "2026-11-09T11:28:48.513Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "from": 1792927728000,
+                    "query": "service:synthetics-browser",
+                    "to": 1794223728000,
+                    "track": "rum"
+                  },
+                  "type": "search_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/error-tracking/issues/search",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"d3ab59c6-84ee-11f0-87bb-da7ad0900002\",\"type\":\"error_tracking_search_result\",\"attributes\":{\"impacted_sessions\":4430,\"impacted_users\":4320,\"total_count\":8647},\"relationships\":{\"issue\":{\"data\":{\"id\":\"d3ab59c6-84ee-11f0-87bb-da7ad0900002\",\"type\":\"issue\"}}}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/error-tracking/issues/d3ab59c6-84ee-11f0-87bb-da7ad0900002",
+            "query": [
+              [
+                "filter[samples.biases]",
+                "latest"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"invalid filter\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Get the details of an error tracking issue with a samples bias filter but no samples include returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Error Tracking",
       "frozen_at": "2026-10-22T13:29:57.649Z",
       "interactions": [
         {
