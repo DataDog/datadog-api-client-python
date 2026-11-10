@@ -3270,6 +3270,19 @@ from datadog_api_client.v2.model.detailed_finding_attributes import DetailedFind
 from datadog_api_client.v2.model.detailed_finding_type import DetailedFindingType
 from datadog_api_client.v2.model.device_attributes import DeviceAttributes
 from datadog_api_client.v2.model.device_attributes_interface_statuses import DeviceAttributesInterfaceStatuses
+from datadog_api_client.v2.model.device_base_array import DeviceBaseArray
+from datadog_api_client.v2.model.device_base_array_links import DeviceBaseArrayLinks
+from datadog_api_client.v2.model.device_base_array_meta import DeviceBaseArrayMeta
+from datadog_api_client.v2.model.device_base_array_meta_page import DeviceBaseArrayMetaPage
+from datadog_api_client.v2.model.device_base_data import DeviceBaseData
+from datadog_api_client.v2.model.device_base_data_attributes import DeviceBaseDataAttributes
+from datadog_api_client.v2.model.device_details import DeviceDetails
+from datadog_api_client.v2.model.device_details_data import DeviceDetailsData
+from datadog_api_client.v2.model.device_details_data_attributes import DeviceDetailsDataAttributes
+from datadog_api_client.v2.model.device_details_data_type import DeviceDetailsDataType
+from datadog_api_client.v2.model.device_employee import DeviceEmployee
+from datadog_api_client.v2.model.device_geo_ip import DeviceGeoIP
+from datadog_api_client.v2.model.device_status import DeviceStatus
 from datadog_api_client.v2.model.device_tags_by_source import DeviceTagsBySource
 from datadog_api_client.v2.model.devices_list_data import DevicesListData
 from datadog_api_client.v2.model.dns_metric_key import DnsMetricKey
@@ -16282,6 +16295,19 @@ __all__ = [
     "DetailedFindingType",
     "DeviceAttributes",
     "DeviceAttributesInterfaceStatuses",
+    "DeviceBaseArray",
+    "DeviceBaseArrayLinks",
+    "DeviceBaseArrayMeta",
+    "DeviceBaseArrayMetaPage",
+    "DeviceBaseData",
+    "DeviceBaseDataAttributes",
+    "DeviceDetails",
+    "DeviceDetailsData",
+    "DeviceDetailsDataAttributes",
+    "DeviceDetailsDataType",
+    "DeviceEmployee",
+    "DeviceGeoIP",
+    "DeviceStatus",
     "DeviceTagsBySource",
     "DevicesListData",
     "DnsMetricKey",

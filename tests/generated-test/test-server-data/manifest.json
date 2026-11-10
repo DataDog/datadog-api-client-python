@@ -301,6 +301,11 @@
       "version": "v2"
     },
     {
+      "feature": "End User Device Monitoring",
+      "file": "v2/end-user-device-monitoring.json",
+      "version": "v2"
+    },
+    {
       "feature": "Error Tracking",
       "file": "v2/error-tracking.json",
       "version": "v2"
