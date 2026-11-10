@@ -622,7 +622,9 @@ class MetricsApi:
                     "location": "query",
                 },
                 "filter_metrics_id": {
-                    "validation": {},
+                    "validation": {
+                        "max_length": 200,
+                    },
                     "openapi_types": (str,),
                     "attribute": "filter[metrics.id]",
                     "location": "query",
@@ -1582,8 +1584,9 @@ class MetricsApi:
             start with ``app.`` and end with ``.count``. The exception is a value whose only ``*`` is at the end (for
             example, ``http.request*`` ): it matches names that start with that text and is case-sensitive.
             Spaces are treated as ``*``. Only one value is accepted; repeating the parameter returns
-            ``400 Bad Request``. Allowed characters are letters, digits, ``_`` , ``.`` , ``*`` , and spaces. An empty value
-            is ignored.
+            ``400 Bad Request``. Allowed characters are letters, digits, ``_`` , ``.`` , ``*`` , and spaces. Surrounding spaces
+            are ignored, and an empty or spaces-only value is ignored. The value can be at most 200 characters (the
+            longest metric name); a longer value returns ``400 Bad Request``.
         :type filter_metrics_id: str, optional
         :param filter_historical_metrics: Only return metrics that have historical metrics ingestion enabled ( ``true`` ) or not enabled ( ``false`` ).
         :type filter_historical_metrics: bool, optional
@@ -1708,8 +1711,9 @@ class MetricsApi:
             start with ``app.`` and end with ``.count``. The exception is a value whose only ``*`` is at the end (for
             example, ``http.request*`` ): it matches names that start with that text and is case-sensitive.
             Spaces are treated as ``*``. Only one value is accepted; repeating the parameter returns
-            ``400 Bad Request``. Allowed characters are letters, digits, ``_`` , ``.`` , ``*`` , and spaces. An empty value
-            is ignored.
+            ``400 Bad Request``. Allowed characters are letters, digits, ``_`` , ``.`` , ``*`` , and spaces. Surrounding spaces
+            are ignored, and an empty or spaces-only value is ignored. The value can be at most 200 characters (the
+            longest metric name); a longer value returns ``400 Bad Request``.
         :type filter_metrics_id: str, optional
         :param filter_historical_metrics: Only return metrics that have historical metrics ingestion enabled ( ``true`` ) or not enabled ( ``false`` ).
         :type filter_historical_metrics: bool, optional
