@@ -18,14 +18,14 @@ class RulesValidateQueryRequestDataAttributes(ModelNormal):
         }
 
     attribute_map = {
-        "query": "Query",
+        "query": "query",
     }
 
     def __init__(self_, query: str, **kwargs):
         """
         The definition of ``RulesValidateQueryRequestDataAttributes`` object.
 
-        :param query: The ``attributes`` ``Query``.
+        :param query: The tag pipeline rule query to validate, in Datadog tag query syntax: ``tag:value`` terms combined with ``AND`` , ``OR`` , and ``NOT``.
         :type query: str
         """
         super().__init__(kwargs)

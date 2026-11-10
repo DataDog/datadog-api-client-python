@@ -2435,7 +2435,7 @@
               "value": {
                 "data": {
                   "attributes": {
-                    "Query": "example:query AND test:true"
+                    "query": "example:query AND test:true"
                   },
                   "type": "validate_query"
                 }

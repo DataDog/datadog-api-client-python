@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,22 +14,29 @@ from datadog_api_client.model_utils import (
 )
 
 
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.gcp_cud_metadata_config import GCPCudMetadataConfig
+
+
 class GCPUsageCostConfigAttributes(ModelNormal):
     validations = {
-        "created_at": {},
         "months": {
             "inclusive_maximum": 36,
         },
-        "status_updated_at": {},
-        "updated_at": {},
     }
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.gcp_cud_metadata_config import GCPCudMetadataConfig
+
         return {
             "account_id": (str,),
             "bucket_name": (str,),
             "created_at": (str,),
+            "cud_metadata_config": (GCPCudMetadataConfig,),
+            "cud_metadata_error_codes": ([int],),
+            "cud_metadata_state": (str,),
+            "cud_metadata_status_updated_at": (str,),
             "dataset": (str,),
             "error_messages": ([str], none_type),
             "export_prefix": (str,),
@@ -46,6 +53,10 @@ class GCPUsageCostConfigAttributes(ModelNormal):
         "account_id": "account_id",
         "bucket_name": "bucket_name",
         "created_at": "created_at",
+        "cud_metadata_config": "cud_metadata_config",
+        "cud_metadata_error_codes": "cud_metadata_error_codes",
+        "cud_metadata_state": "cud_metadata_state",
+        "cud_metadata_status_updated_at": "cud_metadata_status_updated_at",
         "dataset": "dataset",
         "error_messages": "error_messages",
         "export_prefix": "export_prefix",
@@ -68,6 +79,10 @@ class GCPUsageCostConfigAttributes(ModelNormal):
         service_account: str,
         status: str,
         created_at: Union[str, UnsetType] = unset,
+        cud_metadata_config: Union[GCPCudMetadataConfig, UnsetType] = unset,
+        cud_metadata_error_codes: Union[List[int], UnsetType] = unset,
+        cud_metadata_state: Union[str, UnsetType] = unset,
+        cud_metadata_status_updated_at: Union[str, UnsetType] = unset,
         error_messages: Union[List[str], none_type, UnsetType] = unset,
         months: Union[int, UnsetType] = unset,
         project_id: Union[str, UnsetType] = unset,
@@ -86,6 +101,18 @@ class GCPUsageCostConfigAttributes(ModelNormal):
 
         :param created_at: The timestamp when the Google Cloud Usage Cost config was created.
         :type created_at: str, optional
+
+        :param cud_metadata_config: The BigQuery table the committed use discount (CUD) metadata is read from. Only returned when CUD metadata is configured for the account.
+        :type cud_metadata_config: GCPCudMetadataConfig, optional
+
+        :param cud_metadata_error_codes: The error codes reported for the committed use discount (CUD) metadata export. Only returned when CUD metadata is configured for the account.
+        :type cud_metadata_error_codes: [int], optional
+
+        :param cud_metadata_state: The state of the Google Cloud committed use discount (CUD) metadata export. Only returned when CUD metadata is configured for the account.
+        :type cud_metadata_state: str, optional
+
+        :param cud_metadata_status_updated_at: The timestamp when the committed use discount (CUD) metadata state was last updated. Only returned when CUD metadata is configured for the account.
+        :type cud_metadata_status_updated_at: str, optional
 
         :param dataset: The export dataset name used for the Google Cloud Usage Cost Report.
         :type dataset: str
@@ -119,6 +146,14 @@ class GCPUsageCostConfigAttributes(ModelNormal):
         """
         if created_at is not unset:
             kwargs["created_at"] = created_at
+        if cud_metadata_config is not unset:
+            kwargs["cud_metadata_config"] = cud_metadata_config
+        if cud_metadata_error_codes is not unset:
+            kwargs["cud_metadata_error_codes"] = cud_metadata_error_codes
+        if cud_metadata_state is not unset:
+            kwargs["cud_metadata_state"] = cud_metadata_state
+        if cud_metadata_status_updated_at is not unset:
+            kwargs["cud_metadata_status_updated_at"] = cud_metadata_status_updated_at
         if error_messages is not unset:
             kwargs["error_messages"] = error_messages
         if months is not unset:

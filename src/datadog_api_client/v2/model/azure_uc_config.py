@@ -16,12 +16,9 @@ from datadog_api_client.model_utils import (
 
 class AzureUCConfig(ModelNormal):
     validations = {
-        "created_at": {},
         "months": {
             "inclusive_maximum": 36,
         },
-        "status_updated_at": {},
-        "updated_at": {},
     }
 
     @cached_property
