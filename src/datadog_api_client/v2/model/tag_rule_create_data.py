@@ -39,7 +39,7 @@ class TagRuleCreateData(ModelNormal):
         :param attributes: Attributes that can be supplied when creating a tag rule.
         :type attributes: TagRuleCreateAttributes
 
-        :param type: JSON:API resource type for a tag rule.
+        :param type: JSON:API resource type for a tag rule. Responses use the legacy ``tag_policy`` value.
         :type type: TagRuleResourceType
         """
         super().__init__(kwargs)

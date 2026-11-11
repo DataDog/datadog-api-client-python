@@ -53,7 +53,7 @@ class TagRuleUpdateData(ModelNormal):
         :param id: The unique identifier of the tag rule being updated.
         :type id: str
 
-        :param type: JSON:API resource type for a tag rule.
+        :param type: JSON:API resource type for a tag rule. Responses use the legacy ``tag_policy`` value.
         :type type: TagRuleResourceType
         """
         if attributes is not unset:
