@@ -7262,6 +7262,106 @@ from datadog_api_client.v2.model.mute_rules_response import MuteRulesResponse
 from datadog_api_client.v2.model.ndk_sourcemap_attributes import NDKSourcemapAttributes
 from datadog_api_client.v2.model.ndk_sourcemap_data import NDKSourcemapData
 from datadog_api_client.v2.model.ndk_sourcemap_map_kind import NDKSourcemapMapKind
+from datadog_api_client.v2.model.nebius_cloud_cost_collection_integration_dataflow_request import (
+    NebiusCloudCostCollectionIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.nebius_cloud_cost_collection_integration_dataflow_response import (
+    NebiusCloudCostCollectionIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.nebius_cloud_cost_collection_integration_dataflow_settings_request import (
+    NebiusCloudCostCollectionIntegrationDataflowSettingsRequest,
+)
+from datadog_api_client.v2.model.nebius_cloud_cost_collection_integration_dataflow_settings_response import (
+    NebiusCloudCostCollectionIntegrationDataflowSettingsResponse,
+)
+from datadog_api_client.v2.model.nebius_cloud_integration_account_authentication_request import (
+    NebiusCloudIntegrationAccountAuthenticationRequest,
+)
+from datadog_api_client.v2.model.nebius_cloud_integration_account_authentication_response import (
+    NebiusCloudIntegrationAccountAuthenticationResponse,
+)
+from datadog_api_client.v2.model.nebius_cloud_integration_account_authentication_update import (
+    NebiusCloudIntegrationAccountAuthenticationUpdate,
+)
+from datadog_api_client.v2.model.nebius_cloud_integration_account_create_attributes import (
+    NebiusCloudIntegrationAccountCreateAttributes,
+)
+from datadog_api_client.v2.model.nebius_cloud_integration_account_create_data import (
+    NebiusCloudIntegrationAccountCreateData,
+)
+from datadog_api_client.v2.model.nebius_cloud_integration_account_create_request import (
+    NebiusCloudIntegrationAccountCreateRequest,
+)
+from datadog_api_client.v2.model.nebius_cloud_integration_account_response import NebiusCloudIntegrationAccountResponse
+from datadog_api_client.v2.model.nebius_cloud_integration_account_response_attributes import (
+    NebiusCloudIntegrationAccountResponseAttributes,
+)
+from datadog_api_client.v2.model.nebius_cloud_integration_account_response_data import (
+    NebiusCloudIntegrationAccountResponseData,
+)
+from datadog_api_client.v2.model.nebius_cloud_integration_account_service_account_auth_request import (
+    NebiusCloudIntegrationAccountServiceAccountAuthRequest,
+)
+from datadog_api_client.v2.model.nebius_cloud_integration_account_service_account_auth_response import (
+    NebiusCloudIntegrationAccountServiceAccountAuthResponse,
+)
+from datadog_api_client.v2.model.nebius_cloud_integration_account_service_account_auth_type import (
+    NebiusCloudIntegrationAccountServiceAccountAuthType,
+)
+from datadog_api_client.v2.model.nebius_cloud_integration_account_service_account_auth_update import (
+    NebiusCloudIntegrationAccountServiceAccountAuthUpdate,
+)
+from datadog_api_client.v2.model.nebius_cloud_integration_account_settings_request import (
+    NebiusCloudIntegrationAccountSettingsRequest,
+)
+from datadog_api_client.v2.model.nebius_cloud_integration_account_settings_response import (
+    NebiusCloudIntegrationAccountSettingsResponse,
+)
+from datadog_api_client.v2.model.nebius_cloud_integration_account_settings_update import (
+    NebiusCloudIntegrationAccountSettingsUpdate,
+)
+from datadog_api_client.v2.model.nebius_cloud_integration_account_update_attributes import (
+    NebiusCloudIntegrationAccountUpdateAttributes,
+)
+from datadog_api_client.v2.model.nebius_cloud_integration_account_update_data import (
+    NebiusCloudIntegrationAccountUpdateData,
+)
+from datadog_api_client.v2.model.nebius_cloud_integration_account_update_request import (
+    NebiusCloudIntegrationAccountUpdateRequest,
+)
+from datadog_api_client.v2.model.nebius_cloud_integration_accounts_response import (
+    NebiusCloudIntegrationAccountsResponse,
+)
+from datadog_api_client.v2.model.nebius_cloud_integration_dataflows_request import (
+    NebiusCloudIntegrationDataflowsRequest,
+)
+from datadog_api_client.v2.model.nebius_cloud_integration_dataflows_response import (
+    NebiusCloudIntegrationDataflowsResponse,
+)
+from datadog_api_client.v2.model.nebius_cloud_logs_integration_dataflow_request import (
+    NebiusCloudLogsIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.nebius_cloud_logs_integration_dataflow_response import (
+    NebiusCloudLogsIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.nebius_cloud_logs_integration_dataflow_settings_request import (
+    NebiusCloudLogsIntegrationDataflowSettingsRequest,
+)
+from datadog_api_client.v2.model.nebius_cloud_logs_integration_dataflow_settings_response import (
+    NebiusCloudLogsIntegrationDataflowSettingsResponse,
+)
+from datadog_api_client.v2.model.nebius_cloud_resources_integration_dataflow_request import (
+    NebiusCloudResourcesIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.nebius_cloud_resources_integration_dataflow_response import (
+    NebiusCloudResourcesIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.nebius_cloud_service_quota_collection_integration_dataflow_request import (
+    NebiusCloudServiceQuotaCollectionIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.nebius_cloud_service_quota_collection_integration_dataflow_response import (
+    NebiusCloudServiceQuotaCollectionIntegrationDataflowResponse,
+)
 from datadog_api_client.v2.model.node_type import NodeType
 from datadog_api_client.v2.model.node_types_response import NodeTypesResponse
 from datadog_api_client.v2.model.node_types_response_data import NodeTypesResponseData
@@ -19054,6 +19154,40 @@ __all__ = [
     "NDKSourcemapAttributes",
     "NDKSourcemapData",
     "NDKSourcemapMapKind",
+    "NebiusCloudCostCollectionIntegrationDataflowRequest",
+    "NebiusCloudCostCollectionIntegrationDataflowResponse",
+    "NebiusCloudCostCollectionIntegrationDataflowSettingsRequest",
+    "NebiusCloudCostCollectionIntegrationDataflowSettingsResponse",
+    "NebiusCloudIntegrationAccountAuthenticationRequest",
+    "NebiusCloudIntegrationAccountAuthenticationResponse",
+    "NebiusCloudIntegrationAccountAuthenticationUpdate",
+    "NebiusCloudIntegrationAccountCreateAttributes",
+    "NebiusCloudIntegrationAccountCreateData",
+    "NebiusCloudIntegrationAccountCreateRequest",
+    "NebiusCloudIntegrationAccountResponse",
+    "NebiusCloudIntegrationAccountResponseAttributes",
+    "NebiusCloudIntegrationAccountResponseData",
+    "NebiusCloudIntegrationAccountServiceAccountAuthRequest",
+    "NebiusCloudIntegrationAccountServiceAccountAuthResponse",
+    "NebiusCloudIntegrationAccountServiceAccountAuthType",
+    "NebiusCloudIntegrationAccountServiceAccountAuthUpdate",
+    "NebiusCloudIntegrationAccountSettingsRequest",
+    "NebiusCloudIntegrationAccountSettingsResponse",
+    "NebiusCloudIntegrationAccountSettingsUpdate",
+    "NebiusCloudIntegrationAccountUpdateAttributes",
+    "NebiusCloudIntegrationAccountUpdateData",
+    "NebiusCloudIntegrationAccountUpdateRequest",
+    "NebiusCloudIntegrationAccountsResponse",
+    "NebiusCloudIntegrationDataflowsRequest",
+    "NebiusCloudIntegrationDataflowsResponse",
+    "NebiusCloudLogsIntegrationDataflowRequest",
+    "NebiusCloudLogsIntegrationDataflowResponse",
+    "NebiusCloudLogsIntegrationDataflowSettingsRequest",
+    "NebiusCloudLogsIntegrationDataflowSettingsResponse",
+    "NebiusCloudResourcesIntegrationDataflowRequest",
+    "NebiusCloudResourcesIntegrationDataflowResponse",
+    "NebiusCloudServiceQuotaCollectionIntegrationDataflowRequest",
+    "NebiusCloudServiceQuotaCollectionIntegrationDataflowResponse",
     "NodeType",
     "NodeTypesResponse",
     "NodeTypesResponseData",

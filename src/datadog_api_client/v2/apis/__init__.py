@@ -87,6 +87,7 @@ from datadog_api_client.v2.api.metrics_api import MetricsApi
 from datadog_api_client.v2.api.microsoft_teams_integration_api import MicrosoftTeamsIntegrationApi
 from datadog_api_client.v2.api.model_lab_api_api import ModelLabAPIApi
 from datadog_api_client.v2.api.monitors_api import MonitorsApi
+from datadog_api_client.v2.api.nebius_cloud_integration_api import NebiusCloudIntegrationApi
 from datadog_api_client.v2.api.network_device_monitoring_api import NetworkDeviceMonitoringApi
 from datadog_api_client.v2.api.o_auth2_client_public_api import OAuth2ClientPublicApi
 from datadog_api_client.v2.api.oci_integration_api import OCIIntegrationApi
@@ -249,6 +250,7 @@ __all__ = [
     "MicrosoftTeamsIntegrationApi",
     "ModelLabAPIApi",
     "MonitorsApi",
+    "NebiusCloudIntegrationApi",
     "NetworkDeviceMonitoringApi",
     "OAuth2ClientPublicApi",
     "OCIIntegrationApi",
