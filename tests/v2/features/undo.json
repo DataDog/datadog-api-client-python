@@ -4322,6 +4322,43 @@
       "type": "idempotent"
     }
   },
+  "ListOpenAICodexIntegrationAccounts": {
+    "tag": "OpenAI Codex Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateOpenAICodexIntegrationAccount": {
+    "tag": "OpenAI Codex Integration",
+    "undo": {
+      "operationId": "DeleteOpenAICodexIntegrationAccount",
+      "parameters": [
+        {
+          "name": "account_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteOpenAICodexIntegrationAccount": {
+    "tag": "OpenAI Codex Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetOpenAICodexIntegrationAccount": {
+    "tag": "OpenAI Codex Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateOpenAICodexIntegrationAccount": {
+    "tag": "OpenAI Codex Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListSnowflakeIntegrationAccounts": {
     "tag": "Snowflake Integration",
     "undo": {
