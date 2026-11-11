@@ -928,6 +928,9 @@ from datadog_api_client.v2.model.application_security_waf_exclusion_filter_updat
 from datadog_api_client.v2.model.application_security_waf_exclusion_filters_response import (
     ApplicationSecurityWafExclusionFiltersResponse,
 )
+from datadog_api_client.v2.model.approve_flag_suggestion_attributes import ApproveFlagSuggestionAttributes
+from datadog_api_client.v2.model.approve_flag_suggestion_data import ApproveFlagSuggestionData
+from datadog_api_client.v2.model.approve_flag_suggestion_request import ApproveFlagSuggestionRequest
 from datadog_api_client.v2.model.apps_sort_field import AppsSortField
 from datadog_api_client.v2.model.arbitrary_cost_upsert_request import ArbitraryCostUpsertRequest
 from datadog_api_client.v2.model.arbitrary_cost_upsert_request_data import ArbitraryCostUpsertRequestData
@@ -2235,6 +2238,9 @@ from datadog_api_client.v2.model.create_feature_flag_data import CreateFeatureFl
 from datadog_api_client.v2.model.create_feature_flag_data_type import CreateFeatureFlagDataType
 from datadog_api_client.v2.model.create_feature_flag_request import CreateFeatureFlagRequest
 from datadog_api_client.v2.model.create_feature_flag_staleness_status import CreateFeatureFlagStalenessStatus
+from datadog_api_client.v2.model.create_flag_suggestion_attributes import CreateFlagSuggestionAttributes
+from datadog_api_client.v2.model.create_flag_suggestion_data import CreateFlagSuggestionData
+from datadog_api_client.v2.model.create_flag_suggestion_request import CreateFlagSuggestionRequest
 from datadog_api_client.v2.model.create_form_data import CreateFormData
 from datadog_api_client.v2.model.create_form_data_attributes import CreateFormDataAttributes
 from datadog_api_client.v2.model.create_form_request import CreateFormRequest
@@ -4458,6 +4464,11 @@ from datadog_api_client.v2.model.fastly_service_response import FastlyServiceRes
 from datadog_api_client.v2.model.fastly_service_type import FastlyServiceType
 from datadog_api_client.v2.model.fastly_services_response import FastlyServicesResponse
 from datadog_api_client.v2.model.feature_flag import FeatureFlag
+from datadog_api_client.v2.model.feature_flag_approval_required import FeatureFlagApprovalRequired
+from datadog_api_client.v2.model.feature_flag_approval_required_attributes import FeatureFlagApprovalRequiredAttributes
+from datadog_api_client.v2.model.feature_flag_approval_required_data_type import FeatureFlagApprovalRequiredDataType
+from datadog_api_client.v2.model.feature_flag_approval_required_response import FeatureFlagApprovalRequiredResponse
+from datadog_api_client.v2.model.feature_flag_approvals_data_type import FeatureFlagApprovalsDataType
 from datadog_api_client.v2.model.feature_flag_attributes import FeatureFlagAttributes
 from datadog_api_client.v2.model.feature_flag_distribution_channel import FeatureFlagDistributionChannel
 from datadog_api_client.v2.model.feature_flag_environment import FeatureFlagEnvironment
@@ -4472,6 +4483,19 @@ from datadog_api_client.v2.model.feature_flag_staleness_recommended_action impor
 from datadog_api_client.v2.model.feature_flag_staleness_status import FeatureFlagStalenessStatus
 from datadog_api_client.v2.model.feature_flag_staleness_status_override import FeatureFlagStalenessStatusOverride
 from datadog_api_client.v2.model.feature_flag_status import FeatureFlagStatus
+from datadog_api_client.v2.model.feature_flag_suggestion import FeatureFlagSuggestion
+from datadog_api_client.v2.model.feature_flag_suggestion_attributes import FeatureFlagSuggestionAttributes
+from datadog_api_client.v2.model.feature_flag_suggestion_attributes_current_status import (
+    FeatureFlagSuggestionAttributesCurrentStatus,
+)
+from datadog_api_client.v2.model.feature_flag_suggestion_attributes_lifecycle_status import (
+    FeatureFlagSuggestionAttributesLifecycleStatus,
+)
+from datadog_api_client.v2.model.feature_flag_suggestion_data_type import FeatureFlagSuggestionDataType
+from datadog_api_client.v2.model.feature_flag_suggestion_experiment_action import FeatureFlagSuggestionExperimentAction
+from datadog_api_client.v2.model.feature_flag_suggestion_metadata import FeatureFlagSuggestionMetadata
+from datadog_api_client.v2.model.feature_flag_suggestion_metadata_request import FeatureFlagSuggestionMetadataRequest
+from datadog_api_client.v2.model.feature_flag_suggestion_response import FeatureFlagSuggestionResponse
 from datadog_api_client.v2.model.feature_flags_pagination_links import FeatureFlagsPaginationLinks
 from datadog_api_client.v2.model.feature_flags_pagination_meta import FeatureFlagsPaginationMeta
 from datadog_api_client.v2.model.feature_flags_pagination_meta_page import FeatureFlagsPaginationMetaPage
@@ -9744,6 +9768,9 @@ from datadog_api_client.v2.model.reference_table_schema_field_type import Refere
 from datadog_api_client.v2.model.reference_table_sort_type import ReferenceTableSortType
 from datadog_api_client.v2.model.reference_table_source_type import ReferenceTableSourceType
 from datadog_api_client.v2.model.register_app_key_response import RegisterAppKeyResponse
+from datadog_api_client.v2.model.reject_flag_suggestion_attributes import RejectFlagSuggestionAttributes
+from datadog_api_client.v2.model.reject_flag_suggestion_data import RejectFlagSuggestionData
+from datadog_api_client.v2.model.reject_flag_suggestion_request import RejectFlagSuggestionRequest
 from datadog_api_client.v2.model.relation_attributes import RelationAttributes
 from datadog_api_client.v2.model.relation_entity import RelationEntity
 from datadog_api_client.v2.model.relation_include_type import RelationIncludeType
@@ -9965,6 +9992,7 @@ from datadog_api_client.v2.model.revert_custom_rule_revision_request_data import
 from datadog_api_client.v2.model.revert_custom_rule_revision_request_data_attributes import (
     RevertCustomRuleRevisionRequestDataAttributes,
 )
+from datadog_api_client.v2.model.review_flag_suggestion_data_type import ReviewFlagSuggestionDataType
 from datadog_api_client.v2.model.role import Role
 from datadog_api_client.v2.model.role_attributes import RoleAttributes
 from datadog_api_client.v2.model.role_clone import RoleClone
@@ -13467,10 +13495,14 @@ from datadog_api_client.v2.model.update_environment_attributes import UpdateEnvi
 from datadog_api_client.v2.model.update_environment_data import UpdateEnvironmentData
 from datadog_api_client.v2.model.update_environment_data_type import UpdateEnvironmentDataType
 from datadog_api_client.v2.model.update_environment_request import UpdateEnvironmentRequest
+from datadog_api_client.v2.model.update_feature_flag_approvals_attributes import UpdateFeatureFlagApprovalsAttributes
+from datadog_api_client.v2.model.update_feature_flag_approvals_data import UpdateFeatureFlagApprovalsData
+from datadog_api_client.v2.model.update_feature_flag_approvals_request import UpdateFeatureFlagApprovalsRequest
 from datadog_api_client.v2.model.update_feature_flag_attributes import UpdateFeatureFlagAttributes
 from datadog_api_client.v2.model.update_feature_flag_data import UpdateFeatureFlagData
 from datadog_api_client.v2.model.update_feature_flag_data_type import UpdateFeatureFlagDataType
 from datadog_api_client.v2.model.update_feature_flag_request import UpdateFeatureFlagRequest
+from datadog_api_client.v2.model.update_feature_flag_staleness_status import UpdateFeatureFlagStalenessStatus
 from datadog_api_client.v2.model.update_flaky_tests_request import UpdateFlakyTestsRequest
 from datadog_api_client.v2.model.update_flaky_tests_request_attributes import UpdateFlakyTestsRequestAttributes
 from datadog_api_client.v2.model.update_flaky_tests_request_data import UpdateFlakyTestsRequestData
@@ -14612,6 +14644,9 @@ __all__ = [
     "ApplicationSecurityWafExclusionFilterUpdateData",
     "ApplicationSecurityWafExclusionFilterUpdateRequest",
     "ApplicationSecurityWafExclusionFiltersResponse",
+    "ApproveFlagSuggestionAttributes",
+    "ApproveFlagSuggestionData",
+    "ApproveFlagSuggestionRequest",
     "AppsSortField",
     "ArbitraryCostUpsertRequest",
     "ArbitraryCostUpsertRequestData",
@@ -15615,6 +15650,9 @@ __all__ = [
     "CreateFeatureFlagDataType",
     "CreateFeatureFlagRequest",
     "CreateFeatureFlagStalenessStatus",
+    "CreateFlagSuggestionAttributes",
+    "CreateFlagSuggestionData",
+    "CreateFlagSuggestionRequest",
     "CreateFormData",
     "CreateFormDataAttributes",
     "CreateFormRequest",
@@ -16952,6 +16990,11 @@ __all__ = [
     "FastlyServiceType",
     "FastlyServicesResponse",
     "FeatureFlag",
+    "FeatureFlagApprovalRequired",
+    "FeatureFlagApprovalRequiredAttributes",
+    "FeatureFlagApprovalRequiredDataType",
+    "FeatureFlagApprovalRequiredResponse",
+    "FeatureFlagApprovalsDataType",
     "FeatureFlagAttributes",
     "FeatureFlagDistributionChannel",
     "FeatureFlagEnvironment",
@@ -16966,6 +17009,15 @@ __all__ = [
     "FeatureFlagStalenessStatus",
     "FeatureFlagStalenessStatusOverride",
     "FeatureFlagStatus",
+    "FeatureFlagSuggestion",
+    "FeatureFlagSuggestionAttributes",
+    "FeatureFlagSuggestionAttributesCurrentStatus",
+    "FeatureFlagSuggestionAttributesLifecycleStatus",
+    "FeatureFlagSuggestionDataType",
+    "FeatureFlagSuggestionExperimentAction",
+    "FeatureFlagSuggestionMetadata",
+    "FeatureFlagSuggestionMetadataRequest",
+    "FeatureFlagSuggestionResponse",
     "FeatureFlagsPaginationLinks",
     "FeatureFlagsPaginationMeta",
     "FeatureFlagsPaginationMetaPage",
@@ -20446,6 +20498,9 @@ __all__ = [
     "ReferenceTableSortType",
     "ReferenceTableSourceType",
     "RegisterAppKeyResponse",
+    "RejectFlagSuggestionAttributes",
+    "RejectFlagSuggestionData",
+    "RejectFlagSuggestionRequest",
     "RelationAttributes",
     "RelationEntity",
     "RelationIncludeType",
@@ -20621,6 +20676,7 @@ __all__ = [
     "RevertCustomRuleRevisionRequest",
     "RevertCustomRuleRevisionRequestData",
     "RevertCustomRuleRevisionRequestDataAttributes",
+    "ReviewFlagSuggestionDataType",
     "Role",
     "RoleAttributes",
     "RoleClone",
@@ -22833,10 +22889,14 @@ __all__ = [
     "UpdateEnvironmentData",
     "UpdateEnvironmentDataType",
     "UpdateEnvironmentRequest",
+    "UpdateFeatureFlagApprovalsAttributes",
+    "UpdateFeatureFlagApprovalsData",
+    "UpdateFeatureFlagApprovalsRequest",
     "UpdateFeatureFlagAttributes",
     "UpdateFeatureFlagData",
     "UpdateFeatureFlagDataType",
     "UpdateFeatureFlagRequest",
+    "UpdateFeatureFlagStalenessStatus",
     "UpdateFlakyTestsRequest",
     "UpdateFlakyTestsRequestAttributes",
     "UpdateFlakyTestsRequestData",

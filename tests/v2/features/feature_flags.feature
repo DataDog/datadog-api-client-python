@@ -1,6 +1,6 @@
 @endpoint(feature-flags) @endpoint(feature-flags-v2)
 Feature: Feature Flags
-  Manage feature flags and environments.
+  Manage feature flags, environments, and approval suggestions.
 
   Background:
     Given a valid "apiKeyAuth" key in the system
@@ -39,12 +39,86 @@ Feature: Feature Flags
     When the request is sent
     Then the response status is 404 Not Found
 
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Apply an approved flag change suggestion returns "Bad Request - Invalid request parameters or body." response
+    Given new "ApplyFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request - Invalid request parameters or body.
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Apply an approved flag change suggestion returns "Conflict - The suggestion is not approved or the proposed change conflicts with current configuration." response
+    Given new "ApplyFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 409 Conflict - The suggestion is not approved or the proposed change conflicts with current configuration.
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Apply an approved flag change suggestion returns "Not Found" response
+    Given new "ApplyFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Apply an approved flag change suggestion returns "OK" response
+    Given new "ApplyFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Approve a flag change suggestion returns "Bad Request - Invalid request parameters or body." response
+    Given new "ApproveFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"apply": false, "comment": "Approved for rollout."}, "type": "flag-suggestion-events"}}
+    When the request is sent
+    Then the response status is 400 Bad Request - Invalid request parameters or body.
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Approve a flag change suggestion returns "Conflict - The suggestion is already applied or discarded, or the proposed change conflicts with current configuration." response
+    Given new "ApproveFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"apply": false, "comment": "Approved for rollout."}, "type": "flag-suggestion-events"}}
+    When the request is sent
+    Then the response status is 409 Conflict - The suggestion is already applied or discarded, or the proposed change conflicts with current configuration.
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Approve a flag change suggestion returns "Not Found" response
+    Given new "ApproveFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"apply": false, "comment": "Approved for rollout."}, "type": "flag-suggestion-events"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Approve a flag change suggestion returns "OK" response
+    Given new "ApproveFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"apply": false, "comment": "Approved for rollout."}, "type": "flag-suggestion-events"}}
+    When the request is sent
+    Then the response status is 200 OK
+
   @skip @team:ddoghq/feature-flags
   Scenario: Archive a feature flag returns "Bad Request" response
     Given new "ArchiveFeatureFlag" request
     And request contains "feature_flag_id" parameter with value "00000000-0000-0000-0000-000000000000"
     When the request is sent
     Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Archive a feature flag returns "Conflict - The flag is already archived or a conflicting suggestion is pending." response
+    Given new "ArchiveFeatureFlag" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 409 Conflict - The flag is already archived or a conflicting suggestion is pending.
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Archive a feature flag returns "Created - Approval is required. A suggestion was created and the change has not been applied." response
+    Given new "ArchiveFeatureFlag" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 201 Created - Approval is required. A suggestion was created and the change has not been applied.
 
   @skip @team:ddoghq/feature-flags
   Scenario: Archive a feature flag returns "Not Found" response
@@ -89,6 +163,38 @@ Feature: Feature Flags
     And the response "data.attributes.tags" is equal to ["env:api-client-test"]
     And the response "data.attributes.value_type" is equal to "BOOLEAN"
 
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Create a flag change suggestion returns "Bad Request - Invalid request parameters or body." response
+    Given new "CreateFlagSuggestion" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"action": "updated", "comment": "Restrict this flag to server applications.", "environment_id": "550e8400-e29b-41d4-a716-446655440001", "notification_rule_targets": ["requester@example.com"], "property": "DISTRIBUTION_CHANNEL", "suggestion": "SERVER", "suggestion_metadata": {"variant_id": "550e8400-e29b-41d4-a716-446655440002"}}, "type": "flag-suggestions"}}
+    When the request is sent
+    Then the response status is 400 Bad Request - Invalid request parameters or body.
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Create a flag change suggestion returns "Conflict - A conflicting suggestion is pending, or the lineup changes or omits a draft allocation." response
+    Given new "CreateFlagSuggestion" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"action": "updated", "comment": "Restrict this flag to server applications.", "environment_id": "550e8400-e29b-41d4-a716-446655440001", "notification_rule_targets": ["requester@example.com"], "property": "DISTRIBUTION_CHANNEL", "suggestion": "SERVER", "suggestion_metadata": {"variant_id": "550e8400-e29b-41d4-a716-446655440002"}}, "type": "flag-suggestions"}}
+    When the request is sent
+    Then the response status is 409 Conflict - A conflicting suggestion is pending, or the lineup changes or omits a draft allocation.
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Create a flag change suggestion returns "Created" response
+    Given new "CreateFlagSuggestion" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"action": "updated", "comment": "Restrict this flag to server applications.", "environment_id": "550e8400-e29b-41d4-a716-446655440001", "notification_rule_targets": ["requester@example.com"], "property": "DISTRIBUTION_CHANNEL", "suggestion": "SERVER", "suggestion_metadata": {"variant_id": "550e8400-e29b-41d4-a716-446655440002"}}, "type": "flag-suggestions"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Create a flag change suggestion returns "Not Found" response
+    Given new "CreateFlagSuggestion" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"action": "updated", "comment": "Restrict this flag to server applications.", "environment_id": "550e8400-e29b-41d4-a716-446655440001", "notification_rule_targets": ["requester@example.com"], "property": "DISTRIBUTION_CHANNEL", "suggestion": "SERVER", "suggestion_metadata": {"variant_id": "550e8400-e29b-41d4-a716-446655440002"}}, "type": "flag-suggestions"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @team:ddoghq/feature-flags
   Scenario: Create allocation for a flag in an environment returns "Created" response
     Given there is a valid "feature_flag" in the system
@@ -121,7 +227,7 @@ Feature: Feature Flags
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:ddoghq/feature-flags
+  @skip @team:ddoghq/feature-flags
   Scenario: Create targeting rules for a flag env returns "Accepted - Approval required for this change" response
     Given new "CreateAllocationsForFeatureFlagInEnvironment" request
     And request contains "feature_flag_id" parameter from "REPLACE.ME"
@@ -129,6 +235,9 @@ Feature: Feature Flags
     And body with value {"data": {"attributes": {"experiment_id": "550e8400-e29b-41d4-a716-446655440030", "exposure_schedule": {"absolute_start_time": "2025-06-13T12:00:00Z", "control_variant_id": "550e8400-e29b-41d4-a716-446655440012", "control_variant_key": "control", "id": "550e8400-e29b-41d4-a716-446655440010", "rollout_options": {"autostart": false, "selection_interval_ms": 3600000, "strategy": "UNIFORM_INTERVALS"}, "rollout_steps": [{"exposure_ratio": 0.5, "grouped_step_index": 1, "id": "550e8400-e29b-41d4-a716-446655440040", "interval_ms": 3600000, "is_pause_record": false}]}, "guardrail_metrics": [{"metric_id": "metric-error-rate", "trigger_action": "PAUSE"}], "id": "550e8400-e29b-41d4-a716-446655440020", "key": "prod-rollout", "name": "Production Rollout", "targeting_rules": [{"conditions": [{"attribute": "user_tier", "operator": "ONE_OF", "saved_filter_id": "550e8400-e29b-41d4-a716-446655440090", "value": ["premium", "enterprise"]}]}], "type": "FEATURE_GATE", "variant_weights": [{"value": 50, "variant_id": "550e8400-e29b-41d4-a716-446655440001", "variant_key": "control"}]}, "type": "allocations"}}
     When the request is sent
     Then the response status is 202 Accepted - Approval required for this change
+    And the response "data.type" is equal to "approval-required"
+    And the response "data.attributes.property" is equal to "ALLOCATIONS"
+    And the response "data.attributes.action" is equal to "updated"
 
   @generated @skip @team:ddoghq/feature-flags
   Scenario: Create targeting rules for a flag env returns "Bad Request" response
@@ -140,13 +249,13 @@ Feature: Feature Flags
     Then the response status is 400 Bad Request
 
   @generated @skip @team:ddoghq/feature-flags
-  Scenario: Create targeting rules for a flag env returns "Conflict" response
+  Scenario: Create targeting rules for a flag env returns "Conflict - A conflicting suggestion is pending or an allocation with this key already exists." response
     Given new "CreateAllocationsForFeatureFlagInEnvironment" request
     And request contains "feature_flag_id" parameter from "REPLACE.ME"
     And request contains "environment_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"experiment_id": "550e8400-e29b-41d4-a716-446655440030", "exposure_schedule": {"absolute_start_time": "2025-06-13T12:00:00Z", "control_variant_id": "550e8400-e29b-41d4-a716-446655440012", "control_variant_key": "control", "id": "550e8400-e29b-41d4-a716-446655440010", "rollout_options": {"autostart": false, "selection_interval_ms": 3600000, "strategy": "UNIFORM_INTERVALS"}, "rollout_steps": [{"exposure_ratio": 0.5, "grouped_step_index": 1, "id": "550e8400-e29b-41d4-a716-446655440040", "interval_ms": 3600000, "is_pause_record": false}]}, "guardrail_metrics": [{"metric_id": "metric-error-rate", "trigger_action": "PAUSE"}], "id": "550e8400-e29b-41d4-a716-446655440020", "key": "prod-rollout", "name": "Production Rollout", "targeting_rules": [{"conditions": [{"attribute": "user_tier", "operator": "ONE_OF", "saved_filter_id": "550e8400-e29b-41d4-a716-446655440090", "value": ["premium", "enterprise"]}]}], "type": "FEATURE_GATE", "variant_weights": [{"value": 50, "variant_id": "550e8400-e29b-41d4-a716-446655440001", "variant_key": "control"}]}, "type": "allocations"}}
     When the request is sent
-    Then the response status is 409 Conflict
+    Then the response status is 409 Conflict - A conflicting suggestion is pending or an allocation with this key already exists.
 
   @generated @skip @team:ddoghq/feature-flags
   Scenario: Create targeting rules for a flag env returns "Created" response
@@ -183,6 +292,14 @@ Feature: Feature Flags
     Then the response status is 409 Conflict - A pending suggestion already exists for this property.
 
   @generated @skip @team:ddoghq/feature-flags
+  Scenario: Delete a variant returns "Created - Approval is required. A suggestion was created and the change has not been applied." response
+    Given new "DeleteVariantFromFeatureFlag" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And request contains "variant_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 201 Created - Approval is required. A suggestion was created and the change has not been applied.
+
+  @generated @skip @team:ddoghq/feature-flags
   Scenario: Delete a variant returns "No Content" response
     Given new "DeleteVariantFromFeatureFlag" request
     And request contains "feature_flag_id" parameter from "REPLACE.ME"
@@ -213,15 +330,59 @@ Feature: Feature Flags
     When the request is sent
     Then the response status is 404 Not Found
 
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Delete or discard a flag change suggestion returns "Bad Request - Invalid request parameters or body." response
+    Given new "DeleteFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request - Invalid request parameters or body.
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Delete or discard a flag change suggestion returns "Conflict - Applied or rejected suggestions cannot be deleted." response
+    Given new "DeleteFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 409 Conflict - Applied or rejected suggestions cannot be deleted.
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Delete or discard a flag change suggestion returns "No Content" response
+    Given new "DeleteFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Delete or discard a flag change suggestion returns "Not Found" response
+    Given new "DeleteFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Disable a feature flag in an environment returns "Bad Request" response
+    Given new "DisableFeatureFlagEnvironment" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And request contains "environment_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Disable a feature flag in an environment returns "Conflict - A conflicting suggestion is pending for this flag and environment." response
+    Given new "DisableFeatureFlagEnvironment" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And request contains "environment_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 409 Conflict - A conflicting suggestion is pending for this flag and environment.
+
   @skip @team:ddoghq/feature-flags
-  Scenario: Disable a feature flag in an environment returns "Accepted - Approval required for this change" response
+  Scenario: Disable a feature flag in an environment returns "Created - Approval is required. A suggestion was created and the change has not been applied." response
     Given there is a valid "feature_flag" in the system
     And there is a valid "environment" in the system
     And new "DisableFeatureFlagEnvironment" request
     And request contains "feature_flag_id" parameter from "feature_flag.data.id"
     And request contains "environment_id" parameter from "environment.data.id"
     When the request is sent
-    Then the response status is 202 Accepted - Approval required for this change
+    Then the response status is 201 Created - Approval is required. A suggestion was created and the change has not been applied.
 
   @skip @team:ddoghq/feature-flags
   Scenario: Disable a feature flag in an environment returns "Not Found" response
@@ -241,15 +402,31 @@ Feature: Feature Flags
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Enable a feature flag in an environment returns "Bad Request" response
+    Given new "EnableFeatureFlagEnvironment" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And request contains "environment_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Enable a feature flag in an environment returns "Conflict - A conflicting suggestion is pending for this flag and environment." response
+    Given new "EnableFeatureFlagEnvironment" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And request contains "environment_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 409 Conflict - A conflicting suggestion is pending for this flag and environment.
+
   @skip @team:ddoghq/feature-flags
-  Scenario: Enable a feature flag in an environment returns "Accepted - Approval required for this change" response
+  Scenario: Enable a feature flag in an environment returns "Created - Approval is required. A suggestion was created and the change has not been applied." response
     Given there is a valid "feature_flag" in the system
     And there is a valid "environment" in the system
     And new "EnableFeatureFlagEnvironment" request
     And request contains "feature_flag_id" parameter from "feature_flag.data.id"
     And request contains "environment_id" parameter from "environment.data.id"
     When the request is sent
-    Then the response status is 202 Accepted - Approval required for this change
+    Then the response status is 201 Created - Approval is required. A suggestion was created and the change has not been applied.
 
   @skip @team:ddoghq/feature-flags
   Scenario: Enable a feature flag in an environment returns "Not Found" response
@@ -286,6 +463,27 @@ Feature: Feature Flags
     And the response "data.attributes.key" has the same value as "feature_flag.data.attributes.key"
     And the response "data.attributes.name" has the same value as "feature_flag.data.attributes.name"
     And the response "data.attributes.value_type" has the same value as "feature_flag.data.attributes.value_type"
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Get a flag change suggestion returns "Bad Request - Invalid request parameters or body." response
+    Given new "GetFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request - Invalid request parameters or body.
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Get a flag change suggestion returns "Not Found" response
+    Given new "GetFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Get a flag change suggestion returns "OK" response
+    Given new "GetFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/feature-flags
   Scenario: Get a saved filter returns "Bad Request" response
@@ -955,6 +1153,38 @@ Feature: Feature Flags
     Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/feature-flags
+  Scenario: Reject a flag change suggestion returns "Bad Request - Invalid request parameters or body." response
+    Given new "RejectFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"comment": "Keep the existing configuration."}, "type": "flag-suggestion-events"}}
+    When the request is sent
+    Then the response status is 400 Bad Request - Invalid request parameters or body.
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Reject a flag change suggestion returns "Conflict - The suggestion is already approved, applied, or discarded." response
+    Given new "RejectFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"comment": "Keep the existing configuration."}, "type": "flag-suggestion-events"}}
+    When the request is sent
+    Then the response status is 409 Conflict - The suggestion is already approved, applied, or discarded.
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Reject a flag change suggestion returns "Not Found" response
+    Given new "RejectFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"comment": "Keep the existing configuration."}, "type": "flag-suggestion-events"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Reject a flag change suggestion returns "OK" response
+    Given new "RejectFlagSuggestion" request
+    And request contains "suggestion_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"comment": "Keep the existing configuration."}, "type": "flag-suggestion-events"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/feature-flags
   Scenario: Resume a progressive rollout returns "Bad Request" response
     Given new "ResumeExposureSchedule" request
     And request contains "exposure_schedule_id" parameter from "REPLACE.ME"
@@ -979,6 +1209,38 @@ Feature: Feature Flags
   Scenario: Resume a progressive rollout returns "OK" response
     Given new "ResumeExposureSchedule" request
     And request contains "exposure_schedule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Set the approval requirement for a feature flag returns "Bad Request - Invalid request parameters or body." response
+    Given new "UpdateFeatureFlagApprovals" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"enabled": true}, "type": "feature-flag-approvals"}}
+    When the request is sent
+    Then the response status is 400 Bad Request - Invalid request parameters or body.
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Set the approval requirement for a feature flag returns "Conflict - A pending experiment request or a running approved experiment uses this flag." response
+    Given new "UpdateFeatureFlagApprovals" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"enabled": true}, "type": "feature-flag-approvals"}}
+    When the request is sent
+    Then the response status is 409 Conflict - A pending experiment request or a running approved experiment uses this flag.
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Set the approval requirement for a feature flag returns "Not Found" response
+    Given new "UpdateFeatureFlagApprovals" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"enabled": true}, "type": "feature-flag-approvals"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Set the approval requirement for a feature flag returns "OK" response
+    Given new "UpdateFeatureFlagApprovals" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"enabled": true}, "type": "feature-flag-approvals"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -1045,6 +1307,20 @@ Feature: Feature Flags
     When the request is sent
     Then the response status is 400 Bad Request
 
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Unarchive a feature flag returns "Conflict - The flag is not archived or a conflicting suggestion is pending." response
+    Given new "UnarchiveFeatureFlag" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 409 Conflict - The flag is not archived or a conflicting suggestion is pending.
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Unarchive a feature flag returns "Created - Approval is required. A suggestion was created and the change has not been applied." response
+    Given new "UnarchiveFeatureFlag" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 201 Created - Approval is required. A suggestion was created and the change has not been applied.
+
   @skip @team:ddoghq/feature-flags
   Scenario: Unarchive a feature flag returns "Not Found" response
     Given new "UnarchiveFeatureFlag" request
@@ -1067,6 +1343,22 @@ Feature: Feature Flags
     And body with value {"data": {"type": "feature-flags", "attributes": {"description": "Updated description for the feature flag", "json_schema": "{\"type\": \"object\", \"properties\": {\"enabled\": {\"type\": \"boolean\"}}}", "name": "Updated Feature Flag Name"}}}
     When the request is sent
     Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Update a feature flag returns "Conflict - A feature flag with this name already exists, a distribution channel suggestion is pending, or a pending experiment request or running approved experiment uses this flag." response
+    Given new "UpdateFeatureFlag" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Updated description for feature flag XYZ789", "distribution_channel": "ALL", "json_schema": "{\"type\": \"object\", \"properties\": {\"enabled\": {\"type\": \"boolean\"}}}", "name": "Updated Feature Flag XYZ789", "staleness_status": "PERMANENT", "tags": ["team:feature-flagging"]}, "type": "feature-flags"}}
+    When the request is sent
+    Then the response status is 409 Conflict - A feature flag with this name already exists, a distribution channel suggestion is pending, or a pending experiment request or running approved experiment uses this flag.
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Update a feature flag returns "Created - A distribution channel suggestion was created because approval is required. No flag fields were updated." response
+    Given new "UpdateFeatureFlag" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Updated description for feature flag XYZ789", "distribution_channel": "ALL", "json_schema": "{\"type\": \"object\", \"properties\": {\"enabled\": {\"type\": \"boolean\"}}}", "name": "Updated Feature Flag XYZ789", "staleness_status": "PERMANENT", "tags": ["team:feature-flagging"]}, "type": "feature-flags"}}
+    When the request is sent
+    Then the response status is 201 Created - A distribution channel suggestion was created because approval is required. No flag fields were updated.
 
   @skip @team:ddoghq/feature-flags
   Scenario: Update a feature flag returns "Not Found" response
@@ -1104,6 +1396,15 @@ Feature: Feature Flags
     And body with value {"data": {"attributes": {"name": "Variant ABC123 Updated", "value": "new_value"}, "id": "550e8400-e29b-41d4-a716-446655440002", "type": "variants"}}
     When the request is sent
     Then the response status is 409 Conflict - A pending suggestion already exists for this property.
+
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Update a variant returns "Created - Approval is required. A suggestion was created and the change has not been applied." response
+    Given new "UpdateVariantForFeatureFlag" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And request contains "variant_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"name": "Variant ABC123 Updated", "value": "new_value"}, "id": "550e8400-e29b-41d4-a716-446655440002", "type": "variants"}}
+    When the request is sent
+    Then the response status is 201 Created - Approval is required. A suggestion was created and the change has not been applied.
 
   @generated @skip @team:ddoghq/feature-flags
   Scenario: Update a variant returns "Not Found" response
@@ -1160,15 +1461,6 @@ Feature: Feature Flags
     Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/feature-flags
-  Scenario: Update targeting rules for a flag returns "Accepted - Approval required for this change" response
-    Given new "UpdateAllocationsForFeatureFlagInEnvironment" request
-    And request contains "feature_flag_id" parameter from "REPLACE.ME"
-    And request contains "environment_id" parameter from "REPLACE.ME"
-    And body with value {"data": [{"attributes": {"experiment_id": "550e8400-e29b-41d4-a716-446655440030", "exposure_schedule": {"absolute_start_time": "2025-06-13T12:00:00Z", "control_variant_id": "550e8400-e29b-41d4-a716-446655440012", "control_variant_key": "control", "id": "550e8400-e29b-41d4-a716-446655440010", "rollout_options": {"autostart": false, "selection_interval_ms": 3600000, "strategy": "UNIFORM_INTERVALS"}, "rollout_steps": [{"exposure_ratio": 0.5, "grouped_step_index": 1, "id": "550e8400-e29b-41d4-a716-446655440040", "interval_ms": 3600000, "is_pause_record": false}]}, "guardrail_metrics": [{"metric_id": "metric-error-rate", "trigger_action": "PAUSE"}], "id": "550e8400-e29b-41d4-a716-446655440020", "key": "prod-rollout", "name": "Production Rollout", "targeting_rules": [{"conditions": [{"attribute": "user_tier", "operator": "ONE_OF", "saved_filter_id": "550e8400-e29b-41d4-a716-446655440090", "value": ["premium", "enterprise"]}]}], "type": "FEATURE_GATE", "variant_weights": [{"value": 50, "variant_id": "550e8400-e29b-41d4-a716-446655440001", "variant_key": "control"}]}, "type": "allocations"}]}
-    When the request is sent
-    Then the response status is 202 Accepted - Approval required for this change
-
-  @generated @skip @team:ddoghq/feature-flags
   Scenario: Update targeting rules for a flag returns "Bad Request" response
     Given new "UpdateAllocationsForFeatureFlagInEnvironment" request
     And request contains "feature_flag_id" parameter from "REPLACE.ME"
@@ -1178,13 +1470,24 @@ Feature: Feature Flags
     Then the response status is 400 Bad Request
 
   @generated @skip @team:ddoghq/feature-flags
-  Scenario: Update targeting rules for a flag returns "Conflict" response
+  Scenario: Update targeting rules for a flag returns "Conflict - A conflicting suggestion is pending or the allocation update conflicts with the current configuration." response
     Given new "UpdateAllocationsForFeatureFlagInEnvironment" request
     And request contains "feature_flag_id" parameter from "REPLACE.ME"
     And request contains "environment_id" parameter from "REPLACE.ME"
     And body with value {"data": [{"attributes": {"experiment_id": "550e8400-e29b-41d4-a716-446655440030", "exposure_schedule": {"absolute_start_time": "2025-06-13T12:00:00Z", "control_variant_id": "550e8400-e29b-41d4-a716-446655440012", "control_variant_key": "control", "id": "550e8400-e29b-41d4-a716-446655440010", "rollout_options": {"autostart": false, "selection_interval_ms": 3600000, "strategy": "UNIFORM_INTERVALS"}, "rollout_steps": [{"exposure_ratio": 0.5, "grouped_step_index": 1, "id": "550e8400-e29b-41d4-a716-446655440040", "interval_ms": 3600000, "is_pause_record": false}]}, "guardrail_metrics": [{"metric_id": "metric-error-rate", "trigger_action": "PAUSE"}], "id": "550e8400-e29b-41d4-a716-446655440020", "key": "prod-rollout", "name": "Production Rollout", "targeting_rules": [{"conditions": [{"attribute": "user_tier", "operator": "ONE_OF", "saved_filter_id": "550e8400-e29b-41d4-a716-446655440090", "value": ["premium", "enterprise"]}]}], "type": "FEATURE_GATE", "variant_weights": [{"value": 50, "variant_id": "550e8400-e29b-41d4-a716-446655440001", "variant_key": "control"}]}, "type": "allocations"}]}
     When the request is sent
-    Then the response status is 409 Conflict
+    Then the response status is 409 Conflict - A conflicting suggestion is pending or the allocation update conflicts with the current configuration.
+
+  @skip @team:ddoghq/feature-flags
+  Scenario: Update targeting rules for a flag returns "Created - Approval is required. A suggestion was created and the change has not been applied." response
+    Given new "UpdateAllocationsForFeatureFlagInEnvironment" request
+    And request contains "feature_flag_id" parameter from "REPLACE.ME"
+    And request contains "environment_id" parameter from "REPLACE.ME"
+    And body with value {"data": [{"attributes": {"experiment_id": "550e8400-e29b-41d4-a716-446655440030", "exposure_schedule": {"absolute_start_time": "2025-06-13T12:00:00Z", "control_variant_id": "550e8400-e29b-41d4-a716-446655440012", "control_variant_key": "control", "id": "550e8400-e29b-41d4-a716-446655440010", "rollout_options": {"autostart": false, "selection_interval_ms": 3600000, "strategy": "UNIFORM_INTERVALS"}, "rollout_steps": [{"exposure_ratio": 0.5, "grouped_step_index": 1, "id": "550e8400-e29b-41d4-a716-446655440040", "interval_ms": 3600000, "is_pause_record": false}]}, "guardrail_metrics": [{"metric_id": "metric-error-rate", "trigger_action": "PAUSE"}], "id": "550e8400-e29b-41d4-a716-446655440020", "key": "prod-rollout", "name": "Production Rollout", "targeting_rules": [{"conditions": [{"attribute": "user_tier", "operator": "ONE_OF", "saved_filter_id": "550e8400-e29b-41d4-a716-446655440090", "value": ["premium", "enterprise"]}]}], "type": "FEATURE_GATE", "variant_weights": [{"value": 50, "variant_id": "550e8400-e29b-41d4-a716-446655440001", "variant_key": "control"}]}, "type": "allocations"}]}
+    When the request is sent
+    Then the response status is 201 Created - Approval is required. A suggestion was created and the change has not been applied.
+    And the response "data.type" is equal to "flag-suggestions"
+    And the response "data.attributes.lifecycle_status" is equal to "pending"
 
   @generated @skip @team:ddoghq/feature-flags
   Scenario: Update targeting rules for a flag returns "Not Found" response
