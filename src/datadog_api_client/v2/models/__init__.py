@@ -13005,6 +13005,9 @@ from datadog_api_client.v2.model.temporary_grant_request_type import TemporaryGr
 from datadog_api_client.v2.model.tenancy_config import TenancyConfig
 from datadog_api_client.v2.model.tenancy_config_data import TenancyConfigData
 from datadog_api_client.v2.model.tenancy_config_data_attributes import TenancyConfigDataAttributes
+from datadog_api_client.v2.model.tenancy_config_data_attributes_grace_resource import (
+    TenancyConfigDataAttributesGraceResource,
+)
 from datadog_api_client.v2.model.tenancy_config_data_attributes_logs_config import TenancyConfigDataAttributesLogsConfig
 from datadog_api_client.v2.model.tenancy_config_data_attributes_metrics_config import (
     TenancyConfigDataAttributesMetricsConfig,
@@ -22579,6 +22582,7 @@ __all__ = [
     "TenancyConfig",
     "TenancyConfigData",
     "TenancyConfigDataAttributes",
+    "TenancyConfigDataAttributesGraceResource",
     "TenancyConfigDataAttributesLogsConfig",
     "TenancyConfigDataAttributesMetricsConfig",
     "TenancyConfigDataAttributesRegionsConfig",

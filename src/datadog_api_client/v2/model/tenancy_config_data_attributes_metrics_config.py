@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union
+from typing import Dict, List, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -20,12 +20,14 @@ class TenancyConfigDataAttributesMetricsConfig(ModelNormal):
             "compartment_tag_filters": ([str],),
             "enabled": (bool,),
             "excluded_services": ([str],),
+            "resource_tag_filters": ({str: ([str],)},),
         }
 
     attribute_map = {
         "compartment_tag_filters": "compartment_tag_filters",
         "enabled": "enabled",
         "excluded_services": "excluded_services",
+        "resource_tag_filters": "resource_tag_filters",
     }
 
     def __init__(
@@ -33,6 +35,7 @@ class TenancyConfigDataAttributesMetricsConfig(ModelNormal):
         compartment_tag_filters: Union[List[str], UnsetType] = unset,
         enabled: Union[bool, UnsetType] = unset,
         excluded_services: Union[List[str], UnsetType] = unset,
+        resource_tag_filters: Union[Dict[str, List[str]], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -46,6 +49,9 @@ class TenancyConfigDataAttributesMetricsConfig(ModelNormal):
 
         :param excluded_services: List of OCI service names excluded from metrics collection.
         :type excluded_services: [str], optional
+
+        :param resource_tag_filters: Map of OCI service names to the resource tag filters that scope metrics collection for that service.
+        :type resource_tag_filters: {str: ([str],)}, optional
         """
         if compartment_tag_filters is not unset:
             kwargs["compartment_tag_filters"] = compartment_tag_filters
@@ -53,4 +59,6 @@ class TenancyConfigDataAttributesMetricsConfig(ModelNormal):
             kwargs["enabled"] = enabled
         if excluded_services is not unset:
             kwargs["excluded_services"] = excluded_services
+        if resource_tag_filters is not unset:
+            kwargs["resource_tag_filters"] = resource_tag_filters
         super().__init__(kwargs)
