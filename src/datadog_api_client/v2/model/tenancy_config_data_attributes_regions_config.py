@@ -8,6 +8,7 @@ from typing import List, Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -17,9 +18,9 @@ class TenancyConfigDataAttributesRegionsConfig(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "available": ([str],),
-            "disabled": ([str],),
-            "enabled": ([str],),
+            "available": ([str], none_type),
+            "disabled": ([str], none_type),
+            "enabled": ([str], none_type),
         }
 
     attribute_map = {
@@ -30,22 +31,22 @@ class TenancyConfigDataAttributesRegionsConfig(ModelNormal):
 
     def __init__(
         self_,
-        available: Union[List[str], UnsetType] = unset,
-        disabled: Union[List[str], UnsetType] = unset,
-        enabled: Union[List[str], UnsetType] = unset,
+        available: Union[List[str], none_type, UnsetType] = unset,
+        disabled: Union[List[str], none_type, UnsetType] = unset,
+        enabled: Union[List[str], none_type, UnsetType] = unset,
         **kwargs,
     ):
         """
         Region configuration for an OCI tenancy, indicating which regions are available, enabled, or disabled for data collection.
 
-        :param available: List of OCI regions available for data collection in the tenancy.
-        :type available: [str], optional
+        :param available: List of OCI regions available for data collection in the tenancy. Returns ``null`` when no regions are set.
+        :type available: [str], none_type, optional
 
-        :param disabled: List of OCI regions explicitly disabled for data collection.
-        :type disabled: [str], optional
+        :param disabled: List of OCI regions explicitly disabled for data collection. Returns ``null`` when no regions are set.
+        :type disabled: [str], none_type, optional
 
-        :param enabled: List of OCI regions enabled for data collection.
-        :type enabled: [str], optional
+        :param enabled: List of OCI regions enabled for data collection. Returns ``null`` when no regions are set.
+        :type enabled: [str], none_type, optional
         """
         if available is not unset:
             kwargs["available"] = available
