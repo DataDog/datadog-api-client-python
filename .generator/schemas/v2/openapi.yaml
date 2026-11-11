@@ -32073,15 +32073,15 @@ components:
           description: A short summary of the issue or context.
           type: string
         tags:
-          description: Tags to help categorize or filter the page.
+          description: Tags to help categorize or filter the Page.
           items:
-            description: A single tag for categorizing the page.
+            description: A single tag for categorizing the Page.
             type: string
           type: array
         target:
           $ref: "#/components/schemas/CreatePageRequestDataAttributesTarget"
         title:
-          description: The title of the page.
+          description: The title of the Page.
           example: "Service: Test is down"
           type: string
         urgency:
@@ -32120,10 +32120,10 @@ components:
           $ref: "#/components/schemas/CreatePageResponseData"
       type: object
     CreatePageResponseData:
-      description: The information returned after successfully creating a page.
+      description: The information returned after successfully creating a Page.
       properties:
         id:
-          description: The unique ID of the created page.
+          description: The unique ID of the created Page.
           type: string
         type:
           $ref: "#/components/schemas/CreatePageResponseDataType"
@@ -113723,7 +113723,7 @@ components:
       description: Details about where to reroute the On-Call Page.
       properties:
         comment:
-          description: An optional comment explaining why the page is being rerouted.
+          description: An optional comment explaining why the Page is being rerouted.
           example: Rerouting to the database team.
           type: string
         target:
@@ -219942,7 +219942,7 @@ paths:
               $ref: "#/components/schemas/CreatePageRequest"
         required: true
       responses:
-        "200":
+        "201":
           content:
             application/json:
               examples:
@@ -219953,7 +219953,7 @@ paths:
                       type: pages
               schema:
                 $ref: "#/components/schemas/CreatePageResponse"
-          description: OK.
+          description: Created.
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
       security:
@@ -220145,7 +220145,7 @@ paths:
         Acknowledges an On-Call Page.
       operationId: AcknowledgeOnCallPage
       parameters:
-        - description: The page ID.
+        - description: The Page ID.
           in: path
           name: page_id
           required: true
@@ -220154,8 +220154,8 @@ paths:
             format: uuid
             type: string
       responses:
-        "202":
-          description: Accepted.
+        "204":
+          description: No Content.
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
       security:
@@ -220247,7 +220247,7 @@ paths:
         Escalates an On-Call Page.
       operationId: EscalateOnCallPage
       parameters:
-        - description: The page ID.
+        - description: The Page ID.
           in: path
           name: page_id
           required: true
@@ -220256,8 +220256,8 @@ paths:
             format: uuid
             type: string
       responses:
-        "202":
-          description: Accepted.
+        "204":
+          description: No Content.
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
       security:
@@ -220349,7 +220349,7 @@ paths:
         Reroutes an On-Call Page.
       operationId: RerouteOnCallPage
       parameters:
-        - description: The page ID.
+        - description: The Page ID.
           in: path
           name: page_id
           required: true
@@ -220485,7 +220485,7 @@ paths:
         Resolves an On-Call Page.
       operationId: ResolveOnCallPage
       parameters:
-        - description: The page ID.
+        - description: The Page ID.
           in: path
           name: page_id
           required: true
@@ -220494,8 +220494,8 @@ paths:
             format: uuid
             type: string
       responses:
-        "202":
-          description: Accepted.
+        "204":
+          description: No Content.
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
       security:

@@ -59,13 +59,13 @@ class CreatePageRequestDataAttributes(ModelNormal):
         :param description: A short summary of the issue or context.
         :type description: str, optional
 
-        :param tags: Tags to help categorize or filter the page.
+        :param tags: Tags to help categorize or filter the Page.
         :type tags: [str], optional
 
         :param target: Information about the target to notify (such as a team or user).
         :type target: CreatePageRequestDataAttributesTarget
 
-        :param title: The title of the page.
+        :param title: The title of the Page.
         :type title: str
 
         :param urgency: On-Call Page urgency level.
