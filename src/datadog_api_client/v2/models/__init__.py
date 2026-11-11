@@ -4919,6 +4919,70 @@ from datadog_api_client.v2.model.git_hub_cloud_auth_persona_mapping_type import 
 from datadog_api_client.v2.model.git_hub_cloud_auth_persona_mappings_response import (
     GitHubCloudAuthPersonaMappingsResponse,
 )
+from datadog_api_client.v2.model.git_hub_costs_cloud_cost_metrics_integration_dataflow_response import (
+    GitHubCostsCloudCostMetricsIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.git_hub_costs_integration_account_authentication_request import (
+    GitHubCostsIntegrationAccountAuthenticationRequest,
+)
+from datadog_api_client.v2.model.git_hub_costs_integration_account_authentication_response import (
+    GitHubCostsIntegrationAccountAuthenticationResponse,
+)
+from datadog_api_client.v2.model.git_hub_costs_integration_account_authentication_update import (
+    GitHubCostsIntegrationAccountAuthenticationUpdate,
+)
+from datadog_api_client.v2.model.git_hub_costs_integration_account_bearer_token_auth_request import (
+    GitHubCostsIntegrationAccountBearerTokenAuthRequest,
+)
+from datadog_api_client.v2.model.git_hub_costs_integration_account_bearer_token_auth_response import (
+    GitHubCostsIntegrationAccountBearerTokenAuthResponse,
+)
+from datadog_api_client.v2.model.git_hub_costs_integration_account_bearer_token_auth_type import (
+    GitHubCostsIntegrationAccountBearerTokenAuthType,
+)
+from datadog_api_client.v2.model.git_hub_costs_integration_account_bearer_token_auth_update import (
+    GitHubCostsIntegrationAccountBearerTokenAuthUpdate,
+)
+from datadog_api_client.v2.model.git_hub_costs_integration_account_create_attributes import (
+    GitHubCostsIntegrationAccountCreateAttributes,
+)
+from datadog_api_client.v2.model.git_hub_costs_integration_account_create_data import (
+    GitHubCostsIntegrationAccountCreateData,
+)
+from datadog_api_client.v2.model.git_hub_costs_integration_account_create_request import (
+    GitHubCostsIntegrationAccountCreateRequest,
+)
+from datadog_api_client.v2.model.git_hub_costs_integration_account_response import GitHubCostsIntegrationAccountResponse
+from datadog_api_client.v2.model.git_hub_costs_integration_account_response_attributes import (
+    GitHubCostsIntegrationAccountResponseAttributes,
+)
+from datadog_api_client.v2.model.git_hub_costs_integration_account_response_data import (
+    GitHubCostsIntegrationAccountResponseData,
+)
+from datadog_api_client.v2.model.git_hub_costs_integration_account_settings_request import (
+    GitHubCostsIntegrationAccountSettingsRequest,
+)
+from datadog_api_client.v2.model.git_hub_costs_integration_account_settings_response import (
+    GitHubCostsIntegrationAccountSettingsResponse,
+)
+from datadog_api_client.v2.model.git_hub_costs_integration_account_settings_update import (
+    GitHubCostsIntegrationAccountSettingsUpdate,
+)
+from datadog_api_client.v2.model.git_hub_costs_integration_account_update_attributes import (
+    GitHubCostsIntegrationAccountUpdateAttributes,
+)
+from datadog_api_client.v2.model.git_hub_costs_integration_account_update_data import (
+    GitHubCostsIntegrationAccountUpdateData,
+)
+from datadog_api_client.v2.model.git_hub_costs_integration_account_update_request import (
+    GitHubCostsIntegrationAccountUpdateRequest,
+)
+from datadog_api_client.v2.model.git_hub_costs_integration_accounts_response import (
+    GitHubCostsIntegrationAccountsResponse,
+)
+from datadog_api_client.v2.model.git_hub_costs_integration_dataflows_response import (
+    GitHubCostsIntegrationDataflowsResponse,
+)
 from datadog_api_client.v2.model.git_hub_oidc_claim_patterns import GitHubOIDCClaimPatterns
 from datadog_api_client.v2.model.github_app import GithubApp
 from datadog_api_client.v2.model.github_app_github_app_id import GithubAppGithubAppId
@@ -17352,6 +17416,28 @@ __all__ = [
     "GitHubCloudAuthPersonaMappingResponse",
     "GitHubCloudAuthPersonaMappingType",
     "GitHubCloudAuthPersonaMappingsResponse",
+    "GitHubCostsCloudCostMetricsIntegrationDataflowResponse",
+    "GitHubCostsIntegrationAccountAuthenticationRequest",
+    "GitHubCostsIntegrationAccountAuthenticationResponse",
+    "GitHubCostsIntegrationAccountAuthenticationUpdate",
+    "GitHubCostsIntegrationAccountBearerTokenAuthRequest",
+    "GitHubCostsIntegrationAccountBearerTokenAuthResponse",
+    "GitHubCostsIntegrationAccountBearerTokenAuthType",
+    "GitHubCostsIntegrationAccountBearerTokenAuthUpdate",
+    "GitHubCostsIntegrationAccountCreateAttributes",
+    "GitHubCostsIntegrationAccountCreateData",
+    "GitHubCostsIntegrationAccountCreateRequest",
+    "GitHubCostsIntegrationAccountResponse",
+    "GitHubCostsIntegrationAccountResponseAttributes",
+    "GitHubCostsIntegrationAccountResponseData",
+    "GitHubCostsIntegrationAccountSettingsRequest",
+    "GitHubCostsIntegrationAccountSettingsResponse",
+    "GitHubCostsIntegrationAccountSettingsUpdate",
+    "GitHubCostsIntegrationAccountUpdateAttributes",
+    "GitHubCostsIntegrationAccountUpdateData",
+    "GitHubCostsIntegrationAccountUpdateRequest",
+    "GitHubCostsIntegrationAccountsResponse",
+    "GitHubCostsIntegrationDataflowsResponse",
     "GitHubOIDCClaimPatterns",
     "GithubApp",
     "GithubAppGithubAppId",
