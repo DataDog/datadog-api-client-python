@@ -17,6 +17,22 @@ Feature: Rum Audience Management
     Then the response status is 201 Connection created successfully
 
   @generated @skip @team:ddoghq/audience-management-backend @team:ddoghq/product-analytics-ingestion
+  Scenario: Delete a user profile returns "Bad Request" response
+    Given operation "DeleteUserProfile" enabled
+    And new "DeleteUserProfile" request
+    And request contains "user_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/audience-management-backend @team:ddoghq/product-analytics-ingestion
+  Scenario: Delete a user profile returns "Deletion accepted; the profile will be removed asynchronously" response
+    Given operation "DeleteUserProfile" enabled
+    And new "DeleteUserProfile" request
+    And request contains "user_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 202 Deletion accepted; the profile will be removed asynchronously
+
+  @generated @skip @team:ddoghq/audience-management-backend @team:ddoghq/product-analytics-ingestion
   Scenario: Delete connection returns "Connection deleted successfully" response
     Given operation "DeleteConnection" enabled
     And new "DeleteConnection" request
