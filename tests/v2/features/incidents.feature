@@ -1098,6 +1098,22 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
 
+  @team:ddoghq/incident-app
+  Scenario: Get the details of an incident includes responders with modification timestamps
+    Given operation "CreateIncident" enabled
+    And operation "GetIncident" enabled
+    And there is a valid "user" in the system
+    And there is a valid "incident_with_commander" in the system
+    And new "GetIncident" request
+    And request contains "incident_id" parameter from "incident_with_commander.data.id"
+    And request contains "include" parameter with value ["responders"]
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" has the same value as "incident_with_commander.data.id"
+    And the response "included[0].type" is equal to "incident_responders"
+    And the response "included[0].attributes" has field "modified"
+    And the response "included" has item with field "relationships.user.data.id" with value "{{ user.data.id }}"
+
   @generated @skip @team:ddoghq/incident-app
   Scenario: Get the details of an incident returns "Bad Request" response
     Given operation "GetIncident" enabled
@@ -1330,6 +1346,18 @@ Feature: Incidents
     When the request is sent
     Then the response status is 200 OK
     And the response "data.relationships.commander_user.data" is equal to null
+
+  @skip-validation @team:ddoghq/incident-app
+  Scenario: Search for incidents accepts responders include
+    Given operation "SearchIncidents" enabled
+    And new "SearchIncidents" request
+    And request contains "query" parameter with value "state:(active OR stable OR resolved)"
+    And request contains "page[size]" parameter with value 1
+    And request contains "include" parameter with value "responders"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.incidents" has length 1
+    And the response "data.attributes.incidents[0].data.type" is equal to "incidents"
 
   @generated @skip @team:ddoghq/incident-app
   Scenario: Search for incidents returns "Bad Request" response

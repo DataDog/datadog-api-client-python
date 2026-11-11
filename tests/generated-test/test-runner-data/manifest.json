@@ -7087,6 +7087,13 @@
     {
       "feature": "Incidents",
       "feature_file": "../../v2/features/incidents.feature",
+      "file": "v2/incidents/get-the-details-of-an-incident-includes-responders-with-modification-timestamps.json",
+      "scenario": "Get the details of an incident includes responders with modification timestamps",
+      "version": "v2"
+    },
+    {
+      "feature": "Incidents",
+      "feature_file": "../../v2/features/incidents.feature",
       "file": "v2/incidents/get-the-details-of-an-incident-returns-ok-response.json",
       "scenario": "Get the details of an incident returns \"OK\" response",
       "version": "v2"
@@ -7131,6 +7138,13 @@
       "feature_file": "../../v2/features/incidents.feature",
       "file": "v2/incidents/remove-commander-from-an-incident-returns-ok-response.json",
       "scenario": "Remove commander from an incident returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Incidents",
+      "feature_file": "../../v2/features/incidents.feature",
+      "file": "v2/incidents/search-for-incidents-accepts-responders-include.json",
+      "scenario": "Search for incidents accepts responders include",
       "version": "v2"
     },
     {
