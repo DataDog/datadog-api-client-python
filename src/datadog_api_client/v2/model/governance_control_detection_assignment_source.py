@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class GovernanceControlDetectionAssignmentSource(ModelSimple):
     """
-    How the detection's current assignment was determined. Possible values are `auto_resolved`, `manual`, `reassigned`, and `cleared`.
+    How the detection's current assignment was determined. Possible values are `auto_resolved`, `manual`, `reassigned`, and `cleared`. `null` when not set.
 
     :param value: Must be one of ["auto_resolved", "manual", "reassigned", "cleared"].
     :type value: str
@@ -30,6 +30,8 @@ class GovernanceControlDetectionAssignmentSource(ModelSimple):
     MANUAL: ClassVar["GovernanceControlDetectionAssignmentSource"]
     REASSIGNED: ClassVar["GovernanceControlDetectionAssignmentSource"]
     CLEARED: ClassVar["GovernanceControlDetectionAssignmentSource"]
+
+    _nullable = True
 
     @cached_property
     def openapi_types(_):

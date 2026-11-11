@@ -33,15 +33,15 @@ class GovernanceControlDetectionAttributes(ModelNormal):
         from datadog_api_client.v2.model.governance_control_detection_state import GovernanceControlDetectionState
 
         return {
-            "assigned_team": (str,),
-            "assigned_to": (str,),
+            "assigned_team": (str, none_type),
+            "assigned_to": (str, none_type),
             "assignment_source": (GovernanceControlDetectionAssignmentSource,),
             "control_id": (str,),
             "created_at": (datetime,),
             "detection_type": (str,),
-            "display_name": (str,),
-            "exception_at": (datetime,),
-            "exception_by": (str,),
+            "display_name": (str, none_type),
+            "exception_at": (datetime, none_type),
+            "exception_by": (str, none_type),
             "metadata": (
                 bool,
                 date,
@@ -54,11 +54,11 @@ class GovernanceControlDetectionAttributes(ModelNormal):
                 UUID,
                 none_type,
             ),
-            "mitigate_after": (datetime,),
-            "mitigated_at": (datetime,),
-            "priority": (int,),
+            "mitigate_after": (datetime, none_type),
+            "mitigated_at": (datetime, none_type),
+            "priority": (int, none_type),
             "resource_id": (str,),
-            "resource_type": (str,),
+            "resource_type": (str, none_type),
             "state": (GovernanceControlDetectionState,),
         }
 
@@ -83,35 +83,35 @@ class GovernanceControlDetectionAttributes(ModelNormal):
 
     def __init__(
         self_,
-        assignment_source: GovernanceControlDetectionAssignmentSource,
+        assignment_source: Union[GovernanceControlDetectionAssignmentSource, none_type],
         control_id: str,
         created_at: datetime,
         detection_type: str,
-        display_name: str,
-        priority: int,
+        display_name: Union[str, none_type],
+        priority: Union[int, none_type],
         resource_id: str,
-        resource_type: str,
+        resource_type: Union[str, none_type],
         state: GovernanceControlDetectionState,
-        assigned_team: Union[str, UnsetType] = unset,
-        assigned_to: Union[str, UnsetType] = unset,
-        exception_at: Union[datetime, UnsetType] = unset,
-        exception_by: Union[str, UnsetType] = unset,
+        assigned_team: Union[str, none_type, UnsetType] = unset,
+        assigned_to: Union[str, none_type, UnsetType] = unset,
+        exception_at: Union[datetime, none_type, UnsetType] = unset,
+        exception_by: Union[str, none_type, UnsetType] = unset,
         metadata: Union[Any, UnsetType] = unset,
-        mitigate_after: Union[datetime, UnsetType] = unset,
-        mitigated_at: Union[datetime, UnsetType] = unset,
+        mitigate_after: Union[datetime, none_type, UnsetType] = unset,
+        mitigated_at: Union[datetime, none_type, UnsetType] = unset,
         **kwargs,
     ):
         """
         The attributes of a governance control detection.
 
         :param assigned_team: The identifier of the team the detection is assigned to, if any.
-        :type assigned_team: str, optional
+        :type assigned_team: str, none_type, optional
 
         :param assigned_to: The identifier of the user the detection is assigned to, if any.
-        :type assigned_to: str, optional
+        :type assigned_to: str, none_type, optional
 
-        :param assignment_source: How the detection's current assignment was determined. Possible values are ``auto_resolved`` , ``manual`` , ``reassigned`` , and ``cleared``.
-        :type assignment_source: GovernanceControlDetectionAssignmentSource
+        :param assignment_source: How the detection's current assignment was determined. Possible values are ``auto_resolved`` , ``manual`` , ``reassigned`` , and ``cleared``. ``null`` when not set.
+        :type assignment_source: GovernanceControlDetectionAssignmentSource, none_type
 
         :param control_id: DEPRECATED: mirrors ``detection_type`` for backward compatibility; use ``detection_type``
             instead. **Deprecated**.
@@ -124,31 +124,31 @@ class GovernanceControlDetectionAttributes(ModelNormal):
         :type detection_type: str
 
         :param display_name: The human-readable name of the detected resource.
-        :type display_name: str
+        :type display_name: str, none_type
 
         :param exception_at: The date and time when the detection was marked as an exception, if applicable.
-        :type exception_at: datetime, optional
+        :type exception_at: datetime, none_type, optional
 
         :param exception_by: The identifier of the user who marked the detection as an exception, if applicable.
-        :type exception_by: str, optional
+        :type exception_by: str, none_type, optional
 
         :param metadata: Free-form metadata associated with the detection.
         :type metadata: bool, date, datetime, dict, float, int, list, str, UUID, none_type, optional
 
         :param mitigate_after: The date and time after which the detection is scheduled to be mitigated, if applicable.
-        :type mitigate_after: datetime, optional
+        :type mitigate_after: datetime, none_type, optional
 
         :param mitigated_at: The date and time when the detection was mitigated, if applicable.
-        :type mitigated_at: datetime, optional
+        :type mitigated_at: datetime, none_type, optional
 
         :param priority: The priority of the detection, if set.
-        :type priority: int
+        :type priority: int, none_type
 
         :param resource_id: The identifier of the resource the detection applies to.
         :type resource_id: str
 
         :param resource_type: The type of resource the detection applies to, for example ``api_key`` or ``dashboard``.
-        :type resource_type: str
+        :type resource_type: str, none_type
 
         :param state: The current state of the detection. Possible values are ``active`` , ``exception`` , ``mitigated`` , ``inactive`` , ``obsolete`` , ``resolved_externally`` , and ``mitigation_in_progress``.
         :type state: GovernanceControlDetectionState
