@@ -57,6 +57,7 @@ class ExperimentsExperimentV2ListDTODataAttributes(ModelNormal):
             "events_end_date": (datetime, none_type),
             "events_start_date": (datetime, none_type),
             "experiment_type": (str,),
+            "holdout_ids": ([UUID],),
             "hypothesis": (str,),
             "migration_metadata": (
                 bool,
@@ -93,6 +94,7 @@ class ExperimentsExperimentV2ListDTODataAttributes(ModelNormal):
         "events_end_date": "events_end_date",
         "events_start_date": "events_start_date",
         "experiment_type": "experiment_type",
+        "holdout_ids": "holdout_ids",
         "hypothesis": "hypothesis",
         "migration_metadata": "migration_metadata",
         "name": "name",
@@ -119,6 +121,7 @@ class ExperimentsExperimentV2ListDTODataAttributes(ModelNormal):
         events_end_date: Union[datetime, none_type, UnsetType] = unset,
         events_start_date: Union[datetime, none_type, UnsetType] = unset,
         experiment_type: Union[str, UnsetType] = unset,
+        holdout_ids: Union[List[UUID], UnsetType] = unset,
         hypothesis: Union[str, UnsetType] = unset,
         migration_metadata: Union[Any, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
@@ -163,6 +166,9 @@ class ExperimentsExperimentV2ListDTODataAttributes(ModelNormal):
 
         :param experiment_type: Kind of experiment. STANDARD is an ordinary experiment. Other values, such as CANARY and HOLDOUT, identify experiments owned by another workflow. New kinds may be added; treat unknown values as non-standard.
         :type experiment_type: str, optional
+
+        :param holdout_ids: IDs of the holdouts the experiment is attached to, in evaluation order: MANAGED holdouts first, starting with the GLOBAL holdout, followed by EXTERNAL holdouts. For a draft experiment, the list includes the GLOBAL holdout that the experiment would join if it started. ``GET /api/v2/experiments/{experiment_id}/holdouts`` returns their details.
+        :type holdout_ids: [UUID], optional
 
         :param hypothesis: Expected effect that the experiment is designed to test.
         :type hypothesis: str, optional
@@ -222,6 +228,8 @@ class ExperimentsExperimentV2ListDTODataAttributes(ModelNormal):
             kwargs["events_start_date"] = events_start_date
         if experiment_type is not unset:
             kwargs["experiment_type"] = experiment_type
+        if holdout_ids is not unset:
+            kwargs["holdout_ids"] = holdout_ids
         if hypothesis is not unset:
             kwargs["hypothesis"] = hypothesis
         if migration_metadata is not unset:

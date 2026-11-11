@@ -6121,6 +6121,13 @@
     {
       "feature": "Experiments",
       "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/list-experiment-holdouts-returns-ok-response.json",
+      "scenario": "List experiment holdouts returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
       "file": "v2/experiments/list-experiment-metric-groups-returns-ok-response.json",
       "scenario": "List experiment metric groups returns \"OK\" response",
       "version": "v2"
