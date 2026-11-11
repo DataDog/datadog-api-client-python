@@ -3142,6 +3142,12 @@
       "type": "safe"
     }
   },
+  "ListExperimentHoldouts": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListExperimentMetricGroups": {
     "tag": "Experiments",
     "undo": {

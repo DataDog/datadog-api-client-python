@@ -81,6 +81,9 @@ from datadog_api_client.v2.model.experiments_conclude_experiment_v2_request impo
     ExperimentsConcludeExperimentV2Request,
 )
 from datadog_api_client.v2.model.experiments_experiment_diagnostics_v2_dto import ExperimentsExperimentDiagnosticsV2DTO
+from datadog_api_client.v2.model.experiments_experiment_holdout_v2_dto_array import (
+    ExperimentsExperimentHoldoutV2DTOArray,
+)
 from datadog_api_client.v2.model.experiments_experiment_metric_group_v2_dto_array import (
     ExperimentsExperimentMetricGroupV2DTOArray,
 )
@@ -825,6 +828,29 @@ class ExperimentsApi:
                     "required": True,
                     "openapi_types": (UUID,),
                     "attribute": "subject_type_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_experiment_holdouts_endpoint = _Endpoint(
+            settings={
+                "response_type": (ExperimentsExperimentHoldoutV2DTOArray,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/experiments/{experiment_id}/holdouts",
+                "operation_id": "list_experiment_holdouts",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "experiment_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "experiment_id",
                     "location": "path",
                 },
             },
@@ -2195,6 +2221,23 @@ class ExperimentsApi:
         kwargs["subject_type_id"] = subject_type_id
 
         return self._get_subject_type_endpoint.call_with_http_info(**kwargs)
+
+    def list_experiment_holdouts(
+        self,
+        experiment_id: UUID,
+    ) -> ExperimentsExperimentHoldoutV2DTOArray:
+        """List experiment holdouts.
+
+        List the holdouts an experiment is attached to, in evaluation order: MANAGED holdouts first, starting with the GLOBAL holdout, followed by EXTERNAL holdouts. For a draft experiment, the response includes the GLOBAL holdout that the experiment would join if it started. The response excludes archived and deleted holdouts, and MANAGED holdouts past their analysis window. EXTERNAL holdouts are listed until they are archived. MANAGED holdouts are listed only for experiments that use a Datadog feature flag, because Datadog serves holdouts only through its flags. The order matches the experiment's ``holdout_ids`` attribute.
+
+        :param experiment_id: The UUID of the experiment.
+        :type experiment_id: UUID
+        :rtype: ExperimentsExperimentHoldoutV2DTOArray
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["experiment_id"] = experiment_id
+
+        return self._list_experiment_holdouts_endpoint.call_with_http_info(**kwargs)
 
     def list_experiment_metric_groups(
         self,

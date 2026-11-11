@@ -862,6 +862,29 @@ Feature: Experiments
     Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/experimentation
+  Scenario: List experiment holdouts returns "Malformed experiment ID (not a valid UUID)." response
+    Given new "ListExperimentHoldouts" request
+    And request contains "experiment_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Malformed experiment ID (not a valid UUID).
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: List experiment holdouts returns "No experiment with this ID exists for the organization." response
+    Given new "ListExperimentHoldouts" request
+    And request contains "experiment_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 No experiment with this ID exists for the organization.
+
+  @team:ddoghq/experimentation
+  Scenario: List experiment holdouts returns "OK" response
+    Given new "ListExperimentHoldouts" request
+    And there is a valid "experiment" in the system
+    And request contains "experiment_id" parameter from "experiment.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 0
+
+  @generated @skip @team:ddoghq/experimentation
   Scenario: List experiment metric groups returns "Malformed experiment ID." response
     Given new "ListExperimentMetricGroups" request
     And request contains "experiment_id" parameter from "REPLACE.ME"

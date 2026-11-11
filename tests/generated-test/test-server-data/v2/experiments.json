@@ -2237,6 +2237,88 @@
     },
     {
       "feature": "Experiments",
+      "frozen_at": "2026-11-11T15:51:16.342Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "ex-b11fe042126dd95f"
+                  },
+                  "type": "experiments"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/experiments",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"06af48ef-5322-7000-ba71-98a43ecc3fc0\",\"type\":\"experiments\",\"attributes\":{\"assignments_end_date\":null,\"assignments_start_date\":null,\"concluded_at\":null,\"created_at\":\"2026-11-11T15:51:17.802364Z\",\"events_end_date\":null,\"events_start_date\":null,\"experiment_type\":\"STANDARD\",\"holdout_ids\":[],\"name\":\"ex-b11fe042126dd95f\",\"pipeline_table_suffix\":\"yor8f7\",\"related_links\":[],\"results_last_updated\":null,\"split_by_properties\":[],\"status\":\"DRAFT\",\"structured_metadata\":[],\"subject_type_id\":\"06abb0e8-33b2-7001-ad2f-70568bfbf6e9\",\"tags\":[],\"teams\":[],\"updated_at\":\"2026-11-11T15:51:17.834103Z\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/experiments/06af48ef-5322-7000-ba71-98a43ecc3fc0/holdouts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/experiments/06af48ef-5322-7000-ba71-98a43ecc3fc0",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "List experiment holdouts returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
       "frozen_at": "2026-09-29T01:19:20.780Z",
       "interactions": [
         {

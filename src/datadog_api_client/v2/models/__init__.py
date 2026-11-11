@@ -4001,6 +4001,25 @@ from datadog_api_client.v2.model.experiments_experiment_diagnostics_v2_dto_data_
 from datadog_api_client.v2.model.experiments_experiment_diagnostics_v2_dto_data_type import (
     ExperimentsExperimentDiagnosticsV2DTODataType,
 )
+from datadog_api_client.v2.model.experiments_experiment_holdout_v2_dto_array import (
+    ExperimentsExperimentHoldoutV2DTOArray,
+)
+from datadog_api_client.v2.model.experiments_experiment_holdout_v2_dto_data import ExperimentsExperimentHoldoutV2DTOData
+from datadog_api_client.v2.model.experiments_experiment_holdout_v2_dto_data_attributes import (
+    ExperimentsExperimentHoldoutV2DTODataAttributes,
+)
+from datadog_api_client.v2.model.experiments_experiment_holdout_v2_dto_data_attributes_holdout_type import (
+    ExperimentsExperimentHoldoutV2DTODataAttributesHoldoutType,
+)
+from datadog_api_client.v2.model.experiments_experiment_holdout_v2_dto_data_attributes_kind import (
+    ExperimentsExperimentHoldoutV2DTODataAttributesKind,
+)
+from datadog_api_client.v2.model.experiments_experiment_holdout_v2_dto_data_attributes_state import (
+    ExperimentsExperimentHoldoutV2DTODataAttributesState,
+)
+from datadog_api_client.v2.model.experiments_experiment_holdout_v2_dto_data_type import (
+    ExperimentsExperimentHoldoutV2DTODataType,
+)
 from datadog_api_client.v2.model.experiments_experiment_metric_group_mutation_v2 import (
     ExperimentsExperimentMetricGroupMutationV2,
 )
@@ -16756,6 +16775,13 @@ __all__ = [
     "ExperimentsExperimentDiagnosticsV2DTODataAttributesResult",
     "ExperimentsExperimentDiagnosticsV2DTODataAttributesState",
     "ExperimentsExperimentDiagnosticsV2DTODataType",
+    "ExperimentsExperimentHoldoutV2DTOArray",
+    "ExperimentsExperimentHoldoutV2DTOData",
+    "ExperimentsExperimentHoldoutV2DTODataAttributes",
+    "ExperimentsExperimentHoldoutV2DTODataAttributesHoldoutType",
+    "ExperimentsExperimentHoldoutV2DTODataAttributesKind",
+    "ExperimentsExperimentHoldoutV2DTODataAttributesState",
+    "ExperimentsExperimentHoldoutV2DTODataType",
     "ExperimentsExperimentMetricGroupMutationV2",
     "ExperimentsExperimentMetricGroupMutationV2Data",
     "ExperimentsExperimentMetricGroupMutationV2DataAttributesMetricsItems",
