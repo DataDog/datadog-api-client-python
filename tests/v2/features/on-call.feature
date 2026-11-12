@@ -9,6 +9,30 @@ Feature: On-Call
     And a valid "appKeyAuth" key in the system
     And an instance of "On-Call" API
 
+  @team:ddoghq/on-call
+  Scenario: Create On-Call Page Comment returns "Bad Request" response
+    Given new "CreateOnCallPageComment" request
+    And request contains "page_id" parameter with value "00000000-0000-0000-0000-000000000000"
+    And body with value {"data": {"attributes": {"body": "Comment from the API client integration tests."}, "type": "comment"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:ddoghq/on-call
+  Scenario: Create On-Call Page Comment returns "No Content" response
+    Given new "CreateOnCallPageComment" request
+    And request contains "page_id" parameter with value "f63eb677-07ce-46ab-b2e0-80ca1ffe91bf"
+    And body with value {"data": {"attributes": {"body": "Comment from the API client integration tests."}, "id": "3c5f5b5e-3a3e-4f8c-9b1d-2f6a7e8d9c0b", "type": "comments"}}
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @team:ddoghq/on-call
+  Scenario: Create On-Call Page Comment returns "Not Found" response
+    Given new "CreateOnCallPageComment" request
+    And request contains "page_id" parameter with value "00000000-0000-0000-0000-000000000000"
+    And body with value {"data": {"attributes": {"body": "Comment from the API client integration tests."}, "type": "comments"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @generated @skip @team:ddoghq/on-call
   Scenario: Create On-Call escalation policy returns "Bad Request" response
     Given new "CreateOnCallEscalationPolicy" request

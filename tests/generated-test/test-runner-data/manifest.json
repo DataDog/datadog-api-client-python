@@ -9376,6 +9376,27 @@
     {
       "feature": "On-Call",
       "feature_file": "../../v2/features/on-call.feature",
+      "file": "v2/on-call/create-on-call-page-comment-returns-bad-request-response.json",
+      "scenario": "Create On-Call Page Comment returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "feature_file": "../../v2/features/on-call.feature",
+      "file": "v2/on-call/create-on-call-page-comment-returns-no-content-response.json",
+      "scenario": "Create On-Call Page Comment returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "feature_file": "../../v2/features/on-call.feature",
+      "file": "v2/on-call/create-on-call-page-comment-returns-not-found-response.json",
+      "scenario": "Create On-Call Page Comment returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "feature_file": "../../v2/features/on-call.feature",
       "file": "v2/on-call/create-on-call-escalation-policy-returns-created-response.json",
       "scenario": "Create On-Call escalation policy returns \"Created\" response",
       "version": "v2"

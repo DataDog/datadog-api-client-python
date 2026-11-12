@@ -3,6 +3,119 @@
   "recordings": [
     {
       "feature": "On-Call",
+      "frozen_at": "2026-11-12T09:46:05.223Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "body": "Comment from the API client integration tests."
+                  },
+                  "type": "comment"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/pages/00000000-0000-0000-0000-000000000000/comment",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"got type \\\"comment\\\" expected one of \\\"comments\\\"\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create On-Call Page Comment returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "frozen_at": "2026-11-12T09:23:49.315Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "body": "Comment from the API client integration tests."
+                  },
+                  "id": "3c5f5b5e-3a3e-4f8c-9b1d-2f6a7e8d9c0b",
+                  "type": "comments"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/pages/f63eb677-07ce-46ab-b2e0-80ca1ffe91bf/comment",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create On-Call Page Comment returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
+      "frozen_at": "2026-11-12T09:46:05.659Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "body": "Comment from the API client integration tests."
+                  },
+                  "type": "comments"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/on-call/pages/00000000-0000-0000-0000-000000000000/comment",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Create On-Call Page Comment returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "On-Call",
       "frozen_at": "2025-11-28T12:58:56.434Z",
       "interactions": [
         {

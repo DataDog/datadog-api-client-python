@@ -25,6 +25,7 @@ from datadog_api_client.v2.model.on_call_pages_response import OnCallPagesRespon
 from datadog_api_client.v2.model.on_call_pages_sort import OnCallPagesSort
 from datadog_api_client.v2.model.on_call_page_data import OnCallPageData
 from datadog_api_client.v2.model.on_call_page_response import OnCallPageResponse
+from datadog_api_client.v2.model.create_on_call_page_comment_request import CreateOnCallPageCommentRequest
 from datadog_api_client.v2.model.schedules import Schedules
 from datadog_api_client.v2.model.schedule_list_item import ScheduleListItem
 from datadog_api_client.v2.model.schedule import Schedule
@@ -81,6 +82,32 @@ class OnCallApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_on_call_page_comment_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/on-call/pages/{page_id}/comment",
+                "operation_id": "create_on_call_page_comment",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "page_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "page_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (CreateOnCallPageCommentRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -995,6 +1022,27 @@ class OnCallApi:
         kwargs["body"] = body
 
         return self._create_on_call_escalation_policy_endpoint.call_with_http_info(**kwargs)
+
+    def create_on_call_page_comment(
+        self,
+        page_id: str,
+        body: CreateOnCallPageCommentRequest,
+    ) -> None:
+        """Create On-Call Page Comment.
+
+        Add a comment to the timeline of an On-Call Page.
+
+        :param page_id: The ID of the Page, or its key.
+        :type page_id: str
+        :type body: CreateOnCallPageCommentRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["page_id"] = page_id
+
+        kwargs["body"] = body
+
+        return self._create_on_call_page_comment_endpoint.call_with_http_info(**kwargs)
 
     def create_on_call_schedule(
         self,

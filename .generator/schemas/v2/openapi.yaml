@@ -32004,6 +32004,53 @@ components:
       required:
         - type
       type: object
+    CreateOnCallPageCommentRequest:
+      description: Request to create a comment on an On-Call Page.
+      properties:
+        data:
+          $ref: "#/components/schemas/CreateOnCallPageCommentRequestData"
+      required:
+        - data
+      type: object
+    CreateOnCallPageCommentRequestAttributes:
+      description: Attributes for creating a comment on an On-Call Page.
+      properties:
+        body:
+          description: The content of the comment.
+          example: Investigating the database latency.
+          maxLength: 20000
+          minLength: 1
+          type: string
+        mentioned_user_ids:
+          description: The IDs of the users mentioned in the comment.
+          example:
+            - 00000000-0000-0000-0000-000000000001
+          items:
+            description: The ID of a mentioned user.
+            format: uuid
+            type: string
+          type: array
+      required:
+        - body
+      type: object
+    CreateOnCallPageCommentRequestData:
+      description: Data for creating a comment on an On-Call Page.
+      properties:
+        attributes:
+          $ref: "#/components/schemas/CreateOnCallPageCommentRequestAttributes"
+        id:
+          description: |-
+            A client-generated UUID that makes the request idempotent: retrying with the same ID
+            does not create a duplicate comment. If omitted or not a valid UUID, a random one is generated.
+          example: 3c5f5b5e-3a3e-4f8c-9b1d-2f6a7e8d9c0b
+          format: uuid
+          type: string
+        type:
+          $ref: "#/components/schemas/OnCallPageCommentType"
+      required:
+        - type
+        - attributes
+      type: object
     CreateOpenAPIResponse:
       description: Response for `CreateOpenAPI` operation.
       properties:
@@ -100070,6 +100117,15 @@ components:
         - id
         - type
       type: object
+    OnCallPageCommentType:
+      default: comments
+      description: "Indicates that the resource is of type `comments`."
+      enum:
+        - comments
+      example: comments
+      type: string
+      x-enum-varnames:
+        - COMMENTS
     OnCallPageData:
       description: An On-Call Page.
       properties:
@@ -221129,6 +221185,66 @@ paths:
       summary: Acknowledge On-Call Page
       tags:
         - On-Call Paging
+  /api/v2/on-call/pages/{page_id}/comment:
+    post:
+      description: Add a comment to the timeline of an On-Call Page.
+      operationId: CreateOnCallPageComment
+      parameters:
+        - description: The ID of the Page, or its key.
+          in: path
+          name: page_id
+          required: true
+          schema:
+            example: 15e74b8b-f865-48d0-bcc5-453323ed2c8f
+            type: string
+      requestBody:
+        content:
+          application/json:
+            examples:
+              default:
+                value:
+                  data:
+                    attributes:
+                      body: Investigating the database latency.
+                      mentioned_user_ids:
+                        - 00000000-0000-0000-0000-000000000001
+                    id: 3c5f5b5e-3a3e-4f8c-9b1d-2f6a7e8d9c0b
+                    type: comments
+            schema:
+              $ref: "#/components/schemas/CreateOnCallPageCommentRequest"
+        required: true
+      responses:
+        "204":
+          description: No Content
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Bad Request
+        "401":
+          $ref: "#/components/responses/UnauthorizedResponse"
+        "403":
+          $ref: "#/components/responses/ForbiddenResponse"
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Not Found
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      security:
+        - apiKeyAuth: []
+          appKeyAuth: []
+        - AuthZ: []
+      summary: Create On-Call Page Comment
+      tags:
+        - On-Call
+      "x-permission":
+        operator: AND
+        permissions:
+          - on_call_respond
   /api/v2/on-call/pages/{page_id}/escalate:
     post:
       description: |-
