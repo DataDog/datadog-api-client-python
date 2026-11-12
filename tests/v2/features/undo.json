@@ -245,6 +245,18 @@
       "type": "safe"
     }
   },
+  "ListAgentHealthIssues": {
+    "tag": "Agent Health",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetAgentHealthIssue": {
+    "tag": "Agent Health",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListAwsScanOptions": {
     "tag": "Agentless Scanning",
     "undo": {
