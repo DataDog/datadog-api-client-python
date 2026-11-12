@@ -1643,6 +1643,84 @@ from datadog_api_client.v2.model.change_request_update_request import ChangeRequ
 from datadog_api_client.v2.model.change_request_user_relationship import ChangeRequestUserRelationship
 from datadog_api_client.v2.model.change_request_user_relationship_data import ChangeRequestUserRelationshipData
 from datadog_api_client.v2.model.chargeback_breakdown import ChargebackBreakdown
+from datadog_api_client.v2.model.chat_gpt_enterprise_agent_console_integration_dataflow_request import (
+    ChatGPTEnterpriseAgentConsoleIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.chat_gpt_enterprise_agent_console_integration_dataflow_response import (
+    ChatGPTEnterpriseAgentConsoleIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.chat_gpt_enterprise_cloud_cost_data_integration_dataflow_request import (
+    ChatGPTEnterpriseCloudCostDataIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.chat_gpt_enterprise_cloud_cost_data_integration_dataflow_response import (
+    ChatGPTEnterpriseCloudCostDataIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.chat_gpt_enterprise_integration_account_authentication_request import (
+    ChatGPTEnterpriseIntegrationAccountAuthenticationRequest,
+)
+from datadog_api_client.v2.model.chat_gpt_enterprise_integration_account_authentication_response import (
+    ChatGPTEnterpriseIntegrationAccountAuthenticationResponse,
+)
+from datadog_api_client.v2.model.chat_gpt_enterprise_integration_account_authentication_update import (
+    ChatGPTEnterpriseIntegrationAccountAuthenticationUpdate,
+)
+from datadog_api_client.v2.model.chat_gpt_enterprise_integration_account_bearer_token_auth_request import (
+    ChatGPTEnterpriseIntegrationAccountBearerTokenAuthRequest,
+)
+from datadog_api_client.v2.model.chat_gpt_enterprise_integration_account_bearer_token_auth_response import (
+    ChatGPTEnterpriseIntegrationAccountBearerTokenAuthResponse,
+)
+from datadog_api_client.v2.model.chat_gpt_enterprise_integration_account_bearer_token_auth_type import (
+    ChatGPTEnterpriseIntegrationAccountBearerTokenAuthType,
+)
+from datadog_api_client.v2.model.chat_gpt_enterprise_integration_account_bearer_token_auth_update import (
+    ChatGPTEnterpriseIntegrationAccountBearerTokenAuthUpdate,
+)
+from datadog_api_client.v2.model.chat_gpt_enterprise_integration_account_create_attributes import (
+    ChatGPTEnterpriseIntegrationAccountCreateAttributes,
+)
+from datadog_api_client.v2.model.chat_gpt_enterprise_integration_account_create_data import (
+    ChatGPTEnterpriseIntegrationAccountCreateData,
+)
+from datadog_api_client.v2.model.chat_gpt_enterprise_integration_account_create_request import (
+    ChatGPTEnterpriseIntegrationAccountCreateRequest,
+)
+from datadog_api_client.v2.model.chat_gpt_enterprise_integration_account_response import (
+    ChatGPTEnterpriseIntegrationAccountResponse,
+)
+from datadog_api_client.v2.model.chat_gpt_enterprise_integration_account_response_attributes import (
+    ChatGPTEnterpriseIntegrationAccountResponseAttributes,
+)
+from datadog_api_client.v2.model.chat_gpt_enterprise_integration_account_response_data import (
+    ChatGPTEnterpriseIntegrationAccountResponseData,
+)
+from datadog_api_client.v2.model.chat_gpt_enterprise_integration_account_settings_request import (
+    ChatGPTEnterpriseIntegrationAccountSettingsRequest,
+)
+from datadog_api_client.v2.model.chat_gpt_enterprise_integration_account_settings_response import (
+    ChatGPTEnterpriseIntegrationAccountSettingsResponse,
+)
+from datadog_api_client.v2.model.chat_gpt_enterprise_integration_account_settings_update import (
+    ChatGPTEnterpriseIntegrationAccountSettingsUpdate,
+)
+from datadog_api_client.v2.model.chat_gpt_enterprise_integration_account_update_attributes import (
+    ChatGPTEnterpriseIntegrationAccountUpdateAttributes,
+)
+from datadog_api_client.v2.model.chat_gpt_enterprise_integration_account_update_data import (
+    ChatGPTEnterpriseIntegrationAccountUpdateData,
+)
+from datadog_api_client.v2.model.chat_gpt_enterprise_integration_account_update_request import (
+    ChatGPTEnterpriseIntegrationAccountUpdateRequest,
+)
+from datadog_api_client.v2.model.chat_gpt_enterprise_integration_accounts_response import (
+    ChatGPTEnterpriseIntegrationAccountsResponse,
+)
+from datadog_api_client.v2.model.chat_gpt_enterprise_integration_dataflows_request import (
+    ChatGPTEnterpriseIntegrationDataflowsRequest,
+)
+from datadog_api_client.v2.model.chat_gpt_enterprise_integration_dataflows_response import (
+    ChatGPTEnterpriseIntegrationDataflowsResponse,
+)
 from datadog_api_client.v2.model.circle_ciapi_key import CircleCIAPIKey
 from datadog_api_client.v2.model.circle_ciapi_key_api_token import CircleCIAPIKeyApiToken
 from datadog_api_client.v2.model.circle_ciapi_key_type import CircleCIAPIKeyType
@@ -15241,6 +15319,32 @@ __all__ = [
     "ChangeRequestUserRelationship",
     "ChangeRequestUserRelationshipData",
     "ChargebackBreakdown",
+    "ChatGPTEnterpriseAgentConsoleIntegrationDataflowRequest",
+    "ChatGPTEnterpriseAgentConsoleIntegrationDataflowResponse",
+    "ChatGPTEnterpriseCloudCostDataIntegrationDataflowRequest",
+    "ChatGPTEnterpriseCloudCostDataIntegrationDataflowResponse",
+    "ChatGPTEnterpriseIntegrationAccountAuthenticationRequest",
+    "ChatGPTEnterpriseIntegrationAccountAuthenticationResponse",
+    "ChatGPTEnterpriseIntegrationAccountAuthenticationUpdate",
+    "ChatGPTEnterpriseIntegrationAccountBearerTokenAuthRequest",
+    "ChatGPTEnterpriseIntegrationAccountBearerTokenAuthResponse",
+    "ChatGPTEnterpriseIntegrationAccountBearerTokenAuthType",
+    "ChatGPTEnterpriseIntegrationAccountBearerTokenAuthUpdate",
+    "ChatGPTEnterpriseIntegrationAccountCreateAttributes",
+    "ChatGPTEnterpriseIntegrationAccountCreateData",
+    "ChatGPTEnterpriseIntegrationAccountCreateRequest",
+    "ChatGPTEnterpriseIntegrationAccountResponse",
+    "ChatGPTEnterpriseIntegrationAccountResponseAttributes",
+    "ChatGPTEnterpriseIntegrationAccountResponseData",
+    "ChatGPTEnterpriseIntegrationAccountSettingsRequest",
+    "ChatGPTEnterpriseIntegrationAccountSettingsResponse",
+    "ChatGPTEnterpriseIntegrationAccountSettingsUpdate",
+    "ChatGPTEnterpriseIntegrationAccountUpdateAttributes",
+    "ChatGPTEnterpriseIntegrationAccountUpdateData",
+    "ChatGPTEnterpriseIntegrationAccountUpdateRequest",
+    "ChatGPTEnterpriseIntegrationAccountsResponse",
+    "ChatGPTEnterpriseIntegrationDataflowsRequest",
+    "ChatGPTEnterpriseIntegrationDataflowsResponse",
     "CircleCIAPIKey",
     "CircleCIAPIKeyApiToken",
     "CircleCIAPIKeyType",

@@ -4266,6 +4266,43 @@
       "type": "safe"
     }
   },
+  "ListChatGPTEnterpriseIntegrationAccounts": {
+    "tag": "ChatGPT Enterprise Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateChatGPTEnterpriseIntegrationAccount": {
+    "tag": "ChatGPT Enterprise Integration",
+    "undo": {
+      "operationId": "DeleteChatGPTEnterpriseIntegrationAccount",
+      "parameters": [
+        {
+          "name": "account_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteChatGPTEnterpriseIntegrationAccount": {
+    "tag": "ChatGPT Enterprise Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetChatGPTEnterpriseIntegrationAccount": {
+    "tag": "ChatGPT Enterprise Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateChatGPTEnterpriseIntegrationAccount": {
+    "tag": "ChatGPT Enterprise Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListDatabricksIntegrationAccounts": {
     "tag": "Databricks Integration",
     "undo": {
