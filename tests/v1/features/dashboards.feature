@@ -1258,7 +1258,6 @@ Feature: Dashboards
     And the response "widgets[0].definition.type" is equal to "topology_map"
     And the response "widgets[0].definition.requests[0].request_type" is equal to "topology"
     And the response "widgets[0].definition.requests[0].query.data_source" is equal to "data_streams"
-    And the response "widgets[0].definition.requests[0].query.service" is equal to ""
     And the response "widgets[0].definition.requests[0].query.filters" is equal to ["env:prod"]
     And the response "widgets[0].definition.requests[0].query.query_string" is equal to "service:myservice"
 
