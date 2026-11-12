@@ -50,26 +50,6 @@ class CSMThreatsApi:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
 
-        self._create_cloud_workload_security_agent_rule_endpoint = _Endpoint(
-            settings={
-                "response_type": (CloudWorkloadSecurityAgentRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/security_monitoring/cloud_workload_security/agent_rules",
-                "operation_id": "create_cloud_workload_security_agent_rule",
-                "http_method": "POST",
-                "version": "v2",
-            },
-            params_map={
-                "body": {
-                    "required": True,
-                    "openapi_types": (CloudWorkloadSecurityAgentRuleCreateRequest,),
-                    "location": "body",
-                },
-            },
-            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
-            api_client=api_client,
-        )
-
         self._create_csm_threats_agent_policy_endpoint = _Endpoint(
             settings={
                 "response_type": (CloudWorkloadSecurityAgentPolicyResponse,),
@@ -107,29 +87,6 @@ class CSMThreatsApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
-            api_client=api_client,
-        )
-
-        self._delete_cloud_workload_security_agent_rule_endpoint = _Endpoint(
-            settings={
-                "response_type": None,
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/security_monitoring/cloud_workload_security/agent_rules/{agent_rule_id}",
-                "operation_id": "delete_cloud_workload_security_agent_rule",
-                "http_method": "DELETE",
-                "version": "v2",
-            },
-            params_map={
-                "agent_rule_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "agent_rule_id",
-                    "location": "path",
-                },
-            },
-            headers_map={
-                "accept": ["*/*"],
-            },
             api_client=api_client,
         )
 
@@ -328,32 +285,6 @@ class CSMThreatsApi:
             api_client=api_client,
         )
 
-        self._update_cloud_workload_security_agent_rule_endpoint = _Endpoint(
-            settings={
-                "response_type": (CloudWorkloadSecurityAgentRuleResponse,),
-                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
-                "endpoint_path": "/api/v2/security_monitoring/cloud_workload_security/agent_rules/{agent_rule_id}",
-                "operation_id": "update_cloud_workload_security_agent_rule",
-                "http_method": "PATCH",
-                "version": "v2",
-            },
-            params_map={
-                "agent_rule_id": {
-                    "required": True,
-                    "openapi_types": (str,),
-                    "attribute": "agent_rule_id",
-                    "location": "path",
-                },
-                "body": {
-                    "required": True,
-                    "openapi_types": (CloudWorkloadSecurityAgentRuleUpdateRequest,),
-                    "location": "body",
-                },
-            },
-            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
-            api_client=api_client,
-        )
-
         self._update_csm_threats_agent_policy_endpoint = _Endpoint(
             settings={
                 "response_type": (CloudWorkloadSecurityAgentPolicyResponse,),
@@ -411,25 +342,6 @@ class CSMThreatsApi:
             api_client=api_client,
         )
 
-    def create_cloud_workload_security_agent_rule(
-        self,
-        body: CloudWorkloadSecurityAgentRuleCreateRequest,
-    ) -> CloudWorkloadSecurityAgentRuleResponse:
-        """Create a Workload Protection agent rule (US1-FED).
-
-        Create a new agent rule with the given parameters.
-
-        **Note** : This endpoint should only be used for the Government (US1-FED) site.
-
-        :param body: The definition of the new agent rule
-        :type body: CloudWorkloadSecurityAgentRuleCreateRequest
-        :rtype: CloudWorkloadSecurityAgentRuleResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["body"] = body
-
-        return self._create_cloud_workload_security_agent_rule_endpoint.call_with_http_info(**kwargs)
-
     def create_csm_threats_agent_policy(
         self,
         body: CloudWorkloadSecurityAgentPolicyCreateRequest,
@@ -467,25 +379,6 @@ class CSMThreatsApi:
         kwargs["body"] = body
 
         return self._create_csm_threats_agent_rule_endpoint.call_with_http_info(**kwargs)
-
-    def delete_cloud_workload_security_agent_rule(
-        self,
-        agent_rule_id: str,
-    ) -> None:
-        """Delete a Workload Protection agent rule (US1-FED).
-
-        Delete a specific agent rule.
-
-        **Note** : This endpoint should only be used for the Government (US1-FED) site.
-
-        :param agent_rule_id: The ID of the Agent rule
-        :type agent_rule_id: str
-        :rtype: None
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["agent_rule_id"] = agent_rule_id
-
-        return self._delete_cloud_workload_security_agent_rule_endpoint.call_with_http_info(**kwargs)
 
     def delete_csm_threats_agent_policy(
         self,
@@ -660,31 +553,6 @@ class CSMThreatsApi:
             kwargs["policy_id"] = policy_id
 
         return self._list_csm_threats_agent_rules_endpoint.call_with_http_info(**kwargs)
-
-    def update_cloud_workload_security_agent_rule(
-        self,
-        agent_rule_id: str,
-        body: CloudWorkloadSecurityAgentRuleUpdateRequest,
-    ) -> CloudWorkloadSecurityAgentRuleResponse:
-        """Update a Workload Protection agent rule (US1-FED).
-
-        Update a specific agent rule.
-        Returns the agent rule object when the request is successful.
-
-        **Note** : This endpoint should only be used for the Government (US1-FED) site.
-
-        :param agent_rule_id: The ID of the Agent rule
-        :type agent_rule_id: str
-        :param body: New definition of the agent rule
-        :type body: CloudWorkloadSecurityAgentRuleUpdateRequest
-        :rtype: CloudWorkloadSecurityAgentRuleResponse
-        """
-        kwargs: Dict[str, Any] = {}
-        kwargs["agent_rule_id"] = agent_rule_id
-
-        kwargs["body"] = body
-
-        return self._update_cloud_workload_security_agent_rule_endpoint.call_with_http_info(**kwargs)
 
     def update_csm_threats_agent_policy(
         self,

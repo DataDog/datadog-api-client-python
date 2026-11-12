@@ -9545,35 +9545,10 @@
       "type": "safe"
     }
   },
-  "CreateCloudWorkloadSecurityAgentRule": {
-    "tag": "CSM Threats",
-    "undo": {
-      "operationId": "DeleteCloudWorkloadSecurityAgentRule",
-      "parameters": [
-        {
-          "name": "agent_rule_id",
-          "source": "data.id"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
-  "DeleteCloudWorkloadSecurityAgentRule": {
-    "tag": "CSM Threats",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
   "GetCloudWorkloadSecurityAgentRule": {
     "tag": "CSM Threats",
     "undo": {
       "type": "safe"
-    }
-  },
-  "UpdateCloudWorkloadSecurityAgentRule": {
-    "tag": "CSM Threats",
-    "undo": {
-      "type": "idempotent"
     }
   },
   "ListSecurityMonitoringCriticalAssets": {

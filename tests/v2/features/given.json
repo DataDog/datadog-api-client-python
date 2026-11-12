@@ -1753,18 +1753,6 @@
     "parameters": [
       {
         "name": "body",
-        "value": "{\n  \"data\": {\n    \"type\": \"agent_rule\",\n    \"attributes\": {\n      \"name\": \"{{ unique_lower_alnum }}\",\n      \"description\": \"My Agent rule\",\n      \"expression\": \"exec.file.name == \\\"sh\\\"\",\n      \"enabled\": true\n     }\n  }\n}"
-      }
-    ],
-    "step": "there is a valid \"agent_rule\" in the system",
-    "key": "agent_rule",
-    "tag": "CSM Threats",
-    "operationId": "CreateCloudWorkloadSecurityAgentRule"
-  },
-  {
-    "parameters": [
-      {
-        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"critical_assets\",\n    \"attributes\": {\n      \"query\":\"security:monitoring\",\n      \"severity\":\"medium\",\n      \"rule_query\":\"source:k9\",\n      \"tags\":[\"team:security\"]\n    }\n  }\n}"
       }
     ],
