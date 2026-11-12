@@ -70,11 +70,11 @@ class MetricTagConfigurationAttributes(ModelNormal):
             Defaults to false. Requires ``tags`` property.
         :type exclude_tags_mode: bool, optional
 
-        :param include_percentiles: Toggle to include or exclude percentile aggregations for distribution metrics.
-            Only present when the ``metric_type`` is ``distribution``.
+        :param include_percentiles: Whether percentile aggregations are enabled for a ``distribution`` , ``exponential_histogram`` ,
+            or ``explicit_histogram`` metric.
         :type include_percentiles: bool, optional
 
-        :param metric_type: The metric's type.
+        :param metric_type: The metric's type. Contact your Customer Success Manager for instructions on using native histogram types.
         :type metric_type: MetricTagConfigurationMetricTypes, optional
 
         :param modified_at: Timestamp when the tag configuration was last modified.
