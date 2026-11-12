@@ -1,0 +1,100 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Create a heatgrid widget with bin labels and formatted row labels",
+  "operation_id": "CreateDashboard",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Dashboard",
+        "type": "object"
+      },
+      "source": "dashboards_json_payload/heatgrid_text_formats_widget.json",
+      "value": {
+        "layout_type": "ordered",
+        "title": "{{ unique }}",
+        "widgets": [
+          {
+            "definition": {
+              "color": {
+                "bins": [
+                  {
+                    "color": "#00FF00",
+                    "label": "Normal"
+                  },
+                  {
+                    "color": "#FF0000",
+                    "label": "High",
+                    "lower_bound": 80
+                  }
+                ],
+                "mode": "discrete",
+                "source": "custom"
+              },
+              "label_column": {
+                "text_formats": [
+                  {
+                    "match": {
+                      "type": "starts_with",
+                      "value": "api-"
+                    },
+                    "replace": {
+                      "substring": "api-",
+                      "type": "substring",
+                      "with": ""
+                    }
+                  },
+                  {
+                    "match": {
+                      "type": "is",
+                      "value": "unknown"
+                    },
+                    "replace": {
+                      "type": "all",
+                      "with": "Other"
+                    }
+                  }
+                ]
+              },
+              "requests": [
+                {
+                  "formulas": [
+                    {
+                      "formula": "query1"
+                    }
+                  ],
+                  "queries": [
+                    {
+                      "data_source": "metrics",
+                      "name": "query1",
+                      "query": "avg:system.cpu.user{*} by {host}"
+                    }
+                  ],
+                  "response_format": "timeseries"
+                }
+              ],
+              "sort": {
+                "nesting_display": "flat",
+                "sort_by": {
+                  "order": "asc",
+                  "property": "label"
+                }
+              },
+              "type": "heatgrid"
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/dashboard"
+  },
+  "scenario": "Create a heatgrid widget with bin labels and formatted row labels",
+  "schema_version": 1,
+  "version": "v1"
+}
