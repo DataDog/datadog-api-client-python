@@ -8677,6 +8677,85 @@ from datadog_api_client.v2.model.open_aiapi_key_api_token import OpenAIAPIKeyApi
 from datadog_api_client.v2.model.open_aiapi_key_type import OpenAIAPIKeyType
 from datadog_api_client.v2.model.open_aiapi_key_update import OpenAIAPIKeyUpdate
 from datadog_api_client.v2.model.open_aiapi_key_update_api_token import OpenAIAPIKeyUpdateApiToken
+from datadog_api_client.v2.model.open_ai_codex_dora_integration_dataflow_request import (
+    OpenAICodexDoraIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.open_ai_codex_dora_integration_dataflow_response import (
+    OpenAICodexDoraIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.open_ai_codex_integration_account_authentication_request import (
+    OpenAICodexIntegrationAccountAuthenticationRequest,
+)
+from datadog_api_client.v2.model.open_ai_codex_integration_account_authentication_response import (
+    OpenAICodexIntegrationAccountAuthenticationResponse,
+)
+from datadog_api_client.v2.model.open_ai_codex_integration_account_authentication_update import (
+    OpenAICodexIntegrationAccountAuthenticationUpdate,
+)
+from datadog_api_client.v2.model.open_ai_codex_integration_account_bearer_token_auth_request import (
+    OpenAICodexIntegrationAccountBearerTokenAuthRequest,
+)
+from datadog_api_client.v2.model.open_ai_codex_integration_account_bearer_token_auth_response import (
+    OpenAICodexIntegrationAccountBearerTokenAuthResponse,
+)
+from datadog_api_client.v2.model.open_ai_codex_integration_account_bearer_token_auth_type import (
+    OpenAICodexIntegrationAccountBearerTokenAuthType,
+)
+from datadog_api_client.v2.model.open_ai_codex_integration_account_bearer_token_auth_update import (
+    OpenAICodexIntegrationAccountBearerTokenAuthUpdate,
+)
+from datadog_api_client.v2.model.open_ai_codex_integration_account_create_attributes import (
+    OpenAICodexIntegrationAccountCreateAttributes,
+)
+from datadog_api_client.v2.model.open_ai_codex_integration_account_create_data import (
+    OpenAICodexIntegrationAccountCreateData,
+)
+from datadog_api_client.v2.model.open_ai_codex_integration_account_create_request import (
+    OpenAICodexIntegrationAccountCreateRequest,
+)
+from datadog_api_client.v2.model.open_ai_codex_integration_account_response import OpenAICodexIntegrationAccountResponse
+from datadog_api_client.v2.model.open_ai_codex_integration_account_response_attributes import (
+    OpenAICodexIntegrationAccountResponseAttributes,
+)
+from datadog_api_client.v2.model.open_ai_codex_integration_account_response_data import (
+    OpenAICodexIntegrationAccountResponseData,
+)
+from datadog_api_client.v2.model.open_ai_codex_integration_account_settings_request import (
+    OpenAICodexIntegrationAccountSettingsRequest,
+)
+from datadog_api_client.v2.model.open_ai_codex_integration_account_settings_response import (
+    OpenAICodexIntegrationAccountSettingsResponse,
+)
+from datadog_api_client.v2.model.open_ai_codex_integration_account_settings_update import (
+    OpenAICodexIntegrationAccountSettingsUpdate,
+)
+from datadog_api_client.v2.model.open_ai_codex_integration_account_update_attributes import (
+    OpenAICodexIntegrationAccountUpdateAttributes,
+)
+from datadog_api_client.v2.model.open_ai_codex_integration_account_update_data import (
+    OpenAICodexIntegrationAccountUpdateData,
+)
+from datadog_api_client.v2.model.open_ai_codex_integration_account_update_request import (
+    OpenAICodexIntegrationAccountUpdateRequest,
+)
+from datadog_api_client.v2.model.open_ai_codex_integration_accounts_response import (
+    OpenAICodexIntegrationAccountsResponse,
+)
+from datadog_api_client.v2.model.open_ai_codex_integration_dataflows_request import (
+    OpenAICodexIntegrationDataflowsRequest,
+)
+from datadog_api_client.v2.model.open_ai_codex_integration_dataflows_response import (
+    OpenAICodexIntegrationDataflowsResponse,
+)
+from datadog_api_client.v2.model.open_ai_codex_metrics_integration_dataflow_response import (
+    OpenAICodexMetricsIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.open_ai_codex_turn_metrics_integration_dataflow_request import (
+    OpenAICodexTurnMetricsIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.open_ai_codex_turn_metrics_integration_dataflow_response import (
+    OpenAICodexTurnMetricsIntegrationDataflowResponse,
+)
 from datadog_api_client.v2.model.open_ai_credentials import OpenAICredentials
 from datadog_api_client.v2.model.open_ai_credentials_update import OpenAICredentialsUpdate
 from datadog_api_client.v2.model.open_ai_integration import OpenAIIntegration
@@ -19715,6 +19794,33 @@ __all__ = [
     "OpenAIAPIKeyType",
     "OpenAIAPIKeyUpdate",
     "OpenAIAPIKeyUpdateApiToken",
+    "OpenAICodexDoraIntegrationDataflowRequest",
+    "OpenAICodexDoraIntegrationDataflowResponse",
+    "OpenAICodexIntegrationAccountAuthenticationRequest",
+    "OpenAICodexIntegrationAccountAuthenticationResponse",
+    "OpenAICodexIntegrationAccountAuthenticationUpdate",
+    "OpenAICodexIntegrationAccountBearerTokenAuthRequest",
+    "OpenAICodexIntegrationAccountBearerTokenAuthResponse",
+    "OpenAICodexIntegrationAccountBearerTokenAuthType",
+    "OpenAICodexIntegrationAccountBearerTokenAuthUpdate",
+    "OpenAICodexIntegrationAccountCreateAttributes",
+    "OpenAICodexIntegrationAccountCreateData",
+    "OpenAICodexIntegrationAccountCreateRequest",
+    "OpenAICodexIntegrationAccountResponse",
+    "OpenAICodexIntegrationAccountResponseAttributes",
+    "OpenAICodexIntegrationAccountResponseData",
+    "OpenAICodexIntegrationAccountSettingsRequest",
+    "OpenAICodexIntegrationAccountSettingsResponse",
+    "OpenAICodexIntegrationAccountSettingsUpdate",
+    "OpenAICodexIntegrationAccountUpdateAttributes",
+    "OpenAICodexIntegrationAccountUpdateData",
+    "OpenAICodexIntegrationAccountUpdateRequest",
+    "OpenAICodexIntegrationAccountsResponse",
+    "OpenAICodexIntegrationDataflowsRequest",
+    "OpenAICodexIntegrationDataflowsResponse",
+    "OpenAICodexMetricsIntegrationDataflowResponse",
+    "OpenAICodexTurnMetricsIntegrationDataflowRequest",
+    "OpenAICodexTurnMetricsIntegrationDataflowResponse",
     "OpenAICredentials",
     "OpenAICredentialsUpdate",
     "OpenAIIntegration",
