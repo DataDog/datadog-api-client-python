@@ -3,14 +3,12 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import List, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
-    unset,
-    UnsetType,
 )
 
 
@@ -46,9 +44,9 @@ class AiGatewayRoutingRuleAttributes(ModelNormal):
     def __init__(
         self_,
         created_at: datetime,
+        route_id: int,
         tiers: List[AiGatewayRoutingRuleTier],
         updated_at: datetime,
-        route_id: Union[int, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -57,8 +55,8 @@ class AiGatewayRoutingRuleAttributes(ModelNormal):
         :param created_at: Time when the resource was created.
         :type created_at: datetime
 
-        :param route_id: Stable numeric route identifier used by scoped policies.
-        :type route_id: int, optional
+        :param route_id: Stable numeric route identifier used by scoped policies and ``ai-gateway-route`` restriction policies.
+        :type route_id: int
 
         :param tiers:
         :type tiers: [AiGatewayRoutingRuleTier]
@@ -66,10 +64,9 @@ class AiGatewayRoutingRuleAttributes(ModelNormal):
         :param updated_at: Time when the resource was last updated.
         :type updated_at: datetime
         """
-        if route_id is not unset:
-            kwargs["route_id"] = route_id
         super().__init__(kwargs)
 
         self_.created_at = created_at
+        self_.route_id = route_id
         self_.tiers = tiers
         self_.updated_at = updated_at

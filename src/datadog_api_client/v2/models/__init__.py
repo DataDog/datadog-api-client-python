@@ -618,6 +618,8 @@ from datadog_api_client.v2.model.ai_gateway_rate_limit_usage_list_response impor
 from datadog_api_client.v2.model.ai_gateway_rate_limit_usage_resource import AiGatewayRateLimitUsageResource
 from datadog_api_client.v2.model.ai_gateway_rate_limit_usage_type import AiGatewayRateLimitUsageType
 from datadog_api_client.v2.model.ai_gateway_restricted_details_meta import AiGatewayRestrictedDetailsMeta
+from datadog_api_client.v2.model.ai_gateway_routing_classifier import AiGatewayRoutingClassifier
+from datadog_api_client.v2.model.ai_gateway_routing_classifier_request import AiGatewayRoutingClassifierRequest
 from datadog_api_client.v2.model.ai_gateway_routing_reasoning_level import AiGatewayRoutingReasoningLevel
 from datadog_api_client.v2.model.ai_gateway_routing_rule_attributes import AiGatewayRoutingRuleAttributes
 from datadog_api_client.v2.model.ai_gateway_routing_rule_create_attributes import AiGatewayRoutingRuleCreateAttributes
@@ -14436,6 +14438,8 @@ __all__ = [
     "AiGatewayRateLimitUsageResource",
     "AiGatewayRateLimitUsageType",
     "AiGatewayRestrictedDetailsMeta",
+    "AiGatewayRoutingClassifier",
+    "AiGatewayRoutingClassifierRequest",
     "AiGatewayRoutingReasoningLevel",
     "AiGatewayRoutingRuleAttributes",
     "AiGatewayRoutingRuleCreateAttributes",

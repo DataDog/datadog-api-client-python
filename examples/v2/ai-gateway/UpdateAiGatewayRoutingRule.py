@@ -1,5 +1,5 @@
 """
-Replace an AI Gateway routing rule returns "OK" response
+Update an AI Gateway routing rule returns "OK" response
 """
 
 from os import environ
@@ -8,6 +8,7 @@ from datadog_api_client.v2.api.ai_gateway_api import AIGatewayApi
 from datadog_api_client.v2.model.ai_gateway_nullable_routing_rule_tier_ordering import (
     AiGatewayNullableRoutingRuleTierOrdering,
 )
+from datadog_api_client.v2.model.ai_gateway_routing_classifier_request import AiGatewayRoutingClassifierRequest
 from datadog_api_client.v2.model.ai_gateway_routing_reasoning_level import AiGatewayRoutingReasoningLevel
 from datadog_api_client.v2.model.ai_gateway_routing_rule_replace_attributes import AiGatewayRoutingRuleReplaceAttributes
 from datadog_api_client.v2.model.ai_gateway_routing_rule_replace_data import AiGatewayRoutingRuleReplaceData
@@ -16,20 +17,34 @@ from datadog_api_client.v2.model.ai_gateway_routing_rule_target_request import A
 from datadog_api_client.v2.model.ai_gateway_routing_rule_target_type import AiGatewayRoutingRuleTargetType
 from datadog_api_client.v2.model.ai_gateway_routing_rule_tier_request import AiGatewayRoutingRuleTierRequest
 from datadog_api_client.v2.model.ai_gateway_routing_rule_type import AiGatewayRoutingRuleType
+from datetime import datetime
+from dateutil.tz import tzutc
 
 body = AiGatewayRoutingRuleReplaceRequest(
     data=AiGatewayRoutingRuleReplaceData(
         attributes=AiGatewayRoutingRuleReplaceAttributes(
+            expected_updated_at=datetime(2026, 8, 24, 12, 0, tzinfo=tzutc()),
+            removed_target_ids=[
+                901,
+            ],
             tiers=[
                 AiGatewayRoutingRuleTierRequest(
+                    classifier=AiGatewayRoutingClassifierRequest(
+                        confidence_threshold=0.5,
+                        context="Requests come from engineers.",
+                        model="gpt-6-luna",
+                        provider="openai",
+                    ),
                     ordering=AiGatewayNullableRoutingRuleTierOrdering.CONFIGURED,
                     targets=[
                         AiGatewayRoutingRuleTargetRequest(
+                            default=False,
                             id=901,
                             model="gpt-5.2-codex",
                             model_id=101,
                             provider="prod-us",
                             reasoning_level=AiGatewayRoutingReasoningLevel.MEDIUM,
+                            rubric="Short factual questions.",
                             slug="coding-fallback",
                             type=AiGatewayRoutingRuleTargetType.MODEL,
                             weight=70,

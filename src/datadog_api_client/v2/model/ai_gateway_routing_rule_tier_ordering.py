@@ -16,16 +16,18 @@ class AiGatewayRoutingRuleTierOrdering(ModelSimple):
     """
     How a tier orders its targets.
 
-    :param value: Must be one of ["configured", "weighted_affinity"].
+    :param value: Must be one of ["configured", "weighted_affinity", "classified"].
     :type value: str
     """
 
     allowed_values = {
         "configured",
         "weighted_affinity",
+        "classified",
     }
     CONFIGURED: ClassVar["AiGatewayRoutingRuleTierOrdering"]
     WEIGHTED_AFFINITY: ClassVar["AiGatewayRoutingRuleTierOrdering"]
+    CLASSIFIED: ClassVar["AiGatewayRoutingRuleTierOrdering"]
 
     @cached_property
     def openapi_types(_):
@@ -36,3 +38,4 @@ class AiGatewayRoutingRuleTierOrdering(ModelSimple):
 
 AiGatewayRoutingRuleTierOrdering.CONFIGURED = AiGatewayRoutingRuleTierOrdering("configured")
 AiGatewayRoutingRuleTierOrdering.WEIGHTED_AFFINITY = AiGatewayRoutingRuleTierOrdering("weighted_affinity")
+AiGatewayRoutingRuleTierOrdering.CLASSIFIED = AiGatewayRoutingRuleTierOrdering("classified")
