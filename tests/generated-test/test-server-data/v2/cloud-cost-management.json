@@ -1838,6 +1838,116 @@
     },
     {
       "feature": "Cloud Cost Management",
+      "frozen_at": "2026-11-09T15:50:58.386Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "ai_provider": true
+                  },
+                  "id": "00000000-0000-0000-0000-000000000000",
+                  "type": "cost_metadata"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/cost/custom_costs/00000000-0000-0000-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"file not found: 00000000-0000-0000-0000-000000000000\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Update Custom Costs file returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "frozen_at": "2026-11-09T15:50:59.765Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": [
+                {
+                  "BilledCost": 250,
+                  "BillingCurrency": "USD",
+                  "ChargeDescription": "my_description",
+                  "ChargePeriodEnd": "2026-10-31",
+                  "ChargePeriodStart": "2026-10-01",
+                  "ProviderName": "my_provider"
+                }
+              ]
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/cost/custom_costs",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"565b55e5-0fe7-4c65-93b0-0eb9046150ea\",\"type\":\"cost_metadata\",\"attributes\":{\"ai_provider\":false,\"billed_cost\":250,\"billing_currency\":\"USD\",\"charge_period\":{\"start\":1790812800000,\"end\":1793404800000},\"name\":\"data.json\",\"provider_names\":[\"my_provider\"],\"status\":\"UPLOADING\",\"uploaded_at\":1794239459982,\"uploaded_by\":{\"name\":\"C\u00e9dric Van Rompay\",\"icon\":\"https://secure.gravatar.com/avatar/fb5991514ab909a799dd362ad990f4f8?d=retro\\u0026s=48\",\"email\":\"cedric.vanrompay@datadoghq.com\"}}},\"meta\":{\"version\":\"1.0\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Accepted",
+            "status": 202
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "ai_provider": true
+                  },
+                  "id": "565b55e5-0fe7-4c65-93b0-0eb9046150ea",
+                  "type": "cost_metadata"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/cost/custom_costs/565b55e5-0fe7-4c65-93b0-0eb9046150ea",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"565b55e5-0fe7-4c65-93b0-0eb9046150ea\",\"type\":\"cost_metadata\",\"attributes\":{\"ai_provider\":true,\"billed_cost\":250,\"billing_currency\":\"USD\",\"charge_period\":{\"start\":1790812800000,\"end\":1793404800000},\"name\":\"data.json\",\"provider_names\":[\"my_provider\"],\"status\":\"PROCESSING\",\"uploaded_at\":1794239459982,\"uploaded_by\":{\"name\":\"C\u00e9dric Van Rompay\",\"icon\":\"https://secure.gravatar.com/avatar/fb5991514ab909a799dd362ad990f4f8?d=retro\\u0026s=48\",\"email\":\"cedric.vanrompay@datadoghq.com\"}}},\"meta\":{\"version\":\"1.0\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Update Custom Costs file returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
       "frozen_at": "2025-06-23T12:09:42.232Z",
       "interactions": [
         {

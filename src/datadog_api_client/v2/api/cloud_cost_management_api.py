@@ -57,6 +57,7 @@ from datadog_api_client.v2.model.custom_costs_file_list_response import CustomCo
 from datadog_api_client.v2.model.custom_costs_file_upload_response import CustomCostsFileUploadResponse
 from datadog_api_client.v2.model.custom_costs_file_line_item import CustomCostsFileLineItem
 from datadog_api_client.v2.model.custom_costs_file_get_response import CustomCostsFileGetResponse
+from datadog_api_client.v2.model.custom_costs_file_update_request import CustomCostsFileUpdateRequest
 from datadog_api_client.v2.model.gcp_usage_cost_configs_response import GCPUsageCostConfigsResponse
 from datadog_api_client.v2.model.gcp_usage_cost_config_response import GCPUsageCostConfigResponse
 from datadog_api_client.v2.model.gcp_usage_cost_config_post_request import GCPUsageCostConfigPostRequest
@@ -1989,6 +1990,32 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
+        self._update_custom_costs_file_endpoint = _Endpoint(
+            settings={
+                "response_type": (CustomCostsFileUploadResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/custom_costs/{file_id}",
+                "operation_id": "update_custom_costs_file",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "file_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "file_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (CustomCostsFileUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_tag_pipelines_ruleset_endpoint = _Endpoint(
             settings={
                 "response_type": (RulesetResp,),
@@ -3806,6 +3833,27 @@ class CloudCostManagementApi:
         kwargs["body"] = body
 
         return self._update_custom_allocation_rule_endpoint.call_with_http_info(**kwargs)
+
+    def update_custom_costs_file(
+        self,
+        file_id: str,
+        body: CustomCostsFileUpdateRequest,
+    ) -> CustomCostsFileUploadResponse:
+        """Update Custom Costs file.
+
+        Mark whether a Custom Costs file holds AI provider costs. Datadog then recomputes the costs for the months that the file covers.
+
+        :param file_id: File ID.
+        :type file_id: str
+        :type body: CustomCostsFileUpdateRequest
+        :rtype: CustomCostsFileUploadResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["file_id"] = file_id
+
+        kwargs["body"] = body
+
+        return self._update_custom_costs_file_endpoint.call_with_http_info(**kwargs)
 
     def update_tag_pipelines_ruleset(
         self,
