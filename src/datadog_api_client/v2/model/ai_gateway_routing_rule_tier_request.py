@@ -15,6 +15,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.ai_gateway_routing_classifier_request import AiGatewayRoutingClassifierRequest
     from datadog_api_client.v2.model.ai_gateway_nullable_routing_rule_tier_ordering import (
         AiGatewayNullableRoutingRuleTierOrdering,
     )
@@ -30,17 +31,20 @@ class AiGatewayRoutingRuleTierRequest(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.ai_gateway_routing_classifier_request import AiGatewayRoutingClassifierRequest
         from datadog_api_client.v2.model.ai_gateway_nullable_routing_rule_tier_ordering import (
             AiGatewayNullableRoutingRuleTierOrdering,
         )
         from datadog_api_client.v2.model.ai_gateway_routing_rule_target_request import AiGatewayRoutingRuleTargetRequest
 
         return {
+            "classifier": (AiGatewayRoutingClassifierRequest,),
             "ordering": (AiGatewayNullableRoutingRuleTierOrdering,),
             "targets": ([AiGatewayRoutingRuleTargetRequest],),
         }
 
     attribute_map = {
+        "classifier": "classifier",
         "ordering": "ordering",
         "targets": "targets",
     }
@@ -48,18 +52,24 @@ class AiGatewayRoutingRuleTierRequest(ModelNormal):
     def __init__(
         self_,
         targets: List[AiGatewayRoutingRuleTargetRequest],
+        classifier: Union[AiGatewayRoutingClassifierRequest, none_type, UnsetType] = unset,
         ordering: Union[AiGatewayNullableRoutingRuleTierOrdering, none_type, UnsetType] = unset,
         **kwargs,
     ):
         """
         Routing fallback tier used to create or replace a rule.
 
-        :param ordering: How a tier orders its targets. Omitted or null defaults to configured, which preserves target order. The weighted_affinity ordering distributes first-choice assignments by relative target weights and accepts only model targets with an explicit provider, without repeated provider and model pairs in the same tier.
+        :param classifier: Decision model and settings for a classified tier. Omission preserves the saved classifier; null clears it. Newly selected models require provider View.
+        :type classifier: AiGatewayRoutingClassifierRequest, none_type, optional
+
+        :param ordering: How a tier orders its targets. Omission preserves the saved same-position tier on update; null resets to configured. New tiers default to configured. The weighted_affinity ordering distributes first-choice assignments by relative target weights and accepts only model targets with an explicit provider, without repeated provider and model pairs in the same tier. The ``classified`` ordering is allowed only in the first tier and requires a classifier, destination rubrics, and one default destination.
         :type ordering: AiGatewayNullableRoutingRuleTierOrdering, none_type, optional
 
         :param targets:
         :type targets: [AiGatewayRoutingRuleTargetRequest]
         """
+        if classifier is not unset:
+            kwargs["classifier"] = classifier
         if ordering is not unset:
             kwargs["ordering"] = ordering
         super().__init__(kwargs)

@@ -49,6 +49,7 @@ class AiGatewayModelGroupAttributes(ModelNormal):
             "providers": ([AiGatewayModelGroupProvider],),
             "revision": (int,),
             "routing_rules": ([AiGatewayModelGroupRoutingRule],),
+            "routing_rules_restricted": (bool,),
             "updated_at": (datetime,),
         }
 
@@ -63,7 +64,11 @@ class AiGatewayModelGroupAttributes(ModelNormal):
         "providers": "providers",
         "revision": "revision",
         "routing_rules": "routing_rules",
+        "routing_rules_restricted": "routing_rules_restricted",
         "updated_at": "updated_at",
+    }
+    read_only_vars = {
+        "routing_rules_restricted",
     }
 
     def __init__(
@@ -79,6 +84,7 @@ class AiGatewayModelGroupAttributes(ModelNormal):
         routing_rules: List[AiGatewayModelGroupRoutingRule],
         updated_at: datetime,
         revision: Union[int, UnsetType] = unset,
+        routing_rules_restricted: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -114,11 +120,16 @@ class AiGatewayModelGroupAttributes(ModelNormal):
         :param routing_rules:
         :type routing_rules: [AiGatewayModelGroupRoutingRule]
 
+        :param routing_rules_restricted: Whether some saved routes are hidden from the caller. Omit routing_rule_slugs to preserve all memberships; replacing the visible selection also preserves saved hidden memberships.
+        :type routing_rules_restricted: bool, optional
+
         :param updated_at: Time when the resource was last updated.
         :type updated_at: datetime
         """
         if revision is not unset:
             kwargs["revision"] = revision
+        if routing_rules_restricted is not unset:
+            kwargs["routing_rules_restricted"] = routing_rules_restricted
         super().__init__(kwargs)
 
         self_.allow_fast_mode = allow_fast_mode

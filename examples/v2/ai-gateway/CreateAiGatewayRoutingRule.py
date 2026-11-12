@@ -8,6 +8,7 @@ from datadog_api_client.v2.api.ai_gateway_api import AIGatewayApi
 from datadog_api_client.v2.model.ai_gateway_nullable_routing_rule_tier_ordering import (
     AiGatewayNullableRoutingRuleTierOrdering,
 )
+from datadog_api_client.v2.model.ai_gateway_routing_classifier_request import AiGatewayRoutingClassifierRequest
 from datadog_api_client.v2.model.ai_gateway_routing_reasoning_level import AiGatewayRoutingReasoningLevel
 from datadog_api_client.v2.model.ai_gateway_routing_rule_create_attributes import AiGatewayRoutingRuleCreateAttributes
 from datadog_api_client.v2.model.ai_gateway_routing_rule_create_data import AiGatewayRoutingRuleCreateData
@@ -23,14 +24,22 @@ body = AiGatewayRoutingRuleCreateRequest(
             slug="coding",
             tiers=[
                 AiGatewayRoutingRuleTierRequest(
+                    classifier=AiGatewayRoutingClassifierRequest(
+                        confidence_threshold=0.5,
+                        context="Requests come from engineers.",
+                        model="gpt-6-luna",
+                        provider="openai",
+                    ),
                     ordering=AiGatewayNullableRoutingRuleTierOrdering.CONFIGURED,
                     targets=[
                         AiGatewayRoutingRuleTargetRequest(
+                            default=False,
                             id=901,
                             model="gpt-5.2-codex",
                             model_id=101,
                             provider="prod-us",
                             reasoning_level=AiGatewayRoutingReasoningLevel.MEDIUM,
+                            rubric="Short factual questions.",
                             slug="coding-fallback",
                             type=AiGatewayRoutingRuleTargetType.MODEL,
                             weight=70,

@@ -27,6 +27,7 @@ class JSONAPIErrorItem(ModelNormal):
         from datadog_api_client.v2.model.jsonapi_error_item_source import JSONAPIErrorItemSource
 
         return {
+            "code": (str,),
             "detail": (str,),
             "meta": (
                 {
@@ -50,6 +51,7 @@ class JSONAPIErrorItem(ModelNormal):
         }
 
     attribute_map = {
+        "code": "code",
         "detail": "detail",
         "meta": "meta",
         "source": "source",
@@ -59,6 +61,7 @@ class JSONAPIErrorItem(ModelNormal):
 
     def __init__(
         self_,
+        code: Union[str, UnsetType] = unset,
         detail: Union[str, UnsetType] = unset,
         meta: Union[Dict[str, Any], UnsetType] = unset,
         source: Union[JSONAPIErrorItemSource, UnsetType] = unset,
@@ -68,6 +71,9 @@ class JSONAPIErrorItem(ModelNormal):
     ):
         """
         API error response body
+
+        :param code: An application-specific error code.
+        :type code: str, optional
 
         :param detail: A human-readable explanation specific to this occurrence of the error.
         :type detail: str, optional
@@ -84,6 +90,8 @@ class JSONAPIErrorItem(ModelNormal):
         :param title: Short human-readable summary of the error.
         :type title: str, optional
         """
+        if code is not unset:
+            kwargs["code"] = code
         if detail is not unset:
             kwargs["detail"] = detail
         if meta is not unset:

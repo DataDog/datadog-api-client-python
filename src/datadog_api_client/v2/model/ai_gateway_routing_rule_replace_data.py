@@ -44,7 +44,7 @@ class AiGatewayRoutingRuleReplaceData(ModelNormal):
         """
         Data used to replace an AI Gateway routing rule.
 
-        :param attributes: Attributes used to replace an AI Gateway routing rule.
+        :param attributes: Partial route update. Omit tiers to preserve the entire graph, including hidden selections. Saved target IDs retain omitted settings. Replacing tiers must explicitly retain or remove every hidden occurrence.
         :type attributes: AiGatewayRoutingRuleReplaceAttributes
 
         :param id: Resource identifier.

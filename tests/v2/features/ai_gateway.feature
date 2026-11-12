@@ -208,7 +208,7 @@ Feature: AI Gateway
   Scenario: Create an AI Gateway routing rule returns "Bad Request" response
     Given operation "CreateAiGatewayRoutingRule" enabled
     And new "CreateAiGatewayRoutingRule" request
-    And body with value {"data": {"attributes": {"slug": "coding", "tiers": [{"ordering": "configured", "targets": [{"id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "type": "routing-rules"}}
+    And body with value {"data": {"attributes": {"slug": "coding", "tiers": [{"classifier": {"confidence_threshold": 0.5, "context": "Requests come from engineers.", "model": "gpt-6-luna", "provider": "openai"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Short factual questions.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "type": "routing-rules"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -216,7 +216,7 @@ Feature: AI Gateway
   Scenario: Create an AI Gateway routing rule returns "Conflict" response
     Given operation "CreateAiGatewayRoutingRule" enabled
     And new "CreateAiGatewayRoutingRule" request
-    And body with value {"data": {"attributes": {"slug": "coding", "tiers": [{"ordering": "configured", "targets": [{"id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "type": "routing-rules"}}
+    And body with value {"data": {"attributes": {"slug": "coding", "tiers": [{"classifier": {"confidence_threshold": 0.5, "context": "Requests come from engineers.", "model": "gpt-6-luna", "provider": "openai"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Short factual questions.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "type": "routing-rules"}}
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -224,7 +224,7 @@ Feature: AI Gateway
   Scenario: Create an AI Gateway routing rule returns "Created" response
     Given operation "CreateAiGatewayRoutingRule" enabled
     And new "CreateAiGatewayRoutingRule" request
-    And body with value {"data": {"attributes": {"slug": "coding", "tiers": [{"ordering": "configured", "targets": [{"id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "type": "routing-rules"}}
+    And body with value {"data": {"attributes": {"slug": "coding", "tiers": [{"classifier": {"confidence_threshold": 0.5, "context": "Requests come from engineers.", "model": "gpt-6-luna", "provider": "openai"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Short factual questions.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "type": "routing-rules"}}
     When the request is sent
     Then the response status is 201 Created
 
@@ -816,42 +816,6 @@ Feature: AI Gateway
     Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/frontier-prd-gateway
-  Scenario: Replace an AI Gateway routing rule returns "Bad Request" response
-    Given operation "UpdateAiGatewayRoutingRule" enabled
-    And new "UpdateAiGatewayRoutingRule" request
-    And request contains "slug" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"tiers": [{"ordering": "configured", "targets": [{"id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "id": "coding", "type": "routing-rules"}}
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:ddoghq/frontier-prd-gateway
-  Scenario: Replace an AI Gateway routing rule returns "Conflict" response
-    Given operation "UpdateAiGatewayRoutingRule" enabled
-    And new "UpdateAiGatewayRoutingRule" request
-    And request contains "slug" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"tiers": [{"ordering": "configured", "targets": [{"id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "id": "coding", "type": "routing-rules"}}
-    When the request is sent
-    Then the response status is 409 Conflict
-
-  @generated @skip @team:ddoghq/frontier-prd-gateway
-  Scenario: Replace an AI Gateway routing rule returns "Not Found" response
-    Given operation "UpdateAiGatewayRoutingRule" enabled
-    And new "UpdateAiGatewayRoutingRule" request
-    And request contains "slug" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"tiers": [{"ordering": "configured", "targets": [{"id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "id": "coding", "type": "routing-rules"}}
-    When the request is sent
-    Then the response status is 404 Not Found
-
-  @generated @skip @team:ddoghq/frontier-prd-gateway
-  Scenario: Replace an AI Gateway routing rule returns "OK" response
-    Given operation "UpdateAiGatewayRoutingRule" enabled
-    And new "UpdateAiGatewayRoutingRule" request
-    And request contains "slug" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"tiers": [{"ordering": "configured", "targets": [{"id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "id": "coding", "type": "routing-rules"}}
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip @team:ddoghq/frontier-prd-gateway
   Scenario: Reset a budget instance's spend returns "Bad Request" response
     Given operation "ResetAiGatewayBudgetInstanceSpend" enabled
     And new "ResetAiGatewayBudgetInstanceSpend" request
@@ -1070,5 +1034,41 @@ Feature: AI Gateway
     And new "UpdateAiGatewayRateLimit" request
     And request contains "id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"input_tokens_per_minute": null, "mode": "ALERT", "output_tokens_per_minute": null, "requests_per_minute": null, "tags": null, "team_id": null, "user_id": null}, "id": "11111111-1111-1111-1111-111111111111", "type": "rate-limits"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/frontier-prd-gateway
+  Scenario: Update an AI Gateway routing rule returns "Bad Request" response
+    Given operation "UpdateAiGatewayRoutingRule" enabled
+    And new "UpdateAiGatewayRoutingRule" request
+    And request contains "slug" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"expected_updated_at": "2026-08-24T12:00:00Z", "removed_target_ids": [901], "tiers": [{"classifier": {"confidence_threshold": 0.5, "context": "Requests come from engineers.", "model": "gpt-6-luna", "provider": "openai"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Short factual questions.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "id": "coding", "type": "routing-rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/frontier-prd-gateway
+  Scenario: Update an AI Gateway routing rule returns "Conflict" response
+    Given operation "UpdateAiGatewayRoutingRule" enabled
+    And new "UpdateAiGatewayRoutingRule" request
+    And request contains "slug" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"expected_updated_at": "2026-08-24T12:00:00Z", "removed_target_ids": [901], "tiers": [{"classifier": {"confidence_threshold": 0.5, "context": "Requests come from engineers.", "model": "gpt-6-luna", "provider": "openai"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Short factual questions.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "id": "coding", "type": "routing-rules"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:ddoghq/frontier-prd-gateway
+  Scenario: Update an AI Gateway routing rule returns "Not Found" response
+    Given operation "UpdateAiGatewayRoutingRule" enabled
+    And new "UpdateAiGatewayRoutingRule" request
+    And request contains "slug" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"expected_updated_at": "2026-08-24T12:00:00Z", "removed_target_ids": [901], "tiers": [{"classifier": {"confidence_threshold": 0.5, "context": "Requests come from engineers.", "model": "gpt-6-luna", "provider": "openai"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Short factual questions.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "id": "coding", "type": "routing-rules"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/frontier-prd-gateway
+  Scenario: Update an AI Gateway routing rule returns "OK" response
+    Given operation "UpdateAiGatewayRoutingRule" enabled
+    And new "UpdateAiGatewayRoutingRule" request
+    And request contains "slug" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"expected_updated_at": "2026-08-24T12:00:00Z", "removed_target_ids": [901], "tiers": [{"classifier": {"confidence_threshold": 0.5, "context": "Requests come from engineers.", "model": "gpt-6-luna", "provider": "openai"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Short factual questions.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "id": "coding", "type": "routing-rules"}}
     When the request is sent
     Then the response status is 200 OK
