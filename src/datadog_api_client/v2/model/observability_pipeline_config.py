@@ -14,6 +14,9 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.observability_pipeline_anomaly_detection import (
+        ObservabilityPipelineAnomalyDetection,
+    )
     from datadog_api_client.v2.model.observability_pipeline_config_destination_item import (
         ObservabilityPipelineConfigDestinationItem,
     )
@@ -161,6 +164,9 @@ if TYPE_CHECKING:
 class ObservabilityPipelineConfig(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.observability_pipeline_anomaly_detection import (
+            ObservabilityPipelineAnomalyDetection,
+        )
         from datadog_api_client.v2.model.observability_pipeline_config_destination_item import (
             ObservabilityPipelineConfigDestinationItem,
         )
@@ -175,7 +181,9 @@ class ObservabilityPipelineConfig(ModelNormal):
         )
 
         return {
+            "anomaly_detection": (ObservabilityPipelineAnomalyDetection,),
             "destinations": ([ObservabilityPipelineConfigDestinationItem],),
+            "end_to_end_acknowledgements": (bool,),
             "pipeline_type": (ObservabilityPipelineConfigPipelineType,),
             "processor_groups": ([ObservabilityPipelineConfigProcessorGroup],),
             "processors": ([ObservabilityPipelineConfigProcessorGroup],),
@@ -184,7 +192,9 @@ class ObservabilityPipelineConfig(ModelNormal):
         }
 
     attribute_map = {
+        "anomaly_detection": "anomaly_detection",
         "destinations": "destinations",
+        "end_to_end_acknowledgements": "end_to_end_acknowledgements",
         "pipeline_type": "pipeline_type",
         "processor_groups": "processor_groups",
         "processors": "processors",
@@ -254,6 +264,8 @@ class ObservabilityPipelineConfig(ModelNormal):
                 ObservabilityPipelinePrometheusRemoteWriteSource,
             ]
         ],
+        anomaly_detection: Union[ObservabilityPipelineAnomalyDetection, UnsetType] = unset,
+        end_to_end_acknowledgements: Union[bool, UnsetType] = unset,
         pipeline_type: Union[ObservabilityPipelineConfigPipelineType, UnsetType] = unset,
         processor_groups: Union[List[ObservabilityPipelineConfigProcessorGroup], UnsetType] = unset,
         processors: Union[List[ObservabilityPipelineConfigProcessorGroup], UnsetType] = unset,
@@ -263,8 +275,16 @@ class ObservabilityPipelineConfig(ModelNormal):
         """
         Specifies the pipeline's configuration, including its sources, processors, and destinations.
 
+        :param anomaly_detection: Anomaly detection settings for the pipeline.
+            Only applies to ``logs`` pipelines. Requires Observability Pipelines Worker 2.25 or later.
+        :type anomaly_detection: ObservabilityPipelineAnomalyDetection, optional
+
         :param destinations: A list of destination components where processed logs are sent.
         :type destinations: [ObservabilityPipelineConfigDestinationItem]
+
+        :param end_to_end_acknowledgements: Set to ``true`` to enable end-to-end acknowledgments for the pipeline.
+            Requires Observability Pipelines Worker 2.14 or later.
+        :type end_to_end_acknowledgements: bool, optional
 
         :param pipeline_type: The type of data being ingested. Defaults to ``logs`` if not specified.
         :type pipeline_type: ObservabilityPipelineConfigPipelineType, optional
@@ -287,6 +307,10 @@ class ObservabilityPipelineConfig(ModelNormal):
             See `Upgrade Your Filter Queries to the New Search Syntax <https://docs.datadoghq.com/observability_pipelines/guide/upgrade_your_filter_queries_to_the_new_search_syntax/>`_ for more information.
         :type use_legacy_search_syntax: bool, optional
         """
+        if anomaly_detection is not unset:
+            kwargs["anomaly_detection"] = anomaly_detection
+        if end_to_end_acknowledgements is not unset:
+            kwargs["end_to_end_acknowledgements"] = end_to_end_acknowledgements
         if pipeline_type is not unset:
             kwargs["pipeline_type"] = pipeline_type
         if processor_groups is not unset:
