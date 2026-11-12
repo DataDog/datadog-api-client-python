@@ -36,7 +36,6 @@ class GovernanceControlDetectionAttributes(ModelNormal):
             "assigned_team": (str,),
             "assigned_to": (str,),
             "assignment_source": (GovernanceControlDetectionAssignmentSource,),
-            "control_id": (str,),
             "created_at": (datetime,),
             "detection_type": (str,),
             "display_name": (str,),
@@ -66,7 +65,6 @@ class GovernanceControlDetectionAttributes(ModelNormal):
         "assigned_team": "assigned_team",
         "assigned_to": "assigned_to",
         "assignment_source": "assignment_source",
-        "control_id": "control_id",
         "created_at": "created_at",
         "detection_type": "detection_type",
         "display_name": "display_name",
@@ -84,7 +82,6 @@ class GovernanceControlDetectionAttributes(ModelNormal):
     def __init__(
         self_,
         assignment_source: GovernanceControlDetectionAssignmentSource,
-        control_id: str,
         created_at: datetime,
         detection_type: str,
         display_name: str,
@@ -112,10 +109,6 @@ class GovernanceControlDetectionAttributes(ModelNormal):
 
         :param assignment_source: How the detection's current assignment was determined. Possible values are ``auto_resolved`` , ``manual`` , ``reassigned`` , and ``cleared``.
         :type assignment_source: GovernanceControlDetectionAssignmentSource
-
-        :param control_id: DEPRECATED: mirrors ``detection_type`` for backward compatibility; use ``detection_type``
-            instead. **Deprecated**.
-        :type control_id: str
 
         :param created_at: The date and time when the detection was created.
         :type created_at: datetime
@@ -170,7 +163,6 @@ class GovernanceControlDetectionAttributes(ModelNormal):
         super().__init__(kwargs)
 
         self_.assignment_source = assignment_source
-        self_.control_id = control_id
         self_.created_at = created_at
         self_.detection_type = detection_type
         self_.display_name = display_name
