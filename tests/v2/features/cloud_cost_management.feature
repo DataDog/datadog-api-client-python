@@ -1082,6 +1082,24 @@ Feature: Cloud Cost Management
     Then the response status is 200 OK
     And the response "data.type" is equal to "azure_uc_configs"
 
+  @team:ddoghq/cloud-cost-management
+  Scenario: Update Custom Costs file returns "Not Found" response
+    Given new "UpdateCustomCostsFile" request
+    And request contains "file_id" parameter with value "00000000-0000-0000-0000-000000000000"
+    And body with value {"data": {"attributes": {"ai_provider": true}, "id": "00000000-0000-0000-0000-000000000000", "type": "cost_metadata"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:ddoghq/cloud-cost-management
+  Scenario: Update Custom Costs file returns "OK" response
+    Given there is a valid "custom_costs_file" in the system
+    And new "UpdateCustomCostsFile" request
+    And request contains "file_id" parameter from "custom_costs_file.data.id"
+    And body with value {"data": {"attributes": {"ai_provider": true}, "id": "{{ custom_costs_file.data.id }}", "type": "cost_metadata"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.ai_provider" is equal to true
+
   @generated @skip @team:ddoghq/cloud-cost-management
   Scenario: Update Google Cloud Usage Cost config returns "Bad Request" response
     Given new "UpdateCostGCPUsageCostConfig" request

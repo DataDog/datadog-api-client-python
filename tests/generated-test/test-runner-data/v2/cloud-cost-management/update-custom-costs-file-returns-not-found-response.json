@@ -1,0 +1,51 @@
+{
+  "api": "CloudCostManagement",
+  "expected_status": 404,
+  "feature": "Cloud Cost Management",
+  "id": "v2/Cloud Cost Management/Update Custom Costs file returns \"Not Found\" response",
+  "operation_id": "UpdateCustomCostsFile",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CustomCostsFileUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "ai_provider": true
+          },
+          "id": "00000000-0000-0000-0000-000000000000",
+          "type": "cost_metadata"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "file_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "00000000-0000-0000-0000-000000000000"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/cost/custom_costs/{file_id}"
+  },
+  "scenario": "Update Custom Costs file returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

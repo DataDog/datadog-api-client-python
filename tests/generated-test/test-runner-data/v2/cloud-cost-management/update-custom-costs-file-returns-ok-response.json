@@ -1,0 +1,51 @@
+{
+  "api": "CloudCostManagement",
+  "expected_status": 200,
+  "feature": "Cloud Cost Management",
+  "id": "v2/Cloud Cost Management/Update Custom Costs file returns \"OK\" response",
+  "operation_id": "UpdateCustomCostsFile",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CustomCostsFileUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "ai_provider": true
+          },
+          "id": "{{ custom_costs_file.data.id }}",
+          "type": "cost_metadata"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "file_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "custom_costs_file.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/cost/custom_costs/{file_id}"
+  },
+  "scenario": "Update Custom Costs file returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

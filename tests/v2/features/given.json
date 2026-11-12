@@ -341,6 +341,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "[{\"ProviderName\": \"my_provider\", \"ChargePeriodStart\": \"2026-10-01\", \"ChargePeriodEnd\": \"2026-10-31\", \"ChargeDescription\": \"my_description\", \"BilledCost\": 250, \"BillingCurrency\": \"USD\"}]"
+      }
+    ],
+    "step": "there is a valid \"custom_costs_file\" in the system",
+    "key": "custom_costs_file",
+    "tag": "Cloud Cost Management",
+    "operationId": "UploadCustomCostsFile"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\"\n    },\n    \"type\": \"application_keys\"\n  }\n}"
       }
     ],

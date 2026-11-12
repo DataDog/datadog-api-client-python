@@ -4644,6 +4644,20 @@
     {
       "feature": "Cloud Cost Management",
       "feature_file": "../../v2/features/cloud_cost_management.feature",
+      "file": "v2/cloud-cost-management/update-custom-costs-file-returns-not-found-response.json",
+      "scenario": "Update Custom Costs file returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "feature_file": "../../v2/features/cloud_cost_management.feature",
+      "file": "v2/cloud-cost-management/update-custom-costs-file-returns-ok-response.json",
+      "scenario": "Update Custom Costs file returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Cost Management",
+      "feature_file": "../../v2/features/cloud_cost_management.feature",
       "file": "v2/cloud-cost-management/update-google-cloud-usage-cost-config-returns-not-found-response.json",
       "scenario": "Update Google Cloud Usage Cost config returns \"Not Found\" response",
       "version": "v2"

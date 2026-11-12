@@ -1939,6 +1939,12 @@
       "type": "safe"
     }
   },
+  "UpdateCustomCostsFile": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListCostGCPUsageCostConfigs": {
     "tag": "Cloud Cost Management",
     "undo": {
