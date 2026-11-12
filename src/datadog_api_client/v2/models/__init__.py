@@ -268,6 +268,18 @@ from datadog_api_client.v2.model.agent_health_host_issues_attributes import Agen
 from datadog_api_client.v2.model.agent_health_host_issues_data import AgentHealthHostIssuesData
 from datadog_api_client.v2.model.agent_health_host_issues_response import AgentHealthHostIssuesResponse
 from datadog_api_client.v2.model.agent_health_host_issues_type import AgentHealthHostIssuesType
+from datadog_api_client.v2.model.agent_health_issue_attributes import AgentHealthIssueAttributes
+from datadog_api_client.v2.model.agent_health_issue_data import AgentHealthIssueData
+from datadog_api_client.v2.model.agent_health_issue_detail_attributes import AgentHealthIssueDetailAttributes
+from datadog_api_client.v2.model.agent_health_issue_detail_data import AgentHealthIssueDetailData
+from datadog_api_client.v2.model.agent_health_issue_resource_type import AgentHealthIssueResourceType
+from datadog_api_client.v2.model.agent_health_issue_response import AgentHealthIssueResponse
+from datadog_api_client.v2.model.agent_health_issues_response import AgentHealthIssuesResponse
+from datadog_api_client.v2.model.agent_health_issues_response_meta import AgentHealthIssuesResponseMeta
+from datadog_api_client.v2.model.agent_health_issues_response_page import AgentHealthIssuesResponsePage
+from datadog_api_client.v2.model.agent_health_remediation import AgentHealthRemediation
+from datadog_api_client.v2.model.agent_health_remediation_script import AgentHealthRemediationScript
+from datadog_api_client.v2.model.agent_health_remediation_step import AgentHealthRemediationStep
 from datadog_api_client.v2.model.agent_trigger import AgentTrigger
 from datadog_api_client.v2.model.agent_trigger_wrapper import AgentTriggerWrapper
 from datadog_api_client.v2.model.aggregated_long_tasks_by_invoker_type import AggregatedLongTasksByInvokerType
@@ -14180,6 +14192,18 @@ __all__ = [
     "AgentHealthHostIssuesData",
     "AgentHealthHostIssuesResponse",
     "AgentHealthHostIssuesType",
+    "AgentHealthIssueAttributes",
+    "AgentHealthIssueData",
+    "AgentHealthIssueDetailAttributes",
+    "AgentHealthIssueDetailData",
+    "AgentHealthIssueResourceType",
+    "AgentHealthIssueResponse",
+    "AgentHealthIssuesResponse",
+    "AgentHealthIssuesResponseMeta",
+    "AgentHealthIssuesResponsePage",
+    "AgentHealthRemediation",
+    "AgentHealthRemediationScript",
+    "AgentHealthRemediationStep",
     "AgentTrigger",
     "AgentTriggerWrapper",
     "AggregatedLongTasksByInvokerType",
