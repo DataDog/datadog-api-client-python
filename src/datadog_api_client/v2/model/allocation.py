@@ -34,6 +34,7 @@ class Allocation(ModelNormal):
         from datadog_api_client.v2.model.variant_weight import VariantWeight
 
         return {
+            "bandit_id": (UUID,),
             "created_at": (datetime,),
             "environment_ids": ([UUID],),
             "experiment_id": (str, none_type),
@@ -50,6 +51,7 @@ class Allocation(ModelNormal):
         }
 
     attribute_map = {
+        "bandit_id": "bandit_id",
         "created_at": "created_at",
         "environment_ids": "environment_ids",
         "experiment_id": "experiment_id",
@@ -64,6 +66,9 @@ class Allocation(ModelNormal):
         "updated_at": "updated_at",
         "variant_weights": "variant_weights",
     }
+    read_only_vars = {
+        "bandit_id",
+    }
 
     def __init__(
         self_,
@@ -77,6 +82,7 @@ class Allocation(ModelNormal):
         type: AllocationType,
         updated_at: datetime,
         variant_weights: List[VariantWeight],
+        bandit_id: Union[UUID, UnsetType] = unset,
         experiment_id: Union[str, none_type, UnsetType] = unset,
         exposure_schedule: Union[AllocationExposureSchedule, UnsetType] = unset,
         id: Union[UUID, UnsetType] = unset,
@@ -84,6 +90,9 @@ class Allocation(ModelNormal):
     ):
         """
         Targeting rule (allocation) details for a feature flag environment.
+
+        :param bandit_id: The bandit that serves through this targeting rule allocation. Absent when no bandit uses it. Until the bandit ends, only the bandit's own operations can change or delete the allocation; its position among the flag's targeting rules can still change.
+        :type bandit_id: UUID, optional
 
         :param created_at: The timestamp when the targeting rule allocation was created.
         :type created_at: datetime
@@ -124,6 +133,8 @@ class Allocation(ModelNormal):
         :param variant_weights: Weighted variant assignments for this targeting rule allocation.
         :type variant_weights: [VariantWeight]
         """
+        if bandit_id is not unset:
+            kwargs["bandit_id"] = bandit_id
         if experiment_id is not unset:
             kwargs["experiment_id"] = experiment_id
         if exposure_schedule is not unset:

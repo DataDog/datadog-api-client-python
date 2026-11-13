@@ -591,6 +591,78 @@ Feature: Experiments
     Then the response status is 204 The subject type was deleted.
 
   @generated @skip @team:ddoghq/experimentation
+  Scenario: Get bandit results returns "Malformed bandit ID (not a valid UUID), or start or end isn't an RFC3339 timestamp, or start isn't before end." response
+    Given operation "GetBanditResults" enabled
+    And new "GetBanditResults" request
+    And request contains "bandit_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Malformed bandit ID (not a valid UUID), or start or end isn't an RFC3339 timestamp, or start isn't before end.
+
+  @team:ddoghq/experimentation
+  Scenario: Get bandit results returns "No bandit with this ID exists for the organization." response
+    Given operation "GetBanditResults" enabled
+    And new "GetBanditResults" request
+    And request contains "bandit_id" parameter with value "00000000-0000-4000-8000-000000000000"
+    When the request is sent
+    Then the response status is 404 No bandit with this ID exists for the organization.
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Get bandit results returns "OK" response
+    Given operation "GetBanditResults" enabled
+    And new "GetBanditResults" request
+    And request contains "bandit_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Get bandit returns "Malformed bandit ID (not a valid UUID)." response
+    Given operation "GetBandit" enabled
+    And new "GetBandit" request
+    And request contains "bandit_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Malformed bandit ID (not a valid UUID).
+
+  @team:ddoghq/experimentation
+  Scenario: Get bandit returns "No bandit with this ID exists for the organization." response
+    Given operation "GetBandit" enabled
+    And new "GetBandit" request
+    And request contains "bandit_id" parameter with value "00000000-0000-4000-8000-000000000000"
+    When the request is sent
+    Then the response status is 404 No bandit with this ID exists for the organization.
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Get bandit returns "OK" response
+    Given operation "GetBandit" enabled
+    And new "GetBandit" request
+    And request contains "bandit_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Get bandit traffic summary returns "Malformed bandit ID (not a valid UUID), or start or end isn't an RFC3339 timestamp, or start isn't before end." response
+    Given operation "GetBanditTrafficSummary" enabled
+    And new "GetBanditTrafficSummary" request
+    And request contains "bandit_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Malformed bandit ID (not a valid UUID), or start or end isn't an RFC3339 timestamp, or start isn't before end.
+
+  @team:ddoghq/experimentation
+  Scenario: Get bandit traffic summary returns "No bandit with this ID exists for the organization." response
+    Given operation "GetBanditTrafficSummary" enabled
+    And new "GetBanditTrafficSummary" request
+    And request contains "bandit_id" parameter with value "00000000-0000-4000-8000-000000000000"
+    When the request is sent
+    Then the response status is 404 No bandit with this ID exists for the organization.
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Get bandit traffic summary returns "OK" response
+    Given operation "GetBanditTrafficSummary" enabled
+    And new "GetBanditTrafficSummary" request
+    And request contains "bandit_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/experimentation
   Scenario: Get experiment analysis plan returns "Malformed experiment ID." response
     Given new "GetExperimentAnalysisPlan" request
     And request contains "experiment_id" parameter from "REPLACE.ME"
@@ -858,6 +930,20 @@ Feature: Experiments
     Given new "GetSubjectType" request
     And there is a valid "experiment_subject_type" in the system
     And request contains "subject_type_id" parameter from "experiment_subject_type.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: List bandits returns "Invalid query parameter: an unknown status or sort field, a subject_type_id that isn't a UUID, a search over 1024 characters, or a malformed page parameter." response
+    Given operation "ListBandits" enabled
+    And new "ListBandits" request
+    When the request is sent
+    Then the response status is 400 Invalid query parameter: an unknown status or sort field, a subject_type_id that isn't a UUID, a search over 1024 characters, or a malformed page parameter.
+
+  @team:ddoghq/experimentation
+  Scenario: List bandits returns "OK" response
+    Given operation "ListBandits" enabled
+    And new "ListBandits" request
     When the request is sent
     Then the response status is 200 OK
 

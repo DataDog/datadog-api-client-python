@@ -3854,6 +3854,68 @@ from datadog_api_client.v2.model.experiments_analysis_plan_write_v2_request_data
 from datadog_api_client.v2.model.experiments_analysis_plan_write_v2_request_data_type import (
     ExperimentsAnalysisPlanWriteV2RequestDataType,
 )
+from datadog_api_client.v2.model.experiments_bandit_arm_data_status import ExperimentsBanditArmDataStatus
+from datadog_api_client.v2.model.experiments_bandit_bayesian_prior_v2 import ExperimentsBanditBayesianPriorV2
+from datadog_api_client.v2.model.experiments_bandit_confidence_interval_v2 import ExperimentsBanditConfidenceIntervalV2
+from datadog_api_client.v2.model.experiments_bandit_daily_traffic_v2 import ExperimentsBanditDailyTrafficV2
+from datadog_api_client.v2.model.experiments_bandit_desired_change import ExperimentsBanditDesiredChange
+from datadog_api_client.v2.model.experiments_bandit_flag_configuration_v2 import ExperimentsBanditFlagConfigurationV2
+from datadog_api_client.v2.model.experiments_bandit_nullable_confidence_interval_v2 import (
+    ExperimentsBanditNullableConfidenceIntervalV2,
+)
+from datadog_api_client.v2.model.experiments_bandit_observation_counts_v2 import ExperimentsBanditObservationCountsV2
+from datadog_api_client.v2.model.experiments_bandit_optimal_variant_unavailable_reason import (
+    ExperimentsBanditOptimalVariantUnavailableReason,
+)
+from datadog_api_client.v2.model.experiments_bandit_point_estimate_v2 import ExperimentsBanditPointEstimateV2
+from datadog_api_client.v2.model.experiments_bandit_policy_kind import ExperimentsBanditPolicyKind
+from datadog_api_client.v2.model.experiments_bandit_policy_reason import ExperimentsBanditPolicyReason
+from datadog_api_client.v2.model.experiments_bandit_policy_v2 import ExperimentsBanditPolicyV2
+from datadog_api_client.v2.model.experiments_bandit_policy_variant_v2 import ExperimentsBanditPolicyVariantV2
+from datadog_api_client.v2.model.experiments_bandit_posterior_unavailable_reason import (
+    ExperimentsBanditPosteriorUnavailableReason,
+)
+from datadog_api_client.v2.model.experiments_bandit_refresh_status import ExperimentsBanditRefreshStatus
+from datadog_api_client.v2.model.experiments_bandit_refresh_v2 import ExperimentsBanditRefreshV2
+from datadog_api_client.v2.model.experiments_bandit_results_state import ExperimentsBanditResultsState
+from datadog_api_client.v2.model.experiments_bandit_results_v2_dto import ExperimentsBanditResultsV2DTO
+from datadog_api_client.v2.model.experiments_bandit_results_v2_dto_data import ExperimentsBanditResultsV2DTOData
+from datadog_api_client.v2.model.experiments_bandit_results_v2_dto_data_attributes import (
+    ExperimentsBanditResultsV2DTODataAttributes,
+)
+from datadog_api_client.v2.model.experiments_bandit_results_v2_dto_data_type import (
+    ExperimentsBanditResultsV2DTODataType,
+)
+from datadog_api_client.v2.model.experiments_bandit_scheduled_end_failure_v2 import (
+    ExperimentsBanditScheduledEndFailureV2,
+)
+from datadog_api_client.v2.model.experiments_bandit_statistics_status import ExperimentsBanditStatisticsStatus
+from datadog_api_client.v2.model.experiments_bandit_status import ExperimentsBanditStatus
+from datadog_api_client.v2.model.experiments_bandit_traffic_summary_v2_dto import ExperimentsBanditTrafficSummaryV2DTO
+from datadog_api_client.v2.model.experiments_bandit_traffic_summary_v2_dto_data import (
+    ExperimentsBanditTrafficSummaryV2DTOData,
+)
+from datadog_api_client.v2.model.experiments_bandit_traffic_summary_v2_dto_data_attributes import (
+    ExperimentsBanditTrafficSummaryV2DTODataAttributes,
+)
+from datadog_api_client.v2.model.experiments_bandit_traffic_summary_v2_dto_data_type import (
+    ExperimentsBanditTrafficSummaryV2DTODataType,
+)
+from datadog_api_client.v2.model.experiments_bandit_traffic_variant_v2 import ExperimentsBanditTrafficVariantV2
+from datadog_api_client.v2.model.experiments_bandit_v2_dto import ExperimentsBanditV2DTO
+from datadog_api_client.v2.model.experiments_bandit_v2_dto_data import ExperimentsBanditV2DTOData
+from datadog_api_client.v2.model.experiments_bandit_v2_dto_data_attributes import ExperimentsBanditV2DTODataAttributes
+from datadog_api_client.v2.model.experiments_bandit_v2_dto_data_type import ExperimentsBanditV2DTODataType
+from datadog_api_client.v2.model.experiments_bandit_v2_list_dto_array import ExperimentsBanditV2ListDTOArray
+from datadog_api_client.v2.model.experiments_bandit_v2_list_dto_data import ExperimentsBanditV2ListDTOData
+from datadog_api_client.v2.model.experiments_bandit_v2_list_dto_data_attributes import (
+    ExperimentsBanditV2ListDTODataAttributes,
+)
+from datadog_api_client.v2.model.experiments_bandit_v2_read_meta_dto import ExperimentsBanditV2ReadMetaDTO
+from datadog_api_client.v2.model.experiments_bandit_v2_warning_code import ExperimentsBanditV2WarningCode
+from datadog_api_client.v2.model.experiments_bandit_v2_warning_dto import ExperimentsBanditV2WarningDTO
+from datadog_api_client.v2.model.experiments_bandit_variant_result_v2 import ExperimentsBanditVariantResultV2
+from datadog_api_client.v2.model.experiments_bandit_variant_v2 import ExperimentsBanditVariantV2
 from datadog_api_client.v2.model.experiments_cancel_experiment_v2_request import ExperimentsCancelExperimentV2Request
 from datadog_api_client.v2.model.experiments_cancel_experiment_v2_request_data import (
     ExperimentsCancelExperimentV2RequestData,
@@ -16775,6 +16837,48 @@ __all__ = [
     "ExperimentsAnalysisPlanWriteV2RequestDataAttributes",
     "ExperimentsAnalysisPlanWriteV2RequestDataAttributesBayesianPrior",
     "ExperimentsAnalysisPlanWriteV2RequestDataType",
+    "ExperimentsBanditArmDataStatus",
+    "ExperimentsBanditBayesianPriorV2",
+    "ExperimentsBanditConfidenceIntervalV2",
+    "ExperimentsBanditDailyTrafficV2",
+    "ExperimentsBanditDesiredChange",
+    "ExperimentsBanditFlagConfigurationV2",
+    "ExperimentsBanditNullableConfidenceIntervalV2",
+    "ExperimentsBanditObservationCountsV2",
+    "ExperimentsBanditOptimalVariantUnavailableReason",
+    "ExperimentsBanditPointEstimateV2",
+    "ExperimentsBanditPolicyKind",
+    "ExperimentsBanditPolicyReason",
+    "ExperimentsBanditPolicyV2",
+    "ExperimentsBanditPolicyVariantV2",
+    "ExperimentsBanditPosteriorUnavailableReason",
+    "ExperimentsBanditRefreshStatus",
+    "ExperimentsBanditRefreshV2",
+    "ExperimentsBanditResultsState",
+    "ExperimentsBanditResultsV2DTO",
+    "ExperimentsBanditResultsV2DTOData",
+    "ExperimentsBanditResultsV2DTODataAttributes",
+    "ExperimentsBanditResultsV2DTODataType",
+    "ExperimentsBanditScheduledEndFailureV2",
+    "ExperimentsBanditStatisticsStatus",
+    "ExperimentsBanditStatus",
+    "ExperimentsBanditTrafficSummaryV2DTO",
+    "ExperimentsBanditTrafficSummaryV2DTOData",
+    "ExperimentsBanditTrafficSummaryV2DTODataAttributes",
+    "ExperimentsBanditTrafficSummaryV2DTODataType",
+    "ExperimentsBanditTrafficVariantV2",
+    "ExperimentsBanditV2DTO",
+    "ExperimentsBanditV2DTOData",
+    "ExperimentsBanditV2DTODataAttributes",
+    "ExperimentsBanditV2DTODataType",
+    "ExperimentsBanditV2ListDTOArray",
+    "ExperimentsBanditV2ListDTOData",
+    "ExperimentsBanditV2ListDTODataAttributes",
+    "ExperimentsBanditV2ReadMetaDTO",
+    "ExperimentsBanditV2WarningCode",
+    "ExperimentsBanditV2WarningDTO",
+    "ExperimentsBanditVariantResultV2",
+    "ExperimentsBanditVariantV2",
     "ExperimentsCancelExperimentV2Request",
     "ExperimentsCancelExperimentV2RequestData",
     "ExperimentsCancelExperimentV2RequestDataAttributes",

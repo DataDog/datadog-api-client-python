@@ -16,6 +16,10 @@ from datadog_api_client.model_utils import (
 from datadog_api_client.v2.model.experiments_experiment_v2_list_dto_array import ExperimentsExperimentV2ListDTOArray
 from datadog_api_client.v2.model.experiments_experiment_v2_dto import ExperimentsExperimentV2DTO
 from datadog_api_client.v2.model.experiments_create_experiment_v2_request import ExperimentsCreateExperimentV2Request
+from datadog_api_client.v2.model.experiments_bandit_v2_list_dto_array import ExperimentsBanditV2ListDTOArray
+from datadog_api_client.v2.model.experiments_bandit_v2_dto import ExperimentsBanditV2DTO
+from datadog_api_client.v2.model.experiments_bandit_results_v2_dto import ExperimentsBanditResultsV2DTO
+from datadog_api_client.v2.model.experiments_bandit_traffic_summary_v2_dto import ExperimentsBanditTrafficSummaryV2DTO
 from datadog_api_client.v2.model.experiments_exposure_sql_model_v2_dto_array import (
     ExperimentsExposureSQLModelV2DTOArray,
 )
@@ -561,6 +565,95 @@ class ExperimentsApi:
             api_client=api_client,
         )
 
+        self._get_bandit_endpoint = _Endpoint(
+            settings={
+                "response_type": (ExperimentsBanditV2DTO,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/experiments/bandits/{bandit_id}",
+                "operation_id": "get_bandit",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "bandit_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "bandit_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_bandit_results_endpoint = _Endpoint(
+            settings={
+                "response_type": (ExperimentsBanditResultsV2DTO,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/experiments/bandits/{bandit_id}/results",
+                "operation_id": "get_bandit_results",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "bandit_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "bandit_id",
+                    "location": "path",
+                },
+                "start": {
+                    "openapi_types": (datetime,),
+                    "attribute": "start",
+                    "location": "query",
+                },
+                "end": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_bandit_traffic_summary_endpoint = _Endpoint(
+            settings={
+                "response_type": (ExperimentsBanditTrafficSummaryV2DTO,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/experiments/bandits/{bandit_id}/traffic-summary",
+                "operation_id": "get_bandit_traffic_summary",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "bandit_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "bandit_id",
+                    "location": "path",
+                },
+                "start": {
+                    "openapi_types": (datetime,),
+                    "attribute": "start",
+                    "location": "query",
+                },
+                "end": {
+                    "openapi_types": (datetime,),
+                    "attribute": "end",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_experiment_endpoint = _Endpoint(
             settings={
                 "response_type": (ExperimentsExperimentV2DTO,),
@@ -829,6 +922,61 @@ class ExperimentsApi:
                     "openapi_types": (UUID,),
                     "attribute": "subject_type_id",
                     "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_bandits_endpoint = _Endpoint(
+            settings={
+                "response_type": (ExperimentsBanditV2ListDTOArray,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/experiments/bandits",
+                "operation_id": "list_bandits",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_offset": {
+                    "openapi_types": (int,),
+                    "attribute": "page[offset]",
+                    "location": "query",
+                },
+                "page_limit": {
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
+                    "location": "query",
+                },
+                "search": {
+                    "openapi_types": (str,),
+                    "attribute": "search",
+                    "location": "query",
+                },
+                "sort": {
+                    "openapi_types": (str,),
+                    "attribute": "sort",
+                    "location": "query",
+                },
+                "status": {
+                    "openapi_types": ([str],),
+                    "attribute": "status",
+                    "location": "query",
+                    "collection_format": "multi",
+                },
+                "subject_type_id": {
+                    "openapi_types": ([UUID],),
+                    "attribute": "subject_type_id",
+                    "location": "query",
+                    "collection_format": "multi",
+                },
+                "tags": {
+                    "openapi_types": ([str],),
+                    "attribute": "tags",
+                    "location": "query",
+                    "collection_format": "multi",
                 },
             },
             headers_map={
@@ -2004,6 +2152,83 @@ class ExperimentsApi:
 
         return self._delete_subject_type_endpoint.call_with_http_info(**kwargs)
 
+    def get_bandit(
+        self,
+        bandit_id: UUID,
+    ) -> ExperimentsBanditV2DTO:
+        """Get bandit.
+
+        Get a bandit: its setup, the policy it serves, its latest refresh, and the arm most likely to be best. When the caller lacks feature flag and environment read permissions, the response omits ``datadog_flag_configuration`` and ``meta.warnings`` includes ``datadog_flag_configuration_omitted``. Bandits must be enabled for the organization.
+
+        :param bandit_id: The UUID of the bandit.
+        :type bandit_id: UUID
+        :rtype: ExperimentsBanditV2DTO
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["bandit_id"] = bandit_id
+
+        return self._get_bandit_endpoint.call_with_http_info(**kwargs)
+
+    def get_bandit_results(
+        self,
+        bandit_id: UUID,
+        *,
+        start: Union[datetime, UnsetType] = unset,
+        end: Union[datetime, UnsetType] = unset,
+    ) -> ExperimentsBanditResultsV2DTO:
+        """Get bandit results.
+
+        Get what a bandit's refreshes have learned: each arm's estimate and probability of being best from the latest saved refresh, and each arm's point estimate over time. ``start`` and ``end`` narrow only ``point_estimates`` ; the latest estimates ignore them. Observation counts are on Get bandit traffic summary. Bandits must be enabled for the organization.
+
+        :param bandit_id: The UUID of the bandit.
+        :type bandit_id: UUID
+        :param start: Return only point estimates from refreshes saved at or after this RFC3339 timestamp. Inclusive.
+        :type start: datetime, optional
+        :param end: Return only point estimates from refreshes saved before this RFC3339 timestamp. Exclusive.
+        :type end: datetime, optional
+        :rtype: ExperimentsBanditResultsV2DTO
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["bandit_id"] = bandit_id
+
+        if start is not unset:
+            kwargs["start"] = start
+
+        if end is not unset:
+            kwargs["end"] = end
+
+        return self._get_bandit_results_endpoint.call_with_http_info(**kwargs)
+
+    def get_bandit_traffic_summary(
+        self,
+        bandit_id: UUID,
+        *,
+        start: Union[datetime, UnsetType] = unset,
+        end: Union[datetime, UnsetType] = unset,
+    ) -> ExperimentsBanditTrafficSummaryV2DTO:
+        """Get bandit traffic summary.
+
+        Get what a bandit has observed, as of its latest saved refresh: observation counts, subjects, and each arm's valid observations and subjects in total and per UTC day. An observation is a subject's reward on the arm it was exposed to, counted on the UTC day of its anchor time. ``start`` and ``end`` narrow only ``daily`` ; the totals ignore them. Bandits must be enabled for the organization.
+
+        :param bandit_id: The UUID of the bandit.
+        :type bandit_id: UUID
+        :param start: Return only the UTC days that overlap the range starting at this RFC3339 timestamp. Inclusive.
+        :type start: datetime, optional
+        :param end: Return only the UTC days that overlap the range ending at this RFC3339 timestamp. Exclusive.
+        :type end: datetime, optional
+        :rtype: ExperimentsBanditTrafficSummaryV2DTO
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["bandit_id"] = bandit_id
+
+        if start is not unset:
+            kwargs["start"] = start
+
+        if end is not unset:
+            kwargs["end"] = end
+
+        return self._get_bandit_traffic_summary_endpoint.call_with_http_info(**kwargs)
+
     def get_experiment(
         self,
         experiment_id: UUID,
@@ -2221,6 +2446,65 @@ class ExperimentsApi:
         kwargs["subject_type_id"] = subject_type_id
 
         return self._get_subject_type_endpoint.call_with_http_info(**kwargs)
+
+    def list_bandits(
+        self,
+        *,
+        page_offset: Union[int, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+        search: Union[str, UnsetType] = unset,
+        sort: Union[str, UnsetType] = unset,
+        status: Union[List[str], UnsetType] = unset,
+        subject_type_id: Union[List[UUID], UnsetType] = unset,
+        tags: Union[List[str], UnsetType] = unset,
+    ) -> ExperimentsBanditV2ListDTOArray:
+        """List bandits.
+
+        List the organization's bandits, newest first by default. Each item is a summary; use Get bandit for its setup, active policy, and latest refresh. Bandits must be enabled for the organization.
+
+        :param page_offset: Number of results to skip for pagination. Defaults to 0 when omitted.
+        :type page_offset: int, optional
+        :param page_limit: Maximum number of results to return. Defaults to 25 when omitted, and is capped at 50 (larger values are clamped to 50). The response includes meta.page (with total) and pagination links.
+        :type page_limit: int, optional
+        :param search: Find bandits whose names contain the search text, regardless of case.
+        :type search: str, optional
+        :param sort: Sort fields: name, created_at, or updated_at. Use a comma-separated list in priority order, for example name,-created_at. Prefix each field with ``-`` for descending. Defaults to created_at descending.
+        :type sort: str, optional
+        :param status: Filter by bandit status. Accepted values are DRAFT, SCHEDULED, RUNNING, PAUSED, STOPPED, and COMPLETED.
+            Repeat this parameter to select several statuses, for example ``status=RUNNING&status=PAUSED``.
+        :type status: [str], optional
+        :param subject_type_id: Filter by subject type UUID. Repeat this parameter to supply several IDs. A bandit matches if it uses any
+            listed subject type.
+        :type subject_type_id: [UUID], optional
+        :param tags: Filter by tag name. Repeat this parameter to supply several tags. A bandit matches if it has at least one
+            listed tag. Use ``team:<handle>`` to filter by team. When both tags and teams are given, a bandit must match
+            one of each.
+        :type tags: [str], optional
+        :rtype: ExperimentsBanditV2ListDTOArray
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if search is not unset:
+            kwargs["search"] = search
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if status is not unset:
+            kwargs["status"] = status
+
+        if subject_type_id is not unset:
+            kwargs["subject_type_id"] = subject_type_id
+
+        if tags is not unset:
+            kwargs["tags"] = tags
+
+        return self._list_bandits_endpoint.call_with_http_info(**kwargs)
 
     def list_experiment_holdouts(
         self,
