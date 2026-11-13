@@ -16,6 +16,7 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.coverage_summary_codeowner_stats import CoverageSummaryCodeownerStats
+    from datadog_api_client.v2.model.coverage_summary_flag_stats import CoverageSummaryFlagStats
     from datadog_api_client.v2.model.coverage_summary_service_stats import CoverageSummaryServiceStats
 
 
@@ -23,12 +24,14 @@ class CoverageSummaryAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.coverage_summary_codeowner_stats import CoverageSummaryCodeownerStats
+        from datadog_api_client.v2.model.coverage_summary_flag_stats import CoverageSummaryFlagStats
         from datadog_api_client.v2.model.coverage_summary_service_stats import CoverageSummaryServiceStats
 
         return {
             "codeowners": ({str: (CoverageSummaryCodeownerStats,)}, none_type),
             "evaluated_flags_count": (int,),
             "evaluated_reports_count": (int,),
+            "flags": ({str: (CoverageSummaryFlagStats,)}, none_type),
             "patch_coverage": (float, none_type),
             "services": ({str: (CoverageSummaryServiceStats,)}, none_type),
             "total_coverage": (float, none_type),
@@ -38,6 +41,7 @@ class CoverageSummaryAttributes(ModelNormal):
         "codeowners": "codeowners",
         "evaluated_flags_count": "evaluated_flags_count",
         "evaluated_reports_count": "evaluated_reports_count",
+        "flags": "flags",
         "patch_coverage": "patch_coverage",
         "services": "services",
         "total_coverage": "total_coverage",
@@ -48,6 +52,7 @@ class CoverageSummaryAttributes(ModelNormal):
         codeowners: Union[Dict[str, CoverageSummaryCodeownerStats], none_type, UnsetType] = unset,
         evaluated_flags_count: Union[int, UnsetType] = unset,
         evaluated_reports_count: Union[int, UnsetType] = unset,
+        flags: Union[Dict[str, CoverageSummaryFlagStats], none_type, UnsetType] = unset,
         patch_coverage: Union[float, none_type, UnsetType] = unset,
         services: Union[Dict[str, CoverageSummaryServiceStats], none_type, UnsetType] = unset,
         total_coverage: Union[float, none_type, UnsetType] = unset,
@@ -65,6 +70,11 @@ class CoverageSummaryAttributes(ModelNormal):
         :param evaluated_reports_count: Total number of coverage reports evaluated.
         :type evaluated_reports_count: int, optional
 
+        :param flags: Coverage statistics broken down by flag. Each entry contains only coverage percentages.
+            Branch summaries include the flags of the latest covered commit, including coverage carried forward
+            to that commit. Pull request summaries include flags across all commits of the pull request.
+        :type flags: {str: (CoverageSummaryFlagStats,)}, none_type, optional
+
         :param patch_coverage: Overall patch coverage percentage.
         :type patch_coverage: float, none_type, optional
 
@@ -80,6 +90,8 @@ class CoverageSummaryAttributes(ModelNormal):
             kwargs["evaluated_flags_count"] = evaluated_flags_count
         if evaluated_reports_count is not unset:
             kwargs["evaluated_reports_count"] = evaluated_reports_count
+        if flags is not unset:
+            kwargs["flags"] = flags
         if patch_coverage is not unset:
             kwargs["patch_coverage"] = patch_coverage
         if services is not unset:
