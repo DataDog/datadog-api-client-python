@@ -5,7 +5,7 @@ Feature: Tag Rules
   spans, or metrics). Rules can be `blocking` (data not matching the rule is
   rejected) or `surfacing` (matching data is highlighted but not blocked).
   Each rule reports a compliance `score` derived from how much recent
-  telemetry adheres to the rule.
+  telemetry adheres to the rule. RUM supports only `surfacing` rules.
 
   Background:
     Given a valid "apiKeyAuth" key in the system
@@ -16,7 +16,7 @@ Feature: Tag Rules
   Scenario: Create a tag rule returns "Bad Request" response
     Given operation "CreateTagRule" enabled
     And new "CreateTagRule" request
-    And body with value {"data": {"attributes": {"enabled": true, "name": "Service tag must be one of api or web", "negated": false, "required": true, "rule_type": "surfacing", "scope": "env", "source": "logs", "tag_key": "service", "tag_value_patterns": ["api", "web"]}, "type": "tag_rule"}}
+    And body with value {"data": {"attributes": {"enabled": true, "name": "Service tag must be one of api or web", "negated": false, "required": true, "rule_type": "surfacing", "scope": "env:prod", "source": "logs", "tag_key": "service", "tag_value_patterns": ["api", "web"]}, "type": "tag_policy"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -24,7 +24,7 @@ Feature: Tag Rules
   Scenario: Create a tag rule returns "Conflict" response
     Given operation "CreateTagRule" enabled
     And new "CreateTagRule" request
-    And body with value {"data": {"attributes": {"enabled": true, "name": "Service tag must be one of api or web", "negated": false, "required": true, "rule_type": "surfacing", "scope": "env", "source": "logs", "tag_key": "service", "tag_value_patterns": ["api", "web"]}, "type": "tag_rule"}}
+    And body with value {"data": {"attributes": {"enabled": true, "name": "Service tag must be one of api or web", "negated": false, "required": true, "rule_type": "surfacing", "scope": "env:prod", "source": "logs", "tag_key": "service", "tag_value_patterns": ["api", "web"]}, "type": "tag_policy"}}
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -32,7 +32,7 @@ Feature: Tag Rules
   Scenario: Create a tag rule returns "Created" response
     Given operation "CreateTagRule" enabled
     And new "CreateTagRule" request
-    And body with value {"data": {"attributes": {"enabled": true, "name": "Service tag must be one of api or web", "negated": false, "required": true, "rule_type": "surfacing", "scope": "env", "source": "logs", "tag_key": "service", "tag_value_patterns": ["api", "web"]}, "type": "tag_rule"}}
+    And body with value {"data": {"attributes": {"enabled": true, "name": "Service tag must be one of api or web", "negated": false, "required": true, "rule_type": "surfacing", "scope": "env:prod", "source": "logs", "tag_key": "service", "tag_value_patterns": ["api", "web"]}, "type": "tag_policy"}}
     When the request is sent
     Then the response status is 201 Created
 
@@ -127,7 +127,7 @@ Feature: Tag Rules
     Given operation "UpdateTagRule" enabled
     And new "UpdateTagRule" request
     And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"rule_type": "surfacing", "tag_value_patterns": []}, "id": "123", "type": "tag_rule"}}
+    And body with value {"data": {"attributes": {"rule_type": "surfacing", "tag_value_patterns": []}, "id": "123", "type": "tag_policy"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -136,7 +136,7 @@ Feature: Tag Rules
     Given operation "UpdateTagRule" enabled
     And new "UpdateTagRule" request
     And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"rule_type": "surfacing", "tag_value_patterns": []}, "id": "123", "type": "tag_rule"}}
+    And body with value {"data": {"attributes": {"rule_type": "surfacing", "tag_value_patterns": []}, "id": "123", "type": "tag_policy"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -145,6 +145,6 @@ Feature: Tag Rules
     Given operation "UpdateTagRule" enabled
     And new "UpdateTagRule" request
     And request contains "rule_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"rule_type": "surfacing", "tag_value_patterns": []}, "id": "123", "type": "tag_rule"}}
+    And body with value {"data": {"attributes": {"rule_type": "surfacing", "tag_value_patterns": []}, "id": "123", "type": "tag_policy"}}
     When the request is sent
     Then the response status is 200 OK

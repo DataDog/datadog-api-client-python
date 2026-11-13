@@ -16,6 +16,7 @@ class TagRuleType(ModelSimple):
     """
     How the rule is enforced. `blocking` rejects telemetry that violates the rule.
         `surfacing` only highlights non-compliant telemetry without blocking it.
+        RUM supports only `surfacing` rules.
 
     :param value: Must be one of ["blocking", "surfacing"].
     :type value: str
