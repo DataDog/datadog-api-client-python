@@ -1431,8 +1431,22 @@
     {
       "feature": "Monitors",
       "feature_file": "../../v1/features/monitors.feature",
+      "file": "v1/monitors/create-a-data-jobs-duration-monitor-returns-ok-response.json",
+      "scenario": "Create a Data Jobs duration monitor returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "feature_file": "../../v1/features/monitors.feature",
       "file": "v1/monitors/create-a-data-jobs-monitor-returns-ok-response.json",
       "scenario": "Create a Data Jobs monitor returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "feature_file": "../../v1/features/monitors.feature",
+      "file": "v1/monitors/create-a-data-jobs-monitor-with-the-aastra-query-dialect-returns-ok-response.json",
+      "scenario": "Create a Data Jobs monitor with the aastra query dialect returns \"OK\" response",
       "version": "v1"
     },
     {
