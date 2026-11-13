@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Dict, Union, TYPE_CHECKING
+from typing import Dict, List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -17,6 +17,7 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.ai_gateway_rate_limit_mode import AiGatewayRateLimitMode
+    from datadog_api_client.v2.model.ai_gateway_rate_limit_selector_entry import AiGatewayRateLimitSelectorEntry
 
 
 class AiGatewayRateLimitCreateAttributes(ModelNormal):
@@ -38,6 +39,7 @@ class AiGatewayRateLimitCreateAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.ai_gateway_rate_limit_mode import AiGatewayRateLimitMode
+        from datadog_api_client.v2.model.ai_gateway_rate_limit_selector_entry import AiGatewayRateLimitSelectorEntry
 
         return {
             "input_tokens_per_minute": (int, none_type),
@@ -45,6 +47,7 @@ class AiGatewayRateLimitCreateAttributes(ModelNormal):
             "name": (str,),
             "output_tokens_per_minute": (int, none_type),
             "requests_per_minute": (int, none_type),
+            "selector": ([AiGatewayRateLimitSelectorEntry],),
             "tags": ({str: (str,)},),
             "team_id": (UUID,),
             "user_id": (UUID,),
@@ -56,6 +59,7 @@ class AiGatewayRateLimitCreateAttributes(ModelNormal):
         "name": "name",
         "output_tokens_per_minute": "output_tokens_per_minute",
         "requests_per_minute": "requests_per_minute",
+        "selector": "selector",
         "tags": "tags",
         "team_id": "team_id",
         "user_id": "user_id",
@@ -68,6 +72,7 @@ class AiGatewayRateLimitCreateAttributes(ModelNormal):
         mode: Union[AiGatewayRateLimitMode, UnsetType] = unset,
         output_tokens_per_minute: Union[int, none_type, UnsetType] = unset,
         requests_per_minute: Union[int, none_type, UnsetType] = unset,
+        selector: Union[List[AiGatewayRateLimitSelectorEntry], none_type, UnsetType] = unset,
         tags: Union[Dict[str, str], UnsetType] = unset,
         team_id: Union[UUID, UnsetType] = unset,
         user_id: Union[UUID, UnsetType] = unset,
@@ -91,6 +96,9 @@ class AiGatewayRateLimitCreateAttributes(ModelNormal):
         :param requests_per_minute: Maximum requests per rolling minute. At least one of ``requests_per_minute`` , ``input_tokens_per_minute`` , and ``output_tokens_per_minute`` is required.
         :type requests_per_minute: int, none_type, optional
 
+        :param selector: Dimension rules for a template rate limit, which gives each matched user, Team, or value its own allowance with the rule's limits. Can't be combined with user_id, team_id, or tags, and can't be changed after creation. Omit for a rule with one shared allowance.
+        :type selector: [AiGatewayRateLimitSelectorEntry], none_type, optional
+
         :param tags: Optional scope tags, such as ``provider`` , ``model`` , ``ml_app`` , or custom dimensions. A request matches when it has all of these tags. The reserved metadata keys ``name`` , ``budget_name`` , and ``span_filter`` are rejected.
         :type tags: {str: (str,)}, optional
 
@@ -108,6 +116,8 @@ class AiGatewayRateLimitCreateAttributes(ModelNormal):
             kwargs["output_tokens_per_minute"] = output_tokens_per_minute
         if requests_per_minute is not unset:
             kwargs["requests_per_minute"] = requests_per_minute
+        if selector is not unset:
+            kwargs["selector"] = selector
         if tags is not unset:
             kwargs["tags"] = tags
         if team_id is not unset:

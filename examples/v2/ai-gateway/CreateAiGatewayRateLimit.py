@@ -9,6 +9,7 @@ from datadog_api_client.v2.model.ai_gateway_rate_limit_create_attributes import 
 from datadog_api_client.v2.model.ai_gateway_rate_limit_create_data import AiGatewayRateLimitCreateData
 from datadog_api_client.v2.model.ai_gateway_rate_limit_create_request import AiGatewayRateLimitCreateRequest
 from datadog_api_client.v2.model.ai_gateway_rate_limit_mode import AiGatewayRateLimitMode
+from datadog_api_client.v2.model.ai_gateway_rate_limit_selector_entry import AiGatewayRateLimitSelectorEntry
 from datadog_api_client.v2.model.ai_gateway_rate_limit_type import AiGatewayRateLimitType
 from uuid import UUID
 
@@ -20,6 +21,15 @@ body = AiGatewayRateLimitCreateRequest(
             name="Default rate limit",
             output_tokens_per_minute=None,
             requests_per_minute=600,
+            selector=[
+                AiGatewayRateLimitSelectorEntry(
+                    dim="user_id",
+                    per_value=True,
+                    values=[
+                        "11111111-1111-1111-1111-111111111111",
+                    ],
+                ),
+            ],
             team_id=UUID("00000000-0000-4000-8000-000000000002"),
             user_id=UUID("00000000-0000-4000-8000-000000000001"),
         ),
