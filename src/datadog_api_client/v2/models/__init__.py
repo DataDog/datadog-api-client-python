@@ -627,6 +627,9 @@ from datadog_api_client.v2.model.ai_gateway_rate_limit_instance_type import AiGa
 from datadog_api_client.v2.model.ai_gateway_rate_limit_instances_summary_attributes import (
     AiGatewayRateLimitInstancesSummaryAttributes,
 )
+from datadog_api_client.v2.model.ai_gateway_rate_limit_instances_summary_list_response import (
+    AiGatewayRateLimitInstancesSummaryListResponse,
+)
 from datadog_api_client.v2.model.ai_gateway_rate_limit_instances_summary_resource import (
     AiGatewayRateLimitInstancesSummaryResource,
 )
@@ -14480,6 +14483,7 @@ __all__ = [
     "AiGatewayRateLimitInstanceSort",
     "AiGatewayRateLimitInstanceType",
     "AiGatewayRateLimitInstancesSummaryAttributes",
+    "AiGatewayRateLimitInstancesSummaryListResponse",
     "AiGatewayRateLimitInstancesSummaryResource",
     "AiGatewayRateLimitInstancesSummaryResponse",
     "AiGatewayRateLimitInstancesSummaryType",

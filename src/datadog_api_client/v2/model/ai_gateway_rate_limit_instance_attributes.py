@@ -20,6 +20,8 @@ class AiGatewayRateLimitInstanceAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "cost_microcents": (int,),
+            "cost_microcents_per_minute": (int, none_type),
             "first_seen": (datetime,),
             "input_tokens": (int,),
             "input_tokens_per_minute": (int, none_type),
@@ -38,6 +40,8 @@ class AiGatewayRateLimitInstanceAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "cost_microcents": "cost_microcents",
+        "cost_microcents_per_minute": "cost_microcents_per_minute",
         "first_seen": "first_seen",
         "input_tokens": "input_tokens",
         "input_tokens_per_minute": "input_tokens_per_minute",
@@ -69,6 +73,8 @@ class AiGatewayRateLimitInstanceAttributes(ModelNormal):
         usage_known: bool,
         utilization: float,
         would_limit_requests: int,
+        cost_microcents: Union[int, UnsetType] = unset,
+        cost_microcents_per_minute: Union[int, none_type, UnsetType] = unset,
         input_tokens_per_minute: Union[int, none_type, UnsetType] = unset,
         output_tokens_per_minute: Union[int, none_type, UnsetType] = unset,
         requests_per_minute: Union[int, none_type, UnsetType] = unset,
@@ -76,6 +82,12 @@ class AiGatewayRateLimitInstanceAttributes(ModelNormal):
     ):
         """
         One counter of a template rate limit and its live usage.
+
+        :param cost_microcents: Priced spend, in microcents, counted in the rolling one-minute window. 0 when the rate limit doesn't limit cost.
+        :type cost_microcents: int, optional
+
+        :param cost_microcents_per_minute: The rate limit's per-counter spend limit, in microcents. Null when it doesn't limit cost.
+        :type cost_microcents_per_minute: int, none_type, optional
 
         :param first_seen: When the gateway first recorded a request for this counter.
         :type first_seen: datetime
@@ -89,7 +101,7 @@ class AiGatewayRateLimitInstanceAttributes(ModelNormal):
         :param instance_key: Opaque canonical key identifying the counter.
         :type instance_key: str
 
-        :param last_seen: When the gateway last recorded a request for this counter; up to a few minutes behind live traffic.
+        :param last_seen: When the gateway last saw this counter hot, that is near or at a limit or limiting; up to a few minutes behind live traffic.
         :type last_seen: datetime
 
         :param limited_requests: Requests this counter rejected in the last 15 minutes (ENFORCE).
@@ -122,6 +134,10 @@ class AiGatewayRateLimitInstanceAttributes(ModelNormal):
         :param would_limit_requests: Requests this counter would have rejected in the last 15 minutes (ALERT).
         :type would_limit_requests: int
         """
+        if cost_microcents is not unset:
+            kwargs["cost_microcents"] = cost_microcents
+        if cost_microcents_per_minute is not unset:
+            kwargs["cost_microcents_per_minute"] = cost_microcents_per_minute
         if input_tokens_per_minute is not unset:
             kwargs["input_tokens_per_minute"] = input_tokens_per_minute
         if output_tokens_per_minute is not unset:

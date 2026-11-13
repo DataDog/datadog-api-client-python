@@ -7747,7 +7747,20 @@
   "CreateAiGatewayRateLimit": {
     "tag": "AI Gateway",
     "undo": {
-      "type": "idempotent"
+      "operationId": "DeleteAiGatewayRateLimit",
+      "parameters": [
+        {
+          "name": "id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "ListAiGatewayRateLimitInstancesSummaries": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "safe"
     }
   },
   "GetAiGatewayRateLimitUsage": {

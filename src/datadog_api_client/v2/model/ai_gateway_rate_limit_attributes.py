@@ -23,6 +23,10 @@ if TYPE_CHECKING:
 
 class AiGatewayRateLimitAttributes(ModelNormal):
     validations = {
+        "cost_microcents_per_minute": {
+            "inclusive_maximum": 10000000000000,
+            "inclusive_minimum": 1,
+        },
         "input_tokens_per_minute": {
             "inclusive_maximum": 100000000000,
             "inclusive_minimum": 1,
@@ -43,6 +47,7 @@ class AiGatewayRateLimitAttributes(ModelNormal):
         from datadog_api_client.v2.model.ai_gateway_rate_limit_selector_entry import AiGatewayRateLimitSelectorEntry
 
         return {
+            "cost_microcents_per_minute": (int, none_type),
             "created_at": (datetime,),
             "created_by": (str,),
             "enabled": (bool,),
@@ -65,6 +70,7 @@ class AiGatewayRateLimitAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "cost_microcents_per_minute": "cost_microcents_per_minute",
         "created_at": "created_at",
         "created_by": "created_by",
         "enabled": "enabled",
@@ -91,26 +97,30 @@ class AiGatewayRateLimitAttributes(ModelNormal):
         created_at: datetime,
         created_by: str,
         enabled: bool,
+        is_template: bool,
         mode: AiGatewayRateLimitMode,
         name: str,
         revision: int,
         scope_restricted: bool,
         tags: Dict[str, str],
+        template_split_dims: List[str],
         updated_at: datetime,
         updated_by: str,
+        cost_microcents_per_minute: Union[int, none_type, UnsetType] = unset,
         input_tokens_per_minute: Union[int, none_type, UnsetType] = unset,
-        is_template: Union[bool, UnsetType] = unset,
         monitor_id: Union[int, none_type, UnsetType] = unset,
         output_tokens_per_minute: Union[int, none_type, UnsetType] = unset,
         requests_per_minute: Union[int, none_type, UnsetType] = unset,
         selector: Union[List[AiGatewayRateLimitSelectorEntry], none_type, UnsetType] = unset,
         team_id: Union[UUID, none_type, UnsetType] = unset,
-        template_split_dims: Union[List[str], UnsetType] = unset,
         user_id: Union[UUID, none_type, UnsetType] = unset,
         **kwargs,
     ):
         """
         Attributes of an AI Gateway rate limit.
+
+        :param cost_microcents_per_minute: Maximum priced spend per rolling minute, in microcents of 1e-8 USD each, shared by all matching traffic, or per counter for a template rate limit. Null when this rule does not limit cost.
+        :type cost_microcents_per_minute: int, none_type, optional
 
         :param created_at: Creation timestamp.
         :type created_at: datetime
@@ -125,7 +135,7 @@ class AiGatewayRateLimitAttributes(ModelNormal):
         :type input_tokens_per_minute: int, none_type, optional
 
         :param is_template: Whether the selector gives each matching value its own allowance, that is, whether it has at least one per_value entry. Returned even when scope_restricted hides the selector.
-        :type is_template: bool, optional
+        :type is_template: bool
 
         :param mode: Action taken when request rate exceeds the limit.
         :type mode: AiGatewayRateLimitMode
@@ -158,7 +168,7 @@ class AiGatewayRateLimitAttributes(ModelNormal):
         :type team_id: UUID, none_type, optional
 
         :param template_split_dims: Dimensions of the selector's per_value entries, such as user_id or tag:env, each matching value of which gets its own allowance. Empty unless is_template is true. Returned even when scope_restricted hides the selector.
-        :type template_split_dims: [str], optional
+        :type template_split_dims: [str]
 
         :param updated_at: Last modification timestamp.
         :type updated_at: datetime
@@ -169,10 +179,10 @@ class AiGatewayRateLimitAttributes(ModelNormal):
         :param user_id: Optional user UUID. Count only this user's requests.
         :type user_id: UUID, none_type, optional
         """
+        if cost_microcents_per_minute is not unset:
+            kwargs["cost_microcents_per_minute"] = cost_microcents_per_minute
         if input_tokens_per_minute is not unset:
             kwargs["input_tokens_per_minute"] = input_tokens_per_minute
-        if is_template is not unset:
-            kwargs["is_template"] = is_template
         if monitor_id is not unset:
             kwargs["monitor_id"] = monitor_id
         if output_tokens_per_minute is not unset:
@@ -183,8 +193,6 @@ class AiGatewayRateLimitAttributes(ModelNormal):
             kwargs["selector"] = selector
         if team_id is not unset:
             kwargs["team_id"] = team_id
-        if template_split_dims is not unset:
-            kwargs["template_split_dims"] = template_split_dims
         if user_id is not unset:
             kwargs["user_id"] = user_id
         super().__init__(kwargs)
@@ -192,10 +200,12 @@ class AiGatewayRateLimitAttributes(ModelNormal):
         self_.created_at = created_at
         self_.created_by = created_by
         self_.enabled = enabled
+        self_.is_template = is_template
         self_.mode = mode
         self_.name = name
         self_.revision = revision
         self_.scope_restricted = scope_restricted
         self_.tags = tags
+        self_.template_split_dims = template_split_dims
         self_.updated_at = updated_at
         self_.updated_by = updated_by
