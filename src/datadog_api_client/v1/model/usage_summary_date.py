@@ -1318,7 +1318,13 @@ class UsageSummaryDate(ModelNormal):
         :param fargate_tasks_count_hwm: Shows the average of all Fargate tasks over all hours in the current date for all organizations.
         :type fargate_tasks_count_hwm: int, optional
 
-        :param feature_flags_config_requests_sum: Shows the sum of all Feature Flags Client-Side SDK config requests over all hours in the current date for all organizations.
+        :param feature_flags_config_requests_sum: Shows the sum of all Feature Flags configuration-request usage units from client-side and server-side SDK
+            requests over all hours in the current date for all organizations. Each metered client-side request
+            contributes 1 unit, and each metered server-side request contributes 10 units. This value already includes
+            the server-side multiplier, so do not multiply it again. For example, 100 metered client-side requests and
+            10 metered server-side requests total 200 units, not 110. Periods before server-side metering began include
+            no server-side requests.
+            See `Monthly Flag Configuration Requests <https://docs.datadoghq.com/feature_flags/concepts/monthly_flag_configuration_requests/>`_.
         :type feature_flags_config_requests_sum: int, optional
 
         :param flex_logs_compute_large_avg: Shows the average number of Flex Logs Compute Large Instances over all hours in the current date for the given org.
