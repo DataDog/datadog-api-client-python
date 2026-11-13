@@ -28,11 +28,16 @@ from datadog_api_client.v2.model.allocation_exposure_schedule_response import Al
 from datadog_api_client.v2.model.list_feature_flag_history_response import ListFeatureFlagHistoryResponse
 from datadog_api_client.v2.model.saved_filter_response import SavedFilterResponse
 from datadog_api_client.v2.model.patch_saved_filter_request import PatchSavedFilterRequest
+from datadog_api_client.v2.model.feature_flag_suggestion_response import FeatureFlagSuggestionResponse
+from datadog_api_client.v2.model.approve_flag_suggestion_request import ApproveFlagSuggestionRequest
+from datadog_api_client.v2.model.reject_flag_suggestion_request import RejectFlagSuggestionRequest
 from datadog_api_client.v2.model.update_feature_flag_request import UpdateFeatureFlagRequest
 from datadog_api_client.v2.model.allocation_response import AllocationResponse
 from datadog_api_client.v2.model.create_allocations_request import CreateAllocationsRequest
 from datadog_api_client.v2.model.list_allocations_response import ListAllocationsResponse
 from datadog_api_client.v2.model.overwrite_allocations_request import OverwriteAllocationsRequest
+from datadog_api_client.v2.model.update_feature_flag_approvals_request import UpdateFeatureFlagApprovalsRequest
+from datadog_api_client.v2.model.create_flag_suggestion_request import CreateFlagSuggestionRequest
 from datadog_api_client.v2.model.variant_response import VariantResponse
 from datadog_api_client.v2.model.create_variant_request import CreateVariantRequest
 from datadog_api_client.v2.model.update_variant_request import UpdateVariantRequest
@@ -40,13 +45,62 @@ from datadog_api_client.v2.model.update_variant_request import UpdateVariantRequ
 
 class FeatureFlagsApi:
     """
-    Manage feature flags and environments.
+    Manage feature flags, environments, and approval suggestions.
     """
 
     def __init__(self, api_client=None):
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._apply_flag_suggestion_endpoint = _Endpoint(
+            settings={
+                "response_type": (FeatureFlagSuggestionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/feature-flags/suggestions/{suggestion_id}/apply",
+                "operation_id": "apply_flag_suggestion",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "suggestion_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "suggestion_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._approve_flag_suggestion_endpoint = _Endpoint(
+            settings={
+                "response_type": (FeatureFlagSuggestionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/feature-flags/suggestions/{suggestion_id}/approve",
+                "operation_id": "approve_flag_suggestion",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "suggestion_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "suggestion_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (ApproveFlagSuggestionRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
 
         self._archive_feature_flag_endpoint = _Endpoint(
             settings={
@@ -143,6 +197,32 @@ class FeatureFlagsApi:
             api_client=api_client,
         )
 
+        self._create_flag_suggestion_endpoint = _Endpoint(
+            settings={
+                "response_type": (FeatureFlagSuggestionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/feature-flags/{feature_flag_id}/suggestions",
+                "operation_id": "create_flag_suggestion",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "feature_flag_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "feature_flag_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (CreateFlagSuggestionRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._create_variant_for_feature_flag_endpoint = _Endpoint(
             settings={
                 "response_type": (VariantResponse,),
@@ -183,6 +263,29 @@ class FeatureFlagsApi:
                     "required": True,
                     "openapi_types": (UUID,),
                     "attribute": "environment_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_flag_suggestion_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/feature-flags/suggestions/{suggestion_id}",
+                "operation_id": "delete_flag_suggestion",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "suggestion_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "suggestion_id",
                     "location": "path",
                 },
             },
@@ -370,6 +473,29 @@ class FeatureFlagsApi:
                     "required": True,
                     "openapi_types": (UUID,),
                     "attribute": "environment_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_flag_suggestion_endpoint = _Endpoint(
+            settings={
+                "response_type": (FeatureFlagSuggestionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/feature-flags/suggestions/{suggestion_id}",
+                "operation_id": "get_flag_suggestion",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "suggestion_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "suggestion_id",
                     "location": "path",
                 },
             },
@@ -667,6 +793,32 @@ class FeatureFlagsApi:
             api_client=api_client,
         )
 
+        self._reject_flag_suggestion_endpoint = _Endpoint(
+            settings={
+                "response_type": (FeatureFlagSuggestionResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/feature-flags/suggestions/{suggestion_id}/reject",
+                "operation_id": "reject_flag_suggestion",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "suggestion_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "suggestion_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (RejectFlagSuggestionRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._resume_exposure_schedule_endpoint = _Endpoint(
             settings={
                 "response_type": (AllocationExposureScheduleResponse,),
@@ -781,6 +933,11 @@ class FeatureFlagsApi:
                     "attribute": "environment_id",
                     "location": "path",
                 },
+                "default_variant_key": {
+                    "openapi_types": (str,),
+                    "attribute": "default_variant_key",
+                    "location": "query",
+                },
                 "body": {
                     "required": True,
                     "openapi_types": (OverwriteAllocationsRequest,),
@@ -810,6 +967,32 @@ class FeatureFlagsApi:
                 "body": {
                     "required": True,
                     "openapi_types": (UpdateFeatureFlagRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_feature_flag_approvals_endpoint = _Endpoint(
+            settings={
+                "response_type": (FeatureFlagResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/feature-flags/{feature_flag_id}/require-approval",
+                "operation_id": "update_feature_flag_approvals",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "feature_flag_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "feature_flag_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (UpdateFeatureFlagApprovalsRequest,),
                     "location": "body",
                 },
             },
@@ -901,14 +1084,83 @@ class FeatureFlagsApi:
             api_client=api_client,
         )
 
+    def apply_flag_suggestion(
+        self,
+        suggestion_id: UUID,
+    ) -> FeatureFlagSuggestionResponse:
+        """Apply an approved flag change suggestion.
+
+        Applies a previously approved feature flag change suggestion. Requires contributor or
+        editor access to the flag. Pending, rejected, or discarded suggestions return ``409 Conflict``.
+        An already applied suggestion also returns ``409 Conflict`` , except that retrying an applied
+        experiment action succeeds. This endpoint does not require a request body.
+
+        When an ``ALLOCATIONS`` suggestion is applied, either by this endpoint or by an approval that applies it,
+        each exposure schedule with ``autostart`` set to ``true`` , no ``absolute_start_time`` , and no future
+        ``scheduled_start_time`` starts at apply time. This includes a schedule that is already running, so a
+        suggestion that omits its ``absolute_start_time`` restarts its rollout. If its ``selection_interval_ms`` is
+        greater than ``0`` , every step except the last uses that interval. An ``absolute_start_time`` in the
+        suggestion is kept, including one set by the allocations request that built the suggestion, so time spent
+        waiting for approval counts toward its rollout steps.
+        Schedules with ``apm_retention`` , in the suggestion or on the saved schedule, are the exception: apply does
+        not start them, and they start only through the exposure schedule start endpoint. When the suggestion omits
+        ``apm_retention`` or ``absolute_start_time`` for a saved schedule with ``apm_retention`` , apply keeps the saved
+        values, so a running schedule keeps its start, unless the suggestion changes its rollout strategy, which
+        stops it.
+
+        :param suggestion_id: The ID of the feature flag change suggestion.
+        :type suggestion_id: UUID
+        :rtype: FeatureFlagSuggestionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["suggestion_id"] = suggestion_id
+
+        return self._apply_flag_suggestion_endpoint.call_with_http_info(**kwargs)
+
+    def approve_flag_suggestion(
+        self,
+        suggestion_id: UUID,
+        body: ApproveFlagSuggestionRequest,
+    ) -> FeatureFlagSuggestionResponse:
+        """Approve a flag change suggestion.
+
+        Approves a feature flag change suggestion and applies the change immediately by default.
+        Set ``apply`` to ``false`` to approve without applying, then call ``ApplyFlagSuggestion`` later.
+        Until it is applied or deleted, an approved suggestion still blocks conflicting changes.
+        Requires editor access to the flag or the Feature Flag Approvals Override permission.
+        A creator cannot approve their own suggestion unless they have override permission.
+        Applied or discarded suggestions return ``409 Conflict``. Retrying approval of an already
+        applied experiment action with ``apply`` set to ``true`` succeeds.
+
+        :param suggestion_id: The ID of the feature flag change suggestion.
+        :type suggestion_id: UUID
+        :type body: ApproveFlagSuggestionRequest
+        :rtype: FeatureFlagSuggestionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["suggestion_id"] = suggestion_id
+
+        kwargs["body"] = body
+
+        return self._approve_flag_suggestion_endpoint.call_with_http_info(**kwargs)
+
     def archive_feature_flag(
         self,
         feature_flag_id: UUID,
     ) -> FeatureFlagResponse:
         """Archive a feature flag.
 
-        Archives a feature flag. Archived flags are
-        hidden from the main list but remain accessible and can be unarchived.
+        Archives a feature flag. Archived flags are hidden from the main list but remain accessible
+        and can be unarchived.
+
+        When backend approvals are enabled and this change requires approval, callers without
+        the Feature Flag Approvals Override permission receive ``201 Created`` with a persisted
+        suggestion. The change is not applied until the suggestion is approved and applied.
+        Use the returned suggestion ID with ``GetFlagSuggestion`` , ``ApproveFlagSuggestion`` ,
+        ``RejectFlagSuggestion`` , or ``DeleteFlagSuggestion``.
+
+        A conflicting suggestion that is pending, or approved but not yet applied, returns ``409 Conflict`` without applying the change,
+        including for callers with override permission or when approval is no longer required.
 
         :param feature_flag_id: The ID of the feature flag.
         :type feature_flag_id: UUID
@@ -927,7 +1179,17 @@ class FeatureFlagsApi:
     ) -> AllocationResponse:
         """Create targeting rules for a flag env.
 
-        Creates a new targeting rule (allocation) for a specific feature flag in a specific environment.
+        Creates a new targeting rule (allocation) for a feature flag in an environment.
+
+        When backend approvals are enabled and this change requires approval, callers without
+        the Feature Flag Approvals Override permission receive ``202 Accepted`` with an
+        ``approval-required`` resource. No allocation is created and no suggestion is persisted.
+        The resource ID is the flag ID. Submit its ``property`` , ``action`` , ``suggestion`` , and ``environment_id``
+        to ``CreateFlagSuggestion`` , together with ``notification_rule_targets`` , to request approval.
+        The suggestion value contains the complete desired allocation set, including the new rule.
+
+        A conflicting suggestion that is pending, or approved but not yet applied, returns ``409 Conflict`` , including for callers with
+        override permission or when approval is no longer required.
 
         :param feature_flag_id: The ID of the feature flag.
         :type feature_flag_id: UUID
@@ -977,6 +1239,50 @@ class FeatureFlagsApi:
 
         return self._create_feature_flags_environment_endpoint.call_with_http_info(**kwargs)
 
+    def create_flag_suggestion(
+        self,
+        feature_flag_id: UUID,
+        body: CreateFlagSuggestionRequest,
+    ) -> FeatureFlagSuggestionResponse:
+        """Create a flag change suggestion.
+
+        Creates a persisted suggestion for a feature flag change that requires approval.
+        The change is not applied until the suggestion is approved and applied. Requires
+        contributor or editor access to the flag. The request must contain at least one
+        ``notification_rule_targets`` handle for review notifications.
+
+        Use this endpoint to submit the proposed change from the ``202 Accepted`` approval-required
+        response of ``CreateAllocationsForFeatureFlagInEnvironment``. Other approval-gated mutation endpoints
+        return ``201 Created`` with a persisted suggestion. Do not submit those suggestions again.
+
+        An ``environment_id`` is required for ``ALLOCATIONS`` , ``DEFAULT_VARIANT`` , and ``OVERRIDE_VARIANT``.
+        For allocation and variant changes, ``suggestion`` is a JSON-encoded string, not a nested
+        JSON object. Conflicting suggestions that are pending, or approved but not yet applied,
+        return ``409 Conflict``.
+
+        The allocations in an ``ALLOCATIONS`` suggestion are validated with the rules that
+        ``UpdateAllocationsForFeatureFlagInEnvironment`` applies to a change that requires approval, including the
+        rules for request fields, targeting rules and their ``ONE_OF`` and ``NOT_ONE_OF`` value limits, variant and
+        metric references, draft allocations, and exposure schedules. A schedule with ``apm_retention`` that has not
+        started must be started with the exposure schedule start endpoint, not with ``autostart`` or an
+        ``absolute_start_time``. That endpoint's Product Analytics Experiments Write permission checks also apply.
+        If that endpoint would reject the allocations, this endpoint returns the same error: ``400 Bad Request`` for
+        invalid allocations, for example a ``UNIFORM_INTERVALS`` schedule with a ``selection_interval_ms`` of ``0`` ,
+        ``403 Forbidden`` when the caller lacks the Experiments Write permission the lineup needs, and
+        ``409 Conflict`` for a lineup that changes or omits a draft allocation.
+
+        :param feature_flag_id: The ID of the feature flag.
+        :type feature_flag_id: UUID
+        :type body: CreateFlagSuggestionRequest
+        :rtype: FeatureFlagSuggestionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["feature_flag_id"] = feature_flag_id
+
+        kwargs["body"] = body
+
+        return self._create_flag_suggestion_endpoint.call_with_http_info(**kwargs)
+
     def create_variant_for_feature_flag(
         self,
         feature_flag_id: UUID,
@@ -1021,6 +1327,26 @@ class FeatureFlagsApi:
 
         return self._delete_feature_flags_environment_endpoint.call_with_http_info(**kwargs)
 
+    def delete_flag_suggestion(
+        self,
+        suggestion_id: UUID,
+    ) -> None:
+        """Delete or discard a flag change suggestion.
+
+        Deletes a pending suggestion or discards an approved suggestion that has not been
+        applied. Requires editor access to the flag, or contributor access for the suggestion's
+        creator. Applied and rejected suggestions return ``409 Conflict``. A missing or already
+        discarded suggestion returns ``204 No Content``.
+
+        :param suggestion_id: The ID of the feature flag change suggestion.
+        :type suggestion_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["suggestion_id"] = suggestion_id
+
+        return self._delete_flag_suggestion_endpoint.call_with_http_info(**kwargs)
+
     def delete_variant_from_feature_flag(
         self,
         feature_flag_id: UUID,
@@ -1030,7 +1356,15 @@ class FeatureFlagsApi:
 
         Deletes a variant from a feature flag.
 
-        When backend approvals are enabled and the flag requires approval, this endpoint creates and returns a ``FlagSuggestion`` with ``201 Created`` instead of deleting the variant immediately. If a pending suggestion already exists for this flag's variant property, the endpoint returns ``409 Conflict``.
+        When backend approvals are enabled and this change requires approval, callers without
+        the Feature Flag Approvals Override permission receive ``201 Created`` with a persisted
+        suggestion, in the same format as the ``GetFlagSuggestion`` response. The change is not
+        applied until the suggestion is approved and applied.
+        Use the returned suggestion ID with ``GetFlagSuggestion`` , ``ApproveFlagSuggestion`` ,
+        ``RejectFlagSuggestion`` , or ``DeleteFlagSuggestion``.
+
+        A conflicting suggestion that is pending, or approved but not yet applied, returns ``409 Conflict`` without applying the change,
+        including for callers with override permission or when approval is no longer required.
 
         :param feature_flag_id: The ID of the feature flag.
         :type feature_flag_id: UUID
@@ -1052,7 +1386,17 @@ class FeatureFlagsApi:
     ) -> None:
         """Disable a feature flag in an environment.
 
-        Disable a feature flag in a specific environment.
+        Disables a feature flag in a specific environment.
+
+        When backend approvals are enabled and this change requires approval, callers without
+        the Feature Flag Approvals Override permission receive ``201 Created`` with a persisted
+        suggestion, in the same format as the ``GetFlagSuggestion`` response. The change is not
+        applied until the suggestion is approved and applied.
+        Use the returned suggestion ID with ``GetFlagSuggestion`` , ``ApproveFlagSuggestion`` ,
+        ``RejectFlagSuggestion`` , or ``DeleteFlagSuggestion``.
+
+        A conflicting suggestion that is pending, or approved but not yet applied, returns ``409 Conflict`` without applying the change,
+        including for callers with override permission or when approval is no longer required.
 
         :param feature_flag_id: The ID of the feature flag.
         :type feature_flag_id: UUID
@@ -1074,7 +1418,17 @@ class FeatureFlagsApi:
     ) -> None:
         """Enable a feature flag in an environment.
 
-        Enable a feature flag in a specific environment.
+        Enables a feature flag in a specific environment.
+
+        When backend approvals are enabled and this change requires approval, callers without
+        the Feature Flag Approvals Override permission receive ``201 Created`` with a persisted
+        suggestion, in the same format as the ``GetFlagSuggestion`` response. The change is not
+        applied until the suggestion is approved and applied.
+        Use the returned suggestion ID with ``GetFlagSuggestion`` , ``ApproveFlagSuggestion`` ,
+        ``RejectFlagSuggestion`` , or ``DeleteFlagSuggestion``.
+
+        A conflicting suggestion that is pending, or approved but not yet applied, returns ``409 Conflict`` without applying the change,
+        including for callers with override permission or when approval is no longer required.
 
         :param feature_flag_id: The ID of the feature flag.
         :type feature_flag_id: UUID
@@ -1185,6 +1539,25 @@ class FeatureFlagsApi:
         kwargs["environment_id"] = environment_id
 
         return self._get_feature_flags_environment_endpoint.call_with_http_info(**kwargs)
+
+    def get_flag_suggestion(
+        self,
+        suggestion_id: UUID,
+    ) -> FeatureFlagSuggestionResponse:
+        """Get a flag change suggestion.
+
+        Returns a feature flag change suggestion by ID. Use ``lifecycle_status`` to distinguish
+        pending, approved, applied, rejected, and discarded suggestions. An approved suggestion
+        has not yet been applied; an applied suggestion has changed the flag.
+
+        :param suggestion_id: The ID of the feature flag change suggestion.
+        :type suggestion_id: UUID
+        :rtype: FeatureFlagSuggestionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["suggestion_id"] = suggestion_id
+
+        return self._get_flag_suggestion_endpoint.call_with_http_info(**kwargs)
 
     def get_saved_filter(
         self,
@@ -1455,6 +1828,30 @@ class FeatureFlagsApi:
 
         return self._pause_exposure_schedule_endpoint.call_with_http_info(**kwargs)
 
+    def reject_flag_suggestion(
+        self,
+        suggestion_id: UUID,
+        body: RejectFlagSuggestionRequest,
+    ) -> FeatureFlagSuggestionResponse:
+        """Reject a flag change suggestion.
+
+        Rejects a pending feature flag change suggestion without applying the change. Requires
+        editor access to the flag or the Feature Flag Approvals Override permission. Rejecting
+        an already rejected suggestion succeeds. Approved, applied, or discarded suggestions
+        return ``409 Conflict``.
+
+        :param suggestion_id: The ID of the feature flag change suggestion.
+        :type suggestion_id: UUID
+        :type body: RejectFlagSuggestionRequest
+        :rtype: FeatureFlagSuggestionResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["suggestion_id"] = suggestion_id
+
+        kwargs["body"] = body
+
+        return self._reject_flag_suggestion_endpoint.call_with_http_info(**kwargs)
+
     def resume_exposure_schedule(
         self,
         exposure_schedule_id: UUID,
@@ -1512,8 +1909,16 @@ class FeatureFlagsApi:
     ) -> FeatureFlagResponse:
         """Unarchive a feature flag.
 
-        Unarchives a previously archived feature flag,
-        making it visible in the main list again.
+        Unarchives a previously archived feature flag, making it visible in the main list again.
+
+        When backend approvals are enabled and this change requires approval, callers without
+        the Feature Flag Approvals Override permission receive ``201 Created`` with a persisted
+        suggestion. The change is not applied until the suggestion is approved and applied.
+        Use the returned suggestion ID with ``GetFlagSuggestion`` , ``ApproveFlagSuggestion`` ,
+        ``RejectFlagSuggestion`` , or ``DeleteFlagSuggestion``.
+
+        A conflicting suggestion that is pending, or approved but not yet applied, returns ``409 Conflict`` without applying the change,
+        including for callers with override permission or when approval is no longer required.
 
         :param feature_flag_id: The ID of the feature flag.
         :type feature_flag_id: UUID
@@ -1529,23 +1934,44 @@ class FeatureFlagsApi:
         feature_flag_id: UUID,
         environment_id: UUID,
         body: OverwriteAllocationsRequest,
+        *,
+        default_variant_key: Union[str, UnsetType] = unset,
     ) -> ListAllocationsResponse:
         """Update targeting rules for a flag.
 
-        Updates targeting rules (allocations) for a specific feature flag in a specific environment.
-        This operation replaces the existing allocation set with the request payload.
+        Updates targeting rules (allocations) for a feature flag in an environment. This operation
+        replaces the existing allocation set with the request payload.
+
+        When backend approvals are enabled and this change requires approval, callers without
+        the Feature Flag Approvals Override permission receive ``201 Created`` with a persisted
+        suggestion. The change is not applied until the suggestion is approved and applied.
+        Use the returned suggestion ID with ``GetFlagSuggestion`` , ``ApproveFlagSuggestion`` ,
+        ``RejectFlagSuggestion`` , or ``DeleteFlagSuggestion``.
+
+        A conflicting suggestion that is pending, or approved but not yet applied, returns ``409 Conflict`` without applying the change,
+        including for callers with override permission or when approval is no longer required.
+
+        When approval is required, combining allocation replacement with ``default_variant_key``
+        returns ``400 Bad Request``. Omit that parameter and submit the default variant change
+        separately with ``CreateFlagSuggestion`` using the ``DEFAULT_VARIANT`` property and the variant ID.
 
         :param feature_flag_id: The ID of the feature flag.
         :type feature_flag_id: UUID
         :param environment_id: The ID of the environment.
         :type environment_id: UUID
         :type body: OverwriteAllocationsRequest
+        :param default_variant_key: The key of the default variant to set. When approval is required, omit this parameter
+            and submit a ``DEFAULT_VARIANT`` suggestion separately.
+        :type default_variant_key: str, optional
         :rtype: ListAllocationsResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["feature_flag_id"] = feature_flag_id
 
         kwargs["environment_id"] = environment_id
+
+        if default_variant_key is not unset:
+            kwargs["default_variant_key"] = default_variant_key
 
         kwargs["body"] = body
 
@@ -1558,13 +1984,30 @@ class FeatureFlagsApi:
     ) -> FeatureFlagResponse:
         """Update a feature flag.
 
-        Updates an existing feature flag's metadata such as
-         name and description. Does not modify targeting rules or allocations.
+        Updates an existing feature flag's metadata, including its name,
+        description, distribution channel, and tags. Does not modify targeting rules or allocations.
 
         To change the owning team, update ``tags`` and include a tag of the form
         ``team:<team-handle>`` in the array. ``tags`` is a full replacement of the
         existing tag set (including any ``team:`` tag), so include every tag you
         want to keep, not just the ones you're adding.
+
+        To change the lifecycle, set ``staleness_status`` to ``ACTIVE`` (temporary) or ``PERMANENT``.
+        Either value clears any snooze; omit it to keep the lifecycle. Send ``staleness_status`` in a
+        separate request from ``distribution_channel``. Do not copy the top-level ``staleness_status``
+        from a response into the request: that legacy response field is always ``ACTIVE`` , so
+        copying it makes a ``PERMANENT`` flag temporary.
+
+        When backend approvals are enabled and a distribution channel change requires approval,
+        callers without the Feature Flag Approvals Override permission receive ``201 Created``
+        with a suggestion instead of an updated flag. No fields in the request are applied.
+        The suggestion contains only the distribution channel change. To update other fields, such as
+        name, description, JSON schema, and tags, send a separate request without ``distribution_channel``.
+
+        While backend approvals are enabled, a request that includes ``distribution_channel``
+        returns ``409 Conflict`` if a distribution channel suggestion for the flag is pending, or
+        approved but not yet applied. No fields are applied, including for callers with override
+        permission.
 
         :param feature_flag_id: The ID of the feature flag.
         :type feature_flag_id: UUID
@@ -1577,6 +2020,31 @@ class FeatureFlagsApi:
         kwargs["body"] = body
 
         return self._update_feature_flag_endpoint.call_with_http_info(**kwargs)
+
+    def update_feature_flag_approvals(
+        self,
+        feature_flag_id: UUID,
+        body: UpdateFeatureFlagApprovalsRequest,
+    ) -> FeatureFlagResponse:
+        """Set the approval requirement for a feature flag.
+
+        Enables or disables the approval requirement for a feature flag. Requires the Feature
+        Flag Write permission and contributor or editor access to the flag. Disabling approvals
+        also requires the Feature Flag Approvals Override permission, even if approvals are already disabled.
+        This operation updates the setting directly and does not create a suggestion. Changing the setting
+        returns ``409 Conflict`` when a pending experiment request or a running approved experiment uses the flag.
+
+        :param feature_flag_id: The ID of the feature flag.
+        :type feature_flag_id: UUID
+        :type body: UpdateFeatureFlagApprovalsRequest
+        :rtype: FeatureFlagResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["feature_flag_id"] = feature_flag_id
+
+        kwargs["body"] = body
+
+        return self._update_feature_flag_approvals_endpoint.call_with_http_info(**kwargs)
 
     def update_feature_flags_environment(
         self,
@@ -1638,7 +2106,15 @@ class FeatureFlagsApi:
 
         Updates the name and value of an existing variant on a feature flag.
 
-        When backend approvals are enabled and the flag requires approval, this endpoint creates and returns a ``FlagSuggestion`` with ``201 Created`` instead of applying the change immediately. Use the returned suggestion ``id`` to approve or reject the change. If a pending suggestion already exists for this flag's variant property, the endpoint returns ``409 Conflict``.
+        When backend approvals are enabled and this change requires approval, callers without
+        the Feature Flag Approvals Override permission receive ``201 Created`` with a persisted
+        suggestion, in the same format as the ``GetFlagSuggestion`` response. The change is not
+        applied until the suggestion is approved and applied.
+        Use the returned suggestion ID with ``GetFlagSuggestion`` , ``ApproveFlagSuggestion`` ,
+        ``RejectFlagSuggestion`` , or ``DeleteFlagSuggestion``.
+
+        A conflicting suggestion that is pending, or approved but not yet applied, returns ``409 Conflict`` without applying the change,
+        including for callers with override permission or when approval is no longer required.
 
         :param feature_flag_id: The ID of the feature flag.
         :type feature_flag_id: UUID
