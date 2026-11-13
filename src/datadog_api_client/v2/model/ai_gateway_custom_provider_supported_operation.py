@@ -16,7 +16,7 @@ class AiGatewayCustomProviderSupportedOperation(ModelSimple):
     """
     Operation supported by a custom provider.
 
-    :param value: Must be one of ["OPENAI_CHAT_COMPLETIONS", "OPENAI_RESPONSES", "ANTHROPIC_MESSAGES"].
+    :param value: Must be one of ["OPENAI_CHAT_COMPLETIONS", "OPENAI_RESPONSES", "ANTHROPIC_MESSAGES", "SYSTEM_ONE"].
     :type value: str
     """
 
@@ -24,10 +24,12 @@ class AiGatewayCustomProviderSupportedOperation(ModelSimple):
         "OPENAI_CHAT_COMPLETIONS",
         "OPENAI_RESPONSES",
         "ANTHROPIC_MESSAGES",
+        "SYSTEM_ONE",
     }
     OPENAI_CHAT_COMPLETIONS: ClassVar["AiGatewayCustomProviderSupportedOperation"]
     OPENAI_RESPONSES: ClassVar["AiGatewayCustomProviderSupportedOperation"]
     ANTHROPIC_MESSAGES: ClassVar["AiGatewayCustomProviderSupportedOperation"]
+    SYSTEM_ONE: ClassVar["AiGatewayCustomProviderSupportedOperation"]
 
     @cached_property
     def openapi_types(_):
@@ -45,3 +47,4 @@ AiGatewayCustomProviderSupportedOperation.OPENAI_RESPONSES = AiGatewayCustomProv
 AiGatewayCustomProviderSupportedOperation.ANTHROPIC_MESSAGES = AiGatewayCustomProviderSupportedOperation(
     "ANTHROPIC_MESSAGES"
 )
+AiGatewayCustomProviderSupportedOperation.SYSTEM_ONE = AiGatewayCustomProviderSupportedOperation("SYSTEM_ONE")
