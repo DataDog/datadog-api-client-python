@@ -50,6 +50,7 @@ class Dashboard(ModelNormal):
         from datadog_api_client.v1.model.widget import Widget
 
         return {
+            "archived_at": (datetime,),
             "author_handle": (str,),
             "author_name": (str, none_type),
             "created_at": (datetime,),
@@ -73,6 +74,7 @@ class Dashboard(ModelNormal):
         }
 
     attribute_map = {
+        "archived_at": "archived_at",
         "author_handle": "author_handle",
         "author_name": "author_name",
         "created_at": "created_at",
@@ -95,6 +97,7 @@ class Dashboard(ModelNormal):
         "widgets": "widgets",
     }
     read_only_vars = {
+        "archived_at",
         "author_handle",
         "author_name",
         "created_at",
@@ -109,6 +112,7 @@ class Dashboard(ModelNormal):
         layout_type: DashboardLayoutType,
         title: str,
         widgets: List[Widget],
+        archived_at: Union[datetime, UnsetType] = unset,
         author_handle: Union[str, UnsetType] = unset,
         author_name: Union[str, none_type, UnsetType] = unset,
         created_at: Union[datetime, UnsetType] = unset,
@@ -133,6 +137,9 @@ class Dashboard(ModelNormal):
         """
         A dashboard is Datadog’s tool for visually tracking, analyzing, and displaying
         key performance metrics, which enable you to monitor the health of your infrastructure.
+
+        :param archived_at: Archive date of the dashboard.
+        :type archived_at: datetime, optional
 
         :param author_handle: Identifier of the dashboard author.
         :type author_handle: str, optional
@@ -198,6 +205,8 @@ class Dashboard(ModelNormal):
         :param widgets: List of widgets to display on the dashboard.
         :type widgets: [Widget]
         """
+        if archived_at is not unset:
+            kwargs["archived_at"] = archived_at
         if author_handle is not unset:
             kwargs["author_handle"] = author_handle
         if author_name is not unset:
