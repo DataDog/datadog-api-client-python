@@ -18,6 +18,10 @@ class LLMObsPatternsConfigUpsertRequestAttributes(ModelNormal):
         "hierarchy_depth": {
             "inclusive_maximum": 2147483647,
         },
+        "min_cluster_size": {
+            "inclusive_maximum": 2147483647,
+            "inclusive_minimum": 2,
+        },
         "num_records": {
             "inclusive_maximum": 2147483647,
         },
@@ -31,6 +35,7 @@ class LLMObsPatternsConfigUpsertRequestAttributes(ModelNormal):
             "evp_query": (str,),
             "hierarchy_depth": (int,),
             "integration_provider": (str,),
+            "min_cluster_size": (int,),
             "model_name": (str,),
             "name": (str,),
             "num_records": (int,),
@@ -45,6 +50,7 @@ class LLMObsPatternsConfigUpsertRequestAttributes(ModelNormal):
         "evp_query": "evp_query",
         "hierarchy_depth": "hierarchy_depth",
         "integration_provider": "integration_provider",
+        "min_cluster_size": "min_cluster_size",
         "model_name": "model_name",
         "name": "name",
         "num_records": "num_records",
@@ -63,6 +69,7 @@ class LLMObsPatternsConfigUpsertRequestAttributes(ModelNormal):
         account_id: Union[str, UnsetType] = unset,
         config_id: Union[str, UnsetType] = unset,
         integration_provider: Union[str, UnsetType] = unset,
+        min_cluster_size: Union[int, UnsetType] = unset,
         model_name: Union[str, UnsetType] = unset,
         scope: Union[str, UnsetType] = unset,
         template: Union[str, UnsetType] = unset,
@@ -85,6 +92,10 @@ class LLMObsPatternsConfigUpsertRequestAttributes(ModelNormal):
 
         :param integration_provider: Integration provider for a bring-your-own-model configuration.
         :type integration_provider: str, optional
+
+        :param min_cluster_size: Minimum topic size, the smallest number of interactions a topic must contain. Topics with fewer
+            interactions are moved to Outliers. Must be at least 2 and less than ``num_records``. Required when creating a configuration.
+        :type min_cluster_size: int, optional
 
         :param model_name: Model name for a bring-your-own-model configuration.
         :type model_name: str, optional
@@ -110,6 +121,8 @@ class LLMObsPatternsConfigUpsertRequestAttributes(ModelNormal):
             kwargs["config_id"] = config_id
         if integration_provider is not unset:
             kwargs["integration_provider"] = integration_provider
+        if min_cluster_size is not unset:
+            kwargs["min_cluster_size"] = min_cluster_size
         if model_name is not unset:
             kwargs["model_name"] = model_name
         if scope is not unset:
