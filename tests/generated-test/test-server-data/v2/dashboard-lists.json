@@ -739,6 +739,174 @@
     },
     {
       "feature": "Dashboard Lists",
+      "frozen_at": "2026-08-31T02:38:18.801Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "name": "Test-Get_dashboard_list_items_with_five_team_tags_and_two_AI_tags-1788143898"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/dashboard/lists/manual",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"author\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"created\":\"2026-08-31T02:38:19.366670+00:00\",\"dashboards\":null,\"dashboard_count\":0,\"id\":673085,\"is_favorite\":false,\"modified\":\"2026-08-31T02:38:19.366675+00:00\",\"name\":\"Test-Get_dashboard_list_items_with_five_team_tags_and_two_AI_tags-1788143898\",\"type\":\"manual_dashboard_list\"}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "layout_type": "ordered",
+                "tags": [
+                  "team:alpha",
+                  "team:beta",
+                  "team:gamma",
+                  "team:delta",
+                  "team:epsilon",
+                  "ai:generated",
+                  "ai:edited"
+                ],
+                "title": "Test-Get_dashboard_list_items_with_five_team_tags_and_two_AI_tags-1788143898",
+                "widgets": []
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/dashboard",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":\"fn2-4ry-3vu\",\"title\":\"Test-Get_dashboard_list_items_with_five_team_tags_and_two_AI_tags-1788143898\",\"description\":null,\"author_handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"author_name\":\"CI Account\",\"layout_type\":\"ordered\",\"url\":\"/dashboard/fn2-4ry-3vu/test-getdashboardlistitemswithfiveteamtagsandtwoaitags-1788143898\",\"template_variables\":null,\"widgets\":[],\"notify_list\":null,\"created_at\":\"2026-08-31T02:38:19.484838+00:00\",\"modified_at\":\"2026-08-31T02:38:19.484838+00:00\",\"tags\":[\"team:alpha\",\"team:beta\",\"team:gamma\",\"team:delta\",\"team:epsilon\",\"ai:generated\",\"ai:edited\"],\"restricted_roles\":[]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "dashboards": [
+                  {
+                    "id": "fn2-4ry-3vu",
+                    "type": "custom_timeboard"
+                  }
+                ]
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/dashboard/lists/manual/673085/dashboards",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"added_dashboards_to_list\":[{\"type\":\"custom_timeboard\",\"id\":\"fn2-4ry-3vu\"}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/dashboard/lists/manual/673085/dashboards",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"dashboards\":[{\"author\":{\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"created\":\"2026-08-31T02:38:19.484838+00:00\",\"is_favorite\":false,\"is_shared\":false,\"modified\":\"2026-08-31T02:38:19.484838+00:00\",\"title\":\"Test-Get_dashboard_list_items_with_five_team_tags_and_two_AI_tags-1788143898\",\"type\":\"custom_timeboard\",\"id\":\"fn2-4ry-3vu\",\"url\":\"/dashboard/fn2-4ry-3vu/test-getdashboardlistitemswithfiveteamtagsandtwoaitags-1788143898\",\"is_read_only\":false,\"tags\":[\"team:alpha\",\"team:beta\",\"team:gamma\",\"team:delta\",\"team:epsilon\",\"ai:generated\",\"ai:edited\"],\"icon\":null,\"integration_id\":null,\"popularity\":0}],\"total\":1}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/dashboard/fn2-4ry-3vu",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_dashboard_id\":\"fn2-4ry-3vu\"}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/dashboard/lists/manual/673085",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_dashboard_list_id\":673085}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Get dashboard list items with five team tags and two AI tags",
+      "version": "v2"
+    },
+    {
+      "feature": "Dashboard Lists",
       "frozen_at": "2022-03-21T19:16:49.586Z",
       "interactions": [
         {

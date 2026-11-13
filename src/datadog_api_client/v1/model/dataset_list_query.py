@@ -66,7 +66,7 @@ class DatasetListQuery(ModelNormal):
         :param dataset_provider: Product page that published the dataset queried by a ``DatasetListQuery``. ``ddsql_query`` is the only provider currently supported for host map widgets.
         :type dataset_provider: PublishedDatasetProvider
 
-        :param filter: Filter applied to the dataset's rows, using events-style search syntax.
+        :param filter: Filter applied to the rows of the dataset, using events-style search syntax.
         :type filter: str, optional
 
         :param limit: Maximum number of rows to return from the dataset query.
