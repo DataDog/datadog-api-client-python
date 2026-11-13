@@ -14,9 +14,10 @@ from typing import ClassVar
 
 class IssuesSearchRequestDataAttributesTrack(ModelSimple):
     """
-    Track of the events to query. Either track(s) or persona(s) must be specified.
+    Track of the events to query. Either `track` or `persona` must be specified.
+        If both are specified, `persona` is ignored.
 
-    :param value: Must be one of ["trace", "logs", "rum"].
+    :param value: Must be one of ["trace", "logs", "rum", "llmobs"].
     :type value: str
     """
 
@@ -24,10 +25,12 @@ class IssuesSearchRequestDataAttributesTrack(ModelSimple):
         "trace",
         "logs",
         "rum",
+        "llmobs",
     }
     TRACE: ClassVar["IssuesSearchRequestDataAttributesTrack"]
     LOGS: ClassVar["IssuesSearchRequestDataAttributesTrack"]
     RUM: ClassVar["IssuesSearchRequestDataAttributesTrack"]
+    LLMOBS: ClassVar["IssuesSearchRequestDataAttributesTrack"]
 
     @cached_property
     def openapi_types(_):
@@ -39,3 +42,4 @@ class IssuesSearchRequestDataAttributesTrack(ModelSimple):
 IssuesSearchRequestDataAttributesTrack.TRACE = IssuesSearchRequestDataAttributesTrack("trace")
 IssuesSearchRequestDataAttributesTrack.LOGS = IssuesSearchRequestDataAttributesTrack("logs")
 IssuesSearchRequestDataAttributesTrack.RUM = IssuesSearchRequestDataAttributesTrack("rum")
+IssuesSearchRequestDataAttributesTrack.LLMOBS = IssuesSearchRequestDataAttributesTrack("llmobs")

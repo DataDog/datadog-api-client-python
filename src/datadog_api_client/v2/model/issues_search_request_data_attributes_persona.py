@@ -14,9 +14,10 @@ from typing import ClassVar
 
 class IssuesSearchRequestDataAttributesPersona(ModelSimple):
     """
-    Persona for the search. Either track(s) or persona(s) must be specified.
+    Persona for the search. Either `track` or `persona` must be specified.
+        Ignored if `track` is specified.
 
-    :param value: Must be one of ["ALL", "BROWSER", "MOBILE", "BACKEND"].
+    :param value: Must be one of ["ALL", "BROWSER", "MOBILE", "BACKEND", "AGENT"].
     :type value: str
     """
 
@@ -25,11 +26,13 @@ class IssuesSearchRequestDataAttributesPersona(ModelSimple):
         "BROWSER",
         "MOBILE",
         "BACKEND",
+        "AGENT",
     }
     ALL: ClassVar["IssuesSearchRequestDataAttributesPersona"]
     BROWSER: ClassVar["IssuesSearchRequestDataAttributesPersona"]
     MOBILE: ClassVar["IssuesSearchRequestDataAttributesPersona"]
     BACKEND: ClassVar["IssuesSearchRequestDataAttributesPersona"]
+    AGENT: ClassVar["IssuesSearchRequestDataAttributesPersona"]
 
     @cached_property
     def openapi_types(_):
@@ -42,3 +45,4 @@ IssuesSearchRequestDataAttributesPersona.ALL = IssuesSearchRequestDataAttributes
 IssuesSearchRequestDataAttributesPersona.BROWSER = IssuesSearchRequestDataAttributesPersona("BROWSER")
 IssuesSearchRequestDataAttributesPersona.MOBILE = IssuesSearchRequestDataAttributesPersona("MOBILE")
 IssuesSearchRequestDataAttributesPersona.BACKEND = IssuesSearchRequestDataAttributesPersona("BACKEND")
+IssuesSearchRequestDataAttributesPersona.AGENT = IssuesSearchRequestDataAttributesPersona("AGENT")
