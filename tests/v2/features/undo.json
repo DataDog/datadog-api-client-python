@@ -10223,6 +10223,18 @@
       "type": "safe"
     }
   },
+  "ListTargetScanningGroups": {
+    "tag": "Sensitive Data Scanner",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetScanningGroup": {
+    "tag": "Sensitive Data Scanner",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "SubmitMetrics": {
     "tag": "Metrics",
     "undo": {

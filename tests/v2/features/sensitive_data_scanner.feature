@@ -117,6 +117,41 @@ Feature: Sensitive Data Scanner
     Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/sensitive-data-scanner
+  Scenario: Get Scanning Group returns "Bad Request" response
+    Given new "GetScanningGroup" request
+    And request contains "group_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/sensitive-data-scanner
+  Scenario: Get Scanning Group returns "Not Found" response
+    Given new "GetScanningGroup" request
+    And request contains "group_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/sensitive-data-scanner
+  Scenario: Get Scanning Group returns "OK" response
+    Given new "GetScanningGroup" request
+    And request contains "group_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/sensitive-data-scanner
+  Scenario: List Scanning Groups of a target returns "Bad Request" response
+    Given new "ListTargetScanningGroups" request
+    And request contains "filter[target]" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/sensitive-data-scanner
+  Scenario: List Scanning Groups of a target returns "OK" response
+    Given new "ListTargetScanningGroups" request
+    And request contains "filter[target]" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/sensitive-data-scanner
   Scenario: List Scanning Groups returns "Bad Request" response
     Given new "ListScanningGroups" request
     When the request is sent
