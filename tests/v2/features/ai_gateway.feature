@@ -184,7 +184,7 @@ Feature: AI Gateway
   Scenario: Create an AI Gateway rate limit returns "Bad Request" response
     Given operation "CreateAiGatewayRateLimit" enabled
     And new "CreateAiGatewayRateLimit" request
-    And body with value {"data": {"attributes": {"input_tokens_per_minute": null, "mode": "ALERT", "name": "Default rate limit", "output_tokens_per_minute": null, "requests_per_minute": 600, "team_id": "00000000-0000-4000-8000-000000000002", "user_id": "00000000-0000-4000-8000-000000000001"}, "type": "rate-limits"}}
+    And body with value {"data": {"attributes": {"input_tokens_per_minute": null, "mode": "ALERT", "name": "Default rate limit", "output_tokens_per_minute": null, "requests_per_minute": 600, "selector": [{"dim": "user_id", "per_value": true, "values": ["11111111-1111-1111-1111-111111111111"]}], "team_id": "00000000-0000-4000-8000-000000000002", "user_id": "00000000-0000-4000-8000-000000000001"}, "type": "rate-limits"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -192,7 +192,7 @@ Feature: AI Gateway
   Scenario: Create an AI Gateway rate limit returns "Conflict" response
     Given operation "CreateAiGatewayRateLimit" enabled
     And new "CreateAiGatewayRateLimit" request
-    And body with value {"data": {"attributes": {"input_tokens_per_minute": null, "mode": "ALERT", "name": "Default rate limit", "output_tokens_per_minute": null, "requests_per_minute": 600, "team_id": "00000000-0000-4000-8000-000000000002", "user_id": "00000000-0000-4000-8000-000000000001"}, "type": "rate-limits"}}
+    And body with value {"data": {"attributes": {"input_tokens_per_minute": null, "mode": "ALERT", "name": "Default rate limit", "output_tokens_per_minute": null, "requests_per_minute": 600, "selector": [{"dim": "user_id", "per_value": true, "values": ["11111111-1111-1111-1111-111111111111"]}], "team_id": "00000000-0000-4000-8000-000000000002", "user_id": "00000000-0000-4000-8000-000000000001"}, "type": "rate-limits"}}
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -200,7 +200,7 @@ Feature: AI Gateway
   Scenario: Create an AI Gateway rate limit returns "Created" response
     Given operation "CreateAiGatewayRateLimit" enabled
     And new "CreateAiGatewayRateLimit" request
-    And body with value {"data": {"attributes": {"input_tokens_per_minute": null, "mode": "ALERT", "name": "Default rate limit", "output_tokens_per_minute": null, "requests_per_minute": 600, "team_id": "00000000-0000-4000-8000-000000000002", "user_id": "00000000-0000-4000-8000-000000000001"}, "type": "rate-limits"}}
+    And body with value {"data": {"attributes": {"input_tokens_per_minute": null, "mode": "ALERT", "name": "Default rate limit", "output_tokens_per_minute": null, "requests_per_minute": 600, "selector": [{"dim": "user_id", "per_value": true, "values": ["11111111-1111-1111-1111-111111111111"]}], "team_id": "00000000-0000-4000-8000-000000000002", "user_id": "00000000-0000-4000-8000-000000000001"}, "type": "rate-limits"}}
     When the request is sent
     Then the response status is 201 Created
 
@@ -559,6 +559,30 @@ Feature: AI Gateway
     Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/frontier-prd-gateway
+  Scenario: Get an AI Gateway rate limit counter summary returns "Bad Request" response
+    Given operation "GetAiGatewayRateLimitInstancesSummary" enabled
+    And new "GetAiGatewayRateLimitInstancesSummary" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/frontier-prd-gateway
+  Scenario: Get an AI Gateway rate limit counter summary returns "Not Found" response
+    Given operation "GetAiGatewayRateLimitInstancesSummary" enabled
+    And new "GetAiGatewayRateLimitInstancesSummary" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/frontier-prd-gateway
+  Scenario: Get an AI Gateway rate limit counter summary returns "OK" response
+    Given operation "GetAiGatewayRateLimitInstancesSummary" enabled
+    And new "GetAiGatewayRateLimitInstancesSummary" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/frontier-prd-gateway
   Scenario: Get an AI Gateway rate limit returns "Not Found" response
     Given operation "GetAiGatewayRateLimit" enabled
     And new "GetAiGatewayRateLimit" request
@@ -686,6 +710,30 @@ Feature: AI Gateway
   Scenario: List AI Gateway providers returns "OK" response
     Given operation "ListAiGatewayProviders" enabled
     And new "ListAiGatewayProviders" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/frontier-prd-gateway
+  Scenario: List AI Gateway rate limit counters returns "Bad Request" response
+    Given operation "ListAiGatewayRateLimitInstances" enabled
+    And new "ListAiGatewayRateLimitInstances" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/frontier-prd-gateway
+  Scenario: List AI Gateway rate limit counters returns "Not Found" response
+    Given operation "ListAiGatewayRateLimitInstances" enabled
+    And new "ListAiGatewayRateLimitInstances" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/frontier-prd-gateway
+  Scenario: List AI Gateway rate limit counters returns "OK" response
+    Given operation "ListAiGatewayRateLimitInstances" enabled
+    And new "ListAiGatewayRateLimitInstances" request
+    And request contains "id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 

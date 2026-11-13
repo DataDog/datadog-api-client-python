@@ -67,6 +67,13 @@ from datadog_api_client.v2.model.ai_gateway_rate_limit_response import AiGateway
 from datadog_api_client.v2.model.ai_gateway_rate_limit_create_request import AiGatewayRateLimitCreateRequest
 from datadog_api_client.v2.model.ai_gateway_rate_limit_usage_list_response import AiGatewayRateLimitUsageListResponse
 from datadog_api_client.v2.model.ai_gateway_rate_limit_update_request import AiGatewayRateLimitUpdateRequest
+from datadog_api_client.v2.model.ai_gateway_rate_limit_instance_list_response import (
+    AiGatewayRateLimitInstanceListResponse,
+)
+from datadog_api_client.v2.model.ai_gateway_rate_limit_instance_sort import AiGatewayRateLimitInstanceSort
+from datadog_api_client.v2.model.ai_gateway_rate_limit_instances_summary_response import (
+    AiGatewayRateLimitInstancesSummaryResponse,
+)
 from datadog_api_client.v2.model.ai_gateway_routing_rule_list_response import AiGatewayRoutingRuleListResponse
 from datadog_api_client.v2.model.ai_gateway_routing_rule_response import AiGatewayRoutingRuleResponse
 from datadog_api_client.v2.model.ai_gateway_routing_rule_create_request import AiGatewayRoutingRuleCreateRequest
@@ -778,6 +785,35 @@ class AIGatewayApi:
             api_client=api_client,
         )
 
+        self._get_ai_gateway_rate_limit_instances_summary_endpoint = _Endpoint(
+            settings={
+                "response_type": (AiGatewayRateLimitInstancesSummaryResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/rate-limits/{id}/instances/summary",
+                "operation_id": "get_ai_gateway_rate_limit_instances_summary",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+                "split_dim": {
+                    "openapi_types": ([str],),
+                    "attribute": "split_dim",
+                    "location": "query",
+                    "collection_format": "multi",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_ai_gateway_rate_limit_usage_endpoint = _Endpoint(
             settings={
                 "response_type": (AiGatewayRateLimitUsageListResponse,),
@@ -1094,6 +1130,57 @@ class AIGatewayApi:
                 "version": "v2",
             },
             params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_ai_gateway_rate_limit_instances_endpoint = _Endpoint(
+            settings={
+                "response_type": (AiGatewayRateLimitInstanceListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/rate-limits/{id}/instances",
+                "operation_id": "list_ai_gateway_rate_limit_instances",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+                "split_dim": {
+                    "openapi_types": ([str],),
+                    "attribute": "split_dim",
+                    "location": "query",
+                    "collection_format": "multi",
+                },
+                "sort": {
+                    "openapi_types": (AiGatewayRateLimitInstanceSort,),
+                    "attribute": "sort",
+                    "location": "query",
+                },
+                "limit": {
+                    "validation": {
+                        "inclusive_maximum": 500,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "limit",
+                    "location": "query",
+                },
+                "offset": {
+                    "validation": {
+                        "inclusive_minimum": 0,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "offset",
+                    "location": "query",
+                },
+            },
             headers_map={
                 "accept": ["application/json"],
             },
@@ -1590,7 +1677,7 @@ class AIGatewayApi:
     ) -> AiGatewayRateLimitResponse:
         """Create an AI Gateway rate limit.
 
-        Create a rate limit. All requests matching its scope share one allowance, and every matching rate limit applies. Returns 409 when another active rate limit has the same user, Team, and tags, or when the organization already has the maximum number of rate limits.
+        Create a rate limit. All requests matching its scope share one allowance, unless a selector makes it a template, which gives each matched user, Team, or value its own allowance. Every matching rate limit applies. Returns 409 when another active rate limit has the same user, Team, tags, and selector, or when the organization already has the maximum number of rate limits.
 
         :type body: AiGatewayRateLimitCreateRequest
         :rtype: AiGatewayRateLimitResponse
@@ -1990,6 +2077,30 @@ class AIGatewayApi:
 
         return self._get_ai_gateway_rate_limit_endpoint.call_with_http_info(**kwargs)
 
+    def get_ai_gateway_rate_limit_instances_summary(
+        self,
+        id: UUID,
+        *,
+        split_dim: Union[List[str], UnsetType] = unset,
+    ) -> AiGatewayRateLimitInstancesSummaryResponse:
+        """Get an AI Gateway rate limit counter summary.
+
+        Aggregate a template rate limit's counters, including how many there are, how many are near or at their limit, and the fullest counter's utilization. Use split_dim to aggregate only counters that match every given dimension value. When the caller can't see the template's selector, every count is zero and scope_restricted is true. Summaries are cached for up to 15 seconds. Returns 503 when counter usage can't be read.
+
+        :param id: Rate limit UUID.
+        :type id: UUID
+        :param split_dim: Keep only counters whose split dimension equals a value, written as ``<dim>=<value>`` , such as ``split_dim=user_id=<uuid>&split_dim=model=gpt-4o``. Dimensions use the ``split_dims`` names ``user_id`` , ``team_id`` , ``model`` , ``provider`` , and ``tag:<key>``. Repeat the parameter to filter on several dimensions; a counter must match all of them. Each dimension may appear once and must be a per-value dimension of the rate limit.
+        :type split_dim: [str], optional
+        :rtype: AiGatewayRateLimitInstancesSummaryResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["id"] = id
+
+        if split_dim is not unset:
+            kwargs["split_dim"] = split_dim
+
+        return self._get_ai_gateway_rate_limit_instances_summary_endpoint.call_with_http_info(**kwargs)
+
     def get_ai_gateway_rate_limit_usage(
         self,
     ) -> AiGatewayRateLimitUsageListResponse:
@@ -2252,6 +2363,48 @@ class AIGatewayApi:
         kwargs: Dict[str, Any] = {}
         return self._list_ai_gateway_providers_endpoint.call_with_http_info(**kwargs)
 
+    def list_ai_gateway_rate_limit_instances(
+        self,
+        id: UUID,
+        *,
+        split_dim: Union[List[str], UnsetType] = unset,
+        sort: Union[AiGatewayRateLimitInstanceSort, UnsetType] = unset,
+        limit: Union[int, UnsetType] = unset,
+        offset: Union[int, UnsetType] = unset,
+    ) -> AiGatewayRateLimitInstanceListResponse:
+        """List AI Gateway rate limit counters.
+
+        List the counters of a template rate limit, one per matched user, Team, or value, with their live usage. Counters appear within a few minutes of their first request and are dropped after 30 days without one. Usage is read for counters seen in the last 20 minutes, at most 200 per request; past that, rows carry usage_known false. Counters for a provider or model the caller can't see are left out, and when the caller can't see the template's selector, the list is empty. A rate limit with one shared allowance, including one whose selector has no per_value entry, returns an empty list. Returns 503 when counter usage can't be read.
+
+        :param id: Rate limit UUID.
+        :type id: UUID
+        :param split_dim: Keep only counters whose split dimension equals a value, written as ``<dim>=<value>`` , such as ``split_dim=user_id=<uuid>&split_dim=model=gpt-4o``. Dimensions use the ``split_dims`` names ``user_id`` , ``team_id`` , ``model`` , ``provider`` , and ``tag:<key>``. Repeat the parameter to filter on several dimensions; a counter must match all of them. Each dimension may appear once and must be a per-value dimension of the rate limit.
+        :type split_dim: [str], optional
+        :param sort: Sort order for rate limit counters.
+        :type sort: AiGatewayRateLimitInstanceSort, optional
+        :param limit: Maximum number of rate limit counters to return.
+        :type limit: int, optional
+        :param offset: Number of rate limit counters to skip.
+        :type offset: int, optional
+        :rtype: AiGatewayRateLimitInstanceListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["id"] = id
+
+        if split_dim is not unset:
+            kwargs["split_dim"] = split_dim
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if limit is not unset:
+            kwargs["limit"] = limit
+
+        if offset is not unset:
+            kwargs["offset"] = offset
+
+        return self._list_ai_gateway_rate_limit_instances_endpoint.call_with_http_info(**kwargs)
+
     def list_ai_gateway_rate_limits(
         self,
     ) -> AiGatewayRateLimitListResponse:
@@ -2478,7 +2631,7 @@ class AIGatewayApi:
     ) -> AiGatewayRateLimitResponse:
         """Update an AI Gateway rate limit.
 
-        Update a rate limit. Only the attributes sent are changed. Scope stays editable, and changes never reset current usage. Returns 409 when the rule was changed concurrently or the new scope duplicates another rule.
+        Update a rate limit. Only the attributes sent are changed, and changes never reset current usage. Scope stays editable, except on a template rate limit, whose user_id, team_id, and tags are rejected with 400. Returns 409 when the rule was changed concurrently or the new scope duplicates another rule.
 
         :param id: Rate limit UUID.
         :type id: UUID

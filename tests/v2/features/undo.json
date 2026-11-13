@@ -7774,6 +7774,18 @@
       "type": "idempotent"
     }
   },
+  "ListAiGatewayRateLimitInstances": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetAiGatewayRateLimitInstancesSummary": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "BatchRowsQuery": {
     "tag": "Reference Tables",
     "undo": {
