@@ -52,6 +52,8 @@ class UsageBillableSummaryKeys(ModelNormal):
             "dbm_host_top99p": (UsageBillableSummaryBody,),
             "dbm_normalized_queries_average": (UsageBillableSummaryBody,),
             "dbm_normalized_queries_sum": (UsageBillableSummaryBody,),
+            "error_tracking_sum": (UsageBillableSummaryBody,),
+            "error_tracking_tiered_sum": (UsageBillableSummaryBody,),
             "fargate_container_apm_and_profiler_average": (UsageBillableSummaryBody,),
             "fargate_container_apm_and_profiler_sum": (UsageBillableSummaryBody,),
             "fargate_container_average": (UsageBillableSummaryBody,),
@@ -144,6 +146,8 @@ class UsageBillableSummaryKeys(ModelNormal):
         "dbm_host_top99p": "dbm_host_top99p",
         "dbm_normalized_queries_average": "dbm_normalized_queries_average",
         "dbm_normalized_queries_sum": "dbm_normalized_queries_sum",
+        "error_tracking_sum": "error_tracking_sum",
+        "error_tracking_tiered_sum": "error_tracking_tiered_sum",
         "fargate_container_apm_and_profiler_average": "fargate_container_apm_and_profiler_average",
         "fargate_container_apm_and_profiler_sum": "fargate_container_apm_and_profiler_sum",
         "fargate_container_average": "fargate_container_average",
@@ -237,6 +241,8 @@ class UsageBillableSummaryKeys(ModelNormal):
         dbm_host_top99p: Union[UsageBillableSummaryBody, UnsetType] = unset,
         dbm_normalized_queries_average: Union[UsageBillableSummaryBody, UnsetType] = unset,
         dbm_normalized_queries_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
+        error_tracking_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
+        error_tracking_tiered_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
         fargate_container_apm_and_profiler_average: Union[UsageBillableSummaryBody, UnsetType] = unset,
         fargate_container_apm_and_profiler_sum: Union[UsageBillableSummaryBody, UnsetType] = unset,
         fargate_container_average: Union[UsageBillableSummaryBody, UnsetType] = unset,
@@ -388,6 +394,12 @@ class UsageBillableSummaryKeys(ModelNormal):
 
         :param dbm_normalized_queries_sum: Response with properties for each aggregated usage type.
         :type dbm_normalized_queries_sum: UsageBillableSummaryBody, optional
+
+        :param error_tracking_sum: Response with properties for each aggregated usage type.
+        :type error_tracking_sum: UsageBillableSummaryBody, optional
+
+        :param error_tracking_tiered_sum: Response with properties for each aggregated usage type.
+        :type error_tracking_tiered_sum: UsageBillableSummaryBody, optional
 
         :param fargate_container_apm_and_profiler_average: Response with properties for each aggregated usage type.
         :type fargate_container_apm_and_profiler_average: UsageBillableSummaryBody, optional
@@ -627,6 +639,10 @@ class UsageBillableSummaryKeys(ModelNormal):
             kwargs["dbm_normalized_queries_average"] = dbm_normalized_queries_average
         if dbm_normalized_queries_sum is not unset:
             kwargs["dbm_normalized_queries_sum"] = dbm_normalized_queries_sum
+        if error_tracking_sum is not unset:
+            kwargs["error_tracking_sum"] = error_tracking_sum
+        if error_tracking_tiered_sum is not unset:
+            kwargs["error_tracking_tiered_sum"] = error_tracking_tiered_sum
         if fargate_container_apm_and_profiler_average is not unset:
             kwargs["fargate_container_apm_and_profiler_average"] = fargate_container_apm_and_profiler_average
         if fargate_container_apm_and_profiler_sum is not unset:
