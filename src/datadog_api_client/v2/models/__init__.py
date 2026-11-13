@@ -5945,6 +5945,10 @@ from datadog_api_client.v2.model.issue_sample_reference import IssueSampleRefere
 from datadog_api_client.v2.model.issue_sample_stack_frame import IssueSampleStackFrame
 from datadog_api_client.v2.model.issue_sample_type import IssueSampleType
 from datadog_api_client.v2.model.issue_samples_relationship import IssueSamplesRelationship
+from datadog_api_client.v2.model.issue_snooze_request import IssueSnoozeRequest
+from datadog_api_client.v2.model.issue_snooze_request_data import IssueSnoozeRequestData
+from datadog_api_client.v2.model.issue_snooze_request_data_attributes import IssueSnoozeRequestDataAttributes
+from datadog_api_client.v2.model.issue_snooze_request_data_type import IssueSnoozeRequestDataType
 from datadog_api_client.v2.model.issue_state import IssueState
 from datadog_api_client.v2.model.issue_team import IssueTeam
 from datadog_api_client.v2.model.issue_team_attributes import IssueTeamAttributes
@@ -18158,6 +18162,10 @@ __all__ = [
     "IssueSampleStackFrame",
     "IssueSampleType",
     "IssueSamplesRelationship",
+    "IssueSnoozeRequest",
+    "IssueSnoozeRequestData",
+    "IssueSnoozeRequestDataAttributes",
+    "IssueSnoozeRequestDataType",
     "IssueState",
     "IssueTeam",
     "IssueTeamAttributes",

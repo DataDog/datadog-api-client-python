@@ -52,7 +52,8 @@ class IssueWatchCondition(ModelNormal):
         ``OCCURRENCES`` uses ``threshold`` , ``CARDINALITY`` uses ``threshold`` and ``projection`` ,
         ``ELAPSED_TIME`` uses ``duration`` , and ``ANY`` and ``ALL`` use ``operands``.
 
-        :param duration: Time that must elapse before the condition is met, as a Go duration string.
+        :param duration: Time that must elapse from when the watch started, as a Go duration string, such as ``24h`` , or ``168h`` for a
+            week.
         :type duration: str, optional
 
         :param kind: Kind of watch condition.
@@ -61,10 +62,14 @@ class IssueWatchCondition(ModelNormal):
         :param operands: Nested conditions combined by ``ANY`` or ``ALL``.
         :type operands: [IssueWatchCondition], optional
 
-        :param projection: Attributes whose distinct values are counted for ``CARDINALITY``.
+        :param projection: Attributes whose distinct values ``CARDINALITY`` counts, in search syntax: ``@`` for attributes, such as
+            ``@usr.id`` or ``@account.id`` , and no prefix for tags and reserved fields, such as ``org_id`` or ``service``.
+            Only use attributes that the issue's errors carry: a condition on an attribute they don't carry is never
+            met.
         :type projection: [str], optional
 
-        :param threshold: Number of occurrences, or of distinct values for ``CARDINALITY`` , that triggers the condition.
+        :param threshold: Number of new occurrences, or of distinct values for ``CARDINALITY`` , that meets the condition, counted from
+            when the watch started.
         :type threshold: int, optional
         """
         if duration is not unset:

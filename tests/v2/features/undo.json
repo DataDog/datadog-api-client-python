@@ -2783,6 +2783,23 @@
       "type": "idempotent"
     }
   },
+  "SnoozeIssue": {
+    "tag": "Error Tracking",
+    "undo": {
+      "operationId": "UpdateIssueState",
+      "parameters": [
+        {
+          "name": "issue_id",
+          "source": "data.id"
+        },
+        {
+          "name": "body",
+          "template": "{\"data\": {\"type\": \"error_tracking_issue\", \"id\": \"{{ data.id }}\", \"attributes\": {\"state\": \"OPEN\"}}}"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
   "UpdateIssueState": {
     "tag": "Error Tracking",
     "undo": {
