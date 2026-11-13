@@ -7313,6 +7313,13 @@ from datadog_api_client.v2.model.monthly_cost_attribution_body import MonthlyCos
 from datadog_api_client.v2.model.monthly_cost_attribution_meta import MonthlyCostAttributionMeta
 from datadog_api_client.v2.model.monthly_cost_attribution_pagination import MonthlyCostAttributionPagination
 from datadog_api_client.v2.model.monthly_cost_attribution_response import MonthlyCostAttributionResponse
+from datadog_api_client.v2.model.monthly_resource import MonthlyResource
+from datadog_api_client.v2.model.monthly_resource_attributes import MonthlyResourceAttributes
+from datadog_api_client.v2.model.monthly_resource_type import MonthlyResourceType
+from datadog_api_client.v2.model.monthly_resources_metadata import MonthlyResourcesMetadata
+from datadog_api_client.v2.model.monthly_resources_pagination import MonthlyResourcesPagination
+from datadog_api_client.v2.model.monthly_resources_response import MonthlyResourcesResponse
+from datadog_api_client.v2.model.monthly_resources_view import MonthlyResourcesView
 from datadog_api_client.v2.model.mute_data_type import MuteDataType
 from datadog_api_client.v2.model.mute_findings_mute_attributes import MuteFindingsMuteAttributes
 from datadog_api_client.v2.model.mute_findings_reason import MuteFindingsReason
@@ -19158,6 +19165,13 @@ __all__ = [
     "MonthlyCostAttributionMeta",
     "MonthlyCostAttributionPagination",
     "MonthlyCostAttributionResponse",
+    "MonthlyResource",
+    "MonthlyResourceAttributes",
+    "MonthlyResourceType",
+    "MonthlyResourcesMetadata",
+    "MonthlyResourcesPagination",
+    "MonthlyResourcesResponse",
+    "MonthlyResourcesView",
     "MuteDataType",
     "MuteFindingsMuteAttributes",
     "MuteFindingsReason",
