@@ -11617,6 +11617,7 @@ from datadog_api_client.v2.model.sensitive_data_scanner_group_relationships impo
     SensitiveDataScannerGroupRelationships,
 )
 from datadog_api_client.v2.model.sensitive_data_scanner_group_response import SensitiveDataScannerGroupResponse
+from datadog_api_client.v2.model.sensitive_data_scanner_group_target import SensitiveDataScannerGroupTarget
 from datadog_api_client.v2.model.sensitive_data_scanner_group_type import SensitiveDataScannerGroupType
 from datadog_api_client.v2.model.sensitive_data_scanner_group_update import SensitiveDataScannerGroupUpdate
 from datadog_api_client.v2.model.sensitive_data_scanner_group_update_request import (
@@ -11674,6 +11675,19 @@ from datadog_api_client.v2.model.sensitive_data_scanner_standard_patterns_respon
     SensitiveDataScannerStandardPatternsResponseItem,
 )
 from datadog_api_client.v2.model.sensitive_data_scanner_suppressions import SensitiveDataScannerSuppressions
+from datadog_api_client.v2.model.sensitive_data_scanner_target_group_attributes import (
+    SensitiveDataScannerTargetGroupAttributes,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_target_group_data import SensitiveDataScannerTargetGroupData
+from datadog_api_client.v2.model.sensitive_data_scanner_target_group_list_response import (
+    SensitiveDataScannerTargetGroupListResponse,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_target_group_relationships import (
+    SensitiveDataScannerTargetGroupRelationships,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_target_group_response import (
+    SensitiveDataScannerTargetGroupResponse,
+)
 from datadog_api_client.v2.model.sensitive_data_scanner_text_replacement import SensitiveDataScannerTextReplacement
 from datadog_api_client.v2.model.sensitive_data_scanner_text_replacement_type import (
     SensitiveDataScannerTextReplacementType,
@@ -21653,6 +21667,7 @@ __all__ = [
     "SensitiveDataScannerGroupList",
     "SensitiveDataScannerGroupRelationships",
     "SensitiveDataScannerGroupResponse",
+    "SensitiveDataScannerGroupTarget",
     "SensitiveDataScannerGroupType",
     "SensitiveDataScannerGroupUpdate",
     "SensitiveDataScannerGroupUpdateRequest",
@@ -21686,6 +21701,11 @@ __all__ = [
     "SensitiveDataScannerStandardPatternsResponseData",
     "SensitiveDataScannerStandardPatternsResponseItem",
     "SensitiveDataScannerSuppressions",
+    "SensitiveDataScannerTargetGroupAttributes",
+    "SensitiveDataScannerTargetGroupData",
+    "SensitiveDataScannerTargetGroupListResponse",
+    "SensitiveDataScannerTargetGroupRelationships",
+    "SensitiveDataScannerTargetGroupResponse",
     "SensitiveDataScannerTextReplacement",
     "SensitiveDataScannerTextReplacementType",
     "SerialExecution",

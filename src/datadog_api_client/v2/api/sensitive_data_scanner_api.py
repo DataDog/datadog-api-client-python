@@ -45,6 +45,13 @@ from datadog_api_client.v2.model.sensitive_data_scanner_rule_update_request impo
 from datadog_api_client.v2.model.sensitive_data_scanner_standard_patterns_response_data import (
     SensitiveDataScannerStandardPatternsResponseData,
 )
+from datadog_api_client.v2.model.sensitive_data_scanner_target_group_list_response import (
+    SensitiveDataScannerTargetGroupListResponse,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_group_target import SensitiveDataScannerGroupTarget
+from datadog_api_client.v2.model.sensitive_data_scanner_target_group_response import (
+    SensitiveDataScannerTargetGroupResponse,
+)
 
 
 class SensitiveDataScannerApi:
@@ -149,6 +156,29 @@ class SensitiveDataScannerApi:
             api_client=api_client,
         )
 
+        self._get_scanning_group_endpoint = _Endpoint(
+            settings={
+                "response_type": (SensitiveDataScannerTargetGroupResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/sensitive-data-scanner/groups/{group_id}",
+                "operation_id": "get_scanning_group",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "group_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "group_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_scanning_groups_endpoint = _Endpoint(
             settings={
                 "response_type": (SensitiveDataScannerGetConfigResponse,),
@@ -175,6 +205,29 @@ class SensitiveDataScannerApi:
                 "version": "v2",
             },
             params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_target_scanning_groups_endpoint = _Endpoint(
+            settings={
+                "response_type": (SensitiveDataScannerTargetGroupListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/sensitive-data-scanner/groups",
+                "operation_id": "list_target_scanning_groups",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "filter_target": {
+                    "required": True,
+                    "openapi_types": (SensitiveDataScannerGroupTarget,),
+                    "attribute": "filter[target]",
+                    "location": "query",
+                },
+            },
             headers_map={
                 "accept": ["application/json"],
             },
@@ -335,6 +388,25 @@ class SensitiveDataScannerApi:
 
         return self._delete_scanning_rule_endpoint.call_with_http_info(**kwargs)
 
+    def get_scanning_group(
+        self,
+        group_id: str,
+    ) -> SensitiveDataScannerTargetGroupResponse:
+        """Get Scanning Group.
+
+        Get a scanning group, with its rules included.
+        Only scanning groups of the ``llm_observability`` target are returned. Other scanning groups
+        are reported as not found.
+
+        :param group_id: The ID of a group of rules.
+        :type group_id: str
+        :rtype: SensitiveDataScannerTargetGroupResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["group_id"] = group_id
+
+        return self._get_scanning_group_endpoint.call_with_http_info(**kwargs)
+
     def list_scanning_groups(
         self,
     ) -> SensitiveDataScannerGetConfigResponse:
@@ -358,6 +430,27 @@ class SensitiveDataScannerApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._list_standard_patterns_endpoint.call_with_http_info(**kwargs)
+
+    def list_target_scanning_groups(
+        self,
+        filter_target: SensitiveDataScannerGroupTarget,
+    ) -> SensitiveDataScannerTargetGroupListResponse:
+        """List Scanning Groups of a target.
+
+        List the scanning groups of a target, with their rules included.
+        Only the ``llm_observability`` target is supported. Scanning groups of logs, RUM, events, and APM
+        are listed by the List Scanning Groups endpoint.
+        If the organization has no scanning group for the target, its default group is stored and returned,
+        so it can be edited. This does not change what gets scanned, because the default rules already apply.
+
+        :param filter_target: Target whose scanning groups are listed.
+        :type filter_target: SensitiveDataScannerGroupTarget
+        :rtype: SensitiveDataScannerTargetGroupListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["filter_target"] = filter_target
+
+        return self._list_target_scanning_groups_endpoint.call_with_http_info(**kwargs)
 
     def reorder_scanning_groups(
         self,

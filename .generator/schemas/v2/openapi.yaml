@@ -131055,6 +131055,14 @@ components:
         type:
           $ref: "#/components/schemas/SensitiveDataScannerGroupType"
       type: object
+    SensitiveDataScannerGroupTarget:
+      description: Datadog product whose scanning groups are served by the target-scoped group routes.
+      enum:
+        - llm_observability
+      example: llm_observability
+      type: string
+      x-enum-varnames:
+        - LLM_OBSERVABILITY
     SensitiveDataScannerGroupType:
       default: sensitive_data_scanner_group
       description: Sensitive Data Scanner group type.
@@ -131494,6 +131502,104 @@ components:
             Should the rule use the underlying standard pattern suppression configuration. If set to `true`, the rule must be tied
             to a standard pattern. If set to `false`, the specified suppressions are applied.
           type: boolean
+      type: object
+    SensitiveDataScannerTargetGroupAttributes:
+      description: Attributes of a scanning group of a target.
+      properties:
+        description:
+          description: Description of the group.
+          example: ""
+          type: string
+        filter:
+          $ref: "#/components/schemas/SensitiveDataScannerFilter"
+        is_enabled:
+          description: Whether or not the group is enabled.
+          example: true
+          type: boolean
+        name:
+          description: Name of the group.
+          example: Agent Observability Span Scanning
+          type: string
+        product_list:
+          description: Products the scanning group applies to.
+          example:
+            - llm_observability
+          items:
+            $ref: "#/components/schemas/SensitiveDataScannerGroupTarget"
+          type: array
+        samplings:
+          description: Sampling rates per product type. Always empty for these targets.
+          items:
+            $ref: "#/components/schemas/SensitiveDataScannerSamplings"
+          type: array
+      required:
+        - name
+        - description
+        - product_list
+        - is_enabled
+        - filter
+        - samplings
+      type: object
+    SensitiveDataScannerTargetGroupData:
+      description: A scanning group of a target.
+      properties:
+        attributes:
+          $ref: "#/components/schemas/SensitiveDataScannerTargetGroupAttributes"
+        id:
+          description: ID of the group.
+          example: 6f1c2a4e-3b5d-4e8f-9a7b-1c2d3e4f5a6b
+          type: string
+        relationships:
+          $ref: "#/components/schemas/SensitiveDataScannerTargetGroupRelationships"
+        type:
+          $ref: "#/components/schemas/SensitiveDataScannerGroupType"
+      required:
+        - id
+        - type
+        - attributes
+        - relationships
+      type: object
+    SensitiveDataScannerTargetGroupIncludedArray:
+      description: Rules of the returned groups.
+      items:
+        $ref: "#/components/schemas/SensitiveDataScannerRuleIncludedItem"
+      type: array
+    SensitiveDataScannerTargetGroupListResponse:
+      description: Scanning groups of a target, with their rules included.
+      properties:
+        data:
+          description: Scanning groups of the target, in order.
+          items:
+            $ref: "#/components/schemas/SensitiveDataScannerTargetGroupData"
+          type: array
+        included:
+          $ref: "#/components/schemas/SensitiveDataScannerTargetGroupIncludedArray"
+        meta:
+          $ref: "#/components/schemas/SensitiveDataScannerMeta"
+      required:
+        - data
+        - meta
+      type: object
+    SensitiveDataScannerTargetGroupRelationships:
+      description: Relationships of a scanning group of a target.
+      properties:
+        rules:
+          $ref: "#/components/schemas/SensitiveDataScannerRuleData"
+      required:
+        - rules
+      type: object
+    SensitiveDataScannerTargetGroupResponse:
+      description: A scanning group of a target, with its rules included.
+      properties:
+        data:
+          $ref: "#/components/schemas/SensitiveDataScannerTargetGroupData"
+        included:
+          $ref: "#/components/schemas/SensitiveDataScannerTargetGroupIncludedArray"
+        meta:
+          $ref: "#/components/schemas/SensitiveDataScannerMeta"
+      required:
+        - data
+        - meta
       type: object
     SensitiveDataScannerTextReplacement:
       description: Object describing how the scanned event will be replaced.
@@ -255041,6 +255147,199 @@ paths:
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: List standard patterns
+      tags:
+        - Sensitive Data Scanner
+      "x-permission":
+        operator: OR
+        permissions:
+          - data_scanner_read
+  /api/v2/sensitive-data-scanner/groups:
+    get:
+      description: |-
+        List the scanning groups of a target, with their rules included.
+        Only the `llm_observability` target is supported. Scanning groups of logs, RUM, events, and APM
+        are listed by the List Scanning Groups endpoint.
+        If the organization has no scanning group for the target, its default group is stored and returned,
+        so it can be edited. This does not change what gets scanned, because the default rules already apply.
+      operationId: ListTargetScanningGroups
+      parameters:
+        - description: Target whose scanning groups are listed.
+          in: query
+          name: filter[target]
+          required: true
+          schema:
+            $ref: "#/components/schemas/SensitiveDataScannerGroupTarget"
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                default:
+                  value:
+                    data:
+                      - attributes:
+                          description: ""
+                          filter:
+                            query: ""
+                          is_enabled: true
+                          name: Agent Observability Span Scanning
+                          product_list:
+                            - llm_observability
+                          samplings: []
+                        id: 6f1c2a4e-3b5d-4e8f-9a7b-1c2d3e4f5a6b
+                        relationships:
+                          rules:
+                            data:
+                              - id: 0e9d8c7b-6a5f-4e3d-8c1b-0a9f8e7d6c5b
+                                type: sensitive_data_scanner_rule
+                        type: sensitive_data_scanner_group
+                    included:
+                      - attributes:
+                          description: Detects credit card numbers.
+                          excluded_namespaces: []
+                          included_keyword_configuration:
+                            character_count: 30
+                            keywords:
+                              - credit card
+                            use_recommended_keywords: true
+                          is_enabled: true
+                          name: Credit card scanner
+                          namespaces: []
+                          priority: 1
+                          suppressions:
+                            use_recommended_suppressions: true
+                          tags:
+                            - sensitive_data:credit_card
+                            - sensitive_data_category:financial
+                          text_replacement:
+                            replacement_string: "[Credit card scanner]"
+                            type: replacement_string
+                        id: 0e9d8c7b-6a5f-4e3d-8c1b-0a9f8e7d6c5b
+                        relationships:
+                          group:
+                            data:
+                              id: 6f1c2a4e-3b5d-4e8f-9a7b-1c2d3e4f5a6b
+                              type: sensitive_data_scanner_group
+                          standard_pattern:
+                            data:
+                              id: ruleIdBank-123456789
+                              type: sensitive_data_scanner_standard_pattern
+                        type: sensitive_data_scanner_rule
+                    meta: {}
+              schema:
+                $ref: "#/components/schemas/SensitiveDataScannerTargetGroupListResponse"
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Bad Request
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Forbidden
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      summary: List Scanning Groups of a target
+      tags:
+        - Sensitive Data Scanner
+      "x-permission":
+        operator: OR
+        permissions:
+          - data_scanner_read
+  /api/v2/sensitive-data-scanner/groups/{group_id}:
+    get:
+      description: |-
+        Get a scanning group, with its rules included.
+        Only scanning groups of the `llm_observability` target are returned. Other scanning groups
+        are reported as not found.
+      operationId: GetScanningGroup
+      parameters:
+        - $ref: "#/components/parameters/SensitiveDataScannerGroupID"
+      responses:
+        "200":
+          content:
+            application/json:
+              examples:
+                default:
+                  value:
+                    data:
+                      attributes:
+                        description: ""
+                        filter:
+                          query: ""
+                        is_enabled: true
+                        name: Agent Observability Span Scanning
+                        product_list:
+                          - llm_observability
+                        samplings: []
+                      id: 6f1c2a4e-3b5d-4e8f-9a7b-1c2d3e4f5a6b
+                      relationships:
+                        rules:
+                          data:
+                            - id: 0e9d8c7b-6a5f-4e3d-8c1b-0a9f8e7d6c5b
+                              type: sensitive_data_scanner_rule
+                      type: sensitive_data_scanner_group
+                    included:
+                      - attributes:
+                          description: Detects credit card numbers.
+                          excluded_namespaces: []
+                          included_keyword_configuration:
+                            character_count: 30
+                            keywords:
+                              - credit card
+                            use_recommended_keywords: true
+                          is_enabled: true
+                          name: Credit card scanner
+                          namespaces: []
+                          priority: 1
+                          suppressions:
+                            use_recommended_suppressions: true
+                          tags:
+                            - sensitive_data:credit_card
+                            - sensitive_data_category:financial
+                          text_replacement:
+                            replacement_string: "[Credit card scanner]"
+                            type: replacement_string
+                        id: 0e9d8c7b-6a5f-4e3d-8c1b-0a9f8e7d6c5b
+                        relationships:
+                          group:
+                            data:
+                              id: 6f1c2a4e-3b5d-4e8f-9a7b-1c2d3e4f5a6b
+                              type: sensitive_data_scanner_group
+                          standard_pattern:
+                            data:
+                              id: ruleIdBank-123456789
+                              type: sensitive_data_scanner_standard_pattern
+                        type: sensitive_data_scanner_rule
+                    meta: {}
+              schema:
+                $ref: "#/components/schemas/SensitiveDataScannerTargetGroupResponse"
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Bad Request
+        "403":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Forbidden
+        "404":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/JSONAPIErrorResponse"
+          description: Not Found
+        "429":
+          $ref: "#/components/responses/TooManyRequestsResponse"
+      summary: Get Scanning Group
       tags:
         - Sensitive Data Scanner
       "x-permission":
