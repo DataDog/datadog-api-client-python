@@ -60,7 +60,7 @@ class TagRuleData(ModelNormal):
         :param relationships: Related resources for a tag rule. Only present when the corresponding ``include`` query parameter is supplied.
         :type relationships: TagRuleRelationships, optional
 
-        :param type: JSON:API resource type for a tag rule.
+        :param type: JSON:API resource type for a tag rule. Requests accept ``tag_rule`` or ``tag_policy`` ; responses use ``tag_policy``.
         :type type: TagRuleResourceType
         """
         if relationships is not unset:

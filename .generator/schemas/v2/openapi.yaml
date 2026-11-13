@@ -33587,7 +33587,7 @@ components:
       example:
         data:
           attributes:
-            company_logo: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAIKMMMM
+            company_logo: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==
             components:
               - name: API
                 position: 0
@@ -33606,10 +33606,10 @@ components:
                 position: 2
                 type: component
             domain_prefix: status-page-us1
-            email_header_image: data:image/png;base64,pQSLAw0KGgoAAAANSUhEUgAAAQ4AASJKFF
-            favicon: data:image/png;base64,kWMRNw0KGgoAAAANSUhEUgAAAEAAAABACA
+            email_header_image: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==
+            favicon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==
             name: Status Page US1
-            slack_app_icon: data:image/png;base64,mXRTqw0KGgoAAAANSUhEUgAAAEAAAABACA
+            slack_app_icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==
             subscriptions_enabled: true
             type: public
             visualization_type: bars_and_uptime_percentage
@@ -33634,7 +33634,7 @@ components:
       properties:
         company_logo:
           description: The base64-encoded image data displayed on the status page.
-          example: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAIKMMMM
+          example: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==
           type: string
         components:
           description: The components displayed on the status page.
@@ -33664,14 +33664,14 @@ components:
           type: string
         email_header_image:
           description: Base64-encoded image data included in email notifications sent to status page subscribers.
-          example: data:image/png;base64,pQSLAw0KGgoAAAANSUhEUgAAAQ4AASJKFF
+          example: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==
           type: string
         email_notifications_enabled:
           description: Whether email notifications are enabled for the status page. Must be enabled when `subscriptions_enabled` is `true`.
           type: boolean
         favicon:
           description: Base64-encoded image data displayed in the browser tab.
-          example: data:image/png;base64,kWMRNw0KGgoAAAANSUhEUgAAAEAAAABACA
+          example: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==
           type: string
         ms_teams_subscriptions_enabled:
           description: Whether Microsoft Teams subscriptions are enabled for the status page.
@@ -33685,7 +33685,7 @@ components:
           type: boolean
         slack_app_icon:
           description: The base64-encoded image data used as the Slack app icon.
-          example: data:image/png;base64,mXRTqw0KGgoAAAANSUhEUgAAAEAAAABACA
+          example: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==
           type: string
         slack_subscriptions_enabled:
           description: Whether Slack subscriptions are enabled for the status page.
@@ -62643,6 +62643,34 @@ components:
         - CLOUD_FUNCTION
         - CLOUD_RUN_REVISION
         - GCE_INSTANCE
+    GCPProjectFilterConfig:
+      description: Configuration for filtering the GCP projects that Datadog monitors by project ID or by project label.
+      properties:
+        filters:
+          description: |-
+            List of filters matched against the project field set by `type`. Filters support the `*` and `?`
+            wildcards, and a leading `!` makes a filter an exclusion. A project is skipped if it matches any
+            exclusion filter. When inclusion filters are set, a project must also match at least one of them.
+            For `project_id`, each filter is a project ID pattern, such as `prod-*`. You can set up to 15,000
+            filters. For `project_label`, each filter is a label in the form `key:value`, such as `env:prod*`.
+            You can set up to 100 filters. Keys are matched exactly, and wildcards apply only to values, so
+            `key:*` matches any value.
+          example: ["prod-*", "!prod-legacy"]
+          items:
+            description: A project filter.
+            type: string
+          type: array
+        type:
+          $ref: "#/components/schemas/GCPProjectFilterConfigType"
+      type: object
+    GCPProjectFilterConfigType:
+      description: The GCP project field that the filters are matched against.
+      enum: ["project_id", "project_label"]
+      example: "project_id"
+      type: string
+      x-enum-varnames:
+        - PROJECT_ID
+        - PROJECT_LABEL
     GCPSTSDelegateAccount:
       description: Datadog principal service account info.
       properties:
@@ -62776,6 +62804,17 @@ components:
           example: [{"filters": ["$KEY:$VALUE"], "type": "gce_instance"}]
           items:
             $ref: "#/components/schemas/GCPMonitoredResourceConfig"
+          type: array
+        project_filter_configs:
+          description: |-
+            Configurations that limit which GCP projects Datadog monitors, out of the projects this service
+            account can access. Each type can have at most one configuration. A project is monitored only if
+            it passes the filters of every configured type. By default, Datadog monitors every project the
+            service account can access. When updating a service account, omit this field to keep the current
+            filters, or send an empty list to remove them.
+          example: [{"filters": ["prod-*", "!prod-legacy"], "type": "project_id"}, {"filters": ["env:prod*"], "type": "project_label"}]
+          items:
+            $ref: "#/components/schemas/GCPProjectFilterConfig"
           type: array
         region_filter_configs:
           description: Configurations for GCP location filtering, such as region, multi-region, or zone. Only monitored resources that match the specified regions are imported into Datadog. By default, Datadog collects from all locations.
@@ -106156,12 +106195,12 @@ components:
       example:
         data:
           attributes:
-            company_logo: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAIKMMMM
+            company_logo: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==
             domain_prefix: status-page-us1-east
-            email_header_image: data:image/png;base64,pQSLAw0KGgoAAAANSUhEUgAAAQ4AASJKFF
-            favicon: data:image/png;base64,kWMRNw0KGgoAAAANSUhEUgAAAEAAAABACA
+            email_header_image: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==
+            favicon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==
             name: Status Page US1 East
-            slack_app_icon: data:image/png;base64,mXRTqw0KGgoAAAANSUhEUgAAAEAAAABACA
+            slack_app_icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==
             subscriptions_enabled: false
             type: internal
             visualization_type: bars_only
@@ -106193,7 +106232,7 @@ components:
       properties:
         company_logo:
           description: The base64-encoded image data displayed on the status page.
-          example: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAIKMMMM
+          example: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==
           type: string
         domain_prefix:
           description: The subdomain of the status page URL. Public pages use `https://{domain_prefix}.statuspage.datadoghq.com`, while private pages use `https://{domain_prefix}.private.statuspage.datadoghq.com`. Globally unique across Datadog Status Pages.
@@ -106201,14 +106240,14 @@ components:
           type: string
         email_header_image:
           description: The base64-encoded image data displayed in email notifications sent to status page subscribers.
-          example: data:image/png;base64,pQSLAw0KGgoAAAANSUhEUgAAAQ4AASJKFF
+          example: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==
           type: string
         email_notifications_enabled:
           description: Whether email notifications are enabled for the status page. Must be enabled when `subscriptions_enabled` is `true`.
           type: boolean
         favicon:
           description: The base64-encoded image data displayed in the browser tab.
-          example: data:image/png;base64,kWMRNw0KGgoAAAANSUhEUgAAAEAAAABACA
+          example: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==
           type: string
         ms_teams_subscriptions_enabled:
           description: Whether Microsoft Teams subscriptions are enabled for the status page.
@@ -106222,7 +106261,7 @@ components:
           type: boolean
         slack_app_icon:
           description: The base64-encoded image data used as the Slack app icon.
-          example: data:image/png;base64,mXRTqw0KGgoAAAANSUhEUgAAAEAAAABACA
+          example: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==
           type: string
         slack_subscriptions_enabled:
           description: Whether Slack subscriptions are enabled for the status page.
@@ -144149,10 +144188,13 @@ components:
         - modified_by
       type: object
     TagRuleCreateAttributes:
-      description: Attributes that can be supplied when creating a tag rule.
+      description: |-
+        Attributes that can be supplied when creating a tag rule. If `tag_value_patterns`
+        contains `*`, set `required` and `negated` to different values. If both are `false`,
+        the rule has no effect. If both are `true`, no value can satisfy the rule.
       properties:
         enabled:
-          description: Whether the rule is currently enforced. Defaults to `true` for newly created rules.
+          description: The API ignores this value on creation and always enables new rules. To disable a rule, use the "Update a tag rule" endpoint.
           example: true
           type: boolean
         name:
@@ -144171,26 +144213,35 @@ components:
           $ref: "#/components/schemas/TagRuleCreateType"
         scope:
           description: |-
-            The scope the rule applies within. Typically an environment, team, or
-            organization-level identifier used to limit where the rule is enforced.
-          example: "env"
+            The scope the rule applies within. For logs and spans, use a search query, such
+            as `env:prod`, or `*` to match all telemetry. For metrics, use a metric selector
+            with an optional tag filter, such as `system.cpu.*{env:prod}`. A metric wildcard
+            is allowed only once, at the end of the metric selector.
+          example: "env:prod"
           type: string
         source:
           $ref: "#/components/schemas/TagRuleSource"
         tag_key:
-          description: The tag key that the rule governs (for example, `service`).
+          description: |-
+            The tag key that the rule governs (for example, `service`). Allowed characters
+            are ASCII letters, digits, underscores, hyphens, periods, and slashes. The keys
+            `host` and `device` are not supported in any letter case.
           example: "service"
+          pattern: '^[A-Za-z0-9_.\/-]+$'
           type: string
         tag_value_patterns:
           description: |-
-            One or more patterns that valid values for the tag key must match. At least one
-            pattern is required.
+            Between 1 and 30 non-empty patterns that valid values for the tag key must match.
+            Allowed characters are ASCII letters, digits, underscores, colons, hyphens,
+            periods, commas, slashes, and asterisks.
           example:
             - "api"
             - "web"
           items:
             description: A pattern that valid tag values must match.
+            pattern: '^[A-Za-z0-9_:.,\/*-]+$'
             type: string
+          maxItems: 30
           minItems: 1
           type: array
       required:
@@ -144273,13 +144324,15 @@ components:
           $ref: "#/components/schemas/TagRuleScoreRelationship"
       type: object
     TagRuleResourceType:
-      description: JSON:API resource type for a tag rule.
+      description: JSON:API resource type for a tag rule. Requests accept `tag_rule` or `tag_policy`; responses use `tag_policy`.
       enum:
         - tag_rule
-      example: "tag_rule"
+        - tag_policy
+      example: "tag_policy"
       type: string
       x-enum-varnames:
         - TAG_RULE
+        - TAG_POLICY
     TagRuleResponse:
       description: A single tag rule.
       properties:
@@ -144360,13 +144413,15 @@ components:
         - id
       type: object
     TagRuleScoreResourceType:
-      description: JSON:API resource type for a tag rule compliance score.
+      description: JSON:API resource type for a tag rule compliance score. Responses use `tag_policy_score`.
       enum:
         - tag_rule_score
-      example: "tag_rule_score"
+        - tag_policy_score
+      example: "tag_policy_score"
       type: string
       x-enum-varnames:
         - TAG_RULE_SCORE
+        - TAG_POLICY_SCORE
     TagRuleScoreResponse:
       description: A tag rule compliance score.
       properties:
@@ -144395,6 +144450,7 @@ components:
       description: |-
         How the rule is enforced. `blocking` rejects telemetry that violates the rule.
         `surfacing` only highlights non-compliant telemetry without blocking it.
+        RUM supports only `surfacing` rules.
       enum:
         - blocking
         - surfacing
@@ -144406,7 +144462,9 @@ components:
     TagRuleUpdateAttributes:
       description: |-
         Mutable attributes of a tag rule. Each field is optional; omitting a field leaves its
-        current value unchanged. The `source` of a rule cannot be changed.
+        current value unchanged. The `source` of a rule cannot be changed. Tag keys, patterns,
+        and metrics scopes have the same constraints as on creation. If the effective
+        `tag_value_patterns` contains `*`, set `required` and `negated` to different values.
       properties:
         enabled:
           description: Whether the rule is currently enforced.
@@ -144427,12 +144485,16 @@ components:
           type: string
         tag_key:
           description: The tag key that the rule governs.
+          pattern: '^[A-Za-z0-9_.\/-]+$'
           type: string
         tag_value_patterns:
           description: One or more patterns that valid values for the tag key must match.
           items:
             description: A pattern that valid tag values must match.
+            pattern: '^[A-Za-z0-9_:.,\/*-]+$'
             type: string
+          maxItems: 30
+          minItems: 1
           type: array
       type: object
     TagRuleUpdateData:
@@ -193239,7 +193301,7 @@ paths:
           required: false
           schema:
             $ref: "#/components/schemas/TagRuleSource"
-        - description: Start of the time window used for compliance score computation, as a Unix timestamp in milliseconds. Defaults to a recent window appropriate for the source.
+        - description: Start of the time window used for compliance score computation, as a Unix timestamp in milliseconds. Defaults to approximately 4 hours before the current time for metrics, or 24 hours before the current time for other sources. The API clamps earlier values to this default, regardless of `ts_end`.
           example: 1779315066097
           in: query
           name: ts_start
@@ -193285,8 +193347,8 @@ paths:
                           score:
                             data:
                               id: "123-v1-1779315066097-1779401466097"
-                              type: "tag_rule_score"
-                        type: "tag_rule"
+                              type: "tag_policy_score"
+                        type: "tag_policy"
                     included:
                       - attributes:
                           score: 80
@@ -193294,7 +193356,7 @@ paths:
                           ts_start: 1779315066097
                           version: 1
                         id: "123-v1-1779315066097-1779401466097"
-                        type: "tag_rule_score"
+                        type: "tag_policy_score"
               schema:
                 $ref: "#/components/schemas/TagRulesListResponse"
           description: OK
@@ -193388,7 +193450,7 @@ paths:
                           - "web"
                         version: 1
                       id: "123"
-                      type: "tag_rule"
+                      type: "tag_policy"
               schema:
                 $ref: "#/components/schemas/TagRuleResponse"
           description: Created
@@ -193437,7 +193499,8 @@ paths:
       description: |-
         Delete a tag rule. By default the rule is soft-deleted so it can be recovered later
         and so that historical score data remains queryable. Pass `hard_delete=true` to remove
-        the rule permanently.
+        the rule permanently. Deleting a `blocking` rule additionally requires the
+        `telemetry_rules_activate` permission.
       operationId: DeleteTagRule
       parameters:
         - description: The unique identifier of the tag rule to delete.
@@ -193518,7 +193581,7 @@ paths:
           required: false
           schema:
             $ref: "#/components/schemas/TagRuleInclude"
-        - description: Start of the time window used for compliance score computation, as a Unix timestamp in milliseconds.
+        - description: Start of the time window used for compliance score computation, as a Unix timestamp in milliseconds. Defaults to approximately 4 hours before the current time for metrics, or 24 hours before the current time for other sources. The API clamps earlier values to this default, regardless of `ts_end`.
           example: 1779315066097
           in: query
           name: ts_start
@@ -193564,8 +193627,8 @@ paths:
                         score:
                           data:
                             id: "123-v1-1779315066097-1779401466097"
-                            type: "tag_rule_score"
-                      type: "tag_rule"
+                            type: "tag_policy_score"
+                      type: "tag_policy"
                     included:
                       - attributes:
                           score: 80
@@ -193573,7 +193636,7 @@ paths:
                           ts_start: 1779315066097
                           version: 1
                         id: "123-v1-1779315066097-1779401466097"
-                        type: "tag_rule_score"
+                        type: "tag_policy_score"
               schema:
                 $ref: "#/components/schemas/TagRuleResponse"
           description: OK
@@ -193623,6 +193686,9 @@ paths:
         Update one or more attributes of an existing tag rule. Only the fields supplied in the
         request body are modified; omitted fields retain their current values. The rule's
         `source` cannot be changed after creation.
+        Promoting a rule from `surfacing` to `blocking` additionally requires the
+        `telemetry_rules_activate` permission, and your organization must have access to
+        blocking rules. You can't promote RUM rules to `blocking`.
       operationId: UpdateTagRule
       parameters:
         - description: The unique identifier of the tag rule to update.
@@ -193673,7 +193739,7 @@ paths:
                           - "web"
                         version: 2
                       id: "123"
-                      type: "tag_rule"
+                      type: "tag_policy"
               schema:
                 $ref: "#/components/schemas/TagRuleResponse"
           description: OK
@@ -193733,7 +193799,7 @@ paths:
           required: true
           schema:
             type: string
-        - description: Start of the time window used for compliance score computation, as a Unix timestamp in milliseconds.
+        - description: Start of the time window used for compliance score computation, as a Unix timestamp in milliseconds. Defaults to approximately 4 hours before the current time for metrics, or 24 hours before the current time for other sources. The API clamps earlier values to this default, regardless of `ts_end`.
           example: 1779315066097
           in: query
           name: ts_start
@@ -193763,7 +193829,7 @@ paths:
                         ts_start: 1779315066097
                         version: 1
                       id: "123-v1-1779315066097-1779401466097"
-                      type: "tag_rule_score"
+                      type: "tag_policy_score"
               schema:
                 $ref: "#/components/schemas/TagRuleScoreResponse"
           description: OK
@@ -202243,6 +202309,14 @@ paths:
                         - filters:
                             - $KEY:$VALUE
                           type: gce_instance
+                      project_filter_configs:
+                        - filters:
+                            - prod-*
+                            - "!prod-legacy"
+                          type: project_id
+                        - filters:
+                            - "env:prod*"
+                          type: project_label
                       region_filter_configs:
                         - nam4
                         - europe-north1
@@ -202341,6 +202415,14 @@ paths:
                         - filters:
                             - $KEY:$VALUE
                           type: gce_instance
+                      project_filter_configs:
+                        - filters:
+                            - prod-*
+                            - "!prod-legacy"
+                          type: project_id
+                        - filters:
+                            - "env:prod*"
+                          type: project_label
                       region_filter_configs:
                         - nam4
                         - europe-north1
@@ -261082,7 +261164,7 @@ paths:
                 value:
                   data:
                     attributes:
-                      company_logo: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAIKMMMM
+                      company_logo: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==
                       components:
                         - name: API
                           position: 0
@@ -261101,10 +261183,10 @@ paths:
                           position: 2
                           type: component
                       domain_prefix: status-page-us1
-                      email_header_image: data:image/png;base64,pQSLAw0KGgoAAAANSUhEUgAAAQ4AASJKFF
-                      favicon: data:image/png;base64,kWMRNw0KGgoAAAANSUhEUgAAAEAAAABACA
+                      email_header_image: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==
+                      favicon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==
                       name: Status Page US1
-                      slack_app_icon: data:image/png;base64,mXRTqw0KGgoAAAANSUhEUgAAAEAAAABACA
+                      slack_app_icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==
                       subscriptions_enabled: true
                       type: public
                       visualization_type: bars_and_uptime_percentage
@@ -261414,12 +261496,12 @@ paths:
                 value:
                   data:
                     attributes:
-                      company_logo: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAIKMMMM
+                      company_logo: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==
                       domain_prefix: status-page-us1-east
-                      email_header_image: data:image/png;base64,pQSLAw0KGgoAAAANSUhEUgAAAQ4AASJKFF
-                      favicon: data:image/png;base64,kWMRNw0KGgoAAAANSUhEUgAAAEAAAABACA
+                      email_header_image: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==
+                      favicon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==
                       name: Status Page US1 East
-                      slack_app_icon: data:image/png;base64,mXRTqw0KGgoAAAANSUhEUgAAAEAAAABACA
+                      slack_app_icon: data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==
                       subscriptions_enabled: false
                       type: internal
                       visualization_type: bars_only
@@ -275512,7 +275594,7 @@ tags:
       scoped to a particular telemetry source (such as logs, spans, or metrics). Rules can be
       `blocking` (data not matching the rule is rejected) or `surfacing` (matching data is
       highlighted but not blocked). Each rule reports a compliance `score` derived from how
-      much recent telemetry adheres to the rule.
+      much recent telemetry adheres to the rule. RUM supports only `surfacing` rules.
     name: Tag Rules
   - description: View and manage teams within Datadog. See the [Teams page](https://docs.datadoghq.com/account_management/teams/) for more information.
     name: Teams
