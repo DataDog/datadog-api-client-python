@@ -36,10 +36,12 @@ class TagRuleCreateData(ModelNormal):
         """
         Data object for creating a tag rule.
 
-        :param attributes: Attributes that can be supplied when creating a tag rule.
+        :param attributes: Attributes that can be supplied when creating a tag rule. If ``tag_value_patterns``
+            contains ``*`` , set ``required`` and ``negated`` to different values. If both are ``false`` ,
+            the rule has no effect. If both are ``true`` , no value can satisfy the rule.
         :type attributes: TagRuleCreateAttributes
 
-        :param type: JSON:API resource type for a tag rule.
+        :param type: JSON:API resource type for a tag rule. Requests accept ``tag_rule`` or ``tag_policy`` ; responses use ``tag_policy``.
         :type type: TagRuleResourceType
         """
         super().__init__(kwargs)

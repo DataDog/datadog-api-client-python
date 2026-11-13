@@ -20,7 +20,7 @@ body = TagRuleCreateRequest(
             negated=False,
             required=True,
             rule_type=TagRuleCreateType.SURFACING,
-            scope="env",
+            scope="env:prod",
             source=TagRuleSource.LOGS,
             tag_key="service",
             tag_value_patterns=[
@@ -28,7 +28,7 @@ body = TagRuleCreateRequest(
                 "web",
             ],
         ),
-        type=TagRuleResourceType.TAG_RULE,
+        type=TagRuleResourceType.TAG_POLICY,
     ),
 )
 
