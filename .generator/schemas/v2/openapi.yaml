@@ -128542,6 +128542,7 @@ components:
         - application_security
         - api_security
         - workload_activity
+        - workload_hardening
       type: string
       x-enum-varnames:
         - LOG_DETECTION
@@ -128551,6 +128552,7 @@ components:
         - APPLICATION_SECURITY
         - API_SECURITY
         - WORKLOAD_ACTIVITY
+        - WORKLOAD_HARDENING
     SecurityMonitoringRuleTypeTest:
       description: The rule type.
       enum:
