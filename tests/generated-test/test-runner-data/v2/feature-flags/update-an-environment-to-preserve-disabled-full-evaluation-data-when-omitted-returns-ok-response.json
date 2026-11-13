@@ -1,0 +1,53 @@
+{
+  "api": "FeatureFlags",
+  "expected_status": 200,
+  "feature": "Feature Flags",
+  "id": "v2/Feature Flags/Update an environment to preserve disabled full evaluation data when omitted returns \"OK\" response",
+  "operation_id": "UpdateFeatureFlagsEnvironment",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UpdateEnvironmentRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "Updated Privacy {{ unique }}",
+            "queries": [
+              "updated-privacy-{{ unique_lower }}"
+            ]
+          },
+          "type": "environments"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "environment_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "environment.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/feature-flags/environments/{environment_id}"
+  },
+  "scenario": "Update an environment to preserve disabled full evaluation data when omitted returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
