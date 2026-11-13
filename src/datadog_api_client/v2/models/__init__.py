@@ -5919,6 +5919,22 @@ from datadog_api_client.v2.model.issue_case_reference import IssueCaseReference
 from datadog_api_client.v2.model.issue_case_relationship import IssueCaseRelationship
 from datadog_api_client.v2.model.issue_case_relationships import IssueCaseRelationships
 from datadog_api_client.v2.model.issue_case_resource_type import IssueCaseResourceType
+from datadog_api_client.v2.model.issue_impact import IssueImpact
+from datadog_api_client.v2.model.issue_impact_account import IssueImpactAccount
+from datadog_api_client.v2.model.issue_impact_accounts import IssueImpactAccounts
+from datadog_api_client.v2.model.issue_impact_attributes import IssueImpactAttributes
+from datadog_api_client.v2.model.issue_impact_endpoint import IssueImpactEndpoint
+from datadog_api_client.v2.model.issue_impact_endpoints import IssueImpactEndpoints
+from datadog_api_client.v2.model.issue_impact_error_counts import IssueImpactErrorCounts
+from datadog_api_client.v2.model.issue_impact_response import IssueImpactResponse
+from datadog_api_client.v2.model.issue_impact_session import IssueImpactSession
+from datadog_api_client.v2.model.issue_impact_sessions import IssueImpactSessions
+from datadog_api_client.v2.model.issue_impact_type import IssueImpactType
+from datadog_api_client.v2.model.issue_impact_user import IssueImpactUser
+from datadog_api_client.v2.model.issue_impact_users import IssueImpactUsers
+from datadog_api_client.v2.model.issue_impact_view import IssueImpactView
+from datadog_api_client.v2.model.issue_impact_view_counts import IssueImpactViewCounts
+from datadog_api_client.v2.model.issue_impact_views import IssueImpactViews
 from datadog_api_client.v2.model.issue_included import IssueIncluded
 from datadog_api_client.v2.model.issue_language import IssueLanguage
 from datadog_api_client.v2.model.issue_platform import IssuePlatform
@@ -18132,6 +18148,22 @@ __all__ = [
     "IssueCaseRelationship",
     "IssueCaseRelationships",
     "IssueCaseResourceType",
+    "IssueImpact",
+    "IssueImpactAccount",
+    "IssueImpactAccounts",
+    "IssueImpactAttributes",
+    "IssueImpactEndpoint",
+    "IssueImpactEndpoints",
+    "IssueImpactErrorCounts",
+    "IssueImpactResponse",
+    "IssueImpactSession",
+    "IssueImpactSessions",
+    "IssueImpactType",
+    "IssueImpactUser",
+    "IssueImpactUsers",
+    "IssueImpactView",
+    "IssueImpactViewCounts",
+    "IssueImpactViews",
     "IssueIncluded",
     "IssueLanguage",
     "IssuePlatform",

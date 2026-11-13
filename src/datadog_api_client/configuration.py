@@ -604,6 +604,7 @@ class Configuration:
                 "v2.trigger_deployment_gates_evaluation": False,
                 "v2.update_deployment_gate": False,
                 "v2.update_deployment_rule": False,
+                "v2.get_issue_impact": False,
                 "v2.get_eudm_device": False,
                 "v2.get_eudm_devices": False,
                 "v2.clone_form": False,

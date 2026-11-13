@@ -18,6 +18,7 @@ from datadog_api_client.v2.model.issue_response import IssueResponse
 from datadog_api_client.v2.model.get_issue_include_query_parameter_item import GetIssueIncludeQueryParameterItem
 from datadog_api_client.v2.model.issue_sample_bias import IssueSampleBias
 from datadog_api_client.v2.model.issue_update_assignee_request import IssueUpdateAssigneeRequest
+from datadog_api_client.v2.model.issue_impact_response import IssueImpactResponse
 from datadog_api_client.v2.model.issue_update_state_request import IssueUpdateStateRequest
 
 
@@ -81,6 +82,41 @@ class ErrorTrackingApi:
                     "attribute": "filter[samples.biases]",
                     "location": "query",
                     "collection_format": "csv",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_issue_impact_endpoint = _Endpoint(
+            settings={
+                "response_type": (IssueImpactResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/error-tracking/issues/{issue_id}/impact",
+                "operation_id": "get_issue_impact",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "issue_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "issue_id",
+                    "location": "path",
+                },
+                "filter_from": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "filter[from]",
+                    "location": "query",
+                },
+                "filter_to": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "filter[to]",
+                    "location": "query",
                 },
             },
             headers_map={
@@ -216,6 +252,37 @@ class ErrorTrackingApi:
             kwargs["filter_samples_biases"] = filter_samples_biases
 
         return self._get_issue_endpoint.call_with_http_info(**kwargs)
+
+    def get_issue_impact(
+        self,
+        issue_id: str,
+        filter_from: int,
+        filter_to: int,
+    ) -> IssueImpactResponse:
+        """Get the impact of an error tracking issue.
+
+        Get an issue's impact over a time window: its error counts by source, and the users, sessions, accounts,
+        RUM views, and endpoints it affects most.
+        Returns 403 if the caller lacks the ``error_tracking_read`` permission or does not have access to the issue's
+        data.
+
+        :param issue_id: The identifier of the issue.
+        :type issue_id: str
+        :param filter_from: Start of the time window, in milliseconds since the Unix epoch. Must be before ``filter[to]``.
+        :type filter_from: int
+        :param filter_to: End of the time window, in milliseconds since the Unix epoch. Use the issue's ``last_seen`` to end the window at
+            its latest error.
+        :type filter_to: int
+        :rtype: IssueImpactResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["issue_id"] = issue_id
+
+        kwargs["filter_from"] = filter_from
+
+        kwargs["filter_to"] = filter_to
+
+        return self._get_issue_impact_endpoint.call_with_http_info(**kwargs)
 
     def search_issues(
         self,
