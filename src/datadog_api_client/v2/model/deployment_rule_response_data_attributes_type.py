@@ -16,16 +16,18 @@ class DeploymentRuleResponseDataAttributesType(ModelSimple):
     """
     The type of the deployment rule.
 
-    :param value: Must be one of ["faulty_deployment_detection", "monitor"].
+    :param value: Must be one of ["faulty_deployment_detection", "monitor", "bits_deployment_analysis"].
     :type value: str
     """
 
     allowed_values = {
         "faulty_deployment_detection",
         "monitor",
+        "bits_deployment_analysis",
     }
     FAULTY_DEPLOYMENT_DETECTION: ClassVar["DeploymentRuleResponseDataAttributesType"]
     MONITOR: ClassVar["DeploymentRuleResponseDataAttributesType"]
+    BITS_DEPLOYMENT_ANALYSIS: ClassVar["DeploymentRuleResponseDataAttributesType"]
 
     @cached_property
     def openapi_types(_):
@@ -38,3 +40,6 @@ DeploymentRuleResponseDataAttributesType.FAULTY_DEPLOYMENT_DETECTION = Deploymen
     "faulty_deployment_detection"
 )
 DeploymentRuleResponseDataAttributesType.MONITOR = DeploymentRuleResponseDataAttributesType("monitor")
+DeploymentRuleResponseDataAttributesType.BITS_DEPLOYMENT_ANALYSIS = DeploymentRuleResponseDataAttributesType(
+    "bits_deployment_analysis"
+)

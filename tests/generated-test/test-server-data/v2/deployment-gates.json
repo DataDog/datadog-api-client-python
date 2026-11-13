@@ -3,6 +3,124 @@
   "recordings": [
     {
       "feature": "Deployment Gates",
+      "frozen_at": "2026-11-13T14:16:52.599Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "env": "production",
+                    "identifier": "my-gate-testcreatebitsdeploymentanalysisdeploymentrulereturnsokresponse1794579412",
+                    "service": "my-service"
+                  },
+                  "type": "deployment_gate"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"33fe177b-ec9e-46a0-bf75-1e338fb930b6\",\"type\":\"deployment_gate\",\"attributes\":{\"created_at\":\"2026-11-13T14:16:53.738322Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"env\":\"production\",\"identifier\":\"my-gate-testcreatebitsdeploymentanalysisdeploymentrulereturnsokresponse1794579412\",\"service\":\"my-service\",\"updated_at\":\"2026-11-13T14:16:53.738322Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "name": "Bits deployment analysis rule",
+                    "options": {
+                      "duration": 900
+                    },
+                    "type": "bits_deployment_analysis"
+                  },
+                  "type": "deployment_rule"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates/33fe177b-ec9e-46a0-bf75-1e338fb930b6/rules",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"3c9bd129-87b5-4d87-9de9-ce09321997b4\",\"type\":\"deployment_rule\",\"attributes\":{\"created_at\":\"2026-11-13T14:16:54.335953Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"gate_id\":\"33fe177b-ec9e-46a0-bf75-1e338fb930b6\",\"name\":\"Bits deployment analysis rule\",\"options\":{\"duration\":900},\"type\":\"bits_deployment_analysis\",\"updated_at\":\"2026-11-13T14:16:54.335953Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/33fe177b-ec9e-46a0-bf75-1e338fb930b6/rules/3c9bd129-87b5-4d87-9de9-ce09321997b4",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/33fe177b-ec9e-46a0-bf75-1e338fb930b6",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create bits deployment analysis deployment rule returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
       "frozen_at": "2025-10-28T14:03:25.410Z",
       "interactions": [
         {
@@ -2391,6 +2509,113 @@
         }
       ],
       "scenario": "Trigger a deployment gates evaluation returns \"Deployment gate not found.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "frozen_at": "2026-11-13T14:16:54.911Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "dry_run": false,
+                    "env": "production",
+                    "identifier": "my-gate-testtriggeradeploymentgatesevaluationwithaninlinebitsdeploymentanalysisrulereturnsaccepted1794579414",
+                    "service": "my-service"
+                  },
+                  "type": "deployment_gate"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployment_gates",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"7f16604d-5a13-4eb1-9e72-7df75de58af7\",\"type\":\"deployment_gate\",\"attributes\":{\"created_at\":\"2026-11-13T14:16:55.09619Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"env\":\"production\",\"identifier\":\"my-gate-testtriggeradeploymentgatesevaluationwithaninlinebitsdeploymentanalysisrulereturnsaccepted1794579414\",\"service\":\"my-service\",\"updated_at\":\"2026-11-13T14:16:55.09619Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "configuration": {
+                      "dry_run": false,
+                      "rules": [
+                        {
+                          "dry_run": false,
+                          "name": "bits deployment analysis",
+                          "options": {
+                            "duration": 900
+                          },
+                          "type": "bits_deployment_analysis"
+                        }
+                      ]
+                    },
+                    "env": "production",
+                    "identifier": "my-gate-testtriggeradeploymentgatesevaluationwithaninlinebitsdeploymentanalysisrulereturnsaccepted1794579414",
+                    "service": "my-service"
+                  },
+                  "type": "deployment_gates_evaluation_request"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/deployments/gates/evaluation",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a194edb1-cf31-41b2-9544-821054a377e7\",\"type\":\"deployment_gates_evaluation_response\",\"attributes\":{\"evaluation_id\":\"a194edb1-cf31-41b2-9544-821054a377e7\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Accepted",
+            "status": 202
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/deployment_gates/7f16604d-5a13-4eb1-9e72-7df75de58af7",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Trigger a deployment gates evaluation with an inline bits deployment analysis rule returns \"Accepted\" response",
       "version": "v2"
     },
     {

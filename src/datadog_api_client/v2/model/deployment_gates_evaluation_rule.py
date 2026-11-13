@@ -40,10 +40,14 @@ class DeploymentGatesEvaluationRule(ModelComposed):
         # loading
         from datadog_api_client.v2.model.deployment_gates_monitor_rule import DeploymentGatesMonitorRule
         from datadog_api_client.v2.model.deployment_gates_fdd_rule import DeploymentGatesFDDRule
+        from datadog_api_client.v2.model.deployment_gates_bits_deployment_analysis_rule import (
+            DeploymentGatesBitsDeploymentAnalysisRule,
+        )
 
         return {
             "oneOf": [
                 DeploymentGatesMonitorRule,
                 DeploymentGatesFDDRule,
+                DeploymentGatesBitsDeploymentAnalysisRule,
             ],
         }
