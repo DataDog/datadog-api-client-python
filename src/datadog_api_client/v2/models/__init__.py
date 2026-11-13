@@ -2111,6 +2111,7 @@ from datadog_api_client.v2.model.cost_tags_response import CostTagsResponse
 from datadog_api_client.v2.model.coverage_summary_attributes import CoverageSummaryAttributes
 from datadog_api_client.v2.model.coverage_summary_codeowner_stats import CoverageSummaryCodeownerStats
 from datadog_api_client.v2.model.coverage_summary_data import CoverageSummaryData
+from datadog_api_client.v2.model.coverage_summary_flag_stats import CoverageSummaryFlagStats
 from datadog_api_client.v2.model.coverage_summary_response import CoverageSummaryResponse
 from datadog_api_client.v2.model.coverage_summary_service_stats import CoverageSummaryServiceStats
 from datadog_api_client.v2.model.coverage_summary_type import CoverageSummaryType
@@ -15629,6 +15630,7 @@ __all__ = [
     "CoverageSummaryAttributes",
     "CoverageSummaryCodeownerStats",
     "CoverageSummaryData",
+    "CoverageSummaryFlagStats",
     "CoverageSummaryResponse",
     "CoverageSummaryServiceStats",
     "CoverageSummaryType",
