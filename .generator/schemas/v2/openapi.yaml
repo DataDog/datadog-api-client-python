@@ -62693,6 +62693,34 @@ components:
         - CLOUD_FUNCTION
         - CLOUD_RUN_REVISION
         - GCE_INSTANCE
+    GCPProjectFilterConfig:
+      description: Configuration for filtering the GCP projects that Datadog monitors by project ID or by project label.
+      properties:
+        filters:
+          description: |-
+            List of filters matched against the project field set by `type`. Filters support the `*` and `?`
+            wildcards, and a leading `!` makes a filter an exclusion. A project is skipped if it matches any
+            exclusion filter. When inclusion filters are set, a project must also match at least one of them.
+            For `project_id`, each filter is a project ID pattern, such as `prod-*`. You can set up to 15,000
+            filters. For `project_label`, each filter is a label in the form `key:value`, such as `env:prod*`.
+            You can set up to 100 filters. Keys are matched exactly, and wildcards apply only to values, so
+            `key:*` matches any value.
+          example: ["prod-*", "!prod-legacy"]
+          items:
+            description: A project filter.
+            type: string
+          type: array
+        type:
+          $ref: "#/components/schemas/GCPProjectFilterConfigType"
+      type: object
+    GCPProjectFilterConfigType:
+      description: The GCP project field that the filters are matched against.
+      enum: ["project_id", "project_label"]
+      example: "project_id"
+      type: string
+      x-enum-varnames:
+        - PROJECT_ID
+        - PROJECT_LABEL
     GCPSTSDelegateAccount:
       description: Datadog principal service account info.
       properties:
@@ -62826,6 +62854,17 @@ components:
           example: [{"filters": ["$KEY:$VALUE"], "type": "gce_instance"}]
           items:
             $ref: "#/components/schemas/GCPMonitoredResourceConfig"
+          type: array
+        project_filter_configs:
+          description: |-
+            Configurations that limit which GCP projects Datadog monitors, out of the projects this service
+            account can access. Each type can have at most one configuration. A project is monitored only if
+            it passes the filters of every configured type. By default, Datadog monitors every project the
+            service account can access. When updating a service account, omit this field to keep the current
+            filters, or send an empty list to remove them.
+          example: [{"filters": ["prod-*", "!prod-legacy"], "type": "project_id"}, {"filters": ["env:prod*"], "type": "project_label"}]
+          items:
+            $ref: "#/components/schemas/GCPProjectFilterConfig"
           type: array
         region_filter_configs:
           description: Configurations for GCP location filtering, such as region, multi-region, or zone. Only monitored resources that match the specified regions are imported into Datadog. By default, Datadog collects from all locations.
@@ -202320,6 +202359,14 @@ paths:
                         - filters:
                             - $KEY:$VALUE
                           type: gce_instance
+                      project_filter_configs:
+                        - filters:
+                            - prod-*
+                            - "!prod-legacy"
+                          type: project_id
+                        - filters:
+                            - "env:prod*"
+                          type: project_label
                       region_filter_configs:
                         - nam4
                         - europe-north1
@@ -202418,6 +202465,14 @@ paths:
                         - filters:
                             - $KEY:$VALUE
                           type: gce_instance
+                      project_filter_configs:
+                        - filters:
+                            - prod-*
+                            - "!prod-legacy"
+                          type: project_id
+                        - filters:
+                            - "env:prod*"
+                          type: project_label
                       region_filter_configs:
                         - nam4
                         - europe-north1

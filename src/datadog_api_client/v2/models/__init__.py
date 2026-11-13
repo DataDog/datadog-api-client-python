@@ -4771,6 +4771,8 @@ from datadog_api_client.v2.model.gcp_integration_update import GCPIntegrationUpd
 from datadog_api_client.v2.model.gcp_metric_namespace_config import GCPMetricNamespaceConfig
 from datadog_api_client.v2.model.gcp_monitored_resource_config import GCPMonitoredResourceConfig
 from datadog_api_client.v2.model.gcp_monitored_resource_config_type import GCPMonitoredResourceConfigType
+from datadog_api_client.v2.model.gcp_project_filter_config import GCPProjectFilterConfig
+from datadog_api_client.v2.model.gcp_project_filter_config_type import GCPProjectFilterConfigType
 from datadog_api_client.v2.model.gcpsts_delegate_account import GCPSTSDelegateAccount
 from datadog_api_client.v2.model.gcpsts_delegate_account_attributes import GCPSTSDelegateAccountAttributes
 from datadog_api_client.v2.model.gcpsts_delegate_account_response import GCPSTSDelegateAccountResponse
@@ -17305,6 +17307,8 @@ __all__ = [
     "GCPMetricNamespaceConfig",
     "GCPMonitoredResourceConfig",
     "GCPMonitoredResourceConfigType",
+    "GCPProjectFilterConfig",
+    "GCPProjectFilterConfigType",
     "GCPSTSDelegateAccount",
     "GCPSTSDelegateAccountAttributes",
     "GCPSTSDelegateAccountResponse",
