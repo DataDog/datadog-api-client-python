@@ -5756,6 +5756,7 @@ from datadog_api_client.v2.model.incident_todo_response_data import IncidentTodo
 from datadog_api_client.v2.model.incident_todo_response_included_item import IncidentTodoResponseIncludedItem
 from datadog_api_client.v2.model.incident_todo_type import IncidentTodoType
 from datadog_api_client.v2.model.incident_trigger import IncidentTrigger
+from datadog_api_client.v2.model.incident_trigger_incident_type import IncidentTriggerIncidentType
 from datadog_api_client.v2.model.incident_trigger_wrapper import IncidentTriggerWrapper
 from datadog_api_client.v2.model.incident_type import IncidentType
 from datadog_api_client.v2.model.incident_type_attributes import IncidentTypeAttributes
@@ -18003,6 +18004,7 @@ __all__ = [
     "IncidentTodoResponseIncludedItem",
     "IncidentTodoType",
     "IncidentTrigger",
+    "IncidentTriggerIncidentType",
     "IncidentTriggerWrapper",
     "IncidentType",
     "IncidentTypeAttributes",

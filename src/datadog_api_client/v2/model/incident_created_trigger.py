@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,41 +14,51 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.incident_trigger_incident_type import IncidentTriggerIncidentType
     from datadog_api_client.v2.model.incident_condition import IncidentCondition
 
 
 class IncidentCreatedTrigger(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.incident_trigger_incident_type import IncidentTriggerIncidentType
         from datadog_api_client.v2.model.incident_condition import IncidentCondition
 
         return {
             "incident_type": (str,),
+            "incident_types": ([IncidentTriggerIncidentType],),
             "tag_condition": (IncidentCondition,),
         }
 
     attribute_map = {
         "incident_type": "incidentType",
+        "incident_types": "incidentTypes",
         "tag_condition": "tagCondition",
     }
 
     def __init__(
         self_,
         incident_type: Union[str, UnsetType] = unset,
+        incident_types: Union[List[IncidentTriggerIncidentType], UnsetType] = unset,
         tag_condition: Union[IncidentCondition, UnsetType] = unset,
         **kwargs,
     ):
         """
         Trigger a workflow when an incident is declared.
 
-        :param incident_type: The type of incident that triggers the workflow.
+        :param incident_type: Deprecated. Use ``incidentTypes`` instead. The type of incident that triggers the workflow. **Deprecated**.
         :type incident_type: str, optional
+
+        :param incident_types: The types of incident that trigger the workflow.
+        :type incident_types: [IncidentTriggerIncidentType], optional
 
         :param tag_condition: Conditions that determine which incidents trigger the workflow.
         :type tag_condition: IncidentCondition, optional
         """
         if incident_type is not unset:
             kwargs["incident_type"] = incident_type
+        if incident_types is not unset:
+            kwargs["incident_types"] = incident_types
         if tag_condition is not unset:
             kwargs["tag_condition"] = tag_condition
         super().__init__(kwargs)
