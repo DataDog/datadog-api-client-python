@@ -306,7 +306,7 @@ Feature: Feature Flags
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:ddoghq/feature-flags
+  @team:ddoghq/feature-flags @validate-error-response
   Scenario: Get a saved filter returns "Not Found" response
     Given new "GetSavedFilter" request
     And request contains "saved_filter_id" parameter with value "00000000-0000-0000-0000-000000000000"
@@ -321,11 +321,15 @@ Feature: Feature Flags
     Then the response status is 200 OK
     And the response "data.id" is equal to "8c051ac8-df7a-496e-b5c0-de691a411100"
     And the response "data.type" is equal to "saved-filters"
+    And the response "data.attributes" has field "created_at"
+    And the response "data.attributes.created_by" is equal to "550e8400-e29b-41d4-a716-446655440091"
     And the response "data.attributes.creation_type" is equal to "RULES"
     And the response "data.attributes.name" is equal to "getSavedFilterTest-Rule"
     And the response "data.attributes.description" is equal to "Synthetic fixture for OpenAPI tests"
     And the response "data.attributes.targeting_rules" has length 2
+    And the response "data.attributes.targeting_rules[0].id" is equal to "204d53d3-9913-485f-af8e-8a8b4b34a4cb"
     And the response "data.attributes.targeting_rules[0].conditions" has length 1
+    And the response "data.attributes.targeting_rules[0].conditions[0].id" is equal to "e12773d9-27ec-4009-88ab-6654227138c3"
     And the response "data.attributes.targeting_rules[0].conditions[0].attribute" is equal to "email"
     And the response "data.attributes.targeting_rules[0].conditions[0].operator" is equal to "ONE_OF"
     And the response "data.attributes.targeting_rules[0].conditions[0].value" is equal to ["test@example.com"]
@@ -333,6 +337,7 @@ Feature: Feature Flags
     And the response "data.attributes.targeting_rules[1].conditions[0].attribute" is equal to "org_id"
     And the response "data.attributes.targeting_rules[1].conditions[0].operator" is equal to "ONE_OF"
     And the response "data.attributes.targeting_rules[1].conditions[0].value" is equal to ["test-org-1"]
+    And the response "data.attributes" has field "updated_at"
 
   @replay-only @team:ddoghq/feature-flags
   Scenario: Get a saved filter returns a saved list
@@ -342,14 +347,19 @@ Feature: Feature Flags
     Then the response status is 200 OK
     And the response "data.id" is equal to "fb44ff15-fe17-4bab-afe8-9a8eb0cf586c"
     And the response "data.type" is equal to "saved-filters"
+    And the response "data.attributes" has field "created_at"
+    And the response "data.attributes.created_by" is equal to "550e8400-e29b-41d4-a716-446655440091"
     And the response "data.attributes.creation_type" is equal to "LIST"
     And the response "data.attributes.name" is equal to "getSavedFilterTest-list"
     And the response "data.attributes.description" is equal to "Synthetic fixture for OpenAPI tests"
     And the response "data.attributes.targeting_rules" has length 1
+    And the response "data.attributes.targeting_rules[0].id" is equal to "bb656152-2e92-43bc-a30a-b0bd9187c2ec"
     And the response "data.attributes.targeting_rules[0].conditions" has length 1
+    And the response "data.attributes.targeting_rules[0].conditions[0].id" is equal to "6b2127a4-a463-4069-baa8-4950f11c6605"
     And the response "data.attributes.targeting_rules[0].conditions[0].attribute" is equal to "user_id"
     And the response "data.attributes.targeting_rules[0].conditions[0].operator" is equal to "ONE_OF"
     And the response "data.attributes.targeting_rules[0].conditions[0].value" is equal to ["test-user-1", "test-user-2"]
+    And the response "data.attributes" has field "updated_at"
 
   @skip @team:ddoghq/feature-flags
   Scenario: Get an environment returns "Not Found" response
@@ -728,7 +738,7 @@ Feature: Feature Flags
     And the response "data.attributes.targeting_rules[0].conditions[0].attribute" is equal to "org_id"
     And the response "data.attributes.targeting_rules[0].conditions[0].value" is equal to ["test-org-1"]
 
-  @replay-only @team:ddoghq/feature-flags
+  @replay-only @team:ddoghq/feature-flags @validate-error-response
   Scenario: Patch a saved filter rejects a duplicate name
     Given new "UpdateSavedFilterAttributes" request
     And request contains "saved_filter_id" parameter with value "2cfc7949-7eb4-4d76-b1b8-d1aa9b565535"
@@ -740,7 +750,7 @@ Feature: Feature Flags
     And the response "errors[0].title" is equal to "Conflict"
     And the response "errors[0].detail" is equal to "a saved filter with this name already exists: conflict occurred"
 
-  @replay-only @team:ddoghq/feature-flags
+  @replay-only @team:ddoghq/feature-flags @validate-error-response
   Scenario: Patch a saved filter rejects a null-only update
     Given new "UpdateSavedFilterAttributes" request
     And request contains "saved_filter_id" parameter with value "2cfc7949-7eb4-4d76-b1b8-d1aa9b565535"
@@ -752,7 +762,7 @@ Feature: Feature Flags
     And the response "errors[0].title" is equal to "Bad Request"
     And the response "errors[0].detail" is equal to "at least one field must be provided"
 
-  @replay-only @team:ddoghq/feature-flags
+  @replay-only @team:ddoghq/feature-flags @validate-error-response
   Scenario: Patch a saved filter rejects a timestamp-only update
     Given new "UpdateSavedFilterAttributes" request
     And request contains "saved_filter_id" parameter with value "a8c393b4-3a9c-48fd-aa48-402c97e8d9c9"
@@ -764,7 +774,7 @@ Feature: Feature Flags
     And the response "errors[0].title" is equal to "Bad Request"
     And the response "errors[0].detail" is equal to "at least one field must be provided"
 
-  @replay-only @skip-python @skip-ruby @team:ddoghq/feature-flags
+  @replay-only @skip-python @skip-ruby @team:ddoghq/feature-flags @validate-error-response
   Scenario: Patch a saved filter rejects an empty name
     Given new "UpdateSavedFilterAttributes" request
     And request contains "saved_filter_id" parameter with value "2cfc7949-7eb4-4d76-b1b8-d1aa9b565535"
@@ -776,7 +786,7 @@ Feature: Feature Flags
     And the response "errors[0].title" is equal to "Bad Request"
     And the response "errors[0].detail" is equal to "name must not be empty"
 
-  @replay-only @skip-java @skip-python @skip-ruby @skip-typescript @team:ddoghq/feature-flags
+  @replay-only @skip-java @skip-python @skip-ruby @skip-typescript @team:ddoghq/feature-flags @validate-error-response
   Scenario: Patch a saved filter rejects an invalid timestamp
     Given new "UpdateSavedFilterAttributes" request
     And request contains "saved_filter_id" parameter with value "2cfc7949-7eb4-4d76-b1b8-d1aa9b565535"
@@ -788,7 +798,7 @@ Feature: Feature Flags
     And the response "errors[0].title" is equal to "Bad Request"
     And the response "errors[0].detail" is equal to "last_updated_at must be a valid RFC3339 timestamp"
 
-  @replay-only @skip-python @skip-ruby @team:ddoghq/feature-flags
+  @replay-only @skip-python @skip-ruby @team:ddoghq/feature-flags @validate-error-response
   Scenario: Patch a saved filter rejects empty targeting rules
     Given new "UpdateSavedFilterAttributes" request
     And request contains "saved_filter_id" parameter with value "2cfc7949-7eb4-4d76-b1b8-d1aa9b565535"
@@ -800,7 +810,7 @@ Feature: Feature Flags
     And the response "errors[0].title" is equal to "Bad Request"
     And the response "errors[0].detail" is equal to "attribute \"targeting_rules\" failed min validation"
 
-  @replay-only @team:ddoghq/feature-flags
+  @replay-only @team:ddoghq/feature-flags @validate-error-response
   Scenario: Patch a saved filter rejects nested saved filters
     Given new "UpdateSavedFilterAttributes" request
     And request contains "saved_filter_id" parameter with value "2cfc7949-7eb4-4d76-b1b8-d1aa9b565535"
@@ -812,7 +822,7 @@ Feature: Feature Flags
     And the response "errors[0].title" is equal to "Bad Request"
     And the response "errors[0].detail" is equal to "targeting rule 0 condition 0: saved filters cannot reference other saved filters"
 
-  @replay-only @team:ddoghq/feature-flags
+  @replay-only @team:ddoghq/feature-flags @validate-error-response
   Scenario: Patch a saved filter rejects stale rule updates
     Given new "UpdateSavedFilterAttributes" request
     And request contains "saved_filter_id" parameter with value "a8c393b4-3a9c-48fd-aa48-402c97e8d9c9"
@@ -860,7 +870,7 @@ Feature: Feature Flags
     And the response "data.attributes.targeting_rules[0].conditions[0].attribute" is equal to "user_id"
     And the response "data.attributes.targeting_rules[0].conditions[0].value" is equal to ["test-user-3"]
 
-  @replay-only @team:ddoghq/feature-flags
+  @replay-only @team:ddoghq/feature-flags @validate-error-response
   Scenario: Patch a saved filter returns "Bad Request" response
     Given new "UpdateSavedFilterAttributes" request
     And request contains "saved_filter_id" parameter with value "2cfc7949-7eb4-4d76-b1b8-d1aa9b565535"
@@ -872,7 +882,7 @@ Feature: Feature Flags
     And the response "errors[0].title" is equal to "Bad Request"
     And the response "errors[0].detail" is equal to "at least one field must be provided"
 
-  @replay-only @team:ddoghq/feature-flags
+  @replay-only @team:ddoghq/feature-flags @validate-error-response
   Scenario: Patch a saved filter returns "Conflict" response
     Given new "UpdateSavedFilterAttributes" request
     And request contains "saved_filter_id" parameter with value "2cfc7949-7eb4-4d76-b1b8-d1aa9b565535"
@@ -884,7 +894,7 @@ Feature: Feature Flags
     And the response "errors[0].title" is equal to "Conflict"
     And the response "errors[0].detail" is equal to "saved filter has been modified since you last fetched it; please refresh and retry: conflict occurred"
 
-  @replay-only @team:ddoghq/feature-flags
+  @replay-only @team:ddoghq/feature-flags @validate-error-response
   Scenario: Patch a saved filter returns "Not Found" response
     Given new "UpdateSavedFilterAttributes" request
     And request contains "saved_filter_id" parameter with value "00000000-0000-0000-0000-000000000000"

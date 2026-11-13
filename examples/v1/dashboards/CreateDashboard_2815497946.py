@@ -40,6 +40,7 @@ body = Dashboard(
                         request_type=TopologyRequestType.TOPOLOGY,
                         query=TopologyQueryDataStreams(
                             data_source=TopologyQueryDataStreamsDataSource.DATA_STREAMS,
+                            service="",
                             filters=[
                                 "env:prod",
                             ],
