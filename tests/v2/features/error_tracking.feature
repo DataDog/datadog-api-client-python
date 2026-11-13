@@ -53,6 +53,41 @@ Feature: Error Tracking
     And the response "data.id" is equal to "{{ issue.id }}"
     And the response "data.relationships" has field "samples"
 
+  @skip @team:ddoghq/error-tracking
+  Scenario: Get the impact of an error tracking issue returns "Bad Request" response
+    Given operation "GetIssueImpact" enabled
+    And new "GetIssueImpact" request
+    And there is a valid "issue" in the system
+    And request contains "issue_id" parameter from "issue.id"
+    And request contains "filter[from]" parameter with value {{ timestamp("now") }}000
+    And request contains "filter[to]" parameter with value {{ timestamp("now - 15d") }}000
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @skip @team:ddoghq/error-tracking
+  Scenario: Get the impact of an error tracking issue returns "Not Found" response
+    Given operation "GetIssueImpact" enabled
+    And new "GetIssueImpact" request
+    And request contains "issue_id" parameter with value "67d80aa3-36ff-44b9-a694-c501a7591737"
+    And request contains "filter[from]" parameter with value {{ timestamp("now - 15d") }}000
+    And request contains "filter[to]" parameter with value {{ timestamp("now") }}000
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @replay-only @skip @team:ddoghq/error-tracking
+  Scenario: Get the impact of an error tracking issue returns "OK" response
+    Given operation "GetIssueImpact" enabled
+    And new "GetIssueImpact" request
+    And there is a valid "issue" in the system
+    And request contains "issue_id" parameter from "issue.id"
+    And request contains "filter[from]" parameter with value {{ timestamp("now - 15d") }}000
+    And request contains "filter[to]" parameter with value {{ timestamp("now") }}000
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" is equal to "{{ issue.id }}"
+    And the response "data.type" is equal to "error_tracking_issue_impact"
+    And the response "data.attributes" has field "error_counts"
+
   @generated @skip @team:ddoghq/error-tracking
   Scenario: Remove the assignee of an issue returns "Bad Request" response
     Given new "DeleteIssueAssignee" request
