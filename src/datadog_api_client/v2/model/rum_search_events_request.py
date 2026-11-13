@@ -51,7 +51,7 @@ class RUMSearchEventsRequest(ModelNormal):
         **kwargs,
     ):
         """
-        The request for a RUM events list.
+        The request for a RUM events list. All attributes are optional: without any, the request returns the first 10 events of the last 15 minutes.
 
         :param filter: The search and filter query settings.
         :type filter: RUMQueryFilter, optional

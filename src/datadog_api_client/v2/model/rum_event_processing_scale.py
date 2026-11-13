@@ -44,7 +44,7 @@ class RUMEventProcessingScale(ModelNormal):
         :param last_modified_at: Timestamp in milliseconds when this scale was last modified.
         :type last_modified_at: int, optional
 
-        :param state: Configures which RUM events are processed and stored for the application.
+        :param state: Configures which RUM events are processed and stored for the application. Defaults to ``ALL`` when creating an application.
         :type state: RUMEventProcessingState, optional
         """
         if last_modified_at is not unset:
