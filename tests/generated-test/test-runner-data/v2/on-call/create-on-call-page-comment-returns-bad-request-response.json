@@ -1,0 +1,50 @@
+{
+  "api": "On-Call",
+  "expected_status": 400,
+  "feature": "On-Call",
+  "id": "v2/On-Call/Create On-Call Page Comment returns \"Bad Request\" response",
+  "operation_id": "CreateOnCallPageComment",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateOnCallPageCommentRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "body": "Comment from the API client integration tests."
+          },
+          "type": "comment"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "page_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "00000000-0000-0000-0000-000000000000"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/on-call/pages/{page_id}/comment"
+  },
+  "scenario": "Create On-Call Page Comment returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
