@@ -62,7 +62,7 @@ class AiGatewayRoutingClassifierRequest(ModelNormal):
         :param model: Decision model on the provider. Omit together with provider to preserve the saved selection.
         :type model: str, optional
 
-        :param provider: Decision-model provider slug. It must name a provider of type ``openai`` , ``baseten`` , or ``typesafe`` , the provider types that serve a decision model. Omit together with model to preserve the saved selection.
+        :param provider: Decision-model provider slug. Omit together with model to preserve the saved selection.
         :type provider: str, optional
         """
         if confidence_threshold is not unset:

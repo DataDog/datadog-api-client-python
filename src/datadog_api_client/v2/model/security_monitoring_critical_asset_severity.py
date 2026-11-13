@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class SecurityMonitoringCriticalAssetSeverity(ModelSimple):
     """
-    Severity associated with this critical asset. Either an explicit severity can be set, or the severity can be increased or decreased, or the severity can be left unchanged (no-op).
+    Severity associated with this dynamic severity rule (previously called critical assets). Either an explicit severity can be set, or the severity can be increased or decreased, or the severity can be left unchanged (no-op).
 
     :param value: Must be one of ["info", "low", "medium", "high", "critical", "increase", "decrease", "no-op"].
     :type value: str
