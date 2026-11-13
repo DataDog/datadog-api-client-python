@@ -310,6 +310,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"name\": \"PERSISTENT_EMAIL_{{ unique_upper_alnum }}\",\n  \"description\": \"Persistent email variable\",\n  \"tags\": [],\n  \"is_email\": true\n}\n"
+      }
+    ],
+    "step": "there is a valid \"synthetics_email_global_variable\" in the system",
+    "key": "synthetics_email_global_variable",
+    "tag": "Synthetics",
+    "operationId": "CreateGlobalVariable"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"description\": \"\",\n  \"name\": \"GLOBAL_VARIABLE_PAYLOAD_{{ unique_upper_alnum }}\",\n  \"tags\": [],\n  \"value\": {\n    \"secure\": false,\n    \"value\": \"\"\n  }\n}\n"
       }
     ],
