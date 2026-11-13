@@ -64,9 +64,10 @@ class CreateDeploymentRuleParamsDataAttributes(ModelNormal):
         :type name: str
 
         :param options: Options for deployment rule response representing either faulty deployment detection or monitor options.
+            Bits Deployment Analysis rules only accept ``duration`` , using the faulty deployment detection options shape.
         :type options: DeploymentRulesOptions
 
-        :param type: The type of the deployment rule (faulty_deployment_detection or monitor).
+        :param type: The type of the deployment rule (faulty_deployment_detection, monitor, or bits_deployment_analysis).
         :type type: str
         """
         if dry_run is not unset:

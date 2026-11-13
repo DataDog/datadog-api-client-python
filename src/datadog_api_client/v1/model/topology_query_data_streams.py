@@ -52,8 +52,8 @@ class TopologyQueryDataStreams(ModelNormal):
         self_,
         data_source: TopologyQueryDataStreamsDataSource,
         filters: List[str],
+        service: str,
         query_string: Union[str, UnsetType] = unset,
-        service: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -65,17 +65,16 @@ class TopologyQueryDataStreams(ModelNormal):
         :param filters: Your environment and primary tag (or * if enabled for your account).
         :type filters: [str]
 
-        :param query_string: A search string for filtering services. Replaces the deprecated ``service`` field.
+        :param query_string: A search string for filtering services. When set, this replaces the ``service`` field.
         :type query_string: str, optional
 
-        :param service: (deprecated) Name of the service. Use ``query_string`` instead. **Deprecated**.
-        :type service: str, optional
+        :param service: (deprecated) Name of the service. Leave this empty and use query_string instead.
+        :type service: str
         """
         if query_string is not unset:
             kwargs["query_string"] = query_string
-        if service is not unset:
-            kwargs["service"] = service
         super().__init__(kwargs)
 
         self_.data_source = data_source
         self_.filters = filters
+        self_.service = service

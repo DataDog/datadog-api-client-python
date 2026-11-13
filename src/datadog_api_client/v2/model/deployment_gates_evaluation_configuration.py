@@ -17,6 +17,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.deployment_gates_evaluation_rule import DeploymentGatesEvaluationRule
     from datadog_api_client.v2.model.deployment_gates_monitor_rule import DeploymentGatesMonitorRule
     from datadog_api_client.v2.model.deployment_gates_fdd_rule import DeploymentGatesFDDRule
+    from datadog_api_client.v2.model.deployment_gates_bits_deployment_analysis_rule import (
+        DeploymentGatesBitsDeploymentAnalysisRule,
+    )
 
 
 class DeploymentGatesEvaluationConfiguration(ModelNormal):
@@ -42,7 +45,14 @@ class DeploymentGatesEvaluationConfiguration(ModelNormal):
 
     def __init__(
         self_,
-        rules: List[Union[DeploymentGatesEvaluationRule, DeploymentGatesMonitorRule, DeploymentGatesFDDRule]],
+        rules: List[
+            Union[
+                DeploymentGatesEvaluationRule,
+                DeploymentGatesMonitorRule,
+                DeploymentGatesFDDRule,
+                DeploymentGatesBitsDeploymentAnalysisRule,
+            ]
+        ],
         dry_run: Union[bool, UnsetType] = unset,
         **kwargs,
     ):

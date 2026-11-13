@@ -28,7 +28,8 @@
                     "filters": [
                       "env:prod"
                     ],
-                    "query_string": "service:myservice"
+                    "query_string": "service:myservice",
+                    "service": ""
                   },
                   "request_type": "topology"
                 }

@@ -14,6 +14,7 @@ class DeploymentRulesOptions(ModelComposed):
     def __init__(self, **kwargs):
         """
         Options for deployment rule response representing either faulty deployment detection or monitor options.
+        Bits Deployment Analysis rules only accept ``duration`` , using the faulty deployment detection options shape.
 
         :param allowed_resources: Resources to include in faulty deployment detection. Mutually exclusive with `excluded_resources`.
         :type allowed_resources: [str], optional

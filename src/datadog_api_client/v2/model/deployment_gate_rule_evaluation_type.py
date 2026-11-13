@@ -16,16 +16,18 @@ class DeploymentGateRuleEvaluationType(ModelSimple):
     """
     Type of deployment gate rule.
 
-    :param value: Must be one of ["monitor", "faulty_deployment_detection"].
+    :param value: Must be one of ["monitor", "faulty_deployment_detection", "bits_deployment_analysis"].
     :type value: str
     """
 
     allowed_values = {
         "monitor",
         "faulty_deployment_detection",
+        "bits_deployment_analysis",
     }
     MONITOR: ClassVar["DeploymentGateRuleEvaluationType"]
     FAULTY_DEPLOYMENT_DETECTION: ClassVar["DeploymentGateRuleEvaluationType"]
+    BITS_DEPLOYMENT_ANALYSIS: ClassVar["DeploymentGateRuleEvaluationType"]
 
     @cached_property
     def openapi_types(_):
@@ -38,3 +40,4 @@ DeploymentGateRuleEvaluationType.MONITOR = DeploymentGateRuleEvaluationType("mon
 DeploymentGateRuleEvaluationType.FAULTY_DEPLOYMENT_DETECTION = DeploymentGateRuleEvaluationType(
     "faulty_deployment_detection"
 )
+DeploymentGateRuleEvaluationType.BITS_DEPLOYMENT_ANALYSIS = DeploymentGateRuleEvaluationType("bits_deployment_analysis")
