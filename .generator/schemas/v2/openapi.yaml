@@ -217741,7 +217741,11 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/APIErrorResponse"
-          description: Bad Request
+          description: |-
+            Bad Request
+
+            If the tag configuration is too large to be stored, the error message is
+            `Tag configuration is too large to be stored. The limit applies to the total encoded size of the tags list, not to a fixed number of tags. Retrying the same request will fail. Remove tags that are not needed for querying, or use shorter tag keys, then resubmit.`
         "403":
           content:
             application/json:
@@ -217819,7 +217823,11 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/APIErrorResponse"
-          description: Bad Request
+          description: |-
+            Bad Request
+
+            If the tag configuration is too large to be stored, the error message is
+            `Tag configuration is too large to be stored. The limit applies to the total encoded size of the tags list, not to a fixed number of tags. Retrying the same request will fail. Remove tags that are not needed for querying, or use shorter tag keys, then resubmit.`
         "403":
           content:
             application/json:
