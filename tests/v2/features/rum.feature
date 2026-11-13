@@ -13,7 +13,7 @@ Feature: RUM
   @generated @skip @team:ddoghq/rum-backend
   Scenario: Aggregate RUM events returns "Bad Request" response
     Given new "AggregateRUMEvents" request
-    And body with value {"compute": [{"aggregation": "pc90", "interval": "5m", "metric": "@duration", "type": "total"}], "filter": {"from": "now-15m", "query": "@type:session AND @session.type:user", "to": "now"}, "group_by": [{"facet": "@view.time_spent", "histogram": {"interval": 10, "max": 100, "min": 50}, "limit": 10, "sort": {"aggregation": "count", "order": "asc"}, "total": false}], "options": {"timezone": "GMT"}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}}
+    And body with value {"compute": [{"aggregation": "pc90", "interval": "5m", "metric": "@view.loading_time", "type": "total"}], "filter": {"from": "now-15m", "query": "@type:session AND @session.type:user", "to": "now"}, "group_by": [{"facet": "@view.name", "histogram": {"interval": 10, "max": 100, "min": 50}, "limit": 10, "sort": {"aggregation": "count", "order": "asc"}, "total": false}], "options": {"timezone": "GMT"}, "page": {"cursor": "eyJzdGFydEF0IjoiQVFBQUFYS2tMS3pPbm40NGV3QUFBQUJCV0V0clRFdDZVbG8zY3pCRmNsbHJiVmxDWlEifQ==", "limit": 25}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -32,6 +32,13 @@ Feature: RUM
     And body with value {"data": {"attributes": {"name": "wrong_rum_application", "type": "wrong_android"}, "type": "wrong_rum_application_type"}}
     When the request is sent
     Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/rum-backend
+  Scenario: Create a new RUM application returns "Conflict" response
+    Given new "CreateRUMApplication" request
+    And body with value {"data": {"attributes": {"apm_rum_flat_sampling_replay_enabled": true, "apm_rum_flat_sampling_replay_sample_rate": 1, "create_default_retention_filters": false, "error_tracking_exclusion_filter_enabled": false, "name": "my_new_rum_application", "product_analytics_replay_sample_rate": 100, "product_analytics_retention_state": "MAX", "rum_event_processing_state": "ALL", "tags": ["team:rum"], "type": "browser"}, "type": "rum_application_create"}}
+    When the request is sent
+    Then the response status is 409 Conflict
 
   @skip-validation @team:ddoghq/rum-backend
   Scenario: Create a new RUM application returns "Created" response
@@ -69,6 +76,13 @@ Feature: RUM
     And the response "data.type" is equal to "rum_application"
     And the response "data.attributes.name" is equal to "test-rum-no-default-rf-{{ unique_hash }}"
     And the response "data.attributes.type" is equal to "browser"
+
+  @generated @skip @team:ddoghq/rum-backend
+  Scenario: Delete a RUM application returns "Bad Request" response
+    Given new "DeleteRUMApplication" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
 
   @skip-validation @team:ddoghq/rum-backend
   Scenario: Delete a RUM application returns "No Content" response
@@ -138,6 +152,13 @@ Feature: RUM
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:ddoghq/rum-backend
+  Scenario: Get a RUM application returns "Bad Request" response
+    Given new "GetRUMApplication" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
   @team:ddoghq/rum-backend
   Scenario: Get a RUM application returns "Not Found" response
     Given new "GetRUMApplication" request
@@ -193,6 +214,12 @@ Feature: RUM
     When the request is sent
     Then the response status is 200 OK
     And the response "data.id" is equal to "00000000-0000-4000-8000-000000000001"
+
+  @generated @skip @team:ddoghq/rum-backend
+  Scenario: List all the RUM applications returns "Bad Request" response
+    Given new "GetRUMApplications" request
+    When the request is sent
+    Then the response status is 400 Bad Request
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: List all the RUM applications returns "Not Found" response
@@ -295,7 +322,7 @@ Feature: RUM
   Scenario: Update a RUM application returns "Bad Request" response
     Given new "UpdateRUMApplication" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"name": "updated_name_for_my_existing_rum_application", "product_analytics_retention_state": "MAX", "rum_event_processing_state": "ALL", "type": "browser"}, "id": "abcd1234-0000-0000-abcd-1234abcd5678", "type": "rum_application_update"}}
+    And body with value {"data": {"attributes": {"apm_rum_flat_sampling_replay_enabled": true, "apm_rum_flat_sampling_replay_sample_rate": 1, "error_tracking_exclusion_filter_enabled": false, "name": "updated_name_for_my_existing_rum_application", "product_analytics_replay_sample_rate": 100, "product_analytics_retention_state": "MAX", "remote_config_id": "abc12345-1234-5678-abcd-ef1234567890", "rum_event_processing_state": "ALL", "tags": ["team:rum"], "type": "browser"}, "id": "abcd1234-0000-0000-abcd-1234abcd5678", "type": "rum_application_update"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -303,7 +330,7 @@ Feature: RUM
   Scenario: Update a RUM application returns "Not Found" response
     Given new "UpdateRUMApplication" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"name": "updated_name_for_my_existing_rum_application", "product_analytics_retention_state": "MAX", "rum_event_processing_state": "ALL", "type": "browser"}, "id": "abcd1234-0000-0000-abcd-1234abcd5678", "type": "rum_application_update"}}
+    And body with value {"data": {"attributes": {"apm_rum_flat_sampling_replay_enabled": true, "apm_rum_flat_sampling_replay_sample_rate": 1, "error_tracking_exclusion_filter_enabled": false, "name": "updated_name_for_my_existing_rum_application", "product_analytics_replay_sample_rate": 100, "product_analytics_retention_state": "MAX", "remote_config_id": "abc12345-1234-5678-abcd-ef1234567890", "rum_event_processing_state": "ALL", "tags": ["team:rum"], "type": "browser"}, "id": "abcd1234-0000-0000-abcd-1234abcd5678", "type": "rum_application_update"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -323,6 +350,14 @@ Feature: RUM
     And the response "data.attributes.product_scales.product_analytics_retention_scale.state" is equal to "NONE"
     And the response "data.attributes.product_scales.rum_event_processing_scale" has field "last_modified_at"
     And the response "data.attributes.product_scales.product_analytics_retention_scale" has field "last_modified_at"
+
+  @generated @skip @team:ddoghq/rum-backend
+  Scenario: Update a RUM application returns "Unprocessable Entity. The `data.id` of the request body does not match the `id` path parameter." response
+    Given new "UpdateRUMApplication" request
+    And request contains "id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"apm_rum_flat_sampling_replay_enabled": true, "apm_rum_flat_sampling_replay_sample_rate": 1, "error_tracking_exclusion_filter_enabled": false, "name": "updated_name_for_my_existing_rum_application", "product_analytics_replay_sample_rate": 100, "product_analytics_retention_state": "MAX", "remote_config_id": "abc12345-1234-5678-abcd-ef1234567890", "rum_event_processing_state": "ALL", "tags": ["team:rum"], "type": "browser"}, "id": "abcd1234-0000-0000-abcd-1234abcd5678", "type": "rum_application_update"}}
+    When the request is sent
+    Then the response status is 422 Unprocessable Entity. The `data.id` of the request body does not match the `id` path parameter.
 
   @skip-validation @team:ddoghq/rum-backend
   Scenario: Update a RUM application returns "Unprocessable Entity." response

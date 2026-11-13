@@ -13,7 +13,7 @@ from datadog_api_client.model_utils import (
 class RUMGroupByMissing(ModelComposed):
     def __init__(self, **kwargs):
         """
-        The value to use for logs that don't have the facet used to group by.
+        The value to use for events that don't have the facet used to group by.
         """
         super().__init__(kwargs)
 

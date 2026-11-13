@@ -22,11 +22,16 @@ class RUMApplicationAttributes(ModelNormal):
         "api_key_id": {
             "inclusive_maximum": 2147483647,
         },
+        "apm_rum_flat_sampling_replay_sample_rate": {
+            "inclusive_maximum": 1,
+            "inclusive_minimum": 0,
+        },
         "org_id": {
             "inclusive_maximum": 2147483647,
         },
         "product_analytics_replay_sample_rate": {
-            "inclusive_maximum": 2147483647,
+            "inclusive_maximum": 100,
+            "inclusive_minimum": 0,
         },
     }
 
@@ -128,7 +133,7 @@ class RUMApplicationAttributes(ModelNormal):
         :param apm_rum_flat_sampling_replay_enabled: Indicates if flat sampling of Session Replay for APM-correlated RUM sessions is enabled.
         :type apm_rum_flat_sampling_replay_enabled: bool, optional
 
-        :param apm_rum_flat_sampling_replay_sample_rate: Sample rate (0-100) of Session Replay for APM-correlated RUM sessions when flat sampling is enabled.
+        :param apm_rum_flat_sampling_replay_sample_rate: Fraction (0 to 1) of APM-correlated RUM sessions with Session Replay when flat sampling is enabled.
         :type apm_rum_flat_sampling_replay_sample_rate: float, optional
 
         :param application_id: ID of the RUM application.
@@ -188,7 +193,7 @@ class RUMApplicationAttributes(ModelNormal):
         :param tags: List of tags associated with the RUM application.
         :type tags: [str], optional
 
-        :param type: Type of the RUM application. Supported values are ``browser`` , ``ios`` , ``android`` , ``react-native`` , ``flutter`` , ``roku`` , ``electron`` , ``unity`` , ``kotlin-multiplatform``.
+        :param type: Type of the RUM application. Possible values are ``browser`` , ``ios`` , ``android`` , ``react-native`` , ``flutter`` , ``roku`` , ``electron`` , ``unity`` , ``kotlin-multiplatform`` , ``react`` , ``nextjs`` , ``angular`` , ``vuejs`` , ``nuxt`` , ``tanstack`` , ``maui`` , ``salesforce-lwc`` , ``shopify`` , ``cpp`` , ``unreal``.
         :type type: str
 
         :param updated_at: Timestamp in ms of the last update date.

@@ -9718,6 +9718,7 @@ from datadog_api_client.v2.model.rum_application_create_type import RUMApplicati
 from datadog_api_client.v2.model.rum_application_list import RUMApplicationList
 from datadog_api_client.v2.model.rum_application_list_attributes import RUMApplicationListAttributes
 from datadog_api_client.v2.model.rum_application_list_type import RUMApplicationListType
+from datadog_api_client.v2.model.rum_application_platform_type import RUMApplicationPlatformType
 from datadog_api_client.v2.model.rum_application_response import RUMApplicationResponse
 from datadog_api_client.v2.model.rum_application_type import RUMApplicationType
 from datadog_api_client.v2.model.rum_application_update import RUMApplicationUpdate
@@ -9788,6 +9789,9 @@ from datadog_api_client.v2.model.rum_operations_list_response_meta import RUMOpe
 from datadog_api_client.v2.model.rum_operations_list_response_meta_page import RUMOperationsListResponseMetaPage
 from datadog_api_client.v2.model.rum_product_analytics_retention_scale import RUMProductAnalyticsRetentionScale
 from datadog_api_client.v2.model.rum_product_analytics_retention_state import RUMProductAnalyticsRetentionState
+from datadog_api_client.v2.model.rum_product_analytics_retention_state_request import (
+    RUMProductAnalyticsRetentionStateRequest,
+)
 from datadog_api_client.v2.model.rum_product_scales import RUMProductScales
 from datadog_api_client.v2.model.rum_query_filter import RUMQueryFilter
 from datadog_api_client.v2.model.rum_query_options import RUMQueryOptions
@@ -20487,6 +20491,7 @@ __all__ = [
     "RUMApplicationList",
     "RUMApplicationListAttributes",
     "RUMApplicationListType",
+    "RUMApplicationPlatformType",
     "RUMApplicationResponse",
     "RUMApplicationType",
     "RUMApplicationUpdate",
@@ -20545,6 +20550,7 @@ __all__ = [
     "RUMOperationsListResponseMetaPage",
     "RUMProductAnalyticsRetentionScale",
     "RUMProductAnalyticsRetentionState",
+    "RUMProductAnalyticsRetentionStateRequest",
     "RUMProductScales",
     "RUMQueryFilter",
     "RUMQueryOptions",
