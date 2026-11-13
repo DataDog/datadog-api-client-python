@@ -9580,8 +9580,6 @@ components:
 
         `draft`: The monitor appears as Draft and does not send notifications.
         `published`: The monitor is active and evaluates conditions and notify as configured.
-
-        This field is in preview. The draft value is only available to customers with the feature enabled.
       enum:
         - draft
         - published
@@ -10635,7 +10633,7 @@ components:
           nullable: true
           type: integer
         variables:
-          description: List of requests that can be used in the monitor query. **This feature is currently in beta.**
+          description: List of requests that can be used in the monitor query.
           items:
             $ref: "#/components/schemas/MonitorFormulaAndFunctionQueryDefinition"
           type: array
@@ -10658,7 +10656,7 @@ components:
       readOnly: true
       type: object
     MonitorOptionsCustomSchedule:
-      description: Configuration options for the custom schedule. **This feature is in private beta.**
+      description: Configuration options for the custom schedule.
       properties:
         recurrences:
           description: Array of custom schedule recurrences.

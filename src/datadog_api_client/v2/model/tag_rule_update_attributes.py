@@ -18,6 +18,14 @@ if TYPE_CHECKING:
 
 
 class TagRuleUpdateAttributes(ModelNormal):
+    validations = {
+        "tag_key": {},
+        "tag_value_patterns": {
+            "max_items": 30,
+            "min_items": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.tag_rule_type import TagRuleType
@@ -58,7 +66,9 @@ class TagRuleUpdateAttributes(ModelNormal):
     ):
         """
         Mutable attributes of a tag rule. Each field is optional; omitting a field leaves its
-        current value unchanged. The ``source`` of a rule cannot be changed.
+        current value unchanged. The ``source`` of a rule cannot be changed. Tag keys, patterns,
+        and metrics scopes have the same constraints as on creation. If the effective
+        ``tag_value_patterns`` contains ``*`` , set ``required`` and ``negated`` to different values.
 
         :param enabled: Whether the rule is currently enforced.
         :type enabled: bool, optional
@@ -74,6 +84,7 @@ class TagRuleUpdateAttributes(ModelNormal):
 
         :param rule_type: How the rule is enforced. ``blocking`` rejects telemetry that violates the rule.
             ``surfacing`` only highlights non-compliant telemetry without blocking it.
+            RUM supports only ``surfacing`` rules.
         :type rule_type: TagRuleType, optional
 
         :param scope: The scope the rule applies within.

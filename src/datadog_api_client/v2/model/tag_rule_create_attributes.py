@@ -20,7 +20,9 @@ if TYPE_CHECKING:
 
 class TagRuleCreateAttributes(ModelNormal):
     validations = {
+        "tag_key": {},
         "tag_value_patterns": {
+            "max_items": 30,
             "min_items": 1,
         },
     }
@@ -68,9 +70,11 @@ class TagRuleCreateAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes that can be supplied when creating a tag rule.
+        Attributes that can be supplied when creating a tag rule. If ``tag_value_patterns``
+        contains ``*`` , set ``required`` and ``negated`` to different values. If both are ``false`` ,
+        the rule has no effect. If both are ``true`` , no value can satisfy the rule.
 
-        :param enabled: Whether the rule is currently enforced. Defaults to ``true`` for newly created rules.
+        :param enabled: The API ignores this value on creation and always enables new rules. To disable a rule, use the "Update a tag rule" endpoint.
         :type enabled: bool, optional
 
         :param name: Human-readable name for the tag rule.
@@ -86,18 +90,23 @@ class TagRuleCreateAttributes(ModelNormal):
             creation time.
         :type rule_type: TagRuleCreateType
 
-        :param scope: The scope the rule applies within. Typically an environment, team, or
-            organization-level identifier used to limit where the rule is enforced.
+        :param scope: The scope the rule applies within. For logs and spans, use a search query, such
+            as ``env:prod`` , or ``*`` to match all telemetry. For metrics, use a metric selector
+            with an optional tag filter, such as ``system.cpu.*{env:prod}``. A metric wildcard
+            is allowed only once, at the end of the metric selector.
         :type scope: str
 
         :param source: The telemetry source that a tag rule applies to.
         :type source: TagRuleSource
 
-        :param tag_key: The tag key that the rule governs (for example, ``service`` ).
+        :param tag_key: The tag key that the rule governs (for example, ``service`` ). Allowed characters
+            are ASCII letters, digits, underscores, hyphens, periods, and slashes. The keys
+            ``host`` and ``device`` are not supported in any letter case.
         :type tag_key: str
 
-        :param tag_value_patterns: One or more patterns that valid values for the tag key must match. At least one
-            pattern is required.
+        :param tag_value_patterns: Between 1 and 30 non-empty patterns that valid values for the tag key must match.
+            Allowed characters are ASCII letters, digits, underscores, colons, hyphens,
+            periods, commas, slashes, and asterisks.
         :type tag_value_patterns: [str]
         """
         if enabled is not unset:
