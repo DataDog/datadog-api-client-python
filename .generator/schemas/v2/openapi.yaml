@@ -81749,6 +81749,15 @@ components:
           example: openai
           nullable: true
           type: string
+        min_cluster_size:
+          description: |-
+            Minimum topic size, the smallest number of interactions a topic must contain. Topics with fewer
+            interactions are moved to Outliers.
+          example: 15
+          format: int32
+          maximum: 2147483647
+          minimum: 2
+          type: integer
         model_name:
           description: Model name for a bring-your-own-model configuration.
           example: gpt-4o
@@ -81788,6 +81797,7 @@ components:
         - evp_query
         - sampling_ratio
         - num_records
+        - min_cluster_size
         - hierarchy_depth
         - scope
         - created_at
@@ -81825,6 +81835,15 @@ components:
           example: openai
           nullable: true
           type: string
+        min_cluster_size:
+          description: |-
+            Minimum topic size, the smallest number of interactions a topic must contain. Topics with fewer
+            interactions are moved to Outliers.
+          example: 15
+          format: int32
+          maximum: 2147483647
+          minimum: 2
+          type: integer
         model_name:
           description: Model name for a bring-your-own-model configuration.
           example: gpt-4o
@@ -81865,6 +81884,7 @@ components:
         - evp_query
         - sampling_ratio
         - num_records
+        - min_cluster_size
         - hierarchy_depth
         - scope
         - created_at
@@ -81977,6 +81997,15 @@ components:
           description: Integration provider for a bring-your-own-model configuration.
           example: openai
           type: string
+        min_cluster_size:
+          description: |-
+            Minimum topic size, the smallest number of interactions a topic must contain. Topics with fewer
+            interactions are moved to Outliers. Must be at least 2 and less than `num_records`. Required when creating a configuration.
+          example: 15
+          format: int32
+          maximum: 2147483647
+          minimum: 2
+          type: integer
         model_name:
           description: Model name for a bring-your-own-model configuration.
           example: gpt-4o
@@ -210024,6 +210053,7 @@ paths:
                             evp_query: "@ml_app:support-bot"
                             hierarchy_depth: 2
                             id: a7c8d9e0-1234-5678-9abc-def012345678
+                            min_cluster_size: 15
                             name: Support chatbot topics
                             num_records: 1000
                             sampling_ratio: 0.1
@@ -210083,6 +210113,7 @@ paths:
                     attributes:
                       evp_query: "@ml_app:support-bot"
                       hierarchy_depth: 2
+                      min_cluster_size: 15
                       name: Support chatbot topics
                       num_records: 1000
                       sampling_ratio: 0.1
@@ -210103,6 +210134,7 @@ paths:
                         created_at: "2024-01-15T10:30:00Z"
                         evp_query: "@ml_app:support-bot"
                         hierarchy_depth: 2
+                        min_cluster_size: 15
                         name: Support chatbot topics
                         num_records: 1000
                         sampling_ratio: 0.1
@@ -210171,6 +210203,7 @@ paths:
                         created_at: "2024-01-15T10:30:00Z"
                         evp_query: "@ml_app:support-bot"
                         hierarchy_depth: 2
+                        min_cluster_size: 15
                         name: Support chatbot topics
                         num_records: 1000
                         sampling_ratio: 0.1

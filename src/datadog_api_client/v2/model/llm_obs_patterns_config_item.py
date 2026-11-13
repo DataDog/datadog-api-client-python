@@ -20,6 +20,10 @@ class LLMObsPatternsConfigItem(ModelNormal):
         "hierarchy_depth": {
             "inclusive_maximum": 2147483647,
         },
+        "min_cluster_size": {
+            "inclusive_maximum": 2147483647,
+            "inclusive_minimum": 2,
+        },
         "num_records": {
             "inclusive_maximum": 2147483647,
         },
@@ -34,6 +38,7 @@ class LLMObsPatternsConfigItem(ModelNormal):
             "hierarchy_depth": (int,),
             "id": (str,),
             "integration_provider": (str, none_type),
+            "min_cluster_size": (int,),
             "model_name": (str, none_type),
             "name": (str,),
             "num_records": (int,),
@@ -50,6 +55,7 @@ class LLMObsPatternsConfigItem(ModelNormal):
         "hierarchy_depth": "hierarchy_depth",
         "id": "id",
         "integration_provider": "integration_provider",
+        "min_cluster_size": "min_cluster_size",
         "model_name": "model_name",
         "name": "name",
         "num_records": "num_records",
@@ -65,6 +71,7 @@ class LLMObsPatternsConfigItem(ModelNormal):
         evp_query: str,
         hierarchy_depth: int,
         id: str,
+        min_cluster_size: int,
         name: str,
         num_records: int,
         sampling_ratio: float,
@@ -96,6 +103,10 @@ class LLMObsPatternsConfigItem(ModelNormal):
 
         :param integration_provider: Integration provider for a bring-your-own-model configuration.
         :type integration_provider: str, none_type, optional
+
+        :param min_cluster_size: Minimum topic size, the smallest number of interactions a topic must contain. Topics with fewer
+            interactions are moved to Outliers.
+        :type min_cluster_size: int
 
         :param model_name: Model name for a bring-your-own-model configuration.
         :type model_name: str, none_type, optional
@@ -132,6 +143,7 @@ class LLMObsPatternsConfigItem(ModelNormal):
         self_.evp_query = evp_query
         self_.hierarchy_depth = hierarchy_depth
         self_.id = id
+        self_.min_cluster_size = min_cluster_size
         self_.name = name
         self_.num_records = num_records
         self_.sampling_ratio = sampling_ratio
