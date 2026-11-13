@@ -3348,6 +3348,36 @@
       "type": "idempotent"
     }
   },
+  "DeleteFlagSuggestion": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetFlagSuggestion": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ApplyFlagSuggestion": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "ApproveFlagSuggestion": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "RejectFlagSuggestion": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
   "GetFeatureFlag": {
     "tag": "Feature Flags",
     "undo": {
@@ -3395,6 +3425,25 @@
     "tag": "Feature Flags",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "UpdateFeatureFlagApprovals": {
+    "tag": "Feature Flags",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateFlagSuggestion": {
+    "tag": "Feature Flags",
+    "undo": {
+      "operationId": "DeleteFlagSuggestion",
+      "parameters": [
+        {
+          "name": "suggestion_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
     }
   },
   "UnarchiveFeatureFlag": {
