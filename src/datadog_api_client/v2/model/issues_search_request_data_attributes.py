@@ -99,10 +99,11 @@ class IssuesSearchRequestDataAttributes(ModelNormal):
         :param _from: Start date (inclusive) of the query in milliseconds since the Unix epoch.
         :type _from: int
 
-        :param order_by: The attribute to sort the search results by.
+        :param order_by: The attribute to sort the search results by, in descending order. Defaults to ``TOTAL_COUNT``.
         :type order_by: IssuesSearchRequestDataAttributesOrderBy, optional
 
-        :param persona: Persona for the search. Either track(s) or persona(s) must be specified.
+        :param persona: Persona for the search. Either ``track`` or ``persona`` must be specified.
+            Ignored if ``track`` is specified.
         :type persona: IssuesSearchRequestDataAttributesPersona, optional
 
         :param query: Search query following the event search syntax.
@@ -117,7 +118,8 @@ class IssuesSearchRequestDataAttributes(ModelNormal):
         :param to: End date (exclusive) of the query in milliseconds since the Unix epoch.
         :type to: int
 
-        :param track: Track of the events to query. Either track(s) or persona(s) must be specified.
+        :param track: Track of the events to query. Either ``track`` or ``persona`` must be specified.
+            If both are specified, ``persona`` is ignored.
         :type track: IssuesSearchRequestDataAttributesTrack, optional
         """
         if assignee_ids is not unset:

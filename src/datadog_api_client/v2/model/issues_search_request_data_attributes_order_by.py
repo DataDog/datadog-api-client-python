@@ -14,9 +14,9 @@ from typing import ClassVar
 
 class IssuesSearchRequestDataAttributesOrderBy(ModelSimple):
     """
-    The attribute to sort the search results by.
+    The attribute to sort the search results by, in descending order. Defaults to `TOTAL_COUNT`.
 
-    :param value: Must be one of ["TOTAL_COUNT", "FIRST_SEEN", "IMPACTED_SESSIONS", "PRIORITY"].
+    :param value: Must be one of ["TOTAL_COUNT", "FIRST_SEEN", "IMPACTED_SESSIONS", "PRIORITY", "IMPACTED_ACCOUNTS"].
     :type value: str
     """
 
@@ -25,11 +25,13 @@ class IssuesSearchRequestDataAttributesOrderBy(ModelSimple):
         "FIRST_SEEN",
         "IMPACTED_SESSIONS",
         "PRIORITY",
+        "IMPACTED_ACCOUNTS",
     }
     TOTAL_COUNT: ClassVar["IssuesSearchRequestDataAttributesOrderBy"]
     FIRST_SEEN: ClassVar["IssuesSearchRequestDataAttributesOrderBy"]
     IMPACTED_SESSIONS: ClassVar["IssuesSearchRequestDataAttributesOrderBy"]
     PRIORITY: ClassVar["IssuesSearchRequestDataAttributesOrderBy"]
+    IMPACTED_ACCOUNTS: ClassVar["IssuesSearchRequestDataAttributesOrderBy"]
 
     @cached_property
     def openapi_types(_):
@@ -44,3 +46,6 @@ IssuesSearchRequestDataAttributesOrderBy.IMPACTED_SESSIONS = IssuesSearchRequest
     "IMPACTED_SESSIONS"
 )
 IssuesSearchRequestDataAttributesOrderBy.PRIORITY = IssuesSearchRequestDataAttributesOrderBy("PRIORITY")
+IssuesSearchRequestDataAttributesOrderBy.IMPACTED_ACCOUNTS = IssuesSearchRequestDataAttributesOrderBy(
+    "IMPACTED_ACCOUNTS"
+)
