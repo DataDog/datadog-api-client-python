@@ -18,6 +18,7 @@ from datadog_api_client.v2.model.issue_response import IssueResponse
 from datadog_api_client.v2.model.get_issue_include_query_parameter_item import GetIssueIncludeQueryParameterItem
 from datadog_api_client.v2.model.issue_sample_bias import IssueSampleBias
 from datadog_api_client.v2.model.issue_update_assignee_request import IssueUpdateAssigneeRequest
+from datadog_api_client.v2.model.issue_snooze_request import IssueSnoozeRequest
 from datadog_api_client.v2.model.issue_update_state_request import IssueUpdateStateRequest
 
 
@@ -108,6 +109,32 @@ class ErrorTrackingApi:
                 "body": {
                     "required": True,
                     "openapi_types": (IssuesSearchRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._snooze_issue_endpoint = _Endpoint(
+            settings={
+                "response_type": (IssueResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/error-tracking/issues/{issue_id}/snooze",
+                "operation_id": "snooze_issue",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "issue_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "issue_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (IssueSnoozeRequest,),
                     "location": "body",
                 },
             },
@@ -241,6 +268,33 @@ class ErrorTrackingApi:
         kwargs["body"] = body
 
         return self._search_issues_endpoint.call_with_http_info(**kwargs)
+
+    def snooze_issue(
+        self,
+        issue_id: str,
+        body: IssueSnoozeRequest,
+    ) -> IssueResponse:
+        """Snooze an issue.
+
+        Snooze an issue by ``issue_id`` : move it to ``IGNORED`` until a condition is met, then back to ``OPEN``.
+        The condition can be a number of occurrences, a number of distinct values of an attribute such as ``@usr.id`` ,
+        an elapsed time, or any or all of several conditions.
+        Snoozing an issue that is already snoozed replaces its snooze. Updating the state of the issue with
+        ``UpdateIssueState`` cancels the snooze.
+        The response includes the watch that reopens the issue.
+
+        :param issue_id: The identifier of the issue.
+        :type issue_id: str
+        :param body: Snooze issue request payload.
+        :type body: IssueSnoozeRequest
+        :rtype: IssueResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["issue_id"] = issue_id
+
+        kwargs["body"] = body
+
+        return self._snooze_issue_endpoint.call_with_http_info(**kwargs)
 
     def update_issue_assignee(
         self,

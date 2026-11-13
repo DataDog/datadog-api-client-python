@@ -18,7 +18,7 @@ body = TagRuleUpdateRequest(
             tag_value_patterns=[],
         ),
         id="123",
-        type=TagRuleResourceType.TAG_RULE,
+        type=TagRuleResourceType.TAG_POLICY,
     ),
 )
 

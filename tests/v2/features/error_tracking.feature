@@ -89,6 +89,38 @@ Feature: Error Tracking
     When the request is sent
     Then the response status is 200 OK
 
+  @skip @team:ddoghq/error-tracking
+  Scenario: Snooze an issue returns "Bad Request" response
+    Given operation "SnoozeIssue" enabled
+    And new "SnoozeIssue" request
+    And there is a valid "issue" in the system
+    And request contains "issue_id" parameter from "issue.id"
+    And body with value {"data": {"attributes": {"condition": {"kind": "OCCURRENCES"}}, "id": "{{ issue.id }}", "type": "error_tracking_issue"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @skip @team:ddoghq/error-tracking
+  Scenario: Snooze an issue returns "Not Found" response
+    Given operation "SnoozeIssue" enabled
+    And new "SnoozeIssue" request
+    And request contains "issue_id" parameter with value "67d80aa3-36ff-44b9-a694-c501a7591737"
+    And body with value {"data": {"attributes": {"condition": {"kind": "ELAPSED_TIME", "duration": "168h"}}, "id": "67d80aa3-36ff-44b9-a694-c501a7591737", "type": "error_tracking_issue"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip @team:ddoghq/error-tracking
+  Scenario: Snooze an issue returns "OK" response
+    Given operation "SnoozeIssue" enabled
+    And new "SnoozeIssue" request
+    And there is a valid "issue" in the system
+    And request contains "issue_id" parameter from "issue.id"
+    And body with value {"data": {"attributes": {"condition": {"kind": "ELAPSED_TIME", "duration": "168h"}}, "id": "{{ issue.id }}", "type": "error_tracking_issue"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" is equal to "{{ issue.id }}"
+    And the response "data.attributes.state" is equal to "IGNORED"
+    And the response "data.relationships" has field "watches"
+
   @team:ddoghq/error-tracking
   Scenario: Update the assignee of an issue returns "Bad Request" response
     Given new "UpdateIssueAssignee" request
