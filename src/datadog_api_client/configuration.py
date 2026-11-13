@@ -396,6 +396,7 @@ class Configuration:
                 "v2.list_ai_gateway_provider_models": False,
                 "v2.list_ai_gateway_providers": False,
                 "v2.list_ai_gateway_rate_limit_instances": False,
+                "v2.list_ai_gateway_rate_limit_instances_summaries": False,
                 "v2.list_ai_gateway_rate_limits": False,
                 "v2.list_ai_gateway_routing_rules": False,
                 "v2.override_ai_gateway_budget_instance_capacity": False,

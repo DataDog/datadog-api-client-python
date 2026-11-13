@@ -1492,6 +1492,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"rate-limits\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"selector\": [{\"dim\": \"user_id\", \"per_value\": true}],\n      \"requests_per_minute\": 1000000,\n      \"mode\": \"ALERT\"\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"rate_limit_template\" in the system",
+    "key": "rate_limit_template",
+    "tag": "AI Gateway",
+    "operationId": "CreateAiGatewayRateLimit"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"custom_rule\",\n    \"attributes\": {\n      \"blocking\": false,\n      \"conditions\": [\n        {\n          \"operator\": \"match_regex\",\n          \"parameters\": {\n            \"inputs\": [\n              {\n                \"address\": \"server.request.query\",\n                \"key_path\": [\n                  \"id\"\n                ]\n              }\n            ],\n            \"regex\": \"badactor\"\n          }\n        }\n      ],\n      \"enabled\": true,\n      \"name\": \"test\",\n      \"path_glob\": \"/test\",\n      \"scope\": [\n        {\n          \"env\": \"test\",\n          \"service\": \"test\"\n        }\n      ],\n      \"tags\": {\n        \"category\": \"attack_attempt\",\n        \"type\": \"test\"\n      }\n    }\n  }\n}"
       }
     ],

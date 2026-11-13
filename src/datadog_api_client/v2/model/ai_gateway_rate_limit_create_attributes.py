@@ -22,6 +22,10 @@ if TYPE_CHECKING:
 
 class AiGatewayRateLimitCreateAttributes(ModelNormal):
     validations = {
+        "cost_microcents_per_minute": {
+            "inclusive_maximum": 10000000000000,
+            "inclusive_minimum": 1,
+        },
         "input_tokens_per_minute": {
             "inclusive_maximum": 100000000000,
             "inclusive_minimum": 1,
@@ -42,6 +46,7 @@ class AiGatewayRateLimitCreateAttributes(ModelNormal):
         from datadog_api_client.v2.model.ai_gateway_rate_limit_selector_entry import AiGatewayRateLimitSelectorEntry
 
         return {
+            "cost_microcents_per_minute": (int, none_type),
             "input_tokens_per_minute": (int, none_type),
             "mode": (AiGatewayRateLimitMode,),
             "name": (str,),
@@ -54,6 +59,7 @@ class AiGatewayRateLimitCreateAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "cost_microcents_per_minute": "cost_microcents_per_minute",
         "input_tokens_per_minute": "input_tokens_per_minute",
         "mode": "mode",
         "name": "name",
@@ -68,6 +74,7 @@ class AiGatewayRateLimitCreateAttributes(ModelNormal):
     def __init__(
         self_,
         name: str,
+        cost_microcents_per_minute: Union[int, none_type, UnsetType] = unset,
         input_tokens_per_minute: Union[int, none_type, UnsetType] = unset,
         mode: Union[AiGatewayRateLimitMode, UnsetType] = unset,
         output_tokens_per_minute: Union[int, none_type, UnsetType] = unset,
@@ -81,6 +88,9 @@ class AiGatewayRateLimitCreateAttributes(ModelNormal):
         """
         Attributes used to create an AI Gateway rate limit.
 
+        :param cost_microcents_per_minute: Maximum priced spend per rolling minute, in microcents of 1e-8 USD each. At most 10000000000000, that is $100,000. In ``ENFORCE`` mode, requests to a model with no pricing are rejected, because their cost can't be counted.
+        :type cost_microcents_per_minute: int, none_type, optional
+
         :param input_tokens_per_minute: Maximum input tokens per rolling minute.
         :type input_tokens_per_minute: int, none_type, optional
 
@@ -93,7 +103,7 @@ class AiGatewayRateLimitCreateAttributes(ModelNormal):
         :param output_tokens_per_minute: Maximum output tokens per rolling minute.
         :type output_tokens_per_minute: int, none_type, optional
 
-        :param requests_per_minute: Maximum requests per rolling minute. At least one of ``requests_per_minute`` , ``input_tokens_per_minute`` , and ``output_tokens_per_minute`` is required.
+        :param requests_per_minute: Maximum requests per rolling minute. At least one of ``requests_per_minute`` , ``input_tokens_per_minute`` , ``output_tokens_per_minute`` , and ``cost_microcents_per_minute`` is required.
         :type requests_per_minute: int, none_type, optional
 
         :param selector: Dimension rules for a template rate limit, which gives each matched user, Team, or value its own allowance with the rule's limits. Can't be combined with user_id, team_id, or tags, and can't be changed after creation. Omit for a rule with one shared allowance.
@@ -108,6 +118,8 @@ class AiGatewayRateLimitCreateAttributes(ModelNormal):
         :param user_id: Optional UUID. Count only this user's requests.
         :type user_id: UUID, optional
         """
+        if cost_microcents_per_minute is not unset:
+            kwargs["cost_microcents_per_minute"] = cost_microcents_per_minute
         if input_tokens_per_minute is not unset:
             kwargs["input_tokens_per_minute"] = input_tokens_per_minute
         if mode is not unset:

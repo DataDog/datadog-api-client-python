@@ -20,6 +20,10 @@ if TYPE_CHECKING:
 
 class AiGatewayRateLimitUpdateAttributes(ModelNormal):
     validations = {
+        "cost_microcents_per_minute": {
+            "inclusive_maximum": 10000000000000,
+            "inclusive_minimum": 0,
+        },
         "input_tokens_per_minute": {
             "inclusive_maximum": 100000000000,
             "inclusive_minimum": 0,
@@ -39,6 +43,7 @@ class AiGatewayRateLimitUpdateAttributes(ModelNormal):
         from datadog_api_client.v2.model.ai_gateway_rate_limit_mode import AiGatewayRateLimitMode
 
         return {
+            "cost_microcents_per_minute": (int, none_type),
             "enabled": (bool,),
             "input_tokens_per_minute": (int, none_type),
             "mode": (AiGatewayRateLimitMode,),
@@ -51,6 +56,7 @@ class AiGatewayRateLimitUpdateAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "cost_microcents_per_minute": "cost_microcents_per_minute",
         "enabled": "enabled",
         "input_tokens_per_minute": "input_tokens_per_minute",
         "mode": "mode",
@@ -64,6 +70,7 @@ class AiGatewayRateLimitUpdateAttributes(ModelNormal):
 
     def __init__(
         self_,
+        cost_microcents_per_minute: Union[int, none_type, UnsetType] = unset,
         enabled: Union[bool, UnsetType] = unset,
         input_tokens_per_minute: Union[int, none_type, UnsetType] = unset,
         mode: Union[AiGatewayRateLimitMode, UnsetType] = unset,
@@ -77,6 +84,9 @@ class AiGatewayRateLimitUpdateAttributes(ModelNormal):
     ):
         """
         Attributes used to update an AI Gateway rate limit. Only sent fields are changed.
+
+        :param cost_microcents_per_minute: Spend limit in microcents per rolling minute. Set to 0 to remove the cost limit. Null is ignored. At least one limit must remain.
+        :type cost_microcents_per_minute: int, none_type, optional
 
         :param enabled: Whether this rate limit is active.
         :type enabled: bool, optional
@@ -105,6 +115,8 @@ class AiGatewayRateLimitUpdateAttributes(ModelNormal):
         :param user_id: Replaces the user scope. An empty string clears it. Null is ignored.
         :type user_id: str, none_type, optional
         """
+        if cost_microcents_per_minute is not unset:
+            kwargs["cost_microcents_per_minute"] = cost_microcents_per_minute
         if enabled is not unset:
             kwargs["enabled"] = enabled
         if input_tokens_per_minute is not unset:

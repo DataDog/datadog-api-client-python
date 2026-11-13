@@ -184,7 +184,7 @@ Feature: AI Gateway
   Scenario: Create an AI Gateway rate limit returns "Bad Request" response
     Given operation "CreateAiGatewayRateLimit" enabled
     And new "CreateAiGatewayRateLimit" request
-    And body with value {"data": {"attributes": {"input_tokens_per_minute": null, "mode": "ALERT", "name": "Default rate limit", "output_tokens_per_minute": null, "requests_per_minute": 600, "selector": [{"dim": "user_id", "per_value": true, "values": ["11111111-1111-1111-1111-111111111111"]}], "team_id": "00000000-0000-4000-8000-000000000002", "user_id": "00000000-0000-4000-8000-000000000001"}, "type": "rate-limits"}}
+    And body with value {"data": {"attributes": {"cost_microcents_per_minute": 100000000, "input_tokens_per_minute": null, "mode": "ALERT", "name": "Default rate limit", "output_tokens_per_minute": null, "requests_per_minute": 600, "selector": [{"dim": "user_id", "per_value": true, "values": ["11111111-1111-1111-1111-111111111111"]}], "team_id": "00000000-0000-4000-8000-000000000002", "user_id": "00000000-0000-4000-8000-000000000001"}, "type": "rate-limits"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -192,7 +192,7 @@ Feature: AI Gateway
   Scenario: Create an AI Gateway rate limit returns "Conflict" response
     Given operation "CreateAiGatewayRateLimit" enabled
     And new "CreateAiGatewayRateLimit" request
-    And body with value {"data": {"attributes": {"input_tokens_per_minute": null, "mode": "ALERT", "name": "Default rate limit", "output_tokens_per_minute": null, "requests_per_minute": 600, "selector": [{"dim": "user_id", "per_value": true, "values": ["11111111-1111-1111-1111-111111111111"]}], "team_id": "00000000-0000-4000-8000-000000000002", "user_id": "00000000-0000-4000-8000-000000000001"}, "type": "rate-limits"}}
+    And body with value {"data": {"attributes": {"cost_microcents_per_minute": 100000000, "input_tokens_per_minute": null, "mode": "ALERT", "name": "Default rate limit", "output_tokens_per_minute": null, "requests_per_minute": 600, "selector": [{"dim": "user_id", "per_value": true, "values": ["11111111-1111-1111-1111-111111111111"]}], "team_id": "00000000-0000-4000-8000-000000000002", "user_id": "00000000-0000-4000-8000-000000000001"}, "type": "rate-limits"}}
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -200,7 +200,7 @@ Feature: AI Gateway
   Scenario: Create an AI Gateway rate limit returns "Created" response
     Given operation "CreateAiGatewayRateLimit" enabled
     And new "CreateAiGatewayRateLimit" request
-    And body with value {"data": {"attributes": {"input_tokens_per_minute": null, "mode": "ALERT", "name": "Default rate limit", "output_tokens_per_minute": null, "requests_per_minute": 600, "selector": [{"dim": "user_id", "per_value": true, "values": ["11111111-1111-1111-1111-111111111111"]}], "team_id": "00000000-0000-4000-8000-000000000002", "user_id": "00000000-0000-4000-8000-000000000001"}, "type": "rate-limits"}}
+    And body with value {"data": {"attributes": {"cost_microcents_per_minute": 100000000, "input_tokens_per_minute": null, "mode": "ALERT", "name": "Default rate limit", "output_tokens_per_minute": null, "requests_per_minute": 600, "selector": [{"dim": "user_id", "per_value": true, "values": ["11111111-1111-1111-1111-111111111111"]}], "team_id": "00000000-0000-4000-8000-000000000002", "user_id": "00000000-0000-4000-8000-000000000001"}, "type": "rate-limits"}}
     When the request is sent
     Then the response status is 201 Created
 
@@ -713,6 +713,20 @@ Feature: AI Gateway
     When the request is sent
     Then the response status is 200 OK
 
+  @skip @team:ddoghq/frontier-prd-gateway
+  Scenario: List AI Gateway rate limit counter summaries returns "OK" response
+    Given operation "ListAiGatewayRateLimitInstancesSummaries" enabled
+    And there is a valid "rate_limit_template" in the system
+    And new "ListAiGatewayRateLimitInstancesSummaries" request
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has item with field "id" with value "{{ rate_limit_template.data.id }}"
+    And the response "data" has item with field "attributes.rate_limit_id" with value "{{ rate_limit_template.data.id }}"
+    And the response "data[0].type" is equal to "rate-limit-instances-summary"
+    And the response "data[0].attributes" has field "instance_count"
+    And the response "data[0].attributes" has field "truncated"
+    And the response "data[0].attributes" has field "scope_restricted"
+
   @generated @skip @team:ddoghq/frontier-prd-gateway
   Scenario: List AI Gateway rate limit counters returns "Bad Request" response
     Given operation "ListAiGatewayRateLimitInstances" enabled
@@ -1054,7 +1068,7 @@ Feature: AI Gateway
     Given operation "UpdateAiGatewayRateLimit" enabled
     And new "UpdateAiGatewayRateLimit" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"input_tokens_per_minute": null, "mode": "ALERT", "output_tokens_per_minute": null, "requests_per_minute": null, "tags": null, "team_id": null, "user_id": null}, "id": "11111111-1111-1111-1111-111111111111", "type": "rate-limits"}}
+    And body with value {"data": {"attributes": {"cost_microcents_per_minute": null, "input_tokens_per_minute": null, "mode": "ALERT", "output_tokens_per_minute": null, "requests_per_minute": null, "tags": null, "team_id": null, "user_id": null}, "id": "11111111-1111-1111-1111-111111111111", "type": "rate-limits"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -1063,7 +1077,7 @@ Feature: AI Gateway
     Given operation "UpdateAiGatewayRateLimit" enabled
     And new "UpdateAiGatewayRateLimit" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"input_tokens_per_minute": null, "mode": "ALERT", "output_tokens_per_minute": null, "requests_per_minute": null, "tags": null, "team_id": null, "user_id": null}, "id": "11111111-1111-1111-1111-111111111111", "type": "rate-limits"}}
+    And body with value {"data": {"attributes": {"cost_microcents_per_minute": null, "input_tokens_per_minute": null, "mode": "ALERT", "output_tokens_per_minute": null, "requests_per_minute": null, "tags": null, "team_id": null, "user_id": null}, "id": "11111111-1111-1111-1111-111111111111", "type": "rate-limits"}}
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -1072,7 +1086,7 @@ Feature: AI Gateway
     Given operation "UpdateAiGatewayRateLimit" enabled
     And new "UpdateAiGatewayRateLimit" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"input_tokens_per_minute": null, "mode": "ALERT", "output_tokens_per_minute": null, "requests_per_minute": null, "tags": null, "team_id": null, "user_id": null}, "id": "11111111-1111-1111-1111-111111111111", "type": "rate-limits"}}
+    And body with value {"data": {"attributes": {"cost_microcents_per_minute": null, "input_tokens_per_minute": null, "mode": "ALERT", "output_tokens_per_minute": null, "requests_per_minute": null, "tags": null, "team_id": null, "user_id": null}, "id": "11111111-1111-1111-1111-111111111111", "type": "rate-limits"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -1081,7 +1095,7 @@ Feature: AI Gateway
     Given operation "UpdateAiGatewayRateLimit" enabled
     And new "UpdateAiGatewayRateLimit" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"input_tokens_per_minute": null, "mode": "ALERT", "output_tokens_per_minute": null, "requests_per_minute": null, "tags": null, "team_id": null, "user_id": null}, "id": "11111111-1111-1111-1111-111111111111", "type": "rate-limits"}}
+    And body with value {"data": {"attributes": {"cost_microcents_per_minute": null, "input_tokens_per_minute": null, "mode": "ALERT", "output_tokens_per_minute": null, "requests_per_minute": null, "tags": null, "team_id": null, "user_id": null}, "id": "11111111-1111-1111-1111-111111111111", "type": "rate-limits"}}
     When the request is sent
     Then the response status is 200 OK
 

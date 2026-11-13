@@ -16,6 +16,7 @@ from uuid import UUID
 body = AiGatewayRateLimitCreateRequest(
     data=AiGatewayRateLimitCreateData(
         attributes=AiGatewayRateLimitCreateAttributes(
+            cost_microcents_per_minute=100000000,
             input_tokens_per_minute=None,
             mode=AiGatewayRateLimitMode.ALERT,
             name="Default rate limit",

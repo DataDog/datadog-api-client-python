@@ -57,7 +57,7 @@ class AiGatewayRateLimitInstancesSummaryAttributes(ModelNormal):
         """
         Aggregate of a template rate limit's counters.
 
-        :param instance_count: Number of counters.
+        :param instance_count: Number of counters that were near or at a limit, or limited a request, in the last hour. Counters with room to spare aren't recorded.
         :type instance_count: int
 
         :param limited_requests: Requests the counters rejected in the last 15 minutes (ENFORCE), totaled over the counters whose usage was read.

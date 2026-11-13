@@ -65,6 +65,9 @@ from datadog_api_client.v2.model.ai_gateway_model_pricing_request import AiGatew
 from datadog_api_client.v2.model.ai_gateway_rate_limit_list_response import AiGatewayRateLimitListResponse
 from datadog_api_client.v2.model.ai_gateway_rate_limit_response import AiGatewayRateLimitResponse
 from datadog_api_client.v2.model.ai_gateway_rate_limit_create_request import AiGatewayRateLimitCreateRequest
+from datadog_api_client.v2.model.ai_gateway_rate_limit_instances_summary_list_response import (
+    AiGatewayRateLimitInstancesSummaryListResponse,
+)
 from datadog_api_client.v2.model.ai_gateway_rate_limit_usage_list_response import AiGatewayRateLimitUsageListResponse
 from datadog_api_client.v2.model.ai_gateway_rate_limit_update_request import AiGatewayRateLimitUpdateRequest
 from datadog_api_client.v2.model.ai_gateway_rate_limit_instance_list_response import (
@@ -1187,6 +1190,22 @@ class AIGatewayApi:
             api_client=api_client,
         )
 
+        self._list_ai_gateway_rate_limit_instances_summaries_endpoint = _Endpoint(
+            settings={
+                "response_type": (AiGatewayRateLimitInstancesSummaryListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/rate-limits/instances/summary",
+                "operation_id": "list_ai_gateway_rate_limit_instances_summaries",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_ai_gateway_rate_limits_endpoint = _Endpoint(
             settings={
                 "response_type": (AiGatewayRateLimitListResponse,),
@@ -2085,7 +2104,7 @@ class AIGatewayApi:
     ) -> AiGatewayRateLimitInstancesSummaryResponse:
         """Get an AI Gateway rate limit counter summary.
 
-        Aggregate a template rate limit's counters, including how many there are, how many are near or at their limit, and the fullest counter's utilization. Use split_dim to aggregate only counters that match every given dimension value. When the caller can't see the template's selector, every count is zero and scope_restricted is true. Summaries are cached for up to 15 seconds. Returns 503 when counter usage can't be read.
+        Aggregate a template rate limit's hot counters (those near or at a limit, or limiting, in the last hour), including how many there are, how many are near or at their limit, and the fullest counter's utilization. Use split_dim to aggregate only counters that match every given dimension value. When the caller can't see the template's selector, every count is zero and scope_restricted is true. Summaries are cached for up to 15 seconds. Returns 503 when counter usage can't be read.
 
         :param id: Rate limit UUID.
         :type id: UUID
@@ -2374,7 +2393,7 @@ class AIGatewayApi:
     ) -> AiGatewayRateLimitInstanceListResponse:
         """List AI Gateway rate limit counters.
 
-        List the counters of a template rate limit, one per matched user, Team, or value, with their live usage. Counters appear within a few minutes of their first request and are dropped after 30 days without one. Usage is read for counters seen in the last 20 minutes, at most 200 per request; past that, rows carry usage_known false. Counters for a provider or model the caller can't see are left out, and when the caller can't see the template's selector, the list is empty. A rate limit with one shared allowance, including one whose selector has no per_value entry, returns an empty list. Returns 503 when counter usage can't be read.
+        List the hot counters of a template rate limit, one per matched user, Team, or value, with their live usage. Only counters at 80% or more of a limit, or that limited or would have limited a request, in the last hour are listed. A counter appears within a few minutes of becoming hot. Usage is read for at most 200 counters per request; past that, rows carry usage_known false. Counters for a provider or model the caller can't see are left out, and when the caller can't see the template's selector, the list is empty. A rate limit with one shared allowance, including one whose selector has no per_value entry, returns an empty list. Returns 503 when counter usage can't be read.
 
         :param id: Rate limit UUID.
         :type id: UUID
@@ -2404,6 +2423,18 @@ class AIGatewayApi:
             kwargs["offset"] = offset
 
         return self._list_ai_gateway_rate_limit_instances_endpoint.call_with_http_info(**kwargs)
+
+    def list_ai_gateway_rate_limit_instances_summaries(
+        self,
+    ) -> AiGatewayRateLimitInstancesSummaryListResponse:
+        """List AI Gateway rate limit counter summaries.
+
+        Aggregate the counters of every template rate limit in the organization in one call, with one summary per template in the order the rate limit list returns them. Each summary is the one the single-template counter summary endpoint returns without split_dim, including scope_restricted and truncated. Rate limits with one shared allowance are left out. Summaries are cached for up to 15 seconds.
+
+        :rtype: AiGatewayRateLimitInstancesSummaryListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_ai_gateway_rate_limit_instances_summaries_endpoint.call_with_http_info(**kwargs)
 
     def list_ai_gateway_rate_limits(
         self,
