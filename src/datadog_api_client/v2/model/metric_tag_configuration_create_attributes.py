@@ -59,11 +59,11 @@ class MetricTagConfigurationCreateAttributes(ModelNormal):
             Defaults to false. Requires ``tags`` property.
         :type exclude_tags_mode: bool, optional
 
-        :param include_percentiles: Toggle to include/exclude percentiles for a distribution metric.
-            Defaults to false. Can only be applied to metrics that have a ``metric_type`` of ``distribution``.
+        :param include_percentiles: Include percentile aggregations for metric types ``distribution`` , ``exponential_histogram`` ,
+            and ``explicit_histogram``. Omit this field to keep the current setting.
         :type include_percentiles: bool, optional
 
-        :param metric_type: The metric's type.
+        :param metric_type: The metric's type. Contact your Customer Success Manager for instructions on using native histogram types.
         :type metric_type: MetricTagConfigurationMetricTypes
 
         :param tags: A list of tag keys that will be queryable for your metric.

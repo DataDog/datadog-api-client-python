@@ -88786,8 +88786,8 @@ components:
           type: boolean
         include_percentiles:
           description: |-
-            Toggle to include or exclude percentile aggregations for distribution metrics.
-            Only present when the `metric_type` is `distribution`.
+            Whether percentile aggregations are enabled for a `distribution`, `exponential_histogram`,
+            or `explicit_histogram` metric.
           example: true
           type: boolean
         metric_type:
@@ -88818,8 +88818,8 @@ components:
           type: boolean
         include_percentiles:
           description: |-
-            Toggle to include/exclude percentiles for a distribution metric.
-            Defaults to false. Can only be applied to metrics that have a `metric_type` of `distribution`.
+            Include percentile aggregations for metric types `distribution`, `exponential_histogram`,
+            and `explicit_histogram`. Omit this field to keep the current setting.
           example: true
           type: boolean
         metric_type:
@@ -88881,12 +88881,14 @@ components:
         - EXPLICIT_HISTOGRAM
     MetricTagConfigurationMetricTypes:
       default: gauge
-      description: The metric's type.
+      description: The metric's type. Contact your Customer Success Manager for instructions on using native histogram types.
       enum:
         - gauge
         - count
         - rate
         - distribution
+        - exponential_histogram
+        - explicit_histogram
       example: count
       type: string
       x-enum-varnames:
@@ -88894,6 +88896,8 @@ components:
         - COUNT
         - RATE
         - DISTRIBUTION
+        - EXPONENTIAL_HISTOGRAM
+        - EXPLICIT_HISTOGRAM
     MetricTagConfigurationResponse:
       description: Response object which includes a single metric's tag configuration.
       properties:
@@ -88923,8 +88927,8 @@ components:
           type: boolean
         include_percentiles:
           description: |-
-            Toggle to include/exclude percentiles for a distribution metric.
-            Defaults to false. Can only be applied to metrics that have a `metric_type` of `distribution`.
+            Include percentile aggregations for metric types `distribution`, `exponential_histogram`,
+            and `explicit_histogram`. Omit this field to keep the current setting.
           example: true
           type: boolean
         tags:
@@ -217178,6 +217182,16 @@ paths:
                           - datacenter
                       id: http.endpoint.request
                       type: manage_tags
+                explicit_histogram:
+                  value:
+                    data:
+                      attributes:
+                        include_percentiles: true
+                        metric_type: explicit_histogram
+                        tags:
+                          - service
+                      id: example.request.duration
+                      type: manage_tags
               schema:
                 $ref: "#/components/schemas/MetricTagConfigurationResponse"
           description: Success
@@ -217213,8 +217227,8 @@ paths:
           - metrics_read
     patch:
       description: |-
-        Update the tag configuration of a metric or percentile aggregations of a distribution metric or custom aggregations
-        of a count, rate, or gauge metric. By setting `exclude_tags_mode` to true the behavior is changed
+        Update the tag configuration of a metric, percentile aggregations of a distribution or native histogram metric,
+        or custom aggregations of a count, rate, or gauge metric. By setting `exclude_tags_mode` to true, the behavior changes
         from an allow-list to a deny-list, and tags in the defined list will not be queryable.
         Can only be used with application keys from users with the `Manage Tags for Metrics` permission. This endpoint requires
         a tag configuration to be created first.
@@ -217290,8 +217304,8 @@ paths:
           - metric_tags_write
     post:
       description: |-
-        Create and define a list of queryable tag keys for an existing count/gauge/rate/distribution metric.
-        Optionally, include percentile aggregations on any distribution metric. By setting `exclude_tags_mode`
+        Define queryable tag keys for an existing count, gauge, rate, distribution, or native histogram metric.
+        Distribution and native histogram metrics support percentile aggregations. By setting `exclude_tags_mode`
         to true, the behavior is changed from an allow-list to a deny-list, and tags in the defined list are
         not queryable. Can only be used with application keys of users with the `Manage Tags for Metrics`
         permission.
