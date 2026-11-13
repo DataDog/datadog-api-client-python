@@ -26,7 +26,7 @@ class TagRulesApi:
     scoped to a particular telemetry source (such as logs, spans, or metrics). Rules can be
     ``blocking`` (data not matching the rule is rejected) or ``surfacing`` (matching data is
     highlighted but not blocked). Each rule reports a compliance ``score`` derived from how
-    much recent telemetry adheres to the rule.
+    much recent telemetry adheres to the rule. RUM supports only ``surfacing`` rules.
     """
 
     def __init__(self, api_client=None):
@@ -254,7 +254,8 @@ class TagRulesApi:
 
         Delete a tag rule. By default the rule is soft-deleted so it can be recovered later
         and so that historical score data remains queryable. Pass ``hard_delete=true`` to remove
-        the rule permanently.
+        the rule permanently. Deleting a ``blocking`` rule additionally requires the
+        ``telemetry_rules_activate`` permission.
 
         :param rule_id: The unique identifier of the tag rule to delete.
         :type rule_id: str
@@ -288,7 +289,7 @@ class TagRulesApi:
         :type rule_id: str
         :param include: Comma-separated list of related resources to include alongside the rule. Currently the only supported value is ``score``.
         :type include: TagRuleInclude, optional
-        :param ts_start: Start of the time window used for compliance score computation, as a Unix timestamp in milliseconds.
+        :param ts_start: Start of the time window used for compliance score computation, as a Unix timestamp in milliseconds. Defaults to approximately 4 hours before the current time for metrics, or 24 hours before the current time for other sources. The API clamps earlier values to this default, regardless of ``ts_end``.
         :type ts_start: int, optional
         :param ts_end: End of the time window used for compliance score computation, as a Unix timestamp in milliseconds. Must be in the past and greater than ``ts_start``.
         :type ts_end: int, optional
@@ -324,7 +325,7 @@ class TagRulesApi:
 
         :param rule_id: The unique identifier of the tag rule.
         :type rule_id: str
-        :param ts_start: Start of the time window used for compliance score computation, as a Unix timestamp in milliseconds.
+        :param ts_start: Start of the time window used for compliance score computation, as a Unix timestamp in milliseconds. Defaults to approximately 4 hours before the current time for metrics, or 24 hours before the current time for other sources. The API clamps earlier values to this default, regardless of ``ts_end``.
         :type ts_start: int, optional
         :param ts_end: End of the time window used for compliance score computation, as a Unix timestamp in milliseconds. Must be in the past and greater than ``ts_start``.
         :type ts_end: int, optional
@@ -365,7 +366,7 @@ class TagRulesApi:
         :type include: TagRuleInclude, optional
         :param filter_source: Restrict the result set to rules whose source matches the given value.
         :type filter_source: TagRuleSource, optional
-        :param ts_start: Start of the time window used for compliance score computation, as a Unix timestamp in milliseconds. Defaults to a recent window appropriate for the source.
+        :param ts_start: Start of the time window used for compliance score computation, as a Unix timestamp in milliseconds. Defaults to approximately 4 hours before the current time for metrics, or 24 hours before the current time for other sources. The API clamps earlier values to this default, regardless of ``ts_end``.
         :type ts_start: int, optional
         :param ts_end: End of the time window used for compliance score computation, as a Unix timestamp in milliseconds. Must be in the past and greater than ``ts_start``.
         :type ts_end: int, optional
@@ -402,6 +403,9 @@ class TagRulesApi:
         Update one or more attributes of an existing tag rule. Only the fields supplied in the
         request body are modified; omitted fields retain their current values. The rule's
         ``source`` cannot be changed after creation.
+        Promoting a rule from ``surfacing`` to ``blocking`` additionally requires the
+        ``telemetry_rules_activate`` permission, and your organization must have access to
+        blocking rules. You can't promote RUM rules to ``blocking``.
 
         :param rule_id: The unique identifier of the tag rule to update.
         :type rule_id: str
