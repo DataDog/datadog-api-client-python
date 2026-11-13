@@ -6100,6 +6100,27 @@
     {
       "feature": "Experiments",
       "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/get-bandit-results-returns-no-bandit-with-this-id-exists-for-the-organization-response.json",
+      "scenario": "Get bandit results returns \"No bandit with this ID exists for the organization.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/get-bandit-returns-no-bandit-with-this-id-exists-for-the-organization-response.json",
+      "scenario": "Get bandit returns \"No bandit with this ID exists for the organization.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/get-bandit-traffic-summary-returns-no-bandit-with-this-id-exists-for-the-organization-response.json",
+      "scenario": "Get bandit traffic summary returns \"No bandit with this ID exists for the organization.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
       "file": "v2/experiments/get-experiment-analysis-plan-returns-ok-response.json",
       "scenario": "Get experiment analysis plan returns \"OK\" response",
       "version": "v2"
@@ -6151,6 +6172,13 @@
       "feature_file": "../../v2/features/experiments.feature",
       "file": "v2/experiments/get-subject-type-returns-ok-response.json",
       "scenario": "Get subject type returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/list-bandits-returns-ok-response.json",
+      "scenario": "List bandits returns \"OK\" response",
       "version": "v2"
     },
     {

@@ -2844,6 +2844,30 @@
       "type": "unsafe"
     }
   },
+  "ListBandits": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetBandit": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetBanditResults": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetBanditTrafficSummary": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListExposureSQLModels": {
     "tag": "Experiments",
     "undo": {
