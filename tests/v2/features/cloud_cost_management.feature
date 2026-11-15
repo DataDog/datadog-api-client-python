@@ -58,6 +58,46 @@ Feature: Cloud Cost Management
     Then the response status is 200 OK
     And the response "data.attributes.account_id" is equal to "123456_A123BC_12AB34"
 
+  @generated @skip @team:ddoghq/ccm-optimize
+  Scenario: Create a cost recommendation custom rule returns "Bad Request" response
+    Given operation "CreateCostRecommendationCustomRule" enabled
+    And new "CreateCostRecommendationCustomRule" request
+    And body with value {"data": {"attributes": {"enabled": true, "filters": [{"filter_type": "is", "tag": "env", "values": ["staging"]}], "name": "Staging instances", "notes": "Staging instances can run with less headroom.", "recommender_id": "aws_ec2_instance_unused", "settings": {"lookback_days": 14, "max_cpu_user_limit": 0.05}}, "type": "custom_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/ccm-optimize
+  Scenario: Create a cost recommendation custom rule returns "Created" response
+    Given operation "CreateCostRecommendationCustomRule" enabled
+    And new "CreateCostRecommendationCustomRule" request
+    And body with value {"data": {"attributes": {"enabled": true, "filters": [{"filter_type": "is", "tag": "env", "values": ["staging"]}], "name": "Staging instances", "notes": "Staging instances can run with less headroom.", "recommender_id": "aws_ec2_instance_unused", "settings": {"lookback_days": 14, "max_cpu_user_limit": 0.05}}, "type": "custom_rules"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:ddoghq/ccm-optimize
+  Scenario: Create a cost recommendation notification rule returns "Bad Request" response
+    Given operation "CreateCostRecommendationNotificationRule" enabled
+    And new "CreateCostRecommendationNotificationRule" request
+    And body with value {"data": {"attributes": {"channel_id": "C0456ABCD", "destination_type": "slack", "enabled": true, "frequency": "weekly", "interval_execution_date": "2026-11-02", "interval_execution_time": "09:30", "mention_targets": ["U01ABCDE"], "message_customization": {"actions": {"view_in_ccm": {"bulk": true, "per_rec": true}}, "header": {"custom_text": "{{ rec_count }} recommendations to review this week.", "notification_name": true, "total_savings": true}, "include_tags": ["team"], "mode": "structured", "per_rec": {"effort": true, "risk": true, "why": true}}, "name": "Production recommendations", "scope_query": "service:api AND env:prod", "timezone": "America/New_York", "weekly_execution_day": "monday", "weekly_execution_time": "09:30", "workspace_id": "T0123ABCD"}, "type": "notification_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/ccm-optimize
+  Scenario: Create a cost recommendation notification rule returns "Conflict" response
+    Given operation "CreateCostRecommendationNotificationRule" enabled
+    And new "CreateCostRecommendationNotificationRule" request
+    And body with value {"data": {"attributes": {"channel_id": "C0456ABCD", "destination_type": "slack", "enabled": true, "frequency": "weekly", "interval_execution_date": "2026-11-02", "interval_execution_time": "09:30", "mention_targets": ["U01ABCDE"], "message_customization": {"actions": {"view_in_ccm": {"bulk": true, "per_rec": true}}, "header": {"custom_text": "{{ rec_count }} recommendations to review this week.", "notification_name": true, "total_savings": true}, "include_tags": ["team"], "mode": "structured", "per_rec": {"effort": true, "risk": true, "why": true}}, "name": "Production recommendations", "scope_query": "service:api AND env:prod", "timezone": "America/New_York", "weekly_execution_day": "monday", "weekly_execution_time": "09:30", "workspace_id": "T0123ABCD"}, "type": "notification_rules"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:ddoghq/ccm-optimize
+  Scenario: Create a cost recommendation notification rule returns "Created" response
+    Given operation "CreateCostRecommendationNotificationRule" enabled
+    And new "CreateCostRecommendationNotificationRule" request
+    And body with value {"data": {"attributes": {"channel_id": "C0456ABCD", "destination_type": "slack", "enabled": true, "frequency": "weekly", "interval_execution_date": "2026-11-02", "interval_execution_time": "09:30", "mention_targets": ["U01ABCDE"], "message_customization": {"actions": {"view_in_ccm": {"bulk": true, "per_rec": true}}, "header": {"custom_text": "{{ rec_count }} recommendations to review this week.", "notification_name": true, "total_savings": true}, "include_tags": ["team"], "mode": "structured", "per_rec": {"effort": true, "risk": true, "why": true}}, "name": "Production recommendations", "scope_query": "service:api AND env:prod", "timezone": "America/New_York", "weekly_execution_day": "monday", "weekly_execution_time": "09:30", "workspace_id": "T0123ABCD"}, "type": "notification_rules"}}
+    When the request is sent
+    Then the response status is 201 Created
+
   @generated @skip @team:ddoghq/ccm-roi
   Scenario: Create a unit cost returns "Bad Request" response
     Given operation "CreateUnitCost" enabled
@@ -269,6 +309,54 @@ Feature: Cloud Cost Management
     When the request is sent
     Then the response status is 404 Not Found
 
+  @generated @skip @team:ddoghq/ccm-optimize
+  Scenario: Delete a cost recommendation custom rule returns "Bad Request" response
+    Given operation "DeleteCostRecommendationCustomRule" enabled
+    And new "DeleteCostRecommendationCustomRule" request
+    And request contains "custom_rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/ccm-optimize
+  Scenario: Delete a cost recommendation custom rule returns "No Content" response
+    Given operation "DeleteCostRecommendationCustomRule" enabled
+    And new "DeleteCostRecommendationCustomRule" request
+    And request contains "custom_rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:ddoghq/ccm-optimize
+  Scenario: Delete a cost recommendation custom rule returns "Not Found" response
+    Given operation "DeleteCostRecommendationCustomRule" enabled
+    And new "DeleteCostRecommendationCustomRule" request
+    And request contains "custom_rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/ccm-optimize
+  Scenario: Delete a cost recommendation notification rule returns "Bad Request" response
+    Given operation "DeleteCostRecommendationNotificationRule" enabled
+    And new "DeleteCostRecommendationNotificationRule" request
+    And request contains "notification_rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/ccm-optimize
+  Scenario: Delete a cost recommendation notification rule returns "No Content" response
+    Given operation "DeleteCostRecommendationNotificationRule" enabled
+    And new "DeleteCostRecommendationNotificationRule" request
+    And request contains "notification_rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:ddoghq/ccm-optimize
+  Scenario: Delete a cost recommendation notification rule returns "Not Found" response
+    Given operation "DeleteCostRecommendationNotificationRule" enabled
+    And new "DeleteCostRecommendationNotificationRule" request
+    And request contains "notification_rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @generated @skip @team:ddoghq/ccm-roi
   Scenario: Delete a unit cost returns "Bad Request" response
     Given operation "DeleteUnitCost" enabled
@@ -427,6 +515,54 @@ Feature: Cloud Cost Management
   Scenario: Get a budget's custom forecast returns "OK" response
     Given new "GetCustomForecast" request
     And request contains "budget_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/ccm-optimize
+  Scenario: Get a cost recommendation custom rule returns "Bad Request" response
+    Given operation "GetCostRecommendationCustomRule" enabled
+    And new "GetCostRecommendationCustomRule" request
+    And request contains "custom_rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/ccm-optimize
+  Scenario: Get a cost recommendation custom rule returns "Not Found" response
+    Given operation "GetCostRecommendationCustomRule" enabled
+    And new "GetCostRecommendationCustomRule" request
+    And request contains "custom_rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/ccm-optimize
+  Scenario: Get a cost recommendation custom rule returns "OK" response
+    Given operation "GetCostRecommendationCustomRule" enabled
+    And new "GetCostRecommendationCustomRule" request
+    And request contains "custom_rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/ccm-optimize
+  Scenario: Get a cost recommendation notification rule returns "Bad Request" response
+    Given operation "GetCostRecommendationNotificationRule" enabled
+    And new "GetCostRecommendationNotificationRule" request
+    And request contains "notification_rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/ccm-optimize
+  Scenario: Get a cost recommendation notification rule returns "Not Found" response
+    Given operation "GetCostRecommendationNotificationRule" enabled
+    And new "GetCostRecommendationNotificationRule" request
+    And request contains "notification_rule_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/ccm-optimize
+  Scenario: Get a cost recommendation notification rule returns "OK" response
+    Given operation "GetCostRecommendationNotificationRule" enabled
+    And new "GetCostRecommendationNotificationRule" request
+    And request contains "notification_rule_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -977,6 +1113,20 @@ Feature: Cloud Cost Management
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:ddoghq/ccm-optimize
+  Scenario: List cost recommendation custom rules returns "OK" response
+    Given operation "ListCostRecommendationCustomRules" enabled
+    And new "ListCostRecommendationCustomRules" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/ccm-optimize
+  Scenario: List cost recommendation notification rules returns "OK" response
+    Given operation "ListCostRecommendationNotificationRules" enabled
+    And new "ListCostRecommendationNotificationRules" request
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:ddoghq/cloud-cost-management
   Scenario: List custom allocation rule statuses returns "OK" response
     Given new "ListCustomAllocationRulesStatus" request
@@ -1124,6 +1274,69 @@ Feature: Cloud Cost Management
     When the request is sent
     Then the response status is 200 OK
     And the response "data.attributes.account_id" is equal to "123456_A123BC_12AB34"
+
+  @generated @skip @team:ddoghq/ccm-optimize
+  Scenario: Update a cost recommendation custom rule returns "Bad Request" response
+    Given operation "UpdateCostRecommendationCustomRule" enabled
+    And new "UpdateCostRecommendationCustomRule" request
+    And request contains "custom_rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"enabled": false, "filters": [{"filter_type": "is", "tag": "env", "values": ["staging"]}], "name": "Staging and development instances", "notes": "Staging instances can run with less headroom.", "settings": {"lookback_days": 14, "max_cpu_user_limit": 0.05}}, "id": "8a1b6f3e-2c4d-4e5f-9a7b-1c2d3e4f5a6b", "type": "custom_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/ccm-optimize
+  Scenario: Update a cost recommendation custom rule returns "Not Found" response
+    Given operation "UpdateCostRecommendationCustomRule" enabled
+    And new "UpdateCostRecommendationCustomRule" request
+    And request contains "custom_rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"enabled": false, "filters": [{"filter_type": "is", "tag": "env", "values": ["staging"]}], "name": "Staging and development instances", "notes": "Staging instances can run with less headroom.", "settings": {"lookback_days": 14, "max_cpu_user_limit": 0.05}}, "id": "8a1b6f3e-2c4d-4e5f-9a7b-1c2d3e4f5a6b", "type": "custom_rules"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/ccm-optimize
+  Scenario: Update a cost recommendation custom rule returns "OK" response
+    Given operation "UpdateCostRecommendationCustomRule" enabled
+    And new "UpdateCostRecommendationCustomRule" request
+    And request contains "custom_rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"enabled": false, "filters": [{"filter_type": "is", "tag": "env", "values": ["staging"]}], "name": "Staging and development instances", "notes": "Staging instances can run with less headroom.", "settings": {"lookback_days": 14, "max_cpu_user_limit": 0.05}}, "id": "8a1b6f3e-2c4d-4e5f-9a7b-1c2d3e4f5a6b", "type": "custom_rules"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/ccm-optimize
+  Scenario: Update a cost recommendation notification rule returns "Bad Request" response
+    Given operation "UpdateCostRecommendationNotificationRule" enabled
+    And new "UpdateCostRecommendationNotificationRule" request
+    And request contains "notification_rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"channel_id": "C0456ABCD", "destination_type": "slack", "enabled": false, "frequency": "weekly", "interval_execution_date": "2026-11-02", "interval_execution_time": "09:30", "mention_targets": ["U01ABCDE"], "message_customization": {"actions": {"view_in_ccm": {"bulk": true, "per_rec": true}}, "header": {"custom_text": "{{ rec_count }} recommendations to review this week.", "notification_name": true, "total_savings": true}, "include_tags": ["team"], "mode": "structured", "per_rec": {"effort": true, "risk": true, "why": true}}, "name": "Production recommendations", "scope_query": "service:api AND env:prod", "timezone": "America/New_York", "weekly_execution_day": "monday", "weekly_execution_time": "09:30", "workspace_id": "T0123ABCD"}, "id": "2c59b248-6a91-4f95-972a-dc236cae9cbb", "type": "notification_rules"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/ccm-optimize
+  Scenario: Update a cost recommendation notification rule returns "Conflict" response
+    Given operation "UpdateCostRecommendationNotificationRule" enabled
+    And new "UpdateCostRecommendationNotificationRule" request
+    And request contains "notification_rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"channel_id": "C0456ABCD", "destination_type": "slack", "enabled": false, "frequency": "weekly", "interval_execution_date": "2026-11-02", "interval_execution_time": "09:30", "mention_targets": ["U01ABCDE"], "message_customization": {"actions": {"view_in_ccm": {"bulk": true, "per_rec": true}}, "header": {"custom_text": "{{ rec_count }} recommendations to review this week.", "notification_name": true, "total_savings": true}, "include_tags": ["team"], "mode": "structured", "per_rec": {"effort": true, "risk": true, "why": true}}, "name": "Production recommendations", "scope_query": "service:api AND env:prod", "timezone": "America/New_York", "weekly_execution_day": "monday", "weekly_execution_time": "09:30", "workspace_id": "T0123ABCD"}, "id": "2c59b248-6a91-4f95-972a-dc236cae9cbb", "type": "notification_rules"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:ddoghq/ccm-optimize
+  Scenario: Update a cost recommendation notification rule returns "Not Found" response
+    Given operation "UpdateCostRecommendationNotificationRule" enabled
+    And new "UpdateCostRecommendationNotificationRule" request
+    And request contains "notification_rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"channel_id": "C0456ABCD", "destination_type": "slack", "enabled": false, "frequency": "weekly", "interval_execution_date": "2026-11-02", "interval_execution_time": "09:30", "mention_targets": ["U01ABCDE"], "message_customization": {"actions": {"view_in_ccm": {"bulk": true, "per_rec": true}}, "header": {"custom_text": "{{ rec_count }} recommendations to review this week.", "notification_name": true, "total_savings": true}, "include_tags": ["team"], "mode": "structured", "per_rec": {"effort": true, "risk": true, "why": true}}, "name": "Production recommendations", "scope_query": "service:api AND env:prod", "timezone": "America/New_York", "weekly_execution_day": "monday", "weekly_execution_time": "09:30", "workspace_id": "T0123ABCD"}, "id": "2c59b248-6a91-4f95-972a-dc236cae9cbb", "type": "notification_rules"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/ccm-optimize
+  Scenario: Update a cost recommendation notification rule returns "OK" response
+    Given operation "UpdateCostRecommendationNotificationRule" enabled
+    And new "UpdateCostRecommendationNotificationRule" request
+    And request contains "notification_rule_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"channel_id": "C0456ABCD", "destination_type": "slack", "enabled": false, "frequency": "weekly", "interval_execution_date": "2026-11-02", "interval_execution_time": "09:30", "mention_targets": ["U01ABCDE"], "message_customization": {"actions": {"view_in_ccm": {"bulk": true, "per_rec": true}}, "header": {"custom_text": "{{ rec_count }} recommendations to review this week.", "notification_name": true, "total_savings": true}, "include_tags": ["team"], "mode": "structured", "per_rec": {"effort": true, "risk": true, "why": true}}, "name": "Production recommendations", "scope_query": "service:api AND env:prod", "timezone": "America/New_York", "weekly_execution_day": "monday", "weekly_execution_time": "09:30", "workspace_id": "T0123ABCD"}, "id": "2c59b248-6a91-4f95-972a-dc236cae9cbb", "type": "notification_rules"}}
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/ccm-roi
   Scenario: Update a unit cost returns "Bad Request" response

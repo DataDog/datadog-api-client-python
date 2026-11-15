@@ -1999,6 +1999,80 @@
       "type": "safe"
     }
   },
+  "ListCostRecommendationCustomRules": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateCostRecommendationCustomRule": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "operationId": "DeleteCostRecommendationCustomRule",
+      "parameters": [
+        {
+          "name": "custom_rule_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteCostRecommendationCustomRule": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetCostRecommendationCustomRule": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateCostRecommendationCustomRule": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListCostRecommendationNotificationRules": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateCostRecommendationNotificationRule": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "operationId": "DeleteCostRecommendationNotificationRule",
+      "parameters": [
+        {
+          "name": "notification_rule_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteCostRecommendationNotificationRule": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetCostRecommendationNotificationRule": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateCostRecommendationNotificationRule": {
+    "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListCostTagDescriptions": {
     "tag": "Cloud Cost Management",
     "undo": {
