@@ -19,7 +19,7 @@ Feature: Metrics
     Given a valid "appKeyAuth" key in the system
     And new "UpdateMetricMetadata" request
     And request contains "metric_name" parameter from "REPLACE.ME"
-    And body with value {"per_unit": "second", "type": "count", "unit": "byte"}
+    And body with value {"description": "Number of requests received.", "per_unit": "second", "short_name": "requests", "statsd_interval": 10, "type": "count", "unit": "byte"}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -28,7 +28,7 @@ Feature: Metrics
     Given a valid "appKeyAuth" key in the system
     And new "UpdateMetricMetadata" request
     And request contains "metric_name" parameter from "REPLACE.ME"
-    And body with value {"per_unit": "second", "type": "count", "unit": "byte"}
+    And body with value {"description": "Number of requests received.", "per_unit": "second", "short_name": "requests", "statsd_interval": 10, "type": "count", "unit": "byte"}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -37,7 +37,7 @@ Feature: Metrics
     Given a valid "appKeyAuth" key in the system
     And new "UpdateMetricMetadata" request
     And request contains "metric_name" parameter from "REPLACE.ME"
-    And body with value {"per_unit": "second", "type": "count", "unit": "byte"}
+    And body with value {"description": "Number of requests received.", "per_unit": "second", "short_name": "requests", "statsd_interval": 10, "type": "count", "unit": "byte"}
     When the request is sent
     Then the response status is 200 OK
 

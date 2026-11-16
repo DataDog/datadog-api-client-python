@@ -8,6 +8,7 @@ from typing import Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -17,13 +18,13 @@ class MetricMetadata(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "description": (str,),
-            "integration": (str,),
-            "per_unit": (str,),
-            "short_name": (str,),
-            "statsd_interval": (int,),
-            "type": (str,),
-            "unit": (str,),
+            "description": (str, none_type),
+            "integration": (str, none_type),
+            "per_unit": (str, none_type),
+            "short_name": (str, none_type),
+            "statsd_interval": (int, none_type),
+            "type": (str, none_type),
+            "unit": (str, none_type),
         }
 
     attribute_map = {
@@ -41,38 +42,38 @@ class MetricMetadata(ModelNormal):
 
     def __init__(
         self_,
-        description: Union[str, UnsetType] = unset,
-        integration: Union[str, UnsetType] = unset,
-        per_unit: Union[str, UnsetType] = unset,
-        short_name: Union[str, UnsetType] = unset,
-        statsd_interval: Union[int, UnsetType] = unset,
-        type: Union[str, UnsetType] = unset,
-        unit: Union[str, UnsetType] = unset,
+        description: Union[str, none_type, UnsetType] = unset,
+        integration: Union[str, none_type, UnsetType] = unset,
+        per_unit: Union[str, none_type, UnsetType] = unset,
+        short_name: Union[str, none_type, UnsetType] = unset,
+        statsd_interval: Union[int, none_type, UnsetType] = unset,
+        type: Union[str, none_type, UnsetType] = unset,
+        unit: Union[str, none_type, UnsetType] = unset,
         **kwargs,
     ):
         """
         Object with all metric related metadata.
 
         :param description: Metric description.
-        :type description: str, optional
+        :type description: str, none_type, optional
 
         :param integration: Name of the integration that sent the metric if applicable.
-        :type integration: str, optional
+        :type integration: str, none_type, optional
 
         :param per_unit: Per unit of the metric such as ``second`` in ``bytes per second``.
-        :type per_unit: str, optional
+        :type per_unit: str, none_type, optional
 
         :param short_name: A more human-readable and abbreviated version of the metric name.
-        :type short_name: str, optional
+        :type short_name: str, none_type, optional
 
         :param statsd_interval: StatsD flush interval of the metric in seconds if applicable.
-        :type statsd_interval: int, optional
+        :type statsd_interval: int, none_type, optional
 
         :param type: Metric type such as ``gauge`` or ``rate``.
-        :type type: str, optional
+        :type type: str, none_type, optional
 
         :param unit: Primary unit of the metric such as ``byte`` or ``operation``.
-        :type unit: str, optional
+        :type unit: str, none_type, optional
         """
         if description is not unset:
             kwargs["description"] = description
