@@ -38,10 +38,10 @@ class CustomCostsUser(ModelNormal):
         """
         Metadata of the user that has uploaded the Custom Costs file.
 
-        :param email: The name of the Custom Costs file.
+        :param email: Handle of the user. This is usually the user's email address, but can be another identifier (for example, a UUID for a service account).
         :type email: str, optional
 
-        :param icon: The name of the Custom Costs file.
+        :param icon: Icon of the user.
         :type icon: str, optional
 
         :param name: Name of the user.

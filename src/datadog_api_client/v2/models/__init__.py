@@ -2575,6 +2575,9 @@ from datadog_api_client.v2.model.custom_costs_file_metadata_with_content import 
 from datadog_api_client.v2.model.custom_costs_file_metadata_with_content_high_level import (
     CustomCostsFileMetadataWithContentHighLevel,
 )
+from datadog_api_client.v2.model.custom_costs_file_preview_unavailable_reason import (
+    CustomCostsFilePreviewUnavailableReason,
+)
 from datadog_api_client.v2.model.custom_costs_file_update_attributes import CustomCostsFileUpdateAttributes
 from datadog_api_client.v2.model.custom_costs_file_update_data import CustomCostsFileUpdateData
 from datadog_api_client.v2.model.custom_costs_file_update_request import CustomCostsFileUpdateRequest
@@ -15948,6 +15951,7 @@ __all__ = [
     "CustomCostsFileMetadataHighLevel",
     "CustomCostsFileMetadataWithContent",
     "CustomCostsFileMetadataWithContentHighLevel",
+    "CustomCostsFilePreviewUnavailableReason",
     "CustomCostsFileUpdateAttributes",
     "CustomCostsFileUpdateData",
     "CustomCostsFileUpdateRequest",
