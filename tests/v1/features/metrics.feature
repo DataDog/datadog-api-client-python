@@ -95,6 +95,11 @@ Feature: Metrics
     And the response "status" is equal to "ok"
     And the response "resp_version" is equal to 1
     And the response "query" is equal to "system.cpu.idle{*}"
+    And the response "times" has length 0
+    And the response "values" has length 0
+    And the response "series[0]" has field "attributes"
+    And the response "series[0].unit" has length 2
+    And the response "series[0].unit[0].id" is equal to 17
 
   @generated @skip @team:ddoghq/metrics-experience @team:ddoghq/metrics-index @team:ddoghq/metrics-intake @team:ddoghq/timeseries-query
   Scenario: Search metrics returns "Bad Request" response

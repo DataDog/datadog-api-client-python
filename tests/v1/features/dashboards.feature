@@ -103,6 +103,9 @@ Feature: Dashboards
     When the request is sent
     Then the response status is 200 OK
     And the response "widgets[0].definition.type" is equal to "heatgrid"
+    And the response "widgets[0].definition.requests[0].formulas[0].formula" is equal to "query1"
+    And the response "widgets[0].definition.requests[0].formulas[0]" does not have field "cell_display_mode"
+    And the response "widgets[0].definition.requests[0].formulas[0]" does not have field "cell_display_mode_options"
     And the response "widgets[0].definition.color.mode" is equal to "gradient"
     And the response "widgets[0].definition.color.source" is equal to "preset"
     And the response "widgets[0].definition.color.preset_name" is equal to "classic"
