@@ -47,7 +47,7 @@ class AiGatewayRateLimitUsageAttributes(ModelNormal):
         """
         Live consumption of one AI Gateway rate limit.
 
-        :param cost_microcents: Priced spend, in microcents, counted in the rolling one-minute window. Only rules with a cost limit count spend, so the value is 0 for other rules and for the untracked and total entries.
+        :param cost_microcents: Priced spend, in microcents, counted in the rolling one-minute window. Only rules with a cost limit count it, so it is 0 for other rules and for the untracked and total entries.
         :type cost_microcents: int, optional
 
         :param input_tokens: Input tokens counted in the rolling one-minute window.

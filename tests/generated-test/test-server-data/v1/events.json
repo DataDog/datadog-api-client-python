@@ -78,6 +78,43 @@
     },
     {
       "feature": "Events",
+      "frozen_at": "2022-01-06T00:50:51.866Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "tags": [
+                  "test:TestPostaneventreturnsOKresponsewithanint64IDabove2531641430251"
+                ],
+                "text": "An event whose ID exceeds Number.MAX_SAFE_INTEGER.",
+                "title": "Test-Post_an_event_returns_OK_response_with_an_int64_ID_above_2_53-1641430251"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/events",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"status\":\"ok\",\"event\":{\"id\":6327818702635911000,\"id_str\":\"6327818702635911562\",\"title\":\"Test-Post_an_event_returns_OK_response_with_an_int64_ID_above_2_53-1641430251\",\"text\":\"An event whose ID exceeds Number.MAX_SAFE_INTEGER.\",\"date_happened\":1641430251,\"handle\":null,\"priority\":null,\"related_event_id\":null,\"tags\":[\"test:TestPostaneventreturnsOKresponsewithanint64IDabove2531641430251\"],\"url\":\"https://app.datadoghq.com/event/event?id=6327818702635911562\"}}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Accepted",
+            "status": 202
+          }
+        }
+      ],
+      "scenario": "Post an event returns \"OK\" response with an int64 ID above 2^53",
+      "version": "v1"
+    },
+    {
+      "feature": "Events",
       "frozen_at": "2022-01-06T00:50:51.994Z",
       "interactions": [
         {
