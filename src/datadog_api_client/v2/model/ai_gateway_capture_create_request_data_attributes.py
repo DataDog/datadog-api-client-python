@@ -80,7 +80,7 @@ class AiGatewayCaptureCreateRequestDataAttributes(ModelNormal):
         """
         Settings and configuration revision for creating the override.
 
-        :param configuration_revision: Opaque revision of the organization default and all overrides. Writes require the revision returned by a current read or preview.
+        :param configuration_revision: Opaque revision of the organization default and all overrides, including hidden overrides. Writes require the revision returned by a current read or preview.
         :type configuration_revision: str
 
         :param confirm_full_capture: Set to ``true`` to confirm a change that can enable full capture, including a deletion that causes a ``full_capture`` override or the organization default to apply.
