@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict
+from typing import Any, Dict, Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -11,6 +11,8 @@ from datadog_api_client.model_utils import (
     date,
     datetime,
     none_type,
+    unset,
+    UnsetType,
     UUID,
 )
 
@@ -19,6 +21,7 @@ class LLMObsAnnotationItem(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
+            "annotator": (str,),
             "created_at": (datetime,),
             "created_by": (str,),
             "id": (str,),
@@ -44,6 +47,7 @@ class LLMObsAnnotationItem(ModelNormal):
         }
 
     attribute_map = {
+        "annotator": "annotator",
         "created_at": "created_at",
         "created_by": "created_by",
         "id": "id",
@@ -62,10 +66,16 @@ class LLMObsAnnotationItem(ModelNormal):
         label_values: Dict[str, Any],
         modified_at: datetime,
         modified_by: str,
+        annotator: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
         A single annotation on an interaction.
+
+        :param annotator: Caller-supplied name or identifier for the external person or automated system that produced the labels.
+            The value is stored and returned as provided. It is not a Datadog user ID or login, and it is not
+            resolved against Datadog users.
+        :type annotator: str, optional
 
         :param created_at: Timestamp when the annotation was created.
         :type created_at: datetime
@@ -88,6 +98,8 @@ class LLMObsAnnotationItem(ModelNormal):
         :param modified_by: Identifier of the user who last modified the annotation.
         :type modified_by: str
         """
+        if annotator is not unset:
+            kwargs["annotator"] = annotator
         super().__init__(kwargs)
 
         self_.created_at = created_at

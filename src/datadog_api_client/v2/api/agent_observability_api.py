@@ -4090,6 +4090,8 @@ class AgentObservabilityApi:
 
         Create or update annotations on interactions in a queue. Each annotation is matched
         by ``interaction_id`` and the requesting user's identity.
+        Use the optional ``annotator`` field to name an external person or automated system that produced the labels
+        without changing the authenticated creator, modifier, permissions, or per-user matching behavior.
         Results and errors in the response are linked to request items by ``interaction_id``.
         Errors for individual items are returned in the ``errors`` field without blocking the rest of the batch.
         Requests where every item is denied by queue access rules return ``403``.

@@ -395,7 +395,7 @@ Feature: Agent Observability
     Given operation "UpsertLLMObsAnnotations" enabled
     And new "UpsertLLMObsAnnotations" request
     And request contains "queue_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"annotations": [{"interaction_id": "00000000-0000-0000-0000-000000000001", "label_values": [{"label_schema_id": "abc-123", "value": "good"}, {"label_schema_id": "ef56gh78", "value": "positive"}]}]}, "type": "annotations"}}
+    And body with value {"data": {"attributes": {"annotations": [{"annotator": "Alex Contractor", "interaction_id": "00000000-0000-0000-0000-000000000001", "label_values": [{"label_schema_id": "abc-123", "value": "good"}, {"label_schema_id": "ef56gh78", "value": "positive"}]}]}, "type": "annotations"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -404,7 +404,7 @@ Feature: Agent Observability
     Given operation "UpsertLLMObsAnnotations" enabled
     And new "UpsertLLMObsAnnotations" request
     And request contains "queue_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"annotations": [{"interaction_id": "00000000-0000-0000-0000-000000000001", "label_values": [{"label_schema_id": "abc-123", "value": "good"}, {"label_schema_id": "ef56gh78", "value": "positive"}]}]}, "type": "annotations"}}
+    And body with value {"data": {"attributes": {"annotations": [{"annotator": "Alex Contractor", "interaction_id": "00000000-0000-0000-0000-000000000001", "label_values": [{"label_schema_id": "abc-123", "value": "good"}, {"label_schema_id": "ef56gh78", "value": "positive"}]}]}, "type": "annotations"}}
     When the request is sent
     Then the response status is 404 Not Found — the queue does not exist.
 
@@ -413,7 +413,7 @@ Feature: Agent Observability
     Given operation "UpsertLLMObsAnnotations" enabled
     And new "UpsertLLMObsAnnotations" request
     And request contains "queue_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"annotations": [{"interaction_id": "00000000-0000-0000-0000-000000000001", "label_values": [{"label_schema_id": "abc-123", "value": "good"}, {"label_schema_id": "ef56gh78", "value": "positive"}]}]}, "type": "annotations"}}
+    And body with value {"data": {"attributes": {"annotations": [{"annotator": "Alex Contractor", "interaction_id": "00000000-0000-0000-0000-000000000001", "label_values": [{"label_schema_id": "abc-123", "value": "good"}, {"label_schema_id": "ef56gh78", "value": "positive"}]}]}, "type": "annotations"}}
     When the request is sent
     Then the response status is 200 OK — annotations created or updated. For mixed batches, denied items and other per-item errors are listed in `errors`.
 
