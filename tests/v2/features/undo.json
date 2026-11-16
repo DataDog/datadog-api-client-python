@@ -2783,6 +2783,12 @@
       "type": "idempotent"
     }
   },
+  "GetIssueImpact": {
+    "tag": "Error Tracking",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "UpdateIssueState": {
     "tag": "Error Tracking",
     "undo": {

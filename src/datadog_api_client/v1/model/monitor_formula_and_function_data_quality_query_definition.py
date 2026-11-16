@@ -39,7 +39,6 @@ class MonitorFormulaAndFunctionDataQualityQueryDefinition(ModelNormal):
             "measure": (str,),
             "monitor_options": (MonitorFormulaAndFunctionDataQualityMonitorOptions,),
             "name": (str,),
-            "run_filter": (str,),
             "schema_version": (str,),
             "scope": (str,),
         }
@@ -51,7 +50,6 @@ class MonitorFormulaAndFunctionDataQualityQueryDefinition(ModelNormal):
         "measure": "measure",
         "monitor_options": "monitor_options",
         "name": "name",
-        "run_filter": "run_filter",
         "schema_version": "schema_version",
         "scope": "scope",
     }
@@ -64,7 +62,6 @@ class MonitorFormulaAndFunctionDataQualityQueryDefinition(ModelNormal):
         name: str,
         group_by: Union[List[str], UnsetType] = unset,
         monitor_options: Union[MonitorFormulaAndFunctionDataQualityMonitorOptions, UnsetType] = unset,
-        run_filter: Union[str, UnsetType] = unset,
         schema_version: Union[str, UnsetType] = unset,
         scope: Union[str, UnsetType] = unset,
         **kwargs,
@@ -84,8 +81,7 @@ class MonitorFormulaAndFunctionDataQualityQueryDefinition(ModelNormal):
         :param measure: The data quality measure to query. Common values include:
             ``bytes`` , ``cardinality`` , ``custom`` , ``freshness`` , ``max`` , ``mean`` , ``min`` ,
             ``nullness`` , ``percent_negative`` , ``percent_zero`` , ``row_count`` , ``stddev`` ,
-            ``sum`` , ``uniqueness``. ``data-jobs alert`` job duration monitors use ``duration``.
-            Additional values may be supported.
+            ``sum`` , ``uniqueness``. Additional values may be supported.
         :type measure: str
 
         :param monitor_options: Monitor configuration options for data quality queries.
@@ -93,10 +89,6 @@ class MonitorFormulaAndFunctionDataQualityQueryDefinition(ModelNormal):
 
         :param name: Name of the query for use in formulas.
         :type name: str
-
-        :param run_filter: Optional filter on individual runs, using metrics filter syntax.
-            Only supported by ``data-jobs alert`` job duration monitors.
-        :type run_filter: str, optional
 
         :param schema_version: Schema version for the data quality query.
         :type schema_version: str, optional
@@ -109,8 +101,6 @@ class MonitorFormulaAndFunctionDataQualityQueryDefinition(ModelNormal):
             kwargs["group_by"] = group_by
         if monitor_options is not unset:
             kwargs["monitor_options"] = monitor_options
-        if run_filter is not unset:
-            kwargs["run_filter"] = run_filter
         if schema_version is not unset:
             kwargs["schema_version"] = schema_version
         if scope is not unset:
