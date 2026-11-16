@@ -6212,7 +6212,7 @@ class SecurityMonitoringApi:
     ) -> SecurityMonitoringCriticalAssetResponse:
         """Create a critical asset.
 
-        Create a new critical asset.
+        Create a new dynamic severity rule (previously called critical assets).
 
         :param body: The definition of the new critical asset.
         :type body: SecurityMonitoringCriticalAssetCreateRequest
@@ -6630,7 +6630,7 @@ class SecurityMonitoringApi:
     ) -> None:
         """Delete a critical asset.
 
-        Delete a specific critical asset.
+        Delete a specific dynamic severity rule (previously called critical assets).
 
         :param critical_asset_id: The ID of the critical asset.
         :type critical_asset_id: str
@@ -6940,7 +6940,7 @@ class SecurityMonitoringApi:
     ) -> SecurityMonitoringCriticalAssetsResponse:
         """Get critical assets affecting a specific rule.
 
-        Get the list of critical assets that affect a specific existing rule by the rule's ID.
+        Get the list of dynamic severity rules (previously called critical assets) that affect a specific existing rule by the rule's ID.
 
         :param rule_id: The ID of the rule.
         :type rule_id: str
@@ -7470,7 +7470,7 @@ class SecurityMonitoringApi:
     ) -> SecurityMonitoringCriticalAssetResponse:
         """Get a critical asset.
 
-        Get the details of a specific critical asset.
+        Get the details of a specific dynamic severity rule (previously called critical assets).
 
         :param critical_asset_id: The ID of the critical asset.
         :type critical_asset_id: str
@@ -8995,7 +8995,7 @@ class SecurityMonitoringApi:
     ) -> SecurityMonitoringCriticalAssetsResponse:
         """Get all critical assets.
 
-        Get the list of all critical assets.
+        Get the list of all dynamic severity rules (previously called critical assets).
 
         :rtype: SecurityMonitoringCriticalAssetsResponse
         """
@@ -10516,7 +10516,7 @@ class SecurityMonitoringApi:
     ) -> SecurityMonitoringCriticalAssetResponse:
         """Update a critical asset.
 
-        Update a specific critical asset.
+        Update a specific dynamic severity rule (previously called critical assets).
 
         :param critical_asset_id: The ID of the critical asset.
         :type critical_asset_id: str

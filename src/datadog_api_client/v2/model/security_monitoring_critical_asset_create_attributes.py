@@ -69,7 +69,7 @@ class SecurityMonitoringCriticalAssetCreateAttributes(ModelNormal):
         :param rule_query: The rule query of the critical asset, with the same syntax as the search bar for detection rules. This determines which rules this critical asset will apply to.
         :type rule_query: str
 
-        :param severity: Severity associated with this critical asset. Either an explicit severity can be set, or the severity can be increased or decreased, or the severity can be left unchanged (no-op).
+        :param severity: Severity associated with this dynamic severity rule (previously called critical assets). Either an explicit severity can be set, or the severity can be increased or decreased, or the severity can be left unchanged (no-op).
         :type severity: SecurityMonitoringCriticalAssetSeverity
 
         :param tags: List of tags associated with the critical asset.
