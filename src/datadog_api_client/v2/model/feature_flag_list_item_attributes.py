@@ -144,7 +144,9 @@ class FeatureFlagListItemAttributes(ModelNormal):
         :param staleness_details: The feature flag's current staleness state and suggested actions.
         :type staleness_details: FeatureFlagStalenessDetails, optional
 
-        :param staleness_status: Legacy status retained for compatibility. This field is always ``ACTIVE`` ; use ``staleness_details.staleness_status`` for the computed status. **Deprecated**.
+        :param staleness_status: Legacy status retained for compatibility. This field is always ``ACTIVE`` ; use
+            ``staleness_details.staleness_status`` for the computed status. Do not copy it into an update
+            request: sending ``ACTIVE`` makes a ``PERMANENT`` flag temporary and clears any snooze. **Deprecated**.
         :type staleness_status: str, optional
 
         :param staleness_status_override: An explicit staleness status override. Omitted when no override is set.
