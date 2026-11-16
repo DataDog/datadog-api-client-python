@@ -451,6 +451,42 @@ Feature: Usage Metering
     And the response "data[0].type" is equal to "usage_timeseries"
     And the response "data[0].attributes.product_family" is equal to "observability-pipelines"
 
+  @integration-only @team:ddoghq/billing-hub
+  Scenario: Get monthly usage by resource returns "Bad Request" response
+    Given new "GetUsageMonthlyResources" request
+    And request contains "filter[billing_dimension]" parameter with value "infra_host"
+    And request contains "filter[month]" parameter with value "not-a-month"
+    And request contains "filter[view]" parameter with value "all"
+    When the request is sent
+    Then the response status is 400 Bad Request
+    And the response "errors[0].status" is equal to "400"
+    And the response "errors[0].title" is equal to "Bad Request"
+    And the response "errors[0]" has field "detail"
+
+  @integration-only @team:ddoghq/billing-hub
+  Scenario: Get monthly usage by resource returns "OK" response
+    Given new "GetUsageMonthlyResources" request
+    And request contains "filter[billing_dimension]" parameter with value "infra_host"
+    And request contains "filter[month]" parameter with value "2026-04"
+    And request contains "filter[view]" parameter with value "all"
+    And request contains "page[limit]" parameter with value 1
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "meta" has field "pagination"
+    And the response "meta.pagination" has field "next_record_id"
+
+  @integration-only @team:ddoghq/billing-hub
+  Scenario: Get monthly usage by resource supports non-host resources
+    Given new "GetUsageMonthlyResources" request
+    And request contains "filter[billing_dimension]" parameter with value "indexed_points"
+    And request contains "filter[month]" parameter with value "2026-04"
+    And request contains "filter[view]" parameter with value "all"
+    And request contains "page[limit]" parameter with value 1
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "meta" has field "pagination"
+    And the response "meta.pagination" has field "next_record_id"
+
   @generated @skip @team:ddoghq/billing-hub
   Scenario: Get projected cost across your account returns "Bad Request" response
     Given new "GetProjectedCost" request

@@ -33,6 +33,8 @@ from datadog_api_client.v2.model.cost_by_org_response import CostByOrgResponse
 from datadog_api_client.v2.model.cost_aggregation_type import CostAggregationType
 from datadog_api_client.v2.model.hourly_usage_response import HourlyUsageResponse
 from datadog_api_client.v2.model.usage_lambda_traced_invocations_response import UsageLambdaTracedInvocationsResponse
+from datadog_api_client.v2.model.monthly_resources_response import MonthlyResourcesResponse
+from datadog_api_client.v2.model.monthly_resources_view import MonthlyResourcesView
 from datadog_api_client.v2.model.usage_observability_pipelines_response import UsageObservabilityPipelinesResponse
 from datadog_api_client.v2.model.projected_cost_response import ProjectedCostResponse
 from datadog_api_client.v2.model.usage_quotas_list_response import UsageQuotasListResponse
@@ -693,6 +695,61 @@ class UsageMeteringApi:
                 "end_hr": {
                     "openapi_types": (datetime,),
                     "attribute": "end_hr",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json;datetime-format=rfc3339"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_usage_monthly_resources_endpoint = _Endpoint(
+            settings={
+                "response_type": (MonthlyResourcesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/usage/monthly_resources",
+                "operation_id": "get_usage_monthly_resources",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "filter_billing_dimension": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "filter[billing_dimension]",
+                    "location": "query",
+                },
+                "filter_month": {
+                    "required": True,
+                    "validation": {},
+                    "openapi_types": (str,),
+                    "attribute": "filter[month]",
+                    "location": "query",
+                },
+                "filter_view": {
+                    "required": True,
+                    "openapi_types": (MonthlyResourcesView,),
+                    "attribute": "filter[view]",
+                    "location": "query",
+                },
+                "filter_include_descendants": {
+                    "openapi_types": (bool,),
+                    "attribute": "filter[include_descendants]",
+                    "location": "query",
+                },
+                "page_limit": {
+                    "validation": {
+                        "inclusive_maximum": 100000,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
+                    "location": "query",
+                },
+                "page_next_record_id": {
+                    "openapi_types": (str,),
+                    "attribute": "page[next_record_id]",
                     "location": "query",
                 },
             },
@@ -1594,6 +1651,83 @@ class UsageMeteringApi:
 
         warnings.warn("get_usage_lambda_traced_invocations is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_usage_lambda_traced_invocations_endpoint.call_with_http_info(**kwargs)
+
+    def get_usage_monthly_resources(
+        self,
+        filter_billing_dimension: str,
+        filter_month: str,
+        filter_view: MonthlyResourcesView,
+        *,
+        filter_include_descendants: Union[bool, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+        page_next_record_id: Union[str, UnsetType] = unset,
+    ) -> MonthlyResourcesResponse:
+        """Get monthly usage by resource.
+
+        Get resource-level usage for a billing dimension and month, using the same
+        data as the resource breakdown in Plan & Usage. Supports all host and
+        non-host resource types available in that breakdown. Availability depends
+        on the billing dimension and the organization's usage data.
+
+        Results are scoped to the authenticated organization. Set ``filter[include_descendants]``
+        to ``true`` to also return usage from its descendant organizations in all regions.
+
+        Set ``filter[view]`` to ``billable`` to return resources that contribute to billable usage.
+        For dimensions billed at the 99th percentile, this view returns resources at the
+        selected billing hour. For sum-based dimensions, it returns monthly resource usage.
+        Set ``filter[view]`` to ``all`` to return the full monthly resource breakdown. Requests
+        for unsupported billing dimensions, or dimensions configured with an unsupported
+        billing aggregation method, return a ``400 Bad Request`` error.
+
+        To get the next page of results, pass the ``meta.pagination.next_record_id`` value
+        from the previous response as ``page[next_record_id]`` , and keep all filters unchanged.
+        A null cursor indicates the last page. Paginated responses contain at most
+        ``page[limit]`` resource records, including queries across descendant organizations.
+
+        Exception: for any billing dimension billed at the 99th percentile,
+        ``filter[view]=billable`` returns the complete resource breakdown in one response,
+        including requested descendants. Eligibility depends on the organization's
+        billing configuration for the requested dimension and month, not on the product
+        name. For these queries, ``page[limit]`` and ``page[next_record_id]`` are ignored, and
+        ``meta.pagination.next_record_id`` is null. Sum-based usage and ``filter[view]=all``
+        remain paginated.
+
+        :param filter_billing_dimension: Billing dimension to retrieve, such as ``infra_host`` , ``indexed_points`` , or ``logs_indexed_30day``.
+        :type filter_billing_dimension: str
+        :param filter_month: Month of usage to retrieve in ``YYYY-MM`` format.
+        :type filter_month: str
+        :param filter_view: Set to ``billable`` to return resources that contribute to billable usage, or ``all``
+            to return the full monthly resource breakdown.
+        :type filter_view: MonthlyResourcesView
+        :param filter_include_descendants: Include usage for descendant organizations of the authenticated organization.
+        :type filter_include_descendants: bool, optional
+        :param page_limit: Maximum number of resource records per paginated response. Must be a positive integer.
+            Values above 100,000 are capped at 100,000. Ignored for billable queries using
+            99th-percentile billing, which return the complete result in one response.
+        :type page_limit: int, optional
+        :param page_next_record_id: Opaque cursor from ``meta.pagination.next_record_id`` in the previous response.
+            Omit for the first request. Ignored for billable queries using 99th-percentile
+            billing, which always return the complete result.
+        :type page_next_record_id: str, optional
+        :rtype: MonthlyResourcesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["filter_billing_dimension"] = filter_billing_dimension
+
+        kwargs["filter_month"] = filter_month
+
+        kwargs["filter_view"] = filter_view
+
+        if filter_include_descendants is not unset:
+            kwargs["filter_include_descendants"] = filter_include_descendants
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if page_next_record_id is not unset:
+            kwargs["page_next_record_id"] = page_next_record_id
+
+        return self._get_usage_monthly_resources_endpoint.call_with_http_info(**kwargs)
 
     def get_usage_observability_pipelines(
         self,
