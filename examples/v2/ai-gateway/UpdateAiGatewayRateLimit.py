@@ -10,6 +10,9 @@ from datadog_api_client.v2.model.ai_gateway_rate_limit_type import AiGatewayRate
 from datadog_api_client.v2.model.ai_gateway_rate_limit_update_attributes import AiGatewayRateLimitUpdateAttributes
 from datadog_api_client.v2.model.ai_gateway_rate_limit_update_data import AiGatewayRateLimitUpdateData
 from datadog_api_client.v2.model.ai_gateway_rate_limit_update_request import AiGatewayRateLimitUpdateRequest
+from datadog_api_client.v2.model.ai_gateway_rate_limit_window_limit import AiGatewayRateLimitWindowLimit
+from datadog_api_client.v2.model.ai_gateway_rate_limit_window_limit_metric import AiGatewayRateLimitWindowLimitMetric
+from datadog_api_client.v2.model.ai_gateway_rate_limit_window_limit_window import AiGatewayRateLimitWindowLimitWindow
 from uuid import UUID
 
 body = AiGatewayRateLimitUpdateRequest(
@@ -23,6 +26,13 @@ body = AiGatewayRateLimitUpdateRequest(
             tags=None,
             team_id=None,
             user_id=None,
+            window_limits=[
+                AiGatewayRateLimitWindowLimit(
+                    amount=2000000000,
+                    metric=AiGatewayRateLimitWindowLimitMetric.COST,
+                    window=AiGatewayRateLimitWindowLimitWindow.TWENTY_FOUR_HOURS,
+                ),
+            ],
         ),
         id=UUID("11111111-1111-1111-1111-111111111111"),
         type=AiGatewayRateLimitType.RATE_LIMITS,

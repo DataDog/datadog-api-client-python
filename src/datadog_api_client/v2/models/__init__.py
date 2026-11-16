@@ -652,6 +652,9 @@ from datadog_api_client.v2.model.ai_gateway_rate_limit_usage_attributes import A
 from datadog_api_client.v2.model.ai_gateway_rate_limit_usage_list_response import AiGatewayRateLimitUsageListResponse
 from datadog_api_client.v2.model.ai_gateway_rate_limit_usage_resource import AiGatewayRateLimitUsageResource
 from datadog_api_client.v2.model.ai_gateway_rate_limit_usage_type import AiGatewayRateLimitUsageType
+from datadog_api_client.v2.model.ai_gateway_rate_limit_window_limit import AiGatewayRateLimitWindowLimit
+from datadog_api_client.v2.model.ai_gateway_rate_limit_window_limit_metric import AiGatewayRateLimitWindowLimitMetric
+from datadog_api_client.v2.model.ai_gateway_rate_limit_window_limit_window import AiGatewayRateLimitWindowLimitWindow
 from datadog_api_client.v2.model.ai_gateway_restricted_details_meta import AiGatewayRestrictedDetailsMeta
 from datadog_api_client.v2.model.ai_gateway_routing_classifier import AiGatewayRoutingClassifier
 from datadog_api_client.v2.model.ai_gateway_routing_classifier_request import AiGatewayRoutingClassifierRequest
@@ -14516,6 +14519,9 @@ __all__ = [
     "AiGatewayRateLimitUsageListResponse",
     "AiGatewayRateLimitUsageResource",
     "AiGatewayRateLimitUsageType",
+    "AiGatewayRateLimitWindowLimit",
+    "AiGatewayRateLimitWindowLimitMetric",
+    "AiGatewayRateLimitWindowLimitWindow",
     "AiGatewayRestrictedDetailsMeta",
     "AiGatewayRoutingClassifier",
     "AiGatewayRoutingClassifierRequest",
