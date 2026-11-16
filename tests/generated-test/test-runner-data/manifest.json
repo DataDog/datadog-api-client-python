@@ -5337,6 +5337,13 @@
     {
       "feature": "Deployment Gates",
       "feature_file": "../../v2/features/deployment_gates.feature",
+      "file": "v2/deployment-gates/create-bits-deployment-analysis-deployment-rule-returns-ok-response.json",
+      "scenario": "Create bits deployment analysis deployment rule returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "feature_file": "../../v2/features/deployment_gates.feature",
       "file": "v2/deployment-gates/create-deployment-gate-returns-bad-request-response.json",
       "scenario": "Create deployment gate returns \"Bad Request\" response",
       "version": "v2"
@@ -5514,6 +5521,13 @@
       "feature_file": "../../v2/features/deployment_gates.feature",
       "file": "v2/deployment-gates/trigger-a-deployment-gates-evaluation-returns-deployment-gate-not-found-response.json",
       "scenario": "Trigger a deployment gates evaluation returns \"Deployment gate not found.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Deployment Gates",
+      "feature_file": "../../v2/features/deployment_gates.feature",
+      "file": "v2/deployment-gates/trigger-a-deployment-gates-evaluation-with-an-inline-bits-deployment-analysis-rule-returns-accepted-response.json",
+      "scenario": "Trigger a deployment gates evaluation with an inline bits deployment analysis rule returns \"Accepted\" response",
       "version": "v2"
     },
     {

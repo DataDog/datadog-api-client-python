@@ -3238,6 +3238,15 @@ from datadog_api_client.v2.model.deployment_gate_rule_failure_monitor import Dep
 from datadog_api_client.v2.model.deployment_gate_rule_failure_narrative import DeploymentGateRuleFailureNarrative
 from datadog_api_client.v2.model.deployment_gate_rule_failures import DeploymentGateRuleFailures
 from datadog_api_client.v2.model.deployment_gate_rules_response import DeploymentGateRulesResponse
+from datadog_api_client.v2.model.deployment_gates_bits_deployment_analysis_rule import (
+    DeploymentGatesBitsDeploymentAnalysisRule,
+)
+from datadog_api_client.v2.model.deployment_gates_bits_deployment_analysis_rule_options import (
+    DeploymentGatesBitsDeploymentAnalysisRuleOptions,
+)
+from datadog_api_client.v2.model.deployment_gates_bits_deployment_analysis_rule_type import (
+    DeploymentGatesBitsDeploymentAnalysisRuleType,
+)
 from datadog_api_client.v2.model.deployment_gates_evaluation_configuration import DeploymentGatesEvaluationConfiguration
 from datadog_api_client.v2.model.deployment_gates_evaluation_request import DeploymentGatesEvaluationRequest
 from datadog_api_client.v2.model.deployment_gates_evaluation_request_attributes import (
@@ -16384,6 +16393,9 @@ __all__ = [
     "DeploymentGateRuleFailureNarrative",
     "DeploymentGateRuleFailures",
     "DeploymentGateRulesResponse",
+    "DeploymentGatesBitsDeploymentAnalysisRule",
+    "DeploymentGatesBitsDeploymentAnalysisRuleOptions",
+    "DeploymentGatesBitsDeploymentAnalysisRuleType",
     "DeploymentGatesEvaluationConfiguration",
     "DeploymentGatesEvaluationRequest",
     "DeploymentGatesEvaluationRequestAttributes",
