@@ -73,6 +73,15 @@ Feature: Events
     And the response "event.text" is equal to "A text message."
 
   @team:ddoghq/monitors-evaluation
+  Scenario: Post an event returns "OK" response with an int64 ID above 2^53
+    Given new "CreateEvent" request
+    And body with value {"title": "{{ unique }}", "text": "An event whose ID exceeds Number.MAX_SAFE_INTEGER.", "tags": ["test:{{ unique_alnum }}"]}
+    When the request is sent
+    Then the response status is 202 OK
+    And the response "event" has field "id"
+    And the response "event" has field "id_str"
+
+  @team:ddoghq/monitors-evaluation
   Scenario: Post an event with a long title returns "OK" response
     Given new "CreateEvent" request
     And body with value {"title": "{{ unique }} very very very looooooooong looooooooooooong loooooooooooooooooooooong looooooooooooooooooooooooooong title with 100+ characters", "text": "A text message.", "tags": ["test:{{ unique_alnum }}"]}

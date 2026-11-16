@@ -18,12 +18,12 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.ai_gateway_rate_limit_mode import AiGatewayRateLimitMode
     from datadog_api_client.v2.model.ai_gateway_rate_limit_selector_entry import AiGatewayRateLimitSelectorEntry
-    from datadog_api_client.v2.model.ai_gateway_rate_limit_window_limit import AiGatewayRateLimitWindowLimit
 
 
 class AiGatewayRateLimitCreateAttributes(ModelNormal):
     validations = {
         "cost_microcents_per_minute": {
+            "inclusive_maximum": 10000000000000,
             "inclusive_minimum": 1,
         },
         "input_tokens_per_minute": {
@@ -38,16 +38,12 @@ class AiGatewayRateLimitCreateAttributes(ModelNormal):
             "inclusive_maximum": 10000000,
             "inclusive_minimum": 1,
         },
-        "window_limits": {
-            "max_items": 4,
-        },
     }
 
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.ai_gateway_rate_limit_mode import AiGatewayRateLimitMode
         from datadog_api_client.v2.model.ai_gateway_rate_limit_selector_entry import AiGatewayRateLimitSelectorEntry
-        from datadog_api_client.v2.model.ai_gateway_rate_limit_window_limit import AiGatewayRateLimitWindowLimit
 
         return {
             "cost_microcents_per_minute": (int, none_type),
@@ -60,7 +56,6 @@ class AiGatewayRateLimitCreateAttributes(ModelNormal):
             "tags": ({str: (str,)},),
             "team_id": (UUID,),
             "user_id": (UUID,),
-            "window_limits": ([AiGatewayRateLimitWindowLimit],),
         }
 
     attribute_map = {
@@ -74,7 +69,6 @@ class AiGatewayRateLimitCreateAttributes(ModelNormal):
         "tags": "tags",
         "team_id": "team_id",
         "user_id": "user_id",
-        "window_limits": "window_limits",
     }
 
     def __init__(
@@ -89,13 +83,12 @@ class AiGatewayRateLimitCreateAttributes(ModelNormal):
         tags: Union[Dict[str, str], UnsetType] = unset,
         team_id: Union[UUID, UnsetType] = unset,
         user_id: Union[UUID, UnsetType] = unset,
-        window_limits: Union[List[AiGatewayRateLimitWindowLimit], UnsetType] = unset,
         **kwargs,
     ):
         """
         Attributes used to create an AI Gateway rate limit.
 
-        :param cost_microcents_per_minute: Maximum priced spend per rolling minute, in microcents of 1e-8 USD each. In ``ENFORCE`` mode, the gateway rejects requests to models with no pricing because their cost can't be counted.
+        :param cost_microcents_per_minute: Maximum priced spend per rolling minute, in microcents of 1e-8 USD each. At most 10000000000000, that is $100,000. In ``ENFORCE`` mode, requests to a model with no pricing are rejected, because their cost can't be counted.
         :type cost_microcents_per_minute: int, none_type, optional
 
         :param input_tokens_per_minute: Maximum input tokens per rolling minute.
@@ -110,7 +103,7 @@ class AiGatewayRateLimitCreateAttributes(ModelNormal):
         :param output_tokens_per_minute: Maximum output tokens per rolling minute.
         :type output_tokens_per_minute: int, none_type, optional
 
-        :param requests_per_minute: Maximum requests per rolling minute. At least one of ``requests_per_minute`` , ``input_tokens_per_minute`` , ``output_tokens_per_minute`` , ``cost_microcents_per_minute`` , or a non-empty ``window_limits`` is required.
+        :param requests_per_minute: Maximum requests per rolling minute. At least one of ``requests_per_minute`` , ``input_tokens_per_minute`` , ``output_tokens_per_minute`` , and ``cost_microcents_per_minute`` is required.
         :type requests_per_minute: int, none_type, optional
 
         :param selector: Dimension rules for a template rate limit, which gives each matched user, Team, or value its own allowance with the rule's limits. Can't be combined with user_id, team_id, or tags, and can't be changed after creation. Omit for a rule with one shared allowance.
@@ -124,9 +117,6 @@ class AiGatewayRateLimitCreateAttributes(ModelNormal):
 
         :param user_id: Optional UUID. Count only this user's requests.
         :type user_id: UUID, optional
-
-        :param window_limits: Limits over rolling windows longer than a minute, such as $20 of spend per 24 hours. This field is available only to organizations with the feature enabled. Other organizations receive a 400 Bad Request response for a non-empty list. Each limit counts the rule's matching traffic, or each counter of a template rate limit, over its window. Set per-minute limits in the ``*_per_minute`` fields. A rule can have at most four limits in total, including any per-minute limits that are set. Each metric and window pair can appear only once, and for the same metric, a longer window must have a larger amount. In ``ENFORCE`` mode, the gateway rejects a request that exceeds any limit with HTTP 429 and a ``Retry-After`` header. If the list includes a ``cost`` limit, the gateway also rejects requests to models with no pricing because their cost can't be counted.
-        :type window_limits: [AiGatewayRateLimitWindowLimit], optional
         """
         if cost_microcents_per_minute is not unset:
             kwargs["cost_microcents_per_minute"] = cost_microcents_per_minute
@@ -146,8 +136,6 @@ class AiGatewayRateLimitCreateAttributes(ModelNormal):
             kwargs["team_id"] = team_id
         if user_id is not unset:
             kwargs["user_id"] = user_id
-        if window_limits is not unset:
-            kwargs["window_limits"] = window_limits
         super().__init__(kwargs)
 
         self_.name = name
