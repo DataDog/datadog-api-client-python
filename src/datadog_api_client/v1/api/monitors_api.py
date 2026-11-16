@@ -623,6 +623,22 @@ class MonitorsApi:
         * ``operator`` ``<`` , ``<=`` , ``>`` , ``>=`` , ``==`` , or ``!=``.
         * ``#`` an integer or decimal number used to set the threshold.
 
+        **Data Jobs Alert Query**
+
+        Job status example: ``formula("failed_runs(run_query)").by(group_keys).last(time_window) > #``
+
+        Job duration examples: ``formula("job_duration(run_query)").detection(static).by(group_keys) > duration``
+        and ``formula("job_duration(run_query)").detection(anomaly).by(group_keys) > 0``
+
+        * ``run_query`` : The name of the single query variable in ``options.variables``. Job status monitors
+          use a data jobs query; job duration monitors use a data quality query with the ``duration`` measure.
+        * ``group_keys`` : The tags to group by, such as ``entity_id,name,workspace_name``.
+        * ``time_window`` : Number of minutes (#m), hours (#h), or days (#d), up to ``10d``.
+        * ``#`` : The number of trailing failed runs to alert above, as a non-negative integer.
+        * ``duration`` : The duration to alert above, such as ``2h`` , ``30m`` , or a number of seconds.
+        * ``options.thresholds.critical`` : Must equal the query threshold, in seconds for job duration.
+          Anomaly job duration monitors omit ``options.thresholds``.
+
         :param body: Create a monitor request body.
         :type body: Monitor
         :rtype: Monitor

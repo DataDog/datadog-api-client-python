@@ -1,0 +1,56 @@
+{
+  "api": "Monitors",
+  "expected_status": 200,
+  "feature": "Monitors",
+  "id": "v1/Monitors/Create a Data Jobs duration monitor returns \"OK\" response",
+  "operation_id": "CreateMonitor",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "Monitor",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "message": "Data jobs duration alert triggered",
+        "name": "{{ unique }}",
+        "options": {
+          "variables": [
+            {
+              "data_source": "data_quality_metrics",
+              "filter": "search for databricks_job",
+              "group_by": [
+                "name",
+                "workspace_name",
+                "entity_id"
+              ],
+              "measure": "duration",
+              "monitor_options": {
+                "consecutive_runs": 2,
+                "detection_type": "anomaly"
+              },
+              "name": "run_query",
+              "run_filter": "env:prod",
+              "schema_version": "0.0.1"
+            }
+          ]
+        },
+        "query": "formula(\"job_duration(run_query)\").detection(anomaly).by(name,workspace_name,entity_id) > 0",
+        "tags": [
+          "test:{{ unique_lower_alnum }}",
+          "env:ci"
+        ],
+        "type": "data-jobs alert"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v1/monitor"
+  },
+  "scenario": "Create a Data Jobs duration monitor returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v1"
+}

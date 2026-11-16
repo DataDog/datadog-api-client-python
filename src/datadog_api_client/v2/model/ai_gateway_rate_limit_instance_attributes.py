@@ -83,10 +83,10 @@ class AiGatewayRateLimitInstanceAttributes(ModelNormal):
         """
         One counter of a template rate limit and its live usage.
 
-        :param cost_microcents: Priced spend, in microcents, counted in the rolling one-minute window. 0 when the rate limit doesn't limit cost.
+        :param cost_microcents: Priced spend, in microcents, counted in the rolling one-minute window. The value is 0 when the rate limit doesn't limit cost.
         :type cost_microcents: int, optional
 
-        :param cost_microcents_per_minute: The rate limit's per-counter spend limit, in microcents. Null when it doesn't limit cost.
+        :param cost_microcents_per_minute: The rate limit's per-counter spend limit, in microcents. Null when the rate limit doesn't limit cost.
         :type cost_microcents_per_minute: int, none_type, optional
 
         :param first_seen: When the gateway first recorded a request for this counter.
@@ -101,7 +101,7 @@ class AiGatewayRateLimitInstanceAttributes(ModelNormal):
         :param instance_key: Opaque canonical key identifying the counter.
         :type instance_key: str
 
-        :param last_seen: When the gateway last saw this counter hot, that is near or at a limit or limiting; up to a few minutes behind live traffic.
+        :param last_seen: When the gateway last recorded this counter as hot, meaning it was at 80% or more of a limit, or it limited or would have limited a request. This value can lag live traffic by a few minutes.
         :type last_seen: datetime
 
         :param limited_requests: Requests this counter rejected in the last 15 minutes (ENFORCE).

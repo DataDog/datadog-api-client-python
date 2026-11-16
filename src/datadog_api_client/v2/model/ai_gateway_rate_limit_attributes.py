@@ -19,12 +19,12 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.ai_gateway_rate_limit_mode import AiGatewayRateLimitMode
     from datadog_api_client.v2.model.ai_gateway_rate_limit_selector_entry import AiGatewayRateLimitSelectorEntry
+    from datadog_api_client.v2.model.ai_gateway_rate_limit_window_limit import AiGatewayRateLimitWindowLimit
 
 
 class AiGatewayRateLimitAttributes(ModelNormal):
     validations = {
         "cost_microcents_per_minute": {
-            "inclusive_maximum": 10000000000000,
             "inclusive_minimum": 1,
         },
         "input_tokens_per_minute": {
@@ -39,12 +39,16 @@ class AiGatewayRateLimitAttributes(ModelNormal):
             "inclusive_maximum": 10000000,
             "inclusive_minimum": 1,
         },
+        "window_limits": {
+            "max_items": 4,
+        },
     }
 
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.ai_gateway_rate_limit_mode import AiGatewayRateLimitMode
         from datadog_api_client.v2.model.ai_gateway_rate_limit_selector_entry import AiGatewayRateLimitSelectorEntry
+        from datadog_api_client.v2.model.ai_gateway_rate_limit_window_limit import AiGatewayRateLimitWindowLimit
 
         return {
             "cost_microcents_per_minute": (int, none_type),
@@ -67,6 +71,7 @@ class AiGatewayRateLimitAttributes(ModelNormal):
             "updated_at": (datetime,),
             "updated_by": (str,),
             "user_id": (UUID, none_type),
+            "window_limits": ([AiGatewayRateLimitWindowLimit],),
         }
 
     attribute_map = {
@@ -90,6 +95,7 @@ class AiGatewayRateLimitAttributes(ModelNormal):
         "updated_at": "updated_at",
         "updated_by": "updated_by",
         "user_id": "user_id",
+        "window_limits": "window_limits",
     }
 
     def __init__(
@@ -114,6 +120,7 @@ class AiGatewayRateLimitAttributes(ModelNormal):
         selector: Union[List[AiGatewayRateLimitSelectorEntry], none_type, UnsetType] = unset,
         team_id: Union[UUID, none_type, UnsetType] = unset,
         user_id: Union[UUID, none_type, UnsetType] = unset,
+        window_limits: Union[List[AiGatewayRateLimitWindowLimit], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -178,6 +185,9 @@ class AiGatewayRateLimitAttributes(ModelNormal):
 
         :param user_id: Optional user UUID. Count only this user's requests.
         :type user_id: UUID, none_type, optional
+
+        :param window_limits: Limits over rolling windows longer than a minute. Each limit counts the rule's matching traffic, or each counter of a template rate limit, over its window. Per-minute limits are in the ``*_per_minute`` fields. This list is empty when the rule has no window limits.
+        :type window_limits: [AiGatewayRateLimitWindowLimit], optional
         """
         if cost_microcents_per_minute is not unset:
             kwargs["cost_microcents_per_minute"] = cost_microcents_per_minute
@@ -195,6 +205,8 @@ class AiGatewayRateLimitAttributes(ModelNormal):
             kwargs["team_id"] = team_id
         if user_id is not unset:
             kwargs["user_id"] = user_id
+        if window_limits is not unset:
+            kwargs["window_limits"] = window_limits
         super().__init__(kwargs)
 
         self_.created_at = created_at

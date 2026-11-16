@@ -43,6 +43,18 @@ Feature: Monitors
     Then the response status is 200 OK
 
   @team:ddoghq/monitor-app
+  Scenario: Create a Data Jobs duration monitor returns "OK" response
+    Given new "CreateMonitor" request
+    And body with value {"name": "{{ unique }}", "type": "data-jobs alert", "query": "formula(\"job_duration(run_query)\").detection(anomaly).by(name,workspace_name,entity_id) > 0", "message": "Data jobs duration alert triggered", "tags": ["test:{{ unique_lower_alnum }}", "env:ci"], "options": {"variables": [{"name": "run_query", "data_source": "data_quality_metrics", "schema_version": "0.0.1", "measure": "duration", "filter": "search for databricks_job", "run_filter": "env:prod", "group_by": ["name", "workspace_name", "entity_id"], "monitor_options": {"detection_type": "anomaly", "consecutive_runs": 2}}]}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "name" is equal to "{{ unique }}"
+    And the response "type" is equal to "data-jobs alert"
+    And the response "options.variables[0].run_filter" is equal to "env:prod"
+    And the response "options.variables[0].monitor_options.detection_type" is equal to "anomaly"
+    And the response "options.variables[0].monitor_options.consecutive_runs" is equal to 2
+
+  @team:ddoghq/monitor-app
   Scenario: Create a Data Jobs monitor returns "OK" response
     Given new "CreateMonitor" request
     And body with value {"name": "{{ unique }}", "type": "data-jobs alert", "query": "formula(\"failed_runs(run_query)\").by(job_name,workspace_name).last(10d) > 0", "message": "Data jobs alert triggered", "tags": ["test:{{ unique_lower_alnum }}", "env:ci"], "options": {"thresholds": {"critical": 0}, "variables": [{"name": "run_query", "jobs_query": "job_name:*", "job_type": "databricks.job", "query_dialect": "metric"}]}}
@@ -50,6 +62,18 @@ Feature: Monitors
     Then the response status is 200 OK
     And the response "name" is equal to "{{ unique }}"
     And the response "type" is equal to "data-jobs alert"
+
+  @team:ddoghq/monitor-app
+  Scenario: Create a Data Jobs monitor with the aastra query dialect returns "OK" response
+    Given new "CreateMonitor" request
+    And body with value {"name": "{{ unique }}", "type": "data-jobs alert", "query": "formula(\"failed_runs(run_query)\").by(name,workspace_name,entity_id).last(1d) > 0", "message": "Data jobs alert triggered", "tags": ["test:{{ unique_lower_alnum }}", "env:ci"], "options": {"thresholds": {"critical": 0}, "variables": [{"name": "run_query", "jobs_query": "search for databricks_job", "job_type": "databricks.job", "query_dialect": "aastra", "run_filter": "env:prod", "monitor_options": {"alert_on_every_failure": true}}]}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "name" is equal to "{{ unique }}"
+    And the response "type" is equal to "data-jobs alert"
+    And the response "options.variables[0].query_dialect" is equal to "aastra"
+    And the response "options.variables[0].run_filter" is equal to "env:prod"
+    And the response "options.variables[0].monitor_options.alert_on_every_failure" is equal to true
 
   @team:ddoghq/monitor-app
   Scenario: Create a Data Quality monitor returns "OK" response

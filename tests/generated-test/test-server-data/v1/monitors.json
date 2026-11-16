@@ -194,6 +194,90 @@
     },
     {
       "feature": "Monitors",
+      "frozen_at": "2026-11-06T16:42:00.361Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "message": "Data jobs duration alert triggered",
+                "name": "Test-Create_a_Data_Jobs_duration_monitor_returns_OK_response-1793983320",
+                "options": {
+                  "variables": [
+                    {
+                      "data_source": "data_quality_metrics",
+                      "filter": "search for databricks_job",
+                      "group_by": [
+                        "name",
+                        "workspace_name",
+                        "entity_id"
+                      ],
+                      "measure": "duration",
+                      "monitor_options": {
+                        "consecutive_runs": 2,
+                        "detection_type": "anomaly"
+                      },
+                      "name": "run_query",
+                      "run_filter": "env:prod",
+                      "schema_version": "0.0.1"
+                    }
+                  ]
+                },
+                "query": "formula(\"job_duration(run_query)\").detection(anomaly).by(name,workspace_name,entity_id) > 0",
+                "tags": [
+                  "test:testcreateadatajobsdurationmonitorreturnsokresponse1793983320",
+                  "env:ci"
+                ],
+                "type": "data-jobs alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":341751249,\"org_id\":321813,\"type\":\"data-jobs alert\",\"name\":\"Test-Create_a_Data_Jobs_duration_monitor_returns_OK_response-1793983320\",\"message\":\"Data jobs duration alert triggered\",\"tags\":[\"test:testcreateadatajobsdurationmonitorreturnsokresponse1793983320\",\"env:ci\"],\"query\":\"formula(\\\"job_duration(run_query)\\\").detection(anomaly).by(name,workspace_name,entity_id) > 0\",\"options\":{\"variables\":[{\"data_source\":\"data_quality_metrics\",\"filter\":\"search for databricks_job\",\"group_by\":[\"name\",\"workspace_name\",\"entity_id\"],\"measure\":\"duration\",\"monitor_options\":{\"consecutive_runs\":2,\"detection_type\":\"anomaly\"},\"name\":\"run_query\",\"run_filter\":\"env:prod\",\"schema_version\":\"0.0.1\"}],\"notify_no_data\":false,\"notify_audit\":false,\"new_host_delay\":300,\"include_tags\":true,\"silenced\":{}},\"multi\":true,\"created_at\":1793983320000,\"created\":\"2026-11-06T16:42:00.590725+00:00\",\"modified\":\"2026-11-06T16:42:00.590725+00:00\",\"deleted\":null,\"priority\":null,\"restricted_roles\":null,\"restriction_policy\":null,\"draft_status\":\"published\",\"assets\":[],\"overall_state_modified\":null,\"overall_state\":\"No Data\",\"creator\":{\"name\":\"C\\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\",\"email\":\"cedric.vanrompay@datadoghq.com\",\"id\":68397867}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/monitor/341751249",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_monitor_id\":341751249}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a Data Jobs duration monitor returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
       "frozen_at": "2026-05-14T10:58:54.153Z",
       "interactions": [
         {
@@ -266,6 +350,86 @@
         }
       ],
       "scenario": "Create a Data Jobs monitor returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Monitors",
+      "frozen_at": "2026-11-06T16:42:01.032Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "message": "Data jobs alert triggered",
+                "name": "Test-Create_a_Data_Jobs_monitor_with_the_aastra_query_dialect_returns_OK_response-1793983321",
+                "options": {
+                  "thresholds": {
+                    "critical": 0
+                  },
+                  "variables": [
+                    {
+                      "job_type": "databricks.job",
+                      "jobs_query": "search for databricks_job",
+                      "monitor_options": {
+                        "alert_on_every_failure": true
+                      },
+                      "name": "run_query",
+                      "query_dialect": "aastra",
+                      "run_filter": "env:prod"
+                    }
+                  ]
+                },
+                "query": "formula(\"failed_runs(run_query)\").by(name,workspace_name,entity_id).last(1d) > 0",
+                "tags": [
+                  "test:testcreateadatajobsmonitorwiththeaastraquerydialectreturnsokresponse1793983321",
+                  "env:ci"
+                ],
+                "type": "data-jobs alert"
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/monitor",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":341751253,\"org_id\":321813,\"type\":\"data-jobs alert\",\"name\":\"Test-Create_a_Data_Jobs_monitor_with_the_aastra_query_dialect_returns_OK_response-1793983321\",\"message\":\"Data jobs alert triggered\",\"tags\":[\"test:testcreateadatajobsmonitorwiththeaastraquerydialectreturnsokresponse1793983321\",\"env:ci\"],\"query\":\"formula(\\\"failed_runs(run_query)\\\").by(name,workspace_name,entity_id).last(1d) > 0\",\"options\":{\"thresholds\":{\"critical\":0.0},\"variables\":[{\"job_type\":\"databricks.job\",\"jobs_query\":\"search for databricks_job\",\"monitor_options\":{\"alert_on_every_failure\":true},\"name\":\"run_query\",\"query_dialect\":\"aastra\",\"run_filter\":\"env:prod\"}],\"notify_no_data\":false,\"notify_audit\":false,\"new_host_delay\":300,\"include_tags\":true,\"silenced\":{}},\"multi\":true,\"created_at\":1793983321000,\"created\":\"2026-11-06T16:42:01.177378+00:00\",\"modified\":\"2026-11-06T16:42:01.177378+00:00\",\"deleted\":null,\"priority\":null,\"restricted_roles\":null,\"restriction_policy\":null,\"draft_status\":\"published\",\"assets\":[],\"overall_state_modified\":null,\"overall_state\":\"No Data\",\"creator\":{\"name\":\"C\\u00e9dric Van Rompay\",\"handle\":\"cedric.vanrompay@datadoghq.com\",\"email\":\"cedric.vanrompay@datadoghq.com\",\"id\":68397867}}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/monitor/341751253",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_monitor_id\":341751253}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a Data Jobs monitor with the aastra query dialect returns \"OK\" response",
       "version": "v1"
     },
     {
