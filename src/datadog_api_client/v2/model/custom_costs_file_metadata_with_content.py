@@ -16,6 +16,9 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.custom_costs_file_usage_charge_period import CustomCostsFileUsageChargePeriod
     from datadog_api_client.v2.model.custom_costs_file_line_item import CustomCostsFileLineItem
+    from datadog_api_client.v2.model.custom_costs_file_preview_unavailable_reason import (
+        CustomCostsFilePreviewUnavailableReason,
+    )
     from datadog_api_client.v2.model.custom_costs_user import CustomCostsUser
 
 
@@ -24,6 +27,9 @@ class CustomCostsFileMetadataWithContent(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v2.model.custom_costs_file_usage_charge_period import CustomCostsFileUsageChargePeriod
         from datadog_api_client.v2.model.custom_costs_file_line_item import CustomCostsFileLineItem
+        from datadog_api_client.v2.model.custom_costs_file_preview_unavailable_reason import (
+            CustomCostsFilePreviewUnavailableReason,
+        )
         from datadog_api_client.v2.model.custom_costs_user import CustomCostsUser
 
         return {
@@ -33,6 +39,7 @@ class CustomCostsFileMetadataWithContent(ModelNormal):
             "charge_period": (CustomCostsFileUsageChargePeriod,),
             "content": ([CustomCostsFileLineItem],),
             "name": (str,),
+            "preview_unavailable_reason": (CustomCostsFilePreviewUnavailableReason,),
             "provider_names": ([str],),
             "status": (str,),
             "uploaded_at": (float,),
@@ -46,6 +53,7 @@ class CustomCostsFileMetadataWithContent(ModelNormal):
         "charge_period": "charge_period",
         "content": "content",
         "name": "name",
+        "preview_unavailable_reason": "preview_unavailable_reason",
         "provider_names": "provider_names",
         "status": "status",
         "uploaded_at": "uploaded_at",
@@ -60,6 +68,7 @@ class CustomCostsFileMetadataWithContent(ModelNormal):
         charge_period: Union[CustomCostsFileUsageChargePeriod, UnsetType] = unset,
         content: Union[List[CustomCostsFileLineItem], UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
+        preview_unavailable_reason: Union[CustomCostsFilePreviewUnavailableReason, UnsetType] = unset,
         provider_names: Union[List[str], UnsetType] = unset,
         status: Union[str, UnsetType] = unset,
         uploaded_at: Union[float, UnsetType] = unset,
@@ -87,6 +96,9 @@ class CustomCostsFileMetadataWithContent(ModelNormal):
         :param name: Name of the Custom Costs file.
         :type name: str, optional
 
+        :param preview_unavailable_reason: Reason the content of the Custom Costs file is not returned. Only set when ``content`` is omitted.
+        :type preview_unavailable_reason: CustomCostsFilePreviewUnavailableReason, optional
+
         :param provider_names: Providers contained in the Custom Costs file.
         :type provider_names: [str], optional
 
@@ -111,6 +123,8 @@ class CustomCostsFileMetadataWithContent(ModelNormal):
             kwargs["content"] = content
         if name is not unset:
             kwargs["name"] = name
+        if preview_unavailable_reason is not unset:
+            kwargs["preview_unavailable_reason"] = preview_unavailable_reason
         if provider_names is not unset:
             kwargs["provider_names"] = provider_names
         if status is not unset:
