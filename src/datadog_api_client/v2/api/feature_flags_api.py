@@ -1406,17 +1406,17 @@ class FeatureFlagsApi:
         """List environments.
 
         Returns a list of environments for the organization.
-        Supports filtering by name, key, and DD_ENV.
+        Use ``dd_env`` to filter by an exact DD_ENV value in an environment's ``queries`` list.
 
-        :param name: Filter environments by name (partial matching).
+        :param name: This parameter is currently ignored. Use dd_env to filter environments.
         :type name: str, optional
-        :param key: Filter environments by key (partial matching).
+        :param key: This parameter is currently ignored. Use dd_env to filter environments.
         :type key: str, optional
-        :param dd_env: Filter environments by queries that contain the provided DD_ENV value.
+        :param dd_env: Filter environments whose queries list contains an exact match for the provided DD_ENV value.
         :type dd_env: str, optional
-        :param limit: Maximum number of results to return.
+        :param limit: This parameter is currently ignored. All matching environments are returned.
         :type limit: int, optional
-        :param offset: Number of results to skip.
+        :param offset: This parameter is currently ignored. All matching environments are returned.
         :type offset: int, optional
         :rtype: ListEnvironmentsResponse
         """
@@ -1585,8 +1585,13 @@ class FeatureFlagsApi:
     ) -> EnvironmentResponse:
         """Update an environment.
 
-        Updates an existing environment's metadata such as
-         name and description.
+        Updates an environment's name, DD_ENV values, and settings.
+
+        Every request must include ``name`` and ``queries`` , even when changing only ``observe_full_evaluation_data``.
+        To preserve the current name and DD_ENV values, get the environment first and include those values in the request.
+
+        Omitting ``is_production`` or ``require_feature_flag_approval`` resets that setting to ``false``.
+        Include their current values to preserve them. Omitting ``observe_full_evaluation_data`` preserves its current value.
 
         :param environment_id: The ID of the environment.
         :type environment_id: UUID

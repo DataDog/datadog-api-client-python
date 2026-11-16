@@ -1,0 +1,53 @@
+{
+  "api": "FeatureFlags",
+  "expected_status": 400,
+  "feature": "Feature Flags",
+  "id": "v2/Feature Flags/Update an environment without a name returns \"Bad Request\" response",
+  "operation_id": "UpdateFeatureFlagsEnvironment",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "UpdateEnvironmentRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "observe_full_evaluation_data": true,
+            "queries": [
+              "missing-name-{{ unique_lower }}"
+            ]
+          },
+          "type": "environments"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "environment_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "environment.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/feature-flags/environments/{environment_id}"
+  },
+  "scenario": "Update an environment without a name returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

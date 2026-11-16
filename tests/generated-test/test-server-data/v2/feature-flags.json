@@ -378,7 +378,7 @@
     },
     {
       "feature": "Feature Flags",
-      "frozen_at": "2026-04-22T20:15:55.045Z",
+      "frozen_at": "2026-11-06T02:44:48.234Z",
       "interactions": [
         {
           "request": {
@@ -387,10 +387,9 @@
               "value": {
                 "data": {
                   "attributes": {
-                    "name": "Test Environment Test-Create_an_environment_returns_Created_response-1776888955",
+                    "name": "Invalid Query Test-Create_an_environment_returns_Bad_Request_response-1793933088",
                     "queries": [
-                      "test-Test-Create_an_environment_returns_Created_response-1776888955",
-                      "env-Test-Create_an_environment_returns_Created_response-1776888955"
+                      "staging-*"
                     ]
                   },
                   "type": "environments"
@@ -405,7 +404,146 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"e8d345e2-dca2-4270-912f-1189174ee338\",\"type\":\"environments\",\"attributes\":{\"is_production\":false,\"name\":\"Test Environment Test-Create_an_environment_returns_Created_response-1776888955\",\"queries\":[\"test-Test-Create_an_environment_returns_Created_response-1776888955\",\"env-Test-Create_an_environment_returns_Created_response-1776888955\"],\"require_feature_flag_approval\":false}}}"
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"invalid dd_env value \\\"staging-*\\\": 'staging-*' cannot contain wildcard characters (*)\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create an environment returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-11-06T02:44:50.009Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test Environment Test-Create_an_environment_returns_Conflict_response-1793933090",
+                    "queries": [
+                      "test-Test-Create_an_environment_returns_Conflict_response-1793933090",
+                      "env-Test-Create_an_environment_returns_Conflict_response-1793933090"
+                    ]
+                  },
+                  "type": "environments"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/feature-flags/environments",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"05bea707-02f8-4751-b470-9b728111427d\",\"type\":\"environments\",\"attributes\":{\"is_production\":false,\"name\":\"Test Environment Test-Create_an_environment_returns_Conflict_response-1793933090\",\"observe_full_evaluation_data\":false,\"queries\":[\"test-Test-Create_an_environment_returns_Conflict_response-1793933090\",\"env-Test-Create_an_environment_returns_Conflict_response-1793933090\"],\"require_feature_flag_approval\":false}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Duplicate Query Test-Create_an_environment_returns_Conflict_response-1793933090",
+                    "queries": [
+                      "test-Test-Create_an_environment_returns_Conflict_response-1793933090",
+                      "env-Test-Create_an_environment_returns_Conflict_response-1793933090"
+                    ]
+                  },
+                  "type": "environments"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/feature-flags/environments",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"409\",\"title\":\"Conflict\",\"detail\":\"the following dd_env values are already used in other environments: 'test-Test-Create_an_environment_returns_Conflict_response-1793933090' (already used in environment 'Test Environment Test-Create_an_environment_returns_Conflict_response-1793933090'), 'env-Test-Create_an_environment_returns_Conflict_response-1793933090' (already used in environment 'Test Environment Test-Create_an_environment_returns_Conflict_response-1793933090')\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Conflict",
+            "status": 409
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/feature-flags/environments/05bea707-02f8-4751-b470-9b728111427d",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create an environment returns \"Conflict\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-11-06T02:45:02.026Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test Environment Test-Create_an_environment_returns_Created_response-1793933102",
+                    "queries": [
+                      "test-Test-Create_an_environment_returns_Created_response-1793933102",
+                      "env-Test-Create_an_environment_returns_Created_response-1793933102"
+                    ]
+                  },
+                  "type": "environments"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/feature-flags/environments",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"c149b1d8-a53a-45da-ac06-69b43a15291e\",\"type\":\"environments\",\"attributes\":{\"is_production\":false,\"name\":\"Test Environment Test-Create_an_environment_returns_Created_response-1793933102\",\"observe_full_evaluation_data\":false,\"queries\":[\"test-Test-Create_an_environment_returns_Created_response-1793933102\",\"env-Test-Create_an_environment_returns_Created_response-1793933102\"],\"require_feature_flag_approval\":false}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -422,7 +560,7 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/feature-flags/environments/e8d345e2-dca2-4270-912f-1189174ee338",
+            "path": "/api/v2/feature-flags/environments/c149b1d8-a53a-45da-ac06-69b43a15291e",
             "query": []
           },
           "response": {
@@ -437,6 +575,163 @@
         }
       ],
       "scenario": "Create an environment returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-11-06T02:45:10.384Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Evaluation Privacy Test-Create_an_environment_with_full_evaluation_data_false_returns_Created_response-1793933110",
+                    "observe_full_evaluation_data": false,
+                    "queries": [
+                      "privacy-test-create_an_environment_with_full_evaluation_data_false_returns_created_response-1793933110"
+                    ]
+                  },
+                  "type": "environments"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/feature-flags/environments",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"8bccacf6-c4af-4348-80b7-89cc9270ee2c\",\"type\":\"environments\",\"attributes\":{\"is_production\":false,\"name\":\"Evaluation Privacy Test-Create_an_environment_with_full_evaluation_data_false_returns_Created_response-1793933110\",\"observe_full_evaluation_data\":false,\"queries\":[\"privacy-test-create_an_environment_with_full_evaluation_data_false_returns_created_response-1793933110\"],\"require_feature_flag_approval\":false}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/feature-flags/environments/8bccacf6-c4af-4348-80b7-89cc9270ee2c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create an environment with full evaluation data false returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-11-06T02:45:17.730Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Evaluation Privacy Test-Create_an_environment_with_full_evaluation_data_true_returns_Created_response-1793933117",
+                    "observe_full_evaluation_data": true,
+                    "queries": [
+                      "privacy-test-create_an_environment_with_full_evaluation_data_true_returns_created_response-1793933117"
+                    ]
+                  },
+                  "type": "environments"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/feature-flags/environments",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"80da35d0-20a8-4feb-9b7a-75445584389f\",\"type\":\"environments\",\"attributes\":{\"is_production\":false,\"name\":\"Evaluation Privacy Test-Create_an_environment_with_full_evaluation_data_true_returns_Created_response-1793933117\",\"observe_full_evaluation_data\":true,\"queries\":[\"privacy-test-create_an_environment_with_full_evaluation_data_true_returns_created_response-1793933117\"],\"require_feature_flag_approval\":false}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/feature-flags/environments/80da35d0-20a8-4feb-9b7a-75445584389f",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create an environment with full evaluation data true returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-11-06T02:45:25.325Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/feature-flags/environments/00000000-0000-0000-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"record not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete an environment returns \"Not Found\" response",
       "version": "v2"
     },
     {
@@ -629,6 +924,37 @@
         }
       ],
       "scenario": "Get a saved filter returns a saved list",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-11-06T02:45:25.815Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/feature-flags/environments/00000000-0000-0000-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"record not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get an environment returns \"Not Found\" response",
       "version": "v2"
     },
     {
@@ -5254,6 +5580,626 @@
         }
       ],
       "scenario": "Update a feature flag returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-11-06T02:45:26.090Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test Environment Test-Update_an_environment_returns_Bad_Request_response-1793933126",
+                    "queries": [
+                      "test-Test-Update_an_environment_returns_Bad_Request_response-1793933126",
+                      "env-Test-Update_an_environment_returns_Bad_Request_response-1793933126"
+                    ]
+                  },
+                  "type": "environments"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/feature-flags/environments",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"951aab7d-fa3b-458f-8be1-bb5b0b18412e\",\"type\":\"environments\",\"attributes\":{\"is_production\":false,\"name\":\"Test Environment Test-Update_an_environment_returns_Bad_Request_response-1793933126\",\"observe_full_evaluation_data\":false,\"queries\":[\"test-Test-Update_an_environment_returns_Bad_Request_response-1793933126\",\"env-Test-Update_an_environment_returns_Bad_Request_response-1793933126\"],\"require_feature_flag_approval\":false}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Missing Queries Test-Update_an_environment_returns_Bad_Request_response-1793933126"
+                  },
+                  "type": "environments"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/feature-flags/environments/951aab7d-fa3b-458f-8be1-bb5b0b18412e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"queries\\\" is required\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/feature-flags/environments/951aab7d-fa3b-458f-8be1-bb5b0b18412e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update an environment returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-11-06T02:45:47.522Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Missing Environment Test-Update_an_environment_returns_Not_Found_response-1793933147",
+                    "queries": [
+                      "missing-test-update_an_environment_returns_not_found_response-1793933147"
+                    ]
+                  },
+                  "type": "environments"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/feature-flags/environments/00000000-0000-0000-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"record not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Update an environment returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-11-06T02:45:47.769Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "is_production": true,
+                    "name": "Full Evaluation Data Test-Update_an_environment_to_disable_full_evaluation_data_returns_OK_response-1793933147",
+                    "observe_full_evaluation_data": true,
+                    "queries": [
+                      "full-evaluation-data-test-update_an_environment_to_disable_full_evaluation_data_returns_ok_response-1793933147"
+                    ],
+                    "require_feature_flag_approval": true
+                  },
+                  "type": "environments"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/feature-flags/environments",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"860f12c3-337d-4de2-9c69-e762c91d0714\",\"type\":\"environments\",\"attributes\":{\"is_production\":true,\"name\":\"Full Evaluation Data Test-Update_an_environment_to_disable_full_evaluation_data_returns_OK_response-1793933147\",\"observe_full_evaluation_data\":true,\"queries\":[\"full-evaluation-data-test-update_an_environment_to_disable_full_evaluation_data_returns_ok_response-1793933147\"],\"require_feature_flag_approval\":true}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Updated Privacy Test-Update_an_environment_to_disable_full_evaluation_data_returns_OK_response-1793933147",
+                    "observe_full_evaluation_data": false,
+                    "queries": [
+                      "updated-privacy-test-update_an_environment_to_disable_full_evaluation_data_returns_ok_response-1793933147"
+                    ]
+                  },
+                  "type": "environments"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/feature-flags/environments/860f12c3-337d-4de2-9c69-e762c91d0714",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"860f12c3-337d-4de2-9c69-e762c91d0714\",\"type\":\"environments\",\"attributes\":{\"is_production\":false,\"name\":\"Updated Privacy Test-Update_an_environment_to_disable_full_evaluation_data_returns_OK_response-1793933147\",\"observe_full_evaluation_data\":false,\"queries\":[\"updated-privacy-test-update_an_environment_to_disable_full_evaluation_data_returns_ok_response-1793933147\"],\"require_feature_flag_approval\":false}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/feature-flags/environments/860f12c3-337d-4de2-9c69-e762c91d0714",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update an environment to disable full evaluation data returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-11-06T02:45:53.272Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test Environment Test-Update_an_environment_to_enable_full_evaluation_data_returns_OK_response-1793933153",
+                    "queries": [
+                      "test-Test-Update_an_environment_to_enable_full_evaluation_data_returns_OK_response-1793933153",
+                      "env-Test-Update_an_environment_to_enable_full_evaluation_data_returns_OK_response-1793933153"
+                    ]
+                  },
+                  "type": "environments"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/feature-flags/environments",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"d8a4580c-a184-4d43-b229-c90eee7375d8\",\"type\":\"environments\",\"attributes\":{\"is_production\":false,\"name\":\"Test Environment Test-Update_an_environment_to_enable_full_evaluation_data_returns_OK_response-1793933153\",\"observe_full_evaluation_data\":false,\"queries\":[\"test-Test-Update_an_environment_to_enable_full_evaluation_data_returns_OK_response-1793933153\",\"env-Test-Update_an_environment_to_enable_full_evaluation_data_returns_OK_response-1793933153\"],\"require_feature_flag_approval\":false}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Updated Privacy Test-Update_an_environment_to_enable_full_evaluation_data_returns_OK_response-1793933153",
+                    "observe_full_evaluation_data": true,
+                    "queries": [
+                      "updated-privacy-test-update_an_environment_to_enable_full_evaluation_data_returns_ok_response-1793933153"
+                    ]
+                  },
+                  "type": "environments"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/feature-flags/environments/d8a4580c-a184-4d43-b229-c90eee7375d8",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"d8a4580c-a184-4d43-b229-c90eee7375d8\",\"type\":\"environments\",\"attributes\":{\"is_production\":false,\"name\":\"Updated Privacy Test-Update_an_environment_to_enable_full_evaluation_data_returns_OK_response-1793933153\",\"observe_full_evaluation_data\":true,\"queries\":[\"updated-privacy-test-update_an_environment_to_enable_full_evaluation_data_returns_ok_response-1793933153\"],\"require_feature_flag_approval\":false}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/feature-flags/environments/d8a4580c-a184-4d43-b229-c90eee7375d8",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update an environment to enable full evaluation data returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-11-06T02:45:57.986Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test Environment Test-Update_an_environment_to_preserve_disabled_full_evaluation_data_when_omitted_returns_OK_response-1793933157",
+                    "queries": [
+                      "test-Test-Update_an_environment_to_preserve_disabled_full_evaluation_data_when_omitted_returns_OK_response-1793933157",
+                      "env-Test-Update_an_environment_to_preserve_disabled_full_evaluation_data_when_omitted_returns_OK_response-1793933157"
+                    ]
+                  },
+                  "type": "environments"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/feature-flags/environments",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"651e270a-f68e-442c-9eb6-e142cd1e3d53\",\"type\":\"environments\",\"attributes\":{\"is_production\":false,\"name\":\"Test Environment Test-Update_an_environment_to_preserve_disabled_full_evaluation_data_when_omitted_returns_OK_response-1793933157\",\"observe_full_evaluation_data\":false,\"queries\":[\"test-Test-Update_an_environment_to_preserve_disabled_full_evaluation_data_when_omitted_returns_OK_response-1793933157\",\"env-Test-Update_an_environment_to_preserve_disabled_full_evaluation_data_when_omitted_returns_OK_response-1793933157\"],\"require_feature_flag_approval\":false}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Updated Privacy Test-Update_an_environment_to_preserve_disabled_full_evaluation_data_when_omitted_returns_OK_response-1793933157",
+                    "queries": [
+                      "updated-privacy-test-update_an_environment_to_preserve_disabled_full_evaluation_data_when_omitted_returns_ok_response-1793933157"
+                    ]
+                  },
+                  "type": "environments"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/feature-flags/environments/651e270a-f68e-442c-9eb6-e142cd1e3d53",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"651e270a-f68e-442c-9eb6-e142cd1e3d53\",\"type\":\"environments\",\"attributes\":{\"is_production\":false,\"name\":\"Updated Privacy Test-Update_an_environment_to_preserve_disabled_full_evaluation_data_when_omitted_returns_OK_response-1793933157\",\"observe_full_evaluation_data\":false,\"queries\":[\"updated-privacy-test-update_an_environment_to_preserve_disabled_full_evaluation_data_when_omitted_returns_ok_response-1793933157\"],\"require_feature_flag_approval\":false}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/feature-flags/environments/651e270a-f68e-442c-9eb6-e142cd1e3d53",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update an environment to preserve disabled full evaluation data when omitted returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-11-06T02:46:03.189Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "is_production": true,
+                    "name": "Full Evaluation Data Test-Update_an_environment_to_preserve_enabled_full_evaluation_data_when_omitted_returns_OK_response-1793933163",
+                    "observe_full_evaluation_data": true,
+                    "queries": [
+                      "full-evaluation-data-test-update_an_environment_to_preserve_enabled_full_evaluation_data_when_omitted_returns_ok_response-1793933163"
+                    ],
+                    "require_feature_flag_approval": true
+                  },
+                  "type": "environments"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/feature-flags/environments",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"860f6e26-63d4-4bf6-a38e-a935ab265c35\",\"type\":\"environments\",\"attributes\":{\"is_production\":true,\"name\":\"Full Evaluation Data Test-Update_an_environment_to_preserve_enabled_full_evaluation_data_when_omitted_returns_OK_response-1793933163\",\"observe_full_evaluation_data\":true,\"queries\":[\"full-evaluation-data-test-update_an_environment_to_preserve_enabled_full_evaluation_data_when_omitted_returns_ok_response-1793933163\"],\"require_feature_flag_approval\":true}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Updated Privacy Test-Update_an_environment_to_preserve_enabled_full_evaluation_data_when_omitted_returns_OK_response-1793933163",
+                    "queries": [
+                      "updated-privacy-test-update_an_environment_to_preserve_enabled_full_evaluation_data_when_omitted_returns_ok_response-1793933163"
+                    ]
+                  },
+                  "type": "environments"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/feature-flags/environments/860f6e26-63d4-4bf6-a38e-a935ab265c35",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"860f6e26-63d4-4bf6-a38e-a935ab265c35\",\"type\":\"environments\",\"attributes\":{\"is_production\":false,\"name\":\"Updated Privacy Test-Update_an_environment_to_preserve_enabled_full_evaluation_data_when_omitted_returns_OK_response-1793933163\",\"observe_full_evaluation_data\":true,\"queries\":[\"updated-privacy-test-update_an_environment_to_preserve_enabled_full_evaluation_data_when_omitted_returns_ok_response-1793933163\"],\"require_feature_flag_approval\":false}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/feature-flags/environments/860f6e26-63d4-4bf6-a38e-a935ab265c35",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update an environment to preserve enabled full evaluation data when omitted returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-11-06T02:46:07.867Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test Environment Test-Update_an_environment_without_a_name_returns_Bad_Request_response-1793933167",
+                    "queries": [
+                      "test-Test-Update_an_environment_without_a_name_returns_Bad_Request_response-1793933167",
+                      "env-Test-Update_an_environment_without_a_name_returns_Bad_Request_response-1793933167"
+                    ]
+                  },
+                  "type": "environments"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/feature-flags/environments",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"fe979089-d9f2-4e24-9559-d533fcd5e719\",\"type\":\"environments\",\"attributes\":{\"is_production\":false,\"name\":\"Test Environment Test-Update_an_environment_without_a_name_returns_Bad_Request_response-1793933167\",\"observe_full_evaluation_data\":false,\"queries\":[\"test-Test-Update_an_environment_without_a_name_returns_Bad_Request_response-1793933167\",\"env-Test-Update_an_environment_without_a_name_returns_Bad_Request_response-1793933167\"],\"require_feature_flag_approval\":false}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "observe_full_evaluation_data": true,
+                    "queries": [
+                      "missing-name-test-update_an_environment_without_a_name_returns_bad_request_response-1793933167"
+                    ]
+                  },
+                  "type": "environments"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/feature-flags/environments/fe979089-d9f2-4e24-9559-d533fcd5e719",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"name\\\" is required\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/feature-flags/environments/fe979089-d9f2-4e24-9559-d533fcd5e719",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update an environment without a name returns \"Bad Request\" response",
       "version": "v2"
     },
     {
