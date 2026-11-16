@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 from typing import Any, Dict
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -251,7 +252,9 @@ class KeyManagementApi:
         self,
         body: ApiKey,
     ) -> ApiKeyResponse:
-        """Create an API key.
+        """Create an API key. **Deprecated**.
+
+        This endpoint is deprecated. Use `Create an API key <https://docs.datadoghq.com/api/latest/key-management/#create-an-api-key>`_ ( ``POST /api/v2/api_keys`` ) instead.
 
         Creates an API key with a given name.
 
@@ -263,13 +266,16 @@ class KeyManagementApi:
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
+        warnings.warn("create_api_key is deprecated", DeprecationWarning, stacklevel=2)
         return self._create_api_key_endpoint.call_with_http_info(**kwargs)
 
     def create_application_key(
         self,
         body: ApplicationKey,
     ) -> ApplicationKeyResponse:
-        """Create an application key.
+        """Create an application key. **Deprecated**.
+
+        This endpoint is deprecated. Use `Create an application key for current user <https://docs.datadoghq.com/api/latest/key-management/#create-an-application-key-for-current-user>`_ ( ``POST /api/v2/current_user/application_keys`` ) instead.
 
         Create an application key with a given name.
         This endpoint is disabled for organizations in `One-Time Read mode <https://docs.datadoghq.com/account_management/api-app-keys/#one-time-read-mode>`_.
@@ -282,13 +288,16 @@ class KeyManagementApi:
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
 
+        warnings.warn("create_application_key is deprecated", DeprecationWarning, stacklevel=2)
         return self._create_application_key_endpoint.call_with_http_info(**kwargs)
 
     def delete_api_key(
         self,
         key: str,
     ) -> ApiKeyResponse:
-        """Delete an API key.
+        """Delete an API key. **Deprecated**.
+
+        This endpoint is deprecated. Use `Delete an API key <https://docs.datadoghq.com/api/latest/key-management/#delete-an-api-key>`_ ( ``DELETE /api/v2/api_keys/{api_key_id}`` ) instead.
 
         Delete a given API key.
 
@@ -301,13 +310,21 @@ class KeyManagementApi:
         kwargs: Dict[str, Any] = {}
         kwargs["key"] = key
 
+        warnings.warn("delete_api_key is deprecated", DeprecationWarning, stacklevel=2)
         return self._delete_api_key_endpoint.call_with_http_info(**kwargs)
 
     def delete_application_key(
         self,
         key: str,
     ) -> ApplicationKeyResponse:
-        """Delete an application key.
+        """Delete an application key. **Deprecated**.
+
+        This endpoint is deprecated. To delete your own application key, use
+        `Delete an application key owned by current user <https://docs.datadoghq.com/api/latest/key-management/#delete-an-application-key-owned-by-current-user>`_
+        ( ``DELETE /api/v2/current_user/application_keys/{app_key_id}`` ), which requires the ``user_app_keys`` permission.
+        To delete an application key for your organization, use
+        `Delete an application key <https://docs.datadoghq.com/api/latest/key-management/#delete-an-application-key>`_
+        ( ``DELETE /api/v2/application_keys/{app_key_id}`` ), which requires the ``org_app_keys_write`` permission.
 
         Delete a given application key.
         This endpoint is disabled for organizations in `One-Time Read mode <https://docs.datadoghq.com/account_management/api-app-keys/#one-time-read-mode>`_.
@@ -321,13 +338,16 @@ class KeyManagementApi:
         kwargs: Dict[str, Any] = {}
         kwargs["key"] = key
 
+        warnings.warn("delete_application_key is deprecated", DeprecationWarning, stacklevel=2)
         return self._delete_application_key_endpoint.call_with_http_info(**kwargs)
 
     def get_api_key(
         self,
         key: str,
     ) -> ApiKeyResponse:
-        """Get API key.
+        """Get API key. **Deprecated**.
+
+        This endpoint is deprecated. Use `Get API key <https://docs.datadoghq.com/api/latest/key-management/#get-api-key>`_ ( ``GET /api/v2/api_keys/{api_key_id}`` ) instead.
 
         Get a given API key.
 
@@ -340,13 +360,21 @@ class KeyManagementApi:
         kwargs: Dict[str, Any] = {}
         kwargs["key"] = key
 
+        warnings.warn("get_api_key is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_api_key_endpoint.call_with_http_info(**kwargs)
 
     def get_application_key(
         self,
         key: str,
     ) -> ApplicationKeyResponse:
-        """Get an application key.
+        """Get an application key. **Deprecated**.
+
+        This endpoint is deprecated. To get your own application key, use
+        `Get one application key owned by current user <https://docs.datadoghq.com/api/latest/key-management/#get-one-application-key-owned-by-current-user>`_
+        ( ``GET /api/v2/current_user/application_keys/{app_key_id}`` ), which requires the ``user_app_keys`` permission.
+        To get an application key for your organization, use
+        `Get an application key <https://docs.datadoghq.com/api/latest/key-management/#get-an-application-key>`_
+        ( ``GET /api/v2/application_keys/{app_key_id}`` ), which requires the ``org_app_keys_read`` permission.
 
         Get a given application key.
         This endpoint is disabled for organizations in `One-Time Read mode <https://docs.datadoghq.com/account_management/api-app-keys/#one-time-read-mode>`_.
@@ -360,12 +388,15 @@ class KeyManagementApi:
         kwargs: Dict[str, Any] = {}
         kwargs["key"] = key
 
+        warnings.warn("get_application_key is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_application_key_endpoint.call_with_http_info(**kwargs)
 
     def list_api_keys(
         self,
     ) -> ApiKeyListResponse:
-        """Get all API keys.
+        """Get all API keys. **Deprecated**.
+
+        This endpoint is deprecated. Use `Get all API keys <https://docs.datadoghq.com/api/latest/key-management/#get-all-api-keys>`_ ( ``GET /api/v2/api_keys`` ) instead.
 
         Get all API keys available for your account.
 
@@ -374,12 +405,20 @@ class KeyManagementApi:
         :rtype: ApiKeyListResponse
         """
         kwargs: Dict[str, Any] = {}
+        warnings.warn("list_api_keys is deprecated", DeprecationWarning, stacklevel=2)
         return self._list_api_keys_endpoint.call_with_http_info(**kwargs)
 
     def list_application_keys(
         self,
     ) -> ApplicationKeyListResponse:
-        """Get all application keys.
+        """Get all application keys. **Deprecated**.
+
+        This endpoint is deprecated. To list your own application keys, use
+        `Get all application keys owned by current user <https://docs.datadoghq.com/api/latest/key-management/#get-all-application-keys-owned-by-current-user>`_
+        ( ``GET /api/v2/current_user/application_keys`` ), which requires the ``user_app_keys`` permission.
+        To list application keys across your organization, use
+        `Get all application keys <https://docs.datadoghq.com/api/latest/key-management/#get-all-application-keys>`_
+        ( ``GET /api/v2/application_keys`` ), which requires the ``org_app_keys_read`` permission.
 
         Get all application keys available for your Datadog account.
         This endpoint is disabled for organizations in `One-Time Read mode <https://docs.datadoghq.com/account_management/api-app-keys/#one-time-read-mode>`_.
@@ -389,6 +428,7 @@ class KeyManagementApi:
         :rtype: ApplicationKeyListResponse
         """
         kwargs: Dict[str, Any] = {}
+        warnings.warn("list_application_keys is deprecated", DeprecationWarning, stacklevel=2)
         return self._list_application_keys_endpoint.call_with_http_info(**kwargs)
 
     def update_api_key(
@@ -396,7 +436,9 @@ class KeyManagementApi:
         key: str,
         body: ApiKey,
     ) -> ApiKeyResponse:
-        """Edit an API key.
+        """Edit an API key. **Deprecated**.
+
+        This endpoint is deprecated. Use `Edit an API key <https://docs.datadoghq.com/api/latest/key-management/#edit-an-api-key>`_ ( ``PATCH /api/v2/api_keys/{api_key_id}`` ) instead.
 
         Edit an API key name.
 
@@ -412,6 +454,7 @@ class KeyManagementApi:
 
         kwargs["body"] = body
 
+        warnings.warn("update_api_key is deprecated", DeprecationWarning, stacklevel=2)
         return self._update_api_key_endpoint.call_with_http_info(**kwargs)
 
     def update_application_key(
@@ -419,7 +462,14 @@ class KeyManagementApi:
         key: str,
         body: ApplicationKey,
     ) -> ApplicationKeyResponse:
-        """Edit an application key.
+        """Edit an application key. **Deprecated**.
+
+        This endpoint is deprecated. To edit your own application key, use
+        `Edit an application key owned by current user <https://docs.datadoghq.com/api/latest/key-management/#edit-an-application-key-owned-by-current-user>`_
+        ( ``PATCH /api/v2/current_user/application_keys/{app_key_id}`` ), which requires the ``user_app_keys`` permission.
+        To edit an application key for your organization, use
+        `Edit an application key <https://docs.datadoghq.com/api/latest/key-management/#edit-an-application-key>`_
+        ( ``PATCH /api/v2/application_keys/{app_key_id}`` ), which requires the ``org_app_keys_write`` permission.
 
         Edit an application key name.
         This endpoint is disabled for organizations in `One-Time Read mode <https://docs.datadoghq.com/account_management/api-app-keys/#one-time-read-mode>`_.
@@ -436,4 +486,5 @@ class KeyManagementApi:
 
         kwargs["body"] = body
 
+        warnings.warn("update_application_key is deprecated", DeprecationWarning, stacklevel=2)
         return self._update_application_key_endpoint.call_with_http_info(**kwargs)
