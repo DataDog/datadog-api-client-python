@@ -8,7 +8,10 @@ from datadog_api_client.v1.api.metrics_api import MetricsApi
 from datadog_api_client.v1.model.metric_metadata import MetricMetadata
 
 body = MetricMetadata(
+    description="Number of requests received.",
     per_unit="second",
+    short_name="requests",
+    statsd_interval=10,
     type="count",
     unit="byte",
 )

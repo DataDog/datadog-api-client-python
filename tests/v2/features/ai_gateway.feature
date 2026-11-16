@@ -184,7 +184,7 @@ Feature: AI Gateway
   Scenario: Create an AI Gateway rate limit returns "Bad Request" response
     Given operation "CreateAiGatewayRateLimit" enabled
     And new "CreateAiGatewayRateLimit" request
-    And body with value {"data": {"attributes": {"cost_microcents_per_minute": 100000000, "input_tokens_per_minute": null, "mode": "ALERT", "name": "Default rate limit", "output_tokens_per_minute": null, "requests_per_minute": 600, "selector": [{"dim": "user_id", "per_value": true, "values": ["11111111-1111-1111-1111-111111111111"]}], "team_id": "00000000-0000-4000-8000-000000000002", "user_id": "00000000-0000-4000-8000-000000000001"}, "type": "rate-limits"}}
+    And body with value {"data": {"attributes": {"cost_microcents_per_minute": 100000000, "input_tokens_per_minute": null, "mode": "ALERT", "name": "Default rate limit", "output_tokens_per_minute": null, "requests_per_minute": 600, "selector": [{"dim": "user_id", "per_value": true, "values": ["11111111-1111-1111-1111-111111111111"]}], "team_id": "00000000-0000-4000-8000-000000000002", "user_id": "00000000-0000-4000-8000-000000000001", "window_limits": [{"amount": 2000000000, "metric": "cost", "window": "24h"}]}, "type": "rate-limits"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -192,7 +192,7 @@ Feature: AI Gateway
   Scenario: Create an AI Gateway rate limit returns "Conflict" response
     Given operation "CreateAiGatewayRateLimit" enabled
     And new "CreateAiGatewayRateLimit" request
-    And body with value {"data": {"attributes": {"cost_microcents_per_minute": 100000000, "input_tokens_per_minute": null, "mode": "ALERT", "name": "Default rate limit", "output_tokens_per_minute": null, "requests_per_minute": 600, "selector": [{"dim": "user_id", "per_value": true, "values": ["11111111-1111-1111-1111-111111111111"]}], "team_id": "00000000-0000-4000-8000-000000000002", "user_id": "00000000-0000-4000-8000-000000000001"}, "type": "rate-limits"}}
+    And body with value {"data": {"attributes": {"cost_microcents_per_minute": 100000000, "input_tokens_per_minute": null, "mode": "ALERT", "name": "Default rate limit", "output_tokens_per_minute": null, "requests_per_minute": 600, "selector": [{"dim": "user_id", "per_value": true, "values": ["11111111-1111-1111-1111-111111111111"]}], "team_id": "00000000-0000-4000-8000-000000000002", "user_id": "00000000-0000-4000-8000-000000000001", "window_limits": [{"amount": 2000000000, "metric": "cost", "window": "24h"}]}, "type": "rate-limits"}}
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -200,7 +200,7 @@ Feature: AI Gateway
   Scenario: Create an AI Gateway rate limit returns "Created" response
     Given operation "CreateAiGatewayRateLimit" enabled
     And new "CreateAiGatewayRateLimit" request
-    And body with value {"data": {"attributes": {"cost_microcents_per_minute": 100000000, "input_tokens_per_minute": null, "mode": "ALERT", "name": "Default rate limit", "output_tokens_per_minute": null, "requests_per_minute": 600, "selector": [{"dim": "user_id", "per_value": true, "values": ["11111111-1111-1111-1111-111111111111"]}], "team_id": "00000000-0000-4000-8000-000000000002", "user_id": "00000000-0000-4000-8000-000000000001"}, "type": "rate-limits"}}
+    And body with value {"data": {"attributes": {"cost_microcents_per_minute": 100000000, "input_tokens_per_minute": null, "mode": "ALERT", "name": "Default rate limit", "output_tokens_per_minute": null, "requests_per_minute": 600, "selector": [{"dim": "user_id", "per_value": true, "values": ["11111111-1111-1111-1111-111111111111"]}], "team_id": "00000000-0000-4000-8000-000000000002", "user_id": "00000000-0000-4000-8000-000000000001", "window_limits": [{"amount": 2000000000, "metric": "cost", "window": "24h"}]}, "type": "rate-limits"}}
     When the request is sent
     Then the response status is 201 Created
 
@@ -1068,7 +1068,7 @@ Feature: AI Gateway
     Given operation "UpdateAiGatewayRateLimit" enabled
     And new "UpdateAiGatewayRateLimit" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"cost_microcents_per_minute": null, "input_tokens_per_minute": null, "mode": "ALERT", "output_tokens_per_minute": null, "requests_per_minute": null, "tags": null, "team_id": null, "user_id": null}, "id": "11111111-1111-1111-1111-111111111111", "type": "rate-limits"}}
+    And body with value {"data": {"attributes": {"cost_microcents_per_minute": null, "input_tokens_per_minute": null, "mode": "ALERT", "output_tokens_per_minute": null, "requests_per_minute": null, "tags": null, "team_id": null, "user_id": null, "window_limits": [{"amount": 2000000000, "metric": "cost", "window": "24h"}]}, "id": "11111111-1111-1111-1111-111111111111", "type": "rate-limits"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -1077,7 +1077,7 @@ Feature: AI Gateway
     Given operation "UpdateAiGatewayRateLimit" enabled
     And new "UpdateAiGatewayRateLimit" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"cost_microcents_per_minute": null, "input_tokens_per_minute": null, "mode": "ALERT", "output_tokens_per_minute": null, "requests_per_minute": null, "tags": null, "team_id": null, "user_id": null}, "id": "11111111-1111-1111-1111-111111111111", "type": "rate-limits"}}
+    And body with value {"data": {"attributes": {"cost_microcents_per_minute": null, "input_tokens_per_minute": null, "mode": "ALERT", "output_tokens_per_minute": null, "requests_per_minute": null, "tags": null, "team_id": null, "user_id": null, "window_limits": [{"amount": 2000000000, "metric": "cost", "window": "24h"}]}, "id": "11111111-1111-1111-1111-111111111111", "type": "rate-limits"}}
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -1086,7 +1086,7 @@ Feature: AI Gateway
     Given operation "UpdateAiGatewayRateLimit" enabled
     And new "UpdateAiGatewayRateLimit" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"cost_microcents_per_minute": null, "input_tokens_per_minute": null, "mode": "ALERT", "output_tokens_per_minute": null, "requests_per_minute": null, "tags": null, "team_id": null, "user_id": null}, "id": "11111111-1111-1111-1111-111111111111", "type": "rate-limits"}}
+    And body with value {"data": {"attributes": {"cost_microcents_per_minute": null, "input_tokens_per_minute": null, "mode": "ALERT", "output_tokens_per_minute": null, "requests_per_minute": null, "tags": null, "team_id": null, "user_id": null, "window_limits": [{"amount": 2000000000, "metric": "cost", "window": "24h"}]}, "id": "11111111-1111-1111-1111-111111111111", "type": "rate-limits"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -1095,7 +1095,7 @@ Feature: AI Gateway
     Given operation "UpdateAiGatewayRateLimit" enabled
     And new "UpdateAiGatewayRateLimit" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"cost_microcents_per_minute": null, "input_tokens_per_minute": null, "mode": "ALERT", "output_tokens_per_minute": null, "requests_per_minute": null, "tags": null, "team_id": null, "user_id": null}, "id": "11111111-1111-1111-1111-111111111111", "type": "rate-limits"}}
+    And body with value {"data": {"attributes": {"cost_microcents_per_minute": null, "input_tokens_per_minute": null, "mode": "ALERT", "output_tokens_per_minute": null, "requests_per_minute": null, "tags": null, "team_id": null, "user_id": null, "window_limits": [{"amount": 2000000000, "metric": "cost", "window": "24h"}]}, "id": "11111111-1111-1111-1111-111111111111", "type": "rate-limits"}}
     When the request is sent
     Then the response status is 200 OK
 
