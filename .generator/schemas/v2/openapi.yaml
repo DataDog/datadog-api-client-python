@@ -7287,7 +7287,10 @@ components:
         - avg_download_ms
       type: object
     AggregatedWaterfallPerformanceCriteria:
-      description: Performance criteria to filter view instances by a metric threshold.
+      description: |-
+        Performance criteria to filter view instances by a metric threshold. When criteria are
+        applied, specify at least one of `min` or `max`. When both are provided, `min` must be less
+        than `max`.
       properties:
         max:
           description: Maximum threshold in seconds (inclusive).
@@ -279378,7 +279381,8 @@ tags:
       url: https://docs.datadoghq.com/real_user_monitoring/
     name: RUM Config
   - description: |-
-      Get insights into the performance of your Real User Monitoring (RUM) applications over HTTP. See the [RUM & Session Replay page](https://docs.datadoghq.com/real_user_monitoring/) for more information
+      Get insights into the performance of your Real User Monitoring (RUM) applications over HTTP. See the [RUM &
+      Session Replay page](https://docs.datadoghq.com/real_user_monitoring/) for more information.
     name: RUM Insights
   - description: >-
       Configure Managed Archives for RUM applications. Your organization must have Managed Archives enabled.

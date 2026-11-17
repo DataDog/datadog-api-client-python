@@ -46,7 +46,9 @@ class AggregatedWaterfallPerformanceCriteria(ModelNormal):
         **kwargs,
     ):
         """
-        Performance criteria to filter view instances by a metric threshold.
+        Performance criteria to filter view instances by a metric threshold. When criteria are
+        applied, specify at least one of ``min`` or ``max``. When both are provided, ``min`` must be less
+        than ``max``.
 
         :param max: Maximum threshold in seconds (inclusive).
         :type max: float, optional
