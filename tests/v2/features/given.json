@@ -923,6 +923,18 @@
     "operationId": "CreateCoreWeaveCloudIntegrationAccount"
   },
   {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\"data\": {\"type\": \"integration-account\", \"attributes\": {\"name\": \"nebius-{{ unique }}\", \"authentication\": {\"auth_type\": \"nebius_service_account\", \"service_account_id\": \"serviceaccount-xxxxxxxx\", \"private_key\": \"-----BEGIN PRIVATE KEY-----MIIE...FAKE-----END PRIVATE KEY-----\"}, \"settings\": {\"tenant_id\": \"tenant-12345678\"}}}}"
+      }
+    ],
+    "step": "there is a valid \"nebius_cloud_integration_account\" in the system",
+    "key": "nebius_cloud_integration_account",
+    "tag": "Nebius Cloud Integration",
+    "operationId": "CreateNebiusCloudIntegrationAccount"
+  },
+  {
     "step": "there is an integrated AWS test account for WIF",
     "key": "aws_wif_account_v2",
     "tag": "AWS Integration",
