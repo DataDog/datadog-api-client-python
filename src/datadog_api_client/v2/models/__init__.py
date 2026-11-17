@@ -2511,6 +2511,11 @@ from datadog_api_client.v2.model.create_on_call_notification_rule_request import
 from datadog_api_client.v2.model.create_on_call_notification_rule_request_data import (
     CreateOnCallNotificationRuleRequestData,
 )
+from datadog_api_client.v2.model.create_on_call_page_comment_request import CreateOnCallPageCommentRequest
+from datadog_api_client.v2.model.create_on_call_page_comment_request_attributes import (
+    CreateOnCallPageCommentRequestAttributes,
+)
+from datadog_api_client.v2.model.create_on_call_page_comment_request_data import CreateOnCallPageCommentRequestData
 from datadog_api_client.v2.model.create_open_api_response import CreateOpenAPIResponse
 from datadog_api_client.v2.model.create_open_api_response_attributes import CreateOpenAPIResponseAttributes
 from datadog_api_client.v2.model.create_open_api_response_data import CreateOpenAPIResponseData
@@ -8910,6 +8915,7 @@ from datadog_api_client.v2.model.on_call_notification_rule_type import OnCallNot
 from datadog_api_client.v2.model.on_call_notification_rules_included import OnCallNotificationRulesIncluded
 from datadog_api_client.v2.model.on_call_page_author_relationship import OnCallPageAuthorRelationship
 from datadog_api_client.v2.model.on_call_page_author_relationship_data import OnCallPageAuthorRelationshipData
+from datadog_api_client.v2.model.on_call_page_comment_type import OnCallPageCommentType
 from datadog_api_client.v2.model.on_call_page_data import OnCallPageData
 from datadog_api_client.v2.model.on_call_page_data_attributes import OnCallPageDataAttributes
 from datadog_api_client.v2.model.on_call_page_data_relationships import OnCallPageDataRelationships
@@ -16109,6 +16115,9 @@ __all__ = [
     "CreateNotificationRuleParametersDataAttributes",
     "CreateOnCallNotificationRuleRequest",
     "CreateOnCallNotificationRuleRequestData",
+    "CreateOnCallPageCommentRequest",
+    "CreateOnCallPageCommentRequestAttributes",
+    "CreateOnCallPageCommentRequestData",
     "CreateOpenAPIResponse",
     "CreateOpenAPIResponseAttributes",
     "CreateOpenAPIResponseData",
@@ -20146,6 +20155,7 @@ __all__ = [
     "OnCallNotificationRulesIncluded",
     "OnCallPageAuthorRelationship",
     "OnCallPageAuthorRelationshipData",
+    "OnCallPageCommentType",
     "OnCallPageData",
     "OnCallPageDataAttributes",
     "OnCallPageDataRelationships",
