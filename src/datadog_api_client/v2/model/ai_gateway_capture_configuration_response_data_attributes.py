@@ -55,7 +55,7 @@ class AiGatewayCaptureConfigurationResponseDataAttributes(ModelNormal):
         """
         Organization default mode, scoped overrides, and current configuration revision.
 
-        :param configuration_revision: Opaque revision of the organization default and all overrides. Writes require the revision returned by a current read or preview.
+        :param configuration_revision: Opaque revision of the organization default and all overrides, including hidden overrides. Writes require the revision returned by a current read or preview.
         :type configuration_revision: str
 
         :param default_metadata_capture: Items Metadata-only capture adds, each listed once. An item requires the items whose information it already reveals: ``tool_output_size`` , ``tool_names`` and ``conversation_shape`` require ``tool_usage`` , and ``input_size_by_role`` requires ``tool_output_size``. A set that leaves out a required item is rejected. When several Metadata-only overrides match a request, it gets only the items all of them select.
@@ -64,7 +64,7 @@ class AiGatewayCaptureConfigurationResponseDataAttributes(ModelNormal):
         :param default_mode: Default capture mode for the organization. Change it in **Org defaults**.
         :type default_mode: AiGatewayCaptureConfigurationResponseDataAttributesDefaultMode
 
-        :param overrides: Scoped overrides currently configured for the organization.
+        :param overrides: Overrides the caller can View. Hidden overrides still apply to traffic; an empty list does not prove that no overrides exist.
         :type overrides: [AiGatewayCaptureOverride]
         """
         if default_metadata_capture is not unset:

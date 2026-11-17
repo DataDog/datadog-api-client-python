@@ -1619,7 +1619,7 @@ class AIGatewayApi:
     ) -> AiGatewayCaptureOverrideResponse:
         """Create an AI Gateway data capture override.
 
-        Create a scoped override with a client-generated UUID and the current ``configuration_revision``. If the override can enable full capture for more traffic, set ``confirm_full_capture`` to ``true``. Returns HTTP 409 when ``configuration_revision`` is stale, the UUID already exists, or the organization has 100 overrides. Missing ``configuration_revision`` or required full-capture confirmation returns HTTP 400. Retrying an accepted create with the same UUID returns HTTP 409. To undo a create, read the current configuration revision and delete the override using its returned override revision.
+        Create a scoped override with a client-generated UUID and the current ``configuration_revision``. If the override can enable full capture for more traffic, set ``confirm_full_capture`` to ``true``. Returns HTTP 409 when ``configuration_revision`` is stale, the UUID already exists, or the organization has 100 overrides. Missing ``configuration_revision`` or required full-capture confirmation returns HTTP 400. Retrying an accepted create with the same UUID returns HTTP 409. To undo a create, read the current configuration revision and delete the override using its returned override revision. Requires ``ai_gateway_config_write``. Restriction policies are saved separately after the returned UUID and revision acknowledge creation. A lost response is an unknown outcome; absence from a filtered configuration response does not prove creation failed.
 
         :type body: AiGatewayCaptureCreateRequest
         :rtype: AiGatewayCaptureOverrideResponse
@@ -1746,7 +1746,7 @@ class AIGatewayApi:
     ) -> None:
         """Delete an AI Gateway data capture override.
 
-        Delete an override using its ``revision`` and the current ``configuration_revision``. If deleting the override can enable full capture for affected traffic, set ``confirm_full_capture`` to ``true``. Returns HTTP 409 when ``configuration_revision`` or the override ``revision`` is stale, including a concurrent change during deletion. Missing revisions or required full-capture confirmation returns HTTP 400.
+        Delete an override using its ``revision`` and the current ``configuration_revision``. If deleting the override can enable full capture for affected traffic, set ``confirm_full_capture`` to ``true``. Returns HTTP 409 when ``configuration_revision`` or the override ``revision`` is stale, including a concurrent change during deletion. Missing revisions or required full-capture confirmation returns HTTP 400. Requires ``ai_gateway_config_write`` and View and Edit access to this override. Hidden overrides return HTTP 404; visible overrides without Edit return HTTP 403. Authorization failures return HTTP 503. If permission cleanup fails after the deletion is committed, the response is HTTP 500 with code ``deletion_permission_cleanup_failed`` , ``meta.configuration_deleted=true`` , and ``meta.permissions_cleanup_failed=true``. Do not retry the deletion.
 
         :param id: Data capture override ID.
         :type id: UUID
@@ -1980,7 +1980,7 @@ class AIGatewayApi:
     ) -> AiGatewayCaptureConfigurationResponse:
         """Get the AI Gateway data capture configuration.
 
-        Get the organization default mode, scoped capture overrides, and configuration revision.
+        Get the organization default mode, scoped capture overrides, and configuration revision. Requires ``ai_gateway_config_read``. Only overrides the caller can View are returned. Hidden overrides remain effective and contribute to ``configuration_revision``. An override missing from the response is not necessarily deleted.
 
         :rtype: AiGatewayCaptureConfigurationResponse
         """
@@ -2531,7 +2531,7 @@ class AIGatewayApi:
     ) -> AiGatewayCaptureOverrideResponse:
         """Replace an AI Gateway data capture override.
 
-        Replace an override using its ``revision`` and the current ``configuration_revision``. Changes to capture overrides don't affect routing rules. Returns HTTP 409 when ``configuration_revision`` or the override ``revision`` is stale, including a concurrent change during replacement. Missing revisions or required full-capture confirmation returns HTTP 400.
+        Replace an override using its ``revision`` and the current ``configuration_revision``. Changes to capture overrides don't affect routing rules. Returns HTTP 409 when ``configuration_revision`` or the override ``revision`` is stale, including a concurrent change during replacement. Missing revisions or required full-capture confirmation returns HTTP 400. Requires ``ai_gateway_config_write`` and View and Edit access to this override. Hidden overrides return HTTP 404; visible overrides without Edit return HTTP 403. Authorization failures return HTTP 503. The returned UUID and revision acknowledge the saved configuration even if the caller can no longer list it. Restriction policies are saved separately.
 
         :param id: Data capture override ID.
         :type id: UUID
