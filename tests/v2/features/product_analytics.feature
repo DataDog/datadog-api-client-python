@@ -172,6 +172,182 @@ Feature: Product Analytics
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:ddoghq/product-analytics-activation @team:ddoghq/product-analytics-query
+  Scenario: Create a Product Analytics launch returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "CreateProductAnalyticsLaunch" enabled
+    And new "CreateProductAnalyticsLaunch" request
+    And body with value {"data": {"attributes": {"context": "Let users apply promo codes at checkout.", "description": "Promo codes at checkout.", "kpis": [{"id": "7c1e6a52-3a8f-4d4e-9a55-2f1d1c8b6a10", "title": "Checkout conversion rate"}], "name": "checkout_promo_codes", "phase": "plan", "steps": {"tracking_plan": {"events": [{"kpis": ["7c1e6a52-3a8f-4d4e-9a55-2f1d1c8b6a10"], "name": "promo_code_applied", "trigger": "The user applies a valid promo code.", "views": ["/checkout"]}]}}}, "type": "liftoff"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/product-analytics-activation @team:ddoghq/product-analytics-query
+  Scenario: Create a Product Analytics launch returns "Created" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "CreateProductAnalyticsLaunch" enabled
+    And new "CreateProductAnalyticsLaunch" request
+    And body with value {"data": {"attributes": {"context": "Let users apply promo codes at checkout.", "description": "Promo codes at checkout.", "kpis": [{"id": "7c1e6a52-3a8f-4d4e-9a55-2f1d1c8b6a10", "title": "Checkout conversion rate"}], "name": "checkout_promo_codes", "phase": "plan", "steps": {"tracking_plan": {"events": [{"kpis": ["7c1e6a52-3a8f-4d4e-9a55-2f1d1c8b6a10"], "name": "promo_code_applied", "trigger": "The user applies a valid promo code.", "views": ["/checkout"]}]}}}, "type": "liftoff"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:ddoghq/product-analytics-ingestion
+  Scenario: Create a Product Analytics monitor returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "CreateProductAnalyticsMonitor" enabled
+    And new "CreateProductAnalyticsMonitor" request
+    And body with value {"data": {"attributes": {"message": "Conversion from /a to /b dropped over the last hour\n\n@slack-my-alerts-channel", "name": "Funnel conversion drop", "options": {"thresholds": {"critical": 1, "warning": 2}, "variables": [{"data_source": "product_analytics_journey", "name": "query", "search": {"expression": "node_0->node_1", "filters": {"graph_filters": [{"name": "__dd.time_to_convert", "operator": "<=", "value": 86400000}]}, "join_keys": {"primary": "@usr.id"}, "node_objects": {"node_0": {"data_source": "product_analytics", "search": {"query": "@type:view @view.name:/a"}}, "node_1": {"data_source": "product_analytics", "search": {"query": "@type:view @view.name:/b"}}}}}]}, "priority": 3, "query": "formula(\"query\").rollup(\"sum\").last(\"1h\") < 1", "tags": {"chart_id": "chart-1", "query_type": "funnel"}}, "type": "pa_monitor_request"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/product-analytics-ingestion
+  Scenario: Create a Product Analytics monitor returns "Created" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "CreateProductAnalyticsMonitor" enabled
+    And new "CreateProductAnalyticsMonitor" request
+    And body with value {"data": {"attributes": {"message": "Conversion from /a to /b dropped over the last hour\n\n@slack-my-alerts-channel", "name": "Funnel conversion drop", "options": {"thresholds": {"critical": 1, "warning": 2}, "variables": [{"data_source": "product_analytics_journey", "name": "query", "search": {"expression": "node_0->node_1", "filters": {"graph_filters": [{"name": "__dd.time_to_convert", "operator": "<=", "value": 86400000}]}, "join_keys": {"primary": "@usr.id"}, "node_objects": {"node_0": {"data_source": "product_analytics", "search": {"query": "@type:view @view.name:/a"}}, "node_1": {"data_source": "product_analytics", "search": {"query": "@type:view @view.name:/b"}}}}}]}, "priority": 3, "query": "formula(\"query\").rollup(\"sum\").last(\"1h\") < 1", "tags": {"chart_id": "chart-1", "query_type": "funnel"}}, "type": "pa_monitor_request"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:ddoghq/product-analytics-activation @team:ddoghq/product-analytics-query
+  Scenario: Delete a Product Analytics launch returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "DeleteProductAnalyticsLaunch" enabled
+    And new "DeleteProductAnalyticsLaunch" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/product-analytics-activation @team:ddoghq/product-analytics-query
+  Scenario: Delete a Product Analytics launch returns "No Content" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "DeleteProductAnalyticsLaunch" enabled
+    And new "DeleteProductAnalyticsLaunch" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:ddoghq/product-analytics-activation @team:ddoghq/product-analytics-query
+  Scenario: Delete a Product Analytics launch returns "Not Found" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "DeleteProductAnalyticsLaunch" enabled
+    And new "DeleteProductAnalyticsLaunch" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/product-analytics-ingestion
+  Scenario: Delete a Product Analytics monitor returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "DeleteProductAnalyticsMonitor" enabled
+    And new "DeleteProductAnalyticsMonitor" request
+    And request contains "monitor_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/product-analytics-ingestion
+  Scenario: Delete a Product Analytics monitor returns "No Content" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "DeleteProductAnalyticsMonitor" enabled
+    And new "DeleteProductAnalyticsMonitor" request
+    And request contains "monitor_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:ddoghq/product-analytics-ingestion
+  Scenario: Delete a Product Analytics monitor returns "Not Found" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "DeleteProductAnalyticsMonitor" enabled
+    And new "DeleteProductAnalyticsMonitor" request
+    And request contains "monitor_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/product-analytics-activation @team:ddoghq/product-analytics-query
+  Scenario: Get a Product Analytics launch returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "GetProductAnalyticsLaunch" enabled
+    And new "GetProductAnalyticsLaunch" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/product-analytics-activation @team:ddoghq/product-analytics-query
+  Scenario: Get a Product Analytics launch returns "Not Found" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "GetProductAnalyticsLaunch" enabled
+    And new "GetProductAnalyticsLaunch" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/product-analytics-activation @team:ddoghq/product-analytics-query
+  Scenario: Get a Product Analytics launch returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "GetProductAnalyticsLaunch" enabled
+    And new "GetProductAnalyticsLaunch" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/product-analytics-ingestion
+  Scenario: Get a Product Analytics monitor returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "GetProductAnalyticsMonitor" enabled
+    And new "GetProductAnalyticsMonitor" request
+    And request contains "monitor_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/product-analytics-ingestion
+  Scenario: Get a Product Analytics monitor returns "Not Found" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "GetProductAnalyticsMonitor" enabled
+    And new "GetProductAnalyticsMonitor" request
+    And request contains "monitor_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/product-analytics-ingestion
+  Scenario: Get a Product Analytics monitor returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "GetProductAnalyticsMonitor" enabled
+    And new "GetProductAnalyticsMonitor" request
+    And request contains "monitor_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/product-analytics-activation @team:ddoghq/product-analytics-query
+  Scenario: List Product Analytics launches returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "ListProductAnalyticsLaunches" enabled
+    And new "ListProductAnalyticsLaunches" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/product-analytics-activation @team:ddoghq/product-analytics-query
+  Scenario: List Product Analytics launches returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "ListProductAnalyticsLaunches" enabled
+    And new "ListProductAnalyticsLaunches" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/product-analytics-ingestion
+  Scenario: List Product Analytics monitors returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "ListProductAnalyticsMonitors" enabled
+    And new "ListProductAnalyticsMonitors" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/product-analytics-ingestion
+  Scenario: List Product Analytics monitors returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "ListProductAnalyticsMonitors" enabled
+    And new "ListProductAnalyticsMonitors" request
+    When the request is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:ddoghq/product-analytics-platform
   Scenario: List analytics events returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
@@ -253,3 +429,113 @@ Feature: Product Analytics
     And body with value {"account": {"id": "account-67890"}, "application": {"id": "123abcde-123a-123b-1234-123456789abc"}, "event": {"name": "payment.processed"}, "session": {"id": "session-abcdef"}, "type": "server", "usr": {"id": "user-12345"}}
     When the request is sent
     Then the response status is 202 Request accepted for processing (always 202 empty JSON).
+
+  @generated @skip @team:ddoghq/product-analytics-ingestion
+  Scenario: Unlink a Product Analytics monitor from its chart returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "RemoveChartFromProductAnalyticsMonitor" enabled
+    And new "RemoveChartFromProductAnalyticsMonitor" request
+    And request contains "monitor_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"chart_id": "chart-1", "dashboard_id": "dash-1"}, "type": "pa_monitor_unlink_request"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/product-analytics-ingestion
+  Scenario: Unlink a Product Analytics monitor from its chart returns "Conflict" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "RemoveChartFromProductAnalyticsMonitor" enabled
+    And new "RemoveChartFromProductAnalyticsMonitor" request
+    And request contains "monitor_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"chart_id": "chart-1", "dashboard_id": "dash-1"}, "type": "pa_monitor_unlink_request"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:ddoghq/product-analytics-ingestion
+  Scenario: Unlink a Product Analytics monitor from its chart returns "No Content" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "RemoveChartFromProductAnalyticsMonitor" enabled
+    And new "RemoveChartFromProductAnalyticsMonitor" request
+    And request contains "monitor_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"chart_id": "chart-1", "dashboard_id": "dash-1"}, "type": "pa_monitor_unlink_request"}}
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:ddoghq/product-analytics-ingestion
+  Scenario: Unlink a Product Analytics monitor from its chart returns "Not Found" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "RemoveChartFromProductAnalyticsMonitor" enabled
+    And new "RemoveChartFromProductAnalyticsMonitor" request
+    And request contains "monitor_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"chart_id": "chart-1", "dashboard_id": "dash-1"}, "type": "pa_monitor_unlink_request"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/product-analytics-activation @team:ddoghq/product-analytics-query
+  Scenario: Update a Product Analytics launch returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "UpdateProductAnalyticsLaunch" enabled
+    And new "UpdateProductAnalyticsLaunch" request
+    And request contains "id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"phase": "setup"}, "id": "5e3c7a1b-2d4f-4e6a-8b9c-0d1e2f3a4b5c", "type": "liftoff"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/product-analytics-activation @team:ddoghq/product-analytics-query
+  Scenario: Update a Product Analytics launch returns "Conflict" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "UpdateProductAnalyticsLaunch" enabled
+    And new "UpdateProductAnalyticsLaunch" request
+    And request contains "id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"phase": "setup"}, "id": "5e3c7a1b-2d4f-4e6a-8b9c-0d1e2f3a4b5c", "type": "liftoff"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:ddoghq/product-analytics-activation @team:ddoghq/product-analytics-query
+  Scenario: Update a Product Analytics launch returns "Not Found" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "UpdateProductAnalyticsLaunch" enabled
+    And new "UpdateProductAnalyticsLaunch" request
+    And request contains "id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"phase": "setup"}, "id": "5e3c7a1b-2d4f-4e6a-8b9c-0d1e2f3a4b5c", "type": "liftoff"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/product-analytics-activation @team:ddoghq/product-analytics-query
+  Scenario: Update a Product Analytics launch returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "UpdateProductAnalyticsLaunch" enabled
+    And new "UpdateProductAnalyticsLaunch" request
+    And request contains "id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"phase": "setup"}, "id": "5e3c7a1b-2d4f-4e6a-8b9c-0d1e2f3a4b5c", "type": "liftoff"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/product-analytics-ingestion
+  Scenario: Update a Product Analytics monitor returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "UpdateProductAnalyticsMonitor" enabled
+    And new "UpdateProductAnalyticsMonitor" request
+    And request contains "monitor_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"name": "Funnel conversion drop", "options": {"thresholds": {"critical": 1, "warning": 1.5}}}, "type": "pa_monitor_request"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/product-analytics-ingestion
+  Scenario: Update a Product Analytics monitor returns "Not Found" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "UpdateProductAnalyticsMonitor" enabled
+    And new "UpdateProductAnalyticsMonitor" request
+    And request contains "monitor_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"name": "Funnel conversion drop", "options": {"thresholds": {"critical": 1, "warning": 1.5}}}, "type": "pa_monitor_request"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/product-analytics-ingestion
+  Scenario: Update a Product Analytics monitor returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "UpdateProductAnalyticsMonitor" enabled
+    And new "UpdateProductAnalyticsMonitor" request
+    And request contains "monitor_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"name": "Funnel conversion drop", "options": {"thresholds": {"critical": 1, "warning": 1.5}}}, "type": "pa_monitor_request"}}
+    When the request is sent
+    Then the response status is 200 OK

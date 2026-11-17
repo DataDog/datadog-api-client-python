@@ -3,10 +3,14 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Any, Dict
+from typing import Any, Dict, List, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
+from datadog_api_client.model_utils import (
+    UnsetType,
+    unset,
+)
 from datadog_api_client.v2.model.product_analytics_server_side_event_item import ProductAnalyticsServerSideEventItem
 from datadog_api_client.v2.model.product_analytics_analytics_list_response import ProductAnalyticsAnalyticsListResponse
 from datadog_api_client.v2.model.product_analytics_analytics_list_request import ProductAnalyticsAnalyticsListRequest
@@ -23,6 +27,17 @@ from datadog_api_client.v2.model.product_analytics_journey_timeseries_response i
     ProductAnalyticsJourneyTimeseriesResponse,
 )
 from datadog_api_client.v2.model.product_analytics_formula_journey_request import ProductAnalyticsFormulaJourneyRequest
+from datadog_api_client.v2.model.product_analytics_launches_response import ProductAnalyticsLaunchesResponse
+from datadog_api_client.v2.model.product_analytics_launch_list_scope import ProductAnalyticsLaunchListScope
+from datadog_api_client.v2.model.product_analytics_launch_phase import ProductAnalyticsLaunchPhase
+from datadog_api_client.v2.model.product_analytics_launch_response import ProductAnalyticsLaunchResponse
+from datadog_api_client.v2.model.product_analytics_launch_create_request import ProductAnalyticsLaunchCreateRequest
+from datadog_api_client.v2.model.product_analytics_launch_patch_request import ProductAnalyticsLaunchPatchRequest
+from datadog_api_client.v2.model.product_analytics_monitor_list_response import ProductAnalyticsMonitorListResponse
+from datadog_api_client.v2.model.product_analytics_monitor_response import ProductAnalyticsMonitorResponse
+from datadog_api_client.v2.model.product_analytics_monitor_create_request import ProductAnalyticsMonitorCreateRequest
+from datadog_api_client.v2.model.product_analytics_monitor_update_request import ProductAnalyticsMonitorUpdateRequest
+from datadog_api_client.v2.model.product_analytics_monitor_unlink_request import ProductAnalyticsMonitorUnlinkRequest
 from datadog_api_client.v2.model.product_analytics_retention_grid_response import ProductAnalyticsRetentionGridResponse
 from datadog_api_client.v2.model.product_analytics_retention_grid_request import ProductAnalyticsRetentionGridRequest
 from datadog_api_client.v2.model.product_analytics_retention_list_response import ProductAnalyticsRetentionListResponse
@@ -48,6 +63,225 @@ class ProductAnalyticsApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._create_product_analytics_launch_endpoint = _Endpoint(
+            settings={
+                "response_type": (ProductAnalyticsLaunchResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/product-analytics/launches",
+                "operation_id": "create_product_analytics_launch",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (ProductAnalyticsLaunchCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_product_analytics_monitor_endpoint = _Endpoint(
+            settings={
+                "response_type": (ProductAnalyticsMonitorResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/product-analytics/monitors",
+                "operation_id": "create_product_analytics_monitor",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (ProductAnalyticsMonitorCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._delete_product_analytics_launch_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/product-analytics/launches/{id}",
+                "operation_id": "delete_product_analytics_launch",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_product_analytics_monitor_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/product-analytics/monitors/{monitor_id}",
+                "operation_id": "delete_product_analytics_monitor",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "monitor_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "monitor_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_product_analytics_launch_endpoint = _Endpoint(
+            settings={
+                "response_type": (ProductAnalyticsLaunchResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/product-analytics/launches/{id}",
+                "operation_id": "get_product_analytics_launch",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_product_analytics_monitor_endpoint = _Endpoint(
+            settings={
+                "response_type": (ProductAnalyticsMonitorResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/product-analytics/monitors/{monitor_id}",
+                "operation_id": "get_product_analytics_monitor",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "monitor_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "monitor_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_product_analytics_launches_endpoint = _Endpoint(
+            settings={
+                "response_type": (ProductAnalyticsLaunchesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/product-analytics/launches",
+                "operation_id": "list_product_analytics_launches",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "sort": {
+                    "openapi_types": (str,),
+                    "attribute": "sort",
+                    "location": "query",
+                },
+                "scope": {
+                    "openapi_types": (ProductAnalyticsLaunchListScope,),
+                    "attribute": "scope",
+                    "location": "query",
+                },
+                "phase": {
+                    "openapi_types": ([ProductAnalyticsLaunchPhase],),
+                    "attribute": "phase",
+                    "location": "query",
+                    "collection_format": "multi",
+                },
+                "application_id": {
+                    "openapi_types": (str,),
+                    "attribute": "application_id",
+                    "location": "query",
+                },
+                "name": {
+                    "openapi_types": (str,),
+                    "attribute": "name",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_product_analytics_monitors_endpoint = _Endpoint(
+            settings={
+                "response_type": (ProductAnalyticsMonitorListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/product-analytics/monitors",
+                "operation_id": "list_product_analytics_monitors",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "page_size": {
+                    "validation": {
+                        "inclusive_maximum": 1000,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+                "page_number": {
+                    "validation": {
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
+                },
+                "chart_id": {
+                    "openapi_types": (str,),
+                    "attribute": "chart_id",
+                    "location": "query",
+                },
+                "dashboard_id": {
+                    "openapi_types": (str,),
+                    "attribute": "dashboard_id",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
 
         self._query_product_analytics_journey_funnel_endpoint = _Endpoint(
             settings={
@@ -289,6 +523,32 @@ class ProductAnalyticsApi:
             api_client=api_client,
         )
 
+        self._remove_chart_from_product_analytics_monitor_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/product-analytics/monitors/{monitor_id}/unlink",
+                "operation_id": "remove_chart_from_product_analytics_monitor",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "monitor_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "monitor_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (ProductAnalyticsMonitorUnlinkRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._submit_product_analytics_event_endpoint = _Endpoint(
             settings={
                 "response_type": (dict,),
@@ -354,6 +614,249 @@ class ProductAnalyticsApi:
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
+
+        self._update_product_analytics_launch_endpoint = _Endpoint(
+            settings={
+                "response_type": (ProductAnalyticsLaunchResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/product-analytics/launches/{id}",
+                "operation_id": "update_product_analytics_launch",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (ProductAnalyticsLaunchPatchRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_product_analytics_monitor_endpoint = _Endpoint(
+            settings={
+                "response_type": (ProductAnalyticsMonitorResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth"],
+                "endpoint_path": "/api/v2/product-analytics/monitors/{monitor_id}",
+                "operation_id": "update_product_analytics_monitor",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "monitor_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "monitor_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (ProductAnalyticsMonitorUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+    def create_product_analytics_launch(
+        self,
+        body: ProductAnalyticsLaunchCreateRequest,
+    ) -> ProductAnalyticsLaunchResponse:
+        """Create a Product Analytics launch.
+
+        Create a Product Analytics launch and its tracking plan.
+        The tracking plan lists the events and event properties to instrument. Events can only reference properties
+        and KPIs defined in the launch.
+
+        :type body: ProductAnalyticsLaunchCreateRequest
+        :rtype: ProductAnalyticsLaunchResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_product_analytics_launch_endpoint.call_with_http_info(**kwargs)
+
+    def create_product_analytics_monitor(
+        self,
+        body: ProductAnalyticsMonitorCreateRequest,
+    ) -> ProductAnalyticsMonitorResponse:
+        """Create a Product Analytics monitor.
+
+        Create a Product Analytics monitor that alerts on a Product Analytics query, such as a funnel conversion rate.
+        Link it to the chart it was created from with the ``chart_id`` and ``dashboard_id`` tags.
+
+        :type body: ProductAnalyticsMonitorCreateRequest
+        :rtype: ProductAnalyticsMonitorResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_product_analytics_monitor_endpoint.call_with_http_info(**kwargs)
+
+    def delete_product_analytics_launch(
+        self,
+        id: str,
+    ) -> None:
+        """Delete a Product Analytics launch.
+
+        Delete a Product Analytics launch and its tracking plan.
+
+        :param id: UUID of the launch.
+        :type id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["id"] = id
+
+        return self._delete_product_analytics_launch_endpoint.call_with_http_info(**kwargs)
+
+    def delete_product_analytics_monitor(
+        self,
+        monitor_id: str,
+    ) -> None:
+        """Delete a Product Analytics monitor.
+
+        Delete a Product Analytics monitor.
+
+        :param monitor_id: Numeric ID of the monitor.
+        :type monitor_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["monitor_id"] = monitor_id
+
+        return self._delete_product_analytics_monitor_endpoint.call_with_http_info(**kwargs)
+
+    def get_product_analytics_launch(
+        self,
+        id: str,
+    ) -> ProductAnalyticsLaunchResponse:
+        """Get a Product Analytics launch.
+
+        Get a Product Analytics launch and its tracking plan by UUID.
+
+        :param id: UUID of the launch.
+        :type id: str
+        :rtype: ProductAnalyticsLaunchResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["id"] = id
+
+        return self._get_product_analytics_launch_endpoint.call_with_http_info(**kwargs)
+
+    def get_product_analytics_monitor(
+        self,
+        monitor_id: str,
+    ) -> ProductAnalyticsMonitorResponse:
+        """Get a Product Analytics monitor.
+
+        Get a Product Analytics monitor by its ID.
+
+        :param monitor_id: Numeric ID of the monitor.
+        :type monitor_id: str
+        :rtype: ProductAnalyticsMonitorResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["monitor_id"] = monitor_id
+
+        return self._get_product_analytics_monitor_endpoint.call_with_http_info(**kwargs)
+
+    def list_product_analytics_launches(
+        self,
+        *,
+        sort: Union[str, UnsetType] = unset,
+        scope: Union[ProductAnalyticsLaunchListScope, UnsetType] = unset,
+        phase: Union[List[ProductAnalyticsLaunchPhase], UnsetType] = unset,
+        application_id: Union[str, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
+    ) -> ProductAnalyticsLaunchesResponse:
+        """List Product Analytics launches.
+
+        List the Product Analytics launches of your organization. A launch tracks a feature release with its phase,
+        KPIs, and tracking plan.
+        Results are sorted by ``-created_at`` by default.
+
+        :param sort: Comma-separated fields to sort by: ``id`` , ``phase`` , ``feature_flag_id`` , ``name`` , ``application_id`` ,
+            ``description`` , ``created_by`` , ``created_at`` , ``updated_by`` , or ``updated_at``. Prefix a field with ``-`` to sort
+            in descending order.
+        :type sort: str, optional
+        :param scope: Set to ``liftoffs`` to leave out launches in the ``plan`` phase.
+        :type scope: ProductAnalyticsLaunchListScope, optional
+        :param phase: Return only launches in these phases. Repeat the parameter to pass several phases.
+        :type phase: [ProductAnalyticsLaunchPhase], optional
+        :param application_id: Return only launches of this RUM application UUID.
+        :type application_id: str, optional
+        :param name: Return only launches whose name contains this value, ignoring case.
+        :type name: str, optional
+        :rtype: ProductAnalyticsLaunchesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if scope is not unset:
+            kwargs["scope"] = scope
+
+        if phase is not unset:
+            kwargs["phase"] = phase
+
+        if application_id is not unset:
+            kwargs["application_id"] = application_id
+
+        if name is not unset:
+            kwargs["name"] = name
+
+        return self._list_product_analytics_launches_endpoint.call_with_http_info(**kwargs)
+
+    def list_product_analytics_monitors(
+        self,
+        *,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        chart_id: Union[str, UnsetType] = unset,
+        dashboard_id: Union[str, UnsetType] = unset,
+    ) -> ProductAnalyticsMonitorListResponse:
+        """List Product Analytics monitors.
+
+        List the Product Analytics monitors of your organization, one page at a time.
+        When ``chart_id`` is set, optionally with ``dashboard_id`` , the response includes every monitor linked to that
+        chart, without pagination.
+        With ``chart_id`` alone, monitors created from a dashboard widget are not returned.
+        Monitors created in the last few seconds may be missing.
+
+        :param page_size: Maximum number of monitors per page, from 1 to 1000. Ignored when ``chart_id`` is set.
+        :type page_size: int, optional
+        :param page_number: Page number, starting at 1. Ignored when ``chart_id`` is set.
+        :type page_number: int, optional
+        :param chart_id: Return only the monitors linked to this chart. Turns off pagination.
+        :type chart_id: str, optional
+        :param dashboard_id: Return only the monitors linked to this dashboard. Requires ``chart_id``.
+        :type dashboard_id: str, optional
+        :rtype: ProductAnalyticsMonitorListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if chart_id is not unset:
+            kwargs["chart_id"] = chart_id
+
+        if dashboard_id is not unset:
+            kwargs["dashboard_id"] = dashboard_id
+
+        return self._list_product_analytics_monitors_endpoint.call_with_http_info(**kwargs)
 
     def query_product_analytics_journey_funnel(
         self,
@@ -567,6 +1070,29 @@ class ProductAnalyticsApi:
 
         return self._query_product_analytics_timeseries_endpoint.call_with_http_info(**kwargs)
 
+    def remove_chart_from_product_analytics_monitor(
+        self,
+        monitor_id: str,
+        body: ProductAnalyticsMonitorUnlinkRequest,
+    ) -> None:
+        """Unlink a Product Analytics monitor from its chart.
+
+        Remove the ``chart_id`` and ``dashboard_id`` tags from a Product Analytics monitor. The monitor and the rest of
+        its configuration are kept.
+        The request must name the stored link exactly. A monitor with no link is left unchanged.
+
+        :param monitor_id: Numeric ID of the monitor.
+        :type monitor_id: str
+        :type body: ProductAnalyticsMonitorUnlinkRequest
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["monitor_id"] = monitor_id
+
+        kwargs["body"] = body
+
+        return self._remove_chart_from_product_analytics_monitor_endpoint.call_with_http_info(**kwargs)
+
     def submit_product_analytics_event(
         self,
         body: ProductAnalyticsServerSideEventItem,
@@ -613,3 +1139,50 @@ class ProductAnalyticsApi:
         kwargs["body"] = body
 
         return self._submit_product_analytics_event_endpoint.call_with_http_info(**kwargs)
+
+    def update_product_analytics_launch(
+        self,
+        id: str,
+        body: ProductAnalyticsLaunchPatchRequest,
+    ) -> ProductAnalyticsLaunchResponse:
+        """Update a Product Analytics launch.
+
+        Update some fields of a Product Analytics launch. Fields that are not set are left unchanged. The ``id`` in
+        the body must match the one in the path.
+        Setting ``steps.tracking_plan`` replaces the whole stored tracking plan, not only the fields you send.
+        Returns ``409`` when the launch changed during the update; fetch it again and retry.
+
+        :param id: UUID of the launch.
+        :type id: str
+        :type body: ProductAnalyticsLaunchPatchRequest
+        :rtype: ProductAnalyticsLaunchResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["id"] = id
+
+        kwargs["body"] = body
+
+        return self._update_product_analytics_launch_endpoint.call_with_http_info(**kwargs)
+
+    def update_product_analytics_monitor(
+        self,
+        monitor_id: str,
+        body: ProductAnalyticsMonitorUpdateRequest,
+    ) -> ProductAnalyticsMonitorResponse:
+        """Update a Product Analytics monitor.
+
+        Update a Product Analytics monitor. Fields that are not set are left unchanged, and at least one field
+        must be set. When set, ``tags`` replaces the monitor tags except ``chart_id`` and ``dashboard_id`` , which this
+        endpoint ignores. To remove them, use the unlink endpoint.
+
+        :param monitor_id: Numeric ID of the monitor.
+        :type monitor_id: str
+        :type body: ProductAnalyticsMonitorUpdateRequest
+        :rtype: ProductAnalyticsMonitorResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["monitor_id"] = monitor_id
+
+        kwargs["body"] = body
+
+        return self._update_product_analytics_monitor_endpoint.call_with_http_info(**kwargs)

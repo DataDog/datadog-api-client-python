@@ -1504,6 +1504,42 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"liftoff\",\n    \"attributes\": {\n      \"name\": \"{{ unique_lower_alnum }}\",\n      \"description\": \"Promo codes at checkout.\",\n      \"context\": \"Let users apply promo codes at checkout.\",\n      \"phase\": \"plan\",\n      \"kpis\": [{\"id\": \"7c1e6a52-3a8f-4d4e-9a55-2f1d1c8b6a10\", \"title\": \"Checkout conversion rate\"}],\n      \"steps\": {\n        \"tracking_plan\": {\n          \"events\": [\n            {\n              \"name\": \"promo_code_applied\",\n              \"views\": [\"/checkout\"],\n              \"trigger\": \"The user applies a valid promo code.\",\n              \"kpis\": [\"7c1e6a52-3a8f-4d4e-9a55-2f1d1c8b6a10\"]\n            }\n          ]\n        }\n      }\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"product_analytics_launch\" in the system",
+    "key": "product_analytics_launch",
+    "tag": "Product Analytics",
+    "operationId": "CreateProductAnalyticsLaunch"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"pa_monitor_request\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"message\": \"Conversion from /a to /b dropped over the last hour\",\n      \"query\": \"formula(\\\"query\\\").rollup(\\\"sum\\\").last(\\\"1h\\\") < 1\",\n      \"priority\": 3,\n      \"options\": {\n        \"thresholds\": {\"critical\": 1, \"warning\": 2},\n        \"variables\": [\n          {\n            \"name\": \"query\",\n            \"data_source\": \"product_analytics_journey\",\n            \"search\": {\n              \"expression\": \"node_0->node_1\",\n              \"node_objects\": {\n                \"node_0\": {\n                  \"data_source\": \"product_analytics\",\n                  \"search\": {\"query\": \"@type:view @view.name:/a\"}\n                },\n                \"node_1\": {\n                  \"data_source\": \"product_analytics\",\n                  \"search\": {\"query\": \"@type:view @view.name:/b\"}\n                }\n              },\n              \"join_keys\": {\"primary\": \"@usr.id\"}\n            }\n          }\n        ]\n      },\n      \"tags\": {\"query_type\": \"funnel\"}\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"product_analytics_monitor\" in the system",
+    "key": "product_analytics_monitor",
+    "tag": "Product Analytics",
+    "operationId": "CreateProductAnalyticsMonitor"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"segment\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"description\": \"Users who viewed the logs page in the last 30 days.\",\n      \"data_query\": {\n        \"event_platform\": [\n          {\n            \"name\": \"viewed_logs\",\n            \"facet\": \"@usr.id\",\n            \"query\": \"@type:view @view.name:/logs\",\n            \"from\": \"-2592000000\",\n            \"to\": \"0\"\n          }\n        ]\n      }\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"product_analytics_segment\" in the system",
+    "key": "product_analytics_segment",
+    "tag": "Rum Audience Management",
+    "operationId": "CreateProductAnalyticsSegment"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"rate-limits\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"selector\": [{\"dim\": \"user_id\", \"per_value\": true}],\n      \"requests_per_minute\": 1000000,\n      \"mode\": \"ALERT\"\n    }\n  }\n}"
       }
     ],
