@@ -6909,6 +6909,12 @@
       "type": "unsafe"
     }
   },
+  "CreateOnCallPageComment": {
+    "tag": "On-Call",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "EscalateOnCallPage": {
     "tag": "On-Call Paging",
     "undo": {
