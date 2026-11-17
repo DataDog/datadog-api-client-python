@@ -37,7 +37,7 @@ class CaseViewCreateAttributes(ModelNormal):
         :param name: The name of the view.
         :type name: str
 
-        :param np_rule_id: The identifier of a notification rule linked to this view. When set, users subscribed to the view receive alerts for matching work items.
+        :param np_rule_id: Deprecated. This field is ignored. Use ``POST /api/v2/cases/projects/{project_id}/notification_rules`` to manage project notifications. **Deprecated**.
         :type np_rule_id: str, optional
 
         :param project_id: The UUID of the project this view belongs to. Views are scoped to a single project.

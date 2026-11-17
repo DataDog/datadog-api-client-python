@@ -47,7 +47,7 @@ class CaseViewAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes of a work item view, including the filter query and optional notification rule.
+        Attributes of a work item view, including the filter query.
 
         :param created_at: Timestamp when the view was created.
         :type created_at: datetime
@@ -58,7 +58,7 @@ class CaseViewAttributes(ModelNormal):
         :param name: A human-readable name for the view, displayed in the Work Management UI.
         :type name: str
 
-        :param np_rule_id: The identifier of a notification rule linked to this view. When set, users subscribed to the view receive alerts for matching work items.
+        :param np_rule_id: Deprecated. Identifier of a legacy notification rule linked to this view, if any. **Deprecated**.
         :type np_rule_id: str, optional
 
         :param query: The search query that determines which work items appear in this view. Uses the same syntax as the Work Management search bar (for example, ``status:open priority:P1`` ).

@@ -2058,7 +2058,7 @@ class CaseManagementApi:
     ) -> CaseViewResponse:
         """Create a case view.
 
-        Creates a new saved work item view with a name, filter query, and associated project. Optionally, a notification rule can be linked to the view.
+        Creates a new saved work item view with a name, filter query, and associated project.
 
         :param body: Work item view payload.
         :type body: CaseViewCreateRequest
@@ -3069,7 +3069,7 @@ class CaseManagementApi:
     ) -> CaseViewResponse:
         """Update a case view.
 
-        Updates the name, query, or notification rule of an existing work item view.
+        Updates the name or query of an existing work item view.
 
         :param view_id: The UUID of the work item view.
         :type view_id: str
