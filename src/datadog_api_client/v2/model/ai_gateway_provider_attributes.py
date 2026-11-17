@@ -15,38 +15,48 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.ai_gateway_provider_credential_source import AiGatewayProviderCredentialSource
     from datadog_api_client.v2.model.ai_gateway_provider_integration_config import AiGatewayProviderIntegrationConfig
     from datadog_api_client.v2.model.ai_gateway_known_provider import AiGatewayKnownProvider
+    from datadog_api_client.v2.model.ai_gateway_provider_status import AiGatewayProviderStatus
 
 
 class AiGatewayProviderAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.ai_gateway_provider_credential_source import AiGatewayProviderCredentialSource
         from datadog_api_client.v2.model.ai_gateway_provider_integration_config import (
             AiGatewayProviderIntegrationConfig,
         )
         from datadog_api_client.v2.model.ai_gateway_known_provider import AiGatewayKnownProvider
+        from datadog_api_client.v2.model.ai_gateway_provider_status import AiGatewayProviderStatus
 
         return {
             "cost_multiplier": (float,),
             "created_at": (datetime,),
+            "credential_source": (AiGatewayProviderCredentialSource,),
             "integration_account_id": (str,),
             "integration_config": (AiGatewayProviderIntegrationConfig,),
             "known_provider": (AiGatewayKnownProvider,),
             "name": (str,),
             "slug": (str,),
+            "status": (AiGatewayProviderStatus,),
             "updated_at": (datetime,),
+            "zdr_eligible": (bool,),
         }
 
     attribute_map = {
         "cost_multiplier": "cost_multiplier",
         "created_at": "created_at",
+        "credential_source": "credential_source",
         "integration_account_id": "integration_account_id",
         "integration_config": "integration_config",
         "known_provider": "known_provider",
         "name": "name",
         "slug": "slug",
+        "status": "status",
         "updated_at": "updated_at",
+        "zdr_eligible": "zdr_eligible",
     }
 
     def __init__(
@@ -58,7 +68,10 @@ class AiGatewayProviderAttributes(ModelNormal):
         name: str,
         slug: str,
         updated_at: datetime,
+        credential_source: Union[AiGatewayProviderCredentialSource, UnsetType] = unset,
         integration_config: Union[AiGatewayProviderIntegrationConfig, UnsetType] = unset,
+        status: Union[AiGatewayProviderStatus, UnsetType] = unset,
+        zdr_eligible: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -69,6 +82,11 @@ class AiGatewayProviderAttributes(ModelNormal):
 
         :param created_at: Time when the resource was created.
         :type created_at: datetime
+
+        :param credential_source: Whose credential the gateway sends to the provider. ``integration_account`` sends the integration
+            account's credential. ``subscription`` forwards each caller's own subscription sign-in ( ``ChatGPT`` for
+            ``openai`` , ``claude.ai`` for ``anthropic`` ) and needs no integration account.
+        :type credential_source: AiGatewayProviderCredentialSource, optional
 
         :param integration_account_id: Provider integration account identifier.
         :type integration_account_id: str
@@ -85,11 +103,25 @@ class AiGatewayProviderAttributes(ModelNormal):
         :param slug: Immutable routing identifier.
         :type slug: str
 
+        :param status: Read-only. Whether the provider is working, based on the model sync and live calls. Omitted for
+            providers that are never checked, which include providers without an integration account, and
+            Azure OpenAI and Gemini providers until live traffic records a status.
+        :type status: AiGatewayProviderStatus, optional
+
         :param updated_at: Time when the resource was last updated.
         :type updated_at: datetime
+
+        :param zdr_eligible: Whether this provider connection is covered by a zero data retention agreement.
+        :type zdr_eligible: bool, optional
         """
+        if credential_source is not unset:
+            kwargs["credential_source"] = credential_source
         if integration_config is not unset:
             kwargs["integration_config"] = integration_config
+        if status is not unset:
+            kwargs["status"] = status
+        if zdr_eligible is not unset:
+            kwargs["zdr_eligible"] = zdr_eligible
         super().__init__(kwargs)
 
         self_.cost_multiplier = cost_multiplier

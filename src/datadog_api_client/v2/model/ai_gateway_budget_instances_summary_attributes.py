@@ -3,11 +3,14 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    unset,
+    UnsetType,
     UUID,
 )
 
@@ -21,6 +24,7 @@ class AiGatewayBudgetInstancesSummaryAttributes(ModelNormal):
             "instance_count": (int,),
             "over_warning_threshold_count": (int,),
             "restricted_details": (bool,),
+            "total_capacity_microcents": (int,),
             "total_spend_microcents": (int,),
             "window_start": (datetime,),
         }
@@ -31,6 +35,7 @@ class AiGatewayBudgetInstancesSummaryAttributes(ModelNormal):
         "instance_count": "instance_count",
         "over_warning_threshold_count": "over_warning_threshold_count",
         "restricted_details": "restricted_details",
+        "total_capacity_microcents": "total_capacity_microcents",
         "total_spend_microcents": "total_spend_microcents",
         "window_start": "window_start",
     }
@@ -44,6 +49,7 @@ class AiGatewayBudgetInstancesSummaryAttributes(ModelNormal):
         restricted_details: bool,
         total_spend_microcents: int,
         window_start: datetime,
+        total_capacity_microcents: Union[int, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -64,12 +70,17 @@ class AiGatewayBudgetInstancesSummaryAttributes(ModelNormal):
         :param restricted_details: Whether instances were withheld because their provider or model is hidden. Summary counts and totals exclude those instances.
         :type restricted_details: bool
 
+        :param total_capacity_microcents: Sum of the capacity of every matching instance in the window, including per-instance overrides.
+        :type total_capacity_microcents: int, optional
+
         :param total_spend_microcents: Spend summed across all instances, in microcents.
         :type total_spend_microcents: int
 
         :param window_start: Start of the accounting window.
         :type window_start: datetime
         """
+        if total_capacity_microcents is not unset:
+            kwargs["total_capacity_microcents"] = total_capacity_microcents
         super().__init__(kwargs)
 
         self_.budget_id = budget_id

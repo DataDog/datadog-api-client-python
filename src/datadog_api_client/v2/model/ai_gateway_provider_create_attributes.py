@@ -14,6 +14,9 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.ai_gateway_provider_create_credential_source import (
+        AiGatewayProviderCreateCredentialSource,
+    )
     from datadog_api_client.v2.model.ai_gateway_provider_initial_binding import AiGatewayProviderInitialBinding
     from datadog_api_client.v2.model.ai_gateway_provider_integration_config import AiGatewayProviderIntegrationConfig
     from datadog_api_client.v2.model.ai_gateway_known_provider import AiGatewayKnownProvider
@@ -41,6 +44,9 @@ class AiGatewayProviderCreateAttributes(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.ai_gateway_provider_create_credential_source import (
+            AiGatewayProviderCreateCredentialSource,
+        )
         from datadog_api_client.v2.model.ai_gateway_provider_initial_binding import AiGatewayProviderInitialBinding
         from datadog_api_client.v2.model.ai_gateway_provider_integration_config import (
             AiGatewayProviderIntegrationConfig,
@@ -50,6 +56,7 @@ class AiGatewayProviderCreateAttributes(ModelNormal):
 
         return {
             "cost_multiplier": (float,),
+            "credential_source": (AiGatewayProviderCreateCredentialSource,),
             "initial_bindings": ([AiGatewayProviderInitialBinding],),
             "integration_account_id": (str,),
             "integration_config": (AiGatewayProviderIntegrationConfig,),
@@ -57,10 +64,12 @@ class AiGatewayProviderCreateAttributes(ModelNormal):
             "models": ([AiGatewayModelInput],),
             "name": (str,),
             "slug": (str,),
+            "zdr_eligible": (bool,),
         }
 
     attribute_map = {
         "cost_multiplier": "cost_multiplier",
+        "credential_source": "credential_source",
         "initial_bindings": "initial_bindings",
         "integration_account_id": "integration_account_id",
         "integration_config": "integration_config",
@@ -68,6 +77,7 @@ class AiGatewayProviderCreateAttributes(ModelNormal):
         "models": "models",
         "name": "name",
         "slug": "slug",
+        "zdr_eligible": "zdr_eligible",
     }
 
     def __init__(
@@ -75,11 +85,13 @@ class AiGatewayProviderCreateAttributes(ModelNormal):
         name: str,
         slug: str,
         cost_multiplier: Union[float, UnsetType] = unset,
+        credential_source: Union[AiGatewayProviderCreateCredentialSource, UnsetType] = unset,
         initial_bindings: Union[List[AiGatewayProviderInitialBinding], UnsetType] = unset,
         integration_account_id: Union[str, UnsetType] = unset,
         integration_config: Union[AiGatewayProviderIntegrationConfig, UnsetType] = unset,
         known_provider: Union[AiGatewayKnownProvider, UnsetType] = unset,
         models: Union[List[AiGatewayModelInput], UnsetType] = unset,
+        zdr_eligible: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -87,6 +99,14 @@ class AiGatewayProviderCreateAttributes(ModelNormal):
 
         :param cost_multiplier: Multiplier applied to provider costs. Must be greater than 0 and at most 1000000.
         :type cost_multiplier: float, optional
+
+        :param credential_source: Whose credential the gateway sends to the provider. Defaults to ``integration_account`` , which sends
+            the integration account's credential. ``subscription`` forwards each caller's own subscription sign-in
+            ( ``ChatGPT`` for ``openai`` , ``claude.ai`` for ``anthropic`` ) and needs no integration account; it is available
+            only to organizations with subscription providers enabled. A subscription provider's models are
+            optional: callers can use any model their subscription includes, and a model you add sets its
+            pricing. Immutable.
+        :type credential_source: AiGatewayProviderCreateCredentialSource, optional
 
         :param initial_bindings: Reserved for initial View/Edit permissions. Supplying this attribute, including an empty array or null, returns HTTP 503 before discovery or persistence. Omit it for normal creation.
         :type initial_bindings: [AiGatewayProviderInitialBinding], optional
@@ -108,9 +128,16 @@ class AiGatewayProviderCreateAttributes(ModelNormal):
 
         :param slug: Immutable routing identifier.
         :type slug: str
+
+        :param zdr_eligible: Whether this provider connection is covered by a zero data retention agreement. Defaults to ``false``.
+            For Bedrock, zero data retention is granted per region, so configure one provider per region and set
+            this only on the covered ones.
+        :type zdr_eligible: bool, optional
         """
         if cost_multiplier is not unset:
             kwargs["cost_multiplier"] = cost_multiplier
+        if credential_source is not unset:
+            kwargs["credential_source"] = credential_source
         if initial_bindings is not unset:
             kwargs["initial_bindings"] = initial_bindings
         if integration_account_id is not unset:
@@ -121,6 +148,8 @@ class AiGatewayProviderCreateAttributes(ModelNormal):
             kwargs["known_provider"] = known_provider
         if models is not unset:
             kwargs["models"] = models
+        if zdr_eligible is not unset:
+            kwargs["zdr_eligible"] = zdr_eligible
         super().__init__(kwargs)
 
         self_.name = name

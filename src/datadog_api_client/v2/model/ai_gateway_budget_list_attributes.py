@@ -18,6 +18,7 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.ai_gateway_budget_enforcement import AiGatewayBudgetEnforcement
+    from datadog_api_client.v2.model.ai_gateway_budget_reporting_summary import AiGatewayBudgetReportingSummary
     from datadog_api_client.v2.model.ai_gateway_budget_selector_entry import AiGatewayBudgetSelectorEntry
     from datadog_api_client.v2.model.ai_gateway_budget_tags import AiGatewayBudgetTags
     from datadog_api_client.v2.model.ai_gateway_budget_window_policy import AiGatewayBudgetWindowPolicy
@@ -27,6 +28,7 @@ class AiGatewayBudgetListAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.ai_gateway_budget_enforcement import AiGatewayBudgetEnforcement
+        from datadog_api_client.v2.model.ai_gateway_budget_reporting_summary import AiGatewayBudgetReportingSummary
         from datadog_api_client.v2.model.ai_gateway_budget_selector_entry import AiGatewayBudgetSelectorEntry
         from datadog_api_client.v2.model.ai_gateway_budget_tags import AiGatewayBudgetTags
         from datadog_api_client.v2.model.ai_gateway_budget_window_policy import AiGatewayBudgetWindowPolicy
@@ -41,6 +43,7 @@ class AiGatewayBudgetListAttributes(ModelNormal):
             "enforcement": (AiGatewayBudgetEnforcement,),
             "monitor_id": (int, none_type),
             "name": (str,),
+            "reporting_summary": (AiGatewayBudgetReportingSummary,),
             "scope_restricted": (bool,),
             "selector": ([AiGatewayBudgetSelectorEntry],),
             "tags": (AiGatewayBudgetTags,),
@@ -63,6 +66,7 @@ class AiGatewayBudgetListAttributes(ModelNormal):
         "enforcement": "enforcement",
         "monitor_id": "monitor_id",
         "name": "name",
+        "reporting_summary": "reporting_summary",
         "scope_restricted": "scope_restricted",
         "selector": "selector",
         "tags": "tags",
@@ -93,6 +97,7 @@ class AiGatewayBudgetListAttributes(ModelNormal):
         window_end: datetime,
         window_policy: AiGatewayBudgetWindowPolicy,
         window_start: datetime,
+        reporting_summary: Union[AiGatewayBudgetReportingSummary, UnsetType] = unset,
         selector: Union[List[AiGatewayBudgetSelectorEntry], none_type, UnsetType] = unset,
         team_id: Union[UUID, UnsetType] = unset,
         user_id: Union[UUID, UnsetType] = unset,
@@ -128,6 +133,9 @@ class AiGatewayBudgetListAttributes(ModelNormal):
         :param name: Human-readable resource name.
         :type name: str
 
+        :param reporting_summary: Health across all counters in the active accounting window. Includes hidden counters; contains no scope values or identities.
+        :type reporting_summary: AiGatewayBudgetReportingSummary, optional
+
         :param scope_restricted: Whether provider or model scope metadata was withheld. Omit unchanged scope fields on an unrelated update to preserve their saved values.
         :type scope_restricted: bool
 
@@ -158,6 +166,8 @@ class AiGatewayBudgetListAttributes(ModelNormal):
         :param window_start: Start of the active accounting window.
         :type window_start: datetime
         """
+        if reporting_summary is not unset:
+            kwargs["reporting_summary"] = reporting_summary
         if selector is not unset:
             kwargs["selector"] = selector
         if team_id is not unset:

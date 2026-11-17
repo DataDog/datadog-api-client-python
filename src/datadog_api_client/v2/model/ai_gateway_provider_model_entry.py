@@ -16,16 +16,20 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.ai_gateway_model_metadata import AiGatewayModelMetadata
+    from datadog_api_client.v2.model.ai_gateway_model_pricing_attributes import AiGatewayModelPricingAttributes
     from datadog_api_client.v2.model.ai_gateway_model_source import AiGatewayModelSource
     from datadog_api_client.v2.model.ai_gateway_supported_operation import AiGatewaySupportedOperation
+    from datadog_api_client.v2.model.ai_gateway_model_zdr import AiGatewayModelZdr
 
 
 class AiGatewayProviderModelEntry(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.ai_gateway_model_metadata import AiGatewayModelMetadata
+        from datadog_api_client.v2.model.ai_gateway_model_pricing_attributes import AiGatewayModelPricingAttributes
         from datadog_api_client.v2.model.ai_gateway_model_source import AiGatewayModelSource
         from datadog_api_client.v2.model.ai_gateway_supported_operation import AiGatewaySupportedOperation
+        from datadog_api_client.v2.model.ai_gateway_model_zdr import AiGatewayModelZdr
 
         return {
             "created_at": (datetime,),
@@ -33,10 +37,12 @@ class AiGatewayProviderModelEntry(ModelNormal):
             "id": (str,),
             "metadata": (AiGatewayModelMetadata,),
             "model_id_wire": (str,),
+            "pricing": (AiGatewayModelPricingAttributes,),
             "provider_id": (int,),
             "source": (AiGatewayModelSource,),
             "supported_operations": ([AiGatewaySupportedOperation],),
             "updated_at": (datetime,),
+            "zdr": (AiGatewayModelZdr,),
         }
 
     attribute_map = {
@@ -45,10 +51,12 @@ class AiGatewayProviderModelEntry(ModelNormal):
         "id": "id",
         "metadata": "metadata",
         "model_id_wire": "model_id_wire",
+        "pricing": "pricing",
         "provider_id": "provider_id",
         "source": "source",
         "supported_operations": "supported_operations",
         "updated_at": "updated_at",
+        "zdr": "zdr",
     }
 
     def __init__(
@@ -62,6 +70,8 @@ class AiGatewayProviderModelEntry(ModelNormal):
         supported_operations: List[AiGatewaySupportedOperation],
         updated_at: datetime,
         metadata: Union[AiGatewayModelMetadata, UnsetType] = unset,
+        pricing: Union[AiGatewayModelPricingAttributes, UnsetType] = unset,
+        zdr: Union[AiGatewayModelZdr, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -82,6 +92,9 @@ class AiGatewayProviderModelEntry(ModelNormal):
         :param model_id_wire: Model identifier sent to the provider.
         :type model_id_wire: str
 
+        :param pricing: Attributes of a model pricing resource.
+        :type pricing: AiGatewayModelPricingAttributes, optional
+
         :param provider_id: Provider identifier.
         :type provider_id: int
 
@@ -93,9 +106,17 @@ class AiGatewayProviderModelEntry(ModelNormal):
 
         :param updated_at: Time when the resource was last updated.
         :type updated_at: datetime
+
+        :param zdr: The Datadog side of a model's zero data retention eligibility. The customer side is the provider's
+            ``zdr_eligible`` setting.
+        :type zdr: AiGatewayModelZdr, optional
         """
         if metadata is not unset:
             kwargs["metadata"] = metadata
+        if pricing is not unset:
+            kwargs["pricing"] = pricing
+        if zdr is not unset:
+            kwargs["zdr"] = zdr
         super().__init__(kwargs)
 
         self_.created_at = created_at

@@ -160,7 +160,7 @@ Feature: AI Gateway
   Scenario: Create an AI Gateway provider returns "Bad Request" response
     Given operation "CreateAiGatewayProvider" enabled
     And new "CreateAiGatewayProvider" request
-    And body with value {"data": {"attributes": {"cost_multiplier": 1.0, "initial_bindings": [{"principals": ["org:11111111-1111-1111-1111-111111111111"], "relation": "viewer"}], "integration_account_id": "account-123", "integration_config": {"bedrock_region": "us-east-1", "foundry_project": "my-project", "foundry_resource_id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/ai/providers/Microsoft.CognitiveServices/accounts/my-foundry", "location": "us-central1", "project_id": "my-gcp-project", "supported_operations": ["OPENAI_CHAT_COMPLETIONS"]}, "known_provider": "openai", "models": [{"model_id_canonical": "gpt-5.2-codex", "model_id_wire": "gpt-5.2-codex-20260801", "supported_operations": ["OPENAI_CHAT_COMPLETIONS"]}], "name": "production-us", "slug": "prod-us"}, "type": "providers"}}
+    And body with value {"data": {"attributes": {"cost_multiplier": 1.0, "credential_source": "integration_account", "initial_bindings": [{"principals": ["org:11111111-1111-1111-1111-111111111111"], "relation": "viewer"}], "integration_account_id": "account-123", "integration_config": {"bedrock_region": "us-east-1", "foundry_project": "my-project", "foundry_resource_id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/ai/providers/Microsoft.CognitiveServices/accounts/my-foundry", "location": "us-central1", "project_id": "my-gcp-project", "supported_operations": ["OPENAI_CHAT_COMPLETIONS"]}, "known_provider": "openai", "models": [{"model_id_canonical": "gpt-5.2-codex", "model_id_wire": "gpt-5.2-codex-20260801", "supported_operations": ["OPENAI_CHAT_COMPLETIONS"]}], "name": "production-us", "slug": "prod-us", "zdr_eligible": false}, "type": "providers"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -168,7 +168,7 @@ Feature: AI Gateway
   Scenario: Create an AI Gateway provider returns "Conflict" response
     Given operation "CreateAiGatewayProvider" enabled
     And new "CreateAiGatewayProvider" request
-    And body with value {"data": {"attributes": {"cost_multiplier": 1.0, "initial_bindings": [{"principals": ["org:11111111-1111-1111-1111-111111111111"], "relation": "viewer"}], "integration_account_id": "account-123", "integration_config": {"bedrock_region": "us-east-1", "foundry_project": "my-project", "foundry_resource_id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/ai/providers/Microsoft.CognitiveServices/accounts/my-foundry", "location": "us-central1", "project_id": "my-gcp-project", "supported_operations": ["OPENAI_CHAT_COMPLETIONS"]}, "known_provider": "openai", "models": [{"model_id_canonical": "gpt-5.2-codex", "model_id_wire": "gpt-5.2-codex-20260801", "supported_operations": ["OPENAI_CHAT_COMPLETIONS"]}], "name": "production-us", "slug": "prod-us"}, "type": "providers"}}
+    And body with value {"data": {"attributes": {"cost_multiplier": 1.0, "credential_source": "integration_account", "initial_bindings": [{"principals": ["org:11111111-1111-1111-1111-111111111111"], "relation": "viewer"}], "integration_account_id": "account-123", "integration_config": {"bedrock_region": "us-east-1", "foundry_project": "my-project", "foundry_resource_id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/ai/providers/Microsoft.CognitiveServices/accounts/my-foundry", "location": "us-central1", "project_id": "my-gcp-project", "supported_operations": ["OPENAI_CHAT_COMPLETIONS"]}, "known_provider": "openai", "models": [{"model_id_canonical": "gpt-5.2-codex", "model_id_wire": "gpt-5.2-codex-20260801", "supported_operations": ["OPENAI_CHAT_COMPLETIONS"]}], "name": "production-us", "slug": "prod-us", "zdr_eligible": false}, "type": "providers"}}
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -176,7 +176,7 @@ Feature: AI Gateway
   Scenario: Create an AI Gateway provider returns "Created" response
     Given operation "CreateAiGatewayProvider" enabled
     And new "CreateAiGatewayProvider" request
-    And body with value {"data": {"attributes": {"cost_multiplier": 1.0, "initial_bindings": [{"principals": ["org:11111111-1111-1111-1111-111111111111"], "relation": "viewer"}], "integration_account_id": "account-123", "integration_config": {"bedrock_region": "us-east-1", "foundry_project": "my-project", "foundry_resource_id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/ai/providers/Microsoft.CognitiveServices/accounts/my-foundry", "location": "us-central1", "project_id": "my-gcp-project", "supported_operations": ["OPENAI_CHAT_COMPLETIONS"]}, "known_provider": "openai", "models": [{"model_id_canonical": "gpt-5.2-codex", "model_id_wire": "gpt-5.2-codex-20260801", "supported_operations": ["OPENAI_CHAT_COMPLETIONS"]}], "name": "production-us", "slug": "prod-us"}, "type": "providers"}}
+    And body with value {"data": {"attributes": {"cost_multiplier": 1.0, "credential_source": "integration_account", "initial_bindings": [{"principals": ["org:11111111-1111-1111-1111-111111111111"], "relation": "viewer"}], "integration_account_id": "account-123", "integration_config": {"bedrock_region": "us-east-1", "foundry_project": "my-project", "foundry_resource_id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/ai/providers/Microsoft.CognitiveServices/accounts/my-foundry", "location": "us-central1", "project_id": "my-gcp-project", "supported_operations": ["OPENAI_CHAT_COMPLETIONS"]}, "known_provider": "openai", "models": [{"model_id_canonical": "gpt-5.2-codex", "model_id_wire": "gpt-5.2-codex-20260801", "supported_operations": ["OPENAI_CHAT_COMPLETIONS"]}], "name": "production-us", "slug": "prod-us", "zdr_eligible": false}, "type": "providers"}}
     When the request is sent
     Then the response status is 201 Created
 
@@ -208,7 +208,7 @@ Feature: AI Gateway
   Scenario: Create an AI Gateway routing rule returns "Bad Request" response
     Given operation "CreateAiGatewayRoutingRule" enabled
     And new "CreateAiGatewayRoutingRule" request
-    And body with value {"data": {"attributes": {"slug": "coding", "tiers": [{"classifier": {"confidence_threshold": 0.5, "context": "Requests come from engineers.", "model": "gpt-6-luna", "provider": "openai"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Short factual questions.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "type": "routing-rules"}}
+    And body with value {"data": {"attributes": {"initial_bindings": [{"principals": ["org:11111111-1111-1111-1111-111111111111"], "relation": "viewer"}], "slug": "coding", "tiers": [{"classifier": {"confidence_threshold": 0.5, "context": "Requests come from engineers.", "model": "gpt-6-luna", "provider": "openai"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Short factual questions.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "type": "routing-rules"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -216,7 +216,7 @@ Feature: AI Gateway
   Scenario: Create an AI Gateway routing rule returns "Conflict" response
     Given operation "CreateAiGatewayRoutingRule" enabled
     And new "CreateAiGatewayRoutingRule" request
-    And body with value {"data": {"attributes": {"slug": "coding", "tiers": [{"classifier": {"confidence_threshold": 0.5, "context": "Requests come from engineers.", "model": "gpt-6-luna", "provider": "openai"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Short factual questions.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "type": "routing-rules"}}
+    And body with value {"data": {"attributes": {"initial_bindings": [{"principals": ["org:11111111-1111-1111-1111-111111111111"], "relation": "viewer"}], "slug": "coding", "tiers": [{"classifier": {"confidence_threshold": 0.5, "context": "Requests come from engineers.", "model": "gpt-6-luna", "provider": "openai"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Short factual questions.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "type": "routing-rules"}}
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -224,7 +224,7 @@ Feature: AI Gateway
   Scenario: Create an AI Gateway routing rule returns "Created" response
     Given operation "CreateAiGatewayRoutingRule" enabled
     And new "CreateAiGatewayRoutingRule" request
-    And body with value {"data": {"attributes": {"slug": "coding", "tiers": [{"classifier": {"confidence_threshold": 0.5, "context": "Requests come from engineers.", "model": "gpt-6-luna", "provider": "openai"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Short factual questions.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "type": "routing-rules"}}
+    And body with value {"data": {"attributes": {"initial_bindings": [{"principals": ["org:11111111-1111-1111-1111-111111111111"], "relation": "viewer"}], "slug": "coding", "tiers": [{"classifier": {"confidence_threshold": 0.5, "context": "Requests come from engineers.", "model": "gpt-6-luna", "provider": "openai"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Short factual questions.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "type": "routing-rules"}}
     When the request is sent
     Then the response status is 201 Created
 
@@ -1032,7 +1032,7 @@ Feature: AI Gateway
     Given operation "UpdateAiGatewayProvider" enabled
     And new "UpdateAiGatewayProvider" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"cost_multiplier": 1.0, "name": "production-us-v2"}, "id": "42", "type": "providers"}}
+    And body with value {"data": {"attributes": {"cost_multiplier": 1.0, "name": "production-us-v2", "zdr_eligible": false}, "id": "42", "type": "providers"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -1041,7 +1041,7 @@ Feature: AI Gateway
     Given operation "UpdateAiGatewayProvider" enabled
     And new "UpdateAiGatewayProvider" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"cost_multiplier": 1.0, "name": "production-us-v2"}, "id": "42", "type": "providers"}}
+    And body with value {"data": {"attributes": {"cost_multiplier": 1.0, "name": "production-us-v2", "zdr_eligible": false}, "id": "42", "type": "providers"}}
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -1050,7 +1050,7 @@ Feature: AI Gateway
     Given operation "UpdateAiGatewayProvider" enabled
     And new "UpdateAiGatewayProvider" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"cost_multiplier": 1.0, "name": "production-us-v2"}, "id": "42", "type": "providers"}}
+    And body with value {"data": {"attributes": {"cost_multiplier": 1.0, "name": "production-us-v2", "zdr_eligible": false}, "id": "42", "type": "providers"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -1059,7 +1059,7 @@ Feature: AI Gateway
     Given operation "UpdateAiGatewayProvider" enabled
     And new "UpdateAiGatewayProvider" request
     And request contains "id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"cost_multiplier": 1.0, "name": "production-us-v2"}, "id": "42", "type": "providers"}}
+    And body with value {"data": {"attributes": {"cost_multiplier": 1.0, "name": "production-us-v2", "zdr_eligible": false}, "id": "42", "type": "providers"}}
     When the request is sent
     Then the response status is 200 OK
 
