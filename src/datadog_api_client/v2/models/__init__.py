@@ -384,6 +384,7 @@ from datadog_api_client.v2.model.ai_gateway_budget_instances_summary_response im
     AiGatewayBudgetInstancesSummaryResponse,
 )
 from datadog_api_client.v2.model.ai_gateway_budget_instances_summary_type import AiGatewayBudgetInstancesSummaryType
+from datadog_api_client.v2.model.ai_gateway_budget_limit_mode import AiGatewayBudgetLimitMode
 from datadog_api_client.v2.model.ai_gateway_budget_list_attributes import AiGatewayBudgetListAttributes
 from datadog_api_client.v2.model.ai_gateway_budget_list_resource import AiGatewayBudgetListResource
 from datadog_api_client.v2.model.ai_gateway_budget_list_response import AiGatewayBudgetListResponse
@@ -391,6 +392,7 @@ from datadog_api_client.v2.model.ai_gateway_budget_period_attributes import AiGa
 from datadog_api_client.v2.model.ai_gateway_budget_period_resource import AiGatewayBudgetPeriodResource
 from datadog_api_client.v2.model.ai_gateway_budget_period_response import AiGatewayBudgetPeriodResponse
 from datadog_api_client.v2.model.ai_gateway_budget_period_type import AiGatewayBudgetPeriodType
+from datadog_api_client.v2.model.ai_gateway_budget_reporting_summary import AiGatewayBudgetReportingSummary
 from datadog_api_client.v2.model.ai_gateway_budget_resource import AiGatewayBudgetResource
 from datadog_api_client.v2.model.ai_gateway_budget_response import AiGatewayBudgetResponse
 from datadog_api_client.v2.model.ai_gateway_budget_selector_entry import AiGatewayBudgetSelectorEntry
@@ -488,6 +490,16 @@ from datadog_api_client.v2.model.ai_gateway_governance_type import AiGatewayGove
 from datadog_api_client.v2.model.ai_gateway_known_provider import AiGatewayKnownProvider
 from datadog_api_client.v2.model.ai_gateway_max_reasoning_level import AiGatewayMaxReasoningLevel
 from datadog_api_client.v2.model.ai_gateway_metadata_capture_item import AiGatewayMetadataCaptureItem
+from datadog_api_client.v2.model.ai_gateway_model_automatic_pricing import AiGatewayModelAutomaticPricing
+from datadog_api_client.v2.model.ai_gateway_model_automatic_pricing_field_match import (
+    AiGatewayModelAutomaticPricingFieldMatch,
+)
+from datadog_api_client.v2.model.ai_gateway_model_automatic_pricing_mapping import AiGatewayModelAutomaticPricingMapping
+from datadog_api_client.v2.model.ai_gateway_model_automatic_pricing_mode_trigger import (
+    AiGatewayModelAutomaticPricingModeTrigger,
+)
+from datadog_api_client.v2.model.ai_gateway_model_automatic_pricing_rate import AiGatewayModelAutomaticPricingRate
+from datadog_api_client.v2.model.ai_gateway_model_automatic_pricing_source import AiGatewayModelAutomaticPricingSource
 from datadog_api_client.v2.model.ai_gateway_model_capabilities import AiGatewayModelCapabilities
 from datadog_api_client.v2.model.ai_gateway_model_catalog_entry_attributes import AiGatewayModelCatalogEntryAttributes
 from datadog_api_client.v2.model.ai_gateway_model_catalog_entry_identifier import AiGatewayModelCatalogEntryIdentifier
@@ -560,6 +572,7 @@ from datadog_api_client.v2.model.ai_gateway_model_pricing_response import AiGate
 from datadog_api_client.v2.model.ai_gateway_model_pricing_response_data import AiGatewayModelPricingResponseData
 from datadog_api_client.v2.model.ai_gateway_model_pricing_source import AiGatewayModelPricingSource
 from datadog_api_client.v2.model.ai_gateway_model_pricing_source_type import AiGatewayModelPricingSourceType
+from datadog_api_client.v2.model.ai_gateway_model_pricing_status import AiGatewayModelPricingStatus
 from datadog_api_client.v2.model.ai_gateway_model_pricing_type import AiGatewayModelPricingType
 from datadog_api_client.v2.model.ai_gateway_model_reasoning import AiGatewayModelReasoning
 from datadog_api_client.v2.model.ai_gateway_model_reasoning_control import AiGatewayModelReasoningControl
@@ -569,6 +582,8 @@ from datadog_api_client.v2.model.ai_gateway_model_source import AiGatewayModelSo
 from datadog_api_client.v2.model.ai_gateway_model_update_attributes import AiGatewayModelUpdateAttributes
 from datadog_api_client.v2.model.ai_gateway_model_update_data import AiGatewayModelUpdateData
 from datadog_api_client.v2.model.ai_gateway_model_update_request import AiGatewayModelUpdateRequest
+from datadog_api_client.v2.model.ai_gateway_model_zdr import AiGatewayModelZdr
+from datadog_api_client.v2.model.ai_gateway_model_zdr_coverage import AiGatewayModelZdrCoverage
 from datadog_api_client.v2.model.ai_gateway_models_bulk_create_attributes import AiGatewayModelsBulkCreateAttributes
 from datadog_api_client.v2.model.ai_gateway_models_bulk_create_data import AiGatewayModelsBulkCreateData
 from datadog_api_client.v2.model.ai_gateway_models_bulk_create_request import AiGatewayModelsBulkCreateRequest
@@ -596,8 +611,12 @@ from datadog_api_client.v2.model.ai_gateway_policy_tier_request import AiGateway
 from datadog_api_client.v2.model.ai_gateway_policy_type import AiGatewayPolicyType
 from datadog_api_client.v2.model.ai_gateway_provider_attributes import AiGatewayProviderAttributes
 from datadog_api_client.v2.model.ai_gateway_provider_create_attributes import AiGatewayProviderCreateAttributes
+from datadog_api_client.v2.model.ai_gateway_provider_create_credential_source import (
+    AiGatewayProviderCreateCredentialSource,
+)
 from datadog_api_client.v2.model.ai_gateway_provider_create_data import AiGatewayProviderCreateData
 from datadog_api_client.v2.model.ai_gateway_provider_create_request import AiGatewayProviderCreateRequest
+from datadog_api_client.v2.model.ai_gateway_provider_credential_source import AiGatewayProviderCredentialSource
 from datadog_api_client.v2.model.ai_gateway_provider_initial_binding import AiGatewayProviderInitialBinding
 from datadog_api_client.v2.model.ai_gateway_provider_initial_binding_relation import (
     AiGatewayProviderInitialBindingRelation,
@@ -609,6 +628,8 @@ from datadog_api_client.v2.model.ai_gateway_provider_models_relationship import 
 from datadog_api_client.v2.model.ai_gateway_provider_relationships import AiGatewayProviderRelationships
 from datadog_api_client.v2.model.ai_gateway_provider_resource import AiGatewayProviderResource
 from datadog_api_client.v2.model.ai_gateway_provider_response import AiGatewayProviderResponse
+from datadog_api_client.v2.model.ai_gateway_provider_status import AiGatewayProviderStatus
+from datadog_api_client.v2.model.ai_gateway_provider_status_state import AiGatewayProviderStatusState
 from datadog_api_client.v2.model.ai_gateway_provider_type import AiGatewayProviderType
 from datadog_api_client.v2.model.ai_gateway_provider_update_attributes import AiGatewayProviderUpdateAttributes
 from datadog_api_client.v2.model.ai_gateway_provider_update_data import AiGatewayProviderUpdateData
@@ -14565,6 +14586,7 @@ __all__ = [
     "AiGatewayBudgetInstancesSummaryResource",
     "AiGatewayBudgetInstancesSummaryResponse",
     "AiGatewayBudgetInstancesSummaryType",
+    "AiGatewayBudgetLimitMode",
     "AiGatewayBudgetListAttributes",
     "AiGatewayBudgetListResource",
     "AiGatewayBudgetListResponse",
@@ -14572,6 +14594,7 @@ __all__ = [
     "AiGatewayBudgetPeriodResource",
     "AiGatewayBudgetPeriodResponse",
     "AiGatewayBudgetPeriodType",
+    "AiGatewayBudgetReportingSummary",
     "AiGatewayBudgetResource",
     "AiGatewayBudgetResponse",
     "AiGatewayBudgetSelectorEntry",
@@ -14629,6 +14652,12 @@ __all__ = [
     "AiGatewayKnownProvider",
     "AiGatewayMaxReasoningLevel",
     "AiGatewayMetadataCaptureItem",
+    "AiGatewayModelAutomaticPricing",
+    "AiGatewayModelAutomaticPricingFieldMatch",
+    "AiGatewayModelAutomaticPricingMapping",
+    "AiGatewayModelAutomaticPricingModeTrigger",
+    "AiGatewayModelAutomaticPricingRate",
+    "AiGatewayModelAutomaticPricingSource",
     "AiGatewayModelCapabilities",
     "AiGatewayModelCatalogEntryAttributes",
     "AiGatewayModelCatalogEntryIdentifier",
@@ -14683,6 +14712,7 @@ __all__ = [
     "AiGatewayModelPricingResponseData",
     "AiGatewayModelPricingSource",
     "AiGatewayModelPricingSourceType",
+    "AiGatewayModelPricingStatus",
     "AiGatewayModelPricingType",
     "AiGatewayModelReasoning",
     "AiGatewayModelReasoningControl",
@@ -14692,6 +14722,8 @@ __all__ = [
     "AiGatewayModelUpdateAttributes",
     "AiGatewayModelUpdateData",
     "AiGatewayModelUpdateRequest",
+    "AiGatewayModelZdr",
+    "AiGatewayModelZdrCoverage",
     "AiGatewayModelsBulkCreateAttributes",
     "AiGatewayModelsBulkCreateData",
     "AiGatewayModelsBulkCreateRequest",
@@ -14715,8 +14747,10 @@ __all__ = [
     "AiGatewayPolicyType",
     "AiGatewayProviderAttributes",
     "AiGatewayProviderCreateAttributes",
+    "AiGatewayProviderCreateCredentialSource",
     "AiGatewayProviderCreateData",
     "AiGatewayProviderCreateRequest",
+    "AiGatewayProviderCredentialSource",
     "AiGatewayProviderInitialBinding",
     "AiGatewayProviderInitialBindingRelation",
     "AiGatewayProviderIntegrationConfig",
@@ -14726,6 +14760,8 @@ __all__ = [
     "AiGatewayProviderRelationships",
     "AiGatewayProviderResource",
     "AiGatewayProviderResponse",
+    "AiGatewayProviderStatus",
+    "AiGatewayProviderStatusState",
     "AiGatewayProviderType",
     "AiGatewayProviderUpdateAttributes",
     "AiGatewayProviderUpdateData",

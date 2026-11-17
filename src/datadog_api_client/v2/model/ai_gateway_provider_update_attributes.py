@@ -30,15 +30,21 @@ class AiGatewayProviderUpdateAttributes(ModelNormal):
         return {
             "cost_multiplier": (float,),
             "name": (str,),
+            "zdr_eligible": (bool,),
         }
 
     attribute_map = {
         "cost_multiplier": "cost_multiplier",
         "name": "name",
+        "zdr_eligible": "zdr_eligible",
     }
 
     def __init__(
-        self_, cost_multiplier: Union[float, UnsetType] = unset, name: Union[str, UnsetType] = unset, **kwargs
+        self_,
+        cost_multiplier: Union[float, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
+        zdr_eligible: Union[bool, UnsetType] = unset,
+        **kwargs,
     ):
         """
         Attributes used to update an AI Gateway provider.
@@ -48,9 +54,14 @@ class AiGatewayProviderUpdateAttributes(ModelNormal):
 
         :param name: Human-readable resource name.
         :type name: str, optional
+
+        :param zdr_eligible: Whether this provider connection is covered by a zero data retention agreement. Omit to leave unchanged.
+        :type zdr_eligible: bool, optional
         """
         if cost_multiplier is not unset:
             kwargs["cost_multiplier"] = cost_multiplier
         if name is not unset:
             kwargs["name"] = name
+        if zdr_eligible is not unset:
+            kwargs["zdr_eligible"] = zdr_eligible
         super().__init__(kwargs)

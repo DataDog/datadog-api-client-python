@@ -8,6 +8,10 @@ from datadog_api_client.v2.api.ai_gateway_api import AIGatewayApi
 from datadog_api_client.v2.model.ai_gateway_nullable_routing_rule_tier_ordering import (
     AiGatewayNullableRoutingRuleTierOrdering,
 )
+from datadog_api_client.v2.model.ai_gateway_provider_initial_binding import AiGatewayProviderInitialBinding
+from datadog_api_client.v2.model.ai_gateway_provider_initial_binding_relation import (
+    AiGatewayProviderInitialBindingRelation,
+)
 from datadog_api_client.v2.model.ai_gateway_routing_classifier_request import AiGatewayRoutingClassifierRequest
 from datadog_api_client.v2.model.ai_gateway_routing_reasoning_level import AiGatewayRoutingReasoningLevel
 from datadog_api_client.v2.model.ai_gateway_routing_rule_create_attributes import AiGatewayRoutingRuleCreateAttributes
@@ -21,6 +25,14 @@ from datadog_api_client.v2.model.ai_gateway_routing_rule_type import AiGatewayRo
 body = AiGatewayRoutingRuleCreateRequest(
     data=AiGatewayRoutingRuleCreateData(
         attributes=AiGatewayRoutingRuleCreateAttributes(
+            initial_bindings=[
+                AiGatewayProviderInitialBinding(
+                    principals=[
+                        "org:11111111-1111-1111-1111-111111111111",
+                    ],
+                    relation=AiGatewayProviderInitialBindingRelation.VIEWER,
+                ),
+            ],
             slug="coding",
             tiers=[
                 AiGatewayRoutingRuleTierRequest(

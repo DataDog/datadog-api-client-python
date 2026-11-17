@@ -11,6 +11,9 @@ from datadog_api_client.v2.model.ai_gateway_custom_provider_supported_operation 
 from datadog_api_client.v2.model.ai_gateway_known_provider import AiGatewayKnownProvider
 from datadog_api_client.v2.model.ai_gateway_model_input import AiGatewayModelInput
 from datadog_api_client.v2.model.ai_gateway_provider_create_attributes import AiGatewayProviderCreateAttributes
+from datadog_api_client.v2.model.ai_gateway_provider_create_credential_source import (
+    AiGatewayProviderCreateCredentialSource,
+)
 from datadog_api_client.v2.model.ai_gateway_provider_create_data import AiGatewayProviderCreateData
 from datadog_api_client.v2.model.ai_gateway_provider_create_request import AiGatewayProviderCreateRequest
 from datadog_api_client.v2.model.ai_gateway_provider_initial_binding import AiGatewayProviderInitialBinding
@@ -25,6 +28,7 @@ body = AiGatewayProviderCreateRequest(
     data=AiGatewayProviderCreateData(
         attributes=AiGatewayProviderCreateAttributes(
             cost_multiplier=1.0,
+            credential_source=AiGatewayProviderCreateCredentialSource.INTEGRATION_ACCOUNT,
             initial_bindings=[
                 AiGatewayProviderInitialBinding(
                     principals=[
@@ -56,6 +60,7 @@ body = AiGatewayProviderCreateRequest(
             ],
             name="production-us",
             slug="prod-us",
+            zdr_eligible=False,
         ),
         type=AiGatewayProviderType.PROVIDERS,
     ),

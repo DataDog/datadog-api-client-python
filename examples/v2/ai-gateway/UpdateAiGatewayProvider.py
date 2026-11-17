@@ -15,6 +15,7 @@ body = AiGatewayProviderUpdateRequest(
         attributes=AiGatewayProviderUpdateAttributes(
             cost_multiplier=1.0,
             name="production-us-v2",
+            zdr_eligible=False,
         ),
         id="42",
         type=AiGatewayProviderType.PROVIDERS,
