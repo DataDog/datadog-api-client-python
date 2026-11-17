@@ -9,16 +9,19 @@ from datadog_api_client.v2.model.rum_application_create import RUMApplicationCre
 from datadog_api_client.v2.model.rum_application_create_attributes import RUMApplicationCreateAttributes
 from datadog_api_client.v2.model.rum_application_create_request import RUMApplicationCreateRequest
 from datadog_api_client.v2.model.rum_application_create_type import RUMApplicationCreateType
+from datadog_api_client.v2.model.rum_application_platform_type import RUMApplicationPlatformType
 from datadog_api_client.v2.model.rum_event_processing_state import RUMEventProcessingState
-from datadog_api_client.v2.model.rum_product_analytics_retention_state import RUMProductAnalyticsRetentionState
+from datadog_api_client.v2.model.rum_product_analytics_retention_state_request import (
+    RUMProductAnalyticsRetentionStateRequest,
+)
 
 body = RUMApplicationCreateRequest(
     data=RUMApplicationCreate(
         attributes=RUMApplicationCreateAttributes(
             name="test-rum-with-product-scales-5c67ebb32077e1d9",
-            type="browser",
+            type=RUMApplicationPlatformType.BROWSER,
             rum_event_processing_state=RUMEventProcessingState.ERROR_FOCUSED_MODE,
-            product_analytics_retention_state=RUMProductAnalyticsRetentionState.NONE,
+            product_analytics_retention_state=RUMProductAnalyticsRetentionStateRequest.NONE,
         ),
         type=RUMApplicationCreateType.RUM_APPLICATION_CREATE,
     ),

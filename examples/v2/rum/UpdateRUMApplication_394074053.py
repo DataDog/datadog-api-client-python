@@ -10,7 +10,9 @@ from datadog_api_client.v2.model.rum_application_update_attributes import RUMApp
 from datadog_api_client.v2.model.rum_application_update_request import RUMApplicationUpdateRequest
 from datadog_api_client.v2.model.rum_application_update_type import RUMApplicationUpdateType
 from datadog_api_client.v2.model.rum_event_processing_state import RUMEventProcessingState
-from datadog_api_client.v2.model.rum_product_analytics_retention_state import RUMProductAnalyticsRetentionState
+from datadog_api_client.v2.model.rum_product_analytics_retention_state_request import (
+    RUMProductAnalyticsRetentionStateRequest,
+)
 
 # there is a valid "rum_application" in the system
 RUM_APPLICATION_DATA_ID = environ["RUM_APPLICATION_DATA_ID"]
@@ -20,7 +22,7 @@ body = RUMApplicationUpdateRequest(
         attributes=RUMApplicationUpdateAttributes(
             name="updated_rum_with_product_scales",
             rum_event_processing_state=RUMEventProcessingState.ALL,
-            product_analytics_retention_state=RUMProductAnalyticsRetentionState.MAX,
+            product_analytics_retention_state=RUMProductAnalyticsRetentionStateRequest.MAX,
         ),
         id=RUM_APPLICATION_DATA_ID,
         type=RUMApplicationUpdateType.RUM_APPLICATION_UPDATE,
