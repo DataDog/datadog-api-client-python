@@ -10831,6 +10831,12 @@ from datadog_api_client.v2.model.security_monitoring_batch_migration_publish_att
 from datadog_api_client.v2.model.security_monitoring_batch_migration_publish_data import (
     SecurityMonitoringBatchMigrationPublishData,
 )
+from datadog_api_client.v2.model.security_monitoring_batch_migration_publish_error import (
+    SecurityMonitoringBatchMigrationPublishError,
+)
+from datadog_api_client.v2.model.security_monitoring_batch_migration_publish_error_detail import (
+    SecurityMonitoringBatchMigrationPublishErrorDetail,
+)
 from datadog_api_client.v2.model.security_monitoring_batch_migration_publish_request import (
     SecurityMonitoringBatchMigrationPublishRequest,
 )
@@ -21389,6 +21395,8 @@ __all__ = [
     "SecurityMonitoringBatchMigrationListMeta",
     "SecurityMonitoringBatchMigrationPublishAttributes",
     "SecurityMonitoringBatchMigrationPublishData",
+    "SecurityMonitoringBatchMigrationPublishError",
+    "SecurityMonitoringBatchMigrationPublishErrorDetail",
     "SecurityMonitoringBatchMigrationPublishRequest",
     "SecurityMonitoringBatchMigrationPublishResponse",
     "SecurityMonitoringBatchMigrationPublishType",

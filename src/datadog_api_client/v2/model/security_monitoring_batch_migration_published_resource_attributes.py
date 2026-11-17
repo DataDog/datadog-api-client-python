@@ -14,6 +14,9 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.security_monitoring_batch_migration_publish_error import (
+        SecurityMonitoringBatchMigrationPublishError,
+    )
     from datadog_api_client.v2.model.security_monitoring_batch_migration_published_resource_status import (
         SecurityMonitoringBatchMigrationPublishedResourceStatus,
     )
@@ -22,12 +25,15 @@ if TYPE_CHECKING:
 class SecurityMonitoringBatchMigrationPublishedResourceAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.security_monitoring_batch_migration_publish_error import (
+            SecurityMonitoringBatchMigrationPublishError,
+        )
         from datadog_api_client.v2.model.security_monitoring_batch_migration_published_resource_status import (
             SecurityMonitoringBatchMigrationPublishedResourceStatus,
         )
 
         return {
-            "error": (str,),
+            "error": (SecurityMonitoringBatchMigrationPublishError,),
             "rule_id": (str,),
             "status": (SecurityMonitoringBatchMigrationPublishedResourceStatus,),
         }
@@ -41,7 +47,7 @@ class SecurityMonitoringBatchMigrationPublishedResourceAttributes(ModelNormal):
     def __init__(
         self_,
         status: SecurityMonitoringBatchMigrationPublishedResourceStatus,
-        error: Union[str, UnsetType] = unset,
+        error: Union[SecurityMonitoringBatchMigrationPublishError, UnsetType] = unset,
         rule_id: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -49,7 +55,7 @@ class SecurityMonitoringBatchMigrationPublishedResourceAttributes(ModelNormal):
         Attributes of the publication outcome of a batch migration resource.
 
         :param error: The reason why the resource could not be published.
-        :type error: str, optional
+        :type error: SecurityMonitoringBatchMigrationPublishError, optional
 
         :param rule_id: The ID of the created Cloud SIEM detection rule.
         :type rule_id: str, optional
