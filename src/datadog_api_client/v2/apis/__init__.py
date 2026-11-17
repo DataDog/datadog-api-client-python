@@ -41,6 +41,7 @@ from datadog_api_client.v2.api.compliance_api import ComplianceApi
 from datadog_api_client.v2.api.confluent_cloud_api import ConfluentCloudApi
 from datadog_api_client.v2.api.container_images_api import ContainerImagesApi
 from datadog_api_client.v2.api.containers_api import ContainersApi
+from datadog_api_client.v2.api.core_weave_integration_api import CoreWeaveIntegrationApi
 from datadog_api_client.v2.api.customer_org_api import CustomerOrgApi
 from datadog_api_client.v2.api.ddsql_api import DDSQLApi
 from datadog_api_client.v2.api.dem_api import DEMApi
@@ -204,6 +205,7 @@ __all__ = [
     "ConfluentCloudApi",
     "ContainerImagesApi",
     "ContainersApi",
+    "CoreWeaveIntegrationApi",
     "CustomerOrgApi",
     "DDSQLApi",
     "DEMApi",

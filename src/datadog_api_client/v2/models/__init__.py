@@ -2121,6 +2121,84 @@ from datadog_api_client.v2.model.convert_job_results_to_signals_attributes impor
 from datadog_api_client.v2.model.convert_job_results_to_signals_data import ConvertJobResultsToSignalsData
 from datadog_api_client.v2.model.convert_job_results_to_signals_data_type import ConvertJobResultsToSignalsDataType
 from datadog_api_client.v2.model.convert_job_results_to_signals_request import ConvertJobResultsToSignalsRequest
+from datadog_api_client.v2.model.core_weave_cloud_integration_account_api_token_auth_request import (
+    CoreWeaveCloudIntegrationAccountAPITokenAuthRequest,
+)
+from datadog_api_client.v2.model.core_weave_cloud_integration_account_api_token_auth_response import (
+    CoreWeaveCloudIntegrationAccountAPITokenAuthResponse,
+)
+from datadog_api_client.v2.model.core_weave_cloud_integration_account_api_token_auth_type import (
+    CoreWeaveCloudIntegrationAccountAPITokenAuthType,
+)
+from datadog_api_client.v2.model.core_weave_cloud_integration_account_api_token_auth_update import (
+    CoreWeaveCloudIntegrationAccountAPITokenAuthUpdate,
+)
+from datadog_api_client.v2.model.core_weave_cloud_integration_account_authentication_request import (
+    CoreWeaveCloudIntegrationAccountAuthenticationRequest,
+)
+from datadog_api_client.v2.model.core_weave_cloud_integration_account_authentication_response import (
+    CoreWeaveCloudIntegrationAccountAuthenticationResponse,
+)
+from datadog_api_client.v2.model.core_weave_cloud_integration_account_authentication_update import (
+    CoreWeaveCloudIntegrationAccountAuthenticationUpdate,
+)
+from datadog_api_client.v2.model.core_weave_cloud_integration_account_create_attributes import (
+    CoreWeaveCloudIntegrationAccountCreateAttributes,
+)
+from datadog_api_client.v2.model.core_weave_cloud_integration_account_create_data import (
+    CoreWeaveCloudIntegrationAccountCreateData,
+)
+from datadog_api_client.v2.model.core_weave_cloud_integration_account_create_request import (
+    CoreWeaveCloudIntegrationAccountCreateRequest,
+)
+from datadog_api_client.v2.model.core_weave_cloud_integration_account_response import (
+    CoreWeaveCloudIntegrationAccountResponse,
+)
+from datadog_api_client.v2.model.core_weave_cloud_integration_account_response_attributes import (
+    CoreWeaveCloudIntegrationAccountResponseAttributes,
+)
+from datadog_api_client.v2.model.core_weave_cloud_integration_account_response_data import (
+    CoreWeaveCloudIntegrationAccountResponseData,
+)
+from datadog_api_client.v2.model.core_weave_cloud_integration_account_settings_request import (
+    CoreWeaveCloudIntegrationAccountSettingsRequest,
+)
+from datadog_api_client.v2.model.core_weave_cloud_integration_account_settings_response import (
+    CoreWeaveCloudIntegrationAccountSettingsResponse,
+)
+from datadog_api_client.v2.model.core_weave_cloud_integration_account_settings_update import (
+    CoreWeaveCloudIntegrationAccountSettingsUpdate,
+)
+from datadog_api_client.v2.model.core_weave_cloud_integration_account_update_attributes import (
+    CoreWeaveCloudIntegrationAccountUpdateAttributes,
+)
+from datadog_api_client.v2.model.core_weave_cloud_integration_account_update_data import (
+    CoreWeaveCloudIntegrationAccountUpdateData,
+)
+from datadog_api_client.v2.model.core_weave_cloud_integration_account_update_request import (
+    CoreWeaveCloudIntegrationAccountUpdateRequest,
+)
+from datadog_api_client.v2.model.core_weave_cloud_integration_accounts_response import (
+    CoreWeaveCloudIntegrationAccountsResponse,
+)
+from datadog_api_client.v2.model.core_weave_cloud_integration_dataflows_request import (
+    CoreWeaveCloudIntegrationDataflowsRequest,
+)
+from datadog_api_client.v2.model.core_weave_cloud_integration_dataflows_response import (
+    CoreWeaveCloudIntegrationDataflowsResponse,
+)
+from datadog_api_client.v2.model.core_weave_cloud_logs_integration_dataflow_request import (
+    CoreWeaveCloudLogsIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.core_weave_cloud_logs_integration_dataflow_response import (
+    CoreWeaveCloudLogsIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.core_weave_cloud_metrics_integration_dataflow_request import (
+    CoreWeaveCloudMetricsIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.core_weave_cloud_metrics_integration_dataflow_response import (
+    CoreWeaveCloudMetricsIntegrationDataflowResponse,
+)
 from datadog_api_client.v2.model.cost_aggregation_type import CostAggregationType
 from datadog_api_client.v2.model.cost_anomalies_response import CostAnomaliesResponse
 from datadog_api_client.v2.model.cost_anomalies_response_data import CostAnomaliesResponseData
@@ -15767,6 +15845,32 @@ __all__ = [
     "ConvertJobResultsToSignalsData",
     "ConvertJobResultsToSignalsDataType",
     "ConvertJobResultsToSignalsRequest",
+    "CoreWeaveCloudIntegrationAccountAPITokenAuthRequest",
+    "CoreWeaveCloudIntegrationAccountAPITokenAuthResponse",
+    "CoreWeaveCloudIntegrationAccountAPITokenAuthType",
+    "CoreWeaveCloudIntegrationAccountAPITokenAuthUpdate",
+    "CoreWeaveCloudIntegrationAccountAuthenticationRequest",
+    "CoreWeaveCloudIntegrationAccountAuthenticationResponse",
+    "CoreWeaveCloudIntegrationAccountAuthenticationUpdate",
+    "CoreWeaveCloudIntegrationAccountCreateAttributes",
+    "CoreWeaveCloudIntegrationAccountCreateData",
+    "CoreWeaveCloudIntegrationAccountCreateRequest",
+    "CoreWeaveCloudIntegrationAccountResponse",
+    "CoreWeaveCloudIntegrationAccountResponseAttributes",
+    "CoreWeaveCloudIntegrationAccountResponseData",
+    "CoreWeaveCloudIntegrationAccountSettingsRequest",
+    "CoreWeaveCloudIntegrationAccountSettingsResponse",
+    "CoreWeaveCloudIntegrationAccountSettingsUpdate",
+    "CoreWeaveCloudIntegrationAccountUpdateAttributes",
+    "CoreWeaveCloudIntegrationAccountUpdateData",
+    "CoreWeaveCloudIntegrationAccountUpdateRequest",
+    "CoreWeaveCloudIntegrationAccountsResponse",
+    "CoreWeaveCloudIntegrationDataflowsRequest",
+    "CoreWeaveCloudIntegrationDataflowsResponse",
+    "CoreWeaveCloudLogsIntegrationDataflowRequest",
+    "CoreWeaveCloudLogsIntegrationDataflowResponse",
+    "CoreWeaveCloudMetricsIntegrationDataflowRequest",
+    "CoreWeaveCloudMetricsIntegrationDataflowResponse",
     "CostAggregationType",
     "CostAnomaliesResponse",
     "CostAnomaliesResponseData",
