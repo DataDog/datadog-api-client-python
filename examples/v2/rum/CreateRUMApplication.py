@@ -9,12 +9,13 @@ from datadog_api_client.v2.model.rum_application_create import RUMApplicationCre
 from datadog_api_client.v2.model.rum_application_create_attributes import RUMApplicationCreateAttributes
 from datadog_api_client.v2.model.rum_application_create_request import RUMApplicationCreateRequest
 from datadog_api_client.v2.model.rum_application_create_type import RUMApplicationCreateType
+from datadog_api_client.v2.model.rum_application_platform_type import RUMApplicationPlatformType
 
 body = RUMApplicationCreateRequest(
     data=RUMApplicationCreate(
         attributes=RUMApplicationCreateAttributes(
             name="test-rum-5c67ebb32077e1d9",
-            type="ios",
+            type=RUMApplicationPlatformType.IOS,
         ),
         type=RUMApplicationCreateType.RUM_APPLICATION_CREATE,
     ),
