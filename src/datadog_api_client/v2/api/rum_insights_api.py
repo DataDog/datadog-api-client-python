@@ -15,7 +15,8 @@ from datadog_api_client.v2.model.aggregated_waterfall_request import AggregatedW
 
 class RUMInsightsApi:
     """
-    Get insights into the performance of your Real User Monitoring (RUM) applications over HTTP. See the `RUM & Session Replay page <https://docs.datadoghq.com/real_user_monitoring/>`_ for more information
+    Get insights into the performance of your Real User Monitoring (RUM) applications over HTTP. See the `RUM &
+    Session Replay page <https://docs.datadoghq.com/real_user_monitoring/>`_ for more information.
     """
 
     def __init__(self, api_client=None):

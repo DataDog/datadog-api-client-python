@@ -73,7 +73,9 @@ class AggregatedWaterfallRequestAttributes(ModelNormal):
         :param application_id: The RUM application ID to analyze.
         :type application_id: str
 
-        :param criteria: Performance criteria to filter view instances by a metric threshold.
+        :param criteria: Performance criteria to filter view instances by a metric threshold. When criteria are
+            applied, specify at least one of ``min`` or ``max``. When both are provided, ``min`` must be less
+            than ``max``.
         :type criteria: AggregatedWaterfallPerformanceCriteria, optional
 
         :param filter: RUM query string to filter events (for example, @session.type:user @geo.country:US).

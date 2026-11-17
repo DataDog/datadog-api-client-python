@@ -3,7 +3,7 @@ Feature: RUM Insights
   Get insights into the performance of your Real User Monitoring (RUM)
   applications over HTTP. See the [RUM & Session Replay
   page](https://docs.datadoghq.com/real_user_monitoring/) for more
-  information
+  information.
 
   Background:
     Given a valid "apiKeyAuth" key in the system
