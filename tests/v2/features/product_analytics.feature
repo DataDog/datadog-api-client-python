@@ -15,6 +15,24 @@ Feature: Product Analytics
     And an instance of "ProductAnalytics" API
 
   @generated @skip @team:ddoghq/product-analytics-platform
+  Scenario: Analyze journey drop-off returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "QueryProductAnalyticsJourneyDropOff" enabled
+    And new "QueryProductAnalyticsJourneyDropOff" request
+    And body with value {"data": {"attributes": {"from": 1756425600000, "query": {"sampling": {"enabled": false}, "search": {"expression": "A -> B", "filters": {"audience_filters": {"accounts": [{"name": "enterprise_accounts"}], "formula": "power_users AND NOT trial_segment", "segments": [{"name": "trial_segment", "segment_id": "00000000-0000-0000-0000-000000000000"}], "users": [{"name": "power_users"}]}, "graph_filters": [{"name": "__dd.time_to_convert", "operator": "<=", "target": {"type": "node", "value": "A"}, "value": 60000}]}, "join_keys": {"primary": "@session.id", "secondary": []}, "node_objects": {"A": {"data_source": "product_analytics", "search": {"query": "@type:view @view.name:Login"}}, "B": {"data_source": "product_analytics", "search": {"query": "@type:action @action.target.name:Submit"}}}}, "target": {"type": "node", "value": "A"}, "top_issue_count": 5}, "to": 1756857600000}, "type": "journey_drop_off_analysis_request"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @skip @team:ddoghq/product-analytics-platform
+  Scenario: Analyze journey drop-off returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "QueryProductAnalyticsJourneyDropOff" enabled
+    And new "QueryProductAnalyticsJourneyDropOff" request
+    And body with value {"data": {"attributes": {"from": 1756425600000, "query": {"sampling": {"enabled": false}, "search": {"expression": "A -> B", "filters": {"audience_filters": {"accounts": [{"name": "enterprise_accounts"}], "formula": "power_users AND NOT trial_segment", "segments": [{"name": "trial_segment", "segment_id": "00000000-0000-0000-0000-000000000000"}], "users": [{"name": "power_users"}]}, "graph_filters": [{"name": "__dd.time_to_convert", "operator": "<=", "target": {"type": "node", "value": "A"}, "value": 60000}]}, "join_keys": {"primary": "@session.id", "secondary": []}, "node_objects": {"A": {"data_source": "product_analytics", "search": {"query": "@type:view @view.name:Login"}}, "B": {"data_source": "product_analytics", "search": {"query": "@type:action @action.target.name:Submit"}}}}, "target": {"type": "node", "value": "B"}, "top_issue_count": 5}, "to": 1756857600000}, "type": "journey_drop_off_analysis_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/product-analytics-platform
   Scenario: Compute a Sankey diagram returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
     And operation "QueryProductAnalyticsSankey" enabled
@@ -169,6 +187,42 @@ Feature: Product Analytics
     Given a valid "appKeyAuth" key in the system
     And new "QueryProductAnalyticsTimeseries" request
     And body with value {"data": {"attributes": {"from": 1771232048460, "query": {"compute": {"aggregation": "count"}, "query": {"data_source": "product_analytics", "search": {"query": "@type:view"}}}, "to": 1771836848262}, "type": "formula_analytics_extended_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/product-analytics-platform
+  Scenario: Get feature suggestions returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "QueryProductAnalyticsFunnelSuggestions" enabled
+    And new "QueryProductAnalyticsFunnelSuggestions" request
+    And body with value {"data": {"attributes": {"application_id": "40d8ca4b-2ac0-481f-b16e-f110699ecff6"}, "type": "funnel_suggestions_request"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/product-analytics-platform
+  Scenario: Get feature suggestions returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "QueryProductAnalyticsFunnelSuggestions" enabled
+    And new "QueryProductAnalyticsFunnelSuggestions" request
+    And body with value {"data": {"attributes": {"application_id": "40d8ca4b-2ac0-481f-b16e-f110699ecff6"}, "type": "funnel_suggestions_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/product-analytics-platform
+  Scenario: Get funnel step suggestions returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "QueryProductAnalyticsFunnelStepSuggestions" enabled
+    And new "QueryProductAnalyticsFunnelStepSuggestions" request
+    And body with value {"data": {"attributes": {"application_id": "40d8ca4b-2ac0-481f-b16e-f110699ecff6", "expression": "node_01->node_02", "steps": {"node_01": "@type:view @view.name:/checkout", "node_02": "@type:action @action.name:pay"}}, "type": "funnel_suggestions_steps_request"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/product-analytics-platform
+  Scenario: Get funnel step suggestions returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "QueryProductAnalyticsFunnelStepSuggestions" enabled
+    And new "QueryProductAnalyticsFunnelStepSuggestions" request
+    And body with value {"data": {"attributes": {"application_id": "40d8ca4b-2ac0-481f-b16e-f110699ecff6", "expression": "node_01->node_02", "steps": {"node_01": "@type:view @view.name:/checkout", "node_02": "@type:action @action.name:pay"}}, "type": "funnel_suggestions_steps_request"}}
     When the request is sent
     Then the response status is 200 OK
 

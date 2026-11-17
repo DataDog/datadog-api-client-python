@@ -9374,6 +9374,7 @@ from datadog_api_client.v2.model.product_analytics_base_query import ProductAnal
 from datadog_api_client.v2.model.product_analytics_calendar_interval import ProductAnalyticsCalendarInterval
 from datadog_api_client.v2.model.product_analytics_calendar_interval_type import ProductAnalyticsCalendarIntervalType
 from datadog_api_client.v2.model.product_analytics_compute import ProductAnalyticsCompute
+from datadog_api_client.v2.model.product_analytics_core_user_journey import ProductAnalyticsCoreUserJourney
 from datadog_api_client.v2.model.product_analytics_elapsed_time import ProductAnalyticsElapsedTime
 from datadog_api_client.v2.model.product_analytics_event_query import ProductAnalyticsEventQuery
 from datadog_api_client.v2.model.product_analytics_event_query_data_source import ProductAnalyticsEventQueryDataSource
@@ -9403,6 +9404,63 @@ from datadog_api_client.v2.model.product_analytics_formula_retention_request_dat
 from datadog_api_client.v2.model.product_analytics_formula_retention_request_type import (
     ProductAnalyticsFormulaRetentionRequestType,
 )
+from datadog_api_client.v2.model.product_analytics_funnel_step_suggestions_request import (
+    ProductAnalyticsFunnelStepSuggestionsRequest,
+)
+from datadog_api_client.v2.model.product_analytics_funnel_step_suggestions_request_attributes import (
+    ProductAnalyticsFunnelStepSuggestionsRequestAttributes,
+)
+from datadog_api_client.v2.model.product_analytics_funnel_step_suggestions_request_data import (
+    ProductAnalyticsFunnelStepSuggestionsRequestData,
+)
+from datadog_api_client.v2.model.product_analytics_funnel_step_suggestions_request_type import (
+    ProductAnalyticsFunnelStepSuggestionsRequestType,
+)
+from datadog_api_client.v2.model.product_analytics_funnel_step_suggestions_response import (
+    ProductAnalyticsFunnelStepSuggestionsResponse,
+)
+from datadog_api_client.v2.model.product_analytics_funnel_step_suggestions_response_attributes import (
+    ProductAnalyticsFunnelStepSuggestionsResponseAttributes,
+)
+from datadog_api_client.v2.model.product_analytics_funnel_step_suggestions_response_data import (
+    ProductAnalyticsFunnelStepSuggestionsResponseData,
+)
+from datadog_api_client.v2.model.product_analytics_funnel_step_suggestions_response_type import (
+    ProductAnalyticsFunnelStepSuggestionsResponseType,
+)
+from datadog_api_client.v2.model.product_analytics_funnel_suggestions_application import (
+    ProductAnalyticsFunnelSuggestionsApplication,
+)
+from datadog_api_client.v2.model.product_analytics_funnel_suggestions_domain import (
+    ProductAnalyticsFunnelSuggestionsDomain,
+)
+from datadog_api_client.v2.model.product_analytics_funnel_suggestions_feature import (
+    ProductAnalyticsFunnelSuggestionsFeature,
+)
+from datadog_api_client.v2.model.product_analytics_funnel_suggestions_request import (
+    ProductAnalyticsFunnelSuggestionsRequest,
+)
+from datadog_api_client.v2.model.product_analytics_funnel_suggestions_request_attributes import (
+    ProductAnalyticsFunnelSuggestionsRequestAttributes,
+)
+from datadog_api_client.v2.model.product_analytics_funnel_suggestions_request_data import (
+    ProductAnalyticsFunnelSuggestionsRequestData,
+)
+from datadog_api_client.v2.model.product_analytics_funnel_suggestions_request_type import (
+    ProductAnalyticsFunnelSuggestionsRequestType,
+)
+from datadog_api_client.v2.model.product_analytics_funnel_suggestions_response import (
+    ProductAnalyticsFunnelSuggestionsResponse,
+)
+from datadog_api_client.v2.model.product_analytics_funnel_suggestions_response_attributes import (
+    ProductAnalyticsFunnelSuggestionsResponseAttributes,
+)
+from datadog_api_client.v2.model.product_analytics_funnel_suggestions_response_data import (
+    ProductAnalyticsFunnelSuggestionsResponseData,
+)
+from datadog_api_client.v2.model.product_analytics_funnel_suggestions_response_type import (
+    ProductAnalyticsFunnelSuggestionsResponseType,
+)
 from datadog_api_client.v2.model.product_analytics_graph_query_compute import ProductAnalyticsGraphQueryCompute
 from datadog_api_client.v2.model.product_analytics_graph_query_group_by import ProductAnalyticsGraphQueryGroupBy
 from datadog_api_client.v2.model.product_analytics_graph_query_group_by_source import (
@@ -9429,6 +9487,30 @@ from datadog_api_client.v2.model.product_analytics_journey_computed_column_name 
     ProductAnalyticsJourneyComputedColumnName,
 )
 from datadog_api_client.v2.model.product_analytics_journey_conversion_type import ProductAnalyticsJourneyConversionType
+from datadog_api_client.v2.model.product_analytics_journey_drop_off_issue import ProductAnalyticsJourneyDropOffIssue
+from datadog_api_client.v2.model.product_analytics_journey_drop_off_query import ProductAnalyticsJourneyDropOffQuery
+from datadog_api_client.v2.model.product_analytics_journey_drop_off_request import ProductAnalyticsJourneyDropOffRequest
+from datadog_api_client.v2.model.product_analytics_journey_drop_off_request_attributes import (
+    ProductAnalyticsJourneyDropOffRequestAttributes,
+)
+from datadog_api_client.v2.model.product_analytics_journey_drop_off_request_data import (
+    ProductAnalyticsJourneyDropOffRequestData,
+)
+from datadog_api_client.v2.model.product_analytics_journey_drop_off_request_type import (
+    ProductAnalyticsJourneyDropOffRequestType,
+)
+from datadog_api_client.v2.model.product_analytics_journey_drop_off_response import (
+    ProductAnalyticsJourneyDropOffResponse,
+)
+from datadog_api_client.v2.model.product_analytics_journey_drop_off_response_attributes import (
+    ProductAnalyticsJourneyDropOffResponseAttributes,
+)
+from datadog_api_client.v2.model.product_analytics_journey_drop_off_response_data import (
+    ProductAnalyticsJourneyDropOffResponseData,
+)
+from datadog_api_client.v2.model.product_analytics_journey_drop_off_response_type import (
+    ProductAnalyticsJourneyDropOffResponseType,
+)
 from datadog_api_client.v2.model.product_analytics_journey_entity import ProductAnalyticsJourneyEntity
 from datadog_api_client.v2.model.product_analytics_journey_funnel_compute import ProductAnalyticsJourneyFunnelCompute
 from datadog_api_client.v2.model.product_analytics_journey_funnel_query import ProductAnalyticsJourneyFunnelQuery
@@ -9643,6 +9725,7 @@ from datadog_api_client.v2.model.product_analytics_retention_return_period_scope
 from datadog_api_client.v2.model.product_analytics_retention_scope import ProductAnalyticsRetentionScope
 from datadog_api_client.v2.model.product_analytics_retention_search import ProductAnalyticsRetentionSearch
 from datadog_api_client.v2.model.product_analytics_retention_time_interval import ProductAnalyticsRetentionTimeInterval
+from datadog_api_client.v2.model.product_analytics_sampling import ProductAnalyticsSampling
 from datadog_api_client.v2.model.product_analytics_sankey_aggregated_node import ProductAnalyticsSankeyAggregatedNode
 from datadog_api_client.v2.model.product_analytics_sankey_aggregated_node_type import (
     ProductAnalyticsSankeyAggregatedNodeType,
@@ -20390,6 +20473,7 @@ __all__ = [
     "ProductAnalyticsCalendarInterval",
     "ProductAnalyticsCalendarIntervalType",
     "ProductAnalyticsCompute",
+    "ProductAnalyticsCoreUserJourney",
     "ProductAnalyticsElapsedTime",
     "ProductAnalyticsEventQuery",
     "ProductAnalyticsEventQueryDataSource",
@@ -20405,6 +20489,25 @@ __all__ = [
     "ProductAnalyticsFormulaRetentionRequestAttributes",
     "ProductAnalyticsFormulaRetentionRequestData",
     "ProductAnalyticsFormulaRetentionRequestType",
+    "ProductAnalyticsFunnelStepSuggestionsRequest",
+    "ProductAnalyticsFunnelStepSuggestionsRequestAttributes",
+    "ProductAnalyticsFunnelStepSuggestionsRequestData",
+    "ProductAnalyticsFunnelStepSuggestionsRequestType",
+    "ProductAnalyticsFunnelStepSuggestionsResponse",
+    "ProductAnalyticsFunnelStepSuggestionsResponseAttributes",
+    "ProductAnalyticsFunnelStepSuggestionsResponseData",
+    "ProductAnalyticsFunnelStepSuggestionsResponseType",
+    "ProductAnalyticsFunnelSuggestionsApplication",
+    "ProductAnalyticsFunnelSuggestionsDomain",
+    "ProductAnalyticsFunnelSuggestionsFeature",
+    "ProductAnalyticsFunnelSuggestionsRequest",
+    "ProductAnalyticsFunnelSuggestionsRequestAttributes",
+    "ProductAnalyticsFunnelSuggestionsRequestData",
+    "ProductAnalyticsFunnelSuggestionsRequestType",
+    "ProductAnalyticsFunnelSuggestionsResponse",
+    "ProductAnalyticsFunnelSuggestionsResponseAttributes",
+    "ProductAnalyticsFunnelSuggestionsResponseData",
+    "ProductAnalyticsFunnelSuggestionsResponseType",
     "ProductAnalyticsGraphQueryCompute",
     "ProductAnalyticsGraphQueryGroupBy",
     "ProductAnalyticsGraphQueryGroupBySource",
@@ -20419,6 +20522,16 @@ __all__ = [
     "ProductAnalyticsJourneyComputedColumn",
     "ProductAnalyticsJourneyComputedColumnName",
     "ProductAnalyticsJourneyConversionType",
+    "ProductAnalyticsJourneyDropOffIssue",
+    "ProductAnalyticsJourneyDropOffQuery",
+    "ProductAnalyticsJourneyDropOffRequest",
+    "ProductAnalyticsJourneyDropOffRequestAttributes",
+    "ProductAnalyticsJourneyDropOffRequestData",
+    "ProductAnalyticsJourneyDropOffRequestType",
+    "ProductAnalyticsJourneyDropOffResponse",
+    "ProductAnalyticsJourneyDropOffResponseAttributes",
+    "ProductAnalyticsJourneyDropOffResponseData",
+    "ProductAnalyticsJourneyDropOffResponseType",
     "ProductAnalyticsJourneyEntity",
     "ProductAnalyticsJourneyFunnelCompute",
     "ProductAnalyticsJourneyFunnelQuery",
@@ -20523,6 +20636,7 @@ __all__ = [
     "ProductAnalyticsRetentionScope",
     "ProductAnalyticsRetentionSearch",
     "ProductAnalyticsRetentionTimeInterval",
+    "ProductAnalyticsSampling",
     "ProductAnalyticsSankeyAggregatedNode",
     "ProductAnalyticsSankeyAggregatedNodeType",
     "ProductAnalyticsSankeyDefinition",
