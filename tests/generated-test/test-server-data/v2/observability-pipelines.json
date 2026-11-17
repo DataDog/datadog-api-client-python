@@ -3,7 +3,7 @@
   "recordings": [
     {
       "feature": "Observability Pipelines",
-      "frozen_at": "2026-01-30T16:23:40.491Z",
+      "frozen_at": "2026-11-17T21:33:59.522Z",
       "interactions": [
         {
           "request": {
@@ -61,7 +61,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"errors\":[{\"title\":\"Component with ID my-processor-group is an unknown component\",\"meta\":{\"message\":\"Component with ID my-processor-group is an unknown component\"}},{\"title\":\"The following components are unused: [datadog-agent-source unknown-processor]\",\"meta\":{\"message\":\"The following components are unused: [datadog-agent-source unknown-processor]\"}}]}\n"
+              "value": "{\"errors\":[{\"title\":\"component datadog-logs-destination references unknown input: my-processor-group\",\"meta\":{\"field\":\"inputs\",\"id\":\"datadog-logs-destination\",\"message\":\"component datadog-logs-destination references unknown input: my-processor-group\"}}]}\n"
             },
             "headers": {
               "content-type": "application/json"
@@ -1456,7 +1456,7 @@
     },
     {
       "feature": "Observability Pipelines",
-      "frozen_at": "2026-01-30T16:23:55.673Z",
+      "frozen_at": "2026-11-17T21:34:08.074Z",
       "interactions": [
         {
           "request": {
@@ -1513,7 +1513,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"errors\":[{\"title\":\"Field 'include' is required\",\"meta\":{\"field\":\"include\",\"id\":\"filter-processor\",\"message\":\"Field 'include' is required\"}}]}\n"
+              "value": "{\"errors\":[{\"title\":\"include is required\",\"meta\":{\"field\":\"include\",\"id\":\"filter-processor\",\"message\":\"include is required\"}}]}\n"
             },
             "headers": {
               "content-type": "application/json"
