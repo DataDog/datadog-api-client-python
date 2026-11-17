@@ -911,6 +911,18 @@
     "operationId": "CreateIncidentTodo"
   },
   {
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\"data\": {\"type\": \"integration-account\", \"attributes\": {\"name\": \"coreweave-{{ unique }}\", \"authentication\": {\"auth_type\": \"coreweave_api_token\", \"api_token\": \"CW-SECRET-xxxxxxxxxxxxxxxxxxxx\"}, \"settings\": {\"account_tags\": [\"env:prod\", \"team:gpu\"]}}}}"
+      }
+    ],
+    "step": "there is a valid \"coreweave_cloud_integration_account\" in the system",
+    "key": "coreweave_cloud_integration_account",
+    "tag": "CoreWeave Integration",
+    "operationId": "CreateCoreWeaveCloudIntegrationAccount"
+  },
+  {
     "step": "there is an integrated AWS test account for WIF",
     "key": "aws_wif_account_v2",
     "tag": "AWS Integration",

@@ -4368,6 +4368,43 @@
       "type": "idempotent"
     }
   },
+  "ListCoreWeaveCloudIntegrationAccounts": {
+    "tag": "CoreWeave Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateCoreWeaveCloudIntegrationAccount": {
+    "tag": "CoreWeave Integration",
+    "undo": {
+      "operationId": "DeleteCoreWeaveCloudIntegrationAccount",
+      "parameters": [
+        {
+          "name": "account_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteCoreWeaveCloudIntegrationAccount": {
+    "tag": "CoreWeave Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetCoreWeaveCloudIntegrationAccount": {
+    "tag": "CoreWeave Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateCoreWeaveCloudIntegrationAccount": {
+    "tag": "CoreWeave Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListDatabricksIntegrationAccounts": {
     "tag": "Databricks Integration",
     "undo": {
