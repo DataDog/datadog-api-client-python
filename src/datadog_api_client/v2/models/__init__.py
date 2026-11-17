@@ -10894,6 +10894,38 @@ from datadog_api_client.v2.model.security_agent_investigations_list_meta import 
 from datadog_api_client.v2.model.security_agent_investigations_list_response import (
     SecurityAgentInvestigationsListResponse,
 )
+from datadog_api_client.v2.model.security_agent_outreach_domain_add_request import SecurityAgentOutreachDomainAddRequest
+from datadog_api_client.v2.model.security_agent_outreach_domain_add_request_data import (
+    SecurityAgentOutreachDomainAddRequestData,
+)
+from datadog_api_client.v2.model.security_agent_outreach_domain_add_request_data_attributes import (
+    SecurityAgentOutreachDomainAddRequestDataAttributes,
+)
+from datadog_api_client.v2.model.security_agent_outreach_domain_add_type import SecurityAgentOutreachDomainAddType
+from datadog_api_client.v2.model.security_agent_outreach_mode import SecurityAgentOutreachMode
+from datadog_api_client.v2.model.security_agent_outreach_mode_attributes import SecurityAgentOutreachModeAttributes
+from datadog_api_client.v2.model.security_agent_outreach_mode_response import SecurityAgentOutreachModeResponse
+from datadog_api_client.v2.model.security_agent_outreach_mode_response_data import SecurityAgentOutreachModeResponseData
+from datadog_api_client.v2.model.security_agent_outreach_mode_update_data import SecurityAgentOutreachModeUpdateData
+from datadog_api_client.v2.model.security_agent_outreach_mode_update_request import (
+    SecurityAgentOutreachModeUpdateRequest,
+)
+from datadog_api_client.v2.model.security_agent_outreach_policy import SecurityAgentOutreachPolicy
+from datadog_api_client.v2.model.security_agent_outreach_policy_attributes import SecurityAgentOutreachPolicyAttributes
+from datadog_api_client.v2.model.security_agent_outreach_policy_response import SecurityAgentOutreachPolicyResponse
+from datadog_api_client.v2.model.security_agent_outreach_policy_type import SecurityAgentOutreachPolicyType
+from datadog_api_client.v2.model.security_agent_outreach_rule import SecurityAgentOutreachRule
+from datadog_api_client.v2.model.security_agent_outreach_rule_update import SecurityAgentOutreachRuleUpdate
+from datadog_api_client.v2.model.security_agent_outreach_rules_update_attributes import (
+    SecurityAgentOutreachRulesUpdateAttributes,
+)
+from datadog_api_client.v2.model.security_agent_outreach_rules_update_request import (
+    SecurityAgentOutreachRulesUpdateRequest,
+)
+from datadog_api_client.v2.model.security_agent_outreach_rules_update_request_data import (
+    SecurityAgentOutreachRulesUpdateRequestData,
+)
+from datadog_api_client.v2.model.security_agent_outreach_rules_update_type import SecurityAgentOutreachRulesUpdateType
 from datadog_api_client.v2.model.security_automation_rules_links import SecurityAutomationRulesLinks
 from datadog_api_client.v2.model.security_automation_rules_meta import SecurityAutomationRulesMeta
 from datadog_api_client.v2.model.security_automation_rules_page_info import SecurityAutomationRulesPageInfo
@@ -21548,6 +21580,26 @@ __all__ = [
     "SecurityAgentInvestigationVerdict",
     "SecurityAgentInvestigationsListMeta",
     "SecurityAgentInvestigationsListResponse",
+    "SecurityAgentOutreachDomainAddRequest",
+    "SecurityAgentOutreachDomainAddRequestData",
+    "SecurityAgentOutreachDomainAddRequestDataAttributes",
+    "SecurityAgentOutreachDomainAddType",
+    "SecurityAgentOutreachMode",
+    "SecurityAgentOutreachModeAttributes",
+    "SecurityAgentOutreachModeResponse",
+    "SecurityAgentOutreachModeResponseData",
+    "SecurityAgentOutreachModeUpdateData",
+    "SecurityAgentOutreachModeUpdateRequest",
+    "SecurityAgentOutreachPolicy",
+    "SecurityAgentOutreachPolicyAttributes",
+    "SecurityAgentOutreachPolicyResponse",
+    "SecurityAgentOutreachPolicyType",
+    "SecurityAgentOutreachRule",
+    "SecurityAgentOutreachRuleUpdate",
+    "SecurityAgentOutreachRulesUpdateAttributes",
+    "SecurityAgentOutreachRulesUpdateRequest",
+    "SecurityAgentOutreachRulesUpdateRequestData",
+    "SecurityAgentOutreachRulesUpdateType",
     "SecurityAutomationRulesLinks",
     "SecurityAutomationRulesMeta",
     "SecurityAutomationRulesPageInfo",

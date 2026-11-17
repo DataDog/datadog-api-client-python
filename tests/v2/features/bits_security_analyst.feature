@@ -10,6 +10,39 @@ Feature: Bits Security Analyst
     And an instance of "BitsSecurityAnalyst" API
 
   @skip @team:ddoghq/k9-bits-ai
+  Scenario: Add an allowed outreach domain returns "Bad Request" response
+    Given operation "AddSecurityAgentOutreachPolicyDomain" enabled
+    And new "AddSecurityAgentOutreachPolicyDomain" request
+    And body with value {"data": {"attributes": {"domain": "not a domain"}, "type": "outreach_policy_domain_add"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/k9-bits-ai
+  Scenario: Add an allowed outreach domain returns "Conflict" response
+    Given operation "AddSecurityAgentOutreachPolicyDomain" enabled
+    And new "AddSecurityAgentOutreachPolicyDomain" request
+    And body with value {"data": {"attributes": {"domain": "acme.com"}, "type": "outreach_policy_domain_add"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:ddoghq/k9-bits-ai
+  Scenario: Add an allowed outreach domain returns "Not Found" response
+    Given operation "AddSecurityAgentOutreachPolicyDomain" enabled
+    And new "AddSecurityAgentOutreachPolicyDomain" request
+    And body with value {"data": {"attributes": {"domain": "acme.com"}, "type": "outreach_policy_domain_add"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip @team:ddoghq/k9-bits-ai
+  Scenario: Add an allowed outreach domain returns "OK" response
+    Given operation "AddSecurityAgentOutreachPolicyDomain" enabled
+    And new "AddSecurityAgentOutreachPolicyDomain" request
+    And body with value {"data": {"attributes": {"domain": "acme.com"}, "type": "outreach_policy_domain_add"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.allowed_domains" contains "acme.com"
+
+  @skip @team:ddoghq/k9-bits-ai
   Scenario: Count Bits Security Analyst investigations returns "Bad Request" response
     Given operation "CountSecurityAgentInvestigations" enabled
     And new "CountSecurityAgentInvestigations" request
@@ -55,6 +88,21 @@ Feature: Bits Security Analyst
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:ddoghq/k9-bits-ai
+  Scenario: Get the user outreach policy returns "Not Found" response
+    Given operation "GetSecurityAgentOutreachPolicy" enabled
+    And new "GetSecurityAgentOutreachPolicy" request
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip @team:ddoghq/k9-bits-ai
+  Scenario: Get the user outreach policy returns "OK" response
+    Given operation "GetSecurityAgentOutreachPolicy" enabled
+    And new "GetSecurityAgentOutreachPolicy" request
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "outreach_policy"
+
   @skip @team:ddoghq/k9-bits-ai
   Scenario: List Bits Security Analyst investigations returns "Bad Request" response
     Given operation "ListSecurityAgentInvestigations" enabled
@@ -71,3 +119,93 @@ Feature: Bits Security Analyst
     And request contains "page[size]" parameter with value 1
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/k9-bits-ai
+  Scenario: Remove an allowed outreach domain returns "Bad Request" response
+    Given operation "RemoveSecurityAgentOutreachPolicyDomain" enabled
+    And new "RemoveSecurityAgentOutreachPolicyDomain" request
+    And request contains "domain" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/k9-bits-ai
+  Scenario: Remove an allowed outreach domain returns "Conflict" response
+    Given operation "RemoveSecurityAgentOutreachPolicyDomain" enabled
+    And new "RemoveSecurityAgentOutreachPolicyDomain" request
+    And request contains "domain" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:ddoghq/k9-bits-ai
+  Scenario: Remove an allowed outreach domain returns "Not Found" response
+    Given operation "RemoveSecurityAgentOutreachPolicyDomain" enabled
+    And new "RemoveSecurityAgentOutreachPolicyDomain" request
+    And request contains "domain" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip @team:ddoghq/k9-bits-ai
+  Scenario: Remove an allowed outreach domain returns "OK" response
+    Given operation "RemoveSecurityAgentOutreachPolicyDomain" enabled
+    And new "RemoveSecurityAgentOutreachPolicyDomain" request
+    And request contains "domain" parameter with value "acme.com"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @skip @team:ddoghq/k9-bits-ai
+  Scenario: Update outreach policy rules returns "Bad Request" response
+    Given operation "UpdateSecurityAgentOutreachPolicyRules" enabled
+    And new "UpdateSecurityAgentOutreachPolicyRules" request
+    And body with value {"data": {"attributes": {"rules": []}, "type": "outreach_policy_rules_update"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/k9-bits-ai
+  Scenario: Update outreach policy rules returns "Conflict" response
+    Given operation "UpdateSecurityAgentOutreachPolicyRules" enabled
+    And new "UpdateSecurityAgentOutreachPolicyRules" request
+    And body with value {"data": {"attributes": {"rules": [{"is_enabled": true, "rule_id": "abc-def-ghi"}]}, "type": "outreach_policy_rules_update"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:ddoghq/k9-bits-ai
+  Scenario: Update outreach policy rules returns "Not Found" response
+    Given operation "UpdateSecurityAgentOutreachPolicyRules" enabled
+    And new "UpdateSecurityAgentOutreachPolicyRules" request
+    And body with value {"data": {"attributes": {"rules": [{"is_enabled": true, "rule_id": "abc-def-ghi"}]}, "type": "outreach_policy_rules_update"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip @team:ddoghq/k9-bits-ai
+  Scenario: Update outreach policy rules returns "OK" response
+    Given operation "UpdateSecurityAgentOutreachPolicyRules" enabled
+    And new "UpdateSecurityAgentOutreachPolicyRules" request
+    And body with value {"data": {"attributes": {"rules": [{"is_enabled": true, "rule_id": "abc-def-ghi"}]}, "type": "outreach_policy_rules_update"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.type" is equal to "outreach_policy"
+
+  @skip @team:ddoghq/k9-bits-ai
+  Scenario: Update the outreach mode returns "Bad Request" response
+    Given operation "UpdateSecurityAgentOutreachMode" enabled
+    And new "UpdateSecurityAgentOutreachMode" request
+    And body with value {"data": {"attributes": {"mode": "always"}, "type": "outreach_policy"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/k9-bits-ai
+  Scenario: Update the outreach mode returns "Not Found" response
+    Given operation "UpdateSecurityAgentOutreachMode" enabled
+    And new "UpdateSecurityAgentOutreachMode" request
+    And body with value {"data": {"attributes": {"mode": "automated"}, "type": "outreach_policy"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip @team:ddoghq/k9-bits-ai
+  Scenario: Update the outreach mode returns "OK" response
+    Given operation "UpdateSecurityAgentOutreachMode" enabled
+    And new "UpdateSecurityAgentOutreachMode" request
+    And body with value {"data": {"attributes": {"mode": "automated"}, "type": "outreach_policy"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.mode" is equal to "automated"
