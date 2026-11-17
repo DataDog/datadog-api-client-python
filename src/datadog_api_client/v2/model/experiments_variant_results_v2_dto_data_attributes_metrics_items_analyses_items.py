@@ -16,6 +16,7 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.experiments_confidence_interval import ExperimentsConfidenceInterval
+    from datadog_api_client.v2.model.experiments_evsi_unavailable_reason import ExperimentsEVSIUnavailableReason
     from datadog_api_client.v2.model.experiments_variant_results_v2_dto_data_attributes_metrics_items_analyses_items_lift_type import (
         ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItemsLiftType,
     )
@@ -31,6 +32,7 @@ class ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItems(Mode
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.experiments_confidence_interval import ExperimentsConfidenceInterval
+        from datadog_api_client.v2.model.experiments_evsi_unavailable_reason import ExperimentsEVSIUnavailableReason
         from datadog_api_client.v2.model.experiments_variant_results_v2_dto_data_attributes_metrics_items_analyses_items_lift_type import (
             ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItemsLiftType,
         )
@@ -45,6 +47,8 @@ class ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItems(Mode
             "confidence_interval": (ExperimentsConfidenceInterval,),
             "confidence_level": (float,),
             "evsi": (float,),
+            "evsi_future_se": (float,),
+            "evsi_unavailable_reason": (ExperimentsEVSIUnavailableReason,),
             "expectation_above_zero": (float,),
             "expectation_below_zero": (float,),
             "global_lift": (float,),
@@ -71,6 +75,8 @@ class ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItems(Mode
         "confidence_interval": "confidence_interval",
         "confidence_level": "confidence_level",
         "evsi": "evsi",
+        "evsi_future_se": "evsi_future_se",
+        "evsi_unavailable_reason": "evsi_unavailable_reason",
         "expectation_above_zero": "expectation_above_zero",
         "expectation_below_zero": "expectation_below_zero",
         "global_lift": "global_lift",
@@ -96,6 +102,8 @@ class ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItems(Mode
         confidence_interval: Union[ExperimentsConfidenceInterval, UnsetType] = unset,
         confidence_level: Union[float, UnsetType] = unset,
         evsi: Union[float, UnsetType] = unset,
+        evsi_future_se: Union[float, UnsetType] = unset,
+        evsi_unavailable_reason: Union[ExperimentsEVSIUnavailableReason, UnsetType] = unset,
         expectation_above_zero: Union[float, UnsetType] = unset,
         expectation_below_zero: Union[float, UnsetType] = unset,
         global_lift: Union[float, UnsetType] = unset,
@@ -129,8 +137,14 @@ class ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItems(Mode
         :param confidence_level: Configured nominal confidence level. Interval bounds can use an adjusted level for multiple testing or hybrid methods.
         :type confidence_level: float, optional
 
-        :param evsi: Expected reduction in minimum expected regret from collecting more sample data.
+        :param evsi: Expected value of sample information: expected reduction in minimum expected regret from additional data over the recorded horizon. Uses the analysis estimand units; relative lift is a fraction, not a percentage. Zero is a valid estimate. Omitted when unavailable or unrecorded.
         :type evsi: float, optional
+
+        :param evsi_future_se: Standard error of the hypothetical additional-data estimate used for EVSI, in the same estimand units and CUPED setting. May be present when EVSI computation failed. Omitted when unavailable or unrecorded.
+        :type evsi_future_se: float, optional
+
+        :param evsi_unavailable_reason: Recorded reason this analysis has no EVSI estimate. Omitted when unrecorded; absence does not establish availability for historical or imported results. Controls and non-Bayesian analyses omit this field.
+        :type evsi_unavailable_reason: ExperimentsEVSIUnavailableReason, optional
 
         :param expectation_above_zero: Expected effect when the effect is positive.
         :type expectation_above_zero: float, optional
@@ -192,6 +206,10 @@ class ExperimentsVariantResultsV2DTODataAttributesMetricsItemsAnalysesItems(Mode
             kwargs["confidence_level"] = confidence_level
         if evsi is not unset:
             kwargs["evsi"] = evsi
+        if evsi_future_se is not unset:
+            kwargs["evsi_future_se"] = evsi_future_se
+        if evsi_unavailable_reason is not unset:
+            kwargs["evsi_unavailable_reason"] = evsi_unavailable_reason
         if expectation_above_zero is not unset:
             kwargs["expectation_above_zero"] = expectation_above_zero
         if expectation_below_zero is not unset:

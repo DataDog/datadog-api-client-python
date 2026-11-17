@@ -52,7 +52,7 @@ class ExperimentsVariantResultsV2DTOArray(ModelNormal):
         :param data: Resources returned in this response.
         :type data: [ExperimentsVariantResultsV2DTOData]
 
-        :param meta: Information about when experiment results were updated and whether they are stale.
+        :param meta: Selected experiment result run, its recorded EVSI forecast, and results freshness.
         :type meta: ExperimentsExperimentResultsV2MetaDTO, optional
         """
         if meta is not unset:
