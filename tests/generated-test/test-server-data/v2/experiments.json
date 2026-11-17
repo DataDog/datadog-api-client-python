@@ -1565,6 +1565,99 @@
     },
     {
       "feature": "Experiments",
+      "frozen_at": "2026-11-13T12:21:33.645Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/experiments/bandits/00000000-0000-4000-8000-000000000000/results",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"No bandit with this ID exists for the organization.\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get bandit results returns \"No bandit with this ID exists for the organization.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "frozen_at": "2026-11-13T12:21:35.097Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/experiments/bandits/00000000-0000-4000-8000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"No bandit with this ID exists for the organization.\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get bandit returns \"No bandit with this ID exists for the organization.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "frozen_at": "2026-11-13T12:21:35.230Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/experiments/bandits/00000000-0000-4000-8000-000000000000/traffic-summary",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"No bandit with this ID exists for the organization.\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get bandit traffic summary returns \"No bandit with this ID exists for the organization.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
       "frozen_at": "2026-09-29T01:19:14.875Z",
       "interactions": [
         {
@@ -2233,6 +2326,37 @@
         }
       ],
       "scenario": "Get subject type returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "frozen_at": "2026-11-13T12:21:35.390Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/experiments/bandits",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[],\"meta\":{\"page\":{\"type\":\"offset_limit\",\"offset\":0,\"limit\":25,\"total\":0,\"first_offset\":0,\"prev_offset\":null,\"next_offset\":null,\"last_offset\":0}},\"links\":{\"self\":\"https://api.datadoghq.com/api/v2/experiments/bandits\",\"first\":\"https://api.datadoghq.com/api/v2/experiments/bandits?page%5Blimit%5D=25\\u0026page%5Boffset%5D=0\",\"last\":\"https://api.datadoghq.com/api/v2/experiments/bandits?page%5Blimit%5D=25\\u0026page%5Boffset%5D=0\"}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "List bandits returns \"OK\" response",
       "version": "v2"
     },
     {
