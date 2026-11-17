@@ -51,7 +51,7 @@ class CaseView(ModelNormal):
         """
         A saved work item view that provides a filtered, reusable list of work items matching a specific query. Views act as persistent dashboards for monitoring work item subsets.
 
-        :param attributes: Attributes of a work item view, including the filter query and optional notification rule.
+        :param attributes: Attributes of a work item view, including the filter query.
         :type attributes: CaseViewAttributes
 
         :param id: The view's identifier.
