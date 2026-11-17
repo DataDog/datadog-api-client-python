@@ -2989,6 +2989,18 @@ components:
           schema:
             $ref: "#/components/schemas/HTTPCDRulesNotFoundResponse"
       description: Deployment rule not found.
+    IntegrationAccountBadRequestResponse:
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/JSONAPIErrorResponse"
+      description: Bad Request
+    IntegrationAccountNotFoundResponse:
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/JSONAPIErrorResponse"
+      description: Not Found
     NDMBadRequestResponse:
       content:
         application/json:
@@ -202762,11 +202774,11 @@ paths:
                 $ref: "#/components/schemas/ChatGPTEnterpriseIntegrationAccountsResponse"
           description: OK
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/IntegrationAccountBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/IntegrationAccountNotFoundResponse"
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: List ChatGPT Enterprise integration accounts
@@ -202819,11 +202831,11 @@ paths:
                 $ref: "#/components/schemas/ChatGPTEnterpriseIntegrationAccountResponse"
           description: Created
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/IntegrationAccountBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/IntegrationAccountNotFoundResponse"
         "422":
           $ref: "#/components/responses/UnprocessableEntityResponse"
         "429":
@@ -202849,11 +202861,11 @@ paths:
         "200":
           description: OK
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/IntegrationAccountBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/IntegrationAccountNotFoundResponse"
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: Delete a ChatGPT Enterprise integration account
@@ -202902,11 +202914,11 @@ paths:
                 $ref: "#/components/schemas/ChatGPTEnterpriseIntegrationAccountResponse"
           description: OK
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/IntegrationAccountBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/IntegrationAccountNotFoundResponse"
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: Get a ChatGPT Enterprise integration account
@@ -202961,11 +202973,11 @@ paths:
                 $ref: "#/components/schemas/ChatGPTEnterpriseIntegrationAccountResponse"
           description: OK
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/IntegrationAccountBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/IntegrationAccountNotFoundResponse"
         "422":
           $ref: "#/components/responses/UnprocessableEntityResponse"
         "429":
@@ -203027,11 +203039,11 @@ paths:
                 $ref: "#/components/schemas/DatabricksIntegrationAccountsResponse"
           description: OK
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/IntegrationAccountBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/IntegrationAccountNotFoundResponse"
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: List Databricks integration accounts
@@ -203095,11 +203107,11 @@ paths:
                 $ref: "#/components/schemas/DatabricksIntegrationAccountResponse"
           description: Created
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/IntegrationAccountBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/IntegrationAccountNotFoundResponse"
         "422":
           $ref: "#/components/responses/UnprocessableEntityResponse"
         "429":
@@ -203125,11 +203137,11 @@ paths:
         "200":
           description: OK
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/IntegrationAccountBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/IntegrationAccountNotFoundResponse"
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: Delete a Databricks integration account
@@ -203189,11 +203201,11 @@ paths:
                 $ref: "#/components/schemas/DatabricksIntegrationAccountResponse"
           description: OK
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/IntegrationAccountBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/IntegrationAccountNotFoundResponse"
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: Get a Databricks integration account
@@ -203259,11 +203271,11 @@ paths:
                 $ref: "#/components/schemas/DatabricksIntegrationAccountResponse"
           description: OK
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/IntegrationAccountBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/IntegrationAccountNotFoundResponse"
         "422":
           $ref: "#/components/responses/UnprocessableEntityResponse"
         "429":
@@ -203313,11 +203325,11 @@ paths:
                 $ref: "#/components/schemas/ElasticCloudIntegrationAccountsResponse"
           description: OK
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/IntegrationAccountBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/IntegrationAccountNotFoundResponse"
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: List Elastic Cloud integration accounts
@@ -203369,11 +203381,11 @@ paths:
                 $ref: "#/components/schemas/ElasticCloudIntegrationAccountResponse"
           description: Created
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/IntegrationAccountBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/IntegrationAccountNotFoundResponse"
         "422":
           $ref: "#/components/responses/UnprocessableEntityResponse"
         "429":
@@ -203399,11 +203411,11 @@ paths:
         "200":
           description: OK
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/IntegrationAccountBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/IntegrationAccountNotFoundResponse"
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: Delete an Elastic Cloud integration account
@@ -203451,11 +203463,11 @@ paths:
                 $ref: "#/components/schemas/ElasticCloudIntegrationAccountResponse"
           description: OK
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/IntegrationAccountBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/IntegrationAccountNotFoundResponse"
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: Get an Elastic Cloud integration account
@@ -203509,11 +203521,11 @@ paths:
                 $ref: "#/components/schemas/ElasticCloudIntegrationAccountResponse"
           description: OK
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/IntegrationAccountBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/IntegrationAccountNotFoundResponse"
         "422":
           $ref: "#/components/responses/UnprocessableEntityResponse"
         "429":
@@ -203594,11 +203606,11 @@ paths:
                 $ref: "#/components/schemas/SnowflakeIntegrationAccountsResponse"
           description: OK
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/IntegrationAccountBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/IntegrationAccountNotFoundResponse"
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: List Snowflake integration accounts
@@ -203681,11 +203693,11 @@ paths:
                 $ref: "#/components/schemas/SnowflakeIntegrationAccountResponse"
           description: Created
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/IntegrationAccountBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/IntegrationAccountNotFoundResponse"
         "422":
           $ref: "#/components/responses/UnprocessableEntityResponse"
         "429":
@@ -203711,11 +203723,11 @@ paths:
         "200":
           description: OK
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/IntegrationAccountBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/IntegrationAccountNotFoundResponse"
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: Delete a Snowflake integration account
@@ -203794,11 +203806,11 @@ paths:
                 $ref: "#/components/schemas/SnowflakeIntegrationAccountResponse"
           description: OK
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/IntegrationAccountBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/IntegrationAccountNotFoundResponse"
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: Get a Snowflake integration account
@@ -203883,11 +203895,11 @@ paths:
                 $ref: "#/components/schemas/SnowflakeIntegrationAccountResponse"
           description: OK
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/IntegrationAccountBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/IntegrationAccountNotFoundResponse"
         "422":
           $ref: "#/components/responses/UnprocessableEntityResponse"
         "429":
@@ -203934,11 +203946,11 @@ paths:
                 $ref: "#/components/schemas/TemporalCloudOpenMetricsIntegrationAccountsResponse"
           description: OK
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/IntegrationAccountBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/IntegrationAccountNotFoundResponse"
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: List Temporal Cloud OpenMetrics accounts
@@ -203987,11 +203999,11 @@ paths:
                 $ref: "#/components/schemas/TemporalCloudOpenMetricsIntegrationAccountResponse"
           description: Created
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/IntegrationAccountBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/IntegrationAccountNotFoundResponse"
         "422":
           $ref: "#/components/responses/UnprocessableEntityResponse"
         "429":
@@ -204017,11 +204029,11 @@ paths:
         "200":
           description: OK
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/IntegrationAccountBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/IntegrationAccountNotFoundResponse"
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: Delete a Temporal Cloud OpenMetrics account
@@ -204066,11 +204078,11 @@ paths:
                 $ref: "#/components/schemas/TemporalCloudOpenMetricsIntegrationAccountResponse"
           description: OK
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/IntegrationAccountBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/IntegrationAccountNotFoundResponse"
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: Get a Temporal Cloud OpenMetrics account
@@ -204121,11 +204133,11 @@ paths:
                 $ref: "#/components/schemas/TemporalCloudOpenMetricsIntegrationAccountResponse"
           description: OK
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/IntegrationAccountBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/IntegrationAccountNotFoundResponse"
         "422":
           $ref: "#/components/responses/UnprocessableEntityResponse"
         "429":
@@ -204173,11 +204185,11 @@ paths:
                 $ref: "#/components/schemas/TwilioIntegrationAccountsResponse"
           description: OK
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/IntegrationAccountBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/IntegrationAccountNotFoundResponse"
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: List Twilio integration accounts
@@ -204227,11 +204239,11 @@ paths:
                 $ref: "#/components/schemas/TwilioIntegrationAccountResponse"
           description: Created
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/IntegrationAccountBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/IntegrationAccountNotFoundResponse"
         "422":
           $ref: "#/components/responses/UnprocessableEntityResponse"
         "429":
@@ -204257,11 +204269,11 @@ paths:
         "200":
           description: OK
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/IntegrationAccountBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/IntegrationAccountNotFoundResponse"
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: Delete a Twilio integration account
@@ -204307,11 +204319,11 @@ paths:
                 $ref: "#/components/schemas/TwilioIntegrationAccountResponse"
           description: OK
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/IntegrationAccountBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/IntegrationAccountNotFoundResponse"
         "429":
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: Get a Twilio integration account
@@ -204363,11 +204375,11 @@ paths:
                 $ref: "#/components/schemas/TwilioIntegrationAccountResponse"
           description: OK
         "400":
-          $ref: "#/components/responses/BadRequestResponse"
+          $ref: "#/components/responses/IntegrationAccountBadRequestResponse"
         "403":
           $ref: "#/components/responses/ForbiddenResponse"
         "404":
-          $ref: "#/components/responses/NotFoundResponse"
+          $ref: "#/components/responses/IntegrationAccountNotFoundResponse"
         "422":
           $ref: "#/components/responses/UnprocessableEntityResponse"
         "429":
