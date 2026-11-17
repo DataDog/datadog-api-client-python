@@ -30,6 +30,7 @@ class CostRecommendationDataAttributes(ModelNormal):
             "dd_resource_key": (str,),
             "potential_daily_savings": (CostRecommendationDataAttributesPotentialDailySavings,),
             "recommendation_type": (str,),
+            "recommender_id": (str,),
             "resource_id": (str,),
             "resource_type": (str,),
             "tags": ([str],),
@@ -39,6 +40,7 @@ class CostRecommendationDataAttributes(ModelNormal):
         "dd_resource_key": "dd_resource_key",
         "potential_daily_savings": "potential_daily_savings",
         "recommendation_type": "recommendation_type",
+        "recommender_id": "recommender_id",
         "resource_id": "resource_id",
         "resource_type": "resource_type",
         "tags": "tags",
@@ -49,6 +51,7 @@ class CostRecommendationDataAttributes(ModelNormal):
         dd_resource_key: Union[str, UnsetType] = unset,
         potential_daily_savings: Union[CostRecommendationDataAttributesPotentialDailySavings, UnsetType] = unset,
         recommendation_type: Union[str, UnsetType] = unset,
+        recommender_id: Union[str, UnsetType] = unset,
         resource_id: Union[str, UnsetType] = unset,
         resource_type: Union[str, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
@@ -66,6 +69,10 @@ class CostRecommendationDataAttributes(ModelNormal):
         :param recommendation_type: The kind of recommendation (for example, ``terminate`` or ``rightsize`` ).
         :type recommendation_type: str, optional
 
+        :param recommender_id: ID of the recommender that produced the recommendation (for example,
+            ``aws_ec2_instance_downsize`` ).
+        :type recommender_id: str, optional
+
         :param resource_id: Cloud provider identifier of the resource.
         :type resource_id: str, optional
 
@@ -81,6 +88,8 @@ class CostRecommendationDataAttributes(ModelNormal):
             kwargs["potential_daily_savings"] = potential_daily_savings
         if recommendation_type is not unset:
             kwargs["recommendation_type"] = recommendation_type
+        if recommender_id is not unset:
+            kwargs["recommender_id"] = recommender_id
         if resource_id is not unset:
             kwargs["resource_id"] = resource_id
         if resource_type is not unset:
