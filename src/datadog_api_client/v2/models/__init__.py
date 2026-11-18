@@ -3554,8 +3554,6 @@ from datadog_api_client.v2.model.downtime_response_attributes import DowntimeRes
 from datadog_api_client.v2.model.downtime_response_data import DowntimeResponseData
 from datadog_api_client.v2.model.downtime_response_included_item import DowntimeResponseIncludedItem
 from datadog_api_client.v2.model.downtime_run_as_item import DowntimeRunAsItem
-from datadog_api_client.v2.model.downtime_run_as_principal import DowntimeRunAsPrincipal
-from datadog_api_client.v2.model.downtime_run_as_principal_type import DowntimeRunAsPrincipalType
 from datadog_api_client.v2.model.downtime_schedule_create_request import DowntimeScheduleCreateRequest
 from datadog_api_client.v2.model.downtime_schedule_current_downtime_response import (
     DowntimeScheduleCurrentDowntimeResponse,
@@ -16945,8 +16943,6 @@ __all__ = [
     "DowntimeResponseData",
     "DowntimeResponseIncludedItem",
     "DowntimeRunAsItem",
-    "DowntimeRunAsPrincipal",
-    "DowntimeRunAsPrincipalType",
     "DowntimeScheduleCreateRequest",
     "DowntimeScheduleCurrentDowntimeResponse",
     "DowntimeScheduleOneTimeCreateUpdateRequest",

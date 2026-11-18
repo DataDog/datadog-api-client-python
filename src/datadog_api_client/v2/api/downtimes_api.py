@@ -262,8 +262,7 @@ class DowntimesApi:
         :param include: Comma-separated list of resource paths for related resources to include in the response. Supported resource
             paths are ``created_by`` and ``monitor``.
         :type include: str, optional
-        :param with_run_as: If ``true`` , include the ``run_as`` attribute in the response, which lists the principals allowed to
-            act on behalf of the downtime.
+        :param with_run_as: If ``true`` , include the ``run_as`` attribute in the response, which lists the user the downtime runs as.
 
             **Note** : This feature is currently in Preview and may not be available for all organizations.
         :type with_run_as: bool, optional
