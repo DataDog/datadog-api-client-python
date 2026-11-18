@@ -10976,6 +10976,13 @@ from datadog_api_client.v2.model.security_agent_investigation_counts_response im
     SecurityAgentInvestigationCountsResponse,
 )
 from datadog_api_client.v2.model.security_agent_investigation_counts_type import SecurityAgentInvestigationCountsType
+from datadog_api_client.v2.model.security_agent_investigation_create_attributes import (
+    SecurityAgentInvestigationCreateAttributes,
+)
+from datadog_api_client.v2.model.security_agent_investigation_create_data import SecurityAgentInvestigationCreateData
+from datadog_api_client.v2.model.security_agent_investigation_create_request import (
+    SecurityAgentInvestigationCreateRequest,
+)
 from datadog_api_client.v2.model.security_agent_investigation_data import SecurityAgentInvestigationData
 from datadog_api_client.v2.model.security_agent_investigation_entity import SecurityAgentInvestigationEntity
 from datadog_api_client.v2.model.security_agent_investigation_field import SecurityAgentInvestigationField
@@ -21702,6 +21709,9 @@ __all__ = [
     "SecurityAgentInvestigationCountsData",
     "SecurityAgentInvestigationCountsResponse",
     "SecurityAgentInvestigationCountsType",
+    "SecurityAgentInvestigationCreateAttributes",
+    "SecurityAgentInvestigationCreateData",
+    "SecurityAgentInvestigationCreateRequest",
     "SecurityAgentInvestigationData",
     "SecurityAgentInvestigationEntity",
     "SecurityAgentInvestigationField",
