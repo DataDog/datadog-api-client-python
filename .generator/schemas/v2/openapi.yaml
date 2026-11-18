@@ -10014,7 +10014,9 @@ components:
           $ref: "#/components/schemas/AiGatewayNullableMaxReasoningLevel"
           description: Maximum reasoning level. Null means there is no group-specific limit.
         model_ids:
-          description: All saved model catalog IDs, including selections whose provider metadata is hidden. Preserve these IDs independently of the visible catalog.
+          description: |-
+            Saved model catalog IDs whose providers the caller can view. Hidden identities are omitted. The
+            `models_restricted` field indicates hidden membership.
           example:
             - 101
           items:
@@ -10025,16 +10027,23 @@ components:
             type: integer
           type: array
         models:
-          description: Metadata for saved model selections whose providers the caller can view. Missing metadata does not remove a saved ID.
+          description: Metadata for saved model selections whose providers the caller can view. Hidden model identities and metadata are omitted.
           items:
             $ref: "#/components/schemas/AiGatewayModelGroupModel"
           type: array
+        models_restricted:
+          description: Whether some saved models are hidden from the caller. Hidden identities, names, and counts are omitted. Editing visible selections preserves hidden memberships.
+          example: true
+          readOnly: true
+          type: boolean
         name:
           description: Human-readable resource name.
           example: Coding models
           type: string
         provider_ids:
-          description: All explicitly selected provider IDs, including hidden providers. Embedded provider metadata includes only viewable providers.
+          description: |-
+            Explicitly selected provider IDs the caller can view. Hidden identities are omitted. The
+            `providers_restricted` field indicates hidden membership.
           example:
             - 42
           items:
@@ -10045,10 +10054,15 @@ components:
             type: integer
           type: array
         providers:
-          description: Viewable explicitly selected providers, separate from individually selected models. Use provider_ids to retain all selections.
+          description: Viewable explicitly selected providers, separate from individually selected models. Hidden provider identities and metadata are omitted.
           items:
             $ref: "#/components/schemas/AiGatewayModelGroupProvider"
           type: array
+        providers_restricted:
+          description: Whether some saved providers are hidden from the caller. Hidden identities, names, and counts are omitted. Editing visible selections preserves hidden memberships.
+          example: true
+          readOnly: true
+          type: boolean
         revision:
           description: Revision of the organization-wide policy. Present for the default model group and absent for named policies.
           format: int64
@@ -10145,7 +10159,7 @@ components:
           minLength: 1
           type: string
         provider_ids:
-          description: Explicit provider selections, including current and future models. Omit to preserve selections on update; an empty array clears them. Null is invalid. New selections require provider View; saved hidden IDs can be retained or removed.
+          description: Explicit provider selections, including current and future models. Replaces visible selections and preserves saved hidden selections. Omit to preserve the complete selection; an empty array clears only visible selections. Null is invalid. New selections require provider View.
           items:
             description: Provider ID.
             format: int64
@@ -10325,7 +10339,7 @@ components:
           $ref: "#/components/schemas/AiGatewayNullableMaxReasoningLevel"
           description: Maximum reasoning level. Null clears the group-specific limit.
         model_ids:
-          description: Individually selected model catalog IDs. Replaces this selection only. Omit to preserve it; an empty array clears it. Null is invalid. Individual selections do not include future models. New selections require provider View; retaining or removing saved hidden selections requires only parent Edit.
+          description: Individually selected model catalog IDs. Replaces visible selections and preserves saved hidden selections. Omit to preserve the complete selection; an empty array clears only visible selections. Null is invalid. Individual selections do not include future models. New selections require provider View.
           items:
             description: Model catalog entry ID.
             example: 101
@@ -10340,7 +10354,7 @@ components:
           minLength: 1
           type: string
         provider_ids:
-          description: Explicit provider selections, including current and future models. Omit to preserve selections on update; an empty array clears them. Null is invalid. New selections require provider View; saved hidden IDs can be retained or removed.
+          description: Explicit provider selections, including current and future models. Replaces visible selections and preserves saved hidden selections. Omit to preserve the complete selection; an empty array clears only visible selections. Null is invalid. New selections require provider View.
           items:
             description: Provider ID.
             format: int64
@@ -10348,7 +10362,7 @@ components:
             type: integer
           type: array
         routing_rule_slugs:
-          description: Organization-unique routing rule slugs. Replaces route selections only. Omit to preserve them; an empty array clears them. Null is invalid.
+          description: Organization-unique routing rule slugs. Replaces visible route selections and preserves saved hidden selections. Omit to preserve all route selections; an empty array clears only visible selections. Null is invalid. New selections require route View.
           items:
             description: Routing rule slug.
             example: coding-route
@@ -222242,7 +222256,7 @@ paths:
         permissions: []
   /api/v2/model-groups:
     get:
-      description: List model groups the user can view. The organization-wide policy has id "default" and explicit model, provider, and route selections. Missing or empty selections grant no organization-wide access. Its audience is fixed to the organization; it cannot be renamed or deleted. Named policies retain their access bindings. Requires configuration read permission; named policies also require view access.
+      description: List model groups the user can view. The organization-wide policy has id "default" and explicit model, provider, and route selections. Missing or empty selections grant no organization-wide access. Its audience is fixed to the organization; it cannot be renamed or deleted. Named policies retain their access bindings. Requires configuration read permission and policy View, including for the default policy. Hidden policies are omitted from lists and return the same not-found response as missing policies.
       operationId: ListAiGatewayModelGroups
       responses:
         "200":
@@ -222295,7 +222309,12 @@ paths:
         **Note**: This endpoint is in Preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
     post:
-      description: Create an AI Gateway model group from a name and any combination of model catalog entries and routing rules, with optional fast-mode and reasoning limits and initial access bindings.
+      description: |-
+        Create an AI Gateway model group from a name and any combination of model catalog entries, providers, and
+        routing rules, with optional fast-mode and reasoning limits. Include initial access bindings when creating a
+        restricted policy. If the bindings cannot be applied, the policy is not created. To update sharing on an
+        existing policy, use the restriction policy API. If a creation request fails without confirming whether the
+        policy was created, check the policy list before retrying to avoid duplicates.
       operationId: CreateAiGatewayModelGroup
       requestBody:
         content:
@@ -222391,7 +222410,7 @@ paths:
         **Note**: This endpoint is in Preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
     get:
-      description: Get a named policy or the explicit organization-wide policy by id "default". Requires configuration read permission; named policies also require view access. Provider selections cover current and future models and are returned separately from individual model selections.
+      description: Get a named policy or the explicit organization-wide policy by id "default". Requires configuration read permission and policy View, including for the default policy. Hidden policies are omitted from lists and return the same not-found response as missing policies. Provider selections cover current and future models and are returned separately from individual model selections.
       operationId: GetAiGatewayModelGroup
       parameters:
         - $ref: "#/components/parameters/AiGatewayModelGroupID"
@@ -222452,7 +222471,7 @@ paths:
         **Note**: This endpoint is in Preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
     patch:
-      description: Update a model group. For id "default", save membership and request options atomically with expected_revision. Empty selections grant no organization-wide access. Applicable authorized named policies override organization-wide request options; a rejected named-policy request cannot fall back to organization-wide options. The organization-wide audience is fixed and grants resource use only. Requires configuration write permission; named policies also require edit access.
+      description: Update a model group. For id "default", save membership and request options atomically with expected_revision. Empty selections grant no organization-wide access. Applicable authorized named policies override organization-wide request options; a rejected named-policy request cannot fall back to organization-wide options. The organization-wide audience is fixed and grants resource use only. Requires configuration write permission and policy View and Edit, including for the default policy. Management visibility does not change the inference audience or Run access.
       operationId: UpdateAiGatewayModelGroup
       parameters:
         - $ref: "#/components/parameters/AiGatewayModelGroupID"
