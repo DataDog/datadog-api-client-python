@@ -45,7 +45,7 @@
     },
     {
       "feature": "Rum Retention Filters",
-      "frozen_at": "2025-03-05T20:01:25.330Z",
+      "frozen_at": "2026-11-18T09:34:10.044Z",
       "interactions": [
         {
           "request": {
@@ -72,13 +72,34 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"4b95d361-f65d-4515-9824-c9aaeba5ac2a\",\"type\":\"retention_filters\",\"attributes\":{\"enabled\":true,\"event_type\":\"session\",\"name\":\"Test creating retention filter\",\"query\":\"custom_query\",\"sample_rate\":50}}}"
+              "value": "{\"data\":{\"id\":\"f6548ee0-9023-41fb-bf59-32b1f009851f\",\"type\":\"retention_filters\",\"attributes\":{\"cross_product_sampling\":{\"session_replay_sample_rate\":100,\"trace_sample_rate\":100,\"session_replay_enabled\":true,\"trace_enabled\":false},\"enabled\":true,\"event_type\":\"session\",\"name\":\"Test creating retention filter\",\"query\":\"custom_query\",\"sample_rate\":50,\"track\":\"rum\"},\"meta\":{\"source\":\"unknown\",\"updated_at\":1794994452420,\"updated_by_handle\":\"cedric.vanrompay@datadoghq.com\",\"edition_mode\":\"complete\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
             },
             "reason": "Created",
             "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/f6548ee0-9023-41fb-bf59-32b1f009851f",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
           }
         }
       ],
