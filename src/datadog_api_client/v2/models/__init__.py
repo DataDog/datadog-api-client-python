@@ -270,10 +270,9 @@ from datadog_api_client.v2.model.agent_health_host_issues_response import AgentH
 from datadog_api_client.v2.model.agent_health_host_issues_type import AgentHealthHostIssuesType
 from datadog_api_client.v2.model.agent_health_issue_attributes import AgentHealthIssueAttributes
 from datadog_api_client.v2.model.agent_health_issue_data import AgentHealthIssueData
-from datadog_api_client.v2.model.agent_health_issue_detail_attributes import AgentHealthIssueDetailAttributes
-from datadog_api_client.v2.model.agent_health_issue_detail_data import AgentHealthIssueDetailData
 from datadog_api_client.v2.model.agent_health_issue_resource_type import AgentHealthIssueResourceType
 from datadog_api_client.v2.model.agent_health_issue_response import AgentHealthIssueResponse
+from datadog_api_client.v2.model.agent_health_issues_count_by import AgentHealthIssuesCountBy
 from datadog_api_client.v2.model.agent_health_issues_response import AgentHealthIssuesResponse
 from datadog_api_client.v2.model.agent_health_issues_response_meta import AgentHealthIssuesResponseMeta
 from datadog_api_client.v2.model.agent_health_issues_response_page import AgentHealthIssuesResponsePage
@@ -14510,10 +14509,9 @@ __all__ = [
     "AgentHealthHostIssuesType",
     "AgentHealthIssueAttributes",
     "AgentHealthIssueData",
-    "AgentHealthIssueDetailAttributes",
-    "AgentHealthIssueDetailData",
     "AgentHealthIssueResourceType",
     "AgentHealthIssueResponse",
+    "AgentHealthIssuesCountBy",
     "AgentHealthIssuesResponse",
     "AgentHealthIssuesResponseMeta",
     "AgentHealthIssuesResponsePage",

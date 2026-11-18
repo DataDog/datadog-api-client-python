@@ -25,12 +25,14 @@ class AgentHealthRemediation(ModelNormal):
         from datadog_api_client.v2.model.agent_health_remediation_step import AgentHealthRemediationStep
 
         return {
+            "ai_prompt": (str,),
             "script": (AgentHealthRemediationScript,),
             "steps": ([AgentHealthRemediationStep],),
             "summary": (str,),
         }
 
     attribute_map = {
+        "ai_prompt": "ai_prompt",
         "script": "script",
         "steps": "steps",
         "summary": "summary",
@@ -38,6 +40,7 @@ class AgentHealthRemediation(ModelNormal):
 
     def __init__(
         self_,
+        ai_prompt: Union[str, UnsetType] = unset,
         script: Union[AgentHealthRemediationScript, UnsetType] = unset,
         steps: Union[List[AgentHealthRemediationStep], UnsetType] = unset,
         summary: Union[str, UnsetType] = unset,
@@ -45,6 +48,9 @@ class AgentHealthRemediation(ModelNormal):
     ):
         """
         Remediation for the issue. Omitted when no remediation is available.
+
+        :param ai_prompt: A suggested prompt for an AI assistant to help remediate the issue.
+        :type ai_prompt: str, optional
 
         :param script: A script that can be used to remediate the issue.
         :type script: AgentHealthRemediationScript, optional
@@ -55,6 +61,8 @@ class AgentHealthRemediation(ModelNormal):
         :param summary: A summary of how to remediate the issue.
         :type summary: str, optional
         """
+        if ai_prompt is not unset:
+            kwargs["ai_prompt"] = ai_prompt
         if script is not unset:
             kwargs["script"] = script
         if steps is not unset:

@@ -12,28 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.agent_health_issue_detail_data import AgentHealthIssueDetailData
+    from datadog_api_client.v2.model.agent_health_issue_data import AgentHealthIssueData
 
 
 class AgentHealthIssueResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.agent_health_issue_detail_data import AgentHealthIssueDetailData
+        from datadog_api_client.v2.model.agent_health_issue_data import AgentHealthIssueData
 
         return {
-            "data": (AgentHealthIssueDetailData,),
+            "data": (AgentHealthIssueData,),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: AgentHealthIssueDetailData, **kwargs):
+    def __init__(self_, data: AgentHealthIssueData, **kwargs):
         """
         A response containing an open Agent Health issue and available remediation.
 
         :param data: An open Agent Health issue with available remediation.
-        :type data: AgentHealthIssueDetailData
+        :type data: AgentHealthIssueData
         """
         super().__init__(kwargs)
 

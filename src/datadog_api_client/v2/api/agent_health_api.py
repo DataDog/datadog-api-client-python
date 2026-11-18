@@ -14,6 +14,7 @@ from datadog_api_client.model_utils import (
 from datadog_api_client.v2.model.agent_health_host_issues_response import AgentHealthHostIssuesResponse
 from datadog_api_client.v2.model.agent_health_agent_type import AgentHealthAgentType
 from datadog_api_client.v2.model.agent_health_issues_response import AgentHealthIssuesResponse
+from datadog_api_client.v2.model.agent_health_issues_count_by import AgentHealthIssuesCountBy
 from datadog_api_client.v2.model.agent_health_issue_response import AgentHealthIssueResponse
 
 
@@ -88,22 +89,9 @@ class AgentHealthApi:
                 "version": "v2",
             },
             params_map={
-                "page_size": {
-                    "validation": {
-                        "inclusive_maximum": 100,
-                        "inclusive_minimum": 1,
-                    },
-                    "openapi_types": (int,),
-                    "attribute": "page[size]",
-                    "location": "query",
-                },
-                "page_number": {
-                    "validation": {
-                        "inclusive_maximum": 1000000,
-                        "inclusive_minimum": 0,
-                    },
-                    "openapi_types": (int,),
-                    "attribute": "page[number]",
+                "count_by": {
+                    "openapi_types": (AgentHealthIssuesCountBy,),
+                    "attribute": "count_by",
                     "location": "query",
                 },
                 "filter_severity": {
@@ -204,8 +192,7 @@ class AgentHealthApi:
     def list_agent_health_issues(
         self,
         *,
-        page_size: Union[int, UnsetType] = unset,
-        page_number: Union[int, UnsetType] = unset,
+        count_by: Union[AgentHealthIssuesCountBy, UnsetType] = unset,
         filter_severity: Union[str, UnsetType] = unset,
         filter_category: Union[str, UnsetType] = unset,
         filter_issue_type: Union[str, UnsetType] = unset,
@@ -214,24 +201,24 @@ class AgentHealthApi:
     ) -> AgentHealthIssuesResponse:
         """List Agent Health issues.
 
-        List Agent Health issues across your organization. Only open issues are returned.
-        Returns ``403`` if you lack the ``hosts_read`` permission.
+        List open Agent Health issues across your organization. Returns ``403`` if you
+        lack the ``hosts_read`` permission.
 
-        Results use a stable order: severity rank ( ``high`` , ``medium`` , ``low`` , then other values),
-        then ``first_seen_at`` descending with missing timestamps last, then issue ID ascending.
-        Use ``page[size]`` and the zero-based ``page[number]`` to paginate. Invalid page values
-        return a ``400`` JSON:API error response. ``meta.page.total_filtered_count`` is the number
-        of issues matching the filters, and ``meta.page.total_count`` the number of open issues
-        in the organization.
+        Each item in ``data`` is a JSON:API resource object whose ``attributes`` hold the issue
+        fields, including its ``issue_type``. Issues use a stable order: severity rank
+        ( ``high`` , ``medium`` , ``low`` , then other values), then ``first_seen_at`` descending with
+        missing timestamps last, then issue ID ascending.
+
+        Set ``count_by=issue_type`` to include ``meta.page`` , where ``total_count`` is the number of
+        open issues matching the filters and ``counts_by_issue_type`` holds the per-type counts.
+        ``meta`` is omitted when ``count_by`` is not requested.
 
         Each filter accepts up to 50 comma-separated exact values of at most 256 characters
         each, combined with OR within a filter and AND across filters. Blank entries are ignored; an all-blank filter
         is treated as absent.
 
-        :param page_size: The number of issues to return per page, from 1 to 100. Defaults to 25.
-        :type page_size: int, optional
-        :param page_number: The zero-based page number, from 0 to 1000000. Defaults to 0.
-        :type page_number: int, optional
+        :param count_by: Set to ``issue_type`` to include ``meta.page`` with ``total_count`` and per-issue-type counts. If you don't set this parameter, the response omits ``meta``. Only ``issue_type`` is supported.
+        :type count_by: AgentHealthIssuesCountBy, optional
         :param filter_severity: Filter by a comma-separated list of exact ``severity`` values, up to 50 values
             of at most 256 characters each. Values are combined with OR within this filter and AND across filters.
             Blank entries are ignored; an all-blank filter is treated as absent.
@@ -255,11 +242,8 @@ class AgentHealthApi:
         :rtype: AgentHealthIssuesResponse
         """
         kwargs: Dict[str, Any] = {}
-        if page_size is not unset:
-            kwargs["page_size"] = page_size
-
-        if page_number is not unset:
-            kwargs["page_number"] = page_number
+        if count_by is not unset:
+            kwargs["count_by"] = count_by
 
         if filter_severity is not unset:
             kwargs["filter_severity"] = filter_severity
