@@ -1,0 +1,35 @@
+{
+  "api": "FleetAutomation",
+  "expected_status": 204,
+  "feature": "Fleet Automation",
+  "id": "v2/Fleet Automation/Delete a fleet access scope returns \"No Content\" response",
+  "operation_id": "DeleteFleetAccessScope",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "access_scope_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "fleet_access_scope.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/fleet/access_scopes/{access_scope_id}"
+  },
+  "scenario": "Delete a fleet access scope returns \"No Content\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

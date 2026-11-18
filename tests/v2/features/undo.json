@@ -3475,6 +3475,43 @@
       "type": "idempotent"
     }
   },
+  "ListFleetAccessScopes": {
+    "tag": "Fleet Automation",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateFleetAccessScope": {
+    "tag": "Fleet Automation",
+    "undo": {
+      "operationId": "DeleteFleetAccessScope",
+      "parameters": [
+        {
+          "name": "access_scope_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteFleetAccessScope": {
+    "tag": "Fleet Automation",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetFleetAccessScope": {
+    "tag": "Fleet Automation",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateFleetAccessScope": {
+    "tag": "Fleet Automation",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListFleetAgentVersionsV2": {
     "tag": "Fleet Automation",
     "undo": {

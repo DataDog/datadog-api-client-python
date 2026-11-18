@@ -6798,6 +6798,41 @@
       "version": "v2"
     },
     {
+      "feature": "Fleet Automation",
+      "feature_file": "../../v2/features/fleet_automation.feature",
+      "file": "v2/fleet-automation/create-a-fleet-access-scope-returns-created-response.json",
+      "scenario": "Create a fleet access scope returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Fleet Automation",
+      "feature_file": "../../v2/features/fleet_automation.feature",
+      "file": "v2/fleet-automation/delete-a-fleet-access-scope-returns-no-content-response.json",
+      "scenario": "Delete a fleet access scope returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Fleet Automation",
+      "feature_file": "../../v2/features/fleet_automation.feature",
+      "file": "v2/fleet-automation/get-a-fleet-access-scope-returns-ok-response.json",
+      "scenario": "Get a fleet access scope returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Fleet Automation",
+      "feature_file": "../../v2/features/fleet_automation.feature",
+      "file": "v2/fleet-automation/list-all-fleet-access-scopes-returns-ok-response.json",
+      "scenario": "List all fleet access scopes returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Fleet Automation",
+      "feature_file": "../../v2/features/fleet_automation.feature",
+      "file": "v2/fleet-automation/replace-a-fleet-access-scope-returns-ok-response.json",
+      "scenario": "Replace a fleet access scope returns \"OK\" response",
+      "version": "v2"
+    },
+    {
       "feature": "Forms",
       "feature_file": "../../v2/features/forms.feature",
       "file": "v2/forms/clone-a-form-returns-not-found-response.json",

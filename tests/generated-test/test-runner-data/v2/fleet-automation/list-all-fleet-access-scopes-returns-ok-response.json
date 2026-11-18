@@ -1,0 +1,18 @@
+{
+  "api": "FleetAutomation",
+  "expected_status": 200,
+  "feature": "Fleet Automation",
+  "id": "v2/Fleet Automation/List all fleet access scopes returns \"OK\" response",
+  "operation_id": "ListFleetAccessScopes",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/fleet/access_scopes"
+  },
+  "scenario": "List all fleet access scopes returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

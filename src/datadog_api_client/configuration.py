@@ -256,11 +256,16 @@ class Configuration:
         # Keep track of unstable operations
         self.unstable_operations = _UnstableOperations(
             {
+                "v2.create_fleet_access_scope": False,
                 "v2.create_fleet_schedule": False,
+                "v2.delete_fleet_access_scope": False,
                 "v2.delete_fleet_schedule": False,
+                "v2.get_fleet_access_scope": False,
+                "v2.list_fleet_access_scopes": False,
                 "v2.list_fleet_agent_tracers": False,
                 "v2.list_fleet_tracers": False,
                 "v2.trigger_fleet_schedule": False,
+                "v2.update_fleet_access_scope": False,
                 "v2.update_fleet_schedule": False,
                 "v2.aggregate_llm_obs_experimentation": False,
                 "v2.batch_update_llm_obs_dataset": False,

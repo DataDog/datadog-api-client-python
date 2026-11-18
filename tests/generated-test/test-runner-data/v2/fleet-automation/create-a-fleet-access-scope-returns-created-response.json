@@ -1,0 +1,39 @@
+{
+  "api": "FleetAutomation",
+  "expected_status": 201,
+  "feature": "Fleet Automation",
+  "id": "v2/Fleet Automation/Create a fleet access scope returns \"Created\" response",
+  "operation_id": "CreateFleetAccessScope",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "FleetAccessScopeWriteRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "description": "{{ unique }}",
+            "features": {
+              "configure": false,
+              "install": false,
+              "upgrade": true
+            },
+            "query": "env:prod"
+          },
+          "type": "access_scope"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/fleet/access_scopes"
+  },
+  "scenario": "Create a fleet access scope returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

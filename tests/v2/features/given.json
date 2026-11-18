@@ -740,6 +740,19 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"access_scope\",\n    \"attributes\": {\n      \"description\": \"{{ unique }}\",\n      \"query\": \"env:prod\",\n      \"features\": {\n        \"install\": false,\n        \"upgrade\": true,\n        \"configure\": false\n      }\n    }\n  }\n}"
+      }
+    ],
+    "source": "data",
+    "step": "there is a valid \"fleet_access_scope\" in the system",
+    "key": "fleet_access_scope",
+    "tag": "Fleet Automation",
+    "operationId": "CreateFleetAccessScope"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"deployment\",\n    \"attributes\": {\n      \"filter_query\": \"env:prod AND service:{{ unique_lower }}\",\n      \"config_operations\": [\n        {\n          \"file_op\": \"merge-patch\",\n          \"file_path\": \"/datadog.yaml\",\n          \"patch\": {\n            \"log_level\": \"info\"\n          }\n        }\n      ]\n    }\n  }\n}"
       }
     ],

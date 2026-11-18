@@ -4864,6 +4864,17 @@ from datadog_api_client.v2.model.flaky_tests_search_request_data_type import Fla
 from datadog_api_client.v2.model.flaky_tests_search_response import FlakyTestsSearchResponse
 from datadog_api_client.v2.model.flaky_tests_search_response_meta import FlakyTestsSearchResponseMeta
 from datadog_api_client.v2.model.flaky_tests_search_sort import FlakyTestsSearchSort
+from datadog_api_client.v2.model.fleet_access_scope import FleetAccessScope
+from datadog_api_client.v2.model.fleet_access_scope_attributes import FleetAccessScopeAttributes
+from datadog_api_client.v2.model.fleet_access_scope_features import FleetAccessScopeFeatures
+from datadog_api_client.v2.model.fleet_access_scope_resource_type import FleetAccessScopeResourceType
+from datadog_api_client.v2.model.fleet_access_scope_response import FleetAccessScopeResponse
+from datadog_api_client.v2.model.fleet_access_scope_response_attributes import FleetAccessScopeResponseAttributes
+from datadog_api_client.v2.model.fleet_access_scope_write import FleetAccessScopeWrite
+from datadog_api_client.v2.model.fleet_access_scope_write_request import FleetAccessScopeWriteRequest
+from datadog_api_client.v2.model.fleet_access_scopes_page import FleetAccessScopesPage
+from datadog_api_client.v2.model.fleet_access_scopes_response import FleetAccessScopesResponse
+from datadog_api_client.v2.model.fleet_access_scopes_response_meta import FleetAccessScopesResponseMeta
 from datadog_api_client.v2.model.fleet_agent_attributes_tags_items import FleetAgentAttributesTagsItems
 from datadog_api_client.v2.model.fleet_agent_configuration_files_v2 import FleetAgentConfigurationFilesV2
 from datadog_api_client.v2.model.fleet_agent_detail_v2 import FleetAgentDetailV2
@@ -17677,6 +17688,17 @@ __all__ = [
     "FlakyTestsSearchResponse",
     "FlakyTestsSearchResponseMeta",
     "FlakyTestsSearchSort",
+    "FleetAccessScope",
+    "FleetAccessScopeAttributes",
+    "FleetAccessScopeFeatures",
+    "FleetAccessScopeResourceType",
+    "FleetAccessScopeResponse",
+    "FleetAccessScopeResponseAttributes",
+    "FleetAccessScopeWrite",
+    "FleetAccessScopeWriteRequest",
+    "FleetAccessScopesPage",
+    "FleetAccessScopesResponse",
+    "FleetAccessScopesResponseMeta",
     "FleetAgentAttributesTagsItems",
     "FleetAgentConfigurationFilesV2",
     "FleetAgentDetailV2",

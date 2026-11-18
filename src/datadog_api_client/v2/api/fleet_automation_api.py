@@ -16,6 +16,9 @@ from datadog_api_client.v2.model.fleet_schedule_response import FleetScheduleRes
 from datadog_api_client.v2.model.fleet_schedule_create_request import FleetScheduleCreateRequest
 from datadog_api_client.v2.model.fleet_schedule_patch_request import FleetSchedulePatchRequest
 from datadog_api_client.v2.model.fleet_deployment_response import FleetDeploymentResponse
+from datadog_api_client.v2.model.fleet_access_scopes_response import FleetAccessScopesResponse
+from datadog_api_client.v2.model.fleet_access_scope_response import FleetAccessScopeResponse
+from datadog_api_client.v2.model.fleet_access_scope_write_request import FleetAccessScopeWriteRequest
 from datadog_api_client.v2.model.fleet_agent_versions_v2_response import FleetAgentVersionsV2Response
 from datadog_api_client.v2.model.fleet_agents_v2_response import FleetAgentsV2Response
 from datadog_api_client.v2.model.fleet_agent_detail_v2_response import FleetAgentDetailV2Response
@@ -82,6 +85,26 @@ class FleetAutomationApi:
             api_client=api_client,
         )
 
+        self._create_fleet_access_scope_endpoint = _Endpoint(
+            settings={
+                "response_type": (FleetAccessScopeResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/fleet/access_scopes",
+                "operation_id": "create_fleet_access_scope",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (FleetAccessScopeWriteRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._create_fleet_deployment_configure_v2_endpoint = _Endpoint(
             settings={
                 "response_type": (FleetDeploymentConfigureV2DryRunResponse,),
@@ -142,6 +165,29 @@ class FleetAutomationApi:
             api_client=api_client,
         )
 
+        self._delete_fleet_access_scope_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/fleet/access_scopes/{access_scope_id}",
+                "operation_id": "delete_fleet_access_scope",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "access_scope_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "access_scope_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._delete_fleet_schedule_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -161,6 +207,29 @@ class FleetAutomationApi:
             },
             headers_map={
                 "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_fleet_access_scope_endpoint = _Endpoint(
+            settings={
+                "response_type": (FleetAccessScopeResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/fleet/access_scopes/{access_scope_id}",
+                "operation_id": "get_fleet_access_scope",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "access_scope_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "access_scope_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
             },
             api_client=api_client,
         )
@@ -234,6 +303,22 @@ class FleetAutomationApi:
                     "location": "path",
                 },
             },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_fleet_access_scopes_endpoint = _Endpoint(
+            settings={
+                "response_type": (FleetAccessScopesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/fleet/access_scopes",
+                "operation_id": "list_fleet_access_scopes",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
             },
@@ -496,6 +581,32 @@ class FleetAutomationApi:
             api_client=api_client,
         )
 
+        self._update_fleet_access_scope_endpoint = _Endpoint(
+            settings={
+                "response_type": (FleetAccessScopeResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/fleet/access_scopes/{access_scope_id}",
+                "operation_id": "update_fleet_access_scope",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "access_scope_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "access_scope_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (FleetAccessScopeWriteRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_fleet_schedule_endpoint = _Endpoint(
             settings={
                 "response_type": (FleetScheduleResponse,),
@@ -548,6 +659,22 @@ class FleetAutomationApi:
         kwargs["deployment_id"] = deployment_id
 
         return self._cancel_fleet_deployment_v2_endpoint.call_with_http_info(**kwargs)
+
+    def create_fleet_access_scope(
+        self,
+        body: FleetAccessScopeWriteRequest,
+    ) -> FleetAccessScopeResponse:
+        """Create a fleet access scope.
+
+        Create an access scope defining which fleet actions can be performed on matching agents. Manage its principals separately with a restriction policy on ``fleet-scope:<id>``.
+
+        :type body: FleetAccessScopeWriteRequest
+        :rtype: FleetAccessScopeResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_fleet_access_scope_endpoint.call_with_http_info(**kwargs)
 
     def create_fleet_deployment_configure_v2(
         self,
@@ -639,6 +766,23 @@ class FleetAutomationApi:
 
         return self._create_fleet_schedule_endpoint.call_with_http_info(**kwargs)
 
+    def delete_fleet_access_scope(
+        self,
+        access_scope_id: str,
+    ) -> None:
+        """Delete a fleet access scope.
+
+        Delete an access scope. The associated restriction policy is deleted on a best-effort basis. Listing scopes after the last scope is deleted initializes the default scope again.
+
+        :param access_scope_id: The unique identifier of the fleet access scope.
+        :type access_scope_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["access_scope_id"] = access_scope_id
+
+        return self._delete_fleet_access_scope_endpoint.call_with_http_info(**kwargs)
+
     def delete_fleet_schedule(
         self,
         id: str,
@@ -664,6 +808,23 @@ class FleetAutomationApi:
         kwargs["id"] = id
 
         return self._delete_fleet_schedule_endpoint.call_with_http_info(**kwargs)
+
+    def get_fleet_access_scope(
+        self,
+        access_scope_id: str,
+    ) -> FleetAccessScopeResponse:
+        """Get a fleet access scope.
+
+        Retrieve an access scope by its unique identifier.
+
+        :param access_scope_id: The unique identifier of the fleet access scope.
+        :type access_scope_id: str
+        :rtype: FleetAccessScopeResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["access_scope_id"] = access_scope_id
+
+        return self._get_fleet_access_scope_endpoint.call_with_http_info(**kwargs)
 
     def get_fleet_agent_detail_v2(
         self,
@@ -728,6 +889,18 @@ class FleetAutomationApi:
         kwargs["id"] = id
 
         return self._get_fleet_schedule_v2_endpoint.call_with_http_info(**kwargs)
+
+    def list_fleet_access_scopes(
+        self,
+    ) -> FleetAccessScopesResponse:
+        """List all fleet access scopes.
+
+        Retrieve all access scopes in the organization. This endpoint is not paginated. If the organization has no scopes, listing initializes its default scope, including after the final scope has been deleted.
+
+        :rtype: FleetAccessScopesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_fleet_access_scopes_endpoint.call_with_http_info(**kwargs)
 
     def list_fleet_agents_v2(
         self,
@@ -989,6 +1162,27 @@ class FleetAutomationApi:
         kwargs["id"] = id
 
         return self._trigger_fleet_schedule_endpoint.call_with_http_info(**kwargs)
+
+    def update_fleet_access_scope(
+        self,
+        access_scope_id: str,
+        body: FleetAccessScopeWriteRequest,
+    ) -> FleetAccessScopeResponse:
+        """Replace a fleet access scope.
+
+        Replace the mutable attributes of an access scope selected by its path ID. Omitted strings become empty; omitted feature flags become false. Existing restriction policy bindings are preserved.
+
+        :param access_scope_id: The unique identifier of the fleet access scope.
+        :type access_scope_id: str
+        :type body: FleetAccessScopeWriteRequest
+        :rtype: FleetAccessScopeResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["access_scope_id"] = access_scope_id
+
+        kwargs["body"] = body
+
+        return self._update_fleet_access_scope_endpoint.call_with_http_info(**kwargs)
 
     def update_fleet_schedule(
         self,

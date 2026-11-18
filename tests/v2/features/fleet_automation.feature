@@ -58,6 +58,27 @@ Feature: Fleet Automation
     Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/fleet-automation
+  Scenario: Create a fleet access scope returns "Bad Request" response
+    Given operation "CreateFleetAccessScope" enabled
+    And new "CreateFleetAccessScope" request
+    And body with value {"data": {"attributes": {"description": "Production hosts", "features": {"configure": false, "install": false, "upgrade": true}, "query": "env:prod"}, "type": "access_scope"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:ddoghq/fleet-automation
+  Scenario: Create a fleet access scope returns "Created" response
+    Given operation "CreateFleetAccessScope" enabled
+    And new "CreateFleetAccessScope" request
+    And body with value {"data": {"type": "access_scope", "attributes": {"description": "{{ unique }}", "query": "env:prod", "features": {"install": false, "upgrade": true, "configure": false}}}}
+    When the request is sent
+    Then the response status is 201 Created
+    And the response "data.type" is equal to "access_scope"
+    And the response "data.attributes.query" is equal to "env:prod"
+    And the response "data.attributes.features.install" is false
+    And the response "data.attributes.features.upgrade" is equal to true
+    And the response "data.attributes.features.configure" is false
+
+  @generated @skip @team:ddoghq/fleet-automation
   Scenario: Create a schedule returns "Bad Request" response
     Given operation "CreateFleetSchedule" enabled
     And new "CreateFleetSchedule" request
@@ -72,6 +93,31 @@ Feature: Fleet Automation
     And body with value {"data": {"attributes": {"name": "Weekly Production Agent Updates", "query": "env:prod AND service:web", "rule": {"days_of_week": ["Mon", "Wed", "Fri"], "maintenance_window_duration": 1200, "start_maintenance_window": "02:00", "timezone": "America/New_York"}, "status": "active", "version_to_latest": 0}, "type": "schedule"}}
     When the request is sent
     Then the response status is 201 CREATED
+
+  @generated @skip @team:ddoghq/fleet-automation
+  Scenario: Delete a fleet access scope returns "Bad Request" response
+    Given operation "DeleteFleetAccessScope" enabled
+    And new "DeleteFleetAccessScope" request
+    And request contains "access_scope_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:ddoghq/fleet-automation
+  Scenario: Delete a fleet access scope returns "No Content" response
+    Given operation "DeleteFleetAccessScope" enabled
+    And there is a valid "fleet_access_scope" in the system
+    And new "DeleteFleetAccessScope" request
+    And request contains "access_scope_id" parameter from "fleet_access_scope.id"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:ddoghq/fleet-automation
+  Scenario: Delete a fleet access scope returns "Not Found" response
+    Given operation "DeleteFleetAccessScope" enabled
+    And new "DeleteFleetAccessScope" request
+    And request contains "access_scope_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
 
   @generated @skip @team:ddoghq/fleet-automation
   Scenario: Delete a schedule returns "Bad Request" response
@@ -118,6 +164,34 @@ Feature: Fleet Automation
     And request contains "deployment_id" parameter from "deployment.id"
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/fleet-automation
+  Scenario: Get a fleet access scope returns "Bad Request" response
+    Given operation "GetFleetAccessScope" enabled
+    And new "GetFleetAccessScope" request
+    And request contains "access_scope_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/fleet-automation
+  Scenario: Get a fleet access scope returns "Not Found" response
+    Given operation "GetFleetAccessScope" enabled
+    And new "GetFleetAccessScope" request
+    And request contains "access_scope_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:ddoghq/fleet-automation
+  Scenario: Get a fleet access scope returns "OK" response
+    Given operation "GetFleetAccessScope" enabled
+    And there is a valid "fleet_access_scope" in the system
+    And new "GetFleetAccessScope" request
+    And request contains "access_scope_id" parameter from "fleet_access_scope.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" has the same value as "fleet_access_scope.id"
+    And the response "data.type" is equal to "access_scope"
+    And the response "data.attributes.query" is equal to "env:prod"
 
   @skip @team:ddoghq/fleet-automation
   Scenario: Get a schedule by ID returns "Bad Request" response
@@ -187,6 +261,23 @@ Feature: Fleet Automation
     Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/fleet-automation
+  Scenario: List all fleet access scopes returns "Bad Request" response
+    Given operation "ListFleetAccessScopes" enabled
+    And new "ListFleetAccessScopes" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:ddoghq/fleet-automation
+  Scenario: List all fleet access scopes returns "OK" response
+    Given operation "ListFleetAccessScopes" enabled
+    And there is a valid "fleet_access_scope" in the system
+    And new "ListFleetAccessScopes" request
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has item with field "id" with value "{{ fleet_access_scope.id }}"
+    And the response "meta.page" has field "total_count"
+
+  @generated @skip @team:ddoghq/fleet-automation
   Scenario: List all fleet tracers returns "Bad Request" response
     Given operation "ListFleetTracers" enabled
     And new "ListFleetTracers" request
@@ -254,6 +345,38 @@ Feature: Fleet Automation
     And request contains "agent_key" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/fleet-automation
+  Scenario: Replace a fleet access scope returns "Bad Request" response
+    Given operation "UpdateFleetAccessScope" enabled
+    And new "UpdateFleetAccessScope" request
+    And request contains "access_scope_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Production hosts", "features": {"configure": false, "install": false, "upgrade": true}, "query": "env:prod"}, "type": "access_scope"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/fleet-automation
+  Scenario: Replace a fleet access scope returns "Not Found" response
+    Given operation "UpdateFleetAccessScope" enabled
+    And new "UpdateFleetAccessScope" request
+    And request contains "access_scope_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Production hosts", "features": {"configure": false, "install": false, "upgrade": true}, "query": "env:prod"}, "type": "access_scope"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:ddoghq/fleet-automation
+  Scenario: Replace a fleet access scope returns "OK" response
+    Given operation "UpdateFleetAccessScope" enabled
+    And there is a valid "fleet_access_scope" in the system
+    And new "UpdateFleetAccessScope" request
+    And request contains "access_scope_id" parameter from "fleet_access_scope.id"
+    And body with value {"data": {"type": "access_scope", "attributes": {"description": "{{ unique }} updated", "query": "env:staging", "features": {"install": false, "upgrade": false, "configure": true}}}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" has the same value as "fleet_access_scope.id"
+    And the response "data.attributes.query" is equal to "env:staging"
+    And the response "data.attributes.features.upgrade" is false
+    And the response "data.attributes.features.configure" is equal to true
 
   @generated @skip @team:ddoghq/fleet-automation
   Scenario: Trigger a schedule deployment returns "Bad Request" response
