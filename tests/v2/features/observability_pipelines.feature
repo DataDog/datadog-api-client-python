@@ -14,8 +14,8 @@ Feature: Observability Pipelines
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "unknown-processor", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Main Observability Pipeline"}, "type": "pipelines"}}
     When the request is sent
     Then the response status is 400 Bad Request
-    And the response "errors[0].title" is equal to "Component with ID my-processor-group is an unknown component"
-    And the response "errors[0].meta.message" is equal to "Component with ID my-processor-group is an unknown component"
+    And the response "errors[0].title" is equal to "component datadog-logs-destination references unknown input: my-processor-group"
+    And the response "errors[0].meta.message" is equal to "component datadog-logs-destination references unknown input: my-processor-group"
 
   @generated @skip @team:ddoghq/observability-pipelines
   Scenario: Create a new pipeline returns "Conflict" response
@@ -181,10 +181,10 @@ Feature: Observability Pipelines
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "filter-processor", "type": "filter"}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Main Observability Pipeline"}, "type": "pipelines"}}
     When the request is sent
     Then the response status is 400 Bad Request
-    And the response "errors[0].title" is equal to "Field 'include' is required"
+    And the response "errors[0].title" is equal to "include is required"
     And the response "errors[0].meta.field" is equal to "include"
     And the response "errors[0].meta.id" is equal to "filter-processor"
-    And the response "errors[0].meta.message" is equal to "Field 'include' is required"
+    And the response "errors[0].meta.message" is equal to "include is required"
 
   @team:ddoghq/observability-pipelines
   Scenario: Validate an observability pipeline returns "OK" response
