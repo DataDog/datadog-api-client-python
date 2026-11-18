@@ -40,6 +40,9 @@ class ContainersApi:
             },
             params_map={
                 "filter_tags": {
+                    "validation": {
+                        "max_length": 1024,
+                    },
                     "openapi_types": (str,),
                     "attribute": "filter[tags]",
                     "location": "query",
@@ -92,9 +95,17 @@ class ContainersApi:
         To get CPU or memory metrics, use a ``container`` data source query with ``/api/v2/query/scalar``
         or ``/api/v2/query/timeseries``.
 
-        :param filter_tags: Comma-separated ``key:value`` tags. A container must match every tag. Wildcards, negation
-            ( ``-key:value`` ), spaces, and ``IN (...)`` are not supported. To cover several hosts, make one
-            request per host.
+        :param filter_tags: Comma-separated ``key:value`` tags. A container must match every tag. Each tag starts with a letter and
+            contains only letters, digits, ``_`` , ``-`` , ``.`` , ``/`` , ``@`` , and ``:``. Values match exactly and are
+            case-sensitive (tags are usually lowercase).
+            In a value, ``*`` matches any run of characters, including none. It can appear anywhere in the value and
+            more than once, and it can't be escaped. For example, ``env:prod*`` matches ``env:prod`` and ``env:prod-eu`` ,
+            ``kube_namespace:*-web`` matches ``kube_namespace:shop-web`` , and ``container_id:a4cf*`` matches containers
+            whose ID starts with ``a4cf``.
+            These return ``400 Bad Request`` , with the reason in ``errors[0].detail`` : a ``*`` in a key or in a tag
+            without ``:`` ( ``kube_*:prod`` , ``*:prod`` , ``prod*`` ), a ``?`` , a leading ``-`` (negation), spaces (so ``OR`` and
+            ``IN (...)`` can't be used), an empty value ( ``env:`` ), and more than 1024 characters in total. To match
+            unrelated values of one key, make one request per value.
         :type filter_tags: str, optional
         :param group_by: Comma-separated list of up to three tag keys to group containers by. Returns ``container_group``
             objects with counts and tags. Grouped results ignore ``sort`` and do not support pagination.
@@ -145,9 +156,17 @@ class ContainersApi:
 
         Provide a paginated version of :meth:`list_containers`, returning all items.
 
-        :param filter_tags: Comma-separated ``key:value`` tags. A container must match every tag. Wildcards, negation
-            ( ``-key:value`` ), spaces, and ``IN (...)`` are not supported. To cover several hosts, make one
-            request per host.
+        :param filter_tags: Comma-separated ``key:value`` tags. A container must match every tag. Each tag starts with a letter and
+            contains only letters, digits, ``_`` , ``-`` , ``.`` , ``/`` , ``@`` , and ``:``. Values match exactly and are
+            case-sensitive (tags are usually lowercase).
+            In a value, ``*`` matches any run of characters, including none. It can appear anywhere in the value and
+            more than once, and it can't be escaped. For example, ``env:prod*`` matches ``env:prod`` and ``env:prod-eu`` ,
+            ``kube_namespace:*-web`` matches ``kube_namespace:shop-web`` , and ``container_id:a4cf*`` matches containers
+            whose ID starts with ``a4cf``.
+            These return ``400 Bad Request`` , with the reason in ``errors[0].detail`` : a ``*`` in a key or in a tag
+            without ``:`` ( ``kube_*:prod`` , ``*:prod`` , ``prod*`` ), a ``?`` , a leading ``-`` (negation), spaces (so ``OR`` and
+            ``IN (...)`` can't be used), an empty value ( ``env:`` ), and more than 1024 characters in total. To match
+            unrelated values of one key, make one request per value.
         :type filter_tags: str, optional
         :param group_by: Comma-separated list of up to three tag keys to group containers by. Returns ``container_group``
             objects with counts and tags. Grouped results ignore ``sort`` and do not support pagination.
