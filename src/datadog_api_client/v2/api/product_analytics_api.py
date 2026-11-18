@@ -13,6 +13,10 @@ from datadog_api_client.v2.model.product_analytics_analytics_list_request import
 from datadog_api_client.v2.model.product_analytics_scalar_response import ProductAnalyticsScalarResponse
 from datadog_api_client.v2.model.product_analytics_analytics_request import ProductAnalyticsAnalyticsRequest
 from datadog_api_client.v2.model.product_analytics_timeseries_response import ProductAnalyticsTimeseriesResponse
+from datadog_api_client.v2.model.product_analytics_journey_drop_off_response import (
+    ProductAnalyticsJourneyDropOffResponse,
+)
+from datadog_api_client.v2.model.product_analytics_journey_drop_off_request import ProductAnalyticsJourneyDropOffRequest
 from datadog_api_client.v2.model.product_analytics_journey_funnel_response import ProductAnalyticsJourneyFunnelResponse
 from datadog_api_client.v2.model.product_analytics_journey_funnel_request import ProductAnalyticsJourneyFunnelRequest
 from datadog_api_client.v2.model.product_analytics_journey_list_response import ProductAnalyticsJourneyListResponse
@@ -32,6 +36,18 @@ from datadog_api_client.v2.model.product_analytics_formula_retention_request imp
 )
 from datadog_api_client.v2.model.product_analytics_sankey_response import ProductAnalyticsSankeyResponse
 from datadog_api_client.v2.model.product_analytics_sankey_request import ProductAnalyticsSankeyRequest
+from datadog_api_client.v2.model.product_analytics_funnel_suggestions_response import (
+    ProductAnalyticsFunnelSuggestionsResponse,
+)
+from datadog_api_client.v2.model.product_analytics_funnel_suggestions_request import (
+    ProductAnalyticsFunnelSuggestionsRequest,
+)
+from datadog_api_client.v2.model.product_analytics_funnel_step_suggestions_response import (
+    ProductAnalyticsFunnelStepSuggestionsResponse,
+)
+from datadog_api_client.v2.model.product_analytics_funnel_step_suggestions_request import (
+    ProductAnalyticsFunnelStepSuggestionsRequest,
+)
 
 
 class ProductAnalyticsApi:
@@ -48,6 +64,66 @@ class ProductAnalyticsApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._query_product_analytics_funnel_step_suggestions_endpoint = _Endpoint(
+            settings={
+                "response_type": (ProductAnalyticsFunnelStepSuggestionsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/product-analytics/suggestions/features/steps",
+                "operation_id": "query_product_analytics_funnel_step_suggestions",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (ProductAnalyticsFunnelStepSuggestionsRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._query_product_analytics_funnel_suggestions_endpoint = _Endpoint(
+            settings={
+                "response_type": (ProductAnalyticsFunnelSuggestionsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/product-analytics/suggestions/features",
+                "operation_id": "query_product_analytics_funnel_suggestions",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (ProductAnalyticsFunnelSuggestionsRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._query_product_analytics_journey_drop_off_endpoint = _Endpoint(
+            settings={
+                "response_type": (ProductAnalyticsJourneyDropOffResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/product-analytics/journey/drop_off_analysis",
+                "operation_id": "query_product_analytics_journey_drop_off",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (ProductAnalyticsJourneyDropOffRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
 
         self._query_product_analytics_journey_funnel_endpoint = _Endpoint(
             settings={
@@ -354,6 +430,62 @@ class ProductAnalyticsApi:
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
+
+    def query_product_analytics_funnel_step_suggestions(
+        self,
+        body: ProductAnalyticsFunnelStepSuggestionsRequest,
+    ) -> ProductAnalyticsFunnelStepSuggestionsResponse:
+        """Get funnel step suggestions.
+
+        Get the steps that users most often take after the existing steps of a funnel.
+        Suggestions come from the same precomputed journeys as feature suggestions.
+        Returns an empty list when no journey starts with the given steps.
+
+        :type body: ProductAnalyticsFunnelStepSuggestionsRequest
+        :rtype: ProductAnalyticsFunnelStepSuggestionsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._query_product_analytics_funnel_step_suggestions_endpoint.call_with_http_info(**kwargs)
+
+    def query_product_analytics_funnel_suggestions(
+        self,
+        body: ProductAnalyticsFunnelSuggestionsRequest,
+    ) -> ProductAnalyticsFunnelSuggestionsResponse:
+        """Get feature suggestions.
+
+        Get the features that Product Analytics detected in your applications, grouped by
+        application and feature area. Each feature comes with a suggested journey that users
+        follow to use it, which you can use as funnel steps.
+
+        :type body: ProductAnalyticsFunnelSuggestionsRequest
+        :rtype: ProductAnalyticsFunnelSuggestionsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._query_product_analytics_funnel_suggestions_endpoint.call_with_http_info(**kwargs)
+
+    def query_product_analytics_journey_drop_off(
+        self,
+        body: ProductAnalyticsJourneyDropOffRequest,
+    ) -> ProductAnalyticsJourneyDropOffResponse:
+        """Analyze journey drop-off.
+
+        Analyze the drop-off at a given step of the journey. The journey must have at least two
+        steps, and only the ``@session.id`` join key is supported. Set ``target`` to the node to
+        analyze. It can't be the first step. When ``target`` is omitted, the last step is used.
+        Returns the number of sessions that reached the step before the target but not the target,
+        together with the issues and frustration signals most associated with the drop-off.
+
+        :type body: ProductAnalyticsJourneyDropOffRequest
+        :rtype: ProductAnalyticsJourneyDropOffResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._query_product_analytics_journey_drop_off_endpoint.call_with_http_info(**kwargs)
 
     def query_product_analytics_journey_funnel(
         self,
