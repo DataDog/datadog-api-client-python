@@ -78,16 +78,16 @@ class AiGatewayModelGroupUpdateAttributes(ModelNormal):
         :param max_reasoning_level: Maximum reasoning level permitted by a model group.
         :type max_reasoning_level: AiGatewayNullableMaxReasoningLevel, none_type, optional
 
-        :param model_ids: Individually selected model catalog IDs. Replaces this selection only. Omit to preserve it; an empty array clears it. Null is invalid. Individual selections do not include future models. New selections require provider View; retaining or removing saved hidden selections requires only parent Edit.
+        :param model_ids: Individually selected model catalog IDs. Replaces visible selections and preserves saved hidden selections. Omit to preserve the complete selection; an empty array clears only visible selections. Null is invalid. Individual selections do not include future models. New selections require provider View.
         :type model_ids: [int], optional
 
         :param name: Human-readable resource name.
         :type name: str, optional
 
-        :param provider_ids: Explicit provider selections, including current and future models. Omit to preserve selections on update; an empty array clears them. Null is invalid. New selections require provider View; saved hidden IDs can be retained or removed.
+        :param provider_ids: Explicit provider selections, including current and future models. Replaces visible selections and preserves saved hidden selections. Omit to preserve the complete selection; an empty array clears only visible selections. Null is invalid. New selections require provider View.
         :type provider_ids: [int], optional
 
-        :param routing_rule_slugs: Organization-unique routing rule slugs. Replaces route selections only. Omit to preserve them; an empty array clears them. Null is invalid.
+        :param routing_rule_slugs: Organization-unique routing rule slugs. Replaces visible route selections and preserves saved hidden selections. Omit to preserve all route selections; an empty array clears only visible selections. Null is invalid. New selections require route View.
         :type routing_rule_slugs: [str], optional
         """
         if allow_fast_mode is not unset:

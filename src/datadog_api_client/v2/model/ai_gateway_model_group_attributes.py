@@ -44,9 +44,11 @@ class AiGatewayModelGroupAttributes(ModelNormal):
             "max_reasoning_level": (AiGatewayNullableMaxReasoningLevel,),
             "model_ids": ([int],),
             "models": ([AiGatewayModelGroupModel],),
+            "models_restricted": (bool,),
             "name": (str,),
             "provider_ids": ([int],),
             "providers": ([AiGatewayModelGroupProvider],),
+            "providers_restricted": (bool,),
             "revision": (int,),
             "routing_rules": ([AiGatewayModelGroupRoutingRule],),
             "routing_rules_restricted": (bool,),
@@ -59,15 +61,19 @@ class AiGatewayModelGroupAttributes(ModelNormal):
         "max_reasoning_level": "max_reasoning_level",
         "model_ids": "model_ids",
         "models": "models",
+        "models_restricted": "models_restricted",
         "name": "name",
         "provider_ids": "provider_ids",
         "providers": "providers",
+        "providers_restricted": "providers_restricted",
         "revision": "revision",
         "routing_rules": "routing_rules",
         "routing_rules_restricted": "routing_rules_restricted",
         "updated_at": "updated_at",
     }
     read_only_vars = {
+        "models_restricted",
+        "providers_restricted",
         "routing_rules_restricted",
     }
 
@@ -83,6 +89,8 @@ class AiGatewayModelGroupAttributes(ModelNormal):
         providers: List[AiGatewayModelGroupProvider],
         routing_rules: List[AiGatewayModelGroupRoutingRule],
         updated_at: datetime,
+        models_restricted: Union[bool, UnsetType] = unset,
+        providers_restricted: Union[bool, UnsetType] = unset,
         revision: Union[int, UnsetType] = unset,
         routing_rules_restricted: Union[bool, UnsetType] = unset,
         **kwargs,
@@ -99,20 +107,28 @@ class AiGatewayModelGroupAttributes(ModelNormal):
         :param max_reasoning_level: Maximum reasoning level permitted by a model group.
         :type max_reasoning_level: AiGatewayNullableMaxReasoningLevel, none_type
 
-        :param model_ids: All saved model catalog IDs, including selections whose provider metadata is hidden. Preserve these IDs independently of the visible catalog.
+        :param model_ids: Saved model catalog IDs whose providers the caller can view. Hidden identities are omitted. The
+            ``models_restricted`` field indicates hidden membership.
         :type model_ids: [int]
 
-        :param models: Metadata for saved model selections whose providers the caller can view. Missing metadata does not remove a saved ID.
+        :param models: Metadata for saved model selections whose providers the caller can view. Hidden model identities and metadata are omitted.
         :type models: [AiGatewayModelGroupModel]
+
+        :param models_restricted: Whether some saved models are hidden from the caller. Hidden identities, names, and counts are omitted. Editing visible selections preserves hidden memberships.
+        :type models_restricted: bool, optional
 
         :param name: Human-readable resource name.
         :type name: str
 
-        :param provider_ids: All explicitly selected provider IDs, including hidden providers. Embedded provider metadata includes only viewable providers.
+        :param provider_ids: Explicitly selected provider IDs the caller can view. Hidden identities are omitted. The
+            ``providers_restricted`` field indicates hidden membership.
         :type provider_ids: [int]
 
-        :param providers: Viewable explicitly selected providers, separate from individually selected models. Use provider_ids to retain all selections.
+        :param providers: Viewable explicitly selected providers, separate from individually selected models. Hidden provider identities and metadata are omitted.
         :type providers: [AiGatewayModelGroupProvider]
+
+        :param providers_restricted: Whether some saved providers are hidden from the caller. Hidden identities, names, and counts are omitted. Editing visible selections preserves hidden memberships.
+        :type providers_restricted: bool, optional
 
         :param revision: Revision of the organization-wide policy. Present for the default model group and absent for named policies.
         :type revision: int, optional
@@ -126,6 +142,10 @@ class AiGatewayModelGroupAttributes(ModelNormal):
         :param updated_at: Time when the resource was last updated.
         :type updated_at: datetime
         """
+        if models_restricted is not unset:
+            kwargs["models_restricted"] = models_restricted
+        if providers_restricted is not unset:
+            kwargs["providers_restricted"] = providers_restricted
         if revision is not unset:
             kwargs["revision"] = revision
         if routing_rules_restricted is not unset:

@@ -1658,7 +1658,11 @@ class AIGatewayApi:
     ) -> AiGatewayModelGroupResponse:
         """Create an AI Gateway model group.
 
-        Create an AI Gateway model group from a name and any combination of model catalog entries and routing rules, with optional fast-mode and reasoning limits and initial access bindings.
+        Create an AI Gateway model group from a name and any combination of model catalog entries, providers, and
+        routing rules, with optional fast-mode and reasoning limits. Include initial access bindings when creating a
+        restricted policy. If the bindings cannot be applied, the policy is not created. To update sharing on an
+        existing policy, use the restriction policy API. If a creation request fails without confirming whether the
+        policy was created, check the policy list before retrying to avoid duplicates.
 
         :type body: AiGatewayModelGroupCreateRequest
         :rtype: AiGatewayModelGroupResponse
@@ -2005,7 +2009,7 @@ class AIGatewayApi:
     ) -> AiGatewayModelGroupResponse:
         """Get an AI Gateway model group.
 
-        Get a named policy or the explicit organization-wide policy by id "default". Requires configuration read permission; named policies also require view access. Provider selections cover current and future models and are returned separately from individual model selections.
+        Get a named policy or the explicit organization-wide policy by id "default". Requires configuration read permission and policy View, including for the default policy. Hidden policies are omitted from lists and return the same not-found response as missing policies. Provider selections cover current and future models and are returned separately from individual model selections.
 
         :param id: Model group ID, or "default" for the explicit organization-wide access policy.
         :type id: str
@@ -2268,7 +2272,7 @@ class AIGatewayApi:
     ) -> AiGatewayModelGroupListResponse:
         """List AI Gateway model groups.
 
-        List model groups the user can view. The organization-wide policy has id "default" and explicit model, provider, and route selections. Missing or empty selections grant no organization-wide access. Its audience is fixed to the organization; it cannot be renamed or deleted. Named policies retain their access bindings. Requires configuration read permission; named policies also require view access.
+        List model groups the user can view. The organization-wide policy has id "default" and explicit model, provider, and route selections. Missing or empty selections grant no organization-wide access. Its audience is fixed to the organization; it cannot be renamed or deleted. Named policies retain their access bindings. Requires configuration read permission and policy View, including for the default policy. Hidden policies are omitted from lists and return the same not-found response as missing policies.
 
         :rtype: AiGatewayModelGroupListResponse
         """
@@ -2594,7 +2598,7 @@ class AIGatewayApi:
     ) -> AiGatewayModelGroupResponse:
         """Update an AI Gateway model group.
 
-        Update a model group. For id "default", save membership and request options atomically with expected_revision. Empty selections grant no organization-wide access. Applicable authorized named policies override organization-wide request options; a rejected named-policy request cannot fall back to organization-wide options. The organization-wide audience is fixed and grants resource use only. Requires configuration write permission; named policies also require edit access.
+        Update a model group. For id "default", save membership and request options atomically with expected_revision. Empty selections grant no organization-wide access. Applicable authorized named policies override organization-wide request options; a rejected named-policy request cannot fall back to organization-wide options. The organization-wide audience is fixed and grants resource use only. Requires configuration write permission and policy View and Edit, including for the default policy. Management visibility does not change the inference audience or Run access.
 
         :param id: Model group ID, or "default" for the explicit organization-wide access policy.
         :type id: str
