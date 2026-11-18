@@ -11058,6 +11058,27 @@ from datadog_api_client.v2.model.security_findings_search_request_data_attribute
 from datadog_api_client.v2.model.security_findings_search_request_page import SecurityFindingsSearchRequestPage
 from datadog_api_client.v2.model.security_findings_sort import SecurityFindingsSort
 from datadog_api_client.v2.model.security_findings_status import SecurityFindingsStatus
+from datadog_api_client.v2.model.security_monitoring_aws_identity_center_aws_account import (
+    SecurityMonitoringAWSIdentityCenterAWSAccount,
+)
+from datadog_api_client.v2.model.security_monitoring_aws_identity_center_aws_accounts_attributes import (
+    SecurityMonitoringAWSIdentityCenterAWSAccountsAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_aws_identity_center_aws_accounts_data import (
+    SecurityMonitoringAWSIdentityCenterAWSAccountsData,
+)
+from datadog_api_client.v2.model.security_monitoring_aws_identity_center_aws_accounts_resource_type import (
+    SecurityMonitoringAWSIdentityCenterAWSAccountsResourceType,
+)
+from datadog_api_client.v2.model.security_monitoring_aws_identity_center_aws_accounts_response import (
+    SecurityMonitoringAWSIdentityCenterAWSAccountsResponse,
+)
+from datadog_api_client.v2.model.security_monitoring_aws_identity_center_integration_config_create_attributes import (
+    SecurityMonitoringAWSIdentityCenterIntegrationConfigCreateAttributes,
+)
+from datadog_api_client.v2.model.security_monitoring_aws_identity_center_integration_config_update_attributes import (
+    SecurityMonitoringAWSIdentityCenterIntegrationConfigUpdateAttributes,
+)
 from datadog_api_client.v2.model.security_monitoring_azure_app_registration import (
     SecurityMonitoringAzureAppRegistration,
 )
@@ -11484,6 +11505,9 @@ from datadog_api_client.v2.model.security_monitoring_integration_credentials_val
     SecurityMonitoringIntegrationCredentialsValidateRequest,
 )
 from datadog_api_client.v2.model.security_monitoring_integration_type import SecurityMonitoringIntegrationType
+from datadog_api_client.v2.model.security_monitoring_integration_type_aws_identity_center import (
+    SecurityMonitoringIntegrationTypeAWSIdentityCenter,
+)
 from datadog_api_client.v2.model.security_monitoring_integration_type_crowd_strike import (
     SecurityMonitoringIntegrationTypeCrowdStrike,
 )
@@ -21761,6 +21785,13 @@ __all__ = [
     "SecurityFindingsSearchRequestPage",
     "SecurityFindingsSort",
     "SecurityFindingsStatus",
+    "SecurityMonitoringAWSIdentityCenterAWSAccount",
+    "SecurityMonitoringAWSIdentityCenterAWSAccountsAttributes",
+    "SecurityMonitoringAWSIdentityCenterAWSAccountsData",
+    "SecurityMonitoringAWSIdentityCenterAWSAccountsResourceType",
+    "SecurityMonitoringAWSIdentityCenterAWSAccountsResponse",
+    "SecurityMonitoringAWSIdentityCenterIntegrationConfigCreateAttributes",
+    "SecurityMonitoringAWSIdentityCenterIntegrationConfigUpdateAttributes",
     "SecurityMonitoringAzureAppRegistration",
     "SecurityMonitoringBatchMigrationAttributes",
     "SecurityMonitoringBatchMigrationCreateAttributes",
@@ -21917,6 +21948,7 @@ __all__ = [
     "SecurityMonitoringIntegrationCredentialsValidateData",
     "SecurityMonitoringIntegrationCredentialsValidateRequest",
     "SecurityMonitoringIntegrationType",
+    "SecurityMonitoringIntegrationTypeAWSIdentityCenter",
     "SecurityMonitoringIntegrationTypeCrowdStrike",
     "SecurityMonitoringIntegrationTypeEntraId",
     "SecurityMonitoringIntegrationTypeGoogleWorkspace",

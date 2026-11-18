@@ -1817,6 +1817,13 @@ Feature: Security Monitoring
     Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/cloud-siem
+  Scenario: Get AWS IAM Identity Center account prerequisites returns "OK" response
+    Given operation "GetAWSIdentityCenterAWSAccounts" enabled
+    And new "GetAWSIdentityCenterAWSAccounts" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/cloud-siem
   Scenario: Get Entra ID Azure App Registration prerequisites returns "OK" response
     Given operation "GetEntraIdAzureAppRegistrations" enabled
     And new "GetEntraIdAzureAppRegistrations" request

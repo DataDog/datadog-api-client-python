@@ -27,6 +27,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.security_monitoring_entra_id_integration_config_create_attributes import (
         SecurityMonitoringEntraIdIntegrationConfigCreateAttributes,
     )
+    from datadog_api_client.v2.model.security_monitoring_aws_identity_center_integration_config_create_attributes import (
+        SecurityMonitoringAWSIdentityCenterIntegrationConfigCreateAttributes,
+    )
     from datadog_api_client.v2.model.security_monitoring_crowd_strike_integration_config_create_attributes import (
         SecurityMonitoringCrowdStrikeIntegrationConfigCreateAttributes,
     )
@@ -62,6 +65,7 @@ class SecurityMonitoringIntegrationConfigCreateData(ModelNormal):
             SecurityMonitoringGoogleWorkspaceIntegrationConfigCreateAttributes,
             SecurityMonitoringOktaIntegrationConfigCreateAttributes,
             SecurityMonitoringEntraIdIntegrationConfigCreateAttributes,
+            SecurityMonitoringAWSIdentityCenterIntegrationConfigCreateAttributes,
             SecurityMonitoringCrowdStrikeIntegrationConfigCreateAttributes,
             SecurityMonitoringSentinelOneIntegrationConfigCreateAttributes,
         ],
