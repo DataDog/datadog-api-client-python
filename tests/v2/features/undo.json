@@ -10178,6 +10178,36 @@
       "type": "safe"
     }
   },
+  "GetSecurityAgentOutreachPolicy": {
+    "tag": "Bits Security Analyst",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateSecurityAgentOutreachMode": {
+    "tag": "Bits Security Analyst",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "AddSecurityAgentOutreachPolicyDomain": {
+    "tag": "Bits Security Analyst",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "RemoveSecurityAgentOutreachPolicyDomain": {
+    "tag": "Bits Security Analyst",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateSecurityAgentOutreachPolicyRules": {
+    "tag": "Bits Security Analyst",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "ListSecurityMonitoringSignals": {
     "tag": "Security Monitoring",
     "undo": {
