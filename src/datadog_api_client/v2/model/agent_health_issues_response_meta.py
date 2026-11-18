@@ -30,9 +30,9 @@ class AgentHealthIssuesResponseMeta(ModelNormal):
 
     def __init__(self_, page: AgentHealthIssuesResponsePage, **kwargs):
         """
-        Pagination metadata for the matching Agent Health issues.
+        Aggregate counts for the matching Agent Health issues. Present only when ``count_by=issue_type`` is requested.
 
-        :param page: Pagination counts for the Agent Health issues.
+        :param page: Counts for the matching Agent Health issues.
         :type page: AgentHealthIssuesResponsePage
         """
         super().__init__(kwargs)

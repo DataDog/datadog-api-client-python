@@ -36,9 +36,9 @@ class AgentHealthIssueData(ModelNormal):
 
     def __init__(self_, attributes: AgentHealthIssueAttributes, id: str, type: AgentHealthIssueResourceType, **kwargs):
         """
-        An open Agent Health issue.
+        An open Agent Health issue with available remediation.
 
-        :param attributes: Attributes of an open Agent Health issue.
+        :param attributes: Attributes of an open Agent Health issue, including available remediation.
         :type attributes: AgentHealthIssueAttributes
 
         :param id: The unique identifier of the issue.

@@ -3,26 +3,52 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union
+from typing import Any, Dict, List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    date,
     datetime,
+    none_type,
     unset,
     UnsetType,
+    UUID,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.agent_health_remediation import AgentHealthRemediation
 
 
 class AgentHealthIssueAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.agent_health_remediation import AgentHealthRemediation
+
         return {
             "category": (str,),
             "description": (str,),
+            "extra": (
+                {
+                    str: (
+                        bool,
+                        date,
+                        datetime,
+                        dict,
+                        float,
+                        int,
+                        list,
+                        str,
+                        UUID,
+                        none_type,
+                    )
+                },
+            ),
             "first_seen_at": (datetime,),
             "issue_name": (str,),
             "issue_type": (str,),
+            "remediation": (AgentHealthRemediation,),
             "resource_id": (str,),
             "resource_kind": (str,),
             "resource_type": (str,),
@@ -36,9 +62,11 @@ class AgentHealthIssueAttributes(ModelNormal):
     attribute_map = {
         "category": "category",
         "description": "description",
+        "extra": "extra",
         "first_seen_at": "first_seen_at",
         "issue_name": "issue_name",
         "issue_type": "issue_type",
+        "remediation": "remediation",
         "resource_id": "resource_id",
         "resource_kind": "resource_kind",
         "resource_type": "resource_type",
@@ -59,7 +87,9 @@ class AgentHealthIssueAttributes(ModelNormal):
         state: str,
         category: Union[str, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
+        extra: Union[Dict[str, Any], UnsetType] = unset,
         first_seen_at: Union[datetime, UnsetType] = unset,
+        remediation: Union[AgentHealthRemediation, UnsetType] = unset,
         resource_type: Union[str, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
@@ -67,13 +97,16 @@ class AgentHealthIssueAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Attributes of an open Agent Health issue.
+        Attributes of an open Agent Health issue, including available remediation.
 
         :param category: The category of the issue, such as ``configuration``. Omitted when not set.
         :type category: str, optional
 
         :param description: The description of the issue. Omitted when empty.
         :type description: str, optional
+
+        :param extra: Free-form, issue-type-specific context. Keys are not part of the stable schema. Omitted when empty.
+        :type extra: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
         :param first_seen_at: The time the issue was first seen, in RFC 3339 format. Omitted when empty.
         :type first_seen_at: datetime, optional
@@ -83,6 +116,9 @@ class AgentHealthIssueAttributes(ModelNormal):
 
         :param issue_type: The machine-readable type of the issue.
         :type issue_type: str
+
+        :param remediation: Remediation for the issue. Omitted when no remediation is available.
+        :type remediation: AgentHealthRemediation, optional
 
         :param resource_id: The identifier of the affected resource, interpreted according to ``resource_kind`` : hostname for ``host`` , DaemonSet UID for ``deployment`` (node Agent), cluster UUID for ``cluster`` , hostname of the host running the Cluster Agent for ``cluster_agent`` , or OpenTelemetry collector ID for ``otel``.
         :type resource_id: str
@@ -112,8 +148,12 @@ class AgentHealthIssueAttributes(ModelNormal):
             kwargs["category"] = category
         if description is not unset:
             kwargs["description"] = description
+        if extra is not unset:
+            kwargs["extra"] = extra
         if first_seen_at is not unset:
             kwargs["first_seen_at"] = first_seen_at
+        if remediation is not unset:
+            kwargs["remediation"] = remediation
         if resource_type is not unset:
             kwargs["resource_type"] = resource_type
         if tags is not unset:

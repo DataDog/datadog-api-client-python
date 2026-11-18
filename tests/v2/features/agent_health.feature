@@ -35,7 +35,7 @@ Feature: Agent Health
     Given a valid "appKeyAuth" key in the system
     And operation "ListAgentHealthIssues" enabled
     And new "ListAgentHealthIssues" request
-    And request contains "page[size]" parameter with value 1000
+    And request contains "count_by" parameter with value "invalid"
     When the request is sent
     Then the response status is 400 Bad Request
 
