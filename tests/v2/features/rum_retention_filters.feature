@@ -33,7 +33,7 @@ Feature: Rum Retention Filters
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @replay-only @team:ddoghq/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Create a RUM retention filter returns "Created" response
     Given new "CreateRetentionFilter" request
     And request contains "app_id" parameter with value "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"

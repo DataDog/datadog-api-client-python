@@ -8515,7 +8515,19 @@
   "CreateRetentionFilter": {
     "tag": "Rum Retention Filters",
     "undo": {
-      "type": "safe"
+      "operationId": "DeleteRetentionFilter",
+      "parameters": [
+        {
+          "name": "app_id",
+          "origin": "path",
+          "source": "app_id"
+        },
+        {
+          "name": "rf_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
     }
   },
   "ListExclusionFilters": {
@@ -8527,7 +8539,19 @@
   "CreateExclusionFilter": {
     "tag": "Rum Retention Filters",
     "undo": {
-      "type": "safe"
+      "operationId": "DeleteExclusionFilter",
+      "parameters": [
+        {
+          "name": "app_id",
+          "origin": "path",
+          "source": "app_id"
+        },
+        {
+          "name": "ef_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
     }
   },
   "DeleteExclusionFilter": {
