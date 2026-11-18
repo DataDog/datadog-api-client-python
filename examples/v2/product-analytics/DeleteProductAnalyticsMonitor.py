@@ -1,0 +1,14 @@
+"""
+Delete a Product Analytics monitor returns "No Content" response
+"""
+
+from datadog_api_client import ApiClient, Configuration
+from datadog_api_client.v2.api.product_analytics_api import ProductAnalyticsApi
+
+configuration = Configuration()
+configuration.unstable_operations["delete_product_analytics_monitor"] = True
+with ApiClient(configuration) as api_client:
+    api_instance = ProductAnalyticsApi(api_client)
+    api_instance.delete_product_analytics_monitor(
+        monitor_id="12345",
+    )

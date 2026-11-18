@@ -7656,6 +7656,86 @@
       "type": "safe"
     }
   },
+  "ListProductAnalyticsLaunches": {
+    "tag": "Product Analytics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateProductAnalyticsLaunch": {
+    "tag": "Product Analytics",
+    "undo": {
+      "operationId": "DeleteProductAnalyticsLaunch",
+      "parameters": [
+        {
+          "name": "id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteProductAnalyticsLaunch": {
+    "tag": "Product Analytics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetProductAnalyticsLaunch": {
+    "tag": "Product Analytics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateProductAnalyticsLaunch": {
+    "tag": "Product Analytics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListProductAnalyticsMonitors": {
+    "tag": "Product Analytics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateProductAnalyticsMonitor": {
+    "tag": "Product Analytics",
+    "undo": {
+      "operationId": "DeleteProductAnalyticsMonitor",
+      "parameters": [
+        {
+          "name": "monitor_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteProductAnalyticsMonitor": {
+    "tag": "Product Analytics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetProductAnalyticsMonitor": {
+    "tag": "Product Analytics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateProductAnalyticsMonitor": {
+    "tag": "Product Analytics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "RemoveChartFromProductAnalyticsMonitor": {
+    "tag": "Product Analytics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "QueryProductAnalyticsRetentionGrid": {
     "tag": "Product Analytics",
     "undo": {
@@ -7682,6 +7762,49 @@
   },
   "QueryProductAnalyticsSankey": {
     "tag": "Product Analytics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListProductAnalyticsSegments": {
+    "tag": "Rum Audience Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateProductAnalyticsSegment": {
+    "tag": "Rum Audience Management",
+    "undo": {
+      "operationId": "DeleteProductAnalyticsSegment",
+      "parameters": [
+        {
+          "name": "id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteProductAnalyticsSegment": {
+    "tag": "Rum Audience Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetProductAnalyticsSegment": {
+    "tag": "Rum Audience Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateProductAnalyticsSegment": {
+    "tag": "Rum Audience Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "PreviewProductAnalyticsSegment": {
+    "tag": "Rum Audience Management",
     "undo": {
       "type": "safe"
     }

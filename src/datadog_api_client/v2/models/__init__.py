@@ -9707,6 +9707,74 @@ from datadog_api_client.v2.model.product_analytics_journey_timeseries_response_d
 from datadog_api_client.v2.model.product_analytics_journey_timeseries_response_type import (
     ProductAnalyticsJourneyTimeseriesResponseType,
 )
+from datadog_api_client.v2.model.product_analytics_launch_attributes import ProductAnalyticsLaunchAttributes
+from datadog_api_client.v2.model.product_analytics_launch_code_analysis import ProductAnalyticsLaunchCodeAnalysis
+from datadog_api_client.v2.model.product_analytics_launch_code_status import ProductAnalyticsLaunchCodeStatus
+from datadog_api_client.v2.model.product_analytics_launch_create_data import ProductAnalyticsLaunchCreateData
+from datadog_api_client.v2.model.product_analytics_launch_create_request import ProductAnalyticsLaunchCreateRequest
+from datadog_api_client.v2.model.product_analytics_launch_dashboard_step import ProductAnalyticsLaunchDashboardStep
+from datadog_api_client.v2.model.product_analytics_launch_data import ProductAnalyticsLaunchData
+from datadog_api_client.v2.model.product_analytics_launch_event import ProductAnalyticsLaunchEvent
+from datadog_api_client.v2.model.product_analytics_launch_event_finding import ProductAnalyticsLaunchEventFinding
+from datadog_api_client.v2.model.product_analytics_launch_event_property import ProductAnalyticsLaunchEventProperty
+from datadog_api_client.v2.model.product_analytics_launch_experiment_step import ProductAnalyticsLaunchExperimentStep
+from datadog_api_client.v2.model.product_analytics_launch_funnel_step import ProductAnalyticsLaunchFunnelStep
+from datadog_api_client.v2.model.product_analytics_launch_kpi import ProductAnalyticsLaunchKPI
+from datadog_api_client.v2.model.product_analytics_launch_list_scope import ProductAnalyticsLaunchListScope
+from datadog_api_client.v2.model.product_analytics_launch_patch_attributes import ProductAnalyticsLaunchPatchAttributes
+from datadog_api_client.v2.model.product_analytics_launch_patch_data import ProductAnalyticsLaunchPatchData
+from datadog_api_client.v2.model.product_analytics_launch_patch_request import ProductAnalyticsLaunchPatchRequest
+from datadog_api_client.v2.model.product_analytics_launch_patch_steps import ProductAnalyticsLaunchPatchSteps
+from datadog_api_client.v2.model.product_analytics_launch_phase import ProductAnalyticsLaunchPhase
+from datadog_api_client.v2.model.product_analytics_launch_properties import ProductAnalyticsLaunchProperties
+from datadog_api_client.v2.model.product_analytics_launch_property import ProductAnalyticsLaunchProperty
+from datadog_api_client.v2.model.product_analytics_launch_property_finding import ProductAnalyticsLaunchPropertyFinding
+from datadog_api_client.v2.model.product_analytics_launch_request_attributes import (
+    ProductAnalyticsLaunchRequestAttributes,
+)
+from datadog_api_client.v2.model.product_analytics_launch_response import ProductAnalyticsLaunchResponse
+from datadog_api_client.v2.model.product_analytics_launch_steps import ProductAnalyticsLaunchSteps
+from datadog_api_client.v2.model.product_analytics_launch_steps_request import ProductAnalyticsLaunchStepsRequest
+from datadog_api_client.v2.model.product_analytics_launch_tracking_plan import ProductAnalyticsLaunchTrackingPlan
+from datadog_api_client.v2.model.product_analytics_launch_tracking_plan_request import (
+    ProductAnalyticsLaunchTrackingPlanRequest,
+)
+from datadog_api_client.v2.model.product_analytics_launch_type import ProductAnalyticsLaunchType
+from datadog_api_client.v2.model.product_analytics_launches_response import ProductAnalyticsLaunchesResponse
+from datadog_api_client.v2.model.product_analytics_monitor_attributes import ProductAnalyticsMonitorAttributes
+from datadog_api_client.v2.model.product_analytics_monitor_create_attributes import (
+    ProductAnalyticsMonitorCreateAttributes,
+)
+from datadog_api_client.v2.model.product_analytics_monitor_create_data import ProductAnalyticsMonitorCreateData
+from datadog_api_client.v2.model.product_analytics_monitor_create_request import ProductAnalyticsMonitorCreateRequest
+from datadog_api_client.v2.model.product_analytics_monitor_creator import ProductAnalyticsMonitorCreator
+from datadog_api_client.v2.model.product_analytics_monitor_data import ProductAnalyticsMonitorData
+from datadog_api_client.v2.model.product_analytics_monitor_list_attributes import ProductAnalyticsMonitorListAttributes
+from datadog_api_client.v2.model.product_analytics_monitor_list_data import ProductAnalyticsMonitorListData
+from datadog_api_client.v2.model.product_analytics_monitor_list_item import ProductAnalyticsMonitorListItem
+from datadog_api_client.v2.model.product_analytics_monitor_list_response import ProductAnalyticsMonitorListResponse
+from datadog_api_client.v2.model.product_analytics_monitor_list_type import ProductAnalyticsMonitorListType
+from datadog_api_client.v2.model.product_analytics_monitor_options import ProductAnalyticsMonitorOptions
+from datadog_api_client.v2.model.product_analytics_monitor_request_type import ProductAnalyticsMonitorRequestType
+from datadog_api_client.v2.model.product_analytics_monitor_response import ProductAnalyticsMonitorResponse
+from datadog_api_client.v2.model.product_analytics_monitor_status import ProductAnalyticsMonitorStatus
+from datadog_api_client.v2.model.product_analytics_monitor_tags import ProductAnalyticsMonitorTags
+from datadog_api_client.v2.model.product_analytics_monitor_thresholds import ProductAnalyticsMonitorThresholds
+from datadog_api_client.v2.model.product_analytics_monitor_type import ProductAnalyticsMonitorType
+from datadog_api_client.v2.model.product_analytics_monitor_unlink_attributes import (
+    ProductAnalyticsMonitorUnlinkAttributes,
+)
+from datadog_api_client.v2.model.product_analytics_monitor_unlink_data import ProductAnalyticsMonitorUnlinkData
+from datadog_api_client.v2.model.product_analytics_monitor_unlink_request import ProductAnalyticsMonitorUnlinkRequest
+from datadog_api_client.v2.model.product_analytics_monitor_unlink_request_type import (
+    ProductAnalyticsMonitorUnlinkRequestType,
+)
+from datadog_api_client.v2.model.product_analytics_monitor_update_attributes import (
+    ProductAnalyticsMonitorUpdateAttributes,
+)
+from datadog_api_client.v2.model.product_analytics_monitor_update_data import ProductAnalyticsMonitorUpdateData
+from datadog_api_client.v2.model.product_analytics_monitor_update_request import ProductAnalyticsMonitorUpdateRequest
+from datadog_api_client.v2.model.product_analytics_monitor_variable import ProductAnalyticsMonitorVariable
 from datadog_api_client.v2.model.product_analytics_occurrence_filter import ProductAnalyticsOccurrenceFilter
 from datadog_api_client.v2.model.product_analytics_occurrence_query import ProductAnalyticsOccurrenceQuery
 from datadog_api_client.v2.model.product_analytics_occurrence_query_data_source import (
@@ -11878,6 +11946,44 @@ from datadog_api_client.v2.model.security_monitoring_triage_user import Security
 from datadog_api_client.v2.model.security_monitoring_user import SecurityMonitoringUser
 from datadog_api_client.v2.model.security_trigger import SecurityTrigger
 from datadog_api_client.v2.model.security_trigger_wrapper import SecurityTriggerWrapper
+from datadog_api_client.v2.model.segment_attributes import SegmentAttributes
+from datadog_api_client.v2.model.segment_create_attributes import SegmentCreateAttributes
+from datadog_api_client.v2.model.segment_create_data import SegmentCreateData
+from datadog_api_client.v2.model.segment_create_request import SegmentCreateRequest
+from datadog_api_client.v2.model.segment_data import SegmentData
+from datadog_api_client.v2.model.segment_data_query import SegmentDataQuery
+from datadog_api_client.v2.model.segment_delete_attributes import SegmentDeleteAttributes
+from datadog_api_client.v2.model.segment_delete_data import SegmentDeleteData
+from datadog_api_client.v2.model.segment_delete_response import SegmentDeleteResponse
+from datadog_api_client.v2.model.segment_deleted_type import SegmentDeletedType
+from datadog_api_client.v2.model.segment_entity import SegmentEntity
+from datadog_api_client.v2.model.segment_event_platform_block import SegmentEventPlatformBlock
+from datadog_api_client.v2.model.segment_journey_block import SegmentJourneyBlock
+from datadog_api_client.v2.model.segment_preview_attributes import SegmentPreviewAttributes
+from datadog_api_client.v2.model.segment_preview_data import SegmentPreviewData
+from datadog_api_client.v2.model.segment_preview_request import SegmentPreviewRequest
+from datadog_api_client.v2.model.segment_preview_request_type import SegmentPreviewRequestType
+from datadog_api_client.v2.model.segment_preview_response import SegmentPreviewResponse
+from datadog_api_client.v2.model.segment_preview_response_attributes import SegmentPreviewResponseAttributes
+from datadog_api_client.v2.model.segment_preview_response_data import SegmentPreviewResponseData
+from datadog_api_client.v2.model.segment_preview_response_type import SegmentPreviewResponseType
+from datadog_api_client.v2.model.segment_profile_store_block import SegmentProfileStoreBlock
+from datadog_api_client.v2.model.segment_reference_table_block import SegmentReferenceTableBlock
+from datadog_api_client.v2.model.segment_reference_table_column import SegmentReferenceTableColumn
+from datadog_api_client.v2.model.segment_reference_table_join_condition import SegmentReferenceTableJoinCondition
+from datadog_api_client.v2.model.segment_resource_type import SegmentResourceType
+from datadog_api_client.v2.model.segment_response import SegmentResponse
+from datadog_api_client.v2.model.segment_retention_block import SegmentRetentionBlock
+from datadog_api_client.v2.model.segment_sort_column import SegmentSortColumn
+from datadog_api_client.v2.model.segment_static_block import SegmentStaticBlock
+from datadog_api_client.v2.model.segment_summary_attributes import SegmentSummaryAttributes
+from datadog_api_client.v2.model.segment_summary_data import SegmentSummaryData
+from datadog_api_client.v2.model.segment_template_block import SegmentTemplateBlock
+from datadog_api_client.v2.model.segment_update_attributes import SegmentUpdateAttributes
+from datadog_api_client.v2.model.segment_update_data import SegmentUpdateData
+from datadog_api_client.v2.model.segment_update_request import SegmentUpdateRequest
+from datadog_api_client.v2.model.segment_user import SegmentUser
+from datadog_api_client.v2.model.segments_response import SegmentsResponse
 from datadog_api_client.v2.model.selectors import Selectors
 from datadog_api_client.v2.model.self_service_trigger_wrapper import SelfServiceTriggerWrapper
 from datadog_api_client.v2.model.send_slack_message_action import SendSlackMessageAction
@@ -20734,6 +20840,62 @@ __all__ = [
     "ProductAnalyticsJourneyTimeseriesResponse",
     "ProductAnalyticsJourneyTimeseriesResponseData",
     "ProductAnalyticsJourneyTimeseriesResponseType",
+    "ProductAnalyticsLaunchAttributes",
+    "ProductAnalyticsLaunchCodeAnalysis",
+    "ProductAnalyticsLaunchCodeStatus",
+    "ProductAnalyticsLaunchCreateData",
+    "ProductAnalyticsLaunchCreateRequest",
+    "ProductAnalyticsLaunchDashboardStep",
+    "ProductAnalyticsLaunchData",
+    "ProductAnalyticsLaunchEvent",
+    "ProductAnalyticsLaunchEventFinding",
+    "ProductAnalyticsLaunchEventProperty",
+    "ProductAnalyticsLaunchExperimentStep",
+    "ProductAnalyticsLaunchFunnelStep",
+    "ProductAnalyticsLaunchKPI",
+    "ProductAnalyticsLaunchListScope",
+    "ProductAnalyticsLaunchPatchAttributes",
+    "ProductAnalyticsLaunchPatchData",
+    "ProductAnalyticsLaunchPatchRequest",
+    "ProductAnalyticsLaunchPatchSteps",
+    "ProductAnalyticsLaunchPhase",
+    "ProductAnalyticsLaunchProperties",
+    "ProductAnalyticsLaunchProperty",
+    "ProductAnalyticsLaunchPropertyFinding",
+    "ProductAnalyticsLaunchRequestAttributes",
+    "ProductAnalyticsLaunchResponse",
+    "ProductAnalyticsLaunchSteps",
+    "ProductAnalyticsLaunchStepsRequest",
+    "ProductAnalyticsLaunchTrackingPlan",
+    "ProductAnalyticsLaunchTrackingPlanRequest",
+    "ProductAnalyticsLaunchType",
+    "ProductAnalyticsLaunchesResponse",
+    "ProductAnalyticsMonitorAttributes",
+    "ProductAnalyticsMonitorCreateAttributes",
+    "ProductAnalyticsMonitorCreateData",
+    "ProductAnalyticsMonitorCreateRequest",
+    "ProductAnalyticsMonitorCreator",
+    "ProductAnalyticsMonitorData",
+    "ProductAnalyticsMonitorListAttributes",
+    "ProductAnalyticsMonitorListData",
+    "ProductAnalyticsMonitorListItem",
+    "ProductAnalyticsMonitorListResponse",
+    "ProductAnalyticsMonitorListType",
+    "ProductAnalyticsMonitorOptions",
+    "ProductAnalyticsMonitorRequestType",
+    "ProductAnalyticsMonitorResponse",
+    "ProductAnalyticsMonitorStatus",
+    "ProductAnalyticsMonitorTags",
+    "ProductAnalyticsMonitorThresholds",
+    "ProductAnalyticsMonitorType",
+    "ProductAnalyticsMonitorUnlinkAttributes",
+    "ProductAnalyticsMonitorUnlinkData",
+    "ProductAnalyticsMonitorUnlinkRequest",
+    "ProductAnalyticsMonitorUnlinkRequestType",
+    "ProductAnalyticsMonitorUpdateAttributes",
+    "ProductAnalyticsMonitorUpdateData",
+    "ProductAnalyticsMonitorUpdateRequest",
+    "ProductAnalyticsMonitorVariable",
     "ProductAnalyticsOccurrenceFilter",
     "ProductAnalyticsOccurrenceQuery",
     "ProductAnalyticsOccurrenceQueryDataSource",
@@ -22093,6 +22255,44 @@ __all__ = [
     "SecurityMonitoringUser",
     "SecurityTrigger",
     "SecurityTriggerWrapper",
+    "SegmentAttributes",
+    "SegmentCreateAttributes",
+    "SegmentCreateData",
+    "SegmentCreateRequest",
+    "SegmentData",
+    "SegmentDataQuery",
+    "SegmentDeleteAttributes",
+    "SegmentDeleteData",
+    "SegmentDeleteResponse",
+    "SegmentDeletedType",
+    "SegmentEntity",
+    "SegmentEventPlatformBlock",
+    "SegmentJourneyBlock",
+    "SegmentPreviewAttributes",
+    "SegmentPreviewData",
+    "SegmentPreviewRequest",
+    "SegmentPreviewRequestType",
+    "SegmentPreviewResponse",
+    "SegmentPreviewResponseAttributes",
+    "SegmentPreviewResponseData",
+    "SegmentPreviewResponseType",
+    "SegmentProfileStoreBlock",
+    "SegmentReferenceTableBlock",
+    "SegmentReferenceTableColumn",
+    "SegmentReferenceTableJoinCondition",
+    "SegmentResourceType",
+    "SegmentResponse",
+    "SegmentRetentionBlock",
+    "SegmentSortColumn",
+    "SegmentStaticBlock",
+    "SegmentSummaryAttributes",
+    "SegmentSummaryData",
+    "SegmentTemplateBlock",
+    "SegmentUpdateAttributes",
+    "SegmentUpdateData",
+    "SegmentUpdateRequest",
+    "SegmentUser",
+    "SegmentsResponse",
     "Selectors",
     "SelfServiceTriggerWrapper",
     "SendSlackMessageAction",

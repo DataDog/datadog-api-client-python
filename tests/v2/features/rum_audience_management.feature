@@ -8,6 +8,30 @@ Feature: Rum Audience Management
     And an instance of "RumAudienceManagement" API
 
   @generated @skip @team:ddoghq/audience-management-backend @team:ddoghq/product-analytics-ingestion
+  Scenario: Create a segment returns "Bad Request" response
+    Given operation "CreateProductAnalyticsSegment" enabled
+    And new "CreateProductAnalyticsSegment" request
+    And body with value {"data": {"attributes": {"data_query": {"event_platform": [{"facet": "@usr.id", "from": "-2592000000", "name": "viewed_logs", "query": "@type:view @view.name:/logs", "to": "0"}]}, "description": "Users who viewed the logs page in the last 30 days.", "name": "High-value users", "tags": ["team:growth"]}, "type": "segment"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/audience-management-backend @team:ddoghq/product-analytics-ingestion
+  Scenario: Create a segment returns "Conflict" response
+    Given operation "CreateProductAnalyticsSegment" enabled
+    And new "CreateProductAnalyticsSegment" request
+    And body with value {"data": {"attributes": {"data_query": {"event_platform": [{"facet": "@usr.id", "from": "-2592000000", "name": "viewed_logs", "query": "@type:view @view.name:/logs", "to": "0"}]}, "description": "Users who viewed the logs page in the last 30 days.", "name": "High-value users", "tags": ["team:growth"]}, "type": "segment"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:ddoghq/audience-management-backend @team:ddoghq/product-analytics-ingestion
+  Scenario: Create a segment returns "Created" response
+    Given operation "CreateProductAnalyticsSegment" enabled
+    And new "CreateProductAnalyticsSegment" request
+    And body with value {"data": {"attributes": {"data_query": {"event_platform": [{"facet": "@usr.id", "from": "-2592000000", "name": "viewed_logs", "query": "@type:view @view.name:/logs", "to": "0"}]}, "description": "Users who viewed the logs page in the last 30 days.", "name": "High-value users", "tags": ["team:growth"]}, "type": "segment"}}
+    When the request is sent
+    Then the response status is 201 Created
+
+  @generated @skip @team:ddoghq/audience-management-backend @team:ddoghq/product-analytics-ingestion
   Scenario: Create connection returns "Connection created successfully" response
     Given operation "CreateConnection" enabled
     And new "CreateConnection" request
@@ -15,6 +39,22 @@ Feature: Rum Audience Management
     And body with value {"data": {"attributes": {"fields": [{"description": "Customer subscription tier from `CRM`", "display_name": "Customer Tier", "id": "customer_tier", "source_name": "subscription_tier", "type": "string"}, {"description": "Customer lifetime value in `USD`", "display_name": "Lifetime Value", "id": "lifetime_value", "source_name": "ltv", "type": "number"}], "join_attribute": "user_email", "join_type": "email", "type": "ref_table"}, "id": "crm-integration", "type": "connection_id"}}
     When the request is sent
     Then the response status is 201 Connection created successfully
+
+  @generated @skip @team:ddoghq/audience-management-backend @team:ddoghq/product-analytics-ingestion
+  Scenario: Delete a segment returns "Not Found" response
+    Given operation "DeleteProductAnalyticsSegment" enabled
+    And new "DeleteProductAnalyticsSegment" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/audience-management-backend @team:ddoghq/product-analytics-ingestion
+  Scenario: Delete a segment returns "OK" response
+    Given operation "DeleteProductAnalyticsSegment" enabled
+    And new "DeleteProductAnalyticsSegment" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/audience-management-backend @team:ddoghq/product-analytics-ingestion
   Scenario: Delete a user profile returns "Bad Request" response
@@ -40,6 +80,30 @@ Feature: Rum Audience Management
     And request contains "entity" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 Connection deleted successfully
+
+  @generated @skip @team:ddoghq/audience-management-backend @team:ddoghq/product-analytics-ingestion
+  Scenario: Get a segment returns "Bad Request" response
+    Given operation "GetProductAnalyticsSegment" enabled
+    And new "GetProductAnalyticsSegment" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/audience-management-backend @team:ddoghq/product-analytics-ingestion
+  Scenario: Get a segment returns "Not Found" response
+    Given operation "GetProductAnalyticsSegment" enabled
+    And new "GetProductAnalyticsSegment" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/audience-management-backend @team:ddoghq/product-analytics-ingestion
+  Scenario: Get a segment returns "OK" response
+    Given operation "GetProductAnalyticsSegment" enabled
+    And new "GetProductAnalyticsSegment" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/audience-management-backend @team:ddoghq/product-analytics-ingestion
   Scenario: Get account facet info returns "Successful response with facet information" response
@@ -74,6 +138,36 @@ Feature: Rum Audience Management
     Then the response status is 200 Successful response with list of connections
 
   @generated @skip @team:ddoghq/audience-management-backend @team:ddoghq/product-analytics-ingestion
+  Scenario: List segments returns "Bad Request" response
+    Given operation "ListProductAnalyticsSegments" enabled
+    And new "ListProductAnalyticsSegments" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/audience-management-backend @team:ddoghq/product-analytics-ingestion
+  Scenario: List segments returns "OK" response
+    Given operation "ListProductAnalyticsSegments" enabled
+    And new "ListProductAnalyticsSegments" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/audience-management-backend @team:ddoghq/product-analytics-ingestion
+  Scenario: Preview a segment returns "Bad Request" response
+    Given operation "PreviewProductAnalyticsSegment" enabled
+    And new "PreviewProductAnalyticsSegment" request
+    And body with value {"data": {"attributes": {"data_query": {"event_platform": [{"facet": "@usr.id", "from": "-2592000000", "query": "@type:view @view.name:/logs", "to": "0"}]}, "limit": 50, "user_store_columns": ["user_id", "user_email", "user_name"]}, "type": "segment_preview_request"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/audience-management-backend @team:ddoghq/product-analytics-ingestion
+  Scenario: Preview a segment returns "OK" response
+    Given operation "PreviewProductAnalyticsSegment" enabled
+    And new "PreviewProductAnalyticsSegment" request
+    And body with value {"data": {"attributes": {"data_query": {"event_platform": [{"facet": "@usr.id", "from": "-2592000000", "query": "@type:view @view.name:/logs", "to": "0"}]}, "limit": 50, "user_store_columns": ["user_id", "user_email", "user_name"]}, "type": "segment_preview_request"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/audience-management-backend @team:ddoghq/product-analytics-ingestion
   Scenario: Query accounts returns "Successful response with account data" response
     Given operation "QueryAccounts" enabled
     And new "QueryAccounts" request
@@ -96,6 +190,42 @@ Feature: Rum Audience Management
     And body with value {"data": {"attributes": {"limit": 25, "query": "user_email:*@techcorp.com AND first_country_code:US AND first_browser_name:Chrome", "select_columns": ["user_id", "user_email", "user_name", "user_org_id", "first_country_code", "first_browser_name", "first_device_type", "last_seen"], "sort": {"field": "first_seen", "order": "DESC"}, "wildcard_search_term": "john"}, "id": "query_users_request", "type": "query_users_request"}}
     When the request is sent
     Then the response status is 200 Successful response with user data
+
+  @generated @skip @team:ddoghq/audience-management-backend @team:ddoghq/product-analytics-ingestion
+  Scenario: Update a segment returns "Bad Request" response
+    Given operation "UpdateProductAnalyticsSegment" enabled
+    And new "UpdateProductAnalyticsSegment" request
+    And request contains "id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Users who viewed the logs page in the last 7 days.", "name": "High-value users"}, "id": "8a1b2c3d-4e5f-6a7b-8c9d-0e1f2a3b4c5d", "type": "segment"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/audience-management-backend @team:ddoghq/product-analytics-ingestion
+  Scenario: Update a segment returns "Conflict" response
+    Given operation "UpdateProductAnalyticsSegment" enabled
+    And new "UpdateProductAnalyticsSegment" request
+    And request contains "id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Users who viewed the logs page in the last 7 days.", "name": "High-value users"}, "id": "8a1b2c3d-4e5f-6a7b-8c9d-0e1f2a3b4c5d", "type": "segment"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @generated @skip @team:ddoghq/audience-management-backend @team:ddoghq/product-analytics-ingestion
+  Scenario: Update a segment returns "No Content" response
+    Given operation "UpdateProductAnalyticsSegment" enabled
+    And new "UpdateProductAnalyticsSegment" request
+    And request contains "id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Users who viewed the logs page in the last 7 days.", "name": "High-value users"}, "id": "8a1b2c3d-4e5f-6a7b-8c9d-0e1f2a3b4c5d", "type": "segment"}}
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:ddoghq/audience-management-backend @team:ddoghq/product-analytics-ingestion
+  Scenario: Update a segment returns "Not Found" response
+    Given operation "UpdateProductAnalyticsSegment" enabled
+    And new "UpdateProductAnalyticsSegment" request
+    And request contains "id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"description": "Users who viewed the logs page in the last 7 days.", "name": "High-value users"}, "id": "8a1b2c3d-4e5f-6a7b-8c9d-0e1f2a3b4c5d", "type": "segment"}}
+    When the request is sent
+    Then the response status is 404 Not Found
 
   @generated @skip @team:ddoghq/audience-management-backend @team:ddoghq/product-analytics-ingestion
   Scenario: Update connection returns "Connection updated successfully" response
