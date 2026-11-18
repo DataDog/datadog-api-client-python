@@ -471,7 +471,7 @@ class ActionsDatastoresApi:
     ) -> DatastoreArray:
         """List datastores.
 
-        Lists all datastores for the organization.
+        Lists all datastores in the organization.
 
         :rtype: DatastoreArray
         """

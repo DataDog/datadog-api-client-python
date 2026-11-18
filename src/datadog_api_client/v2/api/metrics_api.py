@@ -1336,7 +1336,7 @@ class MetricsApi:
     ) -> DerivedMetricResponse:
         """Get a derived metric.
 
-        Get the definition of a derived metric by name.
+        Get the definition of a derived metric from its name.
 
         :param metric_name: The name of the metric.
         :type metric_name: str
