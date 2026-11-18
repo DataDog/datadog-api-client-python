@@ -9460,6 +9460,13 @@
     {
       "feature": "Observability Pipelines",
       "feature_file": "../../v2/features/observability_pipelines.feature",
+      "file": "v2/observability-pipelines/validate-an-observability-pipeline-with-named-and-unnamed-parse-grok-include-rules-returns-ok-response.json",
+      "scenario": "Validate an observability pipeline with named and unnamed parse grok include rules returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "feature_file": "../../v2/features/observability_pipelines.feature",
       "file": "v2/observability-pipelines/validate-an-observability-pipeline-with-parse-grok-processor-include-rules-returns-ok-response.json",
       "scenario": "Validate an observability pipeline with parse grok processor include rules returns \"OK\" response",
       "version": "v2"

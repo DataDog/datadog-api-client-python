@@ -23,6 +23,13 @@ if TYPE_CHECKING:
 
 
 class ObservabilityPipelineParseGrokProcessorIncludeRule(ModelNormal):
+    validations = {
+        "name": {
+            "max_length": 128,
+            "min_length": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.observability_pipeline_parse_grok_processor_rule_match_rule import (
@@ -35,12 +42,14 @@ class ObservabilityPipelineParseGrokProcessorIncludeRule(ModelNormal):
         return {
             "include": (str,),
             "match_rules": ([ObservabilityPipelineParseGrokProcessorRuleMatchRule],),
+            "name": (str,),
             "support_rules": ([ObservabilityPipelineParseGrokProcessorRuleSupportRule],),
         }
 
     attribute_map = {
         "include": "include",
         "match_rules": "match_rules",
+        "name": "name",
         "support_rules": "support_rules",
     }
 
@@ -48,6 +57,7 @@ class ObservabilityPipelineParseGrokProcessorIncludeRule(ModelNormal):
         self_,
         include: str,
         match_rules: List[ObservabilityPipelineParseGrokProcessorRuleMatchRule],
+        name: Union[str, UnsetType] = unset,
         support_rules: Union[List[ObservabilityPipelineParseGrokProcessorRuleSupportRule], UnsetType] = unset,
         **kwargs,
     ):
@@ -62,9 +72,15 @@ class ObservabilityPipelineParseGrokProcessorIncludeRule(ModelNormal):
             Each rule must contain a name and a valid Grok pattern.
         :type match_rules: [ObservabilityPipelineParseGrokProcessorRuleMatchRule]
 
+        :param name: Optional name identifying this include-based Grok rule in worker diagnostics.
+            Names must be unique within the processor.
+        :type name: str, optional
+
         :param support_rules: A list of Grok helper rules that can be referenced by the parsing rules.
         :type support_rules: [ObservabilityPipelineParseGrokProcessorRuleSupportRule], optional
         """
+        if name is not unset:
+            kwargs["name"] = name
         if support_rules is not unset:
             kwargs["support_rules"] = support_rules
         super().__init__(kwargs)

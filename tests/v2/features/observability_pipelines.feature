@@ -346,6 +346,14 @@ Feature: Observability Pipelines
     And the response "errors" has length 0
 
   @team:ddoghq/observability-pipelines
+  Scenario: Validate an observability pipeline with named and unnamed parse grok include rules returns "OK" response
+    Given new "ValidatePipeline" request
+    And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "parse-grok-processor", "include": "*", "type": "parse_grok", "field": "content", "rules": [{"include": "service:payments", "name": "payments", "match_rules": [{"name": "MyParsingRule", "rule": "%{word:user}"}]}, {"include": "service:checkout", "name": "checkout", "match_rules": [{"name": "MyParsingRule", "rule": "%{word:user}"}]}, {"include": "*", "match_rules": [{"name": "MyParsingRule", "rule": "%{word:user}"}]}]}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with Named and Unnamed Grok Include Rules"}, "type": "pipelines"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "errors" has length 0
+
+  @team:ddoghq/observability-pipelines
   Scenario: Validate an observability pipeline with parse grok processor include rules returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["datadog-agent-source"], "processors": [{"enabled": true, "id": "parse-grok-processor", "include": "*", "type": "parse_grok", "field": "content", "rules": [{"include": "service:foo", "match_rules": [{"name": "MyParsingRule", "rule": "%{word:user}"}]}]}]}], "sources": [{"id": "datadog-agent-source", "type": "datadog_agent"}]}, "name": "Pipeline with Parse Grok Include Rules"}, "type": "pipelines"}}

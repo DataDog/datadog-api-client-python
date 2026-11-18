@@ -3189,6 +3189,111 @@
     },
     {
       "feature": "Observability Pipelines",
+      "frozen_at": "2026-11-17T20:07:44.755Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "config": {
+                      "destinations": [
+                        {
+                          "id": "datadog-logs-destination",
+                          "inputs": [
+                            "my-processor-group"
+                          ],
+                          "type": "datadog_logs"
+                        }
+                      ],
+                      "processor_groups": [
+                        {
+                          "enabled": true,
+                          "id": "my-processor-group",
+                          "include": "service:my-service",
+                          "inputs": [
+                            "datadog-agent-source"
+                          ],
+                          "processors": [
+                            {
+                              "enabled": true,
+                              "field": "content",
+                              "id": "parse-grok-processor",
+                              "include": "*",
+                              "rules": [
+                                {
+                                  "include": "service:payments",
+                                  "match_rules": [
+                                    {
+                                      "name": "MyParsingRule",
+                                      "rule": "%{word:user}"
+                                    }
+                                  ],
+                                  "name": "payments"
+                                },
+                                {
+                                  "include": "service:checkout",
+                                  "match_rules": [
+                                    {
+                                      "name": "MyParsingRule",
+                                      "rule": "%{word:user}"
+                                    }
+                                  ],
+                                  "name": "checkout"
+                                },
+                                {
+                                  "include": "*",
+                                  "match_rules": [
+                                    {
+                                      "name": "MyParsingRule",
+                                      "rule": "%{word:user}"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "type": "parse_grok"
+                            }
+                          ]
+                        }
+                      ],
+                      "sources": [
+                        {
+                          "id": "datadog-agent-source",
+                          "type": "datadog_agent"
+                        }
+                      ]
+                    },
+                    "name": "Pipeline with Named and Unnamed Grok Include Rules"
+                  },
+                  "type": "pipelines"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/obs-pipelines/pipelines/validate",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Validate an observability pipeline with named and unnamed parse grok include rules returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
       "frozen_at": "2026-06-29T20:01:05.978Z",
       "interactions": [
         {

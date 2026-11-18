@@ -27,6 +27,10 @@ class ObservabilityPipelineParseGrokProcessorRuleItem(ModelComposed):
 
         :param include: A Datadog search query used to determine which logs this Grok rule targets.
         :type include: str
+
+        :param name: Optional name identifying this include-based Grok rule in worker diagnostics.
+            Names must be unique within the processor.
+        :type name: str, optional
         """
         super().__init__(kwargs)
 
