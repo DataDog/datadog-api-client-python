@@ -9,7 +9,6 @@ from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
-    none_type,
     unset,
     UnsetType,
 )
@@ -26,9 +25,7 @@ class EnvironmentAttributes(ModelNormal):
     def openapi_types(_):
         return {
             "created_at": (datetime,),
-            "description": (str, none_type),
             "is_production": (bool,),
-            "key": (str,),
             "name": (str,),
             "observe_full_evaluation_data": (bool,),
             "queries": ([str],),
@@ -38,9 +35,7 @@ class EnvironmentAttributes(ModelNormal):
 
     attribute_map = {
         "created_at": "created_at",
-        "description": "description",
         "is_production": "is_production",
-        "key": "key",
         "name": "name",
         "observe_full_evaluation_data": "observe_full_evaluation_data",
         "queries": "queries",
@@ -52,9 +47,7 @@ class EnvironmentAttributes(ModelNormal):
         self_,
         name: str,
         created_at: Union[datetime, UnsetType] = unset,
-        description: Union[str, none_type, UnsetType] = unset,
         is_production: Union[bool, UnsetType] = unset,
-        key: Union[str, UnsetType] = unset,
         observe_full_evaluation_data: Union[bool, UnsetType] = unset,
         queries: Union[List[str], UnsetType] = unset,
         require_feature_flag_approval: Union[bool, UnsetType] = unset,
@@ -67,14 +60,8 @@ class EnvironmentAttributes(ModelNormal):
         :param created_at: The timestamp when the environment was created.
         :type created_at: datetime, optional
 
-        :param description: The description of the environment.
-        :type description: str, none_type, optional
-
         :param is_production: Indicates whether this is a production environment.
         :type is_production: bool, optional
-
-        :param key: The unique key of the environment.
-        :type key: str, optional
 
         :param name: The name of the environment.
         :type name: str
@@ -93,12 +80,8 @@ class EnvironmentAttributes(ModelNormal):
         """
         if created_at is not unset:
             kwargs["created_at"] = created_at
-        if description is not unset:
-            kwargs["description"] = description
         if is_production is not unset:
             kwargs["is_production"] = is_production
-        if key is not unset:
-            kwargs["key"] = key
         if observe_full_evaluation_data is not unset:
             kwargs["observe_full_evaluation_data"] = observe_full_evaluation_data
         if queries is not unset:
