@@ -66,6 +66,26 @@ from datadog_api_client.v2.model.gcp_usage_cost_config_patch_request import GCPU
 from datadog_api_client.v2.model.oci_configs_response import OCIConfigsResponse
 from datadog_api_client.v2.model.cost_recommendation_array import CostRecommendationArray
 from datadog_api_client.v2.model.recommendations_filter_request import RecommendationsFilterRequest
+from datadog_api_client.v2.model.cost_recommendation_custom_rules_response import CostRecommendationCustomRulesResponse
+from datadog_api_client.v2.model.cost_recommendation_custom_rule_response import CostRecommendationCustomRuleResponse
+from datadog_api_client.v2.model.cost_recommendation_custom_rule_create_request import (
+    CostRecommendationCustomRuleCreateRequest,
+)
+from datadog_api_client.v2.model.cost_recommendation_custom_rule_update_request import (
+    CostRecommendationCustomRuleUpdateRequest,
+)
+from datadog_api_client.v2.model.cost_recommendation_notification_rules_response import (
+    CostRecommendationNotificationRulesResponse,
+)
+from datadog_api_client.v2.model.cost_recommendation_notification_rule_response import (
+    CostRecommendationNotificationRuleResponse,
+)
+from datadog_api_client.v2.model.cost_recommendation_notification_rule_create_request import (
+    CostRecommendationNotificationRuleCreateRequest,
+)
+from datadog_api_client.v2.model.cost_recommendation_notification_rule_update_request import (
+    CostRecommendationNotificationRuleUpdateRequest,
+)
 from datadog_api_client.v2.model.cost_tag_descriptions_response import CostTagDescriptionsResponse
 from datadog_api_client.v2.model.cost_tag_description_response import CostTagDescriptionResponse
 from datadog_api_client.v2.model.cost_tag_description_upsert_request import CostTagDescriptionUpsertRequest
@@ -157,6 +177,46 @@ class CloudCostManagementApi:
                 "body": {
                     "required": True,
                     "openapi_types": (GCPUsageCostConfigPostRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_cost_recommendation_custom_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (CostRecommendationCustomRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/recommendations/custom_rules",
+                "operation_id": "create_cost_recommendation_custom_rule",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (CostRecommendationCustomRuleCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_cost_recommendation_notification_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (CostRecommendationNotificationRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/recommendations/notification_rules",
+                "operation_id": "create_cost_recommendation_notification_rule",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (CostRecommendationNotificationRuleCreateRequest,),
                     "location": "body",
                 },
             },
@@ -307,6 +367,52 @@ class CloudCostManagementApi:
                     "required": True,
                     "openapi_types": (int,),
                     "attribute": "cloud_account_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_cost_recommendation_custom_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/recommendations/custom_rules/{custom_rule_id}",
+                "operation_id": "delete_cost_recommendation_custom_rule",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "custom_rule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "custom_rule_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_cost_recommendation_notification_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/recommendations/notification_rules/{notification_rule_id}",
+                "operation_id": "delete_cost_recommendation_notification_rule",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "notification_rule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "notification_rule_id",
                     "location": "path",
                 },
             },
@@ -1023,6 +1129,52 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
+        self._get_cost_recommendation_custom_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (CostRecommendationCustomRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/recommendations/custom_rules/{custom_rule_id}",
+                "operation_id": "get_cost_recommendation_custom_rule",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "custom_rule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "custom_rule_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_cost_recommendation_notification_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (CostRecommendationNotificationRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/recommendations/notification_rules/{notification_rule_id}",
+                "operation_id": "get_cost_recommendation_notification_rule",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "notification_rule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "notification_rule_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._get_cost_tag_description_by_key_endpoint = _Endpoint(
             settings={
                 "response_type": (CostTagDescriptionResponse,),
@@ -1396,6 +1548,38 @@ class CloudCostManagementApi:
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/cost/oci_config",
                 "operation_id": "list_cost_oci_configs",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_cost_recommendation_custom_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": (CostRecommendationCustomRulesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/recommendations/custom_rules",
+                "operation_id": "list_cost_recommendation_custom_rules",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_cost_recommendation_notification_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": (CostRecommendationNotificationRulesResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/recommendations/notification_rules",
+                "operation_id": "list_cost_recommendation_notification_rules",
                 "http_method": "GET",
                 "version": "v2",
             },
@@ -1964,6 +2148,58 @@ class CloudCostManagementApi:
             api_client=api_client,
         )
 
+        self._update_cost_recommendation_custom_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (CostRecommendationCustomRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/recommendations/custom_rules/{custom_rule_id}",
+                "operation_id": "update_cost_recommendation_custom_rule",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "custom_rule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "custom_rule_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (CostRecommendationCustomRuleUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_cost_recommendation_notification_rule_endpoint = _Endpoint(
+            settings={
+                "response_type": (CostRecommendationNotificationRuleResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/cost/recommendations/notification_rules/{notification_rule_id}",
+                "operation_id": "update_cost_recommendation_notification_rule",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "notification_rule_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "notification_rule_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (CostRecommendationNotificationRuleUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_custom_allocation_rule_endpoint = _Endpoint(
             settings={
                 "response_type": (ArbitraryRuleResponse,),
@@ -2264,6 +2500,38 @@ class CloudCostManagementApi:
 
         return self._create_cost_gcp_usage_cost_config_endpoint.call_with_http_info(**kwargs)
 
+    def create_cost_recommendation_custom_rule(
+        self,
+        body: CostRecommendationCustomRuleCreateRequest,
+    ) -> CostRecommendationCustomRuleResponse:
+        """Create a cost recommendation custom rule.
+
+        Create a custom recommendation rule. The rule overrides the settings it lists for the resources its tag filters match; every other setting keeps the recommender default. Only the settings in the request are stored.
+
+        :type body: CostRecommendationCustomRuleCreateRequest
+        :rtype: CostRecommendationCustomRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_cost_recommendation_custom_rule_endpoint.call_with_http_info(**kwargs)
+
+    def create_cost_recommendation_notification_rule(
+        self,
+        body: CostRecommendationNotificationRuleCreateRequest,
+    ) -> CostRecommendationNotificationRuleResponse:
+        """Create a cost recommendation notification rule.
+
+        Create a rule that sends a digest of the cost recommendations matching ``scope_query`` to Slack or Microsoft Teams on a schedule.
+
+        :type body: CostRecommendationNotificationRuleCreateRequest
+        :rtype: CostRecommendationNotificationRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_cost_recommendation_notification_rule_endpoint.call_with_http_info(**kwargs)
+
     def create_custom_allocation_rule(
         self,
         body: ArbitraryCostUpsertRequest,
@@ -2393,6 +2661,40 @@ class CloudCostManagementApi:
         kwargs["cloud_account_id"] = cloud_account_id
 
         return self._delete_cost_gcp_usage_cost_config_endpoint.call_with_http_info(**kwargs)
+
+    def delete_cost_recommendation_custom_rule(
+        self,
+        custom_rule_id: str,
+    ) -> None:
+        """Delete a cost recommendation custom rule.
+
+        Delete a custom recommendation rule.
+
+        :param custom_rule_id: The ID of the custom rule.
+        :type custom_rule_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["custom_rule_id"] = custom_rule_id
+
+        return self._delete_cost_recommendation_custom_rule_endpoint.call_with_http_info(**kwargs)
+
+    def delete_cost_recommendation_notification_rule(
+        self,
+        notification_rule_id: str,
+    ) -> None:
+        """Delete a cost recommendation notification rule.
+
+        Delete a recommendation notification rule.
+
+        :param notification_rule_id: The ID of the notification rule.
+        :type notification_rule_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["notification_rule_id"] = notification_rule_id
+
+        return self._delete_cost_recommendation_notification_rule_endpoint.call_with_http_info(**kwargs)
 
     def delete_cost_tag_description_by_key(
         self,
@@ -2977,6 +3279,40 @@ class CloudCostManagementApi:
 
         return self._get_cost_gcp_usage_cost_config_endpoint.call_with_http_info(**kwargs)
 
+    def get_cost_recommendation_custom_rule(
+        self,
+        custom_rule_id: str,
+    ) -> CostRecommendationCustomRuleResponse:
+        """Get a cost recommendation custom rule.
+
+        Get a custom recommendation rule.
+
+        :param custom_rule_id: The ID of the custom rule.
+        :type custom_rule_id: str
+        :rtype: CostRecommendationCustomRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["custom_rule_id"] = custom_rule_id
+
+        return self._get_cost_recommendation_custom_rule_endpoint.call_with_http_info(**kwargs)
+
+    def get_cost_recommendation_notification_rule(
+        self,
+        notification_rule_id: str,
+    ) -> CostRecommendationNotificationRuleResponse:
+        """Get a cost recommendation notification rule.
+
+        Get a recommendation notification rule.
+
+        :param notification_rule_id: The ID of the notification rule.
+        :type notification_rule_id: str
+        :rtype: CostRecommendationNotificationRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["notification_rule_id"] = notification_rule_id
+
+        return self._get_cost_recommendation_notification_rule_endpoint.call_with_http_info(**kwargs)
+
     def get_cost_tag_description_by_key(
         self,
         tag_key: str,
@@ -3309,6 +3645,30 @@ class CloudCostManagementApi:
         kwargs: Dict[str, Any] = {}
         warnings.warn("list_cost_oci_configs is deprecated", DeprecationWarning, stacklevel=2)
         return self._list_cost_oci_configs_endpoint.call_with_http_info(**kwargs)
+
+    def list_cost_recommendation_custom_rules(
+        self,
+    ) -> CostRecommendationCustomRulesResponse:
+        """List cost recommendation custom rules.
+
+        List the custom recommendation rules of the organization. A custom rule overrides recommender settings for the resources its tag filters match.
+
+        :rtype: CostRecommendationCustomRulesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_cost_recommendation_custom_rules_endpoint.call_with_http_info(**kwargs)
+
+    def list_cost_recommendation_notification_rules(
+        self,
+    ) -> CostRecommendationNotificationRulesResponse:
+        """List cost recommendation notification rules.
+
+        List the recommendation notification rules of the organization. A notification rule sends a digest of the cost recommendations that match its query to Slack or Microsoft Teams on a schedule.
+
+        :rtype: CostRecommendationNotificationRulesResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_cost_recommendation_notification_rules_endpoint.call_with_http_info(**kwargs)
 
     def list_cost_tag_descriptions(
         self,
@@ -3797,6 +4157,48 @@ class CloudCostManagementApi:
         kwargs["body"] = body
 
         return self._update_cost_gcp_usage_cost_config_endpoint.call_with_http_info(**kwargs)
+
+    def update_cost_recommendation_custom_rule(
+        self,
+        custom_rule_id: str,
+        body: CostRecommendationCustomRuleUpdateRequest,
+    ) -> CostRecommendationCustomRuleResponse:
+        """Update a cost recommendation custom rule.
+
+        Update a custom recommendation rule. Attributes left out keep their value; ``filters`` and ``settings`` replace the stored list and map when sent. The recommender of a rule cannot change.
+
+        :param custom_rule_id: The ID of the custom rule.
+        :type custom_rule_id: str
+        :type body: CostRecommendationCustomRuleUpdateRequest
+        :rtype: CostRecommendationCustomRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["custom_rule_id"] = custom_rule_id
+
+        kwargs["body"] = body
+
+        return self._update_cost_recommendation_custom_rule_endpoint.call_with_http_info(**kwargs)
+
+    def update_cost_recommendation_notification_rule(
+        self,
+        notification_rule_id: str,
+        body: CostRecommendationNotificationRuleUpdateRequest,
+    ) -> CostRecommendationNotificationRuleResponse:
+        """Update a cost recommendation notification rule.
+
+        Update a recommendation notification rule. Attributes left out keep their value.
+
+        :param notification_rule_id: The ID of the notification rule.
+        :type notification_rule_id: str
+        :type body: CostRecommendationNotificationRuleUpdateRequest
+        :rtype: CostRecommendationNotificationRuleResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["notification_rule_id"] = notification_rule_id
+
+        kwargs["body"] = body
+
+        return self._update_cost_recommendation_notification_rule_endpoint.call_with_http_info(**kwargs)
 
     def update_custom_allocation_rule(
         self,

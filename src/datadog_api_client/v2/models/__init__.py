@@ -2247,12 +2247,99 @@ from datadog_api_client.v2.model.cost_orchestrator import CostOrchestrator
 from datadog_api_client.v2.model.cost_orchestrator_type import CostOrchestratorType
 from datadog_api_client.v2.model.cost_orchestrators_response import CostOrchestratorsResponse
 from datadog_api_client.v2.model.cost_recommendation_array import CostRecommendationArray
+from datadog_api_client.v2.model.cost_recommendation_custom_rule_attributes import (
+    CostRecommendationCustomRuleAttributes,
+)
+from datadog_api_client.v2.model.cost_recommendation_custom_rule_create_attributes import (
+    CostRecommendationCustomRuleCreateAttributes,
+)
+from datadog_api_client.v2.model.cost_recommendation_custom_rule_create_data import (
+    CostRecommendationCustomRuleCreateData,
+)
+from datadog_api_client.v2.model.cost_recommendation_custom_rule_create_request import (
+    CostRecommendationCustomRuleCreateRequest,
+)
+from datadog_api_client.v2.model.cost_recommendation_custom_rule_data import CostRecommendationCustomRuleData
+from datadog_api_client.v2.model.cost_recommendation_custom_rule_filter import CostRecommendationCustomRuleFilter
+from datadog_api_client.v2.model.cost_recommendation_custom_rule_filter_type import (
+    CostRecommendationCustomRuleFilterType,
+)
+from datadog_api_client.v2.model.cost_recommendation_custom_rule_response import CostRecommendationCustomRuleResponse
+from datadog_api_client.v2.model.cost_recommendation_custom_rule_settings import CostRecommendationCustomRuleSettings
+from datadog_api_client.v2.model.cost_recommendation_custom_rule_type import CostRecommendationCustomRuleType
+from datadog_api_client.v2.model.cost_recommendation_custom_rule_update_attributes import (
+    CostRecommendationCustomRuleUpdateAttributes,
+)
+from datadog_api_client.v2.model.cost_recommendation_custom_rule_update_data import (
+    CostRecommendationCustomRuleUpdateData,
+)
+from datadog_api_client.v2.model.cost_recommendation_custom_rule_update_request import (
+    CostRecommendationCustomRuleUpdateRequest,
+)
+from datadog_api_client.v2.model.cost_recommendation_custom_rules_response import CostRecommendationCustomRulesResponse
 from datadog_api_client.v2.model.cost_recommendation_data import CostRecommendationData
 from datadog_api_client.v2.model.cost_recommendation_data_attributes import CostRecommendationDataAttributes
 from datadog_api_client.v2.model.cost_recommendation_data_attributes_potential_daily_savings import (
     CostRecommendationDataAttributesPotentialDailySavings,
 )
 from datadog_api_client.v2.model.cost_recommendation_data_type import CostRecommendationDataType
+from datadog_api_client.v2.model.cost_recommendation_notification_rule_attributes import (
+    CostRecommendationNotificationRuleAttributes,
+)
+from datadog_api_client.v2.model.cost_recommendation_notification_rule_create_attributes import (
+    CostRecommendationNotificationRuleCreateAttributes,
+)
+from datadog_api_client.v2.model.cost_recommendation_notification_rule_create_data import (
+    CostRecommendationNotificationRuleCreateData,
+)
+from datadog_api_client.v2.model.cost_recommendation_notification_rule_create_request import (
+    CostRecommendationNotificationRuleCreateRequest,
+)
+from datadog_api_client.v2.model.cost_recommendation_notification_rule_data import (
+    CostRecommendationNotificationRuleData,
+)
+from datadog_api_client.v2.model.cost_recommendation_notification_rule_destination_type import (
+    CostRecommendationNotificationRuleDestinationType,
+)
+from datadog_api_client.v2.model.cost_recommendation_notification_rule_frequency import (
+    CostRecommendationNotificationRuleFrequency,
+)
+from datadog_api_client.v2.model.cost_recommendation_notification_rule_message_action import (
+    CostRecommendationNotificationRuleMessageAction,
+)
+from datadog_api_client.v2.model.cost_recommendation_notification_rule_message_actions import (
+    CostRecommendationNotificationRuleMessageActions,
+)
+from datadog_api_client.v2.model.cost_recommendation_notification_rule_message_customization import (
+    CostRecommendationNotificationRuleMessageCustomization,
+)
+from datadog_api_client.v2.model.cost_recommendation_notification_rule_message_customization_header import (
+    CostRecommendationNotificationRuleMessageCustomizationHeader,
+)
+from datadog_api_client.v2.model.cost_recommendation_notification_rule_message_customization_mode import (
+    CostRecommendationNotificationRuleMessageCustomizationMode,
+)
+from datadog_api_client.v2.model.cost_recommendation_notification_rule_message_customization_per_rec import (
+    CostRecommendationNotificationRuleMessageCustomizationPerRec,
+)
+from datadog_api_client.v2.model.cost_recommendation_notification_rule_response import (
+    CostRecommendationNotificationRuleResponse,
+)
+from datadog_api_client.v2.model.cost_recommendation_notification_rule_type import (
+    CostRecommendationNotificationRuleType,
+)
+from datadog_api_client.v2.model.cost_recommendation_notification_rule_update_attributes import (
+    CostRecommendationNotificationRuleUpdateAttributes,
+)
+from datadog_api_client.v2.model.cost_recommendation_notification_rule_update_data import (
+    CostRecommendationNotificationRuleUpdateData,
+)
+from datadog_api_client.v2.model.cost_recommendation_notification_rule_update_request import (
+    CostRecommendationNotificationRuleUpdateRequest,
+)
+from datadog_api_client.v2.model.cost_recommendation_notification_rules_response import (
+    CostRecommendationNotificationRulesResponse,
+)
 from datadog_api_client.v2.model.cost_tag import CostTag
 from datadog_api_client.v2.model.cost_tag_attributes import CostTagAttributes
 from datadog_api_client.v2.model.cost_tag_description import CostTagDescription
@@ -16064,10 +16151,43 @@ __all__ = [
     "CostOrchestratorType",
     "CostOrchestratorsResponse",
     "CostRecommendationArray",
+    "CostRecommendationCustomRuleAttributes",
+    "CostRecommendationCustomRuleCreateAttributes",
+    "CostRecommendationCustomRuleCreateData",
+    "CostRecommendationCustomRuleCreateRequest",
+    "CostRecommendationCustomRuleData",
+    "CostRecommendationCustomRuleFilter",
+    "CostRecommendationCustomRuleFilterType",
+    "CostRecommendationCustomRuleResponse",
+    "CostRecommendationCustomRuleSettings",
+    "CostRecommendationCustomRuleType",
+    "CostRecommendationCustomRuleUpdateAttributes",
+    "CostRecommendationCustomRuleUpdateData",
+    "CostRecommendationCustomRuleUpdateRequest",
+    "CostRecommendationCustomRulesResponse",
     "CostRecommendationData",
     "CostRecommendationDataAttributes",
     "CostRecommendationDataAttributesPotentialDailySavings",
     "CostRecommendationDataType",
+    "CostRecommendationNotificationRuleAttributes",
+    "CostRecommendationNotificationRuleCreateAttributes",
+    "CostRecommendationNotificationRuleCreateData",
+    "CostRecommendationNotificationRuleCreateRequest",
+    "CostRecommendationNotificationRuleData",
+    "CostRecommendationNotificationRuleDestinationType",
+    "CostRecommendationNotificationRuleFrequency",
+    "CostRecommendationNotificationRuleMessageAction",
+    "CostRecommendationNotificationRuleMessageActions",
+    "CostRecommendationNotificationRuleMessageCustomization",
+    "CostRecommendationNotificationRuleMessageCustomizationHeader",
+    "CostRecommendationNotificationRuleMessageCustomizationMode",
+    "CostRecommendationNotificationRuleMessageCustomizationPerRec",
+    "CostRecommendationNotificationRuleResponse",
+    "CostRecommendationNotificationRuleType",
+    "CostRecommendationNotificationRuleUpdateAttributes",
+    "CostRecommendationNotificationRuleUpdateData",
+    "CostRecommendationNotificationRuleUpdateRequest",
+    "CostRecommendationNotificationRulesResponse",
     "CostTag",
     "CostTagAttributes",
     "CostTagDescription",

@@ -558,17 +558,11 @@ from datadog_api_client.v1.model.monitor_formula_and_function_cost_data_source i
 from datadog_api_client.v1.model.monitor_formula_and_function_cost_query_definition import (
     MonitorFormulaAndFunctionCostQueryDefinition,
 )
-from datadog_api_client.v1.model.monitor_formula_and_function_data_jobs_monitor_options import (
-    MonitorFormulaAndFunctionDataJobsMonitorOptions,
-)
 from datadog_api_client.v1.model.monitor_formula_and_function_data_jobs_query_definition import (
     MonitorFormulaAndFunctionDataJobsQueryDefinition,
 )
 from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_data_source import (
     MonitorFormulaAndFunctionDataQualityDataSource,
-)
-from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_detection_type import (
-    MonitorFormulaAndFunctionDataQualityDetectionType,
 )
 from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_diff_function import (
     MonitorFormulaAndFunctionDataQualityDiffFunction,
@@ -2023,10 +2017,8 @@ __all__ = [
     "MonitorFormulaAndFunctionCostAggregator",
     "MonitorFormulaAndFunctionCostDataSource",
     "MonitorFormulaAndFunctionCostQueryDefinition",
-    "MonitorFormulaAndFunctionDataJobsMonitorOptions",
     "MonitorFormulaAndFunctionDataJobsQueryDefinition",
     "MonitorFormulaAndFunctionDataQualityDataSource",
-    "MonitorFormulaAndFunctionDataQualityDetectionType",
     "MonitorFormulaAndFunctionDataQualityDiffFunction",
     "MonitorFormulaAndFunctionDataQualityDiffType",
     "MonitorFormulaAndFunctionDataQualityEntityMetricConfig",
