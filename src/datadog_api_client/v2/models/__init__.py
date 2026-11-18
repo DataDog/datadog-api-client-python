@@ -4264,6 +4264,11 @@ from datadog_api_client.v2.model.experiments_datadog_percentile_aggregation_inpu
 from datadog_api_client.v2.model.experiments_datadog_percentile_measure_input import (
     ExperimentsDatadogPercentileMeasureInput,
 )
+from datadog_api_client.v2.model.experiments_evsi_context import ExperimentsEVSIContext
+from datadog_api_client.v2.model.experiments_evsi_traffic_unavailable_reason import (
+    ExperimentsEVSITrafficUnavailableReason,
+)
+from datadog_api_client.v2.model.experiments_evsi_unavailable_reason import ExperimentsEVSIUnavailableReason
 from datadog_api_client.v2.model.experiments_experiment_diagnostics_v2_dto import ExperimentsExperimentDiagnosticsV2DTO
 from datadog_api_client.v2.model.experiments_experiment_diagnostics_v2_dto_data import (
     ExperimentsExperimentDiagnosticsV2DTOData,
@@ -17239,6 +17244,9 @@ __all__ = [
     "ExperimentsDatadogMetricMeasureInput",
     "ExperimentsDatadogPercentileAggregationInput",
     "ExperimentsDatadogPercentileMeasureInput",
+    "ExperimentsEVSIContext",
+    "ExperimentsEVSITrafficUnavailableReason",
+    "ExperimentsEVSIUnavailableReason",
     "ExperimentsExperimentDiagnosticsV2DTO",
     "ExperimentsExperimentDiagnosticsV2DTOData",
     "ExperimentsExperimentDiagnosticsV2DTODataAttributes",
