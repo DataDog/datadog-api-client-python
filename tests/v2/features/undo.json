@@ -12485,6 +12485,37 @@
       "type": "safe"
     }
   },
+  "ListTerraformCloudAuthPersonaMappings": {
+    "tag": "Cloud Authentication",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CreateTerraformCloudAuthPersonaMapping": {
+    "tag": "Cloud Authentication",
+    "undo": {
+      "operationId": "DeleteTerraformCloudAuthPersonaMapping",
+      "parameters": [
+        {
+          "name": "persona_mapping_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteTerraformCloudAuthPersonaMapping": {
+    "tag": "Cloud Authentication",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetTerraformCloudAuthPersonaMapping": {
+    "tag": "Cloud Authentication",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListWorkflows": {
     "tag": "Workflow Automation",
     "undo": {

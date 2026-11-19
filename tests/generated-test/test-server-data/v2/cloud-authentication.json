@@ -537,6 +537,333 @@
     },
     {
       "feature": "Cloud Authentication",
+      "frozen_at": "2026-11-16T20:45:20.222Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Create_an_HCP_Terraform_persona_mapping_returns_Bad_Request_response-1794861920"
+                  },
+                  "type": "roles"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/roles",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a3519362-e1fe-11f1-a4f2-da7ad0900002\",\"type\":\"roles\",\"attributes\":{\"created_at\":\"2026-11-16T20:45:20.315681Z\",\"modified_at\":\"2026-11-16T20:45:20.316864Z\",\"name\":\"Test-Create_an_HCP_Terraform_persona_mapping_returns_Bad_Request_response-1794861920\",\"team_count\":0,\"user_count\":0},\"relationships\":{\"permissions\":{\"data\":[{\"id\":\"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2\",\"type\":\"permissions\"},{\"id\":\"4441648c-d8b1-11e9-a77a-1b899a04b304\",\"type\":\"permissions\"},{\"id\":\"417ba636-2dce-11eb-84c0-6bce5b0d9de0\",\"type\":\"permissions\"},{\"id\":\"12efc20e-d36c-11eb-a9b8-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"df71ef13-d5c6-11eb-aa97-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"df71ef14-d5c6-11eb-aa97-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"df71ef12-d5c6-11eb-aa97-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"7605ef24-f376-11eb-b90b-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"b6bf9ac6-9a59-11ec-8480-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"930087f2-d533-11ec-ae05-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"f8e941cf-e746-11ec-b22d-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"6c5ad874-7aff-11ed-a5cd-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"535680c8-3dee-11ee-b07a-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"a8b4d6e8-4ea4-11ee-b482-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"50c270de-69ee-11ee-9151-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"87d927dc-0329-11ef-a3a8-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"328c0d5a-73c9-11f0-bc76-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"836e096c-7d42-11f0-93b5-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"ccca47e0-a54e-11f0-aeb0-da7ad0900002\",\"type\":\"permissions\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Create_an_HCP_Terraform_persona_mapping_returns_Bad_Request_response-1794861920@datadoghq.com",
+                    "service_account": true
+                  },
+                  "relationships": {
+                    "roles": {
+                      "data": [
+                        {
+                          "id": "a3519362-e1fe-11f1-a4f2-da7ad0900002",
+                          "type": "roles"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/service_accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"a36e42a7-e1fe-11f1-b93b-3295cab7105d\",\"attributes\":{\"uuid\":\"a36e42a7-e1fe-11f1-b93b-3295cab7105d\",\"name\":null,\"handle\":\"a36e42a7-e1fe-11f1-b93b-3295cab7105d\",\"created_at\":\"2026-11-16T20:45:20.505190+00:00\",\"modified_at\":\"2026-11-16T20:45:20.505190+00:00\",\"email\":\"test-create_an_hcp_terraform_persona_mapping_returns_bad_request_response-1794861920@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/487e3d7c6949d8526cabf60403600b4f?s=48&d=retro\",\"title\":null,\"verified\":true,\"service_account\":true,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Active\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[{\"type\":\"roles\",\"id\":\"a3519362-e1fe-11f1-a4f2-da7ad0900002\"}]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}},\"included\":[{\"type\":\"roles\",\"id\":\"a3519362-e1fe-11f1-a4f2-da7ad0900002\",\"attributes\":{\"name\":\"Test-Create_an_HCP_Terraform_persona_mapping_returns_Bad_Request_response-1794861920\",\"managed\":false,\"created_at\":\"2026-11-16T20:45:20.315681+00:00\",\"modified_at\":\"2026-11-16T20:45:20.316864+00:00\"},\"relationships\":{\"permissions\":{\"data\":[{\"type\":\"permissions\",\"id\":\"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2\"},{\"type\":\"permissions\",\"id\":\"4441648c-d8b1-11e9-a77a-1b899a04b304\"},{\"type\":\"permissions\",\"id\":\"417ba636-2dce-11eb-84c0-6bce5b0d9de0\"},{\"type\":\"permissions\",\"id\":\"12efc20e-d36c-11eb-a9b8-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"7605ef24-f376-11eb-b90b-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"b6bf9ac6-9a59-11ec-8480-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"f8e941cf-e746-11ec-b22d-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"6c5ad874-7aff-11ed-a5cd-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"a8b4d6e8-4ea4-11ee-b482-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"50c270de-69ee-11ee-9151-da7ad0900002\"}]}}},{\"type\":\"permissions\",\"id\":\"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2\",\"attributes\":{\"name\":\"dashboards_read\",\"display_name\":\"Dashboards Read\",\"description\":\"View dashboards.\",\"created\":\"2019-09-10T14:39:51.955175+00:00\",\"group_name\":\"Dashboards\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"4441648c-d8b1-11e9-a77a-1b899a04b304\",\"attributes\":{\"name\":\"monitors_read\",\"display_name\":\"Monitors Read\",\"description\":\"View monitors.\",\"created\":\"2019-09-16T18:39:07.744297+00:00\",\"group_name\":\"Monitors\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"417ba636-2dce-11eb-84c0-6bce5b0d9de0\",\"attributes\":{\"name\":\"apm_read\",\"display_name\":\"APM Read\",\"description\":\"Read and query APM and Trace Analytics.\",\"created\":\"2020-11-23T20:55:45.006110+00:00\",\"group_name\":\"APM\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"12efc20e-d36c-11eb-a9b8-da7ad0900002\",\"attributes\":{\"name\":\"incident_read\",\"display_name\":\"Incidents Read\",\"description\":\"View incidents in Datadog.\",\"created\":\"2021-06-22T15:11:09.255499+00:00\",\"group_name\":\"Work and Incident Management\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"7605ef24-f376-11eb-b90b-da7ad0900002\",\"attributes\":{\"name\":\"rum_apps_read\",\"display_name\":\"RUM Apps Read\",\"description\":\"View RUM Applications data.\",\"created\":\"2021-08-02T09:46:07.671535+00:00\",\"group_name\":\"Real User Monitoring\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"b6bf9ac6-9a59-11ec-8480-da7ad0900002\",\"attributes\":{\"name\":\"notebooks_read\",\"display_name\":\"Notebooks Read\",\"description\":\"View notebooks.\",\"created\":\"2022-03-02T18:51:05.040950+00:00\",\"group_name\":\"Notebooks\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"f8e941cf-e746-11ec-b22d-da7ad0900002\",\"attributes\":{\"name\":\"slos_read\",\"display_name\":\"SLOs Read\",\"description\":\"View SLOs and status corrections.\",\"created\":\"2022-06-08T16:20:55.142591+00:00\",\"group_name\":\"Service Level Objectives\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"6c5ad874-7aff-11ed-a5cd-da7ad0900002\",\"attributes\":{\"name\":\"ci_visibility_read\",\"display_name\":\"CI Visibility Read\",\"description\":\"View CI Visibility.\",\"created\":\"2022-12-13T16:01:37.149406+00:00\",\"group_name\":\"Software Delivery\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"a8b4d6e8-4ea4-11ee-b482-da7ad0900002\",\"attributes\":{\"name\":\"cd_visibility_read\",\"display_name\":\"CD Visibility Read\",\"description\":\"View CD Visibility.\",\"created\":\"2023-09-09T00:06:00.708335+00:00\",\"group_name\":\"Software Delivery\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"50c270de-69ee-11ee-9151-da7ad0900002\",\"attributes\":{\"name\":\"appsec_vm_read\",\"display_name\":\"Vulnerability Management Read\",\"description\":\"View infrastructure, application code and library vulnerabilities. This does not restrict access to the vulnerability data source through the API or inventory SQL.\",\"created\":\"2023-10-13T17:31:17.311029+00:00\",\"group_name\":\"Cloud Security Platform\",\"display_type\":\"read\",\"restricted\":true}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "account_identifier": "test-create_an_hcp_terraform_persona_mapping_returns_bad_request_response-1794861920@datadoghq.com",
+                    "issuer_url": "https://app.terraform.io",
+                    "sub_pattern": "organization:*:project:*:workspace:*:run_phase:*"
+                  },
+                  "type": "terraform_cloud_auth_config"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/wif/terraform/persona_mapping",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"invalid terraform sub pattern \\\"organization:*:project:*:workspace:*:run_phase:*\\\": organization segment cannot be a wildcard\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/a36e42a7-e1fe-11f1-b93b-3295cab7105d",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/roles/a3519362-e1fe-11f1-a4f2-da7ad0900002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create an HCP Terraform persona mapping returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "frozen_at": "2026-11-16T20:45:31.137Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Create_an_HCP_Terraform_persona_mapping_returns_Created_response-1794861931"
+                  },
+                  "type": "roles"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/roles",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a9d21b62-e1fe-11f1-afff-da7ad0900002\",\"type\":\"roles\",\"attributes\":{\"created_at\":\"2026-11-16T20:45:31.224409Z\",\"modified_at\":\"2026-11-16T20:45:31.225532Z\",\"name\":\"Test-Create_an_HCP_Terraform_persona_mapping_returns_Created_response-1794861931\",\"team_count\":0,\"user_count\":0},\"relationships\":{\"permissions\":{\"data\":[{\"id\":\"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2\",\"type\":\"permissions\"},{\"id\":\"4441648c-d8b1-11e9-a77a-1b899a04b304\",\"type\":\"permissions\"},{\"id\":\"417ba636-2dce-11eb-84c0-6bce5b0d9de0\",\"type\":\"permissions\"},{\"id\":\"12efc20e-d36c-11eb-a9b8-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"df71ef13-d5c6-11eb-aa97-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"df71ef14-d5c6-11eb-aa97-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"df71ef12-d5c6-11eb-aa97-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"7605ef24-f376-11eb-b90b-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"b6bf9ac6-9a59-11ec-8480-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"930087f2-d533-11ec-ae05-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"f8e941cf-e746-11ec-b22d-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"6c5ad874-7aff-11ed-a5cd-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"535680c8-3dee-11ee-b07a-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"a8b4d6e8-4ea4-11ee-b482-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"50c270de-69ee-11ee-9151-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"87d927dc-0329-11ef-a3a8-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"328c0d5a-73c9-11f0-bc76-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"836e096c-7d42-11f0-93b5-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"ccca47e0-a54e-11f0-aeb0-da7ad0900002\",\"type\":\"permissions\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Create_an_HCP_Terraform_persona_mapping_returns_Created_response-1794861931@datadoghq.com",
+                    "service_account": true
+                  },
+                  "relationships": {
+                    "roles": {
+                      "data": [
+                        {
+                          "id": "a9d21b62-e1fe-11f1-afff-da7ad0900002",
+                          "type": "roles"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/service_accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"a9efa02b-e1fe-11f1-8729-2ee1bd86e8ac\",\"attributes\":{\"uuid\":\"a9efa02b-e1fe-11f1-8729-2ee1bd86e8ac\",\"name\":null,\"handle\":\"a9efa02b-e1fe-11f1-8729-2ee1bd86e8ac\",\"created_at\":\"2026-11-16T20:45:31.419288+00:00\",\"modified_at\":\"2026-11-16T20:45:31.419288+00:00\",\"email\":\"test-create_an_hcp_terraform_persona_mapping_returns_created_response-1794861931@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/0a8ed028e426cedaba6e63b53c16032e?s=48&d=retro\",\"title\":null,\"verified\":true,\"service_account\":true,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Active\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[{\"type\":\"roles\",\"id\":\"a9d21b62-e1fe-11f1-afff-da7ad0900002\"}]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}},\"included\":[{\"type\":\"roles\",\"id\":\"a9d21b62-e1fe-11f1-afff-da7ad0900002\",\"attributes\":{\"name\":\"Test-Create_an_HCP_Terraform_persona_mapping_returns_Created_response-1794861931\",\"managed\":false,\"created_at\":\"2026-11-16T20:45:31.224409+00:00\",\"modified_at\":\"2026-11-16T20:45:31.225532+00:00\"},\"relationships\":{\"permissions\":{\"data\":[{\"type\":\"permissions\",\"id\":\"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2\"},{\"type\":\"permissions\",\"id\":\"4441648c-d8b1-11e9-a77a-1b899a04b304\"},{\"type\":\"permissions\",\"id\":\"417ba636-2dce-11eb-84c0-6bce5b0d9de0\"},{\"type\":\"permissions\",\"id\":\"12efc20e-d36c-11eb-a9b8-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"7605ef24-f376-11eb-b90b-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"b6bf9ac6-9a59-11ec-8480-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"f8e941cf-e746-11ec-b22d-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"6c5ad874-7aff-11ed-a5cd-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"a8b4d6e8-4ea4-11ee-b482-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"50c270de-69ee-11ee-9151-da7ad0900002\"}]}}},{\"type\":\"permissions\",\"id\":\"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2\",\"attributes\":{\"name\":\"dashboards_read\",\"display_name\":\"Dashboards Read\",\"description\":\"View dashboards.\",\"created\":\"2019-09-10T14:39:51.955175+00:00\",\"group_name\":\"Dashboards\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"4441648c-d8b1-11e9-a77a-1b899a04b304\",\"attributes\":{\"name\":\"monitors_read\",\"display_name\":\"Monitors Read\",\"description\":\"View monitors.\",\"created\":\"2019-09-16T18:39:07.744297+00:00\",\"group_name\":\"Monitors\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"417ba636-2dce-11eb-84c0-6bce5b0d9de0\",\"attributes\":{\"name\":\"apm_read\",\"display_name\":\"APM Read\",\"description\":\"Read and query APM and Trace Analytics.\",\"created\":\"2020-11-23T20:55:45.006110+00:00\",\"group_name\":\"APM\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"12efc20e-d36c-11eb-a9b8-da7ad0900002\",\"attributes\":{\"name\":\"incident_read\",\"display_name\":\"Incidents Read\",\"description\":\"View incidents in Datadog.\",\"created\":\"2021-06-22T15:11:09.255499+00:00\",\"group_name\":\"Work and Incident Management\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"7605ef24-f376-11eb-b90b-da7ad0900002\",\"attributes\":{\"name\":\"rum_apps_read\",\"display_name\":\"RUM Apps Read\",\"description\":\"View RUM Applications data.\",\"created\":\"2021-08-02T09:46:07.671535+00:00\",\"group_name\":\"Real User Monitoring\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"b6bf9ac6-9a59-11ec-8480-da7ad0900002\",\"attributes\":{\"name\":\"notebooks_read\",\"display_name\":\"Notebooks Read\",\"description\":\"View notebooks.\",\"created\":\"2022-03-02T18:51:05.040950+00:00\",\"group_name\":\"Notebooks\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"f8e941cf-e746-11ec-b22d-da7ad0900002\",\"attributes\":{\"name\":\"slos_read\",\"display_name\":\"SLOs Read\",\"description\":\"View SLOs and status corrections.\",\"created\":\"2022-06-08T16:20:55.142591+00:00\",\"group_name\":\"Service Level Objectives\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"6c5ad874-7aff-11ed-a5cd-da7ad0900002\",\"attributes\":{\"name\":\"ci_visibility_read\",\"display_name\":\"CI Visibility Read\",\"description\":\"View CI Visibility.\",\"created\":\"2022-12-13T16:01:37.149406+00:00\",\"group_name\":\"Software Delivery\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"a8b4d6e8-4ea4-11ee-b482-da7ad0900002\",\"attributes\":{\"name\":\"cd_visibility_read\",\"display_name\":\"CD Visibility Read\",\"description\":\"View CD Visibility.\",\"created\":\"2023-09-09T00:06:00.708335+00:00\",\"group_name\":\"Software Delivery\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"50c270de-69ee-11ee-9151-da7ad0900002\",\"attributes\":{\"name\":\"appsec_vm_read\",\"display_name\":\"Vulnerability Management Read\",\"description\":\"View infrastructure, application code and library vulnerabilities. This does not restrict access to the vulnerability data source through the API or inventory SQL.\",\"created\":\"2023-10-13T17:31:17.311029+00:00\",\"group_name\":\"Cloud Security Platform\",\"display_type\":\"read\",\"restricted\":true}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "account_identifier": "test-create_an_hcp_terraform_persona_mapping_returns_created_response-1794861931@datadoghq.com",
+                    "issuer_url": "https://app.terraform.io",
+                    "sub_pattern": "organization:datadog-api-spec:project:Default Project:workspace:sdk-testcreateanhcpterraformpersonamappingreturnscreatedresponse1794861931:run_phase:*"
+                  },
+                  "type": "terraform_cloud_auth_config"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/wif/terraform/persona_mapping",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"2bae0149-e86f-4314-8ff6-e170bf70b572\",\"type\":\"terraform_cloud_auth_config\",\"attributes\":{\"account_identifier\":\"a9efa02b-e1fe-11f1-8729-2ee1bd86e8ac\",\"account_uuid\":\"a9efa02b-e1fe-11f1-8729-2ee1bd86e8ac\",\"audience\":\"datadog/4dee724d-00cc-11ea-a77b-570c9d03c6c5\",\"issuer_url\":\"https://app.terraform.io\",\"sub_pattern\":\"organization:datadog-api-spec:project:Default Project:workspace:sdk-testcreateanhcpterraformpersonamappingreturnscreatedresponse1794861931:run_phase:*\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/wif/terraform/persona_mapping/2bae0149-e86f-4314-8ff6-e170bf70b572",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/a9efa02b-e1fe-11f1-8729-2ee1bd86e8ac",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/roles/a9d21b62-e1fe-11f1-afff-da7ad0900002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create an HCP Terraform persona mapping returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
       "frozen_at": "2026-11-05T21:33:08.190Z",
       "interactions": [
         {
@@ -1017,6 +1344,203 @@
         }
       ],
       "scenario": "Delete an AWS cloud authentication intake mapping returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "frozen_at": "2026-11-16T20:45:42.309Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Delete_an_HCP_Terraform_persona_mapping_returns_No_Content_response-1794861942"
+                  },
+                  "type": "roles"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/roles",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"b07bdff2-e1fe-11f1-89f9-da7ad0900002\",\"type\":\"roles\",\"attributes\":{\"created_at\":\"2026-11-16T20:45:42.40341Z\",\"modified_at\":\"2026-11-16T20:45:42.404454Z\",\"name\":\"Test-Delete_an_HCP_Terraform_persona_mapping_returns_No_Content_response-1794861942\",\"team_count\":0,\"user_count\":0},\"relationships\":{\"permissions\":{\"data\":[{\"id\":\"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2\",\"type\":\"permissions\"},{\"id\":\"4441648c-d8b1-11e9-a77a-1b899a04b304\",\"type\":\"permissions\"},{\"id\":\"417ba636-2dce-11eb-84c0-6bce5b0d9de0\",\"type\":\"permissions\"},{\"id\":\"12efc20e-d36c-11eb-a9b8-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"df71ef13-d5c6-11eb-aa97-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"df71ef14-d5c6-11eb-aa97-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"df71ef12-d5c6-11eb-aa97-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"7605ef24-f376-11eb-b90b-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"b6bf9ac6-9a59-11ec-8480-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"930087f2-d533-11ec-ae05-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"f8e941cf-e746-11ec-b22d-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"6c5ad874-7aff-11ed-a5cd-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"535680c8-3dee-11ee-b07a-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"a8b4d6e8-4ea4-11ee-b482-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"50c270de-69ee-11ee-9151-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"87d927dc-0329-11ef-a3a8-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"328c0d5a-73c9-11f0-bc76-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"836e096c-7d42-11f0-93b5-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"ccca47e0-a54e-11f0-aeb0-da7ad0900002\",\"type\":\"permissions\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Delete_an_HCP_Terraform_persona_mapping_returns_No_Content_response-1794861942@datadoghq.com",
+                    "service_account": true
+                  },
+                  "relationships": {
+                    "roles": {
+                      "data": [
+                        {
+                          "id": "b07bdff2-e1fe-11f1-89f9-da7ad0900002",
+                          "type": "roles"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/service_accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"b0ca1b07-e1fe-11f1-b93b-3295cab7105d\",\"attributes\":{\"uuid\":\"b0ca1b07-e1fe-11f1-b93b-3295cab7105d\",\"name\":null,\"handle\":\"b0ca1b07-e1fe-11f1-b93b-3295cab7105d\",\"created_at\":\"2026-11-16T20:45:42.917446+00:00\",\"modified_at\":\"2026-11-16T20:45:42.917446+00:00\",\"email\":\"test-delete_an_hcp_terraform_persona_mapping_returns_no_content_response-1794861942@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/93d67db9433e84c9b5b80cd5c7638a1f?s=48&d=retro\",\"title\":null,\"verified\":true,\"service_account\":true,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Active\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[{\"type\":\"roles\",\"id\":\"b07bdff2-e1fe-11f1-89f9-da7ad0900002\"}]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}},\"included\":[{\"type\":\"roles\",\"id\":\"b07bdff2-e1fe-11f1-89f9-da7ad0900002\",\"attributes\":{\"name\":\"Test-Delete_an_HCP_Terraform_persona_mapping_returns_No_Content_response-1794861942\",\"managed\":false,\"created_at\":\"2026-11-16T20:45:42.403410+00:00\",\"modified_at\":\"2026-11-16T20:45:42.404454+00:00\"},\"relationships\":{\"permissions\":{\"data\":[{\"type\":\"permissions\",\"id\":\"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2\"},{\"type\":\"permissions\",\"id\":\"4441648c-d8b1-11e9-a77a-1b899a04b304\"},{\"type\":\"permissions\",\"id\":\"417ba636-2dce-11eb-84c0-6bce5b0d9de0\"},{\"type\":\"permissions\",\"id\":\"12efc20e-d36c-11eb-a9b8-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"7605ef24-f376-11eb-b90b-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"b6bf9ac6-9a59-11ec-8480-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"f8e941cf-e746-11ec-b22d-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"6c5ad874-7aff-11ed-a5cd-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"a8b4d6e8-4ea4-11ee-b482-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"50c270de-69ee-11ee-9151-da7ad0900002\"}]}}},{\"type\":\"permissions\",\"id\":\"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2\",\"attributes\":{\"name\":\"dashboards_read\",\"display_name\":\"Dashboards Read\",\"description\":\"View dashboards.\",\"created\":\"2019-09-10T14:39:51.955175+00:00\",\"group_name\":\"Dashboards\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"4441648c-d8b1-11e9-a77a-1b899a04b304\",\"attributes\":{\"name\":\"monitors_read\",\"display_name\":\"Monitors Read\",\"description\":\"View monitors.\",\"created\":\"2019-09-16T18:39:07.744297+00:00\",\"group_name\":\"Monitors\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"417ba636-2dce-11eb-84c0-6bce5b0d9de0\",\"attributes\":{\"name\":\"apm_read\",\"display_name\":\"APM Read\",\"description\":\"Read and query APM and Trace Analytics.\",\"created\":\"2020-11-23T20:55:45.006110+00:00\",\"group_name\":\"APM\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"12efc20e-d36c-11eb-a9b8-da7ad0900002\",\"attributes\":{\"name\":\"incident_read\",\"display_name\":\"Incidents Read\",\"description\":\"View incidents in Datadog.\",\"created\":\"2021-06-22T15:11:09.255499+00:00\",\"group_name\":\"Work and Incident Management\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"7605ef24-f376-11eb-b90b-da7ad0900002\",\"attributes\":{\"name\":\"rum_apps_read\",\"display_name\":\"RUM Apps Read\",\"description\":\"View RUM Applications data.\",\"created\":\"2021-08-02T09:46:07.671535+00:00\",\"group_name\":\"Real User Monitoring\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"b6bf9ac6-9a59-11ec-8480-da7ad0900002\",\"attributes\":{\"name\":\"notebooks_read\",\"display_name\":\"Notebooks Read\",\"description\":\"View notebooks.\",\"created\":\"2022-03-02T18:51:05.040950+00:00\",\"group_name\":\"Notebooks\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"f8e941cf-e746-11ec-b22d-da7ad0900002\",\"attributes\":{\"name\":\"slos_read\",\"display_name\":\"SLOs Read\",\"description\":\"View SLOs and status corrections.\",\"created\":\"2022-06-08T16:20:55.142591+00:00\",\"group_name\":\"Service Level Objectives\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"6c5ad874-7aff-11ed-a5cd-da7ad0900002\",\"attributes\":{\"name\":\"ci_visibility_read\",\"display_name\":\"CI Visibility Read\",\"description\":\"View CI Visibility.\",\"created\":\"2022-12-13T16:01:37.149406+00:00\",\"group_name\":\"Software Delivery\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"a8b4d6e8-4ea4-11ee-b482-da7ad0900002\",\"attributes\":{\"name\":\"cd_visibility_read\",\"display_name\":\"CD Visibility Read\",\"description\":\"View CD Visibility.\",\"created\":\"2023-09-09T00:06:00.708335+00:00\",\"group_name\":\"Software Delivery\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"50c270de-69ee-11ee-9151-da7ad0900002\",\"attributes\":{\"name\":\"appsec_vm_read\",\"display_name\":\"Vulnerability Management Read\",\"description\":\"View infrastructure, application code and library vulnerabilities. This does not restrict access to the vulnerability data source through the API or inventory SQL.\",\"created\":\"2023-10-13T17:31:17.311029+00:00\",\"group_name\":\"Cloud Security Platform\",\"display_type\":\"read\",\"restricted\":true}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "account_identifier": "test-delete_an_hcp_terraform_persona_mapping_returns_no_content_response-1794861942@datadoghq.com",
+                    "issuer_url": "https://app.terraform.io",
+                    "sub_pattern": "organization:datadog-api-spec:project:Default Project:workspace:sdk-testdeleteanhcpterraformpersonamappingreturnsnocontentresponse1794861942:run_phase:*"
+                  },
+                  "type": "terraform_cloud_auth_config"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/wif/terraform/persona_mapping",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"782bc8a4-c26d-4cd2-81d9-d4fac23c42bb\",\"type\":\"terraform_cloud_auth_config\",\"attributes\":{\"account_identifier\":\"b0ca1b07-e1fe-11f1-b93b-3295cab7105d\",\"account_uuid\":\"b0ca1b07-e1fe-11f1-b93b-3295cab7105d\",\"audience\":\"datadog/4dee724d-00cc-11ea-a77b-570c9d03c6c5\",\"issuer_url\":\"https://app.terraform.io\",\"sub_pattern\":\"organization:datadog-api-spec:project:Default Project:workspace:sdk-testdeleteanhcpterraformpersonamappingreturnsnocontentresponse1794861942:run_phase:*\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/wif/terraform/persona_mapping/782bc8a4-c26d-4cd2-81d9-d4fac23c42bb",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/wif/terraform/persona_mapping/782bc8a4-c26d-4cd2-81d9-d4fac23c42bb",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/b0ca1b07-e1fe-11f1-b93b-3295cab7105d",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/roles/b07bdff2-e1fe-11f1-89f9-da7ad0900002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Delete an HCP Terraform persona mapping returns \"No Content\" response",
       "version": "v2"
     },
     {
@@ -1505,6 +2029,234 @@
     },
     {
       "feature": "Cloud Authentication",
+      "frozen_at": "2026-11-16T20:45:53.982Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/wif/terraform/persona_mapping/00000000-0000-0000-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get an HCP Terraform persona mapping returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "frozen_at": "2026-11-16T20:45:54.061Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Get_an_HCP_Terraform_persona_mapping_returns_OK_response-1794861954"
+                  },
+                  "type": "roles"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/roles",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"b77ba486-e1fe-11f1-8281-da7ad0900002\",\"type\":\"roles\",\"attributes\":{\"created_at\":\"2026-11-16T20:45:54.146015Z\",\"modified_at\":\"2026-11-16T20:45:54.146989Z\",\"name\":\"Test-Get_an_HCP_Terraform_persona_mapping_returns_OK_response-1794861954\",\"team_count\":0,\"user_count\":0},\"relationships\":{\"permissions\":{\"data\":[{\"id\":\"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2\",\"type\":\"permissions\"},{\"id\":\"4441648c-d8b1-11e9-a77a-1b899a04b304\",\"type\":\"permissions\"},{\"id\":\"417ba636-2dce-11eb-84c0-6bce5b0d9de0\",\"type\":\"permissions\"},{\"id\":\"12efc20e-d36c-11eb-a9b8-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"df71ef13-d5c6-11eb-aa97-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"df71ef14-d5c6-11eb-aa97-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"df71ef12-d5c6-11eb-aa97-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"7605ef24-f376-11eb-b90b-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"b6bf9ac6-9a59-11ec-8480-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"930087f2-d533-11ec-ae05-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"f8e941cf-e746-11ec-b22d-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"6c5ad874-7aff-11ed-a5cd-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"535680c8-3dee-11ee-b07a-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"a8b4d6e8-4ea4-11ee-b482-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"50c270de-69ee-11ee-9151-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"87d927dc-0329-11ef-a3a8-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"328c0d5a-73c9-11f0-bc76-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"836e096c-7d42-11f0-93b5-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"ccca47e0-a54e-11f0-aeb0-da7ad0900002\",\"type\":\"permissions\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-Get_an_HCP_Terraform_persona_mapping_returns_OK_response-1794861954@datadoghq.com",
+                    "service_account": true
+                  },
+                  "relationships": {
+                    "roles": {
+                      "data": [
+                        {
+                          "id": "b77ba486-e1fe-11f1-8281-da7ad0900002",
+                          "type": "roles"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/service_accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"b7999b1b-e1fe-11f1-a922-52bd42c1dbd7\",\"attributes\":{\"uuid\":\"b7999b1b-e1fe-11f1-a922-52bd42c1dbd7\",\"name\":null,\"handle\":\"b7999b1b-e1fe-11f1-a922-52bd42c1dbd7\",\"created_at\":\"2026-11-16T20:45:54.343643+00:00\",\"modified_at\":\"2026-11-16T20:45:54.343643+00:00\",\"email\":\"test-get_an_hcp_terraform_persona_mapping_returns_ok_response-1794861954@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/a757b2d5ff87242b7c83395ca2302be0?s=48&d=retro\",\"title\":null,\"verified\":true,\"service_account\":true,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Active\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[{\"type\":\"roles\",\"id\":\"b77ba486-e1fe-11f1-8281-da7ad0900002\"}]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}},\"included\":[{\"type\":\"roles\",\"id\":\"b77ba486-e1fe-11f1-8281-da7ad0900002\",\"attributes\":{\"name\":\"Test-Get_an_HCP_Terraform_persona_mapping_returns_OK_response-1794861954\",\"managed\":false,\"created_at\":\"2026-11-16T20:45:54.146015+00:00\",\"modified_at\":\"2026-11-16T20:45:54.146989+00:00\"},\"relationships\":{\"permissions\":{\"data\":[{\"type\":\"permissions\",\"id\":\"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2\"},{\"type\":\"permissions\",\"id\":\"4441648c-d8b1-11e9-a77a-1b899a04b304\"},{\"type\":\"permissions\",\"id\":\"417ba636-2dce-11eb-84c0-6bce5b0d9de0\"},{\"type\":\"permissions\",\"id\":\"12efc20e-d36c-11eb-a9b8-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"7605ef24-f376-11eb-b90b-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"b6bf9ac6-9a59-11ec-8480-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"f8e941cf-e746-11ec-b22d-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"6c5ad874-7aff-11ed-a5cd-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"a8b4d6e8-4ea4-11ee-b482-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"50c270de-69ee-11ee-9151-da7ad0900002\"}]}}},{\"type\":\"permissions\",\"id\":\"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2\",\"attributes\":{\"name\":\"dashboards_read\",\"display_name\":\"Dashboards Read\",\"description\":\"View dashboards.\",\"created\":\"2019-09-10T14:39:51.955175+00:00\",\"group_name\":\"Dashboards\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"4441648c-d8b1-11e9-a77a-1b899a04b304\",\"attributes\":{\"name\":\"monitors_read\",\"display_name\":\"Monitors Read\",\"description\":\"View monitors.\",\"created\":\"2019-09-16T18:39:07.744297+00:00\",\"group_name\":\"Monitors\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"417ba636-2dce-11eb-84c0-6bce5b0d9de0\",\"attributes\":{\"name\":\"apm_read\",\"display_name\":\"APM Read\",\"description\":\"Read and query APM and Trace Analytics.\",\"created\":\"2020-11-23T20:55:45.006110+00:00\",\"group_name\":\"APM\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"12efc20e-d36c-11eb-a9b8-da7ad0900002\",\"attributes\":{\"name\":\"incident_read\",\"display_name\":\"Incidents Read\",\"description\":\"View incidents in Datadog.\",\"created\":\"2021-06-22T15:11:09.255499+00:00\",\"group_name\":\"Work and Incident Management\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"7605ef24-f376-11eb-b90b-da7ad0900002\",\"attributes\":{\"name\":\"rum_apps_read\",\"display_name\":\"RUM Apps Read\",\"description\":\"View RUM Applications data.\",\"created\":\"2021-08-02T09:46:07.671535+00:00\",\"group_name\":\"Real User Monitoring\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"b6bf9ac6-9a59-11ec-8480-da7ad0900002\",\"attributes\":{\"name\":\"notebooks_read\",\"display_name\":\"Notebooks Read\",\"description\":\"View notebooks.\",\"created\":\"2022-03-02T18:51:05.040950+00:00\",\"group_name\":\"Notebooks\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"f8e941cf-e746-11ec-b22d-da7ad0900002\",\"attributes\":{\"name\":\"slos_read\",\"display_name\":\"SLOs Read\",\"description\":\"View SLOs and status corrections.\",\"created\":\"2022-06-08T16:20:55.142591+00:00\",\"group_name\":\"Service Level Objectives\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"6c5ad874-7aff-11ed-a5cd-da7ad0900002\",\"attributes\":{\"name\":\"ci_visibility_read\",\"display_name\":\"CI Visibility Read\",\"description\":\"View CI Visibility.\",\"created\":\"2022-12-13T16:01:37.149406+00:00\",\"group_name\":\"Software Delivery\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"a8b4d6e8-4ea4-11ee-b482-da7ad0900002\",\"attributes\":{\"name\":\"cd_visibility_read\",\"display_name\":\"CD Visibility Read\",\"description\":\"View CD Visibility.\",\"created\":\"2023-09-09T00:06:00.708335+00:00\",\"group_name\":\"Software Delivery\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"50c270de-69ee-11ee-9151-da7ad0900002\",\"attributes\":{\"name\":\"appsec_vm_read\",\"display_name\":\"Vulnerability Management Read\",\"description\":\"View infrastructure, application code and library vulnerabilities. This does not restrict access to the vulnerability data source through the API or inventory SQL.\",\"created\":\"2023-10-13T17:31:17.311029+00:00\",\"group_name\":\"Cloud Security Platform\",\"display_type\":\"read\",\"restricted\":true}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "account_identifier": "test-get_an_hcp_terraform_persona_mapping_returns_ok_response-1794861954@datadoghq.com",
+                    "issuer_url": "https://app.terraform.io",
+                    "sub_pattern": "organization:datadog-api-spec:project:Default Project:workspace:sdk-testgetanhcpterraformpersonamappingreturnsokresponse1794861954:run_phase:*"
+                  },
+                  "type": "terraform_cloud_auth_config"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/wif/terraform/persona_mapping",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"0c034f48-7440-4d8c-8a57-470b1212de0e\",\"type\":\"terraform_cloud_auth_config\",\"attributes\":{\"account_identifier\":\"b7999b1b-e1fe-11f1-a922-52bd42c1dbd7\",\"account_uuid\":\"b7999b1b-e1fe-11f1-a922-52bd42c1dbd7\",\"audience\":\"datadog/4dee724d-00cc-11ea-a77b-570c9d03c6c5\",\"issuer_url\":\"https://app.terraform.io\",\"sub_pattern\":\"organization:datadog-api-spec:project:Default Project:workspace:sdk-testgetanhcpterraformpersonamappingreturnsokresponse1794861954:run_phase:*\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/wif/terraform/persona_mapping/0c034f48-7440-4d8c-8a57-470b1212de0e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"0c034f48-7440-4d8c-8a57-470b1212de0e\",\"type\":\"terraform_cloud_auth_config\",\"attributes\":{\"account_identifier\":\"b7999b1b-e1fe-11f1-a922-52bd42c1dbd7\",\"account_uuid\":\"b7999b1b-e1fe-11f1-a922-52bd42c1dbd7\",\"audience\":\"datadog/4dee724d-00cc-11ea-a77b-570c9d03c6c5\",\"issuer_url\":\"https://app.terraform.io\",\"sub_pattern\":\"organization:datadog-api-spec:project:Default Project:workspace:sdk-testgetanhcpterraformpersonamappingreturnsokresponse1794861954:run_phase:*\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/wif/terraform/persona_mapping/0c034f48-7440-4d8c-8a57-470b1212de0e",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/b7999b1b-e1fe-11f1-a922-52bd42c1dbd7",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/roles/b77ba486-e1fe-11f1-8281-da7ad0900002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get an HCP Terraform persona mapping returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
       "frozen_at": "2026-10-29T17:42:01.510Z",
       "interactions": [
         {
@@ -1606,6 +2358,203 @@
         }
       ],
       "scenario": "List AWS cloud authentication intake mappings returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "frozen_at": "2026-11-16T20:46:05.239Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-List_HCP_Terraform_persona_mappings_returns_OK_response-1794861965"
+                  },
+                  "type": "roles"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/roles",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"be282714-e1fe-11f1-a4f2-da7ad0900002\",\"type\":\"roles\",\"attributes\":{\"created_at\":\"2026-11-16T20:46:05.342951Z\",\"modified_at\":\"2026-11-16T20:46:05.343882Z\",\"name\":\"Test-List_HCP_Terraform_persona_mappings_returns_OK_response-1794861965\",\"team_count\":0,\"user_count\":0},\"relationships\":{\"permissions\":{\"data\":[{\"id\":\"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2\",\"type\":\"permissions\"},{\"id\":\"4441648c-d8b1-11e9-a77a-1b899a04b304\",\"type\":\"permissions\"},{\"id\":\"417ba636-2dce-11eb-84c0-6bce5b0d9de0\",\"type\":\"permissions\"},{\"id\":\"12efc20e-d36c-11eb-a9b8-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"df71ef13-d5c6-11eb-aa97-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"df71ef14-d5c6-11eb-aa97-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"df71ef12-d5c6-11eb-aa97-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"7605ef24-f376-11eb-b90b-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"b6bf9ac6-9a59-11ec-8480-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"930087f2-d533-11ec-ae05-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"f8e941cf-e746-11ec-b22d-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"6c5ad874-7aff-11ed-a5cd-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"535680c8-3dee-11ee-b07a-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"a8b4d6e8-4ea4-11ee-b482-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"50c270de-69ee-11ee-9151-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"87d927dc-0329-11ef-a3a8-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"328c0d5a-73c9-11f0-bc76-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"836e096c-7d42-11f0-93b5-da7ad0900002\",\"type\":\"permissions\"},{\"id\":\"ccca47e0-a54e-11f0-aeb0-da7ad0900002\",\"type\":\"permissions\"}]}}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "email": "Test-List_HCP_Terraform_persona_mappings_returns_OK_response-1794861965@datadoghq.com",
+                    "service_account": true
+                  },
+                  "relationships": {
+                    "roles": {
+                      "data": [
+                        {
+                          "id": "be282714-e1fe-11f1-a4f2-da7ad0900002",
+                          "type": "roles"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "users"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/service_accounts",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"type\":\"users\",\"id\":\"be47e8f8-e1fe-11f1-91dd-26f07123dec3\",\"attributes\":{\"uuid\":\"be47e8f8-e1fe-11f1-91dd-26f07123dec3\",\"name\":null,\"handle\":\"be47e8f8-e1fe-11f1-91dd-26f07123dec3\",\"created_at\":\"2026-11-16T20:46:05.552299+00:00\",\"modified_at\":\"2026-11-16T20:46:05.552299+00:00\",\"email\":\"test-list_hcp_terraform_persona_mappings_returns_ok_response-1794861965@datadoghq.com\",\"icon\":\"https://secure.gravatar.com/avatar/0c8ea0328fb5f7e81b77c82a6a9dba12?s=48&d=retro\",\"title\":null,\"verified\":true,\"service_account\":true,\"disabled\":false,\"allowed_login_methods\":[],\"status\":\"Active\",\"last_login_time\":null},\"relationships\":{\"roles\":{\"data\":[{\"type\":\"roles\",\"id\":\"be282714-e1fe-11f1-a4f2-da7ad0900002\"}]},\"org\":{\"data\":{\"type\":\"orgs\",\"id\":\"4dee724d-00cc-11ea-a77b-570c9d03c6c5\"}}}},\"included\":[{\"type\":\"roles\",\"id\":\"be282714-e1fe-11f1-a4f2-da7ad0900002\",\"attributes\":{\"name\":\"Test-List_HCP_Terraform_persona_mappings_returns_OK_response-1794861965\",\"managed\":false,\"created_at\":\"2026-11-16T20:46:05.342951+00:00\",\"modified_at\":\"2026-11-16T20:46:05.343882+00:00\"},\"relationships\":{\"permissions\":{\"data\":[{\"type\":\"permissions\",\"id\":\"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2\"},{\"type\":\"permissions\",\"id\":\"4441648c-d8b1-11e9-a77a-1b899a04b304\"},{\"type\":\"permissions\",\"id\":\"417ba636-2dce-11eb-84c0-6bce5b0d9de0\"},{\"type\":\"permissions\",\"id\":\"12efc20e-d36c-11eb-a9b8-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"7605ef24-f376-11eb-b90b-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"b6bf9ac6-9a59-11ec-8480-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"f8e941cf-e746-11ec-b22d-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"6c5ad874-7aff-11ed-a5cd-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"a8b4d6e8-4ea4-11ee-b482-da7ad0900002\"},{\"type\":\"permissions\",\"id\":\"50c270de-69ee-11ee-9151-da7ad0900002\"}]}}},{\"type\":\"permissions\",\"id\":\"d90f6830-d3d8-11e9-a77a-b3404e5e9ee2\",\"attributes\":{\"name\":\"dashboards_read\",\"display_name\":\"Dashboards Read\",\"description\":\"View dashboards.\",\"created\":\"2019-09-10T14:39:51.955175+00:00\",\"group_name\":\"Dashboards\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"4441648c-d8b1-11e9-a77a-1b899a04b304\",\"attributes\":{\"name\":\"monitors_read\",\"display_name\":\"Monitors Read\",\"description\":\"View monitors.\",\"created\":\"2019-09-16T18:39:07.744297+00:00\",\"group_name\":\"Monitors\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"417ba636-2dce-11eb-84c0-6bce5b0d9de0\",\"attributes\":{\"name\":\"apm_read\",\"display_name\":\"APM Read\",\"description\":\"Read and query APM and Trace Analytics.\",\"created\":\"2020-11-23T20:55:45.006110+00:00\",\"group_name\":\"APM\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"12efc20e-d36c-11eb-a9b8-da7ad0900002\",\"attributes\":{\"name\":\"incident_read\",\"display_name\":\"Incidents Read\",\"description\":\"View incidents in Datadog.\",\"created\":\"2021-06-22T15:11:09.255499+00:00\",\"group_name\":\"Work and Incident Management\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"7605ef24-f376-11eb-b90b-da7ad0900002\",\"attributes\":{\"name\":\"rum_apps_read\",\"display_name\":\"RUM Apps Read\",\"description\":\"View RUM Applications data.\",\"created\":\"2021-08-02T09:46:07.671535+00:00\",\"group_name\":\"Real User Monitoring\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"b6bf9ac6-9a59-11ec-8480-da7ad0900002\",\"attributes\":{\"name\":\"notebooks_read\",\"display_name\":\"Notebooks Read\",\"description\":\"View notebooks.\",\"created\":\"2022-03-02T18:51:05.040950+00:00\",\"group_name\":\"Notebooks\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"f8e941cf-e746-11ec-b22d-da7ad0900002\",\"attributes\":{\"name\":\"slos_read\",\"display_name\":\"SLOs Read\",\"description\":\"View SLOs and status corrections.\",\"created\":\"2022-06-08T16:20:55.142591+00:00\",\"group_name\":\"Service Level Objectives\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"6c5ad874-7aff-11ed-a5cd-da7ad0900002\",\"attributes\":{\"name\":\"ci_visibility_read\",\"display_name\":\"CI Visibility Read\",\"description\":\"View CI Visibility.\",\"created\":\"2022-12-13T16:01:37.149406+00:00\",\"group_name\":\"Software Delivery\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"a8b4d6e8-4ea4-11ee-b482-da7ad0900002\",\"attributes\":{\"name\":\"cd_visibility_read\",\"display_name\":\"CD Visibility Read\",\"description\":\"View CD Visibility.\",\"created\":\"2023-09-09T00:06:00.708335+00:00\",\"group_name\":\"Software Delivery\",\"display_type\":\"read\",\"restricted\":true}},{\"type\":\"permissions\",\"id\":\"50c270de-69ee-11ee-9151-da7ad0900002\",\"attributes\":{\"name\":\"appsec_vm_read\",\"display_name\":\"Vulnerability Management Read\",\"description\":\"View infrastructure, application code and library vulnerabilities. This does not restrict access to the vulnerability data source through the API or inventory SQL.\",\"created\":\"2023-10-13T17:31:17.311029+00:00\",\"group_name\":\"Cloud Security Platform\",\"display_type\":\"read\",\"restricted\":true}}]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "account_identifier": "test-list_hcp_terraform_persona_mappings_returns_ok_response-1794861965@datadoghq.com",
+                    "issuer_url": "https://app.terraform.io",
+                    "sub_pattern": "organization:datadog-api-spec:project:Default Project:workspace:sdk-testlisthcpterraformpersonamappingsreturnsokresponse1794861965:run_phase:*"
+                  },
+                  "type": "terraform_cloud_auth_config"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/wif/terraform/persona_mapping",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"0702ef74-934f-440b-ab3e-e87106ac14d8\",\"type\":\"terraform_cloud_auth_config\",\"attributes\":{\"account_identifier\":\"be47e8f8-e1fe-11f1-91dd-26f07123dec3\",\"account_uuid\":\"be47e8f8-e1fe-11f1-91dd-26f07123dec3\",\"audience\":\"datadog/4dee724d-00cc-11ea-a77b-570c9d03c6c5\",\"issuer_url\":\"https://app.terraform.io\",\"sub_pattern\":\"organization:datadog-api-spec:project:Default Project:workspace:sdk-testlisthcpterraformpersonamappingsreturnsokresponse1794861965:run_phase:*\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/wif/terraform/persona_mapping",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"0702ef74-934f-440b-ab3e-e87106ac14d8\",\"type\":\"terraform_cloud_auth_config\",\"attributes\":{\"account_identifier\":\"be47e8f8-e1fe-11f1-91dd-26f07123dec3\",\"account_uuid\":\"be47e8f8-e1fe-11f1-91dd-26f07123dec3\",\"audience\":\"datadog/4dee724d-00cc-11ea-a77b-570c9d03c6c5\",\"issuer_url\":\"https://app.terraform.io\",\"sub_pattern\":\"organization:datadog-api-spec:project:Default Project:workspace:sdk-testlisthcpterraformpersonamappingsreturnsokresponse1794861965:run_phase:*\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/wif/terraform/persona_mapping/0702ef74-934f-440b-ab3e-e87106ac14d8",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/users/be47e8f8-e1fe-11f1-91dd-26f07123dec3",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/roles/be282714-e1fe-11f1-a4f2-da7ad0900002",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "List HCP Terraform persona mappings returns \"OK\" response",
       "version": "v2"
     },
     {

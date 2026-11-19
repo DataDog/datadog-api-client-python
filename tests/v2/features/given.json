@@ -2381,6 +2381,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\"data\": {\"type\": \"terraform_cloud_auth_config\", \"attributes\": {\"issuer_url\": \"https://app.terraform.io\", \"sub_pattern\": \"organization:datadog-api-spec:project:Default Project:workspace:sdk-{{ unique_lower_alnum }}:run_phase:*\", \"account_identifier\": \"{{ service_account_user_with_role.data.attributes.email }}\"}}}"
+      }
+    ],
+    "step": "there is a valid \"terraform_cloud_auth_persona_mapping\" in the system",
+    "key": "terraform_cloud_auth_persona_mapping",
+    "tag": "Cloud Authentication",
+    "operationId": "CreateTerraformCloudAuthPersonaMapping"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\n  \"data\": {\n    \"type\": \"workflows\",\n    \"attributes\": {\n        \"name\": \"Cassette Workflow x-given\",\n        \"runAs\": {\"type\": \"owner\"},\n        \"spec\": {\n            \"triggers\": [\n                {\n                    \"startStepNames\": [\"No_op\"],\n                    \"workflowTrigger\": {}\n                }\n            ],\n            \"steps\": [\n              {\n                \"name\": \"No_op\",\n                \"actionId\": \"com.datadoghq.core.noop\"\n              }\n            ]\n        }\n    }\n  }\n}"
       }
     ],

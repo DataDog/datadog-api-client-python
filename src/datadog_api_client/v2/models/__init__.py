@@ -13632,6 +13632,29 @@ from datadog_api_client.v2.model.tenancy_products_data_attributes_products_items
 )
 from datadog_api_client.v2.model.tenancy_products_data_type import TenancyProductsDataType
 from datadog_api_client.v2.model.tenancy_products_list import TenancyProductsList
+from datadog_api_client.v2.model.terraform_cloud_auth_issuer_url import TerraformCloudAuthIssuerURL
+from datadog_api_client.v2.model.terraform_cloud_auth_persona_mapping_attributes_response import (
+    TerraformCloudAuthPersonaMappingAttributesResponse,
+)
+from datadog_api_client.v2.model.terraform_cloud_auth_persona_mapping_create_attributes import (
+    TerraformCloudAuthPersonaMappingCreateAttributes,
+)
+from datadog_api_client.v2.model.terraform_cloud_auth_persona_mapping_create_data import (
+    TerraformCloudAuthPersonaMappingCreateData,
+)
+from datadog_api_client.v2.model.terraform_cloud_auth_persona_mapping_create_request import (
+    TerraformCloudAuthPersonaMappingCreateRequest,
+)
+from datadog_api_client.v2.model.terraform_cloud_auth_persona_mapping_data_response import (
+    TerraformCloudAuthPersonaMappingDataResponse,
+)
+from datadog_api_client.v2.model.terraform_cloud_auth_persona_mapping_response import (
+    TerraformCloudAuthPersonaMappingResponse,
+)
+from datadog_api_client.v2.model.terraform_cloud_auth_persona_mapping_type import TerraformCloudAuthPersonaMappingType
+from datadog_api_client.v2.model.terraform_cloud_auth_persona_mappings_response import (
+    TerraformCloudAuthPersonaMappingsResponse,
+)
 from datadog_api_client.v2.model.test_optimization_delete_service_settings_request import (
     TestOptimizationDeleteServiceSettingsRequest,
 )
@@ -23492,6 +23515,15 @@ __all__ = [
     "TenancyProductsDataAttributesProductsItems",
     "TenancyProductsDataType",
     "TenancyProductsList",
+    "TerraformCloudAuthIssuerURL",
+    "TerraformCloudAuthPersonaMappingAttributesResponse",
+    "TerraformCloudAuthPersonaMappingCreateAttributes",
+    "TerraformCloudAuthPersonaMappingCreateData",
+    "TerraformCloudAuthPersonaMappingCreateRequest",
+    "TerraformCloudAuthPersonaMappingDataResponse",
+    "TerraformCloudAuthPersonaMappingResponse",
+    "TerraformCloudAuthPersonaMappingType",
+    "TerraformCloudAuthPersonaMappingsResponse",
     "TestOptimizationDeleteServiceSettingsRequest",
     "TestOptimizationDeleteServiceSettingsRequestAttributes",
     "TestOptimizationDeleteServiceSettingsRequestData",

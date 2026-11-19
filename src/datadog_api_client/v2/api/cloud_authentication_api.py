@@ -44,11 +44,20 @@ from datadog_api_client.v2.model.oidc_cloud_auth_persona_mapping_create_request 
 from datadog_api_client.v2.model.oidc_cloud_auth_providers_response import OIDCCloudAuthProvidersResponse
 from datadog_api_client.v2.model.oidc_cloud_auth_provider_response import OIDCCloudAuthProviderResponse
 from datadog_api_client.v2.model.oidc_cloud_auth_provider_create_request import OIDCCloudAuthProviderCreateRequest
+from datadog_api_client.v2.model.terraform_cloud_auth_persona_mappings_response import (
+    TerraformCloudAuthPersonaMappingsResponse,
+)
+from datadog_api_client.v2.model.terraform_cloud_auth_persona_mapping_response import (
+    TerraformCloudAuthPersonaMappingResponse,
+)
+from datadog_api_client.v2.model.terraform_cloud_auth_persona_mapping_create_request import (
+    TerraformCloudAuthPersonaMappingCreateRequest,
+)
 
 
 class CloudAuthenticationApi:
     """
-    Configure AWS, GitHub, and Custom OIDC cloud authentication for persona and intake authentication through the Datadog API.
+    Configure AWS, GitHub, HCP Terraform, and Custom OIDC cloud authentication for persona and intake authentication through the Datadog API.
     """
 
     def __init__(self, api_client=None):
@@ -169,6 +178,26 @@ class CloudAuthenticationApi:
                 "body": {
                     "required": True,
                     "openapi_types": (OIDCCloudAuthProviderCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._create_terraform_cloud_auth_persona_mapping_endpoint = _Endpoint(
+            settings={
+                "response_type": (TerraformCloudAuthPersonaMappingResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/wif/terraform/persona_mapping",
+                "operation_id": "create_terraform_cloud_auth_persona_mapping",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (TerraformCloudAuthPersonaMappingCreateRequest,),
                     "location": "body",
                 },
             },
@@ -305,6 +334,29 @@ class CloudAuthenticationApi:
                     "required": True,
                     "openapi_types": (UUID,),
                     "attribute": "provider_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_terraform_cloud_auth_persona_mapping_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/wif/terraform/persona_mapping/{persona_mapping_id}",
+                "operation_id": "delete_terraform_cloud_auth_persona_mapping",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "persona_mapping_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "persona_mapping_id",
                     "location": "path",
                 },
             },
@@ -452,6 +504,29 @@ class CloudAuthenticationApi:
             api_client=api_client,
         )
 
+        self._get_terraform_cloud_auth_persona_mapping_endpoint = _Endpoint(
+            settings={
+                "response_type": (TerraformCloudAuthPersonaMappingResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/wif/terraform/persona_mapping/{persona_mapping_id}",
+                "operation_id": "get_terraform_cloud_auth_persona_mapping",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "persona_mapping_id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "persona_mapping_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_aws_cloud_auth_intake_mappings_endpoint = _Endpoint(
             settings={
                 "response_type": (AWSCloudAuthIntakeMappingsResponse,),
@@ -538,6 +613,22 @@ class CloudAuthenticationApi:
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/wif/oidc/provider",
                 "operation_id": "list_oidc_cloud_auth_providers",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_terraform_cloud_auth_persona_mappings_endpoint = _Endpoint(
+            settings={
+                "response_type": (TerraformCloudAuthPersonaMappingsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/wif/terraform/persona_mapping",
+                "operation_id": "list_terraform_cloud_auth_persona_mappings",
                 "http_method": "GET",
                 "version": "v2",
             },
@@ -644,6 +735,24 @@ class CloudAuthenticationApi:
 
         return self._create_oidc_cloud_auth_provider_endpoint.call_with_http_info(**kwargs)
 
+    def create_terraform_cloud_auth_persona_mapping(
+        self,
+        body: TerraformCloudAuthPersonaMappingCreateRequest,
+    ) -> TerraformCloudAuthPersonaMappingResponse:
+        """Create an HCP Terraform persona mapping.
+
+        Create an HCP Terraform persona mapping. The mapping associates a Datadog user or service account with workload identity tokens from an HCP Terraform issuer whose ``sub`` claim matches ``sub_pattern``.
+
+        The response includes the ``audience`` value to set as the ``TFC_WORKLOAD_IDENTITY_AUDIENCE_DATADOG`` environment variable in HCP Terraform. The API returns a 409 error if the pattern duplicates an existing mapping, or if it can match the same token as an existing mapping for a different account.
+
+        :type body: TerraformCloudAuthPersonaMappingCreateRequest
+        :rtype: TerraformCloudAuthPersonaMappingResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_terraform_cloud_auth_persona_mapping_endpoint.call_with_http_info(**kwargs)
+
     def delete_aws_cloud_auth_intake_mapping(
         self,
         intake_mapping_id: str,
@@ -745,6 +854,23 @@ class CloudAuthenticationApi:
         kwargs["provider_id"] = provider_id
 
         return self._delete_oidc_cloud_auth_provider_endpoint.call_with_http_info(**kwargs)
+
+    def delete_terraform_cloud_auth_persona_mapping(
+        self,
+        persona_mapping_id: str,
+    ) -> None:
+        """Delete an HCP Terraform persona mapping.
+
+        Delete an HCP Terraform persona mapping by ID. Workload identity tokens that matched only this mapping can no longer be exchanged.
+
+        :param persona_mapping_id: The ID of the persona mapping
+        :type persona_mapping_id: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["persona_mapping_id"] = persona_mapping_id
+
+        return self._delete_terraform_cloud_auth_persona_mapping_endpoint.call_with_http_info(**kwargs)
 
     def get_aws_cloud_auth_intake_mapping(
         self,
@@ -848,6 +974,23 @@ class CloudAuthenticationApi:
 
         return self._get_oidc_cloud_auth_provider_endpoint.call_with_http_info(**kwargs)
 
+    def get_terraform_cloud_auth_persona_mapping(
+        self,
+        persona_mapping_id: str,
+    ) -> TerraformCloudAuthPersonaMappingResponse:
+        """Get an HCP Terraform persona mapping.
+
+        Get an HCP Terraform persona mapping by ID.
+
+        :param persona_mapping_id: The ID of the persona mapping
+        :type persona_mapping_id: str
+        :rtype: TerraformCloudAuthPersonaMappingResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["persona_mapping_id"] = persona_mapping_id
+
+        return self._get_terraform_cloud_auth_persona_mapping_endpoint.call_with_http_info(**kwargs)
+
     def list_aws_cloud_auth_intake_mappings(
         self,
     ) -> AWSCloudAuthIntakeMappingsResponse:
@@ -919,3 +1062,15 @@ class CloudAuthenticationApi:
         """
         kwargs: Dict[str, Any] = {}
         return self._list_oidc_cloud_auth_providers_endpoint.call_with_http_info(**kwargs)
+
+    def list_terraform_cloud_auth_persona_mappings(
+        self,
+    ) -> TerraformCloudAuthPersonaMappingsResponse:
+        """List HCP Terraform persona mappings.
+
+        List all HCP Terraform persona mappings in the organization. Each mapping associates an HCP Terraform workload identity token issuer and ``sub`` claim pattern with a Datadog user or service account.
+
+        :rtype: TerraformCloudAuthPersonaMappingsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_terraform_cloud_auth_persona_mappings_endpoint.call_with_http_info(**kwargs)
