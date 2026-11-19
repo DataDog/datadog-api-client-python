@@ -1,0 +1,50 @@
+{
+  "api": "Experiments",
+  "expected_status": 409,
+  "feature": "Experiments",
+  "id": "v2/Experiments/Stop bandit returns \"The bandit isn't running or paused, its flag environment requires an approval, or a pending change request touches the flag's targeting rules. Retrying alone does not resolve an approval requirement.\" response",
+  "operation_id": "StopBandit",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ExperimentsStopBanditV2Request",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "served_variant_key": "{{ feature_flag.data.attributes.variants[1].key }}"
+          },
+          "type": "stop-bandit-request"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "bandit_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "bandit.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/experiments/bandits/{bandit_id}/stop"
+  },
+  "scenario": "Stop bandit returns \"The bandit isn't running or paused, its flag environment requires an approval, or a pending change request touches the flag's targeting rules. Retrying alone does not resolve an approval requirement.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -3,12 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    none_type,
     UUID,
 )
 
@@ -33,7 +34,9 @@ class ExperimentsBanditPolicyV2(ModelNormal):
             "config_version": (int,),
             "id": (UUID,),
             "kind": (ExperimentsBanditPolicyKind,),
+            "policy_number": (int,),
             "reason": (ExperimentsBanditPolicyReason,),
+            "refresh_id": (UUID, none_type),
             "variants": ([ExperimentsBanditPolicyVariantV2],),
         }
 
@@ -42,7 +45,9 @@ class ExperimentsBanditPolicyV2(ModelNormal):
         "config_version": "config_version",
         "id": "id",
         "kind": "kind",
+        "policy_number": "policy_number",
         "reason": "reason",
+        "refresh_id": "refresh_id",
         "variants": "variants",
     }
 
@@ -52,7 +57,9 @@ class ExperimentsBanditPolicyV2(ModelNormal):
         config_version: int,
         id: UUID,
         kind: ExperimentsBanditPolicyKind,
+        policy_number: int,
         reason: ExperimentsBanditPolicyReason,
+        refresh_id: Union[UUID, none_type],
         variants: List[ExperimentsBanditPolicyVariantV2],
         **kwargs,
     ):
@@ -71,8 +78,14 @@ class ExperimentsBanditPolicyV2(ModelNormal):
         :param kind: ``WARMUP`` serves the arms equally. ``ADAPTIVE`` serves the initial split or a split from a refresh. ``FALLBACK`` serves one variant after the bandit ends.
         :type kind: ExperimentsBanditPolicyKind
 
+        :param policy_number: The policy's place in the bandit's policy history. It follows ``applied_at`` and orders policies saved at the same time.
+        :type policy_number: int
+
         :param reason: Why the policy was applied.
         :type reason: ExperimentsBanditPolicyReason
+
+        :param refresh_id: The refresh that proposed the policy. ``null`` for policies no refresh proposed, such as the first split and the policy served after the bandit ends.
+        :type refresh_id: UUID, none_type
 
         :param variants: Each variant's share of traffic. The probabilities add up to 1.
         :type variants: [ExperimentsBanditPolicyVariantV2]
@@ -83,5 +96,7 @@ class ExperimentsBanditPolicyV2(ModelNormal):
         self_.config_version = config_version
         self_.id = id
         self_.kind = kind
+        self_.policy_number = policy_number
         self_.reason = reason
+        self_.refresh_id = refresh_id
         self_.variants = variants

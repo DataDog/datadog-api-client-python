@@ -1,0 +1,35 @@
+{
+  "api": "Experiments",
+  "expected_status": 409,
+  "feature": "Experiments",
+  "id": "v2/Experiments/Pause bandit returns \"The bandit isn't running, or another change to it happened at the same time.\" response",
+  "operation_id": "PauseBandit",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "POST",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "bandit_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "bandit.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/experiments/bandits/{bandit_id}/pause"
+  },
+  "scenario": "Pause bandit returns \"The bandit isn't running, or another change to it happened at the same time.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -18,7 +18,14 @@ from datadog_api_client.v2.model.experiments_experiment_v2_dto import Experiment
 from datadog_api_client.v2.model.experiments_create_experiment_v2_request import ExperimentsCreateExperimentV2Request
 from datadog_api_client.v2.model.experiments_bandit_v2_list_dto_array import ExperimentsBanditV2ListDTOArray
 from datadog_api_client.v2.model.experiments_bandit_v2_dto import ExperimentsBanditV2DTO
+from datadog_api_client.v2.model.experiments_create_bandit_v2_request import ExperimentsCreateBanditV2Request
+from datadog_api_client.v2.model.experiments_patch_bandit_v2_request import ExperimentsPatchBanditV2Request
+from datadog_api_client.v2.model.experiments_bandit_policy_history_v2_dto_array import (
+    ExperimentsBanditPolicyHistoryV2DTOArray,
+)
+from datadog_api_client.v2.model.experiments_bandit_refresh_v2_dto import ExperimentsBanditRefreshV2DTO
 from datadog_api_client.v2.model.experiments_bandit_results_v2_dto import ExperimentsBanditResultsV2DTO
+from datadog_api_client.v2.model.experiments_stop_bandit_v2_request import ExperimentsStopBanditV2Request
 from datadog_api_client.v2.model.experiments_bandit_traffic_summary_v2_dto import ExperimentsBanditTrafficSummaryV2DTO
 from datadog_api_client.v2.model.experiments_exposure_sql_model_v2_dto_array import (
     ExperimentsExposureSQLModelV2DTOArray,
@@ -221,6 +228,26 @@ class ExperimentsApi:
             api_client=api_client,
         )
 
+        self._create_bandit_endpoint = _Endpoint(
+            settings={
+                "response_type": (ExperimentsBanditV2DTO,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/experiments/bandits",
+                "operation_id": "create_bandit",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (ExperimentsCreateBanditV2Request,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._create_experiment_endpoint = _Endpoint(
             settings={
                 "response_type": (ExperimentsExperimentV2DTO,),
@@ -413,6 +440,29 @@ class ExperimentsApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._delete_bandit_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/experiments/bandits/{bandit_id}",
+                "operation_id": "delete_bandit",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "bandit_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "bandit_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
             api_client=api_client,
         )
 
@@ -930,6 +980,54 @@ class ExperimentsApi:
             api_client=api_client,
         )
 
+        self._list_bandit_policies_endpoint = _Endpoint(
+            settings={
+                "response_type": (ExperimentsBanditPolicyHistoryV2DTOArray,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/experiments/bandits/{bandit_id}/policies",
+                "operation_id": "list_bandit_policies",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "bandit_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "bandit_id",
+                    "location": "path",
+                },
+                "filter_from": {
+                    "openapi_types": (datetime,),
+                    "attribute": "filter[from]",
+                    "location": "query",
+                },
+                "filter_to": {
+                    "openapi_types": (datetime,),
+                    "attribute": "filter[to]",
+                    "location": "query",
+                },
+                "page_offset": {
+                    "openapi_types": (int,),
+                    "attribute": "page[offset]",
+                    "location": "query",
+                },
+                "page_limit": {
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
+                    "location": "query",
+                },
+                "sort": {
+                    "openapi_types": (str,),
+                    "attribute": "sort",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_bandits_endpoint = _Endpoint(
             settings={
                 "response_type": (ExperimentsBanditV2ListDTOArray,),
@@ -1373,6 +1471,32 @@ class ExperimentsApi:
             api_client=api_client,
         )
 
+        self._patch_bandit_endpoint = _Endpoint(
+            settings={
+                "response_type": (ExperimentsBanditV2DTO,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/experiments/bandits/{bandit_id}",
+                "operation_id": "patch_bandit",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "bandit_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "bandit_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (ExperimentsPatchBanditV2Request,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._patch_experiment_endpoint = _Endpoint(
             settings={
                 "response_type": (ExperimentsPatchExperimentV2Response,),
@@ -1451,6 +1575,29 @@ class ExperimentsApi:
             api_client=api_client,
         )
 
+        self._pause_bandit_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/experiments/bandits/{bandit_id}/pause",
+                "operation_id": "pause_bandit",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "bandit_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "bandit_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._publish_experiment_protocol_endpoint = _Endpoint(
             settings={
                 "response_type": (ExperimentsPublicProtocolResponse,),
@@ -1466,6 +1613,34 @@ class ExperimentsApi:
                     "openapi_types": (UUID,),
                     "attribute": "protocol_id",
                     "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._refresh_bandit_endpoint = _Endpoint(
+            settings={
+                "response_type": (ExperimentsBanditRefreshV2DTO,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/experiments/bandits/{bandit_id}/refresh",
+                "operation_id": "refresh_bandit",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "bandit_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "bandit_id",
+                    "location": "path",
+                },
+                "full_refresh": {
+                    "openapi_types": (bool,),
+                    "attribute": "full_refresh",
+                    "location": "query",
                 },
             },
             headers_map={
@@ -1555,6 +1730,29 @@ class ExperimentsApi:
             api_client=api_client,
         )
 
+        self._resume_bandit_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/experiments/bandits/{bandit_id}/resume",
+                "operation_id": "resume_bandit",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "bandit_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "bandit_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._set_default_subject_type_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -1569,6 +1767,29 @@ class ExperimentsApi:
                     "required": True,
                     "openapi_types": (UUID,),
                     "attribute": "subject_type_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._start_bandit_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/experiments/bandits/{bandit_id}/start",
+                "operation_id": "start_bandit",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "bandit_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "bandit_id",
                     "location": "path",
                 },
             },
@@ -1596,6 +1817,32 @@ class ExperimentsApi:
                 },
                 "body": {
                     "openapi_types": (ExperimentsStartExperimentV2Request,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["*/*"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._stop_bandit_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/experiments/bandits/{bandit_id}/stop",
+                "operation_id": "stop_bandit",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "bandit_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "bandit_id",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (ExperimentsStopBanditV2Request,),
                     "location": "body",
                 },
             },
@@ -1883,6 +2130,22 @@ class ExperimentsApi:
 
         return self._conclude_experiment_endpoint.call_with_http_info(**kwargs)
 
+    def create_bandit(
+        self,
+        body: ExperimentsCreateBanditV2Request,
+    ) -> ExperimentsBanditV2DTO:
+        """Create bandit.
+
+        Create a draft bandit. ``name`` is required; you can set everything else now, or later with PATCH ``/api/v2/experiments/bandits/{bandit_id}``. A draft on a flag holds a targeting rule that doesn't serve traffic until the bandit starts. ``variants`` lists the flag variants the bandit uses by ``feature_flag_variant_id`` : ``is_active`` makes a variant an arm (the default), and ``is_fallback`` marks the variant served after a scheduled end. The server fills in each variant's ``key`` and ``name`` from the flag. A scheduled end needs a fallback. Setting ``datadog_flag_configuration`` or ``variants`` needs feature flag and environment read permissions and edit access to the flag. Whether the draft is ready to run is checked when it starts. Validation can return several field errors at once. This endpoint is not idempotent. Bandits must be enabled for the organization.
+
+        :type body: ExperimentsCreateBanditV2Request
+        :rtype: ExperimentsBanditV2DTO
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_bandit_endpoint.call_with_http_info(**kwargs)
+
     def create_experiment(
         self,
         body: ExperimentsCreateExperimentV2Request,
@@ -2037,6 +2300,23 @@ class ExperimentsApi:
         kwargs["body"] = body
 
         return self._create_subject_type_endpoint.call_with_http_info(**kwargs)
+
+    def delete_bandit(
+        self,
+        bandit_id: UUID,
+    ) -> None:
+        """Delete bandit.
+
+        Delete a bandit in any status, with its targeting rule, in one transaction. As with deleting an experiment, a running bandit's rule stops serving and traffic falls through to the flag's other rules; the flag can then be used by another bandit or experiment. After deletion the API no longer returns the bandit. Deleting a bandit cannot be undone. Bandits must be enabled for the organization.
+
+        :param bandit_id: The UUID of the bandit.
+        :type bandit_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["bandit_id"] = bandit_id
+
+        return self._delete_bandit_endpoint.call_with_http_info(**kwargs)
 
     def delete_experiment(
         self,
@@ -2446,6 +2726,54 @@ class ExperimentsApi:
         kwargs["subject_type_id"] = subject_type_id
 
         return self._get_subject_type_endpoint.call_with_http_info(**kwargs)
+
+    def list_bandit_policies(
+        self,
+        bandit_id: UUID,
+        *,
+        filter_from: Union[datetime, UnsetType] = unset,
+        filter_to: Union[datetime, UnsetType] = unset,
+        page_offset: Union[int, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+        sort: Union[str, UnsetType] = unset,
+    ) -> ExperimentsBanditPolicyHistoryV2DTOArray:
+        """List bandit policies.
+
+        List the policies a bandit has served, newest first by default, including the policy it serves after it ends. Each policy is the traffic split SDKs served from when it was applied until the next one. Exposures log the policy's ID as ``bandit.policy_id`` , so the history tells you the split behind each exposure. Exposures logged after the bandit ends have no policy ID. ``filter[from]`` and ``filter[to]`` keep the policies in effect during the range, including the one already in effect at ``filter[from]``. Bandits must be enabled for the organization.
+
+        :param bandit_id: The UUID of the bandit.
+        :type bandit_id: UUID
+        :param filter_from: Return only the policies in effect at or after this RFC 3339 time (inclusive), including the one already in effect at it.
+        :type filter_from: datetime, optional
+        :param filter_to: Return only the policies applied before this RFC 3339 time (exclusive).
+        :type filter_to: datetime, optional
+        :param page_offset: Number of results to skip for pagination. Defaults to 0 when omitted.
+        :type page_offset: int, optional
+        :param page_limit: Maximum number of results to return. Defaults to 25 when omitted, and is capped at 50 (larger values are clamped to 50). The response includes meta.page (with total) and pagination links.
+        :type page_limit: int, optional
+        :param sort: ``applied_at`` for oldest first, or ``-applied_at`` for newest first. Defaults to ``-applied_at``.
+        :type sort: str, optional
+        :rtype: ExperimentsBanditPolicyHistoryV2DTOArray
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["bandit_id"] = bandit_id
+
+        if filter_from is not unset:
+            kwargs["filter_from"] = filter_from
+
+        if filter_to is not unset:
+            kwargs["filter_to"] = filter_to
+
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        return self._list_bandit_policies_endpoint.call_with_http_info(**kwargs)
 
     def list_bandits(
         self,
@@ -2905,6 +3233,27 @@ class ExperimentsApi:
 
         return self._list_subject_types_endpoint.call_with_http_info(**kwargs)
 
+    def patch_bandit(
+        self,
+        bandit_id: UUID,
+        body: ExperimentsPatchBanditV2Request,
+    ) -> ExperimentsBanditV2DTO:
+        """Update bandit.
+
+        Update a bandit. Omitted attributes, including omitted fields of ``datadog_flag_configuration`` and ``bayesian_prior`` , are unchanged. ``variants`` , ``tags`` , and ``teams`` replace the stored lists. Setting a nullable attribute to ``null`` clears it; ``datadog_flag_configuration: null`` takes a draft off its flag. What can change depends on the status. A draft can change anything. A running or paused bandit can change its name, description, refresh schedule, scheduled end, prior, fallback (send the current arms in ``variants`` with a different ``is_fallback`` ), tags, and teams. A stopped or completed bandit can change only its tags and teams. Values that don't change can be sent again in any status. Setting ``datadog_flag_configuration`` or ``variants`` needs feature flag and environment read permissions and edit access to the flag. Validation can return several field errors at once: HTTP 400 if any is about invalid input, or 409 if all are status conflicts. Bandits must be enabled for the organization.
+
+        :param bandit_id: The UUID of the bandit.
+        :type bandit_id: UUID
+        :type body: ExperimentsPatchBanditV2Request
+        :rtype: ExperimentsBanditV2DTO
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["bandit_id"] = bandit_id
+
+        kwargs["body"] = body
+
+        return self._patch_bandit_endpoint.call_with_http_info(**kwargs)
+
     def patch_experiment(
         self,
         experiment_id: UUID,
@@ -3026,6 +3375,23 @@ class ExperimentsApi:
 
         return self._patch_subject_type_endpoint.call_with_http_info(**kwargs)
 
+    def pause_bandit(
+        self,
+        bandit_id: UUID,
+    ) -> None:
+        """Pause bandit.
+
+        Pause a running bandit. Its targeting rule keeps serving the current traffic split, and refreshes stop changing the split until the bandit is resumed. Pausing a bandit that isn't running returns 409. Bandits must be enabled for the organization.
+
+        :param bandit_id: The UUID of the bandit.
+        :type bandit_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["bandit_id"] = bandit_id
+
+        return self._pause_bandit_endpoint.call_with_http_info(**kwargs)
+
     def publish_experiment_protocol(
         self,
         protocol_id: UUID,
@@ -3044,6 +3410,30 @@ class ExperimentsApi:
         kwargs["protocol_id"] = protocol_id
 
         return self._publish_experiment_protocol_endpoint.call_with_http_info(**kwargs)
+
+    def refresh_bandit(
+        self,
+        bandit_id: UUID,
+        *,
+        full_refresh: Union[bool, UnsetType] = unset,
+    ) -> ExperimentsBanditRefreshV2DTO:
+        """Refresh bandit.
+
+        Start a refresh of a running bandit now, instead of waiting for its schedule. The refresh reads the bandit's latest data and saves new results. Outside warmup it also serves the traffic split it proposes, so it can change traffic. HTTP 202 confirms the refresh started, not that it finished. The response returns the refresh ID, which the bandit then reports as ``latest_refresh``. Bandits must be enabled for the organization.
+
+        :param bandit_id: The UUID of the bandit.
+        :type bandit_id: UUID
+        :param full_refresh: Recompute the bandit's whole history instead of updating its latest refresh; for example, after its exposure or metric data was backfilled. Defaults to ``false``.
+        :type full_refresh: bool, optional
+        :rtype: ExperimentsBanditRefreshV2DTO
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["bandit_id"] = bandit_id
+
+        if full_refresh is not unset:
+            kwargs["full_refresh"] = full_refresh
+
+        return self._refresh_bandit_endpoint.call_with_http_info(**kwargs)
 
     def refresh_experiment_results(
         self,
@@ -3120,6 +3510,23 @@ class ExperimentsApi:
 
         return self._replace_experiment_protocol_endpoint.call_with_http_info(**kwargs)
 
+    def resume_bandit(
+        self,
+        bandit_id: UUID,
+    ) -> None:
+        """Resume bandit.
+
+        Resume a paused bandit, so refreshes change its traffic split again. Resuming a bandit that isn't paused returns 409. Bandits must be enabled for the organization.
+
+        :param bandit_id: The UUID of the bandit.
+        :type bandit_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["bandit_id"] = bandit_id
+
+        return self._resume_bandit_endpoint.call_with_http_info(**kwargs)
+
     def set_default_subject_type(
         self,
         subject_type_id: UUID,
@@ -3136,6 +3543,23 @@ class ExperimentsApi:
         kwargs["subject_type_id"] = subject_type_id
 
         return self._set_default_subject_type_endpoint.call_with_http_info(**kwargs)
+
+    def start_bandit(
+        self,
+        bandit_id: UUID,
+    ) -> None:
+        """Start bandit.
+
+        Start a draft bandit. Its targeting rule is published serving every arm equally, and each refresh then shifts traffic toward the arms that do best. The bandit starts exactly as it is configured; set it up with PATCH ``/api/v2/experiments/bandits/{bandit_id}`` first. It needs a flag, at least two arms, a subject type, a metric, and an exposure SQL model. The request is idempotent: a bandit that is already running still returns 204, so a retry after a timeout is safe. Stop is not idempotent. A start is blocked when the flag environment requires an approval or a pending change request touches the flag's targeting rules; retrying alone does not resolve an approval requirement. Bandits must be enabled for the organization.
+
+        :param bandit_id: The UUID of the bandit.
+        :type bandit_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["bandit_id"] = bandit_id
+
+        return self._start_bandit_endpoint.call_with_http_info(**kwargs)
 
     def start_experiment(
         self,
@@ -3159,6 +3583,27 @@ class ExperimentsApi:
             kwargs["body"] = body
 
         return self._start_experiment_endpoint.call_with_http_info(**kwargs)
+
+    def stop_bandit(
+        self,
+        bandit_id: UUID,
+        body: ExperimentsStopBanditV2Request,
+    ) -> None:
+        """Stop bandit.
+
+        Stop a running or paused bandit. From then on its targeting rule serves ``served_variant_key`` to everyone, overriding any configured fallback, and the bandit stops refreshing. ``served_variant_key`` can be any of the flag's variants. Stopping can't be reversed and is not idempotent: stopping a bandit that has already stopped or completed returns 409. Bandits must be enabled for the organization.
+
+        :param bandit_id: The UUID of the bandit.
+        :type bandit_id: UUID
+        :type body: ExperimentsStopBanditV2Request
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["bandit_id"] = bandit_id
+
+        kwargs["body"] = body
+
+        return self._stop_bandit_endpoint.call_with_http_info(**kwargs)
 
     def unarchive_exposure_sql_model(
         self,

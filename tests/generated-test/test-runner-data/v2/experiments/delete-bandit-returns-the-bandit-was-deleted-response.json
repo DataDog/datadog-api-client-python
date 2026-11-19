@@ -1,0 +1,35 @@
+{
+  "api": "Experiments",
+  "expected_status": 204,
+  "feature": "Experiments",
+  "id": "v2/Experiments/Delete bandit returns \"The bandit was deleted.\" response",
+  "operation_id": "DeleteBandit",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "bandit_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "bandit.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/experiments/bandits/{bandit_id}"
+  },
+  "scenario": "Delete bandit returns \"The bandit was deleted.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

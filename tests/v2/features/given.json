@@ -515,6 +515,18 @@
     "parameters": [
       {
         "name": "body",
+        "value": "{\"data\": {\"type\": \"bandits\", \"attributes\": {\"name\": \"bandit-{{ unique_hash }}\", \"datadog_flag_configuration\": {\"feature_flag_id\": \"{{ feature_flag.data.id }}\", \"environment_id\": \"{{ environment.data.id }}\", \"targeting_rules\": []}, \"variants\": [{\"feature_flag_variant_id\": \"{{ feature_flag.data.attributes.variants[0].id }}\", \"is_fallback\": true}, {\"feature_flag_variant_id\": \"{{ feature_flag.data.attributes.variants[1].id }}\"}]}}}"
+      }
+    ],
+    "step": "there is a valid \"bandit\" in the system",
+    "key": "bandit",
+    "tag": "Experiments",
+    "operationId": "CreateBandit"
+  },
+  {
+    "parameters": [
+      {
+        "name": "body",
         "value": "{\"data\": {\"type\": \"metric-collections\", \"attributes\": {\"name\": \"ex-{{ unique_hash }}\"}}}"
       }
     ],

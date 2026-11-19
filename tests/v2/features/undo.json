@@ -2873,16 +2873,85 @@
       "type": "safe"
     }
   },
+  "CreateBandit": {
+    "tag": "Experiments",
+    "undo": {
+      "operationId": "DeleteBandit",
+      "parameters": [
+        {
+          "name": "bandit_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteBandit": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetBandit": {
     "tag": "Experiments",
     "undo": {
       "type": "safe"
     }
   },
+  "PatchBandit": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "PauseBandit": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ListBanditPolicies": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "RefreshBandit": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "GetBanditResults": {
     "tag": "Experiments",
     "undo": {
       "type": "safe"
+    }
+  },
+  "ResumeBandit": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "StartBandit": {
+    "tag": "Experiments",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "StopBandit": {
+    "tag": "Experiments",
+    "undo": {
+      "operationId": "DeleteBandit",
+      "parameters": [
+        {
+          "name": "bandit_id",
+          "origin": "path",
+          "source": "bandit_id"
+        }
+      ],
+      "type": "unsafe"
     }
   },
   "GetBanditTrafficSummary": {

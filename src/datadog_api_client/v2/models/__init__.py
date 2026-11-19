@@ -4045,10 +4045,14 @@ from datadog_api_client.v2.model.experiments_analysis_plan_write_v2_request_data
     ExperimentsAnalysisPlanWriteV2RequestDataType,
 )
 from datadog_api_client.v2.model.experiments_bandit_arm_data_status import ExperimentsBanditArmDataStatus
+from datadog_api_client.v2.model.experiments_bandit_bayesian_prior_input_v2 import ExperimentsBanditBayesianPriorInputV2
 from datadog_api_client.v2.model.experiments_bandit_bayesian_prior_v2 import ExperimentsBanditBayesianPriorV2
 from datadog_api_client.v2.model.experiments_bandit_confidence_interval_v2 import ExperimentsBanditConfidenceIntervalV2
 from datadog_api_client.v2.model.experiments_bandit_daily_traffic_v2 import ExperimentsBanditDailyTrafficV2
 from datadog_api_client.v2.model.experiments_bandit_desired_change import ExperimentsBanditDesiredChange
+from datadog_api_client.v2.model.experiments_bandit_flag_configuration_input_v2 import (
+    ExperimentsBanditFlagConfigurationInputV2,
+)
 from datadog_api_client.v2.model.experiments_bandit_flag_configuration_v2 import ExperimentsBanditFlagConfigurationV2
 from datadog_api_client.v2.model.experiments_bandit_nullable_confidence_interval_v2 import (
     ExperimentsBanditNullableConfidenceIntervalV2,
@@ -4058,6 +4062,18 @@ from datadog_api_client.v2.model.experiments_bandit_optimal_variant_unavailable_
     ExperimentsBanditOptimalVariantUnavailableReason,
 )
 from datadog_api_client.v2.model.experiments_bandit_point_estimate_v2 import ExperimentsBanditPointEstimateV2
+from datadog_api_client.v2.model.experiments_bandit_policy_history_v2_dto_array import (
+    ExperimentsBanditPolicyHistoryV2DTOArray,
+)
+from datadog_api_client.v2.model.experiments_bandit_policy_history_v2_dto_data import (
+    ExperimentsBanditPolicyHistoryV2DTOData,
+)
+from datadog_api_client.v2.model.experiments_bandit_policy_history_v2_dto_data_attributes import (
+    ExperimentsBanditPolicyHistoryV2DTODataAttributes,
+)
+from datadog_api_client.v2.model.experiments_bandit_policy_history_v2_dto_data_type import (
+    ExperimentsBanditPolicyHistoryV2DTODataType,
+)
 from datadog_api_client.v2.model.experiments_bandit_policy_kind import ExperimentsBanditPolicyKind
 from datadog_api_client.v2.model.experiments_bandit_policy_reason import ExperimentsBanditPolicyReason
 from datadog_api_client.v2.model.experiments_bandit_policy_v2 import ExperimentsBanditPolicyV2
@@ -4067,6 +4083,14 @@ from datadog_api_client.v2.model.experiments_bandit_posterior_unavailable_reason
 )
 from datadog_api_client.v2.model.experiments_bandit_refresh_status import ExperimentsBanditRefreshStatus
 from datadog_api_client.v2.model.experiments_bandit_refresh_v2 import ExperimentsBanditRefreshV2
+from datadog_api_client.v2.model.experiments_bandit_refresh_v2_dto import ExperimentsBanditRefreshV2DTO
+from datadog_api_client.v2.model.experiments_bandit_refresh_v2_dto_data import ExperimentsBanditRefreshV2DTOData
+from datadog_api_client.v2.model.experiments_bandit_refresh_v2_dto_data_attributes import (
+    ExperimentsBanditRefreshV2DTODataAttributes,
+)
+from datadog_api_client.v2.model.experiments_bandit_refresh_v2_dto_data_type import (
+    ExperimentsBanditRefreshV2DTODataType,
+)
 from datadog_api_client.v2.model.experiments_bandit_results_state import ExperimentsBanditResultsState
 from datadog_api_client.v2.model.experiments_bandit_results_v2_dto import ExperimentsBanditResultsV2DTO
 from datadog_api_client.v2.model.experiments_bandit_results_v2_dto_data import ExperimentsBanditResultsV2DTOData
@@ -4104,6 +4128,7 @@ from datadog_api_client.v2.model.experiments_bandit_v2_list_dto_data_attributes 
 from datadog_api_client.v2.model.experiments_bandit_v2_read_meta_dto import ExperimentsBanditV2ReadMetaDTO
 from datadog_api_client.v2.model.experiments_bandit_v2_warning_code import ExperimentsBanditV2WarningCode
 from datadog_api_client.v2.model.experiments_bandit_v2_warning_dto import ExperimentsBanditV2WarningDTO
+from datadog_api_client.v2.model.experiments_bandit_variant_input_v2 import ExperimentsBanditVariantInputV2
 from datadog_api_client.v2.model.experiments_bandit_variant_result_v2 import ExperimentsBanditVariantResultV2
 from datadog_api_client.v2.model.experiments_bandit_variant_v2 import ExperimentsBanditVariantV2
 from datadog_api_client.v2.model.experiments_cancel_experiment_v2_request import ExperimentsCancelExperimentV2Request
@@ -4129,6 +4154,11 @@ from datadog_api_client.v2.model.experiments_conclude_experiment_v2_request_data
     ExperimentsConcludeExperimentV2RequestDataType,
 )
 from datadog_api_client.v2.model.experiments_confidence_interval import ExperimentsConfidenceInterval
+from datadog_api_client.v2.model.experiments_create_bandit_v2_request import ExperimentsCreateBanditV2Request
+from datadog_api_client.v2.model.experiments_create_bandit_v2_request_data import ExperimentsCreateBanditV2RequestData
+from datadog_api_client.v2.model.experiments_create_bandit_v2_request_data_attributes import (
+    ExperimentsCreateBanditV2RequestDataAttributes,
+)
 from datadog_api_client.v2.model.experiments_create_experiment_metric_group_v2_request import (
     ExperimentsCreateExperimentMetricGroupV2Request,
 )
@@ -4436,6 +4466,11 @@ from datadog_api_client.v2.model.experiments_nullable_warehouse_metric_measure_i
 from datadog_api_client.v2.model.experiments_offset_links import ExperimentsOffsetLinks
 from datadog_api_client.v2.model.experiments_offset_meta import ExperimentsOffsetMeta
 from datadog_api_client.v2.model.experiments_offset_meta_page import ExperimentsOffsetMetaPage
+from datadog_api_client.v2.model.experiments_patch_bandit_v2_request import ExperimentsPatchBanditV2Request
+from datadog_api_client.v2.model.experiments_patch_bandit_v2_request_data import ExperimentsPatchBanditV2RequestData
+from datadog_api_client.v2.model.experiments_patch_bandit_v2_request_data_attributes import (
+    ExperimentsPatchBanditV2RequestDataAttributes,
+)
 from datadog_api_client.v2.model.experiments_patch_experiment_metric_group_v2_request import (
     ExperimentsPatchExperimentMetricGroupV2Request,
 )
@@ -4632,6 +4667,14 @@ from datadog_api_client.v2.model.experiments_start_experiment_v2_request_data im
 )
 from datadog_api_client.v2.model.experiments_start_experiment_v2_request_data_type import (
     ExperimentsStartExperimentV2RequestDataType,
+)
+from datadog_api_client.v2.model.experiments_stop_bandit_v2_request import ExperimentsStopBanditV2Request
+from datadog_api_client.v2.model.experiments_stop_bandit_v2_request_data import ExperimentsStopBanditV2RequestData
+from datadog_api_client.v2.model.experiments_stop_bandit_v2_request_data_attributes import (
+    ExperimentsStopBanditV2RequestDataAttributes,
+)
+from datadog_api_client.v2.model.experiments_stop_bandit_v2_request_data_type import (
+    ExperimentsStopBanditV2RequestDataType,
 )
 from datadog_api_client.v2.model.experiments_structured_metadata_response import ExperimentsStructuredMetadataResponse
 from datadog_api_client.v2.model.experiments_subject_type_v2_dto import ExperimentsSubjectTypeV2DTO
@@ -17259,15 +17302,21 @@ __all__ = [
     "ExperimentsAnalysisPlanWriteV2RequestDataAttributesBayesianPrior",
     "ExperimentsAnalysisPlanWriteV2RequestDataType",
     "ExperimentsBanditArmDataStatus",
+    "ExperimentsBanditBayesianPriorInputV2",
     "ExperimentsBanditBayesianPriorV2",
     "ExperimentsBanditConfidenceIntervalV2",
     "ExperimentsBanditDailyTrafficV2",
     "ExperimentsBanditDesiredChange",
+    "ExperimentsBanditFlagConfigurationInputV2",
     "ExperimentsBanditFlagConfigurationV2",
     "ExperimentsBanditNullableConfidenceIntervalV2",
     "ExperimentsBanditObservationCountsV2",
     "ExperimentsBanditOptimalVariantUnavailableReason",
     "ExperimentsBanditPointEstimateV2",
+    "ExperimentsBanditPolicyHistoryV2DTOArray",
+    "ExperimentsBanditPolicyHistoryV2DTOData",
+    "ExperimentsBanditPolicyHistoryV2DTODataAttributes",
+    "ExperimentsBanditPolicyHistoryV2DTODataType",
     "ExperimentsBanditPolicyKind",
     "ExperimentsBanditPolicyReason",
     "ExperimentsBanditPolicyV2",
@@ -17275,6 +17324,10 @@ __all__ = [
     "ExperimentsBanditPosteriorUnavailableReason",
     "ExperimentsBanditRefreshStatus",
     "ExperimentsBanditRefreshV2",
+    "ExperimentsBanditRefreshV2DTO",
+    "ExperimentsBanditRefreshV2DTOData",
+    "ExperimentsBanditRefreshV2DTODataAttributes",
+    "ExperimentsBanditRefreshV2DTODataType",
     "ExperimentsBanditResultsState",
     "ExperimentsBanditResultsV2DTO",
     "ExperimentsBanditResultsV2DTOData",
@@ -17298,6 +17351,7 @@ __all__ = [
     "ExperimentsBanditV2ReadMetaDTO",
     "ExperimentsBanditV2WarningCode",
     "ExperimentsBanditV2WarningDTO",
+    "ExperimentsBanditVariantInputV2",
     "ExperimentsBanditVariantResultV2",
     "ExperimentsBanditVariantV2",
     "ExperimentsCancelExperimentV2Request",
@@ -17309,6 +17363,9 @@ __all__ = [
     "ExperimentsConcludeExperimentV2RequestDataAttributes",
     "ExperimentsConcludeExperimentV2RequestDataType",
     "ExperimentsConfidenceInterval",
+    "ExperimentsCreateBanditV2Request",
+    "ExperimentsCreateBanditV2RequestData",
+    "ExperimentsCreateBanditV2RequestDataAttributes",
     "ExperimentsCreateExperimentMetricGroupV2Request",
     "ExperimentsCreateExperimentMetricGroupV2RequestData",
     "ExperimentsCreateExperimentMetricGroupV2RequestDataAttributes",
@@ -17434,6 +17491,9 @@ __all__ = [
     "ExperimentsOffsetLinks",
     "ExperimentsOffsetMeta",
     "ExperimentsOffsetMetaPage",
+    "ExperimentsPatchBanditV2Request",
+    "ExperimentsPatchBanditV2RequestData",
+    "ExperimentsPatchBanditV2RequestDataAttributes",
     "ExperimentsPatchExperimentMetricGroupV2Request",
     "ExperimentsPatchExperimentMetricGroupV2RequestData",
     "ExperimentsPatchExperimentMetricGroupV2RequestDataAttributes",
@@ -17511,6 +17571,10 @@ __all__ = [
     "ExperimentsStartExperimentV2Request",
     "ExperimentsStartExperimentV2RequestData",
     "ExperimentsStartExperimentV2RequestDataType",
+    "ExperimentsStopBanditV2Request",
+    "ExperimentsStopBanditV2RequestData",
+    "ExperimentsStopBanditV2RequestDataAttributes",
+    "ExperimentsStopBanditV2RequestDataType",
     "ExperimentsStructuredMetadataResponse",
     "ExperimentsSubjectTypeV2DTO",
     "ExperimentsSubjectTypeV2DTOArray",

@@ -128,6 +128,43 @@ Feature: Experiments
     When the request is sent
     Then the response status is 204 The experiment was concluded and the winning variant was rolled out to its linked feature flag allocation.
 
+  @team:ddoghq/experimentation
+  Scenario: Create bandit returns "Created" response
+    Given operation "CreateBandit" enabled
+    And there is a valid "feature_flag" in the system
+    And there is a valid "environment" in the system
+    And there is a valid "experiment_subject_type" in the system
+    And new "CreateBandit" request
+    And body with value {"data": {"type": "bandits", "attributes": {"name": "bandit-{{ unique_hash }}", "datadog_flag_configuration": {"feature_flag_id": "{{ feature_flag.data.id }}", "environment_id": "{{ environment.data.id }}", "targeting_rules": []}, "variants": [{"feature_flag_variant_id": "{{ feature_flag.data.attributes.variants[0].id }}", "is_fallback": true}, {"feature_flag_variant_id": "{{ feature_flag.data.attributes.variants[1].id }}"}], "subject_type_id": "{{ experiment_subject_type.data.id }}", "tags": ["bdd"]}}}
+    When the request is sent
+    Then the response status is 201 Created
+    And the response "data.attributes.status" is equal to "DRAFT"
+    And the response "data.attributes.variants" has item with field "is_fallback" with value true
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Create bandit returns "Invalid request body: a missing name, a malformed or unknown attribute, a read-only attribute, invalid variants or prior, or a referenced flag, variant, environment, metric, subject type, exposure SQL model, or schedule that doesn't exist for the organization. May return several errors." response
+    Given operation "CreateBandit" enabled
+    And new "CreateBandit" request
+    And body with value {"data": {"attributes": {"aggregation_window_seconds": 3600, "bayesian_prior": {"arm_standard_deviation": 100, "grand_mean": 0, "grand_mean_standard_deviation": 10000}, "datadog_flag_configuration": {"environment_id": "660e8400-e29b-41d4-a716-446655440000", "feature_flag_id": "550e8400-e29b-41d4-a716-446655440000", "targeting_rules": []}, "description": "Find the button color that maximizes checkout revenue.", "exposure_sql_model_id": "aa0e8400-e29b-41d4-a716-446655440000", "lookback_seconds": 2592000, "metric_id": "990e8400-e29b-41d4-a716-446655440000", "name": "Checkout button color", "refresh_schedule_id": "cc0e8400-e29b-41d4-a716-446655440000", "scheduled_end_at": "2026-12-01T00:00:00Z", "subject_type_id": "880e8400-e29b-41d4-a716-446655440000", "tags": ["checkout"], "teams": ["growth"], "variants": [{"feature_flag_variant_id": "770e8400-e29b-41d4-a716-446655440001", "is_active": true, "is_fallback": true}], "warmup_seconds": 86400}, "type": "bandits"}}
+    When the request is sent
+    Then the response status is 400 Invalid request body: a missing name, a malformed or unknown attribute, a read-only attribute, invalid variants or prior, or a referenced flag, variant, environment, metric, subject type, exposure SQL model, or schedule that doesn't exist for the organization. May return several errors.
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Create bandit returns "Request body sent with a media type other than application/json or application/vnd.api+json." response
+    Given operation "CreateBandit" enabled
+    And new "CreateBandit" request
+    And body with value {"data": {"attributes": {"aggregation_window_seconds": 3600, "bayesian_prior": {"arm_standard_deviation": 100, "grand_mean": 0, "grand_mean_standard_deviation": 10000}, "datadog_flag_configuration": {"environment_id": "660e8400-e29b-41d4-a716-446655440000", "feature_flag_id": "550e8400-e29b-41d4-a716-446655440000", "targeting_rules": []}, "description": "Find the button color that maximizes checkout revenue.", "exposure_sql_model_id": "aa0e8400-e29b-41d4-a716-446655440000", "lookback_seconds": 2592000, "metric_id": "990e8400-e29b-41d4-a716-446655440000", "name": "Checkout button color", "refresh_schedule_id": "cc0e8400-e29b-41d4-a716-446655440000", "scheduled_end_at": "2026-12-01T00:00:00Z", "subject_type_id": "880e8400-e29b-41d4-a716-446655440000", "tags": ["checkout"], "teams": ["growth"], "variants": [{"feature_flag_variant_id": "770e8400-e29b-41d4-a716-446655440001", "is_active": true, "is_fallback": true}], "warmup_seconds": 86400}, "type": "bandits"}}
+    When the request is sent
+    Then the response status is 415 Request body sent with a media type other than application/json or application/vnd.api+json.
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Create bandit returns "The request conflicts with the flag's current state; for example, a pending change request touches its targeting rules." response
+    Given operation "CreateBandit" enabled
+    And new "CreateBandit" request
+    And body with value {"data": {"attributes": {"aggregation_window_seconds": 3600, "bayesian_prior": {"arm_standard_deviation": 100, "grand_mean": 0, "grand_mean_standard_deviation": 10000}, "datadog_flag_configuration": {"environment_id": "660e8400-e29b-41d4-a716-446655440000", "feature_flag_id": "550e8400-e29b-41d4-a716-446655440000", "targeting_rules": []}, "description": "Find the button color that maximizes checkout revenue.", "exposure_sql_model_id": "aa0e8400-e29b-41d4-a716-446655440000", "lookback_seconds": 2592000, "metric_id": "990e8400-e29b-41d4-a716-446655440000", "name": "Checkout button color", "refresh_schedule_id": "cc0e8400-e29b-41d4-a716-446655440000", "scheduled_end_at": "2026-12-01T00:00:00Z", "subject_type_id": "880e8400-e29b-41d4-a716-446655440000", "tags": ["checkout"], "teams": ["growth"], "variants": [{"feature_flag_variant_id": "770e8400-e29b-41d4-a716-446655440001", "is_active": true, "is_fallback": true}], "warmup_seconds": 86400}, "type": "bandits"}}
+    When the request is sent
+    Then the response status is 409 The request conflicts with the flag's current state; for example, a pending change request touches its targeting rules.
+
   @generated @skip @team:ddoghq/experimentation
   Scenario: Create experiment metric group from collection returns "Bad Request" response
     Given new "CreateExperimentMetricGroupFromCollection" request
@@ -403,6 +440,42 @@ Feature: Experiments
     Then the response status is 400 Malformed body, or validation failure on name, product_analytics_attribute, or warehouse_column_names.
 
   @generated @skip @team:ddoghq/experimentation
+  Scenario: Delete bandit returns "Malformed bandit ID (not a valid UUID)." response
+    Given operation "DeleteBandit" enabled
+    And new "DeleteBandit" request
+    And request contains "bandit_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Malformed bandit ID (not a valid UUID).
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Delete bandit returns "No bandit with this ID exists for the organization." response
+    Given operation "DeleteBandit" enabled
+    And new "DeleteBandit" request
+    And request contains "bandit_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 No bandit with this ID exists for the organization.
+
+  @team:ddoghq/experimentation
+  Scenario: Delete bandit returns "The bandit was deleted." response
+    Given operation "DeleteBandit" enabled
+    And operation "CreateBandit" enabled
+    And there is a valid "feature_flag" in the system
+    And there is a valid "environment" in the system
+    And there is a valid "bandit" in the system
+    And new "DeleteBandit" request
+    And request contains "bandit_id" parameter from "bandit.data.id"
+    When the request is sent
+    Then the response status is 204 The bandit was deleted.
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Delete bandit returns "The bandit's rule is live on a flag environment that requires approvals, a pending change request touches the flag's targeting rules, the flag is archived, or the bandit moved to another flag during the delete. Nothing was deleted." response
+    Given operation "DeleteBandit" enabled
+    And new "DeleteBandit" request
+    And request contains "bandit_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 409 The bandit's rule is live on a flag environment that requires approvals, a pending change request touches the flag's targeting rules, the flag is archived, or the bandit moved to another flag during the delete. Nothing was deleted.
+
+  @generated @skip @team:ddoghq/experimentation
   Scenario: Delete experiment metric group returns "Bad Request" response
     Given new "DeleteExperimentMetricGroup" request
     And request contains "experiment_id" parameter from "REPLACE.ME"
@@ -606,13 +679,18 @@ Feature: Experiments
     When the request is sent
     Then the response status is 404 No bandit with this ID exists for the organization.
 
-  @generated @skip @team:ddoghq/experimentation
+  @team:ddoghq/experimentation
   Scenario: Get bandit results returns "OK" response
     Given operation "GetBanditResults" enabled
+    And operation "CreateBandit" enabled
+    And there is a valid "feature_flag" in the system
+    And there is a valid "environment" in the system
+    And there is a valid "bandit" in the system
     And new "GetBanditResults" request
-    And request contains "bandit_id" parameter from "REPLACE.ME"
+    And request contains "bandit_id" parameter from "bandit.data.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.attributes.state" is equal to "WAITING_FOR_FIRST_REFRESH"
 
   @generated @skip @team:ddoghq/experimentation
   Scenario: Get bandit returns "Malformed bandit ID (not a valid UUID)." response
@@ -630,13 +708,18 @@ Feature: Experiments
     When the request is sent
     Then the response status is 404 No bandit with this ID exists for the organization.
 
-  @generated @skip @team:ddoghq/experimentation
+  @team:ddoghq/experimentation
   Scenario: Get bandit returns "OK" response
     Given operation "GetBandit" enabled
+    And operation "CreateBandit" enabled
+    And there is a valid "feature_flag" in the system
+    And there is a valid "environment" in the system
+    And there is a valid "bandit" in the system
     And new "GetBandit" request
-    And request contains "bandit_id" parameter from "REPLACE.ME"
+    And request contains "bandit_id" parameter from "bandit.data.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.attributes.status" is equal to "DRAFT"
 
   @generated @skip @team:ddoghq/experimentation
   Scenario: Get bandit traffic summary returns "Malformed bandit ID (not a valid UUID), or filter[from] or filter[to] isn't an RFC3339 timestamp, or filter[from] isn't before filter[to]." response
@@ -654,11 +737,15 @@ Feature: Experiments
     When the request is sent
     Then the response status is 404 No bandit with this ID exists for the organization.
 
-  @generated @skip @team:ddoghq/experimentation
+  @team:ddoghq/experimentation
   Scenario: Get bandit traffic summary returns "OK" response
     Given operation "GetBanditTrafficSummary" enabled
+    And operation "CreateBandit" enabled
+    And there is a valid "feature_flag" in the system
+    And there is a valid "environment" in the system
+    And there is a valid "bandit" in the system
     And new "GetBanditTrafficSummary" request
-    And request contains "bandit_id" parameter from "REPLACE.ME"
+    And request contains "bandit_id" parameter from "bandit.data.id"
     When the request is sent
     Then the response status is 200 OK
 
@@ -934,6 +1021,35 @@ Feature: Experiments
     Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/experimentation
+  Scenario: List bandit policies returns "Malformed bandit ID (not a valid UUID), a sort other than `applied_at` or `-applied_at`, a malformed page parameter, `filter[from]` or `filter[to]` isn't an RFC 3339 time, or `filter[from]` isn't before `filter[to]`." response
+    Given operation "ListBanditPolicies" enabled
+    And new "ListBanditPolicies" request
+    And request contains "bandit_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Malformed bandit ID (not a valid UUID), a sort other than `applied_at` or `-applied_at`, a malformed page parameter, `filter[from]` or `filter[to]` isn't an RFC 3339 time, or `filter[from]` isn't before `filter[to]`.
+
+  @team:ddoghq/experimentation
+  Scenario: List bandit policies returns "No bandit with this ID exists for the organization." response
+    Given operation "ListBanditPolicies" enabled
+    And new "ListBanditPolicies" request
+    And request contains "bandit_id" parameter with value "00000000-0000-4000-8000-000000000000"
+    When the request is sent
+    Then the response status is 404 No bandit with this ID exists for the organization.
+
+  @team:ddoghq/experimentation
+  Scenario: List bandit policies returns "OK" response
+    Given operation "ListBanditPolicies" enabled
+    And operation "CreateBandit" enabled
+    And there is a valid "feature_flag" in the system
+    And there is a valid "environment" in the system
+    And there is a valid "bandit" in the system
+    And new "ListBanditPolicies" request
+    And request contains "bandit_id" parameter from "bandit.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 0
+
+  @generated @skip @team:ddoghq/experimentation
   Scenario: List bandits returns "Invalid query parameter: an unknown filter[status] or sort field, a filter[subject_type_id] that isn't a UUID, a filter[query] over 1024 characters, or a malformed page parameter." response
     Given operation "ListBandits" enabled
     And new "ListBandits" request
@@ -1150,6 +1266,42 @@ Feature: Experiments
     Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/experimentation
+  Scenario: Pause bandit returns "Malformed bandit ID (not a valid UUID)." response
+    Given operation "PauseBandit" enabled
+    And new "PauseBandit" request
+    And request contains "bandit_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Malformed bandit ID (not a valid UUID).
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Pause bandit returns "No bandit with this ID exists for the organization." response
+    Given operation "PauseBandit" enabled
+    And new "PauseBandit" request
+    And request contains "bandit_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 No bandit with this ID exists for the organization.
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Pause bandit returns "The bandit is paused." response
+    Given operation "PauseBandit" enabled
+    And new "PauseBandit" request
+    And request contains "bandit_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 The bandit is paused.
+
+  @team:ddoghq/experimentation
+  Scenario: Pause bandit returns "The bandit isn't running, or another change to it happened at the same time." response
+    Given operation "PauseBandit" enabled
+    And operation "CreateBandit" enabled
+    And there is a valid "feature_flag" in the system
+    And there is a valid "environment" in the system
+    And there is a valid "bandit" in the system
+    And new "PauseBandit" request
+    And request contains "bandit_id" parameter from "bandit.data.id"
+    When the request is sent
+    Then the response status is 409 The bandit isn't running, or another change to it happened at the same time.
+
+  @generated @skip @team:ddoghq/experimentation
   Scenario: Publish experiment protocol returns "Invalid request or protocol settings." response
     Given new "PublishExperimentProtocol" request
     And request contains "protocol_id" parameter from "REPLACE.ME"
@@ -1180,6 +1332,42 @@ Feature: Experiments
     And request contains "protocol_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 409 Only draft protocols can be published.
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Refresh bandit returns "Accepted" response
+    Given operation "RefreshBandit" enabled
+    And new "RefreshBandit" request
+    And request contains "bandit_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 202 Accepted
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Refresh bandit returns "Malformed bandit ID (not a valid UUID), or `full_refresh` is not a valid boolean." response
+    Given operation "RefreshBandit" enabled
+    And new "RefreshBandit" request
+    And request contains "bandit_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Malformed bandit ID (not a valid UUID), or `full_refresh` is not a valid boolean.
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Refresh bandit returns "No bandit with this ID exists for the organization." response
+    Given operation "RefreshBandit" enabled
+    And new "RefreshBandit" request
+    And request contains "bandit_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 No bandit with this ID exists for the organization.
+
+  @team:ddoghq/experimentation
+  Scenario: Refresh bandit returns "The bandit isn't running, or a refresh of it is already running." response
+    Given operation "RefreshBandit" enabled
+    And operation "CreateBandit" enabled
+    And there is a valid "feature_flag" in the system
+    And there is a valid "environment" in the system
+    And there is a valid "bandit" in the system
+    And new "RefreshBandit" request
+    And request contains "bandit_id" parameter from "bandit.data.id"
+    When the request is sent
+    Then the response status is 409 The bandit isn't running, or a refresh of it is already running.
 
   @generated @skip @team:ddoghq/experimentation
   Scenario: Refresh experiment results for org returns "Accepted" response
@@ -1269,6 +1457,42 @@ Feature: Experiments
     Then the response status is 415 Unsupported request content type.
 
   @generated @skip @team:ddoghq/experimentation
+  Scenario: Resume bandit returns "Malformed bandit ID (not a valid UUID)." response
+    Given operation "ResumeBandit" enabled
+    And new "ResumeBandit" request
+    And request contains "bandit_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Malformed bandit ID (not a valid UUID).
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Resume bandit returns "No bandit with this ID exists for the organization." response
+    Given operation "ResumeBandit" enabled
+    And new "ResumeBandit" request
+    And request contains "bandit_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 No bandit with this ID exists for the organization.
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Resume bandit returns "The bandit is running." response
+    Given operation "ResumeBandit" enabled
+    And new "ResumeBandit" request
+    And request contains "bandit_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 The bandit is running.
+
+  @team:ddoghq/experimentation
+  Scenario: Resume bandit returns "The bandit isn't paused, or another change to it happened at the same time." response
+    Given operation "ResumeBandit" enabled
+    And operation "CreateBandit" enabled
+    And there is a valid "feature_flag" in the system
+    And there is a valid "environment" in the system
+    And there is a valid "bandit" in the system
+    And new "ResumeBandit" request
+    And request contains "bandit_id" parameter from "bandit.data.id"
+    When the request is sent
+    Then the response status is 409 The bandit isn't paused, or another change to it happened at the same time.
+
+  @generated @skip @team:ddoghq/experimentation
   Scenario: Set default subject type returns "Malformed subject type ID (not a valid UUID)." response
     Given new "SetDefaultSubjectType" request
     And request contains "subject_type_id" parameter from "REPLACE.ME"
@@ -1288,6 +1512,42 @@ Feature: Experiments
     And request contains "subject_type_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 The subject type is now the organization's default.
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Start bandit returns "Malformed bandit ID (not a valid UUID)." response
+    Given operation "StartBandit" enabled
+    And new "StartBandit" request
+    And request contains "bandit_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Malformed bandit ID (not a valid UUID).
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Start bandit returns "No bandit with this ID exists for the organization." response
+    Given operation "StartBandit" enabled
+    And new "StartBandit" request
+    And request contains "bandit_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 No bandit with this ID exists for the organization.
+
+  @team:ddoghq/experimentation
+  Scenario: Start bandit returns "The bandit is paused or has ended, its setup is incomplete, or an approval or a pending change request blocks the start." response
+    Given operation "StartBandit" enabled
+    And operation "CreateBandit" enabled
+    And there is a valid "feature_flag" in the system
+    And there is a valid "environment" in the system
+    And there is a valid "bandit" in the system
+    And new "StartBandit" request
+    And request contains "bandit_id" parameter from "bandit.data.id"
+    When the request is sent
+    Then the response status is 409 The bandit is paused or has ended, its setup is incomplete, or an approval or a pending change request blocks the start.
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Start bandit returns "The bandit is running. Get the bandit to read its status and active policy." response
+    Given operation "StartBandit" enabled
+    And new "StartBandit" request
+    And request contains "bandit_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 The bandit is running. Get the bandit to read its status and active policy.
 
   @generated @skip @team:ddoghq/experimentation
   Scenario: Start experiment returns "Malformed experiment ID, a request body carrying attributes this endpoint does not accept, or an experiment managed by a specialized workflow that cannot use this start endpoint." response
@@ -1327,6 +1587,55 @@ Feature: Experiments
     Then the response status is 204 The experiment was started.
 
   @generated @skip @team:ddoghq/experimentation
+  Scenario: Stop bandit returns "Malformed bandit ID, a malformed request body, a missing `served_variant_key`, or a `served_variant_key` that isn't a variant of the bandit's flag." response
+    Given operation "StopBandit" enabled
+    And new "StopBandit" request
+    And request contains "bandit_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"served_variant_key": "green"}, "type": "stop-bandit-request"}}
+    When the request is sent
+    Then the response status is 400 Malformed bandit ID, a malformed request body, a missing `served_variant_key`, or a `served_variant_key` that isn't a variant of the bandit's flag.
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Stop bandit returns "No bandit with this ID exists for the organization." response
+    Given operation "StopBandit" enabled
+    And new "StopBandit" request
+    And request contains "bandit_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"served_variant_key": "green"}, "type": "stop-bandit-request"}}
+    When the request is sent
+    Then the response status is 404 No bandit with this ID exists for the organization.
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Stop bandit returns "Request body sent with a media type other than application/json or application/vnd.api+json." response
+    Given operation "StopBandit" enabled
+    And new "StopBandit" request
+    And request contains "bandit_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"served_variant_key": "green"}, "type": "stop-bandit-request"}}
+    When the request is sent
+    Then the response status is 415 Request body sent with a media type other than application/json or application/vnd.api+json.
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Stop bandit returns "The bandit is stopped and serves the chosen variant." response
+    Given operation "StopBandit" enabled
+    And new "StopBandit" request
+    And request contains "bandit_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"served_variant_key": "green"}, "type": "stop-bandit-request"}}
+    When the request is sent
+    Then the response status is 204 The bandit is stopped and serves the chosen variant.
+
+  @team:ddoghq/experimentation
+  Scenario: Stop bandit returns "The bandit isn't running or paused, its flag environment requires an approval, or a pending change request touches the flag's targeting rules. Retrying alone does not resolve an approval requirement." response
+    Given operation "StopBandit" enabled
+    And operation "CreateBandit" enabled
+    And there is a valid "feature_flag" in the system
+    And there is a valid "environment" in the system
+    And there is a valid "bandit" in the system
+    And new "StopBandit" request
+    And request contains "bandit_id" parameter from "bandit.data.id"
+    And body with value {"data": {"type": "stop-bandit-request", "attributes": {"served_variant_key": "{{ feature_flag.data.attributes.variants[1].key }}"}}}
+    When the request is sent
+    Then the response status is 409 The bandit isn't running or paused, its flag environment requires an approval, or a pending change request touches the flag's targeting rules. Retrying alone does not resolve an approval requirement.
+
+  @generated @skip @team:ddoghq/experimentation
   Scenario: Unarchive exposure SQL model returns "Malformed exposure SQL model ID (not a valid UUID)." response
     Given new "UnarchiveExposureSQLModel" request
     And request contains "exposure_sql_model_id" parameter from "REPLACE.ME"
@@ -1346,6 +1655,57 @@ Feature: Experiments
     And request contains "exposure_sql_model_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 204 The exposure SQL model was unarchived. Unarchiving a model that is not archived succeeds and changes nothing.
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Update bandit returns "Malformed bandit ID, or an invalid request body: a malformed, unknown, read-only, or wrongly `null` attribute, invalid variants or prior, `data.id` not matching the path, or a referenced record that doesn't exist for the organization. May return several errors." response
+    Given operation "PatchBandit" enabled
+    And new "PatchBandit" request
+    And request contains "bandit_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"aggregation_window_seconds": 3600, "bayesian_prior": {"arm_standard_deviation": 100, "grand_mean": 0, "grand_mean_standard_deviation": 10000}, "datadog_flag_configuration": {"environment_id": "660e8400-e29b-41d4-a716-446655440000", "feature_flag_id": "550e8400-e29b-41d4-a716-446655440000", "targeting_rules": []}, "description": "Find the button color that maximizes checkout revenue.", "exposure_sql_model_id": "aa0e8400-e29b-41d4-a716-446655440000", "lookback_seconds": 2592000, "metric_id": "990e8400-e29b-41d4-a716-446655440000", "name": "Checkout button color", "refresh_schedule_id": "cc0e8400-e29b-41d4-a716-446655440000", "scheduled_end_at": "2026-12-08T00:00:00Z", "subject_type_id": "880e8400-e29b-41d4-a716-446655440000", "tags": ["checkout"], "teams": ["growth"], "variants": [{"feature_flag_variant_id": "770e8400-e29b-41d4-a716-446655440001", "is_active": true, "is_fallback": true}], "warmup_seconds": 86400}, "id": "4b1f3c2e-8d5a-4f6b-9c7e-1a2b3c4d5e6f", "type": "bandits"}}
+    When the request is sent
+    Then the response status is 400 Malformed bandit ID, or an invalid request body: a malformed, unknown, read-only, or wrongly `null` attribute, invalid variants or prior, `data.id` not matching the path, or a referenced record that doesn't exist for the organization. May return several errors.
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Update bandit returns "No bandit with this ID exists for the organization." response
+    Given operation "PatchBandit" enabled
+    And new "PatchBandit" request
+    And request contains "bandit_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"aggregation_window_seconds": 3600, "bayesian_prior": {"arm_standard_deviation": 100, "grand_mean": 0, "grand_mean_standard_deviation": 10000}, "datadog_flag_configuration": {"environment_id": "660e8400-e29b-41d4-a716-446655440000", "feature_flag_id": "550e8400-e29b-41d4-a716-446655440000", "targeting_rules": []}, "description": "Find the button color that maximizes checkout revenue.", "exposure_sql_model_id": "aa0e8400-e29b-41d4-a716-446655440000", "lookback_seconds": 2592000, "metric_id": "990e8400-e29b-41d4-a716-446655440000", "name": "Checkout button color", "refresh_schedule_id": "cc0e8400-e29b-41d4-a716-446655440000", "scheduled_end_at": "2026-12-08T00:00:00Z", "subject_type_id": "880e8400-e29b-41d4-a716-446655440000", "tags": ["checkout"], "teams": ["growth"], "variants": [{"feature_flag_variant_id": "770e8400-e29b-41d4-a716-446655440001", "is_active": true, "is_fallback": true}], "warmup_seconds": 86400}, "id": "4b1f3c2e-8d5a-4f6b-9c7e-1a2b3c4d5e6f", "type": "bandits"}}
+    When the request is sent
+    Then the response status is 404 No bandit with this ID exists for the organization.
+
+  @team:ddoghq/experimentation
+  Scenario: Update bandit returns "OK" response
+    Given operation "PatchBandit" enabled
+    And operation "CreateBandit" enabled
+    And there is a valid "feature_flag" in the system
+    And there is a valid "environment" in the system
+    And there is a valid "bandit" in the system
+    And new "PatchBandit" request
+    And request contains "bandit_id" parameter from "bandit.data.id"
+    And body with value {"data": {"type": "bandits", "id": "{{ bandit.data.id }}", "attributes": {"name": "bandit-{{ unique_hash }}-renamed", "variants": [{"feature_flag_variant_id": "{{ feature_flag.data.attributes.variants[0].id }}"}, {"feature_flag_variant_id": "{{ feature_flag.data.attributes.variants[1].id }}", "is_fallback": true}]}}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.name" is equal to "bandit-{{ unique_hash }}-renamed"
+    And the response "data.attributes.variants" has item with field "is_fallback" with value true
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Update bandit returns "Request body sent with a media type other than application/json or application/vnd.api+json." response
+    Given operation "PatchBandit" enabled
+    And new "PatchBandit" request
+    And request contains "bandit_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"aggregation_window_seconds": 3600, "bayesian_prior": {"arm_standard_deviation": 100, "grand_mean": 0, "grand_mean_standard_deviation": 10000}, "datadog_flag_configuration": {"environment_id": "660e8400-e29b-41d4-a716-446655440000", "feature_flag_id": "550e8400-e29b-41d4-a716-446655440000", "targeting_rules": []}, "description": "Find the button color that maximizes checkout revenue.", "exposure_sql_model_id": "aa0e8400-e29b-41d4-a716-446655440000", "lookback_seconds": 2592000, "metric_id": "990e8400-e29b-41d4-a716-446655440000", "name": "Checkout button color", "refresh_schedule_id": "cc0e8400-e29b-41d4-a716-446655440000", "scheduled_end_at": "2026-12-08T00:00:00Z", "subject_type_id": "880e8400-e29b-41d4-a716-446655440000", "tags": ["checkout"], "teams": ["growth"], "variants": [{"feature_flag_variant_id": "770e8400-e29b-41d4-a716-446655440001", "is_active": true, "is_fallback": true}], "warmup_seconds": 86400}, "id": "4b1f3c2e-8d5a-4f6b-9c7e-1a2b3c4d5e6f", "type": "bandits"}}
+    When the request is sent
+    Then the response status is 415 Request body sent with a media type other than application/json or application/vnd.api+json.
+
+  @generated @skip @team:ddoghq/experimentation
+  Scenario: Update bandit returns "The bandit's status doesn't let a requested attribute change (one error per attribute), the bandit moved to another flag during the edit, or a pending change request touches the flag's targeting rules." response
+    Given operation "PatchBandit" enabled
+    And new "PatchBandit" request
+    And request contains "bandit_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"aggregation_window_seconds": 3600, "bayesian_prior": {"arm_standard_deviation": 100, "grand_mean": 0, "grand_mean_standard_deviation": 10000}, "datadog_flag_configuration": {"environment_id": "660e8400-e29b-41d4-a716-446655440000", "feature_flag_id": "550e8400-e29b-41d4-a716-446655440000", "targeting_rules": []}, "description": "Find the button color that maximizes checkout revenue.", "exposure_sql_model_id": "aa0e8400-e29b-41d4-a716-446655440000", "lookback_seconds": 2592000, "metric_id": "990e8400-e29b-41d4-a716-446655440000", "name": "Checkout button color", "refresh_schedule_id": "cc0e8400-e29b-41d4-a716-446655440000", "scheduled_end_at": "2026-12-08T00:00:00Z", "subject_type_id": "880e8400-e29b-41d4-a716-446655440000", "tags": ["checkout"], "teams": ["growth"], "variants": [{"feature_flag_variant_id": "770e8400-e29b-41d4-a716-446655440001", "is_active": true, "is_fallback": true}], "warmup_seconds": 86400}, "id": "4b1f3c2e-8d5a-4f6b-9c7e-1a2b3c4d5e6f", "type": "bandits"}}
+    When the request is sent
+    Then the response status is 409 The bandit's status doesn't let a requested attribute change (one error per attribute), the bandit moved to another flag during the edit, or a pending change request touches the flag's targeting rules.
 
   @generated @skip @team:ddoghq/experimentation
   Scenario: Update experiment analysis plan attributes returns "Bad Request" response
