@@ -39,6 +39,7 @@ class IoCIndicator(ModelNormal):
             "id": (str,),
             "indicator": (str,),
             "indicator_type": (str,),
+            "is_muted": (bool,),
             "last_seen": (datetime,),
             "log_matches": (int,),
             "m_as_type": (IoCScoreEffect,),
@@ -47,6 +48,8 @@ class IoCIndicator(ModelNormal):
             "m_sources": (IoCScoreEffect,),
             "malicious_sources": ([IoCSource], none_type),
             "max_trust_score": (IoCScoreEffect,),
+            "mute_reason": (str,),
+            "mute_scope": (str,),
             "score": (float,),
             "signal_matches": (int,),
             "signal_tier": (int,),
@@ -66,6 +69,7 @@ class IoCIndicator(ModelNormal):
         "id": "id",
         "indicator": "indicator",
         "indicator_type": "indicator_type",
+        "is_muted": "is_muted",
         "last_seen": "last_seen",
         "log_matches": "log_matches",
         "m_as_type": "m_as_type",
@@ -74,6 +78,8 @@ class IoCIndicator(ModelNormal):
         "m_sources": "m_sources",
         "malicious_sources": "malicious_sources",
         "max_trust_score": "max_trust_score",
+        "mute_reason": "mute_reason",
+        "mute_scope": "mute_scope",
         "score": "score",
         "signal_matches": "signal_matches",
         "signal_tier": "signal_tier",
@@ -94,6 +100,7 @@ class IoCIndicator(ModelNormal):
         id: Union[str, UnsetType] = unset,
         indicator: Union[str, UnsetType] = unset,
         indicator_type: Union[str, UnsetType] = unset,
+        is_muted: Union[bool, UnsetType] = unset,
         last_seen: Union[datetime, UnsetType] = unset,
         log_matches: Union[int, UnsetType] = unset,
         m_as_type: Union[IoCScoreEffect, UnsetType] = unset,
@@ -102,6 +109,8 @@ class IoCIndicator(ModelNormal):
         m_sources: Union[IoCScoreEffect, UnsetType] = unset,
         malicious_sources: Union[List[IoCSource], none_type, UnsetType] = unset,
         max_trust_score: Union[IoCScoreEffect, UnsetType] = unset,
+        mute_reason: Union[str, UnsetType] = unset,
+        mute_scope: Union[str, UnsetType] = unset,
         score: Union[float, UnsetType] = unset,
         signal_matches: Union[int, UnsetType] = unset,
         signal_tier: Union[int, UnsetType] = unset,
@@ -139,6 +148,9 @@ class IoCIndicator(ModelNormal):
         :param indicator_type: Type of indicator (for example, IP address or domain).
         :type indicator_type: str, optional
 
+        :param is_muted: Whether the indicator is muted for your organization.
+        :type is_muted: bool, optional
+
         :param last_seen: Timestamp when the indicator was last seen.
         :type last_seen: datetime, optional
 
@@ -162,6 +174,12 @@ class IoCIndicator(ModelNormal):
 
         :param max_trust_score: Effect of a scoring factor on the indicator's threat score.
         :type max_trust_score: IoCScoreEffect, optional
+
+        :param mute_reason: Reason provided when the indicator was muted. Returned only when the indicator is muted.
+        :type mute_reason: str, optional
+
+        :param mute_scope: Scope of the mute applied to the indicator. Returned only when the indicator is muted.
+        :type mute_scope: str, optional
 
         :param score: Threat score for the indicator (0-100).
         :type score: float, optional
@@ -203,6 +221,8 @@ class IoCIndicator(ModelNormal):
             kwargs["indicator"] = indicator
         if indicator_type is not unset:
             kwargs["indicator_type"] = indicator_type
+        if is_muted is not unset:
+            kwargs["is_muted"] = is_muted
         if last_seen is not unset:
             kwargs["last_seen"] = last_seen
         if log_matches is not unset:
@@ -219,6 +239,10 @@ class IoCIndicator(ModelNormal):
             kwargs["malicious_sources"] = malicious_sources
         if max_trust_score is not unset:
             kwargs["max_trust_score"] = max_trust_score
+        if mute_reason is not unset:
+            kwargs["mute_reason"] = mute_reason
+        if mute_scope is not unset:
+            kwargs["mute_scope"] = mute_scope
         if score is not unset:
             kwargs["score"] = score
         if signal_matches is not unset:
