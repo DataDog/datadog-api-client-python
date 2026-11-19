@@ -9,6 +9,33 @@ Feature: Model Lab API
     And an instance of "ModelLabAPI" API
 
   @generated @skip @team:ddoghq/ml-observability
+  Scenario: Add an owner to a Model Lab project returns "Bad Request" response
+    Given operation "AddModelLabProjectOwner" enabled
+    And new "AddModelLabProjectOwner" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "user_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/ml-observability
+  Scenario: Add an owner to a Model Lab project returns "No Content" response
+    Given operation "AddModelLabProjectOwner" enabled
+    And new "AddModelLabProjectOwner" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "user_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:ddoghq/ml-observability
+  Scenario: Add an owner to a Model Lab project returns "Not Found" response
+    Given operation "AddModelLabProjectOwner" enabled
+    And new "AddModelLabProjectOwner" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "user_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/ml-observability
   Scenario: Delete a Model Lab run returns "Bad Request" response
     Given operation "DeleteModelLabRun" enabled
     And new "DeleteModelLabRun" request
@@ -275,6 +302,33 @@ Feature: Model Lab API
     Given operation "PinModelLabRun" enabled
     And new "PinModelLabRun" request
     And request contains "run_id" parameter with value 999999
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/ml-observability
+  Scenario: Remove an owner from a Model Lab project returns "Bad Request" response
+    Given operation "RemoveModelLabProjectOwner" enabled
+    And new "RemoveModelLabProjectOwner" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "user_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/ml-observability
+  Scenario: Remove an owner from a Model Lab project returns "No Content" response
+    Given operation "RemoveModelLabProjectOwner" enabled
+    And new "RemoveModelLabProjectOwner" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "user_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:ddoghq/ml-observability
+  Scenario: Remove an owner from a Model Lab project returns "Not Found" response
+    Given operation "RemoveModelLabProjectOwner" enabled
+    And new "RemoveModelLabProjectOwner" request
+    And request contains "project_id" parameter from "REPLACE.ME"
+    And request contains "user_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 

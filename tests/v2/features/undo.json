@@ -6767,6 +6767,31 @@
       "type": "safe"
     }
   },
+  "RemoveModelLabProjectOwner": {
+    "tag": "Model Lab API",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "AddModelLabProjectOwner": {
+    "tag": "Model Lab API",
+    "undo": {
+      "operationId": "RemoveModelLabProjectOwner",
+      "parameters": [
+        {
+          "name": "project_id",
+          "origin": "path",
+          "source": "project_id"
+        },
+        {
+          "name": "user_id",
+          "origin": "path",
+          "source": "user_id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
   "UnstarModelLabProject": {
     "tag": "Model Lab API",
     "undo": {

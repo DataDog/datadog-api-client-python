@@ -36,6 +36,35 @@ class ModelLabAPIApi:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
 
+        self._add_model_lab_project_owner_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/model-lab-api/projects/{project_id}/owners/{user_id}",
+                "operation_id": "add_model_lab_project_owner",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "project_id": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "project_id",
+                    "location": "path",
+                },
+                "user_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "user_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._delete_model_lab_run_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -451,6 +480,35 @@ class ModelLabAPIApi:
             api_client=api_client,
         )
 
+        self._remove_model_lab_project_owner_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/model-lab-api/projects/{project_id}/owners/{user_id}",
+                "operation_id": "remove_model_lab_project_owner",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "project_id": {
+                    "required": True,
+                    "openapi_types": (int,),
+                    "attribute": "project_id",
+                    "location": "path",
+                },
+                "user_id": {
+                    "required": True,
+                    "openapi_types": (UUID,),
+                    "attribute": "user_id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
         self._star_model_lab_project_endpoint = _Endpoint(
             settings={
                 "response_type": None,
@@ -519,6 +577,31 @@ class ModelLabAPIApi:
             },
             api_client=api_client,
         )
+
+    def add_model_lab_project_owner(
+        self,
+        project_id: int,
+        user_id: UUID,
+    ) -> None:
+        """Add an owner to a Model Lab project.
+
+        Add a user as an owner of a Model Lab project. The user must belong to the
+        project's organization. The project's creator is always an owner, so adding
+        the creator, or a user who is already an owner, has no effect.
+        A project can have at most 50 owners besides its creator.
+
+        :param project_id: The ID of the Model Lab project.
+        :type project_id: int
+        :param user_id: The UUID of the user.
+        :type user_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["project_id"] = project_id
+
+        kwargs["user_id"] = user_id
+
+        return self._add_model_lab_project_owner_endpoint.call_with_http_info(**kwargs)
 
     def delete_model_lab_run(
         self,
@@ -660,7 +743,7 @@ class ModelLabAPIApi:
 
         :param filter: Text search filter for project name or description.
         :type filter: str, optional
-        :param filter_owner_id: Filter by owner UUID.
+        :param filter_owner_id: Filter by owner UUID. Matches projects the user created and projects the user was added to as an owner.
         :type filter_owner_id: UUID, optional
         :param filter_tags: Filter by tags. Format: key:value,key2:value2.
         :type filter_tags: str, optional
@@ -874,6 +957,30 @@ class ModelLabAPIApi:
         kwargs["run_id"] = run_id
 
         return self._pin_model_lab_run_endpoint.call_with_http_info(**kwargs)
+
+    def remove_model_lab_project_owner(
+        self,
+        project_id: int,
+        user_id: UUID,
+    ) -> None:
+        """Remove an owner from a Model Lab project.
+
+        Remove a user from the owners of a Model Lab project. Removing a user who
+        isn't an owner has no effect. The project's creator is always an owner and
+        can't be removed.
+
+        :param project_id: The ID of the Model Lab project.
+        :type project_id: int
+        :param user_id: The UUID of the user.
+        :type user_id: UUID
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["project_id"] = project_id
+
+        kwargs["user_id"] = user_id
+
+        return self._remove_model_lab_project_owner_endpoint.call_with_http_info(**kwargs)
 
     def star_model_lab_project(
         self,
