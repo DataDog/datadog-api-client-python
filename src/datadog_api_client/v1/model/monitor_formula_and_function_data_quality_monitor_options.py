@@ -23,6 +23,9 @@ if TYPE_CHECKING:
     from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_model_type_override import (
         MonitorFormulaAndFunctionDataQualityModelTypeOverride,
     )
+    from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_platform_settings import (
+        MonitorFormulaAndFunctionDataQualityPlatformSettings,
+    )
     from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_source_to_target_config import (
         MonitorFormulaAndFunctionDataQualitySourceToTargetConfig,
     )
@@ -46,6 +49,9 @@ class MonitorFormulaAndFunctionDataQualityMonitorOptions(ModelNormal):
         from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_model_type_override import (
             MonitorFormulaAndFunctionDataQualityModelTypeOverride,
         )
+        from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_platform_settings import (
+            MonitorFormulaAndFunctionDataQualityPlatformSettings,
+        )
         from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_source_to_target_config import (
             MonitorFormulaAndFunctionDataQualitySourceToTargetConfig,
         )
@@ -59,6 +65,7 @@ class MonitorFormulaAndFunctionDataQualityMonitorOptions(ModelNormal):
             "group_by_columns": ([str],),
             "model_configuration": (MonitorFormulaAndFunctionDataQualityModelConfiguration,),
             "model_type_override": (MonitorFormulaAndFunctionDataQualityModelTypeOverride,),
+            "platform_settings": (MonitorFormulaAndFunctionDataQualityPlatformSettings,),
             "sensitivity": (float,),
             "source_to_target_config": (MonitorFormulaAndFunctionDataQualitySourceToTargetConfig,),
         }
@@ -72,6 +79,7 @@ class MonitorFormulaAndFunctionDataQualityMonitorOptions(ModelNormal):
         "group_by_columns": "group_by_columns",
         "model_configuration": "model_configuration",
         "model_type_override": "model_type_override",
+        "platform_settings": "platform_settings",
         "sensitivity": "sensitivity",
         "source_to_target_config": "source_to_target_config",
     }
@@ -86,6 +94,7 @@ class MonitorFormulaAndFunctionDataQualityMonitorOptions(ModelNormal):
         group_by_columns: Union[List[str], UnsetType] = unset,
         model_configuration: Union[MonitorFormulaAndFunctionDataQualityModelConfiguration, UnsetType] = unset,
         model_type_override: Union[MonitorFormulaAndFunctionDataQualityModelTypeOverride, UnsetType] = unset,
+        platform_settings: Union[MonitorFormulaAndFunctionDataQualityPlatformSettings, UnsetType] = unset,
         sensitivity: Union[float, UnsetType] = unset,
         source_to_target_config: Union[MonitorFormulaAndFunctionDataQualitySourceToTargetConfig, UnsetType] = unset,
         **kwargs,
@@ -119,6 +128,9 @@ class MonitorFormulaAndFunctionDataQualityMonitorOptions(ModelNormal):
         :param model_type_override: Override for the model type used in anomaly detection.
         :type model_type_override: MonitorFormulaAndFunctionDataQualityModelTypeOverride, optional
 
+        :param platform_settings: Platform-specific settings for a data quality monitor.
+        :type platform_settings: MonitorFormulaAndFunctionDataQualityPlatformSettings, optional
+
         :param sensitivity: Sensitivity of the anomaly detection model, expressed as a multiplier on the width
             of the predicted bounds. Higher values widen the bounds and produce fewer alerts;
             lower values tighten them and produce more alerts. Defaults to ``3.0``.
@@ -144,6 +156,8 @@ class MonitorFormulaAndFunctionDataQualityMonitorOptions(ModelNormal):
             kwargs["model_configuration"] = model_configuration
         if model_type_override is not unset:
             kwargs["model_type_override"] = model_type_override
+        if platform_settings is not unset:
+            kwargs["platform_settings"] = platform_settings
         if sensitivity is not unset:
             kwargs["sensitivity"] = sensitivity
         if source_to_target_config is not unset:
