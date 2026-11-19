@@ -48,7 +48,8 @@ class AggregatedWaterfallResponseAttributesCriteria(ModelNormal):
         **kwargs,
     ):
         """
-        Performance criteria used to filter view instances by a metric threshold, or null if no criteria were applied.
+        Performance criteria used to filter view instances by a metric threshold, or null if no
+        criteria were applied.
 
         :param max: Maximum threshold in seconds (inclusive).
         :type max: float, optional
