@@ -591,8 +591,14 @@ from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_model
 from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_monitor_options import (
     MonitorFormulaAndFunctionDataQualityMonitorOptions,
 )
+from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_platform_settings import (
+    MonitorFormulaAndFunctionDataQualityPlatformSettings,
+)
 from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_query_definition import (
     MonitorFormulaAndFunctionDataQualityQueryDefinition,
+)
+from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_snowflake_settings import (
+    MonitorFormulaAndFunctionDataQualitySnowflakeSettings,
 )
 from datadog_api_client.v1.model.monitor_formula_and_function_data_quality_source_to_target_config import (
     MonitorFormulaAndFunctionDataQualitySourceToTargetConfig,
@@ -2034,7 +2040,9 @@ __all__ = [
     "MonitorFormulaAndFunctionDataQualityModelConfiguration",
     "MonitorFormulaAndFunctionDataQualityModelTypeOverride",
     "MonitorFormulaAndFunctionDataQualityMonitorOptions",
+    "MonitorFormulaAndFunctionDataQualityPlatformSettings",
     "MonitorFormulaAndFunctionDataQualityQueryDefinition",
+    "MonitorFormulaAndFunctionDataQualitySnowflakeSettings",
     "MonitorFormulaAndFunctionDataQualitySourceToTargetConfig",
     "MonitorFormulaAndFunctionEventAggregation",
     "MonitorFormulaAndFunctionEventQueryDefinition",
