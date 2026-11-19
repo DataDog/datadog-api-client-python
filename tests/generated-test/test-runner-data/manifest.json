@@ -6016,6 +6016,13 @@
     {
       "feature": "Experiments",
       "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/create-bandit-returns-created-response.json",
+      "scenario": "Create bandit returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
       "file": "v2/experiments/create-experiment-metric-group-from-collection-returns-created-response.json",
       "scenario": "Create experiment metric group from collection returns \"Created\" response",
       "version": "v2"
@@ -6060,6 +6067,13 @@
       "feature_file": "../../v2/features/experiments.feature",
       "file": "v2/experiments/create-subject-type-returns-created-response.json",
       "scenario": "Create subject type returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/delete-bandit-returns-the-bandit-was-deleted-response.json",
+      "scenario": "Delete bandit returns \"The bandit was deleted.\" response",
       "version": "v2"
     },
     {
@@ -6114,6 +6128,13 @@
     {
       "feature": "Experiments",
       "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/get-bandit-results-returns-ok-response.json",
+      "scenario": "Get bandit results returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
       "file": "v2/experiments/get-bandit-returns-no-bandit-with-this-id-exists-for-the-organization-response.json",
       "scenario": "Get bandit returns \"No bandit with this ID exists for the organization.\" response",
       "version": "v2"
@@ -6121,8 +6142,22 @@
     {
       "feature": "Experiments",
       "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/get-bandit-returns-ok-response.json",
+      "scenario": "Get bandit returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
       "file": "v2/experiments/get-bandit-traffic-summary-returns-no-bandit-with-this-id-exists-for-the-organization-response.json",
       "scenario": "Get bandit traffic summary returns \"No bandit with this ID exists for the organization.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/get-bandit-traffic-summary-returns-ok-response.json",
+      "scenario": "Get bandit traffic summary returns \"OK\" response",
       "version": "v2"
     },
     {
@@ -6179,6 +6214,20 @@
       "feature_file": "../../v2/features/experiments.feature",
       "file": "v2/experiments/get-subject-type-returns-ok-response.json",
       "scenario": "Get subject type returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/list-bandit-policies-returns-no-bandit-with-this-id-exists-for-the-organization-response.json",
+      "scenario": "List bandit policies returns \"No bandit with this ID exists for the organization.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/list-bandit-policies-returns-ok-response.json",
+      "scenario": "List bandit policies returns \"OK\" response",
       "version": "v2"
     },
     {
@@ -6268,8 +6317,22 @@
     {
       "feature": "Experiments",
       "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/pause-bandit-returns-the-bandit-isn-t-running-or-another-change-to-it-happened-at-the-same-time-response.json",
+      "scenario": "Pause bandit returns \"The bandit isn't running, or another change to it happened at the same time.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
       "file": "v2/experiments/publish-experiment-protocol-returns-ok-response.json",
       "scenario": "Publish experiment protocol returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/refresh-bandit-returns-the-bandit-isn-t-running-or-a-refresh-of-it-is-already-running-response.json",
+      "scenario": "Refresh bandit returns \"The bandit isn't running, or a refresh of it is already running.\" response",
       "version": "v2"
     },
     {
@@ -6282,8 +6345,36 @@
     {
       "feature": "Experiments",
       "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/resume-bandit-returns-the-bandit-isn-t-paused-or-another-change-to-it-happened-at-the-same-time-response.json",
+      "scenario": "Resume bandit returns \"The bandit isn't paused, or another change to it happened at the same time.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/start-bandit-returns-the-bandit-is-paused-or-has-ended-its-setup-is-incomplete-or-an-approval-or-a-pending-change-request-blocks-the-start-response.json",
+      "scenario": "Start bandit returns \"The bandit is paused or has ended, its setup is incomplete, or an approval or a pending change request blocks the start.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
       "file": "v2/experiments/start-experiment-returns-the-experiment-was-started-response.json",
       "scenario": "Start experiment returns \"The experiment was started.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/stop-bandit-returns-the-bandit-isn-t-running-or-paused-its-flag-environment-requires-an-approval-or-a-pending-change-request-touches-the-flag-s-targeting-rules-retrying-alone-does-not-resolve-an-approval-requirement-response.json",
+      "scenario": "Stop bandit returns \"The bandit isn't running or paused, its flag environment requires an approval, or a pending change request touches the flag's targeting rules. Retrying alone does not resolve an approval requirement.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Experiments",
+      "feature_file": "../../v2/features/experiments.feature",
+      "file": "v2/experiments/update-bandit-returns-ok-response.json",
+      "scenario": "Update bandit returns \"OK\" response",
       "version": "v2"
     },
     {

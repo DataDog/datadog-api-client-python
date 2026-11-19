@@ -1,0 +1,35 @@
+{
+  "api": "Experiments",
+  "expected_status": 200,
+  "feature": "Experiments",
+  "id": "v2/Experiments/List bandit policies returns \"OK\" response",
+  "operation_id": "ListBanditPolicies",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "bandit_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "bandit.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/experiments/bandits/{bandit_id}/policies"
+  },
+  "scenario": "List bandit policies returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

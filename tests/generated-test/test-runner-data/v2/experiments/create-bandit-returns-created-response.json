@@ -1,0 +1,51 @@
+{
+  "api": "Experiments",
+  "expected_status": 201,
+  "feature": "Experiments",
+  "id": "v2/Experiments/Create bandit returns \"Created\" response",
+  "operation_id": "CreateBandit",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "ExperimentsCreateBanditV2Request",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "datadog_flag_configuration": {
+              "environment_id": "{{ environment.data.id }}",
+              "feature_flag_id": "{{ feature_flag.data.id }}",
+              "targeting_rules": []
+            },
+            "name": "bandit-{{ unique_hash }}",
+            "subject_type_id": "{{ experiment_subject_type.data.id }}",
+            "tags": [
+              "bdd"
+            ],
+            "variants": [
+              {
+                "feature_flag_variant_id": "{{ feature_flag.data.attributes.variants[0].id }}",
+                "is_fallback": true
+              },
+              {
+                "feature_flag_variant_id": "{{ feature_flag.data.attributes.variants[1].id }}"
+              }
+            ]
+          },
+          "type": "bandits"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/experiments/bandits"
+  },
+  "scenario": "Create bandit returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
