@@ -1,0 +1,18 @@
+{
+  "api": "CloudAuthentication",
+  "expected_status": 200,
+  "feature": "Cloud Authentication",
+  "id": "v2/Cloud Authentication/List HCP Terraform persona mappings returns \"OK\" response",
+  "operation_id": "ListTerraformCloudAuthPersonaMappings",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/wif/terraform/persona_mapping"
+  },
+  "scenario": "List HCP Terraform persona mappings returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

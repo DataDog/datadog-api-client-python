@@ -1,0 +1,35 @@
+{
+  "api": "CloudAuthentication",
+  "expected_status": 201,
+  "feature": "Cloud Authentication",
+  "id": "v2/Cloud Authentication/Create an HCP Terraform persona mapping returns \"Created\" response",
+  "operation_id": "CreateTerraformCloudAuthPersonaMapping",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "TerraformCloudAuthPersonaMappingCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "account_identifier": "{{ service_account_user_with_role.data.attributes.email }}",
+            "issuer_url": "https://app.terraform.io",
+            "sub_pattern": "organization:datadog-api-spec:project:Default Project:workspace:sdk-{{ unique_lower_alnum }}:run_phase:*"
+          },
+          "type": "terraform_cloud_auth_config"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/wif/terraform/persona_mapping"
+  },
+  "scenario": "Create an HCP Terraform persona mapping returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

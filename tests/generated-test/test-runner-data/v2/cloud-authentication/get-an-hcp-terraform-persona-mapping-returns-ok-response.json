@@ -1,0 +1,35 @@
+{
+  "api": "CloudAuthentication",
+  "expected_status": 200,
+  "feature": "Cloud Authentication",
+  "id": "v2/Cloud Authentication/Get an HCP Terraform persona mapping returns \"OK\" response",
+  "operation_id": "GetTerraformCloudAuthPersonaMapping",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "persona_mapping_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "terraform_cloud_auth_persona_mapping.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/wif/terraform/persona_mapping/{persona_mapping_id}"
+  },
+  "scenario": "Get an HCP Terraform persona mapping returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

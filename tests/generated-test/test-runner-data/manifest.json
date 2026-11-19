@@ -4252,6 +4252,20 @@
     {
       "feature": "Cloud Authentication",
       "feature_file": "../../v2/features/cloud_authentication.feature",
+      "file": "v2/cloud-authentication/create-an-hcp-terraform-persona-mapping-returns-bad-request-response.json",
+      "scenario": "Create an HCP Terraform persona mapping returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "feature_file": "../../v2/features/cloud_authentication.feature",
+      "file": "v2/cloud-authentication/create-an-hcp-terraform-persona-mapping-returns-created-response.json",
+      "scenario": "Create an HCP Terraform persona mapping returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "feature_file": "../../v2/features/cloud_authentication.feature",
       "file": "v2/cloud-authentication/delete-a-custom-oidc-persona-mapping-returns-no-content-response.json",
       "scenario": "Delete a Custom OIDC persona mapping returns \"No Content\" response",
       "version": "v2"
@@ -4275,6 +4289,13 @@
       "feature_file": "../../v2/features/cloud_authentication.feature",
       "file": "v2/cloud-authentication/delete-an-aws-cloud-authentication-intake-mapping-returns-not-found-response.json",
       "scenario": "Delete an AWS cloud authentication intake mapping returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "feature_file": "../../v2/features/cloud_authentication.feature",
+      "file": "v2/cloud-authentication/delete-an-hcp-terraform-persona-mapping-returns-no-content-response.json",
+      "scenario": "Delete an HCP Terraform persona mapping returns \"No Content\" response",
       "version": "v2"
     },
     {
@@ -4308,8 +4329,29 @@
     {
       "feature": "Cloud Authentication",
       "feature_file": "../../v2/features/cloud_authentication.feature",
+      "file": "v2/cloud-authentication/get-an-hcp-terraform-persona-mapping-returns-not-found-response.json",
+      "scenario": "Get an HCP Terraform persona mapping returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "feature_file": "../../v2/features/cloud_authentication.feature",
+      "file": "v2/cloud-authentication/get-an-hcp-terraform-persona-mapping-returns-ok-response.json",
+      "scenario": "Get an HCP Terraform persona mapping returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "feature_file": "../../v2/features/cloud_authentication.feature",
       "file": "v2/cloud-authentication/list-aws-cloud-authentication-intake-mappings-returns-ok-response.json",
       "scenario": "List AWS cloud authentication intake mappings returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Cloud Authentication",
+      "feature_file": "../../v2/features/cloud_authentication.feature",
+      "file": "v2/cloud-authentication/list-hcp-terraform-persona-mappings-returns-ok-response.json",
+      "scenario": "List HCP Terraform persona mappings returns \"OK\" response",
       "version": "v2"
     },
     {

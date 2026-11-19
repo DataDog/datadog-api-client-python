@@ -1,7 +1,7 @@
 @endpoint(cloud-authentication) @endpoint(cloud-authentication-v2)
 Feature: Cloud Authentication
-  Configure AWS, GitHub, and Custom OIDC cloud authentication for persona
-  and intake authentication through the Datadog API.
+  Configure AWS, GitHub, HCP Terraform, and Custom OIDC cloud authentication
+  for persona and intake authentication through the Datadog API.
 
   Background:
     Given a valid "apiKeyAuth" key in the system
@@ -167,6 +167,39 @@ Feature: Cloud Authentication
     When the request is sent
     Then the response status is 201 Created
 
+  @team:ddoghq/credential-management @team:ddoghq/delegated-auth-login
+  Scenario: Create an HCP Terraform persona mapping returns "Bad Request" response
+    Given there is a valid "role" in the system
+    And there is a valid "service_account_user_with_role" in the system
+    And operation "CreateTerraformCloudAuthPersonaMapping" enabled
+    And new "CreateTerraformCloudAuthPersonaMapping" request
+    And body with value {"data": {"type": "terraform_cloud_auth_config", "attributes": {"issuer_url": "https://app.terraform.io", "sub_pattern": "organization:*:project:*:workspace:*:run_phase:*", "account_identifier": "{{ service_account_user_with_role.data.attributes.email }}"}}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/credential-management @team:ddoghq/delegated-auth-login
+  Scenario: Create an HCP Terraform persona mapping returns "Conflict" response
+    Given operation "CreateTerraformCloudAuthPersonaMapping" enabled
+    And new "CreateTerraformCloudAuthPersonaMapping" request
+    And body with value {"data": {"attributes": {"account_identifier": "test@example.com", "issuer_url": "https://app.terraform.io", "sub_pattern": "organization:example-org:project:Default Project:workspace:example-workspace:run_phase:*"}, "type": "terraform_cloud_auth_config"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @replay-only @team:ddoghq/credential-management @team:ddoghq/delegated-auth-login
+  Scenario: Create an HCP Terraform persona mapping returns "Created" response
+    Given there is a valid "role" in the system
+    And there is a valid "service_account_user_with_role" in the system
+    And operation "CreateTerraformCloudAuthPersonaMapping" enabled
+    And new "CreateTerraformCloudAuthPersonaMapping" request
+    And body with value {"data": {"type": "terraform_cloud_auth_config", "attributes": {"issuer_url": "https://app.terraform.io", "sub_pattern": "organization:datadog-api-spec:project:Default Project:workspace:sdk-{{ unique_lower_alnum }}:run_phase:*", "account_identifier": "{{ service_account_user_with_role.data.attributes.email }}"}}}
+    When the request is sent
+    Then the response status is 201 Created
+    And the response "data.type" is equal to "terraform_cloud_auth_config"
+    And the response "data" has field "id"
+    And the response "data.attributes.issuer_url" is equal to "https://app.terraform.io"
+    And the response "data.attributes.account_uuid" is equal to "{{ service_account_user_with_role.data.id }}"
+    And the response "data.attributes" has field "audience"
+
   @generated @skip @team:ddoghq/credential-management @team:ddoghq/delegated-auth-login
   Scenario: Delete a Custom OIDC persona mapping returns "Bad Request" response
     Given operation "DeleteOIDCCloudAuthPersonaMapping" enabled
@@ -290,6 +323,33 @@ Feature: Cloud Authentication
   Scenario: Delete an AWS cloud authentication persona mapping returns "Not Found" response
     Given operation "DeleteAWSCloudAuthPersonaMapping" enabled
     And new "DeleteAWSCloudAuthPersonaMapping" request
+    And request contains "persona_mapping_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/credential-management @team:ddoghq/delegated-auth-login
+  Scenario: Delete an HCP Terraform persona mapping returns "Bad Request" response
+    Given operation "DeleteTerraformCloudAuthPersonaMapping" enabled
+    And new "DeleteTerraformCloudAuthPersonaMapping" request
+    And request contains "persona_mapping_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @replay-only @team:ddoghq/credential-management @team:ddoghq/delegated-auth-login
+  Scenario: Delete an HCP Terraform persona mapping returns "No Content" response
+    Given there is a valid "role" in the system
+    And there is a valid "service_account_user_with_role" in the system
+    And there is a valid "terraform_cloud_auth_persona_mapping" in the system
+    And operation "DeleteTerraformCloudAuthPersonaMapping" enabled
+    And new "DeleteTerraformCloudAuthPersonaMapping" request
+    And request contains "persona_mapping_id" parameter from "terraform_cloud_auth_persona_mapping.data.id"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:ddoghq/credential-management @team:ddoghq/delegated-auth-login
+  Scenario: Delete an HCP Terraform persona mapping returns "Not Found" response
+    Given operation "DeleteTerraformCloudAuthPersonaMapping" enabled
+    And new "DeleteTerraformCloudAuthPersonaMapping" request
     And request contains "persona_mapping_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
@@ -422,6 +482,35 @@ Feature: Cloud Authentication
     Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/credential-management @team:ddoghq/delegated-auth-login
+  Scenario: Get an HCP Terraform persona mapping returns "Bad Request" response
+    Given operation "GetTerraformCloudAuthPersonaMapping" enabled
+    And new "GetTerraformCloudAuthPersonaMapping" request
+    And request contains "persona_mapping_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:ddoghq/credential-management @team:ddoghq/delegated-auth-login
+  Scenario: Get an HCP Terraform persona mapping returns "Not Found" response
+    Given operation "GetTerraformCloudAuthPersonaMapping" enabled
+    And new "GetTerraformCloudAuthPersonaMapping" request
+    And request contains "persona_mapping_id" parameter with value "00000000-0000-0000-0000-000000000000"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @replay-only @team:ddoghq/credential-management @team:ddoghq/delegated-auth-login
+  Scenario: Get an HCP Terraform persona mapping returns "OK" response
+    Given there is a valid "role" in the system
+    And there is a valid "service_account_user_with_role" in the system
+    And there is a valid "terraform_cloud_auth_persona_mapping" in the system
+    And operation "GetTerraformCloudAuthPersonaMapping" enabled
+    And new "GetTerraformCloudAuthPersonaMapping" request
+    And request contains "persona_mapping_id" parameter from "terraform_cloud_auth_persona_mapping.data.id"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" is equal to "{{ terraform_cloud_auth_persona_mapping.data.id }}"
+    And the response "data.attributes.sub_pattern" is equal to "{{ terraform_cloud_auth_persona_mapping.data.attributes.sub_pattern }}"
+
+  @generated @skip @team:ddoghq/credential-management @team:ddoghq/delegated-auth-login
   Scenario: List AWS cloud authentication intake mappings returns "Bad Request" response
     Given operation "ListAWSCloudAuthIntakeMappings" enabled
     And new "ListAWSCloudAuthIntakeMappings" request
@@ -477,6 +566,23 @@ Feature: Cloud Authentication
   Scenario: List GitHub cloud authentication persona mappings returns "OK" response
     Given operation "ListGitHubCloudAuthPersonaMappings" enabled
     And new "ListGitHubCloudAuthPersonaMappings" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/credential-management @team:ddoghq/delegated-auth-login
+  Scenario: List HCP Terraform persona mappings returns "Bad Request" response
+    Given operation "ListTerraformCloudAuthPersonaMappings" enabled
+    And new "ListTerraformCloudAuthPersonaMappings" request
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @replay-only @team:ddoghq/credential-management @team:ddoghq/delegated-auth-login
+  Scenario: List HCP Terraform persona mappings returns "OK" response
+    Given there is a valid "role" in the system
+    And there is a valid "service_account_user_with_role" in the system
+    And there is a valid "terraform_cloud_auth_persona_mapping" in the system
+    And operation "ListTerraformCloudAuthPersonaMappings" enabled
+    And new "ListTerraformCloudAuthPersonaMappings" request
     When the request is sent
     Then the response status is 200 OK
 
