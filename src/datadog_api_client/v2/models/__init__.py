@@ -4774,6 +4774,7 @@ from datadog_api_client.v2.model.fastly_service_type import FastlyServiceType
 from datadog_api_client.v2.model.fastly_services_response import FastlyServicesResponse
 from datadog_api_client.v2.model.feature_flag import FeatureFlag
 from datadog_api_client.v2.model.feature_flag_attributes import FeatureFlagAttributes
+from datadog_api_client.v2.model.feature_flag_bucketing_mode import FeatureFlagBucketingMode
 from datadog_api_client.v2.model.feature_flag_change_event import FeatureFlagChangeEvent
 from datadog_api_client.v2.model.feature_flag_change_event_action import FeatureFlagChangeEventAction
 from datadog_api_client.v2.model.feature_flag_change_event_attributes import FeatureFlagChangeEventAttributes
@@ -17597,6 +17598,7 @@ __all__ = [
     "FastlyServicesResponse",
     "FeatureFlag",
     "FeatureFlagAttributes",
+    "FeatureFlagBucketingMode",
     "FeatureFlagChangeEvent",
     "FeatureFlagChangeEventAction",
     "FeatureFlagChangeEventAttributes",

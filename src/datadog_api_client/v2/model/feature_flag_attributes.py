@@ -17,6 +17,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.feature_flag_bucketing_mode import FeatureFlagBucketingMode
     from datadog_api_client.v2.model.feature_flag_environment import FeatureFlagEnvironment
     from datadog_api_client.v2.model.feature_flag_staleness_details import FeatureFlagStalenessDetails
     from datadog_api_client.v2.model.feature_flag_staleness_status_override import FeatureFlagStalenessStatusOverride
@@ -27,6 +28,7 @@ if TYPE_CHECKING:
 class FeatureFlagAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.feature_flag_bucketing_mode import FeatureFlagBucketingMode
         from datadog_api_client.v2.model.feature_flag_environment import FeatureFlagEnvironment
         from datadog_api_client.v2.model.feature_flag_staleness_details import FeatureFlagStalenessDetails
         from datadog_api_client.v2.model.feature_flag_staleness_status_override import (
@@ -37,6 +39,7 @@ class FeatureFlagAttributes(ModelNormal):
 
         return {
             "archived_at": (datetime, none_type),
+            "bucketing_mode": (FeatureFlagBucketingMode,),
             "created_at": (datetime,),
             "created_by": (UUID,),
             "description": (str,),
@@ -59,6 +62,7 @@ class FeatureFlagAttributes(ModelNormal):
 
     attribute_map = {
         "archived_at": "archived_at",
+        "bucketing_mode": "bucketing_mode",
         "created_at": "created_at",
         "created_by": "created_by",
         "description": "description",
@@ -87,6 +91,7 @@ class FeatureFlagAttributes(ModelNormal):
         value_type: ValueType,
         variants: List[Variant],
         archived_at: Union[datetime, none_type, UnsetType] = unset,
+        bucketing_mode: Union[FeatureFlagBucketingMode, UnsetType] = unset,
         created_at: Union[datetime, UnsetType] = unset,
         created_by: Union[UUID, UnsetType] = unset,
         distribution_channel: Union[str, UnsetType] = unset,
@@ -107,6 +112,9 @@ class FeatureFlagAttributes(ModelNormal):
 
         :param archived_at: The timestamp when the feature flag was archived.
         :type archived_at: datetime, none_type, optional
+
+        :param bucketing_mode: How subjects are assigned to variants. ``DATADOG`` is the native scheme. ``EPPO`` reproduces the assignments that Eppo made for a flag migrated from Eppo, so its subjects keep their variants. Set when the flag is created and never changed.
+        :type bucketing_mode: FeatureFlagBucketingMode, optional
 
         :param created_at: The timestamp when the feature flag was created.
         :type created_at: datetime, optional
@@ -164,6 +172,8 @@ class FeatureFlagAttributes(ModelNormal):
         """
         if archived_at is not unset:
             kwargs["archived_at"] = archived_at
+        if bucketing_mode is not unset:
+            kwargs["bucketing_mode"] = bucketing_mode
         if created_at is not unset:
             kwargs["created_at"] = created_at
         if created_by is not unset:
