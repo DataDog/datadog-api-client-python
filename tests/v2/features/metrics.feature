@@ -162,7 +162,6 @@ Feature: Metrics
   @generated @skip @team:ddoghq/metrics-experience
   Scenario: Delete a historical metrics configuration returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
-    And operation "DeleteHistoricalMetricsConfiguration" enabled
     And new "DeleteHistoricalMetricsConfiguration" request
     And request contains "metric_name" parameter from "REPLACE.ME"
     When the request is sent
@@ -171,7 +170,6 @@ Feature: Metrics
   @generated @skip @team:ddoghq/metrics-experience
   Scenario: Delete a historical metrics configuration returns "No Content" response
     Given a valid "appKeyAuth" key in the system
-    And operation "DeleteHistoricalMetricsConfiguration" enabled
     And new "DeleteHistoricalMetricsConfiguration" request
     And request contains "metric_name" parameter from "REPLACE.ME"
     When the request is sent
@@ -233,7 +231,6 @@ Feature: Metrics
   @generated @skip @team:ddoghq/metrics-experience
   Scenario: Enable historical metrics ingestion returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
-    And operation "CreateHistoricalMetricsConfiguration" enabled
     And new "CreateHistoricalMetricsConfiguration" request
     And body with value {"data": {"id": "dd.test.metric", "type": "historical_metrics_configurations"}}
     When the request is sent
@@ -242,7 +239,6 @@ Feature: Metrics
   @generated @skip @team:ddoghq/metrics-experience
   Scenario: Enable historical metrics ingestion returns "Created" response
     Given a valid "appKeyAuth" key in the system
-    And operation "CreateHistoricalMetricsConfiguration" enabled
     And new "CreateHistoricalMetricsConfiguration" request
     And body with value {"data": {"id": "dd.test.metric", "type": "historical_metrics_configurations"}}
     When the request is sent
@@ -251,7 +247,6 @@ Feature: Metrics
   @generated @skip @team:ddoghq/metrics-experience
   Scenario: Enable historical metrics ingestion returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
-    And operation "CreateHistoricalMetricsConfiguration" enabled
     And new "CreateHistoricalMetricsConfiguration" request
     And body with value {"data": {"id": "dd.test.metric", "type": "historical_metrics_configurations"}}
     When the request is sent
@@ -260,7 +255,6 @@ Feature: Metrics
   @generated @skip @team:ddoghq/metrics-experience
   Scenario: Enable historical metrics ingestion returns "OK" response
     Given a valid "appKeyAuth" key in the system
-    And operation "CreateHistoricalMetricsConfiguration" enabled
     And new "CreateHistoricalMetricsConfiguration" request
     And body with value {"data": {"id": "dd.test.metric", "type": "historical_metrics_configurations"}}
     When the request is sent
@@ -269,7 +263,6 @@ Feature: Metrics
   @generated @skip @team:ddoghq/metrics-experience
   Scenario: Enable historical metrics ingestion returns "Unprocessable Entity" response
     Given a valid "appKeyAuth" key in the system
-    And operation "CreateHistoricalMetricsConfiguration" enabled
     And new "CreateHistoricalMetricsConfiguration" request
     And body with value {"data": {"id": "dd.test.metric", "type": "historical_metrics_configurations"}}
     When the request is sent
@@ -308,7 +301,6 @@ Feature: Metrics
   @generated @skip @team:ddoghq/metrics-experience
   Scenario: Get a historical metrics configuration returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
-    And operation "GetHistoricalMetricsConfiguration" enabled
     And new "GetHistoricalMetricsConfiguration" request
     And request contains "metric_name" parameter from "REPLACE.ME"
     When the request is sent
@@ -317,7 +309,6 @@ Feature: Metrics
   @generated @skip @team:ddoghq/metrics-experience
   Scenario: Get a historical metrics configuration returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
-    And operation "GetHistoricalMetricsConfiguration" enabled
     And new "GetHistoricalMetricsConfiguration" request
     And request contains "metric_name" parameter from "REPLACE.ME"
     When the request is sent
@@ -326,7 +317,6 @@ Feature: Metrics
   @generated @skip @team:ddoghq/metrics-experience
   Scenario: Get a historical metrics configuration returns "OK" response
     Given a valid "appKeyAuth" key in the system
-    And operation "GetHistoricalMetricsConfiguration" enabled
     And new "GetHistoricalMetricsConfiguration" request
     And request contains "metric_name" parameter from "REPLACE.ME"
     When the request is sent
