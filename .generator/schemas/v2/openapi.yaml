@@ -77439,6 +77439,9 @@ components:
         indicator_type:
           description: Type of indicator (for example, IP address or domain).
           type: string
+        is_muted:
+          description: Whether the indicator is muted for your organization.
+          type: boolean
         last_seen:
           description: Timestamp when the indicator was last seen.
           format: date-time
@@ -77463,6 +77466,12 @@ components:
           type: array
         max_trust_score:
           $ref: "#/components/schemas/IoCScoreEffect"
+        mute_reason:
+          description: Reason provided when the indicator was muted. Returned only when the indicator is muted.
+          type: string
+        mute_scope:
+          description: Scope of the mute applied to the indicator. Returned only when the indicator is muted.
+          type: string
         score:
           description: Threat score for the indicator (0-100).
           format: double
@@ -77551,6 +77560,9 @@ components:
         indicator_type:
           description: Type of indicator (for example, IP address or domain).
           type: string
+        is_muted:
+          description: Whether the indicator is muted for your organization.
+          type: boolean
         last_seen:
           description: Timestamp when the indicator was last seen.
           format: date-time
@@ -77578,8 +77590,21 @@ components:
             $ref: "#/components/schemas/IoCSource"
           nullable: true
           type: array
+        matched_ocsf_fields:
+          description: OCSF fields in which the indicator was matched. Returned only when `ocsf` is true.
+          items:
+            type: string
+          type: array
         max_trust_score:
           $ref: "#/components/schemas/IoCScoreEffect"
+        mute_reason:
+          description: Reason provided when the indicator was muted. Returned only when the indicator is muted.
+          type: string
+        mute_scope:
+          description: |-
+            Scope of the mute applied to the indicator (for example, `org`). Returned only when the indicator
+            is muted.
+          type: string
         score:
           description: Threat score for the indicator (0-100).
           format: double
