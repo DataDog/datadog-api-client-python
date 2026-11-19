@@ -10,6 +10,7 @@ from datadog_api_client.model_utils import (
     cached_property,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -21,9 +22,21 @@ if TYPE_CHECKING:
 
 class AggregatedLongTasksRequestAttributes(ModelNormal):
     validations = {
+        "filter": {
+            "max_length": 10000,
+        },
+        "_from": {
+            "inclusive_maximum": 4102444800,
+        },
         "sample_size": {
             "inclusive_maximum": 500,
             "inclusive_minimum": 1,
+        },
+        "to": {
+            "inclusive_maximum": 4102444800,
+        },
+        "view_name": {
+            "max_length": 1000,
         },
     }
 
@@ -34,7 +47,7 @@ class AggregatedLongTasksRequestAttributes(ModelNormal):
         )
 
         return {
-            "application_id": (str,),
+            "application_id": (UUID,),
             "criteria": (AggregatedWaterfallPerformanceCriteria,),
             "filter": (str,),
             "_from": (int,),
@@ -55,7 +68,7 @@ class AggregatedLongTasksRequestAttributes(ModelNormal):
 
     def __init__(
         self_,
-        application_id: str,
+        application_id: UUID,
         _from: int,
         sample_size: int,
         to: int,
@@ -68,7 +81,7 @@ class AggregatedLongTasksRequestAttributes(ModelNormal):
         Attributes for an aggregated long tasks query.
 
         :param application_id: The RUM application ID to analyze.
-        :type application_id: str
+        :type application_id: UUID
 
         :param criteria: Performance criteria to filter view instances by a metric threshold. When criteria are
             applied, specify at least one of ``min`` or ``max``. When both are provided, ``min`` must be less
@@ -78,13 +91,14 @@ class AggregatedLongTasksRequestAttributes(ModelNormal):
         :param filter: RUM query string to filter events (for example, @session.type:user @geo.country:US).
         :type filter: str, optional
 
-        :param _from: Start of the time range as a Unix timestamp in seconds.
+        :param _from: Start of the time range as a Unix timestamp in seconds. Must be less than ``to`` ;
+            the range cannot exceed 7 days.
         :type _from: int
 
         :param sample_size: Number of view instances to sample, between 1 and 500.
         :type sample_size: int
 
-        :param to: End of the time range as a Unix timestamp in seconds.
+        :param to: End of the time range as a Unix timestamp in seconds. Must be greater than ``from``.
         :type to: int
 
         :param view_name: The RUM view name to analyze (for example, /account/login).

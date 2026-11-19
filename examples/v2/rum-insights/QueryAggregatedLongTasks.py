@@ -13,11 +13,12 @@ from datadog_api_client.v2.model.aggregated_waterfall_performance_criteria impor
 from datadog_api_client.v2.model.aggregated_waterfall_performance_criteria_metric import (
     AggregatedWaterfallPerformanceCriteriaMetric,
 )
+from uuid import UUID
 
 body = AggregatedLongTasksRequest(
     data=AggregatedLongTasksRequestData(
         attributes=AggregatedLongTasksRequestAttributes(
-            application_id="ccbc53b1-74f2-496b-bdd7-9a8fa7b7376b",
+            application_id=UUID("ccbc53b1-74f2-496b-bdd7-9a8fa7b7376b"),
             criteria=AggregatedWaterfallPerformanceCriteria(
                 max=5.0,
                 metric=AggregatedWaterfallPerformanceCriteriaMetric.LARGEST_CONTENTFUL_PAINT,

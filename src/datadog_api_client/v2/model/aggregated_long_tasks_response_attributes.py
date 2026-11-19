@@ -9,6 +9,7 @@ from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     none_type,
+    UUID,
 )
 
 
@@ -21,6 +22,9 @@ if TYPE_CHECKING:
 
 class AggregatedLongTasksResponseAttributes(ModelNormal):
     validations = {
+        "sampled_view_ids": {
+            "max_items": 50,
+        },
         "view_count": {
             "inclusive_maximum": 2147483647,
         },
@@ -34,7 +38,7 @@ class AggregatedLongTasksResponseAttributes(ModelNormal):
         from datadog_api_client.v2.model.aggregated_long_tasks_by_invoker_type import AggregatedLongTasksByInvokerType
 
         return {
-            "application_id": (str,),
+            "application_id": (UUID,),
             "criteria": (AggregatedLongTasksResponseAttributesCriteria,),
             "_from": (int,),
             "long_tasks_by_invoker_type": ([AggregatedLongTasksByInvokerType],),
@@ -57,7 +61,7 @@ class AggregatedLongTasksResponseAttributes(ModelNormal):
 
     def __init__(
         self_,
-        application_id: str,
+        application_id: UUID,
         criteria: Union[AggregatedLongTasksResponseAttributesCriteria, none_type],
         _from: int,
         long_tasks_by_invoker_type: List[AggregatedLongTasksByInvokerType],
@@ -71,9 +75,10 @@ class AggregatedLongTasksResponseAttributes(ModelNormal):
         Attributes of an aggregated long tasks response.
 
         :param application_id: The RUM application ID that was analyzed.
-        :type application_id: str
+        :type application_id: UUID
 
-        :param criteria: Performance criteria used to filter view instances by a metric threshold, or null if no criteria were applied.
+        :param criteria: Performance criteria used to filter view instances by a metric threshold, or null if no
+            criteria were applied.
         :type criteria: AggregatedLongTasksResponseAttributesCriteria, none_type
 
         :param _from: Start of the analyzed time range as a Unix timestamp in seconds.
@@ -82,13 +87,13 @@ class AggregatedLongTasksResponseAttributes(ModelNormal):
         :param long_tasks_by_invoker_type: Long task statistics grouped by invoker type, sorted by impact score descending.
         :type long_tasks_by_invoker_type: [AggregatedLongTasksByInvokerType]
 
-        :param sampled_view_ids: List of RUM view IDs sampled for this aggregation, capped at 50.
+        :param sampled_view_ids: IDs of sampled views that contain at least one long task. At most 50 IDs are returned.
         :type sampled_view_ids: [str]
 
         :param to: End of the analyzed time range as a Unix timestamp in seconds.
         :type to: int
 
-        :param view_count: Number of view instances included in the analysis.
+        :param view_count: Number of sampled views that contain at least one long task.
         :type view_count: int
 
         :param view_name: The RUM view name that was analyzed.

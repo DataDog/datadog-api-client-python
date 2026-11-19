@@ -64,7 +64,8 @@ class AggregatedLongTasksByInvokerType(ModelNormal):
         """
         Aggregated long task statistics for a single invoker type.
 
-        :param criteria_view_occurrences: Number of sampled views where this invoker type had long tasks contributing to the criteria metric.
+        :param criteria_view_occurrences: Number of sampled views where this invoker type had long tasks contributing to the criteria
+            metric.
         :type criteria_view_occurrences: int, optional
 
         :param impact_score: Rank-product impact score combining view frequency and blocking time severity.
