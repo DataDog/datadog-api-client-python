@@ -6542,6 +6542,12 @@
       "type": "safe"
     }
   },
+  "ListMetricMetadata": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListTagIndexingRules": {
     "tag": "Metrics",
     "undo": {

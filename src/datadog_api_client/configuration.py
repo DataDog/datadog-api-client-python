@@ -824,6 +824,7 @@ class Configuration:
                 "v2.create_tag_indexing_rule_exemption": False,
                 "v2.delete_tag_indexing_rule_exemption": False,
                 "v2.get_tag_indexing_rule_exemption": False,
+                "v2.list_metric_metadata": False,
                 "v2.list_tag_indexing_rule_exemptions": False,
                 "v2.update_tag_indexing_rule_exemption": False,
                 "v2.delete_model_lab_run": False,
