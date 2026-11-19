@@ -8,6 +8,7 @@ from typing import TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    UUID,
 )
 
 
@@ -28,7 +29,7 @@ class AggregatedLongTasksResponseData(ModelNormal):
 
         return {
             "attributes": (AggregatedLongTasksResponseAttributes,),
-            "id": (str,),
+            "id": (UUID,),
             "type": (AggregatedLongTasksRequestType,),
         }
 
@@ -41,7 +42,7 @@ class AggregatedLongTasksResponseData(ModelNormal):
     def __init__(
         self_,
         attributes: AggregatedLongTasksResponseAttributes,
-        id: str,
+        id: UUID,
         type: AggregatedLongTasksRequestType,
         **kwargs,
     ):
@@ -51,8 +52,8 @@ class AggregatedLongTasksResponseData(ModelNormal):
         :param attributes: Attributes of an aggregated long tasks response.
         :type attributes: AggregatedLongTasksResponseAttributes
 
-        :param id: Hash-based unique identifier for this aggregation.
-        :type id: str
+        :param id: Unique UUID identifying this response.
+        :type id: UUID
 
         :param type: The JSON:API type for aggregated long tasks requests.
         :type type: AggregatedLongTasksRequestType

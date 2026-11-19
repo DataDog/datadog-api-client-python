@@ -20,6 +20,15 @@ if TYPE_CHECKING:
 
 
 class AggregatedWaterfallPerformanceCriteria(ModelNormal):
+    validations = {
+        "max": {
+            "inclusive_maximum": 3600,
+        },
+        "min": {
+            "inclusive_maximum": 3600,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.aggregated_waterfall_performance_criteria_metric import (

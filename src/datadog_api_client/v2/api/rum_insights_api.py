@@ -70,7 +70,8 @@ class RUMInsightsApi:
     ) -> AggregatedLongTasksResponse:
         """Query aggregated long tasks.
 
-        Get aggregated long task data for a RUM view, grouped by invoker type and sampled across multiple view instances.
+        Get aggregated long task data for a RUM view, grouped by invoker type and sampled across
+        multiple view instances.
 
         :type body: AggregatedLongTasksRequest
         :rtype: AggregatedLongTasksResponse
