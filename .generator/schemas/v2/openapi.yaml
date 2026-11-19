@@ -239178,6 +239178,10 @@ paths:
       summary: Get a RUM SDK configuration
       tags:
         - RUM Remote Config
+      x-permission:
+        operator: OR
+        permissions:
+          - rum_apps_read
       x-unstable: |-
         **Note**: This endpoint is in preview and is subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -244624,6 +244628,10 @@ paths:
       summary: Create a RUM operation link
       tags:
         - RUM Operations
+      x-permission:
+        operator: OR
+        permissions:
+          - rum_apps_write
   /api/v2/rum/operations/strong_links/{rum_operation_id}/{feature_id}:
     delete:
       description: Delete the link between a RUM operation and a journey.
@@ -244655,6 +244663,10 @@ paths:
       summary: Delete a RUM operation link
       tags:
         - RUM Operations
+      x-permission:
+        operator: OR
+        permissions:
+          - rum_apps_write
     put:
       description: Update the status of a link between a RUM operation and a journey.
       operationId: UpdateRUMOperationStrongLink
@@ -244723,6 +244735,10 @@ paths:
       summary: Update a RUM operation link
       tags:
         - RUM Operations
+      x-permission:
+        operator: OR
+        permissions:
+          - rum_apps_write
   /api/v2/rum/operations/{rum_operation_id}:
     delete:
       description: Delete a RUM operation.
