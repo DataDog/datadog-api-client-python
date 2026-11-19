@@ -21,6 +21,7 @@ class ObservabilityPipelineCustomProcessorRemap(ModelNormal):
             "enabled": (bool,),
             "include": (str,),
             "name": (str,),
+            "sample": (str,),
             "source": (str,),
         }
 
@@ -29,6 +30,7 @@ class ObservabilityPipelineCustomProcessorRemap(ModelNormal):
         "enabled": "enabled",
         "include": "include",
         "name": "name",
+        "sample": "sample",
         "source": "source",
     }
 
@@ -39,6 +41,7 @@ class ObservabilityPipelineCustomProcessorRemap(ModelNormal):
         name: str,
         source: str,
         enabled: Union[bool, UnsetType] = unset,
+        sample: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -56,11 +59,16 @@ class ObservabilityPipelineCustomProcessorRemap(ModelNormal):
         :param name: A descriptive name for this remap rule.
         :type name: str
 
+        :param sample: A sample event used to test the VRL script in the pipeline editor.
+        :type sample: str, optional
+
         :param source: The VRL script source code that defines the processing logic.
         :type source: str
         """
         if enabled is not unset:
             kwargs["enabled"] = enabled
+        if sample is not unset:
+            kwargs["sample"] = sample
         super().__init__(kwargs)
 
         self_.drop_on_error = drop_on_error
