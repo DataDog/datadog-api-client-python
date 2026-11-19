@@ -458,6 +458,20 @@ Feature: Synthetics
     When the request is sent
     Then the response status is 200 OK
 
+  @integration-only @team:ddoghq/synthetics-orchestrating-managing
+  Scenario: Patch a persistent email global variable preserves its address and type
+    Given there is a valid "synthetics_email_global_variable" in the system
+    And new "PatchGlobalVariable" request
+    And request contains "variable_id" parameter from "synthetics_email_global_variable.id"
+    And body with value {"data": {"type": "global_variables_json_patch", "attributes": {"json_patch": [{"op": "replace", "path": "/description", "value": "Updated persistent email variable"}]}}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" has the same value as "synthetics_email_global_variable.id"
+    And the response "data.attributes.description" is equal to "Updated persistent email variable"
+    And the response "data.attributes.is_email" is equal to true
+    And the response "data.attributes.value.secure" is equal to false
+    And the response "data.attributes.value.value" has the same value as "synthetics_email_global_variable.value.value"
+
   @generated @skip @team:ddoghq/synthetics-orchestrating-managing
   Scenario: Patch a test suite returns "API error response." response
     Given new "PatchTestSuite" request
