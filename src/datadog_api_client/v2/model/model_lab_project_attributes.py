@@ -12,6 +12,7 @@ from datadog_api_client.model_utils import (
     none_type,
     unset,
     UnsetType,
+    UUID,
 )
 
 
@@ -33,6 +34,7 @@ class ModelLabProjectAttributes(ModelNormal):
             "is_starred": (bool,),
             "name": (str,),
             "owner_id": (str, none_type),
+            "owner_ids": ([UUID],),
             "tags": ([ModelLabTag],),
             "updated_at": (datetime,),
         }
@@ -46,6 +48,7 @@ class ModelLabProjectAttributes(ModelNormal):
         "is_starred": "is_starred",
         "name": "name",
         "owner_id": "owner_id",
+        "owner_ids": "owner_ids",
         "tags": "tags",
         "updated_at": "updated_at",
     }
@@ -62,6 +65,7 @@ class ModelLabProjectAttributes(ModelNormal):
         deleted_at: Union[datetime, none_type, UnsetType] = unset,
         external_url: Union[str, none_type, UnsetType] = unset,
         owner_id: Union[str, none_type, UnsetType] = unset,
+        owner_ids: Union[List[UUID], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -88,8 +92,11 @@ class ModelLabProjectAttributes(ModelNormal):
         :param name: The name of the project.
         :type name: str
 
-        :param owner_id: The UUID of the project owner.
+        :param owner_id: The UUID of the user that created the project. The creator is always an owner of the project.
         :type owner_id: str, none_type, optional
+
+        :param owner_ids: The UUIDs of the project's owners besides its creator, in the order they became owners.
+        :type owner_ids: [UUID], optional
 
         :param tags: The list of tags associated with the project.
         :type tags: [ModelLabTag]
@@ -103,6 +110,8 @@ class ModelLabProjectAttributes(ModelNormal):
             kwargs["external_url"] = external_url
         if owner_id is not unset:
             kwargs["owner_id"] = owner_id
+        if owner_ids is not unset:
+            kwargs["owner_ids"] = owner_ids
         super().__init__(kwargs)
 
         self_.artifact_storage_location = artifact_storage_location
