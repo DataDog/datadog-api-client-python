@@ -10227,6 +10227,12 @@
       "type": "safe"
     }
   },
+  "CreateSecurityAgentInvestigation": {
+    "tag": "Bits Security Analyst",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
   "CountSecurityAgentInvestigations": {
     "tag": "Bits Security Analyst",
     "undo": {

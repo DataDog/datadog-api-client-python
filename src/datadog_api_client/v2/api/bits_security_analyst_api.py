@@ -14,11 +14,14 @@ from datadog_api_client.model_utils import (
 from datadog_api_client.v2.model.security_agent_investigations_list_response import (
     SecurityAgentInvestigationsListResponse,
 )
+from datadog_api_client.v2.model.security_agent_investigation_response import SecurityAgentInvestigationResponse
+from datadog_api_client.v2.model.security_agent_investigation_create_request import (
+    SecurityAgentInvestigationCreateRequest,
+)
 from datadog_api_client.v2.model.security_agent_investigation_counts_response import (
     SecurityAgentInvestigationCountsResponse,
 )
 from datadog_api_client.v2.model.security_agent_investigation_count_field import SecurityAgentInvestigationCountField
-from datadog_api_client.v2.model.security_agent_investigation_response import SecurityAgentInvestigationResponse
 from datadog_api_client.v2.model.security_agent_investigation_field import SecurityAgentInvestigationField
 
 
@@ -103,6 +106,26 @@ class BitsSecurityAnalystApi:
             headers_map={
                 "accept": ["application/json"],
             },
+            api_client=api_client,
+        )
+
+        self._create_security_agent_investigation_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityAgentInvestigationResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/security_agent/investigations",
+                "operation_id": "create_security_agent_investigation",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityAgentInvestigationCreateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
             api_client=api_client,
         )
 
@@ -321,6 +344,36 @@ class BitsSecurityAnalystApi:
             kwargs["filter_entity"] = filter_entity
 
         return self._count_security_agent_investigations_endpoint.call_with_http_info(**kwargs)
+
+    def create_security_agent_investigation(
+        self,
+        body: SecurityAgentInvestigationCreateRequest,
+    ) -> SecurityAgentInvestigationResponse:
+        """Create a Bits Security Analyst investigation.
+
+        Start a Bits Security Analyst investigation of a signal, or get its investigation if it already has one.
+
+        If the signal already has an investigation, in any state, the response has its latest investigation.
+        Otherwise, an investigation starts, and the response has the new investigation in the ``investigating`` state.
+        Set ``rerun`` to ``true`` to start a new investigation of a signal that already has one. If the signal's
+        investigation is still running, the response has that investigation, and no new one starts.
+        While the investigation is ``investigating`` , the response has a ``Retry-After`` header.
+        ``GET /api/v2/security_monitoring/security_agent/investigations/{investigation_id}`` reads it right away.
+
+        The response doesn't have the investigation's content: ``conclusion`` , ``signal`` , ``key_entities`` , ``key_evidence`` ,
+        ``steps`` , and ``response_suggestions``. Get the investigation for its content.
+
+        This endpoint is rate limited to ``30`` requests per minute per organization. Every investigation it starts,
+        including a rerun, counts toward the organization's monthly investigation limit. Starting an investigation
+        returns ``429`` with the code ``monthly_limit_reached`` once the organization has reached that limit.
+
+        :type body: SecurityAgentInvestigationCreateRequest
+        :rtype: SecurityAgentInvestigationResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._create_security_agent_investigation_endpoint.call_with_http_info(**kwargs)
 
     def get_security_agent_investigation(
         self,

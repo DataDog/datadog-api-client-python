@@ -31,6 +31,48 @@ Feature: Bits Security Analyst
     And the response "data.type" is equal to "investigation_counts"
 
   @skip @team:ddoghq/k9-bits-ai
+  Scenario: Create a Bits Security Analyst investigation returns "Bad Request" response
+    Given operation "CreateSecurityAgentInvestigation" enabled
+    And new "CreateSecurityAgentInvestigation" request
+    And body with value {"data": {"type": "investigations", "attributes": {"signal_id": ""}}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+    And the response "errors" has length 1
+    And the response "errors[0].source.pointer" is equal to "/data/attributes/signal_id"
+
+  @generated @skip @team:ddoghq/k9-bits-ai
+  Scenario: Create a Bits Security Analyst investigation returns "Conflict" response
+    Given operation "CreateSecurityAgentInvestigation" enabled
+    And new "CreateSecurityAgentInvestigation" request
+    And body with value {"data": {"attributes": {"rerun": false, "signal_id": "AQAAAaGNHjq4XzqcIQAAAABBWm8xY0wybUFBQmNYSjl1QUFBQUFBQUE"}, "type": "investigations"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
+  @skip @team:ddoghq/k9-bits-ai
+  Scenario: Create a Bits Security Analyst investigation returns "Not Found" response
+    Given operation "CreateSecurityAgentInvestigation" enabled
+    And new "CreateSecurityAgentInvestigation" request
+    And body with value {"data": {"type": "investigations", "attributes": {"signal_id": "AQAAAaGNHjq4AAAAAAAAAABBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUE"}}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/k9-bits-ai
+  Scenario: Create a Bits Security Analyst investigation returns "OK" response
+    Given operation "CreateSecurityAgentInvestigation" enabled
+    And new "CreateSecurityAgentInvestigation" request
+    And body with value {"data": {"attributes": {"rerun": false, "signal_id": "AQAAAaGNHjq4XzqcIQAAAABBWm8xY0wybUFBQmNYSjl1QUFBQUFBQUE"}, "type": "investigations"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/k9-bits-ai
+  Scenario: Create a Bits Security Analyst investigation returns "Unprocessable Entity" response
+    Given operation "CreateSecurityAgentInvestigation" enabled
+    And new "CreateSecurityAgentInvestigation" request
+    And body with value {"data": {"attributes": {"rerun": false, "signal_id": "AQAAAaGNHjq4XzqcIQAAAABBWm8xY0wybUFBQmNYSjl1QUFBQUFBQUE"}, "type": "investigations"}}
+    When the request is sent
+    Then the response status is 422 Unprocessable Entity
+
+  @skip @team:ddoghq/k9-bits-ai
   Scenario: Get a Bits Security Analyst investigation returns "Bad Request" response
     Given operation "GetSecurityAgentInvestigation" enabled
     And new "GetSecurityAgentInvestigation" request
