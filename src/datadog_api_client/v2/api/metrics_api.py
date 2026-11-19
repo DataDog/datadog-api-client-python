@@ -1079,7 +1079,7 @@ class MetricsApi:
     ) -> HistoricalMetricsConfigurationResponse:
         """Enable historical metrics ingestion.
 
-        Enable historical metrics ingestion (late data ingestion) for a metric. Idempotent:
+        Enable historical metrics ingestion for a metric. Idempotent:
         enabling an already-enabled metric returns 200 instead of 201. Not supported for
         distribution metrics, metrics with an existing tag configuration, or most standard
         (non-custom) metrics.
