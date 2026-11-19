@@ -87,7 +87,8 @@ class RUMInsightsApi:
     ) -> AggregatedWaterfallResponse:
         """Query aggregated waterfall.
 
-        Get aggregated network resource waterfall data for a RUM view, sampled across multiple view instances.
+        Get aggregated network resource waterfall data for a RUM view, sampled across multiple view
+        instances.
 
         :type body: AggregatedWaterfallRequest
         :rtype: AggregatedWaterfallResponse

@@ -9,6 +9,7 @@ from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     none_type,
+    UUID,
 )
 
 
@@ -21,6 +22,9 @@ if TYPE_CHECKING:
 
 class AggregatedWaterfallResponseAttributes(ModelNormal):
     validations = {
+        "sampled_view_ids": {
+            "max_items": 50,
+        },
         "view_count": {
             "inclusive_maximum": 2147483647,
         },
@@ -34,7 +38,7 @@ class AggregatedWaterfallResponseAttributes(ModelNormal):
         from datadog_api_client.v2.model.aggregated_resource import AggregatedResource
 
         return {
-            "application_id": (str,),
+            "application_id": (UUID,),
             "criteria": (AggregatedWaterfallResponseAttributesCriteria,),
             "_from": (int,),
             "resources": ([AggregatedResource],),
@@ -59,7 +63,7 @@ class AggregatedWaterfallResponseAttributes(ModelNormal):
 
     def __init__(
         self_,
-        application_id: str,
+        application_id: UUID,
         criteria: Union[AggregatedWaterfallResponseAttributesCriteria, none_type],
         _from: int,
         resources: List[AggregatedResource],
@@ -74,9 +78,10 @@ class AggregatedWaterfallResponseAttributes(ModelNormal):
         Attributes of an aggregated waterfall response.
 
         :param application_id: The RUM application ID that was analyzed.
-        :type application_id: str
+        :type application_id: UUID
 
-        :param criteria: Performance criteria used to filter view instances by a metric threshold, or null if no criteria were applied.
+        :param criteria: Performance criteria used to filter view instances by a metric threshold, or null if no
+            criteria were applied.
         :type criteria: AggregatedWaterfallResponseAttributesCriteria, none_type
 
         :param _from: Start of the analyzed time range as a Unix timestamp in seconds.

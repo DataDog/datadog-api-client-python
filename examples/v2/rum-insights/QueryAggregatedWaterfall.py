@@ -13,11 +13,12 @@ from datadog_api_client.v2.model.aggregated_waterfall_request import AggregatedW
 from datadog_api_client.v2.model.aggregated_waterfall_request_attributes import AggregatedWaterfallRequestAttributes
 from datadog_api_client.v2.model.aggregated_waterfall_request_data import AggregatedWaterfallRequestData
 from datadog_api_client.v2.model.aggregated_waterfall_request_type import AggregatedWaterfallRequestType
+from uuid import UUID
 
 body = AggregatedWaterfallRequest(
     data=AggregatedWaterfallRequestData(
         attributes=AggregatedWaterfallRequestAttributes(
-            application_id="ccbc53b1-74f2-496b-bdd7-9a8fa7b7376b",
+            application_id=UUID("ccbc53b1-74f2-496b-bdd7-9a8fa7b7376b"),
             criteria=AggregatedWaterfallPerformanceCriteria(
                 max=5.0,
                 metric=AggregatedWaterfallPerformanceCriteriaMetric.LARGEST_CONTENTFUL_PAINT,

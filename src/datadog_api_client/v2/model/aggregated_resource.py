@@ -139,7 +139,8 @@ class AggregatedResource(ModelNormal):
         **kwargs,
     ):
         """
-        Aggregated performance statistics for a single network resource across sampled view instances.
+        Aggregated performance statistics for a single network resource across sampled view
+        instances.
 
         :param avg_duration_ms: Average total duration in milliseconds.
         :type avg_duration_ms: float
@@ -156,13 +157,16 @@ class AggregatedResource(ModelNormal):
         :param downloaded_count: Number of requests downloaded from the network.
         :type downloaded_count: int
 
-        :param global_p75_duration_ms: 75th percentile duration across all view names in the application, present when include_global_appearance is true.
+        :param global_p75_duration_ms: 75th percentile duration across all view names in the application, present when
+            include_global_appearance is true.
         :type global_p75_duration_ms: float, optional
 
-        :param global_view_name_count: Number of distinct view names in the application that load this resource, present when include_global_appearance is true.
+        :param global_view_name_count: Number of distinct view names in the application that load this resource, present when
+            include_global_appearance is true.
         :type global_view_name_count: int, optional
 
-        :param global_view_name_pct: Percentage of distinct view names in the application that load this resource, present when include_global_appearance is true.
+        :param global_view_name_pct: Percentage of distinct view names in the application that load this resource, present when
+            include_global_appearance is true.
         :type global_view_name_pct: float, optional
 
         :param http_method: HTTP method for the resource request.
