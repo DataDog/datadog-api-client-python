@@ -16,6 +16,7 @@ from datadog_api_client.model_utils import (
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.gcp_metric_namespace_config import GCPMetricNamespaceConfig
     from datadog_api_client.v2.model.gcp_monitored_resource_config import GCPMonitoredResourceConfig
+    from datadog_api_client.v2.model.gcp_project_filter_config import GCPProjectFilterConfig
 
 
 class GCPSTSServiceAccountAttributes(ModelNormal):
@@ -23,6 +24,7 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
     def openapi_types(_):
         from datadog_api_client.v2.model.gcp_metric_namespace_config import GCPMetricNamespaceConfig
         from datadog_api_client.v2.model.gcp_monitored_resource_config import GCPMonitoredResourceConfig
+        from datadog_api_client.v2.model.gcp_project_filter_config import GCPProjectFilterConfig
 
         return {
             "account_tags": ([str],),
@@ -38,6 +40,7 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
             "is_security_command_center_enabled": (bool,),
             "metric_namespace_configs": ([GCPMetricNamespaceConfig],),
             "monitored_resource_configs": ([GCPMonitoredResourceConfig],),
+            "project_filter_configs": ([GCPProjectFilterConfig],),
             "region_filter_configs": ([str],),
             "resource_collection_enabled": (bool,),
         }
@@ -56,6 +59,7 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
         "is_security_command_center_enabled": "is_security_command_center_enabled",
         "metric_namespace_configs": "metric_namespace_configs",
         "monitored_resource_configs": "monitored_resource_configs",
+        "project_filter_configs": "project_filter_configs",
         "region_filter_configs": "region_filter_configs",
         "resource_collection_enabled": "resource_collection_enabled",
     }
@@ -75,6 +79,7 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
         is_security_command_center_enabled: Union[bool, UnsetType] = unset,
         metric_namespace_configs: Union[List[GCPMetricNamespaceConfig], UnsetType] = unset,
         monitored_resource_configs: Union[List[GCPMonitoredResourceConfig], UnsetType] = unset,
+        project_filter_configs: Union[List[GCPProjectFilterConfig], UnsetType] = unset,
         region_filter_configs: Union[List[str], UnsetType] = unset,
         resource_collection_enabled: Union[bool, UnsetType] = unset,
         **kwargs,
@@ -126,6 +131,13 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
         :param monitored_resource_configs: Configurations for GCP monitored resources.
         :type monitored_resource_configs: [GCPMonitoredResourceConfig], optional
 
+        :param project_filter_configs: Configurations that limit which GCP projects Datadog monitors, out of the projects this service
+            account can access. Each type can have at most one configuration. A project is monitored only if
+            it passes the filters of every configured type. By default, Datadog monitors every project the
+            service account can access. When updating a service account, omit this field to keep the current
+            filters, or send an empty list to remove them.
+        :type project_filter_configs: [GCPProjectFilterConfig], optional
+
         :param region_filter_configs: Configurations for GCP location filtering, such as region, multi-region, or zone. Only monitored resources that match the specified regions are imported into Datadog. By default, Datadog collects from all locations.
         :type region_filter_configs: [str], optional
 
@@ -158,6 +170,8 @@ class GCPSTSServiceAccountAttributes(ModelNormal):
             kwargs["metric_namespace_configs"] = metric_namespace_configs
         if monitored_resource_configs is not unset:
             kwargs["monitored_resource_configs"] = monitored_resource_configs
+        if project_filter_configs is not unset:
+            kwargs["project_filter_configs"] = project_filter_configs
         if region_filter_configs is not unset:
             kwargs["region_filter_configs"] = region_filter_configs
         if resource_collection_enabled is not unset:
