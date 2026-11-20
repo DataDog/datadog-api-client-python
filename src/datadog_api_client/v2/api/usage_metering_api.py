@@ -1452,7 +1452,9 @@ class UsageMeteringApi:
              cursor := response.metadata.pagination.next_record_id
            END
 
-        This endpoint is only accessible for `parent-level organizations <https://docs.datadoghq.com/account_management/multi_organization/>`_. This endpoint is not available in the Government (US1-FED) site.
+        This endpoint is only accessible for
+        `parent-level organizations <https://docs.datadoghq.com/account_management/multi_organization/>`_.
+        This endpoint is not available in the US2-FED site.
 
         :param start_month: Datetime in ISO-8601 format, UTC, precise to month: ``[YYYY-MM]`` for cost beginning in this month.
         :type start_month: datetime
