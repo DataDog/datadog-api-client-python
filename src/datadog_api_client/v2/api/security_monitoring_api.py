@@ -90,6 +90,10 @@ from datadog_api_client.v2.model.attach_service_now_ticket_request import Attach
 from datadog_api_client.v2.model.create_service_now_ticket_request_array import CreateServiceNowTicketRequestArray
 from datadog_api_client.v2.model.severity_override_response import SeverityOverrideResponse
 from datadog_api_client.v2.model.severity_override_request import SeverityOverrideRequest
+from datadog_api_client.v2.model.search_remediation_groups_response import SearchRemediationGroupsResponse
+from datadog_api_client.v2.model.remediation_group_finding_type import RemediationGroupFindingType
+from datadog_api_client.v2.model.remediation_group_include import RemediationGroupInclude
+from datadog_api_client.v2.model.remediation_group_data import RemediationGroupData
 from datadog_api_client.v2.model.list_assets_sbo_ms_response import ListAssetsSBOMsResponse
 from datadog_api_client.v2.model.asset_type import AssetType
 from datadog_api_client.v2.model.sbom_component_license_type import SBOMComponentLicenseType
@@ -4842,6 +4846,62 @@ class SecurityMonitoringApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._search_remediation_groups_endpoint = _Endpoint(
+            settings={
+                "response_type": (SearchRemediationGroupsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security/remediation_groups",
+                "operation_id": "search_remediation_groups",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "filter_finding_type": {
+                    "openapi_types": ([RemediationGroupFindingType],),
+                    "attribute": "filter[finding_type]",
+                    "location": "query",
+                    "collection_format": "multi",
+                },
+                "filter_query": {
+                    "openapi_types": (str,),
+                    "attribute": "filter[query]",
+                    "location": "query",
+                },
+                "sort": {
+                    "openapi_types": (str,),
+                    "attribute": "sort",
+                    "location": "query",
+                },
+                "page_size": {
+                    "validation": {
+                        "inclusive_maximum": 100,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[size]",
+                    "location": "query",
+                },
+                "page_number": {
+                    "validation": {
+                        "inclusive_maximum": 1000,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[number]",
+                    "location": "query",
+                },
+                "include": {
+                    "openapi_types": (RemediationGroupInclude,),
+                    "attribute": "include",
+                    "location": "query",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
             api_client=api_client,
         )
 
@@ -10010,6 +10070,161 @@ class SecurityMonitoringApi:
         kwargs["body"] = body
 
         return self._run_historical_job_endpoint.call_with_http_info(**kwargs)
+
+    def search_remediation_groups(
+        self,
+        *,
+        filter_finding_type: Union[List[RemediationGroupFindingType], UnsetType] = unset,
+        filter_query: Union[str, UnsetType] = unset,
+        sort: Union[str, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        include: Union[RemediationGroupInclude, UnsetType] = unset,
+    ) -> SearchRemediationGroupsResponse:
+        """Search remediation groups.
+
+        Search the remediation groups of your organization. A remediation group gathers the open security findings
+        that one change fixes, such as updating a package in a repository or upgrading an image.
+
+        Each group comes from a grouping definition, which sets the finding type it covers and the kind object the
+        group returns:
+
+        .. list-table::
+           :header-rows: 1
+
+           * - Grouping definition
+             - Finding type
+             - Kind object
+           * - ``sca.package_update``
+             - ``library_vulnerability``
+             - ``package_update``
+           * - ``cloudvm.image_update``
+             - ``host_and_container_vulnerability``
+             - ``image_update``
+
+        Groups are computed from the attributes of security findings, described in the
+        `security findings schema <https://docs.datadoghq.com/security/guide/findings-schema/>`_. The description of
+        each kind object lists the findings its grouping definition reads and the attribute each field comes from.
+
+        The search includes all open findings, regardless of when they were first detected.
+
+        This endpoint requires the ``cases_read`` permission and either the ``security_monitoring_findings_read`` or
+        ``appsec_vm_read`` permission.
+
+        :param filter_finding_type: Returns only groups whose grouping definition covers this ``@finding_type`` value. To match more than one
+            finding type, repeat the parameter.
+        :type filter_finding_type: [RemediationGroupFindingType], optional
+        :param filter_query: Returns only groups with at least one open finding that matches the query. Use the security findings
+            search syntax with attributes from the
+            `security findings schema <https://docs.datadoghq.com/security/guide/findings-schema/>`_ , prefixed by ``@``.
+            For example, ``@severity:(critical OR high)`` returns groups with at least one critical or high finding.
+            The group's counts still include every finding in the group. The query can be at most 2048 bytes after
+            JSON encoding, and the parameter can appear only once.
+        :type filter_query: str, optional
+        :param sort: Comma-separated list of sort fields. Prefix a field with ``-`` to sort in descending order.
+            ``findings.by_severity`` sorts by the critical count, then high, medium, low, info, none, and unknown.
+            ``findings.total`` sorts by the total finding count. By default, groups are sorted by critical count,
+            then high count, then total finding count, all in descending order.
+        :type sort: str, optional
+        :param page_size: Number of groups in a page.
+        :type page_size: int, optional
+        :param page_number: Page to return, starting at 1.
+        :type page_number: int, optional
+        :param include: Adds each group's case to ``included``. ``case`` is the only supported value.
+        :type include: RemediationGroupInclude, optional
+        :rtype: SearchRemediationGroupsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        if filter_finding_type is not unset:
+            kwargs["filter_finding_type"] = filter_finding_type
+
+        if filter_query is not unset:
+            kwargs["filter_query"] = filter_query
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        return self._search_remediation_groups_endpoint.call_with_http_info(**kwargs)
+
+    def search_remediation_groups_with_pagination(
+        self,
+        *,
+        filter_finding_type: Union[List[RemediationGroupFindingType], UnsetType] = unset,
+        filter_query: Union[str, UnsetType] = unset,
+        sort: Union[str, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+        page_number: Union[int, UnsetType] = unset,
+        include: Union[RemediationGroupInclude, UnsetType] = unset,
+    ) -> collections.abc.Iterable[RemediationGroupData]:
+        """Search remediation groups.
+
+        Provide a paginated version of :meth:`search_remediation_groups`, returning all items.
+
+        :param filter_finding_type: Returns only groups whose grouping definition covers this ``@finding_type`` value. To match more than one
+            finding type, repeat the parameter.
+        :type filter_finding_type: [RemediationGroupFindingType], optional
+        :param filter_query: Returns only groups with at least one open finding that matches the query. Use the security findings
+            search syntax with attributes from the
+            `security findings schema <https://docs.datadoghq.com/security/guide/findings-schema/>`_ , prefixed by ``@``.
+            For example, ``@severity:(critical OR high)`` returns groups with at least one critical or high finding.
+            The group's counts still include every finding in the group. The query can be at most 2048 bytes after
+            JSON encoding, and the parameter can appear only once.
+        :type filter_query: str, optional
+        :param sort: Comma-separated list of sort fields. Prefix a field with ``-`` to sort in descending order.
+            ``findings.by_severity`` sorts by the critical count, then high, medium, low, info, none, and unknown.
+            ``findings.total`` sorts by the total finding count. By default, groups are sorted by critical count,
+            then high count, then total finding count, all in descending order.
+        :type sort: str, optional
+        :param page_size: Number of groups in a page.
+        :type page_size: int, optional
+        :param page_number: Page to return, starting at 1.
+        :type page_number: int, optional
+        :param include: Adds each group's case to ``included``. ``case`` is the only supported value.
+        :type include: RemediationGroupInclude, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[RemediationGroupData]
+        """
+        kwargs: Dict[str, Any] = {}
+        if filter_finding_type is not unset:
+            kwargs["filter_finding_type"] = filter_finding_type
+
+        if filter_query is not unset:
+            kwargs["filter_query"] = filter_query
+
+        if sort is not unset:
+            kwargs["sort"] = sort
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if include is not unset:
+            kwargs["include"] = include
+
+        local_page_size = get_attribute_from_path(kwargs, "page_size", 50)
+        endpoint = self._search_remediation_groups_endpoint
+        set_attribute_from_path(kwargs, "page_size", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "page_param": "page_number",
+            "page_start": 1,
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
 
     def search_security_findings(
         self,

@@ -13324,6 +13324,145 @@
     },
     {
       "feature": "Security Monitoring",
+      "frozen_at": "2026-11-20T13:20:23.214Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/security/remediation_groups",
+            "query": [
+              [
+                "sort",
+                "unknown"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"unsupported sort field \\\"unknown\\\"\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Search remediation groups returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "frozen_at": "2026-11-20T12:31:22.390Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/security/remediation_groups",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"sca.package_update:eyJlY29zeXN0ZW0iOiJucG0iLCJyZWNvbW1lbmRlZF9uYW1lIjoibG9kYXNoIiwicmVwb3NpdG9yeV9pZCI6ImdpdGh1Yi5jb20vYWNtZS9hcGkifQ\",\"type\":\"remediation_groups\",\"attributes\":{\"grouping_definition_id\":\"sca.package_update\",\"title\":\"Update lodash to 4.17.21 in github.com/acme/api\",\"findings\":{\"total\":12,\"by_severity\":{\"critical\":2,\"high\":5,\"medium\":4,\"low\":1,\"info\":0,\"none\":0,\"unknown\":0}},\"package_update\":{\"repository_id\":\"github.com/acme/api\",\"ecosystem\":\"npm\",\"package_name\":\"lodash\",\"target_version\":\"4.17.21\",\"advisory_count\":3,\"exploitable_cve_count\":1,\"file_count\":2}},\"relationships\":{\"case\":{\"data\":{\"id\":\"c1234567-89ab-cdef-0123-456789abcdef\",\"type\":\"cases\"}}}},{\"id\":\"cloudvm.image_update:eyJhY3Rpb24iOiJhbHBpbmUiLCJncm91cGluZ19sb2NhdGlvbiI6IkRvY2tlcmZpbGUiLCJyZW1lZGlhdGlvbl9raW5kIjoiaW1hZ2VfdXBkYXRlIn0\",\"type\":\"remediation_groups\",\"attributes\":{\"grouping_definition_id\":\"cloudvm.image_update\",\"title\":\"Upgrade alpine to 3.20.3\",\"findings\":{\"total\":40,\"by_severity\":{\"critical\":1,\"high\":9,\"medium\":20,\"low\":10,\"info\":0,\"none\":0,\"unknown\":0}},\"image_update\":{\"grouping_location\":\"Dockerfile\",\"location_is_filename\":true,\"remediation_kind\":\"image_update\",\"action\":\"alpine\",\"target_version\":\"3.20.3\",\"advisory_count\":25,\"exploitable_cve_count\":2,\"file_count\":1}},\"relationships\":{\"case\":{\"data\":null}}}],\"meta\":{\"page\":{\"number\":1,\"size\":50,\"total_filtered_count\":2}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Search remediation groups returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "frozen_at": "2026-11-20T12:54:33.999Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/security/remediation_groups",
+            "query": [
+              [
+                "page[number]",
+                "1"
+              ],
+              [
+                "page[size]",
+                "2"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"sca.package_update:eyJlY29zeXN0ZW0iOiJucG0iLCJyZWNvbW1lbmRlZF9uYW1lIjoibG9kYXNoIiwicmVwb3NpdG9yeV9pZCI6ImdpdGh1Yi5jb20vYWNtZS9hcGkifQ\",\"type\":\"remediation_groups\",\"attributes\":{\"grouping_definition_id\":\"sca.package_update\",\"title\":\"Update lodash to 4.17.21 in github.com/acme/api\",\"findings\":{\"total\":12,\"by_severity\":{\"critical\":2,\"high\":5,\"medium\":4,\"low\":1,\"info\":0,\"none\":0,\"unknown\":0}},\"package_update\":{\"repository_id\":\"github.com/acme/api\",\"ecosystem\":\"npm\",\"package_name\":\"lodash\",\"target_version\":\"4.17.21\",\"advisory_count\":3,\"exploitable_cve_count\":1,\"file_count\":2}},\"relationships\":{\"case\":{\"data\":{\"id\":\"c1234567-89ab-cdef-0123-456789abcdef\",\"type\":\"cases\"}}}},{\"id\":\"cloudvm.image_update:eyJhY3Rpb24iOiJhbHBpbmUiLCJncm91cGluZ19sb2NhdGlvbiI6IkRvY2tlcmZpbGUiLCJyZW1lZGlhdGlvbl9raW5kIjoiaW1hZ2VfdXBkYXRlIn0\",\"type\":\"remediation_groups\",\"attributes\":{\"grouping_definition_id\":\"cloudvm.image_update\",\"title\":\"Upgrade alpine to 3.20.3\",\"findings\":{\"total\":40,\"by_severity\":{\"critical\":1,\"high\":9,\"medium\":20,\"low\":10,\"info\":0,\"none\":0,\"unknown\":0}},\"image_update\":{\"grouping_location\":\"Dockerfile\",\"location_is_filename\":true,\"remediation_kind\":\"image_update\",\"action\":\"alpine\",\"target_version\":\"3.20.3\",\"advisory_count\":25,\"exploitable_cve_count\":2,\"file_count\":1}},\"relationships\":{\"case\":{\"data\":null}}}],\"meta\":{\"page\":{\"number\":1,\"size\":2,\"total_filtered_count\":3}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/security/remediation_groups",
+            "query": [
+              [
+                "page[number]",
+                "2"
+              ],
+              [
+                "page[size]",
+                "2"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"sca.package_update:eyJlY29zeXN0ZW0iOiJucG0iLCJyZWNvbW1lbmRlZF9uYW1lIjoibWluaW1pc3QiLCJyZXBvc2l0b3J5X2lkIjoiZ2l0aHViLmNvbS9hY21lL3dlYiJ9\",\"type\":\"remediation_groups\",\"attributes\":{\"grouping_definition_id\":\"sca.package_update\",\"title\":\"Update minimist to 1.2.8 in github.com/acme/web\",\"findings\":{\"total\":4,\"by_severity\":{\"critical\":1,\"high\":2,\"medium\":1,\"low\":0,\"info\":0,\"none\":0,\"unknown\":0}},\"package_update\":{\"repository_id\":\"github.com/acme/web\",\"ecosystem\":\"npm\",\"package_name\":\"minimist\",\"target_version\":\"1.2.8\",\"advisory_count\":2,\"exploitable_cve_count\":0,\"file_count\":1}},\"relationships\":{\"case\":{\"data\":null}}}],\"meta\":{\"page\":{\"number\":2,\"size\":2,\"total_filtered_count\":3}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Search remediation groups returns \"OK\" response with pagination",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
       "frozen_at": "2025-12-17T16:27:52.376Z",
       "interactions": [
         {

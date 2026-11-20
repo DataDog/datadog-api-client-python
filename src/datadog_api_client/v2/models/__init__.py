@@ -10480,6 +10480,20 @@ from datadog_api_client.v2.model.relationship_to_user_team_user import Relations
 from datadog_api_client.v2.model.relationship_to_user_team_user_data import RelationshipToUserTeamUserData
 from datadog_api_client.v2.model.relationship_to_users import RelationshipToUsers
 from datadog_api_client.v2.model.remediation import Remediation
+from datadog_api_client.v2.model.remediation_group_attributes import RemediationGroupAttributes
+from datadog_api_client.v2.model.remediation_group_case_relationship import RemediationGroupCaseRelationship
+from datadog_api_client.v2.model.remediation_group_case_relationship_data import RemediationGroupCaseRelationshipData
+from datadog_api_client.v2.model.remediation_group_data import RemediationGroupData
+from datadog_api_client.v2.model.remediation_group_finding_type import RemediationGroupFindingType
+from datadog_api_client.v2.model.remediation_group_findings import RemediationGroupFindings
+from datadog_api_client.v2.model.remediation_group_findings_by_severity import RemediationGroupFindingsBySeverity
+from datadog_api_client.v2.model.remediation_group_image_update import RemediationGroupImageUpdate
+from datadog_api_client.v2.model.remediation_group_include import RemediationGroupInclude
+from datadog_api_client.v2.model.remediation_group_package_update import RemediationGroupPackageUpdate
+from datadog_api_client.v2.model.remediation_group_relationships import RemediationGroupRelationships
+from datadog_api_client.v2.model.remediation_group_type import RemediationGroupType
+from datadog_api_client.v2.model.remediation_groups_meta import RemediationGroupsMeta
+from datadog_api_client.v2.model.remediation_groups_page_meta import RemediationGroupsPageMeta
 from datadog_api_client.v2.model.reorder_retention_filters_request import ReorderRetentionFiltersRequest
 from datadog_api_client.v2.model.reorder_rule_resource_array import ReorderRuleResourceArray
 from datadog_api_client.v2.model.reorder_rule_resource_data import ReorderRuleResourceData
@@ -11212,6 +11226,7 @@ from datadog_api_client.v2.model.scorecard_score_relationships import ScorecardS
 from datadog_api_client.v2.model.scorecard_scores_aggregation import ScorecardScoresAggregation
 from datadog_api_client.v2.model.scorecard_type import ScorecardType
 from datadog_api_client.v2.model.search_issues_include_query_parameter_item import SearchIssuesIncludeQueryParameterItem
+from datadog_api_client.v2.model.search_remediation_groups_response import SearchRemediationGroupsResponse
 from datadog_api_client.v2.model.seat_assignments_data_type import SeatAssignmentsDataType
 from datadog_api_client.v2.model.seat_user_data import SeatUserData
 from datadog_api_client.v2.model.seat_user_data_array import SeatUserDataArray
@@ -21508,6 +21523,20 @@ __all__ = [
     "RelationshipToUserTeamUserData",
     "RelationshipToUsers",
     "Remediation",
+    "RemediationGroupAttributes",
+    "RemediationGroupCaseRelationship",
+    "RemediationGroupCaseRelationshipData",
+    "RemediationGroupData",
+    "RemediationGroupFindingType",
+    "RemediationGroupFindings",
+    "RemediationGroupFindingsBySeverity",
+    "RemediationGroupImageUpdate",
+    "RemediationGroupInclude",
+    "RemediationGroupPackageUpdate",
+    "RemediationGroupRelationships",
+    "RemediationGroupType",
+    "RemediationGroupsMeta",
+    "RemediationGroupsPageMeta",
     "ReorderRetentionFiltersRequest",
     "ReorderRuleResourceArray",
     "ReorderRuleResourceData",
@@ -22080,6 +22109,7 @@ __all__ = [
     "ScorecardScoresAggregation",
     "ScorecardType",
     "SearchIssuesIncludeQueryParameterItem",
+    "SearchRemediationGroupsResponse",
     "SeatAssignmentsDataType",
     "SeatUserData",
     "SeatUserDataArray",

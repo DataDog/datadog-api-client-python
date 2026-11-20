@@ -1,0 +1,35 @@
+{
+  "api": "SecurityMonitoring",
+  "expected_status": 400,
+  "feature": "Security Monitoring",
+  "id": "v2/Security Monitoring/Search remediation groups returns \"Bad Request\" response",
+  "operation_id": "SearchRemediationGroups",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "sort",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "unknown"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/security/remediation_groups"
+  },
+  "scenario": "Search remediation groups returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
