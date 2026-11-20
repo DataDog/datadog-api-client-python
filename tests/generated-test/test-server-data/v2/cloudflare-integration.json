@@ -144,54 +144,6 @@
     },
     {
       "feature": "Cloudflare Integration",
-      "frozen_at": "2024-01-03T19:17:37.850Z",
-      "interactions": [
-        {
-          "request": {
-            "body": {
-              "type": "json",
-              "value": {
-                "data": {
-                  "attributes": {
-                    "api_key": "fakekey",
-                    "email": "new@email",
-                    "name": "testaddcloudflareaccountreturnscreatedresponsewithoptionalfilters1704309457",
-                    "resources": [
-                      "lb",
-                      "dns"
-                    ],
-                    "zones": [
-                      "zone-id-1",
-                      "zone-id-2"
-                    ]
-                  },
-                  "type": "cloudflare-accounts"
-                }
-              }
-            },
-            "content_type": "application/json",
-            "method": "POST",
-            "path": "/api/v2/integrations/cloudflare/accounts",
-            "query": []
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": "{\"errors\":[\"Invalid account. Your Cloudflare configuration is invalid. Impossible to get zones for the account testaddcloudflareaccountreturnscreatedresponsewithoptionalfilters1704309457: API key or email is not in the correct format.\"]}"
-            },
-            "headers": {
-              "content-type": "application/json"
-            },
-            "reason": "Bad Request",
-            "status": 400
-          }
-        }
-      ],
-      "scenario": "Add Cloudflare account returns \"CREATED\" response with optional filters",
-      "version": "v2"
-    },
-    {
-      "feature": "Cloudflare Integration",
       "frozen_at": "2024-01-04T18:40:42.323Z",
       "interactions": [
         {
