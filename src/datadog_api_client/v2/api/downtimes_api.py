@@ -25,8 +25,6 @@ from datadog_api_client.v2.model.monitor_downtime_match_response_data import Mon
 
 class DowntimesApi:
     """
-    **Note** : Downtime V2 is currently in private beta. To request access, contact `Datadog support <https://docs.datadoghq.com/help/>`_.
-
     `Downtiming <https://docs.datadoghq.com/monitors/notify/downtimes>`_ gives
     you greater control over monitor notifications by allowing you to globally exclude
     scopes from alerting. Downtime settings, which can be scheduled with start and
