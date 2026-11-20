@@ -796,6 +796,75 @@ from datadog_api_client.v2.model.anthropic_credentials_update import AnthropicCr
 from datadog_api_client.v2.model.anthropic_integration import AnthropicIntegration
 from datadog_api_client.v2.model.anthropic_integration_type import AnthropicIntegrationType
 from datadog_api_client.v2.model.anthropic_integration_update import AnthropicIntegrationUpdate
+from datadog_api_client.v2.model.anthropic_usage_and_costs_cloud_cost_metrics_integration_dataflow_request import (
+    AnthropicUsageAndCostsCloudCostMetricsIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.anthropic_usage_and_costs_cloud_cost_metrics_integration_dataflow_response import (
+    AnthropicUsageAndCostsCloudCostMetricsIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.anthropic_usage_and_costs_daily_usage_dora_metrics_integration_dataflow_response import (
+    AnthropicUsageAndCostsDailyUsageDoraMetricsIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.anthropic_usage_and_costs_integration_account_authentication_request import (
+    AnthropicUsageAndCostsIntegrationAccountAuthenticationRequest,
+)
+from datadog_api_client.v2.model.anthropic_usage_and_costs_integration_account_authentication_response import (
+    AnthropicUsageAndCostsIntegrationAccountAuthenticationResponse,
+)
+from datadog_api_client.v2.model.anthropic_usage_and_costs_integration_account_authentication_update import (
+    AnthropicUsageAndCostsIntegrationAccountAuthenticationUpdate,
+)
+from datadog_api_client.v2.model.anthropic_usage_and_costs_integration_account_bearer_token_auth_request import (
+    AnthropicUsageAndCostsIntegrationAccountBearerTokenAuthRequest,
+)
+from datadog_api_client.v2.model.anthropic_usage_and_costs_integration_account_bearer_token_auth_response import (
+    AnthropicUsageAndCostsIntegrationAccountBearerTokenAuthResponse,
+)
+from datadog_api_client.v2.model.anthropic_usage_and_costs_integration_account_bearer_token_auth_type import (
+    AnthropicUsageAndCostsIntegrationAccountBearerTokenAuthType,
+)
+from datadog_api_client.v2.model.anthropic_usage_and_costs_integration_account_bearer_token_auth_update import (
+    AnthropicUsageAndCostsIntegrationAccountBearerTokenAuthUpdate,
+)
+from datadog_api_client.v2.model.anthropic_usage_and_costs_integration_account_create_attributes import (
+    AnthropicUsageAndCostsIntegrationAccountCreateAttributes,
+)
+from datadog_api_client.v2.model.anthropic_usage_and_costs_integration_account_create_data import (
+    AnthropicUsageAndCostsIntegrationAccountCreateData,
+)
+from datadog_api_client.v2.model.anthropic_usage_and_costs_integration_account_create_request import (
+    AnthropicUsageAndCostsIntegrationAccountCreateRequest,
+)
+from datadog_api_client.v2.model.anthropic_usage_and_costs_integration_account_response import (
+    AnthropicUsageAndCostsIntegrationAccountResponse,
+)
+from datadog_api_client.v2.model.anthropic_usage_and_costs_integration_account_response_attributes import (
+    AnthropicUsageAndCostsIntegrationAccountResponseAttributes,
+)
+from datadog_api_client.v2.model.anthropic_usage_and_costs_integration_account_response_data import (
+    AnthropicUsageAndCostsIntegrationAccountResponseData,
+)
+from datadog_api_client.v2.model.anthropic_usage_and_costs_integration_account_update_attributes import (
+    AnthropicUsageAndCostsIntegrationAccountUpdateAttributes,
+)
+from datadog_api_client.v2.model.anthropic_usage_and_costs_integration_account_update_data import (
+    AnthropicUsageAndCostsIntegrationAccountUpdateData,
+)
+from datadog_api_client.v2.model.anthropic_usage_and_costs_integration_account_update_request import (
+    AnthropicUsageAndCostsIntegrationAccountUpdateRequest,
+)
+from datadog_api_client.v2.model.anthropic_usage_and_costs_integration_accounts_response import (
+    AnthropicUsageAndCostsIntegrationAccountsResponse,
+)
+from datadog_api_client.v2.model.anthropic_usage_and_costs_integration_dataflows_request import (
+    AnthropicUsageAndCostsIntegrationDataflowsRequest,
+)
+from datadog_api_client.v2.model.anthropic_usage_and_costs_integration_dataflows_response import (
+    AnthropicUsageAndCostsIntegrationDataflowsResponse,
+)
+from datadog_api_client.v2.model.anthropic_usage_and_costs_usage_metrics_integration_dataflow_response import (
+    AnthropicUsageAndCostsUsageMetricsIntegrationDataflowResponse,
+)
 from datadog_api_client.v2.model.any_value import AnyValue
 from datadog_api_client.v2.model.any_value_item import AnyValueItem
 from datadog_api_client.v2.model.any_value_object import AnyValueObject
@@ -15238,6 +15307,29 @@ __all__ = [
     "AnthropicIntegration",
     "AnthropicIntegrationType",
     "AnthropicIntegrationUpdate",
+    "AnthropicUsageAndCostsCloudCostMetricsIntegrationDataflowRequest",
+    "AnthropicUsageAndCostsCloudCostMetricsIntegrationDataflowResponse",
+    "AnthropicUsageAndCostsDailyUsageDoraMetricsIntegrationDataflowResponse",
+    "AnthropicUsageAndCostsIntegrationAccountAuthenticationRequest",
+    "AnthropicUsageAndCostsIntegrationAccountAuthenticationResponse",
+    "AnthropicUsageAndCostsIntegrationAccountAuthenticationUpdate",
+    "AnthropicUsageAndCostsIntegrationAccountBearerTokenAuthRequest",
+    "AnthropicUsageAndCostsIntegrationAccountBearerTokenAuthResponse",
+    "AnthropicUsageAndCostsIntegrationAccountBearerTokenAuthType",
+    "AnthropicUsageAndCostsIntegrationAccountBearerTokenAuthUpdate",
+    "AnthropicUsageAndCostsIntegrationAccountCreateAttributes",
+    "AnthropicUsageAndCostsIntegrationAccountCreateData",
+    "AnthropicUsageAndCostsIntegrationAccountCreateRequest",
+    "AnthropicUsageAndCostsIntegrationAccountResponse",
+    "AnthropicUsageAndCostsIntegrationAccountResponseAttributes",
+    "AnthropicUsageAndCostsIntegrationAccountResponseData",
+    "AnthropicUsageAndCostsIntegrationAccountUpdateAttributes",
+    "AnthropicUsageAndCostsIntegrationAccountUpdateData",
+    "AnthropicUsageAndCostsIntegrationAccountUpdateRequest",
+    "AnthropicUsageAndCostsIntegrationAccountsResponse",
+    "AnthropicUsageAndCostsIntegrationDataflowsRequest",
+    "AnthropicUsageAndCostsIntegrationDataflowsResponse",
+    "AnthropicUsageAndCostsUsageMetricsIntegrationDataflowResponse",
     "AnyValue",
     "AnyValueItem",
     "AnyValueObject",
