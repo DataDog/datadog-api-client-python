@@ -19,6 +19,7 @@ class ObservabilityPipelineDatadogLogsDestinationRoute(ModelNormal):
         return {
             "api_key_key": (str,),
             "include": (str,),
+            "name": (str,),
             "route_id": (str,),
             "site": (str,),
         }
@@ -26,6 +27,7 @@ class ObservabilityPipelineDatadogLogsDestinationRoute(ModelNormal):
     attribute_map = {
         "api_key_key": "api_key_key",
         "include": "include",
+        "name": "name",
         "route_id": "route_id",
         "site": "site",
     }
@@ -34,6 +36,7 @@ class ObservabilityPipelineDatadogLogsDestinationRoute(ModelNormal):
         self_,
         api_key_key: Union[str, UnsetType] = unset,
         include: Union[str, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
         route_id: Union[str, UnsetType] = unset,
         site: Union[str, UnsetType] = unset,
         **kwargs,
@@ -47,6 +50,9 @@ class ObservabilityPipelineDatadogLogsDestinationRoute(ModelNormal):
         :param include: A Datadog search query that determines which logs are forwarded using this route.
         :type include: str, optional
 
+        :param name: A human-readable name for this route.
+        :type name: str, optional
+
         :param route_id: Unique identifier for this route within the destination.
         :type route_id: str, optional
 
@@ -57,6 +63,8 @@ class ObservabilityPipelineDatadogLogsDestinationRoute(ModelNormal):
             kwargs["api_key_key"] = api_key_key
         if include is not unset:
             kwargs["include"] = include
+        if name is not unset:
+            kwargs["name"] = name
         if route_id is not unset:
             kwargs["route_id"] = route_id
         if site is not unset:
