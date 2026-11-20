@@ -8,6 +8,7 @@ from typing import Union
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -17,9 +18,9 @@ class MetricIngestedIndexedVolumeAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
-            "indexed_volume": (int,),
+            "indexed_volume": (int, none_type),
             "indexed_volume_delta": (int,),
-            "ingested_volume": (int,),
+            "ingested_volume": (int, none_type),
             "ingested_volume_delta": (int,),
         }
 
@@ -32,24 +33,24 @@ class MetricIngestedIndexedVolumeAttributes(ModelNormal):
 
     def __init__(
         self_,
-        indexed_volume: Union[int, UnsetType] = unset,
+        indexed_volume: Union[int, none_type, UnsetType] = unset,
         indexed_volume_delta: Union[int, UnsetType] = unset,
-        ingested_volume: Union[int, UnsetType] = unset,
+        ingested_volume: Union[int, none_type, UnsetType] = unset,
         ingested_volume_delta: Union[int, UnsetType] = unset,
         **kwargs,
     ):
         """
         Object containing the definition of a metric's ingested and indexed volume.
 
-        :param indexed_volume: Estimated average hourly number of indexed time series for the given metric over the last hour. For organizations on Metric Name Pricing, this represents the estimated sum of indexed data points over the last hour.
-        :type indexed_volume: int, optional
+        :param indexed_volume: Estimated average hourly number of indexed time series for the given metric over the last hour. For organizations on Metric Name Pricing, this represents the estimated sum of indexed data points over the last hour. This value is ``null`` when no estimated usage data is available for the metric.
+        :type indexed_volume: int, none_type, optional
 
         :param indexed_volume_delta: Change in ``indexed_volume`` compared with the previous hour: the last hour's value minus the value for
             the hour before. Negative when volume decreased.
         :type indexed_volume_delta: int, optional
 
-        :param ingested_volume: Estimated average hourly number of ingested time series for the given metric over the last hour. This value is ``0`` for metrics not configured with Metrics Without Limits. For organizations on Metric Name Pricing, this represents the estimated sum of ingested data points over the last hour.
-        :type ingested_volume: int, optional
+        :param ingested_volume: Estimated average hourly number of ingested time series for the given metric over the last hour. This value is ``0`` for metrics not configured with Metrics Without Limits. For organizations on Metric Name Pricing, this represents the estimated sum of ingested data points over the last hour. This value can be ``null`` when ingested volume is not available for the metric.
+        :type ingested_volume: int, none_type, optional
 
         :param ingested_volume_delta: Change in ``ingested_volume`` compared with the previous hour: the last hour's value minus the value for
             the hour before. Negative when volume decreased.
