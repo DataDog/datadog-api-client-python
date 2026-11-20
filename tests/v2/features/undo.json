@@ -7769,17 +7769,13 @@
   "GetAccountFacetInfo": {
     "tag": "Rum Audience Management",
     "undo": {
-      "operationId": "TODO",
-      "parameters": [],
-      "type": "unsafe"
+      "type": "safe"
     }
   },
   "QueryAccounts": {
     "tag": "Rum Audience Management",
     "undo": {
-      "operationId": "TODO",
-      "parameters": [],
-      "type": "unsafe"
+      "type": "safe"
     }
   },
   "QueryProductAnalyticsList": {
@@ -7857,25 +7853,19 @@
   "QueryEventFilteredUsers": {
     "tag": "Rum Audience Management",
     "undo": {
-      "operationId": "TODO",
-      "parameters": [],
-      "type": "unsafe"
+      "type": "safe"
     }
   },
   "GetUserFacetInfo": {
     "tag": "Rum Audience Management",
     "undo": {
-      "operationId": "TODO",
-      "parameters": [],
-      "type": "unsafe"
+      "type": "safe"
     }
   },
   "QueryUsers": {
     "tag": "Rum Audience Management",
     "undo": {
-      "operationId": "TODO",
-      "parameters": [],
-      "type": "unsafe"
+      "type": "safe"
     }
   },
   "DeleteUserProfile": {
