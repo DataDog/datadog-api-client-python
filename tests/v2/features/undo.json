@@ -704,6 +704,19 @@
       "type": "unsafe"
     }
   },
+  "CreateAnthropicUsageAndCostsIntegrationAccount": {
+    "tag": "Anthropic Usage And Costs Integration",
+    "undo": {
+      "operationId": "DeleteAnthropicUsageAndCostsIntegrationAccount",
+      "parameters": [
+        {
+          "name": "account_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
   "CreateApmRetentionFilter": {
     "tag": "APM Retention Filters",
     "undo": {
@@ -3662,6 +3675,12 @@
       "type": "idempotent"
     }
   },
+  "DeleteAnthropicUsageAndCostsIntegrationAccount": {
+    "tag": "Anthropic Usage And Costs Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "DeleteApmRetentionFilter": {
     "tag": "APM Retention Filters",
     "undo": {
@@ -5389,6 +5408,12 @@
   },
   "GetAllDatasets": {
     "tag": "Datasets",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetAnthropicUsageAndCostsIntegrationAccount": {
+    "tag": "Anthropic Usage And Costs Integration",
     "undo": {
       "type": "safe"
     }
@@ -7810,6 +7835,12 @@
   },
   "ListAnnotations": {
     "tag": "Annotations",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListAnthropicUsageAndCostsIntegrationAccounts": {
+    "tag": "Anthropic Usage And Costs Integration",
     "undo": {
       "type": "safe"
     }
@@ -10861,6 +10892,12 @@
   },
   "UpdateAnnotation": {
     "tag": "Annotations",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateAnthropicUsageAndCostsIntegrationAccount": {
+    "tag": "Anthropic Usage And Costs Integration",
     "undo": {
       "type": "idempotent"
     }

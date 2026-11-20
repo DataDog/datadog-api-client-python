@@ -12,6 +12,7 @@ from datadog_api_client.v2.api.agent_health_api import AgentHealthApi
 from datadog_api_client.v2.api.agent_observability_api import AgentObservabilityApi
 from datadog_api_client.v2.api.agentless_scanning_api import AgentlessScanningApi
 from datadog_api_client.v2.api.annotations_api import AnnotationsApi
+from datadog_api_client.v2.api.anthropic_usage_and_costs_integration_api import AnthropicUsageAndCostsIntegrationApi
 from datadog_api_client.v2.api.app_builder_api import AppBuilderApi
 from datadog_api_client.v2.api.application_security_api import ApplicationSecurityApi
 from datadog_api_client.v2.api.audit_api import AuditApi
@@ -179,6 +180,7 @@ __all__ = [
     "AgentObservabilityApi",
     "AgentlessScanningApi",
     "AnnotationsApi",
+    "AnthropicUsageAndCostsIntegrationApi",
     "AppBuilderApi",
     "ApplicationSecurityApi",
     "AuditApi",
