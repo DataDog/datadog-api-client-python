@@ -67,20 +67,6 @@ Feature: AWS Logs Integration
     Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/aws-integrations
-  Scenario: Enable an AWS Logs integration returns "Bad Request" response
-    Given new "EnableAWSLogServices" request
-    And body with value {"account_id": "1234567", "services": ["s3", "elb", "elbv2", "cloudfront", "redshift", "lambda"]}
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:ddoghq/aws-integrations
-  Scenario: Enable an AWS Logs integration returns "OK" response
-    Given new "EnableAWSLogServices" request
-    And body with value {"account_id": "1234567", "services": ["s3", "elb", "elbv2", "cloudfront", "redshift", "lambda"]}
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip @team:ddoghq/aws-integrations
   Scenario: Get list of AWS log ready services returns "OK" response
     Given new "ListAWSLogsServices" request
     When the request is sent

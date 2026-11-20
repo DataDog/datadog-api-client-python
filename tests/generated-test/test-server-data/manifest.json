@@ -371,11 +371,6 @@
       "version": "v2"
     },
     {
-      "feature": "LLM Observability",
-      "file": "v2/llm-observability.json",
-      "version": "v2"
-    },
-    {
       "feature": "Logs",
       "file": "v2/logs.json",
       "version": "v2"
@@ -418,11 +413,6 @@
     {
       "feature": "Network Device Monitoring",
       "file": "v2/network-device-monitoring.json",
-      "version": "v2"
-    },
-    {
-      "feature": "OAuth2 Client Public",
-      "file": "v2/oauth2-client-public.json",
       "version": "v2"
     },
     {

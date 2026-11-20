@@ -520,53 +520,6 @@
     },
     {
       "feature": "Logs Custom Destinations",
-      "frozen_at": "2026-03-25T16:23:51.766Z",
-      "interactions": [
-        {
-          "request": {
-            "body": {
-              "type": "json",
-              "value": {
-                "data": {
-                  "attributes": {
-                    "enabled": false,
-                    "forward_tags": false,
-                    "forwarder_destination": {
-                      "access_token": "my-access-token",
-                      "endpoint": "https://example.com",
-                      "sourcetype": 123,
-                      "type": "splunk_hec"
-                    },
-                    "name": "Nginx logs",
-                    "query": "source:nginx"
-                  },
-                  "type": "custom_destination"
-                }
-              }
-            },
-            "content_type": "application/json",
-            "method": "POST",
-            "path": "/api/v2/logs/config/custom-destinations",
-            "query": []
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": "{\"errors\":[\"Invalid custom destination configuration\",\"Sourcetype must be a string or null\"]}\n"
-            },
-            "headers": {
-              "content-type": "application/json"
-            },
-            "reason": "Bad Request",
-            "status": 400
-          }
-        }
-      ],
-      "scenario": "Create a Splunk custom destination with an invalid sourcetype returns \"Bad Request\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "Logs Custom Destinations",
       "frozen_at": "2026-03-25T16:23:52.120Z",
       "interactions": [
         {
