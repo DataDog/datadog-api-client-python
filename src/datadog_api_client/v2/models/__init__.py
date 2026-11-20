@@ -9236,6 +9236,84 @@ from datadog_api_client.v2.model.open_ai_credentials_update import OpenAICredent
 from datadog_api_client.v2.model.open_ai_integration import OpenAIIntegration
 from datadog_api_client.v2.model.open_ai_integration_type import OpenAIIntegrationType
 from datadog_api_client.v2.model.open_ai_integration_update import OpenAIIntegrationUpdate
+from datadog_api_client.v2.model.open_aillm_evaluations_integration_account_authentication_request import (
+    OpenAILLMEvaluationsIntegrationAccountAuthenticationRequest,
+)
+from datadog_api_client.v2.model.open_aillm_evaluations_integration_account_authentication_response import (
+    OpenAILLMEvaluationsIntegrationAccountAuthenticationResponse,
+)
+from datadog_api_client.v2.model.open_aillm_evaluations_integration_account_authentication_update import (
+    OpenAILLMEvaluationsIntegrationAccountAuthenticationUpdate,
+)
+from datadog_api_client.v2.model.open_aillm_evaluations_integration_account_bearer_token_auth_request import (
+    OpenAILLMEvaluationsIntegrationAccountBearerTokenAuthRequest,
+)
+from datadog_api_client.v2.model.open_aillm_evaluations_integration_account_bearer_token_auth_response import (
+    OpenAILLMEvaluationsIntegrationAccountBearerTokenAuthResponse,
+)
+from datadog_api_client.v2.model.open_aillm_evaluations_integration_account_bearer_token_auth_type import (
+    OpenAILLMEvaluationsIntegrationAccountBearerTokenAuthType,
+)
+from datadog_api_client.v2.model.open_aillm_evaluations_integration_account_bearer_token_auth_update import (
+    OpenAILLMEvaluationsIntegrationAccountBearerTokenAuthUpdate,
+)
+from datadog_api_client.v2.model.open_aillm_evaluations_integration_account_create_attributes import (
+    OpenAILLMEvaluationsIntegrationAccountCreateAttributes,
+)
+from datadog_api_client.v2.model.open_aillm_evaluations_integration_account_create_data import (
+    OpenAILLMEvaluationsIntegrationAccountCreateData,
+)
+from datadog_api_client.v2.model.open_aillm_evaluations_integration_account_create_request import (
+    OpenAILLMEvaluationsIntegrationAccountCreateRequest,
+)
+from datadog_api_client.v2.model.open_aillm_evaluations_integration_account_response import (
+    OpenAILLMEvaluationsIntegrationAccountResponse,
+)
+from datadog_api_client.v2.model.open_aillm_evaluations_integration_account_response_attributes import (
+    OpenAILLMEvaluationsIntegrationAccountResponseAttributes,
+)
+from datadog_api_client.v2.model.open_aillm_evaluations_integration_account_response_data import (
+    OpenAILLMEvaluationsIntegrationAccountResponseData,
+)
+from datadog_api_client.v2.model.open_aillm_evaluations_integration_account_settings_request import (
+    OpenAILLMEvaluationsIntegrationAccountSettingsRequest,
+)
+from datadog_api_client.v2.model.open_aillm_evaluations_integration_account_settings_response import (
+    OpenAILLMEvaluationsIntegrationAccountSettingsResponse,
+)
+from datadog_api_client.v2.model.open_aillm_evaluations_integration_account_settings_update import (
+    OpenAILLMEvaluationsIntegrationAccountSettingsUpdate,
+)
+from datadog_api_client.v2.model.open_aillm_evaluations_integration_account_update_attributes import (
+    OpenAILLMEvaluationsIntegrationAccountUpdateAttributes,
+)
+from datadog_api_client.v2.model.open_aillm_evaluations_integration_account_update_data import (
+    OpenAILLMEvaluationsIntegrationAccountUpdateData,
+)
+from datadog_api_client.v2.model.open_aillm_evaluations_integration_account_update_request import (
+    OpenAILLMEvaluationsIntegrationAccountUpdateRequest,
+)
+from datadog_api_client.v2.model.open_aillm_evaluations_integration_accounts_response import (
+    OpenAILLMEvaluationsIntegrationAccountsResponse,
+)
+from datadog_api_client.v2.model.open_aillm_evaluations_integration_dataflows_request import (
+    OpenAILLMEvaluationsIntegrationDataflowsRequest,
+)
+from datadog_api_client.v2.model.open_aillm_evaluations_integration_dataflows_response import (
+    OpenAILLMEvaluationsIntegrationDataflowsResponse,
+)
+from datadog_api_client.v2.model.open_aillm_evaluations_llm_completions_integration_dataflow_request import (
+    OpenAILLMEvaluationsLLMCompletionsIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.open_aillm_evaluations_llm_completions_integration_dataflow_response import (
+    OpenAILLMEvaluationsLLMCompletionsIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.open_aillm_evaluations_project_cloud_cost_data_integration_dataflow_request import (
+    OpenAILLMEvaluationsProjectCloudCostDataIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.open_aillm_evaluations_project_cloud_cost_data_integration_dataflow_response import (
+    OpenAILLMEvaluationsProjectCloudCostDataIntegrationDataflowResponse,
+)
 from datadog_api_client.v2.model.open_api_endpoint import OpenAPIEndpoint
 from datadog_api_client.v2.model.open_api_file import OpenAPIFile
 from datadog_api_client.v2.model.opsgenie_account_create_attributes import OpsgenieAccountCreateAttributes
@@ -20571,6 +20649,32 @@ __all__ = [
     "OpenAIIntegration",
     "OpenAIIntegrationType",
     "OpenAIIntegrationUpdate",
+    "OpenAILLMEvaluationsIntegrationAccountAuthenticationRequest",
+    "OpenAILLMEvaluationsIntegrationAccountAuthenticationResponse",
+    "OpenAILLMEvaluationsIntegrationAccountAuthenticationUpdate",
+    "OpenAILLMEvaluationsIntegrationAccountBearerTokenAuthRequest",
+    "OpenAILLMEvaluationsIntegrationAccountBearerTokenAuthResponse",
+    "OpenAILLMEvaluationsIntegrationAccountBearerTokenAuthType",
+    "OpenAILLMEvaluationsIntegrationAccountBearerTokenAuthUpdate",
+    "OpenAILLMEvaluationsIntegrationAccountCreateAttributes",
+    "OpenAILLMEvaluationsIntegrationAccountCreateData",
+    "OpenAILLMEvaluationsIntegrationAccountCreateRequest",
+    "OpenAILLMEvaluationsIntegrationAccountResponse",
+    "OpenAILLMEvaluationsIntegrationAccountResponseAttributes",
+    "OpenAILLMEvaluationsIntegrationAccountResponseData",
+    "OpenAILLMEvaluationsIntegrationAccountSettingsRequest",
+    "OpenAILLMEvaluationsIntegrationAccountSettingsResponse",
+    "OpenAILLMEvaluationsIntegrationAccountSettingsUpdate",
+    "OpenAILLMEvaluationsIntegrationAccountUpdateAttributes",
+    "OpenAILLMEvaluationsIntegrationAccountUpdateData",
+    "OpenAILLMEvaluationsIntegrationAccountUpdateRequest",
+    "OpenAILLMEvaluationsIntegrationAccountsResponse",
+    "OpenAILLMEvaluationsIntegrationDataflowsRequest",
+    "OpenAILLMEvaluationsIntegrationDataflowsResponse",
+    "OpenAILLMEvaluationsLLMCompletionsIntegrationDataflowRequest",
+    "OpenAILLMEvaluationsLLMCompletionsIntegrationDataflowResponse",
+    "OpenAILLMEvaluationsProjectCloudCostDataIntegrationDataflowRequest",
+    "OpenAILLMEvaluationsProjectCloudCostDataIntegrationDataflowResponse",
     "OpenAPIEndpoint",
     "OpenAPIFile",
     "OpsgenieAccountCreateAttributes",

@@ -11,49 +11,6 @@ Feature: Change Management
     And an instance of "ChangeManagement" API
 
   @generated @skip @team:ddoghq/case-management
-  Scenario: Create a change request branch returns "Bad Request" response
-    Given operation "CreateChangeRequestBranch" enabled
-    And new "CreateChangeRequestBranch" request
-    And request contains "change_request_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"branch_name": "chm/CHM-1234", "repo_id": "DataDog/dd-source"}, "type": "change_request_branch"}}
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:ddoghq/case-management
-  Scenario: Create a change request branch returns "Not Found" response
-    Given operation "CreateChangeRequestBranch" enabled
-    And new "CreateChangeRequestBranch" request
-    And request contains "change_request_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"branch_name": "chm/CHM-1234", "repo_id": "DataDog/dd-source"}, "type": "change_request_branch"}}
-    When the request is sent
-    Then the response status is 404 Not Found
-
-  @generated @skip @team:ddoghq/case-management
-  Scenario: Create a change request branch returns "OK" response
-    Given operation "CreateChangeRequestBranch" enabled
-    And new "CreateChangeRequestBranch" request
-    And request contains "change_request_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"branch_name": "chm/CHM-1234", "repo_id": "DataDog/dd-source"}, "type": "change_request_branch"}}
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip @team:ddoghq/case-management
-  Scenario: Create a change request returns "Bad Request" response
-    Given operation "CreateChangeRequest" enabled
-    And new "CreateChangeRequest" request
-    And body with value {"data": {"attributes": {"change_request_linked_incident_uuid": "00000000-0000-0000-0000-000000000000", "change_request_maintenance_window_query": "", "change_request_plan": "1. Deploy to staging 2. Run tests 3. Deploy to production", "change_request_risk": "LOW", "change_request_type": "NORMAL", "description": "Deploying new payment service v2.1", "end_date": "2024-01-02T15:00:00Z", "project_id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e", "requested_teams": ["team-handle-1"], "start_date": "2024-01-01T03:00:00Z", "title": "Deploy new payment service"}, "type": "change_request"}}
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:ddoghq/case-management
-  Scenario: Create a change request returns "Created" response
-    Given operation "CreateChangeRequest" enabled
-    And new "CreateChangeRequest" request
-    And body with value {"data": {"attributes": {"change_request_linked_incident_uuid": "00000000-0000-0000-0000-000000000000", "change_request_maintenance_window_query": "", "change_request_plan": "1. Deploy to staging 2. Run tests 3. Deploy to production", "change_request_risk": "LOW", "change_request_type": "NORMAL", "description": "Deploying new payment service v2.1", "end_date": "2024-01-02T15:00:00Z", "project_id": "d4bbe1af-f36e-42f1-87c1-493ca35c320e", "requested_teams": ["team-handle-1"], "start_date": "2024-01-01T03:00:00Z", "title": "Deploy new payment service"}, "type": "change_request"}}
-    When the request is sent
-    Then the response status is 201 Created
-
-  @generated @skip @team:ddoghq/case-management
   Scenario: Delete a change request decision returns "Bad Request" response
     Given operation "DeleteChangeRequestDecision" enabled
     And new "DeleteChangeRequestDecision" request

@@ -1,12 +1,42 @@
 {
-  "GetIPRanges": {
-    "tag": "IP Ranges",
+  "AddSecurityMonitoringSignalToIncident": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CancelDowntime": {
+    "tag": "Downtimes",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CancelDowntimesByScope": {
+    "tag": "Downtimes",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CheckAWSLogsLambdaAsync": {
+    "tag": "AWS Logs Integration",
     "undo": {
       "type": "safe"
     }
   },
-  "ListAPIKeys": {
-    "tag": "Key Management",
+  "CheckAWSLogsServicesAsync": {
+    "tag": "AWS Logs Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CheckCanDeleteMonitor": {
+    "tag": "Monitors",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "CheckCanDeleteSLO": {
+    "tag": "Service Level Objectives",
     "undo": {
       "type": "safe"
     }
@@ -24,334 +54,6 @@
       "type": "unsafe"
     }
   },
-  "DeleteAPIKey": {
-    "tag": "Key Management",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetAPIKey": {
-    "tag": "Key Management",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdateAPIKey": {
-    "tag": "Key Management",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "ListApplicationKeys": {
-    "tag": "Key Management",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "CreateApplicationKey": {
-    "tag": "Key Management",
-    "undo": {
-      "operationId": "DeleteApplicationKey",
-      "parameters": [
-        {
-          "name": "key",
-          "source": "<RESPONSE_PATH>"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
-  "DeleteApplicationKey": {
-    "tag": "Key Management",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetApplicationKey": {
-    "tag": "Key Management",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdateApplicationKey": {
-    "tag": "Key Management",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "SubmitServiceCheck": {
-    "tag": "Service Checks",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "GetDailyCustomReports": {
-    "tag": "Usage Metering",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "GetSpecifiedDailyCustomReports": {
-    "tag": "Usage Metering",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "DeleteDashboards": {
-    "tag": "Dashboards",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "ListDashboards": {
-    "tag": "Dashboards",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "RestoreDashboards": {
-    "tag": "Dashboards",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "CreateDashboard": {
-    "tag": "Dashboards",
-    "undo": {
-      "operationId": "DeleteDashboard",
-      "parameters": [
-        {
-          "name": "dashboard_id",
-          "source": "id"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
-  "ListDashboardLists": {
-    "tag": "Dashboard Lists",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "CreateDashboardList": {
-    "tag": "Dashboard Lists",
-    "undo": {
-      "operationId": "DeleteDashboardList",
-      "parameters": [
-        {
-          "name": "list_id",
-          "source": "id"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
-  "DeleteDashboardList": {
-    "tag": "Dashboard Lists",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetDashboardList": {
-    "tag": "Dashboard Lists",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdateDashboardList": {
-    "tag": "Dashboard Lists",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "CreatePublicDashboard": {
-    "tag": "Dashboards",
-    "undo": {
-      "operationId": "DeletePublicDashboard",
-      "parameters": [
-        {
-          "name": "token",
-          "source": "token"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
-  "DeletePublicDashboard": {
-    "tag": "Dashboards",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetPublicDashboard": {
-    "tag": "Dashboards",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdatePublicDashboard": {
-    "tag": "Dashboards",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "DeletePublicDashboardInvitation": {
-    "tag": "Dashboards",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetPublicDashboardInvitations": {
-    "tag": "Dashboards",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "SendPublicDashboardInvitation": {
-    "tag": "Dashboards",
-    "undo": {
-      "operationId": "DeletePublicDashboardInvitation",
-      "parameters": [
-        {
-          "name": "token",
-          "source": "data.attributes.share_token"
-        },
-        {
-          "name": "body",
-          "template": "{\n  \"data\": {\n    \"attributes\": {\n      \"email\": \"{{data.attributes.email}}\"\n    },\n    \"type\": \"public_dashboard_invitation\"\n  }\n}"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
-  "DeleteDashboard": {
-    "tag": "Dashboards",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetDashboard": {
-    "tag": "Dashboards",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdateDashboard": {
-    "tag": "Dashboards",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "SubmitDistributionPoints": {
-    "tag": "Metrics",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "ListDowntimes": {
-    "tag": "Downtimes",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "CreateDowntime": {
-    "tag": "Downtimes",
-    "undo": {
-      "operationId": "CancelDowntime",
-      "parameters": [
-        {
-          "name": "downtime_id",
-          "source": "id"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
-  "CancelDowntimesByScope": {
-    "tag": "Downtimes",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "CancelDowntime": {
-    "tag": "Downtimes",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetDowntime": {
-    "tag": "Downtimes",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdateDowntime": {
-    "tag": "Downtimes",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "ListEvents": {
-    "tag": "Events",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "CreateEvent": {
-    "tag": "Events",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "GetEvent": {
-    "tag": "Events",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "GetGraphSnapshot": {
-    "tag": "Snapshots",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "MuteHost": {
-    "tag": "Hosts",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UnmuteHost": {
-    "tag": "Hosts",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "ListHosts": {
-    "tag": "Hosts",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "GetHostTotals": {
-    "tag": "Hosts",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "DeleteAWSAccount": {
-    "tag": "AWS Integration",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "ListAWSAccounts": {
-    "tag": "AWS Integration",
-    "undo": {
-      "type": "safe"
-    }
-  },
   "CreateAWSAccount": {
     "tag": "AWS Integration",
     "undo": {
@@ -366,74 +68,12 @@
       "type": "unsafe"
     }
   },
-  "UpdateAWSAccount": {
-    "tag": "AWS Integration",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "ListAvailableAWSNamespaces": {
-    "tag": "AWS Integration",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "DeleteAWSEventBridgeSource": {
-    "tag": "AWS Integration",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "ListAWSEventBridgeSources": {
-    "tag": "AWS Integration",
-    "undo": {
-      "type": "safe"
-    }
-  },
   "CreateAWSEventBridgeSource": {
     "tag": "AWS Integration",
     "undo": {
       "operationId": "DeleteAWSEventBridgeSource",
       "parameters": [],
       "type": "unsafe"
-    }
-  },
-  "DeleteAWSTagFilter": {
-    "tag": "AWS Integration",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "ListAWSTagFilters": {
-    "tag": "AWS Integration",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "CreateAWSTagFilter": {
-    "tag": "AWS Integration",
-    "undo": {
-      "operationId": "DeleteAWSTagFilter",
-      "parameters": [],
-      "type": "unsafe"
-    }
-  },
-  "CreateNewAWSExternalID": {
-    "tag": "AWS Integration",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "DeleteAWSLambdaARN": {
-    "tag": "AWS Logs Integration",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "ListAWSLogsIntegrations": {
-    "tag": "AWS Logs Integration",
-    "undo": {
-      "type": "safe"
     }
   },
   "CreateAWSLambdaARN": {
@@ -444,41 +84,25 @@
       "type": "unsafe"
     }
   },
-  "CheckAWSLogsLambdaAsync": {
-    "tag": "AWS Logs Integration",
+  "CreateAWSTagFilter": {
+    "tag": "AWS Integration",
     "undo": {
-      "type": "safe"
-    }
-  },
-  "ListAWSLogsServices": {
-    "tag": "AWS Logs Integration",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "EnableAWSLogServices": {
-    "tag": "AWS Logs Integration",
-    "undo": {
-      "operationId": "TODO",
+      "operationId": "DeleteAWSTagFilter",
+      "parameters": [],
       "type": "unsafe"
     }
   },
-  "CheckAWSLogsServicesAsync": {
-    "tag": "AWS Logs Integration",
+  "CreateApplicationKey": {
+    "tag": "Key Management",
     "undo": {
-      "type": "safe"
-    }
-  },
-  "DeleteAzureIntegration": {
-    "tag": "Azure Integration",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "ListAzureIntegration": {
-    "tag": "Azure Integration",
-    "undo": {
-      "type": "safe"
+      "operationId": "DeleteApplicationKey",
+      "parameters": [
+        {
+          "name": "key",
+          "source": "<RESPONSE_PATH>"
+        }
+      ],
+      "type": "unsafe"
     }
   },
   "CreateAzureIntegration": {
@@ -495,26 +119,47 @@
       "type": "unsafe"
     }
   },
-  "UpdateAzureIntegration": {
-    "tag": "Azure Integration",
+  "CreateDashboard": {
+    "tag": "Dashboards",
     "undo": {
-      "type": "idempotent"
+      "operationId": "DeleteDashboard",
+      "parameters": [
+        {
+          "name": "dashboard_id",
+          "source": "id"
+        }
+      ],
+      "type": "unsafe"
     }
   },
-  "UpdateAzureHostFilters": {
-    "tag": "Azure Integration",
+  "CreateDashboardList": {
+    "tag": "Dashboard Lists",
     "undo": {
-      "type": "safe"
+      "operationId": "DeleteDashboardList",
+      "parameters": [
+        {
+          "name": "list_id",
+          "source": "id"
+        }
+      ],
+      "type": "unsafe"
     }
   },
-  "DeleteGCPIntegration": {
-    "tag": "GCP Integration",
+  "CreateDowntime": {
+    "tag": "Downtimes",
     "undo": {
-      "type": "idempotent"
+      "operationId": "CancelDowntime",
+      "parameters": [
+        {
+          "name": "downtime_id",
+          "source": "id"
+        }
+      ],
+      "type": "unsafe"
     }
   },
-  "ListGCPIntegration": {
-    "tag": "GCP Integration",
+  "CreateEvent": {
+    "tag": "Events",
     "undo": {
       "type": "safe"
     }
@@ -533,760 +178,6 @@
       "type": "unsafe"
     }
   },
-  "UpdateGCPIntegration": {
-    "tag": "GCP Integration",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "CreatePagerDutyIntegrationService": {
-    "tag": "PagerDuty Integration",
-    "undo": {
-      "operationId": "DeletePagerDutyIntegrationService",
-      "parameters": [
-        {
-          "name": "service_name",
-          "source": "service_name"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
-  "DeletePagerDutyIntegrationService": {
-    "tag": "PagerDuty Integration",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetPagerDutyIntegrationService": {
-    "tag": "PagerDuty Integration",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdatePagerDutyIntegrationService": {
-    "tag": "PagerDuty Integration",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetSlackIntegrationChannels": {
-    "tag": "Slack Integration",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "CreateSlackIntegrationChannel": {
-    "tag": "Slack Integration",
-    "undo": {
-      "type": "unsafe"
-    }
-  },
-  "RemoveSlackIntegrationChannel": {
-    "tag": "Slack Integration",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetSlackIntegrationChannel": {
-    "tag": "Slack Integration",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdateSlackIntegrationChannel": {
-    "tag": "Slack Integration",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "CreateWebhooksIntegrationCustomVariable": {
-    "tag": "Webhooks Integration",
-    "undo": {
-      "operationId": "DeleteWebhooksIntegrationCustomVariable",
-      "parameters": [
-        {
-          "name": "custom_variable_name",
-          "source": "name"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
-  "DeleteWebhooksIntegrationCustomVariable": {
-    "tag": "Webhooks Integration",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetWebhooksIntegrationCustomVariable": {
-    "tag": "Webhooks Integration",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdateWebhooksIntegrationCustomVariable": {
-    "tag": "Webhooks Integration",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "CreateWebhooksIntegration": {
-    "tag": "Webhooks Integration",
-    "undo": {
-      "operationId": "DeleteWebhooksIntegration",
-      "parameters": [
-        {
-          "name": "webhook_name",
-          "source": "name"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
-  "DeleteWebhooksIntegration": {
-    "tag": "Webhooks Integration",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetWebhooksIntegration": {
-    "tag": "Webhooks Integration",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdateWebhooksIntegration": {
-    "tag": "Webhooks Integration",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "ListLogs": {
-    "tag": "Logs",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "GetLogsIndexOrder": {
-    "tag": "Logs Indexes",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdateLogsIndexOrder": {
-    "tag": "Logs Indexes",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "ListLogIndexes": {
-    "tag": "Logs Indexes",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "CreateLogsIndex": {
-    "tag": "Logs Indexes",
-    "undo": {
-      "operationId": "TODO",
-      "parameters": [],
-      "type": "unsafe"
-    }
-  },
-  "DeleteLogsIndex": {
-    "tag": "Logs Indexes",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetLogsIndex": {
-    "tag": "Logs Indexes",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdateLogsIndex": {
-    "tag": "Logs Indexes",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetLogsPipelineOrder": {
-    "tag": "Logs Pipelines",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdateLogsPipelineOrder": {
-    "tag": "Logs Pipelines",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "ListLogsPipelines": {
-    "tag": "Logs Pipelines",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "CreateLogsPipeline": {
-    "tag": "Logs Pipelines",
-    "undo": {
-      "operationId": "DeleteLogsPipeline",
-      "parameters": [
-        {
-          "name": "pipeline_id",
-          "source": "id"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
-  "DeleteLogsPipeline": {
-    "tag": "Logs Pipelines",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetLogsPipeline": {
-    "tag": "Logs Pipelines",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdateLogsPipeline": {
-    "tag": "Logs Pipelines",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "ListActiveMetrics": {
-    "tag": "Metrics",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "GetMetricMetadata": {
-    "tag": "Metrics",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdateMetricMetadata": {
-    "tag": "Metrics",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "ListMonitors": {
-    "tag": "Monitors",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "CreateMonitor": {
-    "tag": "Monitors",
-    "undo": {
-      "operationId": "DeleteMonitor",
-      "parameters": [
-        {
-          "name": "monitor_id",
-          "source": "id"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
-  "CheckCanDeleteMonitor": {
-    "tag": "Monitors",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "SearchMonitorGroups": {
-    "tag": "Monitors",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "SearchMonitors": {
-    "tag": "Monitors",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "ValidateMonitor": {
-    "tag": "Monitors",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "DeleteMonitor": {
-    "tag": "Monitors",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetMonitor": {
-    "tag": "Monitors",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdateMonitor": {
-    "tag": "Monitors",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "ListMonitorDowntimes": {
-    "tag": "Downtimes",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "ValidateExistingMonitor": {
-    "tag": "Monitors",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetMonthlyCustomReports": {
-    "tag": "Usage Metering",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "GetSpecifiedMonthlyCustomReports": {
-    "tag": "Usage Metering",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "ListNotebooks": {
-    "tag": "Notebooks",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "CreateNotebook": {
-    "tag": "Notebooks",
-    "undo": {
-      "operationId": "DeleteNotebook",
-      "parameters": [
-        {
-          "name": "notebook_id",
-          "source": "data.id"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
-  "DeleteNotebook": {
-    "tag": "Notebooks",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetNotebook": {
-    "tag": "Notebooks",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdateNotebook": {
-    "tag": "Notebooks",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "ListOrgs": {
-    "tag": "Organizations",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "CreateChildOrg": {
-    "tag": "Organizations",
-    "undo": {
-      "operationId": "TODO",
-      "parameters": [],
-      "type": "unsafe"
-    }
-  },
-  "GetOrg": {
-    "tag": "Organizations",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdateOrg": {
-    "tag": "Organizations",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "DowngradeOrg": {
-    "tag": "Organizations",
-    "undo": {
-      "type": "unsafe"
-    }
-  },
-  "UploadIdPForOrg": {
-    "tag": "Organizations",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "QueryMetrics": {
-    "tag": "Metrics",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "ListMetrics": {
-    "tag": "Metrics",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "AddSecurityMonitoringSignalToIncident": {
-    "tag": "Security Monitoring",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "EditSecurityMonitoringSignalAssignee": {
-    "tag": "Security Monitoring",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "EditSecurityMonitoringSignalState": {
-    "tag": "Security Monitoring",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "SubmitMetrics": {
-    "tag": "Metrics",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "ListSLOs": {
-    "tag": "Service Level Objectives",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "CreateSLO": {
-    "tag": "Service Level Objectives",
-    "undo": {
-      "operationId": "DeleteSLO",
-      "parameters": [
-        {
-          "name": "slo_id",
-          "source": "data[0].id"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
-  "DeleteSLOTimeframeInBulk": {
-    "tag": "Service Level Objectives",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "CheckCanDeleteSLO": {
-    "tag": "Service Level Objectives",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "ListSLOCorrection": {
-    "tag": "Service Level Objective Corrections",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "CreateSLOCorrection": {
-    "tag": "Service Level Objective Corrections",
-    "undo": {
-      "operationId": "DeleteSLOCorrection",
-      "parameters": [
-        {
-          "name": "slo_correction_id",
-          "source": "data.id"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
-  "DeleteSLOCorrection": {
-    "tag": "Service Level Objective Corrections",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetSLOCorrection": {
-    "tag": "Service Level Objective Corrections",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdateSLOCorrection": {
-    "tag": "Service Level Objective Corrections",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "SearchSLO": {
-    "tag": "Service Level Objectives",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "DeleteSLO": {
-    "tag": "Service Level Objectives",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetSLO": {
-    "tag": "Service Level Objectives",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdateSLO": {
-    "tag": "Service Level Objectives",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetSLOCorrections": {
-    "tag": "Service Level Objectives",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "GetSLOHistory": {
-    "tag": "Service Level Objectives",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "GetSyntheticsCIBatch": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "ListLocations": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "CreatePrivateLocation": {
-    "tag": "Synthetics",
-    "undo": {
-      "operationId": "DeletePrivateLocation",
-      "parameters": [
-        {
-          "name": "location_id",
-          "source": "private_location.id"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
-  "DeletePrivateLocation": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetPrivateLocation": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdatePrivateLocation": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetSyntheticsDefaultLocations": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "ListTests": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "CreateSyntheticsAPITest": {
-    "tag": "Synthetics",
-    "undo": {
-      "operationId": "DeleteTests",
-      "parameters": [
-        {
-          "name": "body",
-          "template": "{\"public_ids\": [\"{{ public_id }}\"]}"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
-  "GetAPITest": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdateAPITest": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "CreateSyntheticsBrowserTest": {
-    "tag": "Synthetics",
-    "undo": {
-      "operationId": "DeleteTests",
-      "parameters": [
-        {
-          "name": "body",
-          "template": "{\"public_ids\": [\"{{ public_id }}\"]}"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
-  "GetBrowserTest": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdateBrowserTest": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetBrowserTestLatestResults": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "GetBrowserTestResult": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "DeleteTests": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "CreateSyntheticsMobileTest": {
-    "tag": "Synthetics",
-    "undo": {
-      "operationId": "DeleteTests",
-      "parameters": [
-        {
-          "name": "body",
-          "template": "{\"public_ids\": [\"{{ public_id }}\"]}"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
-  "GetMobileTest": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdateMobileTest": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "SearchTests": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "TriggerTests": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "TriggerCITests": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "FetchUptimes": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetTest": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "PatchTest": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetAPITestLatestResults": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "GetAPITestResult": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "UpdateTestPauseStatus": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "ListGlobalVariables": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "safe"
-    }
-  },
   "CreateGlobalVariable": {
     "tag": "Synthetics",
     "undo": {
@@ -1298,42 +189,6 @@
         }
       ],
       "type": "unsafe"
-    }
-  },
-  "DeleteGlobalVariable": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetGlobalVariable": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "EditGlobalVariable": {
-    "tag": "Synthetics",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "ListHostTags": {
-    "tag": "Tags",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "DeleteHostTags": {
-    "tag": "Tags",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "GetHostTags": {
-    "tag": "Tags",
-    "undo": {
-      "type": "safe"
     }
   },
   "CreateHostTags": {
@@ -1353,10 +208,678 @@
       "type": "unsafe"
     }
   },
-  "UpdateHostTags": {
+  "CreateLogsPipeline": {
+    "tag": "Logs Pipelines",
+    "undo": {
+      "operationId": "DeleteLogsPipeline",
+      "parameters": [
+        {
+          "name": "pipeline_id",
+          "source": "id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "CreateMonitor": {
+    "tag": "Monitors",
+    "undo": {
+      "operationId": "DeleteMonitor",
+      "parameters": [
+        {
+          "name": "monitor_id",
+          "source": "id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "CreateNewAWSExternalID": {
+    "tag": "AWS Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateNotebook": {
+    "tag": "Notebooks",
+    "undo": {
+      "operationId": "DeleteNotebook",
+      "parameters": [
+        {
+          "name": "notebook_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "CreatePagerDutyIntegrationService": {
+    "tag": "PagerDuty Integration",
+    "undo": {
+      "operationId": "DeletePagerDutyIntegrationService",
+      "parameters": [
+        {
+          "name": "service_name",
+          "source": "service_name"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "CreatePrivateLocation": {
+    "tag": "Synthetics",
+    "undo": {
+      "operationId": "DeletePrivateLocation",
+      "parameters": [
+        {
+          "name": "location_id",
+          "source": "private_location.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "CreatePublicDashboard": {
+    "tag": "Dashboards",
+    "undo": {
+      "operationId": "DeletePublicDashboard",
+      "parameters": [
+        {
+          "name": "token",
+          "source": "token"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "CreateSLO": {
+    "tag": "Service Level Objectives",
+    "undo": {
+      "operationId": "DeleteSLO",
+      "parameters": [
+        {
+          "name": "slo_id",
+          "source": "data[0].id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "CreateSLOCorrection": {
+    "tag": "Service Level Objective Corrections",
+    "undo": {
+      "operationId": "DeleteSLOCorrection",
+      "parameters": [
+        {
+          "name": "slo_correction_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "CreateSlackIntegrationChannel": {
+    "tag": "Slack Integration",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "CreateSyntheticsAPITest": {
+    "tag": "Synthetics",
+    "undo": {
+      "operationId": "DeleteTests",
+      "parameters": [
+        {
+          "name": "body",
+          "template": "{\"public_ids\": [\"{{ public_id }}\"]}"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "CreateSyntheticsBrowserTest": {
+    "tag": "Synthetics",
+    "undo": {
+      "operationId": "DeleteTests",
+      "parameters": [
+        {
+          "name": "body",
+          "template": "{\"public_ids\": [\"{{ public_id }}\"]}"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "CreateSyntheticsMobileTest": {
+    "tag": "Synthetics",
+    "undo": {
+      "operationId": "DeleteTests",
+      "parameters": [
+        {
+          "name": "body",
+          "template": "{\"public_ids\": [\"{{ public_id }}\"]}"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "CreateUser": {
+    "tag": "Users",
+    "undo": {
+      "operationId": "DisableUser",
+      "parameters": [
+        {
+          "name": "user_handle",
+          "source": "user.handle"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "CreateWebhooksIntegration": {
+    "tag": "Webhooks Integration",
+    "undo": {
+      "operationId": "DeleteWebhooksIntegration",
+      "parameters": [
+        {
+          "name": "webhook_name",
+          "source": "name"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "CreateWebhooksIntegrationCustomVariable": {
+    "tag": "Webhooks Integration",
+    "undo": {
+      "operationId": "DeleteWebhooksIntegrationCustomVariable",
+      "parameters": [
+        {
+          "name": "custom_variable_name",
+          "source": "name"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "DeleteAPIKey": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteAWSAccount": {
+    "tag": "AWS Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteAWSEventBridgeSource": {
+    "tag": "AWS Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteAWSLambdaARN": {
+    "tag": "AWS Logs Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteAWSTagFilter": {
+    "tag": "AWS Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteApplicationKey": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteAzureIntegration": {
+    "tag": "Azure Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteDashboard": {
+    "tag": "Dashboards",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteDashboardList": {
+    "tag": "Dashboard Lists",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteDashboards": {
+    "tag": "Dashboards",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteGCPIntegration": {
+    "tag": "GCP Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteGlobalVariable": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteHostTags": {
     "tag": "Tags",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "DeleteLogsIndex": {
+    "tag": "Logs Indexes",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteLogsPipeline": {
+    "tag": "Logs Pipelines",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteMonitor": {
+    "tag": "Monitors",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteNotebook": {
+    "tag": "Notebooks",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeletePagerDutyIntegrationService": {
+    "tag": "PagerDuty Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeletePrivateLocation": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeletePublicDashboard": {
+    "tag": "Dashboards",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeletePublicDashboardInvitation": {
+    "tag": "Dashboards",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteSLO": {
+    "tag": "Service Level Objectives",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteSLOCorrection": {
+    "tag": "Service Level Objective Corrections",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteSLOTimeframeInBulk": {
+    "tag": "Service Level Objectives",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteTests": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteWebhooksIntegration": {
+    "tag": "Webhooks Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteWebhooksIntegrationCustomVariable": {
+    "tag": "Webhooks Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DisableUser": {
+    "tag": "Users",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DowngradeOrg": {
+    "tag": "Organizations",
+    "undo": {
+      "type": "unsafe"
+    }
+  },
+  "EditGlobalVariable": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "EditSecurityMonitoringSignalAssignee": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "EditSecurityMonitoringSignalState": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "FetchUptimes": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "GetAPIKey": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetAPITest": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetAPITestLatestResults": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetAPITestResult": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetApplicationKey": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetBrowserTest": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetBrowserTestLatestResults": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetBrowserTestResult": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetDailyCustomReports": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetDashboard": {
+    "tag": "Dashboards",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetDashboardList": {
+    "tag": "Dashboard Lists",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetDowntime": {
+    "tag": "Downtimes",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetEvent": {
+    "tag": "Events",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetGlobalVariable": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetGraphSnapshot": {
+    "tag": "Snapshots",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetHostTags": {
+    "tag": "Tags",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetHostTotals": {
+    "tag": "Hosts",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetHourlyUsageAttribution": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetIPRanges": {
+    "tag": "IP Ranges",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetIncidentManagement": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetIngestedSpans": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetLogsIndex": {
+    "tag": "Logs Indexes",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetLogsIndexOrder": {
+    "tag": "Logs Indexes",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetLogsPipeline": {
+    "tag": "Logs Pipelines",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetLogsPipelineOrder": {
+    "tag": "Logs Pipelines",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetMetricMetadata": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetMobileTest": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetMonitor": {
+    "tag": "Monitors",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetMonthlyCustomReports": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetMonthlyUsageAttribution": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetNotebook": {
+    "tag": "Notebooks",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetOrg": {
+    "tag": "Organizations",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetPagerDutyIntegrationService": {
+    "tag": "PagerDuty Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetPrivateLocation": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetPublicDashboard": {
+    "tag": "Dashboards",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetPublicDashboardInvitations": {
+    "tag": "Dashboards",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetSLO": {
+    "tag": "Service Level Objectives",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetSLOCorrection": {
+    "tag": "Service Level Objective Corrections",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetSLOCorrections": {
+    "tag": "Service Level Objectives",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetSLOHistory": {
+    "tag": "Service Level Objectives",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetSlackIntegrationChannel": {
+    "tag": "Slack Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetSlackIntegrationChannels": {
+    "tag": "Slack Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetSpecifiedDailyCustomReports": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetSpecifiedMonthlyCustomReports": {
+    "tag": "Usage Metering",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetSyntheticsCIBatch": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetSyntheticsDefaultLocations": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetTest": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
     }
   },
   "GetUsageAnalyzedLogs": {
@@ -1366,12 +889,6 @@
     }
   },
   "GetUsageAuditLogs": {
-    "tag": "Usage Metering",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "GetUsageLambda": {
     "tag": "Usage Metering",
     "undo": {
       "type": "safe"
@@ -1389,13 +906,13 @@
       "type": "safe"
     }
   },
-  "GetUsageCloudSecurityPostureManagement": {
+  "GetUsageCWS": {
     "tag": "Usage Metering",
     "undo": {
       "type": "safe"
     }
   },
-  "GetUsageCWS": {
+  "GetUsageCloudSecurityPostureManagement": {
     "tag": "Usage Metering",
     "undo": {
       "type": "safe"
@@ -1419,25 +936,7 @@
       "type": "safe"
     }
   },
-  "GetHourlyUsageAttribution": {
-    "tag": "Usage Metering",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "GetIncidentManagement": {
-    "tag": "Usage Metering",
-    "undo": {
-      "type": "safe"
-    }
-  },
   "GetUsageIndexedSpans": {
-    "tag": "Usage Metering",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "GetIngestedSpans": {
     "tag": "Usage Metering",
     "undo": {
       "type": "safe"
@@ -1449,13 +948,13 @@
       "type": "safe"
     }
   },
-  "GetUsageLogs": {
+  "GetUsageLambda": {
     "tag": "Usage Metering",
     "undo": {
       "type": "safe"
     }
   },
-  "GetUsageLogsByRetention": {
+  "GetUsageLogs": {
     "tag": "Usage Metering",
     "undo": {
       "type": "safe"
@@ -1467,7 +966,7 @@
       "type": "safe"
     }
   },
-  "GetMonthlyUsageAttribution": {
+  "GetUsageLogsByRetention": {
     "tag": "Usage Metering",
     "undo": {
       "type": "safe"
@@ -1497,13 +996,13 @@
       "type": "safe"
     }
   },
-  "GetUsageRumUnits": {
+  "GetUsageRumSessions": {
     "tag": "Usage Metering",
     "undo": {
       "type": "safe"
     }
   },
-  "GetUsageRumSessions": {
+  "GetUsageRumUnits": {
     "tag": "Usage Metering",
     "undo": {
       "type": "safe"
@@ -1557,45 +1056,283 @@
       "type": "safe"
     }
   },
-  "ListUsers": {
-    "tag": "Users",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "CreateUser": {
-    "tag": "Users",
-    "undo": {
-      "operationId": "DisableUser",
-      "parameters": [
-        {
-          "name": "user_handle",
-          "source": "user.handle"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
-  "DisableUser": {
-    "tag": "Users",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
   "GetUser": {
     "tag": "Users",
     "undo": {
       "type": "safe"
     }
   },
-  "UpdateUser": {
+  "GetWebhooksIntegration": {
+    "tag": "Webhooks Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetWebhooksIntegrationCustomVariable": {
+    "tag": "Webhooks Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListAPIKeys": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListAWSAccounts": {
+    "tag": "AWS Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListAWSEventBridgeSources": {
+    "tag": "AWS Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListAWSLogsIntegrations": {
+    "tag": "AWS Logs Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListAWSLogsServices": {
+    "tag": "AWS Logs Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListAWSTagFilters": {
+    "tag": "AWS Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListActiveMetrics": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListApplicationKeys": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListAvailableAWSNamespaces": {
+    "tag": "AWS Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListAzureIntegration": {
+    "tag": "Azure Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListDashboardLists": {
+    "tag": "Dashboard Lists",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListDashboards": {
+    "tag": "Dashboards",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListDowntimes": {
+    "tag": "Downtimes",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListEvents": {
+    "tag": "Events",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListGCPIntegration": {
+    "tag": "GCP Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListGlobalVariables": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListHostTags": {
+    "tag": "Tags",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListHosts": {
+    "tag": "Hosts",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListLocations": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListLogIndexes": {
+    "tag": "Logs Indexes",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListLogs": {
+    "tag": "Logs",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListLogsPipelines": {
+    "tag": "Logs Pipelines",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListMetrics": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListMonitorDowntimes": {
+    "tag": "Downtimes",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListMonitors": {
+    "tag": "Monitors",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListNotebooks": {
+    "tag": "Notebooks",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListOrgs": {
+    "tag": "Organizations",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListSLOCorrection": {
+    "tag": "Service Level Objective Corrections",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListSLOs": {
+    "tag": "Service Level Objectives",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListTests": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListUsers": {
     "tag": "Users",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "MuteHost": {
+    "tag": "Hosts",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "PatchTest": {
+    "tag": "Synthetics",
     "undo": {
       "type": "idempotent"
     }
   },
-  "Validate": {
-    "tag": "Authentication",
+  "QueryMetrics": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "RemoveSlackIntegrationChannel": {
+    "tag": "Slack Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "RestoreDashboards": {
+    "tag": "Dashboards",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "SearchMonitorGroups": {
+    "tag": "Monitors",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "SearchMonitors": {
+    "tag": "Monitors",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "SearchSLO": {
+    "tag": "Service Level Objectives",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "SearchTests": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "SendPublicDashboardInvitation": {
+    "tag": "Dashboards",
+    "undo": {
+      "operationId": "DeletePublicDashboardInvitation",
+      "parameters": [
+        {
+          "name": "token",
+          "source": "data.attributes.share_token"
+        },
+        {
+          "name": "body",
+          "template": "{\n  \"data\": {\n    \"attributes\": {\n      \"email\": \"{{data.attributes.email}}\"\n    },\n    \"type\": \"public_dashboard_invitation\"\n  }\n}"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "SubmitDistributionPoints": {
+    "tag": "Metrics",
     "undo": {
       "type": "safe"
     }
@@ -1604,6 +1341,246 @@
     "tag": "Logs",
     "undo": {
       "type": "safe"
+    }
+  },
+  "SubmitMetrics": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "SubmitServiceCheck": {
+    "tag": "Service Checks",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "TriggerCITests": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "TriggerTests": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UnmuteHost": {
+    "tag": "Hosts",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateAPIKey": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateAPITest": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateAWSAccount": {
+    "tag": "AWS Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateApplicationKey": {
+    "tag": "Key Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateAzureHostFilters": {
+    "tag": "Azure Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateAzureIntegration": {
+    "tag": "Azure Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateBrowserTest": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateDashboard": {
+    "tag": "Dashboards",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateDashboardList": {
+    "tag": "Dashboard Lists",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateDowntime": {
+    "tag": "Downtimes",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateGCPIntegration": {
+    "tag": "GCP Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateHostTags": {
+    "tag": "Tags",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateLogsIndex": {
+    "tag": "Logs Indexes",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateLogsIndexOrder": {
+    "tag": "Logs Indexes",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateLogsPipeline": {
+    "tag": "Logs Pipelines",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateLogsPipelineOrder": {
+    "tag": "Logs Pipelines",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateMetricMetadata": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateMobileTest": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateMonitor": {
+    "tag": "Monitors",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateNotebook": {
+    "tag": "Notebooks",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateOrg": {
+    "tag": "Organizations",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdatePagerDutyIntegrationService": {
+    "tag": "PagerDuty Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdatePrivateLocation": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdatePublicDashboard": {
+    "tag": "Dashboards",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateSLO": {
+    "tag": "Service Level Objectives",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateSLOCorrection": {
+    "tag": "Service Level Objective Corrections",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateSlackIntegrationChannel": {
+    "tag": "Slack Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateTestPauseStatus": {
+    "tag": "Synthetics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateUser": {
+    "tag": "Users",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateWebhooksIntegration": {
+    "tag": "Webhooks Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UpdateWebhooksIntegrationCustomVariable": {
+    "tag": "Webhooks Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "UploadIdPForOrg": {
+    "tag": "Organizations",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "Validate": {
+    "tag": "Authentication",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ValidateExistingMonitor": {
+    "tag": "Monitors",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "ValidateMonitor": {
+    "tag": "Monitors",
+    "undo": {
+      "type": "idempotent"
     }
   }
 }

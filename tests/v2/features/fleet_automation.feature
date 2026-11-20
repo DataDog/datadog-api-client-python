@@ -256,30 +256,6 @@ Feature: Fleet Automation
     Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/fleet-automation
-  Scenario: Trigger a schedule deployment returns "Bad Request" response
-    Given operation "TriggerFleetSchedule" enabled
-    And new "TriggerFleetSchedule" request
-    And request contains "id" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:ddoghq/fleet-automation
-  Scenario: Trigger a schedule deployment returns "CREATED - Deployment successfully created and started." response
-    Given operation "TriggerFleetSchedule" enabled
-    And new "TriggerFleetSchedule" request
-    And request contains "id" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 201 CREATED - Deployment successfully created and started.
-
-  @generated @skip @team:ddoghq/fleet-automation
-  Scenario: Trigger a schedule deployment returns "Not Found" response
-    Given operation "TriggerFleetSchedule" enabled
-    And new "TriggerFleetSchedule" request
-    And request contains "id" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 404 Not Found
-
-  @generated @skip @team:ddoghq/fleet-automation
   Scenario: Update a schedule returns "Bad Request" response
     Given operation "UpdateFleetSchedule" enabled
     And new "UpdateFleetSchedule" request

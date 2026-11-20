@@ -9,27 +9,6 @@ Feature: Logs Indexes
     And an instance of "LogsIndexes" API
 
   @generated @skip @team:ddoghq/logs-backend @team:ddoghq/logs-core
-  Scenario: Create an index returns "Invalid Parameter Error" response
-    Given new "CreateLogsIndex" request
-    And body with value {"daily_limit": 300000000, "daily_limit_reset": {"reset_time": "14:00", "reset_utc_offset": "+02:00"}, "daily_limit_warning_threshold_percentage": 70, "exclusion_filters": [{"filter": {"query": "*", "sample_attribute": "@ci.job_id", "sample_rate": 1.0}, "name": "payment"}], "filter": {"query": "source:python"}, "name": "main", "num_flex_logs_retention_days": 360, "num_retention_days": 15, "tags": ["team:backend", "env:production"]}
-    When the request is sent
-    Then the response status is 400 Invalid Parameter Error
-
-  @generated @skip @team:ddoghq/logs-backend @team:ddoghq/logs-core
-  Scenario: Create an index returns "OK" response
-    Given new "CreateLogsIndex" request
-    And body with value {"daily_limit": 300000000, "daily_limit_reset": {"reset_time": "14:00", "reset_utc_offset": "+02:00"}, "daily_limit_warning_threshold_percentage": 70, "exclusion_filters": [{"filter": {"query": "*", "sample_attribute": "@ci.job_id", "sample_rate": 1.0}, "name": "payment"}], "filter": {"query": "source:python"}, "name": "main", "num_flex_logs_retention_days": 360, "num_retention_days": 15, "tags": ["team:backend", "env:production"]}
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip @team:ddoghq/logs-backend @team:ddoghq/logs-core
-  Scenario: Create an index returns "Unprocessable Entity" response
-    Given new "CreateLogsIndex" request
-    And body with value {"daily_limit": 300000000, "daily_limit_reset": {"reset_time": "14:00", "reset_utc_offset": "+02:00"}, "daily_limit_warning_threshold_percentage": 70, "exclusion_filters": [{"filter": {"query": "*", "sample_attribute": "@ci.job_id", "sample_rate": 1.0}, "name": "payment"}], "filter": {"query": "source:python"}, "name": "main", "num_flex_logs_retention_days": 360, "num_retention_days": 15, "tags": ["team:backend", "env:production"]}
-    When the request is sent
-    Then the response status is 422 Unprocessable Entity
-
-  @generated @skip @team:ddoghq/logs-backend @team:ddoghq/logs-core
   Scenario: Delete an index returns "Not Found" response
     Given new "DeleteLogsIndex" request
     And request contains "name" parameter from "REPLACE.ME"
