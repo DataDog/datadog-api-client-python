@@ -287,6 +287,9 @@ class WidgetDefinition(ModelComposed):
         :param color_by_groups: List of groups used for colors.
         :type color_by_groups: [str], optional
 
+        :param palette: Color palette to apply to the widget. Supported values include `datadog16`, `datadog32`, `semantic`, `classic`, and `dog_classic`. A guide to the available color palettes can be found at https://docs.datadoghq.com/dashboards/guide/widget_colors
+        :type palette: str, optional
+
         :param show_other_links: Whether to show links for "other" category.
         :type show_other_links: bool, optional
 
