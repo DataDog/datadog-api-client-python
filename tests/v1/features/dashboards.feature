@@ -1008,6 +1008,15 @@ Feature: Dashboards
     And the response "widgets[0].definition.type" is equal to "scatterplot"
 
   @team:ddoghq/dashboards-backend
+  Scenario: Create a new dashboard with scatterplot widget and palette
+    Given new "CreateDashboard" request
+    And body from file "dashboards_json_payload/scatterplot_palette_widget.json"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "widgets[0].definition.type" is equal to "scatterplot"
+    And the response "widgets[0].definition.palette" is equal to "datadog16"
+
+  @team:ddoghq/dashboards-backend
   Scenario: Create a new dashboard with servicemap widget
     Given new "CreateDashboard" request
     And body from file "dashboards_json_payload/servicemap_widget.json"

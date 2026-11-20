@@ -703,6 +703,13 @@
     {
       "feature": "Dashboards",
       "feature_file": "../../v1/features/dashboards.feature",
+      "file": "v1/dashboards/create-a-new-dashboard-with-scatterplot-widget-and-palette.json",
+      "scenario": "Create a new dashboard with scatterplot widget and palette",
+      "version": "v1"
+    },
+    {
+      "feature": "Dashboards",
+      "feature_file": "../../v1/features/dashboards.feature",
       "file": "v1/dashboards/create-a-new-dashboard-with-servicemap-widget.json",
       "scenario": "Create a new dashboard with servicemap widget",
       "version": "v1"
