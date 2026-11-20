@@ -1789,6 +1789,63 @@ from datadog_api_client.v2.model.circle_ci_credentials_update import CircleCICre
 from datadog_api_client.v2.model.circle_ci_integration import CircleCIIntegration
 from datadog_api_client.v2.model.circle_ci_integration_type import CircleCIIntegrationType
 from datadog_api_client.v2.model.circle_ci_integration_update import CircleCIIntegrationUpdate
+from datadog_api_client.v2.model.claude_compliance_compliance_logs_integration_dataflow_response import (
+    ClaudeComplianceComplianceLogsIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.claude_compliance_integration_account_authentication_request import (
+    ClaudeComplianceIntegrationAccountAuthenticationRequest,
+)
+from datadog_api_client.v2.model.claude_compliance_integration_account_authentication_response import (
+    ClaudeComplianceIntegrationAccountAuthenticationResponse,
+)
+from datadog_api_client.v2.model.claude_compliance_integration_account_authentication_update import (
+    ClaudeComplianceIntegrationAccountAuthenticationUpdate,
+)
+from datadog_api_client.v2.model.claude_compliance_integration_account_bearer_token_auth_request import (
+    ClaudeComplianceIntegrationAccountBearerTokenAuthRequest,
+)
+from datadog_api_client.v2.model.claude_compliance_integration_account_bearer_token_auth_response import (
+    ClaudeComplianceIntegrationAccountBearerTokenAuthResponse,
+)
+from datadog_api_client.v2.model.claude_compliance_integration_account_bearer_token_auth_type import (
+    ClaudeComplianceIntegrationAccountBearerTokenAuthType,
+)
+from datadog_api_client.v2.model.claude_compliance_integration_account_bearer_token_auth_update import (
+    ClaudeComplianceIntegrationAccountBearerTokenAuthUpdate,
+)
+from datadog_api_client.v2.model.claude_compliance_integration_account_create_attributes import (
+    ClaudeComplianceIntegrationAccountCreateAttributes,
+)
+from datadog_api_client.v2.model.claude_compliance_integration_account_create_data import (
+    ClaudeComplianceIntegrationAccountCreateData,
+)
+from datadog_api_client.v2.model.claude_compliance_integration_account_create_request import (
+    ClaudeComplianceIntegrationAccountCreateRequest,
+)
+from datadog_api_client.v2.model.claude_compliance_integration_account_response import (
+    ClaudeComplianceIntegrationAccountResponse,
+)
+from datadog_api_client.v2.model.claude_compliance_integration_account_response_attributes import (
+    ClaudeComplianceIntegrationAccountResponseAttributes,
+)
+from datadog_api_client.v2.model.claude_compliance_integration_account_response_data import (
+    ClaudeComplianceIntegrationAccountResponseData,
+)
+from datadog_api_client.v2.model.claude_compliance_integration_account_update_attributes import (
+    ClaudeComplianceIntegrationAccountUpdateAttributes,
+)
+from datadog_api_client.v2.model.claude_compliance_integration_account_update_data import (
+    ClaudeComplianceIntegrationAccountUpdateData,
+)
+from datadog_api_client.v2.model.claude_compliance_integration_account_update_request import (
+    ClaudeComplianceIntegrationAccountUpdateRequest,
+)
+from datadog_api_client.v2.model.claude_compliance_integration_accounts_response import (
+    ClaudeComplianceIntegrationAccountsResponse,
+)
+from datadog_api_client.v2.model.claude_compliance_integration_dataflows_response import (
+    ClaudeComplianceIntegrationDataflowsResponse,
+)
 from datadog_api_client.v2.model.clickup_api_key import ClickupAPIKey
 from datadog_api_client.v2.model.clickup_api_key_api_token import ClickupAPIKeyApiToken
 from datadog_api_client.v2.model.clickup_api_key_type import ClickupAPIKeyType
@@ -15908,6 +15965,25 @@ __all__ = [
     "CircleCIIntegration",
     "CircleCIIntegrationType",
     "CircleCIIntegrationUpdate",
+    "ClaudeComplianceComplianceLogsIntegrationDataflowResponse",
+    "ClaudeComplianceIntegrationAccountAuthenticationRequest",
+    "ClaudeComplianceIntegrationAccountAuthenticationResponse",
+    "ClaudeComplianceIntegrationAccountAuthenticationUpdate",
+    "ClaudeComplianceIntegrationAccountBearerTokenAuthRequest",
+    "ClaudeComplianceIntegrationAccountBearerTokenAuthResponse",
+    "ClaudeComplianceIntegrationAccountBearerTokenAuthType",
+    "ClaudeComplianceIntegrationAccountBearerTokenAuthUpdate",
+    "ClaudeComplianceIntegrationAccountCreateAttributes",
+    "ClaudeComplianceIntegrationAccountCreateData",
+    "ClaudeComplianceIntegrationAccountCreateRequest",
+    "ClaudeComplianceIntegrationAccountResponse",
+    "ClaudeComplianceIntegrationAccountResponseAttributes",
+    "ClaudeComplianceIntegrationAccountResponseData",
+    "ClaudeComplianceIntegrationAccountUpdateAttributes",
+    "ClaudeComplianceIntegrationAccountUpdateData",
+    "ClaudeComplianceIntegrationAccountUpdateRequest",
+    "ClaudeComplianceIntegrationAccountsResponse",
+    "ClaudeComplianceIntegrationDataflowsResponse",
     "ClickupAPIKey",
     "ClickupAPIKeyApiToken",
     "ClickupAPIKeyType",
