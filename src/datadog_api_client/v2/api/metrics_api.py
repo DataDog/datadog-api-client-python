@@ -31,6 +31,7 @@ from datadog_api_client.v2.model.historical_metrics_configuration_create_request
 from datadog_api_client.v2.model.tag_indexing_rule_exemptions_response import TagIndexingRuleExemptionsResponse
 from datadog_api_client.v2.model.tag_indexing_rule_exemption_sort import TagIndexingRuleExemptionSort
 from datadog_api_client.v2.model.tag_indexing_rule_exemption_data import TagIndexingRuleExemptionData
+from datadog_api_client.v2.model.metric_metadata_list_response import MetricMetadataListResponse
 from datadog_api_client.v2.model.tag_indexing_rules_response import TagIndexingRulesResponse
 from datadog_api_client.v2.model.tag_indexing_rule_response import TagIndexingRuleResponse
 from datadog_api_client.v2.model.tag_indexing_rule_create_request import TagIndexingRuleCreateRequest
@@ -532,6 +533,32 @@ class MetricsApi:
                     "openapi_types": (str,),
                     "attribute": "metric_name",
                     "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_metric_metadata_endpoint = _Endpoint(
+            settings={
+                "response_type": (MetricMetadataListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/metrics/metadata",
+                "operation_id": "list_metric_metadata",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "filter_metric_name": {
+                    "required": True,
+                    "validation": {
+                        "max_length": 17549,
+                    },
+                    "openapi_types": (str,),
+                    "attribute": "filter[metric_name]",
+                    "location": "query",
                 },
             },
             headers_map={
@@ -1465,6 +1492,30 @@ class MetricsApi:
         kwargs["metric_name"] = metric_name
 
         return self._list_metric_assets_endpoint.call_with_http_info(**kwargs)
+
+    def list_metric_metadata(
+        self,
+        filter_metric_name: str,
+    ) -> MetricMetadataListResponse:
+        """List metadata for multiple metrics.
+
+        Get metadata for up to 50 metrics in one request: type, description, units, StatsD interval, percentile and
+        historical metrics settings, how the metric is ingested, and the product that reports it.
+        Results are returned in the order the metrics were requested. Metrics that don't exist are left out of ``data``.
+        The request doesn't fail, and no not-found entry is returned. To find missing metrics, compare the returned ``id``
+        values with the names you requested.
+
+        :param filter_metric_name: Comma-separated list of metric names, at most 50 distinct names of up to 350 characters each, and at most
+            17,549 characters in total. Duplicate names are removed before counting, and results keep the order of each
+            name's first occurrence. A name that isn't a valid metric name is treated like any other metric that doesn't
+            exist: it's left out of ``data`` rather than failing the request.
+        :type filter_metric_name: str
+        :rtype: MetricMetadataListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["filter_metric_name"] = filter_metric_name
+
+        return self._list_metric_metadata_endpoint.call_with_http_info(**kwargs)
 
     def list_tag_configuration_by_name(
         self,
