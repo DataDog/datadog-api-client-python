@@ -3640,14 +3640,6 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
-  @generated @skip @team:ddoghq/k9-vm-ast
-  Scenario: Ruleset get multiple returns "OK" response
-    Given operation "ListMultipleRulesets" enabled
-    And new "ListMultipleRulesets" request
-    And body with value {"data": {"attributes": {"rulesets": []}, "type": "get_multiple_rulesets_request"}}
-    When the request is sent
-    Then the response status is 200 OK
-
   @team:ddoghq/cloud-siem
   Scenario: Run a historical job returns "Bad Request" response
     Given operation "RunHistoricalJob" enabled
