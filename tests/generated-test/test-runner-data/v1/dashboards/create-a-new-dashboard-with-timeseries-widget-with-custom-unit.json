@@ -9,7 +9,7 @@
       "schema": {
         "format": null,
         "ref": "Dashboard",
-        "type": "object"
+        "type": null
       },
       "source": "dashboards_json_payload/timeseries_widget_with_custom_unit.json",
       "value": {

@@ -1,0 +1,79 @@
+# Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
+# This product includes software developed at Datadog (https://www.datadoghq.com/).
+# Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
+
+from typing import Union, TYPE_CHECKING
+
+from datadog_api_client.model_utils import (
+    ModelNormal,
+    cached_property,
+    unset,
+    UnsetType,
+)
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1_20270101.model.scatterplot_projection_dimensions_items20270101_dimension import (
+        ScatterplotProjectionDimensionsItems20270101Dimension,
+    )
+    from datadog_api_client.v1_20270101.model.widget_number_format import WidgetNumberFormat
+
+
+class ScatterplotProjectionDimensionsItems(ModelNormal):
+    @cached_property
+    def additional_properties_type(_):
+        return None
+
+    @cached_property
+    def openapi_types(_):
+        from datadog_api_client.v1_20270101.model.scatterplot_projection_dimensions_items20270101_dimension import (
+            ScatterplotProjectionDimensionsItems20270101Dimension,
+        )
+        from datadog_api_client.v1_20270101.model.widget_number_format import WidgetNumberFormat
+
+        return {
+            "alias": (str,),
+            "column": (str,),
+            "dimension": (ScatterplotProjectionDimensionsItems20270101Dimension,),
+            "number_format": (WidgetNumberFormat,),
+        }
+
+    attribute_map = {
+        "alias": "alias",
+        "column": "column",
+        "dimension": "dimension",
+        "number_format": "number_format",
+    }
+
+    def __init__(
+        self_,
+        column: str,
+        dimension: Union[ScatterplotProjectionDimensionsItems20270101Dimension, str],
+        alias: Union[str, UnsetType] = unset,
+        number_format: Union[WidgetNumberFormat, UnsetType] = unset,
+        **kwargs,
+    ):
+        """
+        Test-only generated schema for the dashboard versioning proof of concept.
+
+        :param alias: Test-only generated schema for the dashboard versioning proof of concept.
+        :type alias: str, optional
+
+        :param column: Test-only generated schema for the dashboard versioning proof of concept.
+        :type column: str
+
+        :param dimension: Test-only generated schema for the dashboard versioning proof of concept.
+        :type dimension: ScatterplotProjectionDimensionsItems20270101Dimension
+
+        :param number_format: Test-only generated schema for the dashboard versioning proof of concept.
+        :type number_format: WidgetNumberFormat, optional
+        """
+        if alias is not unset:
+            kwargs["alias"] = alias
+        if number_format is not unset:
+            kwargs["number_format"] = number_format
+        super().__init__(kwargs)
+
+        self_.column = column
+        self_.dimension = dimension

@@ -1322,6 +1322,94 @@
     },
     {
       "feature": "Dashboards",
+      "frozen_at": "2024-11-15T19:32:29.001Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "layout_type": "ordered",
+                "title": "Test-Create_a_new_dashboard_returns_OK_response-1731699149 with Profile Metrics Query",
+                "widgets": [
+                  {
+                    "definition": {
+                      "requests": [
+                        {
+                          "profile_metrics_query": {
+                            "compute": {
+                              "aggregation": "sum",
+                              "facet": "@prof_core_cpu_cores"
+                            },
+                            "group_by": [
+                              {
+                                "facet": "service",
+                                "limit": 10,
+                                "sort": {
+                                  "aggregation": "sum",
+                                  "facet": "@prof_core_cpu_cores",
+                                  "order": "desc"
+                                }
+                              }
+                            ],
+                            "search": {
+                              "query": "runtime:jvm"
+                            }
+                          }
+                        }
+                      ],
+                      "type": "timeseries"
+                    }
+                  }
+                ]
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/dashboard",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":\"8a5-8x9-spj\",\"title\":\"Test-Create_a_new_dashboard_returns_OK_response-1731699149 with Profile Metrics Query\",\"description\":null,\"author_handle\":\"frog@datadoghq.com\",\"author_name\":null,\"layout_type\":\"ordered\",\"url\":\"/dashboard/8a5-8x9-spj/test-createanewdashboardreturnsokresponse-1731699149-with-profile-metrics-query\",\"is_read_only\":false,\"template_variables\":null,\"widgets\":[{\"definition\":{\"requests\":[{\"profile_metrics_query\":{\"compute\":{\"aggregation\":\"sum\",\"facet\":\"@prof_core_cpu_cores\"},\"group_by\":[{\"facet\":\"service\",\"limit\":10,\"sort\":{\"aggregation\":\"sum\",\"facet\":\"@prof_core_cpu_cores\",\"order\":\"desc\"}}],\"search\":{\"query\":\"runtime:jvm\"}}}],\"type\":\"timeseries\"},\"id\":4674703282750231}],\"notify_list\":null,\"created_at\":\"2024-11-15T19:32:29.171735+00:00\",\"modified_at\":\"2024-11-15T19:32:29.171735+00:00\",\"restricted_roles\":[]}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/dashboard/8a5-8x9-spj",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_dashboard_id\":\"8a5-8x9-spj\"}\n"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a new dashboard returns \"OK\" response",
+      "version": "v1"
+    },
+    {
+      "feature": "Dashboards",
       "frozen_at": "2025-12-15T21:25:35.069Z",
       "interactions": [
         {

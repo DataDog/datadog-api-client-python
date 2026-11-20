@@ -31,18 +31,60 @@ from datadog_api_client.v1.model.alert_graph_widget_definition import AlertGraph
 from datadog_api_client.v1.model.alert_graph_widget_definition_type import AlertGraphWidgetDefinitionType
 from datadog_api_client.v1.model.alert_value_widget_definition import AlertValueWidgetDefinition
 from datadog_api_client.v1.model.alert_value_widget_definition_type import AlertValueWidgetDefinitionType
+from datadog_api_client.v1.model.analysis_dataset20270101_query import AnalysisDataset20270101Query
 from datadog_api_client.v1.model.api_key import ApiKey
 from datadog_api_client.v1.model.api_key_list_response import ApiKeyListResponse
 from datadog_api_client.v1.model.api_key_response import ApiKeyResponse
+from datadog_api_client.v1.model.apm_recommendations_stream_query20270101_group_by import (
+    ApmRecommendationsStreamQuery20270101GroupBy,
+)
+from datadog_api_client.v1.model.apm_recommendations_stream_query20270101_sort import (
+    ApmRecommendationsStreamQuery20270101Sort,
+)
+from datadog_api_client.v1.model.apm_recommendations_stream_request_columns_items20270101_width import (
+    ApmRecommendationsStreamRequestColumnsItems20270101Width,
+)
 from datadog_api_client.v1.model.apm_stats_query_column_type import ApmStatsQueryColumnType
 from datadog_api_client.v1.model.apm_stats_query_definition import ApmStatsQueryDefinition
 from datadog_api_client.v1.model.apm_stats_query_row_type import ApmStatsQueryRowType
+from datadog_api_client.v1.model.app_builder_input_value20270101_value import AppBuilderInputValue20270101Value
 from datadog_api_client.v1.model.application_key import ApplicationKey
 from datadog_api_client.v1.model.application_key_list_response import ApplicationKeyListResponse
 from datadog_api_client.v1.model.application_key_response import ApplicationKeyResponse
+from datadog_api_client.v1.model.audit_stream_query20270101_sort import AuditStreamQuery20270101Sort
+from datadog_api_client.v1.model.audit_stream_request_columns_items20270101_width import (
+    AuditStreamRequestColumnsItems20270101Width,
+)
 from datadog_api_client.v1.model.authentication_validation_response import AuthenticationValidationResponse
 from datadog_api_client.v1.model.azure_account import AzureAccount
 from datadog_api_client.v1.model.azure_account_list_response import AzureAccountListResponse
+from datadog_api_client.v1.model.backend_distribution_y_axis20270101_max import BackendDistributionYAxis20270101Max
+from datadog_api_client.v1.model.backend_distribution_y_axis20270101_min import BackendDistributionYAxis20270101Min
+from datadog_api_client.v1.model.bar_chart_backend_definition_style20270101_display import (
+    BarChartBackendDefinitionStyle20270101Display,
+)
+from datadog_api_client.v1.model.bar_chart_backend_definition_style20270101_display_one_of import (
+    BarChartBackendDefinitionStyle20270101DisplayOneOf,
+)
+from datadog_api_client.v1.model.bar_chart_backend_definition_style20270101_display_one_of4453561856 import (
+    BarChartBackendDefinitionStyle20270101DisplayOneOf4453561856,
+)
+from datadog_api_client.v1.model.bar_chart_backend_request20270101_one_of import BarChartBackendRequest20270101OneOf
+from datadog_api_client.v1.model.bar_chart_backend_request20270101_one_of4454434112 import (
+    BarChartBackendRequest20270101OneOf4454434112,
+)
+from datadog_api_client.v1.model.bar_chart_backend_request20270101_one_of4454435552 import (
+    BarChartBackendRequest20270101OneOf4454435552,
+)
+from datadog_api_client.v1.model.bar_chart_backend_request20270101_one_of4454436672 import (
+    BarChartBackendRequest20270101OneOf4454436672,
+)
+from datadog_api_client.v1.model.bar_chart_backend_request20270101_one_of4454438272 import (
+    BarChartBackendRequest20270101OneOf4454438272,
+)
+from datadog_api_client.v1.model.bar_chart_backend_request20270101_one_of_query import (
+    BarChartBackendRequest20270101OneOfQuery,
+)
 from datadog_api_client.v1.model.bar_chart_widget_definition import BarChartWidgetDefinition
 from datadog_api_client.v1.model.bar_chart_widget_definition_type import BarChartWidgetDefinitionType
 from datadog_api_client.v1.model.bar_chart_widget_display import BarChartWidgetDisplay
@@ -58,6 +100,21 @@ from datadog_api_client.v1.model.calendar_interval import CalendarInterval
 from datadog_api_client.v1.model.calendar_interval_type import CalendarIntervalType
 from datadog_api_client.v1.model.cancel_downtimes_by_scope_request import CancelDowntimesByScopeRequest
 from datadog_api_client.v1.model.canceled_downtimes_ids import CanceledDowntimesIds
+from datadog_api_client.v1.model.case_stream_query20270101_sort import CaseStreamQuery20270101Sort
+from datadog_api_client.v1.model.case_stream_request_columns_items20270101_width import (
+    CaseStreamRequestColumnsItems20270101Width,
+)
+from datadog_api_client.v1.model.cell_scope20270101_cohort_target import CellScope20270101CohortTarget
+from datadog_api_client.v1.model.cell_scope20270101_cohort_target_one_of import CellScope20270101CohortTargetOneOf
+from datadog_api_client.v1.model.cell_scope20270101_cohort_target_one_of4454617856 import (
+    CellScope20270101CohortTargetOneOf4454617856,
+)
+from datadog_api_client.v1.model.change_backend_request20270101_one_of import ChangeBackendRequest20270101OneOf
+from datadog_api_client.v1.model.change_backend_request20270101_one_of4454622976 import (
+    ChangeBackendRequest20270101OneOf4454622976,
+)
+from datadog_api_client.v1.model.change_duration20270101_one_of import ChangeDuration20270101OneOf
+from datadog_api_client.v1.model.change_duration20270101_one_of4454627136 import ChangeDuration20270101OneOf4454627136
 from datadog_api_client.v1.model.change_widget_definition import ChangeWidgetDefinition
 from datadog_api_client.v1.model.change_widget_definition_type import ChangeWidgetDefinitionType
 from datadog_api_client.v1.model.change_widget_request import ChangeWidgetRequest
@@ -67,14 +124,24 @@ from datadog_api_client.v1.model.check_can_delete_slo_response import CheckCanDe
 from datadog_api_client.v1.model.check_can_delete_slo_response_data import CheckCanDeleteSLOResponseData
 from datadog_api_client.v1.model.check_status_widget_definition import CheckStatusWidgetDefinition
 from datadog_api_client.v1.model.check_status_widget_definition_type import CheckStatusWidgetDefinitionType
+from datadog_api_client.v1.model.cohort_definition20270101_requests import CohortDefinition20270101Requests
+from datadog_api_client.v1.model.cohort_scope20270101_target import CohortScope20270101Target
+from datadog_api_client.v1.model.cohort_scope20270101_target_one_of import CohortScope20270101TargetOneOf
+from datadog_api_client.v1.model.cohort_scope20270101_target_one_of4454865216 import (
+    CohortScope20270101TargetOneOf4454865216,
+)
 from datadog_api_client.v1.model.cohort_widget_definition import CohortWidgetDefinition
 from datadog_api_client.v1.model.cohort_widget_definition_type import CohortWidgetDefinitionType
 from datadog_api_client.v1.model.comparison_custom_timeframe import ComparisonCustomTimeframe
 from datadog_api_client.v1.model.comparison_duration import ComparisonDuration
 from datadog_api_client.v1.model.comparison_duration_type import ComparisonDurationType
+from datadog_api_client.v1.model.composite_stream_request_column20270101_width import (
+    CompositeStreamRequestColumn20270101Width,
+)
 from datadog_api_client.v1.model.content_encoding import ContentEncoding
 from datadog_api_client.v1.model.creator import Creator
 from datadog_api_client.v1.model.dashboard import Dashboard
+from datadog_api_client.v1.model.dashboard20270101_schema_version import Dashboard20270101SchemaVersion
 from datadog_api_client.v1.model.dashboard_bulk_action_data import DashboardBulkActionData
 from datadog_api_client.v1.model.dashboard_bulk_action_data_list import DashboardBulkActionDataList
 from datadog_api_client.v1.model.dashboard_bulk_delete_request import DashboardBulkDeleteRequest
@@ -103,14 +170,105 @@ from datadog_api_client.v1.model.dashboard_template_variable import DashboardTem
 from datadog_api_client.v1.model.dashboard_template_variable_preset import DashboardTemplateVariablePreset
 from datadog_api_client.v1.model.dashboard_template_variable_preset_value import DashboardTemplateVariablePresetValue
 from datadog_api_client.v1.model.dashboard_type import DashboardType
+from datadog_api_client.v1.model.data_observability_assets_query20270101_sort import (
+    DataObservabilityAssetsQuery20270101Sort,
+)
+from datadog_api_client.v1.model.data_observability_assets_request_columns_items20270101_width import (
+    DataObservabilityAssetsRequestColumnsItems20270101Width,
+)
 from datadog_api_client.v1.model.data_projection_query import DataProjectionQuery
 from datadog_api_client.v1.model.data_projection_request_type import DataProjectionRequestType
+from datadog_api_client.v1.model.database_recommendations_stream_query20270101_sort import (
+    DatabaseRecommendationsStreamQuery20270101Sort,
+)
+from datadog_api_client.v1.model.database_recommendations_stream_request_columns_items20270101_width import (
+    DatabaseRecommendationsStreamRequestColumnsItems20270101Width,
+)
+from datadog_api_client.v1.model.dataset_compute20270101_aggregation import DatasetCompute20270101Aggregation
 from datadog_api_client.v1.model.dataset_list_query import DatasetListQuery
 from datadog_api_client.v1.model.dataset_list_query_data_source_type import DatasetListQueryDataSourceType
 from datadog_api_client.v1.model.dataset_list_query_sort import DatasetListQuerySort
 from datadog_api_client.v1.model.dataset_list_query_sort_field import DatasetListQuerySortField
+from datadog_api_client.v1.model.dataset_list_request20270101_query import DatasetListRequest20270101Query
+from datadog_api_client.v1.model.dataset_list_request_columns_items20270101_width import (
+    DatasetListRequestColumnsItems20270101Width,
+)
+from datadog_api_client.v1.model.dataset_sort20270101_aggregation import DatasetSort20270101Aggregation
 from datadog_api_client.v1.model.delete_shared_dashboard_response import DeleteSharedDashboardResponse
 from datadog_api_client.v1.model.deleted_monitor import DeletedMonitor
+from datadog_api_client.v1.model.detection_rule_stream_query20270101_sort import DetectionRuleStreamQuery20270101Sort
+from datadog_api_client.v1.model.detection_rule_stream_request_columns_items20270101_width import (
+    DetectionRuleStreamRequestColumnsItems20270101Width,
+)
+from datadog_api_client.v1.model.distribution_backend_request20270101_one_of import (
+    DistributionBackendRequest20270101OneOf,
+)
+from datadog_api_client.v1.model.distribution_backend_request20270101_one_of4455761856 import (
+    DistributionBackendRequest20270101OneOf4455761856,
+)
+from datadog_api_client.v1.model.distribution_backend_request20270101_one_of4455763296 import (
+    DistributionBackendRequest20270101OneOf4455763296,
+)
+from datadog_api_client.v1.model.distribution_backend_request20270101_one_of4455763936 import (
+    DistributionBackendRequest20270101OneOf4455763936,
+)
+from datadog_api_client.v1.model.distribution_backend_request20270101_one_of4455764576 import (
+    DistributionBackendRequest20270101OneOf4455764576,
+)
+from datadog_api_client.v1.model.distribution_backend_request20270101_one_of4455765216 import (
+    DistributionBackendRequest20270101OneOf4455765216,
+)
+from datadog_api_client.v1.model.distribution_backend_request20270101_one_of4455765856 import (
+    DistributionBackendRequest20270101OneOf4455765856,
+)
+from datadog_api_client.v1.model.distribution_backend_request20270101_one_of4455766496 import (
+    DistributionBackendRequest20270101OneOf4455766496,
+)
+from datadog_api_client.v1.model.distribution_backend_request20270101_one_of4455767136 import (
+    DistributionBackendRequest20270101OneOf4455767136,
+)
+from datadog_api_client.v1.model.distribution_backend_request20270101_one_of4455767776 import (
+    DistributionBackendRequest20270101OneOf4455767776,
+)
+from datadog_api_client.v1.model.distribution_backend_request20270101_one_of4455768416 import (
+    DistributionBackendRequest20270101OneOf4455768416,
+)
+from datadog_api_client.v1.model.distribution_backend_request20270101_one_of4455769056 import (
+    DistributionBackendRequest20270101OneOf4455769056,
+)
+from datadog_api_client.v1.model.distribution_backend_request20270101_one_of4455769696 import (
+    DistributionBackendRequest20270101OneOf4455769696,
+)
+from datadog_api_client.v1.model.distribution_backend_request20270101_one_of4455770336 import (
+    DistributionBackendRequest20270101OneOf4455770336,
+)
+from datadog_api_client.v1.model.distribution_backend_request20270101_one_of4455770976 import (
+    DistributionBackendRequest20270101OneOf4455770976,
+)
+from datadog_api_client.v1.model.distribution_backend_request20270101_one_of4455771616 import (
+    DistributionBackendRequest20270101OneOf4455771616,
+)
+from datadog_api_client.v1.model.distribution_backend_request20270101_one_of4455772256 import (
+    DistributionBackendRequest20270101OneOf4455772256,
+)
+from datadog_api_client.v1.model.distribution_backend_request20270101_one_of4455772896 import (
+    DistributionBackendRequest20270101OneOf4455772896,
+)
+from datadog_api_client.v1.model.distribution_backend_request20270101_one_of4455773536 import (
+    DistributionBackendRequest20270101OneOf4455773536,
+)
+from datadog_api_client.v1.model.distribution_backend_request20270101_one_of4455774496 import (
+    DistributionBackendRequest20270101OneOf4455774496,
+)
+from datadog_api_client.v1.model.distribution_backend_request20270101_one_of4455775456 import (
+    DistributionBackendRequest20270101OneOf4455775456,
+)
+from datadog_api_client.v1.model.distribution_backend_request20270101_one_of4455989472 import (
+    DistributionBackendRequest20270101OneOf4455989472,
+)
+from datadog_api_client.v1.model.distribution_backend_request20270101_one_of4455990432 import (
+    DistributionBackendRequest20270101OneOf4455990432,
+)
 from datadog_api_client.v1.model.distribution_point import DistributionPoint
 from datadog_api_client.v1.model.distribution_points_content_encoding import DistributionPointsContentEncoding
 from datadog_api_client.v1.model.distribution_points_payload import DistributionPointsPayload
@@ -124,26 +282,50 @@ from datadog_api_client.v1.model.distribution_widget_histogram_request_query imp
 from datadog_api_client.v1.model.distribution_widget_request import DistributionWidgetRequest
 from datadog_api_client.v1.model.distribution_widget_x_axis import DistributionWidgetXAxis
 from datadog_api_client.v1.model.distribution_widget_y_axis import DistributionWidgetYAxis
+from datadog_api_client.v1.model.dora_list_stream_query20270101_sort import DoraListStreamQuery20270101Sort
+from datadog_api_client.v1.model.dora_list_stream_request_columns_items20270101_width import (
+    DoraListStreamRequestColumnsItems20270101Width,
+)
 from datadog_api_client.v1.model.downtime import Downtime
 from datadog_api_client.v1.model.downtime_child import DowntimeChild
 from datadog_api_client.v1.model.downtime_recurrence import DowntimeRecurrence
 from datadog_api_client.v1.model.embedded_app_widget_definition import EmbeddedAppWidgetDefinition
 from datadog_api_client.v1.model.embedded_app_widget_definition_type import EmbeddedAppWidgetDefinitionType
 from datadog_api_client.v1.model.embedded_app_widget_input import EmbeddedAppWidgetInput
+from datadog_api_client.v1.model.errors_stream_query20270101_sort import ErrorsStreamQuery20270101Sort
+from datadog_api_client.v1.model.errors_stream_request_columns_items20270101_width import (
+    ErrorsStreamRequestColumnsItems20270101Width,
+)
 from datadog_api_client.v1.model.event import Event
 from datadog_api_client.v1.model.event_alert_type import EventAlertType
 from datadog_api_client.v1.model.event_create_request import EventCreateRequest
 from datadog_api_client.v1.model.event_create_response import EventCreateResponse
 from datadog_api_client.v1.model.event_list_response import EventListResponse
+from datadog_api_client.v1.model.event_pattern_stream_query20270101_sort import EventPatternStreamQuery20270101Sort
+from datadog_api_client.v1.model.event_pattern_stream_request_columns_items20270101_width import (
+    EventPatternStreamRequestColumnsItems20270101Width,
+)
+from datadog_api_client.v1.model.event_platform_stream_request_columns_items20270101_width import (
+    EventPlatformStreamRequestColumnsItems20270101Width,
+)
 from datadog_api_client.v1.model.event_priority import EventPriority
 from datadog_api_client.v1.model.event_query_definition import EventQueryDefinition
 from datadog_api_client.v1.model.event_response import EventResponse
+from datadog_api_client.v1.model.event_stream_query20270101_sort import EventStreamQuery20270101Sort
+from datadog_api_client.v1.model.event_stream_request_columns_items20270101_width import (
+    EventStreamRequestColumnsItems20270101Width,
+)
 from datadog_api_client.v1.model.event_stream_widget_definition import EventStreamWidgetDefinition
 from datadog_api_client.v1.model.event_stream_widget_definition_type import EventStreamWidgetDefinitionType
 from datadog_api_client.v1.model.event_timeline_widget_definition import EventTimelineWidgetDefinition
 from datadog_api_client.v1.model.event_timeline_widget_definition_type import EventTimelineWidgetDefinitionType
 from datadog_api_client.v1.model.events_aggregation import EventsAggregation
 from datadog_api_client.v1.model.events_aggregation_value import EventsAggregationValue
+from datadog_api_client.v1.model.events_platform_list_stream_query20270101_sort import (
+    EventsPlatformListStreamQuery20270101Sort,
+)
+from datadog_api_client.v1.model.flat_sort_by20270101_one_of import FlatSortBy20270101OneOf
+from datadog_api_client.v1.model.flat_sort_by20270101_one_of4456386848 import FlatSortBy20270101OneOf4456386848
 from datadog_api_client.v1.model.formula_and_function_apm_dependency_stat_name import (
     FormulaAndFunctionApmDependencyStatName,
 )
@@ -231,7 +413,14 @@ from datadog_api_client.v1.model.formula_and_function_slo_query_type import Form
 from datadog_api_client.v1.model.formula_and_function_user_journey_query_definition import (
     FormulaAndFunctionUserJourneyQueryDefinition,
 )
+from datadog_api_client.v1.model.formula_detection_rules_query20270101_group_by import (
+    FormulaDetectionRulesQuery20270101GroupBy,
+)
+from datadog_api_client.v1.model.formula_product_analytics_extended_query20270101_indexes import (
+    FormulaProductAnalyticsExtendedQuery20270101Indexes,
+)
 from datadog_api_client.v1.model.formula_type import FormulaType
+from datadog_api_client.v1.model.formula_user_journey_query20270101_search import FormulaUserJourneyQuery20270101Search
 from datadog_api_client.v1.model.free_text_widget_definition import FreeTextWidgetDefinition
 from datadog_api_client.v1.model.free_text_widget_definition_type import FreeTextWidgetDefinitionType
 from datadog_api_client.v1.model.funnel_comparison_custom_timeframe import FunnelComparisonCustomTimeframe
@@ -249,6 +438,89 @@ from datadog_api_client.v1.model.gcp_account import GCPAccount
 from datadog_api_client.v1.model.gcp_account_list_response import GCPAccountListResponse
 from datadog_api_client.v1.model.gcp_monitored_resource_config import GCPMonitoredResourceConfig
 from datadog_api_client.v1.model.gcp_monitored_resource_config_type import GCPMonitoredResourceConfigType
+from datadog_api_client.v1.model.geomap_backend_points_request20270101_one_of import (
+    GeomapBackendPointsRequest20270101OneOf,
+)
+from datadog_api_client.v1.model.geomap_backend_points_request20270101_one_of4457225472 import (
+    GeomapBackendPointsRequest20270101OneOf4457225472,
+)
+from datadog_api_client.v1.model.geomap_backend_points_request20270101_one_of4457227232 import (
+    GeomapBackendPointsRequest20270101OneOf4457227232,
+)
+from datadog_api_client.v1.model.geomap_backend_points_request20270101_one_of4457228992 import (
+    GeomapBackendPointsRequest20270101OneOf4457228992,
+)
+from datadog_api_client.v1.model.geomap_backend_points_request20270101_one_of4457230272 import (
+    GeomapBackendPointsRequest20270101OneOf4457230272,
+)
+from datadog_api_client.v1.model.geomap_backend_points_request_any_of_any_of_item_columns_items20270101_width import (
+    GeomapBackendPointsRequestAnyOfAnyOfItemColumnsItems20270101Width,
+)
+from datadog_api_client.v1.model.geomap_backend_points_request_any_of_any_of_item_columns_items444686320020270101_width import (
+    GeomapBackendPointsRequestAnyOfAnyOfItemColumnsItems444686320020270101Width,
+)
+from datadog_api_client.v1.model.geomap_backend_points_request_any_of_any_of_item_columns_items444699785620270101_width import (
+    GeomapBackendPointsRequestAnyOfAnyOfItemColumnsItems444699785620270101Width,
+)
+from datadog_api_client.v1.model.geomap_backend_regions_request20270101_one_of import (
+    GeomapBackendRegionsRequest20270101OneOf,
+)
+from datadog_api_client.v1.model.geomap_backend_regions_request20270101_one_of4457233792 import (
+    GeomapBackendRegionsRequest20270101OneOf4457233792,
+)
+from datadog_api_client.v1.model.geomap_backend_regions_request20270101_one_of4457448128 import (
+    GeomapBackendRegionsRequest20270101OneOf4457448128,
+)
+from datadog_api_client.v1.model.geomap_backend_regions_request20270101_one_of4457449888 import (
+    GeomapBackendRegionsRequest20270101OneOf4457449888,
+)
+from datadog_api_client.v1.model.geomap_backend_regions_request20270101_one_of4457450848 import (
+    GeomapBackendRegionsRequest20270101OneOf4457450848,
+)
+from datadog_api_client.v1.model.geomap_backend_regions_request20270101_one_of4457451808 import (
+    GeomapBackendRegionsRequest20270101OneOf4457451808,
+)
+from datadog_api_client.v1.model.geomap_backend_regions_request20270101_one_of4457452768 import (
+    GeomapBackendRegionsRequest20270101OneOf4457452768,
+)
+from datadog_api_client.v1.model.geomap_backend_regions_request20270101_one_of4457453728 import (
+    GeomapBackendRegionsRequest20270101OneOf4457453728,
+)
+from datadog_api_client.v1.model.geomap_backend_regions_request20270101_one_of4457454688 import (
+    GeomapBackendRegionsRequest20270101OneOf4457454688,
+)
+from datadog_api_client.v1.model.geomap_backend_regions_request20270101_one_of4457455648 import (
+    GeomapBackendRegionsRequest20270101OneOf4457455648,
+)
+from datadog_api_client.v1.model.geomap_backend_regions_request20270101_one_of4457456608 import (
+    GeomapBackendRegionsRequest20270101OneOf4457456608,
+)
+from datadog_api_client.v1.model.geomap_backend_regions_request20270101_one_of4457457568 import (
+    GeomapBackendRegionsRequest20270101OneOf4457457568,
+)
+from datadog_api_client.v1.model.geomap_backend_regions_request20270101_one_of4457458528 import (
+    GeomapBackendRegionsRequest20270101OneOf4457458528,
+)
+from datadog_api_client.v1.model.geomap_backend_regions_request20270101_one_of4457459488 import (
+    GeomapBackendRegionsRequest20270101OneOf4457459488,
+)
+from datadog_api_client.v1.model.geomap_backend_regions_request20270101_one_of4457460448 import (
+    GeomapBackendRegionsRequest20270101OneOf4457460448,
+)
+from datadog_api_client.v1.model.geomap_backend_regions_request20270101_one_of4457461408 import (
+    GeomapBackendRegionsRequest20270101OneOf4457461408,
+)
+from datadog_api_client.v1.model.geomap_backend_regions_request20270101_one_of4457462368 import (
+    GeomapBackendRegionsRequest20270101OneOf4457462368,
+)
+from datadog_api_client.v1.model.geomap_backend_regions_request20270101_one_of4457463328 import (
+    GeomapBackendRegionsRequest20270101OneOf4457463328,
+)
+from datadog_api_client.v1.model.geomap_backend_regions_request20270101_one_of4457645216 import (
+    GeomapBackendRegionsRequest20270101OneOf4457645216,
+)
+from datadog_api_client.v1.model.geomap_view20270101_one_of import GeomapView20270101OneOf
+from datadog_api_client.v1.model.geomap_view20270101_one_of4457650336 import GeomapView20270101OneOf4457650336
 from datadog_api_client.v1.model.geomap_widget_definition import GeomapWidgetDefinition
 from datadog_api_client.v1.model.geomap_widget_definition_style import GeomapWidgetDefinitionStyle
 from datadog_api_client.v1.model.geomap_widget_definition_type import GeomapWidgetDefinitionType
@@ -271,9 +543,17 @@ from datadog_api_client.v1.model.heatgrid_color_bin import HeatgridColorBin
 from datadog_api_client.v1.model.heatgrid_color_config import HeatgridColorConfig
 from datadog_api_client.v1.model.heatgrid_color_stop import HeatgridColorStop
 from datadog_api_client.v1.model.heatgrid_custom_color_source import HeatgridCustomColorSource
+from datadog_api_client.v1.model.heatgrid_discrete_config20270101_one_of import HeatgridDiscreteConfig20270101OneOf
+from datadog_api_client.v1.model.heatgrid_discrete_config20270101_one_of4457881312 import (
+    HeatgridDiscreteConfig20270101OneOf4457881312,
+)
 from datadog_api_client.v1.model.heatgrid_discrete_custom_color import HeatgridDiscreteCustomColor
 from datadog_api_client.v1.model.heatgrid_discrete_mode import HeatgridDiscreteMode
 from datadog_api_client.v1.model.heatgrid_discrete_preset_color import HeatgridDiscretePresetColor
+from datadog_api_client.v1.model.heatgrid_gradient_config20270101_one_of import HeatgridGradientConfig20270101OneOf
+from datadog_api_client.v1.model.heatgrid_gradient_config20270101_one_of4457883232 import (
+    HeatgridGradientConfig20270101OneOf4457883232,
+)
 from datadog_api_client.v1.model.heatgrid_gradient_custom_color import HeatgridGradientCustomColor
 from datadog_api_client.v1.model.heatgrid_gradient_mode import HeatgridGradientMode
 from datadog_api_client.v1.model.heatgrid_gradient_preset_color import HeatgridGradientPresetColor
@@ -305,6 +585,16 @@ from datadog_api_client.v1.model.heatgrid_widget_definition_type import Heatgrid
 from datadog_api_client.v1.model.heatgrid_widget_formula import HeatgridWidgetFormula
 from datadog_api_client.v1.model.heatgrid_widget_request import HeatgridWidgetRequest
 from datadog_api_client.v1.model.heatgrid_widget_response_format import HeatgridWidgetResponseFormat
+from datadog_api_client.v1.model.heatmap_backend_request20270101_one_of import HeatmapBackendRequest20270101OneOf
+from datadog_api_client.v1.model.heatmap_backend_request20270101_one_of4458138496 import (
+    HeatmapBackendRequest20270101OneOf4458138496,
+)
+from datadog_api_client.v1.model.heatmap_backend_request20270101_one_of4458139936 import (
+    HeatmapBackendRequest20270101OneOf4458139936,
+)
+from datadog_api_client.v1.model.heatmap_backend_request20270101_one_of4458140576 import (
+    HeatmapBackendRequest20270101OneOf4458140576,
+)
 from datadog_api_client.v1.model.host import Host
 from datadog_api_client.v1.model.host_list_response import HostListResponse
 from datadog_api_client.v1.model.host_map_request import HostMapRequest
@@ -341,6 +631,9 @@ from datadog_api_client.v1.model.host_mute_response import HostMuteResponse
 from datadog_api_client.v1.model.host_mute_settings import HostMuteSettings
 from datadog_api_client.v1.model.host_tags import HostTags
 from datadog_api_client.v1.model.host_totals import HostTotals
+from datadog_api_client.v1.model.hostmap_backend_definition20270101_requests import (
+    HostmapBackendDefinition20270101Requests,
+)
 from datadog_api_client.v1.model.hourly_usage_attribution_body import HourlyUsageAttributionBody
 from datadog_api_client.v1.model.hourly_usage_attribution_metadata import HourlyUsageAttributionMetadata
 from datadog_api_client.v1.model.hourly_usage_attribution_pagination import HourlyUsageAttributionPagination
@@ -362,9 +655,18 @@ from datadog_api_client.v1.model.ip_prefixes_webhooks import IPPrefixesWebhooks
 from datadog_api_client.v1.model.ip_ranges import IPRanges
 from datadog_api_client.v1.model.idp_form_data import IdpFormData
 from datadog_api_client.v1.model.idp_response import IdpResponse
+from datadog_api_client.v1.model.image_backend_definition20270101_sizing import ImageBackendDefinition20270101Sizing
 from datadog_api_client.v1.model.image_widget_definition import ImageWidgetDefinition
 from datadog_api_client.v1.model.image_widget_definition_type import ImageWidgetDefinitionType
+from datadog_api_client.v1.model.incidents_stream_query20270101_sort import IncidentsStreamQuery20270101Sort
+from datadog_api_client.v1.model.incidents_stream_request_columns_items20270101_width import (
+    IncidentsStreamRequestColumnsItems20270101Width,
+)
+from datadog_api_client.v1.model.infrastructure_list_request_columns_items20270101_width import (
+    InfrastructureListRequestColumnsItems20270101Width,
+)
 from datadog_api_client.v1.model.intake_payload_accepted import IntakePayloadAccepted
+from datadog_api_client.v1.model.issue_stream_column20270101_width import IssueStreamColumn20270101Width
 from datadog_api_client.v1.model.journey_map_conversion_type import JourneyMapConversionType
 from datadog_api_client.v1.model.journey_map_counting_method import JourneyMapCountingMethod
 from datadog_api_client.v1.model.journey_map_expanded_prefix import JourneyMapExpandedPrefix
@@ -376,6 +678,7 @@ from datadog_api_client.v1.model.journey_map_target import JourneyMapTarget
 from datadog_api_client.v1.model.journey_map_widget_definition import JourneyMapWidgetDefinition
 from datadog_api_client.v1.model.journey_map_widget_definition_type import JourneyMapWidgetDefinitionType
 from datadog_api_client.v1.model.journey_map_widget_request import JourneyMapWidgetRequest
+from datadog_api_client.v1.model.legacy_issue_stream_request20270101_query import LegacyIssueStreamRequest20270101Query
 from datadog_api_client.v1.model.list_stream_column import ListStreamColumn
 from datadog_api_client.v1.model.list_stream_column_width import ListStreamColumnWidth
 from datadog_api_client.v1.model.list_stream_compute_aggregation import ListStreamComputeAggregation
@@ -468,6 +771,10 @@ from datadog_api_client.v1.model.logs_lookup_processor import LogsLookupProcesso
 from datadog_api_client.v1.model.logs_lookup_processor_type import LogsLookupProcessorType
 from datadog_api_client.v1.model.logs_message_remapper import LogsMessageRemapper
 from datadog_api_client.v1.model.logs_message_remapper_type import LogsMessageRemapperType
+from datadog_api_client.v1.model.logs_pattern_stream_query20270101_sort import LogsPatternStreamQuery20270101Sort
+from datadog_api_client.v1.model.logs_pattern_stream_request_columns_items20270101_width import (
+    LogsPatternStreamRequestColumnsItems20270101Width,
+)
 from datadog_api_client.v1.model.logs_pipeline import LogsPipeline
 from datadog_api_client.v1.model.logs_pipeline_list import LogsPipelineList
 from datadog_api_client.v1.model.logs_pipeline_processor import LogsPipelineProcessor
@@ -495,10 +802,20 @@ from datadog_api_client.v1.model.logs_span_remapper import LogsSpanRemapper
 from datadog_api_client.v1.model.logs_span_remapper_type import LogsSpanRemapperType
 from datadog_api_client.v1.model.logs_status_remapper import LogsStatusRemapper
 from datadog_api_client.v1.model.logs_status_remapper_type import LogsStatusRemapperType
+from datadog_api_client.v1.model.logs_stream_query20270101_sort import LogsStreamQuery20270101Sort
+from datadog_api_client.v1.model.logs_stream_request_columns_items20270101_width import (
+    LogsStreamRequestColumnsItems20270101Width,
+)
 from datadog_api_client.v1.model.logs_string_builder_processor import LogsStringBuilderProcessor
 from datadog_api_client.v1.model.logs_string_builder_processor_type import LogsStringBuilderProcessorType
 from datadog_api_client.v1.model.logs_trace_remapper import LogsTraceRemapper
 from datadog_api_client.v1.model.logs_trace_remapper_type import LogsTraceRemapperType
+from datadog_api_client.v1.model.logs_transaction_stream_query20270101_sort import (
+    LogsTransactionStreamQuery20270101Sort,
+)
+from datadog_api_client.v1.model.logs_transaction_stream_request_columns_items20270101_width import (
+    LogsTransactionStreamRequestColumnsItems20270101Width,
+)
 from datadog_api_client.v1.model.logs_url_parser import LogsURLParser
 from datadog_api_client.v1.model.logs_url_parser_type import LogsURLParserType
 from datadog_api_client.v1.model.logs_user_agent_parser import LogsUserAgentParser
@@ -824,8 +1141,139 @@ from datadog_api_client.v1.model.product_analytics_funnel_request_type import Pr
 from datadog_api_client.v1.model.product_analytics_funnel_widget_definition import (
     ProductAnalyticsFunnelWidgetDefinition,
 )
+from datadog_api_client.v1.model.product_analytics_stream_query20270101_sort import (
+    ProductAnalyticsStreamQuery20270101Sort,
+)
 from datadog_api_client.v1.model.published_dataset_provider import PublishedDatasetProvider
 from datadog_api_client.v1.model.query_sort_order import QuerySortOrder
+from datadog_api_client.v1.model.query_table_backend_request20270101_one_of import QueryTableBackendRequest20270101OneOf
+from datadog_api_client.v1.model.query_table_backend_request20270101_one_of4459913248 import (
+    QueryTableBackendRequest20270101OneOf4459913248,
+)
+from datadog_api_client.v1.model.query_table_backend_request20270101_one_of4459916288 import (
+    QueryTableBackendRequest20270101OneOf4459916288,
+)
+from datadog_api_client.v1.model.query_table_backend_request20270101_one_of4459919328 import (
+    QueryTableBackendRequest20270101OneOf4459919328,
+)
+from datadog_api_client.v1.model.query_table_backend_request20270101_one_of4460101856 import (
+    QueryTableBackendRequest20270101OneOf4460101856,
+)
+from datadog_api_client.v1.model.query_table_backend_request20270101_one_of4460104096 import (
+    QueryTableBackendRequest20270101OneOf4460104096,
+)
+from datadog_api_client.v1.model.query_table_backend_request20270101_one_of4460106336 import (
+    QueryTableBackendRequest20270101OneOf4460106336,
+)
+from datadog_api_client.v1.model.query_table_backend_request20270101_one_of4460108576 import (
+    QueryTableBackendRequest20270101OneOf4460108576,
+)
+from datadog_api_client.v1.model.query_table_backend_request20270101_one_of4460110816 import (
+    QueryTableBackendRequest20270101OneOf4460110816,
+)
+from datadog_api_client.v1.model.query_table_backend_request20270101_one_of4460113056 import (
+    QueryTableBackendRequest20270101OneOf4460113056,
+)
+from datadog_api_client.v1.model.query_table_backend_request20270101_one_of4460115296 import (
+    QueryTableBackendRequest20270101OneOf4460115296,
+)
+from datadog_api_client.v1.model.query_table_backend_request20270101_one_of4460117536 import (
+    QueryTableBackendRequest20270101OneOf4460117536,
+)
+from datadog_api_client.v1.model.query_table_backend_request20270101_one_of4460300064 import (
+    QueryTableBackendRequest20270101OneOf4460300064,
+)
+from datadog_api_client.v1.model.query_table_backend_request20270101_one_of4460302304 import (
+    QueryTableBackendRequest20270101OneOf4460302304,
+)
+from datadog_api_client.v1.model.query_table_backend_request20270101_one_of4460304544 import (
+    QueryTableBackendRequest20270101OneOf4460304544,
+)
+from datadog_api_client.v1.model.query_table_backend_request20270101_one_of4460306784 import (
+    QueryTableBackendRequest20270101OneOf4460306784,
+)
+from datadog_api_client.v1.model.query_table_backend_request20270101_one_of4460309024 import (
+    QueryTableBackendRequest20270101OneOf4460309024,
+)
+from datadog_api_client.v1.model.query_table_backend_request20270101_one_of4460311264 import (
+    QueryTableBackendRequest20270101OneOf4460311264,
+)
+from datadog_api_client.v1.model.query_table_backend_request20270101_one_of4460313504 import (
+    QueryTableBackendRequest20270101OneOf4460313504,
+)
+from datadog_api_client.v1.model.query_table_backend_request20270101_one_of4460513216 import (
+    QueryTableBackendRequest20270101OneOf4460513216,
+)
+from datadog_api_client.v1.model.query_table_backend_request20270101_one_of4460516096 import (
+    QueryTableBackendRequest20270101OneOf4460516096,
+)
+from datadog_api_client.v1.model.query_table_backend_request20270101_one_of4460519136 import (
+    QueryTableBackendRequest20270101OneOf4460519136,
+)
+from datadog_api_client.v1.model.query_table_backend_request20270101_one_of4460522016 import (
+    QueryTableBackendRequest20270101OneOf4460522016,
+)
+from datadog_api_client.v1.model.query_table_backend_request20270101_one_of_query import (
+    QueryTableBackendRequest20270101OneOfQuery,
+)
+from datadog_api_client.v1.model.query_value_backend_request20270101_one_of import QueryValueBackendRequest20270101OneOf
+from datadog_api_client.v1.model.query_value_backend_request20270101_one_of4460683296 import (
+    QueryValueBackendRequest20270101OneOf4460683296,
+)
+from datadog_api_client.v1.model.query_value_backend_request20270101_one_of4460685056 import (
+    QueryValueBackendRequest20270101OneOf4460685056,
+)
+from datadog_api_client.v1.model.query_value_backend_request20270101_one_of4460686496 import (
+    QueryValueBackendRequest20270101OneOf4460686496,
+)
+from datadog_api_client.v1.model.query_value_backend_request20270101_one_of4460688416 import (
+    QueryValueBackendRequest20270101OneOf4460688416,
+)
+from datadog_api_client.v1.model.query_value_backend_request20270101_one_of4460689536 import (
+    QueryValueBackendRequest20270101OneOf4460689536,
+)
+from datadog_api_client.v1.model.query_value_backend_request20270101_one_of4460690656 import (
+    QueryValueBackendRequest20270101OneOf4460690656,
+)
+from datadog_api_client.v1.model.query_value_backend_request20270101_one_of4460904832 import (
+    QueryValueBackendRequest20270101OneOf4460904832,
+)
+from datadog_api_client.v1.model.query_value_backend_request20270101_one_of4460905952 import (
+    QueryValueBackendRequest20270101OneOf4460905952,
+)
+from datadog_api_client.v1.model.query_value_backend_request20270101_one_of4460907072 import (
+    QueryValueBackendRequest20270101OneOf4460907072,
+)
+from datadog_api_client.v1.model.query_value_backend_request20270101_one_of4460908192 import (
+    QueryValueBackendRequest20270101OneOf4460908192,
+)
+from datadog_api_client.v1.model.query_value_backend_request20270101_one_of4460909312 import (
+    QueryValueBackendRequest20270101OneOf4460909312,
+)
+from datadog_api_client.v1.model.query_value_backend_request20270101_one_of4460910432 import (
+    QueryValueBackendRequest20270101OneOf4460910432,
+)
+from datadog_api_client.v1.model.query_value_backend_request20270101_one_of4460911552 import (
+    QueryValueBackendRequest20270101OneOf4460911552,
+)
+from datadog_api_client.v1.model.query_value_backend_request20270101_one_of4460912672 import (
+    QueryValueBackendRequest20270101OneOf4460912672,
+)
+from datadog_api_client.v1.model.query_value_backend_request20270101_one_of4460913792 import (
+    QueryValueBackendRequest20270101OneOf4460913792,
+)
+from datadog_api_client.v1.model.query_value_backend_request20270101_one_of4460914912 import (
+    QueryValueBackendRequest20270101OneOf4460914912,
+)
+from datadog_api_client.v1.model.query_value_backend_request20270101_one_of4460916032 import (
+    QueryValueBackendRequest20270101OneOf4460916032,
+)
+from datadog_api_client.v1.model.query_value_backend_request20270101_one_of4460917152 import (
+    QueryValueBackendRequest20270101OneOf4460917152,
+)
+from datadog_api_client.v1.model.query_value_backend_request20270101_one_of4460918912 import (
+    QueryValueBackendRequest20270101OneOf4460918912,
+)
 from datadog_api_client.v1.model.query_value_widget_comparison import QueryValueWidgetComparison
 from datadog_api_client.v1.model.query_value_widget_comparison_directionality import (
     QueryValueWidgetComparisonDirectionality,
@@ -834,6 +1282,10 @@ from datadog_api_client.v1.model.query_value_widget_comparison_type import Query
 from datadog_api_client.v1.model.query_value_widget_definition import QueryValueWidgetDefinition
 from datadog_api_client.v1.model.query_value_widget_definition_type import QueryValueWidgetDefinitionType
 from datadog_api_client.v1.model.query_value_widget_request import QueryValueWidgetRequest
+from datadog_api_client.v1.model.recommendations_stream_query20270101_sort import RecommendationsStreamQuery20270101Sort
+from datadog_api_client.v1.model.recommendations_stream_request_columns_items20270101_width import (
+    RecommendationsStreamRequestColumnsItems20270101Width,
+)
 from datadog_api_client.v1.model.reference_table_logs_lookup_processor import ReferenceTableLogsLookupProcessor
 from datadog_api_client.v1.model.resource_provider_config import ResourceProviderConfig
 from datadog_api_client.v1.model.response_meta_attributes import ResponseMetaAttributes
@@ -868,6 +1320,13 @@ from datadog_api_client.v1.model.retention_return_criteria_time_interval_unit im
     RetentionReturnCriteriaTimeIntervalUnit,
 )
 from datadog_api_client.v1.model.retention_search import RetentionSearch
+from datadog_api_client.v1.model.retention_search_cohort_criteria_time_interval20270101_value import (
+    RetentionSearchCohortCriteriaTimeInterval20270101Value,
+)
+from datadog_api_client.v1.model.rum_stream_query20270101_sort import RumStreamQuery20270101Sort
+from datadog_api_client.v1.model.rum_stream_request_columns_items20270101_width import (
+    RumStreamRequestColumnsItems20270101Width,
+)
 from datadog_api_client.v1.model.run_workflow_widget_definition import RunWorkflowWidgetDefinition
 from datadog_api_client.v1.model.run_workflow_widget_definition_type import RunWorkflowWidgetDefinitionType
 from datadog_api_client.v1.model.run_workflow_widget_input import RunWorkflowWidgetInput
@@ -955,11 +1414,43 @@ from datadog_api_client.v1.model.sankey_rum_request import SankeyRumRequest
 from datadog_api_client.v1.model.sankey_widget_definition import SankeyWidgetDefinition
 from datadog_api_client.v1.model.sankey_widget_definition_type import SankeyWidgetDefinitionType
 from datadog_api_client.v1.model.sankey_widget_request import SankeyWidgetRequest
+from datadog_api_client.v1.model.scatter_plot_legend_type20270101_one_of import ScatterPlotLegendType20270101OneOf
+from datadog_api_client.v1.model.scatter_plot_legend_type20270101_one_of4461516160 import (
+    ScatterPlotLegendType20270101OneOf4461516160,
+)
 from datadog_api_client.v1.model.scatter_plot_request import ScatterPlotRequest
 from datadog_api_client.v1.model.scatter_plot_widget_definition import ScatterPlotWidgetDefinition
 from datadog_api_client.v1.model.scatter_plot_widget_definition_requests import ScatterPlotWidgetDefinitionRequests
 from datadog_api_client.v1.model.scatter_plot_widget_definition_type import ScatterPlotWidgetDefinitionType
+from datadog_api_client.v1.model.scatterplot_backend_table_request20270101_one_of import (
+    ScatterplotBackendTableRequest20270101OneOf,
+)
+from datadog_api_client.v1.model.scatterplot_backend_table_request20270101_one_of4461521920 import (
+    ScatterplotBackendTableRequest20270101OneOf4461521920,
+)
+from datadog_api_client.v1.model.scatterplot_backend_table_request20270101_one_of4461523200 import (
+    ScatterplotBackendTableRequest20270101OneOf4461523200,
+)
+from datadog_api_client.v1.model.scatterplot_backend_table_request20270101_one_of4461524480 import (
+    ScatterplotBackendTableRequest20270101OneOf4461524480,
+)
+from datadog_api_client.v1.model.scatterplot_backend_table_request20270101_one_of4461525600 import (
+    ScatterplotBackendTableRequest20270101OneOf4461525600,
+)
+from datadog_api_client.v1.model.scatterplot_backend_table_request20270101_one_of4461756480 import (
+    ScatterplotBackendTableRequest20270101OneOf4461756480,
+)
+from datadog_api_client.v1.model.scatterplot_backend_table_request20270101_one_of_query import (
+    ScatterplotBackendTableRequest20270101OneOfQuery,
+)
 from datadog_api_client.v1.model.scatterplot_dimension import ScatterplotDimension
+from datadog_api_client.v1.model.scatterplot_projection_dimensions_items20270101_dimension import (
+    ScatterplotProjectionDimensionsItems20270101Dimension,
+)
+from datadog_api_client.v1.model.scatterplot_requests20270101_one_of import ScatterplotRequests20270101OneOf
+from datadog_api_client.v1.model.scatterplot_requests20270101_one_of4461761120 import (
+    ScatterplotRequests20270101OneOf4461761120,
+)
 from datadog_api_client.v1.model.scatterplot_table_request import ScatterplotTableRequest
 from datadog_api_client.v1.model.scatterplot_widget_aggregator import ScatterplotWidgetAggregator
 from datadog_api_client.v1.model.scatterplot_widget_formula import ScatterplotWidgetFormula
@@ -982,6 +1473,18 @@ from datadog_api_client.v1.model.search_slo_timeframe import SearchSLOTimeframe
 from datadog_api_client.v1.model.search_service_level_objective import SearchServiceLevelObjective
 from datadog_api_client.v1.model.search_service_level_objective_attributes import SearchServiceLevelObjectiveAttributes
 from datadog_api_client.v1.model.search_service_level_objective_data import SearchServiceLevelObjectiveData
+from datadog_api_client.v1.model.security_runtime_pattern_stream_query20270101_sort import (
+    SecurityRuntimePatternStreamQuery20270101Sort,
+)
+from datadog_api_client.v1.model.security_runtime_pattern_stream_request_columns_items20270101_width import (
+    SecurityRuntimePatternStreamRequestColumnsItems20270101Width,
+)
+from datadog_api_client.v1.model.security_runtime_stream_query20270101_sort import (
+    SecurityRuntimeStreamQuery20270101Sort,
+)
+from datadog_api_client.v1.model.security_runtime_stream_request_columns_items20270101_width import (
+    SecurityRuntimeStreamRequestColumnsItems20270101Width,
+)
 from datadog_api_client.v1.model.selectable_template_variable_items import SelectableTemplateVariableItems
 from datadog_api_client.v1.model.series import Series
 from datadog_api_client.v1.model.service_check import ServiceCheck
@@ -1025,9 +1528,33 @@ from datadog_api_client.v1.model.split_graph_source_widget_definition import Spl
 from datadog_api_client.v1.model.split_graph_viz_size import SplitGraphVizSize
 from datadog_api_client.v1.model.split_graph_widget_definition import SplitGraphWidgetDefinition
 from datadog_api_client.v1.model.split_graph_widget_definition_type import SplitGraphWidgetDefinitionType
+from datadog_api_client.v1.model.split_group_backend_definition20270101_source_widget_definition import (
+    SplitGroupBackendDefinition20270101SourceWidgetDefinition,
+)
 from datadog_api_client.v1.model.split_sort import SplitSort
 from datadog_api_client.v1.model.split_vector_entry_item import SplitVectorEntryItem
 from datadog_api_client.v1.model.successful_signal_update_response import SuccessfulSignalUpdateResponse
+from datadog_api_client.v1.model.sunburst_backend_request20270101_one_of import SunburstBackendRequest20270101OneOf
+from datadog_api_client.v1.model.sunburst_backend_request20270101_one_of4462422560 import (
+    SunburstBackendRequest20270101OneOf4462422560,
+)
+from datadog_api_client.v1.model.sunburst_backend_request20270101_one_of4462423840 import (
+    SunburstBackendRequest20270101OneOf4462423840,
+)
+from datadog_api_client.v1.model.sunburst_backend_request20270101_one_of4462424800 import (
+    SunburstBackendRequest20270101OneOf4462424800,
+)
+from datadog_api_client.v1.model.sunburst_backend_request20270101_one_of_query import (
+    SunburstBackendRequest20270101OneOfQuery,
+)
+from datadog_api_client.v1.model.sunburst_known_legend20270101_one_of import SunburstKnownLegend20270101OneOf
+from datadog_api_client.v1.model.sunburst_known_legend20270101_one_of4462427680 import (
+    SunburstKnownLegend20270101OneOf4462427680,
+)
+from datadog_api_client.v1.model.sunburst_known_legend20270101_one_of4462657920 import (
+    SunburstKnownLegend20270101OneOf4462657920,
+)
+from datadog_api_client.v1.model.sunburst_legend20270101_one_of import SunburstLegend20270101OneOf
 from datadog_api_client.v1.model.sunburst_widget_definition import SunburstWidgetDefinition
 from datadog_api_client.v1.model.sunburst_widget_definition_type import SunburstWidgetDefinitionType
 from datadog_api_client.v1.model.sunburst_widget_legend import SunburstWidgetLegend
@@ -1298,6 +1825,8 @@ from datadog_api_client.v1.model.synthetics_update_test_pause_status_payload imp
 from datadog_api_client.v1.model.synthetics_uptime import SyntheticsUptime
 from datadog_api_client.v1.model.synthetics_variable_parser import SyntheticsVariableParser
 from datadog_api_client.v1.model.synthetics_warning_type import SyntheticsWarningType
+from datadog_api_client.v1.model.table_formula20270101_one_of import TableFormula20270101OneOf
+from datadog_api_client.v1.model.table_formula20270101_one_of4462669760 import TableFormula20270101OneOf4462669760
 from datadog_api_client.v1.model.table_widget_cell_display_mode import TableWidgetCellDisplayMode
 from datadog_api_client.v1.model.table_widget_definition import TableWidgetDefinition
 from datadog_api_client.v1.model.table_widget_definition_type import TableWidgetDefinitionType
@@ -1314,8 +1843,31 @@ from datadog_api_client.v1.model.table_widget_text_format_replace_substring_type
     TableWidgetTextFormatReplaceSubstringType,
 )
 from datadog_api_client.v1.model.table_widget_text_format_rule import TableWidgetTextFormatRule
+from datadog_api_client.v1.model.tabular_local_dataset_request20270101_query import (
+    TabularLocalDatasetRequest20270101Query,
+)
 from datadog_api_client.v1.model.tag_to_hosts import TagToHosts
 from datadog_api_client.v1.model.target_format_type import TargetFormatType
+from datadog_api_client.v1.model.text_formatting_rule20270101_replace import TextFormattingRule20270101Replace
+from datadog_api_client.v1.model.text_formatting_rule20270101_replace_one_of import (
+    TextFormattingRule20270101ReplaceOneOf,
+)
+from datadog_api_client.v1.model.text_formatting_rule20270101_replace_one_of4462863328 import (
+    TextFormattingRule20270101ReplaceOneOf4462863328,
+)
+from datadog_api_client.v1.model.text_match20270101_one_of import TextMatch20270101OneOf
+from datadog_api_client.v1.model.text_match20270101_one_of4462865408 import TextMatch20270101OneOf4462865408
+from datadog_api_client.v1.model.text_match20270101_one_of4462866048 import TextMatch20270101OneOf4462866048
+from datadog_api_client.v1.model.text_match20270101_one_of4462866688 import TextMatch20270101OneOf4462866688
+from datadog_api_client.v1.model.text_match20270101_one_of4462867328 import TextMatch20270101OneOf4462867328
+from datadog_api_client.v1.model.text_match20270101_one_of4462867968 import TextMatch20270101OneOf4462867968
+from datadog_api_client.v1.model.text_replacement_rule20270101_replace import TextReplacementRule20270101Replace
+from datadog_api_client.v1.model.text_replacement_rule20270101_replace_one_of import (
+    TextReplacementRule20270101ReplaceOneOf,
+)
+from datadog_api_client.v1.model.text_replacement_rule20270101_replace_one_of4462870048 import (
+    TextReplacementRule20270101ReplaceOneOf4462870048,
+)
 from datadog_api_client.v1.model.timeseries_background import TimeseriesBackground
 from datadog_api_client.v1.model.timeseries_background_type import TimeseriesBackgroundType
 from datadog_api_client.v1.model.timeseries_request_style import TimeseriesRequestStyle
@@ -1325,6 +1877,82 @@ from datadog_api_client.v1.model.timeseries_widget_expression_alias import Times
 from datadog_api_client.v1.model.timeseries_widget_legend_column import TimeseriesWidgetLegendColumn
 from datadog_api_client.v1.model.timeseries_widget_legend_layout import TimeseriesWidgetLegendLayout
 from datadog_api_client.v1.model.timeseries_widget_request import TimeseriesWidgetRequest
+from datadog_api_client.v1.model.toplist_backend_definition_style20270101_display import (
+    ToplistBackendDefinitionStyle20270101Display,
+)
+from datadog_api_client.v1.model.toplist_backend_definition_style20270101_display_one_of import (
+    ToplistBackendDefinitionStyle20270101DisplayOneOf,
+)
+from datadog_api_client.v1.model.toplist_backend_definition_style20270101_display_one_of4453175744 import (
+    ToplistBackendDefinitionStyle20270101DisplayOneOf4453175744,
+)
+from datadog_api_client.v1.model.toplist_backend_request20270101_one_of import ToplistBackendRequest20270101OneOf
+from datadog_api_client.v1.model.toplist_backend_request20270101_one_of4463319360 import (
+    ToplistBackendRequest20270101OneOf4463319360,
+)
+from datadog_api_client.v1.model.toplist_backend_request20270101_one_of4463320800 import (
+    ToplistBackendRequest20270101OneOf4463320800,
+)
+from datadog_api_client.v1.model.toplist_backend_request20270101_one_of4463321920 import (
+    ToplistBackendRequest20270101OneOf4463321920,
+)
+from datadog_api_client.v1.model.toplist_backend_request20270101_one_of4463323520 import (
+    ToplistBackendRequest20270101OneOf4463323520,
+)
+from datadog_api_client.v1.model.toplist_backend_request20270101_one_of4463325120 import (
+    ToplistBackendRequest20270101OneOf4463325120,
+)
+from datadog_api_client.v1.model.toplist_backend_request20270101_one_of4463325920 import (
+    ToplistBackendRequest20270101OneOf4463325920,
+)
+from datadog_api_client.v1.model.toplist_backend_request20270101_one_of4463326720 import (
+    ToplistBackendRequest20270101OneOf4463326720,
+)
+from datadog_api_client.v1.model.toplist_backend_request20270101_one_of4463327520 import (
+    ToplistBackendRequest20270101OneOf4463327520,
+)
+from datadog_api_client.v1.model.toplist_backend_request20270101_one_of4463328320 import (
+    ToplistBackendRequest20270101OneOf4463328320,
+)
+from datadog_api_client.v1.model.toplist_backend_request20270101_one_of4463329120 import (
+    ToplistBackendRequest20270101OneOf4463329120,
+)
+from datadog_api_client.v1.model.toplist_backend_request20270101_one_of4463526592 import (
+    ToplistBackendRequest20270101OneOf4463526592,
+)
+from datadog_api_client.v1.model.toplist_backend_request20270101_one_of4463527392 import (
+    ToplistBackendRequest20270101OneOf4463527392,
+)
+from datadog_api_client.v1.model.toplist_backend_request20270101_one_of4463528192 import (
+    ToplistBackendRequest20270101OneOf4463528192,
+)
+from datadog_api_client.v1.model.toplist_backend_request20270101_one_of4463528992 import (
+    ToplistBackendRequest20270101OneOf4463528992,
+)
+from datadog_api_client.v1.model.toplist_backend_request20270101_one_of4463529792 import (
+    ToplistBackendRequest20270101OneOf4463529792,
+)
+from datadog_api_client.v1.model.toplist_backend_request20270101_one_of4463530592 import (
+    ToplistBackendRequest20270101OneOf4463530592,
+)
+from datadog_api_client.v1.model.toplist_backend_request20270101_one_of4463531392 import (
+    ToplistBackendRequest20270101OneOf4463531392,
+)
+from datadog_api_client.v1.model.toplist_backend_request20270101_one_of4463532192 import (
+    ToplistBackendRequest20270101OneOf4463532192,
+)
+from datadog_api_client.v1.model.toplist_backend_request20270101_one_of4463532992 import (
+    ToplistBackendRequest20270101OneOf4463532992,
+)
+from datadog_api_client.v1.model.toplist_backend_request20270101_one_of4463533792 import (
+    ToplistBackendRequest20270101OneOf4463533792,
+)
+from datadog_api_client.v1.model.toplist_backend_request20270101_one_of4463535232 import (
+    ToplistBackendRequest20270101OneOf4463535232,
+)
+from datadog_api_client.v1.model.toplist_backend_request20270101_one_of_query import (
+    ToplistBackendRequest20270101OneOfQuery,
+)
 from datadog_api_client.v1.model.toplist_widget_definition import ToplistWidgetDefinition
 from datadog_api_client.v1.model.toplist_widget_definition_type import ToplistWidgetDefinitionType
 from datadog_api_client.v1.model.toplist_widget_display import ToplistWidgetDisplay
@@ -1336,6 +1964,9 @@ from datadog_api_client.v1.model.toplist_widget_scaling import ToplistWidgetScal
 from datadog_api_client.v1.model.toplist_widget_stacked import ToplistWidgetStacked
 from datadog_api_client.v1.model.toplist_widget_stacked_type import ToplistWidgetStackedType
 from datadog_api_client.v1.model.toplist_widget_style import ToplistWidgetStyle
+from datadog_api_client.v1.model.topology_map_backend_definition20270101_requests import (
+    TopologyMapBackendDefinition20270101Requests,
+)
 from datadog_api_client.v1.model.topology_map_inline_column_kind_scalar import TopologyMapInlineColumnKindScalar
 from datadog_api_client.v1.model.topology_map_inline_column_kind_string import TopologyMapInlineColumnKindString
 from datadog_api_client.v1.model.topology_map_inline_data import TopologyMapInlineData
@@ -1374,12 +2005,32 @@ from datadog_api_client.v1.model.topology_request_custom_response_format import 
 from datadog_api_client.v1.model.topology_request_data_streams import TopologyRequestDataStreams
 from datadog_api_client.v1.model.topology_request_service_map import TopologyRequestServiceMap
 from datadog_api_client.v1.model.topology_request_type import TopologyRequestType
+from datadog_api_client.v1.model.trace_stream_query20270101_sort import TraceStreamQuery20270101Sort
+from datadog_api_client.v1.model.trace_stream_request_columns_items20270101_width import (
+    TraceStreamRequestColumnsItems20270101Width,
+)
 from datadog_api_client.v1.model.tree_map_color_by import TreeMapColorBy
 from datadog_api_client.v1.model.tree_map_group_by import TreeMapGroupBy
 from datadog_api_client.v1.model.tree_map_size_by import TreeMapSizeBy
 from datadog_api_client.v1.model.tree_map_widget_definition import TreeMapWidgetDefinition
 from datadog_api_client.v1.model.tree_map_widget_definition_type import TreeMapWidgetDefinitionType
 from datadog_api_client.v1.model.tree_map_widget_request import TreeMapWidgetRequest
+from datadog_api_client.v1.model.treemap_backend_request20270101_one_of import TreemapBackendRequest20270101OneOf
+from datadog_api_client.v1.model.treemap_backend_request20270101_one_of4463750144 import (
+    TreemapBackendRequest20270101OneOf4463750144,
+)
+from datadog_api_client.v1.model.treemap_backend_request20270101_one_of4463751424 import (
+    TreemapBackendRequest20270101OneOf4463751424,
+)
+from datadog_api_client.v1.model.treemap_backend_request20270101_one_of4463752384 import (
+    TreemapBackendRequest20270101OneOf4463752384,
+)
+from datadog_api_client.v1.model.treemap_backend_request20270101_one_of4463753824 import (
+    TreemapBackendRequest20270101OneOf4463753824,
+)
+from datadog_api_client.v1.model.treemap_backend_request20270101_one_of_query import (
+    TreemapBackendRequest20270101OneOfQuery,
+)
 from datadog_api_client.v1.model.usage_analyzed_logs_hour import UsageAnalyzedLogsHour
 from datadog_api_client.v1.model.usage_analyzed_logs_response import UsageAnalyzedLogsResponse
 from datadog_api_client.v1.model.usage_attribution_aggregates import UsageAttributionAggregates
@@ -1482,6 +2133,10 @@ from datadog_api_client.v1.model.user_list_response import UserListResponse
 from datadog_api_client.v1.model.user_response import UserResponse
 from datadog_api_client.v1.model.viewing_preferences import ViewingPreferences
 from datadog_api_client.v1.model.viewing_preferences_theme import ViewingPreferencesTheme
+from datadog_api_client.v1.model.watchdog_alerts_query20270101_sort import WatchdogAlertsQuery20270101Sort
+from datadog_api_client.v1.model.watchdog_alerts_request_columns_items20270101_width import (
+    WatchdogAlertsRequestColumnsItems20270101Width,
+)
 from datadog_api_client.v1.model.webhooks_integration import WebhooksIntegration
 from datadog_api_client.v1.model.webhooks_integration_custom_variable import WebhooksIntegrationCustomVariable
 from datadog_api_client.v1.model.webhooks_integration_custom_variable_response import (
@@ -1554,6 +2209,11 @@ from datadog_api_client.v1.model.widget_summary_type import WidgetSummaryType
 from datadog_api_client.v1.model.widget_text_align import WidgetTextAlign
 from datadog_api_client.v1.model.widget_tick_edge import WidgetTickEdge
 from datadog_api_client.v1.model.widget_time import WidgetTime
+from datadog_api_client.v1.model.widget_time20270101_one_of import WidgetTime20270101OneOf
+from datadog_api_client.v1.model.widget_time20270101_one_of4464103552 import WidgetTime20270101OneOf4464103552
+from datadog_api_client.v1.model.widget_time20270101_one_of4464104512 import WidgetTime20270101OneOf4464104512
+from datadog_api_client.v1.model.widget_time20270101_one_of4464105312 import WidgetTime20270101OneOf4464105312
+from datadog_api_client.v1.model.widget_time20270101_one_of4464105952 import WidgetTime20270101OneOf4464105952
 from datadog_api_client.v1.model.widget_time_windows import WidgetTimeWindows
 from datadog_api_client.v1.model.widget_vertical_align import WidgetVerticalAlign
 from datadog_api_client.v1.model.widget_view_mode import WidgetViewMode
@@ -1598,18 +2258,36 @@ __all__ = [
     "AlertGraphWidgetDefinitionType",
     "AlertValueWidgetDefinition",
     "AlertValueWidgetDefinitionType",
+    "AnalysisDataset20270101Query",
     "ApiKey",
     "ApiKeyListResponse",
     "ApiKeyResponse",
+    "ApmRecommendationsStreamQuery20270101GroupBy",
+    "ApmRecommendationsStreamQuery20270101Sort",
+    "ApmRecommendationsStreamRequestColumnsItems20270101Width",
     "ApmStatsQueryColumnType",
     "ApmStatsQueryDefinition",
     "ApmStatsQueryRowType",
+    "AppBuilderInputValue20270101Value",
     "ApplicationKey",
     "ApplicationKeyListResponse",
     "ApplicationKeyResponse",
+    "AuditStreamQuery20270101Sort",
+    "AuditStreamRequestColumnsItems20270101Width",
     "AuthenticationValidationResponse",
     "AzureAccount",
     "AzureAccountListResponse",
+    "BackendDistributionYAxis20270101Max",
+    "BackendDistributionYAxis20270101Min",
+    "BarChartBackendDefinitionStyle20270101Display",
+    "BarChartBackendDefinitionStyle20270101DisplayOneOf",
+    "BarChartBackendDefinitionStyle20270101DisplayOneOf4453561856",
+    "BarChartBackendRequest20270101OneOf",
+    "BarChartBackendRequest20270101OneOf4454434112",
+    "BarChartBackendRequest20270101OneOf4454435552",
+    "BarChartBackendRequest20270101OneOf4454436672",
+    "BarChartBackendRequest20270101OneOf4454438272",
+    "BarChartBackendRequest20270101OneOfQuery",
     "BarChartWidgetDefinition",
     "BarChartWidgetDefinitionType",
     "BarChartWidgetDisplay",
@@ -1625,6 +2303,15 @@ __all__ = [
     "CalendarIntervalType",
     "CancelDowntimesByScopeRequest",
     "CanceledDowntimesIds",
+    "CaseStreamQuery20270101Sort",
+    "CaseStreamRequestColumnsItems20270101Width",
+    "CellScope20270101CohortTarget",
+    "CellScope20270101CohortTargetOneOf",
+    "CellScope20270101CohortTargetOneOf4454617856",
+    "ChangeBackendRequest20270101OneOf",
+    "ChangeBackendRequest20270101OneOf4454622976",
+    "ChangeDuration20270101OneOf",
+    "ChangeDuration20270101OneOf4454627136",
     "ChangeWidgetDefinition",
     "ChangeWidgetDefinitionType",
     "ChangeWidgetRequest",
@@ -1634,14 +2321,20 @@ __all__ = [
     "CheckCanDeleteSLOResponseData",
     "CheckStatusWidgetDefinition",
     "CheckStatusWidgetDefinitionType",
+    "CohortDefinition20270101Requests",
+    "CohortScope20270101Target",
+    "CohortScope20270101TargetOneOf",
+    "CohortScope20270101TargetOneOf4454865216",
     "CohortWidgetDefinition",
     "CohortWidgetDefinitionType",
     "ComparisonCustomTimeframe",
     "ComparisonDuration",
     "ComparisonDurationType",
+    "CompositeStreamRequestColumn20270101Width",
     "ContentEncoding",
     "Creator",
     "Dashboard",
+    "Dashboard20270101SchemaVersion",
     "DashboardBulkActionData",
     "DashboardBulkActionDataList",
     "DashboardBulkDeleteRequest",
@@ -1670,14 +2363,47 @@ __all__ = [
     "DashboardTemplateVariablePreset",
     "DashboardTemplateVariablePresetValue",
     "DashboardType",
+    "DataObservabilityAssetsQuery20270101Sort",
+    "DataObservabilityAssetsRequestColumnsItems20270101Width",
     "DataProjectionQuery",
     "DataProjectionRequestType",
+    "DatabaseRecommendationsStreamQuery20270101Sort",
+    "DatabaseRecommendationsStreamRequestColumnsItems20270101Width",
+    "DatasetCompute20270101Aggregation",
     "DatasetListQuery",
     "DatasetListQueryDataSourceType",
     "DatasetListQuerySort",
     "DatasetListQuerySortField",
+    "DatasetListRequest20270101Query",
+    "DatasetListRequestColumnsItems20270101Width",
+    "DatasetSort20270101Aggregation",
     "DeleteSharedDashboardResponse",
     "DeletedMonitor",
+    "DetectionRuleStreamQuery20270101Sort",
+    "DetectionRuleStreamRequestColumnsItems20270101Width",
+    "DistributionBackendRequest20270101OneOf",
+    "DistributionBackendRequest20270101OneOf4455761856",
+    "DistributionBackendRequest20270101OneOf4455763296",
+    "DistributionBackendRequest20270101OneOf4455763936",
+    "DistributionBackendRequest20270101OneOf4455764576",
+    "DistributionBackendRequest20270101OneOf4455765216",
+    "DistributionBackendRequest20270101OneOf4455765856",
+    "DistributionBackendRequest20270101OneOf4455766496",
+    "DistributionBackendRequest20270101OneOf4455767136",
+    "DistributionBackendRequest20270101OneOf4455767776",
+    "DistributionBackendRequest20270101OneOf4455768416",
+    "DistributionBackendRequest20270101OneOf4455769056",
+    "DistributionBackendRequest20270101OneOf4455769696",
+    "DistributionBackendRequest20270101OneOf4455770336",
+    "DistributionBackendRequest20270101OneOf4455770976",
+    "DistributionBackendRequest20270101OneOf4455771616",
+    "DistributionBackendRequest20270101OneOf4455772256",
+    "DistributionBackendRequest20270101OneOf4455772896",
+    "DistributionBackendRequest20270101OneOf4455773536",
+    "DistributionBackendRequest20270101OneOf4455774496",
+    "DistributionBackendRequest20270101OneOf4455775456",
+    "DistributionBackendRequest20270101OneOf4455989472",
+    "DistributionBackendRequest20270101OneOf4455990432",
     "DistributionPoint",
     "DistributionPointsContentEncoding",
     "DistributionPointsPayload",
@@ -1689,26 +2415,38 @@ __all__ = [
     "DistributionWidgetRequest",
     "DistributionWidgetXAxis",
     "DistributionWidgetYAxis",
+    "DoraListStreamQuery20270101Sort",
+    "DoraListStreamRequestColumnsItems20270101Width",
     "Downtime",
     "DowntimeChild",
     "DowntimeRecurrence",
     "EmbeddedAppWidgetDefinition",
     "EmbeddedAppWidgetDefinitionType",
     "EmbeddedAppWidgetInput",
+    "ErrorsStreamQuery20270101Sort",
+    "ErrorsStreamRequestColumnsItems20270101Width",
     "Event",
     "EventAlertType",
     "EventCreateRequest",
     "EventCreateResponse",
     "EventListResponse",
+    "EventPatternStreamQuery20270101Sort",
+    "EventPatternStreamRequestColumnsItems20270101Width",
+    "EventPlatformStreamRequestColumnsItems20270101Width",
     "EventPriority",
     "EventQueryDefinition",
     "EventResponse",
+    "EventStreamQuery20270101Sort",
+    "EventStreamRequestColumnsItems20270101Width",
     "EventStreamWidgetDefinition",
     "EventStreamWidgetDefinitionType",
     "EventTimelineWidgetDefinition",
     "EventTimelineWidgetDefinitionType",
     "EventsAggregation",
     "EventsAggregationValue",
+    "EventsPlatformListStreamQuery20270101Sort",
+    "FlatSortBy20270101OneOf",
+    "FlatSortBy20270101OneOf4456386848",
     "FormulaAndFunctionApmDependencyStatName",
     "FormulaAndFunctionApmDependencyStatsDataSource",
     "FormulaAndFunctionApmDependencyStatsQueryDefinition",
@@ -1748,7 +2486,10 @@ __all__ = [
     "FormulaAndFunctionSLOQueryDefinition",
     "FormulaAndFunctionSLOQueryType",
     "FormulaAndFunctionUserJourneyQueryDefinition",
+    "FormulaDetectionRulesQuery20270101GroupBy",
+    "FormulaProductAnalyticsExtendedQuery20270101Indexes",
     "FormulaType",
+    "FormulaUserJourneyQuery20270101Search",
     "FreeTextWidgetDefinition",
     "FreeTextWidgetDefinitionType",
     "FunnelComparisonCustomTimeframe",
@@ -1766,6 +2507,35 @@ __all__ = [
     "GCPAccountListResponse",
     "GCPMonitoredResourceConfig",
     "GCPMonitoredResourceConfigType",
+    "GeomapBackendPointsRequest20270101OneOf",
+    "GeomapBackendPointsRequest20270101OneOf4457225472",
+    "GeomapBackendPointsRequest20270101OneOf4457227232",
+    "GeomapBackendPointsRequest20270101OneOf4457228992",
+    "GeomapBackendPointsRequest20270101OneOf4457230272",
+    "GeomapBackendPointsRequestAnyOfAnyOfItemColumnsItems20270101Width",
+    "GeomapBackendPointsRequestAnyOfAnyOfItemColumnsItems444686320020270101Width",
+    "GeomapBackendPointsRequestAnyOfAnyOfItemColumnsItems444699785620270101Width",
+    "GeomapBackendRegionsRequest20270101OneOf",
+    "GeomapBackendRegionsRequest20270101OneOf4457233792",
+    "GeomapBackendRegionsRequest20270101OneOf4457448128",
+    "GeomapBackendRegionsRequest20270101OneOf4457449888",
+    "GeomapBackendRegionsRequest20270101OneOf4457450848",
+    "GeomapBackendRegionsRequest20270101OneOf4457451808",
+    "GeomapBackendRegionsRequest20270101OneOf4457452768",
+    "GeomapBackendRegionsRequest20270101OneOf4457453728",
+    "GeomapBackendRegionsRequest20270101OneOf4457454688",
+    "GeomapBackendRegionsRequest20270101OneOf4457455648",
+    "GeomapBackendRegionsRequest20270101OneOf4457456608",
+    "GeomapBackendRegionsRequest20270101OneOf4457457568",
+    "GeomapBackendRegionsRequest20270101OneOf4457458528",
+    "GeomapBackendRegionsRequest20270101OneOf4457459488",
+    "GeomapBackendRegionsRequest20270101OneOf4457460448",
+    "GeomapBackendRegionsRequest20270101OneOf4457461408",
+    "GeomapBackendRegionsRequest20270101OneOf4457462368",
+    "GeomapBackendRegionsRequest20270101OneOf4457463328",
+    "GeomapBackendRegionsRequest20270101OneOf4457645216",
+    "GeomapView20270101OneOf",
+    "GeomapView20270101OneOf4457650336",
     "GeomapWidgetDefinition",
     "GeomapWidgetDefinitionStyle",
     "GeomapWidgetDefinitionType",
@@ -1788,9 +2558,13 @@ __all__ = [
     "HeatgridColorConfig",
     "HeatgridColorStop",
     "HeatgridCustomColorSource",
+    "HeatgridDiscreteConfig20270101OneOf",
+    "HeatgridDiscreteConfig20270101OneOf4457881312",
     "HeatgridDiscreteCustomColor",
     "HeatgridDiscreteMode",
     "HeatgridDiscretePresetColor",
+    "HeatgridGradientConfig20270101OneOf",
+    "HeatgridGradientConfig20270101OneOf4457883232",
     "HeatgridGradientCustomColor",
     "HeatgridGradientMode",
     "HeatgridGradientPresetColor",
@@ -1820,6 +2594,10 @@ __all__ = [
     "HeatgridWidgetFormula",
     "HeatgridWidgetRequest",
     "HeatgridWidgetResponseFormat",
+    "HeatmapBackendRequest20270101OneOf",
+    "HeatmapBackendRequest20270101OneOf4458138496",
+    "HeatmapBackendRequest20270101OneOf4458139936",
+    "HeatmapBackendRequest20270101OneOf4458140576",
     "Host",
     "HostListResponse",
     "HostMapRequest",
@@ -1848,6 +2626,7 @@ __all__ = [
     "HostMuteSettings",
     "HostTags",
     "HostTotals",
+    "HostmapBackendDefinition20270101Requests",
     "HourlyUsageAttributionBody",
     "HourlyUsageAttributionMetadata",
     "HourlyUsageAttributionPagination",
@@ -1869,9 +2648,14 @@ __all__ = [
     "IPRanges",
     "IdpFormData",
     "IdpResponse",
+    "ImageBackendDefinition20270101Sizing",
     "ImageWidgetDefinition",
     "ImageWidgetDefinitionType",
+    "IncidentsStreamQuery20270101Sort",
+    "IncidentsStreamRequestColumnsItems20270101Width",
+    "InfrastructureListRequestColumnsItems20270101Width",
     "IntakePayloadAccepted",
+    "IssueStreamColumn20270101Width",
     "JourneyMapConversionType",
     "JourneyMapCountingMethod",
     "JourneyMapExpandedPrefix",
@@ -1883,6 +2667,7 @@ __all__ = [
     "JourneyMapWidgetDefinition",
     "JourneyMapWidgetDefinitionType",
     "JourneyMapWidgetRequest",
+    "LegacyIssueStreamRequest20270101Query",
     "ListStreamColumn",
     "ListStreamColumnWidth",
     "ListStreamComputeAggregation",
@@ -1965,6 +2750,8 @@ __all__ = [
     "LogsLookupProcessorType",
     "LogsMessageRemapper",
     "LogsMessageRemapperType",
+    "LogsPatternStreamQuery20270101Sort",
+    "LogsPatternStreamRequestColumnsItems20270101Width",
     "LogsPipeline",
     "LogsPipelineList",
     "LogsPipelineProcessor",
@@ -1992,10 +2779,14 @@ __all__ = [
     "LogsSpanRemapperType",
     "LogsStatusRemapper",
     "LogsStatusRemapperType",
+    "LogsStreamQuery20270101Sort",
+    "LogsStreamRequestColumnsItems20270101Width",
     "LogsStringBuilderProcessor",
     "LogsStringBuilderProcessorType",
     "LogsTraceRemapper",
     "LogsTraceRemapperType",
+    "LogsTransactionStreamQuery20270101Sort",
+    "LogsTransactionStreamRequestColumnsItems20270101Width",
     "LogsURLParser",
     "LogsURLParserType",
     "LogsUserAgentParser",
@@ -2203,14 +2994,61 @@ __all__ = [
     "ProductAnalyticsFunnelRequest",
     "ProductAnalyticsFunnelRequestType",
     "ProductAnalyticsFunnelWidgetDefinition",
+    "ProductAnalyticsStreamQuery20270101Sort",
     "PublishedDatasetProvider",
     "QuerySortOrder",
+    "QueryTableBackendRequest20270101OneOf",
+    "QueryTableBackendRequest20270101OneOf4459913248",
+    "QueryTableBackendRequest20270101OneOf4459916288",
+    "QueryTableBackendRequest20270101OneOf4459919328",
+    "QueryTableBackendRequest20270101OneOf4460101856",
+    "QueryTableBackendRequest20270101OneOf4460104096",
+    "QueryTableBackendRequest20270101OneOf4460106336",
+    "QueryTableBackendRequest20270101OneOf4460108576",
+    "QueryTableBackendRequest20270101OneOf4460110816",
+    "QueryTableBackendRequest20270101OneOf4460113056",
+    "QueryTableBackendRequest20270101OneOf4460115296",
+    "QueryTableBackendRequest20270101OneOf4460117536",
+    "QueryTableBackendRequest20270101OneOf4460300064",
+    "QueryTableBackendRequest20270101OneOf4460302304",
+    "QueryTableBackendRequest20270101OneOf4460304544",
+    "QueryTableBackendRequest20270101OneOf4460306784",
+    "QueryTableBackendRequest20270101OneOf4460309024",
+    "QueryTableBackendRequest20270101OneOf4460311264",
+    "QueryTableBackendRequest20270101OneOf4460313504",
+    "QueryTableBackendRequest20270101OneOf4460513216",
+    "QueryTableBackendRequest20270101OneOf4460516096",
+    "QueryTableBackendRequest20270101OneOf4460519136",
+    "QueryTableBackendRequest20270101OneOf4460522016",
+    "QueryTableBackendRequest20270101OneOfQuery",
+    "QueryValueBackendRequest20270101OneOf",
+    "QueryValueBackendRequest20270101OneOf4460683296",
+    "QueryValueBackendRequest20270101OneOf4460685056",
+    "QueryValueBackendRequest20270101OneOf4460686496",
+    "QueryValueBackendRequest20270101OneOf4460688416",
+    "QueryValueBackendRequest20270101OneOf4460689536",
+    "QueryValueBackendRequest20270101OneOf4460690656",
+    "QueryValueBackendRequest20270101OneOf4460904832",
+    "QueryValueBackendRequest20270101OneOf4460905952",
+    "QueryValueBackendRequest20270101OneOf4460907072",
+    "QueryValueBackendRequest20270101OneOf4460908192",
+    "QueryValueBackendRequest20270101OneOf4460909312",
+    "QueryValueBackendRequest20270101OneOf4460910432",
+    "QueryValueBackendRequest20270101OneOf4460911552",
+    "QueryValueBackendRequest20270101OneOf4460912672",
+    "QueryValueBackendRequest20270101OneOf4460913792",
+    "QueryValueBackendRequest20270101OneOf4460914912",
+    "QueryValueBackendRequest20270101OneOf4460916032",
+    "QueryValueBackendRequest20270101OneOf4460917152",
+    "QueryValueBackendRequest20270101OneOf4460918912",
     "QueryValueWidgetComparison",
     "QueryValueWidgetComparisonDirectionality",
     "QueryValueWidgetComparisonType",
     "QueryValueWidgetDefinition",
     "QueryValueWidgetDefinitionType",
     "QueryValueWidgetRequest",
+    "RecommendationsStreamQuery20270101Sort",
+    "RecommendationsStreamRequestColumnsItems20270101Width",
     "ReferenceTableLogsLookupProcessor",
     "ResourceProviderConfig",
     "ResponseMetaAttributes",
@@ -2239,6 +3077,9 @@ __all__ = [
     "RetentionReturnCriteriaTimeIntervalType",
     "RetentionReturnCriteriaTimeIntervalUnit",
     "RetentionSearch",
+    "RetentionSearchCohortCriteriaTimeInterval20270101Value",
+    "RumStreamQuery20270101Sort",
+    "RumStreamRequestColumnsItems20270101Width",
     "RunWorkflowWidgetDefinition",
     "RunWorkflowWidgetDefinitionType",
     "RunWorkflowWidgetInput",
@@ -2320,11 +3161,23 @@ __all__ = [
     "SankeyWidgetDefinition",
     "SankeyWidgetDefinitionType",
     "SankeyWidgetRequest",
+    "ScatterPlotLegendType20270101OneOf",
+    "ScatterPlotLegendType20270101OneOf4461516160",
     "ScatterPlotRequest",
     "ScatterPlotWidgetDefinition",
     "ScatterPlotWidgetDefinitionRequests",
     "ScatterPlotWidgetDefinitionType",
+    "ScatterplotBackendTableRequest20270101OneOf",
+    "ScatterplotBackendTableRequest20270101OneOf4461521920",
+    "ScatterplotBackendTableRequest20270101OneOf4461523200",
+    "ScatterplotBackendTableRequest20270101OneOf4461524480",
+    "ScatterplotBackendTableRequest20270101OneOf4461525600",
+    "ScatterplotBackendTableRequest20270101OneOf4461756480",
+    "ScatterplotBackendTableRequest20270101OneOfQuery",
     "ScatterplotDimension",
+    "ScatterplotProjectionDimensionsItems20270101Dimension",
+    "ScatterplotRequests20270101OneOf",
+    "ScatterplotRequests20270101OneOf4461761120",
     "ScatterplotTableRequest",
     "ScatterplotWidgetAggregator",
     "ScatterplotWidgetFormula",
@@ -2343,6 +3196,10 @@ __all__ = [
     "SearchServiceLevelObjective",
     "SearchServiceLevelObjectiveAttributes",
     "SearchServiceLevelObjectiveData",
+    "SecurityRuntimePatternStreamQuery20270101Sort",
+    "SecurityRuntimePatternStreamRequestColumnsItems20270101Width",
+    "SecurityRuntimeStreamQuery20270101Sort",
+    "SecurityRuntimeStreamRequestColumnsItems20270101Width",
     "SelectableTemplateVariableItems",
     "Series",
     "ServiceCheck",
@@ -2382,9 +3239,19 @@ __all__ = [
     "SplitGraphVizSize",
     "SplitGraphWidgetDefinition",
     "SplitGraphWidgetDefinitionType",
+    "SplitGroupBackendDefinition20270101SourceWidgetDefinition",
     "SplitSort",
     "SplitVectorEntryItem",
     "SuccessfulSignalUpdateResponse",
+    "SunburstBackendRequest20270101OneOf",
+    "SunburstBackendRequest20270101OneOf4462422560",
+    "SunburstBackendRequest20270101OneOf4462423840",
+    "SunburstBackendRequest20270101OneOf4462424800",
+    "SunburstBackendRequest20270101OneOfQuery",
+    "SunburstKnownLegend20270101OneOf",
+    "SunburstKnownLegend20270101OneOf4462427680",
+    "SunburstKnownLegend20270101OneOf4462657920",
+    "SunburstLegend20270101OneOf",
     "SunburstWidgetDefinition",
     "SunburstWidgetDefinitionType",
     "SunburstWidgetLegend",
@@ -2587,6 +3454,8 @@ __all__ = [
     "SyntheticsUptime",
     "SyntheticsVariableParser",
     "SyntheticsWarningType",
+    "TableFormula20270101OneOf",
+    "TableFormula20270101OneOf4462669760",
     "TableWidgetCellDisplayMode",
     "TableWidgetDefinition",
     "TableWidgetDefinitionType",
@@ -2601,8 +3470,21 @@ __all__ = [
     "TableWidgetTextFormatReplaceSubstring",
     "TableWidgetTextFormatReplaceSubstringType",
     "TableWidgetTextFormatRule",
+    "TabularLocalDatasetRequest20270101Query",
     "TagToHosts",
     "TargetFormatType",
+    "TextFormattingRule20270101Replace",
+    "TextFormattingRule20270101ReplaceOneOf",
+    "TextFormattingRule20270101ReplaceOneOf4462863328",
+    "TextMatch20270101OneOf",
+    "TextMatch20270101OneOf4462865408",
+    "TextMatch20270101OneOf4462866048",
+    "TextMatch20270101OneOf4462866688",
+    "TextMatch20270101OneOf4462867328",
+    "TextMatch20270101OneOf4462867968",
+    "TextReplacementRule20270101Replace",
+    "TextReplacementRule20270101ReplaceOneOf",
+    "TextReplacementRule20270101ReplaceOneOf4462870048",
     "TimeseriesBackground",
     "TimeseriesBackgroundType",
     "TimeseriesRequestStyle",
@@ -2612,6 +3494,32 @@ __all__ = [
     "TimeseriesWidgetLegendColumn",
     "TimeseriesWidgetLegendLayout",
     "TimeseriesWidgetRequest",
+    "ToplistBackendDefinitionStyle20270101Display",
+    "ToplistBackendDefinitionStyle20270101DisplayOneOf",
+    "ToplistBackendDefinitionStyle20270101DisplayOneOf4453175744",
+    "ToplistBackendRequest20270101OneOf",
+    "ToplistBackendRequest20270101OneOf4463319360",
+    "ToplistBackendRequest20270101OneOf4463320800",
+    "ToplistBackendRequest20270101OneOf4463321920",
+    "ToplistBackendRequest20270101OneOf4463323520",
+    "ToplistBackendRequest20270101OneOf4463325120",
+    "ToplistBackendRequest20270101OneOf4463325920",
+    "ToplistBackendRequest20270101OneOf4463326720",
+    "ToplistBackendRequest20270101OneOf4463327520",
+    "ToplistBackendRequest20270101OneOf4463328320",
+    "ToplistBackendRequest20270101OneOf4463329120",
+    "ToplistBackendRequest20270101OneOf4463526592",
+    "ToplistBackendRequest20270101OneOf4463527392",
+    "ToplistBackendRequest20270101OneOf4463528192",
+    "ToplistBackendRequest20270101OneOf4463528992",
+    "ToplistBackendRequest20270101OneOf4463529792",
+    "ToplistBackendRequest20270101OneOf4463530592",
+    "ToplistBackendRequest20270101OneOf4463531392",
+    "ToplistBackendRequest20270101OneOf4463532192",
+    "ToplistBackendRequest20270101OneOf4463532992",
+    "ToplistBackendRequest20270101OneOf4463533792",
+    "ToplistBackendRequest20270101OneOf4463535232",
+    "ToplistBackendRequest20270101OneOfQuery",
     "ToplistWidgetDefinition",
     "ToplistWidgetDefinitionType",
     "ToplistWidgetDisplay",
@@ -2623,6 +3531,7 @@ __all__ = [
     "ToplistWidgetStacked",
     "ToplistWidgetStackedType",
     "ToplistWidgetStyle",
+    "TopologyMapBackendDefinition20270101Requests",
     "TopologyMapInlineColumnKindScalar",
     "TopologyMapInlineColumnKindString",
     "TopologyMapInlineData",
@@ -2657,12 +3566,20 @@ __all__ = [
     "TopologyRequestDataStreams",
     "TopologyRequestServiceMap",
     "TopologyRequestType",
+    "TraceStreamQuery20270101Sort",
+    "TraceStreamRequestColumnsItems20270101Width",
     "TreeMapColorBy",
     "TreeMapGroupBy",
     "TreeMapSizeBy",
     "TreeMapWidgetDefinition",
     "TreeMapWidgetDefinitionType",
     "TreeMapWidgetRequest",
+    "TreemapBackendRequest20270101OneOf",
+    "TreemapBackendRequest20270101OneOf4463750144",
+    "TreemapBackendRequest20270101OneOf4463751424",
+    "TreemapBackendRequest20270101OneOf4463752384",
+    "TreemapBackendRequest20270101OneOf4463753824",
+    "TreemapBackendRequest20270101OneOfQuery",
     "UsageAnalyzedLogsHour",
     "UsageAnalyzedLogsResponse",
     "UsageAttributionAggregates",
@@ -2761,6 +3678,8 @@ __all__ = [
     "UserResponse",
     "ViewingPreferences",
     "ViewingPreferencesTheme",
+    "WatchdogAlertsQuery20270101Sort",
+    "WatchdogAlertsRequestColumnsItems20270101Width",
     "WebhooksIntegration",
     "WebhooksIntegrationCustomVariable",
     "WebhooksIntegrationCustomVariableResponse",
@@ -2825,6 +3744,11 @@ __all__ = [
     "WidgetTextAlign",
     "WidgetTickEdge",
     "WidgetTime",
+    "WidgetTime20270101OneOf",
+    "WidgetTime20270101OneOf4464103552",
+    "WidgetTime20270101OneOf4464104512",
+    "WidgetTime20270101OneOf4464105312",
+    "WidgetTime20270101OneOf4464105952",
     "WidgetTimeWindows",
     "WidgetVerticalAlign",
     "WidgetViewMode",
