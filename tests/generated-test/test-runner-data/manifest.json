@@ -9488,6 +9488,13 @@
     {
       "feature": "Observability Pipelines",
       "feature_file": "../../v2/features/observability_pipelines.feature",
+      "file": "v2/observability-pipelines/validate-an-observability-pipeline-with-crowdstrike-fdr-source-returns-ok-response.json",
+      "scenario": "Validate an observability pipeline with CrowdStrike FDR source returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Observability Pipelines",
+      "feature_file": "../../v2/features/observability_pipelines.feature",
       "file": "v2/observability-pipelines/validate-an-observability-pipeline-with-http-server-source-valid-tokens-returns-ok-response.json",
       "scenario": "Validate an observability pipeline with HTTP server source valid_tokens returns \"OK\" response",
       "version": "v2"

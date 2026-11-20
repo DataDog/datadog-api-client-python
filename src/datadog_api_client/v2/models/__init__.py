@@ -8218,6 +8218,12 @@ from datadog_api_client.v2.model.observability_pipeline_config_processor_item im
     ObservabilityPipelineConfigProcessorItem,
 )
 from datadog_api_client.v2.model.observability_pipeline_config_source_item import ObservabilityPipelineConfigSourceItem
+from datadog_api_client.v2.model.observability_pipeline_crowd_strike_fdr_source import (
+    ObservabilityPipelineCrowdStrikeFdrSource,
+)
+from datadog_api_client.v2.model.observability_pipeline_crowd_strike_fdr_source_type import (
+    ObservabilityPipelineCrowdStrikeFdrSourceType,
+)
 from datadog_api_client.v2.model.observability_pipeline_crowd_strike_next_gen_siem_destination import (
     ObservabilityPipelineCrowdStrikeNextGenSiemDestination,
 )
@@ -20219,6 +20225,8 @@ __all__ = [
     "ObservabilityPipelineConfigProcessorGroup",
     "ObservabilityPipelineConfigProcessorItem",
     "ObservabilityPipelineConfigSourceItem",
+    "ObservabilityPipelineCrowdStrikeFdrSource",
+    "ObservabilityPipelineCrowdStrikeFdrSourceType",
     "ObservabilityPipelineCrowdStrikeNextGenSiemDestination",
     "ObservabilityPipelineCrowdStrikeNextGenSiemDestinationCompression",
     "ObservabilityPipelineCrowdStrikeNextGenSiemDestinationCompressionAlgorithm",

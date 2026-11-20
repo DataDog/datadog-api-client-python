@@ -125,6 +125,9 @@ if TYPE_CHECKING:
         ObservabilityPipelineAmazonDataFirehoseSource,
     )
     from datadog_api_client.v2.model.observability_pipeline_amazon_s3_source import ObservabilityPipelineAmazonS3Source
+    from datadog_api_client.v2.model.observability_pipeline_crowd_strike_fdr_source import (
+        ObservabilityPipelineCrowdStrikeFdrSource,
+    )
     from datadog_api_client.v2.model.observability_pipeline_fluent_bit_source import (
         ObservabilityPipelineFluentBitSource,
     )
@@ -237,6 +240,7 @@ class ObservabilityPipelineConfig(ModelNormal):
                 ObservabilityPipelineOpentelemetrySource,
                 ObservabilityPipelineAmazonDataFirehoseSource,
                 ObservabilityPipelineAmazonS3Source,
+                ObservabilityPipelineCrowdStrikeFdrSource,
                 ObservabilityPipelineFluentBitSource,
                 ObservabilityPipelineFluentdSource,
                 ObservabilityPipelineGooglePubSubSource,
