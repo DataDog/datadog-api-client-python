@@ -602,26 +602,6 @@ Feature: Static Analysis
     Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/k9-vm-ast
-  Scenario: Revert Custom Rule Revision returns "Bad request" response
-    Given operation "RevertCustomRuleRevision" enabled
-    And new "RevertCustomRuleRevision" request
-    And request contains "ruleset_name" parameter from "REPLACE.ME"
-    And request contains "rule_name" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {}, "type": "revert_custom_rule_revision_request"}}
-    When the request is sent
-    Then the response status is 400 Bad request
-
-  @generated @skip @team:ddoghq/k9-vm-ast
-  Scenario: Revert Custom Rule Revision returns "Successfully reverted" response
-    Given operation "RevertCustomRuleRevision" enabled
-    And new "RevertCustomRuleRevision" request
-    And request contains "ruleset_name" parameter from "REPLACE.ME"
-    And request contains "rule_name" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {}, "type": "revert_custom_rule_revision_request"}}
-    When the request is sent
-    Then the response status is 200 Successfully reverted
-
-  @generated @skip @team:ddoghq/k9-vm-ast
   Scenario: Show Custom Rule Revision returns "Bad request" response
     Given operation "GetCustomRuleRevision" enabled
     And new "GetCustomRuleRevision" request

@@ -175,54 +175,6 @@ Feature: Case Management
     Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/case-management
-  Scenario: Create Jira issue for case returns "Accepted" response
-    Given new "CreateCaseJiraIssue" request
-    And request contains "case_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"fields": {}, "issue_type_id": "10001", "jira_account_id": "1234", "project_id": "5678"}, "type": "issues"}}
-    When the request is sent
-    Then the response status is 202 Accepted
-
-  @generated @skip @team:ddoghq/case-management
-  Scenario: Create Jira issue for case returns "Bad Request" response
-    Given new "CreateCaseJiraIssue" request
-    And request contains "case_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"fields": {}, "issue_type_id": "10001", "jira_account_id": "1234", "project_id": "5678"}, "type": "issues"}}
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:ddoghq/case-management
-  Scenario: Create Jira issue for case returns "Not Found" response
-    Given new "CreateCaseJiraIssue" request
-    And request contains "case_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"fields": {}, "issue_type_id": "10001", "jira_account_id": "1234", "project_id": "5678"}, "type": "issues"}}
-    When the request is sent
-    Then the response status is 404 Not Found
-
-  @generated @skip @team:ddoghq/case-management
-  Scenario: Create ServiceNow ticket for case returns "Accepted" response
-    Given new "CreateCaseServiceNowTicket" request
-    And request contains "case_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"assignment_group": "IT Support", "instance_name": "my-instance"}, "type": "tickets"}}
-    When the request is sent
-    Then the response status is 202 Accepted
-
-  @generated @skip @team:ddoghq/case-management
-  Scenario: Create ServiceNow ticket for case returns "Bad Request" response
-    Given new "CreateCaseServiceNowTicket" request
-    And request contains "case_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"assignment_group": "IT Support", "instance_name": "my-instance"}, "type": "tickets"}}
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:ddoghq/case-management
-  Scenario: Create ServiceNow ticket for case returns "Not Found" response
-    Given new "CreateCaseServiceNowTicket" request
-    And request contains "case_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"assignment_group": "IT Support", "instance_name": "my-instance"}, "type": "tickets"}}
-    When the request is sent
-    Then the response status is 404 Not Found
-
-  @generated @skip @team:ddoghq/case-management
   Scenario: Create a case link returns "Bad Request" response
     Given new "CreateCaseLink" request
     And body with value {"data": {"attributes": {"child_entity_id": "4417921d-0866-4a38-822c-6f2a0f65f77d", "child_entity_type": "CASE", "parent_entity_id": "bf0cbac6-4c16-4cfb-b6bf-ca5e0ec37a4f", "parent_entity_type": "CASE", "relationship": "BLOCKS"}, "type": "link"}}
@@ -377,30 +329,6 @@ Feature: Case Management
     Given new "CreateCaseAutomationRule" request
     And request contains "project_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"action": {"data": {"handle": "workflow-handle-123"}, "type": "EXECUTE_WORKFLOW"}, "name": "Auto-assign workflow", "state": "ENABLED", "trigger": {"data": {}, "type": "CASE_CREATED"}}, "type": "rule"}}
-    When the request is sent
-    Then the response status is 404 Not Found
-
-  @generated @skip @team:ddoghq/case-management
-  Scenario: Create investigation notebook for case returns "Bad Request" response
-    Given new "CreateCaseNotebook" request
-    And request contains "case_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"type": "notebook"}}
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:ddoghq/case-management
-  Scenario: Create investigation notebook for case returns "No Content" response
-    Given new "CreateCaseNotebook" request
-    And request contains "case_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"type": "notebook"}}
-    When the request is sent
-    Then the response status is 204 No Content
-
-  @generated @skip @team:ddoghq/case-management
-  Scenario: Create investigation notebook for case returns "Not Found" response
-    Given new "CreateCaseNotebook" request
-    And request contains "case_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"type": "notebook"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -794,30 +722,6 @@ Feature: Case Management
     Given new "LinkJiraIssueToCase" request
     And request contains "case_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"jira_issue_url": "https://jira.example.com/browse/PROJ-123"}, "type": "issues"}}
-    When the request is sent
-    Then the response status is 404 Not Found
-
-  @generated @skip @team:ddoghq/case-management
-  Scenario: Link incident to case returns "Bad Request" response
-    Given new "LinkIncident" request
-    And request contains "case_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incidents"}}
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:ddoghq/case-management
-  Scenario: Link incident to case returns "Created" response
-    Given new "LinkIncident" request
-    And request contains "case_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incidents"}}
-    When the request is sent
-    Then the response status is 201 Created
-
-  @generated @skip @team:ddoghq/case-management
-  Scenario: Link incident to case returns "Not Found" response
-    Given new "LinkIncident" request
-    And request contains "case_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "incidents"}}
     When the request is sent
     Then the response status is 404 Not Found
 
