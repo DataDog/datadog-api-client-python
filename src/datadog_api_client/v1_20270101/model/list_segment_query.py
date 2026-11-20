@@ -1,0 +1,85 @@
+# Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
+# This product includes software developed at Datadog (https://www.datadoghq.com/).
+# Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
+
+from typing import Union, TYPE_CHECKING
+
+from datadog_api_client.model_utils import (
+    ModelNormal,
+    cached_property,
+    unset,
+    UnsetType,
+)
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v1_20270101.model.composite_events_platform_query import CompositeEventsPlatformQuery
+    from datadog_api_client.v1_20270101.model.events_context import EventsContext
+    from datadog_api_client.v1_20270101.model.list_segment_query_data_source import ListSegmentQueryDataSource
+    from datadog_api_client.v1_20270101.model.list_segment_query_segment_query import ListSegmentQuerySegmentQuery
+
+
+class ListSegmentQuery(ModelNormal):
+    @cached_property
+    def additional_properties_type(_):
+        return None
+
+    @cached_property
+    def openapi_types(_):
+        from datadog_api_client.v1_20270101.model.composite_events_platform_query import CompositeEventsPlatformQuery
+        from datadog_api_client.v1_20270101.model.events_context import EventsContext
+        from datadog_api_client.v1_20270101.model.list_segment_query_data_source import ListSegmentQueryDataSource
+        from datadog_api_client.v1_20270101.model.list_segment_query_segment_query import ListSegmentQuerySegmentQuery
+
+        return {
+            "base_query": (CompositeEventsPlatformQuery,),
+            "context": (EventsContext,),
+            "data_source": (ListSegmentQueryDataSource,),
+            "name": (str,),
+            "segment_query": (ListSegmentQuerySegmentQuery,),
+        }
+
+    attribute_map = {
+        "base_query": "base_query",
+        "context": "context",
+        "data_source": "data_source",
+        "name": "name",
+        "segment_query": "segment_query",
+    }
+
+    def __init__(
+        self_,
+        base_query: CompositeEventsPlatformQuery,
+        data_source: ListSegmentQueryDataSource,
+        name: str,
+        segment_query: ListSegmentQuerySegmentQuery,
+        context: Union[EventsContext, UnsetType] = unset,
+        **kwargs,
+    ):
+        """
+        Test-only generated schema for the dashboard versioning proof of concept.
+
+        :param base_query: Test-only generated schema for the dashboard versioning proof of concept.
+        :type base_query: CompositeEventsPlatformQuery
+
+        :param context: Test-only generated schema for the dashboard versioning proof of concept.
+        :type context: EventsContext, optional
+
+        :param data_source: Test-only generated schema for the dashboard versioning proof of concept.
+        :type data_source: ListSegmentQueryDataSource
+
+        :param name: Test-only generated schema for the dashboard versioning proof of concept.
+        :type name: str
+
+        :param segment_query: Test-only generated schema for the dashboard versioning proof of concept.
+        :type segment_query: ListSegmentQuerySegmentQuery
+        """
+        if context is not unset:
+            kwargs["context"] = context
+        super().__init__(kwargs)
+
+        self_.base_query = base_query
+        self_.data_source = data_source
+        self_.name = name
+        self_.segment_query = segment_query
