@@ -18,7 +18,7 @@ class PatchSavedFilterForbiddenResponse(ModelComposed):
         :param errors: The authorization error messages.
         :type errors: [str]
 
-        :param data: The caller lacks edit permission on one or more feature flags that reference this saved filter.
+        :param data: The caller lacks edit permission on one or more feature flags that reference this saved filter, or on one or more of their environments.
         :type data: SavedFilterPermissionDeniedData
         """
         super().__init__(kwargs)

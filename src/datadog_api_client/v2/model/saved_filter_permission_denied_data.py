@@ -47,9 +47,9 @@ class SavedFilterPermissionDeniedData(ModelNormal):
         **kwargs,
     ):
         """
-        The caller lacks edit permission on one or more feature flags that reference this saved filter.
+        The caller lacks edit permission on one or more feature flags that reference this saved filter, or on one or more of their environments.
 
-        :param attributes: The caller lacks edit permission on one or more feature flags that reference this saved filter.
+        :param attributes: The caller lacks edit permission on one or more feature flags that reference this saved filter, or on one or more of their environments.
         :type attributes: SavedFilterPermissionDeniedAttributes
 
         :param id: The ID of the saved filter.
