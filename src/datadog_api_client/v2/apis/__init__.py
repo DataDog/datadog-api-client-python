@@ -32,6 +32,7 @@ from datadog_api_client.v2.api.case_management_attribute_api import CaseManageme
 from datadog_api_client.v2.api.case_management_type_api import CaseManagementTypeApi
 from datadog_api_client.v2.api.change_management_api import ChangeManagementApi
 from datadog_api_client.v2.api.chat_gpt_enterprise_integration_api import ChatGPTEnterpriseIntegrationApi
+from datadog_api_client.v2.api.claude_compliance_integration_api import ClaudeComplianceIntegrationApi
 from datadog_api_client.v2.api.cloud_authentication_api import CloudAuthenticationApi
 from datadog_api_client.v2.api.cloud_cost_management_api import CloudCostManagementApi
 from datadog_api_client.v2.api.cloud_network_monitoring_api import CloudNetworkMonitoringApi
@@ -198,6 +199,7 @@ __all__ = [
     "CaseManagementTypeApi",
     "ChangeManagementApi",
     "ChatGPTEnterpriseIntegrationApi",
+    "ClaudeComplianceIntegrationApi",
     "CloudAuthenticationApi",
     "CloudCostManagementApi",
     "CloudNetworkMonitoringApi",

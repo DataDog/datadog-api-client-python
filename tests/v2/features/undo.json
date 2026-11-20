@@ -969,6 +969,19 @@
       "type": "unsafe"
     }
   },
+  "CreateClaudeComplianceIntegrationAccount": {
+    "tag": "Claude Compliance Integration",
+    "undo": {
+      "operationId": "DeleteClaudeComplianceIntegrationAccount",
+      "parameters": [
+        {
+          "name": "account_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
   "CreateCloudflareAccount": {
     "tag": "Cloudflare Integration",
     "undo": {
@@ -3793,6 +3806,12 @@
       "type": "idempotent"
     }
   },
+  "DeleteClaudeComplianceIntegrationAccount": {
+    "tag": "Claude Compliance Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "DeleteCloudflareAccount": {
     "tag": "Cloudflare Integration",
     "undo": {
@@ -5586,6 +5605,12 @@
   },
   "GetChatGPTEnterpriseIntegrationAccount": {
     "tag": "ChatGPT Enterprise Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetClaudeComplianceIntegrationAccount": {
+    "tag": "Claude Compliance Integration",
     "undo": {
       "type": "safe"
     }
@@ -8013,6 +8038,12 @@
   },
   "ListChatGPTEnterpriseIntegrationAccounts": {
     "tag": "ChatGPT Enterprise Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListClaudeComplianceIntegrationAccounts": {
+    "tag": "Claude Compliance Integration",
     "undo": {
       "type": "safe"
     }
@@ -10998,6 +11029,12 @@
   },
   "UpdateChatGPTEnterpriseIntegrationAccount": {
     "tag": "ChatGPT Enterprise Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateClaudeComplianceIntegrationAccount": {
+    "tag": "Claude Compliance Integration",
     "undo": {
       "type": "idempotent"
     }
