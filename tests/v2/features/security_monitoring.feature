@@ -3688,6 +3688,30 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 200 OK
 
+  @replay-only @team:ddoghq/k9-investigation
+  Scenario: Search remediation groups returns "Bad Request" response
+    Given operation "SearchRemediationGroups" enabled
+    And new "SearchRemediationGroups" request
+    And request contains "sort" parameter with value "unknown"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @replay-only @team:ddoghq/k9-investigation
+  Scenario: Search remediation groups returns "OK" response
+    Given operation "SearchRemediationGroups" enabled
+    And new "SearchRemediationGroups" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @replay-only @team:ddoghq/k9-investigation @with-pagination
+  Scenario: Search remediation groups returns "OK" response with pagination
+    Given operation "SearchRemediationGroups" enabled
+    And new "SearchRemediationGroups" request
+    And request contains "page[size]" parameter with value 2
+    When the request with pagination is sent
+    Then the response status is 200 OK
+    And the response has 3 items
+
   @team:ddoghq/cloud-security-posture-management @team:ddoghq/k9-findings-platform
   Scenario: Search security findings returns "Bad Request" response
     Given new "SearchSecurityFindings" request

@@ -10447,6 +10447,12 @@
       "type": "safe"
     }
   },
+  "SearchRemediationGroups": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "SearchSecurityFindings": {
     "tag": "Security Monitoring",
     "undo": {

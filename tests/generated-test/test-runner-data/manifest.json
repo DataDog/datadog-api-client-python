@@ -12288,6 +12288,27 @@
     {
       "feature": "Security Monitoring",
       "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/search-remediation-groups-returns-bad-request-response.json",
+      "scenario": "Search remediation groups returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/search-remediation-groups-returns-ok-response.json",
+      "scenario": "Search remediation groups returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
+      "file": "v2/security-monitoring/search-remediation-groups-returns-ok-response-with-pagination.json",
+      "scenario": "Search remediation groups returns \"OK\" response with pagination",
+      "version": "v2"
+    },
+    {
+      "feature": "Security Monitoring",
+      "feature_file": "../../v2/features/security_monitoring.feature",
       "file": "v2/security-monitoring/search-security-findings-returns-bad-request-response.json",
       "scenario": "Search security findings returns \"Bad Request\" response",
       "version": "v2"

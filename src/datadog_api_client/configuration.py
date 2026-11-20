@@ -511,6 +511,7 @@ class Configuration:
                 "v2.reorder_security_findings_automation_severity_modifier_rules": False,
                 "v2.reorder_security_findings_automation_ticket_creation_rules": False,
                 "v2.run_historical_job": False,
+                "v2.search_remediation_groups": False,
                 "v2.search_security_monitoring_histsignals": False,
                 "v2.start_security_monitoring_batch_migration": False,
                 "v2.start_security_monitoring_rule_proposal": False,
