@@ -14,7 +14,8 @@ from typing import ClassVar
 
 class EventsSort(ModelSimple):
     """
-    The sort parameters when querying events.
+    The sort order of events. `-timestamp` returns the newest events first, which is the default, and `timestamp`
+        the oldest first. The client libraries reject any other value.
 
     :param value: Must be one of ["timestamp", "-timestamp"].
     :type value: str

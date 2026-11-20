@@ -38,13 +38,14 @@ class EventsQueryFilter(ModelNormal):
         """
         The search and filter query settings.
 
-        :param _from: The minimum time for the requested events. Supports date math and regular timestamps in milliseconds.
+        :param _from: The minimum time for the requested events. Supports date math, ISO 8601 and timestamps in milliseconds.
+            Widen it from the default to search beyond the last 15 minutes.
         :type _from: str, optional
 
-        :param query: The search query following the event search syntax.
+        :param query: The search query following the event search syntax. Attributes take ``@`` ( ``@evt.category:alert`` ); tags and reserved fields don't ( ``service:web`` ).
         :type query: str, optional
 
-        :param to: The maximum time for the requested events. Supports date math and regular timestamps in milliseconds.
+        :param to: The maximum time for the requested events. Supports date math, ISO 8601 and timestamps in milliseconds.
         :type to: str, optional
         """
         if _from is not unset:

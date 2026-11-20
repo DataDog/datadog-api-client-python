@@ -63,7 +63,8 @@ class EventsListRequest(ModelNormal):
         :param page: Pagination settings.
         :type page: EventsRequestPage, optional
 
-        :param sort: The sort parameters when querying events.
+        :param sort: The sort order of events. ``-timestamp`` returns the newest events first, which is the default, and ``timestamp``
+            the oldest first. The client libraries reject any other value.
         :type sort: EventsSort, optional
         """
         if filter is not unset:
