@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumSdkConfigType(ModelSimple):
+class RUMSdkConfigType(ModelSimple):
     """
     The type of the resource. The value should always be `rum_sdk_config`.
 
@@ -23,7 +23,7 @@ class RumSdkConfigType(ModelSimple):
     allowed_values = {
         "rum_sdk_config",
     }
-    RUM_SDK_CONFIG: ClassVar["RumSdkConfigType"]
+    RUM_SDK_CONFIG: ClassVar["RUMSdkConfigType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,4 @@ class RumSdkConfigType(ModelSimple):
         }
 
 
-RumSdkConfigType.RUM_SDK_CONFIG = RumSdkConfigType("rum_sdk_config")
+RUMSdkConfigType.RUM_SDK_CONFIG = RUMSdkConfigType("rum_sdk_config")

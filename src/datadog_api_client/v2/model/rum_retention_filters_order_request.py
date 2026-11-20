@@ -14,29 +14,29 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_retention_filters_order_data import RumRetentionFiltersOrderData
+    from datadog_api_client.v2.model.rum_retention_filters_order_data import RUMRetentionFiltersOrderData
 
 
-class RumRetentionFiltersOrderRequest(ModelNormal):
+class RUMRetentionFiltersOrderRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_retention_filters_order_data import RumRetentionFiltersOrderData
+        from datadog_api_client.v2.model.rum_retention_filters_order_data import RUMRetentionFiltersOrderData
 
         return {
-            "data": ([RumRetentionFiltersOrderData],),
+            "data": ([RUMRetentionFiltersOrderData],),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: Union[List[RumRetentionFiltersOrderData], UnsetType] = unset, **kwargs):
+    def __init__(self_, data: Union[List[RUMRetentionFiltersOrderData], UnsetType] = unset, **kwargs):
         """
         The list of RUM retention filter IDs along with their corresponding type to reorder.
         All retention filter IDs should be included in the list created for a RUM application.
 
         :param data: A list of RUM retention filter IDs along with type.
-        :type data: [RumRetentionFiltersOrderData], optional
+        :type data: [RUMRetentionFiltersOrderData], optional
         """
         if data is not unset:
             kwargs["data"] = data

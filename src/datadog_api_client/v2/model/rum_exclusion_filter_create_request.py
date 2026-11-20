@@ -12,28 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_exclusion_filter_create_data import RumExclusionFilterCreateData
+    from datadog_api_client.v2.model.rum_exclusion_filter_create_data import RUMExclusionFilterCreateData
 
 
-class RumExclusionFilterCreateRequest(ModelNormal):
+class RUMExclusionFilterCreateRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_exclusion_filter_create_data import RumExclusionFilterCreateData
+        from datadog_api_client.v2.model.rum_exclusion_filter_create_data import RUMExclusionFilterCreateData
 
         return {
-            "data": (RumExclusionFilterCreateData,),
+            "data": (RUMExclusionFilterCreateData,),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: RumExclusionFilterCreateData, **kwargs):
+    def __init__(self_, data: RUMExclusionFilterCreateData, **kwargs):
         """
         The exclusion filter body to create.
 
         :param data: The new exclusion filter properties to create.
-        :type data: RumExclusionFilterCreateData
+        :type data: RUMExclusionFilterCreateData
         """
         super().__init__(kwargs)
 

@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumExclusionFilterType(ModelSimple):
+class RUMExclusionFilterType(ModelSimple):
     """
     The resource type. The value must be `exclusion_filters`.
 
@@ -23,7 +23,7 @@ class RumExclusionFilterType(ModelSimple):
     allowed_values = {
         "exclusion_filters",
     }
-    EXCLUSION_FILTERS: ClassVar["RumExclusionFilterType"]
+    EXCLUSION_FILTERS: ClassVar["RUMExclusionFilterType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,4 @@ class RumExclusionFilterType(ModelSimple):
         }
 
 
-RumExclusionFilterType.EXCLUSION_FILTERS = RumExclusionFilterType("exclusion_filters")
+RUMExclusionFilterType.EXCLUSION_FILTERS = RUMExclusionFilterType("exclusion_filters")

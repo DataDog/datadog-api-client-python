@@ -14,28 +14,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_metric_response_compute import RumMetricResponseCompute
-    from datadog_api_client.v2.model.rum_metric_event_type import RumMetricEventType
-    from datadog_api_client.v2.model.rum_metric_response_filter import RumMetricResponseFilter
-    from datadog_api_client.v2.model.rum_metric_response_group_by import RumMetricResponseGroupBy
-    from datadog_api_client.v2.model.rum_metric_response_uniqueness import RumMetricResponseUniqueness
+    from datadog_api_client.v2.model.rum_metric_response_compute import RUMMetricResponseCompute
+    from datadog_api_client.v2.model.rum_metric_event_type import RUMMetricEventType
+    from datadog_api_client.v2.model.rum_metric_response_filter import RUMMetricResponseFilter
+    from datadog_api_client.v2.model.rum_metric_response_group_by import RUMMetricResponseGroupBy
+    from datadog_api_client.v2.model.rum_metric_response_uniqueness import RUMMetricResponseUniqueness
 
 
-class RumMetricResponseAttributes(ModelNormal):
+class RUMMetricResponseAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_metric_response_compute import RumMetricResponseCompute
-        from datadog_api_client.v2.model.rum_metric_event_type import RumMetricEventType
-        from datadog_api_client.v2.model.rum_metric_response_filter import RumMetricResponseFilter
-        from datadog_api_client.v2.model.rum_metric_response_group_by import RumMetricResponseGroupBy
-        from datadog_api_client.v2.model.rum_metric_response_uniqueness import RumMetricResponseUniqueness
+        from datadog_api_client.v2.model.rum_metric_response_compute import RUMMetricResponseCompute
+        from datadog_api_client.v2.model.rum_metric_event_type import RUMMetricEventType
+        from datadog_api_client.v2.model.rum_metric_response_filter import RUMMetricResponseFilter
+        from datadog_api_client.v2.model.rum_metric_response_group_by import RUMMetricResponseGroupBy
+        from datadog_api_client.v2.model.rum_metric_response_uniqueness import RUMMetricResponseUniqueness
 
         return {
-            "compute": (RumMetricResponseCompute,),
-            "event_type": (RumMetricEventType,),
-            "filter": (RumMetricResponseFilter,),
-            "group_by": ([RumMetricResponseGroupBy],),
-            "uniqueness": (RumMetricResponseUniqueness,),
+            "compute": (RUMMetricResponseCompute,),
+            "event_type": (RUMMetricEventType,),
+            "filter": (RUMMetricResponseFilter,),
+            "group_by": ([RUMMetricResponseGroupBy],),
+            "uniqueness": (RUMMetricResponseUniqueness,),
         }
 
     attribute_map = {
@@ -48,30 +48,30 @@ class RumMetricResponseAttributes(ModelNormal):
 
     def __init__(
         self_,
-        compute: Union[RumMetricResponseCompute, UnsetType] = unset,
-        event_type: Union[RumMetricEventType, UnsetType] = unset,
-        filter: Union[RumMetricResponseFilter, UnsetType] = unset,
-        group_by: Union[List[RumMetricResponseGroupBy], UnsetType] = unset,
-        uniqueness: Union[RumMetricResponseUniqueness, UnsetType] = unset,
+        compute: Union[RUMMetricResponseCompute, UnsetType] = unset,
+        event_type: Union[RUMMetricEventType, UnsetType] = unset,
+        filter: Union[RUMMetricResponseFilter, UnsetType] = unset,
+        group_by: Union[List[RUMMetricResponseGroupBy], UnsetType] = unset,
+        uniqueness: Union[RUMMetricResponseUniqueness, UnsetType] = unset,
         **kwargs,
     ):
         """
         The object describing a Datadog RUM-based metric.
 
         :param compute: The compute rule of the RUM-based metric.
-        :type compute: RumMetricResponseCompute, optional
+        :type compute: RUMMetricResponseCompute, optional
 
         :param event_type: The type of RUM events the metric is generated from. It is set at creation and cannot be changed.
-        :type event_type: RumMetricEventType, optional
+        :type event_type: RUMMetricEventType, optional
 
         :param filter: The RUM-based metric filter. RUM events matching this filter are aggregated in this metric. Omitted if the metric only filters on the event type.
-        :type filter: RumMetricResponseFilter, optional
+        :type filter: RUMMetricResponseFilter, optional
 
         :param group_by: The rules the metric is grouped by. An empty array is returned if the metric is not grouped.
-        :type group_by: [RumMetricResponseGroupBy], optional
+        :type group_by: [RUMMetricResponseGroupBy], optional
 
         :param uniqueness: The rule to count updatable events. Only present if ``event_type`` is ``session`` or ``view`` , and absent on older metrics created before this setting existed.
-        :type uniqueness: RumMetricResponseUniqueness, optional
+        :type uniqueness: RUMMetricResponseUniqueness, optional
         """
         if compute is not unset:
             kwargs["compute"] = compute

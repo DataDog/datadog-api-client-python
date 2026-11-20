@@ -12,23 +12,23 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_sdk_config_match_option import RumSdkConfigMatchOption
+    from datadog_api_client.v2.model.rum_sdk_config_match_option import RUMSdkConfigMatchOption
     from datadog_api_client.v2.model.rum_sdk_config_tracing_url_propagator_type import (
-        RumSdkConfigTracingUrlPropagatorType,
+        RUMSdkConfigTracingUrlPropagatorType,
     )
 
 
-class RumSdkConfigTracingUrlConfig(ModelNormal):
+class RUMSdkConfigTracingUrlConfig(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_sdk_config_match_option import RumSdkConfigMatchOption
+        from datadog_api_client.v2.model.rum_sdk_config_match_option import RUMSdkConfigMatchOption
         from datadog_api_client.v2.model.rum_sdk_config_tracing_url_propagator_type import (
-            RumSdkConfigTracingUrlPropagatorType,
+            RUMSdkConfigTracingUrlPropagatorType,
         )
 
         return {
-            "match": (RumSdkConfigMatchOption,),
-            "propagator_types": ([RumSdkConfigTracingUrlPropagatorType],),
+            "match": (RUMSdkConfigMatchOption,),
+            "propagator_types": ([RUMSdkConfigTracingUrlPropagatorType],),
         }
 
     attribute_map = {
@@ -37,16 +37,16 @@ class RumSdkConfigTracingUrlConfig(ModelNormal):
     }
 
     def __init__(
-        self_, match: RumSdkConfigMatchOption, propagator_types: List[RumSdkConfigTracingUrlPropagatorType], **kwargs
+        self_, match: RUMSdkConfigMatchOption, propagator_types: List[RUMSdkConfigTracingUrlPropagatorType], **kwargs
     ):
         """
         Configuration for a URL that should have distributed tracing enabled.
 
         :param match: A match option used for URL or origin pattern matching.
-        :type match: RumSdkConfigMatchOption
+        :type match: RUMSdkConfigMatchOption
 
         :param propagator_types: The list of trace propagator types to use for this URL.
-        :type propagator_types: [RumSdkConfigTracingUrlPropagatorType]
+        :type propagator_types: [RUMSdkConfigTracingUrlPropagatorType]
         """
         super().__init__(kwargs)
 

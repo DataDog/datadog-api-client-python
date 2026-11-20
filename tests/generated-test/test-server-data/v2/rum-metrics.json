@@ -1,8 +1,8 @@
 {
-  "feature": "Rum Metrics",
+  "feature": "RUM Metrics",
   "recordings": [
     {
-      "feature": "Rum Metrics",
+      "feature": "RUM Metrics",
       "frozen_at": "2026-06-02T12:32:35.224Z",
       "interactions": [
         {
@@ -47,7 +47,7 @@
       "version": "v2"
     },
     {
-      "feature": "Rum Metrics",
+      "feature": "RUM Metrics",
       "frozen_at": "2026-06-02T12:32:35.746Z",
       "interactions": [
         {
@@ -158,7 +158,7 @@
       "version": "v2"
     },
     {
-      "feature": "Rum Metrics",
+      "feature": "RUM Metrics",
       "frozen_at": "2026-06-02T12:32:37.019Z",
       "interactions": [
         {
@@ -235,7 +235,7 @@
       "version": "v2"
     },
     {
-      "feature": "Rum Metrics",
+      "feature": "RUM Metrics",
       "frozen_at": "2026-06-02T12:32:38.038Z",
       "interactions": [
         {
@@ -335,7 +335,7 @@
       "version": "v2"
     },
     {
-      "feature": "Rum Metrics",
+      "feature": "RUM Metrics",
       "frozen_at": "2026-06-02T12:32:39.442Z",
       "interactions": [
         {
@@ -366,7 +366,7 @@
       "version": "v2"
     },
     {
-      "feature": "Rum Metrics",
+      "feature": "RUM Metrics",
       "frozen_at": "2026-06-02T12:32:39.828Z",
       "interactions": [
         {
@@ -397,7 +397,7 @@
       "version": "v2"
     },
     {
-      "feature": "Rum Metrics",
+      "feature": "RUM Metrics",
       "frozen_at": "2026-06-02T12:32:40.188Z",
       "interactions": [
         {
@@ -497,7 +497,7 @@
       "version": "v2"
     },
     {
-      "feature": "Rum Metrics",
+      "feature": "RUM Metrics",
       "frozen_at": "2026-06-02T12:32:41.286Z",
       "interactions": [
         {
@@ -528,7 +528,7 @@
       "version": "v2"
     },
     {
-      "feature": "Rum Metrics",
+      "feature": "RUM Metrics",
       "frozen_at": "2026-06-02T12:32:41.688Z",
       "interactions": [
         {
@@ -638,7 +638,7 @@
       "version": "v2"
     },
     {
-      "feature": "Rum Metrics",
+      "feature": "RUM Metrics",
       "frozen_at": "2026-06-02T12:32:42.946Z",
       "interactions": [
         {
@@ -748,7 +748,7 @@
       "version": "v2"
     },
     {
-      "feature": "Rum Metrics",
+      "feature": "RUM Metrics",
       "frozen_at": "2026-06-02T12:32:44.259Z",
       "interactions": [
         {
@@ -858,7 +858,7 @@
       "version": "v2"
     },
     {
-      "feature": "Rum Metrics",
+      "feature": "RUM Metrics",
       "frozen_at": "2026-06-02T12:32:46.608Z",
       "interactions": [
         {

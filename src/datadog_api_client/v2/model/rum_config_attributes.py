@@ -14,7 +14,7 @@ from datadog_api_client.model_utils import (
 )
 
 
-class RumConfigAttributes(ModelNormal):
+class RUMConfigAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {

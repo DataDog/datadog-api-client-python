@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumSdkConfigTracingUrlPropagatorType(ModelSimple):
+class RUMSdkConfigTracingUrlPropagatorType(ModelSimple):
     """
     A trace propagator type.
 
@@ -26,10 +26,10 @@ class RumSdkConfigTracingUrlPropagatorType(ModelSimple):
         "b3multi",
         "tracecontext",
     }
-    DATADOG: ClassVar["RumSdkConfigTracingUrlPropagatorType"]
-    B3: ClassVar["RumSdkConfigTracingUrlPropagatorType"]
-    B3MULTI: ClassVar["RumSdkConfigTracingUrlPropagatorType"]
-    TRACECONTEXT: ClassVar["RumSdkConfigTracingUrlPropagatorType"]
+    DATADOG: ClassVar["RUMSdkConfigTracingUrlPropagatorType"]
+    B3: ClassVar["RUMSdkConfigTracingUrlPropagatorType"]
+    B3MULTI: ClassVar["RUMSdkConfigTracingUrlPropagatorType"]
+    TRACECONTEXT: ClassVar["RUMSdkConfigTracingUrlPropagatorType"]
 
     @cached_property
     def openapi_types(_):
@@ -38,7 +38,7 @@ class RumSdkConfigTracingUrlPropagatorType(ModelSimple):
         }
 
 
-RumSdkConfigTracingUrlPropagatorType.DATADOG = RumSdkConfigTracingUrlPropagatorType("datadog")
-RumSdkConfigTracingUrlPropagatorType.B3 = RumSdkConfigTracingUrlPropagatorType("b3")
-RumSdkConfigTracingUrlPropagatorType.B3MULTI = RumSdkConfigTracingUrlPropagatorType("b3multi")
-RumSdkConfigTracingUrlPropagatorType.TRACECONTEXT = RumSdkConfigTracingUrlPropagatorType("tracecontext")
+RUMSdkConfigTracingUrlPropagatorType.DATADOG = RUMSdkConfigTracingUrlPropagatorType("datadog")
+RUMSdkConfigTracingUrlPropagatorType.B3 = RUMSdkConfigTracingUrlPropagatorType("b3")
+RUMSdkConfigTracingUrlPropagatorType.B3MULTI = RUMSdkConfigTracingUrlPropagatorType("b3multi")
+RUMSdkConfigTracingUrlPropagatorType.TRACECONTEXT = RUMSdkConfigTracingUrlPropagatorType("tracecontext")

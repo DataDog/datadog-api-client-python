@@ -52,7 +52,7 @@ class WatcherData(ModelNormal):
         :param id: Unique identifier of the watcher user.
         :type id: str, optional
 
-        :param type: Rum replay watcher resource type.
+        :param type: RUM replay watcher resource type.
         :type type: WatcherDataType
         """
         if attributes is not unset:

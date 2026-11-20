@@ -56,7 +56,7 @@ class ViewershipHistorySessionData(ModelNormal):
         :param id: Unique identifier of the RUM replay session.
         :type id: str, optional
 
-        :param type: Rum replay session resource type.
+        :param type: RUM replay session resource type.
         :type type: ViewershipHistorySessionDataType
         """
         if attributes is not unset:

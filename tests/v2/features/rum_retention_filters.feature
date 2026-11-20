@@ -1,5 +1,5 @@
 @endpoint(rum-retention-filters) @endpoint(rum-retention-filters-v2)
-Feature: Rum Retention Filters
+Feature: RUM Retention Filters
   Manage retention filters through [Manage
   Applications](https://app.datadoghq.com/rum/list) of RUM for your
   organization.
@@ -7,7 +7,7 @@ Feature: Rum Retention Filters
   Background:
     Given a valid "apiKeyAuth" key in the system
     And a valid "appKeyAuth" key in the system
-    And an instance of "RumRetentionFilters" API
+    And an instance of "RUMRetentionFilters" API
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: Create a RUM exclusion filter returns "Bad Request" response

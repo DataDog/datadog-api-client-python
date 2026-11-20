@@ -12,28 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_metric_create_data import RumMetricCreateData
+    from datadog_api_client.v2.model.rum_metric_create_data import RUMMetricCreateData
 
 
-class RumMetricCreateRequest(ModelNormal):
+class RUMMetricCreateRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_metric_create_data import RumMetricCreateData
+        from datadog_api_client.v2.model.rum_metric_create_data import RUMMetricCreateData
 
         return {
-            "data": (RumMetricCreateData,),
+            "data": (RUMMetricCreateData,),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: RumMetricCreateData, **kwargs):
+    def __init__(self_, data: RUMMetricCreateData, **kwargs):
         """
         The new RUM-based metric body.
 
         :param data: The new RUM-based metric properties.
-        :type data: RumMetricCreateData
+        :type data: RUMMetricCreateData
         """
         super().__init__(kwargs)
 

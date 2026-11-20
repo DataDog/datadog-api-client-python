@@ -14,24 +14,24 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_cross_product_sampling import RumCrossProductSampling
+    from datadog_api_client.v2.model.rum_cross_product_sampling import RUMCrossProductSampling
     from datadog_api_client.v2.model.rum_permanent_retention_filter_editability import (
-        RumPermanentRetentionFilterEditability,
+        RUMPermanentRetentionFilterEditability,
     )
 
 
-class RumPermanentRetentionFilterAttributes(ModelNormal):
+class RUMPermanentRetentionFilterAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_cross_product_sampling import RumCrossProductSampling
+        from datadog_api_client.v2.model.rum_cross_product_sampling import RUMCrossProductSampling
         from datadog_api_client.v2.model.rum_permanent_retention_filter_editability import (
-            RumPermanentRetentionFilterEditability,
+            RUMPermanentRetentionFilterEditability,
         )
 
         return {
-            "cross_product_sampling": (RumCrossProductSampling,),
+            "cross_product_sampling": (RUMCrossProductSampling,),
             "description": (str,),
-            "editability": (RumPermanentRetentionFilterEditability,),
+            "editability": (RUMPermanentRetentionFilterEditability,),
             "name": (str,),
         }
 
@@ -44,9 +44,9 @@ class RumPermanentRetentionFilterAttributes(ModelNormal):
 
     def __init__(
         self_,
-        cross_product_sampling: Union[RumCrossProductSampling, UnsetType] = unset,
+        cross_product_sampling: Union[RUMCrossProductSampling, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
-        editability: Union[RumPermanentRetentionFilterEditability, UnsetType] = unset,
+        editability: Union[RUMPermanentRetentionFilterEditability, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -54,13 +54,13 @@ class RumPermanentRetentionFilterAttributes(ModelNormal):
         The attributes of a permanent RUM retention filter.
 
         :param cross_product_sampling: The configuration for cross-product retention filters.
-        :type cross_product_sampling: RumCrossProductSampling, optional
+        :type cross_product_sampling: RUMCrossProductSampling, optional
 
         :param description: A description of what the filter retains.
         :type description: str, optional
 
         :param editability: Indicates which cross-product fields of a permanent RUM retention filter can be updated.
-        :type editability: RumPermanentRetentionFilterEditability, optional
+        :type editability: RUMPermanentRetentionFilterEditability, optional
 
         :param name: The display name of the permanent retention filter.
         :type name: str, optional

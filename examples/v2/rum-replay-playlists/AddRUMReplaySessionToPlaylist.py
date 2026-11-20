@@ -4,12 +4,12 @@ Add RUM replay session to playlist returns "OK" response
 
 from os import environ
 from datadog_api_client import ApiClient, Configuration
-from datadog_api_client.v2.api.rum_replay_playlists_api import RumReplayPlaylistsApi
+from datadog_api_client.v2.api.rum_replay_playlists_api import RUMReplayPlaylistsApi
 
 configuration = Configuration()
 configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
-    api_instance = RumReplayPlaylistsApi(api_client)
+    api_instance = RUMReplayPlaylistsApi(api_client)
     response = api_instance.add_rum_replay_session_to_playlist(
         ts=1704067200000,
         playlist_id=1234567,

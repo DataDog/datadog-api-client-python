@@ -11,7 +11,7 @@ from datadog_api_client.model_utils import (
 )
 
 
-class RumRecoverySessionInput(ModelNormal):
+class RUMRecoverySessionInput(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {

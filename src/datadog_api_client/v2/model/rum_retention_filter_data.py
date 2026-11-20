@@ -14,23 +14,23 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_retention_filter_attributes import RumRetentionFilterAttributes
-    from datadog_api_client.v2.model.rum_retention_filter_meta import RumRetentionFilterMeta
-    from datadog_api_client.v2.model.rum_retention_filter_type import RumRetentionFilterType
+    from datadog_api_client.v2.model.rum_retention_filter_attributes import RUMRetentionFilterAttributes
+    from datadog_api_client.v2.model.rum_retention_filter_meta import RUMRetentionFilterMeta
+    from datadog_api_client.v2.model.rum_retention_filter_type import RUMRetentionFilterType
 
 
-class RumRetentionFilterData(ModelNormal):
+class RUMRetentionFilterData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_retention_filter_attributes import RumRetentionFilterAttributes
-        from datadog_api_client.v2.model.rum_retention_filter_meta import RumRetentionFilterMeta
-        from datadog_api_client.v2.model.rum_retention_filter_type import RumRetentionFilterType
+        from datadog_api_client.v2.model.rum_retention_filter_attributes import RUMRetentionFilterAttributes
+        from datadog_api_client.v2.model.rum_retention_filter_meta import RUMRetentionFilterMeta
+        from datadog_api_client.v2.model.rum_retention_filter_type import RUMRetentionFilterType
 
         return {
-            "attributes": (RumRetentionFilterAttributes,),
+            "attributes": (RUMRetentionFilterAttributes,),
             "id": (str,),
-            "meta": (RumRetentionFilterMeta,),
-            "type": (RumRetentionFilterType,),
+            "meta": (RUMRetentionFilterMeta,),
+            "type": (RUMRetentionFilterType,),
         }
 
     attribute_map = {
@@ -42,26 +42,26 @@ class RumRetentionFilterData(ModelNormal):
 
     def __init__(
         self_,
-        attributes: Union[RumRetentionFilterAttributes, UnsetType] = unset,
+        attributes: Union[RUMRetentionFilterAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
-        meta: Union[RumRetentionFilterMeta, UnsetType] = unset,
-        type: Union[RumRetentionFilterType, UnsetType] = unset,
+        meta: Union[RUMRetentionFilterMeta, UnsetType] = unset,
+        type: Union[RUMRetentionFilterType, UnsetType] = unset,
         **kwargs,
     ):
         """
         The RUM retention filter.
 
         :param attributes: The object describing attributes of a RUM retention filter.
-        :type attributes: RumRetentionFilterAttributes, optional
+        :type attributes: RUMRetentionFilterAttributes, optional
 
         :param id: ID of retention filter in UUID.
         :type id: str, optional
 
         :param meta: Metadata about the retention filter.
-        :type meta: RumRetentionFilterMeta, optional
+        :type meta: RUMRetentionFilterMeta, optional
 
         :param type: The type of the resource. The value should always be retention_filters.
-        :type type: RumRetentionFilterType, optional
+        :type type: RUMRetentionFilterType, optional
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes

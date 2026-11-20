@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumExclusionFilterEventType(ModelSimple):
+class RUMExclusionFilterEventType(ModelSimple):
     """
     The type of RUM events to filter on.
 
@@ -29,13 +29,13 @@ class RumExclusionFilterEventType(ModelSimple):
         "long_task",
         "vital",
     }
-    SESSION: ClassVar["RumExclusionFilterEventType"]
-    VIEW: ClassVar["RumExclusionFilterEventType"]
-    ACTION: ClassVar["RumExclusionFilterEventType"]
-    ERROR: ClassVar["RumExclusionFilterEventType"]
-    RESOURCE: ClassVar["RumExclusionFilterEventType"]
-    LONG_TASK: ClassVar["RumExclusionFilterEventType"]
-    VITAL: ClassVar["RumExclusionFilterEventType"]
+    SESSION: ClassVar["RUMExclusionFilterEventType"]
+    VIEW: ClassVar["RUMExclusionFilterEventType"]
+    ACTION: ClassVar["RUMExclusionFilterEventType"]
+    ERROR: ClassVar["RUMExclusionFilterEventType"]
+    RESOURCE: ClassVar["RUMExclusionFilterEventType"]
+    LONG_TASK: ClassVar["RUMExclusionFilterEventType"]
+    VITAL: ClassVar["RUMExclusionFilterEventType"]
 
     @cached_property
     def openapi_types(_):
@@ -44,10 +44,10 @@ class RumExclusionFilterEventType(ModelSimple):
         }
 
 
-RumExclusionFilterEventType.SESSION = RumExclusionFilterEventType("session")
-RumExclusionFilterEventType.VIEW = RumExclusionFilterEventType("view")
-RumExclusionFilterEventType.ACTION = RumExclusionFilterEventType("action")
-RumExclusionFilterEventType.ERROR = RumExclusionFilterEventType("error")
-RumExclusionFilterEventType.RESOURCE = RumExclusionFilterEventType("resource")
-RumExclusionFilterEventType.LONG_TASK = RumExclusionFilterEventType("long_task")
-RumExclusionFilterEventType.VITAL = RumExclusionFilterEventType("vital")
+RUMExclusionFilterEventType.SESSION = RUMExclusionFilterEventType("session")
+RUMExclusionFilterEventType.VIEW = RUMExclusionFilterEventType("view")
+RUMExclusionFilterEventType.ACTION = RUMExclusionFilterEventType("action")
+RUMExclusionFilterEventType.ERROR = RUMExclusionFilterEventType("error")
+RUMExclusionFilterEventType.RESOURCE = RUMExclusionFilterEventType("resource")
+RUMExclusionFilterEventType.LONG_TASK = RUMExclusionFilterEventType("long_task")
+RUMExclusionFilterEventType.VITAL = RUMExclusionFilterEventType("vital")

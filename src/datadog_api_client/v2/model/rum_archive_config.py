@@ -12,20 +12,20 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_archive_config_attributes import RumArchiveConfigAttributes
-    from datadog_api_client.v2.model.rum_archive_config_type import RumArchiveConfigType
+    from datadog_api_client.v2.model.rum_archive_config_attributes import RUMArchiveConfigAttributes
+    from datadog_api_client.v2.model.rum_archive_config_type import RUMArchiveConfigType
 
 
-class RumArchiveConfig(ModelNormal):
+class RUMArchiveConfig(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_archive_config_attributes import RumArchiveConfigAttributes
-        from datadog_api_client.v2.model.rum_archive_config_type import RumArchiveConfigType
+        from datadog_api_client.v2.model.rum_archive_config_attributes import RUMArchiveConfigAttributes
+        from datadog_api_client.v2.model.rum_archive_config_type import RUMArchiveConfigType
 
         return {
-            "attributes": (RumArchiveConfigAttributes,),
+            "attributes": (RUMArchiveConfigAttributes,),
             "id": (str,),
-            "type": (RumArchiveConfigType,),
+            "type": (RUMArchiveConfigType,),
         }
 
     attribute_map = {
@@ -34,18 +34,18 @@ class RumArchiveConfig(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: RumArchiveConfigAttributes, id: str, type: RumArchiveConfigType, **kwargs):
+    def __init__(self_, attributes: RUMArchiveConfigAttributes, id: str, type: RUMArchiveConfigType, **kwargs):
         """
         JSON:API resource.
 
         :param attributes: Archive configuration.
-        :type attributes: RumArchiveConfigAttributes
+        :type attributes: RUMArchiveConfigAttributes
 
         :param id: Resource identifier.
         :type id: str
 
         :param type: JSON:API resource type.
-        :type type: RumArchiveConfigType
+        :type type: RUMArchiveConfigType
         """
         super().__init__(kwargs)
 

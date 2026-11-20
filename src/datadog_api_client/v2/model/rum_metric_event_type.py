@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumMetricEventType(ModelSimple):
+class RUMMetricEventType(ModelSimple):
     """
     The type of RUM events the metric is generated from. It is set at creation and cannot be changed.
 
@@ -29,13 +29,13 @@ class RumMetricEventType(ModelSimple):
         "long_task",
         "vital",
     }
-    SESSION: ClassVar["RumMetricEventType"]
-    VIEW: ClassVar["RumMetricEventType"]
-    ACTION: ClassVar["RumMetricEventType"]
-    ERROR: ClassVar["RumMetricEventType"]
-    RESOURCE: ClassVar["RumMetricEventType"]
-    LONG_TASK: ClassVar["RumMetricEventType"]
-    VITAL: ClassVar["RumMetricEventType"]
+    SESSION: ClassVar["RUMMetricEventType"]
+    VIEW: ClassVar["RUMMetricEventType"]
+    ACTION: ClassVar["RUMMetricEventType"]
+    ERROR: ClassVar["RUMMetricEventType"]
+    RESOURCE: ClassVar["RUMMetricEventType"]
+    LONG_TASK: ClassVar["RUMMetricEventType"]
+    VITAL: ClassVar["RUMMetricEventType"]
 
     @cached_property
     def openapi_types(_):
@@ -44,10 +44,10 @@ class RumMetricEventType(ModelSimple):
         }
 
 
-RumMetricEventType.SESSION = RumMetricEventType("session")
-RumMetricEventType.VIEW = RumMetricEventType("view")
-RumMetricEventType.ACTION = RumMetricEventType("action")
-RumMetricEventType.ERROR = RumMetricEventType("error")
-RumMetricEventType.RESOURCE = RumMetricEventType("resource")
-RumMetricEventType.LONG_TASK = RumMetricEventType("long_task")
-RumMetricEventType.VITAL = RumMetricEventType("vital")
+RUMMetricEventType.SESSION = RUMMetricEventType("session")
+RUMMetricEventType.VIEW = RUMMetricEventType("view")
+RUMMetricEventType.ACTION = RUMMetricEventType("action")
+RUMMetricEventType.ERROR = RUMMetricEventType("error")
+RUMMetricEventType.RESOURCE = RUMMetricEventType("resource")
+RUMMetricEventType.LONG_TASK = RUMMetricEventType("long_task")
+RUMMetricEventType.VITAL = RUMMetricEventType("vital")

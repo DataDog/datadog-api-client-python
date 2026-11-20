@@ -14,23 +14,23 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_exclusion_filter_attributes import RumExclusionFilterAttributes
-    from datadog_api_client.v2.model.rum_exclusion_filter_meta import RumExclusionFilterMeta
-    from datadog_api_client.v2.model.rum_exclusion_filter_type import RumExclusionFilterType
+    from datadog_api_client.v2.model.rum_exclusion_filter_attributes import RUMExclusionFilterAttributes
+    from datadog_api_client.v2.model.rum_exclusion_filter_meta import RUMExclusionFilterMeta
+    from datadog_api_client.v2.model.rum_exclusion_filter_type import RUMExclusionFilterType
 
 
-class RumExclusionFilterData(ModelNormal):
+class RUMExclusionFilterData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_exclusion_filter_attributes import RumExclusionFilterAttributes
-        from datadog_api_client.v2.model.rum_exclusion_filter_meta import RumExclusionFilterMeta
-        from datadog_api_client.v2.model.rum_exclusion_filter_type import RumExclusionFilterType
+        from datadog_api_client.v2.model.rum_exclusion_filter_attributes import RUMExclusionFilterAttributes
+        from datadog_api_client.v2.model.rum_exclusion_filter_meta import RUMExclusionFilterMeta
+        from datadog_api_client.v2.model.rum_exclusion_filter_type import RUMExclusionFilterType
 
         return {
-            "attributes": (RumExclusionFilterAttributes,),
+            "attributes": (RUMExclusionFilterAttributes,),
             "id": (str,),
-            "meta": (RumExclusionFilterMeta,),
-            "type": (RumExclusionFilterType,),
+            "meta": (RUMExclusionFilterMeta,),
+            "type": (RUMExclusionFilterType,),
         }
 
     attribute_map = {
@@ -43,25 +43,25 @@ class RumExclusionFilterData(ModelNormal):
     def __init__(
         self_,
         id: str,
-        type: RumExclusionFilterType,
-        attributes: Union[RumExclusionFilterAttributes, UnsetType] = unset,
-        meta: Union[RumExclusionFilterMeta, UnsetType] = unset,
+        type: RUMExclusionFilterType,
+        attributes: Union[RUMExclusionFilterAttributes, UnsetType] = unset,
+        meta: Union[RUMExclusionFilterMeta, UnsetType] = unset,
         **kwargs,
     ):
         """
         An exclusion filter.
 
         :param attributes: The attributes of an exclusion filter.
-        :type attributes: RumExclusionFilterAttributes, optional
+        :type attributes: RUMExclusionFilterAttributes, optional
 
         :param id: The ID of the exclusion filter.
         :type id: str
 
         :param meta: Metadata about the exclusion filter.
-        :type meta: RumExclusionFilterMeta, optional
+        :type meta: RUMExclusionFilterMeta, optional
 
         :param type: The resource type. The value must be ``exclusion_filters``.
-        :type type: RumExclusionFilterType
+        :type type: RUMExclusionFilterType
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes

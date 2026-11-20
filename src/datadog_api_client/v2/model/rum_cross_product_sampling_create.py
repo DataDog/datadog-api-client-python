@@ -13,7 +13,7 @@ from datadog_api_client.model_utils import (
 )
 
 
-class RumCrossProductSamplingCreate(ModelNormal):
+class RUMCrossProductSamplingCreate(ModelNormal):
     validations = {
         "trace_sample_rate": {
             "inclusive_maximum": 100,

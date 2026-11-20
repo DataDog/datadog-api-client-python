@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumConfigType(ModelSimple):
+class RUMConfigType(ModelSimple):
     """
     The type of the resource. The value should always be `rum_config`.
 
@@ -23,7 +23,7 @@ class RumConfigType(ModelSimple):
     allowed_values = {
         "rum_config",
     }
-    RUM_CONFIG: ClassVar["RumConfigType"]
+    RUM_CONFIG: ClassVar["RUMConfigType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,4 @@ class RumConfigType(ModelSimple):
         }
 
 
-RumConfigType.RUM_CONFIG = RumConfigType("rum_config")
+RUMConfigType.RUM_CONFIG = RUMConfigType("rum_config")

@@ -7,13 +7,13 @@ from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
-from datadog_api_client.v2.model.rum_metrics_response import RumMetricsResponse
-from datadog_api_client.v2.model.rum_metric_response import RumMetricResponse
-from datadog_api_client.v2.model.rum_metric_create_request import RumMetricCreateRequest
-from datadog_api_client.v2.model.rum_metric_update_request import RumMetricUpdateRequest
+from datadog_api_client.v2.model.rum_metrics_response import RUMMetricsResponse
+from datadog_api_client.v2.model.rum_metric_response import RUMMetricResponse
+from datadog_api_client.v2.model.rum_metric_create_request import RUMMetricCreateRequest
+from datadog_api_client.v2.model.rum_metric_update_request import RUMMetricUpdateRequest
 
 
-class RumMetricsApi:
+class RUMMetricsApi:
     """
     Manage configuration of `RUM-based metrics <https://app.datadoghq.com/rum/generate-metrics>`_ for your organization.
     """
@@ -25,7 +25,7 @@ class RumMetricsApi:
 
         self._create_rum_metric_endpoint = _Endpoint(
             settings={
-                "response_type": (RumMetricResponse,),
+                "response_type": (RUMMetricResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/config/metrics",
                 "operation_id": "create_rum_metric",
@@ -35,7 +35,7 @@ class RumMetricsApi:
             params_map={
                 "body": {
                     "required": True,
-                    "openapi_types": (RumMetricCreateRequest,),
+                    "openapi_types": (RUMMetricCreateRequest,),
                     "location": "body",
                 },
             },
@@ -68,7 +68,7 @@ class RumMetricsApi:
 
         self._get_rum_metric_endpoint = _Endpoint(
             settings={
-                "response_type": (RumMetricResponse,),
+                "response_type": (RUMMetricResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/config/metrics/{metric_id}",
                 "operation_id": "get_rum_metric",
@@ -91,7 +91,7 @@ class RumMetricsApi:
 
         self._list_rum_metrics_endpoint = _Endpoint(
             settings={
-                "response_type": (RumMetricsResponse,),
+                "response_type": (RUMMetricsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/config/metrics",
                 "operation_id": "list_rum_metrics",
@@ -107,7 +107,7 @@ class RumMetricsApi:
 
         self._update_rum_metric_endpoint = _Endpoint(
             settings={
-                "response_type": (RumMetricResponse,),
+                "response_type": (RUMMetricResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/config/metrics/{metric_id}",
                 "operation_id": "update_rum_metric",
@@ -123,7 +123,7 @@ class RumMetricsApi:
                 },
                 "body": {
                     "required": True,
-                    "openapi_types": (RumMetricUpdateRequest,),
+                    "openapi_types": (RUMMetricUpdateRequest,),
                     "location": "body",
                 },
             },
@@ -133,21 +133,21 @@ class RumMetricsApi:
 
     def create_rum_metric(
         self,
-        body: RumMetricCreateRequest,
-    ) -> RumMetricResponse:
+        body: RUMMetricCreateRequest,
+    ) -> RUMMetricResponse:
         """Create a RUM-based metric.
 
         Create a metric based on your organization's RUM data.
         The metric name is set in ``data.id`` , is unique within your organization, and cannot be changed after creation.
-        The ``event_type`` , ``compute`` , and ``uniqueness`` settings cannot be changed after creation either. Only ``filter`` , ``group_by`` , and ``compute.include_percentiles`` can be changed with ``UpdateRumMetric``.
+        The ``event_type`` , ``compute`` , and ``uniqueness`` settings cannot be changed after creation either. Only ``filter`` , ``group_by`` , and ``compute.include_percentiles`` can be changed with ``UpdateRUMMetric``.
         ``uniqueness`` is required when ``event_type`` is ``session`` or ``view`` , and must be omitted for any other event type.
         When ``aggregation_type`` is ``distribution`` , ``include_percentiles`` is required. When it is ``count`` , ``include_percentiles`` and ``path`` must be omitted.
         Returns the created RUM-based metric when the request is successful.
         The request returns a ``409 Conflict`` error if a metric with the same name already exists.
 
         :param body: The definition of the new RUM-based metric.
-        :type body: RumMetricCreateRequest
-        :rtype: RumMetricResponse
+        :type body: RUMMetricCreateRequest
+        :rtype: RUMMetricResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
@@ -163,7 +163,7 @@ class RumMetricsApi:
         Delete a specific RUM-based metric from your organization.
         Metric data that was already generated is not deleted. Deleting a metric cannot be undone.
 
-        :param metric_id: The name of the RUM-based metric, as returned in ``data.id`` by ``ListRumMetrics``.
+        :param metric_id: The name of the RUM-based metric, as returned in ``data.id`` by ``ListRUMMetrics``.
         :type metric_id: str
         :rtype: None
         """
@@ -175,15 +175,15 @@ class RumMetricsApi:
     def get_rum_metric(
         self,
         metric_id: str,
-    ) -> RumMetricResponse:
+    ) -> RUMMetricResponse:
         """Get a RUM-based metric.
 
         Get a specific RUM-based metric from your organization.
-        The ``metric_id`` is the metric name returned in ``data.id`` by ``ListRumMetrics`` and ``CreateRumMetric``.
+        The ``metric_id`` is the metric name returned in ``data.id`` by ``ListRUMMetrics`` and ``CreateRUMMetric``.
 
-        :param metric_id: The name of the RUM-based metric, as returned in ``data.id`` by ``ListRumMetrics``.
+        :param metric_id: The name of the RUM-based metric, as returned in ``data.id`` by ``ListRUMMetrics``.
         :type metric_id: str
-        :rtype: RumMetricResponse
+        :rtype: RUMMetricResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["metric_id"] = metric_id
@@ -192,15 +192,15 @@ class RumMetricsApi:
 
     def list_rum_metrics(
         self,
-    ) -> RumMetricsResponse:
+    ) -> RUMMetricsResponse:
         """Get all RUM-based metrics.
 
         Get the list of all RUM-based metrics configured for your organization, with their definitions.
         The list is not paginated.
         Metrics whose stored definition cannot be converted to the RUM format are omitted from the list.
-        To retrieve a single metric, use ``GetRumMetric``.
+        To retrieve a single metric, use ``GetRUMMetric``.
 
-        :rtype: RumMetricsResponse
+        :rtype: RUMMetricsResponse
         """
         kwargs: Dict[str, Any] = {}
         return self._list_rum_metrics_endpoint.call_with_http_info(**kwargs)
@@ -208,8 +208,8 @@ class RumMetricsApi:
     def update_rum_metric(
         self,
         metric_id: str,
-        body: RumMetricUpdateRequest,
-    ) -> RumMetricResponse:
+        body: RUMMetricUpdateRequest,
+    ) -> RUMMetricResponse:
         """Update a RUM-based metric.
 
         Update a specific RUM-based metric from your organization.
@@ -219,11 +219,11 @@ class RumMetricsApi:
         The request also returns a ``409 Conflict`` error when ``compute.include_percentiles`` is set on a metric whose ``aggregation_type`` is not ``distribution``.
         Returns the updated RUM-based metric when the request is successful.
 
-        :param metric_id: The name of the RUM-based metric, as returned in ``data.id`` by ``ListRumMetrics``.
+        :param metric_id: The name of the RUM-based metric, as returned in ``data.id`` by ``ListRUMMetrics``.
         :type metric_id: str
         :param body: New definition of the RUM-based metric.
-        :type body: RumMetricUpdateRequest
-        :rtype: RumMetricResponse
+        :type body: RUMMetricUpdateRequest
+        :rtype: RUMMetricResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["metric_id"] = metric_id

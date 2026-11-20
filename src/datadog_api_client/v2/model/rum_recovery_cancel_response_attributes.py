@@ -13,18 +13,18 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_recovery_discovery_status import RumRecoveryDiscoveryStatus
+    from datadog_api_client.v2.model.rum_recovery_discovery_status import RUMRecoveryDiscoveryStatus
 
 
-class RumRecoveryCancelResponseAttributes(ModelNormal):
+class RUMRecoveryCancelResponseAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_recovery_discovery_status import RumRecoveryDiscoveryStatus
+        from datadog_api_client.v2.model.rum_recovery_discovery_status import RUMRecoveryDiscoveryStatus
 
         return {
             "cancelled_at": (datetime,),
             "cancelled_by": (str,),
-            "discovery_status": (RumRecoveryDiscoveryStatus,),
+            "discovery_status": (RUMRecoveryDiscoveryStatus,),
         }
 
     attribute_map = {
@@ -34,7 +34,7 @@ class RumRecoveryCancelResponseAttributes(ModelNormal):
     }
 
     def __init__(
-        self_, cancelled_at: datetime, cancelled_by: str, discovery_status: RumRecoveryDiscoveryStatus, **kwargs
+        self_, cancelled_at: datetime, cancelled_by: str, discovery_status: RUMRecoveryDiscoveryStatus, **kwargs
     ):
         """
         Batch cancellation acknowledgment.
@@ -46,7 +46,7 @@ class RumRecoveryCancelResponseAttributes(ModelNormal):
         :type cancelled_by: str
 
         :param discovery_status: Batch discovery state. QUEUED indicates that the request is waiting for processing capacity.
-        :type discovery_status: RumRecoveryDiscoveryStatus
+        :type discovery_status: RUMRecoveryDiscoveryStatus
         """
         super().__init__(kwargs)
 

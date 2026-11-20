@@ -16,7 +16,7 @@ from datadog_api_client.v2.model.watch import Watch
 from datadog_api_client.v2.model.viewership_history_session_array import ViewershipHistorySessionArray
 
 
-class RumReplayViewershipApi:
+class RUMReplayViewershipApi:
     """
     Track and manage RUM replay session viewership. Monitor who watches replay sessions and maintain watch history for audit and analytics purposes.
     """

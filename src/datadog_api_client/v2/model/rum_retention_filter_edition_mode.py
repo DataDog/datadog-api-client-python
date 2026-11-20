@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumRetentionFilterEditionMode(ModelSimple):
+class RUMRetentionFilterEditionMode(ModelSimple):
     """
     The types of changes the retention filter accepts. `complete` filters can be updated and deleted.
         `limited` filters are default retention filters that can't be deleted.
@@ -26,9 +26,9 @@ class RumRetentionFilterEditionMode(ModelSimple):
         "complete",
         "limited",
     }
-    UNKNOWN: ClassVar["RumRetentionFilterEditionMode"]
-    COMPLETE: ClassVar["RumRetentionFilterEditionMode"]
-    LIMITED: ClassVar["RumRetentionFilterEditionMode"]
+    UNKNOWN: ClassVar["RUMRetentionFilterEditionMode"]
+    COMPLETE: ClassVar["RUMRetentionFilterEditionMode"]
+    LIMITED: ClassVar["RUMRetentionFilterEditionMode"]
 
     @cached_property
     def openapi_types(_):
@@ -37,6 +37,6 @@ class RumRetentionFilterEditionMode(ModelSimple):
         }
 
 
-RumRetentionFilterEditionMode.UNKNOWN = RumRetentionFilterEditionMode("unknown")
-RumRetentionFilterEditionMode.COMPLETE = RumRetentionFilterEditionMode("complete")
-RumRetentionFilterEditionMode.LIMITED = RumRetentionFilterEditionMode("limited")
+RUMRetentionFilterEditionMode.UNKNOWN = RUMRetentionFilterEditionMode("unknown")
+RUMRetentionFilterEditionMode.COMPLETE = RUMRetentionFilterEditionMode("complete")
+RUMRetentionFilterEditionMode.LIMITED = RUMRetentionFilterEditionMode("limited")

@@ -19,9 +19,9 @@ from datadog_api_client.v2.model.update_connection_request import UpdateConnecti
 from datadog_api_client.v2.model.list_connections_response import ListConnectionsResponse
 
 
-class RumAudienceManagementApi:
+class RUMAudienceManagementApi:
     """
-    Auto-generated tag Rum Audience Management
+    Auto-generated tag RUM Audience Management
     """
 
     def __init__(self, api_client=None):

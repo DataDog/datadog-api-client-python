@@ -15,7 +15,7 @@ from datadog_api_client.model_utils import (
 )
 
 
-class RumManagedArchiveErrorResponse(ModelNormal):
+class RUMManagedArchiveErrorResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {

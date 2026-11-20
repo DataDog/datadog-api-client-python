@@ -12,20 +12,20 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_recovery_request_attributes import RumRecoveryRequestAttributes
-    from datadog_api_client.v2.model.rum_recovery_request_type import RumRecoveryRequestType
+    from datadog_api_client.v2.model.rum_recovery_request_attributes import RUMRecoveryRequestAttributes
+    from datadog_api_client.v2.model.rum_recovery_request_type import RUMRecoveryRequestType
 
 
-class RumRecoveryRequestData(ModelNormal):
+class RUMRecoveryRequestData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_recovery_request_attributes import RumRecoveryRequestAttributes
-        from datadog_api_client.v2.model.rum_recovery_request_type import RumRecoveryRequestType
+        from datadog_api_client.v2.model.rum_recovery_request_attributes import RUMRecoveryRequestAttributes
+        from datadog_api_client.v2.model.rum_recovery_request_type import RUMRecoveryRequestType
 
         return {
-            "attributes": (RumRecoveryRequestAttributes,),
+            "attributes": (RUMRecoveryRequestAttributes,),
             "id": (str,),
-            "type": (RumRecoveryRequestType,),
+            "type": (RUMRecoveryRequestType,),
         }
 
     attribute_map = {
@@ -34,18 +34,18 @@ class RumRecoveryRequestData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: RumRecoveryRequestAttributes, id: str, type: RumRecoveryRequestType, **kwargs):
+    def __init__(self_, attributes: RUMRecoveryRequestAttributes, id: str, type: RUMRecoveryRequestType, **kwargs):
         """
         JSON:API resource.
 
         :param attributes: Recovery progress. Batch-only attributes are omitted for targeted requests; request_type is also omitted for targeted requests.
-        :type attributes: RumRecoveryRequestAttributes
+        :type attributes: RUMRecoveryRequestAttributes
 
         :param id: Resource identifier.
         :type id: str
 
         :param type: JSON:API resource type.
-        :type type: RumRecoveryRequestType
+        :type type: RUMRecoveryRequestType
         """
         super().__init__(kwargs)
 

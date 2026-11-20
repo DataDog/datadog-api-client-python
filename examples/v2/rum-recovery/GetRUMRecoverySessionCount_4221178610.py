@@ -4,14 +4,14 @@ Count recoverable sessions accepts exactly 180 days
 
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.rum_recovery_api import RUMRecoveryApi
-from datadog_api_client.v2.model.rum_recovery_count_attributes import RumRecoveryCountAttributes
-from datadog_api_client.v2.model.rum_recovery_count_request import RumRecoveryCountRequest
-from datadog_api_client.v2.model.rum_recovery_count_request_data import RumRecoveryCountRequestData
+from datadog_api_client.v2.model.rum_recovery_count_attributes import RUMRecoveryCountAttributes
+from datadog_api_client.v2.model.rum_recovery_count_request import RUMRecoveryCountRequest
+from datadog_api_client.v2.model.rum_recovery_count_request_data import RUMRecoveryCountRequestData
 
-body = RumRecoveryCountRequest(
-    data=RumRecoveryCountRequestData(
+body = RUMRecoveryCountRequest(
+    data=RUMRecoveryCountRequestData(
         type="rum_recovery_count",
-        attributes=RumRecoveryCountAttributes(
+        attributes=RUMRecoveryCountAttributes(
             query="service:rum18600-fixture",
             _from=1621077071000,
             to=1636629071000,

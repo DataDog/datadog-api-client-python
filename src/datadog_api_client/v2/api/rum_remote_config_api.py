@@ -7,8 +7,8 @@ from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
-from datadog_api_client.v2.model.rum_sdk_config_response import RumSdkConfigResponse
-from datadog_api_client.v2.model.rum_sdk_config_update_request import RumSdkConfigUpdateRequest
+from datadog_api_client.v2.model.rum_sdk_config_response import RUMSdkConfigResponse
+from datadog_api_client.v2.model.rum_sdk_config_update_request import RUMSdkConfigUpdateRequest
 
 
 class RUMRemoteConfigApi:
@@ -23,7 +23,7 @@ class RUMRemoteConfigApi:
 
         self._get_rum_sdk_config_endpoint = _Endpoint(
             settings={
-                "response_type": (RumSdkConfigResponse,),
+                "response_type": (RUMSdkConfigResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/remote_config/products/rum/configs/{config_id}",
                 "operation_id": "get_rum_sdk_config",
@@ -46,7 +46,7 @@ class RUMRemoteConfigApi:
 
         self._update_rum_sdk_config_endpoint = _Endpoint(
             settings={
-                "response_type": (RumSdkConfigResponse,),
+                "response_type": (RUMSdkConfigResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/remote_config/products/rum/configs/{config_id}",
                 "operation_id": "update_rum_sdk_config",
@@ -62,7 +62,7 @@ class RUMRemoteConfigApi:
                 },
                 "body": {
                     "required": True,
-                    "openapi_types": (RumSdkConfigUpdateRequest,),
+                    "openapi_types": (RUMSdkConfigUpdateRequest,),
                     "location": "body",
                 },
             },
@@ -73,14 +73,14 @@ class RUMRemoteConfigApi:
     def get_rum_sdk_config(
         self,
         config_id: str,
-    ) -> RumSdkConfigResponse:
+    ) -> RUMSdkConfigResponse:
         """Get a RUM SDK configuration.
 
         Retrieve a RUM SDK configuration by its identifier.
 
         :param config_id: The ID of the RUM SDK configuration.
         :type config_id: str
-        :rtype: RumSdkConfigResponse
+        :rtype: RUMSdkConfigResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["config_id"] = config_id
@@ -90,8 +90,8 @@ class RUMRemoteConfigApi:
     def update_rum_sdk_config(
         self,
         config_id: str,
-        body: RumSdkConfigUpdateRequest,
-    ) -> RumSdkConfigResponse:
+        body: RUMSdkConfigUpdateRequest,
+    ) -> RUMSdkConfigResponse:
         """Update a RUM SDK configuration.
 
         Update an existing RUM SDK configuration by its identifier.
@@ -100,8 +100,8 @@ class RUMRemoteConfigApi:
         :param config_id: The ID of the RUM SDK configuration.
         :type config_id: str
         :param body: The RUM SDK configuration update.
-        :type body: RumSdkConfigUpdateRequest
-        :rtype: RumSdkConfigResponse
+        :type body: RUMSdkConfigUpdateRequest
+        :rtype: RUMSdkConfigResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["config_id"] = config_id

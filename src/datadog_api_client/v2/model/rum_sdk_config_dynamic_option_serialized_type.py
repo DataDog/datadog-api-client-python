@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumSdkConfigDynamicOptionSerializedType(ModelSimple):
+class RUMSdkConfigDynamicOptionSerializedType(ModelSimple):
     """
     The type identifier for a dynamic option. Always `dynamic`.
 
@@ -23,7 +23,7 @@ class RumSdkConfigDynamicOptionSerializedType(ModelSimple):
     allowed_values = {
         "dynamic",
     }
-    DYNAMIC: ClassVar["RumSdkConfigDynamicOptionSerializedType"]
+    DYNAMIC: ClassVar["RUMSdkConfigDynamicOptionSerializedType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,4 @@ class RumSdkConfigDynamicOptionSerializedType(ModelSimple):
         }
 
 
-RumSdkConfigDynamicOptionSerializedType.DYNAMIC = RumSdkConfigDynamicOptionSerializedType("dynamic")
+RUMSdkConfigDynamicOptionSerializedType.DYNAMIC = RUMSdkConfigDynamicOptionSerializedType("dynamic")

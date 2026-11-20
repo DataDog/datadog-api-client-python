@@ -12,22 +12,22 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_exclusion_filter_update_attributes import RumExclusionFilterUpdateAttributes
-    from datadog_api_client.v2.model.rum_exclusion_filter_type import RumExclusionFilterType
+    from datadog_api_client.v2.model.rum_exclusion_filter_update_attributes import RUMExclusionFilterUpdateAttributes
+    from datadog_api_client.v2.model.rum_exclusion_filter_type import RUMExclusionFilterType
 
 
-class RumExclusionFilterUpdateData(ModelNormal):
+class RUMExclusionFilterUpdateData(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.rum_exclusion_filter_update_attributes import (
-            RumExclusionFilterUpdateAttributes,
+            RUMExclusionFilterUpdateAttributes,
         )
-        from datadog_api_client.v2.model.rum_exclusion_filter_type import RumExclusionFilterType
+        from datadog_api_client.v2.model.rum_exclusion_filter_type import RUMExclusionFilterType
 
         return {
-            "attributes": (RumExclusionFilterUpdateAttributes,),
+            "attributes": (RUMExclusionFilterUpdateAttributes,),
             "id": (str,),
-            "type": (RumExclusionFilterType,),
+            "type": (RUMExclusionFilterType,),
         }
 
     attribute_map = {
@@ -37,7 +37,7 @@ class RumExclusionFilterUpdateData(ModelNormal):
     }
 
     def __init__(
-        self_, attributes: RumExclusionFilterUpdateAttributes, id: str, type: RumExclusionFilterType, **kwargs
+        self_, attributes: RUMExclusionFilterUpdateAttributes, id: str, type: RUMExclusionFilterType, **kwargs
     ):
         """
         The exclusion filter properties to update.
@@ -45,13 +45,13 @@ class RumExclusionFilterUpdateData(ModelNormal):
         :param attributes: The attributes of an exclusion filter that can be updated.
             For the built-in Error Tracking exclusion filter, only ``enabled`` can be set;
             ``name`` , ``event_type`` , and ``query`` must be omitted.
-        :type attributes: RumExclusionFilterUpdateAttributes
+        :type attributes: RUMExclusionFilterUpdateAttributes
 
         :param id: The ID of the exclusion filter. Must match the ``ef_id`` path parameter.
         :type id: str
 
         :param type: The resource type. The value must be ``exclusion_filters``.
-        :type type: RumExclusionFilterType
+        :type type: RUMExclusionFilterType
         """
         super().__init__(kwargs)
 

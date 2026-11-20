@@ -14,10 +14,10 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_recovery_batch_request_type import RumRecoveryBatchRequestType
+    from datadog_api_client.v2.model.rum_recovery_batch_request_type import RUMRecoveryBatchRequestType
 
 
-class RumRecoveryBatchCreateAttributes(ModelNormal):
+class RUMRecoveryBatchCreateAttributes(ModelNormal):
     validations = {
         "estimated_count": {
             "inclusive_minimum": 0,
@@ -32,13 +32,13 @@ class RumRecoveryBatchCreateAttributes(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_recovery_batch_request_type import RumRecoveryBatchRequestType
+        from datadog_api_client.v2.model.rum_recovery_batch_request_type import RUMRecoveryBatchRequestType
 
         return {
             "estimated_count": (int,),
             "_from": (int,),
             "query": (str,),
-            "request_type": (RumRecoveryBatchRequestType,),
+            "request_type": (RUMRecoveryBatchRequestType,),
             "to": (int,),
         }
 
@@ -54,7 +54,7 @@ class RumRecoveryBatchCreateAttributes(ModelNormal):
         self_,
         _from: int,
         query: str,
-        request_type: RumRecoveryBatchRequestType,
+        request_type: RUMRecoveryBatchRequestType,
         to: int,
         estimated_count: Union[int, UnsetType] = unset,
         **kwargs,
@@ -72,7 +72,7 @@ class RumRecoveryBatchCreateAttributes(ModelNormal):
         :type query: str
 
         :param request_type: Query-based batch recovery.
-        :type request_type: RumRecoveryBatchRequestType
+        :type request_type: RUMRecoveryBatchRequestType
 
         :param to: End of the range in Unix milliseconds.
         :type to: int

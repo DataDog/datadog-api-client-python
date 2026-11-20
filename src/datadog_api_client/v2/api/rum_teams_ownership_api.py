@@ -20,7 +20,7 @@ from datadog_api_client.v2.model.teams_ownership_mapping_batch_request import Te
 from datadog_api_client.v2.model.teams_ownership_rules_response import TeamsOwnershipRulesResponse
 
 
-class RumTeamsOwnershipApi:
+class RUMTeamsOwnershipApi:
     """
     Manage teams ownership mappings between RUM views and the teams that own them.
     See https://docs.datadoghq.com/real_user_monitoring/ownership_of_views/.

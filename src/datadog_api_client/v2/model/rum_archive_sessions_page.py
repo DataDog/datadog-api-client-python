@@ -13,7 +13,7 @@ from datadog_api_client.model_utils import (
 )
 
 
-class RumArchiveSessionsPage(ModelNormal):
+class RUMArchiveSessionsPage(ModelNormal):
     validations = {
         "total_count": {
             "inclusive_minimum": 0,

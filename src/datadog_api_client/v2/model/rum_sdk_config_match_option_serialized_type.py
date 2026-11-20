@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumSdkConfigMatchOptionSerializedType(ModelSimple):
+class RUMSdkConfigMatchOptionSerializedType(ModelSimple):
     """
     The type of match pattern, either a literal string or a regex.
 
@@ -24,8 +24,8 @@ class RumSdkConfigMatchOptionSerializedType(ModelSimple):
         "string",
         "regex",
     }
-    STRING: ClassVar["RumSdkConfigMatchOptionSerializedType"]
-    REGEX: ClassVar["RumSdkConfigMatchOptionSerializedType"]
+    STRING: ClassVar["RUMSdkConfigMatchOptionSerializedType"]
+    REGEX: ClassVar["RUMSdkConfigMatchOptionSerializedType"]
 
     @cached_property
     def openapi_types(_):
@@ -34,5 +34,5 @@ class RumSdkConfigMatchOptionSerializedType(ModelSimple):
         }
 
 
-RumSdkConfigMatchOptionSerializedType.STRING = RumSdkConfigMatchOptionSerializedType("string")
-RumSdkConfigMatchOptionSerializedType.REGEX = RumSdkConfigMatchOptionSerializedType("regex")
+RUMSdkConfigMatchOptionSerializedType.STRING = RUMSdkConfigMatchOptionSerializedType("string")
+RUMSdkConfigMatchOptionSerializedType.REGEX = RUMSdkConfigMatchOptionSerializedType("regex")

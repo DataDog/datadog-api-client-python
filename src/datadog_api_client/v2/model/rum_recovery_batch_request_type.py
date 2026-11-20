@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumRecoveryBatchRequestType(ModelSimple):
+class RUMRecoveryBatchRequestType(ModelSimple):
     """
     Query-based batch recovery.
 
@@ -23,7 +23,7 @@ class RumRecoveryBatchRequestType(ModelSimple):
     allowed_values = {
         "batch",
     }
-    BATCH: ClassVar["RumRecoveryBatchRequestType"]
+    BATCH: ClassVar["RUMRecoveryBatchRequestType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,4 @@ class RumRecoveryBatchRequestType(ModelSimple):
         }
 
 
-RumRecoveryBatchRequestType.BATCH = RumRecoveryBatchRequestType("batch")
+RUMRecoveryBatchRequestType.BATCH = RUMRecoveryBatchRequestType("batch")
