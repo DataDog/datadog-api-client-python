@@ -21,6 +21,12 @@ if TYPE_CHECKING:
 
 
 class RecommendationsFilterRequestDataAttributes(ModelNormal):
+    validations = {
+        "extra_fields": {
+            "max_items": 256,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.recommendations_filter_request_scope import RecommendationsFilterRequestScope
@@ -29,6 +35,7 @@ class RecommendationsFilterRequestDataAttributes(ModelNormal):
         )
 
         return {
+            "extra_fields": ([str],),
             "filter": (str,),
             "scope": (RecommendationsFilterRequestScope,),
             "sort": ([RecommendationsFilterRequestSortItems],),
@@ -36,6 +43,7 @@ class RecommendationsFilterRequestDataAttributes(ModelNormal):
         }
 
     attribute_map = {
+        "extra_fields": "extra_fields",
         "filter": "filter",
         "scope": "scope",
         "sort": "sort",
@@ -44,6 +52,7 @@ class RecommendationsFilterRequestDataAttributes(ModelNormal):
 
     def __init__(
         self_,
+        extra_fields: Union[List[str], UnsetType] = unset,
         filter: Union[str, UnsetType] = unset,
         scope: Union[RecommendationsFilterRequestScope, UnsetType] = unset,
         sort: Union[List[RecommendationsFilterRequestSortItems], UnsetType] = unset,
@@ -52,6 +61,12 @@ class RecommendationsFilterRequestDataAttributes(ModelNormal):
     ):
         """
         Attributes used to filter and sort cost recommendations.
+
+        :param extra_fields: Additional fields to return from the recommendation event's custom attributes, selected
+            by dotted paths such as ``tags.env`` or wildcard patterns such as ``*target*``.
+            Arrays are traversed without indexes. Matched objects and arrays are returned whole.
+            A maximum of 256 selectors can be requested. Selectors that match nothing return no field.
+        :type extra_fields: [str], optional
 
         :param filter: Filter expression applied to the recommendations. When supplied, this attribute overrides
             ``data.id`` , including when empty. When omitted, ``data.id`` is used. If the resulting filter
@@ -69,6 +84,8 @@ class RecommendationsFilterRequestDataAttributes(ModelNormal):
             or ``completed``. Defaults to ``all`` , which returns recommendations in every status.
         :type view: str, optional
         """
+        if extra_fields is not unset:
+            kwargs["extra_fields"] = extra_fields
         if filter is not unset:
             kwargs["filter"] = filter
         if scope is not unset:

@@ -2310,6 +2310,7 @@ from datadog_api_client.v2.model.cost_recommendation_data_attributes_potential_d
     CostRecommendationDataAttributesPotentialDailySavings,
 )
 from datadog_api_client.v2.model.cost_recommendation_data_type import CostRecommendationDataType
+from datadog_api_client.v2.model.cost_recommendation_extra_field import CostRecommendationExtraField
 from datadog_api_client.v2.model.cost_tag import CostTag
 from datadog_api_client.v2.model.cost_tag_attributes import CostTagAttributes
 from datadog_api_client.v2.model.cost_tag_description import CostTagDescription
@@ -16294,6 +16295,7 @@ __all__ = [
     "CostRecommendationDataAttributes",
     "CostRecommendationDataAttributesPotentialDailySavings",
     "CostRecommendationDataType",
+    "CostRecommendationExtraField",
     "CostTag",
     "CostTagAttributes",
     "CostTagDescription",

@@ -17,6 +17,9 @@ from datadog_api_client.v2.model.recommendations_filter_request_sort_items impor
 body = RecommendationsFilterRequest(
     data=RecommendationsFilterRequestData(
         attributes=RecommendationsFilterRequestDataAttributes(
+            extra_fields=[
+                "tags.env",
+            ],
             scope=RecommendationsFilterRequestScope.CCM,
             sort=[
                 RecommendationsFilterRequestSortItems(
