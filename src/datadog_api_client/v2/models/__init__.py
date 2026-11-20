@@ -8153,6 +8153,7 @@ from datadog_api_client.v2.model.observability_pipeline_amazon_security_lake_des
 from datadog_api_client.v2.model.observability_pipeline_amazon_security_lake_destination_type import (
     ObservabilityPipelineAmazonSecurityLakeDestinationType,
 )
+from datadog_api_client.v2.model.observability_pipeline_anomaly_detection import ObservabilityPipelineAnomalyDetection
 from datadog_api_client.v2.model.observability_pipeline_aws_auth import ObservabilityPipelineAwsAuth
 from datadog_api_client.v2.model.observability_pipeline_azure_data_explorer_destination import (
     ObservabilityPipelineAzureDataExplorerDestination,
@@ -20269,6 +20270,7 @@ __all__ = [
     "ObservabilityPipelineAmazonS3SourceType",
     "ObservabilityPipelineAmazonSecurityLakeDestination",
     "ObservabilityPipelineAmazonSecurityLakeDestinationType",
+    "ObservabilityPipelineAnomalyDetection",
     "ObservabilityPipelineAwsAuth",
     "ObservabilityPipelineAzureDataExplorerDestination",
     "ObservabilityPipelineAzureDataExplorerDestinationAuth",
