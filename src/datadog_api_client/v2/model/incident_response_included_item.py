@@ -40,10 +40,12 @@ class IncidentResponseIncludedItem(ModelComposed):
         # loading
         from datadog_api_client.v2.model.incident_user_data import IncidentUserData
         from datadog_api_client.v2.model.attachment_data import AttachmentData
+        from datadog_api_client.v2.model.incident_responder_data_response import IncidentResponderDataResponse
 
         return {
             "oneOf": [
                 IncidentUserData,
                 AttachmentData,
+                IncidentResponderDataResponse,
             ],
         }
