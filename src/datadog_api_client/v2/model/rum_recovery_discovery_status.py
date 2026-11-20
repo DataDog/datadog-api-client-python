@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumRecoveryDiscoveryStatus(ModelSimple):
+class RUMRecoveryDiscoveryStatus(ModelSimple):
     """
     Batch discovery state. QUEUED indicates that the request is waiting for processing capacity.
 
@@ -30,14 +30,14 @@ class RumRecoveryDiscoveryStatus(ModelSimple):
         "FAILED",
         "CANCELLED",
     }
-    QUEUED: ClassVar["RumRecoveryDiscoveryStatus"]
-    PENDING: ClassVar["RumRecoveryDiscoveryStatus"]
-    SLICING: ClassVar["RumRecoveryDiscoveryStatus"]
-    DISCOVERED: ClassVar["RumRecoveryDiscoveryStatus"]
-    PROCESSING: ClassVar["RumRecoveryDiscoveryStatus"]
-    COMPLETED: ClassVar["RumRecoveryDiscoveryStatus"]
-    FAILED: ClassVar["RumRecoveryDiscoveryStatus"]
-    CANCELLED: ClassVar["RumRecoveryDiscoveryStatus"]
+    QUEUED: ClassVar["RUMRecoveryDiscoveryStatus"]
+    PENDING: ClassVar["RUMRecoveryDiscoveryStatus"]
+    SLICING: ClassVar["RUMRecoveryDiscoveryStatus"]
+    DISCOVERED: ClassVar["RUMRecoveryDiscoveryStatus"]
+    PROCESSING: ClassVar["RUMRecoveryDiscoveryStatus"]
+    COMPLETED: ClassVar["RUMRecoveryDiscoveryStatus"]
+    FAILED: ClassVar["RUMRecoveryDiscoveryStatus"]
+    CANCELLED: ClassVar["RUMRecoveryDiscoveryStatus"]
 
     @cached_property
     def openapi_types(_):
@@ -46,11 +46,11 @@ class RumRecoveryDiscoveryStatus(ModelSimple):
         }
 
 
-RumRecoveryDiscoveryStatus.QUEUED = RumRecoveryDiscoveryStatus("QUEUED")
-RumRecoveryDiscoveryStatus.PENDING = RumRecoveryDiscoveryStatus("PENDING")
-RumRecoveryDiscoveryStatus.SLICING = RumRecoveryDiscoveryStatus("SLICING")
-RumRecoveryDiscoveryStatus.DISCOVERED = RumRecoveryDiscoveryStatus("DISCOVERED")
-RumRecoveryDiscoveryStatus.PROCESSING = RumRecoveryDiscoveryStatus("PROCESSING")
-RumRecoveryDiscoveryStatus.COMPLETED = RumRecoveryDiscoveryStatus("COMPLETED")
-RumRecoveryDiscoveryStatus.FAILED = RumRecoveryDiscoveryStatus("FAILED")
-RumRecoveryDiscoveryStatus.CANCELLED = RumRecoveryDiscoveryStatus("CANCELLED")
+RUMRecoveryDiscoveryStatus.QUEUED = RUMRecoveryDiscoveryStatus("QUEUED")
+RUMRecoveryDiscoveryStatus.PENDING = RUMRecoveryDiscoveryStatus("PENDING")
+RUMRecoveryDiscoveryStatus.SLICING = RUMRecoveryDiscoveryStatus("SLICING")
+RUMRecoveryDiscoveryStatus.DISCOVERED = RUMRecoveryDiscoveryStatus("DISCOVERED")
+RUMRecoveryDiscoveryStatus.PROCESSING = RUMRecoveryDiscoveryStatus("PROCESSING")
+RUMRecoveryDiscoveryStatus.COMPLETED = RUMRecoveryDiscoveryStatus("COMPLETED")
+RUMRecoveryDiscoveryStatus.FAILED = RUMRecoveryDiscoveryStatus("FAILED")
+RUMRecoveryDiscoveryStatus.CANCELLED = RUMRecoveryDiscoveryStatus("CANCELLED")

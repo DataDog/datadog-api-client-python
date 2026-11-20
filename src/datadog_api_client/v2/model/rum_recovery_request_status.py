@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumRecoveryRequestStatus(ModelSimple):
+class RUMRecoveryRequestStatus(ModelSimple):
     """
     Recovery request state.
 
@@ -28,12 +28,12 @@ class RumRecoveryRequestStatus(ModelSimple):
         "CANCELLED",
         "EXPIRED",
     }
-    PENDING: ClassVar["RumRecoveryRequestStatus"]
-    PROCESSING: ClassVar["RumRecoveryRequestStatus"]
-    COMPLETED: ClassVar["RumRecoveryRequestStatus"]
-    FAILED: ClassVar["RumRecoveryRequestStatus"]
-    CANCELLED: ClassVar["RumRecoveryRequestStatus"]
-    EXPIRED: ClassVar["RumRecoveryRequestStatus"]
+    PENDING: ClassVar["RUMRecoveryRequestStatus"]
+    PROCESSING: ClassVar["RUMRecoveryRequestStatus"]
+    COMPLETED: ClassVar["RUMRecoveryRequestStatus"]
+    FAILED: ClassVar["RUMRecoveryRequestStatus"]
+    CANCELLED: ClassVar["RUMRecoveryRequestStatus"]
+    EXPIRED: ClassVar["RUMRecoveryRequestStatus"]
 
     @cached_property
     def openapi_types(_):
@@ -42,9 +42,9 @@ class RumRecoveryRequestStatus(ModelSimple):
         }
 
 
-RumRecoveryRequestStatus.PENDING = RumRecoveryRequestStatus("PENDING")
-RumRecoveryRequestStatus.PROCESSING = RumRecoveryRequestStatus("PROCESSING")
-RumRecoveryRequestStatus.COMPLETED = RumRecoveryRequestStatus("COMPLETED")
-RumRecoveryRequestStatus.FAILED = RumRecoveryRequestStatus("FAILED")
-RumRecoveryRequestStatus.CANCELLED = RumRecoveryRequestStatus("CANCELLED")
-RumRecoveryRequestStatus.EXPIRED = RumRecoveryRequestStatus("EXPIRED")
+RUMRecoveryRequestStatus.PENDING = RUMRecoveryRequestStatus("PENDING")
+RUMRecoveryRequestStatus.PROCESSING = RUMRecoveryRequestStatus("PROCESSING")
+RUMRecoveryRequestStatus.COMPLETED = RUMRecoveryRequestStatus("COMPLETED")
+RUMRecoveryRequestStatus.FAILED = RUMRecoveryRequestStatus("FAILED")
+RUMRecoveryRequestStatus.CANCELLED = RUMRecoveryRequestStatus("CANCELLED")
+RUMRecoveryRequestStatus.EXPIRED = RUMRecoveryRequestStatus("EXPIRED")

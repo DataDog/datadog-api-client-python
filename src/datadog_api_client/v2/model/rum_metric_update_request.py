@@ -12,28 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_metric_update_data import RumMetricUpdateData
+    from datadog_api_client.v2.model.rum_metric_update_data import RUMMetricUpdateData
 
 
-class RumMetricUpdateRequest(ModelNormal):
+class RUMMetricUpdateRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_metric_update_data import RumMetricUpdateData
+        from datadog_api_client.v2.model.rum_metric_update_data import RUMMetricUpdateData
 
         return {
-            "data": (RumMetricUpdateData,),
+            "data": (RUMMetricUpdateData,),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: RumMetricUpdateData, **kwargs):
+    def __init__(self_, data: RUMMetricUpdateData, **kwargs):
         """
         The RUM-based metric update body.
 
         :param data: The RUM-based metric properties to update. ``id`` is required by the API and must match the ``metric_id`` path parameter.
-        :type data: RumMetricUpdateData
+        :type data: RUMMetricUpdateData
         """
         super().__init__(kwargs)
 

@@ -9,20 +9,6 @@ Feature: Organizations
     And an instance of "Organizations" API
 
   @generated @skip @team:ddoghq/org-management
-  Scenario: Create a child organization returns "Bad Request" response
-    Given new "CreateChildOrg" request
-    And body with value {"billing": {"type": "parent_billing"}, "name": "New child org", "subscription": {"type": "pro"}}
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:ddoghq/org-management
-  Scenario: Create a child organization returns "OK" response
-    Given new "CreateChildOrg" request
-    And body with value {"billing": {"type": "parent_billing"}, "name": "New child org", "subscription": {"type": "pro"}}
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip @team:ddoghq/org-management
   Scenario: Get organization information returns "Bad Request" response
     Given new "GetOrg" request
     And request contains "public_id" parameter from "REPLACE.ME"

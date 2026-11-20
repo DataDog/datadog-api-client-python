@@ -10,7 +10,7 @@ from datadog_api_client.model_utils import (
 )
 
 
-class RumRecoveryCountResponseAttributes(ModelNormal):
+class RUMRecoveryCountResponseAttributes(ModelNormal):
     validations = {
         "estimated_count": {
             "inclusive_minimum": 0,

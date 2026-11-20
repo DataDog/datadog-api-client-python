@@ -13,19 +13,19 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.rum_sdk_config_match_option_serialized_type import (
-        RumSdkConfigMatchOptionSerializedType,
+        RUMSdkConfigMatchOptionSerializedType,
     )
 
 
-class RumSdkConfigMatchOption(ModelNormal):
+class RUMSdkConfigMatchOption(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.rum_sdk_config_match_option_serialized_type import (
-            RumSdkConfigMatchOptionSerializedType,
+            RUMSdkConfigMatchOptionSerializedType,
         )
 
         return {
-            "rc_serialized_type": (RumSdkConfigMatchOptionSerializedType,),
+            "rc_serialized_type": (RUMSdkConfigMatchOptionSerializedType,),
             "value": (str,),
         }
 
@@ -34,12 +34,12 @@ class RumSdkConfigMatchOption(ModelNormal):
         "value": "value",
     }
 
-    def __init__(self_, rc_serialized_type: RumSdkConfigMatchOptionSerializedType, value: str, **kwargs):
+    def __init__(self_, rc_serialized_type: RUMSdkConfigMatchOptionSerializedType, value: str, **kwargs):
         """
         A match option used for URL or origin pattern matching.
 
         :param rc_serialized_type: The type of match pattern, either a literal string or a regex.
-        :type rc_serialized_type: RumSdkConfigMatchOptionSerializedType
+        :type rc_serialized_type: RUMSdkConfigMatchOptionSerializedType
 
         :param value: The value to match against.
         :type value: str

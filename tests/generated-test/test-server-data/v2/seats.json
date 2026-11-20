@@ -176,37 +176,6 @@
     },
     {
       "feature": "Seats",
-      "frozen_at": "2026-02-11T18:39:39.654Z",
-      "interactions": [
-        {
-          "request": {
-            "body": {
-              "type": "empty",
-              "value": null
-            },
-            "content_type": "",
-            "method": "GET",
-            "path": "/api/v2/seats/users",
-            "query": []
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"product_code query parameter is required\"}]}"
-            },
-            "headers": {
-              "content-type": "application/vnd.api+json"
-            },
-            "reason": "Bad Request",
-            "status": 400
-          }
-        }
-      ],
-      "scenario": "Get users with seats returns \"Bad Request\" response when product_code is missing",
-      "version": "v2"
-    },
-    {
-      "feature": "Seats",
       "frozen_at": "2026-02-11T18:39:39.917Z",
       "interactions": [
         {

@@ -1,14 +1,14 @@
 {
-  "api": "RumMetrics",
+  "api": "RUMMetrics",
   "expected_status": 200,
-  "feature": "Rum Metrics",
-  "id": "v2/Rum Metrics/Update a RUM-based metric returns \"OK\" response",
-  "operation_id": "UpdateRumMetric",
+  "feature": "RUM Metrics",
+  "id": "v2/RUM Metrics/Update a RUM-based metric returns \"OK\" response",
+  "operation_id": "UpdateRUMMetric",
   "request": {
     "body": {
       "schema": {
         "format": null,
-        "ref": "RumMetricUpdateRequest",
+        "ref": "RUMMetricUpdateRequest",
         "type": "object"
       },
       "source": "inline",

@@ -15,19 +15,19 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_retention_quota_custom_config import RumRetentionQuotaCustomConfig
-    from datadog_api_client.v2.model.rum_retention_quota_mode import RumRetentionQuotaMode
+    from datadog_api_client.v2.model.rum_retention_quota_custom_config import RUMRetentionQuotaCustomConfig
+    from datadog_api_client.v2.model.rum_retention_quota_mode import RUMRetentionQuotaMode
 
 
-class RumRetentionQuotaConfigAttributes(ModelNormal):
+class RUMRetentionQuotaConfigAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_retention_quota_custom_config import RumRetentionQuotaCustomConfig
-        from datadog_api_client.v2.model.rum_retention_quota_mode import RumRetentionQuotaMode
+        from datadog_api_client.v2.model.rum_retention_quota_custom_config import RUMRetentionQuotaCustomConfig
+        from datadog_api_client.v2.model.rum_retention_quota_mode import RUMRetentionQuotaMode
 
         return {
-            "custom": (RumRetentionQuotaCustomConfig,),
-            "mode": (RumRetentionQuotaMode,),
+            "custom": (RUMRetentionQuotaCustomConfig,),
+            "mode": (RUMRetentionQuotaMode,),
             "org_id": (int,),
             "updated_at": (datetime,),
             "updated_by": (str,),
@@ -43,9 +43,9 @@ class RumRetentionQuotaConfigAttributes(ModelNormal):
 
     def __init__(
         self_,
-        mode: RumRetentionQuotaMode,
+        mode: RUMRetentionQuotaMode,
         org_id: int,
-        custom: Union[RumRetentionQuotaCustomConfig, UnsetType] = unset,
+        custom: Union[RUMRetentionQuotaCustomConfig, UnsetType] = unset,
         updated_at: Union[datetime, UnsetType] = unset,
         updated_by: Union[str, UnsetType] = unset,
         **kwargs,
@@ -54,11 +54,11 @@ class RumRetentionQuotaConfigAttributes(ModelNormal):
         The RUM retention quota configuration properties.
 
         :param custom: The configuration used when ``mode`` is ``custom``.
-        :type custom: RumRetentionQuotaCustomConfig, optional
+        :type custom: RUMRetentionQuotaCustomConfig, optional
 
         :param mode: The retention quota mode. ``custom`` enforces a fixed session limit.
             ``custom`` is the only supported mode.
-        :type mode: RumRetentionQuotaMode
+        :type mode: RUMRetentionQuotaMode
 
         :param org_id: The ID of the organization the retention quota configuration belongs to.
         :type org_id: int

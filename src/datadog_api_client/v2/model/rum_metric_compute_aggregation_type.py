@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumMetricComputeAggregationType(ModelSimple):
+class RUMMetricComputeAggregationType(ModelSimple):
     """
     The type of aggregation to use.
         `count` counts the matching events. `distribution` aggregates the values found at `path`.
@@ -25,8 +25,8 @@ class RumMetricComputeAggregationType(ModelSimple):
         "count",
         "distribution",
     }
-    COUNT: ClassVar["RumMetricComputeAggregationType"]
-    DISTRIBUTION: ClassVar["RumMetricComputeAggregationType"]
+    COUNT: ClassVar["RUMMetricComputeAggregationType"]
+    DISTRIBUTION: ClassVar["RUMMetricComputeAggregationType"]
 
     @cached_property
     def openapi_types(_):
@@ -35,5 +35,5 @@ class RumMetricComputeAggregationType(ModelSimple):
         }
 
 
-RumMetricComputeAggregationType.COUNT = RumMetricComputeAggregationType("count")
-RumMetricComputeAggregationType.DISTRIBUTION = RumMetricComputeAggregationType("distribution")
+RUMMetricComputeAggregationType.COUNT = RUMMetricComputeAggregationType("count")
+RUMMetricComputeAggregationType.DISTRIBUTION = RUMMetricComputeAggregationType("distribution")

@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumRetentionQuotaMode(ModelSimple):
+class RUMRetentionQuotaMode(ModelSimple):
     """
     The retention quota mode. `custom` enforces a fixed session limit.
         `custom` is the only supported mode.
@@ -24,7 +24,7 @@ class RumRetentionQuotaMode(ModelSimple):
     allowed_values = {
         "custom",
     }
-    CUSTOM: ClassVar["RumRetentionQuotaMode"]
+    CUSTOM: ClassVar["RUMRetentionQuotaMode"]
 
     @cached_property
     def openapi_types(_):
@@ -33,4 +33,4 @@ class RumRetentionQuotaMode(ModelSimple):
         }
 
 
-RumRetentionQuotaMode.CUSTOM = RumRetentionQuotaMode("custom")
+RUMRetentionQuotaMode.CUSTOM = RUMRetentionQuotaMode("custom")

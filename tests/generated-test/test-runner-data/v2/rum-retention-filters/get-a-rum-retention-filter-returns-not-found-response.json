@@ -1,8 +1,8 @@
 {
-  "api": "RumRetentionFilters",
+  "api": "RUMRetentionFilters",
   "expected_status": 404,
-  "feature": "Rum Retention Filters",
-  "id": "v2/Rum Retention Filters/Get a RUM retention filter returns \"Not Found\" response",
+  "feature": "RUM Retention Filters",
+  "id": "v2/RUM Retention Filters/Get a RUM retention filter returns \"Not Found\" response",
   "operation_id": "GetRetentionFilter",
   "request": {
     "body": null,

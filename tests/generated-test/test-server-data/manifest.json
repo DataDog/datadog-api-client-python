@@ -371,11 +371,6 @@
       "version": "v2"
     },
     {
-      "feature": "LLM Observability",
-      "file": "v2/llm-observability.json",
-      "version": "v2"
-    },
-    {
       "feature": "Logs",
       "file": "v2/logs.json",
       "version": "v2"
@@ -418,11 +413,6 @@
     {
       "feature": "Network Device Monitoring",
       "file": "v2/network-device-monitoring.json",
-      "version": "v2"
-    },
-    {
-      "feature": "OAuth2 Client Public",
-      "file": "v2/oauth2-client-public.json",
       "version": "v2"
     },
     {
@@ -476,6 +466,11 @@
       "version": "v2"
     },
     {
+      "feature": "RUM Metrics",
+      "file": "v2/rum-metrics.json",
+      "version": "v2"
+    },
+    {
       "feature": "RUM Recovery",
       "file": "v2/rum-recovery.json",
       "version": "v2"
@@ -483,6 +478,11 @@
     {
       "feature": "RUM Remote Config",
       "file": "v2/rum-remote-config.json",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Retention Filters",
+      "file": "v2/rum-retention-filters.json",
       "version": "v2"
     },
     {
@@ -498,16 +498,6 @@
     {
       "feature": "Roles",
       "file": "v2/roles.json",
-      "version": "v2"
-    },
-    {
-      "feature": "Rum Metrics",
-      "file": "v2/rum-metrics.json",
-      "version": "v2"
-    },
-    {
-      "feature": "Rum Retention Filters",
-      "file": "v2/rum-retention-filters.json",
       "version": "v2"
     },
     {

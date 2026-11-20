@@ -3,12 +3,12 @@
   "expected_status": 403,
   "feature": "RUM Remote Config",
   "id": "v2/RUM Remote Config/Update a RUM SDK configuration returns \"Forbidden\" response",
-  "operation_id": "UpdateRumSdkConfig",
+  "operation_id": "UpdateRUMSdkConfig",
   "request": {
     "body": {
       "schema": {
         "format": null,
-        "ref": "RumSdkConfigUpdateRequest",
+        "ref": "RUMSdkConfigUpdateRequest",
         "type": "object"
       },
       "source": "inline",

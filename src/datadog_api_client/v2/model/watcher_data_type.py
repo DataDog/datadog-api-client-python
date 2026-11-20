@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class WatcherDataType(ModelSimple):
     """
-    Rum replay watcher resource type.
+    RUM replay watcher resource type.
 
     :param value: If omitted defaults to "rum_replay_watcher". Must be one of ["rum_replay_watcher"].
     :type value: str

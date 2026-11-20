@@ -13,25 +13,25 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.rum_permanent_retention_filter_update_attributes import (
-        RumPermanentRetentionFilterUpdateAttributes,
+        RUMPermanentRetentionFilterUpdateAttributes,
     )
-    from datadog_api_client.v2.model.rum_permanent_retention_filter_id import RumPermanentRetentionFilterID
-    from datadog_api_client.v2.model.rum_permanent_retention_filter_type import RumPermanentRetentionFilterType
+    from datadog_api_client.v2.model.rum_permanent_retention_filter_id import RUMPermanentRetentionFilterID
+    from datadog_api_client.v2.model.rum_permanent_retention_filter_type import RUMPermanentRetentionFilterType
 
 
-class RumPermanentRetentionFilterUpdateData(ModelNormal):
+class RUMPermanentRetentionFilterUpdateData(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.rum_permanent_retention_filter_update_attributes import (
-            RumPermanentRetentionFilterUpdateAttributes,
+            RUMPermanentRetentionFilterUpdateAttributes,
         )
-        from datadog_api_client.v2.model.rum_permanent_retention_filter_id import RumPermanentRetentionFilterID
-        from datadog_api_client.v2.model.rum_permanent_retention_filter_type import RumPermanentRetentionFilterType
+        from datadog_api_client.v2.model.rum_permanent_retention_filter_id import RUMPermanentRetentionFilterID
+        from datadog_api_client.v2.model.rum_permanent_retention_filter_type import RUMPermanentRetentionFilterType
 
         return {
-            "attributes": (RumPermanentRetentionFilterUpdateAttributes,),
-            "id": (RumPermanentRetentionFilterID,),
-            "type": (RumPermanentRetentionFilterType,),
+            "attributes": (RUMPermanentRetentionFilterUpdateAttributes,),
+            "id": (RUMPermanentRetentionFilterID,),
+            "type": (RUMPermanentRetentionFilterType,),
         }
 
     attribute_map = {
@@ -42,22 +42,22 @@ class RumPermanentRetentionFilterUpdateData(ModelNormal):
 
     def __init__(
         self_,
-        attributes: RumPermanentRetentionFilterUpdateAttributes,
-        id: RumPermanentRetentionFilterID,
-        type: RumPermanentRetentionFilterType,
+        attributes: RUMPermanentRetentionFilterUpdateAttributes,
+        id: RUMPermanentRetentionFilterID,
+        type: RUMPermanentRetentionFilterType,
         **kwargs,
     ):
         """
         The new permanent RUM retention filter configuration to update.
 
         :param attributes: The configuration to update on a permanent RUM retention filter.
-        :type attributes: RumPermanentRetentionFilterUpdateAttributes
+        :type attributes: RUMPermanentRetentionFilterUpdateAttributes
 
         :param id: The identifier of a permanent RUM retention filter.
-        :type id: RumPermanentRetentionFilterID
+        :type id: RUMPermanentRetentionFilterID
 
         :param type: The type of the resource. The value should always be ``permanent_retention_filters``.
-        :type type: RumPermanentRetentionFilterType
+        :type type: RUMPermanentRetentionFilterType
         """
         super().__init__(kwargs)
 

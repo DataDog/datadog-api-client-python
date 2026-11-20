@@ -1613,68 +1613,6 @@
     },
     {
       "feature": "Incidents",
-      "frozen_at": "2025-09-16T14:11:22.028Z",
-      "interactions": [
-        {
-          "request": {
-            "body": {
-              "type": "empty",
-              "value": null
-            },
-            "content_type": "",
-            "method": "DELETE",
-            "path": "/api/v2/incidents/00000000-0000-0000-0000-000000000002/impacts/00000000-0000-0000-0000-000000000002",
-            "query": []
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"rpc error: code = NotFound desc = impact not found: impact not found\"}]}"
-            },
-            "headers": {
-              "content-type": "application/vnd.api+json"
-            },
-            "reason": "Not Found",
-            "status": 404
-          }
-        }
-      ],
-      "scenario": "Delete an incident impact returns \"Not Found\" response (different invalid IDs)",
-      "version": "v2"
-    },
-    {
-      "feature": "Incidents",
-      "frozen_at": "2025-09-16T14:11:00.035Z",
-      "interactions": [
-        {
-          "request": {
-            "body": {
-              "type": "empty",
-              "value": null
-            },
-            "content_type": "",
-            "method": "DELETE",
-            "path": "/api/v2/incidents/00000000-0000-0000-0000-000000000000/impacts/00000000-0000-0000-0000-000000000000",
-            "query": []
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": "{\"errors\":[{\"title\":\"Generic Error\",\"detail\":\"rpc error: code = NotFound desc = impact not found: impact not found\"}]}"
-            },
-            "headers": {
-              "content-type": "application/vnd.api+json"
-            },
-            "reason": "Not Found",
-            "status": 404
-          }
-        }
-      ],
-      "scenario": "Delete an incident impact returns \"Not Found\" response (invalid incident and impact)",
-      "version": "v2"
-    },
-    {
-      "feature": "Incidents",
       "frozen_at": "2026-02-23T14:06:37.736Z",
       "interactions": [
         {

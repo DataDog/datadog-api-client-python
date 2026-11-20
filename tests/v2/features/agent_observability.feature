@@ -150,36 +150,6 @@ Feature: Agent Observability
     Then the response status is 413 Payload Too Large
 
   @generated @skip @team:ddoghq/ml-observability
-  Scenario: Clone an Agent Observability dataset returns "Bad Request" response
-    Given operation "CloneLLMObsDataset" enabled
-    And new "CloneLLMObsDataset" request
-    And request contains "project_id" parameter from "REPLACE.ME"
-    And request contains "dataset_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"description": "Clone of the original dataset for experimentation.", "name": "My cloned dataset"}, "id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "type": "datasets"}}
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:ddoghq/ml-observability
-  Scenario: Clone an Agent Observability dataset returns "Not Found" response
-    Given operation "CloneLLMObsDataset" enabled
-    And new "CloneLLMObsDataset" request
-    And request contains "project_id" parameter from "REPLACE.ME"
-    And request contains "dataset_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"description": "Clone of the original dataset for experimentation.", "name": "My cloned dataset"}, "id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "type": "datasets"}}
-    When the request is sent
-    Then the response status is 404 Not Found
-
-  @generated @skip @team:ddoghq/ml-observability
-  Scenario: Clone an Agent Observability dataset returns "OK" response
-    Given operation "CloneLLMObsDataset" enabled
-    And new "CloneLLMObsDataset" request
-    And request contains "project_id" parameter from "REPLACE.ME"
-    And request contains "dataset_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"description": "Clone of the original dataset for experimentation.", "name": "My cloned dataset"}, "id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "type": "datasets"}}
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip @team:ddoghq/ml-observability
   Scenario: Create a new Agent Observability prompt version returns "Bad Request" response
     Given operation "CreateLLMObsPromptVersion" enabled
     And new "CreateLLMObsPromptVersion" request
@@ -223,42 +193,6 @@ Feature: Agent Observability
     Then the response status is 201 Created
 
   @generated @skip @team:ddoghq/ml-observability
-  Scenario: Create an Agent Observability dataset returns "Bad Request" response
-    Given operation "CreateLLMObsDataset" enabled
-    And new "CreateLLMObsDataset" request
-    And request contains "project_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"name": "My LLM Dataset"}, "type": "datasets"}}
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:ddoghq/ml-observability
-  Scenario: Create an Agent Observability dataset returns "Created" response
-    Given operation "CreateLLMObsDataset" enabled
-    And new "CreateLLMObsDataset" request
-    And request contains "project_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"name": "My LLM Dataset"}, "type": "datasets"}}
-    When the request is sent
-    Then the response status is 201 Created
-
-  @generated @skip @team:ddoghq/ml-observability
-  Scenario: Create an Agent Observability dataset returns "Not Found" response
-    Given operation "CreateLLMObsDataset" enabled
-    And new "CreateLLMObsDataset" request
-    And request contains "project_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"name": "My LLM Dataset"}, "type": "datasets"}}
-    When the request is sent
-    Then the response status is 404 Not Found
-
-  @generated @skip @team:ddoghq/ml-observability
-  Scenario: Create an Agent Observability dataset returns "OK" response
-    Given operation "CreateLLMObsDataset" enabled
-    And new "CreateLLMObsDataset" request
-    And request contains "project_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"name": "My LLM Dataset"}, "type": "datasets"}}
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip @team:ddoghq/ml-observability
   Scenario: Create an Agent Observability experiment returns "Bad Request" response
     Given operation "CreateLLMObsExperiment" enabled
     And new "CreateLLMObsExperiment" request
@@ -279,30 +213,6 @@ Feature: Agent Observability
     Given operation "CreateLLMObsExperiment" enabled
     And new "CreateLLMObsExperiment" request
     And body with value {"data": {"attributes": {"dataset_id": "9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d", "name": "My Experiment v1", "parent_experiment_id": "3fd6b5e0-8910-4b1c-a7d0-5b84de329012", "project_id": "a33671aa-24fd-4dcd-9b33-a8ec7dde7751"}, "type": "experiments"}}
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip @team:ddoghq/ml-observability
-  Scenario: Create an Agent Observability project returns "Bad Request" response
-    Given operation "CreateLLMObsProject" enabled
-    And new "CreateLLMObsProject" request
-    And body with value {"data": {"attributes": {"name": "My LLM Project"}, "type": "projects"}}
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:ddoghq/ml-observability
-  Scenario: Create an Agent Observability project returns "Created" response
-    Given operation "CreateLLMObsProject" enabled
-    And new "CreateLLMObsProject" request
-    And body with value {"data": {"attributes": {"name": "My LLM Project"}, "type": "projects"}}
-    When the request is sent
-    Then the response status is 201 Created
-
-  @generated @skip @team:ddoghq/ml-observability
-  Scenario: Create an Agent Observability project returns "OK" response
-    Given operation "CreateLLMObsProject" enabled
-    And new "CreateLLMObsProject" request
-    And body with value {"data": {"attributes": {"name": "My LLM Project"}, "type": "projects"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -418,63 +328,6 @@ Feature: Agent Observability
     Then the response status is 200 OK — annotations created or updated. For mixed batches, denied items and other per-item errors are listed in `errors`.
 
   @generated @skip @team:ddoghq/ml-observability
-  Scenario: Delete Agent Observability dataset records returns "Bad Request" response
-    Given operation "DeleteLLMObsDatasetRecords" enabled
-    And new "DeleteLLMObsDatasetRecords" request
-    And request contains "project_id" parameter from "REPLACE.ME"
-    And request contains "dataset_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"record_ids": ["rec-7c3f5a1b-9e2d-4f8a-b1c6-3d7e9f0a2b4c"]}, "type": "datasets"}}
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:ddoghq/ml-observability
-  Scenario: Delete Agent Observability dataset records returns "No Content" response
-    Given operation "DeleteLLMObsDatasetRecords" enabled
-    And new "DeleteLLMObsDatasetRecords" request
-    And request contains "project_id" parameter from "REPLACE.ME"
-    And request contains "dataset_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"record_ids": ["rec-7c3f5a1b-9e2d-4f8a-b1c6-3d7e9f0a2b4c"]}, "type": "datasets"}}
-    When the request is sent
-    Then the response status is 204 No Content
-
-  @generated @skip @team:ddoghq/ml-observability
-  Scenario: Delete Agent Observability dataset records returns "Not Found" response
-    Given operation "DeleteLLMObsDatasetRecords" enabled
-    And new "DeleteLLMObsDatasetRecords" request
-    And request contains "project_id" parameter from "REPLACE.ME"
-    And request contains "dataset_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"record_ids": ["rec-7c3f5a1b-9e2d-4f8a-b1c6-3d7e9f0a2b4c"]}, "type": "datasets"}}
-    When the request is sent
-    Then the response status is 404 Not Found
-
-  @generated @skip @team:ddoghq/ml-observability
-  Scenario: Delete Agent Observability datasets returns "Bad Request" response
-    Given operation "DeleteLLMObsDatasets" enabled
-    And new "DeleteLLMObsDatasets" request
-    And request contains "project_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"dataset_ids": ["9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d"]}, "type": "datasets"}}
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:ddoghq/ml-observability
-  Scenario: Delete Agent Observability datasets returns "No Content" response
-    Given operation "DeleteLLMObsDatasets" enabled
-    And new "DeleteLLMObsDatasets" request
-    And request contains "project_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"dataset_ids": ["9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d"]}, "type": "datasets"}}
-    When the request is sent
-    Then the response status is 204 No Content
-
-  @generated @skip @team:ddoghq/ml-observability
-  Scenario: Delete Agent Observability datasets returns "Not Found" response
-    Given operation "DeleteLLMObsDatasets" enabled
-    And new "DeleteLLMObsDatasets" request
-    And request contains "project_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"dataset_ids": ["9f64e5c7-dc5a-45c8-a17c-1b85f0bec97d"]}, "type": "datasets"}}
-    When the request is sent
-    Then the response status is 404 Not Found
-
-  @generated @skip @team:ddoghq/ml-observability
   Scenario: Delete Agent Observability experiments returns "Bad Request" response
     Given operation "DeleteLLMObsExperiments" enabled
     And new "DeleteLLMObsExperiments" request
@@ -487,22 +340,6 @@ Feature: Agent Observability
     Given operation "DeleteLLMObsExperiments" enabled
     And new "DeleteLLMObsExperiments" request
     And body with value {"data": {"attributes": {"experiment_ids": ["3fd6b5e0-8910-4b1c-a7d0-5b84de329012"]}, "type": "experiments"}}
-    When the request is sent
-    Then the response status is 204 No Content
-
-  @generated @skip @team:ddoghq/ml-observability
-  Scenario: Delete Agent Observability projects returns "Bad Request" response
-    Given operation "DeleteLLMObsProjects" enabled
-    And new "DeleteLLMObsProjects" request
-    And body with value {"data": {"attributes": {"project_ids": ["a33671aa-24fd-4dcd-9b33-a8ec7dde7751"]}, "type": "projects"}}
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:ddoghq/ml-observability
-  Scenario: Delete Agent Observability projects returns "No Content" response
-    Given operation "DeleteLLMObsProjects" enabled
-    And new "DeleteLLMObsProjects" request
-    And body with value {"data": {"attributes": {"project_ids": ["a33671aa-24fd-4dcd-9b33-a8ec7dde7751"]}, "type": "projects"}}
     When the request is sent
     Then the response status is 204 No Content
 
@@ -1436,30 +1273,6 @@ Feature: Agent Observability
     And body with value {"data": {"attributes": {"content_preview": {"limit": 500}, "filter": {"include_deleted": false, "is_deleted": false, "query": "my experiment", "scope": ["experiments"], "version": null}, "include": {"user_data": false}, "page": {"limit": 50, "number": 1}, "sort": [{"direction": "desc", "field": "created_at"}]}, "type": "experimentation"}}
     When the request is sent
     Then the response status is 200 OK
-
-  @generated @skip @team:ddoghq/ml-observability
-  Scenario: Trigger a patterns run returns "Accepted" response
-    Given operation "TriggerLLMObsPatterns" enabled
-    And new "TriggerLLMObsPatterns" request
-    And body with value {"data": {"attributes": {"config_id": "a7c8d9e0-1234-5678-9abc-def012345678"}, "type": "topic_discovery"}}
-    When the request is sent
-    Then the response status is 202 Accepted
-
-  @generated @skip @team:ddoghq/ml-observability
-  Scenario: Trigger a patterns run returns "Bad Request" response
-    Given operation "TriggerLLMObsPatterns" enabled
-    And new "TriggerLLMObsPatterns" request
-    And body with value {"data": {"attributes": {"config_id": "a7c8d9e0-1234-5678-9abc-def012345678"}, "type": "topic_discovery"}}
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:ddoghq/ml-observability
-  Scenario: Trigger a patterns run returns "Not Found" response
-    Given operation "TriggerLLMObsPatterns" enabled
-    And new "TriggerLLMObsPatterns" request
-    And body with value {"data": {"attributes": {"config_id": "a7c8d9e0-1234-5678-9abc-def012345678"}, "type": "topic_discovery"}}
-    When the request is sent
-    Then the response status is 404 Not Found
 
   @generated @skip @team:ddoghq/ml-observability
   Scenario: Unlock Agent Observability dataset draft state returns "Bad Request" response

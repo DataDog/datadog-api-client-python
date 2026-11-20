@@ -14,16 +14,16 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_recovery_cancel_attributes import RumRecoveryCancelAttributes
+    from datadog_api_client.v2.model.rum_recovery_cancel_attributes import RUMRecoveryCancelAttributes
 
 
-class RumRecoveryCancelData(ModelNormal):
+class RUMRecoveryCancelData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_recovery_cancel_attributes import RumRecoveryCancelAttributes
+        from datadog_api_client.v2.model.rum_recovery_cancel_attributes import RUMRecoveryCancelAttributes
 
         return {
-            "attributes": (RumRecoveryCancelAttributes,),
+            "attributes": (RUMRecoveryCancelAttributes,),
             "id": (str,),
             "type": (str,),
         }
@@ -36,7 +36,7 @@ class RumRecoveryCancelData(ModelNormal):
 
     def __init__(
         self_,
-        attributes: RumRecoveryCancelAttributes,
+        attributes: RUMRecoveryCancelAttributes,
         id: Union[str, UnsetType] = unset,
         type: Union[str, UnsetType] = unset,
         **kwargs,
@@ -45,7 +45,7 @@ class RumRecoveryCancelData(ModelNormal):
         JSON:API resource.
 
         :param attributes: Batch cancellation.
-        :type attributes: RumRecoveryCancelAttributes
+        :type attributes: RUMRecoveryCancelAttributes
 
         :param id: Optional resource identifier.
         :type id: str, optional

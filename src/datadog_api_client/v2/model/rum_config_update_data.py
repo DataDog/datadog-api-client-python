@@ -12,19 +12,19 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_config_update_attributes import RumConfigUpdateAttributes
-    from datadog_api_client.v2.model.rum_config_type import RumConfigType
+    from datadog_api_client.v2.model.rum_config_update_attributes import RUMConfigUpdateAttributes
+    from datadog_api_client.v2.model.rum_config_type import RUMConfigType
 
 
-class RumConfigUpdateData(ModelNormal):
+class RUMConfigUpdateData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_config_update_attributes import RumConfigUpdateAttributes
-        from datadog_api_client.v2.model.rum_config_type import RumConfigType
+        from datadog_api_client.v2.model.rum_config_update_attributes import RUMConfigUpdateAttributes
+        from datadog_api_client.v2.model.rum_config_type import RUMConfigType
 
         return {
-            "attributes": (RumConfigUpdateAttributes,),
-            "type": (RumConfigType,),
+            "attributes": (RUMConfigUpdateAttributes,),
+            "type": (RUMConfigType,),
         }
 
     attribute_map = {
@@ -32,15 +32,15 @@ class RumConfigUpdateData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: RumConfigUpdateAttributes, type: RumConfigType, **kwargs):
+    def __init__(self_, attributes: RUMConfigUpdateAttributes, type: RUMConfigType, **kwargs):
         """
         Object describing the RUM configuration to update.
 
         :param attributes: Attributes of the RUM configuration to update.
-        :type attributes: RumConfigUpdateAttributes
+        :type attributes: RUMConfigUpdateAttributes
 
         :param type: The type of the resource. The value should always be ``rum_config``.
-        :type type: RumConfigType
+        :type type: RUMConfigType
         """
         super().__init__(kwargs)
 

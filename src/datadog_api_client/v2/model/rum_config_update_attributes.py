@@ -10,7 +10,7 @@ from datadog_api_client.model_utils import (
 )
 
 
-class RumConfigUpdateAttributes(ModelNormal):
+class RUMConfigUpdateAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {

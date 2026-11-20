@@ -14,13 +14,13 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_sdk_config_tracing_url_config import RumSdkConfigTracingUrlConfig
-    from datadog_api_client.v2.model.rum_sdk_config_match_option import RumSdkConfigMatchOption
-    from datadog_api_client.v2.model.rum_sdk_config_dynamic_option_pair import RumSdkConfigDynamicOptionPair
-    from datadog_api_client.v2.model.rum_sdk_config_dynamic_option import RumSdkConfigDynamicOption
+    from datadog_api_client.v2.model.rum_sdk_config_tracing_url_config import RUMSdkConfigTracingUrlConfig
+    from datadog_api_client.v2.model.rum_sdk_config_match_option import RUMSdkConfigMatchOption
+    from datadog_api_client.v2.model.rum_sdk_config_dynamic_option_pair import RUMSdkConfigDynamicOptionPair
+    from datadog_api_client.v2.model.rum_sdk_config_dynamic_option import RUMSdkConfigDynamicOption
 
 
-class RumSdkConfigRumUpdateAttributes(ModelNormal):
+class RUMSdkConfigRUMUpdateAttributes(ModelNormal):
     validations = {
         "session_replay_sample_rate": {
             "inclusive_maximum": 100,
@@ -38,15 +38,15 @@ class RumSdkConfigRumUpdateAttributes(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_sdk_config_tracing_url_config import RumSdkConfigTracingUrlConfig
-        from datadog_api_client.v2.model.rum_sdk_config_match_option import RumSdkConfigMatchOption
-        from datadog_api_client.v2.model.rum_sdk_config_dynamic_option_pair import RumSdkConfigDynamicOptionPair
-        from datadog_api_client.v2.model.rum_sdk_config_dynamic_option import RumSdkConfigDynamicOption
+        from datadog_api_client.v2.model.rum_sdk_config_tracing_url_config import RUMSdkConfigTracingUrlConfig
+        from datadog_api_client.v2.model.rum_sdk_config_match_option import RUMSdkConfigMatchOption
+        from datadog_api_client.v2.model.rum_sdk_config_dynamic_option_pair import RUMSdkConfigDynamicOptionPair
+        from datadog_api_client.v2.model.rum_sdk_config_dynamic_option import RUMSdkConfigDynamicOption
 
         return {
-            "allowed_tracing_urls": ([RumSdkConfigTracingUrlConfig],),
-            "allowed_tracking_origins": ([RumSdkConfigMatchOption],),
-            "context": ([RumSdkConfigDynamicOptionPair],),
+            "allowed_tracing_urls": ([RUMSdkConfigTracingUrlConfig],),
+            "allowed_tracking_origins": ([RUMSdkConfigMatchOption],),
+            "context": ([RUMSdkConfigDynamicOptionPair],),
             "default_privacy_level": (str,),
             "enable_privacy_for_action_name": (bool,),
             "env": (str,),
@@ -55,8 +55,8 @@ class RumSdkConfigRumUpdateAttributes(ModelNormal):
             "session_sample_rate": (int,),
             "trace_sample_rate": (int,),
             "track_session_across_subdomains": (bool,),
-            "user": ([RumSdkConfigDynamicOptionPair],),
-            "version": (RumSdkConfigDynamicOption,),
+            "user": ([RUMSdkConfigDynamicOptionPair],),
+            "version": (RUMSdkConfigDynamicOption,),
         }
 
     attribute_map = {
@@ -81,28 +81,28 @@ class RumSdkConfigRumUpdateAttributes(ModelNormal):
         enable_privacy_for_action_name: bool,
         session_replay_sample_rate: int,
         session_sample_rate: int,
-        allowed_tracing_urls: Union[List[RumSdkConfigTracingUrlConfig], UnsetType] = unset,
-        allowed_tracking_origins: Union[List[RumSdkConfigMatchOption], UnsetType] = unset,
-        context: Union[List[RumSdkConfigDynamicOptionPair], UnsetType] = unset,
+        allowed_tracing_urls: Union[List[RUMSdkConfigTracingUrlConfig], UnsetType] = unset,
+        allowed_tracking_origins: Union[List[RUMSdkConfigMatchOption], UnsetType] = unset,
+        context: Union[List[RUMSdkConfigDynamicOptionPair], UnsetType] = unset,
         env: Union[str, UnsetType] = unset,
         service: Union[str, UnsetType] = unset,
         trace_sample_rate: Union[int, UnsetType] = unset,
         track_session_across_subdomains: Union[bool, UnsetType] = unset,
-        user: Union[List[RumSdkConfigDynamicOptionPair], UnsetType] = unset,
-        version: Union[RumSdkConfigDynamicOption, UnsetType] = unset,
+        user: Union[List[RUMSdkConfigDynamicOptionPair], UnsetType] = unset,
+        version: Union[RUMSdkConfigDynamicOption, UnsetType] = unset,
         **kwargs,
     ):
         """
         The RUM SDK settings to apply when updating a configuration.
 
         :param allowed_tracing_urls: A list of URL configurations for distributed tracing.
-        :type allowed_tracing_urls: [RumSdkConfigTracingUrlConfig], optional
+        :type allowed_tracing_urls: [RUMSdkConfigTracingUrlConfig], optional
 
         :param allowed_tracking_origins: A list of origin patterns allowed for cross-origin session tracking.
-        :type allowed_tracking_origins: [RumSdkConfigMatchOption], optional
+        :type allowed_tracking_origins: [RUMSdkConfigMatchOption], optional
 
         :param context: A list of dynamic option key-value pairs.
-        :type context: [RumSdkConfigDynamicOptionPair], optional
+        :type context: [RUMSdkConfigDynamicOptionPair], optional
 
         :param default_privacy_level: The default privacy masking level applied to all RUM data.
         :type default_privacy_level: str
@@ -129,10 +129,10 @@ class RumSdkConfigRumUpdateAttributes(ModelNormal):
         :type track_session_across_subdomains: bool, optional
 
         :param user: A list of dynamic option key-value pairs.
-        :type user: [RumSdkConfigDynamicOptionPair], optional
+        :type user: [RUMSdkConfigDynamicOptionPair], optional
 
         :param version: A dynamic configuration option that extracts a value at runtime using a specified strategy.
-        :type version: RumSdkConfigDynamicOption, optional
+        :type version: RUMSdkConfigDynamicOption, optional
         """
         if allowed_tracing_urls is not unset:
             kwargs["allowed_tracing_urls"] = allowed_tracing_urls

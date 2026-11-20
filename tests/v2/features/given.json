@@ -1,5 +1,7 @@
 [
   {
+    "key": "schedule",
+    "operationId": "CreateFleetSchedule",
     "parameters": [
       {
         "name": "body",
@@ -8,11 +10,11 @@
     ],
     "source": "data",
     "step": "there is a valid \"fleet_schedule\" in the system",
-    "key": "schedule",
-    "tag": "Fleet Automation",
-    "operationId": "CreateFleetSchedule"
+    "tag": "Fleet Automation"
   },
   {
+    "key": "datastore",
+    "operationId": "CreateDatastore",
     "parameters": [
       {
         "name": "body",
@@ -20,11 +22,11 @@
       }
     ],
     "step": "there is a valid \"datastore\" in the system",
-    "key": "datastore",
-    "tag": "Actions Datastores",
-    "operationId": "CreateDatastore"
+    "tag": "Actions Datastores"
   },
   {
+    "key": "datastore_item",
+    "operationId": "BulkWriteDatastoreItems",
     "parameters": [
       {
         "name": "datastore_id",
@@ -36,11 +38,11 @@
       }
     ],
     "step": "there is a valid \"datastore_item\" in the system",
-    "key": "datastore_item",
-    "tag": "Actions Datastores",
-    "operationId": "BulkWriteDatastoreItems"
+    "tag": "Actions Datastores"
   },
   {
+    "key": "action_connection",
+    "operationId": "CreateActionConnection",
     "parameters": [
       {
         "name": "body",
@@ -48,11 +50,11 @@
       }
     ],
     "step": "there is a valid \"action_connection\" in the system",
-    "key": "action_connection",
-    "tag": "Action Connection",
-    "operationId": "CreateActionConnection"
+    "tag": "Action Connection"
   },
   {
+    "key": "gcp_action_connection",
+    "operationId": "CreateActionConnection",
     "parameters": [
       {
         "name": "body",
@@ -60,11 +62,11 @@
       }
     ],
     "step": "there is a valid \"gcp_action_connection\" in the system",
-    "key": "gcp_action_connection",
-    "tag": "Action Connection",
-    "operationId": "CreateActionConnection"
+    "tag": "Action Connection"
   },
   {
+    "key": "github_app_action_connection",
+    "operationId": "CreateActionConnection",
     "parameters": [
       {
         "name": "body",
@@ -72,11 +74,11 @@
       }
     ],
     "step": "there is a valid \"github_app_action_connection\" in the system",
-    "key": "github_app_action_connection",
-    "tag": "Action Connection",
-    "operationId": "CreateActionConnection"
+    "tag": "Action Connection"
   },
   {
+    "key": "github_pat_action_connection",
+    "operationId": "CreateActionConnection",
     "parameters": [
       {
         "name": "body",
@@ -84,11 +86,11 @@
       }
     ],
     "step": "there is a valid \"github_pat_action_connection\" in the system",
-    "key": "github_pat_action_connection",
-    "tag": "Action Connection",
-    "operationId": "CreateActionConnection"
+    "tag": "Action Connection"
   },
   {
+    "key": "execution_policy",
+    "operationId": "CreateExecutionPolicy",
     "parameters": [
       {
         "name": "body",
@@ -96,25 +98,25 @@
       }
     ],
     "step": "there is a valid \"execution_policy\" in the system",
-    "key": "execution_policy",
-    "tag": "Execution Policy",
-    "operationId": "CreateExecutionPolicy"
+    "tag": "Execution Policy"
   },
   {
+    "key": "aws_scan_options",
+    "operationId": "ListAwsScanOptions",
     "source": "data[0]",
     "step": "there is a valid \"aws_scan_options\" in the system",
-    "key": "aws_scan_options",
-    "tag": "Agentless Scanning",
-    "operationId": "ListAwsScanOptions"
+    "tag": "Agentless Scanning"
   },
   {
+    "key": "gcp_scan_options",
+    "operationId": "ListGcpScanOptions",
     "source": "data[0]",
     "step": "there is a valid \"gcp_scan_options\" in the system",
-    "key": "gcp_scan_options",
-    "tag": "Agentless Scanning",
-    "operationId": "ListGcpScanOptions"
+    "tag": "Agentless Scanning"
   },
   {
+    "key": "annotation",
+    "operationId": "CreateAnnotation",
     "parameters": [
       {
         "name": "body",
@@ -122,11 +124,11 @@
       }
     ],
     "step": "there is a valid \"annotation\" in the system",
-    "key": "annotation",
-    "tag": "Annotations",
-    "operationId": "CreateAnnotation"
+    "tag": "Annotations"
   },
   {
+    "key": "api_key",
+    "operationId": "CreateAPIKey",
     "parameters": [
       {
         "name": "body",
@@ -134,11 +136,11 @@
       }
     ],
     "step": "there is a valid \"api_key\" in the system",
-    "key": "api_key",
-    "tag": "Key Management",
-    "operationId": "CreateAPIKey"
+    "tag": "Key Management"
   },
   {
+    "key": "managed_api",
+    "operationId": "CreateOpenAPI",
     "parameters": [
       {
         "name": "openapi_spec_file",
@@ -146,11 +148,11 @@
       }
     ],
     "step": "there is a valid \"managed_api\" in the system",
-    "key": "managed_api",
-    "tag": "API Management",
-    "operationId": "CreateOpenAPI"
+    "tag": "API Management"
   },
   {
+    "key": "spans_metric",
+    "operationId": "CreateSpansMetric",
     "parameters": [
       {
         "name": "body",
@@ -158,11 +160,11 @@
       }
     ],
     "step": "there is a valid \"spans_metric\" in the system",
-    "key": "spans_metric",
-    "tag": "Spans Metrics",
-    "operationId": "CreateSpansMetric"
+    "tag": "Spans Metrics"
   },
   {
+    "key": "retention_filter",
+    "operationId": "CreateApmRetentionFilter",
     "parameters": [
       {
         "name": "body",
@@ -170,11 +172,11 @@
       }
     ],
     "step": "there is a valid \"retention_filter\" in the system",
-    "key": "retention_filter",
-    "tag": "APM Retention Filters",
-    "operationId": "CreateApmRetentionFilter"
+    "tag": "APM Retention Filters"
   },
   {
+    "key": "app",
+    "operationId": "CreateApp",
     "parameters": [
       {
         "name": "body",
@@ -182,11 +184,11 @@
       }
     ],
     "step": "there is a valid \"app\" in the system",
-    "key": "app",
-    "tag": "App Builder",
-    "operationId": "CreateApp"
+    "tag": "App Builder"
   },
   {
+    "key": "authn_mapping",
+    "operationId": "CreateAuthNMapping",
     "parameters": [
       {
         "name": "body",
@@ -194,11 +196,11 @@
       }
     ],
     "step": "there is a valid \"authn_mapping\" in the system",
-    "key": "authn_mapping",
-    "tag": "AuthN Mappings",
-    "operationId": "CreateAuthNMapping"
+    "tag": "AuthN Mappings"
   },
   {
+    "key": "case",
+    "operationId": "CreateCase",
     "parameters": [
       {
         "name": "body",
@@ -207,11 +209,11 @@
     ],
     "source": "data",
     "step": "there is a valid \"case\" in the system",
-    "key": "case",
-    "tag": "Case Management",
-    "operationId": "CreateCase"
+    "tag": "Case Management"
   },
   {
+    "key": "case_with_type",
+    "operationId": "CreateCase",
     "parameters": [
       {
         "name": "body",
@@ -220,41 +222,11 @@
     ],
     "source": "data",
     "step": "there is a valid \"case\" with a custom \"case_type\" in the system",
-    "key": "case_with_type",
-    "tag": "Case Management",
-    "operationId": "CreateCase"
+    "tag": "Case Management"
   },
   {
-    "parameters": [
-      {
-        "name": "body",
-        "value": "{\n  \"data\": {\n    \"type\": \"project\",\n    \"attributes\": {\n      \"key\": \"TST\",\n      \"name\": \"Test Project {{ unique }}\"\n    }\n  }\n}"
-      }
-    ],
-    "source": "data",
-    "step": "there is a valid \"project\" in the system",
-    "key": "project",
-    "tag": "Case Management",
-    "operationId": "CreateProject"
-  },
-  {
-    "parameters": [
-      {
-        "name": "project_id",
-        "value": "d4bbe1af-f36e-42f1-87c1-493ca35c320e"
-      },
-      {
-        "name": "body",
-        "value": "{\n  \"data\": {\n    \"type\": \"notification_rule\",\n    \"attributes\": {\n      \"is_enabled\": true,\n      \"triggers\": [{\"type\": \"CASE_CREATED\", \"data\": {}}],\n      \"recipients\": [{\"type\": \"EMAIL\", \"data\": {\"email\": \"test-{{ unique }}@example.com\"}}]\n    }\n  }\n}"
-      }
-    ],
-    "source": "data",
-    "step": "there is a valid \"case_notification_rule\" in the system",
-    "key": "case_notification_rule",
-    "tag": "Case Management",
-    "operationId": "CreateProjectNotificationRule"
-  },
-  {
+    "key": "case_type",
+    "operationId": "CreateCaseType",
     "parameters": [
       {
         "name": "body",
@@ -263,11 +235,11 @@
     ],
     "source": "data",
     "step": "there is a valid \"case_type\" in the system",
-    "key": "case_type",
-    "tag": "Case Management Type",
-    "operationId": "CreateCaseType"
+    "tag": "Case Management Type"
   },
   {
+    "key": "custom_attribute",
+    "operationId": "CreateCustomAttributeConfig",
     "parameters": [
       {
         "name": "case_type_id",
@@ -280,11 +252,11 @@
     ],
     "source": "data",
     "step": "there is a valid \"custom_attribute\" in the system",
-    "key": "custom_attribute",
-    "tag": "Case Management Attribute",
-    "operationId": "CreateCustomAttributeConfig"
+    "tag": "Case Management Attribute"
   },
   {
+    "key": "comment",
+    "operationId": "CommentCase",
     "parameters": [
       {
         "name": "case_id",
@@ -297,35 +269,11 @@
     ],
     "source": "data[0]",
     "step": "there is a valid \"comment\" in the system",
-    "key": "comment",
-    "tag": "Case Management",
-    "operationId": "CommentCase"
+    "tag": "Case Management"
   },
   {
-    "parameters": [
-      {
-        "name": "body",
-        "value": "{\n  \"apiVersion\": \"v3\",\n  \"kind\": \"service\",\n  \"metadata\": {\n    \"name\": \"service-{{ unique_lower_alnum }}\",\n    \"displayName\": \"Shopping Cart\",\n    \"inheritFrom\": \"service:otherService\",\n    \"tags\": [\n      \"tag:value\"\n    ],\n    \"links\": [\n      {\n        \"name\": \"shopping-cart runbook\",\n        \"type\": \"runbook\",\n        \"url\": \"https://runbook/shopping-cart\"\n      },\n      {\n        \"name\": \"shopping-cart architecture\",\n        \"provider\": \"gdoc\",\n        \"url\": \"https://google.drive/shopping-cart-architecture\",\n        \"type\": \"doc\"\n      },\n      {\n        \"name\": \"shopping-cart Wiki\",\n        \"provider\": \"wiki\",\n        \"url\": \"https://wiki/shopping-cart\",\n        \"type\": \"doc\"\n      },\n      {\n        \"name\": \"shopping-cart source code\",\n        \"provider\": \"github\",\n        \"url\": \"http://github/shopping-cart\",\n        \"type\": \"repo\"\n      }\n    ],\n    \"contacts\": [\n      {\n        \"name\": \"Support Email\",\n        \"type\": \"email\",\n        \"contact\": \"team@shopping.com\"\n      },\n      {\n        \"name\": \"Support Slack\",\n        \"type\": \"slack\",\n        \"contact\": \"https://www.slack.com/archives/shopping-cart\"\n      }\n    ],\n    \"owner\": \"myteam\",\n    \"additionalOwners\": [\n      {\n        \"name\": \"opsTeam\",\n        \"type\": \"operator\"\n      }\n    ]\n  },\n  \"integrations\": {\n    \"pagerduty\": {\n      \"serviceURL\": \"https://www.pagerduty.com/service-directory/Pshopping-cart\"\n    },\n    \"opsgenie\": {\n      \"serviceURL\": \"https://www.opsgenie.com/service/shopping-cart\",\n      \"region\": \"US\"\n    }\n  },\n  \"extensions\": {\n    \"datadoghq.com/shopping-cart\": {\n      \"customField\": \"customValue\"\n    }\n  },\n  \"spec\": {\n    \"lifecycle\": \"production\",\n    \"tier\": \"1\",\n    \"type\": \"web\",\n    \"languages\": [\n      \"go\",\n      \"python\"\n    ],\n    \"dependsOn\": [\n      \"service:serviceA\",\n      \"service:serviceB\"\n    ]\n  },\n  \"datadog\": {\n    \"performanceData\": {\n      \"tags\": [\n        \"service:shopping-cart\",\n        \"hostname:shopping-cart\"\n      ]\n    },\n    \"events\": [\n      {\n        \"name\": \"deployment events\",\n        \"query\": \"app:myapp AND type:github\"\n      },\n      {\n        \"name\": \"event type B\",\n        \"query\": \"app:myapp AND type:github\"\n      }\n    ],\n    \"logs\": [\n      {\n        \"name\": \"critical logs\",\n        \"query\": \"app:myapp AND type:github\"\n      },\n      {\n        \"name\": \"ops logs\",\n        \"query\": \"app:myapp AND type:github\"\n      }\n    ],\n    \"pipelines\": {\n      \"fingerprints\": [\n        \"fp1\",\n        \"fp2\"\n      ]\n    },\n    \"codeLocations\": [\n      {\n        \"repositoryURL\": \"http://github/shopping-cart.git\",\n        \"paths\": [\n          \"baz/*.c\",\n          \"bat/**/*\",\n          \"../plop/*.java\"\n        ]\n      },\n      {\n        \"repositoryURL\": \"http://github/shopping-cart-2.git\",\n        \"paths\": [\n          \"baz/*.c\",\n          \"bat/**/*\",\n          \"../plop/*.java\"\n        ]\n      }\n    ]\n  }\n}"
-      }
-    ],
-    "step": "there is a valid entity in the system",
-    "key": "entity",
-    "tag": "Software Catalog",
-    "operationId": "UpsertCatalogEntity"
-  },
-  {
-    "parameters": [
-      {
-        "name": "body",
-        "value": "{\n  \"kind\": \"my-job\",\n  \"displayName\": \"My Job\",\n  \"description\": \"A job entity in the catalog.\"\n}"
-      }
-    ],
-    "step": "there is a valid kind",
-    "key": "kind",
-    "tag": "Software Catalog",
-    "operationId": "UpsertCatalogKind"
-  },
-  {
+    "key": "custom_framework",
+    "operationId": "CreateCustomFramework",
     "parameters": [
       {
         "name": "body",
@@ -333,11 +281,11 @@
       }
     ],
     "step": "there is a valid \"custom_framework\" in the system",
-    "key": "custom_framework",
-    "tag": "Security Monitoring",
-    "operationId": "CreateCustomFramework"
+    "tag": "Security Monitoring"
   },
   {
+    "key": "custom_costs_file",
+    "operationId": "UploadCustomCostsFile",
     "parameters": [
       {
         "name": "body",
@@ -345,11 +293,11 @@
       }
     ],
     "step": "there is a valid \"custom_costs_file\" in the system",
-    "key": "custom_costs_file",
-    "tag": "Cloud Cost Management",
-    "operationId": "UploadCustomCostsFile"
+    "tag": "Cloud Cost Management"
   },
   {
+    "key": "application_key",
+    "operationId": "CreateCurrentUserApplicationKey",
     "parameters": [
       {
         "name": "body",
@@ -357,11 +305,11 @@
       }
     ],
     "step": "there is a valid \"application_key\" in the system",
-    "key": "application_key",
-    "tag": "Key Management",
-    "operationId": "CreateCurrentUserApplicationKey"
+    "tag": "Key Management"
   },
   {
+    "key": "dashboard_list_dashboard",
+    "operationId": "CreateDashboardListItems",
     "parameters": [
       {
         "name": "dashboard_list_id",
@@ -373,11 +321,11 @@
       }
     ],
     "step": "the \"dashboard_list\" has the \"dashboard\"",
-    "key": "dashboard_list_dashboard",
-    "tag": "Dashboard Lists",
-    "operationId": "CreateDashboardListItems"
+    "tag": "Dashboard Lists"
   },
   {
+    "key": "dashboard_list_screenboard_dashboard",
+    "operationId": "CreateDashboardListItems",
     "parameters": [
       {
         "name": "dashboard_list_id",
@@ -389,11 +337,11 @@
       }
     ],
     "step": "the \"dashboard_list\" has the \"screenboard_dashboard\"",
-    "key": "dashboard_list_screenboard_dashboard",
-    "tag": "Dashboard Lists",
-    "operationId": "CreateDashboardListItems"
+    "tag": "Dashboard Lists"
   },
   {
+    "key": "dataset",
+    "operationId": "CreateDataset",
     "parameters": [
       {
         "name": "body",
@@ -402,11 +350,11 @@
       }
     ],
     "step": "there is a valid \"dataset\" in the system",
-    "key": "dataset",
-    "tag": "Datasets",
-    "operationId": "CreateDataset"
+    "tag": "Datasets"
   },
   {
+    "key": "deletion_request",
+    "operationId": "CreateDataDeletionRequest",
     "parameters": [
       {
         "name": "product",
@@ -418,11 +366,11 @@
       }
     ],
     "step": "there is a valid \"deletion_request\" in the system",
-    "key": "deletion_request",
-    "tag": "Data Deletion",
-    "operationId": "CreateDataDeletionRequest"
+    "tag": "Data Deletion"
   },
   {
+    "key": "deployment_gate",
+    "operationId": "CreateDeploymentGate",
     "parameters": [
       {
         "name": "body",
@@ -430,11 +378,11 @@
       }
     ],
     "step": "there is a valid \"deployment_gate\" in the system",
-    "key": "deployment_gate",
-    "tag": "Deployment Gates",
-    "operationId": "CreateDeploymentGate"
+    "tag": "Deployment Gates"
   },
   {
+    "key": "deployment_rule",
+    "operationId": "CreateDeploymentRule",
     "parameters": [
       {
         "name": "gate_id",
@@ -446,11 +394,11 @@
       }
     ],
     "step": "there is a valid \"deployment_rule\" in the system",
-    "key": "deployment_rule",
-    "tag": "Deployment Gates",
-    "operationId": "CreateDeploymentRule"
+    "tag": "Deployment Gates"
   },
   {
+    "key": "deployment_gates_evaluation",
+    "operationId": "TriggerDeploymentGatesEvaluation",
     "parameters": [
       {
         "name": "body",
@@ -458,11 +406,11 @@
       }
     ],
     "step": "there is a valid \"deployment_gates_evaluation\" in the system",
-    "key": "deployment_gates_evaluation",
-    "tag": "Deployment Gates",
-    "operationId": "TriggerDeploymentGatesEvaluation"
+    "tag": "Deployment Gates"
   },
   {
+    "key": "downtime_v2",
+    "operationId": "CreateDowntime",
     "parameters": [
       {
         "name": "body",
@@ -470,11 +418,11 @@
       }
     ],
     "step": "there is a valid \"downtime_v2\" in the system",
-    "key": "downtime_v2",
-    "tag": "Downtimes",
-    "operationId": "CreateDowntime"
+    "tag": "Downtimes"
   },
   {
+    "key": "issue",
+    "operationId": "SearchIssues",
     "parameters": [
       {
         "name": "body",
@@ -483,11 +431,11 @@
     ],
     "source": "data[0]",
     "step": "there is a valid \"issue\" in the system",
-    "key": "issue",
-    "tag": "Error Tracking",
-    "operationId": "SearchIssues"
+    "tag": "Error Tracking"
   },
   {
+    "key": "configured_experiment",
+    "operationId": "CreateExperiment",
     "parameters": [
       {
         "name": "body",
@@ -495,11 +443,11 @@
       }
     ],
     "step": "there is a valid \"configured_experiment\" in the system",
-    "key": "configured_experiment",
-    "tag": "Experiments",
-    "operationId": "CreateExperiment"
+    "tag": "Experiments"
   },
   {
+    "key": "experiment",
+    "operationId": "CreateExperiment",
     "parameters": [
       {
         "name": "body",
@@ -507,11 +455,11 @@
       }
     ],
     "step": "there is a valid \"experiment\" in the system",
-    "key": "experiment",
-    "tag": "Experiments",
-    "operationId": "CreateExperiment"
+    "tag": "Experiments"
   },
   {
+    "key": "bandit",
+    "operationId": "CreateBandit",
     "parameters": [
       {
         "name": "body",
@@ -519,11 +467,11 @@
       }
     ],
     "step": "there is a valid \"bandit\" in the system",
-    "key": "bandit",
-    "tag": "Experiments",
-    "operationId": "CreateBandit"
+    "tag": "Experiments"
   },
   {
+    "key": "experiment_metric_collection",
+    "operationId": "CreateMetricCollection",
     "parameters": [
       {
         "name": "body",
@@ -531,11 +479,11 @@
       }
     ],
     "step": "there is a valid \"experiment_metric_collection\" in the system",
-    "key": "experiment_metric_collection",
-    "tag": "Experiments",
-    "operationId": "CreateMetricCollection"
+    "tag": "Experiments"
   },
   {
+    "key": "experiment_metric_collection_with_metric",
+    "operationId": "CreateMetricCollection",
     "parameters": [
       {
         "name": "body",
@@ -543,11 +491,11 @@
       }
     ],
     "step": "there is a valid \"experiment_metric_collection_with_metric\" in the system",
-    "key": "experiment_metric_collection_with_metric",
-    "tag": "Experiments",
-    "operationId": "CreateMetricCollection"
+    "tag": "Experiments"
   },
   {
+    "key": "experiment_metric",
+    "operationId": "CreateMetric",
     "parameters": [
       {
         "name": "body",
@@ -555,11 +503,11 @@
       }
     ],
     "step": "there is a valid \"experiment_metric\" in the system",
-    "key": "experiment_metric",
-    "tag": "Experiments",
-    "operationId": "CreateMetric"
+    "tag": "Experiments"
   },
   {
+    "key": "experiment_protocol",
+    "operationId": "CreateExperimentProtocol",
     "parameters": [
       {
         "name": "body",
@@ -567,11 +515,11 @@
       }
     ],
     "step": "there is a valid \"experiment_protocol\" in the system",
-    "key": "experiment_protocol",
-    "tag": "Experiments",
-    "operationId": "CreateExperimentProtocol"
+    "tag": "Experiments"
   },
   {
+    "key": "configured_experiment_protocol",
+    "operationId": "PatchExperimentProtocol",
     "parameters": [
       {
         "name": "protocol_id",
@@ -583,11 +531,11 @@
       }
     ],
     "step": "there is a valid \"configured_experiment_protocol\" in the system",
-    "key": "configured_experiment_protocol",
-    "tag": "Experiments",
-    "operationId": "PatchExperimentProtocol"
+    "tag": "Experiments"
   },
   {
+    "key": "published_protocol",
+    "operationId": "PublishExperimentProtocol",
     "parameters": [
       {
         "name": "protocol_id",
@@ -595,11 +543,11 @@
       }
     ],
     "step": "there is a valid \"published_protocol\" in the system",
-    "key": "published_protocol",
-    "tag": "Experiments",
-    "operationId": "PublishExperimentProtocol"
+    "tag": "Experiments"
   },
   {
+    "key": "experiment_subject_type",
+    "operationId": "CreateSubjectType",
     "parameters": [
       {
         "name": "body",
@@ -607,11 +555,11 @@
       }
     ],
     "step": "there is a valid \"experiment_subject_type\" in the system",
-    "key": "experiment_subject_type",
-    "tag": "Experiments",
-    "operationId": "CreateSubjectType"
+    "tag": "Experiments"
   },
   {
+    "key": "experiment_start_analysis_plan",
+    "operationId": "UpdateExperimentAnalysisPlanAttributes",
     "parameters": [
       {
         "name": "experiment_id",
@@ -623,11 +571,11 @@
       }
     ],
     "step": "there is a valid \"experiment_start_analysis_plan\" in the system",
-    "key": "experiment_start_analysis_plan",
-    "tag": "Experiments",
-    "operationId": "UpdateExperimentAnalysisPlanAttributes"
+    "tag": "Experiments"
   },
   {
+    "key": "experiment_metric_group",
+    "operationId": "CreateExperimentMetricGroup",
     "parameters": [
       {
         "name": "experiment_id",
@@ -639,11 +587,11 @@
       }
     ],
     "step": "there is a valid \"experiment_metric_group\" in the system",
-    "key": "experiment_metric_group",
-    "tag": "Experiments",
-    "operationId": "CreateExperimentMetricGroup"
+    "tag": "Experiments"
   },
   {
+    "key": "feature_flag",
+    "operationId": "CreateFeatureFlag",
     "parameters": [
       {
         "name": "body",
@@ -651,11 +599,11 @@
       }
     ],
     "step": "there is a valid \"feature_flag\" in the system",
-    "key": "feature_flag",
-    "tag": "Feature Flags",
-    "operationId": "CreateFeatureFlag"
+    "tag": "Feature Flags"
   },
   {
+    "key": "feature_flag_list_a",
+    "operationId": "CreateFeatureFlag",
     "parameters": [
       {
         "name": "body",
@@ -663,11 +611,11 @@
       }
     ],
     "step": "there is a valid \"feature_flag_list_a\" in the system",
-    "key": "feature_flag_list_a",
-    "tag": "Feature Flags",
-    "operationId": "CreateFeatureFlag"
+    "tag": "Feature Flags"
   },
   {
+    "key": "feature_flag_list_b",
+    "operationId": "CreateFeatureFlag",
     "parameters": [
       {
         "name": "body",
@@ -675,11 +623,11 @@
       }
     ],
     "step": "there is a valid \"feature_flag_list_b\" in the system",
-    "key": "feature_flag_list_b",
-    "tag": "Feature Flags",
-    "operationId": "CreateFeatureFlag"
+    "tag": "Feature Flags"
   },
   {
+    "key": "feature_flag_list_c",
+    "operationId": "CreateFeatureFlag",
     "parameters": [
       {
         "name": "body",
@@ -687,11 +635,11 @@
       }
     ],
     "step": "there is a valid \"feature_flag_list_c\" in the system",
-    "key": "feature_flag_list_c",
-    "tag": "Feature Flags",
-    "operationId": "CreateFeatureFlag"
+    "tag": "Feature Flags"
   },
   {
+    "key": "environment",
+    "operationId": "CreateFeatureFlagsEnvironment",
     "parameters": [
       {
         "name": "body",
@@ -699,11 +647,11 @@
       }
     ],
     "step": "there is a valid \"environment\" in the system",
-    "key": "environment",
-    "tag": "Feature Flags",
-    "operationId": "CreateFeatureFlagsEnvironment"
+    "tag": "Feature Flags"
   },
   {
+    "key": "environment_with_full_evaluation_data",
+    "operationId": "CreateFeatureFlagsEnvironment",
     "parameters": [
       {
         "name": "body",
@@ -711,11 +659,11 @@
       }
     ],
     "step": "there is a valid \"environment_with_full_evaluation_data\" in the system",
-    "key": "environment_with_full_evaluation_data",
-    "tag": "Feature Flags",
-    "operationId": "CreateFeatureFlagsEnvironment"
+    "tag": "Feature Flags"
   },
   {
+    "key": "production_environment",
+    "operationId": "CreateFeatureFlagsEnvironment",
     "parameters": [
       {
         "name": "body",
@@ -723,32 +671,11 @@
       }
     ],
     "step": "there is a valid \"production_environment\" in the system",
-    "key": "production_environment",
-    "tag": "Feature Flags",
-    "operationId": "CreateFeatureFlagsEnvironment"
+    "tag": "Feature Flags"
   },
   {
-    "parameters": [
-      {
-        "name": "feature_flag_id",
-        "source": "feature_flag.data.id"
-      },
-      {
-        "name": "environment_id",
-        "source": "environment.data.id"
-      },
-      {
-        "name": "body",
-        "value": "{\"data\":[{\"type\":\"allocations\",\"attributes\":{\"name\":\"Exposure Schedule Allocation {{ unique }}\",\"key\":\"exposure-schedule-allocation-{{ unique_lower }}\",\"type\":\"CANARY\",\"targeting_rules\":[],\"variant_weights\":[{\"variant_id\":\"{{ feature_flag.data.attributes.variants[0].id }}\",\"value\":100}],\"exposure_schedule\":{\"rollout_options\":{\"strategy\":\"UNIFORM_INTERVALS\",\"autostart\":false,\"selection_interval_ms\":86400000},\"rollout_steps\":[{\"exposure_ratio\":0.5,\"interval_ms\":null,\"is_pause_record\":false,\"grouped_step_index\":0},{\"exposure_ratio\":1,\"interval_ms\":null,\"is_pause_record\":false,\"grouped_step_index\":1}]},\"guardrail_metrics\":[]}}]}"
-      }
-    ],
-    "source": "data[0].attributes.exposure_schedule",
-    "step": "there is a valid \"exposure_schedule\" in the system",
-    "key": "exposure_schedule",
-    "tag": "Feature Flags",
-    "operationId": "UpdateAllocationsForFeatureFlagInEnvironment"
-  },
-  {
+    "key": "deployment",
+    "operationId": "CreateFleetDeploymentConfigureV2",
     "parameters": [
       {
         "name": "body",
@@ -757,11 +684,11 @@
     ],
     "source": "data",
     "step": "there is a valid \"deployment\" in the system",
-    "key": "deployment",
-    "tag": "Fleet Automation",
-    "operationId": "CreateFleetDeploymentConfigureV2"
+    "tag": "Fleet Automation"
   },
   {
+    "key": "package_deployment",
+    "operationId": "CreateFleetDeploymentUpgradeV2",
     "parameters": [
       {
         "name": "body",
@@ -770,11 +697,11 @@
     ],
     "source": "data",
     "step": "there is a valid \"package_deployment\" in the system",
-    "key": "package_deployment",
-    "tag": "Fleet Automation",
-    "operationId": "CreateFleetDeploymentUpgradeV2"
+    "tag": "Fleet Automation"
   },
   {
+    "key": "form",
+    "operationId": "CreateForm",
     "parameters": [
       {
         "name": "body",
@@ -782,23 +709,11 @@
       }
     ],
     "step": "there is a valid \"form\" in the system",
-    "key": "form",
-    "tag": "Forms",
-    "operationId": "CreateForm"
+    "tag": "Forms"
   },
   {
-    "parameters": [
-      {
-        "name": "body",
-        "value": "{\n  \"data\": {\n    \"type\": \"forms\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"description\": \"A simple test form.\",\n      \"anonymous\": false,\n      \"single_response\": false,\n      \"idp_survey\": false,\n      \"data_definition\": {},\n      \"ui_definition\": {}\n    }\n  }\n}"
-      }
-    ],
-    "step": "there is a valid \"form_published\" in the system",
-    "key": "form_published",
-    "tag": "Forms",
-    "operationId": "CreateAndPublishForm"
-  },
-  {
+    "key": "incident",
+    "operationId": "CreateIncident",
     "parameters": [
       {
         "name": "body",
@@ -806,11 +721,11 @@
       }
     ],
     "step": "there is a valid \"incident\" in the system",
-    "key": "incident",
-    "tag": "Incidents",
-    "operationId": "CreateIncident"
+    "tag": "Incidents"
   },
   {
+    "key": "incident_with_commander",
+    "operationId": "CreateIncident",
     "parameters": [
       {
         "name": "body",
@@ -818,11 +733,10 @@
       }
     ],
     "step": "there is a valid \"incident_with_commander\" in the system",
-    "key": "incident_with_commander",
-    "tag": "Incidents",
-    "operationId": "CreateIncident"
+    "tag": "Incidents"
   },
   {
+    "key": "notification_rule",
     "operationId": "CreateIncidentNotificationRule",
     "parameters": [
       {
@@ -831,10 +745,10 @@
       }
     ],
     "step": "there is a valid \"notification_rule\" in the system",
-    "key": "notification_rule",
     "tag": "Incidents"
   },
   {
+    "key": "notification_template",
     "operationId": "CreateIncidentNotificationTemplate",
     "parameters": [
       {
@@ -843,10 +757,11 @@
       }
     ],
     "step": "there is a valid \"notification_template\" in the system",
-    "key": "notification_template",
     "tag": "Incidents"
   },
   {
+    "key": "incident_type",
+    "operationId": "CreateIncidentType",
     "parameters": [
       {
         "name": "body",
@@ -854,11 +769,11 @@
       }
     ],
     "step": "there is a valid \"incident_type\" in the system",
-    "key": "incident_type",
-    "tag": "Incidents",
-    "operationId": "CreateIncidentType"
+    "tag": "Incidents"
   },
   {
+    "key": "incident_attachment",
+    "operationId": "CreateIncidentAttachment",
     "parameters": [
       {
         "name": "incident_id",
@@ -870,11 +785,10 @@
       }
     ],
     "step": "there is a valid \"incident_attachment\" in the system",
-    "key": "incident_attachment",
-    "tag": "Incidents",
-    "operationId": "CreateIncidentAttachment"
+    "tag": "Incidents"
   },
   {
+    "key": "incident_impact",
     "operationId": "CreateIncidentImpact",
     "parameters": [
       {
@@ -887,10 +801,11 @@
       }
     ],
     "step": "the \"incident\" has an \"incident_impact\"",
-    "key": "incident_impact",
     "tag": "Incidents"
   },
   {
+    "key": "incident_integration_metadata",
+    "operationId": "CreateIncidentIntegration",
     "parameters": [
       {
         "name": "incident_id",
@@ -902,11 +817,11 @@
       }
     ],
     "step": "the \"incident\" has an \"incident_integration_metadata\"",
-    "key": "incident_integration_metadata",
-    "tag": "Incidents",
-    "operationId": "CreateIncidentIntegration"
+    "tag": "Incidents"
   },
   {
+    "key": "incident_todo",
+    "operationId": "CreateIncidentTodo",
     "parameters": [
       {
         "name": "incident_id",
@@ -918,41 +833,17 @@
       }
     ],
     "step": "the \"incident\" has an \"incident_todo\"",
-    "key": "incident_todo",
-    "tag": "Incidents",
-    "operationId": "CreateIncidentTodo"
+    "tag": "Incidents"
   },
   {
-    "parameters": [
-      {
-        "name": "body",
-        "value": "{\"data\": {\"type\": \"integration-account\", \"attributes\": {\"name\": \"coreweave-{{ unique }}\", \"authentication\": {\"auth_type\": \"coreweave_api_token\", \"api_token\": \"CW-SECRET-xxxxxxxxxxxxxxxxxxxx\"}, \"settings\": {\"account_tags\": [\"env:prod\", \"team:gpu\"]}}}}"
-      }
-    ],
-    "step": "there is a valid \"coreweave_cloud_integration_account\" in the system",
-    "key": "coreweave_cloud_integration_account",
-    "tag": "CoreWeave Integration",
-    "operationId": "CreateCoreWeaveCloudIntegrationAccount"
-  },
-  {
-    "parameters": [
-      {
-        "name": "body",
-        "value": "{\"data\": {\"type\": \"integration-account\", \"attributes\": {\"name\": \"nebius-{{ unique }}\", \"authentication\": {\"auth_type\": \"nebius_service_account\", \"service_account_id\": \"serviceaccount-xxxxxxxx\", \"private_key\": \"-----BEGIN PRIVATE KEY-----MIIE...FAKE-----END PRIVATE KEY-----\"}, \"settings\": {\"tenant_id\": \"tenant-12345678\"}}}}"
-      }
-    ],
-    "step": "there is a valid \"nebius_cloud_integration_account\" in the system",
-    "key": "nebius_cloud_integration_account",
-    "tag": "Nebius Cloud Integration",
-    "operationId": "CreateNebiusCloudIntegrationAccount"
-  },
-  {
-    "step": "there is an integrated AWS test account for WIF",
     "key": "aws_wif_account_v2",
-    "tag": "AWS Integration",
-    "operationId": "ListAWSAccounts"
+    "operationId": "ListAWSAccounts",
+    "step": "there is an integrated AWS test account for WIF",
+    "tag": "AWS Integration"
   },
   {
+    "key": "aws_account_v2",
+    "operationId": "CreateAWSAccount",
     "parameters": [
       {
         "name": "body",
@@ -960,11 +851,11 @@
       }
     ],
     "step": "there is a valid \"aws_account_v2\" in the system",
-    "key": "aws_account_v2",
-    "tag": "AWS Integration",
-    "operationId": "CreateAWSAccount"
+    "tag": "AWS Integration"
   },
   {
+    "key": "gcp_sts_account",
+    "operationId": "CreateGCPSTSAccount",
     "parameters": [
       {
         "name": "body",
@@ -972,11 +863,11 @@
       }
     ],
     "step": "there is a valid \"gcp_sts_account\" in the system",
-    "key": "gcp_sts_account",
-    "tag": "GCP Integration",
-    "operationId": "CreateGCPSTSAccount"
+    "tag": "GCP Integration"
   },
   {
+    "key": "organization_handle",
+    "operationId": "CreateOrganizationHandle",
     "parameters": [
       {
         "name": "organization_binding_id",
@@ -988,27 +879,11 @@
       }
     ],
     "step": "there is a valid \"organization_handle\" in the system",
-    "key": "organization_handle",
-    "tag": "Google Chat Integration",
-    "operationId": "CreateOrganizationHandle"
+    "tag": "Google Chat Integration"
   },
   {
-    "parameters": [
-      {
-        "name": "organization_binding_id",
-        "value": "\"e54cb570-c674-529c-769d-84b312288ed7\""
-      },
-      {
-        "name": "body",
-        "value": "{\n  \"data\": {\n    \"type\": \"google-chat-target-audience\",\n    \"attributes\": {\n      \"audience_name\": \"{{ unique }}\",\n      \"audience_id\": \"{{ unique }}\"\n    }\n  }\n}"
-      }
-    ],
-    "step": "there is a valid \"google_chat_target_audience\" in the system",
-    "key": "google_chat_target_audience",
-    "tag": "Google Chat Integration",
-    "operationId": "CreateGoogleChatTargetAudience"
-  },
-  {
+    "key": "tenant_based_handle",
+    "operationId": "CreateTenantBasedHandle",
     "parameters": [
       {
         "name": "body",
@@ -1016,11 +891,11 @@
       }
     ],
     "step": "there is a valid \"tenant_based_handle\" in the system",
-    "key": "tenant_based_handle",
-    "tag": "Microsoft Teams Integration",
-    "operationId": "CreateTenantBasedHandle"
+    "tag": "Microsoft Teams Integration"
   },
   {
+    "key": "workflows_webhook_handle",
+    "operationId": "CreateWorkflowsWebhookHandle",
     "parameters": [
       {
         "name": "body",
@@ -1028,23 +903,11 @@
       }
     ],
     "step": "there is a valid \"workflows_webhook_handle\" in the system",
-    "key": "workflows_webhook_handle",
-    "tag": "Microsoft Teams Integration",
-    "operationId": "CreateWorkflowsWebhookHandle"
+    "tag": "Microsoft Teams Integration"
   },
   {
-    "parameters": [
-      {
-        "name": "body",
-        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"api_key\": \"00000000-0000-0000-0000-000000000000\",\n      \"region\": \"us\"\n    },\n    \"type\": \"opsgenie-account\"\n  }\n}"
-      }
-    ],
-    "step": "there is a valid \"opsgenie_account\" in the system",
-    "key": "opsgenie_account",
-    "tag": "Opsgenie Integration",
-    "operationId": "CreateOpsgenieAccount"
-  },
-  {
+    "key": "opsgenie_service",
+    "operationId": "CreateOpsgenieService",
     "parameters": [
       {
         "name": "body",
@@ -1052,47 +915,11 @@
       }
     ],
     "step": "there is a valid \"opsgenie_service\" in the system",
-    "key": "opsgenie_service",
-    "tag": "Opsgenie Integration",
-    "operationId": "CreateOpsgenieService"
+    "tag": "Opsgenie Integration"
   },
   {
-    "parameters": [
-      {
-        "name": "body",
-        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"api_key\": \"00000000-0000-0000-0000-000000000000\"\n    },\n    \"type\": \"statuspage-account\"\n  }\n}"
-      }
-    ],
-    "step": "there is a valid \"statuspage_account\" in the system",
-    "key": "statuspage_account",
-    "tag": "Statuspage Integration",
-    "operationId": "CreateStatuspageAccount"
-  },
-  {
-    "parameters": [
-      {
-        "name": "body",
-        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"url\": \"https://example.statuspage.io\",\n      \"custom_tags\": \"team:collaboration-integrations\"\n    },\n    \"type\": \"statuspage-url-setting\"\n  }\n}"
-      }
-    ],
-    "step": "there is a valid \"statuspage_url_setting\" in the system",
-    "key": "statuspage_url_setting",
-    "tag": "Statuspage Integration",
-    "operationId": "CreateStatuspageUrlSetting"
-  },
-  {
-    "parameters": [
-      {
-        "name": "body",
-        "value": "{\n  \"data\": {\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"access_token_url\": \"https://example.com/oauth/token\",\n      \"client_id\": \"my-client-id\",\n      \"client_secret\": \"my-client-secret\"\n    },\n    \"type\": \"webhooks-auth-method-oauth2-client-credentials\"\n  }\n}"
-      }
-    ],
-    "step": "there is a valid \"webhooks_oauth2_client_credentials\" in the system",
-    "key": "webhooks_oauth2_client_credentials",
-    "tag": "Webhooks Integration",
-    "operationId": "CreateOAuth2ClientCredentials"
-  },
-  {
+    "key": "cloudflare_account",
+    "operationId": "CreateCloudflareAccount",
     "parameters": [
       {
         "name": "body",
@@ -1100,11 +927,11 @@
       }
     ],
     "step": "there is a valid \"cloudflare_account\" in the system",
-    "key": "cloudflare_account",
-    "tag": "Cloudflare Integration",
-    "operationId": "CreateCloudflareAccount"
+    "tag": "Cloudflare Integration"
   },
   {
+    "key": "confluent_account",
+    "operationId": "CreateConfluentAccount",
     "parameters": [
       {
         "name": "body",
@@ -1112,11 +939,11 @@
       }
     ],
     "step": "there is a valid \"confluent_account\" in the system",
-    "key": "confluent_account",
-    "tag": "Confluent Cloud",
-    "operationId": "CreateConfluentAccount"
+    "tag": "Confluent Cloud"
   },
   {
+    "key": "fastly_account",
+    "operationId": "CreateFastlyAccount",
     "parameters": [
       {
         "name": "body",
@@ -1124,11 +951,11 @@
       }
     ],
     "step": "there is a valid \"fastly_account\" in the system",
-    "key": "fastly_account",
-    "tag": "Fastly Integration",
-    "operationId": "CreateFastlyAccount"
+    "tag": "Fastly Integration"
   },
   {
+    "key": "okta_account",
+    "operationId": "CreateOktaAccount",
     "parameters": [
       {
         "name": "body",
@@ -1136,11 +963,11 @@
       }
     ],
     "step": "there is a valid \"okta_account\" in the system",
-    "key": "okta_account",
-    "tag": "Okta Integration",
-    "operationId": "CreateOktaAccount"
+    "tag": "Okta Integration"
   },
   {
+    "key": "ip_allowlist_empty_disabled",
+    "operationId": "UpdateIPAllowlist",
     "parameters": [
       {
         "name": "body",
@@ -1148,11 +975,11 @@
       }
     ],
     "step": "the \"ip_allowlist_empty_disabled\" has no entries and is disabled",
-    "key": "ip_allowlist_empty_disabled",
-    "tag": "IP Allowlist",
-    "operationId": "UpdateIPAllowlist"
+    "tag": "IP Allowlist"
   },
   {
+    "key": "ip_allowlist_nonempty_disabled",
+    "operationId": "UpdateIPAllowlist",
     "parameters": [
       {
         "name": "body",
@@ -1160,39 +987,11 @@
       }
     ],
     "step": "the \"ip_allowlist_nonempty_disabled\" has two entries and is disabled",
-    "key": "ip_allowlist_nonempty_disabled",
-    "tag": "IP Allowlist",
-    "operationId": "UpdateIPAllowlist"
+    "tag": "IP Allowlist"
   },
   {
-    "parameters": [
-      {
-        "name": "body",
-        "value": "{\n  \"data\": {\n    \"type\": \"prompt-templates\",\n    \"attributes\": {\n      \"prompt_id\": \"{{ unique }}\",\n      \"template\": [{\"role\": \"user\", \"content\": \"Hello\"}]\n    }\n  }\n}"
-      }
-    ],
-    "step": "there is a valid \"prompt\" in the system",
-    "key": "prompt",
-    "tag": "Agent Observability",
-    "operationId": "CreateLLMObsPrompt"
-  },
-  {
-    "parameters": [
-      {
-        "name": "prompt_id",
-        "source": "prompt.data.attributes.prompt_id"
-      },
-      {
-        "name": "body",
-        "value": "{\n  \"data\": {\n    \"type\": \"prompt-template-versions\",\n    \"attributes\": {\n      \"template\": [{\"role\": \"user\", \"content\": \"Hello v2\"}]\n    }\n  }\n}"
-      }
-    ],
-    "step": "there is a valid \"prompt_version\" in the system",
-    "key": "prompt_version",
-    "tag": "Agent Observability",
-    "operationId": "CreateLLMObsPromptVersion"
-  },
-  {
+    "key": "custom_destination",
+    "operationId": "CreateLogsCustomDestination",
     "parameters": [
       {
         "name": "body",
@@ -1200,11 +999,11 @@
       }
     ],
     "step": "there is a valid \"custom_destination\" in the system",
-    "key": "custom_destination",
-    "tag": "Logs Custom Destinations",
-    "operationId": "CreateLogsCustomDestination"
+    "tag": "Logs Custom Destinations"
   },
   {
+    "key": "custom_destination_splunk",
+    "operationId": "CreateLogsCustomDestination",
     "parameters": [
       {
         "name": "body",
@@ -1212,11 +1011,11 @@
       }
     ],
     "step": "there is a valid \"custom_destination_splunk\" in the system",
-    "key": "custom_destination_splunk",
-    "tag": "Logs Custom Destinations",
-    "operationId": "CreateLogsCustomDestination"
+    "tag": "Logs Custom Destinations"
   },
   {
+    "key": "custom_destination_splunk_with_null_sourcetype",
+    "operationId": "CreateLogsCustomDestination",
     "parameters": [
       {
         "name": "body",
@@ -1224,11 +1023,11 @@
       }
     ],
     "step": "there is a valid \"custom_destination_splunk_with_null_sourcetype\" in the system",
-    "key": "custom_destination_splunk_with_null_sourcetype",
-    "tag": "Logs Custom Destinations",
-    "operationId": "CreateLogsCustomDestination"
+    "tag": "Logs Custom Destinations"
   },
   {
+    "key": "custom_destination_splunk_with_sourcetype",
+    "operationId": "CreateLogsCustomDestination",
     "parameters": [
       {
         "name": "body",
@@ -1236,11 +1035,11 @@
       }
     ],
     "step": "there is a valid \"custom_destination_splunk_with_sourcetype\" in the system",
-    "key": "custom_destination_splunk_with_sourcetype",
-    "tag": "Logs Custom Destinations",
-    "operationId": "CreateLogsCustomDestination"
+    "tag": "Logs Custom Destinations"
   },
   {
+    "key": "logs_metric",
+    "operationId": "CreateLogsMetric",
     "parameters": [
       {
         "name": "body",
@@ -1248,11 +1047,11 @@
       }
     ],
     "step": "there is a valid \"logs_metric\" in the system",
-    "key": "logs_metric",
-    "tag": "Logs Metrics",
-    "operationId": "CreateLogsMetric"
+    "tag": "Logs Metrics"
   },
   {
+    "key": "logs_metric_percentile",
+    "operationId": "CreateLogsMetric",
     "parameters": [
       {
         "name": "body",
@@ -1260,11 +1059,11 @@
       }
     ],
     "step": "there is a valid \"logs_metric_percentile\" in the system",
-    "key": "logs_metric_percentile",
-    "tag": "Logs Metrics",
-    "operationId": "CreateLogsMetric"
+    "tag": "Logs Metrics"
   },
   {
+    "key": "restriction_query",
+    "operationId": "CreateRestrictionQuery",
     "parameters": [
       {
         "name": "body",
@@ -1272,11 +1071,11 @@
       }
     ],
     "step": "there is a valid \"restriction_query\" in the system",
-    "key": "restriction_query",
-    "tag": "Logs Restriction Queries",
-    "operationId": "CreateRestrictionQuery"
+    "tag": "Logs Restriction Queries"
   },
   {
+    "key": "derived_metric",
+    "operationId": "CreateDerivedMetric",
     "parameters": [
       {
         "name": "body",
@@ -1284,11 +1083,11 @@
       }
     ],
     "step": "there is a valid \"derived_metric\" in the system",
-    "key": "derived_metric",
-    "tag": "Metrics",
-    "operationId": "CreateDerivedMetric"
+    "tag": "Metrics"
   },
   {
+    "key": "tag_indexing_rule",
+    "operationId": "CreateTagIndexingRule",
     "parameters": [
       {
         "name": "body",
@@ -1296,11 +1095,11 @@
       }
     ],
     "step": "there is a valid \"tag_indexing_rule\" in the system",
-    "key": "tag_indexing_rule",
-    "tag": "Metrics",
-    "operationId": "CreateTagIndexingRule"
+    "tag": "Metrics"
   },
   {
+    "key": "tag_indexing_rule_exclude_mode",
+    "operationId": "CreateTagIndexingRule",
     "parameters": [
       {
         "name": "body",
@@ -1308,27 +1107,11 @@
       }
     ],
     "step": "there is a valid \"tag_indexing_rule_exclude_mode\" in the system",
-    "key": "tag_indexing_rule_exclude_mode",
-    "tag": "Metrics",
-    "operationId": "CreateTagIndexingRule"
+    "tag": "Metrics"
   },
   {
-    "parameters": [
-      {
-        "name": "metric_name",
-        "value": "\"test.exemption.{{ unique_lower_alnum }}\""
-      },
-      {
-        "name": "body",
-        "value": "{\n  \"data\": {\n    \"type\": \"tag_indexing_rule_exemptions\",\n    \"attributes\": {\n      \"reason\": \"BDD test exemption\"\n    }\n  }\n}"
-      }
-    ],
-    "step": "there is a valid \"tag_indexing_rule_exemption\" in the system",
-    "key": "tag_indexing_rule_exemption",
-    "tag": "Metrics",
-    "operationId": "CreateTagIndexingRuleExemption"
-  },
-  {
+    "key": "metric_tag_configuration",
+    "operationId": "CreateTagConfiguration",
     "parameters": [
       {
         "name": "metric_name",
@@ -1340,11 +1123,11 @@
       }
     ],
     "step": "there is a valid \"metric_tag_configuration\" in the system",
-    "key": "metric_tag_configuration",
-    "tag": "Metrics",
-    "operationId": "CreateTagConfiguration"
+    "tag": "Metrics"
   },
   {
+    "key": "monitor_notification_rule",
+    "operationId": "CreateMonitorNotificationRule",
     "parameters": [
       {
         "name": "body",
@@ -1352,23 +1135,11 @@
       }
     ],
     "step": "there is a valid \"monitor_notification_rule\" in the system",
-    "key": "monitor_notification_rule",
-    "tag": "Monitors",
-    "operationId": "CreateMonitorNotificationRule"
+    "tag": "Monitors"
   },
   {
-    "parameters": [
-      {
-        "name": "body",
-        "value": "{\n  \"data\": {\n    \"type\": \"monitor-config-policy\",\n    \"attributes\": {\n      \"policy_type\": \"downtime\",\n      \"policy\": {\n        \"max_duration_ms\": 3600000\n      }\n    }\n  }\n}"
-      }
-    ],
-    "step": "there is a valid \"monitor_configuration_downtime_policy\" in the system",
-    "key": "monitor_configuration_downtime_policy",
-    "tag": "Monitors",
-    "operationId": "CreateMonitorConfigPolicy"
-  },
-  {
+    "key": "monitor_configuration_policy",
+    "operationId": "CreateMonitorConfigPolicy",
     "parameters": [
       {
         "name": "body",
@@ -1376,11 +1147,11 @@
       }
     ],
     "step": "there is a valid \"monitor_configuration_policy\" in the system",
-    "key": "monitor_configuration_policy",
-    "tag": "Monitors",
-    "operationId": "CreateMonitorConfigPolicy"
+    "tag": "Monitors"
   },
   {
+    "key": "monitor_user_template",
+    "operationId": "CreateMonitorUserTemplate",
     "parameters": [
       {
         "name": "body",
@@ -1388,11 +1159,11 @@
       }
     ],
     "step": "there is a valid \"monitor_user_template\" in the system",
-    "key": "monitor_user_template",
-    "tag": "Monitors",
-    "operationId": "CreateMonitorUserTemplate"
+    "tag": "Monitors"
   },
   {
+    "key": "pipeline",
+    "operationId": "CreatePipeline",
     "parameters": [
       {
         "name": "body",
@@ -1400,11 +1171,11 @@
       }
     ],
     "step": "there is a valid \"pipeline\" in the system",
-    "key": "pipeline",
-    "tag": "Observability Pipelines",
-    "operationId": "CreatePipeline"
+    "tag": "Observability Pipelines"
   },
   {
+    "key": "escalation_policy",
+    "operationId": "CreateOnCallEscalationPolicy",
     "parameters": [
       {
         "name": "body",
@@ -1412,11 +1183,11 @@
       }
     ],
     "step": "there is a valid \"escalation_policy\" in the system",
-    "key": "escalation_policy",
-    "tag": "On-Call",
-    "operationId": "CreateOnCallEscalationPolicy"
+    "tag": "On-Call"
   },
   {
+    "key": "schedule",
+    "operationId": "CreateOnCallSchedule",
     "parameters": [
       {
         "name": "body",
@@ -1424,11 +1195,11 @@
       }
     ],
     "step": "there is a valid \"schedule\" in the system",
-    "key": "schedule",
-    "tag": "On-Call",
-    "operationId": "CreateOnCallSchedule"
+    "tag": "On-Call"
   },
   {
+    "key": "override",
+    "operationId": "CreateScheduleOverrides",
     "parameters": [
       {
         "name": "schedule_id",
@@ -1440,11 +1211,11 @@
       }
     ],
     "step": "there is a valid \"override\" in the system",
-    "key": "override",
-    "tag": "On-Call",
-    "operationId": "CreateScheduleOverrides"
+    "tag": "On-Call"
   },
   {
+    "key": "routing_rules",
+    "operationId": "SetOnCallTeamRoutingRules",
     "parameters": [
       {
         "name": "team_id",
@@ -1456,11 +1227,11 @@
       }
     ],
     "step": "there are valid \"routing_rules\" in the system",
-    "key": "routing_rules",
-    "tag": "On-Call",
-    "operationId": "SetOnCallTeamRoutingRules"
+    "tag": "On-Call"
   },
   {
+    "key": "oncall_email_notification_channel",
+    "operationId": "CreateUserNotificationChannel",
     "parameters": [
       {
         "name": "user_id",
@@ -1472,11 +1243,11 @@
       }
     ],
     "step": "there is a valid \"oncall_email_notification_channel\" in the system",
-    "key": "oncall_email_notification_channel",
-    "tag": "On-Call",
-    "operationId": "CreateUserNotificationChannel"
+    "tag": "On-Call"
   },
   {
+    "key": "oncall_email_notification_rule",
+    "operationId": "CreateUserNotificationRule",
     "parameters": [
       {
         "name": "user_id",
@@ -1488,11 +1259,11 @@
       }
     ],
     "step": "there is a valid \"oncall_email_notification_rule\" in the system",
-    "key": "oncall_email_notification_rule",
-    "tag": "On-Call",
-    "operationId": "CreateUserNotificationRule"
+    "tag": "On-Call"
   },
   {
+    "key": "org_connection",
+    "operationId": "CreateOrgConnections",
     "parameters": [
       {
         "name": "body",
@@ -1501,18 +1272,18 @@
       }
     ],
     "step": "there is a valid \"org_connection\" in the system",
-    "key": "org_connection",
-    "tag": "Org Connections",
-    "operationId": "CreateOrgConnections"
+    "tag": "Org Connections"
   },
   {
+    "key": "permission",
+    "operationId": "ListPermissions",
     "source": "data[4]",
     "step": "there is a valid \"permission\" in the system",
-    "key": "permission",
-    "tag": "Roles",
-    "operationId": "ListPermissions"
+    "tag": "Roles"
   },
   {
+    "key": "personal_access_token",
+    "operationId": "CreatePersonalAccessToken",
     "parameters": [
       {
         "name": "body",
@@ -1520,11 +1291,11 @@
       }
     ],
     "step": "there is a valid \"personal_access_token\" in the system",
-    "key": "personal_access_token",
-    "tag": "Key Management",
-    "operationId": "CreatePersonalAccessToken"
+    "tag": "Key Management"
   },
   {
+    "key": "powerpack",
+    "operationId": "CreatePowerpack",
     "parameters": [
       {
         "name": "body",
@@ -1532,11 +1303,11 @@
       }
     ],
     "step": "there is a valid \"powerpack\" in the system",
-    "key": "powerpack",
-    "tag": "Powerpack",
-    "operationId": "CreatePowerpack"
+    "tag": "Powerpack"
   },
   {
+    "key": "rate_limit_template",
+    "operationId": "CreateAiGatewayRateLimit",
     "parameters": [
       {
         "name": "body",
@@ -1544,11 +1315,11 @@
       }
     ],
     "step": "there is a valid \"rate_limit_template\" in the system",
-    "key": "rate_limit_template",
-    "tag": "AI Gateway",
-    "operationId": "CreateAiGatewayRateLimit"
+    "tag": "AI Gateway"
   },
   {
+    "key": "custom_rule",
+    "operationId": "CreateApplicationSecurityWafCustomRule",
     "parameters": [
       {
         "name": "body",
@@ -1556,11 +1327,11 @@
       }
     ],
     "step": "there is a valid \"custom_rule\" in the system",
-    "key": "custom_rule",
-    "tag": "Application Security",
-    "operationId": "CreateApplicationSecurityWafCustomRule"
+    "tag": "Application Security"
   },
   {
+    "key": "exclusion_filter",
+    "operationId": "CreateApplicationSecurityWafExclusionFilter",
     "parameters": [
       {
         "name": "body",
@@ -1568,11 +1339,11 @@
       }
     ],
     "step": "there is a valid \"exclusion_filter\" in the system",
-    "key": "exclusion_filter",
-    "tag": "Application Security",
-    "operationId": "CreateApplicationSecurityWafExclusionFilter"
+    "tag": "Application Security"
   },
   {
+    "key": "policy",
+    "operationId": "CreateApplicationSecurityWafPolicy",
     "parameters": [
       {
         "name": "body",
@@ -1580,11 +1351,11 @@
       }
     ],
     "step": "there is a valid \"policy\" in the system",
-    "key": "policy",
-    "tag": "Application Security",
-    "operationId": "CreateApplicationSecurityWafPolicy"
+    "tag": "Application Security"
   },
   {
+    "key": "agent_rule",
+    "operationId": "CreateCSMThreatsAgentRule",
     "parameters": [
       {
         "name": "body",
@@ -1592,11 +1363,11 @@
       }
     ],
     "step": "there is a valid \"agent_rule_rc\" in the system",
-    "key": "agent_rule",
-    "tag": "CSM Threats",
-    "operationId": "CreateCSMThreatsAgentRule"
+    "tag": "CSM Threats"
   },
   {
+    "key": "policy",
+    "operationId": "CreateCSMThreatsAgentPolicy",
     "parameters": [
       {
         "name": "body",
@@ -1604,11 +1375,11 @@
       }
     ],
     "step": "there is a valid \"policy_rc\" in the system",
-    "key": "policy",
-    "tag": "CSM Threats",
-    "operationId": "CreateCSMThreatsAgentPolicy"
+    "tag": "CSM Threats"
   },
   {
+    "key": "role",
+    "operationId": "CreateRole",
     "parameters": [
       {
         "name": "body",
@@ -1616,11 +1387,11 @@
       }
     ],
     "step": "there is a valid \"role\" in the system",
-    "key": "role",
-    "tag": "Roles",
-    "operationId": "CreateRole"
+    "tag": "Roles"
   },
   {
+    "key": "permission_role",
+    "operationId": "AddPermissionToRole",
     "parameters": [
       {
         "name": "role_id",
@@ -1632,11 +1403,11 @@
       }
     ],
     "step": "the \"permission\" is granted to the \"role\"",
-    "key": "permission_role",
-    "tag": "Roles",
-    "operationId": "AddPermissionToRole"
+    "tag": "Roles"
   },
   {
+    "key": "permission_role",
+    "operationId": "AddUserToRole",
     "parameters": [
       {
         "name": "role_id",
@@ -1648,11 +1419,11 @@
       }
     ],
     "step": "the \"user\" has the \"role\"",
-    "key": "permission_role",
-    "tag": "Roles",
-    "operationId": "AddUserToRole"
+    "tag": "Roles"
   },
   {
+    "key": "rum_application",
+    "operationId": "CreateRUMApplication",
     "parameters": [
       {
         "name": "body",
@@ -1660,11 +1431,11 @@
       }
     ],
     "step": "there is a valid \"rum_application\" in the system",
-    "key": "rum_application",
-    "tag": "RUM",
-    "operationId": "CreateRUMApplication"
+    "tag": "RUM"
   },
   {
+    "key": "rum_metric",
+    "operationId": "CreateRUMMetric",
     "parameters": [
       {
         "name": "body",
@@ -1672,11 +1443,11 @@
       }
     ],
     "step": "there is a valid \"rum_metric\" in the system",
-    "key": "rum_metric",
-    "tag": "Rum Metrics",
-    "operationId": "CreateRumMetric"
+    "tag": "RUM Metrics"
   },
   {
+    "key": "teams_ownership_mapping",
+    "operationId": "CreateTeamsOwnershipMapping",
     "parameters": [
       {
         "name": "body",
@@ -1684,11 +1455,11 @@
       }
     ],
     "step": "there is a valid \"teams_ownership_mapping\" in the system",
-    "key": "teams_ownership_mapping",
-    "tag": "Rum Teams Ownership",
-    "operationId": "CreateTeamsOwnershipMapping"
+    "tag": "RUM Teams Ownership"
   },
   {
+    "key": "create_scorecard_rule",
+    "operationId": "CreateScorecardRule",
     "parameters": [
       {
         "name": "body",
@@ -1696,11 +1467,11 @@
       }
     ],
     "step": "there is a valid \"create_scorecard_rule\" in the system",
-    "key": "create_scorecard_rule",
-    "tag": "Scorecards",
-    "operationId": "CreateScorecardRule"
+    "tag": "Scorecards"
   },
   {
+    "key": "valid_due_date_rule",
+    "operationId": "CreateSecurityFindingsAutomationDueDateRule",
     "parameters": [
       {
         "name": "body",
@@ -1708,11 +1479,11 @@
       }
     ],
     "step": "there is a valid \"valid_due_date_rule\" in the system",
-    "key": "valid_due_date_rule",
-    "tag": "Security Monitoring",
-    "operationId": "CreateSecurityFindingsAutomationDueDateRule"
+    "tag": "Security Monitoring"
   },
   {
+    "key": "valid_inbox_rule",
+    "operationId": "CreateSecurityFindingsAutomationInboxRule",
     "parameters": [
       {
         "name": "body",
@@ -1720,11 +1491,11 @@
       }
     ],
     "step": "there is a valid \"valid_inbox_rule\" in the system",
-    "key": "valid_inbox_rule",
-    "tag": "Security Monitoring",
-    "operationId": "CreateSecurityFindingsAutomationInboxRule"
+    "tag": "Security Monitoring"
   },
   {
+    "key": "valid_mute_rule",
+    "operationId": "CreateSecurityFindingsAutomationMuteRule",
     "parameters": [
       {
         "name": "body",
@@ -1732,11 +1503,11 @@
       }
     ],
     "step": "there is a valid \"valid_mute_rule\" in the system",
-    "key": "valid_mute_rule",
-    "tag": "Security Monitoring",
-    "operationId": "CreateSecurityFindingsAutomationMuteRule"
+    "tag": "Security Monitoring"
   },
   {
+    "key": "valid_severity_modifier_rule",
+    "operationId": "CreateSecurityFindingsAutomationSeverityModifierRule",
     "parameters": [
       {
         "name": "body",
@@ -1744,11 +1515,11 @@
       }
     ],
     "step": "there is a valid \"valid_severity_modifier_rule\" in the system",
-    "key": "valid_severity_modifier_rule",
-    "tag": "Security Monitoring",
-    "operationId": "CreateSecurityFindingsAutomationSeverityModifierRule"
+    "tag": "Security Monitoring"
   },
   {
+    "key": "valid_ticket_creation_rule",
+    "operationId": "CreateSecurityFindingsAutomationTicketCreationRule",
     "parameters": [
       {
         "name": "body",
@@ -1756,11 +1527,11 @@
       }
     ],
     "step": "there is a valid \"valid_ticket_creation_rule\" in the system",
-    "key": "valid_ticket_creation_rule",
-    "tag": "Security Monitoring",
-    "operationId": "CreateSecurityFindingsAutomationTicketCreationRule"
+    "tag": "Security Monitoring"
   },
   {
+    "key": "valid_signal_notification_rule",
+    "operationId": "CreateSignalNotificationRule",
     "parameters": [
       {
         "name": "body",
@@ -1768,11 +1539,11 @@
       }
     ],
     "step": "there is a valid \"valid_signal_notification_rule\" in the system",
-    "key": "valid_signal_notification_rule",
-    "tag": "Security Monitoring",
-    "operationId": "CreateSignalNotificationRule"
+    "tag": "Security Monitoring"
   },
   {
+    "key": "valid_vulnerability_notification_rule",
+    "operationId": "CreateVulnerabilityNotificationRule",
     "parameters": [
       {
         "name": "body",
@@ -1780,11 +1551,11 @@
       }
     ],
     "step": "there is a valid \"valid_vulnerability_notification_rule\" in the system",
-    "key": "valid_vulnerability_notification_rule",
-    "tag": "Security Monitoring",
-    "operationId": "CreateVulnerabilityNotificationRule"
+    "tag": "Security Monitoring"
   },
   {
+    "key": "batch_migration",
+    "operationId": "CreateSecurityMonitoringBatchMigration",
     "parameters": [
       {
         "name": "body",
@@ -1792,11 +1563,11 @@
       }
     ],
     "step": "there is a valid \"batch_migration\" in the system",
-    "key": "batch_migration",
-    "tag": "Security Monitoring",
-    "operationId": "CreateSecurityMonitoringBatchMigration"
+    "tag": "Security Monitoring"
   },
   {
+    "key": "batch_migration_resource",
+    "operationId": "ListSecurityMonitoringBatchMigrationResources",
     "parameters": [
       {
         "name": "batch_id",
@@ -1805,11 +1576,11 @@
     ],
     "source": "data[0]",
     "step": "there is a valid \"batch_migration_resource\" in the system",
-    "key": "batch_migration_resource",
-    "tag": "Security Monitoring",
-    "operationId": "ListSecurityMonitoringBatchMigrationResources"
+    "tag": "Security Monitoring"
   },
   {
+    "key": "critical_asset",
+    "operationId": "CreateSecurityMonitoringCriticalAsset",
     "parameters": [
       {
         "name": "body",
@@ -1817,11 +1588,11 @@
       }
     ],
     "step": "there is a valid \"critical_asset\" in the system",
-    "key": "critical_asset",
-    "tag": "Security Monitoring",
-    "operationId": "CreateSecurityMonitoringCriticalAsset"
+    "tag": "Security Monitoring"
   },
   {
+    "key": "security_filter",
+    "operationId": "CreateSecurityFilter",
     "parameters": [
       {
         "name": "body",
@@ -1829,11 +1600,11 @@
       }
     ],
     "step": "there is a valid \"security_filter\" in the system",
-    "key": "security_filter",
-    "tag": "Security Monitoring",
-    "operationId": "CreateSecurityFilter"
+    "tag": "Security Monitoring"
   },
   {
+    "key": "suppression",
+    "operationId": "CreateSecurityMonitoringSuppression",
     "parameters": [
       {
         "name": "body",
@@ -1841,11 +1612,11 @@
       }
     ],
     "step": "there is a valid \"suppression\" in the system",
-    "key": "suppression",
-    "tag": "Security Monitoring",
-    "operationId": "CreateSecurityMonitoringSuppression"
+    "tag": "Security Monitoring"
   },
   {
+    "key": "suppression2",
+    "operationId": "CreateSecurityMonitoringSuppression",
     "parameters": [
       {
         "name": "body",
@@ -1853,11 +1624,11 @@
       }
     ],
     "step": "there is a valid \"suppression2\" in the system",
-    "key": "suppression2",
-    "tag": "Security Monitoring",
-    "operationId": "CreateSecurityMonitoringSuppression"
+    "tag": "Security Monitoring"
   },
   {
+    "key": "cloud_configuration_rule",
+    "operationId": "CreateSecurityMonitoringRule",
     "parameters": [
       {
         "name": "body",
@@ -1865,11 +1636,11 @@
       }
     ],
     "step": "there is a valid \"cloud_configuration_rule\" in the system",
-    "key": "cloud_configuration_rule",
-    "tag": "Security Monitoring",
-    "operationId": "CreateSecurityMonitoringRule"
+    "tag": "Security Monitoring"
   },
   {
+    "key": "security_rule",
+    "operationId": "CreateSecurityMonitoringRule",
     "parameters": [
       {
         "name": "body",
@@ -1877,23 +1648,11 @@
       }
     ],
     "step": "there is a valid \"security_rule\" in the system",
-    "key": "security_rule",
-    "tag": "Security Monitoring",
-    "operationId": "CreateSecurityMonitoringRule"
+    "tag": "Security Monitoring"
   },
   {
-    "parameters": [
-      {
-        "name": "body",
-        "value": "{\n  \"name\": \"{{ unique }}_bis\",\n  \"queries\": [{\n    \"query\": \"@test:false\",\n    \"aggregation\": \"count\",\n    \"groupByFields\": [],\n    \"distinctFields\": [],\n    \"metrics\": []\n  }],\n  \"filters\": [],\n  \"cases\": [{\n    \"name\": \"\",\n    \"status\": \"info\",\n    \"condition\": \"a > 0\",\n    \"notifications\": []\n  }],\n  \"options\": {\n    \"evaluationWindow\": 900,\n    \"keepAlive\": 3600,\n    \"maxSignalDuration\": 86400\n  },\n  \"message\": \"Test rule Bis\",\n  \"tags\": [],\n  \"isEnabled\": true,\n  \"type\": \"log_detection\"\n}"
-      }
-    ],
-    "step": "there is a valid \"security_rule_bis\" in the system",
-    "key": "security_rule_bis",
-    "tag": "Security Monitoring",
-    "operationId": "CreateSecurityMonitoringRule"
-  },
-  {
+    "key": "security_rule_hash",
+    "operationId": "CreateSecurityMonitoringRule",
     "parameters": [
       {
         "name": "body",
@@ -1901,11 +1660,11 @@
       }
     ],
     "step": "there is a valid \"security_rule_hash\" in the system",
-    "key": "security_rule_hash",
-    "tag": "Security Monitoring",
-    "operationId": "CreateSecurityMonitoringRule"
+    "tag": "Security Monitoring"
   },
   {
+    "key": "rule_proposal",
+    "operationId": "StartSecurityMonitoringRuleProposal",
     "parameters": [
       {
         "name": "body",
@@ -1913,11 +1672,11 @@
       }
     ],
     "step": "there is a valid \"rule_proposal\" in the system",
-    "key": "rule_proposal",
-    "tag": "Security Monitoring",
-    "operationId": "StartSecurityMonitoringRuleProposal"
+    "tag": "Security Monitoring"
   },
   {
+    "key": "security_rule_updated",
+    "operationId": "UpdateSecurityMonitoringRule",
     "parameters": [
       {
         "name": "rule_id",
@@ -1929,17 +1688,17 @@
       }
     ],
     "step": "there is a valid \"security_rule_updated\" in the system",
-    "key": "security_rule_updated",
-    "tag": "Security Monitoring",
-    "operationId": "UpdateSecurityMonitoringRule"
+    "tag": "Security Monitoring"
   },
   {
-    "step": "a valid \"configuration\" in the system",
     "key": "configuration",
-    "tag": "Sensitive Data Scanner",
-    "operationId": "ListScanningGroups"
+    "operationId": "ListScanningGroups",
+    "step": "a valid \"configuration\" in the system",
+    "tag": "Sensitive Data Scanner"
   },
   {
+    "key": "group",
+    "operationId": "CreateScanningGroup",
     "parameters": [
       {
         "name": "body",
@@ -1947,11 +1706,11 @@
       }
     ],
     "step": "there is a valid \"scanning_group\" in the system",
-    "key": "group",
-    "tag": "Sensitive Data Scanner",
-    "operationId": "CreateScanningGroup"
+    "tag": "Sensitive Data Scanner"
   },
   {
+    "key": "rule",
+    "operationId": "CreateScanningRule",
     "parameters": [
       {
         "name": "body",
@@ -1959,11 +1718,11 @@
       }
     ],
     "step": "the \"scanning_group\" has a \"scanning_rule\"",
-    "key": "rule",
-    "tag": "Sensitive Data Scanner",
-    "operationId": "CreateScanningRule"
+    "tag": "Sensitive Data Scanner"
   },
   {
+    "key": "service_account_user",
+    "operationId": "CreateServiceAccount",
     "parameters": [
       {
         "name": "body",
@@ -1971,11 +1730,11 @@
       }
     ],
     "step": "there is a valid \"service_account_user\" in the system",
-    "key": "service_account_user",
-    "tag": "Service Accounts",
-    "operationId": "CreateServiceAccount"
+    "tag": "Service Accounts"
   },
   {
+    "key": "service_account_user_with_role",
+    "operationId": "CreateServiceAccount",
     "parameters": [
       {
         "name": "body",
@@ -1983,11 +1742,11 @@
       }
     ],
     "step": "there is a valid \"service_account_user_with_role\" in the system",
-    "key": "service_account_user_with_role",
-    "tag": "Service Accounts",
-    "operationId": "CreateServiceAccount"
+    "tag": "Service Accounts"
   },
   {
+    "key": "service_account_access_token",
+    "operationId": "CreateServiceAccountAccessToken",
     "parameters": [
       {
         "name": "service_account_id",
@@ -1999,11 +1758,11 @@
       }
     ],
     "step": "there is a valid \"service_account_access_token\" for \"service_account_user\"",
-    "key": "service_account_access_token",
-    "tag": "Service Accounts",
-    "operationId": "CreateServiceAccountAccessToken"
+    "tag": "Service Accounts"
   },
   {
+    "key": "service_account_application_key",
+    "operationId": "CreateServiceAccountApplicationKey",
     "parameters": [
       {
         "name": "service_account_id",
@@ -2015,23 +1774,11 @@
       }
     ],
     "step": "there is a valid \"service_account_application_key\" for \"service_account_user\"",
-    "key": "service_account_application_key",
-    "tag": "Service Accounts",
-    "operationId": "CreateServiceAccountApplicationKey"
+    "tag": "Service Accounts"
   },
   {
-    "parameters": [
-      {
-        "name": "body",
-        "value": "{\n  \"dd-service\": \"service-{{ unique_lower_alnum }}\",\n  \"dd-team\": \"my-team\",\n  \"docs\": [{\"name\": \"Architecture\",\n            \"provider\": \"google drive\",\n            \"url\": \"https://gdrive/mygivedoc\"}],\n  \"extensions\": {\"frogextension\": \"extensionfrogvalue\"},\n  \"integrations\": {\"opsgenie\": {\"region\": \"US\",\n                                \"service-url\": \"https://my-org.opsgenie.com/service/123e4567-e89b-12d3-a456-426614174000\"},\n                   \"pagerduty\": \"https://my-org.pagerduty.com/service-directory/PMyService\"},\n  \"links\": [{\"name\": \"Runbook\", \"type\": \"runbook\", \"url\": \"https://my-runbook\"}],\n  \"repos\": [{\"name\": \"Source Code\",\n             \"provider\": \"GitHub\",\n             \"url\": \"https://github.com/DataDog/given\"}],\n  \"schema-version\": \"v2\",\n  \"tags\": [\"this:tag\", \"service:tag\"],\n  \"team\": \"super-team\"\n}"
-      }
-    ],
-    "step": "there is a valid \"service_definition\" in the system",
-    "key": "service_definition",
-    "tag": "Service Definition",
-    "operationId": "CreateOrUpdateServiceDefinitions"
-  },
-  {
+    "key": "historical_job",
+    "operationId": "RunHistoricalJob",
     "parameters": [
       {
         "name": "body",
@@ -2039,11 +1786,11 @@
       }
     ],
     "step": "there is a valid \"historical_job\" in the system",
-    "key": "historical_job",
-    "tag": "Security Monitoring",
-    "operationId": "RunHistoricalJob"
+    "tag": "Security Monitoring"
   },
   {
+    "key": "report",
+    "operationId": "CreateSLOReportJob",
     "parameters": [
       {
         "name": "body",
@@ -2051,11 +1798,11 @@
       }
     ],
     "step": "there is a valid \"report\" in the system",
-    "key": "report",
-    "tag": "Service Level Objectives",
-    "operationId": "CreateSLOReportJob"
+    "tag": "Service Level Objectives"
   },
   {
+    "key": "private_status_page",
+    "operationId": "CreateStatusPage",
     "parameters": [
       {
         "name": "body",
@@ -2063,11 +1810,11 @@
       }
     ],
     "step": "there is a valid \"private_status_page\" in the system",
-    "key": "private_status_page",
-    "tag": "Status Pages",
-    "operationId": "CreateStatusPage"
+    "tag": "Status Pages"
   },
   {
+    "key": "status_page",
+    "operationId": "CreateStatusPage",
     "parameters": [
       {
         "name": "body",
@@ -2075,11 +1822,11 @@
       }
     ],
     "step": "there is a valid \"status_page\" in the system",
-    "key": "status_page",
-    "tag": "Status Pages",
-    "operationId": "CreateStatusPage"
+    "tag": "Status Pages"
   },
   {
+    "key": "email_access_policy",
+    "operationId": "CreateEmailAccessPolicy",
     "parameters": [
       {
         "name": "page_id",
@@ -2091,11 +1838,11 @@
       }
     ],
     "step": "there is a valid \"email_access_policy\" in the system",
-    "key": "email_access_policy",
-    "tag": "Status Pages",
-    "operationId": "CreateEmailAccessPolicy"
+    "tag": "Status Pages"
   },
   {
+    "key": "degradation",
+    "operationId": "CreateDegradation",
     "parameters": [
       {
         "name": "page_id",
@@ -2107,11 +1854,11 @@
       }
     ],
     "step": "there is a valid \"degradation\" in the system",
-    "key": "degradation",
-    "tag": "Status Pages",
-    "operationId": "CreateDegradation"
+    "tag": "Status Pages"
   },
   {
+    "key": "maintenance",
+    "operationId": "CreateMaintenance",
     "parameters": [
       {
         "name": "page_id",
@@ -2123,11 +1870,11 @@
       }
     ],
     "step": "there is a valid \"maintenance\" in the system",
-    "key": "maintenance",
-    "tag": "Status Pages",
-    "operationId": "CreateMaintenance"
+    "tag": "Status Pages"
   },
   {
+    "key": "dd_team",
+    "operationId": "CreateTeam",
     "parameters": [
       {
         "name": "body",
@@ -2135,11 +1882,11 @@
       }
     ],
     "step": "there is a valid \"dd_team\" in the system",
-    "key": "dd_team",
-    "tag": "Teams",
-    "operationId": "CreateTeam"
+    "tag": "Teams"
   },
   {
+    "key": "dd_team_2",
+    "operationId": "CreateTeam",
     "parameters": [
       {
         "name": "body",
@@ -2147,11 +1894,11 @@
       }
     ],
     "step": "there is a valid \"dd_team_2\" in the system",
-    "key": "dd_team_2",
-    "tag": "Teams",
-    "operationId": "CreateTeam"
+    "tag": "Teams"
   },
   {
+    "key": "team_hierarchy_link",
+    "operationId": "AddTeamHierarchyLink",
     "parameters": [
       {
         "name": "body",
@@ -2159,11 +1906,11 @@
       }
     ],
     "step": "there is a valid \"team_hierarchy_link\" in the system",
-    "key": "team_hierarchy_link",
-    "tag": "Teams",
-    "operationId": "AddTeamHierarchyLink"
+    "tag": "Teams"
   },
   {
+    "key": "team_connection",
+    "operationId": "CreateTeamConnections",
     "parameters": [
       {
         "name": "body",
@@ -2172,11 +1919,11 @@
     ],
     "source": "data[0]",
     "step": "there is a valid \"team_connection\" in the system",
-    "key": "team_connection",
-    "tag": "Teams",
-    "operationId": "CreateTeamConnections"
+    "tag": "Teams"
   },
   {
+    "key": "team_link",
+    "operationId": "CreateTeamLink",
     "parameters": [
       {
         "name": "team_id",
@@ -2188,11 +1935,11 @@
       }
     ],
     "step": "there is a valid \"team_link\" in the system",
-    "key": "team_link",
-    "tag": "Teams",
-    "operationId": "CreateTeamLink"
+    "tag": "Teams"
   },
   {
+    "key": "team_hierarchy_child_membership",
+    "operationId": "CreateTeamMembership",
     "parameters": [
       {
         "name": "team_id",
@@ -2204,11 +1951,11 @@
       }
     ],
     "step": "there is a valid \"team_hierarchy_child_membership\" in the system",
-    "key": "team_hierarchy_child_membership",
-    "tag": "Teams",
-    "operationId": "CreateTeamMembership"
+    "tag": "Teams"
   },
   {
+    "key": "team_hierarchy_duplicate_membership",
+    "operationId": "CreateTeamMembership",
     "parameters": [
       {
         "name": "team_id",
@@ -2220,11 +1967,11 @@
       }
     ],
     "step": "there is a valid \"team_hierarchy_duplicate_membership\" in the system",
-    "key": "team_hierarchy_duplicate_membership",
-    "tag": "Teams",
-    "operationId": "CreateTeamMembership"
+    "tag": "Teams"
   },
   {
+    "key": "team_membership",
+    "operationId": "CreateTeamMembership",
     "parameters": [
       {
         "name": "team_id",
@@ -2236,11 +1983,11 @@
       }
     ],
     "step": "there is a valid \"team_membership\" in the system",
-    "key": "team_membership",
-    "tag": "Teams",
-    "operationId": "CreateTeamMembership"
+    "tag": "Teams"
   },
   {
+    "key": "team_notification_rule",
+    "operationId": "CreateTeamNotificationRule",
     "parameters": [
       {
         "name": "team_id",
@@ -2252,11 +1999,11 @@
       }
     ],
     "step": "there is a valid \"team_notification_rule\" in the system",
-    "key": "team_notification_rule",
-    "tag": "Teams",
-    "operationId": "CreateTeamNotificationRule"
+    "tag": "Teams"
   },
   {
+    "key": "quota",
+    "operationId": "CreateQuotas",
     "parameters": [
       {
         "name": "quota_namespace",
@@ -2272,11 +2019,11 @@
       }
     ],
     "step": "there is a valid \"quota\" in the system",
-    "key": "quota",
-    "tag": "Usage Metering",
-    "operationId": "CreateQuotas"
+    "tag": "Usage Metering"
   },
   {
+    "key": "temporary_grant_request",
+    "operationId": "CreateTemporaryGrantRequest",
     "parameters": [
       {
         "name": "body",
@@ -2284,11 +2031,11 @@
       }
     ],
     "step": "there is a valid \"temporary_grant_request\" in the system",
-    "key": "temporary_grant_request",
-    "tag": "Usage Metering",
-    "operationId": "CreateTemporaryGrantRequest"
+    "tag": "Usage Metering"
   },
   {
+    "key": "user_invitation",
+    "operationId": "SendInvitations",
     "parameters": [
       {
         "name": "body",
@@ -2297,11 +2044,11 @@
     ],
     "source": "data[0]",
     "step": "the \"user\" has a \"user_invitation\"",
-    "key": "user_invitation",
-    "tag": "Users",
-    "operationId": "SendInvitations"
+    "tag": "Users"
   },
   {
+    "key": "team_hierarchy_user",
+    "operationId": "CreateUser",
     "parameters": [
       {
         "name": "body",
@@ -2309,11 +2056,11 @@
       }
     ],
     "step": "there is a valid \"team_hierarchy_user\" in the system",
-    "key": "team_hierarchy_user",
-    "tag": "Users",
-    "operationId": "CreateUser"
+    "tag": "Users"
   },
   {
+    "key": "user",
+    "operationId": "CreateUser",
     "parameters": [
       {
         "name": "body",
@@ -2321,27 +2068,11 @@
       }
     ],
     "step": "there is a valid \"user\" in the system",
-    "key": "user",
-    "tag": "Users",
-    "operationId": "CreateUser"
+    "tag": "Users"
   },
   {
-    "parameters": [
-      {
-        "name": "integration_name",
-        "value": "\"databricks\""
-      },
-      {
-        "name": "body",
-        "value": "{\n  \"data\": {\n    \"type\": \"Account\",\n    \"attributes\": {\n      \"name\": \"{{ unique_lower_alnum }}\",\n      \"settings\": {\n        \"workspace_url\": \"https://example.azuredatabricks.net\"\n      },\n      \"secrets\": {\n        \"client_secret\": \"fake-client-secret\"\n      }\n    }\n  }\n}"
-      }
-    ],
-    "step": "there is a valid \"web_integration_account\" in the system",
-    "key": "web_integration_account",
-    "tag": "Web Integrations",
-    "operationId": "CreateWebIntegrationAccount"
-  },
-  {
+    "key": "aws_cloud_auth_intake_mapping",
+    "operationId": "CreateAWSCloudAuthIntakeMapping",
     "parameters": [
       {
         "name": "body",
@@ -2349,11 +2080,11 @@
       }
     ],
     "step": "there is a valid \"aws_cloud_auth_intake_mapping\" in the system",
-    "key": "aws_cloud_auth_intake_mapping",
-    "tag": "Cloud Authentication",
-    "operationId": "CreateAWSCloudAuthIntakeMapping"
+    "tag": "Cloud Authentication"
   },
   {
+    "key": "oidc_cloud_auth_persona_mapping",
+    "operationId": "CreateOIDCCloudAuthPersonaMapping",
     "parameters": [
       {
         "name": "body",
@@ -2361,11 +2092,11 @@
       }
     ],
     "step": "there is a valid \"oidc_cloud_auth_persona_mapping\" in the system",
-    "key": "oidc_cloud_auth_persona_mapping",
-    "tag": "Cloud Authentication",
-    "operationId": "CreateOIDCCloudAuthPersonaMapping"
+    "tag": "Cloud Authentication"
   },
   {
+    "key": "oidc_cloud_auth_provider",
+    "operationId": "CreateOIDCCloudAuthProvider",
     "parameters": [
       {
         "name": "body",
@@ -2373,11 +2104,11 @@
       }
     ],
     "step": "there is a valid \"oidc_cloud_auth_provider\" in the system",
-    "key": "oidc_cloud_auth_provider",
-    "tag": "Cloud Authentication",
-    "operationId": "CreateOIDCCloudAuthProvider"
+    "tag": "Cloud Authentication"
   },
   {
+    "key": "terraform_cloud_auth_persona_mapping",
+    "operationId": "CreateTerraformCloudAuthPersonaMapping",
     "parameters": [
       {
         "name": "body",
@@ -2385,11 +2116,11 @@
       }
     ],
     "step": "there is a valid \"terraform_cloud_auth_persona_mapping\" in the system",
-    "key": "terraform_cloud_auth_persona_mapping",
-    "tag": "Cloud Authentication",
-    "operationId": "CreateTerraformCloudAuthPersonaMapping"
+    "tag": "Cloud Authentication"
   },
   {
+    "key": "workflow",
+    "operationId": "CreateWorkflow",
     "parameters": [
       {
         "name": "body",
@@ -2397,8 +2128,6 @@
       }
     ],
     "step": "there is a valid \"workflow\" in the system",
-    "key": "workflow",
-    "tag": "Workflow Automation",
-    "operationId": "CreateWorkflow"
+    "tag": "Workflow Automation"
   }
 ]

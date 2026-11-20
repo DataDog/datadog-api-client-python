@@ -14,19 +14,19 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_retention_filter_edition_mode import RumRetentionFilterEditionMode
-    from datadog_api_client.v2.model.rum_retention_filter_meta_source import RumRetentionFilterMetaSource
+    from datadog_api_client.v2.model.rum_retention_filter_edition_mode import RUMRetentionFilterEditionMode
+    from datadog_api_client.v2.model.rum_retention_filter_meta_source import RUMRetentionFilterMetaSource
 
 
-class RumRetentionFilterMeta(ModelNormal):
+class RUMRetentionFilterMeta(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_retention_filter_edition_mode import RumRetentionFilterEditionMode
-        from datadog_api_client.v2.model.rum_retention_filter_meta_source import RumRetentionFilterMetaSource
+        from datadog_api_client.v2.model.rum_retention_filter_edition_mode import RUMRetentionFilterEditionMode
+        from datadog_api_client.v2.model.rum_retention_filter_meta_source import RUMRetentionFilterMetaSource
 
         return {
-            "edition_mode": (RumRetentionFilterEditionMode,),
-            "source": (RumRetentionFilterMetaSource,),
+            "edition_mode": (RUMRetentionFilterEditionMode,),
+            "source": (RUMRetentionFilterMetaSource,),
             "updated_at": (int,),
             "updated_by_handle": (str,),
         }
@@ -40,8 +40,8 @@ class RumRetentionFilterMeta(ModelNormal):
 
     def __init__(
         self_,
-        edition_mode: Union[RumRetentionFilterEditionMode, UnsetType] = unset,
-        source: Union[RumRetentionFilterMetaSource, UnsetType] = unset,
+        edition_mode: Union[RUMRetentionFilterEditionMode, UnsetType] = unset,
+        source: Union[RUMRetentionFilterMetaSource, UnsetType] = unset,
         updated_at: Union[int, UnsetType] = unset,
         updated_by_handle: Union[str, UnsetType] = unset,
         **kwargs,
@@ -51,10 +51,10 @@ class RumRetentionFilterMeta(ModelNormal):
 
         :param edition_mode: The types of changes the retention filter accepts. ``complete`` filters can be updated and deleted.
             ``limited`` filters are default retention filters that can't be deleted.
-        :type edition_mode: RumRetentionFilterEditionMode, optional
+        :type edition_mode: RUMRetentionFilterEditionMode, optional
 
         :param source: The source of the last update to the retention filter. The value is ``unknown`` if the request doesn't specify a source.
-        :type source: RumRetentionFilterMetaSource, optional
+        :type source: RUMRetentionFilterMetaSource, optional
 
         :param updated_at: The time of the last update, as a Unix timestamp in milliseconds.
         :type updated_at: int, optional

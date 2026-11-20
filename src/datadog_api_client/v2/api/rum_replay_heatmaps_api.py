@@ -17,7 +17,7 @@ from datadog_api_client.v2.model.snapshot_create_request import SnapshotCreateRe
 from datadog_api_client.v2.model.snapshot_update_request import SnapshotUpdateRequest
 
 
-class RumReplayHeatmapsApi:
+class RUMReplayHeatmapsApi:
     """
     Manage heatmap snapshots for RUM replay sessions. Create, update, delete, and retrieve snapshots to visualize user interactions on specific views.
     """

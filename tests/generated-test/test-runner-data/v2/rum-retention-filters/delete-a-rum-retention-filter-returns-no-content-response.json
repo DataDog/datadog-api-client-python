@@ -1,8 +1,8 @@
 {
-  "api": "RumRetentionFilters",
+  "api": "RUMRetentionFilters",
   "expected_status": 204,
-  "feature": "Rum Retention Filters",
-  "id": "v2/Rum Retention Filters/Delete a RUM retention filter returns \"No Content\" response",
+  "feature": "RUM Retention Filters",
+  "id": "v2/RUM Retention Filters/Delete a RUM retention filter returns \"No Content\" response",
   "operation_id": "DeleteRetentionFilter",
   "request": {
     "body": null,

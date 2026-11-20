@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumRetentionFilterEventType(ModelSimple):
+class RUMRetentionFilterEventType(ModelSimple):
     """
     The type of RUM events to filter on.
 
@@ -29,13 +29,13 @@ class RumRetentionFilterEventType(ModelSimple):
         "long_task",
         "vital",
     }
-    SESSION: ClassVar["RumRetentionFilterEventType"]
-    VIEW: ClassVar["RumRetentionFilterEventType"]
-    ACTION: ClassVar["RumRetentionFilterEventType"]
-    ERROR: ClassVar["RumRetentionFilterEventType"]
-    RESOURCE: ClassVar["RumRetentionFilterEventType"]
-    LONG_TASK: ClassVar["RumRetentionFilterEventType"]
-    VITAL: ClassVar["RumRetentionFilterEventType"]
+    SESSION: ClassVar["RUMRetentionFilterEventType"]
+    VIEW: ClassVar["RUMRetentionFilterEventType"]
+    ACTION: ClassVar["RUMRetentionFilterEventType"]
+    ERROR: ClassVar["RUMRetentionFilterEventType"]
+    RESOURCE: ClassVar["RUMRetentionFilterEventType"]
+    LONG_TASK: ClassVar["RUMRetentionFilterEventType"]
+    VITAL: ClassVar["RUMRetentionFilterEventType"]
 
     @cached_property
     def openapi_types(_):
@@ -44,10 +44,10 @@ class RumRetentionFilterEventType(ModelSimple):
         }
 
 
-RumRetentionFilterEventType.SESSION = RumRetentionFilterEventType("session")
-RumRetentionFilterEventType.VIEW = RumRetentionFilterEventType("view")
-RumRetentionFilterEventType.ACTION = RumRetentionFilterEventType("action")
-RumRetentionFilterEventType.ERROR = RumRetentionFilterEventType("error")
-RumRetentionFilterEventType.RESOURCE = RumRetentionFilterEventType("resource")
-RumRetentionFilterEventType.LONG_TASK = RumRetentionFilterEventType("long_task")
-RumRetentionFilterEventType.VITAL = RumRetentionFilterEventType("vital")
+RUMRetentionFilterEventType.SESSION = RUMRetentionFilterEventType("session")
+RUMRetentionFilterEventType.VIEW = RUMRetentionFilterEventType("view")
+RUMRetentionFilterEventType.ACTION = RUMRetentionFilterEventType("action")
+RUMRetentionFilterEventType.ERROR = RUMRetentionFilterEventType("error")
+RUMRetentionFilterEventType.RESOURCE = RUMRetentionFilterEventType("resource")
+RUMRetentionFilterEventType.LONG_TASK = RUMRetentionFilterEventType("long_task")
+RUMRetentionFilterEventType.VITAL = RUMRetentionFilterEventType("vital")

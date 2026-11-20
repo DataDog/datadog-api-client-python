@@ -14,31 +14,31 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_sdk_config_serialized_regex import RumSdkConfigSerializedRegex
+    from datadog_api_client.v2.model.rum_sdk_config_serialized_regex import RUMSdkConfigSerializedRegex
     from datadog_api_client.v2.model.rum_sdk_config_dynamic_option_serialized_type import (
-        RumSdkConfigDynamicOptionSerializedType,
+        RUMSdkConfigDynamicOptionSerializedType,
     )
-    from datadog_api_client.v2.model.rum_sdk_config_dynamic_option_strategy import RumSdkConfigDynamicOptionStrategy
+    from datadog_api_client.v2.model.rum_sdk_config_dynamic_option_strategy import RUMSdkConfigDynamicOptionStrategy
 
 
-class RumSdkConfigDynamicOption(ModelNormal):
+class RUMSdkConfigDynamicOption(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_sdk_config_serialized_regex import RumSdkConfigSerializedRegex
+        from datadog_api_client.v2.model.rum_sdk_config_serialized_regex import RUMSdkConfigSerializedRegex
         from datadog_api_client.v2.model.rum_sdk_config_dynamic_option_serialized_type import (
-            RumSdkConfigDynamicOptionSerializedType,
+            RUMSdkConfigDynamicOptionSerializedType,
         )
-        from datadog_api_client.v2.model.rum_sdk_config_dynamic_option_strategy import RumSdkConfigDynamicOptionStrategy
+        from datadog_api_client.v2.model.rum_sdk_config_dynamic_option_strategy import RUMSdkConfigDynamicOptionStrategy
 
         return {
             "attribute": (str,),
-            "extractor": (RumSdkConfigSerializedRegex,),
+            "extractor": (RUMSdkConfigSerializedRegex,),
             "key": (str,),
             "name": (str,),
             "path": (str,),
-            "rc_serialized_type": (RumSdkConfigDynamicOptionSerializedType,),
+            "rc_serialized_type": (RUMSdkConfigDynamicOptionSerializedType,),
             "selector": (str,),
-            "strategy": (RumSdkConfigDynamicOptionStrategy,),
+            "strategy": (RUMSdkConfigDynamicOptionStrategy,),
         }
 
     attribute_map = {
@@ -54,10 +54,10 @@ class RumSdkConfigDynamicOption(ModelNormal):
 
     def __init__(
         self_,
-        rc_serialized_type: RumSdkConfigDynamicOptionSerializedType,
-        strategy: RumSdkConfigDynamicOptionStrategy,
+        rc_serialized_type: RUMSdkConfigDynamicOptionSerializedType,
+        strategy: RUMSdkConfigDynamicOptionStrategy,
         attribute: Union[str, UnsetType] = unset,
-        extractor: Union[RumSdkConfigSerializedRegex, UnsetType] = unset,
+        extractor: Union[RUMSdkConfigSerializedRegex, UnsetType] = unset,
         key: Union[str, UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         path: Union[str, UnsetType] = unset,
@@ -71,7 +71,7 @@ class RumSdkConfigDynamicOption(ModelNormal):
         :type attribute: str, optional
 
         :param extractor: A serialized regex used as an extractor in dynamic options.
-        :type extractor: RumSdkConfigSerializedRegex, optional
+        :type extractor: RUMSdkConfigSerializedRegex, optional
 
         :param key: The ``localStorage`` key to read. Required when ``strategy`` is ``localStorage``.
         :type key: str, optional
@@ -83,13 +83,13 @@ class RumSdkConfigDynamicOption(ModelNormal):
         :type path: str, optional
 
         :param rc_serialized_type: The type identifier for a dynamic option. Always ``dynamic``.
-        :type rc_serialized_type: RumSdkConfigDynamicOptionSerializedType
+        :type rc_serialized_type: RUMSdkConfigDynamicOptionSerializedType
 
         :param selector: The CSS selector to read from the page. Required when ``strategy`` is ``dom``.
         :type selector: str, optional
 
         :param strategy: The strategy used to extract the dynamic value.
-        :type strategy: RumSdkConfigDynamicOptionStrategy
+        :type strategy: RUMSdkConfigDynamicOptionStrategy
         """
         if attribute is not unset:
             kwargs["attribute"] = attribute
