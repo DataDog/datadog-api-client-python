@@ -63,6 +63,22 @@ Feature: Data Deletion
     Then the response status is 412 Precondition failed error
 
   @generated @skip @team:ddoghq/governance-tooling-and-systems
+  Scenario: Forces a data deletion request returns "OK" response
+    Given operation "ForceDataDeletionRequest" enabled
+    And new "ForceDataDeletionRequest" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/governance-tooling-and-systems
+  Scenario: Forces a data deletion request returns "Precondition failed error" response
+    Given operation "ForceDataDeletionRequest" enabled
+    And new "ForceDataDeletionRequest" request
+    And request contains "id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 412 Precondition failed error
+
+  @generated @skip @team:ddoghq/governance-tooling-and-systems
   Scenario: Gets a list of data deletion requests returns "Bad Request" response
     Given new "GetDataDeletionRequests" request
     When the request is sent

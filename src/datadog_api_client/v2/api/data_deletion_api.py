@@ -15,6 +15,7 @@ from datadog_api_client.v2.model.create_data_deletion_response_body import Creat
 from datadog_api_client.v2.model.create_data_deletion_request_body import CreateDataDeletionRequestBody
 from datadog_api_client.v2.model.get_data_deletions_response_body import GetDataDeletionsResponseBody
 from datadog_api_client.v2.model.cancel_data_deletion_response_body import CancelDataDeletionResponseBody
+from datadog_api_client.v2.model.force_data_deletion_response_body import ForceDataDeletionResponseBody
 
 
 class DataDeletionApi:
@@ -73,6 +74,29 @@ class DataDeletionApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._force_data_deletion_request_endpoint = _Endpoint(
+            settings={
+                "response_type": (ForceDataDeletionResponseBody,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/deletion/requests/{id}/force",
+                "operation_id": "force_data_deletion_request",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "id": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "id",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
             api_client=api_client,
         )
 
@@ -159,6 +183,25 @@ class DataDeletionApi:
         kwargs["body"] = body
 
         return self._create_data_deletion_request_endpoint.call_with_http_info(**kwargs)
+
+    def force_data_deletion_request(
+        self,
+        id: str,
+    ) -> ForceDataDeletionResponseBody:
+        """Forces a data deletion request.
+
+        Skips the remaining recovery period of a data deletion request by providing its ID.
+        Only requests in ``in_progress`` status can be forced. The deletion starts within a few minutes,
+        the request moves to ``deleting`` status, and it can no longer be canceled.
+
+        :param id: ID of the deletion request.
+        :type id: str
+        :rtype: ForceDataDeletionResponseBody
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["id"] = id
+
+        return self._force_data_deletion_request_endpoint.call_with_http_info(**kwargs)
 
     def get_data_deletion_requests(
         self,

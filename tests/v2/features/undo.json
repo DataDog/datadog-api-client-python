@@ -2436,6 +2436,12 @@
       "type": "idempotent"
     }
   },
+  "ForceDataDeletionRequest": {
+    "tag": "Data Deletion",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "CreateJourney": {
     "tag": "DEM",
     "undo": {
