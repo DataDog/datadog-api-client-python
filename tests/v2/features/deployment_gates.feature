@@ -11,6 +11,17 @@ Feature: Deployment Gates
     And an instance of "DeploymentGates" API
 
   @team:ddoghq/ci-app-backend
+  Scenario: Create bits deployment analysis deployment rule returns "OK" response
+    Given there is a valid "deployment_gate" in the system
+    And operation "CreateDeploymentRule" enabled
+    And new "CreateDeploymentRule" request
+    And request contains "gate_id" parameter from "deployment_gate.data.id"
+    And body with value {"data": {"attributes": {"dry_run": false, "name": "Bits deployment analysis rule", "options": {"duration": 900}, "type": "bits_deployment_analysis"}, "type": "deployment_rule"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.attributes.type" is equal to "bits_deployment_analysis"
+
+  @team:ddoghq/ci-app-backend
   Scenario: Create deployment gate returns "Bad Request" response
     Given operation "CreateDeploymentGate" enabled
     And new "CreateDeploymentGate" request
@@ -405,6 +416,16 @@ Feature: Deployment Gates
     And body with value {"data": {"attributes": {"env": "staging", "service": "non-existent-service-xyz"}, "type": "deployment_gates_evaluation_request"}}
     When the request is sent
     Then the response status is 404 Deployment gate not found.
+
+  @team:ddoghq/ci-app-backend
+  Scenario: Trigger a deployment gates evaluation with an inline bits deployment analysis rule returns "Accepted" response
+    Given operation "TriggerDeploymentGatesEvaluation" enabled
+    And there is a valid "deployment_gate" in the system
+    And new "TriggerDeploymentGatesEvaluation" request
+    And body with value {"data": {"attributes": {"configuration": {"dry_run": false, "rules": [{"dry_run": false, "name": "bits deployment analysis", "options": {"duration": 900}, "type": "bits_deployment_analysis"}]}, "env": "production", "identifier": "{{ deployment_gate.data.attributes.identifier }}", "service": "my-service"}, "type": "deployment_gates_evaluation_request"}}
+    When the request is sent
+    Then the response status is 202 Accepted
+    And the response "data.type" is equal to "deployment_gates_evaluation_response"
 
   @team:ddoghq/ci-app-backend
   Scenario: Update deployment gate returns "Bad Request" response

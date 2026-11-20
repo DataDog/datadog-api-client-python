@@ -59,6 +59,7 @@ class UpdateDeploymentRuleParamsDataAttributes(ModelNormal):
         :type name: str
 
         :param options: Options for deployment rule response representing either faulty deployment detection or monitor options.
+            Bits Deployment Analysis rules use the faulty deployment detection options shape and accept only ``duration``.
         :type options: DeploymentRulesOptions
         """
         super().__init__(kwargs)
