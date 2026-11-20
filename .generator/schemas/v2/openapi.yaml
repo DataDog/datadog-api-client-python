@@ -256829,7 +256829,7 @@ paths:
           - security_monitoring_rules_read
       x-unstable: |-
         **Note**: This endpoint is in Preview and is subject to change.
-        To request access, contact [Datadog support](https://docs.datadoghq.com/help/) or your Customer Success Manager.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
     post:
       description: |-
         Create a batch migration in the `draft` status, together with 1 to 100 initial
@@ -256921,7 +256921,7 @@ paths:
           - security_monitoring_rules_write
       x-unstable: |-
         **Note**: This endpoint is in Preview and is subject to change.
-        To request access, contact [Datadog support](https://docs.datadoghq.com/help/) or your Customer Success Manager.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/security_monitoring/batch-migrations/{batch_id}:
     delete:
       description: |-
@@ -256961,7 +256961,7 @@ paths:
           - security_monitoring_rules_write
       x-unstable: |-
         **Note**: This endpoint is in Preview and is subject to change.
-        To request access, contact [Datadog support](https://docs.datadoghq.com/help/) or your Customer Success Manager.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
     patch:
       description: |-
         Update the name, description, or tags of a batch migration, in any status. At least
@@ -257046,7 +257046,7 @@ paths:
           - security_monitoring_rules_write
       x-unstable: |-
         **Note**: This endpoint is in Preview and is subject to change.
-        To request access, contact [Datadog support](https://docs.datadoghq.com/help/) or your Customer Success Manager.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/security_monitoring/batch-migrations/{batch_id}/cancel:
     post:
       description: |-
@@ -257087,7 +257087,7 @@ paths:
           - security_monitoring_rules_write
       x-unstable: |-
         **Note**: This endpoint is in Preview and is subject to change.
-        To request access, contact [Datadog support](https://docs.datadoghq.com/help/) or your Customer Success Manager.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/security_monitoring/batch-migrations/{batch_id}/publish:
     post:
       description: |-
@@ -257181,7 +257181,7 @@ paths:
           - security_monitoring_rules_write
       x-unstable: |-
         **Note**: This endpoint is in Preview and is subject to change.
-        To request access, contact [Datadog support](https://docs.datadoghq.com/help/) or your Customer Success Manager.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/security_monitoring/batch-migrations/{batch_id}/resources:
     delete:
       description: |-
@@ -257236,7 +257236,7 @@ paths:
           - security_monitoring_rules_write
       x-unstable: |-
         **Note**: This endpoint is in Preview and is subject to change.
-        To request access, contact [Datadog support](https://docs.datadoghq.com/help/) or your Customer Success Manager.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
     get:
       description: |-
         List the resources of a batch migration, including the input of each source rule and,
@@ -257331,7 +257331,7 @@ paths:
           - security_monitoring_rules_read
       x-unstable: |-
         **Note**: This endpoint is in Preview and is subject to change.
-        To request access, contact [Datadog support](https://docs.datadoghq.com/help/) or your Customer Success Manager.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
     post:
       description: |-
         Add 1 to 1000 resources to a `draft` batch migration. Returns `409 Conflict` if the
@@ -257408,7 +257408,7 @@ paths:
           - security_monitoring_rules_write
       x-unstable: |-
         **Note**: This endpoint is in Preview and is subject to change.
-        To request access, contact [Datadog support](https://docs.datadoghq.com/help/) or your Customer Success Manager.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/security_monitoring/batch-migrations/{batch_id}/resources/{resource_id}:
     patch:
       description: |-
@@ -257485,7 +257485,7 @@ paths:
           - security_monitoring_rules_write
       x-unstable: |-
         **Note**: This endpoint is in Preview and is subject to change.
-        To request access, contact [Datadog support](https://docs.datadoghq.com/help/) or your Customer Success Manager.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/security_monitoring/batch-migrations/{batch_id}/start:
     post:
       description: |-
@@ -257536,7 +257536,7 @@ paths:
           - security_monitoring_rules_write
       x-unstable: |-
         **Note**: This endpoint is in Preview and is subject to change.
-        To request access, contact [Datadog support](https://docs.datadoghq.com/help/) or your Customer Success Manager.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/security_monitoring/cloud_workload_security/agent_rules:
     get:
       description: |-
@@ -260926,7 +260926,7 @@ paths:
           - security_monitoring_rules_write
       x-unstable: |-
         **Note**: This endpoint is in Preview and is subject to change.
-        To request access, contact [Datadog support](https://docs.datadoghq.com/help/) or your Customer Success Manager.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/security_monitoring/rules/proposals/{proposal_id}:
     get:
       description: |-
@@ -261018,7 +261018,7 @@ paths:
           - security_monitoring_rules_read
       x-unstable: |-
         **Note**: This endpoint is in Preview and is subject to change.
-        To request access, contact [Datadog support](https://docs.datadoghq.com/help/) or your Customer Success Manager.
+        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/security_monitoring/rules/test:
     post:
       description: |-
