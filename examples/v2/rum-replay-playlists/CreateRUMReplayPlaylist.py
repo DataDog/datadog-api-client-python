@@ -4,7 +4,7 @@ Create RUM replay playlist returns "Created" response
 
 from os import environ
 from datadog_api_client import ApiClient, Configuration
-from datadog_api_client.v2.api.rum_replay_playlists_api import RumReplayPlaylistsApi
+from datadog_api_client.v2.api.rum_replay_playlists_api import RUMReplayPlaylistsApi
 from datadog_api_client.v2.model.playlist import Playlist
 from datadog_api_client.v2.model.playlist_data import PlaylistData
 from datadog_api_client.v2.model.playlist_data_attributes import PlaylistDataAttributes
@@ -28,7 +28,7 @@ body = Playlist(
 configuration = Configuration()
 configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
-    api_instance = RumReplayPlaylistsApi(api_client)
+    api_instance = RUMReplayPlaylistsApi(api_client)
     response = api_instance.create_rum_replay_playlist(body=body)
 
     print(response)

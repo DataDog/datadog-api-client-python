@@ -14,23 +14,23 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_sdk_config_attributes import RumSdkConfigAttributes
-    from datadog_api_client.v2.model.rum_sdk_config_meta import RumSdkConfigMeta
-    from datadog_api_client.v2.model.rum_sdk_config_type import RumSdkConfigType
+    from datadog_api_client.v2.model.rum_sdk_config_attributes import RUMSdkConfigAttributes
+    from datadog_api_client.v2.model.rum_sdk_config_meta import RUMSdkConfigMeta
+    from datadog_api_client.v2.model.rum_sdk_config_type import RUMSdkConfigType
 
 
-class RumSdkConfigData(ModelNormal):
+class RUMSdkConfigData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_sdk_config_attributes import RumSdkConfigAttributes
-        from datadog_api_client.v2.model.rum_sdk_config_meta import RumSdkConfigMeta
-        from datadog_api_client.v2.model.rum_sdk_config_type import RumSdkConfigType
+        from datadog_api_client.v2.model.rum_sdk_config_attributes import RUMSdkConfigAttributes
+        from datadog_api_client.v2.model.rum_sdk_config_meta import RUMSdkConfigMeta
+        from datadog_api_client.v2.model.rum_sdk_config_type import RUMSdkConfigType
 
         return {
-            "attributes": (RumSdkConfigAttributes,),
+            "attributes": (RUMSdkConfigAttributes,),
             "id": (str,),
-            "meta": (RumSdkConfigMeta,),
-            "type": (RumSdkConfigType,),
+            "meta": (RUMSdkConfigMeta,),
+            "type": (RUMSdkConfigType,),
         }
 
     attribute_map = {
@@ -42,26 +42,26 @@ class RumSdkConfigData(ModelNormal):
 
     def __init__(
         self_,
-        attributes: RumSdkConfigAttributes,
+        attributes: RUMSdkConfigAttributes,
         id: str,
-        type: RumSdkConfigType,
-        meta: Union[RumSdkConfigMeta, UnsetType] = unset,
+        type: RUMSdkConfigType,
+        meta: Union[RUMSdkConfigMeta, UnsetType] = unset,
         **kwargs,
     ):
         """
         The RUM SDK configuration data object.
 
         :param attributes: Attributes of the RUM SDK configuration.
-        :type attributes: RumSdkConfigAttributes
+        :type attributes: RUMSdkConfigAttributes
 
         :param id: The unique identifier of the RUM SDK configuration.
         :type id: str
 
         :param meta: Metadata associated with a RUM SDK configuration.
-        :type meta: RumSdkConfigMeta, optional
+        :type meta: RUMSdkConfigMeta, optional
 
         :param type: The type of the resource. The value should always be ``rum_sdk_config``.
-        :type type: RumSdkConfigType
+        :type type: RUMSdkConfigType
         """
         if meta is not unset:
             kwargs["meta"] = meta

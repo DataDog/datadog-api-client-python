@@ -10557,84 +10557,84 @@
       "version": "v2"
     },
     {
-      "feature": "Rum Metrics",
+      "feature": "RUM Metrics",
       "feature_file": "../../v2/features/rum_metrics.feature",
       "file": "v2/rum-metrics/create-a-rum-based-metric-returns-bad-request-response.json",
       "scenario": "Create a RUM-based metric returns \"Bad Request\" response",
       "version": "v2"
     },
     {
-      "feature": "Rum Metrics",
+      "feature": "RUM Metrics",
       "feature_file": "../../v2/features/rum_metrics.feature",
       "file": "v2/rum-metrics/create-a-rum-based-metric-returns-conflict-response.json",
       "scenario": "Create a RUM-based metric returns \"Conflict\" response",
       "version": "v2"
     },
     {
-      "feature": "Rum Metrics",
+      "feature": "RUM Metrics",
       "feature_file": "../../v2/features/rum_metrics.feature",
       "file": "v2/rum-metrics/create-a-rum-based-metric-returns-created-response.json",
       "scenario": "Create a RUM-based metric returns \"Created\" response",
       "version": "v2"
     },
     {
-      "feature": "Rum Metrics",
+      "feature": "RUM Metrics",
       "feature_file": "../../v2/features/rum_metrics.feature",
       "file": "v2/rum-metrics/delete-a-rum-based-metric-returns-no-content-response.json",
       "scenario": "Delete a RUM-based metric returns \"No Content\" response",
       "version": "v2"
     },
     {
-      "feature": "Rum Metrics",
+      "feature": "RUM Metrics",
       "feature_file": "../../v2/features/rum_metrics.feature",
       "file": "v2/rum-metrics/delete-a-rum-based-metric-returns-not-found-response.json",
       "scenario": "Delete a RUM-based metric returns \"Not Found\" response",
       "version": "v2"
     },
     {
-      "feature": "Rum Metrics",
+      "feature": "RUM Metrics",
       "feature_file": "../../v2/features/rum_metrics.feature",
       "file": "v2/rum-metrics/get-a-rum-based-metric-returns-not-found-response.json",
       "scenario": "Get a RUM-based metric returns \"Not Found\" response",
       "version": "v2"
     },
     {
-      "feature": "Rum Metrics",
+      "feature": "RUM Metrics",
       "feature_file": "../../v2/features/rum_metrics.feature",
       "file": "v2/rum-metrics/get-a-rum-based-metric-returns-ok-response.json",
       "scenario": "Get a RUM-based metric returns \"OK\" response",
       "version": "v2"
     },
     {
-      "feature": "Rum Metrics",
+      "feature": "RUM Metrics",
       "feature_file": "../../v2/features/rum_metrics.feature",
       "file": "v2/rum-metrics/get-all-rum-based-metrics-returns-ok-response.json",
       "scenario": "Get all RUM-based metrics returns \"OK\" response",
       "version": "v2"
     },
     {
-      "feature": "Rum Metrics",
+      "feature": "RUM Metrics",
       "feature_file": "../../v2/features/rum_metrics.feature",
       "file": "v2/rum-metrics/update-a-rum-based-metric-returns-bad-request-response.json",
       "scenario": "Update a RUM-based metric returns \"Bad Request\" response",
       "version": "v2"
     },
     {
-      "feature": "Rum Metrics",
+      "feature": "RUM Metrics",
       "feature_file": "../../v2/features/rum_metrics.feature",
       "file": "v2/rum-metrics/update-a-rum-based-metric-returns-conflict-response.json",
       "scenario": "Update a RUM-based metric returns \"Conflict\" response",
       "version": "v2"
     },
     {
-      "feature": "Rum Metrics",
+      "feature": "RUM Metrics",
       "feature_file": "../../v2/features/rum_metrics.feature",
       "file": "v2/rum-metrics/update-a-rum-based-metric-returns-not-found-response.json",
       "scenario": "Update a RUM-based metric returns \"Not Found\" response",
       "version": "v2"
     },
     {
-      "feature": "Rum Metrics",
+      "feature": "RUM Metrics",
       "feature_file": "../../v2/features/rum_metrics.feature",
       "file": "v2/rum-metrics/update-a-rum-based-metric-returns-ok-response.json",
       "scenario": "Update a RUM-based metric returns \"OK\" response",
@@ -10739,84 +10739,84 @@
       "version": "v2"
     },
     {
-      "feature": "Rum Retention Filters",
+      "feature": "RUM Retention Filters",
       "feature_file": "../../v2/features/rum_retention_filters.feature",
       "file": "v2/rum-retention-filters/create-a-rum-retention-filter-returns-bad-request-response.json",
       "scenario": "Create a RUM retention filter returns \"Bad Request\" response",
       "version": "v2"
     },
     {
-      "feature": "Rum Retention Filters",
+      "feature": "RUM Retention Filters",
       "feature_file": "../../v2/features/rum_retention_filters.feature",
       "file": "v2/rum-retention-filters/create-a-rum-retention-filter-returns-created-response.json",
       "scenario": "Create a RUM retention filter returns \"Created\" response",
       "version": "v2"
     },
     {
-      "feature": "Rum Retention Filters",
+      "feature": "RUM Retention Filters",
       "feature_file": "../../v2/features/rum_retention_filters.feature",
       "file": "v2/rum-retention-filters/delete-a-rum-retention-filter-returns-no-content-response.json",
       "scenario": "Delete a RUM retention filter returns \"No Content\" response",
       "version": "v2"
     },
     {
-      "feature": "Rum Retention Filters",
+      "feature": "RUM Retention Filters",
       "feature_file": "../../v2/features/rum_retention_filters.feature",
       "file": "v2/rum-retention-filters/delete-a-rum-retention-filter-returns-not-found-response.json",
       "scenario": "Delete a RUM retention filter returns \"Not Found\" response",
       "version": "v2"
     },
     {
-      "feature": "Rum Retention Filters",
+      "feature": "RUM Retention Filters",
       "feature_file": "../../v2/features/rum_retention_filters.feature",
       "file": "v2/rum-retention-filters/get-a-rum-retention-filter-returns-not-found-response.json",
       "scenario": "Get a RUM retention filter returns \"Not Found\" response",
       "version": "v2"
     },
     {
-      "feature": "Rum Retention Filters",
+      "feature": "RUM Retention Filters",
       "feature_file": "../../v2/features/rum_retention_filters.feature",
       "file": "v2/rum-retention-filters/get-a-rum-retention-filter-returns-ok-response.json",
       "scenario": "Get a RUM retention filter returns \"OK\" response",
       "version": "v2"
     },
     {
-      "feature": "Rum Retention Filters",
+      "feature": "RUM Retention Filters",
       "feature_file": "../../v2/features/rum_retention_filters.feature",
       "file": "v2/rum-retention-filters/get-all-rum-retention-filters-returns-ok-response.json",
       "scenario": "Get all RUM retention filters returns \"OK\" response",
       "version": "v2"
     },
     {
-      "feature": "Rum Retention Filters",
+      "feature": "RUM Retention Filters",
       "feature_file": "../../v2/features/rum_retention_filters.feature",
       "file": "v2/rum-retention-filters/order-rum-retention-filters-returns-bad-request-response.json",
       "scenario": "Order RUM retention filters returns \"Bad Request\" response",
       "version": "v2"
     },
     {
-      "feature": "Rum Retention Filters",
+      "feature": "RUM Retention Filters",
       "feature_file": "../../v2/features/rum_retention_filters.feature",
       "file": "v2/rum-retention-filters/order-rum-retention-filters-returns-ordered-response.json",
       "scenario": "Order RUM retention filters returns \"Ordered\" response",
       "version": "v2"
     },
     {
-      "feature": "Rum Retention Filters",
+      "feature": "RUM Retention Filters",
       "feature_file": "../../v2/features/rum_retention_filters.feature",
       "file": "v2/rum-retention-filters/update-a-rum-retention-filter-returns-bad-request-response.json",
       "scenario": "Update a RUM retention filter returns \"Bad Request\" response",
       "version": "v2"
     },
     {
-      "feature": "Rum Retention Filters",
+      "feature": "RUM Retention Filters",
       "feature_file": "../../v2/features/rum_retention_filters.feature",
       "file": "v2/rum-retention-filters/update-a-rum-retention-filter-returns-not-found-response.json",
       "scenario": "Update a RUM retention filter returns \"Not Found\" response",
       "version": "v2"
     },
     {
-      "feature": "Rum Retention Filters",
+      "feature": "RUM Retention Filters",
       "feature_file": "../../v2/features/rum_retention_filters.feature",
       "file": "v2/rum-retention-filters/update-a-rum-retention-filter-returns-updated-response.json",
       "scenario": "Update a RUM retention filter returns \"Updated\" response",

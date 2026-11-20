@@ -12,28 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_config_create_data import RumConfigCreateData
+    from datadog_api_client.v2.model.rum_config_create_data import RUMConfigCreateData
 
 
-class RumConfigCreateRequest(ModelNormal):
+class RUMConfigCreateRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_config_create_data import RumConfigCreateData
+        from datadog_api_client.v2.model.rum_config_create_data import RUMConfigCreateData
 
         return {
-            "data": (RumConfigCreateData,),
+            "data": (RUMConfigCreateData,),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: RumConfigCreateData, **kwargs):
+    def __init__(self_, data: RUMConfigCreateData, **kwargs):
         """
         Request body for creating the RUM configuration.
 
         :param data: Object describing the RUM configuration to create.
-        :type data: RumConfigCreateData
+        :type data: RUMConfigCreateData
         """
         super().__init__(kwargs)
 

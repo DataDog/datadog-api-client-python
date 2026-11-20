@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumSdkConfigSerializedRegexType(ModelSimple):
+class RUMSdkConfigSerializedRegexType(ModelSimple):
     """
     The type identifier for a serialized regex. Always `regex`.
 
@@ -23,7 +23,7 @@ class RumSdkConfigSerializedRegexType(ModelSimple):
     allowed_values = {
         "regex",
     }
-    REGEX: ClassVar["RumSdkConfigSerializedRegexType"]
+    REGEX: ClassVar["RUMSdkConfigSerializedRegexType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,4 @@ class RumSdkConfigSerializedRegexType(ModelSimple):
         }
 
 
-RumSdkConfigSerializedRegexType.REGEX = RumSdkConfigSerializedRegexType("regex")
+RUMSdkConfigSerializedRegexType.REGEX = RUMSdkConfigSerializedRegexType("regex")

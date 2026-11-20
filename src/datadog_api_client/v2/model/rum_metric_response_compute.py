@@ -14,16 +14,16 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_metric_compute_aggregation_type import RumMetricComputeAggregationType
+    from datadog_api_client.v2.model.rum_metric_compute_aggregation_type import RUMMetricComputeAggregationType
 
 
-class RumMetricResponseCompute(ModelNormal):
+class RUMMetricResponseCompute(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_metric_compute_aggregation_type import RumMetricComputeAggregationType
+        from datadog_api_client.v2.model.rum_metric_compute_aggregation_type import RUMMetricComputeAggregationType
 
         return {
-            "aggregation_type": (RumMetricComputeAggregationType,),
+            "aggregation_type": (RUMMetricComputeAggregationType,),
             "include_percentiles": (bool,),
             "path": (str,),
         }
@@ -36,7 +36,7 @@ class RumMetricResponseCompute(ModelNormal):
 
     def __init__(
         self_,
-        aggregation_type: Union[RumMetricComputeAggregationType, UnsetType] = unset,
+        aggregation_type: Union[RUMMetricComputeAggregationType, UnsetType] = unset,
         include_percentiles: Union[bool, UnsetType] = unset,
         path: Union[str, UnsetType] = unset,
         **kwargs,
@@ -46,7 +46,7 @@ class RumMetricResponseCompute(ModelNormal):
 
         :param aggregation_type: The type of aggregation to use.
             ``count`` counts the matching events. ``distribution`` aggregates the values found at ``path``.
-        :type aggregation_type: RumMetricComputeAggregationType, optional
+        :type aggregation_type: RUMMetricComputeAggregationType, optional
 
         :param include_percentiles: Toggle to include or exclude percentile aggregations (p50, p75, p90, p95, p99) for distribution metrics.
             Required when ``aggregation_type`` is ``distribution`` , and must be omitted otherwise.

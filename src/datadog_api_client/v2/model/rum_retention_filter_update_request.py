@@ -12,28 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_retention_filter_update_data import RumRetentionFilterUpdateData
+    from datadog_api_client.v2.model.rum_retention_filter_update_data import RUMRetentionFilterUpdateData
 
 
-class RumRetentionFilterUpdateRequest(ModelNormal):
+class RUMRetentionFilterUpdateRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_retention_filter_update_data import RumRetentionFilterUpdateData
+        from datadog_api_client.v2.model.rum_retention_filter_update_data import RUMRetentionFilterUpdateData
 
         return {
-            "data": (RumRetentionFilterUpdateData,),
+            "data": (RUMRetentionFilterUpdateData,),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: RumRetentionFilterUpdateData, **kwargs):
+    def __init__(self_, data: RUMRetentionFilterUpdateData, **kwargs):
         """
         The RUM retention filter body to update.
 
         :param data: The new RUM retention filter properties to update.
-        :type data: RumRetentionFilterUpdateData
+        :type data: RUMRetentionFilterUpdateData
         """
         super().__init__(kwargs)
 

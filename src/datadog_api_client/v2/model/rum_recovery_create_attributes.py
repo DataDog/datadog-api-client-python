@@ -10,16 +10,16 @@ from datadog_api_client.model_utils import (
 )
 
 
-class RumRecoveryCreateAttributes(ModelComposed):
+class RUMRecoveryCreateAttributes(ModelComposed):
     def __init__(self, **kwargs):
         """
         Targeted recovery (the default) or query-based batch recovery.
 
         :param request_type: Targeted recovery. Omitted request_type defaults to sessions.
-        :type request_type: RumRecoverySessionsRequestType, optional
+        :type request_type: RUMRecoverySessionsRequestType, optional
 
         :param sessions: Sessions to recover.
-        :type sessions: [RumRecoverySessionInput]
+        :type sessions: [RUMRecoverySessionInput]
 
         :param estimated_count: Optional client estimate. Creation validates and stores a fresh server estimate instead of this value.
         :type estimated_count: int, optional
@@ -45,13 +45,13 @@ class RumRecoveryCreateAttributes(ModelComposed):
         # classes don't exist yet because their module has not finished
         # loading
         from datadog_api_client.v2.model.rum_recovery_sessions_create_attributes import (
-            RumRecoverySessionsCreateAttributes,
+            RUMRecoverySessionsCreateAttributes,
         )
-        from datadog_api_client.v2.model.rum_recovery_batch_create_attributes import RumRecoveryBatchCreateAttributes
+        from datadog_api_client.v2.model.rum_recovery_batch_create_attributes import RUMRecoveryBatchCreateAttributes
 
         return {
             "oneOf": [
-                RumRecoverySessionsCreateAttributes,
-                RumRecoveryBatchCreateAttributes,
+                RUMRecoverySessionsCreateAttributes,
+                RUMRecoveryBatchCreateAttributes,
             ],
         }

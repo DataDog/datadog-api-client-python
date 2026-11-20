@@ -3,7 +3,7 @@
   "expected_status": 403,
   "feature": "RUM Remote Config",
   "id": "v2/RUM Remote Config/Get a RUM SDK configuration returns \"Forbidden\" response",
-  "operation_id": "GetRumSdkConfig",
+  "operation_id": "GetRUMSdkConfig",
   "request": {
     "body": null,
     "content_type": null,

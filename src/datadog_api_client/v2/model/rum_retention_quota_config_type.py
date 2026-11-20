@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumRetentionQuotaConfigType(ModelSimple):
+class RUMRetentionQuotaConfigType(ModelSimple):
     """
     The type of the resource, always `rum_quota_config`.
 
@@ -23,7 +23,7 @@ class RumRetentionQuotaConfigType(ModelSimple):
     allowed_values = {
         "rum_quota_config",
     }
-    RUM_QUOTA_CONFIG: ClassVar["RumRetentionQuotaConfigType"]
+    RUM_QUOTA_CONFIG: ClassVar["RUMRetentionQuotaConfigType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,4 @@ class RumRetentionQuotaConfigType(ModelSimple):
         }
 
 
-RumRetentionQuotaConfigType.RUM_QUOTA_CONFIG = RumRetentionQuotaConfigType("rum_quota_config")
+RUMRetentionQuotaConfigType.RUM_QUOTA_CONFIG = RUMRetentionQuotaConfigType("rum_quota_config")

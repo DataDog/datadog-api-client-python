@@ -14,18 +14,18 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_recovery_create_attributes import RumRecoveryCreateAttributes
-    from datadog_api_client.v2.model.rum_recovery_sessions_create_attributes import RumRecoverySessionsCreateAttributes
-    from datadog_api_client.v2.model.rum_recovery_batch_create_attributes import RumRecoveryBatchCreateAttributes
+    from datadog_api_client.v2.model.rum_recovery_create_attributes import RUMRecoveryCreateAttributes
+    from datadog_api_client.v2.model.rum_recovery_sessions_create_attributes import RUMRecoverySessionsCreateAttributes
+    from datadog_api_client.v2.model.rum_recovery_batch_create_attributes import RUMRecoveryBatchCreateAttributes
 
 
-class RumRecoveryCreateData(ModelNormal):
+class RUMRecoveryCreateData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_recovery_create_attributes import RumRecoveryCreateAttributes
+        from datadog_api_client.v2.model.rum_recovery_create_attributes import RUMRecoveryCreateAttributes
 
         return {
-            "attributes": (RumRecoveryCreateAttributes,),
+            "attributes": (RUMRecoveryCreateAttributes,),
             "type": (str,),
         }
 
@@ -37,7 +37,7 @@ class RumRecoveryCreateData(ModelNormal):
     def __init__(
         self_,
         attributes: Union[
-            RumRecoveryCreateAttributes, RumRecoverySessionsCreateAttributes, RumRecoveryBatchCreateAttributes
+            RUMRecoveryCreateAttributes, RUMRecoverySessionsCreateAttributes, RUMRecoveryBatchCreateAttributes
         ],
         type: Union[str, UnsetType] = unset,
         **kwargs,
@@ -46,7 +46,7 @@ class RumRecoveryCreateData(ModelNormal):
         JSON:API resource.
 
         :param attributes: Targeted recovery (the default) or query-based batch recovery.
-        :type attributes: RumRecoveryCreateAttributes
+        :type attributes: RUMRecoveryCreateAttributes
 
         :param type: JSON:API resource type.
         :type type: str, optional

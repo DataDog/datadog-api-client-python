@@ -12,22 +12,22 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_retention_filter_update_attributes import RumRetentionFilterUpdateAttributes
-    from datadog_api_client.v2.model.rum_retention_filter_type import RumRetentionFilterType
+    from datadog_api_client.v2.model.rum_retention_filter_update_attributes import RUMRetentionFilterUpdateAttributes
+    from datadog_api_client.v2.model.rum_retention_filter_type import RUMRetentionFilterType
 
 
-class RumRetentionFilterUpdateData(ModelNormal):
+class RUMRetentionFilterUpdateData(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.rum_retention_filter_update_attributes import (
-            RumRetentionFilterUpdateAttributes,
+            RUMRetentionFilterUpdateAttributes,
         )
-        from datadog_api_client.v2.model.rum_retention_filter_type import RumRetentionFilterType
+        from datadog_api_client.v2.model.rum_retention_filter_type import RUMRetentionFilterType
 
         return {
-            "attributes": (RumRetentionFilterUpdateAttributes,),
+            "attributes": (RUMRetentionFilterUpdateAttributes,),
             "id": (str,),
-            "type": (RumRetentionFilterType,),
+            "type": (RUMRetentionFilterType,),
         }
 
     attribute_map = {
@@ -37,19 +37,19 @@ class RumRetentionFilterUpdateData(ModelNormal):
     }
 
     def __init__(
-        self_, attributes: RumRetentionFilterUpdateAttributes, id: str, type: RumRetentionFilterType, **kwargs
+        self_, attributes: RUMRetentionFilterUpdateAttributes, id: str, type: RUMRetentionFilterType, **kwargs
     ):
         """
         The new RUM retention filter properties to update.
 
         :param attributes: The object describing attributes of a RUM retention filter to update.
-        :type attributes: RumRetentionFilterUpdateAttributes
+        :type attributes: RUMRetentionFilterUpdateAttributes
 
         :param id: ID of retention filter in UUID.
         :type id: str
 
         :param type: The type of the resource. The value should always be retention_filters.
-        :type type: RumRetentionFilterType
+        :type type: RUMRetentionFilterType
         """
         super().__init__(kwargs)
 

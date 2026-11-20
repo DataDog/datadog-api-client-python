@@ -14,11 +14,11 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_cross_product_sampling_create import RumCrossProductSamplingCreate
-    from datadog_api_client.v2.model.rum_retention_filter_event_type import RumRetentionFilterEventType
+    from datadog_api_client.v2.model.rum_cross_product_sampling_create import RUMCrossProductSamplingCreate
+    from datadog_api_client.v2.model.rum_retention_filter_event_type import RUMRetentionFilterEventType
 
 
-class RumRetentionFilterCreateAttributes(ModelNormal):
+class RUMRetentionFilterCreateAttributes(ModelNormal):
     validations = {
         "sample_rate": {
             "inclusive_maximum": 100,
@@ -28,13 +28,13 @@ class RumRetentionFilterCreateAttributes(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_cross_product_sampling_create import RumCrossProductSamplingCreate
-        from datadog_api_client.v2.model.rum_retention_filter_event_type import RumRetentionFilterEventType
+        from datadog_api_client.v2.model.rum_cross_product_sampling_create import RUMCrossProductSamplingCreate
+        from datadog_api_client.v2.model.rum_retention_filter_event_type import RUMRetentionFilterEventType
 
         return {
-            "cross_product_sampling": (RumCrossProductSamplingCreate,),
+            "cross_product_sampling": (RUMCrossProductSamplingCreate,),
             "enabled": (bool,),
-            "event_type": (RumRetentionFilterEventType,),
+            "event_type": (RUMRetentionFilterEventType,),
             "name": (str,),
             "query": (str,),
             "sample_rate": (float,),
@@ -51,10 +51,10 @@ class RumRetentionFilterCreateAttributes(ModelNormal):
 
     def __init__(
         self_,
-        event_type: RumRetentionFilterEventType,
+        event_type: RUMRetentionFilterEventType,
         name: str,
         sample_rate: float,
-        cross_product_sampling: Union[RumCrossProductSamplingCreate, UnsetType] = unset,
+        cross_product_sampling: Union[RUMCrossProductSamplingCreate, UnsetType] = unset,
         enabled: Union[bool, UnsetType] = unset,
         query: Union[str, UnsetType] = unset,
         **kwargs,
@@ -63,13 +63,13 @@ class RumRetentionFilterCreateAttributes(ModelNormal):
         The object describing attributes of a RUM retention filter to create.
 
         :param cross_product_sampling: The configuration for cross-product retention filters.
-        :type cross_product_sampling: RumCrossProductSamplingCreate, optional
+        :type cross_product_sampling: RUMCrossProductSamplingCreate, optional
 
         :param enabled: Whether the retention filter is enabled.
         :type enabled: bool, optional
 
         :param event_type: The type of RUM events to filter on.
-        :type event_type: RumRetentionFilterEventType
+        :type event_type: RUMRetentionFilterEventType
 
         :param name: The name of a RUM retention filter.
         :type name: str

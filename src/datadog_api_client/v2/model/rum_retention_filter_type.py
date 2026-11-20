@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumRetentionFilterType(ModelSimple):
+class RUMRetentionFilterType(ModelSimple):
     """
     The type of the resource. The value should always be retention_filters.
 
@@ -23,7 +23,7 @@ class RumRetentionFilterType(ModelSimple):
     allowed_values = {
         "retention_filters",
     }
-    RETENTION_FILTERS: ClassVar["RumRetentionFilterType"]
+    RETENTION_FILTERS: ClassVar["RUMRetentionFilterType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,4 @@ class RumRetentionFilterType(ModelSimple):
         }
 
 
-RumRetentionFilterType.RETENTION_FILTERS = RumRetentionFilterType("retention_filters")
+RUMRetentionFilterType.RETENTION_FILTERS = RUMRetentionFilterType("retention_filters")

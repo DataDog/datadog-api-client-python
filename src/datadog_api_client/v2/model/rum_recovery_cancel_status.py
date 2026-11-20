@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumRecoveryCancelStatus(ModelSimple):
+class RUMRecoveryCancelStatus(ModelSimple):
     """
     Requested cancellation state.
 
@@ -23,7 +23,7 @@ class RumRecoveryCancelStatus(ModelSimple):
     allowed_values = {
         "cancelled",
     }
-    CANCELLED: ClassVar["RumRecoveryCancelStatus"]
+    CANCELLED: ClassVar["RUMRecoveryCancelStatus"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,4 @@ class RumRecoveryCancelStatus(ModelSimple):
         }
 
 
-RumRecoveryCancelStatus.CANCELLED = RumRecoveryCancelStatus("cancelled")
+RUMRecoveryCancelStatus.CANCELLED = RUMRecoveryCancelStatus("cancelled")

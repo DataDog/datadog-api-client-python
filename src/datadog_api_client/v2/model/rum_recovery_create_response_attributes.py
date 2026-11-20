@@ -15,11 +15,11 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_recovery_discovery_status import RumRecoveryDiscoveryStatus
-    from datadog_api_client.v2.model.rum_recovery_request_status import RumRecoveryRequestStatus
+    from datadog_api_client.v2.model.rum_recovery_discovery_status import RUMRecoveryDiscoveryStatus
+    from datadog_api_client.v2.model.rum_recovery_request_status import RUMRecoveryRequestStatus
 
 
-class RumRecoveryCreateResponseAttributes(ModelNormal):
+class RUMRecoveryCreateResponseAttributes(ModelNormal):
     validations = {
         "estimated_count": {
             "inclusive_minimum": 0,
@@ -37,16 +37,16 @@ class RumRecoveryCreateResponseAttributes(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_recovery_discovery_status import RumRecoveryDiscoveryStatus
-        from datadog_api_client.v2.model.rum_recovery_request_status import RumRecoveryRequestStatus
+        from datadog_api_client.v2.model.rum_recovery_discovery_status import RUMRecoveryDiscoveryStatus
+        from datadog_api_client.v2.model.rum_recovery_request_status import RUMRecoveryRequestStatus
 
         return {
             "created_at": (datetime,),
-            "discovery_status": (RumRecoveryDiscoveryStatus,),
+            "discovery_status": (RUMRecoveryDiscoveryStatus,),
             "estimated_count": (int,),
             "failed_sessions": (int,),
             "processed_sessions": (int,),
-            "status": (RumRecoveryRequestStatus,),
+            "status": (RUMRecoveryRequestStatus,),
             "total_sessions": (int,),
         }
 
@@ -65,8 +65,8 @@ class RumRecoveryCreateResponseAttributes(ModelNormal):
         created_at: datetime,
         failed_sessions: int,
         processed_sessions: int,
-        status: RumRecoveryRequestStatus,
-        discovery_status: Union[RumRecoveryDiscoveryStatus, UnsetType] = unset,
+        status: RUMRecoveryRequestStatus,
+        discovery_status: Union[RUMRecoveryDiscoveryStatus, UnsetType] = unset,
         estimated_count: Union[int, UnsetType] = unset,
         total_sessions: Union[int, UnsetType] = unset,
         **kwargs,
@@ -78,7 +78,7 @@ class RumRecoveryCreateResponseAttributes(ModelNormal):
         :type created_at: datetime
 
         :param discovery_status: Batch discovery state. QUEUED indicates that the request is waiting for processing capacity.
-        :type discovery_status: RumRecoveryDiscoveryStatus, optional
+        :type discovery_status: RUMRecoveryDiscoveryStatus, optional
 
         :param estimated_count: Batch estimate stored at creation, when present. New batches use a fresh server estimate; older batches may contain a client-supplied estimate.
         :type estimated_count: int, optional
@@ -90,7 +90,7 @@ class RumRecoveryCreateResponseAttributes(ModelNormal):
         :type processed_sessions: int
 
         :param status: Recovery request state.
-        :type status: RumRecoveryRequestStatus
+        :type status: RUMRecoveryRequestStatus
 
         :param total_sessions: Total targeted sessions. Omitted while a batch total is unknown.
         :type total_sessions: int, optional

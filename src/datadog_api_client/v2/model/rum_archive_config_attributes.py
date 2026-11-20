@@ -14,7 +14,7 @@ from datadog_api_client.model_utils import (
 )
 
 
-class RumArchiveConfigAttributes(ModelNormal):
+class RUMArchiveConfigAttributes(ModelNormal):
     validations = {
         "retention_days": {
             "inclusive_maximum": 180,

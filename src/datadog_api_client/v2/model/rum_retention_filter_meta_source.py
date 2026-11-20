@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumRetentionFilterMetaSource(ModelSimple):
+class RUMRetentionFilterMetaSource(ModelSimple):
     """
     The source of the last update to the retention filter. The value is `unknown` if the request doesn't specify a source.
 
@@ -26,10 +26,10 @@ class RumRetentionFilterMetaSource(ModelSimple):
         "terraform",
         "unknown",
     }
-    DEFAULT: ClassVar["RumRetentionFilterMetaSource"]
-    UI: ClassVar["RumRetentionFilterMetaSource"]
-    TERRAFORM: ClassVar["RumRetentionFilterMetaSource"]
-    UNKNOWN: ClassVar["RumRetentionFilterMetaSource"]
+    DEFAULT: ClassVar["RUMRetentionFilterMetaSource"]
+    UI: ClassVar["RUMRetentionFilterMetaSource"]
+    TERRAFORM: ClassVar["RUMRetentionFilterMetaSource"]
+    UNKNOWN: ClassVar["RUMRetentionFilterMetaSource"]
 
     @cached_property
     def openapi_types(_):
@@ -38,7 +38,7 @@ class RumRetentionFilterMetaSource(ModelSimple):
         }
 
 
-RumRetentionFilterMetaSource.DEFAULT = RumRetentionFilterMetaSource("default")
-RumRetentionFilterMetaSource.UI = RumRetentionFilterMetaSource("ui")
-RumRetentionFilterMetaSource.TERRAFORM = RumRetentionFilterMetaSource("terraform")
-RumRetentionFilterMetaSource.UNKNOWN = RumRetentionFilterMetaSource("unknown")
+RUMRetentionFilterMetaSource.DEFAULT = RUMRetentionFilterMetaSource("default")
+RUMRetentionFilterMetaSource.UI = RUMRetentionFilterMetaSource("ui")
+RUMRetentionFilterMetaSource.TERRAFORM = RUMRetentionFilterMetaSource("terraform")
+RUMRetentionFilterMetaSource.UNKNOWN = RUMRetentionFilterMetaSource("unknown")

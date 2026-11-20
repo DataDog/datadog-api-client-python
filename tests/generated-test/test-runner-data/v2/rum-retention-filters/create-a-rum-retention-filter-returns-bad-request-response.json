@@ -1,14 +1,14 @@
 {
-  "api": "RumRetentionFilters",
+  "api": "RUMRetentionFilters",
   "expected_status": 400,
-  "feature": "Rum Retention Filters",
-  "id": "v2/Rum Retention Filters/Create a RUM retention filter returns \"Bad Request\" response",
+  "feature": "RUM Retention Filters",
+  "id": "v2/RUM Retention Filters/Create a RUM retention filter returns \"Bad Request\" response",
   "operation_id": "CreateRetentionFilter",
   "request": {
     "body": {
       "schema": {
         "format": null,
-        "ref": "RumRetentionFilterCreateRequest",
+        "ref": "RUMRetentionFilterCreateRequest",
         "type": "object"
       },
       "source": "inline",

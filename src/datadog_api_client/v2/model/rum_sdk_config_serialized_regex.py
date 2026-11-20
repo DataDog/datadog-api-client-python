@@ -12,16 +12,16 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_sdk_config_serialized_regex_type import RumSdkConfigSerializedRegexType
+    from datadog_api_client.v2.model.rum_sdk_config_serialized_regex_type import RUMSdkConfigSerializedRegexType
 
 
-class RumSdkConfigSerializedRegex(ModelNormal):
+class RUMSdkConfigSerializedRegex(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_sdk_config_serialized_regex_type import RumSdkConfigSerializedRegexType
+        from datadog_api_client.v2.model.rum_sdk_config_serialized_regex_type import RUMSdkConfigSerializedRegexType
 
         return {
-            "rc_serialized_type": (RumSdkConfigSerializedRegexType,),
+            "rc_serialized_type": (RUMSdkConfigSerializedRegexType,),
             "value": (str,),
         }
 
@@ -30,12 +30,12 @@ class RumSdkConfigSerializedRegex(ModelNormal):
         "value": "value",
     }
 
-    def __init__(self_, rc_serialized_type: RumSdkConfigSerializedRegexType, value: str, **kwargs):
+    def __init__(self_, rc_serialized_type: RUMSdkConfigSerializedRegexType, value: str, **kwargs):
         """
         A serialized regex used as an extractor in dynamic options.
 
         :param rc_serialized_type: The type identifier for a serialized regex. Always ``regex``.
-        :type rc_serialized_type: RumSdkConfigSerializedRegexType
+        :type rc_serialized_type: RUMSdkConfigSerializedRegexType
 
         :param value: The regex pattern used for extraction.
         :type value: str

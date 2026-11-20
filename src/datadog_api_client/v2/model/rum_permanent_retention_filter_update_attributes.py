@@ -14,28 +14,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_cross_product_sampling_update import RumCrossProductSamplingUpdate
+    from datadog_api_client.v2.model.rum_cross_product_sampling_update import RUMCrossProductSamplingUpdate
 
 
-class RumPermanentRetentionFilterUpdateAttributes(ModelNormal):
+class RUMPermanentRetentionFilterUpdateAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_cross_product_sampling_update import RumCrossProductSamplingUpdate
+        from datadog_api_client.v2.model.rum_cross_product_sampling_update import RUMCrossProductSamplingUpdate
 
         return {
-            "cross_product_sampling": (RumCrossProductSamplingUpdate,),
+            "cross_product_sampling": (RUMCrossProductSamplingUpdate,),
         }
 
     attribute_map = {
         "cross_product_sampling": "cross_product_sampling",
     }
 
-    def __init__(self_, cross_product_sampling: Union[RumCrossProductSamplingUpdate, UnsetType] = unset, **kwargs):
+    def __init__(self_, cross_product_sampling: Union[RUMCrossProductSamplingUpdate, UnsetType] = unset, **kwargs):
         """
         The configuration to update on a permanent RUM retention filter.
 
         :param cross_product_sampling: The configuration for cross-product retention filters. All fields are optional for partial updates.
-        :type cross_product_sampling: RumCrossProductSamplingUpdate, optional
+        :type cross_product_sampling: RUMCrossProductSamplingUpdate, optional
         """
         if cross_product_sampling is not unset:
             kwargs["cross_product_sampling"] = cross_product_sampling

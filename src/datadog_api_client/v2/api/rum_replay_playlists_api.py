@@ -18,7 +18,7 @@ from datadog_api_client.v2.model.playlists_session_array import PlaylistsSession
 from datadog_api_client.v2.model.playlists_session import PlaylistsSession
 
 
-class RumReplayPlaylistsApi:
+class RUMReplayPlaylistsApi:
     """
     Create and manage playlists of RUM replay sessions. Organize, categorize, and share collections of replay sessions for analysis and collaboration.
     """

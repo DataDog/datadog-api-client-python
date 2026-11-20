@@ -12,11 +12,11 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_retention_quota_reached_action import RumRetentionQuotaReachedAction
-    from datadog_api_client.v2.model.rum_retention_quota_window_type import RumRetentionQuotaWindowType
+    from datadog_api_client.v2.model.rum_retention_quota_reached_action import RUMRetentionQuotaReachedAction
+    from datadog_api_client.v2.model.rum_retention_quota_window_type import RUMRetentionQuotaWindowType
 
 
-class RumRetentionQuotaCustomConfig(ModelNormal):
+class RUMRetentionQuotaCustomConfig(ModelNormal):
     validations = {
         "daily_reset_time": {},
         "daily_reset_timezone": {},
@@ -27,15 +27,15 @@ class RumRetentionQuotaCustomConfig(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_retention_quota_reached_action import RumRetentionQuotaReachedAction
-        from datadog_api_client.v2.model.rum_retention_quota_window_type import RumRetentionQuotaWindowType
+        from datadog_api_client.v2.model.rum_retention_quota_reached_action import RUMRetentionQuotaReachedAction
+        from datadog_api_client.v2.model.rum_retention_quota_window_type import RUMRetentionQuotaWindowType
 
         return {
             "daily_reset_time": (str,),
             "daily_reset_timezone": (str,),
-            "quota_reached_action": (RumRetentionQuotaReachedAction,),
+            "quota_reached_action": (RUMRetentionQuotaReachedAction,),
             "session_limit": (int,),
-            "window_type": (RumRetentionQuotaWindowType,),
+            "window_type": (RUMRetentionQuotaWindowType,),
         }
 
     attribute_map = {
@@ -50,9 +50,9 @@ class RumRetentionQuotaCustomConfig(ModelNormal):
         self_,
         daily_reset_time: str,
         daily_reset_timezone: str,
-        quota_reached_action: RumRetentionQuotaReachedAction,
+        quota_reached_action: RUMRetentionQuotaReachedAction,
         session_limit: int,
-        window_type: RumRetentionQuotaWindowType,
+        window_type: RUMRetentionQuotaWindowType,
         **kwargs,
     ):
         """
@@ -65,13 +65,13 @@ class RumRetentionQuotaCustomConfig(ModelNormal):
         :type daily_reset_timezone: str
 
         :param quota_reached_action: The action to take when the session quota is reached.
-        :type quota_reached_action: RumRetentionQuotaReachedAction
+        :type quota_reached_action: RUMRetentionQuotaReachedAction
 
         :param session_limit: The maximum number of sessions allowed within the window. Must be at least ``1000``.
         :type session_limit: int
 
         :param window_type: The window type over which the session limit is enforced.
-        :type window_type: RumRetentionQuotaWindowType
+        :type window_type: RUMRetentionQuotaWindowType
         """
         super().__init__(kwargs)
 

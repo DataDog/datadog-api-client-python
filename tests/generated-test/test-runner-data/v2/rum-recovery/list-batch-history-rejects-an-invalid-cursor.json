@@ -17,7 +17,7 @@
         "required": true,
         "schema": {
           "format": null,
-          "ref": "RumRecoveryBatchRequestType",
+          "ref": "RUMRecoveryBatchRequestType",
           "type": "string"
         },
         "source": {

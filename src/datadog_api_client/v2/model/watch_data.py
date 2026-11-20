@@ -52,7 +52,7 @@ class WatchData(ModelNormal):
         :param id: Unique identifier of the watch record.
         :type id: str, optional
 
-        :param type: Rum replay watch resource type.
+        :param type: RUM replay watch resource type.
         :type type: WatchDataType
         """
         if attributes is not unset:

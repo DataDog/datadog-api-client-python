@@ -1673,8 +1673,8 @@
     ],
     "step": "there is a valid \"rum_metric\" in the system",
     "key": "rum_metric",
-    "tag": "Rum Metrics",
-    "operationId": "CreateRumMetric"
+    "tag": "RUM Metrics",
+    "operationId": "CreateRUMMetric"
   },
   {
     "parameters": [
@@ -1685,7 +1685,7 @@
     ],
     "step": "there is a valid \"teams_ownership_mapping\" in the system",
     "key": "teams_ownership_mapping",
-    "tag": "Rum Teams Ownership",
+    "tag": "RUM Teams Ownership",
     "operationId": "CreateTeamsOwnershipMapping"
   },
   {

@@ -1,14 +1,14 @@
 {
-  "api": "RumMetrics",
+  "api": "RUMMetrics",
   "expected_status": 409,
-  "feature": "Rum Metrics",
-  "id": "v2/Rum Metrics/Create a RUM-based metric returns \"Conflict\" response",
-  "operation_id": "CreateRumMetric",
+  "feature": "RUM Metrics",
+  "id": "v2/RUM Metrics/Create a RUM-based metric returns \"Conflict\" response",
+  "operation_id": "CreateRUMMetric",
   "request": {
     "body": {
       "schema": {
         "format": null,
-        "ref": "RumMetricCreateRequest",
+        "ref": "RUMMetricCreateRequest",
         "type": "object"
       },
       "source": "inline",

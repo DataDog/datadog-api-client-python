@@ -12,28 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_retention_filter_create_data import RumRetentionFilterCreateData
+    from datadog_api_client.v2.model.rum_retention_filter_create_data import RUMRetentionFilterCreateData
 
 
-class RumRetentionFilterCreateRequest(ModelNormal):
+class RUMRetentionFilterCreateRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_retention_filter_create_data import RumRetentionFilterCreateData
+        from datadog_api_client.v2.model.rum_retention_filter_create_data import RUMRetentionFilterCreateData
 
         return {
-            "data": (RumRetentionFilterCreateData,),
+            "data": (RUMRetentionFilterCreateData,),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: RumRetentionFilterCreateData, **kwargs):
+    def __init__(self_, data: RUMRetentionFilterCreateData, **kwargs):
         """
         The RUM retention filter body to create.
 
         :param data: The new RUM retention filter properties to create.
-        :type data: RumRetentionFilterCreateData
+        :type data: RUMRetentionFilterCreateData
         """
         super().__init__(kwargs)
 

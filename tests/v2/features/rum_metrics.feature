@@ -1,5 +1,5 @@
 @endpoint(rum-metrics) @endpoint(rum-metrics-v2)
-Feature: Rum Metrics
+Feature: RUM Metrics
   Manage configuration of [RUM-based
   metrics](https://app.datadoghq.com/rum/generate-metrics) for your
   organization.
@@ -7,11 +7,11 @@ Feature: Rum Metrics
   Background:
     Given a valid "apiKeyAuth" key in the system
     And a valid "appKeyAuth" key in the system
-    And an instance of "RumMetrics" API
+    And an instance of "RUMMetrics" API
 
   @team:ddoghq/rum-backend
   Scenario: Create a RUM-based metric returns "Bad Request" response
-    Given new "CreateRumMetric" request
+    Given new "CreateRUMMetric" request
     And body with value {"data": {"id": "rum.actions.invalid", "type": "rum_metrics", "attributes": {"event_type": "action", "compute": {"aggregation_type": "count"}, "uniqueness":{"when": "match"}}}}
     When the request is sent
     Then the response status is 400 Bad Request
@@ -19,14 +19,14 @@ Feature: Rum Metrics
   @team:ddoghq/rum-backend
   Scenario: Create a RUM-based metric returns "Conflict" response
     Given there is a valid "rum_metric" in the system
-    And new "CreateRumMetric" request
+    And new "CreateRUMMetric" request
     And body with value {"data": {"id": "{{ rum_metric.data.id }}", "type": "rum_metrics", "attributes": {"compute": {"aggregation_type": "count"}, "event_type": "action"}}}
     When the request is sent
     Then the response status is 409 Conflict
 
   @team:ddoghq/rum-backend
   Scenario: Create a RUM-based metric returns "Created" response
-    Given new "CreateRumMetric" request
+    Given new "CreateRUMMetric" request
     And body with value {"data": {"attributes": {"compute": {"aggregation_type": "distribution", "include_percentiles": true, "path": "@duration"}, "event_type": "session", "filter": {"query": "@service:web-ui"}, "group_by": [{"path": "@browser.name", "tag_name": "browser_name"}], "uniqueness": {"when": "match"}}, "id": "{{ unique_lower_alnum }}", "type": "rum_metrics"}}
     When the request is sent
     Then the response status is 201 Created
@@ -44,21 +44,21 @@ Feature: Rum Metrics
   @team:ddoghq/rum-backend
   Scenario: Delete a RUM-based metric returns "No Content" response
     Given there is a valid "rum_metric" in the system
-    And new "DeleteRumMetric" request
+    And new "DeleteRUMMetric" request
     And request contains "metric_id" parameter from "rum_metric.data.id"
     When the request is sent
     Then the response status is 204 No Content
 
   @team:ddoghq/rum-backend
   Scenario: Delete a RUM-based metric returns "Not Found" response
-    Given new "DeleteRumMetric" request
+    Given new "DeleteRUMMetric" request
     And request contains "metric_id" parameter with value "{{ unique }}"
     When the request is sent
     Then the response status is 404 Not Found
 
   @team:ddoghq/rum-backend
   Scenario: Get a RUM-based metric returns "Not Found" response
-    Given new "GetRumMetric" request
+    Given new "GetRUMMetric" request
     And request contains "metric_id" parameter with value "{{ unique }}"
     When the request is sent
     Then the response status is 404 Not Found
@@ -66,7 +66,7 @@ Feature: Rum Metrics
   @team:ddoghq/rum-backend
   Scenario: Get a RUM-based metric returns "OK" response
     Given there is a valid "rum_metric" in the system
-    And new "GetRumMetric" request
+    And new "GetRUMMetric" request
     And request contains "metric_id" parameter from "rum_metric.data.id"
     When the request is sent
     Then the response status is 200 OK
@@ -83,14 +83,14 @@ Feature: Rum Metrics
 
   @team:ddoghq/rum-backend
   Scenario: Get all RUM-based metrics returns "OK" response
-    Given new "ListRumMetrics" request
+    Given new "ListRUMMetrics" request
     When the request is sent
     Then the response status is 200 OK
 
   @team:ddoghq/rum-backend
   Scenario: Update a RUM-based metric returns "Bad Request" response
     Given there is a valid "rum_metric" in the system
-    And new "UpdateRumMetric" request
+    And new "UpdateRUMMetric" request
     And request contains "metric_id" parameter from "rum_metric.data.id"
     And body with value {"data": {"id": "rum.sessions.webui.count", "type": "unknown_metrics", "attributes": {"compute": {"include_percentiles": true}}}}
     When the request is sent
@@ -99,7 +99,7 @@ Feature: Rum Metrics
   @team:ddoghq/rum-backend
   Scenario: Update a RUM-based metric returns "Conflict" response
     Given there is a valid "rum_metric" in the system
-    And new "UpdateRumMetric" request
+    And new "UpdateRUMMetric" request
     And request contains "metric_id" parameter from "rum_metric.data.id"
     And body with value {"data": {"id": "conflicting.id", "type": "rum_metrics", "attributes": {"compute": {"include_percentiles": true}}}}
     When the request is sent
@@ -108,7 +108,7 @@ Feature: Rum Metrics
   @team:ddoghq/rum-backend
   Scenario: Update a RUM-based metric returns "Not Found" response
     Given there is a valid "rum_metric" in the system
-    And new "UpdateRumMetric" request
+    And new "UpdateRUMMetric" request
     And request contains "metric_id" parameter with value "8fc991bf-967e-4652-8a5b-0711a985abe3"
     And body with value {"data": {"id": "8fc991bf-967e-4652-8a5b-0711a985abe3", "type": "rum_metrics", "attributes": {"compute": {"include_percentiles": true}}}}
     When the request is sent
@@ -117,7 +117,7 @@ Feature: Rum Metrics
   @team:ddoghq/rum-backend
   Scenario: Update a RUM-based metric returns "OK" response
     Given there is a valid "rum_metric" in the system
-    And new "UpdateRumMetric" request
+    And new "UpdateRUMMetric" request
     And request contains "metric_id" parameter from "rum_metric.data.id"
     And body with value {"data": {"id": "{{ rum_metric.data.id }}", "type": "rum_metrics", "attributes": {"compute": {"include_percentiles": false}, "filter": {"query": "@service:rum-config"}, "group_by": [{"path": "@browser.version", "tag_name": "browser_version"}]}}}
     When the request is sent

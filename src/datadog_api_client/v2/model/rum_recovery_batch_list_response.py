@@ -12,19 +12,19 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_recovery_batch_list_data import RumRecoveryBatchListData
-    from datadog_api_client.v2.model.rum_recovery_batch_list_meta import RumRecoveryBatchListMeta
+    from datadog_api_client.v2.model.rum_recovery_batch_list_data import RUMRecoveryBatchListData
+    from datadog_api_client.v2.model.rum_recovery_batch_list_meta import RUMRecoveryBatchListMeta
 
 
-class RumRecoveryBatchListResponse(ModelNormal):
+class RUMRecoveryBatchListResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_recovery_batch_list_data import RumRecoveryBatchListData
-        from datadog_api_client.v2.model.rum_recovery_batch_list_meta import RumRecoveryBatchListMeta
+        from datadog_api_client.v2.model.rum_recovery_batch_list_data import RUMRecoveryBatchListData
+        from datadog_api_client.v2.model.rum_recovery_batch_list_meta import RUMRecoveryBatchListMeta
 
         return {
-            "data": ([RumRecoveryBatchListData],),
-            "meta": (RumRecoveryBatchListMeta,),
+            "data": ([RUMRecoveryBatchListData],),
+            "meta": (RUMRecoveryBatchListMeta,),
         }
 
     attribute_map = {
@@ -32,15 +32,15 @@ class RumRecoveryBatchListResponse(ModelNormal):
         "meta": "meta",
     }
 
-    def __init__(self_, data: List[RumRecoveryBatchListData], meta: RumRecoveryBatchListMeta, **kwargs):
+    def __init__(self_, data: List[RUMRecoveryBatchListData], meta: RUMRecoveryBatchListMeta, **kwargs):
         """
         JSON:API document.
 
         :param data: Batch requests ordered newest first. A filtered page can be empty while meta.next_cursor is present.
-        :type data: [RumRecoveryBatchListData]
+        :type data: [RUMRecoveryBatchListData]
 
         :param meta: Batch-list pagination metadata.
-        :type meta: RumRecoveryBatchListMeta
+        :type meta: RUMRecoveryBatchListMeta
         """
         super().__init__(kwargs)
 

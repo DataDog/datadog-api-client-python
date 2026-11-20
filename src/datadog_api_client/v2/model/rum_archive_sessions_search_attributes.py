@@ -13,7 +13,7 @@ from datadog_api_client.model_utils import (
 )
 
 
-class RumArchiveSessionsSearchAttributes(ModelNormal):
+class RUMArchiveSessionsSearchAttributes(ModelNormal):
     validations = {
         "_from": {
             "inclusive_minimum": 1,

@@ -13,7 +13,7 @@ from datadog_api_client.model_utils import (
 )
 
 
-class RumReplaySessionsApi:
+class RUMReplaySessionsApi:
     """
     Retrieve segments for RUM replay sessions.
     Access session replay data stored in event platform or blob storage.

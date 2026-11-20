@@ -8,7 +8,7 @@
     "body": {
       "schema": {
         "format": null,
-        "ref": "RumRecoveryCountRequest",
+        "ref": "RUMRecoveryCountRequest",
         "type": "object"
       },
       "source": "inline",

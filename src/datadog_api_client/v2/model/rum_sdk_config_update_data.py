@@ -12,20 +12,20 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_sdk_config_update_attributes import RumSdkConfigUpdateAttributes
-    from datadog_api_client.v2.model.rum_sdk_config_type import RumSdkConfigType
+    from datadog_api_client.v2.model.rum_sdk_config_update_attributes import RUMSdkConfigUpdateAttributes
+    from datadog_api_client.v2.model.rum_sdk_config_type import RUMSdkConfigType
 
 
-class RumSdkConfigUpdateData(ModelNormal):
+class RUMSdkConfigUpdateData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_sdk_config_update_attributes import RumSdkConfigUpdateAttributes
-        from datadog_api_client.v2.model.rum_sdk_config_type import RumSdkConfigType
+        from datadog_api_client.v2.model.rum_sdk_config_update_attributes import RUMSdkConfigUpdateAttributes
+        from datadog_api_client.v2.model.rum_sdk_config_type import RUMSdkConfigType
 
         return {
-            "attributes": (RumSdkConfigUpdateAttributes,),
+            "attributes": (RUMSdkConfigUpdateAttributes,),
             "id": (str,),
-            "type": (RumSdkConfigType,),
+            "type": (RUMSdkConfigType,),
         }
 
     attribute_map = {
@@ -34,18 +34,18 @@ class RumSdkConfigUpdateData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: RumSdkConfigUpdateAttributes, id: str, type: RumSdkConfigType, **kwargs):
+    def __init__(self_, attributes: RUMSdkConfigUpdateAttributes, id: str, type: RUMSdkConfigType, **kwargs):
         """
         The data object for updating a RUM SDK configuration.
 
         :param attributes: Attributes of the RUM SDK configuration to update.
-        :type attributes: RumSdkConfigUpdateAttributes
+        :type attributes: RUMSdkConfigUpdateAttributes
 
         :param id: The ID of the RUM SDK configuration to update.
         :type id: str
 
         :param type: The type of the resource. The value should always be ``rum_sdk_config``.
-        :type type: RumSdkConfigType
+        :type type: RUMSdkConfigType
         """
         super().__init__(kwargs)
 

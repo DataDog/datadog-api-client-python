@@ -14,28 +14,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_permanent_retention_filter_data import RumPermanentRetentionFilterData
+    from datadog_api_client.v2.model.rum_permanent_retention_filter_data import RUMPermanentRetentionFilterData
 
 
-class RumPermanentRetentionFilterResponse(ModelNormal):
+class RUMPermanentRetentionFilterResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_permanent_retention_filter_data import RumPermanentRetentionFilterData
+        from datadog_api_client.v2.model.rum_permanent_retention_filter_data import RUMPermanentRetentionFilterData
 
         return {
-            "data": (RumPermanentRetentionFilterData,),
+            "data": (RUMPermanentRetentionFilterData,),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: Union[RumPermanentRetentionFilterData, UnsetType] = unset, **kwargs):
+    def __init__(self_, data: Union[RUMPermanentRetentionFilterData, UnsetType] = unset, **kwargs):
         """
         A permanent RUM retention filter object.
 
         :param data: A permanent RUM retention filter.
-        :type data: RumPermanentRetentionFilterData, optional
+        :type data: RUMPermanentRetentionFilterData, optional
         """
         if data is not unset:
             kwargs["data"] = data

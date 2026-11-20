@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumPermanentRetentionFilterID(ModelSimple):
+class RUMPermanentRetentionFilterID(ModelSimple):
     """
     The identifier of a permanent RUM retention filter.
 
@@ -25,9 +25,9 @@ class RumPermanentRetentionFilterID(ModelSimple):
         "synthetics_sessions",
         "forced_replay_sessions",
     }
-    RUM_APM_FLAT_SAMPLING: ClassVar["RumPermanentRetentionFilterID"]
-    SYNTHETICS_SESSIONS: ClassVar["RumPermanentRetentionFilterID"]
-    FORCED_REPLAY_SESSIONS: ClassVar["RumPermanentRetentionFilterID"]
+    RUM_APM_FLAT_SAMPLING: ClassVar["RUMPermanentRetentionFilterID"]
+    SYNTHETICS_SESSIONS: ClassVar["RUMPermanentRetentionFilterID"]
+    FORCED_REPLAY_SESSIONS: ClassVar["RUMPermanentRetentionFilterID"]
 
     @cached_property
     def openapi_types(_):
@@ -36,6 +36,6 @@ class RumPermanentRetentionFilterID(ModelSimple):
         }
 
 
-RumPermanentRetentionFilterID.RUM_APM_FLAT_SAMPLING = RumPermanentRetentionFilterID("rum_apm_flat_sampling")
-RumPermanentRetentionFilterID.SYNTHETICS_SESSIONS = RumPermanentRetentionFilterID("synthetics_sessions")
-RumPermanentRetentionFilterID.FORCED_REPLAY_SESSIONS = RumPermanentRetentionFilterID("forced_replay_sessions")
+RUMPermanentRetentionFilterID.RUM_APM_FLAT_SAMPLING = RUMPermanentRetentionFilterID("rum_apm_flat_sampling")
+RUMPermanentRetentionFilterID.SYNTHETICS_SESSIONS = RUMPermanentRetentionFilterID("synthetics_sessions")
+RUMPermanentRetentionFilterID.FORCED_REPLAY_SESSIONS = RUMPermanentRetentionFilterID("forced_replay_sessions")

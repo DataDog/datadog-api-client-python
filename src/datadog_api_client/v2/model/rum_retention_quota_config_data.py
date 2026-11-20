@@ -12,20 +12,20 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_retention_quota_config_attributes import RumRetentionQuotaConfigAttributes
-    from datadog_api_client.v2.model.rum_retention_quota_config_type import RumRetentionQuotaConfigType
+    from datadog_api_client.v2.model.rum_retention_quota_config_attributes import RUMRetentionQuotaConfigAttributes
+    from datadog_api_client.v2.model.rum_retention_quota_config_type import RUMRetentionQuotaConfigType
 
 
-class RumRetentionQuotaConfigData(ModelNormal):
+class RUMRetentionQuotaConfigData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_retention_quota_config_attributes import RumRetentionQuotaConfigAttributes
-        from datadog_api_client.v2.model.rum_retention_quota_config_type import RumRetentionQuotaConfigType
+        from datadog_api_client.v2.model.rum_retention_quota_config_attributes import RUMRetentionQuotaConfigAttributes
+        from datadog_api_client.v2.model.rum_retention_quota_config_type import RUMRetentionQuotaConfigType
 
         return {
-            "attributes": (RumRetentionQuotaConfigAttributes,),
+            "attributes": (RUMRetentionQuotaConfigAttributes,),
             "id": (str,),
-            "type": (RumRetentionQuotaConfigType,),
+            "type": (RUMRetentionQuotaConfigType,),
         }
 
     attribute_map = {
@@ -35,19 +35,19 @@ class RumRetentionQuotaConfigData(ModelNormal):
     }
 
     def __init__(
-        self_, attributes: RumRetentionQuotaConfigAttributes, id: str, type: RumRetentionQuotaConfigType, **kwargs
+        self_, attributes: RUMRetentionQuotaConfigAttributes, id: str, type: RUMRetentionQuotaConfigType, **kwargs
     ):
         """
         The RUM retention quota configuration object.
 
         :param attributes: The RUM retention quota configuration properties.
-        :type attributes: RumRetentionQuotaConfigAttributes
+        :type attributes: RUMRetentionQuotaConfigAttributes
 
         :param id: The identifier of the scope the retention quota configuration applies to.
         :type id: str
 
         :param type: The type of the resource, always ``rum_quota_config``.
-        :type type: RumRetentionQuotaConfigType
+        :type type: RUMRetentionQuotaConfigType
         """
         super().__init__(kwargs)
 

@@ -8,7 +8,7 @@
     "body": {
       "schema": {
         "format": null,
-        "ref": "RumArchiveSessionsSearchRequest",
+        "ref": "RUMArchiveSessionsSearchRequest",
         "type": "object"
       },
       "source": "inline",

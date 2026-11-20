@@ -5,17 +5,17 @@ Create the RUM configuration returns "Created" response
 from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.rum_config_api import RUMConfigApi
-from datadog_api_client.v2.model.rum_config_create_attributes import RumConfigCreateAttributes
-from datadog_api_client.v2.model.rum_config_create_data import RumConfigCreateData
-from datadog_api_client.v2.model.rum_config_create_request import RumConfigCreateRequest
-from datadog_api_client.v2.model.rum_config_type import RumConfigType
+from datadog_api_client.v2.model.rum_config_create_attributes import RUMConfigCreateAttributes
+from datadog_api_client.v2.model.rum_config_create_data import RUMConfigCreateData
+from datadog_api_client.v2.model.rum_config_create_request import RUMConfigCreateRequest
+from datadog_api_client.v2.model.rum_config_type import RUMConfigType
 
-body = RumConfigCreateRequest(
-    data=RumConfigCreateData(
-        attributes=RumConfigCreateAttributes(
+body = RUMConfigCreateRequest(
+    data=RUMConfigCreateData(
+        attributes=RUMConfigCreateAttributes(
             enforced_application_tags=True,
         ),
-        type=RumConfigType.RUM_CONFIG,
+        type=RUMConfigType.RUM_CONFIG,
     ),
 )
 
