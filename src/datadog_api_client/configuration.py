@@ -591,6 +591,7 @@ class Configuration:
                 "v2.get_all_datasets": False,
                 "v2.get_dataset": False,
                 "v2.update_dataset": False,
+                "v2.force_data_deletion_request": False,
                 "v2.create_deployment_gate": False,
                 "v2.create_deployment_rule": False,
                 "v2.delete_deployment_gate": False,

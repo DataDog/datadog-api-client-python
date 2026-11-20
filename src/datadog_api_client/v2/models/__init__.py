@@ -5011,6 +5011,7 @@ from datadog_api_client.v2.model.fleet_tracers_response_meta import FleetTracers
 from datadog_api_client.v2.model.flutter_sourcemap_attributes import FlutterSourcemapAttributes
 from datadog_api_client.v2.model.flutter_sourcemap_data import FlutterSourcemapData
 from datadog_api_client.v2.model.flutter_sourcemap_map_kind import FlutterSourcemapMapKind
+from datadog_api_client.v2.model.force_data_deletion_response_body import ForceDataDeletionResponseBody
 from datadog_api_client.v2.model.form_data import FormData
 from datadog_api_client.v2.model.form_data_attributes import FormDataAttributes
 from datadog_api_client.v2.model.form_data_definition import FormDataDefinition
@@ -17938,6 +17939,7 @@ __all__ = [
     "FlutterSourcemapAttributes",
     "FlutterSourcemapData",
     "FlutterSourcemapMapKind",
+    "ForceDataDeletionResponseBody",
     "FormData",
     "FormDataAttributes",
     "FormDataDefinition",
