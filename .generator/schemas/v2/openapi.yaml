@@ -250972,6 +250972,10 @@ paths:
       summary: List Entity Risk Scores
       tags:
         - Entity Risk Scores
+      x-permission:
+        operator: OR
+        permissions:
+          - security_monitoring_signals_read
       x-unstable: |-
         **Note**: This endpoint is in public beta and it's subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
@@ -251066,6 +251070,10 @@ paths:
       summary: Get Entity Risk Score
       tags:
         - Entity Risk Scores
+      x-permission:
+        operator: OR
+        permissions:
+          - security_monitoring_signals_read
       x-unstable: |-
         **Note**: This endpoint is in public beta and it's subject to change.
         If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
