@@ -46,6 +46,21 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
         :param url_key: Name of the environment variable or secret that holds the S3 bucket URL.
         :type url_key: str, optional
 
+        :param access_key_id_key: Name of the environment variable or secret that holds the AWS access key ID that CrowdStrike generated for the FDR feed.
+        :type access_key_id_key: str, optional
+
+        :param client_concurrency: Number of concurrent tasks polling the SQS queue. Defaults to the number of Worker threads.
+        :type client_concurrency: int, optional
+
+        :param max_number_of_messages: Maximum number of SQS messages to receive per poll. Each message can reference multiple files. Defaults to 1.
+        :type max_number_of_messages: int, optional
+
+        :param secret_access_key_key: Name of the environment variable or secret that holds the AWS secret access key that CrowdStrike generated for the FDR feed.
+        :type secret_access_key_key: str, optional
+
+        :param visibility_timeout_secs: Number of seconds a received SQS message is hidden from other consumers. Set it higher than the time needed to download and process the largest FDR file. Defaults to 300.
+        :type visibility_timeout_secs: int, optional
+
         :param decoding: The decoding format used to interpret incoming logs.
         :type decoding: ObservabilityPipelineDecoding
 
@@ -141,6 +156,9 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
         from datadog_api_client.v2.model.observability_pipeline_amazon_s3_source import (
             ObservabilityPipelineAmazonS3Source,
         )
+        from datadog_api_client.v2.model.observability_pipeline_crowd_strike_fdr_source import (
+            ObservabilityPipelineCrowdStrikeFdrSource,
+        )
         from datadog_api_client.v2.model.observability_pipeline_fluent_bit_source import (
             ObservabilityPipelineFluentBitSource,
         )
@@ -185,6 +203,7 @@ class ObservabilityPipelineConfigSourceItem(ModelComposed):
                 ObservabilityPipelineOpentelemetrySource,
                 ObservabilityPipelineAmazonDataFirehoseSource,
                 ObservabilityPipelineAmazonS3Source,
+                ObservabilityPipelineCrowdStrikeFdrSource,
                 ObservabilityPipelineFluentBitSource,
                 ObservabilityPipelineFluentdSource,
                 ObservabilityPipelineGooglePubSubSource,

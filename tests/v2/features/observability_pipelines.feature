@@ -219,6 +219,14 @@ Feature: Observability Pipelines
     And the response "errors" has length 0
 
   @team:ddoghq/observability-pipelines
+  Scenario: Validate an observability pipeline with CrowdStrike FDR source returns "OK" response
+    Given new "ValidatePipeline" request
+    And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["crowdstrike-fdr-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "service:my-service", "type": "filter"}]}], "sources": [{"id": "crowdstrike-fdr-source", "type": "crowdstrike_fdr", "region": "us-west-2", "url_key": "CROWDSTRIKE_FDR_SQS_URL", "access_key_id_key": "CROWDSTRIKE_FDR_AWS_ACCESS_KEY_ID", "secret_access_key_key": "CROWDSTRIKE_FDR_AWS_SECRET_ACCESS_KEY", "visibility_timeout_secs": 300, "client_concurrency": 4, "max_number_of_messages": 1}]}, "name": "Pipeline with CrowdStrike FDR Source"}, "type": "pipelines"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "errors" has length 0
+
+  @team:ddoghq/observability-pipelines
   Scenario: Validate an observability pipeline with HTTP server source valid_tokens returns "OK" response
     Given new "ValidatePipeline" request
     And body with value {"data": {"attributes": {"config": {"destinations": [{"id": "datadog-logs-destination", "inputs": ["my-processor-group"], "type": "datadog_logs"}], "processor_groups": [{"enabled": true, "id": "my-processor-group", "include": "service:my-service", "inputs": ["http-server-source"], "processors": [{"enabled": true, "id": "filter-processor", "include": "status:error", "type": "filter"}]}], "sources": [{"id": "http-server-source", "type": "http_server", "auth_strategy": "none", "decoding": "json", "valid_tokens": [{"token_key": "HTTP_SERVER_TOKEN", "enabled": true, "path_to_token": {"header": "X-Token"}, "field_to_add": {"key": "token_name", "value": "primary_token"}}, {"token_key": "HTTP_SERVER_TOKEN_BACKUP", "enabled": true, "path_to_token": "path"}]}]}, "name": "Pipeline with HTTP server valid_tokens"}, "type": "pipelines"}}
