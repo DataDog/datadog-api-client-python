@@ -14,6 +14,7 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.cost_recommendation_extra_field import CostRecommendationExtraField
     from datadog_api_client.v2.model.cost_recommendation_data_attributes_potential_daily_savings import (
         CostRecommendationDataAttributesPotentialDailySavings,
     )
@@ -22,12 +23,14 @@ if TYPE_CHECKING:
 class CostRecommendationDataAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.cost_recommendation_extra_field import CostRecommendationExtraField
         from datadog_api_client.v2.model.cost_recommendation_data_attributes_potential_daily_savings import (
             CostRecommendationDataAttributesPotentialDailySavings,
         )
 
         return {
             "dd_resource_key": (str,),
+            "extra_fields": ([CostRecommendationExtraField],),
             "potential_daily_savings": (CostRecommendationDataAttributesPotentialDailySavings,),
             "recommendation_type": (str,),
             "recommender_id": (str,),
@@ -38,6 +41,7 @@ class CostRecommendationDataAttributes(ModelNormal):
 
     attribute_map = {
         "dd_resource_key": "dd_resource_key",
+        "extra_fields": "extra_fields",
         "potential_daily_savings": "potential_daily_savings",
         "recommendation_type": "recommendation_type",
         "recommender_id": "recommender_id",
@@ -49,6 +53,7 @@ class CostRecommendationDataAttributes(ModelNormal):
     def __init__(
         self_,
         dd_resource_key: Union[str, UnsetType] = unset,
+        extra_fields: Union[List[CostRecommendationExtraField], UnsetType] = unset,
         potential_daily_savings: Union[CostRecommendationDataAttributesPotentialDailySavings, UnsetType] = unset,
         recommendation_type: Union[str, UnsetType] = unset,
         recommender_id: Union[str, UnsetType] = unset,
@@ -62,6 +67,9 @@ class CostRecommendationDataAttributes(ModelNormal):
 
         :param dd_resource_key: Datadog resource key identifying the recommended resource.
         :type dd_resource_key: str, optional
+
+        :param extra_fields: Selected recommendation fields. Omitted when no requested fields match.
+        :type extra_fields: [CostRecommendationExtraField], optional
 
         :param potential_daily_savings: Estimated daily savings if the recommendation is applied.
         :type potential_daily_savings: CostRecommendationDataAttributesPotentialDailySavings, optional
@@ -84,6 +92,8 @@ class CostRecommendationDataAttributes(ModelNormal):
         """
         if dd_resource_key is not unset:
             kwargs["dd_resource_key"] = dd_resource_key
+        if extra_fields is not unset:
+            kwargs["extra_fields"] = extra_fields
         if potential_daily_savings is not unset:
             kwargs["potential_daily_savings"] = potential_daily_savings
         if recommendation_type is not unset:
