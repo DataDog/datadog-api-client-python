@@ -34,7 +34,7 @@ class CreatePageResponse(ModelNormal):
         """
         The full response object after creating a new On-Call Page.
 
-        :param data: The information returned after successfully creating a page.
+        :param data: The information returned after successfully creating a Page.
         :type data: CreatePageResponseData, optional
         """
         if data is not unset:

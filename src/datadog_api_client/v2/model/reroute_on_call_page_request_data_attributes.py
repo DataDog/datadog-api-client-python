@@ -42,7 +42,7 @@ class RerouteOnCallPageRequestDataAttributes(ModelNormal):
         """
         Details about where to reroute the On-Call Page.
 
-        :param comment: An optional comment explaining why the page is being rerouted.
+        :param comment: An optional comment explaining why the Page is being rerouted.
         :type comment: str, optional
 
         :param target: Information about the target to notify (such as a team or user).

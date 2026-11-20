@@ -489,7 +489,7 @@ class OnCallPagingApi:
 
         Acknowledges an On-Call Page.
 
-        :param page_id: The page ID.
+        :param page_id: The Page ID.
         :type page_id: UUID
         :rtype: None
         """
@@ -522,7 +522,7 @@ class OnCallPagingApi:
 
         Escalates an On-Call Page.
 
-        :param page_id: The page ID.
+        :param page_id: The Page ID.
         :type page_id: UUID
         :rtype: None
         """
@@ -540,7 +540,7 @@ class OnCallPagingApi:
 
         Reroutes an On-Call Page.
 
-        :param page_id: The page ID.
+        :param page_id: The Page ID.
         :type page_id: UUID
         :type body: RerouteOnCallPageRequest
         :rtype: None
@@ -560,7 +560,7 @@ class OnCallPagingApi:
 
         Resolves an On-Call Page.
 
-        :param page_id: The page ID.
+        :param page_id: The Page ID.
         :type page_id: UUID
         :rtype: None
         """
