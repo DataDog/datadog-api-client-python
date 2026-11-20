@@ -396,86 +396,6 @@
     },
     {
       "feature": "Usage Metering",
-      "frozen_at": "2022-04-25T17:07:01.561Z",
-      "interactions": [
-        {
-          "request": {
-            "body": {
-              "type": "empty",
-              "value": null
-            },
-            "content_type": "",
-            "method": "GET",
-            "path": "/api/v2/usage/estimated_cost_by_org",
-            "query": [
-              [
-                "end_date",
-                "2022-04-22T17:07:01.561Z"
-              ],
-              [
-                "start_date",
-                "2022-04-20T17:07:01.561Z"
-              ]
-            ]
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": "{\"data\":[{\"attributes\":{\"org_name\":\"RQ Dummy Tests\",\"public_id\":\"fasjyydbcgwwc2uc\",\"total_cost\":73.17,\"charges\":[{\"charge_type\":\"committed\",\"cost\":0,\"product_name\":\"infra_host\"},{\"charge_type\":\"on_demand\",\"cost\":72,\"product_name\":\"synthetics_api_tests\"},{\"charge_type\":\"committed\",\"cost\":1.17,\"product_name\":\"infra_host\"}],\"date\":\"2022-04-25T17:00:00+00:00\"},\"type\":\"cost_by_org\",\"id\":\"5d1702ab10f060719ae5aa1fd7ba09e3d7e0fb371b8319051c616a1fcad254e9\"}]}\n"
-            },
-            "headers": {
-              "content-type": "application/json"
-            },
-            "reason": "OK",
-            "status": 200
-          }
-        }
-      ],
-      "scenario": "Get estimated cost across multi-org account with date returns \"OK\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "Usage Metering",
-      "frozen_at": "2022-04-25T17:07:01.561Z",
-      "interactions": [
-        {
-          "request": {
-            "body": {
-              "type": "empty",
-              "value": null
-            },
-            "content_type": "",
-            "method": "GET",
-            "path": "/api/v2/usage/estimated_cost_by_org",
-            "query": [
-              [
-                "end_month",
-                "2022-04-22T17:07:01.561Z"
-              ],
-              [
-                "start_month",
-                "2022-04-20T17:07:01.561Z"
-              ]
-            ]
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": "{\"data\":[{\"attributes\":{\"org_name\":\"RQ Dummy Tests\",\"public_id\":\"fasjyydbcgwwc2uc\",\"total_cost\":73.17,\"charges\":[{\"charge_type\":\"committed\",\"cost\":0,\"product_name\":\"infra_host\"},{\"charge_type\":\"on_demand\",\"cost\":72,\"product_name\":\"synthetics_api_tests\"},{\"charge_type\":\"committed\",\"cost\":1.17,\"product_name\":\"infra_host\"}],\"date\":\"2022-04-25T17:00:00+00:00\"},\"type\":\"cost_by_org\",\"id\":\"5d1702ab10f060719ae5aa1fd7ba09e3d7e0fb371b8319051c616a1fcad254e9\"}]}\n"
-            },
-            "headers": {
-              "content-type": "application/json"
-            },
-            "reason": "OK",
-            "status": 200
-          }
-        }
-      ],
-      "scenario": "Get estimated cost across multi-org account with month returns \"OK\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "Usage Metering",
       "frozen_at": "2022-11-21T21:58:43.871Z",
       "interactions": [
         {
@@ -999,46 +919,6 @@
         }
       ],
       "scenario": "GetEstimatedCostByOrg with both start_month and start_date returns \"Bad Request\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "Usage Metering",
-      "frozen_at": "2022-07-29T14:22:55.359Z",
-      "interactions": [
-        {
-          "request": {
-            "body": {
-              "type": "empty",
-              "value": null
-            },
-            "content_type": "",
-            "method": "GET",
-            "path": "/api/v2/usage/estimated_cost",
-            "query": [
-              [
-                "start_date",
-                "2022-07-24T14:22:55.359Z"
-              ],
-              [
-                "view",
-                "sub-org"
-              ]
-            ]
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": "{\"data\":[]}\n"
-            },
-            "headers": {
-              "content-type": "application/json"
-            },
-            "reason": "OK",
-            "status": 200
-          }
-        }
-      ],
-      "scenario": "GetEstimatedCostByOrg with start_date returns \"OK\" response",
       "version": "v2"
     },
     {

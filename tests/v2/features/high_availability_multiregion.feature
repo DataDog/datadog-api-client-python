@@ -11,22 +11,6 @@ Feature: High Availability MultiRegion
     And an instance of "HighAvailabilityMultiRegion" API
 
   @generated @skip @team:ddoghq/hamr
-  Scenario: Create or update HAMR organization connection returns "Bad Request" response
-    Given operation "CreateHamrOrgConnection" enabled
-    And new "CreateHamrOrgConnection" request
-    And body with value {"data": {"attributes": {"hamr_status": 4, "is_primary": true, "modified_by": "admin@example.com", "target_org_datacenter": "us1", "target_org_name": "Production Backup Org", "target_org_uuid": "660f9511-f3ac-52e5-b827-557766551111"}, "id": "550e8400-e29b-41d4-a716-446655440000", "type": "hamr_org_connections"}}
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:ddoghq/hamr
-  Scenario: Create or update HAMR organization connection returns "OK" response
-    Given operation "CreateHamrOrgConnection" enabled
-    And new "CreateHamrOrgConnection" request
-    And body with value {"data": {"attributes": {"hamr_status": 4, "is_primary": true, "modified_by": "admin@example.com", "target_org_datacenter": "us1", "target_org_name": "Production Backup Org", "target_org_uuid": "660f9511-f3ac-52e5-b827-557766551111"}, "id": "550e8400-e29b-41d4-a716-446655440000", "type": "hamr_org_connections"}}
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip @team:ddoghq/hamr
   Scenario: Get HAMR organization connection returns "Bad Request" response
     Given operation "GetHamrOrgConnection" enabled
     And new "GetHamrOrgConnection" request

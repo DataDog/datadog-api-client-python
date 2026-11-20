@@ -43,101 +43,6 @@
     },
     {
       "feature": "Deployment Gates",
-      "frozen_at": "2026-03-17T10:23:13.804Z",
-      "interactions": [
-        {
-          "request": {
-            "body": {
-              "type": "json",
-              "value": {
-                "data": {
-                  "attributes": {
-                    "dry_run": false,
-                    "env": "production",
-                    "identifier": "my-gate-testcreatedeploymentgatereturnsbadrequestresponse1773742993",
-                    "service": "my-service"
-                  },
-                  "type": "deployment_gate"
-                }
-              }
-            },
-            "content_type": "application/json",
-            "method": "POST",
-            "path": "/api/v2/deployment_gates",
-            "query": []
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": "{\"data\":{\"id\":\"2ddfb377-44de-47fe-b53c-58cf800cca1b\",\"type\":\"deployment_gate\",\"attributes\":{\"created_at\":\"2026-03-17T10:23:14.339908Z\",\"created_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"},\"dry_run\":false,\"env\":\"production\",\"identifier\":\"my-gate-testcreatedeploymentgatereturnsbadrequestresponse1773742993\",\"service\":\"my-service\",\"updated_at\":\"2026-03-17T10:23:14.339908Z\",\"updated_by\":{\"id\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\",\"name\":\"CI Account\",\"handle\":\"9919ec9b-ebc7-49ee-8dc8-03626e717cca\"}}}}"
-            },
-            "headers": {
-              "content-type": "application/vnd.api+json"
-            },
-            "reason": "OK",
-            "status": 200
-          }
-        },
-        {
-          "request": {
-            "body": {
-              "type": "json",
-              "value": {
-                "data": {
-                  "attributes": {
-                    "dry_run": false,
-                    "env": "production",
-                    "identifier": "my-gate-testcreatedeploymentgatereturnsbadrequestresponse1773742993",
-                    "service": "my-service"
-                  },
-                  "type": "deployment_gate"
-                }
-              }
-            },
-            "content_type": "application/json",
-            "method": "POST",
-            "path": "/api/v2/deployment_gates",
-            "query": []
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"Gate already exists with the given env, service and identifier\"}]}"
-            },
-            "headers": {
-              "content-type": "application/vnd.api+json"
-            },
-            "reason": "Bad Request",
-            "status": 400
-          }
-        },
-        {
-          "request": {
-            "body": {
-              "type": "empty",
-              "value": null
-            },
-            "content_type": "",
-            "method": "DELETE",
-            "path": "/api/v2/deployment_gates/2ddfb377-44de-47fe-b53c-58cf800cca1b",
-            "query": []
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": ""
-            },
-            "headers": {},
-            "reason": "No Content",
-            "status": 204
-          }
-        }
-      ],
-      "scenario": "Create deployment gate returns \"Bad request (invalid).\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "Deployment Gates",
       "frozen_at": "2025-10-28T14:03:26.103Z",
       "interactions": [
         {
@@ -293,53 +198,6 @@
         }
       ],
       "scenario": "Create deployment rule returns \"Bad Request\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "Deployment Gates",
-      "frozen_at": "2026-03-17T10:23:14.811Z",
-      "interactions": [
-        {
-          "request": {
-            "body": {
-              "type": "json",
-              "value": {
-                "data": {
-                  "attributes": {
-                    "dry_run": false,
-                    "name": "My deployment rule",
-                    "options": {
-                      "duration": 3600,
-                      "excluded_resources": [
-                        "resource1",
-                        "resource2"
-                      ]
-                    },
-                    "type": "faulty_deployment_detection"
-                  },
-                  "type": "deployment_rule"
-                }
-              }
-            },
-            "content_type": "application/json",
-            "method": "POST",
-            "path": "/api/v2/deployment_gates/not-a-valid-id/rules",
-            "query": []
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"gate_id\\\" Invalid id\"}]}"
-            },
-            "headers": {
-              "content-type": "application/vnd.api+json"
-            },
-            "reason": "Bad Request",
-            "status": 400
-          }
-        }
-      ],
-      "scenario": "Create deployment rule returns \"Bad request (invalid).\" response",
       "version": "v2"
     },
     {
@@ -913,37 +771,6 @@
     },
     {
       "feature": "Deployment Gates",
-      "frozen_at": "2026-03-17T10:23:14.936Z",
-      "interactions": [
-        {
-          "request": {
-            "body": {
-              "type": "empty",
-              "value": null
-            },
-            "content_type": "",
-            "method": "DELETE",
-            "path": "/api/v2/deployment_gates/not-a-valid-id",
-            "query": []
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"id\\\" Invalid id\"}]}"
-            },
-            "headers": {
-              "content-type": "application/vnd.api+json"
-            },
-            "reason": "Bad Request",
-            "status": 400
-          }
-        }
-      ],
-      "scenario": "Delete deployment gate returns \"Bad request (invalid).\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "Deployment Gates",
       "frozen_at": "2026-03-17T10:23:15.078Z",
       "interactions": [
         {
@@ -1087,37 +914,6 @@
         }
       ],
       "scenario": "Delete deployment rule returns \"Bad Request\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "Deployment Gates",
-      "frozen_at": "2026-03-17T10:23:15.199Z",
-      "interactions": [
-        {
-          "request": {
-            "body": {
-              "type": "empty",
-              "value": null
-            },
-            "content_type": "",
-            "method": "DELETE",
-            "path": "/api/v2/deployment_gates/not-a-valid-id/rules/not-a-valid-id",
-            "query": []
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"gate_id\\\" Invalid id\"}]}"
-            },
-            "headers": {
-              "content-type": "application/vnd.api+json"
-            },
-            "reason": "Bad Request",
-            "status": 400
-          }
-        }
-      ],
-      "scenario": "Delete deployment rule returns \"Bad request (invalid).\" response",
       "version": "v2"
     },
     {
@@ -1290,37 +1086,6 @@
         }
       ],
       "scenario": "Delete deployment rule returns \"No Content\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "Deployment Gates",
-      "frozen_at": "2026-03-17T10:23:15.458Z",
-      "interactions": [
-        {
-          "request": {
-            "body": {
-              "type": "empty",
-              "value": null
-            },
-            "content_type": "",
-            "method": "GET",
-            "path": "/api/v2/deployments/gates/evaluation/not-a-valid-id",
-            "query": []
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"id\\\" Invalid id\"}]}"
-            },
-            "headers": {
-              "content-type": "application/vnd.api+json"
-            },
-            "reason": "Bad Request",
-            "status": 400
-          }
-        }
-      ],
-      "scenario": "Get a deployment gates evaluation result returns \"Bad request.\" response",
       "version": "v2"
     },
     {
@@ -1556,37 +1321,6 @@
         }
       ],
       "scenario": "Get deployment gate returns \"Bad Request\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "Deployment Gates",
-      "frozen_at": "2026-03-17T10:23:16.714Z",
-      "interactions": [
-        {
-          "request": {
-            "body": {
-              "type": "empty",
-              "value": null
-            },
-            "content_type": "",
-            "method": "GET",
-            "path": "/api/v2/deployment_gates/not-a-valid-id",
-            "query": []
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"id\\\" Invalid id\"}]}"
-            },
-            "headers": {
-              "content-type": "application/vnd.api+json"
-            },
-            "reason": "Bad Request",
-            "status": 400
-          }
-        }
-      ],
-      "scenario": "Get deployment gate returns \"Bad request (invalid).\" response",
       "version": "v2"
     },
     {
@@ -1844,37 +1578,6 @@
         }
       ],
       "scenario": "Get deployment rule returns \"Bad Request\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "Deployment Gates",
-      "frozen_at": "2026-03-17T10:23:16.977Z",
-      "interactions": [
-        {
-          "request": {
-            "body": {
-              "type": "empty",
-              "value": null
-            },
-            "content_type": "",
-            "method": "GET",
-            "path": "/api/v2/deployment_gates/not-a-valid-id/rules/not-a-valid-id",
-            "query": []
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"gate_id\\\" Invalid id\"}]}"
-            },
-            "headers": {
-              "content-type": "application/vnd.api+json"
-            },
-            "reason": "Bad Request",
-            "status": 400
-          }
-        }
-      ],
-      "scenario": "Get deployment rule returns \"Bad request (invalid).\" response",
       "version": "v2"
     },
     {
@@ -2434,45 +2137,6 @@
     },
     {
       "feature": "Deployment Gates",
-      "frozen_at": "2026-03-17T10:23:18.738Z",
-      "interactions": [
-        {
-          "request": {
-            "body": {
-              "type": "json",
-              "value": {
-                "data": {
-                  "attributes": {
-                    "dry_run": false
-                  },
-                  "id": "12345678-1234-1234-1234-123456789012",
-                  "type": "deployment_gate"
-                }
-              }
-            },
-            "content_type": "application/json",
-            "method": "PUT",
-            "path": "/api/v2/deployment_gates/not-a-valid-id",
-            "query": []
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"id\\\" Invalid id\"}]}"
-            },
-            "headers": {
-              "content-type": "application/vnd.api+json"
-            },
-            "reason": "Bad Request",
-            "status": 400
-          }
-        }
-      ],
-      "scenario": "Update deployment gate returns \"Bad request (invalid).\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "Deployment Gates",
       "frozen_at": "2026-03-17T10:23:18.854Z",
       "interactions": [
         {
@@ -2753,52 +2417,6 @@
         }
       ],
       "scenario": "Update deployment rule returns \"Bad Request\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "Deployment Gates",
-      "frozen_at": "2026-03-17T10:23:18.972Z",
-      "interactions": [
-        {
-          "request": {
-            "body": {
-              "type": "json",
-              "value": {
-                "data": {
-                  "attributes": {
-                    "dry_run": false,
-                    "name": "Updated deployment rule",
-                    "options": {
-                      "duration": 3600,
-                      "excluded_resources": [
-                        "resource1",
-                        "resource2"
-                      ]
-                    }
-                  },
-                  "type": "deployment_rule"
-                }
-              }
-            },
-            "content_type": "application/json",
-            "method": "PUT",
-            "path": "/api/v2/deployment_gates/not-a-valid-id/rules/not-a-valid-id",
-            "query": []
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"gate_id\\\" Invalid id\"}]}"
-            },
-            "headers": {
-              "content-type": "application/vnd.api+json"
-            },
-            "reason": "Bad Request",
-            "status": 400
-          }
-        }
-      ],
-      "scenario": "Update deployment rule returns \"Bad request (invalid).\" response",
       "version": "v2"
     },
     {

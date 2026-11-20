@@ -156,56 +156,6 @@
     },
     {
       "feature": "Powerpack",
-      "frozen_at": "2023-10-04T19:18:49.142Z",
-      "interactions": [
-        {
-          "request": {
-            "body": {
-              "type": "json",
-              "value": {
-                "data": {
-                  "attributes": {
-                    "description": "Sample powerpack",
-                    "name": "Sample Powerpack",
-                    "tags": [
-                      "tag:sample"
-                    ],
-                    "template_variables": [
-                      {
-                        "defaults": [
-                          "*"
-                        ],
-                        "name": "sample"
-                      }
-                    ]
-                  },
-                  "type": "powerpack"
-                }
-              }
-            },
-            "content_type": "application/json",
-            "method": "POST",
-            "path": "/api/v2/powerpacks",
-            "query": []
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": "{\"errors\":[\"API input validation failed: {'group_widget': ['Missing data for required field.']}\"]}"
-            },
-            "headers": {
-              "content-type": "application/json"
-            },
-            "reason": "Bad Request",
-            "status": 400
-          }
-        }
-      ],
-      "scenario": "Create a new powerpack with missing group_widget returns \"Bad Request\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "Powerpack",
       "frozen_at": "2023-10-24T18:32:12.418Z",
       "interactions": [
         {
