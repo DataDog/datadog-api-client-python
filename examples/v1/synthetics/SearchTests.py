@@ -1,5 +1,5 @@
 """
-Search Synthetic tests returns "OK - Returns the list of Synthetic tests matching the search." response
+Search Synthetic tests with filters returns "OK - Returns the list of Synthetic tests matching the search." response
 """
 
 from os import environ

@@ -84,7 +84,12 @@ class SyntheticsTestDetailsWithoutSteps(ModelNormal):
         **kwargs,
     ):
         """
-        Object containing details about your Synthetic test, without test steps.
+        Synthetic test details, without steps.
+        Search results may also include ``created_by`` , ``location_names`` , ``monitor_status`` , ``last_triggered_ts`` ,
+        ``triage_score`` , and ``test_criticality``. In TypeScript, these retain their snake_case names under
+        ``test.additionalProperties``.
+        ``monitor_status`` describes monitor health, with known values ``OK`` , ``Alert`` , and ``No Data``.
+        ``last_triggered_ts`` is the monitor's last trigger time in Unix seconds.
 
         :param config: Configuration object for a Synthetic test.
         :type config: SyntheticsTestConfig, optional

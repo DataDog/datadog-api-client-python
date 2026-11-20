@@ -835,13 +835,13 @@ Feature: Synthetics
     Then the response status is 200 OK - Returns a boolean indicating if the update was successful.
 
   @generated @skip @team:ddoghq/synthetics-orchestrating-managing
-  Scenario: Search Synthetic tests returns "Not found" response
+  Scenario: Search Synthetic tests with filters returns "Not found" response
     Given new "SearchTests" request
     When the request is sent
     Then the response status is 404 Not found
 
   @generated @skip @team:ddoghq/synthetics-orchestrating-managing
-  Scenario: Search Synthetic tests returns "OK - Returns the list of Synthetic tests matching the search." response
+  Scenario: Search Synthetic tests with filters returns "OK - Returns the list of Synthetic tests matching the search." response
     Given new "SearchTests" request
     When the request is sent
     Then the response status is 200 OK - Returns the list of Synthetic tests matching the search.
