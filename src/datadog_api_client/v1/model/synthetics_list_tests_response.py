@@ -32,7 +32,11 @@ class SyntheticsListTestsResponse(ModelNormal):
 
     def __init__(self_, tests: Union[List[SyntheticsTestDetailsWithoutSteps], UnsetType] = unset, **kwargs):
         """
-        Object containing an array of Synthetic tests configuration.
+        Synthetic test configurations.
+        Search responses also include ``total`` (matches before per-test access filtering) and ``facets`` (value counts).
+        ``total`` may report 10,000 even when more tests match.
+        In TypeScript, these are available as ``response.additionalProperties?.total`` and
+        ``response.additionalProperties?.facets``.
 
         :param tests: Array of Synthetic tests configuration.
         :type tests: [SyntheticsTestDetailsWithoutSteps], optional

@@ -20330,7 +20330,12 @@ components:
           type: array
       type: object
     SyntheticsListTestsResponse:
-      description: Object containing an array of Synthetic tests configuration.
+      description: |-
+        Synthetic test configurations.
+        Search responses also include `total` (matches before per-test access filtering) and `facets` (value counts).
+        `total` may report 10,000 even when more tests match.
+        In TypeScript, these are available as `response.additionalProperties?.total` and
+        `response.additionalProperties?.facets`.
       properties:
         tests:
           description: Array of Synthetic tests configuration.
@@ -21430,7 +21435,13 @@ components:
         - MOBILE
         - NETWORK
     SyntheticsTestDetailsWithoutSteps:
-      description: Object containing details about your Synthetic test, without test steps.
+      description: |-
+        Synthetic test details, without steps.
+        Search results may also include `created_by`, `location_names`, `monitor_status`, `last_triggered_ts`,
+        `triage_score`, and `test_criticality`. In TypeScript, these retain their snake_case names under
+        `test.additionalProperties`.
+        `monitor_status` describes monitor health, with known values `OK`, `Alert`, and `No Data`.
+        `last_triggered_ts` is the monitor's last trigger time in Unix seconds.
       properties:
         config:
           $ref: "#/components/schemas/SyntheticsTestConfig"
@@ -40949,7 +40960,8 @@ paths:
           - synthetics_default_settings_read
   /api/v1/synthetics/tests:
     get:
-      description: Get the list of all Synthetic tests.
+      description: |-
+        Get the list of all Synthetic tests. Query filters and monitor-health metadata are available through `SearchTests`.
       operationId: ListTests
       parameters:
         - description: Used for pagination. The number of tests returned in the page.
@@ -41691,6 +41703,7 @@ paths:
     get:
       description: |-
         Get the last 150 test results summaries for a given Synthetic browser test.
+        `SearchTests` provides organization-wide filtering by monitor status, state, or tags.
       operationId: GetBrowserTestLatestResults
       parameters:
         - description: |-
@@ -42160,10 +42173,23 @@ paths:
   /api/v1/synthetics/tests/search:
     get:
       description: |-
-        Search for Synthetic tests.
+        Returns Synthetic tests matching the `text` query, with monitor health, facet counts, and pagination metadata.
+        `total` may report 10,000 even when more tests match. Access restrictions can leave pages short or empty.
+        Increase `start` by `count` for each page.
+        In TypeScript, response-level `total` and `facets`, and test-level `monitor_status`
+        (known values: `OK`, `Alert`, `No Data`), are available through `additionalProperties`.
       operationId: SearchTests
       parameters:
-        - description: The search query.
+        - description: |-
+            Search query. Space-separated terms are combined with AND.
+            - `status:Alert` / `status:OK`: monitor health.
+            - `state:live` / `state:paused`: whether a test runs.
+            - `type:api` / `type:browser` / `type:mobile`: test type.
+            - `team:<name>`, `<key>:<value>`, or `tag:<key>:<value>`: tags, for example `team:dashboards env:prod`.
+            - Free text, for example `checkout`: test names.
+
+            `status:Alert state:live` matches running tests with alerting monitors. Paused tests can remain alerting.
+          example: "status:Alert state:live"
           in: query
           name: text
           required: false
@@ -42175,13 +42201,14 @@ paths:
           required: false
           schema:
             type: boolean
-        - description: If true, return only facets instead of full test details.
+        - description: If true, return facet counts with an empty `tests` array and `total` set to 0.
           in: query
           name: facets_only
           required: false
           schema:
             type: boolean
-        - description: The offset from which to start returning results.
+        - description: |-
+            Zero-based result offset. Increase by `count` for each page, even if fewer tests are returned.
           in: query
           name: start
           required: false
@@ -42189,7 +42216,9 @@ paths:
             default: 0
             format: int64
             type: integer
-        - description: The maximum number of results to return.
+        - description: |-
+            Maximum number of tests per page. Access restrictions can return fewer tests or none,
+            even when more tests match.
           in: query
           name: count
           required: false
@@ -42197,7 +42226,12 @@ paths:
             default: 50
             format: int64
             type: integer
-        - description: The sort order for the results (e.g., `name,asc` or `name,desc`).
+        - description: |-
+            Sort by `<field>,<direction>`, where direction is `asc` or `desc` (for example, `name,asc`).
+            Supported fields include `name`, `status`, `tags`, `triggered`, `created`, `modified`, `priority`,
+            `muted_elapsed`, `muted_left`, `creator`, `type`, `domain`, and `triage_score`.
+            `test_criticality` is an alias for `triage_score`.
+            `triggered,desc` sorts by the most recent monitor trigger time (`last_triggered_ts`).
           in: query
           name: sort
           required: false
@@ -42243,7 +42277,7 @@ paths:
           appKeyAuth: []
         - AuthZ:
             - synthetics_read
-      summary: Search Synthetic tests
+      summary: Search Synthetic tests with filters
       tags:
         - Synthetics
       "x-permission":
@@ -42572,6 +42606,7 @@ paths:
     get:
       description: |-
         Get the last 150 test results summaries for a given Synthetic API test.
+        `SearchTests` provides organization-wide filtering by monitor status, state, or tags.
       operationId: GetAPITestLatestResults
       parameters:
         - description: The public ID of the test for which to search results for.

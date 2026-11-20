@@ -1509,6 +1509,7 @@ class SyntheticsApi:
         """Get a browser test's latest results.
 
         Get the latest result summaries for a given Synthetic browser test.
+        ``SearchTests`` provides organization-wide filtering by monitor status, state, or tags.
 
         :param public_id: The public ID of the Synthetic browser test for which to search results.
         :type public_id: str
@@ -1588,6 +1589,7 @@ class SyntheticsApi:
         """Get a test's latest results.
 
         Get the latest result summaries for a given Synthetic test.
+        ``SearchTests`` provides organization-wide filtering by monitor status, state, or tags.
 
         :param public_id: The public ID of the Synthetic test for which to search results.
         :type public_id: str

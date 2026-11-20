@@ -1100,6 +1100,7 @@ class SyntheticsApi:
         """Get an API test's latest results summaries.
 
         Get the last 150 test results summaries for a given Synthetic API test.
+        ``SearchTests`` provides organization-wide filtering by monitor status, state, or tags.
 
         :param public_id: The public ID of the test for which to search results for.
         :type public_id: str
@@ -1176,6 +1177,7 @@ class SyntheticsApi:
         """Get a browser test's latest results summaries.
 
         Get the last 150 test results summaries for a given Synthetic browser test.
+        ``SearchTests`` provides organization-wide filtering by monitor status, state, or tags.
 
         :param public_id: The public ID of the browser test for which to search results
             for.
@@ -1356,7 +1358,7 @@ class SyntheticsApi:
     ) -> SyntheticsListTestsResponse:
         """Get the list of all Synthetic tests.
 
-        Get the list of all Synthetic tests.
+        Get the list of all Synthetic tests. Query filters and monitor-health metadata are available through ``SearchTests``.
 
         :param page_size: Used for pagination. The number of tests returned in the page.
         :type page_size: int, optional
@@ -1443,21 +1445,38 @@ class SyntheticsApi:
         count: Union[int, UnsetType] = unset,
         sort: Union[str, UnsetType] = unset,
     ) -> SyntheticsListTestsResponse:
-        """Search Synthetic tests.
+        """Search Synthetic tests with filters.
 
-        Search for Synthetic tests.
+        Returns Synthetic tests matching the ``text`` query, with monitor health, facet counts, and pagination metadata.
+        ``total`` may report 10,000 even when more tests match. Access restrictions can leave pages short or empty.
+        Increase ``start`` by ``count`` for each page.
+        In TypeScript, response-level ``total`` and ``facets`` , and test-level ``monitor_status``
+        (known values: ``OK`` , ``Alert`` , ``No Data`` ), are available through ``additionalProperties``.
 
-        :param text: The search query.
+        :param text: Search query. Space-separated terms are combined with AND.
+
+            * ``status:Alert`` / ``status:OK`` : monitor health.
+            * ``state:live`` / ``state:paused`` : whether a test runs.
+            * ``type:api`` / ``type:browser`` / ``type:mobile`` : test type.
+            * ``team:<name>`` , ``<key>:<value>`` , or `tag:<key>:<value>`: tags, for example `team:dashboards env:prod`.
+            * Free text, for example ``checkout`` : test names.
+
+            ``status:Alert state:live`` matches running tests with alerting monitors. Paused tests can remain alerting.
         :type text: str, optional
         :param include_full_config: If true, include the full configuration for each test in the response.
         :type include_full_config: bool, optional
-        :param facets_only: If true, return only facets instead of full test details.
+        :param facets_only: If true, return facet counts with an empty ``tests`` array and ``total`` set to 0.
         :type facets_only: bool, optional
-        :param start: The offset from which to start returning results.
+        :param start: Zero-based result offset. Increase by ``count`` for each page, even if fewer tests are returned.
         :type start: int, optional
-        :param count: The maximum number of results to return.
+        :param count: Maximum number of tests per page. Access restrictions can return fewer tests or none,
+            even when more tests match.
         :type count: int, optional
-        :param sort: The sort order for the results (e.g., ``name,asc`` or ``name,desc`` ).
+        :param sort: Sort by ``<field>,<direction>`` , where direction is ``asc`` or ``desc`` (for example, ``name,asc`` ).
+            Supported fields include ``name`` , ``status`` , ``tags`` , ``triggered`` , ``created`` , ``modified`` , ``priority`` ,
+            ``muted_elapsed`` , ``muted_left`` , ``creator`` , ``type`` , ``domain`` , and ``triage_score``.
+            ``test_criticality`` is an alias for ``triage_score``.
+            ``triggered,desc`` sorts by the most recent monitor trigger time ( ``last_triggered_ts`` ).
         :type sort: str, optional
         :rtype: SyntheticsListTestsResponse
         """
