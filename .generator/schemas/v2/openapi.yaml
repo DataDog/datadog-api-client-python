@@ -274474,7 +274474,10 @@ paths:
           - synthetics_create_edit_trigger
   /api/v2/synthetics/tests/browser/{public_id}/results:
     get:
-      description: Get the latest result summaries for a given Synthetic browser test.
+      description: |-
+        Get the latest result summaries for a given Synthetic browser test.
+        To filter tests across your organization by monitor status, state, or tags, use
+        the Search Synthetic tests with filters endpoint.
       operationId: ListSyntheticsBrowserTestLatestResults
       parameters:
         - description: The public ID of the Synthetic browser test for which to search results.
@@ -275435,7 +275438,10 @@ paths:
           - synthetics_read
   /api/v2/synthetics/tests/{public_id}/results:
     get:
-      description: Get the latest result summaries for a given Synthetic test.
+      description: |-
+        Get the latest result summaries for a given Synthetic test.
+        To filter tests across your organization by monitor status, state, or tags, use
+        the Search Synthetic tests with filters endpoint.
       operationId: ListSyntheticsTestLatestResults
       parameters:
         - description: The public ID of the Synthetic test for which to search results.
