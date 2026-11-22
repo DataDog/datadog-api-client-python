@@ -5256,6 +5256,12 @@
       "type": "safe"
     }
   },
+  "GetAccountFacetInfo": {
+    "tag": "Rum Audience Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetActionConnection": {
     "tag": "Action Connection",
     "undo": {
@@ -7544,6 +7550,12 @@
   },
   "GetUserAuthorizedClient": {
     "tag": "User Authorized Clients",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetUserFacetInfo": {
+    "tag": "Rum Audience Management",
     "undo": {
       "type": "safe"
     }
@@ -10051,6 +10063,12 @@
       "type": "idempotent"
     }
   },
+  "QueryAccounts": {
+    "tag": "Rum Audience Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "QueryAggregatedLongTasks": {
     "tag": "RUM Insights",
     "undo": {
@@ -10059,6 +10077,12 @@
   },
   "QueryAggregatedWaterfall": {
     "tag": "RUM Insights",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "QueryEventFilteredUsers": {
+    "tag": "Rum Audience Management",
     "undo": {
       "type": "safe"
     }
@@ -10145,6 +10169,12 @@
     "tag": "Metrics",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "QueryUsers": {
+    "tag": "Rum Audience Management",
+    "undo": {
+      "type": "safe"
     }
   },
   "RefreshBandit": {
