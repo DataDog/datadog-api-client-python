@@ -28052,7 +28052,7 @@ components:
           example: true
           type: boolean
         expression:
-          description: "The SECL expression of the Agent rule."
+          description: "The SECL expression of the Agent rule. See [Agent expressions](https://docs.datadoghq.com/security/workload_protection/agent_expressions/)."
           example: 'exec.file.name == "sh"'
           type: string
         filters:
@@ -242663,6 +242663,8 @@ paths:
       description: |-
         Get the list of Workload Protection agent rules.
 
+        Set `policy_id` to only return the rules of one policy. Without it, the rules of all policies are returned.
+
         **Note**: This endpoint is not available for the Government (US1-FED) site. Please reference the (US1-FED) specific resource below.
       operationId: ListCSMThreatsAgentRules
       parameters:
@@ -242695,9 +242697,22 @@ paths:
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: Get all Workload Protection agent rules
       tags: ["CSM Threats"]
+      "x-permission":
+        operator: OR
+        permissions:
+          - security_monitoring_cws_agent_rules_read
     post:
       description: |-
         Create a new Workload Protection agent rule with the given parameters.
+
+        The `expression` attribute is written in the Security Agent Expression Language (SECL),
+        for example `exec.file.name == "sh"`. See [Agent expressions](https://docs.datadoghq.com/security/workload_protection/agent_expressions/)
+        for the syntax and the list of available event types and fields.
+
+        If `policy_id` is not set, the rule is added to the `CWS_CUSTOM-canary` policy. This policy is created if it does not exist yet.
+        To add the rule to another policy, set `policy_id` to the ID of that policy, as returned by `ListCSMThreatsAgentPolicies`.
+
+        This endpoint does not accept `kill` or `network_filter` actions, or `blocking` policies. A request that contains them returns a `400` error.
 
         **Note**: This endpoint is not available for the Government (US1-FED) site. Please reference the (US1-FED) specific resource below.
       operationId: CreateCSMThreatsAgentRule
@@ -242761,10 +242776,17 @@ paths:
       summary: Create a Workload Protection agent rule
       tags: ["CSM Threats"]
       x-codegen-request-body-name: body
+      "x-permission":
+        operator: OR
+        permissions:
+          - security_monitoring_cws_agent_rules_write
   /api/v2/remote_config/products/cws/agent_rules/{agent_rule_id}:
     delete:
       description: |-
         Delete a specific Workload Protection agent rule.
+
+        The rule is removed from every policy that contains it. Datadog-managed rules cannot be deleted.
+        This action cannot be undone.
 
         **Note**: This endpoint is not available for the Government (US1-FED) site. Please reference the (US1-FED) specific resource below.
       operationId: DeleteCSMThreatsAgentRule
@@ -242790,6 +242812,10 @@ paths:
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: Delete a Workload Protection agent rule
       tags: ["CSM Threats"]
+      "x-permission":
+        operator: OR
+        permissions:
+          - security_monitoring_cws_agent_rules_write
     get:
       description: |-
         Get the details of a specific Workload Protection agent rule.
@@ -242833,10 +242859,19 @@ paths:
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: Get a Workload Protection agent rule
       tags: ["CSM Threats"]
+      "x-permission":
+        operator: OR
+        permissions:
+          - security_monitoring_cws_agent_rules_read
     patch:
       description: |-
         Update a specific Workload Protection Agent rule.
         Returns the agent rule object when the request is successful.
+
+        The `expression` attribute is written in the Security Agent Expression Language (SECL).
+        See [Agent expressions](https://docs.datadoghq.com/security/workload_protection/agent_expressions/) for the syntax.
+
+        This endpoint does not accept `kill` or `network_filter` actions, or `blocking` policies. A request that contains them returns a `400` error.
 
         **Note**: This endpoint is not available for the Government (US1-FED) site. Please reference the (US1-FED) specific resource below.
       operationId: UpdateCSMThreatsAgentRule
@@ -242909,6 +242944,10 @@ paths:
       summary: Update a Workload Protection agent rule
       tags: ["CSM Threats"]
       x-codegen-request-body-name: body
+      "x-permission":
+        operator: OR
+        permissions:
+          - security_monitoring_cws_agent_rules_write
   /api/v2/remote_config/products/cws/policy:
     get:
       description: |-
@@ -242939,6 +242978,10 @@ paths:
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: Get all Workload Protection policies
       tags: ["CSM Threats"]
+      "x-permission":
+        operator: OR
+        permissions:
+          - security_monitoring_cws_agent_rules_read
     post:
       description: |-
         Create a new Workload Protection policy with the given parameters.
@@ -242991,6 +243034,10 @@ paths:
       summary: Create a Workload Protection policy
       tags: ["CSM Threats"]
       x-codegen-request-body-name: body
+      "x-permission":
+        operator: OR
+        permissions:
+          - security_monitoring_cws_agent_rules_write
   /api/v2/remote_config/products/cws/policy/download:
     get:
       description: |-
@@ -243017,10 +243064,16 @@ paths:
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: "Download the Workload Protection policy"
       tags: ["CSM Threats"]
+      "x-permission":
+        operator: OR
+        permissions:
+          - security_monitoring_cws_agent_rules_read
   /api/v2/remote_config/products/cws/policy/{policy_id}:
     delete:
       description: |-
         Delete a specific Workload Protection policy.
+
+        Datadog-managed policies cannot be deleted. This action cannot be undone.
 
         **Note**: This endpoint is not available for the Government (US1-FED) site. Please reference the (US1-FED) specific resource below.
       operationId: DeleteCSMThreatsAgentPolicy
@@ -243039,6 +243092,10 @@ paths:
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: Delete a Workload Protection policy
       tags: ["CSM Threats"]
+      "x-permission":
+        operator: OR
+        permissions:
+          - security_monitoring_cws_agent_rules_write
     get:
       description: |-
         Get the details of a specific Workload Protection policy.
@@ -243072,6 +243129,10 @@ paths:
           $ref: "#/components/responses/TooManyRequestsResponse"
       summary: Get a Workload Protection policy
       tags: ["CSM Threats"]
+      "x-permission":
+        operator: OR
+        permissions:
+          - security_monitoring_cws_agent_rules_read
     patch:
       description: |-
         Update a specific Workload Protection policy.
@@ -243128,6 +243189,10 @@ paths:
       summary: Update a Workload Protection policy
       tags: ["CSM Threats"]
       x-codegen-request-body-name: body
+      "x-permission":
+        operator: OR
+        permissions:
+          - security_monitoring_cws_agent_rules_write
   /api/v2/remote_config/products/rum/configs/{config_id}:
     get:
       description: Retrieve a RUM SDK configuration by its identifier.

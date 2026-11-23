@@ -97,7 +97,7 @@ class CloudWorkloadSecurityAgentRuleCreateAttributes(ModelNormal):
         :param enabled: Whether the Agent rule is enabled.
         :type enabled: bool, optional
 
-        :param expression: The SECL expression of the Agent rule.
+        :param expression: The SECL expression of the Agent rule. See `Agent expressions <https://docs.datadoghq.com/security/workload_protection/agent_expressions/>`_.
         :type expression: str
 
         :param filters: The platforms the Agent rule is supported on.
