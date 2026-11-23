@@ -3,14 +3,19 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
 class CommitmentsUnit(ModelNormal):
+    _nullable = True
+
     @cached_property
     def openapi_types(_):
         return {
@@ -31,33 +36,47 @@ class CommitmentsUnit(ModelNormal):
         "short_name": "short_name",
     }
 
-    def __init__(self_, family: str, id: int, name: str, plural: str, scale_factor: float, short_name: str, **kwargs):
+    def __init__(
+        self_,
+        family: Union[str, UnsetType] = unset,
+        id: Union[int, UnsetType] = unset,
+        name: Union[str, UnsetType] = unset,
+        plural: Union[str, UnsetType] = unset,
+        scale_factor: Union[float, UnsetType] = unset,
+        short_name: Union[str, UnsetType] = unset,
+        **kwargs,
+    ):
         """
-        Unit metadata for a numeric metric.
+        Unit metadata for a numeric metric. Unset fields are omitted, and the unit is ``null`` when it is unknown.
 
         :param family: The unit family (for example, percentage or money).
-        :type family: str
+        :type family: str, optional
 
         :param id: The unit identifier.
-        :type id: int
+        :type id: int, optional
 
         :param name: The unit name (for example, percent or dollar).
-        :type name: str
+        :type name: str, optional
 
         :param plural: The plural form of the unit name.
-        :type plural: str
+        :type plural: str, optional
 
         :param scale_factor: The scale factor for the unit.
-        :type scale_factor: float
+        :type scale_factor: float, optional
 
         :param short_name: The abbreviated unit name (for example, % or $).
-        :type short_name: str
+        :type short_name: str, optional
         """
+        if family is not unset:
+            kwargs["family"] = family
+        if id is not unset:
+            kwargs["id"] = id
+        if name is not unset:
+            kwargs["name"] = name
+        if plural is not unset:
+            kwargs["plural"] = plural
+        if scale_factor is not unset:
+            kwargs["scale_factor"] = scale_factor
+        if short_name is not unset:
+            kwargs["short_name"] = short_name
         super().__init__(kwargs)
-
-        self_.family = family
-        self_.id = id
-        self_.name = name
-        self_.plural = plural
-        self_.scale_factor = scale_factor
-        self_.short_name = short_name

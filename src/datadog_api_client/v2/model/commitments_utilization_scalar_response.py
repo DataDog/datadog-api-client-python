@@ -3,58 +3,42 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.commitments_scalar_column import CommitmentsScalarColumn
-    from datadog_api_client.v2.model.commitments_utilization_scalar_product_breakdown_entry import (
-        CommitmentsUtilizationScalarProductBreakdownEntry,
+    from datadog_api_client.v2.model.commitments_utilization_scalar_response_data import (
+        CommitmentsUtilizationScalarResponseData,
     )
 
 
 class CommitmentsUtilizationScalarResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.commitments_scalar_column import CommitmentsScalarColumn
-        from datadog_api_client.v2.model.commitments_utilization_scalar_product_breakdown_entry import (
-            CommitmentsUtilizationScalarProductBreakdownEntry,
+        from datadog_api_client.v2.model.commitments_utilization_scalar_response_data import (
+            CommitmentsUtilizationScalarResponseData,
         )
 
         return {
-            "columns": ([CommitmentsScalarColumn],),
-            "product_breakdown": ([CommitmentsUtilizationScalarProductBreakdownEntry],),
+            "data": (CommitmentsUtilizationScalarResponseData,),
         }
 
     attribute_map = {
-        "columns": "columns",
-        "product_breakdown": "product_breakdown",
+        "data": "data",
     }
 
-    def __init__(
-        self_,
-        columns: List[CommitmentsScalarColumn],
-        product_breakdown: Union[List[CommitmentsUtilizationScalarProductBreakdownEntry], UnsetType] = unset,
-        **kwargs,
-    ):
+    def __init__(self_, data: CommitmentsUtilizationScalarResponseData, **kwargs):
         """
         Response containing scalar utilization metrics for cloud commitment programs.
 
-        :param columns: Array of scalar columns in the response.
-        :type columns: [CommitmentsScalarColumn]
-
-        :param product_breakdown: Array of per-product utilization breakdown entries.
-        :type product_breakdown: [CommitmentsUtilizationScalarProductBreakdownEntry], optional
+        :param data: The scalar utilization resource.
+        :type data: CommitmentsUtilizationScalarResponseData
         """
-        if product_breakdown is not unset:
-            kwargs["product_breakdown"] = product_breakdown
         super().__init__(kwargs)
 
-        self_.columns = columns
+        self_.data = data

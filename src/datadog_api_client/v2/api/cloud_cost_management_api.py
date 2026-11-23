@@ -2576,7 +2576,7 @@ class CloudCostManagementApi:
 
         Get a list of individual cloud commitments (Reserved Instances or Savings Plans) with their utilization details. The response schema varies based on the provider, product, and commitment type.
 
-        :param provider: Cloud provider for commitment programs (aws or azure).
+        :param provider: Cloud provider for commitment programs (aws, azure, or gcp).
         :type provider: CommitmentsProvider
         :param product: Cloud product identifier (for example, ec2, rds, virtualmachines).
         :type product: str
@@ -2620,7 +2620,7 @@ class CloudCostManagementApi:
 
         Get scalar coverage metrics for cloud commitment programs, including hours and cost coverage percentages.
 
-        :param provider: Cloud provider for commitment programs (aws or azure).
+        :param provider: Cloud provider for commitment programs (aws, azure, or gcp).
         :type provider: CommitmentsProvider
         :param product: Cloud product identifier (for example, ec2, rds, virtualmachines).
         :type product: str
@@ -2657,9 +2657,9 @@ class CloudCostManagementApi:
     ) -> CommitmentsCoverageTimeseriesResponse:
         """Get commitments coverage (timeseries).
 
-        Get timeseries coverage metrics for cloud commitment programs, broken down by coverage type (Reserved Instances, Savings Plans, On-Demand, and Spot) for both hours and cost.
+        Get timeseries coverage metrics for cloud commitment programs, broken down by coverage type for both hours and cost. AWS and Azure report Reserved Instances, Savings Plans, On-Demand, and Spot. GCP reports Flex Committed Use Discounts and On-Demand.
 
-        :param provider: Cloud provider for commitment programs (aws or azure).
+        :param provider: Cloud provider for commitment programs (aws, azure, or gcp).
         :type provider: CommitmentsProvider
         :param product: Cloud product identifier (for example, ec2, rds, virtualmachines).
         :type product: str
@@ -2698,7 +2698,7 @@ class CloudCostManagementApi:
 
         Get scalar on-demand hot-spots data for cloud commitment programs, showing per-dimension breakdowns of on-demand spending with coverage metrics and potential savings.
 
-        :param provider: Cloud provider for commitment programs (aws or azure).
+        :param provider: Cloud provider for commitment programs (aws, azure, or gcp).
         :type provider: CommitmentsProvider
         :param product: Cloud product identifier (for example, ec2, rds, virtualmachines).
         :type product: str
@@ -2737,7 +2737,7 @@ class CloudCostManagementApi:
 
         Get scalar savings metrics for cloud commitment programs, including realized savings and effective savings rate.
 
-        :param provider: Cloud provider for commitment programs (aws or azure).
+        :param provider: Cloud provider for commitment programs (aws, azure, or gcp).
         :type provider: CommitmentsProvider
         :param product: Cloud product identifier (for example, ec2, rds, virtualmachines).
         :type product: str
@@ -2776,7 +2776,7 @@ class CloudCostManagementApi:
 
         Get timeseries savings metrics for cloud commitment programs, including actual cost, on-demand equivalent cost, realized savings, and effective savings rate over time.
 
-        :param provider: Cloud provider for commitment programs (aws or azure).
+        :param provider: Cloud provider for commitment programs (aws, azure, or gcp).
         :type provider: CommitmentsProvider
         :param product: Cloud product identifier (for example, ec2, rds, virtualmachines).
         :type product: str
@@ -2816,7 +2816,7 @@ class CloudCostManagementApi:
 
         Get scalar utilization metrics for cloud commitment programs, including utilization percentage and unused cost.
 
-        :param provider: Cloud provider for commitment programs (aws or azure).
+        :param provider: Cloud provider for commitment programs (aws, azure, or gcp).
         :type provider: CommitmentsProvider
         :param product: Cloud product identifier (for example, ec2, rds, virtualmachines).
         :type product: str
@@ -2861,7 +2861,7 @@ class CloudCostManagementApi:
 
         Get timeseries utilization metrics for cloud commitment programs, including used and unused cost series over time.
 
-        :param provider: Cloud provider for commitment programs (aws or azure).
+        :param provider: Cloud provider for commitment programs (aws, azure, or gcp).
         :type provider: CommitmentsProvider
         :param product: Cloud product identifier (for example, ec2, rds, virtualmachines).
         :type product: str

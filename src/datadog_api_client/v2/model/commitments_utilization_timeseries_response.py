@@ -3,61 +3,42 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.commitments_timeseries_series import CommitmentsTimeseriesSeries
-    from datadog_api_client.v2.model.commitments_unit import CommitmentsUnit
+    from datadog_api_client.v2.model.commitments_utilization_timeseries_response_data import (
+        CommitmentsUtilizationTimeseriesResponseData,
+    )
 
 
 class CommitmentsUtilizationTimeseriesResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.commitments_timeseries_series import CommitmentsTimeseriesSeries
-        from datadog_api_client.v2.model.commitments_unit import CommitmentsUnit
+        from datadog_api_client.v2.model.commitments_utilization_timeseries_response_data import (
+            CommitmentsUtilizationTimeseriesResponseData,
+        )
 
         return {
-            "series": (CommitmentsTimeseriesSeries,),
-            "times": ([int],),
-            "unit": (CommitmentsUnit,),
+            "data": (CommitmentsUtilizationTimeseriesResponseData,),
         }
 
     attribute_map = {
-        "series": "series",
-        "times": "times",
-        "unit": "unit",
+        "data": "data",
     }
 
-    def __init__(
-        self_,
-        series: CommitmentsTimeseriesSeries,
-        times: List[int],
-        unit: Union[CommitmentsUnit, UnsetType] = unset,
-        **kwargs,
-    ):
+    def __init__(self_, data: CommitmentsUtilizationTimeseriesResponseData, **kwargs):
         """
         Response containing timeseries utilization metrics for cloud commitment programs.
 
-        :param series: Timeseries data as a map of series names to their corresponding value arrays.
-        :type series: CommitmentsTimeseriesSeries
-
-        :param times: Unix timestamps in seconds for the timeseries data points.
-        :type times: [int]
-
-        :param unit: Unit metadata for a numeric metric.
-        :type unit: CommitmentsUnit, optional
+        :param data: The timeseries utilization resource.
+        :type data: CommitmentsUtilizationTimeseriesResponseData
         """
-        if unit is not unset:
-            kwargs["unit"] = unit
         super().__init__(kwargs)
 
-        self_.series = series
-        self_.times = times
+        self_.data = data
