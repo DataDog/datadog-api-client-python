@@ -40,7 +40,8 @@ class CreateDeploymentGateParamsData(ModelNormal):
         """
         Parameters for creating a deployment gate.
 
-        :param attributes: Parameters for creating a deployment gate.
+        :param attributes: Parameters for creating a deployment gate. For the same organization, service, and identifier,
+            a gate for all environments cannot coexist with gates for specific environments.
         :type attributes: CreateDeploymentGateParamsDataAttributes
 
         :param type: Deployment gate resource type.
