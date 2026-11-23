@@ -6960,6 +6960,12 @@
       "type": "safe"
     }
   },
+  "GetScanningGroup": {
+    "tag": "Sensitive Data Scanner",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetScheduleOnCallResponders": {
     "tag": "On-Call",
     "undo": {
@@ -9659,6 +9665,12 @@
   },
   "ListTagsByMetricName": {
     "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListTargetScanningGroups": {
+    "tag": "Sensitive Data Scanner",
     "undo": {
       "type": "safe"
     }
