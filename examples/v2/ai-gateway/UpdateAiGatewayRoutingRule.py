@@ -23,6 +23,8 @@ from dateutil.tz import tzutc
 body = AiGatewayRoutingRuleReplaceRequest(
     data=AiGatewayRoutingRuleReplaceData(
         attributes=AiGatewayRoutingRuleReplaceAttributes(
+            description="Routes coding traffic to the fastest available model.",
+            display_name="Coding fallback",
             expected_updated_at=datetime(2026, 8, 24, 12, 0, tzinfo=tzutc()),
             removed_target_ids=[
                 901,

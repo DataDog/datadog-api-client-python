@@ -3,12 +3,14 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
     datetime,
+    unset,
+    UnsetType,
 )
 
 
@@ -29,6 +31,8 @@ class AiGatewayRoutingRuleAttributes(ModelNormal):
 
         return {
             "created_at": (datetime,),
+            "description": (str,),
+            "display_name": (str,),
             "route_id": (int,),
             "tiers": ([AiGatewayRoutingRuleTier],),
             "updated_at": (datetime,),
@@ -36,6 +40,8 @@ class AiGatewayRoutingRuleAttributes(ModelNormal):
 
     attribute_map = {
         "created_at": "created_at",
+        "description": "description",
+        "display_name": "display_name",
         "route_id": "route_id",
         "tiers": "tiers",
         "updated_at": "updated_at",
@@ -47,6 +53,8 @@ class AiGatewayRoutingRuleAttributes(ModelNormal):
         route_id: int,
         tiers: List[AiGatewayRoutingRuleTier],
         updated_at: datetime,
+        description: Union[str, UnsetType] = unset,
+        display_name: Union[str, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -54,6 +62,12 @@ class AiGatewayRoutingRuleAttributes(ModelNormal):
 
         :param created_at: Time when the resource was created.
         :type created_at: datetime
+
+        :param description: Description of the routing rule. Absent when unset.
+        :type description: str, optional
+
+        :param display_name: Human-readable name of the routing rule. Absent when unset; show the slug instead.
+        :type display_name: str, optional
 
         :param route_id: Stable numeric route identifier used by scoped policies and ``ai-gateway-route`` restriction policies.
         :type route_id: int
@@ -64,6 +78,10 @@ class AiGatewayRoutingRuleAttributes(ModelNormal):
         :param updated_at: Time when the resource was last updated.
         :type updated_at: datetime
         """
+        if description is not unset:
+            kwargs["description"] = description
+        if display_name is not unset:
+            kwargs["display_name"] = display_name
         super().__init__(kwargs)
 
         self_.created_at = created_at

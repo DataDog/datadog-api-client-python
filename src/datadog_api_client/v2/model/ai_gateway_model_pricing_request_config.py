@@ -21,6 +21,10 @@ class AiGatewayModelPricingRequestConfig(ModelComposed):
         :param source: Source for a custom pricing configuration.
         :type source: AiGatewayModelPricingCustomRequestSource
 
+        :param tiers: Custom prices that replace the base rates for the requests they select. Only valid for custom pricing.
+            At most 16 tiers, and no two may share the same `service_tier` and `context_min_tokens`.
+        :type tiers: [AiGatewayModelPricingTier], optional
+
         :param version: Pricing configuration version. The only supported version is `1`.
         :type version: int
 

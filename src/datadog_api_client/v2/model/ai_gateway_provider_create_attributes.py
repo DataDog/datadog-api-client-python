@@ -82,6 +82,7 @@ class AiGatewayProviderCreateAttributes(ModelNormal):
 
     def __init__(
         self_,
+        known_provider: AiGatewayKnownProvider,
         name: str,
         slug: str,
         cost_multiplier: Union[float, UnsetType] = unset,
@@ -89,7 +90,6 @@ class AiGatewayProviderCreateAttributes(ModelNormal):
         initial_bindings: Union[List[AiGatewayProviderInitialBinding], UnsetType] = unset,
         integration_account_id: Union[str, UnsetType] = unset,
         integration_config: Union[AiGatewayProviderIntegrationConfig, UnsetType] = unset,
-        known_provider: Union[AiGatewayKnownProvider, UnsetType] = unset,
         models: Union[List[AiGatewayModelInput], UnsetType] = unset,
         zdr_eligible: Union[bool, UnsetType] = unset,
         **kwargs,
@@ -118,7 +118,7 @@ class AiGatewayProviderCreateAttributes(ModelNormal):
         :type integration_config: AiGatewayProviderIntegrationConfig, optional
 
         :param known_provider: Known provider implementation.
-        :type known_provider: AiGatewayKnownProvider, optional
+        :type known_provider: AiGatewayKnownProvider
 
         :param models: Manually managed models to add alongside models discovered from the provider integration.
         :type models: [AiGatewayModelInput], optional
@@ -144,13 +144,12 @@ class AiGatewayProviderCreateAttributes(ModelNormal):
             kwargs["integration_account_id"] = integration_account_id
         if integration_config is not unset:
             kwargs["integration_config"] = integration_config
-        if known_provider is not unset:
-            kwargs["known_provider"] = known_provider
         if models is not unset:
             kwargs["models"] = models
         if zdr_eligible is not unset:
             kwargs["zdr_eligible"] = zdr_eligible
         super().__init__(kwargs)
 
+        self_.known_provider = known_provider
         self_.name = name
         self_.slug = slug
