@@ -8,6 +8,7 @@ from typing import List, Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -35,12 +36,16 @@ class AiGatewayRoutingRuleCreateAttributes(ModelNormal):
         from datadog_api_client.v2.model.ai_gateway_routing_rule_tier_request import AiGatewayRoutingRuleTierRequest
 
         return {
+            "description": (str, none_type),
+            "display_name": (str, none_type),
             "initial_bindings": ([AiGatewayProviderInitialBinding],),
             "slug": (str,),
             "tiers": ([AiGatewayRoutingRuleTierRequest],),
         }
 
     attribute_map = {
+        "description": "description",
+        "display_name": "display_name",
         "initial_bindings": "initial_bindings",
         "slug": "slug",
         "tiers": "tiers",
@@ -50,11 +55,21 @@ class AiGatewayRoutingRuleCreateAttributes(ModelNormal):
         self_,
         slug: str,
         tiers: List[AiGatewayRoutingRuleTierRequest],
+        description: Union[str, none_type, UnsetType] = unset,
+        display_name: Union[str, none_type, UnsetType] = unset,
         initial_bindings: Union[List[AiGatewayProviderInitialBinding], UnsetType] = unset,
         **kwargs,
     ):
         """
         Attributes used to create an AI Gateway routing rule.
+
+        :param description: Optional description of what the routing rule is for. Up to 500 characters. Line breaks are allowed.
+            Leading and trailing spaces are trimmed, and a blank value is the same as none.
+        :type description: str, none_type, optional
+
+        :param display_name: Optional human-readable name shown in place of the slug. Up to 100 characters on one line. Need not be unique.
+            Leading and trailing spaces are trimmed, and a blank value is the same as none.
+        :type display_name: str, none_type, optional
 
         :param initial_bindings: Reserved for initial View and Edit permissions. Supplying this attribute returns HTTP 400 and doesn't
             create the route. Create the route, then set its permissions through the restriction policy API.
@@ -66,6 +81,10 @@ class AiGatewayRoutingRuleCreateAttributes(ModelNormal):
         :param tiers:
         :type tiers: [AiGatewayRoutingRuleTierRequest]
         """
+        if description is not unset:
+            kwargs["description"] = description
+        if display_name is not unset:
+            kwargs["display_name"] = display_name
         if initial_bindings is not unset:
             kwargs["initial_bindings"] = initial_bindings
         super().__init__(kwargs)

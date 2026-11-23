@@ -14,12 +14,14 @@ from datadog_api_client.v2.model.ai_gateway_model_pricing_custom_request_source 
 from datadog_api_client.v2.model.ai_gateway_model_pricing_custom_request_source_type import (
     AiGatewayModelPricingCustomRequestSourceType,
 )
+from datadog_api_client.v2.model.ai_gateway_model_pricing_rates import AiGatewayModelPricingRates
 from datadog_api_client.v2.model.ai_gateway_model_pricing_request import AiGatewayModelPricingRequest
 from datadog_api_client.v2.model.ai_gateway_model_pricing_request_attributes import (
     AiGatewayModelPricingRequestAttributes,
 )
 from datadog_api_client.v2.model.ai_gateway_model_pricing_request_data import AiGatewayModelPricingRequestData
 from datadog_api_client.v2.model.ai_gateway_model_pricing_required_rates import AiGatewayModelPricingRequiredRates
+from datadog_api_client.v2.model.ai_gateway_model_pricing_tier import AiGatewayModelPricingTier
 from datadog_api_client.v2.model.ai_gateway_model_pricing_type import AiGatewayModelPricingType
 
 body = AiGatewayModelPricingRequest(
@@ -35,6 +37,18 @@ body = AiGatewayModelPricingRequest(
                 source=AiGatewayModelPricingCustomRequestSource(
                     type=AiGatewayModelPricingCustomRequestSourceType.CUSTOM,
                 ),
+                tiers=[
+                    AiGatewayModelPricingTier(
+                        context_min_tokens=200000,
+                        rates=AiGatewayModelPricingRates(
+                            cache_read_cost_per_mtok=0.6,
+                            cache_write_cost_per_mtok=7.5,
+                            non_cached_input_cost_per_mtok=6.0,
+                            output_cost_per_mtok=22.5,
+                        ),
+                        service_tier="priority",
+                    ),
+                ],
                 version=1,
             ),
         ),

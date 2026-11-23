@@ -208,7 +208,7 @@ Feature: AI Gateway
   Scenario: Create an AI Gateway routing rule returns "Bad Request" response
     Given operation "CreateAiGatewayRoutingRule" enabled
     And new "CreateAiGatewayRoutingRule" request
-    And body with value {"data": {"attributes": {"initial_bindings": [{"principals": ["org:11111111-1111-1111-1111-111111111111"], "relation": "viewer"}], "slug": "coding", "tiers": [{"classifier": {"confidence_threshold": 0.5, "context": "Requests come from engineers.", "model": "gpt-6-luna", "provider": "openai"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Short factual questions.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "type": "routing-rules"}}
+    And body with value {"data": {"attributes": {"description": "Routes coding traffic to the fastest available model.", "display_name": "Coding fallback", "initial_bindings": [{"principals": ["org:11111111-1111-1111-1111-111111111111"], "relation": "viewer"}], "slug": "coding", "tiers": [{"classifier": {"confidence_threshold": 0.5, "context": "Requests come from engineers.", "model": "gpt-6-luna", "provider": "openai"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Short factual questions.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "type": "routing-rules"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -216,7 +216,7 @@ Feature: AI Gateway
   Scenario: Create an AI Gateway routing rule returns "Conflict" response
     Given operation "CreateAiGatewayRoutingRule" enabled
     And new "CreateAiGatewayRoutingRule" request
-    And body with value {"data": {"attributes": {"initial_bindings": [{"principals": ["org:11111111-1111-1111-1111-111111111111"], "relation": "viewer"}], "slug": "coding", "tiers": [{"classifier": {"confidence_threshold": 0.5, "context": "Requests come from engineers.", "model": "gpt-6-luna", "provider": "openai"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Short factual questions.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "type": "routing-rules"}}
+    And body with value {"data": {"attributes": {"description": "Routes coding traffic to the fastest available model.", "display_name": "Coding fallback", "initial_bindings": [{"principals": ["org:11111111-1111-1111-1111-111111111111"], "relation": "viewer"}], "slug": "coding", "tiers": [{"classifier": {"confidence_threshold": 0.5, "context": "Requests come from engineers.", "model": "gpt-6-luna", "provider": "openai"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Short factual questions.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "type": "routing-rules"}}
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -224,7 +224,7 @@ Feature: AI Gateway
   Scenario: Create an AI Gateway routing rule returns "Created" response
     Given operation "CreateAiGatewayRoutingRule" enabled
     And new "CreateAiGatewayRoutingRule" request
-    And body with value {"data": {"attributes": {"initial_bindings": [{"principals": ["org:11111111-1111-1111-1111-111111111111"], "relation": "viewer"}], "slug": "coding", "tiers": [{"classifier": {"confidence_threshold": 0.5, "context": "Requests come from engineers.", "model": "gpt-6-luna", "provider": "openai"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Short factual questions.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "type": "routing-rules"}}
+    And body with value {"data": {"attributes": {"description": "Routes coding traffic to the fastest available model.", "display_name": "Coding fallback", "initial_bindings": [{"principals": ["org:11111111-1111-1111-1111-111111111111"], "relation": "viewer"}], "slug": "coding", "tiers": [{"classifier": {"confidence_threshold": 0.5, "context": "Requests come from engineers.", "model": "gpt-6-luna", "provider": "openai"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Short factual questions.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "type": "routing-rules"}}
     When the request is sent
     Then the response status is 201 Created
 
@@ -910,7 +910,7 @@ Feature: AI Gateway
     And new "UpdateAiGatewayModelPricing" request
     And request contains "provider_id" parameter from "REPLACE.ME"
     And request contains "canonical" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"pricing_config": {"rates": {"cache_read_cost_per_mtok": 0.0, "cache_write_cost_per_mtok": 0.0, "non_cached_input_cost_per_mtok": 0.0, "output_cost_per_mtok": 0.0}, "source": {"type": "custom"}, "version": 1}}, "id": "gpt-4o", "type": "model-pricing"}}
+    And body with value {"data": {"attributes": {"pricing_config": {"rates": {"cache_read_cost_per_mtok": 0.0, "cache_write_cost_per_mtok": 0.0, "non_cached_input_cost_per_mtok": 0.0, "output_cost_per_mtok": 0.0}, "source": {"type": "custom"}, "tiers": [{"context_min_tokens": 200000, "rates": {"cache_read_cost_per_mtok": 0.6, "cache_write_cost_per_mtok": 7.5, "non_cached_input_cost_per_mtok": 6.0, "output_cost_per_mtok": 22.5}, "service_tier": "priority"}], "version": 1}}, "id": "gpt-4o", "type": "model-pricing"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -920,7 +920,7 @@ Feature: AI Gateway
     And new "UpdateAiGatewayModelPricing" request
     And request contains "provider_id" parameter from "REPLACE.ME"
     And request contains "canonical" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"pricing_config": {"rates": {"cache_read_cost_per_mtok": 0.0, "cache_write_cost_per_mtok": 0.0, "non_cached_input_cost_per_mtok": 0.0, "output_cost_per_mtok": 0.0}, "source": {"type": "custom"}, "version": 1}}, "id": "gpt-4o", "type": "model-pricing"}}
+    And body with value {"data": {"attributes": {"pricing_config": {"rates": {"cache_read_cost_per_mtok": 0.0, "cache_write_cost_per_mtok": 0.0, "non_cached_input_cost_per_mtok": 0.0, "output_cost_per_mtok": 0.0}, "source": {"type": "custom"}, "tiers": [{"context_min_tokens": 200000, "rates": {"cache_read_cost_per_mtok": 0.6, "cache_write_cost_per_mtok": 7.5, "non_cached_input_cost_per_mtok": 6.0, "output_cost_per_mtok": 22.5}, "service_tier": "priority"}], "version": 1}}, "id": "gpt-4o", "type": "model-pricing"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -930,7 +930,7 @@ Feature: AI Gateway
     And new "UpdateAiGatewayModelPricing" request
     And request contains "provider_id" parameter from "REPLACE.ME"
     And request contains "canonical" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"pricing_config": {"rates": {"cache_read_cost_per_mtok": 0.0, "cache_write_cost_per_mtok": 0.0, "non_cached_input_cost_per_mtok": 0.0, "output_cost_per_mtok": 0.0}, "source": {"type": "custom"}, "version": 1}}, "id": "gpt-4o", "type": "model-pricing"}}
+    And body with value {"data": {"attributes": {"pricing_config": {"rates": {"cache_read_cost_per_mtok": 0.0, "cache_write_cost_per_mtok": 0.0, "non_cached_input_cost_per_mtok": 0.0, "output_cost_per_mtok": 0.0}, "source": {"type": "custom"}, "tiers": [{"context_min_tokens": 200000, "rates": {"cache_read_cost_per_mtok": 0.6, "cache_write_cost_per_mtok": 7.5, "non_cached_input_cost_per_mtok": 6.0, "output_cost_per_mtok": 22.5}, "service_tier": "priority"}], "version": 1}}, "id": "gpt-4o", "type": "model-pricing"}}
     When the request is sent
     Then the response status is 200 OK
 
@@ -1104,7 +1104,7 @@ Feature: AI Gateway
     Given operation "UpdateAiGatewayRoutingRule" enabled
     And new "UpdateAiGatewayRoutingRule" request
     And request contains "slug" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"expected_updated_at": "2026-08-24T12:00:00Z", "removed_target_ids": [901], "tiers": [{"classifier": {"confidence_threshold": 0.5, "context": "Requests come from engineers.", "model": "gpt-6-luna", "provider": "openai"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Short factual questions.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "id": "coding", "type": "routing-rules"}}
+    And body with value {"data": {"attributes": {"description": "Routes coding traffic to the fastest available model.", "display_name": "Coding fallback", "expected_updated_at": "2026-08-24T12:00:00Z", "removed_target_ids": [901], "tiers": [{"classifier": {"confidence_threshold": 0.5, "context": "Requests come from engineers.", "model": "gpt-6-luna", "provider": "openai"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Short factual questions.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "id": "coding", "type": "routing-rules"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -1113,7 +1113,7 @@ Feature: AI Gateway
     Given operation "UpdateAiGatewayRoutingRule" enabled
     And new "UpdateAiGatewayRoutingRule" request
     And request contains "slug" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"expected_updated_at": "2026-08-24T12:00:00Z", "removed_target_ids": [901], "tiers": [{"classifier": {"confidence_threshold": 0.5, "context": "Requests come from engineers.", "model": "gpt-6-luna", "provider": "openai"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Short factual questions.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "id": "coding", "type": "routing-rules"}}
+    And body with value {"data": {"attributes": {"description": "Routes coding traffic to the fastest available model.", "display_name": "Coding fallback", "expected_updated_at": "2026-08-24T12:00:00Z", "removed_target_ids": [901], "tiers": [{"classifier": {"confidence_threshold": 0.5, "context": "Requests come from engineers.", "model": "gpt-6-luna", "provider": "openai"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Short factual questions.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "id": "coding", "type": "routing-rules"}}
     When the request is sent
     Then the response status is 409 Conflict
 
@@ -1122,7 +1122,7 @@ Feature: AI Gateway
     Given operation "UpdateAiGatewayRoutingRule" enabled
     And new "UpdateAiGatewayRoutingRule" request
     And request contains "slug" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"expected_updated_at": "2026-08-24T12:00:00Z", "removed_target_ids": [901], "tiers": [{"classifier": {"confidence_threshold": 0.5, "context": "Requests come from engineers.", "model": "gpt-6-luna", "provider": "openai"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Short factual questions.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "id": "coding", "type": "routing-rules"}}
+    And body with value {"data": {"attributes": {"description": "Routes coding traffic to the fastest available model.", "display_name": "Coding fallback", "expected_updated_at": "2026-08-24T12:00:00Z", "removed_target_ids": [901], "tiers": [{"classifier": {"confidence_threshold": 0.5, "context": "Requests come from engineers.", "model": "gpt-6-luna", "provider": "openai"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Short factual questions.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "id": "coding", "type": "routing-rules"}}
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -1131,6 +1131,6 @@ Feature: AI Gateway
     Given operation "UpdateAiGatewayRoutingRule" enabled
     And new "UpdateAiGatewayRoutingRule" request
     And request contains "slug" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"expected_updated_at": "2026-08-24T12:00:00Z", "removed_target_ids": [901], "tiers": [{"classifier": {"confidence_threshold": 0.5, "context": "Requests come from engineers.", "model": "gpt-6-luna", "provider": "openai"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Short factual questions.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "id": "coding", "type": "routing-rules"}}
+    And body with value {"data": {"attributes": {"description": "Routes coding traffic to the fastest available model.", "display_name": "Coding fallback", "expected_updated_at": "2026-08-24T12:00:00Z", "removed_target_ids": [901], "tiers": [{"classifier": {"confidence_threshold": 0.5, "context": "Requests come from engineers.", "model": "gpt-6-luna", "provider": "openai"}, "ordering": "configured", "targets": [{"default": false, "id": 901, "model": "gpt-5.2-codex", "model_id": 101, "provider": "prod-us", "reasoning_level": "medium", "rubric": "Short factual questions.", "slug": "coding-fallback", "type": "model", "weight": 70}]}]}, "id": "coding", "type": "routing-rules"}}
     When the request is sent
     Then the response status is 200 OK

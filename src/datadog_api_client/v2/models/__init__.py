@@ -572,6 +572,7 @@ from datadog_api_client.v2.model.ai_gateway_model_pricing_response_data import A
 from datadog_api_client.v2.model.ai_gateway_model_pricing_source import AiGatewayModelPricingSource
 from datadog_api_client.v2.model.ai_gateway_model_pricing_source_type import AiGatewayModelPricingSourceType
 from datadog_api_client.v2.model.ai_gateway_model_pricing_status import AiGatewayModelPricingStatus
+from datadog_api_client.v2.model.ai_gateway_model_pricing_tier import AiGatewayModelPricingTier
 from datadog_api_client.v2.model.ai_gateway_model_pricing_type import AiGatewayModelPricingType
 from datadog_api_client.v2.model.ai_gateway_model_reasoning import AiGatewayModelReasoning
 from datadog_api_client.v2.model.ai_gateway_model_reasoning_control import AiGatewayModelReasoningControl
@@ -15228,6 +15229,7 @@ __all__ = [
     "AiGatewayModelPricingSource",
     "AiGatewayModelPricingSourceType",
     "AiGatewayModelPricingStatus",
+    "AiGatewayModelPricingTier",
     "AiGatewayModelPricingType",
     "AiGatewayModelReasoning",
     "AiGatewayModelReasoningControl",

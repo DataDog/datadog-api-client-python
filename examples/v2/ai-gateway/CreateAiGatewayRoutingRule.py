@@ -25,6 +25,8 @@ from datadog_api_client.v2.model.ai_gateway_routing_rule_type import AiGatewayRo
 body = AiGatewayRoutingRuleCreateRequest(
     data=AiGatewayRoutingRuleCreateData(
         attributes=AiGatewayRoutingRuleCreateAttributes(
+            description="Routes coding traffic to the fastest available model.",
+            display_name="Coding fallback",
             initial_bindings=[
                 AiGatewayProviderInitialBinding(
                     principals=[
