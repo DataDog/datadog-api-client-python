@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -18,6 +18,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.security_monitoring_signal_archive_reason import (
         SecurityMonitoringSignalArchiveReason,
     )
+    from datadog_api_client.v2.model.security_monitoring_signal_case import SecurityMonitoringSignalCase
     from datadog_api_client.v2.model.security_monitoring_signal_incident_ids import SecurityMonitoringSignalIncidentIds
     from datadog_api_client.v2.model.security_monitoring_signal_state import SecurityMonitoringSignalState
 
@@ -38,6 +39,7 @@ class SecurityMonitoringSignalTriageAttributes(ModelNormal):
         from datadog_api_client.v2.model.security_monitoring_signal_archive_reason import (
             SecurityMonitoringSignalArchiveReason,
         )
+        from datadog_api_client.v2.model.security_monitoring_signal_case import SecurityMonitoringSignalCase
         from datadog_api_client.v2.model.security_monitoring_signal_incident_ids import (
             SecurityMonitoringSignalIncidentIds,
         )
@@ -49,6 +51,8 @@ class SecurityMonitoringSignalTriageAttributes(ModelNormal):
             "archive_comment_user": (SecurityMonitoringTriageUser,),
             "archive_reason": (SecurityMonitoringSignalArchiveReason,),
             "assignee": (SecurityMonitoringTriageUser,),
+            "cases": ([SecurityMonitoringSignalCase],),
+            "has_case": (bool,),
             "incident_ids": (SecurityMonitoringSignalIncidentIds,),
             "state": (SecurityMonitoringSignalState,),
             "state_update_timestamp": (int,),
@@ -61,6 +65,8 @@ class SecurityMonitoringSignalTriageAttributes(ModelNormal):
         "archive_comment_user": "archive_comment_user",
         "archive_reason": "archive_reason",
         "assignee": "assignee",
+        "cases": "cases",
+        "has_case": "hasCase",
         "incident_ids": "incident_ids",
         "state": "state",
         "state_update_timestamp": "state_update_timestamp",
@@ -76,6 +82,8 @@ class SecurityMonitoringSignalTriageAttributes(ModelNormal):
         archive_comment_timestamp: Union[int, UnsetType] = unset,
         archive_comment_user: Union[SecurityMonitoringTriageUser, UnsetType] = unset,
         archive_reason: Union[SecurityMonitoringSignalArchiveReason, UnsetType] = unset,
+        cases: Union[List[SecurityMonitoringSignalCase], UnsetType] = unset,
+        has_case: Union[bool, UnsetType] = unset,
         state_update_timestamp: Union[int, UnsetType] = unset,
         state_update_user: Union[SecurityMonitoringTriageUser, UnsetType] = unset,
         **kwargs,
@@ -98,6 +106,12 @@ class SecurityMonitoringSignalTriageAttributes(ModelNormal):
         :param assignee: Object representing a given user entity.
         :type assignee: SecurityMonitoringTriageUser
 
+        :param cases: Cases linked to the security signal.
+        :type cases: [SecurityMonitoringSignalCase], optional
+
+        :param has_case: Whether the signal is linked to at least one case.
+        :type has_case: bool, optional
+
         :param incident_ids: Array of incidents that are associated with this signal.
         :type incident_ids: SecurityMonitoringSignalIncidentIds
 
@@ -118,6 +132,10 @@ class SecurityMonitoringSignalTriageAttributes(ModelNormal):
             kwargs["archive_comment_user"] = archive_comment_user
         if archive_reason is not unset:
             kwargs["archive_reason"] = archive_reason
+        if cases is not unset:
+            kwargs["cases"] = cases
+        if has_case is not unset:
+            kwargs["has_case"] = has_case
         if state_update_timestamp is not unset:
             kwargs["state_update_timestamp"] = state_update_timestamp
         if state_update_user is not unset:
