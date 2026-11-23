@@ -39,12 +39,13 @@ class CreateDeploymentGateParamsDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Parameters for creating a deployment gate.
+        Parameters for creating a deployment gate. For the same organization, service, and identifier,
+        a gate for all environments cannot coexist with gates for specific environments.
 
         :param dry_run: Whether this gate is run in dry-run mode.
         :type dry_run: bool, optional
 
-        :param env: The environment of the deployment gate.
+        :param env: Required environment of the deployment gate. Use ``*`` to apply the gate to all environments.
         :type env: str
 
         :param identifier: The identifier of the deployment gate.

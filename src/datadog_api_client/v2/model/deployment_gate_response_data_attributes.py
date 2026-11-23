@@ -68,7 +68,7 @@ class DeploymentGateResponseDataAttributes(ModelNormal):
         **kwargs,
     ):
         """
-        Basic information about a deployment gate.
+        Basic information about a deployment gate. The environment is ``*`` for a gate that applies to all environments.
 
         :param created_at: The timestamp when the deployment gate was created.
         :type created_at: datetime
@@ -79,7 +79,7 @@ class DeploymentGateResponseDataAttributes(ModelNormal):
         :param dry_run: Whether this gate is run in dry-run mode.
         :type dry_run: bool
 
-        :param env: The environment of the deployment gate.
+        :param env: The environment of the deployment gate. ``*`` means all environments.
         :type env: str
 
         :param identifier: The identifier of the deployment gate.

@@ -44,7 +44,7 @@ class DeploymentGateResponseData(ModelNormal):
         """
         Data for a deployment gate.
 
-        :param attributes: Basic information about a deployment gate.
+        :param attributes: Basic information about a deployment gate. The environment is ``*`` for a gate that applies to all environments.
         :type attributes: DeploymentGateResponseDataAttributes
 
         :param id: Unique identifier of the deployment gate.
