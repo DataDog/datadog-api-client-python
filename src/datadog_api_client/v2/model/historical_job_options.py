@@ -17,11 +17,17 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.security_monitoring_rule_anomaly_detection_options import (
         SecurityMonitoringRuleAnomalyDetectionOptions,
     )
+    from datadog_api_client.v2.model.cloud_configuration_compliance_rule_options import (
+        CloudConfigurationComplianceRuleOptions,
+    )
     from datadog_api_client.v2.model.security_monitoring_rule_detection_method import (
         SecurityMonitoringRuleDetectionMethod,
     )
     from datadog_api_client.v2.model.security_monitoring_rule_evaluation_window import (
         SecurityMonitoringRuleEvaluationWindow,
+    )
+    from datadog_api_client.v2.model.security_monitoring_rule_hardcoded_evaluator_type import (
+        SecurityMonitoringRuleHardcodedEvaluatorType,
     )
     from datadog_api_client.v2.model.security_monitoring_rule_impossible_travel_options import (
         SecurityMonitoringRuleImpossibleTravelOptions,
@@ -47,11 +53,17 @@ class HistoricalJobOptions(ModelNormal):
         from datadog_api_client.v2.model.security_monitoring_rule_anomaly_detection_options import (
             SecurityMonitoringRuleAnomalyDetectionOptions,
         )
+        from datadog_api_client.v2.model.cloud_configuration_compliance_rule_options import (
+            CloudConfigurationComplianceRuleOptions,
+        )
         from datadog_api_client.v2.model.security_monitoring_rule_detection_method import (
             SecurityMonitoringRuleDetectionMethod,
         )
         from datadog_api_client.v2.model.security_monitoring_rule_evaluation_window import (
             SecurityMonitoringRuleEvaluationWindow,
+        )
+        from datadog_api_client.v2.model.security_monitoring_rule_hardcoded_evaluator_type import (
+            SecurityMonitoringRuleHardcodedEvaluatorType,
         )
         from datadog_api_client.v2.model.security_monitoring_rule_impossible_travel_options import (
             SecurityMonitoringRuleImpossibleTravelOptions,
@@ -72,8 +84,11 @@ class HistoricalJobOptions(ModelNormal):
 
         return {
             "anomaly_detection_options": (SecurityMonitoringRuleAnomalyDetectionOptions,),
+            "compliance_rule_options": (CloudConfigurationComplianceRuleOptions,),
+            "decrease_criticality_based_on_env": (bool,),
             "detection_method": (SecurityMonitoringRuleDetectionMethod,),
             "evaluation_window": (SecurityMonitoringRuleEvaluationWindow,),
+            "hardcoded_evaluator_type": (SecurityMonitoringRuleHardcodedEvaluatorType,),
             "impossible_travel_options": (SecurityMonitoringRuleImpossibleTravelOptions,),
             "keep_alive": (SecurityMonitoringRuleKeepAlive,),
             "max_signal_duration": (SecurityMonitoringRuleMaxSignalDuration,),
@@ -84,8 +99,11 @@ class HistoricalJobOptions(ModelNormal):
 
     attribute_map = {
         "anomaly_detection_options": "anomalyDetectionOptions",
+        "compliance_rule_options": "complianceRuleOptions",
+        "decrease_criticality_based_on_env": "decreaseCriticalityBasedOnEnv",
         "detection_method": "detectionMethod",
         "evaluation_window": "evaluationWindow",
+        "hardcoded_evaluator_type": "hardcodedEvaluatorType",
         "impossible_travel_options": "impossibleTravelOptions",
         "keep_alive": "keepAlive",
         "max_signal_duration": "maxSignalDuration",
@@ -97,8 +115,11 @@ class HistoricalJobOptions(ModelNormal):
     def __init__(
         self_,
         anomaly_detection_options: Union[SecurityMonitoringRuleAnomalyDetectionOptions, UnsetType] = unset,
+        compliance_rule_options: Union[CloudConfigurationComplianceRuleOptions, UnsetType] = unset,
+        decrease_criticality_based_on_env: Union[bool, UnsetType] = unset,
         detection_method: Union[SecurityMonitoringRuleDetectionMethod, UnsetType] = unset,
         evaluation_window: Union[SecurityMonitoringRuleEvaluationWindow, UnsetType] = unset,
+        hardcoded_evaluator_type: Union[SecurityMonitoringRuleHardcodedEvaluatorType, UnsetType] = unset,
         impossible_travel_options: Union[SecurityMonitoringRuleImpossibleTravelOptions, UnsetType] = unset,
         keep_alive: Union[SecurityMonitoringRuleKeepAlive, UnsetType] = unset,
         max_signal_duration: Union[SecurityMonitoringRuleMaxSignalDuration, UnsetType] = unset,
@@ -113,12 +134,24 @@ class HistoricalJobOptions(ModelNormal):
         :param anomaly_detection_options: Options on anomaly detection method.
         :type anomaly_detection_options: SecurityMonitoringRuleAnomalyDetectionOptions, optional
 
+        :param compliance_rule_options: Options for cloud_configuration rules.
+            Fields ``resourceType`` and ``regoRule`` are mandatory when managing custom ``cloud_configuration`` rules.
+        :type compliance_rule_options: CloudConfigurationComplianceRuleOptions, optional
+
+        :param decrease_criticality_based_on_env: If true, signals in non-production environments have a lower severity than what is defined by the rule case, which can reduce signal noise.
+            The severity is decreased by one level: ``CRITICAL`` in production becomes ``HIGH`` in non-production, ``HIGH`` becomes ``MEDIUM`` and so on. ``INFO`` remains ``INFO``.
+            The decrement is applied when the environment tag of the signal starts with ``staging`` , ``test`` or ``dev``.
+        :type decrease_criticality_based_on_env: bool, optional
+
         :param detection_method: The detection method.
         :type detection_method: SecurityMonitoringRuleDetectionMethod, optional
 
         :param evaluation_window: A time window is specified to match when at least one of the cases matches true. This is a sliding window
             and evaluates in real time. For third party detection method, this field is not used.
         :type evaluation_window: SecurityMonitoringRuleEvaluationWindow, optional
+
+        :param hardcoded_evaluator_type: Hardcoded evaluator type.
+        :type hardcoded_evaluator_type: SecurityMonitoringRuleHardcodedEvaluatorType, optional
 
         :param impossible_travel_options: Options on impossible travel detection method.
         :type impossible_travel_options: SecurityMonitoringRuleImpossibleTravelOptions, optional
@@ -142,10 +175,16 @@ class HistoricalJobOptions(ModelNormal):
         """
         if anomaly_detection_options is not unset:
             kwargs["anomaly_detection_options"] = anomaly_detection_options
+        if compliance_rule_options is not unset:
+            kwargs["compliance_rule_options"] = compliance_rule_options
+        if decrease_criticality_based_on_env is not unset:
+            kwargs["decrease_criticality_based_on_env"] = decrease_criticality_based_on_env
         if detection_method is not unset:
             kwargs["detection_method"] = detection_method
         if evaluation_window is not unset:
             kwargs["evaluation_window"] = evaluation_window
+        if hardcoded_evaluator_type is not unset:
+            kwargs["hardcoded_evaluator_type"] = hardcoded_evaluator_type
         if impossible_travel_options is not unset:
             kwargs["impossible_travel_options"] = impossible_travel_options
         if keep_alive is not unset:
