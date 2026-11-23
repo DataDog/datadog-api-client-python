@@ -2107,16 +2107,35 @@ from datadog_api_client.v2.model.commitments_azure_vmri_commitment import Commit
 from datadog_api_client.v2.model.commitments_azure_vmri_status import CommitmentsAzureVMRIStatus
 from datadog_api_client.v2.model.commitments_commitment_type import CommitmentsCommitmentType
 from datadog_api_client.v2.model.commitments_coverage_scalar_response import CommitmentsCoverageScalarResponse
+from datadog_api_client.v2.model.commitments_coverage_scalar_response_attributes import (
+    CommitmentsCoverageScalarResponseAttributes,
+)
+from datadog_api_client.v2.model.commitments_coverage_scalar_response_data import CommitmentsCoverageScalarResponseData
+from datadog_api_client.v2.model.commitments_coverage_timeseries_metric import CommitmentsCoverageTimeseriesMetric
 from datadog_api_client.v2.model.commitments_coverage_timeseries_response import CommitmentsCoverageTimeseriesResponse
+from datadog_api_client.v2.model.commitments_coverage_timeseries_response_attributes import (
+    CommitmentsCoverageTimeseriesResponseAttributes,
+)
+from datadog_api_client.v2.model.commitments_coverage_timeseries_response_data import (
+    CommitmentsCoverageTimeseriesResponseData,
+)
+from datadog_api_client.v2.model.commitments_coverage_timeseries_response_type import (
+    CommitmentsCoverageTimeseriesResponseType,
+)
 from datadog_api_client.v2.model.commitments_list_item import CommitmentsListItem
 from datadog_api_client.v2.model.commitments_list_meta import CommitmentsListMeta
 from datadog_api_client.v2.model.commitments_list_response import CommitmentsListResponse
 from datadog_api_client.v2.model.commitments_list_response_attributes import CommitmentsListResponseAttributes
 from datadog_api_client.v2.model.commitments_list_response_data import CommitmentsListResponseData
 from datadog_api_client.v2.model.commitments_list_response_type import CommitmentsListResponseType
-from datadog_api_client.v2.model.commitments_on_demand_hotspots_scalar_meta import CommitmentsOnDemandHotspotsScalarMeta
 from datadog_api_client.v2.model.commitments_on_demand_hotspots_scalar_response import (
     CommitmentsOnDemandHotspotsScalarResponse,
+)
+from datadog_api_client.v2.model.commitments_on_demand_hotspots_scalar_response_attributes import (
+    CommitmentsOnDemandHotspotsScalarResponseAttributes,
+)
+from datadog_api_client.v2.model.commitments_on_demand_hotspots_scalar_response_data import (
+    CommitmentsOnDemandHotspotsScalarResponseData,
 )
 from datadog_api_client.v2.model.commitments_provider import CommitmentsProvider
 from datadog_api_client.v2.model.commitments_query_definition import CommitmentsQueryDefinition
@@ -2125,19 +2144,48 @@ from datadog_api_client.v2.model.commitments_query_definition_data_source import
 from datadog_api_client.v2.model.commitments_query_definition_formula import CommitmentsQueryDefinitionFormula
 from datadog_api_client.v2.model.commitments_query_definition_query import CommitmentsQueryDefinitionQuery
 from datadog_api_client.v2.model.commitments_savings_scalar_response import CommitmentsSavingsScalarResponse
+from datadog_api_client.v2.model.commitments_savings_scalar_response_attributes import (
+    CommitmentsSavingsScalarResponseAttributes,
+)
+from datadog_api_client.v2.model.commitments_savings_scalar_response_data import CommitmentsSavingsScalarResponseData
 from datadog_api_client.v2.model.commitments_savings_timeseries_response import CommitmentsSavingsTimeseriesResponse
+from datadog_api_client.v2.model.commitments_savings_timeseries_response_attributes import (
+    CommitmentsSavingsTimeseriesResponseAttributes,
+)
+from datadog_api_client.v2.model.commitments_savings_timeseries_response_data import (
+    CommitmentsSavingsTimeseriesResponseData,
+)
+from datadog_api_client.v2.model.commitments_savings_timeseries_response_type import (
+    CommitmentsSavingsTimeseriesResponseType,
+)
 from datadog_api_client.v2.model.commitments_scalar_column import CommitmentsScalarColumn
 from datadog_api_client.v2.model.commitments_scalar_column_meta import CommitmentsScalarColumnMeta
 from datadog_api_client.v2.model.commitments_scalar_column_type import CommitmentsScalarColumnType
 from datadog_api_client.v2.model.commitments_timeseries_metric import CommitmentsTimeseriesMetric
 from datadog_api_client.v2.model.commitments_timeseries_series import CommitmentsTimeseriesSeries
 from datadog_api_client.v2.model.commitments_unit import CommitmentsUnit
+from datadog_api_client.v2.model.commitments_unused_cost_meta import CommitmentsUnusedCostMeta
 from datadog_api_client.v2.model.commitments_utilization_scalar_product_breakdown_entry import (
     CommitmentsUtilizationScalarProductBreakdownEntry,
 )
 from datadog_api_client.v2.model.commitments_utilization_scalar_response import CommitmentsUtilizationScalarResponse
+from datadog_api_client.v2.model.commitments_utilization_scalar_response_attributes import (
+    CommitmentsUtilizationScalarResponseAttributes,
+)
+from datadog_api_client.v2.model.commitments_utilization_scalar_response_data import (
+    CommitmentsUtilizationScalarResponseData,
+)
 from datadog_api_client.v2.model.commitments_utilization_timeseries_response import (
     CommitmentsUtilizationTimeseriesResponse,
+)
+from datadog_api_client.v2.model.commitments_utilization_timeseries_response_attributes import (
+    CommitmentsUtilizationTimeseriesResponseAttributes,
+)
+from datadog_api_client.v2.model.commitments_utilization_timeseries_response_data import (
+    CommitmentsUtilizationTimeseriesResponseData,
+)
+from datadog_api_client.v2.model.commitments_utilization_timeseries_response_type import (
+    CommitmentsUtilizationTimeseriesResponseType,
 )
 from datadog_api_client.v2.model.completion_condition import CompletionCondition
 from datadog_api_client.v2.model.completion_condition_operator import CompletionConditionOperator
@@ -16257,15 +16305,22 @@ __all__ = [
     "CommitmentsAzureVMRIStatus",
     "CommitmentsCommitmentType",
     "CommitmentsCoverageScalarResponse",
+    "CommitmentsCoverageScalarResponseAttributes",
+    "CommitmentsCoverageScalarResponseData",
+    "CommitmentsCoverageTimeseriesMetric",
     "CommitmentsCoverageTimeseriesResponse",
+    "CommitmentsCoverageTimeseriesResponseAttributes",
+    "CommitmentsCoverageTimeseriesResponseData",
+    "CommitmentsCoverageTimeseriesResponseType",
     "CommitmentsListItem",
     "CommitmentsListMeta",
     "CommitmentsListResponse",
     "CommitmentsListResponseAttributes",
     "CommitmentsListResponseData",
     "CommitmentsListResponseType",
-    "CommitmentsOnDemandHotspotsScalarMeta",
     "CommitmentsOnDemandHotspotsScalarResponse",
+    "CommitmentsOnDemandHotspotsScalarResponseAttributes",
+    "CommitmentsOnDemandHotspotsScalarResponseData",
     "CommitmentsProvider",
     "CommitmentsQueryDefinition",
     "CommitmentsQueryDefinitionAggregator",
@@ -16273,16 +16328,27 @@ __all__ = [
     "CommitmentsQueryDefinitionFormula",
     "CommitmentsQueryDefinitionQuery",
     "CommitmentsSavingsScalarResponse",
+    "CommitmentsSavingsScalarResponseAttributes",
+    "CommitmentsSavingsScalarResponseData",
     "CommitmentsSavingsTimeseriesResponse",
+    "CommitmentsSavingsTimeseriesResponseAttributes",
+    "CommitmentsSavingsTimeseriesResponseData",
+    "CommitmentsSavingsTimeseriesResponseType",
     "CommitmentsScalarColumn",
     "CommitmentsScalarColumnMeta",
     "CommitmentsScalarColumnType",
     "CommitmentsTimeseriesMetric",
     "CommitmentsTimeseriesSeries",
     "CommitmentsUnit",
+    "CommitmentsUnusedCostMeta",
     "CommitmentsUtilizationScalarProductBreakdownEntry",
     "CommitmentsUtilizationScalarResponse",
+    "CommitmentsUtilizationScalarResponseAttributes",
+    "CommitmentsUtilizationScalarResponseData",
     "CommitmentsUtilizationTimeseriesResponse",
+    "CommitmentsUtilizationTimeseriesResponseAttributes",
+    "CommitmentsUtilizationTimeseriesResponseData",
+    "CommitmentsUtilizationTimeseriesResponseType",
     "CompletionCondition",
     "CompletionConditionOperator",
     "CompletionGate",

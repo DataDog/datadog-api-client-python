@@ -3,11 +3,12 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
 )
 
 
@@ -28,12 +29,12 @@ class CommitmentsScalarColumnMeta(ModelNormal):
         "unit": "unit",
     }
 
-    def __init__(self_, unit: CommitmentsUnit, **kwargs):
+    def __init__(self_, unit: Union[CommitmentsUnit, none_type], **kwargs):
         """
         Metadata for a scalar column, including unit information.
 
-        :param unit: Unit metadata for a numeric metric.
-        :type unit: CommitmentsUnit
+        :param unit: Unit metadata for a numeric metric. Unset fields are omitted, and the unit is ``null`` when it is unknown.
+        :type unit: CommitmentsUnit, none_type
         """
         super().__init__(kwargs)
 

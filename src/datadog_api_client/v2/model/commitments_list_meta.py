@@ -8,6 +8,7 @@ from typing import Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -34,15 +35,15 @@ class CommitmentsListMeta(ModelNormal):
 
     def __init__(
         self_,
-        committed_spend_unit: Union[CommitmentsUnit, UnsetType] = unset,
+        committed_spend_unit: Union[CommitmentsUnit, none_type, UnsetType] = unset,
         unused_cost_unavailable: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
         Metadata for a commitments list response.
 
-        :param committed_spend_unit: Unit metadata for a numeric metric.
-        :type committed_spend_unit: CommitmentsUnit, optional
+        :param committed_spend_unit: Unit metadata for a numeric metric. Unset fields are omitted, and the unit is ``null`` when it is unknown.
+        :type committed_spend_unit: CommitmentsUnit, none_type, optional
 
         :param unused_cost_unavailable: Whether Azure cost data lacks the unused cost of some commitments, for example when an export is
             scoped below the billing profile. When ``true`` , utilization is overstated.

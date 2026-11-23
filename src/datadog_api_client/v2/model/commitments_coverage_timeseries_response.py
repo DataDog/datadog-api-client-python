@@ -12,35 +12,33 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.commitments_timeseries_metric import CommitmentsTimeseriesMetric
+    from datadog_api_client.v2.model.commitments_coverage_timeseries_response_data import (
+        CommitmentsCoverageTimeseriesResponseData,
+    )
 
 
 class CommitmentsCoverageTimeseriesResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.commitments_timeseries_metric import CommitmentsTimeseriesMetric
+        from datadog_api_client.v2.model.commitments_coverage_timeseries_response_data import (
+            CommitmentsCoverageTimeseriesResponseData,
+        )
 
         return {
-            "cost": (CommitmentsTimeseriesMetric,),
-            "hours": (CommitmentsTimeseriesMetric,),
+            "data": (CommitmentsCoverageTimeseriesResponseData,),
         }
 
     attribute_map = {
-        "cost": "cost",
-        "hours": "hours",
+        "data": "data",
     }
 
-    def __init__(self_, cost: CommitmentsTimeseriesMetric, hours: CommitmentsTimeseriesMetric, **kwargs):
+    def __init__(self_, data: CommitmentsCoverageTimeseriesResponseData, **kwargs):
         """
         Response containing timeseries coverage metrics for cloud commitment programs.
 
-        :param cost: A timeseries metric containing timestamps, series values, and optional unit metadata.
-        :type cost: CommitmentsTimeseriesMetric
-
-        :param hours: A timeseries metric containing timestamps, series values, and optional unit metadata.
-        :type hours: CommitmentsTimeseriesMetric
+        :param data: The timeseries coverage resource.
+        :type data: CommitmentsCoverageTimeseriesResponseData
         """
         super().__init__(kwargs)
 
-        self_.cost = cost
-        self_.hours = hours
+        self_.data = data

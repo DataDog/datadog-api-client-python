@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -12,29 +12,33 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.commitments_scalar_column import CommitmentsScalarColumn
+    from datadog_api_client.v2.model.commitments_coverage_scalar_response_data import (
+        CommitmentsCoverageScalarResponseData,
+    )
 
 
 class CommitmentsCoverageScalarResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.commitments_scalar_column import CommitmentsScalarColumn
+        from datadog_api_client.v2.model.commitments_coverage_scalar_response_data import (
+            CommitmentsCoverageScalarResponseData,
+        )
 
         return {
-            "columns": ([CommitmentsScalarColumn],),
+            "data": (CommitmentsCoverageScalarResponseData,),
         }
 
     attribute_map = {
-        "columns": "columns",
+        "data": "data",
     }
 
-    def __init__(self_, columns: List[CommitmentsScalarColumn], **kwargs):
+    def __init__(self_, data: CommitmentsCoverageScalarResponseData, **kwargs):
         """
         Response containing scalar coverage metrics for cloud commitment programs.
 
-        :param columns: Array of scalar columns in the response.
-        :type columns: [CommitmentsScalarColumn]
+        :param data: The scalar coverage resource.
+        :type data: CommitmentsCoverageScalarResponseData
         """
         super().__init__(kwargs)
 
-        self_.columns = columns
+        self_.data = data

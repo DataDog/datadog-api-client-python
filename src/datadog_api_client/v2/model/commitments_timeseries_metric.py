@@ -8,6 +8,7 @@ from typing import List, Union, TYPE_CHECKING
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
 )
@@ -40,7 +41,7 @@ class CommitmentsTimeseriesMetric(ModelNormal):
         self_,
         series: CommitmentsTimeseriesSeries,
         times: List[int],
-        unit: Union[CommitmentsUnit, UnsetType] = unset,
+        unit: Union[CommitmentsUnit, none_type, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -52,8 +53,8 @@ class CommitmentsTimeseriesMetric(ModelNormal):
         :param times: Unix timestamps in seconds for the timeseries data points.
         :type times: [int]
 
-        :param unit: Unit metadata for a numeric metric.
-        :type unit: CommitmentsUnit, optional
+        :param unit: Unit metadata for a numeric metric. Unset fields are omitted, and the unit is ``null`` when it is unknown.
+        :type unit: CommitmentsUnit, none_type, optional
         """
         if unit is not unset:
             kwargs["unit"] = unit

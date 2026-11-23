@@ -16,16 +16,18 @@ class CommitmentsProvider(ModelSimple):
     """
     Cloud provider for commitment programs.
 
-    :param value: Must be one of ["aws", "azure"].
+    :param value: Must be one of ["aws", "azure", "gcp"].
     :type value: str
     """
 
     allowed_values = {
         "aws",
         "azure",
+        "gcp",
     }
     AWS: ClassVar["CommitmentsProvider"]
     AZURE: ClassVar["CommitmentsProvider"]
+    GCP: ClassVar["CommitmentsProvider"]
 
     @cached_property
     def openapi_types(_):
@@ -36,3 +38,4 @@ class CommitmentsProvider(ModelSimple):
 
 CommitmentsProvider.AWS = CommitmentsProvider("aws")
 CommitmentsProvider.AZURE = CommitmentsProvider("azure")
+CommitmentsProvider.GCP = CommitmentsProvider("gcp")
