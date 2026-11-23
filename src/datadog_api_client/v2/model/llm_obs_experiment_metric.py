@@ -35,6 +35,7 @@ class LLMObsExperimentMetric(ModelNormal):
             "boolean_value": (bool,),
             "categorical_value": (str,),
             "error": (LLMObsExperimentMetricError,),
+            "higher_is_better": (bool,),
             "json_value": (
                 {
                     str: (
@@ -81,6 +82,7 @@ class LLMObsExperimentMetric(ModelNormal):
         "boolean_value": "boolean_value",
         "categorical_value": "categorical_value",
         "error": "error",
+        "higher_is_better": "higher_is_better",
         "json_value": "json_value",
         "label": "label",
         "metadata": "metadata",
@@ -102,6 +104,7 @@ class LLMObsExperimentMetric(ModelNormal):
         boolean_value: Union[bool, UnsetType] = unset,
         categorical_value: Union[str, UnsetType] = unset,
         error: Union[LLMObsExperimentMetricError, UnsetType] = unset,
+        higher_is_better: Union[bool, UnsetType] = unset,
         json_value: Union[Dict[str, Any], UnsetType] = unset,
         metadata: Union[Dict[str, Any], UnsetType] = unset,
         reasoning: Union[str, UnsetType] = unset,
@@ -124,13 +127,16 @@ class LLMObsExperimentMetric(ModelNormal):
         :param error: Error details for an experiment metric evaluation.
         :type error: LLMObsExperimentMetricError, optional
 
+        :param higher_is_better: Whether a higher numeric score is better. Set to ``false`` when a lower score is better. If omitted, the comparison uses the boolean value of ``metadata.higher_is_better`` when present, or the default direction otherwise.
+        :type higher_is_better: bool, optional
+
         :param json_value: JSON value. Used when ``metric_type`` is ``json``.
         :type json_value: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
         :param label: Label or name for the metric.
         :type label: str
 
-        :param metadata: Arbitrary metadata associated with the metric.
+        :param metadata: Arbitrary metadata associated with the metric. For a numeric score, clients can set ``higher_is_better`` here when they cannot send the top-level field.
         :type metadata: {str: (bool, date, datetime, dict, float, int, list, str, UUID, none_type,)}, optional
 
         :param metric_type: Type of metric recorded for an Agent Observability experiment.
@@ -159,6 +165,8 @@ class LLMObsExperimentMetric(ModelNormal):
             kwargs["categorical_value"] = categorical_value
         if error is not unset:
             kwargs["error"] = error
+        if higher_is_better is not unset:
+            kwargs["higher_is_better"] = higher_is_better
         if json_value is not unset:
             kwargs["json_value"] = json_value
         if metadata is not unset:
