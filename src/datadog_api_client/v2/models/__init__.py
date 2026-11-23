@@ -12285,6 +12285,12 @@ from datadog_api_client.v2.model.sensitive_data_scanner_create_group_response im
 from datadog_api_client.v2.model.sensitive_data_scanner_create_rule_response import (
     SensitiveDataScannerCreateRuleResponse,
 )
+from datadog_api_client.v2.model.sensitive_data_scanner_custom_regex_rule_attributes import (
+    SensitiveDataScannerCustomRegexRuleAttributes,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_custom_regex_rule_type import (
+    SensitiveDataScannerCustomRegexRuleType,
+)
 from datadog_api_client.v2.model.sensitive_data_scanner_filter import SensitiveDataScannerFilter
 from datadog_api_client.v2.model.sensitive_data_scanner_get_config_included_array import (
     SensitiveDataScannerGetConfigIncludedArray,
@@ -12316,6 +12322,8 @@ from datadog_api_client.v2.model.sensitive_data_scanner_group_relationships impo
     SensitiveDataScannerGroupRelationships,
 )
 from datadog_api_client.v2.model.sensitive_data_scanner_group_response import SensitiveDataScannerGroupResponse
+from datadog_api_client.v2.model.sensitive_data_scanner_group_target import SensitiveDataScannerGroupTarget
+from datadog_api_client.v2.model.sensitive_data_scanner_group_target_type import SensitiveDataScannerGroupTargetType
 from datadog_api_client.v2.model.sensitive_data_scanner_group_type import SensitiveDataScannerGroupType
 from datadog_api_client.v2.model.sensitive_data_scanner_group_update import SensitiveDataScannerGroupUpdate
 from datadog_api_client.v2.model.sensitive_data_scanner_group_update_request import (
@@ -12326,6 +12334,12 @@ from datadog_api_client.v2.model.sensitive_data_scanner_group_update_response im
 )
 from datadog_api_client.v2.model.sensitive_data_scanner_included_keyword_configuration import (
     SensitiveDataScannerIncludedKeywordConfiguration,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_machine_learning_rule_attributes import (
+    SensitiveDataScannerMachineLearningRuleAttributes,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_machine_learning_rule_type import (
+    SensitiveDataScannerMachineLearningRuleType,
 )
 from datadog_api_client.v2.model.sensitive_data_scanner_meta import SensitiveDataScannerMeta
 from datadog_api_client.v2.model.sensitive_data_scanner_meta_version_only import SensitiveDataScannerMetaVersionOnly
@@ -12344,6 +12358,7 @@ from datadog_api_client.v2.model.sensitive_data_scanner_rule_delete_response imp
     SensitiveDataScannerRuleDeleteResponse,
 )
 from datadog_api_client.v2.model.sensitive_data_scanner_rule_included_item import SensitiveDataScannerRuleIncludedItem
+from datadog_api_client.v2.model.sensitive_data_scanner_rule_priority import SensitiveDataScannerRulePriority
 from datadog_api_client.v2.model.sensitive_data_scanner_rule_relationships import SensitiveDataScannerRuleRelationships
 from datadog_api_client.v2.model.sensitive_data_scanner_rule_response import SensitiveDataScannerRuleResponse
 from datadog_api_client.v2.model.sensitive_data_scanner_rule_type import SensitiveDataScannerRuleType
@@ -12372,7 +12387,38 @@ from datadog_api_client.v2.model.sensitive_data_scanner_standard_patterns_respon
 from datadog_api_client.v2.model.sensitive_data_scanner_standard_patterns_response_item import (
     SensitiveDataScannerStandardPatternsResponseItem,
 )
+from datadog_api_client.v2.model.sensitive_data_scanner_standard_regex_rule_attributes import (
+    SensitiveDataScannerStandardRegexRuleAttributes,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_standard_regex_rule_type import (
+    SensitiveDataScannerStandardRegexRuleType,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_standard_rule import SensitiveDataScannerStandardRule
+from datadog_api_client.v2.model.sensitive_data_scanner_standard_rule_data import SensitiveDataScannerStandardRuleData
+from datadog_api_client.v2.model.sensitive_data_scanner_standard_rule_type import SensitiveDataScannerStandardRuleType
 from datadog_api_client.v2.model.sensitive_data_scanner_suppressions import SensitiveDataScannerSuppressions
+from datadog_api_client.v2.model.sensitive_data_scanner_target_group_attributes import (
+    SensitiveDataScannerTargetGroupAttributes,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_target_group_data import SensitiveDataScannerTargetGroupData
+from datadog_api_client.v2.model.sensitive_data_scanner_target_group_list_response import (
+    SensitiveDataScannerTargetGroupListResponse,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_target_group_relationships import (
+    SensitiveDataScannerTargetGroupRelationships,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_target_group_response import (
+    SensitiveDataScannerTargetGroupResponse,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_target_rule_attributes import (
+    SensitiveDataScannerTargetRuleAttributes,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_target_rule_included_item import (
+    SensitiveDataScannerTargetRuleIncludedItem,
+)
+from datadog_api_client.v2.model.sensitive_data_scanner_target_rule_relationships import (
+    SensitiveDataScannerTargetRuleRelationships,
+)
 from datadog_api_client.v2.model.sensitive_data_scanner_text_replacement import SensitiveDataScannerTextReplacement
 from datadog_api_client.v2.model.sensitive_data_scanner_text_replacement_type import (
     SensitiveDataScannerTextReplacementType,
@@ -22669,6 +22715,8 @@ __all__ = [
     "SensitiveDataScannerConfigurationType",
     "SensitiveDataScannerCreateGroupResponse",
     "SensitiveDataScannerCreateRuleResponse",
+    "SensitiveDataScannerCustomRegexRuleAttributes",
+    "SensitiveDataScannerCustomRegexRuleType",
     "SensitiveDataScannerFilter",
     "SensitiveDataScannerGetConfigIncludedArray",
     "SensitiveDataScannerGetConfigIncludedItem",
@@ -22686,11 +22734,15 @@ __all__ = [
     "SensitiveDataScannerGroupList",
     "SensitiveDataScannerGroupRelationships",
     "SensitiveDataScannerGroupResponse",
+    "SensitiveDataScannerGroupTarget",
+    "SensitiveDataScannerGroupTargetType",
     "SensitiveDataScannerGroupType",
     "SensitiveDataScannerGroupUpdate",
     "SensitiveDataScannerGroupUpdateRequest",
     "SensitiveDataScannerGroupUpdateResponse",
     "SensitiveDataScannerIncludedKeywordConfiguration",
+    "SensitiveDataScannerMachineLearningRuleAttributes",
+    "SensitiveDataScannerMachineLearningRuleType",
     "SensitiveDataScannerMeta",
     "SensitiveDataScannerMetaVersionOnly",
     "SensitiveDataScannerProduct",
@@ -22704,6 +22756,7 @@ __all__ = [
     "SensitiveDataScannerRuleDeleteRequest",
     "SensitiveDataScannerRuleDeleteResponse",
     "SensitiveDataScannerRuleIncludedItem",
+    "SensitiveDataScannerRulePriority",
     "SensitiveDataScannerRuleRelationships",
     "SensitiveDataScannerRuleResponse",
     "SensitiveDataScannerRuleType",
@@ -22718,7 +22771,20 @@ __all__ = [
     "SensitiveDataScannerStandardPatternsResponse",
     "SensitiveDataScannerStandardPatternsResponseData",
     "SensitiveDataScannerStandardPatternsResponseItem",
+    "SensitiveDataScannerStandardRegexRuleAttributes",
+    "SensitiveDataScannerStandardRegexRuleType",
+    "SensitiveDataScannerStandardRule",
+    "SensitiveDataScannerStandardRuleData",
+    "SensitiveDataScannerStandardRuleType",
     "SensitiveDataScannerSuppressions",
+    "SensitiveDataScannerTargetGroupAttributes",
+    "SensitiveDataScannerTargetGroupData",
+    "SensitiveDataScannerTargetGroupListResponse",
+    "SensitiveDataScannerTargetGroupRelationships",
+    "SensitiveDataScannerTargetGroupResponse",
+    "SensitiveDataScannerTargetRuleAttributes",
+    "SensitiveDataScannerTargetRuleIncludedItem",
+    "SensitiveDataScannerTargetRuleRelationships",
     "SensitiveDataScannerTextReplacement",
     "SensitiveDataScannerTextReplacementType",
     "SerialExecution",
