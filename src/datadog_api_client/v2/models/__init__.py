@@ -12075,6 +12075,7 @@ from datadog_api_client.v2.model.security_monitoring_signal_assignee_update_requ
     SecurityMonitoringSignalAssigneeUpdateRequest,
 )
 from datadog_api_client.v2.model.security_monitoring_signal_attributes import SecurityMonitoringSignalAttributes
+from datadog_api_client.v2.model.security_monitoring_signal_case import SecurityMonitoringSignalCase
 from datadog_api_client.v2.model.security_monitoring_signal_incident_ids import SecurityMonitoringSignalIncidentIds
 from datadog_api_client.v2.model.security_monitoring_signal_incidents_update_attributes import (
     SecurityMonitoringSignalIncidentsUpdateAttributes,
@@ -22620,6 +22621,7 @@ __all__ = [
     "SecurityMonitoringSignalAssigneeUpdateData",
     "SecurityMonitoringSignalAssigneeUpdateRequest",
     "SecurityMonitoringSignalAttributes",
+    "SecurityMonitoringSignalCase",
     "SecurityMonitoringSignalIncidentIds",
     "SecurityMonitoringSignalIncidentsUpdateAttributes",
     "SecurityMonitoringSignalIncidentsUpdateData",
