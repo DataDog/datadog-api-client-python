@@ -173,6 +173,30 @@ Feature: Teams
     When the request is sent
     Then the response status is 201 Created
 
+  @generated @skip @team:ddoghq/teams-and-ownership
+  Scenario: Delete an external team permission default returns "Bad Request" response
+    Given new "DeleteExternalTeamPermissionSettingDefault" request
+    And request contains "source" parameter from "REPLACE.ME"
+    And request contains "action" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @team:ddoghq/teams-and-ownership
+  Scenario: Delete an external team permission default returns "No Content" response
+    Given new "DeleteExternalTeamPermissionSettingDefault" request
+    And request contains "source" parameter with value "scim"
+    And request contains "action" parameter with value "add_and_remove_subteam"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:ddoghq/teams-and-ownership
+  Scenario: Delete an external team permission default returns "Not Found" response
+    Given new "DeleteExternalTeamPermissionSettingDefault" request
+    And request contains "source" parameter from "REPLACE.ME"
+    And request contains "action" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
   @team:ddoghq/teams-and-ownership
   Scenario: Delete team connections returns "Bad Request" response
     Given new "DeleteTeamConnections" request
@@ -704,6 +728,39 @@ Feature: Teams
     Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/teams-and-ownership
+  Scenario: List a source's external team permission defaults returns "Bad Request" response
+    Given new "ListExternalTeamPermissionSettingDefaultsBySource" request
+    And request contains "source" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/teams-and-ownership
+  Scenario: List a source's external team permission defaults returns "Not Found" response
+    Given new "ListExternalTeamPermissionSettingDefaultsBySource" request
+    And request contains "source" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:ddoghq/teams-and-ownership
+  Scenario: List a source's external team permission defaults returns "OK" response
+    Given new "ListExternalTeamPermissionSettingDefaultsBySource" request
+    And request contains "source" parameter with value "scim"
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/teams-and-ownership
+  Scenario: List external team permission defaults returns "Not Found" response
+    Given new "ListExternalTeamPermissionSettingDefaults" request
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @team:ddoghq/teams-and-ownership
+  Scenario: List external team permission defaults returns "OK" response
+    Given new "ListExternalTeamPermissionSettingDefaults" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/teams-and-ownership
   Scenario: List team connections returns "Bad Request" response
     Given new "ListTeamConnections" request
     When the request is sent
@@ -920,6 +977,38 @@ Feature: Teams
     And body with value {"data": {"attributes": {"role": "member"}, "type": "team_memberships"}}
     When the request is sent
     Then the response status is 400 API error response.
+
+  @generated @skip @team:ddoghq/teams-and-ownership
+  Scenario: Update an external team permission default returns "Bad Request" response
+    Given new "UpdateExternalTeamPermissionSettingDefault" request
+    And request contains "source" parameter from "REPLACE.ME"
+    And request contains "action" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"value": "user_access_manage"}, "id": "scim:add_and_remove_subteam", "type": "external_team_permission_setting_defaults"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/teams-and-ownership
+  Scenario: Update an external team permission default returns "Not Found" response
+    Given new "UpdateExternalTeamPermissionSettingDefault" request
+    And request contains "source" parameter from "REPLACE.ME"
+    And request contains "action" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"value": "user_access_manage"}, "id": "scim:add_and_remove_subteam", "type": "external_team_permission_setting_defaults"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @skip @team:ddoghq/teams-and-ownership
+  Scenario: Update an external team permission default returns "OK" response
+    Given new "UpdateExternalTeamPermissionSettingDefault" request
+    And request contains "source" parameter with value "scim"
+    And request contains "action" parameter with value "add_and_remove_subteam"
+    And body with value {"data": {"attributes": {"value": "user_access_manage"}, "id": "scim:add_and_remove_subteam", "type": "external_team_permission_setting_defaults"}}
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data.id" is equal to "scim:add_and_remove_subteam"
+    And the response "data.type" is equal to "external_team_permission_setting_defaults"
+    And the response "data.attributes.source" is equal to "scim"
+    And the response "data.attributes.action" is equal to "add_and_remove_subteam"
+    And the response "data.attributes.value" is equal to "user_access_manage"
 
   @team:ddoghq/teams-and-ownership
   Scenario: Update permission setting for team returns "API error response." response

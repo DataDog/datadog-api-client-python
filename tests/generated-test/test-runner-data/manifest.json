@@ -13261,6 +13261,13 @@
     {
       "feature": "Teams",
       "feature_file": "../../v2/features/teams.feature",
+      "file": "v2/teams/delete-an-external-team-permission-default-returns-no-content-response.json",
+      "scenario": "Delete an external team permission default returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
+      "feature_file": "../../v2/features/teams.feature",
       "file": "v2/teams/delete-team-connections-returns-bad-request-response.json",
       "scenario": "Delete team connections returns \"Bad Request\" response",
       "version": "v2"
@@ -13529,6 +13536,20 @@
       "feature_file": "../../v2/features/teams.feature",
       "file": "v2/teams/link-teams-with-external-teams-returns-no-content-response.json",
       "scenario": "Link teams with external teams returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
+      "feature_file": "../../v2/features/teams.feature",
+      "file": "v2/teams/list-a-source-s-external-team-permission-defaults-returns-ok-response.json",
+      "scenario": "List a source's external team permission defaults returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
+      "feature_file": "../../v2/features/teams.feature",
+      "file": "v2/teams/list-external-team-permission-defaults-returns-ok-response.json",
+      "scenario": "List external team permission defaults returns \"OK\" response",
       "version": "v2"
     },
     {

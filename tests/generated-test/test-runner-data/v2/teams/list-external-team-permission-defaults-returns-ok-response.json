@@ -1,0 +1,18 @@
+{
+  "api": "Teams",
+  "expected_status": 200,
+  "feature": "Teams",
+  "id": "v2/Teams/List external team permission defaults returns \"OK\" response",
+  "operation_id": "ListExternalTeamPermissionSettingDefaults",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/team/settings/external-permissions"
+  },
+  "scenario": "List external team permission defaults returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
