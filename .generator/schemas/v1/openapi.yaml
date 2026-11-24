@@ -11150,6 +11150,10 @@ components:
           default: false
           description: Whether to show the priorities column.
           type: boolean
+        show_sub_groups:
+          default: false
+          description: Whether to count and list each monitor's subgroups instead of its notification groups. Only changes monitors that use `notify_by`, and only for the `groups` and `combined` summary types.
+          type: boolean
         sort:
           $ref: "#/components/schemas/WidgetMonitorSummarySort"
         start:

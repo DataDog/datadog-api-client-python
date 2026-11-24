@@ -43,6 +43,7 @@ class MonitorSummaryWidgetDefinition(ModelNormal):
             "query": (str,),
             "show_last_triggered": (bool,),
             "show_priority": (bool,),
+            "show_sub_groups": (bool,),
             "sort": (WidgetMonitorSummarySort,),
             "start": (int,),
             "summary_type": (WidgetSummaryType,),
@@ -61,6 +62,7 @@ class MonitorSummaryWidgetDefinition(ModelNormal):
         "query": "query",
         "show_last_triggered": "show_last_triggered",
         "show_priority": "show_priority",
+        "show_sub_groups": "show_sub_groups",
         "sort": "sort",
         "start": "start",
         "summary_type": "summary_type",
@@ -81,6 +83,7 @@ class MonitorSummaryWidgetDefinition(ModelNormal):
         hide_zero_counts: Union[bool, UnsetType] = unset,
         show_last_triggered: Union[bool, UnsetType] = unset,
         show_priority: Union[bool, UnsetType] = unset,
+        show_sub_groups: Union[bool, UnsetType] = unset,
         sort: Union[WidgetMonitorSummarySort, UnsetType] = unset,
         start: Union[int, UnsetType] = unset,
         summary_type: Union[WidgetSummaryType, UnsetType] = unset,
@@ -115,6 +118,9 @@ class MonitorSummaryWidgetDefinition(ModelNormal):
 
         :param show_priority: Whether to show the priorities column.
         :type show_priority: bool, optional
+
+        :param show_sub_groups: Whether to count and list each monitor's subgroups instead of its notification groups. Only changes monitors that use ``notify_by`` , and only for the ``groups`` and ``combined`` summary types.
+        :type show_sub_groups: bool, optional
 
         :param sort: Widget sorting methods.
         :type sort: WidgetMonitorSummarySort, optional
@@ -151,6 +157,8 @@ class MonitorSummaryWidgetDefinition(ModelNormal):
             kwargs["show_last_triggered"] = show_last_triggered
         if show_priority is not unset:
             kwargs["show_priority"] = show_priority
+        if show_sub_groups is not unset:
+            kwargs["show_sub_groups"] = show_sub_groups
         if sort is not unset:
             kwargs["sort"] = sort
         if start is not unset:
