@@ -16,16 +16,14 @@ class RemediationGroupFindingType(ModelSimple):
     """
     Value of the findings' `@finding_type` attribute that a grouping definition covers.
 
-    :param value: Must be one of ["library_vulnerability", "host_and_container_vulnerability"].
+    :param value: If omitted defaults to "library_vulnerability". Must be one of ["library_vulnerability"].
     :type value: str
     """
 
     allowed_values = {
         "library_vulnerability",
-        "host_and_container_vulnerability",
     }
     LIBRARY_VULNERABILITY: ClassVar["RemediationGroupFindingType"]
-    HOST_AND_CONTAINER_VULNERABILITY: ClassVar["RemediationGroupFindingType"]
 
     @cached_property
     def openapi_types(_):
@@ -35,6 +33,3 @@ class RemediationGroupFindingType(ModelSimple):
 
 
 RemediationGroupFindingType.LIBRARY_VULNERABILITY = RemediationGroupFindingType("library_vulnerability")
-RemediationGroupFindingType.HOST_AND_CONTAINER_VULNERABILITY = RemediationGroupFindingType(
-    "host_and_container_vulnerability"
-)

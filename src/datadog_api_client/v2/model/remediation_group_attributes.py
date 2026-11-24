@@ -15,7 +15,7 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.remediation_group_findings import RemediationGroupFindings
-    from datadog_api_client.v2.model.remediation_group_image_update import RemediationGroupImageUpdate
+    from datadog_api_client.v2.model.remediation_group_owners import RemediationGroupOwners
     from datadog_api_client.v2.model.remediation_group_package_update import RemediationGroupPackageUpdate
 
 
@@ -23,13 +23,13 @@ class RemediationGroupAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.remediation_group_findings import RemediationGroupFindings
-        from datadog_api_client.v2.model.remediation_group_image_update import RemediationGroupImageUpdate
+        from datadog_api_client.v2.model.remediation_group_owners import RemediationGroupOwners
         from datadog_api_client.v2.model.remediation_group_package_update import RemediationGroupPackageUpdate
 
         return {
             "findings": (RemediationGroupFindings,),
             "grouping_definition_id": (str,),
-            "image_update": (RemediationGroupImageUpdate,),
+            "owners": (RemediationGroupOwners,),
             "package_update": (RemediationGroupPackageUpdate,),
             "title": (str,),
         }
@@ -37,7 +37,7 @@ class RemediationGroupAttributes(ModelNormal):
     attribute_map = {
         "findings": "findings",
         "grouping_definition_id": "grouping_definition_id",
-        "image_update": "image_update",
+        "owners": "owners",
         "package_update": "package_update",
         "title": "title",
     }
@@ -46,26 +46,24 @@ class RemediationGroupAttributes(ModelNormal):
         self_,
         findings: RemediationGroupFindings,
         grouping_definition_id: str,
+        owners: RemediationGroupOwners,
         title: str,
-        image_update: Union[RemediationGroupImageUpdate, UnsetType] = unset,
         package_update: Union[RemediationGroupPackageUpdate, UnsetType] = unset,
         **kwargs,
     ):
         """
-        Attributes of a remediation group. Each group includes one kind object, ``package_update`` or ``image_update`` ,
-        depending on its grouping definition.
+        Attributes of a remediation group. Each group includes one kind object, depending on its grouping definition.
 
         :param findings: Counts of the group's open findings. The counts include every finding in the group, including findings that
             don't match ``filter[query]``.
         :type findings: RemediationGroupFindings
 
-        :param grouping_definition_id: Grouping definition that formed the group: ``sca.package_update`` or ``cloudvm.image_update``.
+        :param grouping_definition_id: Grouping definition that formed the group, such as ``sca.package_update``.
         :type grouping_definition_id: str
 
-        :param image_update: An image or package to upgrade, for a group of host and container vulnerabilities ( ``cloudvm.image_update`` ).
-            The group gathers the open vulnerabilities of running production images that have a fix available, and groups
-            them by ``grouping_location`` , ``remediation_kind`` , and ``action``.
-        :type image_update: RemediationGroupImageUpdate, optional
+        :param owners: Who should fix the group: the code owners of the group's findings, from their ``@git.codeowners`` attribute,
+            and their Datadog teams, from their ``team`` tag. A group with no owners has empty ``items`` and a ``total`` of 0.
+        :type owners: RemediationGroupOwners
 
         :param package_update: A package to update in a repository, for a group of library vulnerabilities ( ``sca.package_update`` ). The group
             gathers the open vulnerabilities of direct dependencies that have a recommended fix, and groups them by
@@ -75,12 +73,11 @@ class RemediationGroupAttributes(ModelNormal):
         :param title: Title of the group, which describes the change to make.
         :type title: str
         """
-        if image_update is not unset:
-            kwargs["image_update"] = image_update
         if package_update is not unset:
             kwargs["package_update"] = package_update
         super().__init__(kwargs)
 
         self_.findings = findings
         self_.grouping_definition_id = grouping_definition_id
+        self_.owners = owners
         self_.title = title

@@ -49,8 +49,7 @@ class RemediationGroupData(ModelNormal):
         """
         A remediation group.
 
-        :param attributes: Attributes of a remediation group. Each group includes one kind object, ``package_update`` or ``image_update`` ,
-            depending on its grouping definition.
+        :param attributes: Attributes of a remediation group. Each group includes one kind object, depending on its grouping definition.
         :type attributes: RemediationGroupAttributes
 
         :param id: Remediation key of the group: the grouping definition ID, a colon, and the group's dimensions
