@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 from typing import Any, Dict, Union
+import warnings
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
@@ -42,7 +43,7 @@ class CSMThreatsApi:
     """
     Workload Protection monitors file, network, and process activity across your environment to detect real-time threats to your infrastructure. See `Workload Protection <https://docs.datadoghq.com/security/workload_protection/>`_ for more information on setting up Workload Protection.
 
-    **Note** : These endpoints are split based on whether you are using the US1-FED site or not. Please reference the specific resource for the site you are using.
+    **Note** : The ``/api/v2/security_monitoring/cloud_workload_security`` endpoints are deprecated. Use the ``/api/v2/remote_config/products/cws`` endpoints on all sites, including US1-FED.
     """
 
     def __init__(self, api_client=None):
@@ -350,8 +351,6 @@ class CSMThreatsApi:
 
         Create a new Workload Protection policy with the given parameters.
 
-        **Note** : This endpoint is not available for the Government (US1-FED) site. Please reference the (US1-FED) specific resource below.
-
         :param body: The definition of the new Agent policy
         :type body: CloudWorkloadSecurityAgentPolicyCreateRequest
         :rtype: CloudWorkloadSecurityAgentPolicyResponse
@@ -378,8 +377,6 @@ class CSMThreatsApi:
 
         This endpoint does not accept ``kill`` or ``network_filter`` actions, or ``blocking`` policies. A request that contains them returns a ``400`` error.
 
-        **Note** : This endpoint is not available for the Government (US1-FED) site. Please reference the (US1-FED) specific resource below.
-
         :param body: The definition of the new agent rule
         :type body: CloudWorkloadSecurityAgentRuleCreateRequest
         :rtype: CloudWorkloadSecurityAgentRuleResponse
@@ -398,8 +395,6 @@ class CSMThreatsApi:
         Delete a specific Workload Protection policy.
 
         Datadog-managed policies cannot be deleted. This action cannot be undone.
-
-        **Note** : This endpoint is not available for the Government (US1-FED) site. Please reference the (US1-FED) specific resource below.
 
         :param policy_id: The ID of the Agent policy
         :type policy_id: str
@@ -422,8 +417,6 @@ class CSMThreatsApi:
 
         The rule is removed from every policy that contains it. Datadog-managed rules cannot be deleted.
         This action cannot be undone.
-
-        **Note** : This endpoint is not available for the Government (US1-FED) site. Please reference the (US1-FED) specific resource below.
 
         :param agent_rule_id: The ID of the Agent rule
         :type agent_rule_id: str
@@ -448,8 +441,6 @@ class CSMThreatsApi:
         Workload Protection agent rules, and downloads them as a ``.policy`` file. This file can then be deployed to
         your agents to update the policy running in your environment.
 
-        **Note** : This endpoint is not available for the Government (US1-FED) site. Please reference the (US1-FED) specific resource below.
-
         :rtype: file_type
         """
         kwargs: Dict[str, Any] = {}
@@ -459,11 +450,12 @@ class CSMThreatsApi:
         self,
         agent_rule_id: str,
     ) -> CloudWorkloadSecurityAgentRuleResponse:
-        """Get a Workload Protection agent rule (US1-FED).
+        """Get a Workload Protection agent rule (US1-FED). **Deprecated**.
+
+        **Note** : This endpoint is deprecated. Use `Get a Workload Protection agent rule <https://docs.datadoghq.com/api/latest/csm-threats/#get-a-workload-protection-agent-rule>`_
+        instead, on all sites including US1-FED.
 
         Get the details of a specific agent rule.
-
-        **Note** : This endpoint should only be used for the Government (US1-FED) site.
 
         :param agent_rule_id: The ID of the Agent rule
         :type agent_rule_id: str
@@ -472,6 +464,7 @@ class CSMThreatsApi:
         kwargs: Dict[str, Any] = {}
         kwargs["agent_rule_id"] = agent_rule_id
 
+        warnings.warn("get_cloud_workload_security_agent_rule is deprecated", DeprecationWarning, stacklevel=2)
         return self._get_cloud_workload_security_agent_rule_endpoint.call_with_http_info(**kwargs)
 
     def get_csm_threats_agent_policy(
@@ -481,8 +474,6 @@ class CSMThreatsApi:
         """Get a Workload Protection policy.
 
         Get the details of a specific Workload Protection policy.
-
-        **Note** : This endpoint is not available for the Government (US1-FED) site. Please reference the (US1-FED) specific resource below.
 
         :param policy_id: The ID of the Agent policy
         :type policy_id: str
@@ -503,8 +494,6 @@ class CSMThreatsApi:
 
         Get the details of a specific Workload Protection agent rule.
 
-        **Note** : This endpoint is not available for the Government (US1-FED) site. Please reference the (US1-FED) specific resource below.
-
         :param agent_rule_id: The ID of the Agent rule
         :type agent_rule_id: str
         :param policy_id: The ID of the Agent policy
@@ -522,15 +511,17 @@ class CSMThreatsApi:
     def list_cloud_workload_security_agent_rules(
         self,
     ) -> CloudWorkloadSecurityAgentRulesListResponse:
-        """Get all Workload Protection agent rules (US1-FED).
+        """Get all Workload Protection agent rules (US1-FED). **Deprecated**.
+
+        **Note** : This endpoint is deprecated. Use `Get all Workload Protection agent rules <https://docs.datadoghq.com/api/latest/csm-threats/#get-all-workload-protection-agent-rules>`_
+        instead, on all sites including US1-FED.
 
         Get the list of agent rules.
-
-        **Note** : This endpoint should only be used for the Government (US1-FED) site.
 
         :rtype: CloudWorkloadSecurityAgentRulesListResponse
         """
         kwargs: Dict[str, Any] = {}
+        warnings.warn("list_cloud_workload_security_agent_rules is deprecated", DeprecationWarning, stacklevel=2)
         return self._list_cloud_workload_security_agent_rules_endpoint.call_with_http_info(**kwargs)
 
     def list_csm_threats_agent_policies(
@@ -539,8 +530,6 @@ class CSMThreatsApi:
         """Get all Workload Protection policies.
 
         Get the list of Workload Protection policies.
-
-        **Note** : This endpoint is not available for the Government (US1-FED) site. Please reference the (US1-FED) specific resource below.
 
         :rtype: CloudWorkloadSecurityAgentPoliciesListResponse
         """
@@ -557,8 +546,6 @@ class CSMThreatsApi:
         Get the list of Workload Protection agent rules.
 
         Set ``policy_id`` to only return the rules of one policy. Without it, the rules of all policies are returned.
-
-        **Note** : This endpoint is not available for the Government (US1-FED) site. Please reference the (US1-FED) specific resource below.
 
         :param policy_id: The ID of the Agent policy
         :type policy_id: str, optional
@@ -579,8 +566,6 @@ class CSMThreatsApi:
 
         Update a specific Workload Protection policy.
         Returns the policy object when the request is successful.
-
-        **Note** : This endpoint is not available for the Government (US1-FED) site. Please reference the (US1-FED) specific resource below.
 
         :param policy_id: The ID of the Agent policy
         :type policy_id: str
@@ -611,8 +596,6 @@ class CSMThreatsApi:
         See `Agent expressions <https://docs.datadoghq.com/security/workload_protection/agent_expressions/>`_ for the syntax.
 
         This endpoint does not accept ``kill`` or ``network_filter`` actions, or ``blocking`` policies. A request that contains them returns a ``400`` error.
-
-        **Note** : This endpoint is not available for the Government (US1-FED) site. Please reference the (US1-FED) specific resource below.
 
         :param agent_rule_id: The ID of the Agent rule
         :type agent_rule_id: str

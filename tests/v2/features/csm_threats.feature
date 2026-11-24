@@ -4,9 +4,10 @@ Feature: CSM Threats
   your environment to detect real-time threats to your infrastructure. See
   [Workload
   Protection](https://docs.datadoghq.com/security/workload_protection/) for
-  more information on setting up Workload Protection.  **Note**: These
-  endpoints are split based on whether you are using the US1-FED site or
-  not. Please reference the specific resource for the site you are using.
+  more information on setting up Workload Protection.  **Note**: The
+  `/api/v2/security_monitoring/cloud_workload_security` endpoints are
+  deprecated. Use the `/api/v2/remote_config/products/cws` endpoints on all
+  sites, including US1-FED.
 
   Background:
     Given a valid "apiKeyAuth" key in the system
