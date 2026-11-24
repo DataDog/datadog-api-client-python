@@ -10084,7 +10084,7 @@ class SecurityMonitoringApi:
         """Search remediation groups.
 
         Search the remediation groups of your organization. A remediation group gathers the open security findings
-        that one change fixes, such as updating a package in a repository or upgrading an image.
+        that one change fixes, such as updating a package in a repository.
 
         Each group comes from a grouping definition, which sets the finding type it covers and the kind object the
         group returns:
@@ -10098,9 +10098,6 @@ class SecurityMonitoringApi:
            * - ``sca.package_update``
              - ``library_vulnerability``
              - ``package_update``
-           * - ``cloudvm.image_update``
-             - ``host_and_container_vulnerability``
-             - ``image_update``
 
         Groups are computed from the attributes of security findings, described in the
         `security findings schema <https://docs.datadoghq.com/security/guide/findings-schema/>`_. The description of

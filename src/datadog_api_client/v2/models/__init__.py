@@ -10678,8 +10678,9 @@ from datadog_api_client.v2.model.remediation_group_data import RemediationGroupD
 from datadog_api_client.v2.model.remediation_group_finding_type import RemediationGroupFindingType
 from datadog_api_client.v2.model.remediation_group_findings import RemediationGroupFindings
 from datadog_api_client.v2.model.remediation_group_findings_by_severity import RemediationGroupFindingsBySeverity
-from datadog_api_client.v2.model.remediation_group_image_update import RemediationGroupImageUpdate
 from datadog_api_client.v2.model.remediation_group_include import RemediationGroupInclude
+from datadog_api_client.v2.model.remediation_group_owner_list import RemediationGroupOwnerList
+from datadog_api_client.v2.model.remediation_group_owners import RemediationGroupOwners
 from datadog_api_client.v2.model.remediation_group_package_update import RemediationGroupPackageUpdate
 from datadog_api_client.v2.model.remediation_group_relationships import RemediationGroupRelationships
 from datadog_api_client.v2.model.remediation_group_type import RemediationGroupType
@@ -21869,8 +21870,9 @@ __all__ = [
     "RemediationGroupFindingType",
     "RemediationGroupFindings",
     "RemediationGroupFindingsBySeverity",
-    "RemediationGroupImageUpdate",
     "RemediationGroupInclude",
+    "RemediationGroupOwnerList",
+    "RemediationGroupOwners",
     "RemediationGroupPackageUpdate",
     "RemediationGroupRelationships",
     "RemediationGroupType",
