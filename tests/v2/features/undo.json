@@ -86,6 +86,12 @@
       "type": "safe"
     }
   },
+  "AddSecurityAgentOutreachPolicyDomain": {
+    "tag": "Bits Security Analyst",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "AddTeamHierarchyLink": {
     "tag": "Teams",
     "undo": {
@@ -7014,6 +7020,12 @@
       "type": "safe"
     }
   },
+  "GetSecurityAgentOutreachPolicy": {
+    "tag": "Bits Security Analyst",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetSecurityFilter": {
     "tag": "Security Monitoring",
     "undo": {
@@ -10267,6 +10279,12 @@
       "type": "idempotent"
     }
   },
+  "RemoveSecurityAgentOutreachPolicyDomain": {
+    "tag": "Bits Security Analyst",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "RemoveTeamHierarchyLink": {
     "tag": "Teams",
     "undo": {
@@ -12005,6 +12023,18 @@
   },
   "UpdateScorecardRule": {
     "tag": "Scorecards",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateSecurityAgentOutreachMode": {
+    "tag": "Bits Security Analyst",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateSecurityAgentOutreachPolicyRules": {
+    "tag": "Bits Security Analyst",
     "undo": {
       "type": "idempotent"
     }

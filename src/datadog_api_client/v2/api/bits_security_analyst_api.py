@@ -20,6 +20,15 @@ from datadog_api_client.v2.model.security_agent_investigation_counts_response im
 from datadog_api_client.v2.model.security_agent_investigation_count_field import SecurityAgentInvestigationCountField
 from datadog_api_client.v2.model.security_agent_investigation_response import SecurityAgentInvestigationResponse
 from datadog_api_client.v2.model.security_agent_investigation_field import SecurityAgentInvestigationField
+from datadog_api_client.v2.model.security_agent_outreach_policy_response import SecurityAgentOutreachPolicyResponse
+from datadog_api_client.v2.model.security_agent_outreach_mode_response import SecurityAgentOutreachModeResponse
+from datadog_api_client.v2.model.security_agent_outreach_mode_update_request import (
+    SecurityAgentOutreachModeUpdateRequest,
+)
+from datadog_api_client.v2.model.security_agent_outreach_domain_add_request import SecurityAgentOutreachDomainAddRequest
+from datadog_api_client.v2.model.security_agent_outreach_rules_update_request import (
+    SecurityAgentOutreachRulesUpdateRequest,
+)
 
 
 class BitsSecurityAnalystApi:
@@ -32,6 +41,26 @@ class BitsSecurityAnalystApi:
         if api_client is None:
             api_client = ApiClient(Configuration())
         self.api_client = api_client
+
+        self._add_security_agent_outreach_policy_domain_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityAgentOutreachPolicyResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/security_agent/outreach_policy/allowed_domains",
+                "operation_id": "add_security_agent_outreach_policy_domain",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityAgentOutreachDomainAddRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
 
         self._count_security_agent_investigations_endpoint = _Endpoint(
             settings={
@@ -129,6 +158,22 @@ class BitsSecurityAnalystApi:
                     "collection_format": "csv",
                 },
             },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_security_agent_outreach_policy_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityAgentOutreachPolicyResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/security_agent/outreach_policy",
+                "operation_id": "get_security_agent_outreach_policy",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
             },
@@ -233,6 +278,88 @@ class BitsSecurityAnalystApi:
             },
             api_client=api_client,
         )
+
+        self._remove_security_agent_outreach_policy_domain_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityAgentOutreachPolicyResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/security_agent/outreach_policy/allowed_domains/{domain}",
+                "operation_id": "remove_security_agent_outreach_policy_domain",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "domain": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "domain",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._update_security_agent_outreach_mode_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityAgentOutreachModeResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/security_agent/outreach_policy",
+                "operation_id": "update_security_agent_outreach_mode",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityAgentOutreachModeUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._update_security_agent_outreach_policy_rules_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityAgentOutreachPolicyResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/security_agent/outreach_policy/rules",
+                "operation_id": "update_security_agent_outreach_policy_rules",
+                "http_method": "POST",
+                "version": "v2",
+            },
+            params_map={
+                "body": {
+                    "required": True,
+                    "openapi_types": (SecurityAgentOutreachRulesUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+    def add_security_agent_outreach_policy_domain(
+        self,
+        body: SecurityAgentOutreachDomainAddRequest,
+    ) -> SecurityAgentOutreachPolicyResponse:
+        """Add an allowed outreach domain.
+
+        Add one allowed email domain. User outreach is only sent to users whose email domain is allowed. The
+        domain must be a fully qualified domain name, like ``example.com`` ; it is lowercased before being stored.
+        An organization can allow at most 20 domains.
+
+        :param body: The email domain to allow.
+        :type body: SecurityAgentOutreachDomainAddRequest
+        :rtype: SecurityAgentOutreachPolicyResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._add_security_agent_outreach_policy_domain_endpoint.call_with_http_info(**kwargs)
 
     def count_security_agent_investigations(
         self,
@@ -346,6 +473,20 @@ class BitsSecurityAnalystApi:
             kwargs["fields_investigations"] = fields_investigations
 
         return self._get_security_agent_investigation_endpoint.call_with_http_info(**kwargs)
+
+    def get_security_agent_outreach_policy(
+        self,
+    ) -> SecurityAgentOutreachPolicyResponse:
+        """Get the user outreach policy.
+
+        Get the organization's user outreach policy for Bits Security Analyst: the outreach mode, the per-rule
+        automation state, the allowed email domains that user outreach can be sent to, and, for the caller, domains
+        that could be allowed next.
+
+        :rtype: SecurityAgentOutreachPolicyResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._get_security_agent_outreach_policy_endpoint.call_with_http_info(**kwargs)
 
     def list_security_agent_investigations(
         self,
@@ -466,3 +607,58 @@ class BitsSecurityAnalystApi:
             kwargs["page_size"] = page_size
 
         return self._list_security_agent_investigations_endpoint.call_with_http_info(**kwargs)
+
+    def remove_security_agent_outreach_policy_domain(
+        self,
+        domain: str,
+    ) -> SecurityAgentOutreachPolicyResponse:
+        """Remove an allowed outreach domain.
+
+        Remove one allowed email domain, by its name.
+
+        :param domain: The allowed email domain to remove, for example ``example.com``. Case-insensitive.
+        :type domain: str
+        :rtype: SecurityAgentOutreachPolicyResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["domain"] = domain
+
+        return self._remove_security_agent_outreach_policy_domain_endpoint.call_with_http_info(**kwargs)
+
+    def update_security_agent_outreach_mode(
+        self,
+        body: SecurityAgentOutreachModeUpdateRequest,
+    ) -> SecurityAgentOutreachModeResponse:
+        """Update the outreach mode.
+
+        Set the organization's outreach mode: ``off`` (no user outreach), ``manual`` (outreach is only sent when an
+        analyst triggers it), or ``automated`` (rules with outreach enabled auto-send automated interviews to users
+        whose email domain is allowed).
+
+        :param body: The new outreach mode.
+        :type body: SecurityAgentOutreachModeUpdateRequest
+        :rtype: SecurityAgentOutreachModeResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._update_security_agent_outreach_mode_endpoint.call_with_http_info(**kwargs)
+
+    def update_security_agent_outreach_policy_rules(
+        self,
+        body: SecurityAgentOutreachRulesUpdateRequest,
+    ) -> SecurityAgentOutreachPolicyResponse:
+        """Update outreach policy rules.
+
+        Upsert the outreach automation state of detection rules. Each rule in the request gets the given state;
+        rules not in the request keep their state. A rule with ``is_enabled: true`` auto-sends automated interviews
+        in ``automated`` mode.
+
+        :param body: The rules to upsert.
+        :type body: SecurityAgentOutreachRulesUpdateRequest
+        :rtype: SecurityAgentOutreachPolicyResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["body"] = body
+
+        return self._update_security_agent_outreach_policy_rules_endpoint.call_with_http_info(**kwargs)
