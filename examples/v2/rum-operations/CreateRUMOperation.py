@@ -11,7 +11,7 @@ from datadog_api_client.v2.model.rum_operation_journey_composite_rule import RUM
 from datadog_api_client.v2.model.rum_operation_journey_composite_rule_kind import RUMOperationJourneyCompositeRuleKind
 from datadog_api_client.v2.model.rum_operation_journey_node import RUMOperationJourneyNode
 from datadog_api_client.v2.model.rum_operation_journey_predicate import RUMOperationJourneyPredicate
-from datadog_api_client.v2.model.rum_operation_journey_rum import RUMOperationJourneyRum
+from datadog_api_client.v2.model.rum_operation_journey_rum import RUMOperationJourneyRUM
 from datadog_api_client.v2.model.rum_operation_journey_step import RUMOperationJourneyStep
 from datadog_api_client.v2.model.rum_operation_journey_step_type import RUMOperationJourneyStepType
 from datadog_api_client.v2.model.rum_operation_request_attributes import RUMOperationRequestAttributes
@@ -26,7 +26,7 @@ body = RUMOperationCreateRequest(
             description=None,
             display_name="Checkout completed",
             feature_ids=[],
-            journey_rum=RUMOperationJourneyRum(
+            journey_rum=RUMOperationJourneyRUM(
                 rum_steps=[
                     RUMOperationJourneyStep(
                         composite=RUMOperationJourneyCompositeRule(

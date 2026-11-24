@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumRetentionQuotaReachedAction(ModelSimple):
+class RUMRetentionQuotaReachedAction(ModelSimple):
     """
     The action to take when the session quota is reached.
 
@@ -24,8 +24,8 @@ class RumRetentionQuotaReachedAction(ModelSimple):
         "stop",
         "slowdown",
     }
-    STOP: ClassVar["RumRetentionQuotaReachedAction"]
-    SLOWDOWN: ClassVar["RumRetentionQuotaReachedAction"]
+    STOP: ClassVar["RUMRetentionQuotaReachedAction"]
+    SLOWDOWN: ClassVar["RUMRetentionQuotaReachedAction"]
 
     @cached_property
     def openapi_types(_):
@@ -34,5 +34,5 @@ class RumRetentionQuotaReachedAction(ModelSimple):
         }
 
 
-RumRetentionQuotaReachedAction.STOP = RumRetentionQuotaReachedAction("stop")
-RumRetentionQuotaReachedAction.SLOWDOWN = RumRetentionQuotaReachedAction("slowdown")
+RUMRetentionQuotaReachedAction.STOP = RUMRetentionQuotaReachedAction("stop")
+RUMRetentionQuotaReachedAction.SLOWDOWN = RUMRetentionQuotaReachedAction("slowdown")

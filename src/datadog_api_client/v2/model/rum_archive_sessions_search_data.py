@@ -14,18 +14,18 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_archive_sessions_search_attributes import RumArchiveSessionsSearchAttributes
+    from datadog_api_client.v2.model.rum_archive_sessions_search_attributes import RUMArchiveSessionsSearchAttributes
 
 
-class RumArchiveSessionsSearchData(ModelNormal):
+class RUMArchiveSessionsSearchData(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.rum_archive_sessions_search_attributes import (
-            RumArchiveSessionsSearchAttributes,
+            RUMArchiveSessionsSearchAttributes,
         )
 
         return {
-            "attributes": (RumArchiveSessionsSearchAttributes,),
+            "attributes": (RUMArchiveSessionsSearchAttributes,),
             "id": (str,),
             "type": (str,),
         }
@@ -38,7 +38,7 @@ class RumArchiveSessionsSearchData(ModelNormal):
 
     def __init__(
         self_,
-        attributes: RumArchiveSessionsSearchAttributes,
+        attributes: RUMArchiveSessionsSearchAttributes,
         id: Union[str, UnsetType] = unset,
         type: Union[str, UnsetType] = unset,
         **kwargs,
@@ -47,7 +47,7 @@ class RumArchiveSessionsSearchData(ModelNormal):
         JSON:API resource.
 
         :param attributes: Archived-session query. A window wider than configured archive retention is narrowed before searching.
-        :type attributes: RumArchiveSessionsSearchAttributes
+        :type attributes: RUMArchiveSessionsSearchAttributes
 
         :param id: Optional resource identifier.
         :type id: str, optional

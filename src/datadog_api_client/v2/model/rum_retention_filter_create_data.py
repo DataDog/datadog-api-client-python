@@ -12,21 +12,21 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_retention_filter_create_attributes import RumRetentionFilterCreateAttributes
-    from datadog_api_client.v2.model.rum_retention_filter_type import RumRetentionFilterType
+    from datadog_api_client.v2.model.rum_retention_filter_create_attributes import RUMRetentionFilterCreateAttributes
+    from datadog_api_client.v2.model.rum_retention_filter_type import RUMRetentionFilterType
 
 
-class RumRetentionFilterCreateData(ModelNormal):
+class RUMRetentionFilterCreateData(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.rum_retention_filter_create_attributes import (
-            RumRetentionFilterCreateAttributes,
+            RUMRetentionFilterCreateAttributes,
         )
-        from datadog_api_client.v2.model.rum_retention_filter_type import RumRetentionFilterType
+        from datadog_api_client.v2.model.rum_retention_filter_type import RUMRetentionFilterType
 
         return {
-            "attributes": (RumRetentionFilterCreateAttributes,),
-            "type": (RumRetentionFilterType,),
+            "attributes": (RUMRetentionFilterCreateAttributes,),
+            "type": (RUMRetentionFilterType,),
         }
 
     attribute_map = {
@@ -34,15 +34,15 @@ class RumRetentionFilterCreateData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: RumRetentionFilterCreateAttributes, type: RumRetentionFilterType, **kwargs):
+    def __init__(self_, attributes: RUMRetentionFilterCreateAttributes, type: RUMRetentionFilterType, **kwargs):
         """
         The new RUM retention filter properties to create.
 
         :param attributes: The object describing attributes of a RUM retention filter to create.
-        :type attributes: RumRetentionFilterCreateAttributes
+        :type attributes: RUMRetentionFilterCreateAttributes
 
         :param type: The type of the resource. The value should always be retention_filters.
-        :type type: RumRetentionFilterType
+        :type type: RUMRetentionFilterType
         """
         super().__init__(kwargs)
 

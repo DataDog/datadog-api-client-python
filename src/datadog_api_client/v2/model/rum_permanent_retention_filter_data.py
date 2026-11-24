@@ -15,25 +15,25 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.rum_permanent_retention_filter_attributes import (
-        RumPermanentRetentionFilterAttributes,
+        RUMPermanentRetentionFilterAttributes,
     )
-    from datadog_api_client.v2.model.rum_permanent_retention_filter_id import RumPermanentRetentionFilterID
-    from datadog_api_client.v2.model.rum_permanent_retention_filter_type import RumPermanentRetentionFilterType
+    from datadog_api_client.v2.model.rum_permanent_retention_filter_id import RUMPermanentRetentionFilterID
+    from datadog_api_client.v2.model.rum_permanent_retention_filter_type import RUMPermanentRetentionFilterType
 
 
-class RumPermanentRetentionFilterData(ModelNormal):
+class RUMPermanentRetentionFilterData(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.rum_permanent_retention_filter_attributes import (
-            RumPermanentRetentionFilterAttributes,
+            RUMPermanentRetentionFilterAttributes,
         )
-        from datadog_api_client.v2.model.rum_permanent_retention_filter_id import RumPermanentRetentionFilterID
-        from datadog_api_client.v2.model.rum_permanent_retention_filter_type import RumPermanentRetentionFilterType
+        from datadog_api_client.v2.model.rum_permanent_retention_filter_id import RUMPermanentRetentionFilterID
+        from datadog_api_client.v2.model.rum_permanent_retention_filter_type import RUMPermanentRetentionFilterType
 
         return {
-            "attributes": (RumPermanentRetentionFilterAttributes,),
-            "id": (RumPermanentRetentionFilterID,),
-            "type": (RumPermanentRetentionFilterType,),
+            "attributes": (RUMPermanentRetentionFilterAttributes,),
+            "id": (RUMPermanentRetentionFilterID,),
+            "type": (RUMPermanentRetentionFilterType,),
         }
 
     attribute_map = {
@@ -44,22 +44,22 @@ class RumPermanentRetentionFilterData(ModelNormal):
 
     def __init__(
         self_,
-        attributes: Union[RumPermanentRetentionFilterAttributes, UnsetType] = unset,
-        id: Union[RumPermanentRetentionFilterID, UnsetType] = unset,
-        type: Union[RumPermanentRetentionFilterType, UnsetType] = unset,
+        attributes: Union[RUMPermanentRetentionFilterAttributes, UnsetType] = unset,
+        id: Union[RUMPermanentRetentionFilterID, UnsetType] = unset,
+        type: Union[RUMPermanentRetentionFilterType, UnsetType] = unset,
         **kwargs,
     ):
         """
         A permanent RUM retention filter.
 
         :param attributes: The attributes of a permanent RUM retention filter.
-        :type attributes: RumPermanentRetentionFilterAttributes, optional
+        :type attributes: RUMPermanentRetentionFilterAttributes, optional
 
         :param id: The identifier of a permanent RUM retention filter.
-        :type id: RumPermanentRetentionFilterID, optional
+        :type id: RUMPermanentRetentionFilterID, optional
 
         :param type: The type of the resource. The value should always be ``permanent_retention_filters``.
-        :type type: RumPermanentRetentionFilterType, optional
+        :type type: RUMPermanentRetentionFilterType, optional
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes

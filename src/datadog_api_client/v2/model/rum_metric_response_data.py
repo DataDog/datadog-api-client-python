@@ -14,11 +14,11 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_metric_response_attributes import RumMetricResponseAttributes
-    from datadog_api_client.v2.model.rum_metric_type import RumMetricType
+    from datadog_api_client.v2.model.rum_metric_response_attributes import RUMMetricResponseAttributes
+    from datadog_api_client.v2.model.rum_metric_type import RUMMetricType
 
 
-class RumMetricResponseData(ModelNormal):
+class RUMMetricResponseData(ModelNormal):
     validations = {
         "id": {
             "max_length": 200,
@@ -27,13 +27,13 @@ class RumMetricResponseData(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_metric_response_attributes import RumMetricResponseAttributes
-        from datadog_api_client.v2.model.rum_metric_type import RumMetricType
+        from datadog_api_client.v2.model.rum_metric_response_attributes import RUMMetricResponseAttributes
+        from datadog_api_client.v2.model.rum_metric_type import RUMMetricType
 
         return {
-            "attributes": (RumMetricResponseAttributes,),
+            "attributes": (RUMMetricResponseAttributes,),
             "id": (str,),
-            "type": (RumMetricType,),
+            "type": (RUMMetricType,),
         }
 
     attribute_map = {
@@ -44,16 +44,16 @@ class RumMetricResponseData(ModelNormal):
 
     def __init__(
         self_,
-        attributes: Union[RumMetricResponseAttributes, UnsetType] = unset,
+        attributes: Union[RUMMetricResponseAttributes, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
-        type: Union[RumMetricType, UnsetType] = unset,
+        type: Union[RUMMetricType, UnsetType] = unset,
         **kwargs,
     ):
         """
         The RUM-based metric properties.
 
         :param attributes: The object describing a Datadog RUM-based metric.
-        :type attributes: RumMetricResponseAttributes, optional
+        :type attributes: RUMMetricResponseAttributes, optional
 
         :param id: The name of the RUM-based metric.
             On creation, it must be 1 to 200 characters long, contain only ASCII letters, digits, underscores, and periods, start with a letter, and not start with ``rum.measure`` or ``rum.investigate``.
@@ -61,7 +61,7 @@ class RumMetricResponseData(ModelNormal):
         :type id: str, optional
 
         :param type: The type of the resource. The value must be ``rum_metrics``.
-        :type type: RumMetricType, optional
+        :type type: RUMMetricType, optional
         """
         if attributes is not unset:
             kwargs["attributes"] = attributes

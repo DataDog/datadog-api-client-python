@@ -7,9 +7,9 @@ from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
-from datadog_api_client.v2.model.rum_retention_quota_scope_type import RumRetentionQuotaScopeType
-from datadog_api_client.v2.model.rum_retention_quota_config_response import RumRetentionQuotaConfigResponse
-from datadog_api_client.v2.model.rum_retention_quota_config_update_request import RumRetentionQuotaConfigUpdateRequest
+from datadog_api_client.v2.model.rum_retention_quota_scope_type import RUMRetentionQuotaScopeType
+from datadog_api_client.v2.model.rum_retention_quota_config_response import RUMRetentionQuotaConfigResponse
+from datadog_api_client.v2.model.rum_retention_quota_config_update_request import RUMRetentionQuotaConfigUpdateRequest
 
 
 class RUMRetentionQuotasApi:
@@ -34,7 +34,7 @@ class RUMRetentionQuotasApi:
             params_map={
                 "scope_type": {
                     "required": True,
-                    "openapi_types": (RumRetentionQuotaScopeType,),
+                    "openapi_types": (RUMRetentionQuotaScopeType,),
                     "attribute": "scope_type",
                     "location": "path",
                 },
@@ -53,7 +53,7 @@ class RUMRetentionQuotasApi:
 
         self._get_rum_quota_config_endpoint = _Endpoint(
             settings={
-                "response_type": (RumRetentionQuotaConfigResponse,),
+                "response_type": (RUMRetentionQuotaConfigResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/config/retention-quota/{scope_type}/{scope_id}",
                 "operation_id": "get_rum_quota_config",
@@ -63,7 +63,7 @@ class RUMRetentionQuotasApi:
             params_map={
                 "scope_type": {
                     "required": True,
-                    "openapi_types": (RumRetentionQuotaScopeType,),
+                    "openapi_types": (RUMRetentionQuotaScopeType,),
                     "attribute": "scope_type",
                     "location": "path",
                 },
@@ -82,7 +82,7 @@ class RUMRetentionQuotasApi:
 
         self._upsert_rum_quota_config_endpoint = _Endpoint(
             settings={
-                "response_type": (RumRetentionQuotaConfigResponse,),
+                "response_type": (RUMRetentionQuotaConfigResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/config/retention-quota/{scope_type}/{scope_id}",
                 "operation_id": "upsert_rum_quota_config",
@@ -92,7 +92,7 @@ class RUMRetentionQuotasApi:
             params_map={
                 "scope_type": {
                     "required": True,
-                    "openapi_types": (RumRetentionQuotaScopeType,),
+                    "openapi_types": (RUMRetentionQuotaScopeType,),
                     "attribute": "scope_type",
                     "location": "path",
                 },
@@ -104,7 +104,7 @@ class RUMRetentionQuotasApi:
                 },
                 "body": {
                     "required": True,
-                    "openapi_types": (RumRetentionQuotaConfigUpdateRequest,),
+                    "openapi_types": (RUMRetentionQuotaConfigUpdateRequest,),
                     "location": "body",
                 },
             },
@@ -114,7 +114,7 @@ class RUMRetentionQuotasApi:
 
     def delete_rum_quota_config(
         self,
-        scope_type: RumRetentionQuotaScopeType,
+        scope_type: RUMRetentionQuotaScopeType,
         scope_id: str,
     ) -> None:
         """Delete a RUM retention quota configuration.
@@ -123,7 +123,7 @@ class RUMRetentionQuotasApi:
 
         :param scope_type: The type of scope the retention quota configuration applies to.
             ``application`` is the only supported scope type.
-        :type scope_type: RumRetentionQuotaScopeType
+        :type scope_type: RUMRetentionQuotaScopeType
         :param scope_id: The identifier of the scope the retention quota configuration applies to.
             For the ``application`` scope, this is the RUM application ID.
         :type scope_id: str
@@ -138,20 +138,20 @@ class RUMRetentionQuotasApi:
 
     def get_rum_quota_config(
         self,
-        scope_type: RumRetentionQuotaScopeType,
+        scope_type: RUMRetentionQuotaScopeType,
         scope_id: str,
-    ) -> RumRetentionQuotaConfigResponse:
+    ) -> RUMRetentionQuotaConfigResponse:
         """Get a RUM retention quota configuration.
 
         Get the RUM retention quota configuration for a given scope.
 
         :param scope_type: The type of scope the retention quota configuration applies to.
             ``application`` is the only supported scope type.
-        :type scope_type: RumRetentionQuotaScopeType
+        :type scope_type: RUMRetentionQuotaScopeType
         :param scope_id: The identifier of the scope the retention quota configuration applies to.
             For the ``application`` scope, this is the RUM application ID.
         :type scope_id: str
-        :rtype: RumRetentionQuotaConfigResponse
+        :rtype: RUMRetentionQuotaConfigResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["scope_type"] = scope_type
@@ -162,10 +162,10 @@ class RUMRetentionQuotasApi:
 
     def upsert_rum_quota_config(
         self,
-        scope_type: RumRetentionQuotaScopeType,
+        scope_type: RUMRetentionQuotaScopeType,
         scope_id: str,
-        body: RumRetentionQuotaConfigUpdateRequest,
-    ) -> RumRetentionQuotaConfigResponse:
+        body: RUMRetentionQuotaConfigUpdateRequest,
+    ) -> RUMRetentionQuotaConfigResponse:
         """Create or update a RUM retention quota config.
 
         Create or update the RUM retention quota configuration for a given scope.
@@ -173,13 +173,13 @@ class RUMRetentionQuotasApi:
 
         :param scope_type: The type of scope the retention quota configuration applies to.
             ``application`` is the only supported scope type.
-        :type scope_type: RumRetentionQuotaScopeType
+        :type scope_type: RUMRetentionQuotaScopeType
         :param scope_id: The identifier of the scope the retention quota configuration applies to.
             For the ``application`` scope, this is the RUM application ID.
         :type scope_id: str
         :param body: The definition of the RUM retention quota configuration to create or update.
-        :type body: RumRetentionQuotaConfigUpdateRequest
-        :rtype: RumRetentionQuotaConfigResponse
+        :type body: RUMRetentionQuotaConfigUpdateRequest
+        :rtype: RUMRetentionQuotaConfigResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["scope_type"] = scope_type

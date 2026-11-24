@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumRetentionQuotaWindowType(ModelSimple):
+class RUMRetentionQuotaWindowType(ModelSimple):
     """
     The window type over which the session limit is enforced.
 
@@ -23,7 +23,7 @@ class RumRetentionQuotaWindowType(ModelSimple):
     allowed_values = {
         "daily",
     }
-    DAILY: ClassVar["RumRetentionQuotaWindowType"]
+    DAILY: ClassVar["RUMRetentionQuotaWindowType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,4 @@ class RumRetentionQuotaWindowType(ModelSimple):
         }
 
 
-RumRetentionQuotaWindowType.DAILY = RumRetentionQuotaWindowType("daily")
+RUMRetentionQuotaWindowType.DAILY = RUMRetentionQuotaWindowType("daily")

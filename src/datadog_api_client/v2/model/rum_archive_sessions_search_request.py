@@ -12,28 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_archive_sessions_search_data import RumArchiveSessionsSearchData
+    from datadog_api_client.v2.model.rum_archive_sessions_search_data import RUMArchiveSessionsSearchData
 
 
-class RumArchiveSessionsSearchRequest(ModelNormal):
+class RUMArchiveSessionsSearchRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_archive_sessions_search_data import RumArchiveSessionsSearchData
+        from datadog_api_client.v2.model.rum_archive_sessions_search_data import RUMArchiveSessionsSearchData
 
         return {
-            "data": (RumArchiveSessionsSearchData,),
+            "data": (RUMArchiveSessionsSearchData,),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: RumArchiveSessionsSearchData, **kwargs):
+    def __init__(self_, data: RUMArchiveSessionsSearchData, **kwargs):
         """
         JSON:API document.
 
         :param data: JSON:API resource.
-        :type data: RumArchiveSessionsSearchData
+        :type data: RUMArchiveSessionsSearchData
         """
         super().__init__(kwargs)
 

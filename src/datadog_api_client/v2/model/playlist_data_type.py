@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class PlaylistDataType(ModelSimple):
     """
-    Rum replay playlist resource type.
+    RUM replay playlist resource type.
 
     :param value: If omitted defaults to "rum_replay_playlist". Must be one of ["rum_replay_playlist"].
     :type value: str

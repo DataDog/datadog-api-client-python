@@ -4,7 +4,7 @@ Query users returns "Successful response with user data" response
 
 from os import environ
 from datadog_api_client import ApiClient, Configuration
-from datadog_api_client.v2.api.rum_audience_management_api import RumAudienceManagementApi
+from datadog_api_client.v2.api.rum_audience_management_api import RUMAudienceManagementApi
 from datadog_api_client.v2.model.query_users_request import QueryUsersRequest
 from datadog_api_client.v2.model.query_users_request_data import QueryUsersRequestData
 from datadog_api_client.v2.model.query_users_request_data_attributes import QueryUsersRequestDataAttributes
@@ -41,7 +41,7 @@ configuration = Configuration()
 configuration.access_token = environ["DD_BEARER_TOKEN"]
 configuration.unstable_operations["query_users"] = True
 with ApiClient(configuration) as api_client:
-    api_instance = RumAudienceManagementApi(api_client)
+    api_instance = RUMAudienceManagementApi(api_client)
     response = api_instance.query_users(body=body)
 
     print(response)

@@ -111,26 +111,26 @@ from datadog_api_client.v2.api.processes_api import ProcessesApi
 from datadog_api_client.v2.api.product_analytics_api import ProductAnalyticsApi
 from datadog_api_client.v2.api.product_catalog_api import ProductCatalogApi
 from datadog_api_client.v2.api.rum_api import RUMApi
+from datadog_api_client.v2.api.rum_audience_management_api import RUMAudienceManagementApi
 from datadog_api_client.v2.api.rum_config_api import RUMConfigApi
 from datadog_api_client.v2.api.rum_insights_api import RUMInsightsApi
 from datadog_api_client.v2.api.rum_managed_archives_api import RUMManagedArchivesApi
+from datadog_api_client.v2.api.rum_metrics_api import RUMMetricsApi
 from datadog_api_client.v2.api.rum_operations_api import RUMOperationsApi
 from datadog_api_client.v2.api.rum_recovery_api import RUMRecoveryApi
 from datadog_api_client.v2.api.rum_remote_config_api import RUMRemoteConfigApi
+from datadog_api_client.v2.api.rum_replay_heatmaps_api import RUMReplayHeatmapsApi
+from datadog_api_client.v2.api.rum_replay_playlists_api import RUMReplayPlaylistsApi
+from datadog_api_client.v2.api.rum_replay_sessions_api import RUMReplaySessionsApi
+from datadog_api_client.v2.api.rum_replay_viewership_api import RUMReplayViewershipApi
+from datadog_api_client.v2.api.rum_retention_filters_api import RUMRetentionFiltersApi
 from datadog_api_client.v2.api.rum_retention_quotas_api import RUMRetentionQuotasApi
+from datadog_api_client.v2.api.rum_teams_ownership_api import RUMTeamsOwnershipApi
 from datadog_api_client.v2.api.reference_tables_api import ReferenceTablesApi
 from datadog_api_client.v2.api.report_schedules_api import ReportSchedulesApi
 from datadog_api_client.v2.api.reporting_and_sharing_api import ReportingAndSharingApi
 from datadog_api_client.v2.api.restriction_policies_api import RestrictionPoliciesApi
 from datadog_api_client.v2.api.roles_api import RolesApi
-from datadog_api_client.v2.api.rum_audience_management_api import RumAudienceManagementApi
-from datadog_api_client.v2.api.rum_metrics_api import RumMetricsApi
-from datadog_api_client.v2.api.rum_replay_heatmaps_api import RumReplayHeatmapsApi
-from datadog_api_client.v2.api.rum_replay_playlists_api import RumReplayPlaylistsApi
-from datadog_api_client.v2.api.rum_replay_sessions_api import RumReplaySessionsApi
-from datadog_api_client.v2.api.rum_replay_viewership_api import RumReplayViewershipApi
-from datadog_api_client.v2.api.rum_retention_filters_api import RumRetentionFiltersApi
-from datadog_api_client.v2.api.rum_teams_ownership_api import RumTeamsOwnershipApi
 from datadog_api_client.v2.api.scorecards_api import ScorecardsApi
 from datadog_api_client.v2.api.seats_api import SeatsApi
 from datadog_api_client.v2.api.security_monitoring_api import SecurityMonitoringApi
@@ -280,26 +280,26 @@ __all__ = [
     "ProductAnalyticsApi",
     "ProductCatalogApi",
     "RUMApi",
+    "RUMAudienceManagementApi",
     "RUMConfigApi",
     "RUMInsightsApi",
     "RUMManagedArchivesApi",
+    "RUMMetricsApi",
     "RUMOperationsApi",
     "RUMRecoveryApi",
     "RUMRemoteConfigApi",
+    "RUMReplayHeatmapsApi",
+    "RUMReplayPlaylistsApi",
+    "RUMReplaySessionsApi",
+    "RUMReplayViewershipApi",
+    "RUMRetentionFiltersApi",
     "RUMRetentionQuotasApi",
+    "RUMTeamsOwnershipApi",
     "ReferenceTablesApi",
     "ReportSchedulesApi",
     "ReportingAndSharingApi",
     "RestrictionPoliciesApi",
     "RolesApi",
-    "RumAudienceManagementApi",
-    "RumMetricsApi",
-    "RumReplayHeatmapsApi",
-    "RumReplayPlaylistsApi",
-    "RumReplaySessionsApi",
-    "RumReplayViewershipApi",
-    "RumRetentionFiltersApi",
-    "RumTeamsOwnershipApi",
     "ScorecardsApi",
     "SeatsApi",
     "SecurityMonitoringApi",

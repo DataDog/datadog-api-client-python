@@ -1,14 +1,14 @@
 {
-  "api": "RumRetentionFilters",
+  "api": "RUMRetentionFilters",
   "expected_status": 200,
-  "feature": "Rum Retention Filters",
-  "id": "v2/Rum Retention Filters/Order RUM retention filters returns \"Ordered\" response",
+  "feature": "RUM Retention Filters",
+  "id": "v2/RUM Retention Filters/Order RUM retention filters returns \"Ordered\" response",
   "operation_id": "OrderRetentionFilters",
   "request": {
     "body": {
       "schema": {
         "format": null,
-        "ref": "RumRetentionFiltersOrderRequest",
+        "ref": "RUMRetentionFiltersOrderRequest",
         "type": "object"
       },
       "source": "inline",

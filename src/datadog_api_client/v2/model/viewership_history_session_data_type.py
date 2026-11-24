@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class ViewershipHistorySessionDataType(ModelSimple):
     """
-    Rum replay session resource type.
+    RUM replay session resource type.
 
     :param value: If omitted defaults to "rum_replay_session". Must be one of ["rum_replay_session"].
     :type value: str

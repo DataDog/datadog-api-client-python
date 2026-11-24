@@ -14,28 +14,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_metric_response_data import RumMetricResponseData
+    from datadog_api_client.v2.model.rum_metric_response_data import RUMMetricResponseData
 
 
-class RumMetricsResponse(ModelNormal):
+class RUMMetricsResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_metric_response_data import RumMetricResponseData
+        from datadog_api_client.v2.model.rum_metric_response_data import RUMMetricResponseData
 
         return {
-            "data": ([RumMetricResponseData],),
+            "data": ([RUMMetricResponseData],),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: Union[List[RumMetricResponseData], UnsetType] = unset, **kwargs):
+    def __init__(self_, data: Union[List[RUMMetricResponseData], UnsetType] = unset, **kwargs):
         """
         All the available RUM-based metric objects.
 
         :param data: A list of RUM-based metric objects.
-        :type data: [RumMetricResponseData], optional
+        :type data: [RUMMetricResponseData], optional
         """
         if data is not unset:
             kwargs["data"] = data

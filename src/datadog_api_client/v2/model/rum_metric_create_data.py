@@ -12,11 +12,11 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_metric_create_attributes import RumMetricCreateAttributes
-    from datadog_api_client.v2.model.rum_metric_type import RumMetricType
+    from datadog_api_client.v2.model.rum_metric_create_attributes import RUMMetricCreateAttributes
+    from datadog_api_client.v2.model.rum_metric_type import RUMMetricType
 
 
-class RumMetricCreateData(ModelNormal):
+class RUMMetricCreateData(ModelNormal):
     validations = {
         "id": {
             "max_length": 200,
@@ -25,13 +25,13 @@ class RumMetricCreateData(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_metric_create_attributes import RumMetricCreateAttributes
-        from datadog_api_client.v2.model.rum_metric_type import RumMetricType
+        from datadog_api_client.v2.model.rum_metric_create_attributes import RUMMetricCreateAttributes
+        from datadog_api_client.v2.model.rum_metric_type import RUMMetricType
 
         return {
-            "attributes": (RumMetricCreateAttributes,),
+            "attributes": (RUMMetricCreateAttributes,),
             "id": (str,),
-            "type": (RumMetricType,),
+            "type": (RUMMetricType,),
         }
 
     attribute_map = {
@@ -40,12 +40,12 @@ class RumMetricCreateData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: RumMetricCreateAttributes, id: str, type: RumMetricType, **kwargs):
+    def __init__(self_, attributes: RUMMetricCreateAttributes, id: str, type: RUMMetricType, **kwargs):
         """
         The new RUM-based metric properties.
 
         :param attributes: The object describing the Datadog RUM-based metric to create.
-        :type attributes: RumMetricCreateAttributes
+        :type attributes: RUMMetricCreateAttributes
 
         :param id: The name of the RUM-based metric.
             On creation, it must be 1 to 200 characters long, contain only ASCII letters, digits, underscores, and periods, start with a letter, and not start with ``rum.measure`` or ``rum.investigate``.
@@ -53,7 +53,7 @@ class RumMetricCreateData(ModelNormal):
         :type id: str
 
         :param type: The type of the resource. The value must be ``rum_metrics``.
-        :type type: RumMetricType
+        :type type: RUMMetricType
         """
         super().__init__(kwargs)
 

@@ -15,20 +15,20 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_recovery_session_status import RumRecoverySessionStatus
+    from datadog_api_client.v2.model.rum_recovery_session_status import RUMRecoverySessionStatus
 
 
-class RumArchiveSessionRecoveryStatus(ModelNormal):
+class RUMArchiveSessionRecoveryStatus(ModelNormal):
     _nullable = True
 
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_recovery_session_status import RumRecoverySessionStatus
+        from datadog_api_client.v2.model.rum_recovery_session_status import RUMRecoverySessionStatus
 
         return {
             "recovered_at": (datetime,),
             "request_id": (str,),
-            "status": (RumRecoverySessionStatus,),
+            "status": (RUMRecoverySessionStatus,),
         }
 
     attribute_map = {
@@ -39,7 +39,7 @@ class RumArchiveSessionRecoveryStatus(ModelNormal):
 
     def __init__(
         self_,
-        status: RumRecoverySessionStatus,
+        status: RUMRecoverySessionStatus,
         recovered_at: Union[datetime, UnsetType] = unset,
         request_id: Union[str, UnsetType] = unset,
         **kwargs,
@@ -54,7 +54,7 @@ class RumArchiveSessionRecoveryStatus(ModelNormal):
         :type request_id: str, optional
 
         :param status: Session availability or recovery state. ``RECOVERED`` indicates that the session is ready to query.
-        :type status: RumRecoverySessionStatus
+        :type status: RUMRecoverySessionStatus
         """
         if recovered_at is not unset:
             kwargs["recovered_at"] = recovered_at

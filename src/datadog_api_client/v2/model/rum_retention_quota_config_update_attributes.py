@@ -14,19 +14,19 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_retention_quota_custom_config import RumRetentionQuotaCustomConfig
-    from datadog_api_client.v2.model.rum_retention_quota_mode import RumRetentionQuotaMode
+    from datadog_api_client.v2.model.rum_retention_quota_custom_config import RUMRetentionQuotaCustomConfig
+    from datadog_api_client.v2.model.rum_retention_quota_mode import RUMRetentionQuotaMode
 
 
-class RumRetentionQuotaConfigUpdateAttributes(ModelNormal):
+class RUMRetentionQuotaConfigUpdateAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_retention_quota_custom_config import RumRetentionQuotaCustomConfig
-        from datadog_api_client.v2.model.rum_retention_quota_mode import RumRetentionQuotaMode
+        from datadog_api_client.v2.model.rum_retention_quota_custom_config import RUMRetentionQuotaCustomConfig
+        from datadog_api_client.v2.model.rum_retention_quota_mode import RUMRetentionQuotaMode
 
         return {
-            "custom": (RumRetentionQuotaCustomConfig,),
-            "mode": (RumRetentionQuotaMode,),
+            "custom": (RUMRetentionQuotaCustomConfig,),
+            "mode": (RUMRetentionQuotaMode,),
         }
 
     attribute_map = {
@@ -35,17 +35,17 @@ class RumRetentionQuotaConfigUpdateAttributes(ModelNormal):
     }
 
     def __init__(
-        self_, mode: RumRetentionQuotaMode, custom: Union[RumRetentionQuotaCustomConfig, UnsetType] = unset, **kwargs
+        self_, mode: RUMRetentionQuotaMode, custom: Union[RUMRetentionQuotaCustomConfig, UnsetType] = unset, **kwargs
     ):
         """
         The RUM retention quota configuration properties to create or update.
 
         :param custom: The configuration used when ``mode`` is ``custom``.
-        :type custom: RumRetentionQuotaCustomConfig, optional
+        :type custom: RUMRetentionQuotaCustomConfig, optional
 
         :param mode: The retention quota mode. ``custom`` enforces a fixed session limit.
             ``custom`` is the only supported mode.
-        :type mode: RumRetentionQuotaMode
+        :type mode: RUMRetentionQuotaMode
         """
         if custom is not unset:
             kwargs["custom"] = custom

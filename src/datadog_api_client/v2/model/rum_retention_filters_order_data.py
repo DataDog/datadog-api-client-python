@@ -12,17 +12,17 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_retention_filter_type import RumRetentionFilterType
+    from datadog_api_client.v2.model.rum_retention_filter_type import RUMRetentionFilterType
 
 
-class RumRetentionFiltersOrderData(ModelNormal):
+class RUMRetentionFiltersOrderData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_retention_filter_type import RumRetentionFilterType
+        from datadog_api_client.v2.model.rum_retention_filter_type import RUMRetentionFilterType
 
         return {
             "id": (str,),
-            "type": (RumRetentionFilterType,),
+            "type": (RUMRetentionFilterType,),
         }
 
     attribute_map = {
@@ -30,7 +30,7 @@ class RumRetentionFiltersOrderData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, id: str, type: RumRetentionFilterType, **kwargs):
+    def __init__(self_, id: str, type: RUMRetentionFilterType, **kwargs):
         """
         The RUM retention filter data for ordering.
 
@@ -38,7 +38,7 @@ class RumRetentionFiltersOrderData(ModelNormal):
         :type id: str
 
         :param type: The type of the resource. The value should always be retention_filters.
-        :type type: RumRetentionFilterType
+        :type type: RUMRetentionFilterType
         """
         super().__init__(kwargs)
 

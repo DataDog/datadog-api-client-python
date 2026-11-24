@@ -1435,7 +1435,7 @@
   },
   {
     "key": "rum_metric",
-    "operationId": "CreateRumMetric",
+    "operationId": "CreateRUMMetric",
     "parameters": [
       {
         "name": "body",
@@ -1443,7 +1443,7 @@
       }
     ],
     "step": "there is a valid \"rum_metric\" in the system",
-    "tag": "Rum Metrics"
+    "tag": "RUM Metrics"
   },
   {
     "key": "teams_ownership_mapping",
@@ -1455,7 +1455,7 @@
       }
     ],
     "step": "there is a valid \"teams_ownership_mapping\" in the system",
-    "tag": "Rum Teams Ownership"
+    "tag": "RUM Teams Ownership"
   },
   {
     "key": "create_scorecard_rule",

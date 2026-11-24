@@ -1,9 +1,9 @@
 {
-  "api": "RumMetrics",
+  "api": "RUMMetrics",
   "expected_status": 200,
-  "feature": "Rum Metrics",
-  "id": "v2/Rum Metrics/Get all RUM-based metrics returns \"OK\" response",
-  "operation_id": "ListRumMetrics",
+  "feature": "RUM Metrics",
+  "id": "v2/RUM Metrics/Get all RUM-based metrics returns \"OK\" response",
+  "operation_id": "ListRUMMetrics",
   "request": {
     "body": null,
     "content_type": null,

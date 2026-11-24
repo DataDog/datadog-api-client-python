@@ -1,12 +1,12 @@
 @endpoint(rum-replay-heatmaps) @endpoint(rum-replay-heatmaps-v2)
-Feature: Rum Replay Heatmaps
+Feature: RUM Replay Heatmaps
   Manage heatmap snapshots for RUM replay sessions. Create, update, delete,
   and retrieve snapshots to visualize user interactions on specific views.
 
   Background:
     Given a valid "apiKeyAuth" key in the system
     And a valid "appKeyAuth" key in the system
-    And an instance of "RumReplayHeatmaps" API
+    And an instance of "RUMReplayHeatmaps" API
 
   @generated @skip @team:ddoghq/session-replay
   Scenario: Create replay heatmap snapshot returns "Created" response

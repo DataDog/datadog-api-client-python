@@ -52,7 +52,7 @@ class PlaylistData(ModelNormal):
         :param id: Unique identifier of the playlist.
         :type id: str, optional
 
-        :param type: Rum replay playlist resource type.
+        :param type: RUM replay playlist resource type.
         :type type: PlaylistDataType
         """
         if attributes is not unset:

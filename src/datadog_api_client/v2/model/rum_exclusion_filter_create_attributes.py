@@ -14,17 +14,17 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_exclusion_filter_event_type import RumExclusionFilterEventType
+    from datadog_api_client.v2.model.rum_exclusion_filter_event_type import RUMExclusionFilterEventType
 
 
-class RumExclusionFilterCreateAttributes(ModelNormal):
+class RUMExclusionFilterCreateAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_exclusion_filter_event_type import RumExclusionFilterEventType
+        from datadog_api_client.v2.model.rum_exclusion_filter_event_type import RUMExclusionFilterEventType
 
         return {
             "enabled": (bool,),
-            "event_type": (RumExclusionFilterEventType,),
+            "event_type": (RUMExclusionFilterEventType,),
             "name": (str,),
             "query": (str,),
         }
@@ -40,7 +40,7 @@ class RumExclusionFilterCreateAttributes(ModelNormal):
         self_,
         name: str,
         enabled: Union[bool, UnsetType] = unset,
-        event_type: Union[RumExclusionFilterEventType, UnsetType] = unset,
+        event_type: Union[RUMExclusionFilterEventType, UnsetType] = unset,
         query: Union[str, UnsetType] = unset,
         **kwargs,
     ):
@@ -51,7 +51,7 @@ class RumExclusionFilterCreateAttributes(ModelNormal):
         :type enabled: bool, optional
 
         :param event_type: The type of RUM events to filter on.
-        :type event_type: RumExclusionFilterEventType, optional
+        :type event_type: RUMExclusionFilterEventType, optional
 
         :param name: The name of the exclusion filter.
         :type name: str

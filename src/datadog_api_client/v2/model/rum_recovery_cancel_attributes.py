@@ -12,28 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_recovery_cancel_status import RumRecoveryCancelStatus
+    from datadog_api_client.v2.model.rum_recovery_cancel_status import RUMRecoveryCancelStatus
 
 
-class RumRecoveryCancelAttributes(ModelNormal):
+class RUMRecoveryCancelAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_recovery_cancel_status import RumRecoveryCancelStatus
+        from datadog_api_client.v2.model.rum_recovery_cancel_status import RUMRecoveryCancelStatus
 
         return {
-            "status": (RumRecoveryCancelStatus,),
+            "status": (RUMRecoveryCancelStatus,),
         }
 
     attribute_map = {
         "status": "status",
     }
 
-    def __init__(self_, status: RumRecoveryCancelStatus, **kwargs):
+    def __init__(self_, status: RUMRecoveryCancelStatus, **kwargs):
         """
         Batch cancellation.
 
         :param status: Requested cancellation state.
-        :type status: RumRecoveryCancelStatus
+        :type status: RUMRecoveryCancelStatus
         """
         super().__init__(kwargs)
 

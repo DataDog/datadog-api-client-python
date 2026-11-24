@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumRetentionFilterTrack(ModelSimple):
+class RUMRetentionFilterTrack(ModelSimple):
     """
     The product whose events the retention filter applies to.
 
@@ -24,8 +24,8 @@ class RumRetentionFilterTrack(ModelSimple):
         "rum",
         "product_analytics",
     }
-    RUM: ClassVar["RumRetentionFilterTrack"]
-    PRODUCT_ANALYTICS: ClassVar["RumRetentionFilterTrack"]
+    RUM: ClassVar["RUMRetentionFilterTrack"]
+    PRODUCT_ANALYTICS: ClassVar["RUMRetentionFilterTrack"]
 
     @cached_property
     def openapi_types(_):
@@ -34,5 +34,5 @@ class RumRetentionFilterTrack(ModelSimple):
         }
 
 
-RumRetentionFilterTrack.RUM = RumRetentionFilterTrack("rum")
-RumRetentionFilterTrack.PRODUCT_ANALYTICS = RumRetentionFilterTrack("product_analytics")
+RUMRetentionFilterTrack.RUM = RUMRetentionFilterTrack("rum")
+RUMRetentionFilterTrack.PRODUCT_ANALYTICS = RUMRetentionFilterTrack("product_analytics")

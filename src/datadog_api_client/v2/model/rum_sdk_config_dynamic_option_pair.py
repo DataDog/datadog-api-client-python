@@ -12,17 +12,17 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_sdk_config_dynamic_option import RumSdkConfigDynamicOption
+    from datadog_api_client.v2.model.rum_sdk_config_dynamic_option import RUMSdkConfigDynamicOption
 
 
-class RumSdkConfigDynamicOptionPair(ModelNormal):
+class RUMSdkConfigDynamicOptionPair(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_sdk_config_dynamic_option import RumSdkConfigDynamicOption
+        from datadog_api_client.v2.model.rum_sdk_config_dynamic_option import RUMSdkConfigDynamicOption
 
         return {
             "key": (str,),
-            "value": (RumSdkConfigDynamicOption,),
+            "value": (RUMSdkConfigDynamicOption,),
         }
 
     attribute_map = {
@@ -30,7 +30,7 @@ class RumSdkConfigDynamicOptionPair(ModelNormal):
         "value": "value",
     }
 
-    def __init__(self_, key: str, value: RumSdkConfigDynamicOption, **kwargs):
+    def __init__(self_, key: str, value: RUMSdkConfigDynamicOption, **kwargs):
         """
         A key-value pair where the value is a dynamic configuration option.
 
@@ -38,7 +38,7 @@ class RumSdkConfigDynamicOptionPair(ModelNormal):
         :type key: str
 
         :param value: A dynamic configuration option that extracts a value at runtime using a specified strategy.
-        :type value: RumSdkConfigDynamicOption
+        :type value: RUMSdkConfigDynamicOption
         """
         super().__init__(kwargs)
 

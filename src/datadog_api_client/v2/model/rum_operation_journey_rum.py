@@ -16,7 +16,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.rum_operation_journey_step import RUMOperationJourneyStep
 
 
-class RUMOperationJourneyRum(ModelNormal):
+class RUMOperationJourneyRUM(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.rum_operation_journey_step import RUMOperationJourneyStep

@@ -14,22 +14,22 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_metric_update_compute import RumMetricUpdateCompute
-    from datadog_api_client.v2.model.rum_metric_filter import RumMetricFilter
-    from datadog_api_client.v2.model.rum_metric_group_by import RumMetricGroupBy
+    from datadog_api_client.v2.model.rum_metric_update_compute import RUMMetricUpdateCompute
+    from datadog_api_client.v2.model.rum_metric_filter import RUMMetricFilter
+    from datadog_api_client.v2.model.rum_metric_group_by import RUMMetricGroupBy
 
 
-class RumMetricUpdateAttributes(ModelNormal):
+class RUMMetricUpdateAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_metric_update_compute import RumMetricUpdateCompute
-        from datadog_api_client.v2.model.rum_metric_filter import RumMetricFilter
-        from datadog_api_client.v2.model.rum_metric_group_by import RumMetricGroupBy
+        from datadog_api_client.v2.model.rum_metric_update_compute import RUMMetricUpdateCompute
+        from datadog_api_client.v2.model.rum_metric_filter import RUMMetricFilter
+        from datadog_api_client.v2.model.rum_metric_group_by import RUMMetricGroupBy
 
         return {
-            "compute": (RumMetricUpdateCompute,),
-            "filter": (RumMetricFilter,),
-            "group_by": ([RumMetricGroupBy],),
+            "compute": (RUMMetricUpdateCompute,),
+            "filter": (RUMMetricFilter,),
+            "group_by": ([RUMMetricGroupBy],),
         }
 
     attribute_map = {
@@ -40,22 +40,22 @@ class RumMetricUpdateAttributes(ModelNormal):
 
     def __init__(
         self_,
-        compute: Union[RumMetricUpdateCompute, UnsetType] = unset,
-        filter: Union[RumMetricFilter, UnsetType] = unset,
-        group_by: Union[List[RumMetricGroupBy], UnsetType] = unset,
+        compute: Union[RUMMetricUpdateCompute, UnsetType] = unset,
+        filter: Union[RUMMetricFilter, UnsetType] = unset,
+        group_by: Union[List[RUMMetricGroupBy], UnsetType] = unset,
         **kwargs,
     ):
         """
         The RUM-based metric properties to update. Omitted properties keep their current value.
 
         :param compute: The compute rule properties that can be updated. Only valid for metrics whose ``aggregation_type`` is ``distribution``.
-        :type compute: RumMetricUpdateCompute, optional
+        :type compute: RUMMetricUpdateCompute, optional
 
         :param filter: The RUM-based metric filter. Events matching this filter are aggregated in this metric. The ``event_type`` filter is added automatically.
-        :type filter: RumMetricFilter, optional
+        :type filter: RUMMetricFilter, optional
 
         :param group_by: The rules to group the metric by. When provided, replaces all the existing group by rules.
-        :type group_by: [RumMetricGroupBy], optional
+        :type group_by: [RUMMetricGroupBy], optional
         """
         if compute is not unset:
             kwargs["compute"] = compute

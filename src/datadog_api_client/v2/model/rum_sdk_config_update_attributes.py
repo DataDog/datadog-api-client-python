@@ -12,28 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_sdk_config_rum_update_attributes import RumSdkConfigRumUpdateAttributes
+    from datadog_api_client.v2.model.rum_sdk_config_rum_update_attributes import RUMSdkConfigRUMUpdateAttributes
 
 
-class RumSdkConfigUpdateAttributes(ModelNormal):
+class RUMSdkConfigUpdateAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_sdk_config_rum_update_attributes import RumSdkConfigRumUpdateAttributes
+        from datadog_api_client.v2.model.rum_sdk_config_rum_update_attributes import RUMSdkConfigRUMUpdateAttributes
 
         return {
-            "rum": (RumSdkConfigRumUpdateAttributes,),
+            "rum": (RUMSdkConfigRUMUpdateAttributes,),
         }
 
     attribute_map = {
         "rum": "rum",
     }
 
-    def __init__(self_, rum: RumSdkConfigRumUpdateAttributes, **kwargs):
+    def __init__(self_, rum: RUMSdkConfigRUMUpdateAttributes, **kwargs):
         """
         Attributes of the RUM SDK configuration to update.
 
         :param rum: The RUM SDK settings to apply when updating a configuration.
-        :type rum: RumSdkConfigRumUpdateAttributes
+        :type rum: RUMSdkConfigRUMUpdateAttributes
         """
         super().__init__(kwargs)
 

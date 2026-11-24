@@ -12,28 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_sdk_config_rum_attributes import RumSdkConfigRumAttributes
+    from datadog_api_client.v2.model.rum_sdk_config_rum_attributes import RUMSdkConfigRUMAttributes
 
 
-class RumSdkConfigAttributes(ModelNormal):
+class RUMSdkConfigAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_sdk_config_rum_attributes import RumSdkConfigRumAttributes
+        from datadog_api_client.v2.model.rum_sdk_config_rum_attributes import RUMSdkConfigRUMAttributes
 
         return {
-            "rum": (RumSdkConfigRumAttributes,),
+            "rum": (RUMSdkConfigRUMAttributes,),
         }
 
     attribute_map = {
         "rum": "rum",
     }
 
-    def __init__(self_, rum: RumSdkConfigRumAttributes, **kwargs):
+    def __init__(self_, rum: RUMSdkConfigRUMAttributes, **kwargs):
         """
         Attributes of the RUM SDK configuration.
 
         :param rum: The RUM SDK settings for a configuration.
-        :type rum: RumSdkConfigRumAttributes
+        :type rum: RUMSdkConfigRUMAttributes
         """
         super().__init__(kwargs)
 

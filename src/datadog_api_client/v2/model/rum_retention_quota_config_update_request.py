@@ -12,28 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_retention_quota_config_update_data import RumRetentionQuotaConfigUpdateData
+    from datadog_api_client.v2.model.rum_retention_quota_config_update_data import RUMRetentionQuotaConfigUpdateData
 
 
-class RumRetentionQuotaConfigUpdateRequest(ModelNormal):
+class RUMRetentionQuotaConfigUpdateRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_retention_quota_config_update_data import RumRetentionQuotaConfigUpdateData
+        from datadog_api_client.v2.model.rum_retention_quota_config_update_data import RUMRetentionQuotaConfigUpdateData
 
         return {
-            "data": (RumRetentionQuotaConfigUpdateData,),
+            "data": (RUMRetentionQuotaConfigUpdateData,),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: RumRetentionQuotaConfigUpdateData, **kwargs):
+    def __init__(self_, data: RUMRetentionQuotaConfigUpdateData, **kwargs):
         """
         The body of a request to create or update a RUM retention quota configuration.
 
         :param data: The RUM retention quota configuration to create or update.
-        :type data: RumRetentionQuotaConfigUpdateData
+        :type data: RUMRetentionQuotaConfigUpdateData
         """
         super().__init__(kwargs)
 

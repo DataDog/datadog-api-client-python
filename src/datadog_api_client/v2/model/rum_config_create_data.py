@@ -12,19 +12,19 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_config_create_attributes import RumConfigCreateAttributes
-    from datadog_api_client.v2.model.rum_config_type import RumConfigType
+    from datadog_api_client.v2.model.rum_config_create_attributes import RUMConfigCreateAttributes
+    from datadog_api_client.v2.model.rum_config_type import RUMConfigType
 
 
-class RumConfigCreateData(ModelNormal):
+class RUMConfigCreateData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_config_create_attributes import RumConfigCreateAttributes
-        from datadog_api_client.v2.model.rum_config_type import RumConfigType
+        from datadog_api_client.v2.model.rum_config_create_attributes import RUMConfigCreateAttributes
+        from datadog_api_client.v2.model.rum_config_type import RUMConfigType
 
         return {
-            "attributes": (RumConfigCreateAttributes,),
-            "type": (RumConfigType,),
+            "attributes": (RUMConfigCreateAttributes,),
+            "type": (RUMConfigType,),
         }
 
     attribute_map = {
@@ -32,15 +32,15 @@ class RumConfigCreateData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: RumConfigCreateAttributes, type: RumConfigType, **kwargs):
+    def __init__(self_, attributes: RUMConfigCreateAttributes, type: RUMConfigType, **kwargs):
         """
         Object describing the RUM configuration to create.
 
         :param attributes: Attributes of the RUM configuration to create.
-        :type attributes: RumConfigCreateAttributes
+        :type attributes: RUMConfigCreateAttributes
 
         :param type: The type of the resource. The value should always be ``rum_config``.
-        :type type: RumConfigType
+        :type type: RUMConfigType
         """
         super().__init__(kwargs)
 

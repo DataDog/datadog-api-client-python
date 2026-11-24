@@ -12,21 +12,21 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_exclusion_filter_create_attributes import RumExclusionFilterCreateAttributes
-    from datadog_api_client.v2.model.rum_exclusion_filter_type import RumExclusionFilterType
+    from datadog_api_client.v2.model.rum_exclusion_filter_create_attributes import RUMExclusionFilterCreateAttributes
+    from datadog_api_client.v2.model.rum_exclusion_filter_type import RUMExclusionFilterType
 
 
-class RumExclusionFilterCreateData(ModelNormal):
+class RUMExclusionFilterCreateData(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.rum_exclusion_filter_create_attributes import (
-            RumExclusionFilterCreateAttributes,
+            RUMExclusionFilterCreateAttributes,
         )
-        from datadog_api_client.v2.model.rum_exclusion_filter_type import RumExclusionFilterType
+        from datadog_api_client.v2.model.rum_exclusion_filter_type import RUMExclusionFilterType
 
         return {
-            "attributes": (RumExclusionFilterCreateAttributes,),
-            "type": (RumExclusionFilterType,),
+            "attributes": (RUMExclusionFilterCreateAttributes,),
+            "type": (RUMExclusionFilterType,),
         }
 
     attribute_map = {
@@ -34,15 +34,15 @@ class RumExclusionFilterCreateData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: RumExclusionFilterCreateAttributes, type: RumExclusionFilterType, **kwargs):
+    def __init__(self_, attributes: RUMExclusionFilterCreateAttributes, type: RUMExclusionFilterType, **kwargs):
         """
         The new exclusion filter properties to create.
 
         :param attributes: The attributes of an exclusion filter to create.
-        :type attributes: RumExclusionFilterCreateAttributes
+        :type attributes: RUMExclusionFilterCreateAttributes
 
         :param type: The resource type. The value must be ``exclusion_filters``.
-        :type type: RumExclusionFilterType
+        :type type: RUMExclusionFilterType
         """
         super().__init__(kwargs)
 

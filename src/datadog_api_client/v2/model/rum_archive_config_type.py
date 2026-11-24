@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumArchiveConfigType(ModelSimple):
+class RUMArchiveConfigType(ModelSimple):
     """
     JSON:API resource type.
 
@@ -23,7 +23,7 @@ class RumArchiveConfigType(ModelSimple):
     allowed_values = {
         "rum_archive_config",
     }
-    RUM_ARCHIVE_CONFIG: ClassVar["RumArchiveConfigType"]
+    RUM_ARCHIVE_CONFIG: ClassVar["RUMArchiveConfigType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,4 @@ class RumArchiveConfigType(ModelSimple):
         }
 
 
-RumArchiveConfigType.RUM_ARCHIVE_CONFIG = RumArchiveConfigType("rum_archive_config")
+RUMArchiveConfigType.RUM_ARCHIVE_CONFIG = RUMArchiveConfigType("rum_archive_config")

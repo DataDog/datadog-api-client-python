@@ -14,16 +14,16 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_recovery_count_attributes import RumRecoveryCountAttributes
+    from datadog_api_client.v2.model.rum_recovery_count_attributes import RUMRecoveryCountAttributes
 
 
-class RumRecoveryCountRequestData(ModelNormal):
+class RUMRecoveryCountRequestData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_recovery_count_attributes import RumRecoveryCountAttributes
+        from datadog_api_client.v2.model.rum_recovery_count_attributes import RUMRecoveryCountAttributes
 
         return {
-            "attributes": (RumRecoveryCountAttributes,),
+            "attributes": (RUMRecoveryCountAttributes,),
             "id": (str,),
             "type": (str,),
         }
@@ -36,7 +36,7 @@ class RumRecoveryCountRequestData(ModelNormal):
 
     def __init__(
         self_,
-        attributes: RumRecoveryCountAttributes,
+        attributes: RUMRecoveryCountAttributes,
         id: Union[str, UnsetType] = unset,
         type: Union[str, UnsetType] = unset,
         **kwargs,
@@ -45,7 +45,7 @@ class RumRecoveryCountRequestData(ModelNormal):
         JSON:API resource.
 
         :param attributes: Query for a recovery estimate. The range cannot exceed 180 days; from cannot be more than 4 years ago and to cannot be more than 1 hour in the future. Session availability depends on the configured archive retention.
-        :type attributes: RumRecoveryCountAttributes
+        :type attributes: RUMRecoveryCountAttributes
 
         :param id: Optional resource identifier.
         :type id: str, optional
