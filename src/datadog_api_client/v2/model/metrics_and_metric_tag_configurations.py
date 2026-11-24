@@ -40,10 +40,12 @@ class MetricsAndMetricTagConfigurations(ModelComposed):
         # loading
         from datadog_api_client.v2.model.metric import Metric
         from datadog_api_client.v2.model.metric_tag_configuration import MetricTagConfiguration
+        from datadog_api_client.v2.model.generated_metric import GeneratedMetric
 
         return {
             "oneOf": [
                 Metric,
                 MetricTagConfiguration,
+                GeneratedMetric,
             ],
         }
