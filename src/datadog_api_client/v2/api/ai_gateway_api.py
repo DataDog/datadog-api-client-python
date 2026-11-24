@@ -53,15 +53,15 @@ from datadog_api_client.v2.model.ai_gateway_provider_list_response import AiGate
 from datadog_api_client.v2.model.ai_gateway_provider_response import AiGatewayProviderResponse
 from datadog_api_client.v2.model.ai_gateway_provider_create_request import AiGatewayProviderCreateRequest
 from datadog_api_client.v2.model.ai_gateway_provider_update_request import AiGatewayProviderUpdateRequest
+from datadog_api_client.v2.model.ai_gateway_model_catalog_entry_response import AiGatewayModelCatalogEntryResponse
+from datadog_api_client.v2.model.ai_gateway_model_update_request import AiGatewayModelUpdateRequest
 from datadog_api_client.v2.model.ai_gateway_model_pricing_response import AiGatewayModelPricingResponse
 from datadog_api_client.v2.model.ai_gateway_model_pricing_request import AiGatewayModelPricingRequest
 from datadog_api_client.v2.model.ai_gateway_model_catalog_entry_list_response import (
     AiGatewayModelCatalogEntryListResponse,
 )
-from datadog_api_client.v2.model.ai_gateway_model_catalog_entry_response import AiGatewayModelCatalogEntryResponse
 from datadog_api_client.v2.model.ai_gateway_model_create_request import AiGatewayModelCreateRequest
 from datadog_api_client.v2.model.ai_gateway_models_bulk_create_request import AiGatewayModelsBulkCreateRequest
-from datadog_api_client.v2.model.ai_gateway_model_update_request import AiGatewayModelUpdateRequest
 from datadog_api_client.v2.model.ai_gateway_rate_limit_list_response import AiGatewayRateLimitListResponse
 from datadog_api_client.v2.model.ai_gateway_rate_limit_response import AiGatewayRateLimitResponse
 from datadog_api_client.v2.model.ai_gateway_rate_limit_create_request import AiGatewayRateLimitCreateRequest
@@ -356,6 +356,41 @@ class AIGatewayApi:
                     "openapi_types": (str,),
                     "attribute": "canonical",
                     "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
+            api_client=api_client,
+        )
+
+        self._delete_ai_gateway_model_by_canonical_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/providers/{provider_id}/model",
+                "operation_id": "delete_ai_gateway_model_by_canonical",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "provider_id": {
+                    "required": True,
+                    "validation": {
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "provider_id",
+                    "location": "path",
+                },
+                "canonical": {
+                    "required": True,
+                    "validation": {
+                        "max_length": 256,
+                    },
+                    "openapi_types": (str,),
+                    "attribute": "canonical",
+                    "location": "query",
                 },
             },
             headers_map={
@@ -1470,6 +1505,44 @@ class AIGatewayApi:
             api_client=api_client,
         )
 
+        self._update_ai_gateway_model_by_canonical_endpoint = _Endpoint(
+            settings={
+                "response_type": (AiGatewayModelCatalogEntryResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/providers/{provider_id}/model",
+                "operation_id": "update_ai_gateway_model_by_canonical",
+                "http_method": "PATCH",
+                "version": "v2",
+            },
+            params_map={
+                "provider_id": {
+                    "required": True,
+                    "validation": {
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "provider_id",
+                    "location": "path",
+                },
+                "canonical": {
+                    "required": True,
+                    "validation": {
+                        "max_length": 256,
+                    },
+                    "openapi_types": (str,),
+                    "attribute": "canonical",
+                    "location": "query",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (AiGatewayModelUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_ai_gateway_model_group_endpoint = _Endpoint(
             settings={
                 "response_type": (AiGatewayModelGroupResponse,),
@@ -1881,6 +1954,7 @@ class AIGatewayApi:
 
         Requires ``ai_gateway_config_write`` and provider Edit. Models and pricing inherit provider access.
         Delete a manually managed model catalog entry by its canonical model ID. Discovered entries are read-only.
+        A canonical ID that contains ``/`` can't be sent in the path; use the ``/api/v2/providers/{provider_id}/model`` endpoint with the ``canonical`` query parameter instead.
 
         :param provider_id: Provider ID.
         :type provider_id: int
@@ -1894,6 +1968,28 @@ class AIGatewayApi:
         kwargs["canonical"] = canonical
 
         return self._delete_ai_gateway_model_endpoint.call_with_http_info(**kwargs)
+
+    def delete_ai_gateway_model_by_canonical(
+        self,
+        provider_id: int,
+        canonical: str,
+    ) -> None:
+        """Delete a provider model by canonical ID.
+
+        Delete a manually managed model catalog entry, naming the model in the ``canonical`` query parameter. Discovered entries are read-only. Unlike the endpoint that takes the canonical ID in the path, this one accepts canonical IDs that contain ``/``. Requires ``ai_gateway_config_write`` and provider Edit. Models and pricing inherit provider access.
+
+        :param provider_id: Provider ID.
+        :type provider_id: int
+        :param canonical: Canonical model identifier. It can contain ``/`` , such as ``openai/gpt-4o``.
+        :type canonical: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["provider_id"] = provider_id
+
+        kwargs["canonical"] = canonical
+
+        return self._delete_ai_gateway_model_by_canonical_endpoint.call_with_http_info(**kwargs)
 
     def delete_ai_gateway_model_group(
         self,
@@ -2725,7 +2821,7 @@ class AIGatewayApi:
     ) -> AiGatewayModelCatalogEntryResponse:
         """Update a model for an AI Gateway provider.
 
-        Update a manually managed model catalog entry. Discovered entries are read-only. Requires ``ai_gateway_config_write`` and provider Edit. Models and pricing inherit provider access.
+        Update a manually managed model catalog entry. Discovered entries are read-only. A canonical ID that contains ``/`` can't be sent in the path; use the ``/api/v2/providers/{provider_id}/model`` endpoint with the ``canonical`` query parameter instead. Requires ``ai_gateway_config_write`` and provider Edit. Models and pricing inherit provider access.
 
         :param provider_id: Provider ID.
         :type provider_id: int
@@ -2742,6 +2838,32 @@ class AIGatewayApi:
         kwargs["body"] = body
 
         return self._update_ai_gateway_model_endpoint.call_with_http_info(**kwargs)
+
+    def update_ai_gateway_model_by_canonical(
+        self,
+        provider_id: int,
+        canonical: str,
+        body: AiGatewayModelUpdateRequest,
+    ) -> AiGatewayModelCatalogEntryResponse:
+        """Update a provider model by canonical ID.
+
+        Update a manually managed model catalog entry, naming the model in the ``canonical`` query parameter. Discovered entries are read-only. Unlike the endpoint that takes the canonical ID in the path, this one accepts canonical IDs that contain ``/``. Requires ``ai_gateway_config_write`` and provider Edit. Models and pricing inherit provider access.
+
+        :param provider_id: Provider ID.
+        :type provider_id: int
+        :param canonical: Canonical model identifier. It can contain ``/`` , such as ``openai/gpt-4o``.
+        :type canonical: str
+        :type body: AiGatewayModelUpdateRequest
+        :rtype: AiGatewayModelCatalogEntryResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["provider_id"] = provider_id
+
+        kwargs["canonical"] = canonical
+
+        kwargs["body"] = body
+
+        return self._update_ai_gateway_model_by_canonical_endpoint.call_with_http_info(**kwargs)
 
     def update_ai_gateway_model_group(
         self,

@@ -317,6 +317,33 @@ Feature: AI Gateway
     Then the response status is 404 Not Found
 
   @generated @skip @team:ddoghq/frontier-prd-gateway
+  Scenario: Delete a provider model by canonical ID returns "Bad Request" response
+    Given operation "DeleteAIGatewayModelByCanonical" enabled
+    And new "DeleteAIGatewayModelByCanonical" request
+    And request contains "provider_id" parameter from "REPLACE.ME"
+    And request contains "canonical" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/frontier-prd-gateway
+  Scenario: Delete a provider model by canonical ID returns "No Content" response
+    Given operation "DeleteAIGatewayModelByCanonical" enabled
+    And new "DeleteAIGatewayModelByCanonical" request
+    And request contains "provider_id" parameter from "REPLACE.ME"
+    And request contains "canonical" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:ddoghq/frontier-prd-gateway
+  Scenario: Delete a provider model by canonical ID returns "Not Found" response
+    Given operation "DeleteAIGatewayModelByCanonical" enabled
+    And new "DeleteAIGatewayModelByCanonical" request
+    And request contains "provider_id" parameter from "REPLACE.ME"
+    And request contains "canonical" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/frontier-prd-gateway
   Scenario: Delete an AI Gateway data capture override returns "Bad Request" response
     Given operation "DeleteAiGatewayDataCaptureOverride" enabled
     And new "DeleteAiGatewayDataCaptureOverride" request
@@ -1042,6 +1069,36 @@ Feature: AI Gateway
   Scenario: Update a model for an AI Gateway provider returns "OK" response
     Given operation "UpdateAiGatewayModel" enabled
     And new "UpdateAiGatewayModel" request
+    And request contains "provider_id" parameter from "REPLACE.ME"
+    And request contains "canonical" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"model_id_wire": "gpt-5.2-codex-20260801", "supported_operations": ["OPENAI_CHAT_COMPLETIONS"]}, "id": "101", "type": "model-catalog-entries"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/frontier-prd-gateway
+  Scenario: Update a provider model by canonical ID returns "Bad Request" response
+    Given operation "UpdateAIGatewayModelByCanonical" enabled
+    And new "UpdateAIGatewayModelByCanonical" request
+    And request contains "provider_id" parameter from "REPLACE.ME"
+    And request contains "canonical" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"model_id_wire": "gpt-5.2-codex-20260801", "supported_operations": ["OPENAI_CHAT_COMPLETIONS"]}, "id": "101", "type": "model-catalog-entries"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/frontier-prd-gateway
+  Scenario: Update a provider model by canonical ID returns "Not Found" response
+    Given operation "UpdateAIGatewayModelByCanonical" enabled
+    And new "UpdateAIGatewayModelByCanonical" request
+    And request contains "provider_id" parameter from "REPLACE.ME"
+    And request contains "canonical" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"model_id_wire": "gpt-5.2-codex-20260801", "supported_operations": ["OPENAI_CHAT_COMPLETIONS"]}, "id": "101", "type": "model-catalog-entries"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/frontier-prd-gateway
+  Scenario: Update a provider model by canonical ID returns "OK" response
+    Given operation "UpdateAIGatewayModelByCanonical" enabled
+    And new "UpdateAIGatewayModelByCanonical" request
     And request contains "provider_id" parameter from "REPLACE.ME"
     And request contains "canonical" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"model_id_wire": "gpt-5.2-codex-20260801", "supported_operations": ["OPENAI_CHAT_COMPLETIONS"]}, "id": "101", "type": "model-catalog-entries"}}

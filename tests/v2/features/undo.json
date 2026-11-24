@@ -3574,6 +3574,12 @@
       "type": "idempotent"
     }
   },
+  "DeleteAIGatewayModelByCanonical": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "DeleteAIGatewayModelPricingByCanonical": {
     "tag": "AI Gateway",
     "undo": {
@@ -10905,6 +10911,12 @@
   },
   "UnwatchCase": {
     "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateAIGatewayModelByCanonical": {
+    "tag": "AI Gateway",
     "undo": {
       "type": "idempotent"
     }
