@@ -3,13 +3,11 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import List, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
@@ -34,20 +32,17 @@ class AgentHealthIssuesResponse(ModelNormal):
         "meta": "meta",
     }
 
-    def __init__(
-        self_, data: List[AgentHealthIssueData], meta: Union[AgentHealthIssuesResponseMeta, UnsetType] = unset, **kwargs
-    ):
+    def __init__(self_, data: List[AgentHealthIssueData], meta: AgentHealthIssuesResponseMeta, **kwargs):
         """
         A response containing open Agent Health issues.
 
         :param data: The open Agent Health issues matching the request.
         :type data: [AgentHealthIssueData]
 
-        :param meta: Aggregate counts for the matching Agent Health issues. Present only when ``count_by=issue_type`` is requested.
-        :type meta: AgentHealthIssuesResponseMeta, optional
+        :param meta: Pagination metadata for the matching Agent Health issues. Always present. Includes per-issue-type counts only when ``count_by=issue_type`` is requested.
+        :type meta: AgentHealthIssuesResponseMeta
         """
-        if meta is not unset:
-            kwargs["meta"] = meta
         super().__init__(kwargs)
 
         self_.data = data
+        self_.meta = meta

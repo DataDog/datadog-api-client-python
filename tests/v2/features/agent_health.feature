@@ -12,10 +12,17 @@ Feature: Agent Health
     Given a valid "apiKeyAuth" key in the system
     And an instance of "AgentHealth" API
 
+  @generated @skip @team:ddoghq/fleet-remediation
+  Scenario: Get an Agent Health issue returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And new "GetAgentHealthIssue" request
+    And request contains "issue_id" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
   @skip @team:ddoghq/fleet-remediation
   Scenario: Get an Agent Health issue returns "Not Found" response
     Given a valid "appKeyAuth" key in the system
-    And operation "GetAgentHealthIssue" enabled
     And new "GetAgentHealthIssue" request
     And request contains "issue_id" parameter with value "does-not-exist"
     When the request is sent
@@ -24,7 +31,6 @@ Feature: Agent Health
   @generated @skip @team:ddoghq/fleet-remediation
   Scenario: Get an Agent Health issue returns "OK" response
     Given a valid "appKeyAuth" key in the system
-    And operation "GetAgentHealthIssue" enabled
     And new "GetAgentHealthIssue" request
     And request contains "issue_id" parameter from "REPLACE.ME"
     When the request is sent
@@ -33,7 +39,6 @@ Feature: Agent Health
   @skip @team:ddoghq/fleet-remediation
   Scenario: List Agent Health issues returns "Bad Request" response
     Given a valid "appKeyAuth" key in the system
-    And operation "ListAgentHealthIssues" enabled
     And new "ListAgentHealthIssues" request
     And request contains "count_by" parameter with value "invalid"
     When the request is sent
@@ -42,9 +47,15 @@ Feature: Agent Health
   @skip @team:ddoghq/fleet-remediation
   Scenario: List Agent Health issues returns "OK" response
     Given a valid "appKeyAuth" key in the system
-    And operation "ListAgentHealthIssues" enabled
     And new "ListAgentHealthIssues" request
     When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/fleet-remediation @with-pagination
+  Scenario: List Agent Health issues returns "OK" response with pagination
+    Given a valid "appKeyAuth" key in the system
+    And new "ListAgentHealthIssues" request
+    When the request with pagination is sent
     Then the response status is 200 OK
 
   @skip @team:ddoghq/fleet-remediation
