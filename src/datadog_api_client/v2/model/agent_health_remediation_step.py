@@ -3,17 +3,20 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
 class AgentHealthRemediationStep(ModelNormal):
+    validations = {
+        "order": {
+            "inclusive_maximum": 2147483647,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         return {
@@ -26,18 +29,17 @@ class AgentHealthRemediationStep(ModelNormal):
         "text": "text",
     }
 
-    def __init__(self_, order: Union[int, UnsetType] = unset, text: Union[str, UnsetType] = unset, **kwargs):
+    def __init__(self_, order: int, text: str, **kwargs):
         """
         A step to remediate the issue.
 
         :param order: The order in which to perform the step.
-        :type order: int, optional
+        :type order: int
 
         :param text: The instructions for the step.
-        :type text: str, optional
+        :type text: str
         """
-        if order is not unset:
-            kwargs["order"] = order
-        if text is not unset:
-            kwargs["text"] = text
         super().__init__(kwargs)
+
+        self_.order = order
+        self_.text = text

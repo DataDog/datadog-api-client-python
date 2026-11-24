@@ -34,11 +34,11 @@ class AgentHealthRemediationScript(ModelNormal):
 
     def __init__(
         self_,
+        requires_root: bool,
         content: Union[str, UnsetType] = unset,
         filename: Union[str, UnsetType] = unset,
         language: Union[str, UnsetType] = unset,
         language_version: Union[str, UnsetType] = unset,
-        requires_root: Union[bool, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -57,7 +57,7 @@ class AgentHealthRemediationScript(ModelNormal):
         :type language_version: str, optional
 
         :param requires_root: Whether the script requires root privileges.
-        :type requires_root: bool, optional
+        :type requires_root: bool
         """
         if content is not unset:
             kwargs["content"] = content
@@ -67,6 +67,6 @@ class AgentHealthRemediationScript(ModelNormal):
             kwargs["language"] = language
         if language_version is not unset:
             kwargs["language_version"] = language_version
-        if requires_root is not unset:
-            kwargs["requires_root"] = requires_root
         super().__init__(kwargs)
+
+        self_.requires_root = requires_root

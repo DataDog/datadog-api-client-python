@@ -19,12 +19,16 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.agent_health_remediation import AgentHealthRemediation
+    from datadog_api_client.v2.model.agent_health_issue_resource_kind import AgentHealthIssueResourceKind
+    from datadog_api_client.v2.model.agent_health_issue_severity import AgentHealthIssueSeverity
 
 
 class AgentHealthIssueAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.agent_health_remediation import AgentHealthRemediation
+        from datadog_api_client.v2.model.agent_health_issue_resource_kind import AgentHealthIssueResourceKind
+        from datadog_api_client.v2.model.agent_health_issue_severity import AgentHealthIssueSeverity
 
         return {
             "category": (str,),
@@ -50,9 +54,9 @@ class AgentHealthIssueAttributes(ModelNormal):
             "issue_type": (str,),
             "remediation": (AgentHealthRemediation,),
             "resource_id": (str,),
-            "resource_kind": (str,),
+            "resource_kind": (AgentHealthIssueResourceKind,),
             "resource_type": (str,),
-            "severity": (str,),
+            "severity": (AgentHealthIssueSeverity,),
             "state": (str,),
             "tags": ([str],),
             "title": (str,),
@@ -82,8 +86,8 @@ class AgentHealthIssueAttributes(ModelNormal):
         issue_name: str,
         issue_type: str,
         resource_id: str,
-        resource_kind: str,
-        severity: str,
+        resource_kind: AgentHealthIssueResourceKind,
+        severity: AgentHealthIssueSeverity,
         state: str,
         category: Union[str, UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
@@ -123,16 +127,16 @@ class AgentHealthIssueAttributes(ModelNormal):
         :param resource_id: The identifier of the affected resource, interpreted according to ``resource_kind`` : hostname for ``host`` , DaemonSet UID for ``deployment`` (node Agent), cluster UUID for ``cluster`` , hostname of the host running the Cluster Agent for ``cluster_agent`` , or OpenTelemetry collector ID for ``otel``.
         :type resource_id: str
 
-        :param resource_kind: The kind of affected resource. Known values are ``host`` , ``deployment`` , ``cluster`` , ``cluster_agent`` , and ``otel``.
-        :type resource_kind: str
+        :param resource_kind: The kind of affected resource. The meaning of ``resource_id`` depends on this: hostname for ``host`` , DaemonSet UID for ``deployment`` (node Agent), cluster UUID for ``cluster`` , hostname of the host running the Cluster Agent for ``cluster_agent`` , or OpenTelemetry collector ID for ``otel``.
+        :type resource_kind: AgentHealthIssueResourceKind
 
         :param resource_type: The type of the affected resource. Omitted when empty.
         :type resource_type: str, optional
 
-        :param severity: The severity of the issue. Known values are ``low`` , ``medium`` , ``high`` , and ``unknown``.
-        :type severity: str
+        :param severity: The severity of the issue.
+        :type severity: AgentHealthIssueSeverity
 
-        :param state: The state of the issue. Only issues with state ``open`` are returned.
+        :param state: The state of the issue, such as ``open``.
         :type state: str
 
         :param tags: Tags associated with the issue. Omitted when empty.

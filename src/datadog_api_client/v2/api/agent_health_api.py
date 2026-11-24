@@ -3,11 +3,14 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+import collections
 from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
+    set_attribute_from_path,
+    get_attribute_from_path,
     UnsetType,
     unset,
 )
@@ -15,6 +18,7 @@ from datadog_api_client.v2.model.agent_health_host_issues_response import AgentH
 from datadog_api_client.v2.model.agent_health_agent_type import AgentHealthAgentType
 from datadog_api_client.v2.model.agent_health_issues_response import AgentHealthIssuesResponse
 from datadog_api_client.v2.model.agent_health_issues_count_by import AgentHealthIssuesCountBy
+from datadog_api_client.v2.model.agent_health_issue_data import AgentHealthIssueData
 from datadog_api_client.v2.model.agent_health_issue_response import AgentHealthIssueResponse
 
 
@@ -94,6 +98,23 @@ class AgentHealthApi:
                     "attribute": "count_by",
                     "location": "query",
                 },
+                "page_limit": {
+                    "validation": {
+                        "inclusive_maximum": 1000,
+                        "inclusive_minimum": 1,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[limit]",
+                    "location": "query",
+                },
+                "page_offset": {
+                    "validation": {
+                        "inclusive_minimum": 0,
+                    },
+                    "openapi_types": (int,),
+                    "attribute": "page[offset]",
+                    "location": "query",
+                },
                 "filter_severity": {
                     "validation": {
                         "max_length": 12850,
@@ -148,12 +169,11 @@ class AgentHealthApi:
         """Get an Agent Health issue.
 
         Get an Agent Health issue and its available remediation in your organization.
-        Only open issues are returned. The ``remediation`` attribute is omitted when
-        the issue has no remediation.
+        The ``remediation`` attribute is omitted when the issue has no remediation.
 
-        Returns ``404`` if the issue does not exist, is not open, belongs to another
-        organization, or you do not have access to its data. This response does not
-        reveal whether the issue exists. Returns ``403`` if you lack the ``hosts_read`` permission.
+        Returns ``404`` if the issue does not exist, belongs to another organization, or
+        you do not have access to its data. This response does not reveal whether the
+        issue exists. Returns ``403`` if you lack the ``hosts_read`` permission.
 
         :param issue_id: The unique identifier of the issue. It can contain ``:`` and must be percent-encoded
             by clients when included in the path.
@@ -193,6 +213,8 @@ class AgentHealthApi:
         self,
         *,
         count_by: Union[AgentHealthIssuesCountBy, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+        page_offset: Union[int, UnsetType] = unset,
         filter_severity: Union[str, UnsetType] = unset,
         filter_category: Union[str, UnsetType] = unset,
         filter_issue_type: Union[str, UnsetType] = unset,
@@ -209,16 +231,20 @@ class AgentHealthApi:
         ( ``high`` , ``medium`` , ``low`` , then other values), then ``first_seen_at`` descending with
         missing timestamps last, then issue ID ascending.
 
-        Set ``count_by=issue_type`` to include ``meta.page`` , where ``total_count`` is the number of
-        open issues matching the filters and ``counts_by_issue_type`` holds the per-type counts.
-        ``meta`` is omitted when ``count_by`` is not requested.
+        The response always includes ``meta.page`` with the applied ``limit`` , ``offset`` , and
+        ``total_count`` (the number of open issues matching the filters). Set ``count_by=issue_type``
+        to also include ``counts_by_issue_type`` with per-issue-type counts.
 
         Each filter accepts up to 50 comma-separated exact values of at most 256 characters
         each, combined with OR within a filter and AND across filters. Blank entries are ignored; an all-blank filter
         is treated as absent.
 
-        :param count_by: Set to ``issue_type`` to include ``meta.page`` with ``total_count`` and per-issue-type counts. If you don't set this parameter, the response omits ``meta``. Only ``issue_type`` is supported.
+        :param count_by: Set to ``issue_type`` to also include ``counts_by_issue_type`` in ``meta.page`` with per-issue-type counts. Pagination metadata is always included. Only ``issue_type`` is supported.
         :type count_by: AgentHealthIssuesCountBy, optional
+        :param page_limit: The maximum number of issues to return. Defaults to 100, with a minimum of 1 and a maximum of 1000.
+        :type page_limit: int, optional
+        :param page_offset: The number of issues to skip before returning results. Defaults to 0, with a minimum of 0.
+        :type page_offset: int, optional
         :param filter_severity: Filter by a comma-separated list of exact ``severity`` values, up to 50 values
             of at most 256 characters each. Values are combined with OR within this filter and AND across filters.
             Blank entries are ignored; an all-blank filter is treated as absent.
@@ -245,6 +271,12 @@ class AgentHealthApi:
         if count_by is not unset:
             kwargs["count_by"] = count_by
 
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
+
         if filter_severity is not unset:
             kwargs["filter_severity"] = filter_severity
 
@@ -261,3 +293,86 @@ class AgentHealthApi:
             kwargs["filter_resource_id"] = filter_resource_id
 
         return self._list_agent_health_issues_endpoint.call_with_http_info(**kwargs)
+
+    def list_agent_health_issues_with_pagination(
+        self,
+        *,
+        count_by: Union[AgentHealthIssuesCountBy, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+        page_offset: Union[int, UnsetType] = unset,
+        filter_severity: Union[str, UnsetType] = unset,
+        filter_category: Union[str, UnsetType] = unset,
+        filter_issue_type: Union[str, UnsetType] = unset,
+        filter_resource_kind: Union[str, UnsetType] = unset,
+        filter_resource_id: Union[str, UnsetType] = unset,
+    ) -> collections.abc.Iterable[AgentHealthIssueData]:
+        """List Agent Health issues.
+
+        Provide a paginated version of :meth:`list_agent_health_issues`, returning all items.
+
+        :param count_by: Set to ``issue_type`` to also include ``counts_by_issue_type`` in ``meta.page`` with per-issue-type counts. Pagination metadata is always included. Only ``issue_type`` is supported.
+        :type count_by: AgentHealthIssuesCountBy, optional
+        :param page_limit: The maximum number of issues to return. Defaults to 100, with a minimum of 1 and a maximum of 1000.
+        :type page_limit: int, optional
+        :param page_offset: The number of issues to skip before returning results. Defaults to 0, with a minimum of 0.
+        :type page_offset: int, optional
+        :param filter_severity: Filter by a comma-separated list of exact ``severity`` values, up to 50 values
+            of at most 256 characters each. Values are combined with OR within this filter and AND across filters.
+            Blank entries are ignored; an all-blank filter is treated as absent.
+        :type filter_severity: str, optional
+        :param filter_category: Filter by a comma-separated list of exact ``category`` values, up to 50 values
+            of at most 256 characters each. Values are combined with OR within this filter and AND across filters.
+            Blank entries are ignored; an all-blank filter is treated as absent.
+        :type filter_category: str, optional
+        :param filter_issue_type: Filter by a comma-separated list of exact ``issue_type`` values, up to 50 values
+            of at most 256 characters each. Values are combined with OR within this filter and AND across filters.
+            Blank entries are ignored; an all-blank filter is treated as absent.
+        :type filter_issue_type: str, optional
+        :param filter_resource_kind: Filter by a comma-separated list of exact ``resource_kind`` values, up to 50 values
+            of at most 256 characters each. Values are combined with OR within this filter and AND across filters.
+            Blank entries are ignored; an all-blank filter is treated as absent.
+        :type filter_resource_kind: str, optional
+        :param filter_resource_id: Filter by a comma-separated list of exact ``resource_id`` values, up to 50 values
+            of at most 256 characters each. Values are combined with OR within this filter and AND across filters.
+            Blank entries are ignored; an all-blank filter is treated as absent.
+        :type filter_resource_id: str, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[AgentHealthIssueData]
+        """
+        kwargs: Dict[str, Any] = {}
+        if count_by is not unset:
+            kwargs["count_by"] = count_by
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
+
+        if filter_severity is not unset:
+            kwargs["filter_severity"] = filter_severity
+
+        if filter_category is not unset:
+            kwargs["filter_category"] = filter_category
+
+        if filter_issue_type is not unset:
+            kwargs["filter_issue_type"] = filter_issue_type
+
+        if filter_resource_kind is not unset:
+            kwargs["filter_resource_kind"] = filter_resource_kind
+
+        if filter_resource_id is not unset:
+            kwargs["filter_resource_id"] = filter_resource_id
+
+        local_page_size = get_attribute_from_path(kwargs, "page_limit", 100)
+        endpoint = self._list_agent_health_issues_endpoint
+        set_attribute_from_path(kwargs, "page_limit", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "page_offset_param": "page_offset",
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
