@@ -18,7 +18,7 @@ class OpenAICodexIntegrationAccountAuthenticationRequest(ModelComposed):
         :param auth_type: The authentication method type.
         :type auth_type: OpenAICodexIntegrationAccountBearerTokenAuthType
 
-        :param token: Secret token used to authenticate with OpenAI Codex.
+        :param token: Workspace-scoped OpenAI Admin key with the `codex.enterprise.analytics.read` scope. To collect turn metrics, also grant `chatgpt.enterprise.compliance_logs_platform.workspace_analytics.read` to the same key.
         :type token: str
         """
         super().__init__(kwargs)

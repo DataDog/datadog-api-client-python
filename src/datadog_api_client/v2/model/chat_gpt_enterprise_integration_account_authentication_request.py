@@ -18,7 +18,7 @@ class ChatGPTEnterpriseIntegrationAccountAuthenticationRequest(ModelComposed):
         :param auth_type: The authentication method type.
         :type auth_type: ChatGPTEnterpriseIntegrationAccountBearerTokenAuthType
 
-        :param token: Secret token used to authenticate with ChatGPT Enterprise.
+        :param token: ChatGPT Enterprise admin API key with the **Costs** permission set to **Read** and every other permission category set to **None**. Create it in the [OpenAI Admin Console](https://admin.openai.com/credentials?tab=admin-keys) of your ChatGPT Enterprise workspace, not in the API Platform admin-key console.
         :type token: str
         """
         super().__init__(kwargs)
