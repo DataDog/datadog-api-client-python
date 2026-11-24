@@ -176,6 +176,9 @@ from datadog_api_client.v2.model.security_monitoring_integration_config_response
 from datadog_api_client.v2.model.security_monitoring_integration_config_create_request import (
     SecurityMonitoringIntegrationConfigCreateRequest,
 )
+from datadog_api_client.v2.model.security_monitoring_aws_identity_center_aws_accounts_response import (
+    SecurityMonitoringAWSIdentityCenterAWSAccountsResponse,
+)
 from datadog_api_client.v2.model.security_monitoring_entra_id_azure_app_registrations_response import (
     SecurityMonitoringEntraIdAzureAppRegistrationsResponse,
 )
@@ -1975,6 +1978,22 @@ class SecurityMonitoringApi:
                     "location": "path",
                 },
             },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._get_aws_identity_center_aws_accounts_endpoint = _Endpoint(
+            settings={
+                "response_type": (SecurityMonitoringAWSIdentityCenterAWSAccountsResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/security_monitoring/configuration/integration_config/aws_identity_center/aws_accounts",
+                "operation_id": "get_aws_identity_center_aws_accounts",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
             headers_map={
                 "accept": ["application/json"],
             },
@@ -6980,6 +6999,21 @@ class SecurityMonitoringApi:
         kwargs["resource_id"] = resource_id
 
         return self._export_security_monitoring_terraform_resource_endpoint.call_with_http_info(**kwargs)
+
+    def get_aws_identity_center_aws_accounts(
+        self,
+    ) -> SecurityMonitoringAWSIdentityCenterAWSAccountsResponse:
+        """Get AWS IAM Identity Center account prerequisites.
+
+        Get the integrated AWS accounts that the AWS IAM Identity Center entity context sync reads users from, and
+        whether users have been collected from them. Collected users are a prerequisite for creating or enabling the
+        AWS IAM Identity Center entity context sync configuration. The accounts include AWS Organization management
+        accounts and any accounts that users were collected from.
+
+        :rtype: SecurityMonitoringAWSIdentityCenterAWSAccountsResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._get_aws_identity_center_aws_accounts_endpoint.call_with_http_info(**kwargs)
 
     def get_content_packs_states(
         self,

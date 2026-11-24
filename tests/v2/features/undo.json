@@ -5269,6 +5269,12 @@
       "type": "safe"
     }
   },
+  "GetAWSIdentityCenterAWSAccounts": {
+    "tag": "Security Monitoring",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetAWSIntegrationIAMPermissions": {
     "tag": "AWS Integration",
     "undo": {

@@ -53,6 +53,9 @@ class SecurityMonitoringIntegrationConfigUpdateAttributes(ModelComposed):
         from datadog_api_client.v2.model.security_monitoring_entra_id_integration_config_update_attributes import (
             SecurityMonitoringEntraIdIntegrationConfigUpdateAttributes,
         )
+        from datadog_api_client.v2.model.security_monitoring_aws_identity_center_integration_config_update_attributes import (
+            SecurityMonitoringAWSIdentityCenterIntegrationConfigUpdateAttributes,
+        )
         from datadog_api_client.v2.model.security_monitoring_crowd_strike_integration_config_update_attributes import (
             SecurityMonitoringCrowdStrikeIntegrationConfigUpdateAttributes,
         )
@@ -65,6 +68,7 @@ class SecurityMonitoringIntegrationConfigUpdateAttributes(ModelComposed):
                 SecurityMonitoringGoogleWorkspaceIntegrationConfigUpdateAttributes,
                 SecurityMonitoringOktaIntegrationConfigUpdateAttributes,
                 SecurityMonitoringEntraIdIntegrationConfigUpdateAttributes,
+                SecurityMonitoringAWSIdentityCenterIntegrationConfigUpdateAttributes,
                 SecurityMonitoringCrowdStrikeIntegrationConfigUpdateAttributes,
                 SecurityMonitoringSentinelOneIntegrationConfigUpdateAttributes,
             ],

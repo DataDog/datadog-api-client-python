@@ -16,7 +16,7 @@ class SecurityMonitoringIntegrationType(ModelSimple):
     """
     The type of external source that provides entities to Cloud SIEM.
 
-    :param value: Must be one of ["GOOGLE_WORKSPACE", "OKTA", "ENTRA_ID", "CROWDSTRIKE", "SENTINELONE"].
+    :param value: Must be one of ["GOOGLE_WORKSPACE", "OKTA", "ENTRA_ID", "AWS_IDENTITY_CENTER", "CROWDSTRIKE", "SENTINELONE"].
     :type value: str
     """
 
@@ -24,12 +24,14 @@ class SecurityMonitoringIntegrationType(ModelSimple):
         "GOOGLE_WORKSPACE",
         "OKTA",
         "ENTRA_ID",
+        "AWS_IDENTITY_CENTER",
         "CROWDSTRIKE",
         "SENTINELONE",
     }
     GOOGLE_WORKSPACE: ClassVar["SecurityMonitoringIntegrationType"]
     OKTA: ClassVar["SecurityMonitoringIntegrationType"]
     ENTRA_ID: ClassVar["SecurityMonitoringIntegrationType"]
+    AWS_IDENTITY_CENTER: ClassVar["SecurityMonitoringIntegrationType"]
     CROWDSTRIKE: ClassVar["SecurityMonitoringIntegrationType"]
     SENTINELONE: ClassVar["SecurityMonitoringIntegrationType"]
 
@@ -43,5 +45,6 @@ class SecurityMonitoringIntegrationType(ModelSimple):
 SecurityMonitoringIntegrationType.GOOGLE_WORKSPACE = SecurityMonitoringIntegrationType("GOOGLE_WORKSPACE")
 SecurityMonitoringIntegrationType.OKTA = SecurityMonitoringIntegrationType("OKTA")
 SecurityMonitoringIntegrationType.ENTRA_ID = SecurityMonitoringIntegrationType("ENTRA_ID")
+SecurityMonitoringIntegrationType.AWS_IDENTITY_CENTER = SecurityMonitoringIntegrationType("AWS_IDENTITY_CENTER")
 SecurityMonitoringIntegrationType.CROWDSTRIKE = SecurityMonitoringIntegrationType("CROWDSTRIKE")
 SecurityMonitoringIntegrationType.SENTINELONE = SecurityMonitoringIntegrationType("SENTINELONE")
