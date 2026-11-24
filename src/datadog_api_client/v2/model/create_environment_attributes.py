@@ -3,14 +3,20 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    none_type,
     unset,
     UnsetType,
+    UUID,
 )
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.environment_subject_authorization_state import EnvironmentSubjectAuthorizationState
 
 
 class CreateEnvironmentAttributes(ModelNormal):
@@ -22,12 +28,18 @@ class CreateEnvironmentAttributes(ModelNormal):
 
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.environment_subject_authorization_state import (
+            EnvironmentSubjectAuthorizationState,
+        )
+
         return {
             "is_production": (bool,),
             "name": (str,),
             "observe_full_evaluation_data": (bool,),
             "queries": ([str],),
             "require_feature_flag_approval": (bool,),
+            "subject_authorization_oidc_provider_id": (UUID, none_type),
+            "subject_authorization_state": (EnvironmentSubjectAuthorizationState,),
         }
 
     attribute_map = {
@@ -36,6 +48,8 @@ class CreateEnvironmentAttributes(ModelNormal):
         "observe_full_evaluation_data": "observe_full_evaluation_data",
         "queries": "queries",
         "require_feature_flag_approval": "require_feature_flag_approval",
+        "subject_authorization_oidc_provider_id": "subject_authorization_oidc_provider_id",
+        "subject_authorization_state": "subject_authorization_state",
     }
 
     def __init__(
@@ -45,6 +59,8 @@ class CreateEnvironmentAttributes(ModelNormal):
         is_production: Union[bool, UnsetType] = unset,
         observe_full_evaluation_data: Union[bool, UnsetType] = unset,
         require_feature_flag_approval: Union[bool, UnsetType] = unset,
+        subject_authorization_oidc_provider_id: Union[UUID, none_type, UnsetType] = unset,
+        subject_authorization_state: Union[EnvironmentSubjectAuthorizationState, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -64,6 +80,12 @@ class CreateEnvironmentAttributes(ModelNormal):
 
         :param require_feature_flag_approval: Indicates whether feature flag changes require approval in this environment.
         :type require_feature_flag_approval: bool, optional
+
+        :param subject_authorization_oidc_provider_id: The ID of a Custom OIDC provider, formatted as a nonzero UUID. Required when ``subject_authorization_state`` is ``enabled``. If omitted or ``null`` , no provider is associated. A non-null ID must be registered in the current organization and site, even when subject authorization is disabled. An unregistered ID returns ``400 Bad Request`` , and an unavailable registry returns ``503 Service Unavailable``. Saving does not verify provider eligibility or key publication.
+        :type subject_authorization_oidc_provider_id: UUID, none_type, optional
+
+        :param subject_authorization_state: Whether assignment requests for this environment require subject authorization. Allowed values are ``disabled`` and ``enabled``. Enabling requires a provider ID formatted as a nonzero UUID. If omitted on create, defaults to ``disabled``. If omitted on update, the stored state is preserved. ``null`` is not accepted. This setting applies only to the current Datadog site and is not copied to other sites. Before you enable it, configure an eligible Custom OIDC provider in the same organization and site, and verify that the provider's keys are published. Assignment requests fail when the required verification configuration is unavailable.
+        :type subject_authorization_state: EnvironmentSubjectAuthorizationState, optional
         """
         if is_production is not unset:
             kwargs["is_production"] = is_production
@@ -71,6 +93,10 @@ class CreateEnvironmentAttributes(ModelNormal):
             kwargs["observe_full_evaluation_data"] = observe_full_evaluation_data
         if require_feature_flag_approval is not unset:
             kwargs["require_feature_flag_approval"] = require_feature_flag_approval
+        if subject_authorization_oidc_provider_id is not unset:
+            kwargs["subject_authorization_oidc_provider_id"] = subject_authorization_oidc_provider_id
+        if subject_authorization_state is not unset:
+            kwargs["subject_authorization_state"] = subject_authorization_state
         super().__init__(kwargs)
 
         self_.name = name

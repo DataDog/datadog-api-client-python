@@ -4041,6 +4041,7 @@ from datadog_api_client.v2.model.entity_v3_system_spec import EntityV3SystemSpec
 from datadog_api_client.v2.model.environment import Environment
 from datadog_api_client.v2.model.environment_attributes import EnvironmentAttributes
 from datadog_api_client.v2.model.environment_response import EnvironmentResponse
+from datadog_api_client.v2.model.environment_subject_authorization_state import EnvironmentSubjectAuthorizationState
 from datadog_api_client.v2.model.environments_pagination_meta import EnvironmentsPaginationMeta
 from datadog_api_client.v2.model.environments_pagination_meta_page import EnvironmentsPaginationMetaPage
 from datadog_api_client.v2.model.error_handler import ErrorHandler
@@ -17705,6 +17706,7 @@ __all__ = [
     "Environment",
     "EnvironmentAttributes",
     "EnvironmentResponse",
+    "EnvironmentSubjectAuthorizationState",
     "EnvironmentsPaginationMeta",
     "EnvironmentsPaginationMetaPage",
     "ErrorHandler",

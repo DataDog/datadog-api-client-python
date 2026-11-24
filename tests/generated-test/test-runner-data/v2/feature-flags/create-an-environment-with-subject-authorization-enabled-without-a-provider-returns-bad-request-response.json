@@ -1,0 +1,37 @@
+{
+  "api": "FeatureFlags",
+  "expected_status": 400,
+  "feature": "Feature Flags",
+  "id": "v2/Feature Flags/Create an environment with subject authorization enabled without a provider returns \"Bad Request\" response",
+  "operation_id": "CreateFeatureFlagsEnvironment",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "CreateEnvironmentRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "name": "Subject Authorization {{ unique }}",
+            "queries": [
+              "auth-{{ unique_lower }}"
+            ],
+            "subject_authorization_state": "enabled"
+          },
+          "type": "environments"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/feature-flags/environments"
+  },
+  "scenario": "Create an environment with subject authorization enabled without a provider returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

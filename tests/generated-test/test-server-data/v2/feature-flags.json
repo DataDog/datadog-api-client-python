@@ -516,7 +516,7 @@
     },
     {
       "feature": "Feature Flags",
-      "frozen_at": "2026-11-06T02:45:02.026Z",
+      "frozen_at": "2026-11-24T17:28:57.456Z",
       "interactions": [
         {
           "request": {
@@ -525,10 +525,10 @@
               "value": {
                 "data": {
                   "attributes": {
-                    "name": "Test Environment Test-Create_an_environment_returns_Created_response-1793933102",
+                    "name": "Test Environment Test-Create_an_environment_returns_Created_response-1795541337",
                     "queries": [
-                      "test-Test-Create_an_environment_returns_Created_response-1793933102",
-                      "env-Test-Create_an_environment_returns_Created_response-1793933102"
+                      "test-Test-Create_an_environment_returns_Created_response-1795541337",
+                      "env-Test-Create_an_environment_returns_Created_response-1795541337"
                     ]
                   },
                   "type": "environments"
@@ -543,7 +543,7 @@
           "response": {
             "body": {
               "encoding": "text",
-              "value": "{\"data\":{\"id\":\"c149b1d8-a53a-45da-ac06-69b43a15291e\",\"type\":\"environments\",\"attributes\":{\"is_production\":false,\"name\":\"Test Environment Test-Create_an_environment_returns_Created_response-1793933102\",\"observe_full_evaluation_data\":false,\"queries\":[\"test-Test-Create_an_environment_returns_Created_response-1793933102\",\"env-Test-Create_an_environment_returns_Created_response-1793933102\"],\"require_feature_flag_approval\":false}}}"
+              "value": "{\"data\":{\"id\":\"1a20c202-4283-4d41-80cc-9cd7ab96adff\",\"type\":\"environments\",\"attributes\":{\"is_production\":false,\"name\":\"Test Environment Test-Create_an_environment_returns_Created_response-1795541337\",\"observe_full_evaluation_data\":false,\"queries\":[\"test-Test-Create_an_environment_returns_Created_response-1795541337\",\"env-Test-Create_an_environment_returns_Created_response-1795541337\"],\"require_feature_flag_approval\":false,\"subject_authorization_oidc_provider_id\":null,\"subject_authorization_state\":\"disabled\"}}}"
             },
             "headers": {
               "content-type": "application/vnd.api+json"
@@ -560,7 +560,7 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/feature-flags/environments/c149b1d8-a53a-45da-ac06-69b43a15291e",
+            "path": "/api/v2/feature-flags/environments/1a20c202-4283-4d41-80cc-9cd7ab96adff",
             "query": []
           },
           "response": {
@@ -701,6 +701,48 @@
         }
       ],
       "scenario": "Create an environment with full evaluation data true returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-11-24T17:28:59.030Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Subject Authorization Test-Create_an_environment_with_subject_authorization_enabled_without_a_provider_returns_Bad_Request_resp-1795541339",
+                    "queries": [
+                      "auth-test-create_an_environment_with_subject_authorization_enabled_without_a_provider_returns_bad_request_resp-1795541339"
+                    ],
+                    "subject_authorization_state": "enabled"
+                  },
+                  "type": "environments"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/feature-flags/environments",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"Enabling subject authorization requires subject_authorization_oidc_provider_id\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create an environment with subject authorization enabled without a provider returns \"Bad Request\" response",
       "version": "v2"
     },
     {
@@ -6104,6 +6146,104 @@
         }
       ],
       "scenario": "Update an environment to preserve enabled full evaluation data when omitted returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "frozen_at": "2026-11-24T17:29:00.998Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test Environment Test-Update_an_environment_with_subject_authorization_enabled_without_a_provider_returns_Bad_Request_resp-1795541340",
+                    "queries": [
+                      "test-Test-Update_an_environment_with_subject_authorization_enabled_without_a_provider_returns_Bad_Request_resp-1795541340",
+                      "env-Test-Update_an_environment_with_subject_authorization_enabled_without_a_provider_returns_Bad_Request_resp-1795541340"
+                    ]
+                  },
+                  "type": "environments"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/feature-flags/environments",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a3ce9fb3-2d85-4fce-a9db-6fd694973d4c\",\"type\":\"environments\",\"attributes\":{\"is_production\":false,\"name\":\"Test Environment Test-Update_an_environment_with_subject_authorization_enabled_without_a_provider_returns_Bad_Request_resp-1795541340\",\"observe_full_evaluation_data\":false,\"queries\":[\"test-Test-Update_an_environment_with_subject_authorization_enabled_without_a_provider_returns_Bad_Request_resp-1795541340\",\"env-Test-Update_an_environment_with_subject_authorization_enabled_without_a_provider_returns_Bad_Request_resp-1795541340\"],\"require_feature_flag_approval\":false,\"subject_authorization_oidc_provider_id\":null,\"subject_authorization_state\":\"disabled\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test Environment Test-Update_an_environment_with_subject_authorization_enabled_without_a_provider_returns_Bad_Request_resp-1795541340",
+                    "queries": [
+                      "test-Test-Update_an_environment_with_subject_authorization_enabled_without_a_provider_returns_Bad_Request_resp-1795541340",
+                      "env-Test-Update_an_environment_with_subject_authorization_enabled_without_a_provider_returns_Bad_Request_resp-1795541340"
+                    ],
+                    "subject_authorization_state": "enabled"
+                  },
+                  "type": "environments"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/feature-flags/environments/a3ce9fb3-2d85-4fce-a9db-6fd694973d4c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"Enabling subject authorization requires subject_authorization_oidc_provider_id\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/feature-flags/environments/a3ce9fb3-2d85-4fce-a9db-6fd694973d4c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update an environment with subject authorization enabled without a provider returns \"Bad Request\" response",
       "version": "v2"
     },
     {
