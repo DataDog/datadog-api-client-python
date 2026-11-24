@@ -3574,6 +3574,12 @@
       "type": "idempotent"
     }
   },
+  "DeleteAIGatewayModelPricingByCanonical": {
+    "tag": "AI Gateway",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "DeleteAPIKey": {
     "tag": "Key Management",
     "undo": {
@@ -5223,6 +5229,12 @@
   },
   "GenerateCostTagDescriptionByKey": {
     "tag": "Cloud Cost Management",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetAIGatewayModelPricingByCanonical": {
+    "tag": "AI Gateway",
     "undo": {
       "type": "safe"
     }
@@ -10887,6 +10899,12 @@
   },
   "UnwatchCase": {
     "tag": "Case Management",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateAIGatewayModelPricingByCanonical": {
+    "tag": "AI Gateway",
     "undo": {
       "type": "idempotent"
     }
