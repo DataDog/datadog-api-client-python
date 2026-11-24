@@ -8363,6 +8363,128 @@
     },
     {
       "feature": "Dashboards",
+      "frozen_at": "2026-11-20T16:55:42.353Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "description": "",
+                "layout_type": "free",
+                "notify_list": [],
+                "template_variables": [],
+                "title": "Test-Create_a_new_dashboard_with_scatterplot_widget_and_palette-1795193742",
+                "widgets": [
+                  {
+                    "definition": {
+                      "color_by_groups": [],
+                      "palette": "datadog16",
+                      "requests": {
+                        "table": {
+                          "formulas": [
+                            {
+                              "alias": "",
+                              "dimension": "x",
+                              "formula": "query1"
+                            },
+                            {
+                              "alias": "",
+                              "dimension": "y",
+                              "formula": "query2"
+                            }
+                          ],
+                          "queries": [
+                            {
+                              "aggregator": "avg",
+                              "data_source": "metrics",
+                              "name": "query1",
+                              "query": "avg:system.cpu.user{*} by {service}"
+                            },
+                            {
+                              "aggregator": "avg",
+                              "data_source": "metrics",
+                              "name": "query2",
+                              "query": "avg:system.mem.used{*} by {service}"
+                            }
+                          ],
+                          "response_format": "scalar"
+                        }
+                      },
+                      "time": {},
+                      "title": "",
+                      "title_align": "left",
+                      "title_size": "16",
+                      "type": "scatterplot",
+                      "xaxis": {
+                        "include_zero": true,
+                        "max": "auto",
+                        "min": "auto",
+                        "scale": "linear"
+                      },
+                      "yaxis": {
+                        "include_zero": true,
+                        "max": "auto",
+                        "min": "auto",
+                        "scale": "linear"
+                      }
+                    },
+                    "layout": {
+                      "height": 15,
+                      "width": 47,
+                      "x": 0,
+                      "y": 0
+                    }
+                  }
+                ]
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v1/dashboard",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"id\":\"9ba-iyz-8ex\",\"title\":\"Test-Create_a_new_dashboard_with_scatterplot_widget_and_palette-1795193742\",\"description\":\"\",\"author_handle\":\"frog@datadoghq.com\",\"author_name\":null,\"layout_type\":\"free\",\"url\":\"/dashboard/9ba-iyz-8ex/test-createanewdashboardwithscatterplotwidgetandpalette-1795193742\",\"template_variables\":[],\"widgets\":[{\"definition\":{\"color_by_groups\":[],\"palette\":\"datadog16\",\"requests\":{\"table\":{\"formulas\":[{\"alias\":\"\",\"dimension\":\"x\",\"formula\":\"query1\"},{\"alias\":\"\",\"dimension\":\"y\",\"formula\":\"query2\"}],\"queries\":[{\"aggregator\":\"avg\",\"data_source\":\"metrics\",\"name\":\"query1\",\"query\":\"avg:system.cpu.user{*} by {service}\"},{\"aggregator\":\"avg\",\"data_source\":\"metrics\",\"name\":\"query2\",\"query\":\"avg:system.mem.used{*} by {service}\"}],\"response_format\":\"scalar\"}},\"time\":{},\"title\":\"\",\"title_align\":\"left\",\"title_size\":\"16\",\"type\":\"scatterplot\",\"xaxis\":{\"include_zero\":true,\"max\":\"auto\",\"min\":\"auto\",\"scale\":\"linear\"},\"yaxis\":{\"include_zero\":true,\"max\":\"auto\",\"min\":\"auto\",\"scale\":\"linear\"}},\"layout\":{\"height\":15,\"width\":47,\"x\":0,\"y\":0},\"id\":3666106239805653}],\"notify_list\":[],\"created_at\":\"2026-11-20T16:55:42.500311+00:00\",\"modified_at\":\"2026-11-20T16:55:42.500311+00:00\",\"experience_type\":\"default\",\"restricted_roles\":[]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v1/dashboard/9ba-iyz-8ex",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"deleted_dashboard_id\":\"9ba-iyz-8ex\"}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "Create a new dashboard with scatterplot widget and palette",
+      "version": "v1"
+    },
+    {
+      "feature": "Dashboards",
       "frozen_at": "2024-11-15T19:32:52.734Z",
       "interactions": [
         {
