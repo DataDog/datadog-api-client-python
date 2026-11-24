@@ -54,9 +54,12 @@ class JobDefinition(ModelNormal):
             "_from": (int,),
             "group_signals_by": ([str],),
             "index": (str,),
+            "is_backfill_job": (bool,),
+            "is_shadow_deployed": (bool,),
             "message": (str,),
             "name": (str,),
             "options": (HistoricalJobOptions,),
+            "projected_per_query": ([str],),
             "queries": ([HistoricalJobQuery],),
             "reference_tables": ([SecurityMonitoringReferenceTable],),
             "tags": ([str],),
@@ -71,15 +74,23 @@ class JobDefinition(ModelNormal):
         "_from": "from",
         "group_signals_by": "groupSignalsBy",
         "index": "index",
+        "is_backfill_job": "isBackfillJob",
+        "is_shadow_deployed": "isShadowDeployed",
         "message": "message",
         "name": "name",
         "options": "options",
+        "projected_per_query": "projectedPerQuery",
         "queries": "queries",
         "reference_tables": "referenceTables",
         "tags": "tags",
         "third_party_cases": "thirdPartyCases",
         "to": "to",
         "type": "type",
+    }
+    read_only_vars = {
+        "is_backfill_job",
+        "is_shadow_deployed",
+        "projected_per_query",
     }
 
     def __init__(
@@ -93,7 +104,10 @@ class JobDefinition(ModelNormal):
         to: int,
         calculated_fields: Union[List[CalculatedField], UnsetType] = unset,
         group_signals_by: Union[List[str], UnsetType] = unset,
+        is_backfill_job: Union[bool, UnsetType] = unset,
+        is_shadow_deployed: Union[bool, UnsetType] = unset,
         options: Union[HistoricalJobOptions, UnsetType] = unset,
+        projected_per_query: Union[List[str], UnsetType] = unset,
         reference_tables: Union[List[SecurityMonitoringReferenceTable], UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
         third_party_cases: Union[List[SecurityMonitoringThirdPartyRuleCaseCreate], UnsetType] = unset,
@@ -118,6 +132,12 @@ class JobDefinition(ModelNormal):
         :param index: Index used to load the data.
         :type index: str
 
+        :param is_backfill_job: Whether the job was run by Datadog to reprocess past data.
+        :type is_backfill_job: bool, optional
+
+        :param is_shadow_deployed: Whether the job is a shadow deployment run by Datadog.
+        :type is_shadow_deployed: bool, optional
+
         :param message: Message for generated results.
         :type message: str
 
@@ -126,6 +146,9 @@ class JobDefinition(ModelNormal):
 
         :param options: Job options.
         :type options: HistoricalJobOptions, optional
+
+        :param projected_per_query: Fields projected for each query, copied from the rule the job was created from.
+        :type projected_per_query: [str], optional
 
         :param queries: Queries for selecting logs analyzed by the job. Up to 10 queries are allowed.
         :type queries: [HistoricalJobQuery]
@@ -149,8 +172,14 @@ class JobDefinition(ModelNormal):
             kwargs["calculated_fields"] = calculated_fields
         if group_signals_by is not unset:
             kwargs["group_signals_by"] = group_signals_by
+        if is_backfill_job is not unset:
+            kwargs["is_backfill_job"] = is_backfill_job
+        if is_shadow_deployed is not unset:
+            kwargs["is_shadow_deployed"] = is_shadow_deployed
         if options is not unset:
             kwargs["options"] = options
+        if projected_per_query is not unset:
+            kwargs["projected_per_query"] = projected_per_query
         if reference_tables is not unset:
             kwargs["reference_tables"] = reference_tables
         if tags is not unset:

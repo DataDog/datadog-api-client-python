@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import Dict, List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -47,11 +47,13 @@ class HistoricalJobQuery(ModelNormal):
             "custom_query_extension": (str,),
             "data_source": (SecurityMonitoringStandardDataSource,),
             "dataset_ids": ([str],),
+            "dataset_versions": ({str: (int,)},),
             "distinct_fields": ([str],),
             "group_by_fields": ([str],),
             "has_optional_group_by_fields": (bool,),
             "index": (str,),
             "indexes": ([str],),
+            "metric": (str,),
             "metrics": ([str],),
             "name": (str,),
             "query": (str,),
@@ -66,15 +68,20 @@ class HistoricalJobQuery(ModelNormal):
         "custom_query_extension": "customQueryExtension",
         "data_source": "dataSource",
         "dataset_ids": "datasetIds",
+        "dataset_versions": "datasetVersions",
         "distinct_fields": "distinctFields",
         "group_by_fields": "groupByFields",
         "has_optional_group_by_fields": "hasOptionalGroupByFields",
         "index": "index",
         "indexes": "indexes",
+        "metric": "metric",
         "metrics": "metrics",
         "name": "name",
         "query": "query",
         "query_language": "queryLanguage",
+    }
+    read_only_vars = {
+        "dataset_versions",
     }
 
     def __init__(
@@ -86,11 +93,13 @@ class HistoricalJobQuery(ModelNormal):
         custom_query_extension: Union[str, UnsetType] = unset,
         data_source: Union[SecurityMonitoringStandardDataSource, UnsetType] = unset,
         dataset_ids: Union[List[str], UnsetType] = unset,
+        dataset_versions: Union[Dict[str, int], UnsetType] = unset,
         distinct_fields: Union[List[str], UnsetType] = unset,
         group_by_fields: Union[List[str], UnsetType] = unset,
         has_optional_group_by_fields: Union[bool, UnsetType] = unset,
         index: Union[str, UnsetType] = unset,
         indexes: Union[List[str], UnsetType] = unset,
+        metric: Union[str, UnsetType] = unset,
         metrics: Union[List[str], UnsetType] = unset,
         name: Union[str, UnsetType] = unset,
         query: Union[str, UnsetType] = unset,
@@ -121,6 +130,9 @@ class HistoricalJobQuery(ModelNormal):
         :param dataset_ids: IDs of reference datasets used by this query.
         :type dataset_ids: [str], optional
 
+        :param dataset_versions: Version of each dataset used by the job, keyed by dataset ID. Pinned when the job is created.
+        :type dataset_versions: {str: (int,)}, optional
+
         :param distinct_fields: Field for which the cardinality is measured. Sent as an array.
         :type distinct_fields: [str], optional
 
@@ -135,6 +147,10 @@ class HistoricalJobQuery(ModelNormal):
 
         :param indexes: Indexes used to load the data for this query. Mutually exclusive with ``index``.
         :type indexes: [str], optional
+
+        :param metric: (Deprecated) The target field to aggregate over when using the sum or max
+            aggregations. Use the ``metrics`` field instead. **Deprecated**.
+        :type metric: str, optional
 
         :param metrics: Group of target fields to aggregate over when using the sum, max, geo data, or new value aggregations. The sum, max, and geo data aggregations only accept one value in this list, whereas the new value aggregation accepts up to five values.
         :type metrics: [str], optional
@@ -162,6 +178,8 @@ class HistoricalJobQuery(ModelNormal):
             kwargs["data_source"] = data_source
         if dataset_ids is not unset:
             kwargs["dataset_ids"] = dataset_ids
+        if dataset_versions is not unset:
+            kwargs["dataset_versions"] = dataset_versions
         if distinct_fields is not unset:
             kwargs["distinct_fields"] = distinct_fields
         if group_by_fields is not unset:
@@ -172,6 +190,8 @@ class HistoricalJobQuery(ModelNormal):
             kwargs["index"] = index
         if indexes is not unset:
             kwargs["indexes"] = indexes
+        if metric is not unset:
+            kwargs["metric"] = metric
         if metrics is not unset:
             kwargs["metrics"] = metrics
         if name is not unset:
