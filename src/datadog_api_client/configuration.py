@@ -456,6 +456,7 @@ class Configuration:
                 "v2.disable_security_findings_automation_default_inbox_rule": False,
                 "v2.enable_security_findings_automation_default_inbox_rule": False,
                 "v2.export_security_monitoring_terraform_resource": False,
+                "v2.get_aws_identity_center_aws_accounts": False,
                 "v2.get_content_packs_states": False,
                 "v2.get_entity_context": False,
                 "v2.get_entity_context_recently_updated": False,
