@@ -8944,6 +8944,12 @@
       "type": "safe"
     }
   },
+  "ListMetricMetadata": {
+    "tag": "Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListMetricSQLModels": {
     "tag": "Experiments",
     "undo": {

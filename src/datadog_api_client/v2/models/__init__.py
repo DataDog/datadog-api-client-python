@@ -7600,6 +7600,12 @@ from datadog_api_client.v2.model.metric_intake_type import MetricIntakeType
 from datadog_api_client.v2.model.metric_meta_page import MetricMetaPage
 from datadog_api_client.v2.model.metric_meta_page_type import MetricMetaPageType
 from datadog_api_client.v2.model.metric_metadata import MetricMetadata
+from datadog_api_client.v2.model.metric_metadata_attributes import MetricMetadataAttributes
+from datadog_api_client.v2.model.metric_metadata_data import MetricMetadataData
+from datadog_api_client.v2.model.metric_metadata_list_response import MetricMetadataListResponse
+from datadog_api_client.v2.model.metric_metadata_origin import MetricMetadataOrigin
+from datadog_api_client.v2.model.metric_metadata_type import MetricMetadataType
+from datadog_api_client.v2.model.metric_metadata_unit import MetricMetadataUnit
 from datadog_api_client.v2.model.metric_monitor_asset import MetricMonitorAsset
 from datadog_api_client.v2.model.metric_monitor_type import MetricMonitorType
 from datadog_api_client.v2.model.metric_notebook_asset import MetricNotebookAsset
@@ -20118,6 +20124,12 @@ __all__ = [
     "MetricMetaPage",
     "MetricMetaPageType",
     "MetricMetadata",
+    "MetricMetadataAttributes",
+    "MetricMetadataData",
+    "MetricMetadataListResponse",
+    "MetricMetadataOrigin",
+    "MetricMetadataType",
+    "MetricMetadataUnit",
     "MetricMonitorAsset",
     "MetricMonitorType",
     "MetricNotebookAsset",

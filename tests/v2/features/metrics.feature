@@ -538,6 +538,28 @@ Feature: Metrics
     And the response "data.type" is equal to "metric_volumes"
     And the response "data.id" is equal to "static_test_metric_donotdelete"
 
+  @skip @team:ddoghq/metrics-experience
+  Scenario: List metadata for multiple metrics returns "Bad Request" response
+    Given a valid "appKeyAuth" key in the system
+    And operation "ListMetricMetadata" enabled
+    And new "ListMetricMetadata" request
+    And request contains "filter[metric_name]" parameter with value ""
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @skip @team:ddoghq/metrics-experience
+  Scenario: List metadata for multiple metrics returns "OK" response
+    Given a valid "appKeyAuth" key in the system
+    And there is a valid "metric_static" in the system
+    And operation "ListMetricMetadata" enabled
+    And new "ListMetricMetadata" request
+    And request contains "filter[metric_name]" parameter with value "static_test_metric_donotdelete,static_test_metric_donotdelete,not.a.real.metric.{{ unique_lower_alnum }}"
+    When the request is sent
+    Then the response status is 200 OK
+    And the response "data" has length 1
+    And the response "data[0].type" is equal to "metric_metadata"
+    And the response "data[0].id" is equal to "static_test_metric_donotdelete"
+
   @generated @skip @team:ddoghq/metrics-experience
   Scenario: List tag configuration by name returns "No tag configuration exists for the metric" response
     Given a valid "appKeyAuth" key in the system
