@@ -1633,6 +1633,19 @@
       "type": "unsafe"
     }
   },
+  "CreateGitHubCostsIntegrationAccount": {
+    "tag": "GitHub Costs Integration",
+    "undo": {
+      "operationId": "DeleteGitHubCostsIntegrationAccount",
+      "parameters": [
+        {
+          "name": "account_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
   "CreateGlobalIncidentHandle": {
     "tag": "Incidents",
     "undo": {
@@ -4119,6 +4132,12 @@
       "type": "idempotent"
     }
   },
+  "DeleteGitHubCostsIntegrationAccount": {
+    "tag": "GitHub Costs Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "DeleteGlobalIncidentHandle": {
     "tag": "Incidents",
     "undo": {
@@ -6182,6 +6201,12 @@
   },
   "GetGitHubCloudAuthPersonaMapping": {
     "tag": "Cloud Authentication",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetGitHubCostsIntegrationAccount": {
+    "tag": "GitHub Costs Integration",
     "undo": {
       "type": "safe"
     }
@@ -8525,6 +8550,12 @@
   },
   "ListGitHubCloudAuthPersonaMappings": {
     "tag": "Cloud Authentication",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListGitHubCostsIntegrationAccounts": {
+    "tag": "GitHub Costs Integration",
     "undo": {
       "type": "safe"
     }
@@ -11415,6 +11446,12 @@
   },
   "UpdateGcpScanOptions": {
     "tag": "Agentless Scanning",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateGitHubCostsIntegrationAccount": {
+    "tag": "GitHub Costs Integration",
     "undo": {
       "type": "idempotent"
     }
