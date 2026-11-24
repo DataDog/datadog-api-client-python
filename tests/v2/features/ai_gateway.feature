@@ -263,6 +263,33 @@ Feature: AI Gateway
     Then the response status is 404 Not Found
 
   @generated @skip @team:ddoghq/frontier-prd-gateway
+  Scenario: Delete a model pricing override by canonical ID returns "Bad Request" response
+    Given operation "DeleteAIGatewayModelPricingByCanonical" enabled
+    And new "DeleteAIGatewayModelPricingByCanonical" request
+    And request contains "provider_id" parameter from "REPLACE.ME"
+    And request contains "canonical" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/frontier-prd-gateway
+  Scenario: Delete a model pricing override by canonical ID returns "No Content" response
+    Given operation "DeleteAIGatewayModelPricingByCanonical" enabled
+    And new "DeleteAIGatewayModelPricingByCanonical" request
+    And request contains "provider_id" parameter from "REPLACE.ME"
+    And request contains "canonical" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 204 No Content
+
+  @generated @skip @team:ddoghq/frontier-prd-gateway
+  Scenario: Delete a model pricing override by canonical ID returns "Not Found" response
+    Given operation "DeleteAIGatewayModelPricingByCanonical" enabled
+    And new "DeleteAIGatewayModelPricingByCanonical" request
+    And request contains "provider_id" parameter from "REPLACE.ME"
+    And request contains "canonical" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/frontier-prd-gateway
   Scenario: Delete a model pricing override returns "Bad Request" response
     Given operation "DeleteAiGatewayModelPricing" enabled
     And new "DeleteAiGatewayModelPricing" request
@@ -432,6 +459,33 @@ Feature: AI Gateway
   Scenario: Get AI Gateway rate limit usage returns "OK" response
     Given operation "GetAiGatewayRateLimitUsage" enabled
     And new "GetAiGatewayRateLimitUsage" request
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/frontier-prd-gateway
+  Scenario: Get a model pricing override by canonical ID returns "Bad Request" response
+    Given operation "GetAIGatewayModelPricingByCanonical" enabled
+    And new "GetAIGatewayModelPricingByCanonical" request
+    And request contains "provider_id" parameter from "REPLACE.ME"
+    And request contains "canonical" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/frontier-prd-gateway
+  Scenario: Get a model pricing override by canonical ID returns "Not Found" response
+    Given operation "GetAIGatewayModelPricingByCanonical" enabled
+    And new "GetAIGatewayModelPricingByCanonical" request
+    And request contains "provider_id" parameter from "REPLACE.ME"
+    And request contains "canonical" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/frontier-prd-gateway
+  Scenario: Get a model pricing override by canonical ID returns "OK" response
+    Given operation "GetAIGatewayModelPricingByCanonical" enabled
+    And new "GetAIGatewayModelPricingByCanonical" request
+    And request contains "provider_id" parameter from "REPLACE.ME"
+    And request contains "canonical" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -901,6 +955,36 @@ Feature: AI Gateway
     And new "ResetAiGatewayBudgetInstanceSpend" request
     And request contains "id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"instance_key": "v1|7:user_id=36:22222222-2222-2222-2222-222222222222", "reason": "Credit approved after incorrect usage attribution"}, "type": "budget-instances"}}
+    When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/frontier-prd-gateway
+  Scenario: Set a model pricing override by canonical ID returns "Bad Request" response
+    Given operation "UpdateAIGatewayModelPricingByCanonical" enabled
+    And new "UpdateAIGatewayModelPricingByCanonical" request
+    And request contains "provider_id" parameter from "REPLACE.ME"
+    And request contains "canonical" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"pricing_config": {"rates": {"cache_read_cost_per_mtok": 0.0, "cache_write_cost_per_mtok": 0.0, "non_cached_input_cost_per_mtok": 0.0, "output_cost_per_mtok": 0.0}, "source": {"type": "custom"}, "tiers": [{"context_min_tokens": 200000, "rates": {"cache_read_cost_per_mtok": 0.6, "cache_write_cost_per_mtok": 7.5, "non_cached_input_cost_per_mtok": 6.0, "output_cost_per_mtok": 22.5}, "service_tier": "priority"}], "version": 1}}, "id": "gpt-4o", "type": "model-pricing"}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/frontier-prd-gateway
+  Scenario: Set a model pricing override by canonical ID returns "Not Found" response
+    Given operation "UpdateAIGatewayModelPricingByCanonical" enabled
+    And new "UpdateAIGatewayModelPricingByCanonical" request
+    And request contains "provider_id" parameter from "REPLACE.ME"
+    And request contains "canonical" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"pricing_config": {"rates": {"cache_read_cost_per_mtok": 0.0, "cache_write_cost_per_mtok": 0.0, "non_cached_input_cost_per_mtok": 0.0, "output_cost_per_mtok": 0.0}, "source": {"type": "custom"}, "tiers": [{"context_min_tokens": 200000, "rates": {"cache_read_cost_per_mtok": 0.6, "cache_write_cost_per_mtok": 7.5, "non_cached_input_cost_per_mtok": 6.0, "output_cost_per_mtok": 22.5}, "service_tier": "priority"}], "version": 1}}, "id": "gpt-4o", "type": "model-pricing"}}
+    When the request is sent
+    Then the response status is 404 Not Found
+
+  @generated @skip @team:ddoghq/frontier-prd-gateway
+  Scenario: Set a model pricing override by canonical ID returns "OK" response
+    Given operation "UpdateAIGatewayModelPricingByCanonical" enabled
+    And new "UpdateAIGatewayModelPricingByCanonical" request
+    And request contains "provider_id" parameter from "REPLACE.ME"
+    And request contains "canonical" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"pricing_config": {"rates": {"cache_read_cost_per_mtok": 0.0, "cache_write_cost_per_mtok": 0.0, "non_cached_input_cost_per_mtok": 0.0, "output_cost_per_mtok": 0.0}, "source": {"type": "custom"}, "tiers": [{"context_min_tokens": 200000, "rates": {"cache_read_cost_per_mtok": 0.6, "cache_write_cost_per_mtok": 7.5, "non_cached_input_cost_per_mtok": 6.0, "output_cost_per_mtok": 22.5}, "service_tier": "priority"}], "version": 1}}, "id": "gpt-4o", "type": "model-pricing"}}
     When the request is sent
     Then the response status is 200 OK
 
