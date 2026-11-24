@@ -41,6 +41,7 @@ class ScatterPlotWidgetDefinition(ModelNormal):
             "color_by_groups": ([str],),
             "custom_links": ([WidgetCustomLink],),
             "description": (str,),
+            "palette": (str,),
             "requests": (ScatterPlotWidgetDefinitionRequests,),
             "time": (WidgetTime,),
             "title": (str,),
@@ -55,6 +56,7 @@ class ScatterPlotWidgetDefinition(ModelNormal):
         "color_by_groups": "color_by_groups",
         "custom_links": "custom_links",
         "description": "description",
+        "palette": "palette",
         "requests": "requests",
         "time": "time",
         "title": "title",
@@ -72,6 +74,7 @@ class ScatterPlotWidgetDefinition(ModelNormal):
         color_by_groups: Union[List[str], UnsetType] = unset,
         custom_links: Union[List[WidgetCustomLink], UnsetType] = unset,
         description: Union[str, UnsetType] = unset,
+        palette: Union[str, UnsetType] = unset,
         time: Union[WidgetTime, WidgetLegacyLiveSpan, WidgetNewLiveSpan, WidgetNewFixedSpan, UnsetType] = unset,
         title: Union[str, UnsetType] = unset,
         title_align: Union[WidgetTextAlign, UnsetType] = unset,
@@ -91,6 +94,9 @@ class ScatterPlotWidgetDefinition(ModelNormal):
 
         :param description: The description of the widget.
         :type description: str, optional
+
+        :param palette: Color palette to apply to the widget. Supported values include ``datadog16`` , ``datadog32`` , ``semantic`` , ``classic`` , and ``dog_classic``. A guide to the available color palettes can be found at https://docs.datadoghq.com/dashboards/guide/widget_colors
+        :type palette: str, optional
 
         :param requests: Widget definition.
         :type requests: ScatterPlotWidgetDefinitionRequests
@@ -122,6 +128,8 @@ class ScatterPlotWidgetDefinition(ModelNormal):
             kwargs["custom_links"] = custom_links
         if description is not unset:
             kwargs["description"] = description
+        if palette is not unset:
+            kwargs["palette"] = palette
         if time is not unset:
             kwargs["time"] = time
         if title is not unset:
