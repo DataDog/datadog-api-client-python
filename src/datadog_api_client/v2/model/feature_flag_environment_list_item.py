@@ -17,12 +17,16 @@ from datadog_api_client.model_utils import (
 
 if TYPE_CHECKING:
     from datadog_api_client.v2.model.feature_flag_status import FeatureFlagStatus
+    from datadog_api_client.v2.model.environment_subject_authorization_state import EnvironmentSubjectAuthorizationState
 
 
 class FeatureFlagEnvironmentListItem(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.feature_flag_status import FeatureFlagStatus
+        from datadog_api_client.v2.model.environment_subject_authorization_state import (
+            EnvironmentSubjectAuthorizationState,
+        )
 
         return {
             "default_allocation_key": (str,),
@@ -37,6 +41,8 @@ class FeatureFlagEnvironmentListItem(ModelNormal):
             "pending_suggestion_id": (str, none_type),
             "require_feature_flag_approval": (bool,),
             "status": (FeatureFlagStatus,),
+            "subject_authorization_oidc_provider_id": (UUID, none_type),
+            "subject_authorization_state": (EnvironmentSubjectAuthorizationState,),
         }
 
     attribute_map = {
@@ -52,6 +58,8 @@ class FeatureFlagEnvironmentListItem(ModelNormal):
         "pending_suggestion_id": "pending_suggestion_id",
         "require_feature_flag_approval": "require_feature_flag_approval",
         "status": "status",
+        "subject_authorization_oidc_provider_id": "subject_authorization_oidc_provider_id",
+        "subject_authorization_state": "subject_authorization_state",
     }
 
     def __init__(
@@ -68,6 +76,8 @@ class FeatureFlagEnvironmentListItem(ModelNormal):
         override_variant_id: Union[str, none_type, UnsetType] = unset,
         pending_suggestion_id: Union[str, none_type, UnsetType] = unset,
         require_feature_flag_approval: Union[bool, UnsetType] = unset,
+        subject_authorization_oidc_provider_id: Union[UUID, none_type, UnsetType] = unset,
+        subject_authorization_state: Union[EnvironmentSubjectAuthorizationState, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -108,6 +118,12 @@ class FeatureFlagEnvironmentListItem(ModelNormal):
 
         :param status: The status of a feature flag in an environment.
         :type status: FeatureFlagStatus
+
+        :param subject_authorization_oidc_provider_id: The environment's associated Custom OIDC provider ID, or ``null`` when no provider is associated.
+        :type subject_authorization_oidc_provider_id: UUID, none_type, optional
+
+        :param subject_authorization_state: Whether assignment requests for this environment require subject authorization. Allowed values are ``disabled`` and ``enabled``. Enabling requires a provider ID formatted as a nonzero UUID. If omitted on create, defaults to ``disabled``. If omitted on update, the stored state is preserved. ``null`` is not accepted. This setting applies only to the current Datadog site and is not copied to other sites. Before you enable it, configure an eligible Custom OIDC provider in the same organization and site, and verify that the provider's keys are published. Assignment requests fail when the required verification configuration is unavailable.
+        :type subject_authorization_state: EnvironmentSubjectAuthorizationState, optional
         """
         if default_allocation_key is not unset:
             kwargs["default_allocation_key"] = default_allocation_key
@@ -129,6 +145,10 @@ class FeatureFlagEnvironmentListItem(ModelNormal):
             kwargs["pending_suggestion_id"] = pending_suggestion_id
         if require_feature_flag_approval is not unset:
             kwargs["require_feature_flag_approval"] = require_feature_flag_approval
+        if subject_authorization_oidc_provider_id is not unset:
+            kwargs["subject_authorization_oidc_provider_id"] = subject_authorization_oidc_provider_id
+        if subject_authorization_state is not unset:
+            kwargs["subject_authorization_state"] = subject_authorization_state
         super().__init__(kwargs)
 
         self_.environment_id = environment_id

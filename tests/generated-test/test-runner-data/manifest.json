@@ -6541,6 +6541,13 @@
     {
       "feature": "Feature Flags",
       "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/create-an-environment-with-subject-authorization-enabled-without-a-provider-returns-bad-request-response.json",
+      "scenario": "Create an environment with subject authorization enabled without a provider returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
       "file": "v2/feature-flags/delete-an-environment-returns-not-found-response.json",
       "scenario": "Delete an environment returns \"Not Found\" response",
       "version": "v2"
@@ -6914,6 +6921,13 @@
       "feature_file": "../../v2/features/feature_flags.feature",
       "file": "v2/feature-flags/update-an-environment-to-preserve-enabled-full-evaluation-data-when-omitted-returns-ok-response.json",
       "scenario": "Update an environment to preserve enabled full evaluation data when omitted returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Feature Flags",
+      "feature_file": "../../v2/features/feature_flags.feature",
+      "file": "v2/feature-flags/update-an-environment-with-subject-authorization-enabled-without-a-provider-returns-bad-request-response.json",
+      "scenario": "Update an environment with subject authorization enabled without a provider returns \"Bad Request\" response",
       "version": "v2"
     },
     {

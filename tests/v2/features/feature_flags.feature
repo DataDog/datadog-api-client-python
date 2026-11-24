@@ -126,6 +126,8 @@ Feature: Feature Flags
     When the request is sent
     Then the response status is 201 Created
     And the response "data.attributes.observe_full_evaluation_data" is equal to false
+    And the response "data.attributes.subject_authorization_state" is equal to "disabled"
+    And the response "data.attributes.subject_authorization_oidc_provider_id" is equal to null
 
   @team:ddoghq/feature-flags
   Scenario: Create an environment with full evaluation data false returns "Created" response
@@ -142,6 +144,15 @@ Feature: Feature Flags
     When the request is sent
     Then the response status is 201 Created
     And the response "data.attributes.observe_full_evaluation_data" is equal to true
+
+  @team:ddoghq/feature-flags
+  Scenario: Create an environment with subject authorization enabled without a provider returns "Bad Request" response
+    Given new "CreateFeatureFlagsEnvironment" request
+    And body with value {"data": {"type": "environments", "attributes": {"name": "Subject Authorization {{ unique }}", "queries": ["auth-{{ unique_lower }}"], "subject_authorization_state": "enabled"}}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+    And the response "errors[0].status" is equal to "400"
+    And the response "errors[0].title" is equal to "Bad Request"
 
   @generated @skip @team:ddoghq/feature-flags
   Scenario: Create targeting rules for a flag env returns "Accepted - Approval required for this change" response
@@ -1194,6 +1205,14 @@ Feature: Feature Flags
     And the response "errors[0].status" is equal to "400"
     And the response "errors[0].title" is equal to "Bad Request"
 
+  @generated @skip @team:ddoghq/feature-flags
+  Scenario: Update an environment returns "Conflict" response
+    Given new "UpdateFeatureFlagsEnvironment" request
+    And request contains "environment_id" parameter from "REPLACE.ME"
+    And body with value {"data": {"attributes": {"is_production": false, "name": "Environment XYZ789", "observe_full_evaluation_data": true, "queries": ["staging", "test"], "require_feature_flag_approval": true, "subject_authorization_oidc_provider_id": "550e8400-e29b-41d4-a716-446655440003", "subject_authorization_state": "disabled"}, "type": "environments"}}
+    When the request is sent
+    Then the response status is 409 Conflict
+
   @team:ddoghq/feature-flags
   Scenario: Update an environment returns "Not Found" response
     Given new "UpdateFeatureFlagsEnvironment" request
@@ -1254,6 +1273,17 @@ Feature: Feature Flags
     And the response "data.attributes.observe_full_evaluation_data" is equal to true
     And the response "data.attributes.is_production" is equal to false
     And the response "data.attributes.require_feature_flag_approval" is equal to false
+
+  @team:ddoghq/feature-flags
+  Scenario: Update an environment with subject authorization enabled without a provider returns "Bad Request" response
+    Given there is a valid "environment" in the system
+    And new "UpdateFeatureFlagsEnvironment" request
+    And request contains "environment_id" parameter from "environment.data.id"
+    And body with value {"data": {"type": "environments", "attributes": {"name": "{{ environment.data.attributes.name }}", "queries": ["{{ environment.data.attributes.queries[0] }}", "{{ environment.data.attributes.queries[1] }}"], "subject_authorization_state": "enabled"}}}
+    When the request is sent
+    Then the response status is 400 Bad Request
+    And the response "errors[0].status" is equal to "400"
+    And the response "errors[0].title" is equal to "Bad Request"
 
   @team:ddoghq/feature-flags
   Scenario: Update an environment without a name returns "Bad Request" response
