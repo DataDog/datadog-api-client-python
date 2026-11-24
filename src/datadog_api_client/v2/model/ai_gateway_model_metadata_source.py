@@ -30,7 +30,6 @@ class AiGatewayModelMetadataSource(ModelNormal):
         return {
             "matched_by": (AiGatewayModelMetadataSourceMatchedBy,),
             "model_id": (str,),
-            "name": (str,),
             "observed_at": (datetime,),
             "provider": (str,),
             "revision": (str,),
@@ -39,7 +38,6 @@ class AiGatewayModelMetadataSource(ModelNormal):
     attribute_map = {
         "matched_by": "matched_by",
         "model_id": "model_id",
-        "name": "name",
         "observed_at": "observed_at",
         "provider": "provider",
         "revision": "revision",
@@ -49,7 +47,6 @@ class AiGatewayModelMetadataSource(ModelNormal):
         self_,
         matched_by: AiGatewayModelMetadataSourceMatchedBy,
         model_id: str,
-        name: str,
         provider: str,
         observed_at: Union[datetime, UnsetType] = unset,
         revision: Union[str, UnsetType] = unset,
@@ -63,9 +60,6 @@ class AiGatewayModelMetadataSource(ModelNormal):
 
         :param model_id: Model identifier in the metadata source provider catalog.
         :type model_id: str
-
-        :param name: Metadata source name.
-        :type name: str
 
         :param observed_at: Last successful observation of this valid source record. Retained invalid entries keep their previous timestamp.
         :type observed_at: datetime, optional
@@ -84,5 +78,4 @@ class AiGatewayModelMetadataSource(ModelNormal):
 
         self_.matched_by = matched_by
         self_.model_id = model_id
-        self_.name = name
         self_.provider = provider

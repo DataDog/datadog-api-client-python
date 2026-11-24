@@ -16,20 +16,20 @@ class AiGatewayModelPricingEffectiveSource(ModelSimple):
     """
     Effective source of the model pricing data.
 
-    :param value: Must be one of ["catalog_auto", "model_override", "models_dev", "unpriced", "unknown"].
+    :param value: Must be one of ["automatic", "catalog_auto", "model_override", "unpriced", "unknown"].
     :type value: str
     """
 
     allowed_values = {
+        "automatic",
         "catalog_auto",
         "model_override",
-        "models_dev",
         "unpriced",
         "unknown",
     }
+    AUTOMATIC: ClassVar["AiGatewayModelPricingEffectiveSource"]
     CATALOG_AUTO: ClassVar["AiGatewayModelPricingEffectiveSource"]
     MODEL_OVERRIDE: ClassVar["AiGatewayModelPricingEffectiveSource"]
-    MODELS_DEV: ClassVar["AiGatewayModelPricingEffectiveSource"]
     UNPRICED: ClassVar["AiGatewayModelPricingEffectiveSource"]
     UNKNOWN: ClassVar["AiGatewayModelPricingEffectiveSource"]
 
@@ -40,8 +40,8 @@ class AiGatewayModelPricingEffectiveSource(ModelSimple):
         }
 
 
+AiGatewayModelPricingEffectiveSource.AUTOMATIC = AiGatewayModelPricingEffectiveSource("automatic")
 AiGatewayModelPricingEffectiveSource.CATALOG_AUTO = AiGatewayModelPricingEffectiveSource("catalog_auto")
 AiGatewayModelPricingEffectiveSource.MODEL_OVERRIDE = AiGatewayModelPricingEffectiveSource("model_override")
-AiGatewayModelPricingEffectiveSource.MODELS_DEV = AiGatewayModelPricingEffectiveSource("models_dev")
 AiGatewayModelPricingEffectiveSource.UNPRICED = AiGatewayModelPricingEffectiveSource("unpriced")
 AiGatewayModelPricingEffectiveSource.UNKNOWN = AiGatewayModelPricingEffectiveSource("unknown")

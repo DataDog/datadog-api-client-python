@@ -75,10 +75,10 @@ class AiGatewayModelPricingAttributes(ModelNormal):
         """
         Attributes of a model pricing resource.
 
-        :param authoritative: True when models.dev pricing is authoritative for this organization and provider.
+        :param authoritative: True when automatic pricing is authoritative for this organization and provider.
         :type authoritative: bool, optional
 
-        :param automatic_pricing: The published models.dev price. Present only when it is the effective price.
+        :param automatic_pricing: The automatically synced published price. Present only when it is the effective price.
         :type automatic_pricing: AiGatewayModelAutomaticPricing, optional
 
         :param blocks_budgeted_requests: True when a ``BLOCK`` budget covering this model rejects its requests before they reach the provider.

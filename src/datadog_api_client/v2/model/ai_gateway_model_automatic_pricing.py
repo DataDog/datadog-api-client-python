@@ -75,7 +75,7 @@ class AiGatewayModelAutomaticPricing(ModelNormal):
         **kwargs,
     ):
         """
-        The published models.dev price. Present only when it is the effective price.
+        The automatically synced published price. Present only when it is the effective price.
 
         :param last_validated_at: Time the price was last revalidated against the source.
         :type last_validated_at: datetime
