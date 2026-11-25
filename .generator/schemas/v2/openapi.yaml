@@ -254361,6 +254361,10 @@ paths:
       description: |-
         Get a list of security findings that match a search query. [See the schema for security findings](https://docs.datadoghq.com/security/guide/findings-schema/).
 
+        This endpoint takes the query, sort, and pagination as URL query parameters. `SearchSecurityFindings` (`POST /api/v2/security/findings/search`) accepts the same parameters in a JSON request body and returns the same results, so pick by how you want to send them. Use this endpoint when the query fits easily in a URL. To send the query in a JSON body without URL encoding, use `SearchSecurityFindings` instead. A `meta.page.after` cursor from either endpoint works on the other.
+
+        Use this endpoint rather than `ListFindings` (`GET /api/v2/posture_management/findings`), which uses the legacy security findings data model and is planned for deprecation.
+
         ### Query Syntax
 
         This endpoint uses the logs query syntax. Findings attributes (living in the attributes.attributes. namespace) are prefixed by @ when queried. Tags are queried without a prefix.
@@ -257566,6 +257570,10 @@ paths:
     post:
       description: |-
         Get a list of security findings that match a search query. [See the schema for security findings](https://docs.datadoghq.com/security/guide/findings-schema/).
+
+        This endpoint takes the query, sort, and pagination in a JSON request body. `ListSecurityFindings` (`GET /api/v2/security/findings`) accepts the same parameters as URL query parameters and returns the same results, so pick by how you want to send them. Use this endpoint to send the query without URL encoding, for example when it has many quotes, parentheses, or spaces. To get the next page, send `meta.page.after` as `data.attributes.page.cursor` in the request body. The `links.next` URL always points to `ListSecurityFindings`, with the query in the URL.
+
+        Use this endpoint rather than `ListFindings` (`GET /api/v2/posture_management/findings`), which uses the legacy security findings data model and is planned for deprecation.
 
         ### Query Syntax
 
