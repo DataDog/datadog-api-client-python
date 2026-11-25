@@ -4,13 +4,13 @@ Estimate recoverable sessions returns "OK" response
 
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.rum_recovery_api import RUMRecoveryApi
-from datadog_api_client.v2.model.rum_recovery_count_attributes import RumRecoveryCountAttributes
-from datadog_api_client.v2.model.rum_recovery_count_request import RumRecoveryCountRequest
-from datadog_api_client.v2.model.rum_recovery_count_request_data import RumRecoveryCountRequestData
+from datadog_api_client.v2.model.rum_recovery_count_attributes import RUMRecoveryCountAttributes
+from datadog_api_client.v2.model.rum_recovery_count_request import RUMRecoveryCountRequest
+from datadog_api_client.v2.model.rum_recovery_count_request_data import RUMRecoveryCountRequestData
 
-body = RumRecoveryCountRequest(
-    data=RumRecoveryCountRequestData(
-        attributes=RumRecoveryCountAttributes(
+body = RUMRecoveryCountRequest(
+    data=RUMRecoveryCountRequestData(
+        attributes=RUMRecoveryCountAttributes(
             _from=1789905600000,
             query="service:web",
             to=1789992000000,

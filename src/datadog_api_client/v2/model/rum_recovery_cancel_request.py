@@ -12,28 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_recovery_cancel_data import RumRecoveryCancelData
+    from datadog_api_client.v2.model.rum_recovery_cancel_data import RUMRecoveryCancelData
 
 
-class RumRecoveryCancelRequest(ModelNormal):
+class RUMRecoveryCancelRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_recovery_cancel_data import RumRecoveryCancelData
+        from datadog_api_client.v2.model.rum_recovery_cancel_data import RUMRecoveryCancelData
 
         return {
-            "data": (RumRecoveryCancelData,),
+            "data": (RUMRecoveryCancelData,),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: RumRecoveryCancelData, **kwargs):
+    def __init__(self_, data: RUMRecoveryCancelData, **kwargs):
         """
         JSON:API document.
 
         :param data: JSON:API resource.
-        :type data: RumRecoveryCancelData
+        :type data: RUMRecoveryCancelData
         """
         super().__init__(kwargs)
 

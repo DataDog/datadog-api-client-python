@@ -1,8 +1,8 @@
 {
-  "feature": "Rum Retention Filters",
+  "feature": "RUM Retention Filters",
   "recordings": [
     {
-      "feature": "Rum Retention Filters",
+      "feature": "RUM Retention Filters",
       "frozen_at": "2025-03-03T21:21:22.678Z",
       "interactions": [
         {
@@ -44,7 +44,7 @@
       "version": "v2"
     },
     {
-      "feature": "Rum Retention Filters",
+      "feature": "RUM Retention Filters",
       "frozen_at": "2026-11-18T09:34:10.044Z",
       "interactions": [
         {
@@ -107,7 +107,7 @@
       "version": "v2"
     },
     {
-      "feature": "Rum Retention Filters",
+      "feature": "RUM Retention Filters",
       "frozen_at": "2025-03-05T20:03:40.119Z",
       "interactions": [
         {
@@ -136,7 +136,7 @@
       "version": "v2"
     },
     {
-      "feature": "Rum Retention Filters",
+      "feature": "RUM Retention Filters",
       "frozen_at": "2025-03-03T21:21:23.296Z",
       "interactions": [
         {
@@ -167,7 +167,7 @@
       "version": "v2"
     },
     {
-      "feature": "Rum Retention Filters",
+      "feature": "RUM Retention Filters",
       "frozen_at": "2025-03-03T21:21:23.382Z",
       "interactions": [
         {
@@ -198,7 +198,7 @@
       "version": "v2"
     },
     {
-      "feature": "Rum Retention Filters",
+      "feature": "RUM Retention Filters",
       "frozen_at": "2025-03-05T20:05:06.468Z",
       "interactions": [
         {
@@ -229,7 +229,7 @@
       "version": "v2"
     },
     {
-      "feature": "Rum Retention Filters",
+      "feature": "RUM Retention Filters",
       "frozen_at": "2025-03-03T21:21:23.741Z",
       "interactions": [
         {
@@ -260,7 +260,7 @@
       "version": "v2"
     },
     {
-      "feature": "Rum Retention Filters",
+      "feature": "RUM Retention Filters",
       "frozen_at": "2025-03-03T21:21:23.865Z",
       "interactions": [
         {
@@ -298,7 +298,7 @@
       "version": "v2"
     },
     {
-      "feature": "Rum Retention Filters",
+      "feature": "RUM Retention Filters",
       "frozen_at": "2025-03-03T21:21:23.931Z",
       "interactions": [
         {
@@ -344,7 +344,7 @@
       "version": "v2"
     },
     {
-      "feature": "Rum Retention Filters",
+      "feature": "RUM Retention Filters",
       "frozen_at": "2025-03-05T20:23:29.589Z",
       "interactions": [
         {
@@ -387,7 +387,7 @@
       "version": "v2"
     },
     {
-      "feature": "Rum Retention Filters",
+      "feature": "RUM Retention Filters",
       "frozen_at": "2025-03-03T21:21:24.104Z",
       "interactions": [
         {
@@ -430,7 +430,7 @@
       "version": "v2"
     },
     {
-      "feature": "Rum Retention Filters",
+      "feature": "RUM Retention Filters",
       "frozen_at": "2025-03-05T20:09:00.396Z",
       "interactions": [
         {

@@ -12,20 +12,20 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_archive_session_attributes import RumArchiveSessionAttributes
-    from datadog_api_client.v2.model.rum_archive_session_type import RumArchiveSessionType
+    from datadog_api_client.v2.model.rum_archive_session_attributes import RUMArchiveSessionAttributes
+    from datadog_api_client.v2.model.rum_archive_session_type import RUMArchiveSessionType
 
 
-class RumArchiveSession(ModelNormal):
+class RUMArchiveSession(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_archive_session_attributes import RumArchiveSessionAttributes
-        from datadog_api_client.v2.model.rum_archive_session_type import RumArchiveSessionType
+        from datadog_api_client.v2.model.rum_archive_session_attributes import RUMArchiveSessionAttributes
+        from datadog_api_client.v2.model.rum_archive_session_type import RUMArchiveSessionType
 
         return {
-            "attributes": (RumArchiveSessionAttributes,),
+            "attributes": (RUMArchiveSessionAttributes,),
             "id": (str,),
-            "type": (RumArchiveSessionType,),
+            "type": (RUMArchiveSessionType,),
         }
 
     attribute_map = {
@@ -34,18 +34,18 @@ class RumArchiveSession(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: RumArchiveSessionAttributes, id: str, type: RumArchiveSessionType, **kwargs):
+    def __init__(self_, attributes: RUMArchiveSessionAttributes, id: str, type: RUMArchiveSessionType, **kwargs):
         """
         JSON:API resource.
 
         :param attributes: Archived session metadata.
-        :type attributes: RumArchiveSessionAttributes
+        :type attributes: RUMArchiveSessionAttributes
 
         :param id: Resource identifier.
         :type id: str
 
         :param type: JSON:API resource type.
-        :type type: RumArchiveSessionType
+        :type type: RUMArchiveSessionType
         """
         super().__init__(kwargs)
 

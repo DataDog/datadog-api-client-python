@@ -16,13 +16,13 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_operation_journey_rum import RUMOperationJourneyRum
+    from datadog_api_client.v2.model.rum_operation_journey_rum import RUMOperationJourneyRUM
 
 
 class RUMOperationRequestAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_operation_journey_rum import RUMOperationJourneyRum
+        from datadog_api_client.v2.model.rum_operation_journey_rum import RUMOperationJourneyRUM
 
         return {
             "application_id": (UUID,),
@@ -30,7 +30,7 @@ class RUMOperationRequestAttributes(ModelNormal):
             "description": (str, none_type),
             "display_name": (str,),
             "feature_ids": ([str],),
-            "journey_rum": (RUMOperationJourneyRum,),
+            "journey_rum": (RUMOperationJourneyRUM,),
             "name": (str,),
             "tags": ([str],),
         }
@@ -48,7 +48,7 @@ class RUMOperationRequestAttributes(ModelNormal):
 
     def __init__(
         self_,
-        journey_rum: RUMOperationJourneyRum,
+        journey_rum: RUMOperationJourneyRUM,
         name: str,
         tags: List[str],
         application_id: Union[UUID, UnsetType] = unset,
@@ -77,7 +77,7 @@ class RUMOperationRequestAttributes(ModelNormal):
         :type feature_ids: [str], optional
 
         :param journey_rum: The definition of a RUM operation's journey, used to detect it from RUM events.
-        :type journey_rum: RUMOperationJourneyRum
+        :type journey_rum: RUMOperationJourneyRUM
 
         :param name: The unique name of the RUM operation. Must not contain spaces.
         :type name: str

@@ -13,7 +13,7 @@ from datadog_api_client.model_utils import (
 )
 
 
-class RumMetricGroupBy(ModelNormal):
+class RUMMetricGroupBy(ModelNormal):
     validations = {
         "tag_name": {
             "max_length": 200,

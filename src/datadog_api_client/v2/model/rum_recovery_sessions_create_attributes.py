@@ -14,11 +14,11 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_recovery_sessions_request_type import RumRecoverySessionsRequestType
-    from datadog_api_client.v2.model.rum_recovery_session_input import RumRecoverySessionInput
+    from datadog_api_client.v2.model.rum_recovery_sessions_request_type import RUMRecoverySessionsRequestType
+    from datadog_api_client.v2.model.rum_recovery_session_input import RUMRecoverySessionInput
 
 
-class RumRecoverySessionsCreateAttributes(ModelNormal):
+class RUMRecoverySessionsCreateAttributes(ModelNormal):
     validations = {
         "sessions": {
             "max_items": 100,
@@ -28,12 +28,12 @@ class RumRecoverySessionsCreateAttributes(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_recovery_sessions_request_type import RumRecoverySessionsRequestType
-        from datadog_api_client.v2.model.rum_recovery_session_input import RumRecoverySessionInput
+        from datadog_api_client.v2.model.rum_recovery_sessions_request_type import RUMRecoverySessionsRequestType
+        from datadog_api_client.v2.model.rum_recovery_session_input import RUMRecoverySessionInput
 
         return {
-            "request_type": (RumRecoverySessionsRequestType,),
-            "sessions": ([RumRecoverySessionInput],),
+            "request_type": (RUMRecoverySessionsRequestType,),
+            "sessions": ([RUMRecoverySessionInput],),
         }
 
     attribute_map = {
@@ -43,18 +43,18 @@ class RumRecoverySessionsCreateAttributes(ModelNormal):
 
     def __init__(
         self_,
-        sessions: List[RumRecoverySessionInput],
-        request_type: Union[RumRecoverySessionsRequestType, UnsetType] = unset,
+        sessions: List[RUMRecoverySessionInput],
+        request_type: Union[RUMRecoverySessionsRequestType, UnsetType] = unset,
         **kwargs,
     ):
         """
         Recover 1 to 100 explicit archived sessions. Session IDs must be unique within the request.
 
         :param request_type: Targeted recovery. Omitted request_type defaults to sessions.
-        :type request_type: RumRecoverySessionsRequestType, optional
+        :type request_type: RUMRecoverySessionsRequestType, optional
 
         :param sessions: Sessions to recover.
-        :type sessions: [RumRecoverySessionInput]
+        :type sessions: [RUMRecoverySessionInput]
         """
         if request_type is not unset:
             kwargs["request_type"] = request_type

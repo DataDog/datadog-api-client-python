@@ -12,28 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_exclusion_filter_update_data import RumExclusionFilterUpdateData
+    from datadog_api_client.v2.model.rum_exclusion_filter_update_data import RUMExclusionFilterUpdateData
 
 
-class RumExclusionFilterUpdateRequest(ModelNormal):
+class RUMExclusionFilterUpdateRequest(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_exclusion_filter_update_data import RumExclusionFilterUpdateData
+        from datadog_api_client.v2.model.rum_exclusion_filter_update_data import RUMExclusionFilterUpdateData
 
         return {
-            "data": (RumExclusionFilterUpdateData,),
+            "data": (RUMExclusionFilterUpdateData,),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: RumExclusionFilterUpdateData, **kwargs):
+    def __init__(self_, data: RUMExclusionFilterUpdateData, **kwargs):
         """
         The exclusion filter body to update.
 
         :param data: The exclusion filter properties to update.
-        :type data: RumExclusionFilterUpdateData
+        :type data: RUMExclusionFilterUpdateData
         """
         super().__init__(kwargs)
 

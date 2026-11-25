@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumMetricType(ModelSimple):
+class RUMMetricType(ModelSimple):
     """
     The type of the resource. The value must be `rum_metrics`.
 
@@ -23,7 +23,7 @@ class RumMetricType(ModelSimple):
     allowed_values = {
         "rum_metrics",
     }
-    RUM_METRICS: ClassVar["RumMetricType"]
+    RUM_METRICS: ClassVar["RUMMetricType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,4 @@ class RumMetricType(ModelSimple):
         }
 
 
-RumMetricType.RUM_METRICS = RumMetricType("rum_metrics")
+RUMMetricType.RUM_METRICS = RUMMetricType("rum_metrics")

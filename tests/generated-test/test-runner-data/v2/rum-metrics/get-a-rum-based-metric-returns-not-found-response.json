@@ -1,9 +1,9 @@
 {
-  "api": "RumMetrics",
+  "api": "RUMMetrics",
   "expected_status": 404,
-  "feature": "Rum Metrics",
-  "id": "v2/Rum Metrics/Get a RUM-based metric returns \"Not Found\" response",
-  "operation_id": "GetRumMetric",
+  "feature": "RUM Metrics",
+  "id": "v2/RUM Metrics/Get a RUM-based metric returns \"Not Found\" response",
+  "operation_id": "GetRUMMetric",
   "request": {
     "body": null,
     "content_type": null,

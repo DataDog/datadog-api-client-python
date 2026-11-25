@@ -12,9 +12,9 @@ from datadog_api_client.model_utils import (
     unset,
     UUID,
 )
-from datadog_api_client.v2.model.rum_archive_config_list_response import RumArchiveConfigListResponse
-from datadog_api_client.v2.model.rum_archive_config_response import RumArchiveConfigResponse
-from datadog_api_client.v2.model.rum_archive_config_upsert_request import RumArchiveConfigUpsertRequest
+from datadog_api_client.v2.model.rum_archive_config_list_response import RUMArchiveConfigListResponse
+from datadog_api_client.v2.model.rum_archive_config_response import RUMArchiveConfigResponse
+from datadog_api_client.v2.model.rum_archive_config_upsert_request import RUMArchiveConfigUpsertRequest
 
 
 class RUMManagedArchivesApi:
@@ -54,7 +54,7 @@ class RUMManagedArchivesApi:
 
         self._get_rum_archive_config_endpoint = _Endpoint(
             settings={
-                "response_type": (RumArchiveConfigResponse,),
+                "response_type": (RUMArchiveConfigResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/rum/config/archive/{app_id}",
                 "operation_id": "get_rum_archive_config",
@@ -77,7 +77,7 @@ class RUMManagedArchivesApi:
 
         self._list_rum_archive_configs_endpoint = _Endpoint(
             settings={
-                "response_type": (RumArchiveConfigListResponse,),
+                "response_type": (RUMArchiveConfigListResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/rum/config/archive",
                 "operation_id": "list_rum_archive_configs",
@@ -112,7 +112,7 @@ class RUMManagedArchivesApi:
 
         self._update_rum_archive_config_endpoint = _Endpoint(
             settings={
-                "response_type": (RumArchiveConfigResponse,),
+                "response_type": (RUMArchiveConfigResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/rum/config/archive/{app_id}",
                 "operation_id": "update_rum_archive_config",
@@ -128,7 +128,7 @@ class RUMManagedArchivesApi:
                 },
                 "body": {
                     "required": True,
-                    "openapi_types": (RumArchiveConfigUpsertRequest,),
+                    "openapi_types": (RUMArchiveConfigUpsertRequest,),
                     "location": "body",
                 },
             },
@@ -156,14 +156,14 @@ class RUMManagedArchivesApi:
     def get_rum_archive_config(
         self,
         app_id: UUID,
-    ) -> RumArchiveConfigResponse:
+    ) -> RUMArchiveConfigResponse:
         """Get an archive configuration.
 
         Get the archive configuration for a RUM application.
 
         :param app_id: RUM application ID.
         :type app_id: UUID
-        :rtype: RumArchiveConfigResponse
+        :rtype: RUMArchiveConfigResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["app_id"] = app_id
@@ -175,7 +175,7 @@ class RUMManagedArchivesApi:
         *,
         page_number: Union[int, UnsetType] = unset,
         page_size: Union[int, UnsetType] = unset,
-    ) -> RumArchiveConfigListResponse:
+    ) -> RUMArchiveConfigListResponse:
         """List archive configurations.
 
         Get the list of archive configurations for your organization.
@@ -184,7 +184,7 @@ class RUMManagedArchivesApi:
         :type page_number: int, optional
         :param page_size: Configurations per page.
         :type page_size: int, optional
-        :rtype: RumArchiveConfigListResponse
+        :rtype: RUMArchiveConfigListResponse
         """
         kwargs: Dict[str, Any] = {}
         if page_number is not unset:
@@ -198,8 +198,8 @@ class RUMManagedArchivesApi:
     def update_rum_archive_config(
         self,
         app_id: UUID,
-        body: RumArchiveConfigUpsertRequest,
-    ) -> RumArchiveConfigResponse:
+        body: RUMArchiveConfigUpsertRequest,
+    ) -> RUMArchiveConfigResponse:
         """Create or update an archive configuration.
 
         Create or update the archive configuration for a RUM application. The application ID in the path must match ``data.id``. Disabling archiving does not delete archived sessions.
@@ -207,8 +207,8 @@ class RUMManagedArchivesApi:
         :param app_id: RUM application ID. Must match data.id for PUT.
         :type app_id: UUID
         :param body: JSON:API request body.
-        :type body: RumArchiveConfigUpsertRequest
-        :rtype: RumArchiveConfigResponse
+        :type body: RUMArchiveConfigUpsertRequest
+        :rtype: RUMArchiveConfigResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["app_id"] = app_id

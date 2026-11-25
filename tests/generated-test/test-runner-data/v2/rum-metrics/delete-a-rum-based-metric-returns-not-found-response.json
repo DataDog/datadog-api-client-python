@@ -1,9 +1,9 @@
 {
-  "api": "RumMetrics",
+  "api": "RUMMetrics",
   "expected_status": 404,
-  "feature": "Rum Metrics",
-  "id": "v2/Rum Metrics/Delete a RUM-based metric returns \"Not Found\" response",
-  "operation_id": "DeleteRumMetric",
+  "feature": "RUM Metrics",
+  "id": "v2/RUM Metrics/Delete a RUM-based metric returns \"Not Found\" response",
+  "operation_id": "DeleteRUMMetric",
   "request": {
     "body": null,
     "content_type": null,

@@ -12,19 +12,19 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_archive_config import RumArchiveConfig
-    from datadog_api_client.v2.model.rum_archive_config_meta import RumArchiveConfigMeta
+    from datadog_api_client.v2.model.rum_archive_config import RUMArchiveConfig
+    from datadog_api_client.v2.model.rum_archive_config_meta import RUMArchiveConfigMeta
 
 
-class RumArchiveConfigListResponse(ModelNormal):
+class RUMArchiveConfigListResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_archive_config import RumArchiveConfig
-        from datadog_api_client.v2.model.rum_archive_config_meta import RumArchiveConfigMeta
+        from datadog_api_client.v2.model.rum_archive_config import RUMArchiveConfig
+        from datadog_api_client.v2.model.rum_archive_config_meta import RUMArchiveConfigMeta
 
         return {
-            "data": ([RumArchiveConfig],),
-            "meta": (RumArchiveConfigMeta,),
+            "data": ([RUMArchiveConfig],),
+            "meta": (RUMArchiveConfigMeta,),
         }
 
     attribute_map = {
@@ -32,15 +32,15 @@ class RumArchiveConfigListResponse(ModelNormal):
         "meta": "meta",
     }
 
-    def __init__(self_, data: List[RumArchiveConfig], meta: RumArchiveConfigMeta, **kwargs):
+    def __init__(self_, data: List[RUMArchiveConfig], meta: RUMArchiveConfigMeta, **kwargs):
         """
         JSON:API document.
 
         :param data: Configurations in page order.
-        :type data: [RumArchiveConfig]
+        :type data: [RUMArchiveConfig]
 
         :param meta: Pagination metadata.
-        :type meta: RumArchiveConfigMeta
+        :type meta: RUMArchiveConfigMeta
         """
         super().__init__(kwargs)
 

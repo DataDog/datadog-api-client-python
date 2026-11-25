@@ -10,7 +10,7 @@ Feature: RUM Retention Quotas
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: Create or update a RUM retention quota config returns "Bad Request" response
-    Given new "UpsertRumQuotaConfig" request
+    Given new "UpsertRUMQuotaConfig" request
     And request contains "scope_type" parameter from "REPLACE.ME"
     And request contains "scope_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"custom": {"daily_reset_time": "08:00", "daily_reset_timezone": "+09:00", "quota_reached_action": "stop", "session_limit": 1000000, "window_type": "daily"}, "mode": "custom"}, "id": "cd73a516-a481-4af5-8352-9b577465c77b", "type": "rum_quota_config"}}
@@ -19,7 +19,7 @@ Feature: RUM Retention Quotas
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: Create or update a RUM retention quota config returns "Not Found" response
-    Given new "UpsertRumQuotaConfig" request
+    Given new "UpsertRUMQuotaConfig" request
     And request contains "scope_type" parameter from "REPLACE.ME"
     And request contains "scope_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"custom": {"daily_reset_time": "08:00", "daily_reset_timezone": "+09:00", "quota_reached_action": "stop", "session_limit": 1000000, "window_type": "daily"}, "mode": "custom"}, "id": "cd73a516-a481-4af5-8352-9b577465c77b", "type": "rum_quota_config"}}
@@ -28,7 +28,7 @@ Feature: RUM Retention Quotas
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: Create or update a RUM retention quota config returns "OK" response
-    Given new "UpsertRumQuotaConfig" request
+    Given new "UpsertRUMQuotaConfig" request
     And request contains "scope_type" parameter from "REPLACE.ME"
     And request contains "scope_id" parameter from "REPLACE.ME"
     And body with value {"data": {"attributes": {"custom": {"daily_reset_time": "08:00", "daily_reset_timezone": "+09:00", "quota_reached_action": "stop", "session_limit": 1000000, "window_type": "daily"}, "mode": "custom"}, "id": "cd73a516-a481-4af5-8352-9b577465c77b", "type": "rum_quota_config"}}
@@ -37,7 +37,7 @@ Feature: RUM Retention Quotas
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: Delete a RUM retention quota configuration returns "Bad Request" response
-    Given new "DeleteRumQuotaConfig" request
+    Given new "DeleteRUMQuotaConfig" request
     And request contains "scope_type" parameter from "REPLACE.ME"
     And request contains "scope_id" parameter from "REPLACE.ME"
     When the request is sent
@@ -45,7 +45,7 @@ Feature: RUM Retention Quotas
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: Delete a RUM retention quota configuration returns "No Content" response
-    Given new "DeleteRumQuotaConfig" request
+    Given new "DeleteRUMQuotaConfig" request
     And request contains "scope_type" parameter from "REPLACE.ME"
     And request contains "scope_id" parameter from "REPLACE.ME"
     When the request is sent
@@ -53,7 +53,7 @@ Feature: RUM Retention Quotas
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: Delete a RUM retention quota configuration returns "Not Found" response
-    Given new "DeleteRumQuotaConfig" request
+    Given new "DeleteRUMQuotaConfig" request
     And request contains "scope_type" parameter from "REPLACE.ME"
     And request contains "scope_id" parameter from "REPLACE.ME"
     When the request is sent
@@ -61,7 +61,7 @@ Feature: RUM Retention Quotas
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: Get a RUM retention quota configuration returns "Bad Request" response
-    Given new "GetRumQuotaConfig" request
+    Given new "GetRUMQuotaConfig" request
     And request contains "scope_type" parameter from "REPLACE.ME"
     And request contains "scope_id" parameter from "REPLACE.ME"
     When the request is sent
@@ -69,7 +69,7 @@ Feature: RUM Retention Quotas
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: Get a RUM retention quota configuration returns "Not Found" response
-    Given new "GetRumQuotaConfig" request
+    Given new "GetRUMQuotaConfig" request
     And request contains "scope_type" parameter from "REPLACE.ME"
     And request contains "scope_id" parameter from "REPLACE.ME"
     When the request is sent
@@ -77,7 +77,7 @@ Feature: RUM Retention Quotas
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: Get a RUM retention quota configuration returns "OK" response
-    Given new "GetRumQuotaConfig" request
+    Given new "GetRUMQuotaConfig" request
     And request contains "scope_type" parameter from "REPLACE.ME"
     And request contains "scope_id" parameter from "REPLACE.ME"
     When the request is sent

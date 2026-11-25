@@ -12,28 +12,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_archive_sessions_page import RumArchiveSessionsPage
+    from datadog_api_client.v2.model.rum_archive_sessions_page import RUMArchiveSessionsPage
 
 
-class RumArchiveSessionsMeta(ModelNormal):
+class RUMArchiveSessionsMeta(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_archive_sessions_page import RumArchiveSessionsPage
+        from datadog_api_client.v2.model.rum_archive_sessions_page import RUMArchiveSessionsPage
 
         return {
-            "page": (RumArchiveSessionsPage,),
+            "page": (RUMArchiveSessionsPage,),
         }
 
     attribute_map = {
         "page": "page",
     }
 
-    def __init__(self_, page: RumArchiveSessionsPage, **kwargs):
+    def __init__(self_, page: RUMArchiveSessionsPage, **kwargs):
         """
         Search metadata.
 
         :param page: Search pagination.
-        :type page: RumArchiveSessionsPage
+        :type page: RUMArchiveSessionsPage
         """
         super().__init__(kwargs)
 

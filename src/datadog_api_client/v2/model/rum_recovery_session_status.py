@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumRecoverySessionStatus(ModelSimple):
+class RUMRecoverySessionStatus(ModelSimple):
     """
     Session availability or recovery state. `RECOVERED` indicates that the session is ready to query.
 
@@ -30,14 +30,14 @@ class RumRecoverySessionStatus(ModelSimple):
         "EXPIRED",
         "CANCELLED",
     }
-    AVAILABLE: ClassVar["RumRecoverySessionStatus"]
-    PENDING: ClassVar["RumRecoverySessionStatus"]
-    PROCESSING: ClassVar["RumRecoverySessionStatus"]
-    RECOVERED: ClassVar["RumRecoverySessionStatus"]
-    FAILED: ClassVar["RumRecoverySessionStatus"]
-    RETAINED: ClassVar["RumRecoverySessionStatus"]
-    EXPIRED: ClassVar["RumRecoverySessionStatus"]
-    CANCELLED: ClassVar["RumRecoverySessionStatus"]
+    AVAILABLE: ClassVar["RUMRecoverySessionStatus"]
+    PENDING: ClassVar["RUMRecoverySessionStatus"]
+    PROCESSING: ClassVar["RUMRecoverySessionStatus"]
+    RECOVERED: ClassVar["RUMRecoverySessionStatus"]
+    FAILED: ClassVar["RUMRecoverySessionStatus"]
+    RETAINED: ClassVar["RUMRecoverySessionStatus"]
+    EXPIRED: ClassVar["RUMRecoverySessionStatus"]
+    CANCELLED: ClassVar["RUMRecoverySessionStatus"]
 
     @cached_property
     def openapi_types(_):
@@ -46,11 +46,11 @@ class RumRecoverySessionStatus(ModelSimple):
         }
 
 
-RumRecoverySessionStatus.AVAILABLE = RumRecoverySessionStatus("AVAILABLE")
-RumRecoverySessionStatus.PENDING = RumRecoverySessionStatus("PENDING")
-RumRecoverySessionStatus.PROCESSING = RumRecoverySessionStatus("PROCESSING")
-RumRecoverySessionStatus.RECOVERED = RumRecoverySessionStatus("RECOVERED")
-RumRecoverySessionStatus.FAILED = RumRecoverySessionStatus("FAILED")
-RumRecoverySessionStatus.RETAINED = RumRecoverySessionStatus("RETAINED")
-RumRecoverySessionStatus.EXPIRED = RumRecoverySessionStatus("EXPIRED")
-RumRecoverySessionStatus.CANCELLED = RumRecoverySessionStatus("CANCELLED")
+RUMRecoverySessionStatus.AVAILABLE = RUMRecoverySessionStatus("AVAILABLE")
+RUMRecoverySessionStatus.PENDING = RUMRecoverySessionStatus("PENDING")
+RUMRecoverySessionStatus.PROCESSING = RUMRecoverySessionStatus("PROCESSING")
+RUMRecoverySessionStatus.RECOVERED = RUMRecoverySessionStatus("RECOVERED")
+RUMRecoverySessionStatus.FAILED = RUMRecoverySessionStatus("FAILED")
+RUMRecoverySessionStatus.RETAINED = RUMRecoverySessionStatus("RETAINED")
+RUMRecoverySessionStatus.EXPIRED = RUMRecoverySessionStatus("EXPIRED")
+RUMRecoverySessionStatus.CANCELLED = RUMRecoverySessionStatus("CANCELLED")

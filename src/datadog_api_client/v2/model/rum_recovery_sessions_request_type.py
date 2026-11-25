@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumRecoverySessionsRequestType(ModelSimple):
+class RUMRecoverySessionsRequestType(ModelSimple):
     """
     Targeted recovery. Omitted request_type defaults to sessions.
 
@@ -23,7 +23,7 @@ class RumRecoverySessionsRequestType(ModelSimple):
     allowed_values = {
         "sessions",
     }
-    SESSIONS: ClassVar["RumRecoverySessionsRequestType"]
+    SESSIONS: ClassVar["RUMRecoverySessionsRequestType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,4 @@ class RumRecoverySessionsRequestType(ModelSimple):
         }
 
 
-RumRecoverySessionsRequestType.SESSIONS = RumRecoverySessionsRequestType("sessions")
+RUMRecoverySessionsRequestType.SESSIONS = RUMRecoverySessionsRequestType("sessions")

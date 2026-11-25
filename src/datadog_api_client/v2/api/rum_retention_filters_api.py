@@ -7,25 +7,25 @@ from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
-from datadog_api_client.v2.model.rum_retention_filters_order_response import RumRetentionFiltersOrderResponse
-from datadog_api_client.v2.model.rum_retention_filters_order_request import RumRetentionFiltersOrderRequest
-from datadog_api_client.v2.model.rum_retention_filters_response import RumRetentionFiltersResponse
-from datadog_api_client.v2.model.rum_retention_filter_response import RumRetentionFilterResponse
-from datadog_api_client.v2.model.rum_retention_filter_create_request import RumRetentionFilterCreateRequest
-from datadog_api_client.v2.model.rum_exclusion_filters_response import RumExclusionFiltersResponse
-from datadog_api_client.v2.model.rum_exclusion_filter_response import RumExclusionFilterResponse
-from datadog_api_client.v2.model.rum_exclusion_filter_create_request import RumExclusionFilterCreateRequest
-from datadog_api_client.v2.model.rum_exclusion_filter_update_request import RumExclusionFilterUpdateRequest
-from datadog_api_client.v2.model.rum_permanent_retention_filters_response import RumPermanentRetentionFiltersResponse
-from datadog_api_client.v2.model.rum_permanent_retention_filter_response import RumPermanentRetentionFilterResponse
-from datadog_api_client.v2.model.rum_permanent_retention_filter_id import RumPermanentRetentionFilterID
+from datadog_api_client.v2.model.rum_retention_filters_order_response import RUMRetentionFiltersOrderResponse
+from datadog_api_client.v2.model.rum_retention_filters_order_request import RUMRetentionFiltersOrderRequest
+from datadog_api_client.v2.model.rum_retention_filters_response import RUMRetentionFiltersResponse
+from datadog_api_client.v2.model.rum_retention_filter_response import RUMRetentionFilterResponse
+from datadog_api_client.v2.model.rum_retention_filter_create_request import RUMRetentionFilterCreateRequest
+from datadog_api_client.v2.model.rum_exclusion_filters_response import RUMExclusionFiltersResponse
+from datadog_api_client.v2.model.rum_exclusion_filter_response import RUMExclusionFilterResponse
+from datadog_api_client.v2.model.rum_exclusion_filter_create_request import RUMExclusionFilterCreateRequest
+from datadog_api_client.v2.model.rum_exclusion_filter_update_request import RUMExclusionFilterUpdateRequest
+from datadog_api_client.v2.model.rum_permanent_retention_filters_response import RUMPermanentRetentionFiltersResponse
+from datadog_api_client.v2.model.rum_permanent_retention_filter_response import RUMPermanentRetentionFilterResponse
+from datadog_api_client.v2.model.rum_permanent_retention_filter_id import RUMPermanentRetentionFilterID
 from datadog_api_client.v2.model.rum_permanent_retention_filter_update_request import (
-    RumPermanentRetentionFilterUpdateRequest,
+    RUMPermanentRetentionFilterUpdateRequest,
 )
-from datadog_api_client.v2.model.rum_retention_filter_update_request import RumRetentionFilterUpdateRequest
+from datadog_api_client.v2.model.rum_retention_filter_update_request import RUMRetentionFilterUpdateRequest
 
 
-class RumRetentionFiltersApi:
+class RUMRetentionFiltersApi:
     """
     Manage retention filters through `Manage Applications <https://app.datadoghq.com/rum/list>`_ of RUM for your organization.
     """
@@ -37,7 +37,7 @@ class RumRetentionFiltersApi:
 
         self._create_exclusion_filter_endpoint = _Endpoint(
             settings={
-                "response_type": (RumExclusionFilterResponse,),
+                "response_type": (RUMExclusionFilterResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters/exclusion",
                 "operation_id": "create_exclusion_filter",
@@ -53,7 +53,7 @@ class RumRetentionFiltersApi:
                 },
                 "body": {
                     "required": True,
-                    "openapi_types": (RumExclusionFilterCreateRequest,),
+                    "openapi_types": (RUMExclusionFilterCreateRequest,),
                     "location": "body",
                 },
             },
@@ -63,7 +63,7 @@ class RumRetentionFiltersApi:
 
         self._create_retention_filter_endpoint = _Endpoint(
             settings={
-                "response_type": (RumRetentionFilterResponse,),
+                "response_type": (RUMRetentionFilterResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters",
                 "operation_id": "create_retention_filter",
@@ -79,7 +79,7 @@ class RumRetentionFiltersApi:
                 },
                 "body": {
                     "required": True,
-                    "openapi_types": (RumRetentionFilterCreateRequest,),
+                    "openapi_types": (RUMRetentionFilterCreateRequest,),
                     "location": "body",
                 },
             },
@@ -147,7 +147,7 @@ class RumRetentionFiltersApi:
 
         self._get_exclusion_filter_endpoint = _Endpoint(
             settings={
-                "response_type": (RumExclusionFilterResponse,),
+                "response_type": (RUMExclusionFilterResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters/exclusion/{ef_id}",
                 "operation_id": "get_exclusion_filter",
@@ -176,7 +176,7 @@ class RumRetentionFiltersApi:
 
         self._get_permanent_retention_filter_endpoint = _Endpoint(
             settings={
-                "response_type": (RumPermanentRetentionFilterResponse,),
+                "response_type": (RUMPermanentRetentionFilterResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters/permanent/{permanent_rf_id}",
                 "operation_id": "get_permanent_retention_filter",
@@ -192,7 +192,7 @@ class RumRetentionFiltersApi:
                 },
                 "permanent_rf_id": {
                     "required": True,
-                    "openapi_types": (RumPermanentRetentionFilterID,),
+                    "openapi_types": (RUMPermanentRetentionFilterID,),
                     "attribute": "permanent_rf_id",
                     "location": "path",
                 },
@@ -205,7 +205,7 @@ class RumRetentionFiltersApi:
 
         self._get_retention_filter_endpoint = _Endpoint(
             settings={
-                "response_type": (RumRetentionFilterResponse,),
+                "response_type": (RUMRetentionFilterResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters/{rf_id}",
                 "operation_id": "get_retention_filter",
@@ -234,7 +234,7 @@ class RumRetentionFiltersApi:
 
         self._list_exclusion_filters_endpoint = _Endpoint(
             settings={
-                "response_type": (RumExclusionFiltersResponse,),
+                "response_type": (RUMExclusionFiltersResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters/exclusion",
                 "operation_id": "list_exclusion_filters",
@@ -257,7 +257,7 @@ class RumRetentionFiltersApi:
 
         self._list_permanent_retention_filters_endpoint = _Endpoint(
             settings={
-                "response_type": (RumPermanentRetentionFiltersResponse,),
+                "response_type": (RUMPermanentRetentionFiltersResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters/permanent",
                 "operation_id": "list_permanent_retention_filters",
@@ -280,7 +280,7 @@ class RumRetentionFiltersApi:
 
         self._list_retention_filters_endpoint = _Endpoint(
             settings={
-                "response_type": (RumRetentionFiltersResponse,),
+                "response_type": (RUMRetentionFiltersResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters",
                 "operation_id": "list_retention_filters",
@@ -303,7 +303,7 @@ class RumRetentionFiltersApi:
 
         self._order_retention_filters_endpoint = _Endpoint(
             settings={
-                "response_type": (RumRetentionFiltersOrderResponse,),
+                "response_type": (RUMRetentionFiltersOrderResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications/{app_id}/relationships/retention_filters",
                 "operation_id": "order_retention_filters",
@@ -319,7 +319,7 @@ class RumRetentionFiltersApi:
                 },
                 "body": {
                     "required": True,
-                    "openapi_types": (RumRetentionFiltersOrderRequest,),
+                    "openapi_types": (RUMRetentionFiltersOrderRequest,),
                     "location": "body",
                 },
             },
@@ -329,7 +329,7 @@ class RumRetentionFiltersApi:
 
         self._update_exclusion_filter_endpoint = _Endpoint(
             settings={
-                "response_type": (RumExclusionFilterResponse,),
+                "response_type": (RUMExclusionFilterResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters/exclusion/{ef_id}",
                 "operation_id": "update_exclusion_filter",
@@ -351,7 +351,7 @@ class RumRetentionFiltersApi:
                 },
                 "body": {
                     "required": True,
-                    "openapi_types": (RumExclusionFilterUpdateRequest,),
+                    "openapi_types": (RUMExclusionFilterUpdateRequest,),
                     "location": "body",
                 },
             },
@@ -361,7 +361,7 @@ class RumRetentionFiltersApi:
 
         self._update_permanent_retention_filter_endpoint = _Endpoint(
             settings={
-                "response_type": (RumPermanentRetentionFilterResponse,),
+                "response_type": (RUMPermanentRetentionFilterResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters/permanent/{permanent_rf_id}",
                 "operation_id": "update_permanent_retention_filter",
@@ -377,13 +377,13 @@ class RumRetentionFiltersApi:
                 },
                 "permanent_rf_id": {
                     "required": True,
-                    "openapi_types": (RumPermanentRetentionFilterID,),
+                    "openapi_types": (RUMPermanentRetentionFilterID,),
                     "attribute": "permanent_rf_id",
                     "location": "path",
                 },
                 "body": {
                     "required": True,
-                    "openapi_types": (RumPermanentRetentionFilterUpdateRequest,),
+                    "openapi_types": (RUMPermanentRetentionFilterUpdateRequest,),
                     "location": "body",
                 },
             },
@@ -393,7 +393,7 @@ class RumRetentionFiltersApi:
 
         self._update_retention_filter_endpoint = _Endpoint(
             settings={
-                "response_type": (RumRetentionFilterResponse,),
+                "response_type": (RUMRetentionFilterResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/applications/{app_id}/retention_filters/{rf_id}",
                 "operation_id": "update_retention_filter",
@@ -415,7 +415,7 @@ class RumRetentionFiltersApi:
                 },
                 "body": {
                     "required": True,
-                    "openapi_types": (RumRetentionFilterUpdateRequest,),
+                    "openapi_types": (RUMRetentionFilterUpdateRequest,),
                     "location": "body",
                 },
             },
@@ -426,8 +426,8 @@ class RumRetentionFiltersApi:
     def create_exclusion_filter(
         self,
         app_id: str,
-        body: RumExclusionFilterCreateRequest,
-    ) -> RumExclusionFilterResponse:
+        body: RUMExclusionFilterCreateRequest,
+    ) -> RUMExclusionFilterResponse:
         """Create a RUM exclusion filter.
 
         Create an exclusion filter for a RUM application.
@@ -436,8 +436,8 @@ class RumRetentionFiltersApi:
         :param app_id: RUM application ID.
         :type app_id: str
         :param body: The definition of the new RUM exclusion filter.
-        :type body: RumExclusionFilterCreateRequest
-        :rtype: RumExclusionFilterResponse
+        :type body: RUMExclusionFilterCreateRequest
+        :rtype: RUMExclusionFilterResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["app_id"] = app_id
@@ -449,8 +449,8 @@ class RumRetentionFiltersApi:
     def create_retention_filter(
         self,
         app_id: str,
-        body: RumRetentionFilterCreateRequest,
-    ) -> RumRetentionFilterResponse:
+        body: RUMRetentionFilterCreateRequest,
+    ) -> RUMRetentionFilterResponse:
         """Create a RUM retention filter.
 
         Create a RUM retention filter for a RUM application.
@@ -459,8 +459,8 @@ class RumRetentionFiltersApi:
         :param app_id: RUM application ID.
         :type app_id: str
         :param body: The definition of the new RUM retention filter.
-        :type body: RumRetentionFilterCreateRequest
-        :rtype: RumRetentionFilterResponse
+        :type body: RUMRetentionFilterCreateRequest
+        :rtype: RUMRetentionFilterResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["app_id"] = app_id
@@ -519,7 +519,7 @@ class RumRetentionFiltersApi:
         self,
         app_id: str,
         ef_id: str,
-    ) -> RumExclusionFilterResponse:
+    ) -> RUMExclusionFilterResponse:
         """Get a RUM exclusion filter.
 
         Get a single exclusion filter for a RUM application.
@@ -528,7 +528,7 @@ class RumRetentionFiltersApi:
         :type app_id: str
         :param ef_id: Exclusion filter ID.
         :type ef_id: str
-        :rtype: RumExclusionFilterResponse
+        :rtype: RUMExclusionFilterResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["app_id"] = app_id
@@ -540,8 +540,8 @@ class RumRetentionFiltersApi:
     def get_permanent_retention_filter(
         self,
         app_id: str,
-        permanent_rf_id: RumPermanentRetentionFilterID,
-    ) -> RumPermanentRetentionFilterResponse:
+        permanent_rf_id: RUMPermanentRetentionFilterID,
+    ) -> RUMPermanentRetentionFilterResponse:
         """Get a permanent RUM retention filter.
 
         Get a permanent RUM retention filter for a RUM application by its identifier.
@@ -549,8 +549,8 @@ class RumRetentionFiltersApi:
         :param app_id: RUM application ID.
         :type app_id: str
         :param permanent_rf_id: The identifier of the permanent RUM retention filter.
-        :type permanent_rf_id: RumPermanentRetentionFilterID
-        :rtype: RumPermanentRetentionFilterResponse
+        :type permanent_rf_id: RUMPermanentRetentionFilterID
+        :rtype: RUMPermanentRetentionFilterResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["app_id"] = app_id
@@ -563,7 +563,7 @@ class RumRetentionFiltersApi:
         self,
         app_id: str,
         rf_id: str,
-    ) -> RumRetentionFilterResponse:
+    ) -> RUMRetentionFilterResponse:
         """Get a RUM retention filter.
 
         Get a RUM retention filter for a RUM application.
@@ -572,7 +572,7 @@ class RumRetentionFiltersApi:
         :type app_id: str
         :param rf_id: Retention filter ID.
         :type rf_id: str
-        :rtype: RumRetentionFilterResponse
+        :rtype: RUMRetentionFilterResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["app_id"] = app_id
@@ -584,7 +584,7 @@ class RumRetentionFiltersApi:
     def list_exclusion_filters(
         self,
         app_id: str,
-    ) -> RumExclusionFiltersResponse:
+    ) -> RUMExclusionFiltersResponse:
         """Get all RUM exclusion filters.
 
         Get the list of exclusion filters for a RUM application.
@@ -592,7 +592,7 @@ class RumRetentionFiltersApi:
 
         :param app_id: RUM application ID.
         :type app_id: str
-        :rtype: RumExclusionFiltersResponse
+        :rtype: RUMExclusionFiltersResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["app_id"] = app_id
@@ -602,7 +602,7 @@ class RumRetentionFiltersApi:
     def list_permanent_retention_filters(
         self,
         app_id: str,
-    ) -> RumPermanentRetentionFiltersResponse:
+    ) -> RUMPermanentRetentionFiltersResponse:
         """Get all permanent RUM retention filters.
 
         Get the list of permanent RUM retention filters for a RUM application.
@@ -611,7 +611,7 @@ class RumRetentionFiltersApi:
 
         :param app_id: RUM application ID.
         :type app_id: str
-        :rtype: RumPermanentRetentionFiltersResponse
+        :rtype: RUMPermanentRetentionFiltersResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["app_id"] = app_id
@@ -621,14 +621,14 @@ class RumRetentionFiltersApi:
     def list_retention_filters(
         self,
         app_id: str,
-    ) -> RumRetentionFiltersResponse:
+    ) -> RUMRetentionFiltersResponse:
         """Get all RUM retention filters.
 
         Get the list of RUM retention filters for a RUM application.
 
         :param app_id: RUM application ID.
         :type app_id: str
-        :rtype: RumRetentionFiltersResponse
+        :rtype: RUMRetentionFiltersResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["app_id"] = app_id
@@ -638,8 +638,8 @@ class RumRetentionFiltersApi:
     def order_retention_filters(
         self,
         app_id: str,
-        body: RumRetentionFiltersOrderRequest,
-    ) -> RumRetentionFiltersOrderResponse:
+        body: RUMRetentionFiltersOrderRequest,
+    ) -> RUMRetentionFiltersOrderResponse:
         """Order RUM retention filters.
 
         Order RUM retention filters for a RUM application.
@@ -648,8 +648,8 @@ class RumRetentionFiltersApi:
         :param app_id: RUM application ID.
         :type app_id: str
         :param body: New definition of the RUM retention filter.
-        :type body: RumRetentionFiltersOrderRequest
-        :rtype: RumRetentionFiltersOrderResponse
+        :type body: RUMRetentionFiltersOrderRequest
+        :rtype: RUMRetentionFiltersOrderResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["app_id"] = app_id
@@ -662,8 +662,8 @@ class RumRetentionFiltersApi:
         self,
         app_id: str,
         ef_id: str,
-        body: RumExclusionFilterUpdateRequest,
-    ) -> RumExclusionFilterResponse:
+        body: RUMExclusionFilterUpdateRequest,
+    ) -> RUMExclusionFilterResponse:
         """Update a RUM exclusion filter.
 
         Update an exclusion filter for a RUM application.
@@ -676,8 +676,8 @@ class RumRetentionFiltersApi:
         :param ef_id: Exclusion filter ID.
         :type ef_id: str
         :param body: New definition of the RUM exclusion filter.
-        :type body: RumExclusionFilterUpdateRequest
-        :rtype: RumExclusionFilterResponse
+        :type body: RUMExclusionFilterUpdateRequest
+        :rtype: RUMExclusionFilterResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["app_id"] = app_id
@@ -691,9 +691,9 @@ class RumRetentionFiltersApi:
     def update_permanent_retention_filter(
         self,
         app_id: str,
-        permanent_rf_id: RumPermanentRetentionFilterID,
-        body: RumPermanentRetentionFilterUpdateRequest,
-    ) -> RumPermanentRetentionFilterResponse:
+        permanent_rf_id: RUMPermanentRetentionFilterID,
+        body: RUMPermanentRetentionFilterUpdateRequest,
+    ) -> RUMPermanentRetentionFilterResponse:
         """Update a permanent RUM retention filter.
 
         Update the cross-product sampling configuration of a permanent RUM retention filter for a RUM application.
@@ -703,10 +703,10 @@ class RumRetentionFiltersApi:
         :param app_id: RUM application ID.
         :type app_id: str
         :param permanent_rf_id: The identifier of the permanent RUM retention filter.
-        :type permanent_rf_id: RumPermanentRetentionFilterID
+        :type permanent_rf_id: RUMPermanentRetentionFilterID
         :param body: New configuration of the permanent RUM retention filter.
-        :type body: RumPermanentRetentionFilterUpdateRequest
-        :rtype: RumPermanentRetentionFilterResponse
+        :type body: RUMPermanentRetentionFilterUpdateRequest
+        :rtype: RUMPermanentRetentionFilterResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["app_id"] = app_id
@@ -721,8 +721,8 @@ class RumRetentionFiltersApi:
         self,
         app_id: str,
         rf_id: str,
-        body: RumRetentionFilterUpdateRequest,
-    ) -> RumRetentionFilterResponse:
+        body: RUMRetentionFilterUpdateRequest,
+    ) -> RUMRetentionFilterResponse:
         """Update a RUM retention filter.
 
         Update a RUM retention filter for a RUM application.
@@ -733,8 +733,8 @@ class RumRetentionFiltersApi:
         :param rf_id: Retention filter ID.
         :type rf_id: str
         :param body: New definition of the RUM retention filter.
-        :type body: RumRetentionFilterUpdateRequest
-        :rtype: RumRetentionFilterResponse
+        :type body: RUMRetentionFilterUpdateRequest
+        :rtype: RUMRetentionFilterResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["app_id"] = app_id

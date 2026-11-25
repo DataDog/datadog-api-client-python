@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumSdkConfigDynamicOptionStrategy(ModelSimple):
+class RUMSdkConfigDynamicOptionStrategy(ModelSimple):
     """
     The strategy used to extract the dynamic value.
 
@@ -26,10 +26,10 @@ class RumSdkConfigDynamicOptionStrategy(ModelSimple):
         "dom",
         "localStorage",
     }
-    JS: ClassVar["RumSdkConfigDynamicOptionStrategy"]
-    COOKIE: ClassVar["RumSdkConfigDynamicOptionStrategy"]
-    DOM: ClassVar["RumSdkConfigDynamicOptionStrategy"]
-    LOCAL_STORAGE: ClassVar["RumSdkConfigDynamicOptionStrategy"]
+    JS: ClassVar["RUMSdkConfigDynamicOptionStrategy"]
+    COOKIE: ClassVar["RUMSdkConfigDynamicOptionStrategy"]
+    DOM: ClassVar["RUMSdkConfigDynamicOptionStrategy"]
+    LOCAL_STORAGE: ClassVar["RUMSdkConfigDynamicOptionStrategy"]
 
     @cached_property
     def openapi_types(_):
@@ -38,7 +38,7 @@ class RumSdkConfigDynamicOptionStrategy(ModelSimple):
         }
 
 
-RumSdkConfigDynamicOptionStrategy.JS = RumSdkConfigDynamicOptionStrategy("js")
-RumSdkConfigDynamicOptionStrategy.COOKIE = RumSdkConfigDynamicOptionStrategy("cookie")
-RumSdkConfigDynamicOptionStrategy.DOM = RumSdkConfigDynamicOptionStrategy("dom")
-RumSdkConfigDynamicOptionStrategy.LOCAL_STORAGE = RumSdkConfigDynamicOptionStrategy("localStorage")
+RUMSdkConfigDynamicOptionStrategy.JS = RUMSdkConfigDynamicOptionStrategy("js")
+RUMSdkConfigDynamicOptionStrategy.COOKIE = RUMSdkConfigDynamicOptionStrategy("cookie")
+RUMSdkConfigDynamicOptionStrategy.DOM = RUMSdkConfigDynamicOptionStrategy("dom")
+RUMSdkConfigDynamicOptionStrategy.LOCAL_STORAGE = RUMSdkConfigDynamicOptionStrategy("localStorage")

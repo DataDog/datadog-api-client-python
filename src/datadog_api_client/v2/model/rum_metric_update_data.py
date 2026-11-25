@@ -14,11 +14,11 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_metric_update_attributes import RumMetricUpdateAttributes
-    from datadog_api_client.v2.model.rum_metric_type import RumMetricType
+    from datadog_api_client.v2.model.rum_metric_update_attributes import RUMMetricUpdateAttributes
+    from datadog_api_client.v2.model.rum_metric_type import RUMMetricType
 
 
-class RumMetricUpdateData(ModelNormal):
+class RUMMetricUpdateData(ModelNormal):
     validations = {
         "id": {
             "max_length": 200,
@@ -27,13 +27,13 @@ class RumMetricUpdateData(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_metric_update_attributes import RumMetricUpdateAttributes
-        from datadog_api_client.v2.model.rum_metric_type import RumMetricType
+        from datadog_api_client.v2.model.rum_metric_update_attributes import RUMMetricUpdateAttributes
+        from datadog_api_client.v2.model.rum_metric_type import RUMMetricType
 
         return {
-            "attributes": (RumMetricUpdateAttributes,),
+            "attributes": (RUMMetricUpdateAttributes,),
             "id": (str,),
-            "type": (RumMetricType,),
+            "type": (RUMMetricType,),
         }
 
     attribute_map = {
@@ -43,13 +43,13 @@ class RumMetricUpdateData(ModelNormal):
     }
 
     def __init__(
-        self_, attributes: RumMetricUpdateAttributes, type: RumMetricType, id: Union[str, UnsetType] = unset, **kwargs
+        self_, attributes: RUMMetricUpdateAttributes, type: RUMMetricType, id: Union[str, UnsetType] = unset, **kwargs
     ):
         """
         The RUM-based metric properties to update. ``id`` is required by the API and must match the ``metric_id`` path parameter.
 
         :param attributes: The RUM-based metric properties to update. Omitted properties keep their current value.
-        :type attributes: RumMetricUpdateAttributes
+        :type attributes: RUMMetricUpdateAttributes
 
         :param id: The name of the RUM-based metric.
             On creation, it must be 1 to 200 characters long, contain only ASCII letters, digits, underscores, and periods, start with a letter, and not start with ``rum.measure`` or ``rum.investigate``.
@@ -57,7 +57,7 @@ class RumMetricUpdateData(ModelNormal):
         :type id: str, optional
 
         :param type: The type of the resource. The value must be ``rum_metrics``.
-        :type type: RumMetricType
+        :type type: RUMMetricType
         """
         if id is not unset:
             kwargs["id"] = id

@@ -10,7 +10,7 @@ from datadog_api_client.model_utils import (
 )
 
 
-class RumArchiveConfigPage(ModelNormal):
+class RUMArchiveConfigPage(ModelNormal):
     validations = {
         "total_filtered_count": {
             "inclusive_minimum": 0,

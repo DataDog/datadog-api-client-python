@@ -12,20 +12,20 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_config_attributes import RumConfigAttributes
-    from datadog_api_client.v2.model.rum_config_type import RumConfigType
+    from datadog_api_client.v2.model.rum_config_attributes import RUMConfigAttributes
+    from datadog_api_client.v2.model.rum_config_type import RUMConfigType
 
 
-class RumConfigData(ModelNormal):
+class RUMConfigData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_config_attributes import RumConfigAttributes
-        from datadog_api_client.v2.model.rum_config_type import RumConfigType
+        from datadog_api_client.v2.model.rum_config_attributes import RUMConfigAttributes
+        from datadog_api_client.v2.model.rum_config_type import RUMConfigType
 
         return {
-            "attributes": (RumConfigAttributes,),
+            "attributes": (RUMConfigAttributes,),
             "id": (str,),
-            "type": (RumConfigType,),
+            "type": (RUMConfigType,),
         }
 
     attribute_map = {
@@ -34,18 +34,18 @@ class RumConfigData(ModelNormal):
         "type": "type",
     }
 
-    def __init__(self_, attributes: RumConfigAttributes, id: str, type: RumConfigType, **kwargs):
+    def __init__(self_, attributes: RUMConfigAttributes, id: str, type: RUMConfigType, **kwargs):
         """
         The RUM configuration data.
 
         :param attributes: Attributes of the RUM configuration.
-        :type attributes: RumConfigAttributes
+        :type attributes: RUMConfigAttributes
 
         :param id: The organization ID associated with the RUM configuration.
         :type id: str
 
         :param type: The type of the resource. The value should always be ``rum_config``.
-        :type type: RumConfigType
+        :type type: RUMConfigType
         """
         super().__init__(kwargs)
 

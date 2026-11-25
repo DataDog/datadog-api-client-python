@@ -14,28 +14,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_exclusion_filter_data import RumExclusionFilterData
+    from datadog_api_client.v2.model.rum_exclusion_filter_data import RUMExclusionFilterData
 
 
-class RumExclusionFiltersResponse(ModelNormal):
+class RUMExclusionFiltersResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_exclusion_filter_data import RumExclusionFilterData
+        from datadog_api_client.v2.model.rum_exclusion_filter_data import RUMExclusionFilterData
 
         return {
-            "data": ([RumExclusionFilterData],),
+            "data": ([RUMExclusionFilterData],),
         }
 
     attribute_map = {
         "data": "data",
     }
 
-    def __init__(self_, data: Union[List[RumExclusionFilterData], UnsetType] = unset, **kwargs):
+    def __init__(self_, data: Union[List[RUMExclusionFilterData], UnsetType] = unset, **kwargs):
         """
         All exclusion filters for a RUM application.
 
         :param data: A list of exclusion filters.
-        :type data: [RumExclusionFilterData], optional
+        :type data: [RUMExclusionFilterData], optional
         """
         if data is not unset:
             kwargs["data"] = data

@@ -12,20 +12,20 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_recovery_batch_list_attributes import RumRecoveryBatchListAttributes
-    from datadog_api_client.v2.model.rum_recovery_batch_list_data_type import RumRecoveryBatchListDataType
+    from datadog_api_client.v2.model.rum_recovery_batch_list_attributes import RUMRecoveryBatchListAttributes
+    from datadog_api_client.v2.model.rum_recovery_batch_list_data_type import RUMRecoveryBatchListDataType
 
 
-class RumRecoveryBatchListData(ModelNormal):
+class RUMRecoveryBatchListData(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_recovery_batch_list_attributes import RumRecoveryBatchListAttributes
-        from datadog_api_client.v2.model.rum_recovery_batch_list_data_type import RumRecoveryBatchListDataType
+        from datadog_api_client.v2.model.rum_recovery_batch_list_attributes import RUMRecoveryBatchListAttributes
+        from datadog_api_client.v2.model.rum_recovery_batch_list_data_type import RUMRecoveryBatchListDataType
 
         return {
-            "attributes": (RumRecoveryBatchListAttributes,),
+            "attributes": (RUMRecoveryBatchListAttributes,),
             "id": (str,),
-            "type": (RumRecoveryBatchListDataType,),
+            "type": (RUMRecoveryBatchListDataType,),
         }
 
     attribute_map = {
@@ -35,19 +35,19 @@ class RumRecoveryBatchListData(ModelNormal):
     }
 
     def __init__(
-        self_, attributes: RumRecoveryBatchListAttributes, id: str, type: RumRecoveryBatchListDataType, **kwargs
+        self_, attributes: RUMRecoveryBatchListAttributes, id: str, type: RUMRecoveryBatchListDataType, **kwargs
     ):
         """
         JSON:API resource.
 
         :param attributes: Batch recovery progress. Status updates can appear here before they appear in request details.
-        :type attributes: RumRecoveryBatchListAttributes
+        :type attributes: RUMRecoveryBatchListAttributes
 
         :param id: Resource identifier.
         :type id: str
 
         :param type: JSON:API resource type.
-        :type type: RumRecoveryBatchListDataType
+        :type type: RUMRecoveryBatchListDataType
         """
         super().__init__(kwargs)
 

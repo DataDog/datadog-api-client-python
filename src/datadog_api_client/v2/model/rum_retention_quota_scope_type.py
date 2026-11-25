@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumRetentionQuotaScopeType(ModelSimple):
+class RUMRetentionQuotaScopeType(ModelSimple):
     """
     The type of scope the retention quota configuration applies to.
         `application` is the only supported scope type.
@@ -24,7 +24,7 @@ class RumRetentionQuotaScopeType(ModelSimple):
     allowed_values = {
         "application",
     }
-    APPLICATION: ClassVar["RumRetentionQuotaScopeType"]
+    APPLICATION: ClassVar["RUMRetentionQuotaScopeType"]
 
     @cached_property
     def openapi_types(_):
@@ -33,4 +33,4 @@ class RumRetentionQuotaScopeType(ModelSimple):
         }
 
 
-RumRetentionQuotaScopeType.APPLICATION = RumRetentionQuotaScopeType("application")
+RUMRetentionQuotaScopeType.APPLICATION = RUMRetentionQuotaScopeType("application")

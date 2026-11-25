@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumMetricUniquenessWhen(ModelSimple):
+class RUMMetricUniquenessWhen(ModelSimple):
     """
     When to count updatable events. `match` when the event is first seen, or `end` when the event is complete. Sessions and views are updated over time, and each one is counted once.
 
@@ -24,8 +24,8 @@ class RumMetricUniquenessWhen(ModelSimple):
         "match",
         "end",
     }
-    WHEN_MATCH: ClassVar["RumMetricUniquenessWhen"]
-    WHEN_END: ClassVar["RumMetricUniquenessWhen"]
+    WHEN_MATCH: ClassVar["RUMMetricUniquenessWhen"]
+    WHEN_END: ClassVar["RUMMetricUniquenessWhen"]
 
     @cached_property
     def openapi_types(_):
@@ -34,5 +34,5 @@ class RumMetricUniquenessWhen(ModelSimple):
         }
 
 
-RumMetricUniquenessWhen.WHEN_MATCH = RumMetricUniquenessWhen("match")
-RumMetricUniquenessWhen.WHEN_END = RumMetricUniquenessWhen("end")
+RUMMetricUniquenessWhen.WHEN_MATCH = RUMMetricUniquenessWhen("match")
+RUMMetricUniquenessWhen.WHEN_END = RUMMetricUniquenessWhen("end")

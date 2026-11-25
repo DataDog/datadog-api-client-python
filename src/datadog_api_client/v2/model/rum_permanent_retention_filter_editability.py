@@ -13,7 +13,7 @@ from datadog_api_client.model_utils import (
 )
 
 
-class RumPermanentRetentionFilterEditability(ModelNormal):
+class RUMPermanentRetentionFilterEditability(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {

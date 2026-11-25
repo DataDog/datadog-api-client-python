@@ -8,7 +8,7 @@
     "body": {
       "schema": {
         "format": null,
-        "ref": "RumArchiveConfigUpsertRequest",
+        "ref": "RUMArchiveConfigUpsertRequest",
         "type": "object"
       },
       "source": "inline",

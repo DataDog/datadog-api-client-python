@@ -14,28 +14,28 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_metric_compute import RumMetricCompute
-    from datadog_api_client.v2.model.rum_metric_event_type import RumMetricEventType
-    from datadog_api_client.v2.model.rum_metric_filter import RumMetricFilter
-    from datadog_api_client.v2.model.rum_metric_group_by import RumMetricGroupBy
-    from datadog_api_client.v2.model.rum_metric_uniqueness import RumMetricUniqueness
+    from datadog_api_client.v2.model.rum_metric_compute import RUMMetricCompute
+    from datadog_api_client.v2.model.rum_metric_event_type import RUMMetricEventType
+    from datadog_api_client.v2.model.rum_metric_filter import RUMMetricFilter
+    from datadog_api_client.v2.model.rum_metric_group_by import RUMMetricGroupBy
+    from datadog_api_client.v2.model.rum_metric_uniqueness import RUMMetricUniqueness
 
 
-class RumMetricCreateAttributes(ModelNormal):
+class RUMMetricCreateAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_metric_compute import RumMetricCompute
-        from datadog_api_client.v2.model.rum_metric_event_type import RumMetricEventType
-        from datadog_api_client.v2.model.rum_metric_filter import RumMetricFilter
-        from datadog_api_client.v2.model.rum_metric_group_by import RumMetricGroupBy
-        from datadog_api_client.v2.model.rum_metric_uniqueness import RumMetricUniqueness
+        from datadog_api_client.v2.model.rum_metric_compute import RUMMetricCompute
+        from datadog_api_client.v2.model.rum_metric_event_type import RUMMetricEventType
+        from datadog_api_client.v2.model.rum_metric_filter import RUMMetricFilter
+        from datadog_api_client.v2.model.rum_metric_group_by import RUMMetricGroupBy
+        from datadog_api_client.v2.model.rum_metric_uniqueness import RUMMetricUniqueness
 
         return {
-            "compute": (RumMetricCompute,),
-            "event_type": (RumMetricEventType,),
-            "filter": (RumMetricFilter,),
-            "group_by": ([RumMetricGroupBy],),
-            "uniqueness": (RumMetricUniqueness,),
+            "compute": (RUMMetricCompute,),
+            "event_type": (RUMMetricEventType,),
+            "filter": (RUMMetricFilter,),
+            "group_by": ([RUMMetricGroupBy],),
+            "uniqueness": (RUMMetricUniqueness,),
         }
 
     attribute_map = {
@@ -48,31 +48,31 @@ class RumMetricCreateAttributes(ModelNormal):
 
     def __init__(
         self_,
-        compute: RumMetricCompute,
-        event_type: RumMetricEventType,
-        filter: Union[RumMetricFilter, UnsetType] = unset,
-        group_by: Union[List[RumMetricGroupBy], UnsetType] = unset,
-        uniqueness: Union[RumMetricUniqueness, UnsetType] = unset,
+        compute: RUMMetricCompute,
+        event_type: RUMMetricEventType,
+        filter: Union[RUMMetricFilter, UnsetType] = unset,
+        group_by: Union[List[RUMMetricGroupBy], UnsetType] = unset,
+        uniqueness: Union[RUMMetricUniqueness, UnsetType] = unset,
         **kwargs,
     ):
         """
         The object describing the Datadog RUM-based metric to create.
 
         :param compute: The compute rule to compute the RUM-based metric. It is set at creation and only ``include_percentiles`` can be updated afterward.
-        :type compute: RumMetricCompute
+        :type compute: RUMMetricCompute
 
         :param event_type: The type of RUM events the metric is generated from. It is set at creation and cannot be changed.
-        :type event_type: RumMetricEventType
+        :type event_type: RUMMetricEventType
 
         :param filter: The RUM-based metric filter. Events matching this filter are aggregated in this metric. The ``event_type`` filter is added automatically.
-        :type filter: RumMetricFilter, optional
+        :type filter: RUMMetricFilter, optional
 
         :param group_by: The rules to group the metric by. Each rule creates a tag on the generated metric. If omitted, the metric is not grouped.
-        :type group_by: [RumMetricGroupBy], optional
+        :type group_by: [RUMMetricGroupBy], optional
 
         :param uniqueness: The rule to count updatable events.
             Required when ``event_type`` is ``session`` or ``view`` , and must be omitted for other event types. It cannot be changed after creation.
-        :type uniqueness: RumMetricUniqueness, optional
+        :type uniqueness: RUMMetricUniqueness, optional
         """
         if filter is not unset:
             kwargs["filter"] = filter

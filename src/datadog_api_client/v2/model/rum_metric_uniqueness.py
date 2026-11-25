@@ -12,29 +12,29 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_metric_uniqueness_when import RumMetricUniquenessWhen
+    from datadog_api_client.v2.model.rum_metric_uniqueness_when import RUMMetricUniquenessWhen
 
 
-class RumMetricUniqueness(ModelNormal):
+class RUMMetricUniqueness(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_metric_uniqueness_when import RumMetricUniquenessWhen
+        from datadog_api_client.v2.model.rum_metric_uniqueness_when import RUMMetricUniquenessWhen
 
         return {
-            "when": (RumMetricUniquenessWhen,),
+            "when": (RUMMetricUniquenessWhen,),
         }
 
     attribute_map = {
         "when": "when",
     }
 
-    def __init__(self_, when: RumMetricUniquenessWhen, **kwargs):
+    def __init__(self_, when: RUMMetricUniquenessWhen, **kwargs):
         """
         The rule to count updatable events.
         Required when ``event_type`` is ``session`` or ``view`` , and must be omitted for other event types. It cannot be changed after creation.
 
         :param when: When to count updatable events. ``match`` when the event is first seen, or ``end`` when the event is complete. Sessions and views are updated over time, and each one is counted once.
-        :type when: RumMetricUniquenessWhen
+        :type when: RUMMetricUniquenessWhen
         """
         super().__init__(kwargs)
 

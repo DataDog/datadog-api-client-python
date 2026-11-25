@@ -12,7 +12,7 @@ from datadog_api_client.model_utils import (
 from typing import ClassVar
 
 
-class RumRecoveryRequestType(ModelSimple):
+class RUMRecoveryRequestType(ModelSimple):
     """
     JSON:API resource type.
 
@@ -23,7 +23,7 @@ class RumRecoveryRequestType(ModelSimple):
     allowed_values = {
         "rum_recovery_request",
     }
-    RUM_RECOVERY_REQUEST: ClassVar["RumRecoveryRequestType"]
+    RUM_RECOVERY_REQUEST: ClassVar["RUMRecoveryRequestType"]
 
     @cached_property
     def openapi_types(_):
@@ -32,4 +32,4 @@ class RumRecoveryRequestType(ModelSimple):
         }
 
 
-RumRecoveryRequestType.RUM_RECOVERY_REQUEST = RumRecoveryRequestType("rum_recovery_request")
+RUMRecoveryRequestType.RUM_RECOVERY_REQUEST = RUMRecoveryRequestType("rum_recovery_request")

@@ -12,22 +12,22 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_recovery_cancel_response_attributes import RumRecoveryCancelResponseAttributes
-    from datadog_api_client.v2.model.rum_recovery_request_type import RumRecoveryRequestType
+    from datadog_api_client.v2.model.rum_recovery_cancel_response_attributes import RUMRecoveryCancelResponseAttributes
+    from datadog_api_client.v2.model.rum_recovery_request_type import RUMRecoveryRequestType
 
 
-class RumRecoveryCancelResponseData(ModelNormal):
+class RUMRecoveryCancelResponseData(ModelNormal):
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.rum_recovery_cancel_response_attributes import (
-            RumRecoveryCancelResponseAttributes,
+            RUMRecoveryCancelResponseAttributes,
         )
-        from datadog_api_client.v2.model.rum_recovery_request_type import RumRecoveryRequestType
+        from datadog_api_client.v2.model.rum_recovery_request_type import RUMRecoveryRequestType
 
         return {
-            "attributes": (RumRecoveryCancelResponseAttributes,),
+            "attributes": (RUMRecoveryCancelResponseAttributes,),
             "id": (str,),
-            "type": (RumRecoveryRequestType,),
+            "type": (RUMRecoveryRequestType,),
         }
 
     attribute_map = {
@@ -37,19 +37,19 @@ class RumRecoveryCancelResponseData(ModelNormal):
     }
 
     def __init__(
-        self_, attributes: RumRecoveryCancelResponseAttributes, id: str, type: RumRecoveryRequestType, **kwargs
+        self_, attributes: RUMRecoveryCancelResponseAttributes, id: str, type: RUMRecoveryRequestType, **kwargs
     ):
         """
         JSON:API resource.
 
         :param attributes: Batch cancellation acknowledgment.
-        :type attributes: RumRecoveryCancelResponseAttributes
+        :type attributes: RUMRecoveryCancelResponseAttributes
 
         :param id: Resource identifier.
         :type id: str
 
         :param type: JSON:API resource type.
-        :type type: RumRecoveryRequestType
+        :type type: RUMRecoveryRequestType
         """
         super().__init__(kwargs)
 

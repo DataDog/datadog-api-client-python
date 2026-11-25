@@ -14,20 +14,20 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_archive_session_recovery_status import RumArchiveSessionRecoveryStatus
+    from datadog_api_client.v2.model.rum_archive_session_recovery_status import RUMArchiveSessionRecoveryStatus
 
 
-class RumArchiveSessionAttributes(ModelNormal):
+class RUMArchiveSessionAttributes(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_archive_session_recovery_status import RumArchiveSessionRecoveryStatus
+        from datadog_api_client.v2.model.rum_archive_session_recovery_status import RUMArchiveSessionRecoveryStatus
 
         return {
             "account_id": (str, none_type),
             "anonymous_id": (str, none_type),
             "application_id": (UUID,),
             "country": (str, none_type),
-            "recovery_status": (RumArchiveSessionRecoveryStatus,),
+            "recovery_status": (RUMArchiveSessionRecoveryStatus,),
             "service": (str,),
             "session_id": (str,),
             "timestamp": (int,),
@@ -54,7 +54,7 @@ class RumArchiveSessionAttributes(ModelNormal):
         anonymous_id: Union[str, none_type],
         application_id: UUID,
         country: Union[str, none_type],
-        recovery_status: Union[RumArchiveSessionRecoveryStatus, none_type],
+        recovery_status: Union[RUMArchiveSessionRecoveryStatus, none_type],
         service: str,
         session_id: str,
         timestamp: int,
@@ -78,7 +78,7 @@ class RumArchiveSessionAttributes(ModelNormal):
         :type country: str, none_type
 
         :param recovery_status: Session recovery state. A missing recovery record can be represented as null. Optional request_id and recovered_at are omitted when unavailable.
-        :type recovery_status: RumArchiveSessionRecoveryStatus, none_type
+        :type recovery_status: RUMArchiveSessionRecoveryStatus, none_type
 
         :param service: Service name.
         :type service: str

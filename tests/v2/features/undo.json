@@ -62,6 +62,12 @@
       "type": "safe"
     }
   },
+  "AddRUMReplaySessionToPlaylist": {
+    "tag": "RUM Replay Playlists",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "AddReadRoleToArchive": {
     "tag": "Logs Archives",
     "undo": {
@@ -72,12 +78,6 @@
     "tag": "Logs Restriction Queries",
     "undo": {
       "type": "safe"
-    }
-  },
-  "AddRumReplaySessionToPlaylist": {
-    "tag": "Rum Replay Playlists",
-    "undo": {
-      "type": "idempotent"
     }
   },
   "AddSTIXThreatIntel": {
@@ -343,8 +343,8 @@
       "type": "safe"
     }
   },
-  "BulkRemoveRumReplayPlaylistSessions": {
-    "tag": "Rum Replay Playlists",
+  "BulkRemoveRUMReplayPlaylistSessions": {
+    "tag": "RUM Replay Playlists",
     "undo": {
       "type": "idempotent"
     }
@@ -1051,7 +1051,7 @@
     }
   },
   "CreateConnection": {
-    "tag": "Rum Audience Management",
+    "tag": "RUM Audience Management",
     "undo": {
       "operationId": "DeleteConnection",
       "parameters": [
@@ -1385,7 +1385,7 @@
     }
   },
   "CreateExclusionFilter": {
-    "tag": "Rum Retention Filters",
+    "tag": "RUM Retention Filters",
     "undo": {
       "operationId": "DeleteExclusionFilter",
       "parameters": [
@@ -2550,6 +2550,25 @@
       "type": "unsafe"
     }
   },
+  "CreateRUMConfig": {
+    "tag": "RUM Config",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "CreateRUMMetric": {
+    "tag": "RUM Metrics",
+    "undo": {
+      "operationId": "DeleteRUMMetric",
+      "parameters": [
+        {
+          "name": "metric_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
   "CreateRUMOperation": {
     "tag": "RUM Operations",
     "undo": {
@@ -2565,6 +2584,33 @@
   "CreateRUMRecoveryRequest": {
     "tag": "RUM Recovery",
     "undo": {
+      "type": "unsafe"
+    }
+  },
+  "CreateRUMReplayPlaylist": {
+    "tag": "RUM Replay Playlists",
+    "undo": {
+      "operationId": "DeleteRUMReplayPlaylist",
+      "parameters": [
+        {
+          "name": "playlist_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
+  "CreateRUMReplaySessionWatch": {
+    "tag": "RUM Replay Viewership",
+    "undo": {
+      "operationId": "DeleteRUMReplaySessionWatch",
+      "parameters": [
+        {
+          "name": "session_id",
+          "origin": "path",
+          "source": "session_id"
+        }
+      ],
       "type": "unsafe"
     }
   },
@@ -2588,7 +2634,7 @@
     }
   },
   "CreateReplayHeatmapSnapshot": {
-    "tag": "Rum Replay Heatmaps",
+    "tag": "RUM Replay Heatmaps",
     "undo": {
       "operationId": "DeleteReplayHeatmapSnapshot",
       "parameters": [
@@ -2627,7 +2673,7 @@
     }
   },
   "CreateRetentionFilter": {
-    "tag": "Rum Retention Filters",
+    "tag": "RUM Retention Filters",
     "undo": {
       "operationId": "DeleteRetentionFilter",
       "parameters": [
@@ -2652,52 +2698,6 @@
         {
           "name": "role_id",
           "source": "data.id"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
-  "CreateRumConfig": {
-    "tag": "RUM Config",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "CreateRumMetric": {
-    "tag": "Rum Metrics",
-    "undo": {
-      "operationId": "DeleteRumMetric",
-      "parameters": [
-        {
-          "name": "metric_id",
-          "source": "data.id"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
-  "CreateRumReplayPlaylist": {
-    "tag": "Rum Replay Playlists",
-    "undo": {
-      "operationId": "DeleteRumReplayPlaylist",
-      "parameters": [
-        {
-          "name": "playlist_id",
-          "source": "data.id"
-        }
-      ],
-      "type": "unsafe"
-    }
-  },
-  "CreateRumReplaySessionWatch": {
-    "tag": "Rum Replay Viewership",
-    "undo": {
-      "operationId": "DeleteRumReplaySessionWatch",
-      "parameters": [
-        {
-          "name": "session_id",
-          "origin": "path",
-          "source": "session_id"
         }
       ],
       "type": "unsafe"
@@ -3324,7 +3324,7 @@
     }
   },
   "CreateTeamsOwnershipMapping": {
-    "tag": "Rum Teams Ownership",
+    "tag": "RUM Teams Ownership",
     "undo": {
       "operationId": "DeleteTeamsOwnershipMapping",
       "parameters": [
@@ -3337,7 +3337,7 @@
     }
   },
   "CreateTeamsOwnershipMappingsBatch": {
-    "tag": "Rum Teams Ownership",
+    "tag": "RUM Teams Ownership",
     "undo": {
       "operationId": "DeleteTeamsOwnershipMapping",
       "parameters": [
@@ -3887,7 +3887,7 @@
     }
   },
   "DeleteConnection": {
-    "tag": "Rum Audience Management",
+    "tag": "RUM Audience Management",
     "undo": {
       "type": "idempotent"
     }
@@ -4067,7 +4067,7 @@
     }
   },
   "DeleteExclusionFilter": {
-    "tag": "Rum Retention Filters",
+    "tag": "RUM Retention Filters",
     "undo": {
       "type": "idempotent"
     }
@@ -4599,6 +4599,12 @@
       "type": "idempotent"
     }
   },
+  "DeleteRUMMetric": {
+    "tag": "RUM Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "DeleteRUMOperation": {
     "tag": "RUM Operations",
     "undo": {
@@ -4611,8 +4617,26 @@
       "type": "idempotent"
     }
   },
+  "DeleteRUMQuotaConfig": {
+    "tag": "RUM Retention Quotas",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteRUMReplayPlaylist": {
+    "tag": "RUM Replay Playlists",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteRUMReplaySessionWatch": {
+    "tag": "RUM Replay Viewership",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "DeleteReplayHeatmapSnapshot": {
-    "tag": "Rum Replay Heatmaps",
+    "tag": "RUM Replay Heatmaps",
     "undo": {
       "type": "idempotent"
     }
@@ -4642,7 +4666,7 @@
     }
   },
   "DeleteRetentionFilter": {
-    "tag": "Rum Retention Filters",
+    "tag": "RUM Retention Filters",
     "undo": {
       "type": "idempotent"
     }
@@ -4655,30 +4679,6 @@
   },
   "DeleteRows": {
     "tag": "Reference Tables",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "DeleteRumMetric": {
-    "tag": "Rum Metrics",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "DeleteRumQuotaConfig": {
-    "tag": "RUM Retention Quotas",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "DeleteRumReplayPlaylist": {
-    "tag": "Rum Replay Playlists",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "DeleteRumReplaySessionWatch": {
-    "tag": "Rum Replay Viewership",
     "undo": {
       "type": "idempotent"
     }
@@ -4960,7 +4960,7 @@
     }
   },
   "DeleteTeamsOwnershipMapping": {
-    "tag": "Rum Teams Ownership",
+    "tag": "RUM Teams Ownership",
     "undo": {
       "type": "idempotent"
     }
@@ -5046,7 +5046,7 @@
     }
   },
   "DeleteUserProfile": {
-    "tag": "Rum Audience Management",
+    "tag": "RUM Audience Management",
     "undo": {
       "type": "idempotent"
     }
@@ -5306,7 +5306,7 @@
     }
   },
   "GetAccountFacetInfo": {
-    "tag": "Rum Audience Management",
+    "tag": "RUM Audience Management",
     "undo": {
       "type": "safe"
     }
@@ -6098,7 +6098,7 @@
     }
   },
   "GetExclusionFilter": {
-    "tag": "Rum Retention Filters",
+    "tag": "RUM Retention Filters",
     "undo": {
       "type": "safe"
     }
@@ -6548,7 +6548,7 @@
     }
   },
   "GetMapping": {
-    "tag": "Rum Audience Management",
+    "tag": "RUM Audience Management",
     "undo": {
       "type": "safe"
     }
@@ -6788,7 +6788,7 @@
     }
   },
   "GetPermanentRetentionFilter": {
-    "tag": "Rum Retention Filters",
+    "tag": "RUM Retention Filters",
     "undo": {
       "type": "safe"
     }
@@ -6865,6 +6865,18 @@
       "type": "safe"
     }
   },
+  "GetRUMConfig": {
+    "tag": "RUM Config",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetRUMMetric": {
+    "tag": "RUM Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetRUMOperation": {
     "tag": "RUM Operations",
     "undo": {
@@ -6877,6 +6889,12 @@
       "type": "safe"
     }
   },
+  "GetRUMQuotaConfig": {
+    "tag": "RUM Retention Quotas",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "GetRUMRecoveryRequest": {
     "tag": "RUM Recovery",
     "undo": {
@@ -6885,6 +6903,18 @@
   },
   "GetRUMRecoverySessionCount": {
     "tag": "RUM Recovery",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetRUMReplayPlaylist": {
+    "tag": "RUM Replay Playlists",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetRUMSdkConfig": {
+    "tag": "RUM Remote Config",
     "undo": {
       "type": "safe"
     }
@@ -6920,7 +6950,7 @@
     }
   },
   "GetRetentionFilter": {
-    "tag": "Rum Retention Filters",
+    "tag": "RUM Retention Filters",
     "undo": {
       "type": "safe"
     }
@@ -6951,36 +6981,6 @@
   },
   "GetRuleVersionHistory": {
     "tag": "Security Monitoring",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "GetRumConfig": {
-    "tag": "RUM Config",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "GetRumMetric": {
-    "tag": "Rum Metrics",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "GetRumQuotaConfig": {
-    "tag": "RUM Retention Quotas",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "GetRumReplayPlaylist": {
-    "tag": "Rum Replay Playlists",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "GetRumSdkConfig": {
-    "tag": "RUM Remote Config",
     "undo": {
       "type": "safe"
     }
@@ -7184,7 +7184,7 @@
     }
   },
   "GetSegments": {
-    "tag": "Rum Replay Sessions",
+    "tag": "RUM Replay Sessions",
     "undo": {
       "type": "safe"
     }
@@ -7490,7 +7490,7 @@
     }
   },
   "GetTeamsOwnershipMapping": {
-    "tag": "Rum Teams Ownership",
+    "tag": "RUM Teams Ownership",
     "undo": {
       "type": "safe"
     }
@@ -7622,7 +7622,7 @@
     }
   },
   "GetUserFacetInfo": {
-    "tag": "Rum Audience Management",
+    "tag": "RUM Audience Management",
     "undo": {
       "type": "safe"
     }
@@ -8189,7 +8189,7 @@
     }
   },
   "ListConnections": {
-    "tag": "Rum Audience Management",
+    "tag": "RUM Audience Management",
     "undo": {
       "type": "safe"
     }
@@ -8447,7 +8447,7 @@
     }
   },
   "ListExclusionFilters": {
-    "tag": "Rum Retention Filters",
+    "tag": "RUM Retention Filters",
     "undo": {
       "type": "safe"
     }
@@ -9191,7 +9191,7 @@
     }
   },
   "ListPermanentRetentionFilters": {
-    "tag": "Rum Retention Filters",
+    "tag": "RUM Retention Filters",
     "undo": {
       "type": "safe"
     }
@@ -9250,6 +9250,12 @@
       "type": "safe"
     }
   },
+  "ListRUMMetrics": {
+    "tag": "RUM Metrics",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListRUMOperationStrongLinks": {
     "tag": "RUM Operations",
     "undo": {
@@ -9268,6 +9274,30 @@
       "type": "safe"
     }
   },
+  "ListRUMReplayPlaylistSessions": {
+    "tag": "RUM Replay Playlists",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListRUMReplayPlaylists": {
+    "tag": "RUM Replay Playlists",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListRUMReplaySessionWatchers": {
+    "tag": "RUM Replay Viewership",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListRUMReplayViewershipHistorySessions": {
+    "tag": "RUM Replay Viewership",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListReferenceTableRows": {
     "tag": "Reference Tables",
     "undo": {
@@ -9275,7 +9305,7 @@
     }
   },
   "ListReplayHeatmapSnapshots": {
-    "tag": "Rum Replay Heatmaps",
+    "tag": "RUM Replay Heatmaps",
     "undo": {
       "type": "safe"
     }
@@ -9299,7 +9329,7 @@
     }
   },
   "ListRetentionFilters": {
-    "tag": "Rum Retention Filters",
+    "tag": "RUM Retention Filters",
     "undo": {
       "type": "safe"
     }
@@ -9324,36 +9354,6 @@
   },
   "ListRoles": {
     "tag": "Roles",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "ListRumMetrics": {
-    "tag": "Rum Metrics",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "ListRumReplayPlaylistSessions": {
-    "tag": "Rum Replay Playlists",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "ListRumReplayPlaylists": {
-    "tag": "Rum Replay Playlists",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "ListRumReplaySessionWatchers": {
-    "tag": "Rum Replay Viewership",
-    "undo": {
-      "type": "safe"
-    }
-  },
-  "ListRumReplayViewershipHistorySessions": {
-    "tag": "Rum Replay Viewership",
     "undo": {
       "type": "safe"
     }
@@ -9779,13 +9779,13 @@
     }
   },
   "ListTeamsOwnershipMappings": {
-    "tag": "Rum Teams Ownership",
+    "tag": "RUM Teams Ownership",
     "undo": {
       "type": "safe"
     }
   },
   "ListTeamsOwnershipRules": {
-    "tag": "Rum Teams Ownership",
+    "tag": "RUM Teams Ownership",
     "undo": {
       "type": "safe"
     }
@@ -9953,7 +9953,7 @@
     }
   },
   "OrderRetentionFilters": {
-    "tag": "Rum Retention Filters",
+    "tag": "RUM Retention Filters",
     "undo": {
       "type": "idempotent"
     }
@@ -10143,7 +10143,7 @@
     }
   },
   "QueryAccounts": {
-    "tag": "Rum Audience Management",
+    "tag": "RUM Audience Management",
     "undo": {
       "type": "safe"
     }
@@ -10161,7 +10161,7 @@
     }
   },
   "QueryEventFilteredUsers": {
-    "tag": "Rum Audience Management",
+    "tag": "RUM Audience Management",
     "undo": {
       "type": "safe"
     }
@@ -10251,7 +10251,7 @@
     }
   },
   "QueryUsers": {
-    "tag": "Rum Audience Management",
+    "tag": "RUM Audience Management",
     "undo": {
       "type": "safe"
     }
@@ -10316,6 +10316,12 @@
       "type": "idempotent"
     }
   },
+  "RemoveRUMReplaySessionFromPlaylist": {
+    "tag": "RUM Replay Playlists",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "RemoveRoleFromArchive": {
     "tag": "Logs Archives",
     "undo": {
@@ -10324,12 +10330,6 @@
   },
   "RemoveRoleFromRestrictionQuery": {
     "tag": "Logs Restriction Queries",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "RemoveRumReplaySessionFromPlaylist": {
-    "tag": "Rum Replay Playlists",
     "undo": {
       "type": "idempotent"
     }
@@ -11234,7 +11234,7 @@
     }
   },
   "UpdateConnection": {
-    "tag": "Rum Audience Management",
+    "tag": "RUM Audience Management",
     "undo": {
       "type": "idempotent"
     }
@@ -11403,7 +11403,7 @@
     }
   },
   "UpdateExclusionFilter": {
-    "tag": "Rum Retention Filters",
+    "tag": "RUM Retention Filters",
     "undo": {
       "type": "idempotent"
     }
@@ -11909,7 +11909,7 @@
     }
   },
   "UpdatePermanentRetentionFilter": {
-    "tag": "Rum Retention Filters",
+    "tag": "RUM Retention Filters",
     "undo": {
       "type": "idempotent"
     }
@@ -11974,6 +11974,18 @@
       "type": "idempotent"
     }
   },
+  "UpdateRUMConfig": {
+    "tag": "RUM Config",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateRUMMetric": {
+    "tag": "RUM Metrics",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "UpdateRUMOperation": {
     "tag": "RUM Operations",
     "undo": {
@@ -11992,6 +12004,18 @@
       "type": "idempotent"
     }
   },
+  "UpdateRUMReplayPlaylist": {
+    "tag": "RUM Replay Playlists",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateRUMSdkConfig": {
+    "tag": "RUM Remote Config",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "UpdateReferenceTable": {
     "tag": "Reference Tables",
     "undo": {
@@ -11999,7 +12023,7 @@
     }
   },
   "UpdateReplayHeatmapSnapshot": {
-    "tag": "Rum Replay Heatmaps",
+    "tag": "RUM Replay Heatmaps",
     "undo": {
       "type": "idempotent"
     }
@@ -12023,37 +12047,13 @@
     }
   },
   "UpdateRetentionFilter": {
-    "tag": "Rum Retention Filters",
+    "tag": "RUM Retention Filters",
     "undo": {
       "type": "idempotent"
     }
   },
   "UpdateRole": {
     "tag": "Roles",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "UpdateRumConfig": {
-    "tag": "RUM Config",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "UpdateRumMetric": {
-    "tag": "Rum Metrics",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "UpdateRumReplayPlaylist": {
-    "tag": "Rum Replay Playlists",
-    "undo": {
-      "type": "idempotent"
-    }
-  },
-  "UpdateRumSdkConfig": {
-    "tag": "RUM Remote Config",
     "undo": {
       "type": "idempotent"
     }
@@ -12517,18 +12517,18 @@
       "type": "idempotent"
     }
   },
+  "UpsertRUMQuotaConfig": {
+    "tag": "RUM Retention Quotas",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "UpsertRows": {
     "tag": "Reference Tables",
     "undo": {
       "operationId": "DeleteRows",
       "parameters": [],
       "type": "unsafe"
-    }
-  },
-  "UpsertRumQuotaConfig": {
-    "tag": "RUM Retention Quotas",
-    "undo": {
-      "type": "idempotent"
     }
   },
   "UpsertScopesRestriction": {

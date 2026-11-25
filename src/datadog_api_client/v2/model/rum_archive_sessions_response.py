@@ -12,19 +12,19 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.rum_archive_session import RumArchiveSession
-    from datadog_api_client.v2.model.rum_archive_sessions_meta import RumArchiveSessionsMeta
+    from datadog_api_client.v2.model.rum_archive_session import RUMArchiveSession
+    from datadog_api_client.v2.model.rum_archive_sessions_meta import RUMArchiveSessionsMeta
 
 
-class RumArchiveSessionsResponse(ModelNormal):
+class RUMArchiveSessionsResponse(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.rum_archive_session import RumArchiveSession
-        from datadog_api_client.v2.model.rum_archive_sessions_meta import RumArchiveSessionsMeta
+        from datadog_api_client.v2.model.rum_archive_session import RUMArchiveSession
+        from datadog_api_client.v2.model.rum_archive_sessions_meta import RUMArchiveSessionsMeta
 
         return {
-            "data": ([RumArchiveSession],),
-            "meta": (RumArchiveSessionsMeta,),
+            "data": ([RUMArchiveSession],),
+            "meta": (RUMArchiveSessionsMeta,),
         }
 
     attribute_map = {
@@ -32,15 +32,15 @@ class RumArchiveSessionsResponse(ModelNormal):
         "meta": "meta",
     }
 
-    def __init__(self_, data: List[RumArchiveSession], meta: RumArchiveSessionsMeta, **kwargs):
+    def __init__(self_, data: List[RUMArchiveSession], meta: RUMArchiveSessionsMeta, **kwargs):
         """
         JSON:API document.
 
         :param data: Archived sessions.
-        :type data: [RumArchiveSession]
+        :type data: [RUMArchiveSession]
 
         :param meta: Search metadata.
-        :type meta: RumArchiveSessionsMeta
+        :type meta: RUMArchiveSessionsMeta
         """
         super().__init__(kwargs)
 

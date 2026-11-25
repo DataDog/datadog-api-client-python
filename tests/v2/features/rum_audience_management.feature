@@ -1,11 +1,11 @@
 @endpoint(rum-audience-management) @endpoint(rum-audience-management-v2)
-Feature: Rum Audience Management
-  Auto-generated tag Rum Audience Management
+Feature: RUM Audience Management
+  Auto-generated tag RUM Audience Management
 
   Background:
     Given a valid "apiKeyAuth" key in the system
     And a valid "appKeyAuth" key in the system
-    And an instance of "RumAudienceManagement" API
+    And an instance of "RUMAudienceManagement" API
 
   @generated @skip @team:ddoghq/audience-management-backend @team:ddoghq/product-analytics-ingestion
   Scenario: Create connection returns "Connection created successfully" response

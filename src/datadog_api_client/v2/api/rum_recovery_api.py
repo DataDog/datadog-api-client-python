@@ -12,17 +12,17 @@ from datadog_api_client.model_utils import (
     unset,
     UUID,
 )
-from datadog_api_client.v2.model.rum_recovery_count_response import RumRecoveryCountResponse
-from datadog_api_client.v2.model.rum_recovery_count_request import RumRecoveryCountRequest
-from datadog_api_client.v2.model.rum_recovery_batch_list_response import RumRecoveryBatchListResponse
-from datadog_api_client.v2.model.rum_recovery_batch_request_type import RumRecoveryBatchRequestType
-from datadog_api_client.v2.model.rum_recovery_create_response import RumRecoveryCreateResponse
-from datadog_api_client.v2.model.rum_recovery_create_request import RumRecoveryCreateRequest
-from datadog_api_client.v2.model.rum_recovery_request_response import RumRecoveryRequestResponse
-from datadog_api_client.v2.model.rum_recovery_cancel_response import RumRecoveryCancelResponse
-from datadog_api_client.v2.model.rum_recovery_cancel_request import RumRecoveryCancelRequest
-from datadog_api_client.v2.model.rum_archive_sessions_response import RumArchiveSessionsResponse
-from datadog_api_client.v2.model.rum_archive_sessions_search_request import RumArchiveSessionsSearchRequest
+from datadog_api_client.v2.model.rum_recovery_count_response import RUMRecoveryCountResponse
+from datadog_api_client.v2.model.rum_recovery_count_request import RUMRecoveryCountRequest
+from datadog_api_client.v2.model.rum_recovery_batch_list_response import RUMRecoveryBatchListResponse
+from datadog_api_client.v2.model.rum_recovery_batch_request_type import RUMRecoveryBatchRequestType
+from datadog_api_client.v2.model.rum_recovery_create_response import RUMRecoveryCreateResponse
+from datadog_api_client.v2.model.rum_recovery_create_request import RUMRecoveryCreateRequest
+from datadog_api_client.v2.model.rum_recovery_request_response import RUMRecoveryRequestResponse
+from datadog_api_client.v2.model.rum_recovery_cancel_response import RUMRecoveryCancelResponse
+from datadog_api_client.v2.model.rum_recovery_cancel_request import RUMRecoveryCancelRequest
+from datadog_api_client.v2.model.rum_archive_sessions_response import RUMArchiveSessionsResponse
+from datadog_api_client.v2.model.rum_archive_sessions_search_request import RUMArchiveSessionsSearchRequest
 
 
 class RUMRecoveryApi:
@@ -39,7 +39,7 @@ class RUMRecoveryApi:
 
         self._create_rum_recovery_request_endpoint = _Endpoint(
             settings={
-                "response_type": (RumRecoveryCreateResponse,),
+                "response_type": (RUMRecoveryCreateResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/rum/recover/requests",
                 "operation_id": "create_rum_recovery_request",
@@ -49,7 +49,7 @@ class RUMRecoveryApi:
             params_map={
                 "body": {
                     "required": True,
-                    "openapi_types": (RumRecoveryCreateRequest,),
+                    "openapi_types": (RUMRecoveryCreateRequest,),
                     "location": "body",
                 },
             },
@@ -59,7 +59,7 @@ class RUMRecoveryApi:
 
         self._get_rum_recovery_request_endpoint = _Endpoint(
             settings={
-                "response_type": (RumRecoveryRequestResponse,),
+                "response_type": (RUMRecoveryRequestResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/rum/recover/requests/{request_id}",
                 "operation_id": "get_rum_recovery_request",
@@ -82,7 +82,7 @@ class RUMRecoveryApi:
 
         self._get_rum_recovery_session_count_endpoint = _Endpoint(
             settings={
-                "response_type": (RumRecoveryCountResponse,),
+                "response_type": (RUMRecoveryCountResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/rum/recover/count",
                 "operation_id": "get_rum_recovery_session_count",
@@ -92,7 +92,7 @@ class RUMRecoveryApi:
             params_map={
                 "body": {
                     "required": True,
-                    "openapi_types": (RumRecoveryCountRequest,),
+                    "openapi_types": (RUMRecoveryCountRequest,),
                     "location": "body",
                 },
             },
@@ -102,7 +102,7 @@ class RUMRecoveryApi:
 
         self._list_rum_recovery_batch_requests_endpoint = _Endpoint(
             settings={
-                "response_type": (RumRecoveryBatchListResponse,),
+                "response_type": (RUMRecoveryBatchListResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/rum/recover/requests",
                 "operation_id": "list_rum_recovery_batch_requests",
@@ -112,7 +112,7 @@ class RUMRecoveryApi:
             params_map={
                 "type": {
                     "required": True,
-                    "openapi_types": (RumRecoveryBatchRequestType,),
+                    "openapi_types": (RUMRecoveryBatchRequestType,),
                     "attribute": "type",
                     "location": "query",
                 },
@@ -161,7 +161,7 @@ class RUMRecoveryApi:
 
         self._search_rum_archive_sessions_endpoint = _Endpoint(
             settings={
-                "response_type": (RumArchiveSessionsResponse,),
+                "response_type": (RUMArchiveSessionsResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/rum/recover/sessions",
                 "operation_id": "search_rum_archive_sessions",
@@ -171,7 +171,7 @@ class RUMRecoveryApi:
             params_map={
                 "body": {
                     "required": True,
-                    "openapi_types": (RumArchiveSessionsSearchRequest,),
+                    "openapi_types": (RUMArchiveSessionsSearchRequest,),
                     "location": "body",
                 },
             },
@@ -181,7 +181,7 @@ class RUMRecoveryApi:
 
         self._update_rum_recovery_batch_request_endpoint = _Endpoint(
             settings={
-                "response_type": (RumRecoveryCancelResponse,),
+                "response_type": (RUMRecoveryCancelResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth"],
                 "endpoint_path": "/api/v2/rum/recover/requests/{request_id}",
                 "operation_id": "update_rum_recovery_batch_request",
@@ -197,7 +197,7 @@ class RUMRecoveryApi:
                 },
                 "body": {
                     "required": True,
-                    "openapi_types": (RumRecoveryCancelRequest,),
+                    "openapi_types": (RUMRecoveryCancelRequest,),
                     "location": "body",
                 },
             },
@@ -207,8 +207,8 @@ class RUMRecoveryApi:
 
     def create_rum_recovery_request(
         self,
-        body: RumRecoveryCreateRequest,
-    ) -> RumRecoveryCreateResponse:
+        body: RUMRecoveryCreateRequest,
+    ) -> RUMRecoveryCreateResponse:
         """Create a recovery request.
 
         Start targeted or query-based batch recovery. Use the returned ``data.id`` to poll the recovery request for progress. Batch creation checks a fresh recoverable-session estimate against the configured maximum (100,000 by default), accepting estimates equal to the maximum. Use the count operation to check the current maximum; creation can still reject a changed estimate. Narrow the query or time range if the maximum is exceeded.
@@ -216,8 +216,8 @@ class RUMRecoveryApi:
         Creation is not idempotent. After an uncertain response, check session search or batch listing before retrying.
 
         :param body: JSON:API request body.
-        :type body: RumRecoveryCreateRequest
-        :rtype: RumRecoveryCreateResponse
+        :type body: RUMRecoveryCreateRequest
+        :rtype: RUMRecoveryCreateResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
@@ -227,14 +227,14 @@ class RUMRecoveryApi:
     def get_rum_recovery_request(
         self,
         request_id: UUID,
-    ) -> RumRecoveryRequestResponse:
+    ) -> RUMRecoveryRequestResponse:
         """Get recovery request progress.
 
         Get progress for a targeted or batch recovery request. A ``COMPLETED`` request can include failed sessions; check individual session statuses for targeted recovery.
 
         :param request_id: Recovery request UUID.
         :type request_id: UUID
-        :rtype: RumRecoveryRequestResponse
+        :rtype: RUMRecoveryRequestResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["request_id"] = request_id
@@ -243,15 +243,15 @@ class RUMRecoveryApi:
 
     def get_rum_recovery_session_count(
         self,
-        body: RumRecoveryCountRequest,
-    ) -> RumRecoveryCountResponse:
+        body: RUMRecoveryCountRequest,
+    ) -> RUMRecoveryCountResponse:
         """Estimate recoverable sessions.
 
         Return the full estimated number of recoverable sessions and the configured maximum per batch. The estimate is not capped at that maximum. This endpoint does not create a recovery request. Narrow the query or time range if the estimate exceeds max_recoverable_sessions. Creation checks a fresh estimate and returns 400 if it exceeds the configured maximum.
 
         :param body: JSON:API request body.
-        :type body: RumRecoveryCountRequest
-        :rtype: RumRecoveryCountResponse
+        :type body: RUMRecoveryCountRequest
+        :rtype: RUMRecoveryCountResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
@@ -260,21 +260,21 @@ class RUMRecoveryApi:
 
     def list_rum_recovery_batch_requests(
         self,
-        type: RumRecoveryBatchRequestType,
+        type: RUMRecoveryBatchRequestType,
         *,
         limit: Union[int, UnsetType] = unset,
         cursor: Union[str, UnsetType] = unset,
         _from: Union[int, UnsetType] = unset,
         to: Union[int, UnsetType] = unset,
         query: Union[str, UnsetType] = unset,
-    ) -> RumRecoveryBatchListResponse:
+    ) -> RUMRecoveryBatchListResponse:
         """List batch recovery requests.
 
         List batch recovery requests for your organization. Set ``type=batch``. Optional ``from`` and ``to`` bounds filter request creation time; ``query`` filters the queries stored on recovery requests.
         A filtered page can be empty or contain fewer than ``limit`` results and still include ``meta.next_cursor``. Continue until the cursor is absent, keeping the filters unchanged between pages.
 
         :param type: Must equal batch.
-        :type type: RumRecoveryBatchRequestType
+        :type type: RUMRecoveryBatchRequestType
         :param limit: Number of results returned per page, at most 100 (default 50). Omitted, zero, or negative values use 50. Invalid integers return 400.
         :type limit: int, optional
         :param cursor: Opaque next-page cursor. Keep type, from, to, and query unchanged between pages.
@@ -285,7 +285,7 @@ class RUMRecoveryApi:
         :type to: int, optional
         :param query: Filter recovery requests whose stored query selects matching facet values. Supports facet:value and facet:(A OR B) terms combined with AND, including * and ? wildcards in filter values. Attribute facets keep their leading @. At most 4096 bytes. Exclusions, repeated facets, free text, ranges, and OR between terms return 400. Stored queries that cannot be matched unambiguously are excluded. Blank values apply no query filter.
         :type query: str, optional
-        :rtype: RumRecoveryBatchListResponse
+        :rtype: RUMRecoveryBatchListResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["type"] = type
@@ -309,15 +309,15 @@ class RUMRecoveryApi:
 
     def search_rum_archive_sessions(
         self,
-        body: RumArchiveSessionsSearchRequest,
-    ) -> RumArchiveSessionsResponse:
+        body: RUMArchiveSessionsSearchRequest,
+    ) -> RUMArchiveSessionsResponse:
         """Search archived sessions.
 
         Search archived RUM sessions. Use ``meta.page.next_cursor`` to retrieve the next page.
 
         :param body: JSON:API request body.
-        :type body: RumArchiveSessionsSearchRequest
-        :rtype: RumArchiveSessionsResponse
+        :type body: RUMArchiveSessionsSearchRequest
+        :rtype: RUMArchiveSessionsResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
@@ -327,8 +327,8 @@ class RUMRecoveryApi:
     def update_rum_recovery_batch_request(
         self,
         request_id: UUID,
-        body: RumRecoveryCancelRequest,
-    ) -> RumRecoveryCancelResponse:
+        body: RUMRecoveryCancelRequest,
+    ) -> RUMRecoveryCancelResponse:
         """Cancel a batch recovery request.
 
         Cancel pending work for a batch recovery request. Work already in progress can finish, and recovered data is not removed. Requests in a terminal state return ``409``.
@@ -336,8 +336,8 @@ class RUMRecoveryApi:
         :param request_id: Recovery request UUID.
         :type request_id: UUID
         :param body: JSON:API request body.
-        :type body: RumRecoveryCancelRequest
-        :rtype: RumRecoveryCancelResponse
+        :type body: RUMRecoveryCancelRequest
+        :rtype: RUMRecoveryCancelResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["request_id"] = request_id

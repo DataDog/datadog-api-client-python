@@ -7,9 +7,9 @@ from typing import Any, Dict
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
-from datadog_api_client.v2.model.rum_config_response import RumConfigResponse
-from datadog_api_client.v2.model.rum_config_update_request import RumConfigUpdateRequest
-from datadog_api_client.v2.model.rum_config_create_request import RumConfigCreateRequest
+from datadog_api_client.v2.model.rum_config_response import RUMConfigResponse
+from datadog_api_client.v2.model.rum_config_update_request import RUMConfigUpdateRequest
+from datadog_api_client.v2.model.rum_config_create_request import RUMConfigCreateRequest
 
 
 class RUMConfigApi:
@@ -25,7 +25,7 @@ class RUMConfigApi:
 
         self._create_rum_config_endpoint = _Endpoint(
             settings={
-                "response_type": (RumConfigResponse,),
+                "response_type": (RUMConfigResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/config",
                 "operation_id": "create_rum_config",
@@ -35,7 +35,7 @@ class RUMConfigApi:
             params_map={
                 "body": {
                     "required": True,
-                    "openapi_types": (RumConfigCreateRequest,),
+                    "openapi_types": (RUMConfigCreateRequest,),
                     "location": "body",
                 },
             },
@@ -45,7 +45,7 @@ class RUMConfigApi:
 
         self._get_rum_config_endpoint = _Endpoint(
             settings={
-                "response_type": (RumConfigResponse,),
+                "response_type": (RUMConfigResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/config",
                 "operation_id": "get_rum_config",
@@ -61,7 +61,7 @@ class RUMConfigApi:
 
         self._update_rum_config_endpoint = _Endpoint(
             settings={
-                "response_type": (RumConfigResponse,),
+                "response_type": (RUMConfigResponse,),
                 "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
                 "endpoint_path": "/api/v2/rum/config",
                 "operation_id": "update_rum_config",
@@ -71,7 +71,7 @@ class RUMConfigApi:
             params_map={
                 "body": {
                     "required": True,
-                    "openapi_types": (RumConfigUpdateRequest,),
+                    "openapi_types": (RUMConfigUpdateRequest,),
                     "location": "body",
                 },
             },
@@ -81,16 +81,16 @@ class RUMConfigApi:
 
     def create_rum_config(
         self,
-        body: RumConfigCreateRequest,
-    ) -> RumConfigResponse:
+        body: RUMConfigCreateRequest,
+    ) -> RUMConfigResponse:
         """Create the RUM configuration.
 
         Create the RUM configuration for your organization.
         Returns the RUM configuration object from the request body when the request is successful.
 
         :param body: The definition of the RUM configuration to create.
-        :type body: RumConfigCreateRequest
-        :rtype: RumConfigResponse
+        :type body: RUMConfigCreateRequest
+        :rtype: RUMConfigResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body
@@ -99,28 +99,28 @@ class RUMConfigApi:
 
     def get_rum_config(
         self,
-    ) -> RumConfigResponse:
+    ) -> RUMConfigResponse:
         """Get the RUM configuration.
 
         Get the RUM configuration for your organization.
 
-        :rtype: RumConfigResponse
+        :rtype: RUMConfigResponse
         """
         kwargs: Dict[str, Any] = {}
         return self._get_rum_config_endpoint.call_with_http_info(**kwargs)
 
     def update_rum_config(
         self,
-        body: RumConfigUpdateRequest,
-    ) -> RumConfigResponse:
+        body: RUMConfigUpdateRequest,
+    ) -> RUMConfigResponse:
         """Update the RUM configuration.
 
         Update the RUM configuration for your organization.
         Returns the RUM configuration object from the request body when the request is successful.
 
         :param body: New definition of the RUM configuration.
-        :type body: RumConfigUpdateRequest
-        :rtype: RumConfigResponse
+        :type body: RUMConfigUpdateRequest
+        :rtype: RUMConfigResponse
         """
         kwargs: Dict[str, Any] = {}
         kwargs["body"] = body

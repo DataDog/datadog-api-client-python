@@ -1,5 +1,5 @@
 @endpoint(rum-teams-ownership) @endpoint(rum-teams-ownership-v2)
-Feature: Rum Teams Ownership
+Feature: RUM Teams Ownership
   Manage teams ownership mappings between RUM views and the teams that own
   them. See
   <https://docs.datadoghq.com/real_user_monitoring/ownership_of_views/>.
@@ -7,7 +7,7 @@ Feature: Rum Teams Ownership
   Background:
     Given a valid "apiKeyAuth" key in the system
     And a valid "appKeyAuth" key in the system
-    And an instance of "RumTeamsOwnership" API
+    And an instance of "RUMTeamsOwnership" API
 
   @skip @team:ddoghq/rum-backend
   Scenario: Bulk create and remove teams ownership mappings returns "Bad Request" response

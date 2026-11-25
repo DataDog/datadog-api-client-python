@@ -13,7 +13,7 @@ from datadog_api_client.model_utils import (
 )
 
 
-class RumExclusionFilterMeta(ModelNormal):
+class RUMExclusionFilterMeta(ModelNormal):
     @cached_property
     def openapi_types(_):
         return {
