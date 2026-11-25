@@ -3,16 +3,20 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+import collections
 from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
+    set_attribute_from_path,
+    get_attribute_from_path,
     UnsetType,
     unset,
     UUID,
 )
 from datadog_api_client.v2.model.rum_archive_config_list_response import RumArchiveConfigListResponse
+from datadog_api_client.v2.model.rum_archive_config import RumArchiveConfig
 from datadog_api_client.v2.model.rum_archive_config_response import RumArchiveConfigResponse
 from datadog_api_client.v2.model.rum_archive_config_upsert_request import RumArchiveConfigUpsertRequest
 
@@ -194,6 +198,44 @@ class RUMManagedArchivesApi:
             kwargs["page_size"] = page_size
 
         return self._list_rum_archive_configs_endpoint.call_with_http_info(**kwargs)
+
+    def list_rum_archive_configs_with_pagination(
+        self,
+        *,
+        page_number: Union[int, UnsetType] = unset,
+        page_size: Union[int, UnsetType] = unset,
+    ) -> collections.abc.Iterable[RumArchiveConfig]:
+        """List archive configurations.
+
+        Provide a paginated version of :meth:`list_rum_archive_configs`, returning all items.
+
+        :param page_number: Page number.
+        :type page_number: int, optional
+        :param page_size: Configurations per page.
+        :type page_size: int, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[RumArchiveConfig]
+        """
+        kwargs: Dict[str, Any] = {}
+        if page_number is not unset:
+            kwargs["page_number"] = page_number
+
+        if page_size is not unset:
+            kwargs["page_size"] = page_size
+
+        local_page_size = get_attribute_from_path(kwargs, "page_size", 20)
+        endpoint = self._list_rum_archive_configs_endpoint
+        set_attribute_from_path(kwargs, "page_size", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "page_param": "page_number",
+            "page_start": 0,
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
 
     def update_rum_archive_config(
         self,

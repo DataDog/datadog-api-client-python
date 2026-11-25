@@ -248806,6 +248806,10 @@ paths:
       summary: List archive configurations
       tags:
         - RUM Managed Archives
+      x-pagination:
+        limitParam: page[size]
+        pageParam: page[number]
+        resultsPath: data
       x-permission:
         operator: OR
         permissions:
@@ -250339,6 +250343,10 @@ paths:
       summary: Search RUM operations
       tags:
         - RUM Operations
+      x-pagination:
+        limitParam: page[limit]
+        pageOffsetParam: page[offset]
+        resultsPath: data
       x-permission:
         operator: OR
         permissions:
@@ -250419,6 +250427,10 @@ paths:
       summary: List RUM operation links
       tags:
         - RUM Operations
+      x-pagination:
+        limitParam: page[limit]
+        pageOffsetParam: page[offset]
+        resultsPath: data
       x-permission:
         operator: OR
         permissions:

@@ -137,6 +137,12 @@ Feature: RUM Operations
     When the request is sent
     Then the response status is 200 OK
 
+  @generated @skip @team:ddoghq/rum-backend @with-pagination
+  Scenario: List RUM operation links returns "OK" response with pagination
+    Given new "ListRUMOperationStrongLinks" request
+    When the request with pagination is sent
+    Then the response status is 200 OK
+
   @generated @skip @team:ddoghq/rum-backend
   Scenario: Search RUM operations returns "Bad Request" response
     Given new "ListRUMOperations" request
@@ -147,6 +153,12 @@ Feature: RUM Operations
   Scenario: Search RUM operations returns "OK" response
     Given new "ListRUMOperations" request
     When the request is sent
+    Then the response status is 200 OK
+
+  @generated @skip @team:ddoghq/rum-backend @with-pagination
+  Scenario: Search RUM operations returns "OK" response with pagination
+    Given new "ListRUMOperations" request
+    When the request with pagination is sent
     Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/rum-backend

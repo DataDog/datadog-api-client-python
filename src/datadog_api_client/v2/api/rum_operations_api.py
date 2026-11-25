@@ -3,11 +3,14 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
+import collections
 from typing import Any, Dict, Union
 
 from datadog_api_client.api_client import ApiClient, Endpoint as _Endpoint
 from datadog_api_client.configuration import Configuration
 from datadog_api_client.model_utils import (
+    set_attribute_from_path,
+    get_attribute_from_path,
     UnsetType,
     unset,
     UUID,
@@ -15,7 +18,9 @@ from datadog_api_client.model_utils import (
 from datadog_api_client.v2.model.rum_operation_response import RUMOperationResponse
 from datadog_api_client.v2.model.rum_operation_create_request import RUMOperationCreateRequest
 from datadog_api_client.v2.model.rum_operations_list_response import RUMOperationsListResponse
+from datadog_api_client.v2.model.rum_operation_response_data import RUMOperationResponseData
 from datadog_api_client.v2.model.rum_operation_strong_links_list_response import RUMOperationStrongLinksListResponse
+from datadog_api_client.v2.model.rum_operation_strong_link_response_data import RUMOperationStrongLinkResponseData
 from datadog_api_client.v2.model.rum_operation_strong_link_response import RUMOperationStrongLinkResponse
 from datadog_api_client.v2.model.rum_operation_strong_link_create_request import RUMOperationStrongLinkCreateRequest
 from datadog_api_client.v2.model.rum_operation_strong_link_update_request import RUMOperationStrongLinkUpdateRequest
@@ -497,6 +502,73 @@ class RUMOperationsApi:
 
         return self._list_rum_operations_endpoint.call_with_http_info(**kwargs)
 
+    def list_rum_operations_with_pagination(
+        self,
+        *,
+        query: Union[str, UnsetType] = unset,
+        page_offset: Union[int, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+        creator: Union[str, UnsetType] = unset,
+        team: Union[str, UnsetType] = unset,
+        feature_id: Union[str, UnsetType] = unset,
+        application_id: Union[UUID, UnsetType] = unset,
+    ) -> collections.abc.Iterable[RUMOperationResponseData]:
+        """Search RUM operations.
+
+        Provide a paginated version of :meth:`list_rum_operations`, returning all items.
+
+        :param query: A search query to filter operations by name.
+        :type query: str, optional
+        :param page_offset: Offset for pagination.
+        :type page_offset: int, optional
+        :param page_limit: Number of items per page. Maximum of 100.
+        :type page_limit: int, optional
+        :param creator: Filter operations by the email of their creator.
+        :type creator: str, optional
+        :param team: Filter operations by team. Accepts a comma-separated list of teams.
+        :type team: str, optional
+        :param feature_id: Filter operations by journey ID. Accepts a comma-separated list of journey IDs.
+        :type feature_id: str, optional
+        :param application_id: Filter operations by RUM application ID.
+        :type application_id: UUID, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[RUMOperationResponseData]
+        """
+        kwargs: Dict[str, Any] = {}
+        if query is not unset:
+            kwargs["query"] = query
+
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        if creator is not unset:
+            kwargs["creator"] = creator
+
+        if team is not unset:
+            kwargs["team"] = team
+
+        if feature_id is not unset:
+            kwargs["feature_id"] = feature_id
+
+        if application_id is not unset:
+            kwargs["application_id"] = application_id
+
+        local_page_size = get_attribute_from_path(kwargs, "page_limit", 50)
+        endpoint = self._list_rum_operations_endpoint
+        set_attribute_from_path(kwargs, "page_limit", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "page_offset_param": "page_offset",
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
+
     def list_rum_operation_strong_links(
         self,
         *,
@@ -535,6 +607,55 @@ class RUMOperationsApi:
             kwargs["page_limit"] = page_limit
 
         return self._list_rum_operation_strong_links_endpoint.call_with_http_info(**kwargs)
+
+    def list_rum_operation_strong_links_with_pagination(
+        self,
+        *,
+        operation_id: Union[str, UnsetType] = unset,
+        feature_id: Union[str, UnsetType] = unset,
+        page_offset: Union[int, UnsetType] = unset,
+        page_limit: Union[int, UnsetType] = unset,
+    ) -> collections.abc.Iterable[RUMOperationStrongLinkResponseData]:
+        """List RUM operation links.
+
+        Provide a paginated version of :meth:`list_rum_operation_strong_links`, returning all items.
+
+        :param operation_id: Filter links by RUM operation ID.
+        :type operation_id: str, optional
+        :param feature_id: Filter links by journey (feature) ID.
+        :type feature_id: str, optional
+        :param page_offset: Offset for pagination.
+        :type page_offset: int, optional
+        :param page_limit: Number of items per page. Maximum of 200.
+        :type page_limit: int, optional
+
+        :return: A generator of paginated results.
+        :rtype: collections.abc.Iterable[RUMOperationStrongLinkResponseData]
+        """
+        kwargs: Dict[str, Any] = {}
+        if operation_id is not unset:
+            kwargs["operation_id"] = operation_id
+
+        if feature_id is not unset:
+            kwargs["feature_id"] = feature_id
+
+        if page_offset is not unset:
+            kwargs["page_offset"] = page_offset
+
+        if page_limit is not unset:
+            kwargs["page_limit"] = page_limit
+
+        local_page_size = get_attribute_from_path(kwargs, "page_limit", 50)
+        endpoint = self._list_rum_operation_strong_links_endpoint
+        set_attribute_from_path(kwargs, "page_limit", local_page_size, endpoint.params_map)
+        pagination = {
+            "limit_value": local_page_size,
+            "results_path": "data",
+            "page_offset_param": "page_offset",
+            "endpoint": endpoint,
+            "kwargs": kwargs,
+        }
+        return endpoint.call_with_http_info_paginated(pagination)
 
     def update_rum_operation(
         self,
