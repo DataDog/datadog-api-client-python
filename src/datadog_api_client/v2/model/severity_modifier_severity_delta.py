@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class SeverityModifierSeverityDelta(ModelSimple):
     """
-    The direction in which to shift the severity of matched findings by one rank.
+    The direction in which to shift the severity of matched findings by one rank. Shifting down stops at the lowest severity available for the finding type.
 
     :param value: Must be one of ["up_one", "down_one"].
     :type value: str

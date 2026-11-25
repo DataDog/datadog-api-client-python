@@ -71,10 +71,10 @@ class TicketCreationRuleAction(ModelNormal):
         :param max_tickets_per_day: The maximum number of tickets the rule may create per day. If exceeded, one final ticket will be created, explaining the limit was hit and link back to the responsible rule.
         :type max_tickets_per_day: int
 
-        :param project_id: The UUID of the case management project.
+        :param project_id: The UUID of the Datadog Work Management (formerly Case Management) project.
         :type project_id: UUID
 
-        :param target: The ticketing system to create tickets in.
+        :param target: The ticketing system to create tickets in. ``case_management`` is Datadog Work Management, formerly called Case Management.
         :type target: TicketCreationTarget
         """
         if assignee_id is not unset:

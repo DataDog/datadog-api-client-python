@@ -52,12 +52,12 @@ class SeverityModifierRuleShiftAction(ModelNormal):
         **kwargs,
     ):
         """
-        Shifts matched findings up or down by one severity rank.
+        Shifts matched findings up or down by one severity rank. Shifting down stops at the lowest severity available for the finding type, for example ``low`` for ``iac_misconfiguration`` , ``runtime_code_vulnerability`` , ``secret`` , and ``static_code_vulnerability`` findings. A rule that wouldn't change a finding's severity doesn't match it, so Datadog checks the next rule.
 
         :param description: An optional free-form explanation for the severity change.
         :type description: str, optional
 
-        :param severity_delta: The direction in which to shift the severity of matched findings by one rank.
+        :param severity_delta: The direction in which to shift the severity of matched findings by one rank. Shifting down stops at the lowest severity available for the finding type.
         :type severity_delta: SeverityModifierSeverityDelta
 
         :param type: The type of a severity modifier rule action that shifts the severity by one rank.

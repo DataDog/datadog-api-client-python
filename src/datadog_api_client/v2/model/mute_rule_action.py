@@ -50,7 +50,7 @@ class MuteRuleAction(ModelNormal):
         """
         The action to take when the mute rule matches a finding.
 
-        :param expire_at: The Unix timestamp in milliseconds at which the mute expires. If omitted, the mute does not expire.
+        :param expire_at: The Unix timestamp in milliseconds at which the mute expires. It must be in the future. If the timestamp is omitted, the mute does not expire.
         :type expire_at: int, optional
 
         :param reason: The reason for muting a security finding.

@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class TicketCreationTarget(ModelSimple):
     """
-    The ticketing system to create tickets in.
+    The ticketing system to create tickets in. `case_management` is Datadog Work Management, formerly called Case Management.
 
     :param value: Must be one of ["jira", "case_management", "linear"].
     :type value: str
