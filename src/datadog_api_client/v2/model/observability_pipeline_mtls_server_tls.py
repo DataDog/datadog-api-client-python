@@ -47,7 +47,7 @@ class ObservabilityPipelineMtlsServerTls(ModelNormal):
         :param ca_file: Path to the Certificate Authority (CA) file used to validate connecting clients' TLS certificates.
         :type ca_file: str, optional
 
-        :param crt_file: Path to the TLS server certificate file used to used to identify the pipeline component to connecting clients.
+        :param crt_file: Path to the TLS server certificate file used to identify the pipeline component to connecting clients.
         :type crt_file: str
 
         :param key_file: Path to the private key file associated with the TLS server certificate.

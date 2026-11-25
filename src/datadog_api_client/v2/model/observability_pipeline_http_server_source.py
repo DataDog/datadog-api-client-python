@@ -18,7 +18,9 @@ if TYPE_CHECKING:
         ObservabilityPipelineHttpServerSourceAuthStrategy,
     )
     from datadog_api_client.v2.model.observability_pipeline_decoding import ObservabilityPipelineDecoding
-    from datadog_api_client.v2.model.observability_pipeline_mtls_server_tls import ObservabilityPipelineMtlsServerTls
+    from datadog_api_client.v2.model.observability_pipeline_mtls_server_tls_with_client_identity import (
+        ObservabilityPipelineMtlsServerTlsWithClientIdentity,
+    )
     from datadog_api_client.v2.model.observability_pipeline_http_server_source_type import (
         ObservabilityPipelineHttpServerSourceType,
     )
@@ -41,8 +43,8 @@ class ObservabilityPipelineHttpServerSource(ModelNormal):
             ObservabilityPipelineHttpServerSourceAuthStrategy,
         )
         from datadog_api_client.v2.model.observability_pipeline_decoding import ObservabilityPipelineDecoding
-        from datadog_api_client.v2.model.observability_pipeline_mtls_server_tls import (
-            ObservabilityPipelineMtlsServerTls,
+        from datadog_api_client.v2.model.observability_pipeline_mtls_server_tls_with_client_identity import (
+            ObservabilityPipelineMtlsServerTlsWithClientIdentity,
         )
         from datadog_api_client.v2.model.observability_pipeline_http_server_source_type import (
             ObservabilityPipelineHttpServerSourceType,
@@ -58,7 +60,7 @@ class ObservabilityPipelineHttpServerSource(ModelNormal):
             "decoding": (ObservabilityPipelineDecoding,),
             "id": (str,),
             "password_key": (str,),
-            "tls": (ObservabilityPipelineMtlsServerTls,),
+            "tls": (ObservabilityPipelineMtlsServerTlsWithClientIdentity,),
             "type": (ObservabilityPipelineHttpServerSourceType,),
             "username_key": (str,),
             "valid_tokens": ([ObservabilityPipelineHttpServerSourceValidToken],),
@@ -86,7 +88,7 @@ class ObservabilityPipelineHttpServerSource(ModelNormal):
         address_key: Union[str, UnsetType] = unset,
         custom_key: Union[str, UnsetType] = unset,
         password_key: Union[str, UnsetType] = unset,
-        tls: Union[ObservabilityPipelineMtlsServerTls, UnsetType] = unset,
+        tls: Union[ObservabilityPipelineMtlsServerTlsWithClientIdentity, UnsetType] = unset,
         username_key: Union[str, UnsetType] = unset,
         valid_tokens: Union[List[ObservabilityPipelineHttpServerSourceValidToken], UnsetType] = unset,
         **kwargs,
@@ -114,8 +116,8 @@ class ObservabilityPipelineHttpServerSource(ModelNormal):
         :param password_key: Name of the environment variable or secret that holds the password (used when ``auth_strategy`` is ``plain`` ).
         :type password_key: str, optional
 
-        :param tls: Configuration for enabling TLS encryption between the pipeline component and external connecting clients.
-        :type tls: ObservabilityPipelineMtlsServerTls, optional
+        :param tls: Configuration for enabling TLS encryption between the pipeline component and external connecting clients, or mutual TLS when ``verify_certificate`` is ``true``. Mutual TLS also enables an optional allowlist of client certificate identities.
+        :type tls: ObservabilityPipelineMtlsServerTlsWithClientIdentity, optional
 
         :param type: The source type. The value should always be ``http_server``.
         :type type: ObservabilityPipelineHttpServerSourceType
