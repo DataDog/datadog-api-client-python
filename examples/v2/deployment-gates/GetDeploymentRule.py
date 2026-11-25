@@ -14,7 +14,6 @@ DEPLOYMENT_RULE_DATA_ID = environ["DEPLOYMENT_RULE_DATA_ID"]
 
 configuration = Configuration()
 configuration.access_token = environ["DD_BEARER_TOKEN"]
-configuration.unstable_operations["get_deployment_rule"] = True
 with ApiClient(configuration) as api_client:
     api_instance = DeploymentGatesApi(api_client)
     response = api_instance.get_deployment_rule(

@@ -187059,9 +187059,6 @@ paths:
         operator: OR
         permissions:
           - deployment_gates_read
-      x-unstable: |-
-        **Note**: This endpoint is in preview and may be subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
     post:
       description: |-
         Create a deployment gate for a specific environment or for all environments using `*`.
@@ -187141,9 +187138,6 @@ paths:
         operator: OR
         permissions:
           - deployment_gates_write
-      x-unstable: |-
-        **Note**: This endpoint is in preview and may be subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/deployment_gates/evaluations:
     get:
       description: |-
@@ -187298,9 +187292,6 @@ paths:
       x-permission:
         operator: OR
         permissions: [deployment_gates_read]
-      x-unstable: |-
-        **Note**: This endpoint is in preview and may be subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/deployment_gates/evaluations/rules:
     get:
       description: |-
@@ -187507,9 +187498,6 @@ paths:
       x-permission:
         operator: OR
         permissions: [deployment_gates_read]
-      x-unstable: |-
-        **Note**: This endpoint is in preview and may be subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/deployment_gates/{gate_id}/rules:
     get:
       description: |-
@@ -187569,9 +187557,6 @@ paths:
         operator: OR
         permissions:
           - deployment_gates_read
-      x-unstable: |-
-        **Note**: This endpoint is in preview and may be subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
     post:
       description: |-
         Endpoint to create a deployment rule. A gate for the rule must already exist.
@@ -187649,9 +187634,6 @@ paths:
         operator: OR
         permissions:
           - deployment_gates_write
-      x-unstable: |-
-        **Note**: This endpoint is in preview and may be subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/deployment_gates/{gate_id}/rules/{id}:
     delete:
       description: |-
@@ -187699,9 +187681,6 @@ paths:
         operator: OR
         permissions:
           - deployment_gates_write
-      x-unstable: |-
-        **Note**: This endpoint is in preview and may be subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
     get:
       description: |-
         Endpoint to get a deployment rule.
@@ -187767,9 +187746,6 @@ paths:
         operator: OR
         permissions:
           - deployment_gates_read
-      x-unstable: |-
-        **Note**: This endpoint is in preview and may be subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
     put:
       description: |-
         Endpoint to update a deployment rule.
@@ -187853,9 +187829,6 @@ paths:
         operator: OR
         permissions:
           - deployment_gates_write
-      x-unstable: |-
-        **Note**: This endpoint is in preview and may be subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/deployment_gates/{id}:
     delete:
       description: |-
@@ -187897,9 +187870,6 @@ paths:
         operator: OR
         permissions:
           - deployment_gates_write
-      x-unstable: |-
-        **Note**: This endpoint is in preview and may be subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
     get:
       description: |-
         Endpoint to get a deployment gate.
@@ -187958,9 +187928,6 @@ paths:
         operator: OR
         permissions:
           - deployment_gates_read
-      x-unstable: |-
-        **Note**: This endpoint is in preview and may be subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
     put:
       description: |-
         Endpoint to update a deployment gate.
@@ -188033,9 +188000,6 @@ paths:
         operator: OR
         permissions:
           - deployment_gates_write
-      x-unstable: |-
-        **Note**: This endpoint is in preview and may be subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/deployments/gates/evaluation:
     post:
       description: |-
@@ -188131,9 +188095,6 @@ paths:
         operator: OR
         permissions:
           - deployment_gates_evaluate
-      x-unstable: |-
-        **Note**: This endpoint is in preview and may be subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/deployments/gates/evaluation/{id}:
     get:
       description: |-
@@ -188197,9 +188158,6 @@ paths:
         operator: OR
         permissions:
           - deployment_gates_evaluate
-      x-unstable: |-
-        **Note**: This endpoint is in preview and may be subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/domain_allowlist:
     get:
       description: Get the domain allowlist for an organization.
