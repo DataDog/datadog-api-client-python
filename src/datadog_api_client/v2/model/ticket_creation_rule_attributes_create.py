@@ -59,7 +59,7 @@ class TicketCreationRuleAttributesCreate(ModelNormal):
         :param action: The action to take when the ticket creation rule matches a finding.
         :type action: TicketCreationRuleAction
 
-        :param enabled: Whether the ticket creation rule is enabled.
+        :param enabled: Whether the ticket creation rule is enabled. If it is omitted, the API saves it as ``false`` and the rule doesn't apply.
         :type enabled: bool, optional
 
         :param name: The name of the ticket creation rule.

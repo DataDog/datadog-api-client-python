@@ -52,7 +52,7 @@ class DueDateRuleAction(ModelNormal):
         """
         The action to take when the due date rule matches a finding.
 
-        :param due_days_per_severity: A list of severity-to-due-date mappings. Each severity may appear at most once.
+        :param due_days_per_severity: A list of severity-to-due-date mappings. Each severity may appear at most once. The rule only matches findings whose severity is listed here.
         :type due_days_per_severity: [DueDatePerSeverityItem]
 
         :param due_from: The reference point from which the due date is calculated. When ``fix_available`` is selected but not applicable to the finding type, ``first_seen`` is used instead.

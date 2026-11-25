@@ -6168,6 +6168,12 @@ class SecurityMonitoringApi:
         """Create a due date rule.
 
         Create a due date rule for the current organization.
+        The rule sets a due date on every finding that matches ``rule.finding_types`` , ``rule.query`` , and
+        a severity listed in ``action.due_days_per_severity``. It applies immediately to new findings;
+        Existing findings can take up to two hours to update.
+        Datadog adds the new rule to the end of the evaluation order. To move it, use
+        ``ReorderSecurityFindingsAutomationDueDateRules``. An organization can have at most 1,000 due date rules;
+        creating more fails with a ``422`` error.
 
         :type body: DueDateRuleCreateRequest
         :rtype: DueDateRuleResponse
@@ -6184,6 +6190,13 @@ class SecurityMonitoringApi:
         """Create an inbox rule.
 
         Create an inbox rule for the current organization.
+        The rule adds every finding that matches ``rule.finding_types`` and ``rule.query`` to the
+        Security Inbox. It applies immediately to new findings; existing findings can
+        take up to two hours to update. Use inbox rules to surface findings that the Datadog default inbox rules
+        ( ``ListSecurityFindingsAutomationDefaultInboxRules`` ) don't cover.
+        Datadog adds the new rule to the end of the evaluation order. To move it, use
+        ``ReorderSecurityFindingsAutomationInboxRules``. An organization can have at most 1,000 inbox rules;
+        creating more fails with a ``422`` error.
 
         :type body: InboxRuleCreateRequest
         :rtype: InboxRuleResponse
@@ -6200,6 +6213,15 @@ class SecurityMonitoringApi:
         """Create a mute rule.
 
         Create a mute rule for the current organization.
+        The rule mutes every finding that matches ``rule.finding_types`` and ``rule.query`` , with the
+        reason in ``action.reason`` , until ``action.expire_at`` if set. It applies immediately to
+        new findings; existing findings can take up to two hours to update. Use a rule to keep
+        muting a class of findings, including ones detected later. To mute or unmute specific
+        findings by ID as a one-time action, use ``MuteSecurityFindings`` instead. Mute rules don't change
+        manually muted findings.
+        Datadog adds the new rule to the end of the evaluation order. To move it, use
+        ``ReorderSecurityFindingsAutomationMuteRules``. An organization can have at most 1,000 mute rules;
+        creating more fails with a ``422`` error.
 
         :type body: MuteRuleCreateRequest
         :rtype: MuteRuleResponse
@@ -6216,6 +6238,15 @@ class SecurityMonitoringApi:
         """Create a severity modifier rule.
 
         Create a severity modifier rule for the current organization.
+        The rule changes the severity of every finding that matches ``rule.finding_types`` and
+        ``rule.query``. It applies immediately to new findings; existing findings can
+        take up to two hours to update. Use a rule to continuously adjust the severity of a class of findings,
+        such as all findings in a development environment. To override the severity of specific
+        findings by ID as a one-time action, use ``UpdateFindingsSeverity`` instead. ``UpdateFindingsSeverity`` can't
+        override or clear a severity set by a rule.
+        Datadog adds the new rule to the end of the evaluation order. To move it, use
+        ``ReorderSecurityFindingsAutomationSeverityModifierRules``. An organization can have at most 1,000 severity modifier rules;
+        creating more fails with a ``422`` error.
 
         :type body: SeverityModifierRuleCreateRequest
         :rtype: SeverityModifierRuleResponse
@@ -6232,6 +6263,14 @@ class SecurityMonitoringApi:
         """Create a ticket creation rule.
 
         Create a ticket creation rule for the current organization.
+        The rule automatically creates tickets for new findings that match ``rule.finding_types`` and
+        ``rule.query`` , in the project set by ``action.target`` and ``action.project_id``. It doesn't
+        create tickets for findings that existed before the rule. Use a rule to create tickets for findings
+        continuously as Datadog detects them. To create tickets for specific existing findings, use
+        ``CreateJiraIssues`` or ``CreateCases`` instead.
+        Datadog adds the new rule to the end of the evaluation order. To move it, use
+        ``ReorderSecurityFindingsAutomationTicketCreationRules``. An organization can have at most 1,000 ticket creation rules;
+        creating more fails with a ``422`` error.
 
         :type body: TicketCreationRuleCreateRequest
         :rtype: TicketCreationRuleResponse
@@ -6581,8 +6620,11 @@ class SecurityMonitoringApi:
         """Delete a due date rule.
 
         Delete a due date rule by ID.
+        Deleting the rule removes the due dates it set on findings, unless another due date rule
+        matches them. Existing findings can take up to two hours to update. You can't restore a deleted rule. To stop a rule temporarily,
+        update it with ``enabled: false`` instead.
 
-        :param rule_id: The ID of the due date rule.
+        :param rule_id: The ID of the due date rule, as returned by ``ListSecurityFindingsAutomationDueDateRules`` or ``CreateSecurityFindingsAutomationDueDateRule``.
         :type rule_id: UUID
         :rtype: None
         """
@@ -6598,8 +6640,12 @@ class SecurityMonitoringApi:
         """Delete an inbox rule.
 
         Delete an inbox rule by ID.
+        Datadog removes findings that the rule added from the Security Inbox, unless another inbox rule
+        matches them. Existing findings can take up to two hours to update.
+        You can't restore a deleted rule. To stop a rule temporarily, update it with ``enabled: false``
+        instead.
 
-        :param rule_id: The ID of the inbox rule.
+        :param rule_id: The ID of the inbox rule, as returned by ``ListSecurityFindingsAutomationInboxRules`` or ``CreateSecurityFindingsAutomationInboxRule``.
         :type rule_id: UUID
         :rtype: None
         """
@@ -6615,8 +6661,12 @@ class SecurityMonitoringApi:
         """Delete a mute rule.
 
         Delete a mute rule by ID.
+        Datadog unmutes findings that the rule muted, unless another mute rule matches them. Manually
+        muted findings stay muted. Existing findings can take up to two hours to update.
+        You can't restore a deleted rule. To stop a rule temporarily, update it with ``enabled: false``
+        instead. Disabling a rule has the same effect on findings as deleting it.
 
-        :param rule_id: The ID of the mute rule.
+        :param rule_id: The ID of the mute rule, as returned by ``ListSecurityFindingsAutomationMuteRules`` or ``CreateSecurityFindingsAutomationMuteRule``.
         :type rule_id: UUID
         :rtype: None
         """
@@ -6632,8 +6682,13 @@ class SecurityMonitoringApi:
         """Delete a severity modifier rule.
 
         Delete a severity modifier rule by ID.
+        Unresolved findings whose severity the rule changed go back to their Datadog severity, unless
+        another severity modifier rule matches them. Resolved findings keep the severity they had.
+        Existing findings can take up to two hours to update.
+        You can't restore a deleted rule. To stop a rule temporarily, update it with ``enabled: false``
+        instead.
 
-        :param rule_id: The ID of the severity modifier rule.
+        :param rule_id: The ID of the severity modifier rule, as returned by ``ListSecurityFindingsAutomationSeverityModifierRules`` or ``CreateSecurityFindingsAutomationSeverityModifierRule``.
         :type rule_id: UUID
         :rtype: None
         """
@@ -6649,8 +6704,11 @@ class SecurityMonitoringApi:
         """Delete a ticket creation rule.
 
         Delete a ticket creation rule by ID.
+        Tickets that the rule already created stay attached to their findings and aren't deleted.
+        You can't restore a deleted rule. To stop a rule temporarily, update it with
+        ``enabled: false`` instead.
 
-        :param rule_id: The ID of the ticket creation rule.
+        :param rule_id: The ID of the ticket creation rule, as returned by ``ListSecurityFindingsAutomationTicketCreationRules`` or ``CreateSecurityFindingsAutomationTicketCreationRule``.
         :type rule_id: UUID
         :rtype: None
         """
@@ -6848,6 +6906,11 @@ class SecurityMonitoringApi:
         """Disable a default inbox rule.
 
         Disable a default inbox rule for the current organization.
+        A disabled default rule stops adding the findings that match its ``rule`` to the Security
+        Inbox, and Datadog removes findings it added from the inbox unless another inbox rule matches them.
+        Disable a default rule when it doesn't fit how your organization reviews findings. To add your own
+        rules, use ``CreateSecurityFindingsAutomationInboxRule``. Only ``enabled``
+        changes. Existing findings can take up to two hours to update. To turn it back on, use ``EnableSecurityFindingsAutomationDefaultInboxRule``.
 
         :param rule_id: The ID of the default inbox rule.
             Known default rule IDs include: ``identity_risk_default_rule`` ,
@@ -6959,6 +7022,11 @@ class SecurityMonitoringApi:
         """Enable a default inbox rule.
 
         Enable a default inbox rule for the current organization.
+        An enabled default rule adds the findings that match its ``rule`` to the Security Inbox.
+        Default rules are enabled unless the organization disabled them. Only ``enabled`` changes;
+        the rule's ``name`` , ``rule`` , and ``action`` stay managed by Datadog. Existing findings can take up to two hours to update.
+        To turn it off again, use
+        ``DisableSecurityFindingsAutomationDefaultInboxRule``.
 
         :param rule_id: The ID of the default inbox rule.
             Known default rule IDs include: ``identity_risk_default_rule`` ,
@@ -7481,7 +7549,7 @@ class SecurityMonitoringApi:
 
         Get the details of a due date rule by ID.
 
-        :param rule_id: The ID of the due date rule.
+        :param rule_id: The ID of the due date rule, as returned by ``ListSecurityFindingsAutomationDueDateRules`` or ``CreateSecurityFindingsAutomationDueDateRule``.
         :type rule_id: UUID
         :rtype: DueDateRuleResponse
         """
@@ -7498,7 +7566,7 @@ class SecurityMonitoringApi:
 
         Get the details of an inbox rule by ID.
 
-        :param rule_id: The ID of the inbox rule.
+        :param rule_id: The ID of the inbox rule, as returned by ``ListSecurityFindingsAutomationInboxRules`` or ``CreateSecurityFindingsAutomationInboxRule``.
         :type rule_id: UUID
         :rtype: InboxRuleResponse
         """
@@ -7515,7 +7583,7 @@ class SecurityMonitoringApi:
 
         Get the details of a mute rule by ID.
 
-        :param rule_id: The ID of the mute rule.
+        :param rule_id: The ID of the mute rule, as returned by ``ListSecurityFindingsAutomationMuteRules`` or ``CreateSecurityFindingsAutomationMuteRule``.
         :type rule_id: UUID
         :rtype: MuteRuleResponse
         """
@@ -7532,7 +7600,7 @@ class SecurityMonitoringApi:
 
         Get the details of a severity modifier rule by ID.
 
-        :param rule_id: The ID of the severity modifier rule.
+        :param rule_id: The ID of the severity modifier rule, as returned by ``ListSecurityFindingsAutomationSeverityModifierRules`` or ``CreateSecurityFindingsAutomationSeverityModifierRule``.
         :type rule_id: UUID
         :rtype: SeverityModifierRuleResponse
         """
@@ -7549,7 +7617,7 @@ class SecurityMonitoringApi:
 
         Get the details of a ticket creation rule by ID.
 
-        :param rule_id: The ID of the ticket creation rule.
+        :param rule_id: The ID of the ticket creation rule, as returned by ``ListSecurityFindingsAutomationTicketCreationRules`` or ``CreateSecurityFindingsAutomationTicketCreationRule``.
         :type rule_id: UUID
         :rtype: TicketCreationRuleResponse
         """
@@ -8892,10 +8960,17 @@ class SecurityMonitoringApi:
         """Get all due date rules.
 
         Get all due date rules for the current organization.
+        A due date rule sets a remediation due date on the findings that match its ``rule`` : a number of
+        days per severity, counted from ``action.due_from`` (when the finding was first seen, or when a
+        fix became available).
+        The response lists rules in evaluation order: Datadog checks each finding against the due date
+        rules in this order and applies the first one that matches. A rule only matches findings whose
+        severity is listed in its ``action.due_days_per_severity``. To change the order, use
+        ``ReorderSecurityFindingsAutomationDueDateRules``.
 
-        :param page_size: The number of rules per page. Maximum is 1000.
+        :param page_size: The number of rules per page. Maximum is 1,000.
         :type page_size: int, optional
-        :param page_number: The page number to return.
+        :param page_number: The page number to return, starting at 0.
         :type page_number: int, optional
         :rtype: DueDateRulesResponse
         """
@@ -8917,10 +8992,16 @@ class SecurityMonitoringApi:
         """Get all inbox rules.
 
         Get all inbox rules for the current organization.
+        An inbox rule adds the findings that match its ``rule`` to the Security Inbox. This list
+        doesn't include the default inbox rules that Datadog manages. To get those, use
+        ``ListSecurityFindingsAutomationDefaultInboxRules``.
+        The response lists rules in evaluation order: Datadog checks each finding against the inbox
+        rules in this order and applies the first one that matches. Datadog checks the default inbox rules
+        before these rules. To change the order, use ``ReorderSecurityFindingsAutomationInboxRules``.
 
-        :param page_size: The number of rules per page. Maximum is 1000.
+        :param page_size: The number of rules per page. Maximum is 1,000.
         :type page_size: int, optional
-        :param page_number: The page number to return.
+        :param page_number: The page number to return, starting at 0.
         :type page_number: int, optional
         :rtype: InboxRulesResponse
         """
@@ -8942,10 +9023,16 @@ class SecurityMonitoringApi:
         """Get all mute rules.
 
         Get all mute rules for the current organization.
+        A mute rule automatically mutes new and existing findings that match its ``rule`` (finding types and query),
+        using the reason in its ``action``. To mute or unmute specific findings by ID as a one-time action,
+        use ``MuteSecurityFindings`` instead.
+        The response lists rules in evaluation order: Datadog checks each finding against the mute
+        rules in this order and applies the first one that matches. To change the order, use
+        ``ReorderSecurityFindingsAutomationMuteRules``.
 
-        :param page_size: The number of rules per page. Maximum is 1000.
+        :param page_size: The number of rules per page. Maximum is 1,000.
         :type page_size: int, optional
-        :param page_number: The page number to return.
+        :param page_number: The page number to return, starting at 0.
         :type page_number: int, optional
         :rtype: MuteRulesResponse
         """
@@ -8967,10 +9054,17 @@ class SecurityMonitoringApi:
         """Get all severity modifier rules.
 
         Get all severity modifier rules for the current organization.
+        A severity modifier rule changes the severity of the findings that match its ``rule`` : it either
+        sets a fixed severity or shifts it up or down by one rank. Severity modifier rules run before
+        mute, due date, inbox, and ticket creation rules, so those rules see the modified severity.
+        To override the severity of specific findings by ID, use ``UpdateFindingsSeverity`` instead.
+        The response lists rules in evaluation order: Datadog checks each finding against the severity modifier
+        rules in this order and applies the first one that would change the finding's severity. To change the order, use
+        ``ReorderSecurityFindingsAutomationSeverityModifierRules``.
 
-        :param page_size: The number of rules per page. Maximum is 1000.
+        :param page_size: The number of rules per page. Maximum is 1,000.
         :type page_size: int, optional
-        :param page_number: The page number to return.
+        :param page_number: The page number to return, starting at 0.
         :type page_number: int, optional
         :rtype: SeverityModifierRulesResponse
         """
@@ -8992,10 +9086,19 @@ class SecurityMonitoringApi:
         """Get all ticket creation rules.
 
         Get all ticket creation rules for the current organization.
+        A ticket creation rule automatically creates tickets for new findings that match its ``rule`` ,
+        in Jira, Linear, or Datadog Work Management ( ``action.target`` ; formerly Case Management), up to
+        ``action.max_tickets_per_day``.
+        Each returned rule includes its scope ( ``rule`` ), its target project, assignee, and ticket
+        fields ( ``action`` ), and ``action.auto_disabled_reason`` when Datadog disabled the rule after a
+        ticketing integration error.
+        The response lists rules in evaluation order: Datadog checks each finding against the ticket creation
+        rules in this order and applies the first one that matches. To change the order, use
+        ``ReorderSecurityFindingsAutomationTicketCreationRules``.
 
-        :param page_size: The number of rules per page. Maximum is 1000.
+        :param page_size: The number of rules per page. Maximum is 1,000.
         :type page_size: int, optional
-        :param page_number: The page number to return.
+        :param page_number: The page number to return, starting at 0.
         :type page_number: int, optional
         :rtype: TicketCreationRulesResponse
         """
@@ -9991,7 +10094,14 @@ class SecurityMonitoringApi:
     ) -> DueDateRuleReorderResponse:
         """Reorder due date rules.
 
-        Reorder the list of due date rules for the current organization.
+        Set the order in which due date rules are evaluated for the current organization.
+        Datadog checks each finding against the due date rules in this order and applies only the first rule that matches.
+        A rule only matches findings whose severity is listed in its ``action.due_days_per_severity``.
+        The first item in ``data`` is evaluated first.
+        ``data`` must list every due date rule exactly once, using the IDs that
+        ``ListSecurityFindingsAutomationDueDateRules`` returns. If a rule is missing, unknown, or listed twice, the
+        request fails with a ``422`` error and the order doesn't change. Datadog adds rules created later
+        to the end of the evaluation order.
 
         :type body: DueDateRuleReorderRequest
         :rtype: DueDateRuleReorderResponse
@@ -10007,7 +10117,14 @@ class SecurityMonitoringApi:
     ) -> InboxRuleReorderResponse:
         """Reorder inbox rules.
 
-        Reorder the list of inbox rules for the current organization.
+        Set the order in which inbox rules are evaluated for the current organization.
+        Datadog checks each finding against the inbox rules in this order and applies only the first rule that matches.
+        Datadog checks the default inbox rules ( ``ListSecurityFindingsAutomationDefaultInboxRules`` ) before these rules.
+        The first item in ``data`` is evaluated first.
+        ``data`` must list every inbox rule exactly once, using the IDs that
+        ``ListSecurityFindingsAutomationInboxRules`` returns. If a rule is missing, unknown, or listed twice, the
+        request fails with a ``422`` error and the order doesn't change. Datadog adds rules created later
+        to the end of the evaluation order.
 
         :type body: InboxRuleReorderRequest
         :rtype: InboxRuleReorderResponse
@@ -10023,7 +10140,13 @@ class SecurityMonitoringApi:
     ) -> MuteRuleReorderResponse:
         """Reorder mute rules.
 
-        Reorder the list of mute rules for the current organization.
+        Set the order in which mute rules are evaluated for the current organization.
+        Datadog checks each finding against the mute rules in this order and applies only the first rule that matches.
+        The first item in ``data`` is evaluated first.
+        ``data`` must list every mute rule exactly once, using the IDs that
+        ``ListSecurityFindingsAutomationMuteRules`` returns. If a rule is missing, unknown, or listed twice, the
+        request fails with a ``422`` error and the order doesn't change. Datadog adds rules created later
+        to the end of the order.
 
         :type body: MuteRuleReorderRequest
         :rtype: MuteRuleReorderResponse
@@ -10039,7 +10162,13 @@ class SecurityMonitoringApi:
     ) -> SeverityModifierRuleReorderResponse:
         """Reorder severity modifier rules.
 
-        Reorder the list of severity modifier rules for the current organization.
+        Set the order in which severity modifier rules are evaluated for the current organization.
+        Datadog checks each finding against the severity modifier rules in this order and applies only the first rule that would change the finding's severity.
+        The first item in ``data`` is evaluated first.
+        ``data`` must list every severity modifier rule exactly once, using the IDs that
+        ``ListSecurityFindingsAutomationSeverityModifierRules`` returns. If a rule is missing, unknown, or listed twice, the
+        request fails with a ``422`` error and the order doesn't change. Datadog adds rules created later
+        to the end of the order.
 
         :type body: SeverityModifierRuleReorderRequest
         :rtype: SeverityModifierRuleReorderResponse
@@ -10055,7 +10184,13 @@ class SecurityMonitoringApi:
     ) -> TicketCreationRuleReorderResponse:
         """Reorder ticket creation rules.
 
-        Reorder the list of ticket creation rules for the current organization.
+        Set the order in which ticket creation rules are evaluated for the current organization.
+        Datadog checks each finding against the ticket creation rules in this order and applies only the first rule that matches.
+        The first item in ``data`` is evaluated first.
+        ``data`` must list every ticket creation rule exactly once, using the IDs that
+        ``ListSecurityFindingsAutomationTicketCreationRules`` returns. If a rule is missing, unknown, or listed twice, the
+        request fails with a ``422`` error and the order doesn't change. Datadog adds rules created later
+        to the end of the order.
 
         :type body: TicketCreationRuleReorderRequest
         :rtype: TicketCreationRuleReorderResponse
@@ -10606,8 +10741,11 @@ class SecurityMonitoringApi:
         """Update a due date rule.
 
         Update a due date rule by ID.
+        This request replaces the whole rule. Send every attribute you want to keep, because the API clears
+        optional fields you omit and saves an omitted ``enabled`` as ``false``. The rule keeps its ID and
+        its position in the evaluation order.
 
-        :param rule_id: The ID of the due date rule.
+        :param rule_id: The ID of the due date rule, as returned by ``ListSecurityFindingsAutomationDueDateRules`` or ``CreateSecurityFindingsAutomationDueDateRule``.
         :type rule_id: UUID
         :type body: DueDateRuleUpdateRequest
         :rtype: DueDateRuleResponse
@@ -10627,8 +10765,11 @@ class SecurityMonitoringApi:
         """Update an inbox rule.
 
         Update an inbox rule by ID.
+        This request replaces the whole rule. Send every attribute you want to keep, because the API clears
+        optional fields you omit and saves an omitted ``enabled`` as ``false``. The rule keeps its ID and
+        its position in the evaluation order.
 
-        :param rule_id: The ID of the inbox rule.
+        :param rule_id: The ID of the inbox rule, as returned by ``ListSecurityFindingsAutomationInboxRules`` or ``CreateSecurityFindingsAutomationInboxRule``.
         :type rule_id: UUID
         :type body: InboxRuleUpdateRequest
         :rtype: InboxRuleResponse
@@ -10648,8 +10789,11 @@ class SecurityMonitoringApi:
         """Update a mute rule.
 
         Update a mute rule by ID.
+        This request replaces the whole rule. Send every attribute you want to keep, because the API clears
+        optional fields you omit and saves an omitted ``enabled`` as ``false``. The rule keeps its ID and
+        its position in the evaluation order.
 
-        :param rule_id: The ID of the mute rule.
+        :param rule_id: The ID of the mute rule, as returned by ``ListSecurityFindingsAutomationMuteRules`` or ``CreateSecurityFindingsAutomationMuteRule``.
         :type rule_id: UUID
         :type body: MuteRuleUpdateRequest
         :rtype: MuteRuleResponse
@@ -10669,8 +10813,11 @@ class SecurityMonitoringApi:
         """Update a severity modifier rule.
 
         Update a severity modifier rule by ID.
+        This request replaces the whole rule. Send every attribute you want to keep, because the API clears
+        optional fields you omit and saves an omitted ``enabled`` as ``false``. The rule keeps its ID and
+        its position in the evaluation order.
 
-        :param rule_id: The ID of the severity modifier rule.
+        :param rule_id: The ID of the severity modifier rule, as returned by ``ListSecurityFindingsAutomationSeverityModifierRules`` or ``CreateSecurityFindingsAutomationSeverityModifierRule``.
         :type rule_id: UUID
         :type body: SeverityModifierRuleUpdateRequest
         :rtype: SeverityModifierRuleResponse
@@ -10690,8 +10837,13 @@ class SecurityMonitoringApi:
         """Update a ticket creation rule.
 
         Update a ticket creation rule by ID.
+        This request replaces the whole rule. Send every attribute you want to keep, because the API clears
+        optional fields you omit and saves an omitted ``enabled`` as ``false``. The rule keeps its ID and
+        its position in the evaluation order.
+        To re-enable a rule that Datadog disabled after a ticketing integration error, update it.
+        Updating a rule clears ``action.auto_disabled_reason``.
 
-        :param rule_id: The ID of the ticket creation rule.
+        :param rule_id: The ID of the ticket creation rule, as returned by ``ListSecurityFindingsAutomationTicketCreationRules`` or ``CreateSecurityFindingsAutomationTicketCreationRule``.
         :type rule_id: UUID
         :type body: TicketCreationRuleUpdateRequest
         :rtype: TicketCreationRuleResponse

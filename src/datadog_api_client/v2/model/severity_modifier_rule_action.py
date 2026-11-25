@@ -15,6 +15,8 @@ class SeverityModifierRuleAction(ModelComposed):
         """
         The action to take when a severity modifier rule matches a finding. This is a discriminated union on ``type`` : ``set`` assigns a fixed severity, while ``shift`` moves the severity up or down by one rank.
 
+        With ``type: set`` , send ``severity`` ( ``info_none`` , ``low`` , ``medium`` , ``high`` , or ``critical`` ) and no ``severity_delta``. With ``type: shift`` , send ``severity_delta`` ( ``up_one`` or ``down_one`` ) and no ``severity``. Both accept an optional ``description``. A ``shift`` rule doesn't match findings with an unknown severity.
+
         A severity modifier rule's ``rule.query`` must not filter on ``@severity`` or on the ``@severity_details.user_adjusted.*`` namespace.
 
         Use ``@severity_details.adjusted.value`` instead, which reflects the severity before user-defined adjustments.
@@ -28,7 +30,7 @@ class SeverityModifierRuleAction(ModelComposed):
         :param type: The type of a severity modifier rule action that sets a fixed severity.
         :type type: SeverityModifierRuleSetActionType
 
-        :param severity_delta: The direction in which to shift the severity of matched findings by one rank.
+        :param severity_delta: The direction in which to shift the severity of matched findings by one rank. Shifting down stops at the lowest severity available for the finding type.
         :type severity_delta: SeverityModifierSeverityDelta
         """
         super().__init__(kwargs)

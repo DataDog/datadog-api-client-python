@@ -59,7 +59,7 @@ class DueDateRuleAttributesCreate(ModelNormal):
         :param action: The action to take when the due date rule matches a finding.
         :type action: DueDateRuleAction
 
-        :param enabled: Whether the due date rule is enabled.
+        :param enabled: Whether the due date rule is enabled. If it is omitted, the API saves it as ``false`` and the rule doesn't apply.
         :type enabled: bool, optional
 
         :param name: The name of the due date rule.

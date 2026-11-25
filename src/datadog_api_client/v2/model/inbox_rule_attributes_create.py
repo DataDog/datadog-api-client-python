@@ -59,7 +59,7 @@ class InboxRuleAttributesCreate(ModelNormal):
         :param action: The action to take when the inbox rule matches a finding.
         :type action: InboxRuleAction
 
-        :param enabled: Whether the inbox rule is enabled.
+        :param enabled: Whether the inbox rule is enabled. If it is omitted, the API saves it as ``false`` and the rule doesn't apply.
         :type enabled: bool, optional
 
         :param name: The name of the inbox rule.
