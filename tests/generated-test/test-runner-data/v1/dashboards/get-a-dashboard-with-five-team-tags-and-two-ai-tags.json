@@ -1,0 +1,35 @@
+{
+  "api": "Dashboards",
+  "expected_status": 200,
+  "feature": "Dashboards",
+  "id": "v1/Dashboards/Get a dashboard with five team tags and two AI tags",
+  "operation_id": "GetDashboard",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "dashboard_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "dashboard_with_team_and_ai_tags.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v1/dashboard/{dashboard_id}"
+  },
+  "scenario": "Get a dashboard with five team tags and two AI tags",
+  "schema_version": 1,
+  "version": "v1"
+}
