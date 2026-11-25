@@ -5326,6 +5326,17 @@ from datadog_api_client.v2.model.generate_cost_tag_description_response import G
 from datadog_api_client.v2.model.generated_cost_tag_description import GeneratedCostTagDescription
 from datadog_api_client.v2.model.generated_cost_tag_description_attributes import GeneratedCostTagDescriptionAttributes
 from datadog_api_client.v2.model.generated_cost_tag_description_type import GeneratedCostTagDescriptionType
+from datadog_api_client.v2.model.generated_metric import GeneratedMetric
+from datadog_api_client.v2.model.generated_metric_attributes_relationship import GeneratedMetricAttributesRelationship
+from datadog_api_client.v2.model.generated_metric_attributes_relationship_data import (
+    GeneratedMetricAttributesRelationshipData,
+)
+from datadog_api_client.v2.model.generated_metric_attributes_relationship_links import (
+    GeneratedMetricAttributesRelationshipLinks,
+)
+from datadog_api_client.v2.model.generated_metric_attributes_type import GeneratedMetricAttributesType
+from datadog_api_client.v2.model.generated_metric_relationships import GeneratedMetricRelationships
+from datadog_api_client.v2.model.generated_metric_type import GeneratedMetricType
 from datadog_api_client.v2.model.get_action_connection_response import GetActionConnectionResponse
 from datadog_api_client.v2.model.get_app_key_registration_response import GetAppKeyRegistrationResponse
 from datadog_api_client.v2.model.get_app_response import GetAppResponse
@@ -18496,6 +18507,13 @@ __all__ = [
     "GeneratedCostTagDescription",
     "GeneratedCostTagDescriptionAttributes",
     "GeneratedCostTagDescriptionType",
+    "GeneratedMetric",
+    "GeneratedMetricAttributesRelationship",
+    "GeneratedMetricAttributesRelationshipData",
+    "GeneratedMetricAttributesRelationshipLinks",
+    "GeneratedMetricAttributesType",
+    "GeneratedMetricRelationships",
+    "GeneratedMetricType",
     "GetActionConnectionResponse",
     "GetAppKeyRegistrationResponse",
     "GetAppResponse",

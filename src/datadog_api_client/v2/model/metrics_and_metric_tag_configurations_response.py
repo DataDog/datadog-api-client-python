@@ -20,6 +20,7 @@ if TYPE_CHECKING:
     from datadog_api_client.v2.model.metric_pagination_meta import MetricPaginationMeta
     from datadog_api_client.v2.model.metric import Metric
     from datadog_api_client.v2.model.metric_tag_configuration import MetricTagConfiguration
+    from datadog_api_client.v2.model.generated_metric import GeneratedMetric
 
 
 class MetricsAndMetricTagConfigurationsResponse(ModelNormal):
@@ -46,7 +47,9 @@ class MetricsAndMetricTagConfigurationsResponse(ModelNormal):
 
     def __init__(
         self_,
-        data: Union[List[Union[MetricsAndMetricTagConfigurations, Metric, MetricTagConfiguration]], UnsetType] = unset,
+        data: Union[
+            List[Union[MetricsAndMetricTagConfigurations, Metric, MetricTagConfiguration, GeneratedMetric]], UnsetType
+        ] = unset,
         included: Union[List[MetricIngestedIndexedVolume], UnsetType] = unset,
         links: Union[MetricsListResponseLinks, UnsetType] = unset,
         meta: Union[MetricPaginationMeta, UnsetType] = unset,
@@ -55,7 +58,7 @@ class MetricsAndMetricTagConfigurationsResponse(ModelNormal):
         """
         Response object that includes metrics and metric tag configurations.
 
-        :param data: Array of metrics and metric tag configurations.
+        :param data: Array of metrics, metric tag configurations, and generated metrics.
         :type data: [MetricsAndMetricTagConfigurations], optional
 
         :param included: Array of metric volume resources included when requested with ``include=metric_volumes``.

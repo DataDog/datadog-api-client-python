@@ -67476,6 +67476,79 @@ components:
       type: string
       x-enum-varnames:
         - COST_GENERATED_TAG_DESCRIPTION
+    GeneratedMetric:
+      description: |-
+        Object for a single generated (derived) metric. Only returned for organizations with
+        generated metrics enabled.
+      example:
+        id: my.generated.metric
+        relationships:
+          generated_metric_attributes:
+            data:
+              id: my.generated.metric
+              type: generated_metric_attributes
+            links:
+              related: /api/v2/metrics?filter[is_generated_metric]=true&include=generated_metric_attributes
+        type: generated_metric
+      properties:
+        id:
+          $ref: "#/components/schemas/MetricName"
+        relationships:
+          $ref: "#/components/schemas/GeneratedMetricRelationships"
+        type:
+          $ref: "#/components/schemas/GeneratedMetricType"
+      required:
+        - id
+        - type
+      type: object
+    GeneratedMetricAttributesRelationship:
+      description: Relationship to the attributes of a generated metric.
+      properties:
+        data:
+          $ref: "#/components/schemas/GeneratedMetricAttributesRelationshipData"
+        links:
+          $ref: "#/components/schemas/GeneratedMetricAttributesRelationshipLinks"
+      type: object
+    GeneratedMetricAttributesRelationshipData:
+      description: Relationship data for the attributes of a generated metric.
+      properties:
+        id:
+          $ref: "#/components/schemas/MetricName"
+        type:
+          $ref: "#/components/schemas/GeneratedMetricAttributesType"
+      type: object
+    GeneratedMetricAttributesRelationshipLinks:
+      description: Links for the generated metric attributes relationship.
+      properties:
+        related:
+          description: Link to list generated metrics together with their attributes.
+          example: /api/v2/metrics?filter[is_generated_metric]=true&include=generated_metric_attributes
+          type: string
+      type: object
+    GeneratedMetricAttributesType:
+      default: generated_metric_attributes
+      description: The generated metric attributes resource type.
+      enum:
+        - generated_metric_attributes
+      example: generated_metric_attributes
+      type: string
+      x-enum-varnames:
+        - GENERATED_METRIC_ATTRIBUTES
+    GeneratedMetricRelationships:
+      description: Relationships for a generated metric.
+      properties:
+        generated_metric_attributes:
+          $ref: "#/components/schemas/GeneratedMetricAttributesRelationship"
+      type: object
+    GeneratedMetricType:
+      default: generated_metric
+      description: The generated metric resource type.
+      enum:
+        - generated_metric
+      example: generated_metric
+      type: string
+      x-enum-varnames:
+        - GENERATED_METRIC
     GetActionConnectionResponse:
       description: The response for found connection
       properties:
@@ -94051,11 +94124,12 @@ components:
       oneOf:
         - $ref: "#/components/schemas/Metric"
         - $ref: "#/components/schemas/MetricTagConfiguration"
+        - $ref: "#/components/schemas/GeneratedMetric"
     MetricsAndMetricTagConfigurationsResponse:
       description: Response object that includes metrics and metric tag configurations.
       properties:
         data:
-          description: Array of metrics and metric tag configurations.
+          description: Array of metrics, metric tag configurations, and generated metrics.
           items:
             $ref: "#/components/schemas/MetricsAndMetricTagConfigurations"
           type: array
