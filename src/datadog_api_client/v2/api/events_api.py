@@ -230,7 +230,7 @@ class EventsApi:
 
         Get the details of an event by ``event_id``.
 
-        :param event_id: The UID of the event.
+        :param event_id: The event's ``evt.id`` or ``evt.uid`` , read from ``data[].attributes.attributes.evt`` in ``ListEvents`` or ``SearchEvents`` results. The top-level ``data[].id`` is not accepted.
         :type event_id: str
         :rtype: V2EventResponse
         """
@@ -256,11 +256,22 @@ class EventsApi:
 
         Use this endpoint to see your latest events.
 
-        :param filter_query: Search query following events syntax.
+        Query syntax: Attributes take ``@`` ( ``@evt.integration_id:kubernetes`` , ``@evt.category:alert`` ), while tags and
+        reserved fields don't ( ``kube_cluster_name:gizmo`` , ``service:web`` , ``source:oom_kill`` ). A name that needs ``@``
+        matches nothing without it. To filter by integration, prefer ``@evt.integration_id`` , whose values use hyphens
+        ( ``oom-kill`` ), over ``source`` , whose values use underscores ( ``oom_kill`` ). Bare words search the event text.
+        Quoted phrases, ``OR`` , ``-`` negation, and value wildcards are supported. Wildcards in attribute names, such as
+        ``@*.name`` , are not supported.
+
+        Without ``filter[from]`` , the endpoint searches only the last 15 minutes. Widen the time window before concluding that no event exists.
+        Each event's own fields are under ``data[].attributes.attributes`` , for example ``evt.integration_id`` , ``evt.category`` ,
+        ``title`` , and ``service``. To fetch one event with ``GetEvent`` , use its ``evt.id`` or ``evt.uid`` , not the top-level ``data[].id``.
+
+        :param filter_query: Search query following events syntax. Attributes take ``@`` ( ``@evt.category:alert`` ); tags and reserved fields don't ( ``service:web`` ).
         :type filter_query: str, optional
-        :param filter_from: Minimum timestamp for requested events, in milliseconds.
+        :param filter_from: Minimum time for requested events, as date math ( ``now-1h`` ), ISO 8601, or a timestamp in milliseconds. Defaults to ``now-15m``.
         :type filter_from: str, optional
-        :param filter_to: Maximum timestamp for requested events, in milliseconds.
+        :param filter_to: Maximum time for requested events, as date math, ISO 8601, or a timestamp in milliseconds. Defaults to ``now``.
         :type filter_to: str, optional
         :param sort: Order of events in results.
         :type sort: EventsSort, optional
@@ -305,11 +316,11 @@ class EventsApi:
 
         Provide a paginated version of :meth:`list_events`, returning all items.
 
-        :param filter_query: Search query following events syntax.
+        :param filter_query: Search query following events syntax. Attributes take ``@`` ( ``@evt.category:alert`` ); tags and reserved fields don't ( ``service:web`` ).
         :type filter_query: str, optional
-        :param filter_from: Minimum timestamp for requested events, in milliseconds.
+        :param filter_from: Minimum time for requested events, as date math ( ``now-1h`` ), ISO 8601, or a timestamp in milliseconds. Defaults to ``now-15m``.
         :type filter_from: str, optional
-        :param filter_to: Maximum timestamp for requested events, in milliseconds.
+        :param filter_to: Maximum time for requested events, as date math, ISO 8601, or a timestamp in milliseconds. Defaults to ``now``.
         :type filter_to: str, optional
         :param sort: Order of events in results.
         :type sort: EventsSort, optional
@@ -364,6 +375,17 @@ class EventsApi:
         `Results are paginated similarly to logs <https://docs.datadoghq.com/logs/guide/collect-multiple-logs-with-pagination>`_.
 
         Use this endpoint to build complex events filtering and search.
+
+        Query syntax: Attributes take ``@`` ( ``@evt.integration_id:kubernetes`` , ``@evt.category:alert`` ), while tags and
+        reserved fields don't ( ``kube_cluster_name:gizmo`` , ``service:web`` , ``source:oom_kill`` ). A name that needs ``@``
+        matches nothing without it. To filter by integration, prefer ``@evt.integration_id`` , whose values use hyphens
+        ( ``oom-kill`` ), over ``source`` , whose values use underscores ( ``oom_kill`` ). Bare words search the event text.
+        Quoted phrases, ``OR`` , ``-`` negation, and value wildcards are supported. Wildcards in attribute names, such as
+        ``@*.name`` , are not supported.
+
+        Without ``filter.from`` , the endpoint searches only the last 15 minutes. Widen the time window before concluding that no event exists.
+        Each event's own fields are under ``data[].attributes.attributes`` , for example ``evt.integration_id`` , ``evt.category`` ,
+        ``title`` , and ``service``. To fetch one event with ``GetEvent`` , use its ``evt.id`` or ``evt.uid`` , not the top-level ``data[].id``.
 
         :type body: EventsListRequest, optional
         :rtype: EventsListResponse
