@@ -8384,6 +8384,16 @@ from datadog_api_client.v2.model.observability_pipeline_clickhouse_destination_f
 from datadog_api_client.v2.model.observability_pipeline_clickhouse_destination_type import (
     ObservabilityPipelineClickhouseDestinationType,
 )
+from datadog_api_client.v2.model.observability_pipeline_client_identity import ObservabilityPipelineClientIdentity
+from datadog_api_client.v2.model.observability_pipeline_client_identity_allowlist import (
+    ObservabilityPipelineClientIdentityAllowlist,
+)
+from datadog_api_client.v2.model.observability_pipeline_client_identity_mode import (
+    ObservabilityPipelineClientIdentityMode,
+)
+from datadog_api_client.v2.model.observability_pipeline_client_identity_rule import (
+    ObservabilityPipelineClientIdentityRule,
+)
 from datadog_api_client.v2.model.observability_pipeline_client_tls import ObservabilityPipelineClientTls
 from datadog_api_client.v2.model.observability_pipeline_cloud_prem_destination import (
     ObservabilityPipelineCloudPremDestination,
@@ -8783,6 +8793,9 @@ from datadog_api_client.v2.model.observability_pipeline_metric_tags_processor_ty
 )
 from datadog_api_client.v2.model.observability_pipeline_metric_value import ObservabilityPipelineMetricValue
 from datadog_api_client.v2.model.observability_pipeline_mtls_server_tls import ObservabilityPipelineMtlsServerTls
+from datadog_api_client.v2.model.observability_pipeline_mtls_server_tls_with_client_identity import (
+    ObservabilityPipelineMtlsServerTlsWithClientIdentity,
+)
 from datadog_api_client.v2.model.observability_pipeline_new_relic_destination import (
     ObservabilityPipelineNewRelicDestination,
 )
@@ -20576,6 +20589,10 @@ __all__ = [
     "ObservabilityPipelineClickhouseDestinationCompressionObject",
     "ObservabilityPipelineClickhouseDestinationFormat",
     "ObservabilityPipelineClickhouseDestinationType",
+    "ObservabilityPipelineClientIdentity",
+    "ObservabilityPipelineClientIdentityAllowlist",
+    "ObservabilityPipelineClientIdentityMode",
+    "ObservabilityPipelineClientIdentityRule",
     "ObservabilityPipelineClientTls",
     "ObservabilityPipelineCloudPremDestination",
     "ObservabilityPipelineCloudPremDestinationType",
@@ -20725,6 +20742,7 @@ __all__ = [
     "ObservabilityPipelineMetricTagsProcessorType",
     "ObservabilityPipelineMetricValue",
     "ObservabilityPipelineMtlsServerTls",
+    "ObservabilityPipelineMtlsServerTlsWithClientIdentity",
     "ObservabilityPipelineNewRelicDestination",
     "ObservabilityPipelineNewRelicDestinationRegion",
     "ObservabilityPipelineNewRelicDestinationType",

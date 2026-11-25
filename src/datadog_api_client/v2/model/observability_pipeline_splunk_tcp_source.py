@@ -14,7 +14,9 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.observability_pipeline_mtls_server_tls import ObservabilityPipelineMtlsServerTls
+    from datadog_api_client.v2.model.observability_pipeline_mtls_server_tls_with_client_identity import (
+        ObservabilityPipelineMtlsServerTlsWithClientIdentity,
+    )
     from datadog_api_client.v2.model.observability_pipeline_splunk_tcp_source_type import (
         ObservabilityPipelineSplunkTcpSourceType,
     )
@@ -30,8 +32,8 @@ class ObservabilityPipelineSplunkTcpSource(ModelNormal):
 
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.observability_pipeline_mtls_server_tls import (
-            ObservabilityPipelineMtlsServerTls,
+        from datadog_api_client.v2.model.observability_pipeline_mtls_server_tls_with_client_identity import (
+            ObservabilityPipelineMtlsServerTlsWithClientIdentity,
         )
         from datadog_api_client.v2.model.observability_pipeline_splunk_tcp_source_type import (
             ObservabilityPipelineSplunkTcpSourceType,
@@ -41,7 +43,7 @@ class ObservabilityPipelineSplunkTcpSource(ModelNormal):
             "address_key": (str,),
             "id": (str,),
             "max_connection_duration_secs": (int,),
-            "tls": (ObservabilityPipelineMtlsServerTls,),
+            "tls": (ObservabilityPipelineMtlsServerTlsWithClientIdentity,),
             "type": (ObservabilityPipelineSplunkTcpSourceType,),
         }
 
@@ -59,7 +61,7 @@ class ObservabilityPipelineSplunkTcpSource(ModelNormal):
         type: ObservabilityPipelineSplunkTcpSourceType,
         address_key: Union[str, UnsetType] = unset,
         max_connection_duration_secs: Union[int, UnsetType] = unset,
-        tls: Union[ObservabilityPipelineMtlsServerTls, UnsetType] = unset,
+        tls: Union[ObservabilityPipelineMtlsServerTlsWithClientIdentity, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -77,8 +79,8 @@ class ObservabilityPipelineSplunkTcpSource(ModelNormal):
         :param max_connection_duration_secs: Maximum duration, in seconds, that a connection can remain open before it is closed. When unset, connections can remain open indefinitely.
         :type max_connection_duration_secs: int, optional
 
-        :param tls: Configuration for enabling TLS encryption between the pipeline component and external connecting clients.
-        :type tls: ObservabilityPipelineMtlsServerTls, optional
+        :param tls: Configuration for enabling TLS encryption between the pipeline component and external connecting clients, or mutual TLS when ``verify_certificate`` is ``true``. Mutual TLS also enables an optional allowlist of client certificate identities.
+        :type tls: ObservabilityPipelineMtlsServerTlsWithClientIdentity, optional
 
         :param type: The source type. Always ``splunk_tcp``.
         :type type: ObservabilityPipelineSplunkTcpSourceType

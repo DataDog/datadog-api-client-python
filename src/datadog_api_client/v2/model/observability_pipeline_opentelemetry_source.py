@@ -14,7 +14,9 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
-    from datadog_api_client.v2.model.observability_pipeline_mtls_server_tls import ObservabilityPipelineMtlsServerTls
+    from datadog_api_client.v2.model.observability_pipeline_mtls_server_tls_with_client_identity import (
+        ObservabilityPipelineMtlsServerTlsWithClientIdentity,
+    )
     from datadog_api_client.v2.model.observability_pipeline_opentelemetry_source_type import (
         ObservabilityPipelineOpentelemetrySourceType,
     )
@@ -23,8 +25,8 @@ if TYPE_CHECKING:
 class ObservabilityPipelineOpentelemetrySource(ModelNormal):
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.observability_pipeline_mtls_server_tls import (
-            ObservabilityPipelineMtlsServerTls,
+        from datadog_api_client.v2.model.observability_pipeline_mtls_server_tls_with_client_identity import (
+            ObservabilityPipelineMtlsServerTlsWithClientIdentity,
         )
         from datadog_api_client.v2.model.observability_pipeline_opentelemetry_source_type import (
             ObservabilityPipelineOpentelemetrySourceType,
@@ -34,7 +36,7 @@ class ObservabilityPipelineOpentelemetrySource(ModelNormal):
             "grpc_address_key": (str,),
             "http_address_key": (str,),
             "id": (str,),
-            "tls": (ObservabilityPipelineMtlsServerTls,),
+            "tls": (ObservabilityPipelineMtlsServerTlsWithClientIdentity,),
             "type": (ObservabilityPipelineOpentelemetrySourceType,),
         }
 
@@ -52,7 +54,7 @@ class ObservabilityPipelineOpentelemetrySource(ModelNormal):
         type: ObservabilityPipelineOpentelemetrySourceType,
         grpc_address_key: Union[str, UnsetType] = unset,
         http_address_key: Union[str, UnsetType] = unset,
-        tls: Union[ObservabilityPipelineMtlsServerTls, UnsetType] = unset,
+        tls: Union[ObservabilityPipelineMtlsServerTlsWithClientIdentity, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -69,8 +71,8 @@ class ObservabilityPipelineOpentelemetrySource(ModelNormal):
         :param id: The unique identifier for this component. Used in other parts of the pipeline to reference this component (for example, as the ``input`` to downstream components).
         :type id: str
 
-        :param tls: Configuration for enabling TLS encryption between the pipeline component and external connecting clients.
-        :type tls: ObservabilityPipelineMtlsServerTls, optional
+        :param tls: Configuration for enabling TLS encryption between the pipeline component and external connecting clients, or mutual TLS when ``verify_certificate`` is ``true``. Mutual TLS also enables an optional allowlist of client certificate identities.
+        :type tls: ObservabilityPipelineMtlsServerTlsWithClientIdentity, optional
 
         :param type: The source type. The value should always be ``opentelemetry``.
         :type type: ObservabilityPipelineOpentelemetrySourceType
