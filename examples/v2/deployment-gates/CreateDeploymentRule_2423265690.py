@@ -41,7 +41,6 @@ body = CreateDeploymentRuleParams(
 
 configuration = Configuration()
 configuration.access_token = environ["DD_BEARER_TOKEN"]
-configuration.unstable_operations["create_deployment_rule"] = True
 with ApiClient(configuration) as api_client:
     api_instance = DeploymentGatesApi(api_client)
     response = api_instance.create_deployment_rule(gate_id=DEPLOYMENT_GATE_DATA_ID, body=body)

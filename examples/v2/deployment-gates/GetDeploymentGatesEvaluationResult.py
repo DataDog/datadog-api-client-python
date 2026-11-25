@@ -9,7 +9,6 @@ from uuid import UUID
 
 configuration = Configuration()
 configuration.access_token = environ["DD_BEARER_TOKEN"]
-configuration.unstable_operations["get_deployment_gates_evaluation_result"] = True
 with ApiClient(configuration) as api_client:
     api_instance = DeploymentGatesApi(api_client)
     response = api_instance.get_deployment_gates_evaluation_result(
