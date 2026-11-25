@@ -14,7 +14,7 @@ from typing import ClassVar
 
 class NotificationRulePreviewNotificationStatus(ModelSimple):
     """
-    The notification status for the given rule type. `SUCCESS` means a matching event was found and the notification was sent successfully. `DEFAULT` means no matching event was found and a default placeholder notification was sent instead. `ERROR` means an error occurred while sending the notification.
+    The notification status for the given rule type. `SUCCESS` means a matching event was found and the test notification was queued. `DEFAULT` means no matching event was found and a placeholder test notification was queued instead. `ERROR` means the test notification couldn't be built or queued. A queued notification can still fail to reach its target later, and this status doesn't report it.
 
     :param value: Must be one of ["SUCCESS", "DEFAULT", "ERROR"].
     :type value: str
