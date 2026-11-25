@@ -48,7 +48,7 @@ class AttachCaseRequestData(ModelNormal):
         """
         Data of the case to attach security findings to.
 
-        :param id: Unique identifier of the case.
+        :param id: Unique identifier of the case. This field is required but not used: the API attaches security findings to the case in the ``case_id`` path parameter.
         :type id: str
 
         :param relationships: Relationships of the case to attach security findings to.
