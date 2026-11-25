@@ -66,7 +66,9 @@ class FleetDeploymentOperation(ModelNormal):
             * ``delete`` : Removes the specified configuration file from the target hosts.
         :type file_op: FleetDeploymentFileOp
 
-        :param file_path: Absolute path to the target configuration file on the host.
+        :param file_path: Path to the target configuration file, relative to the Agent's configuration directory.
+            For example, ``/datadog.yaml`` or ``/conf.d/postgres.d/conf.yaml``. Absolute host paths,
+            such as ``/etc/datadog-agent/datadog.yaml`` , are rejected.
         :type file_path: str
 
         :param patch: Patch data in JSON format to apply to the configuration file.
