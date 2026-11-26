@@ -9,7 +9,7 @@
       "schema": {
         "format": null,
         "ref": "Dashboard",
-        "type": "object"
+        "type": null
       },
       "source": "dashboards_json_payload/topology_map_widget.json",
       "value": {
