@@ -1,0 +1,66 @@
+{
+  "api": "RUMOperations",
+  "expected_status": 404,
+  "feature": "RUM Operations",
+  "id": "v2/RUM Operations/Update a RUM operation link returns \"Not Found\" response",
+  "operation_id": "UpdateRUMOperationStrongLink",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RUMOperationStrongLinkUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "status": "REJECTED"
+          },
+          "type": "strong_links"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rum_operation_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "00000000-0000-0000-0000-000000000000"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "feature_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "bdd-{{ unique_lower_alnum }}"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/operations/strong_links/{rum_operation_id}/{feature_id}"
+  },
+  "scenario": "Update a RUM operation link returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

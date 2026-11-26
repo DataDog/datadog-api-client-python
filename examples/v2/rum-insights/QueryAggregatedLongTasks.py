@@ -2,6 +2,8 @@
 Query aggregated long tasks returns "Successful response" response
 """
 
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
 from os import environ
 from datadog_api_client import ApiClient, Configuration
 from datadog_api_client.v2.api.rum_insights_api import RUMInsightsApi
@@ -25,9 +27,9 @@ body = AggregatedLongTasksRequest(
                 min=2.5,
             ),
             filter="@session.type:user",
-            _from=1762437564,
+            _from=int((datetime.now() + relativedelta(hours=-1)).timestamp()),
             sample_size=20,
-            to=1762523964,
+            to=int(datetime.now().timestamp()),
             view_name="/account/login(/:type)",
         ),
         type=AggregatedLongTasksRequestType.AGGREGATED_LONG_TASKS,

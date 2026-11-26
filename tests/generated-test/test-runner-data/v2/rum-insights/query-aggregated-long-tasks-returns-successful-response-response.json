@@ -1,0 +1,28 @@
+{
+  "api": "RUMInsights",
+  "expected_status": 201,
+  "feature": "RUM Insights",
+  "id": "v2/RUM Insights/Query aggregated long tasks returns \"Successful response\" response",
+  "operation_id": "QueryAggregatedLongTasks",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "AggregatedLongTasksRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "$openapi_transformer_template": "{\"data\": {\"attributes\": {\"application_id\": \"ccbc53b1-74f2-496b-bdd7-9a8fa7b7376b\", \"criteria\": {\"max\": 5.0, \"metric\": \"largest_contentful_paint\", \"min\": 2.5}, \"filter\": \"@session.type:user\", \"from\": {{ timestamp('now - 1h') }}, \"sample_size\": 20, \"to\": {{ timestamp('now') }}, \"view_name\": \"/account/login(/:type)\"}, \"type\": \"aggregated_long_tasks\"}}"
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/rum/query/insight/aggregated_long_tasks"
+  },
+  "scenario": "Query aggregated long tasks returns \"Successful response\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

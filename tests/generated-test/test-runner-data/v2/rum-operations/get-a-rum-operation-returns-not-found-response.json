@@ -1,0 +1,35 @@
+{
+  "api": "RUMOperations",
+  "expected_status": 404,
+  "feature": "RUM Operations",
+  "id": "v2/RUM Operations/Get a RUM operation returns \"Not Found\" response",
+  "operation_id": "GetRUMOperation",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rum_operation_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "00000000-0000-0000-0000-000000000000"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/operations/{rum_operation_id}"
+  },
+  "scenario": "Get a RUM operation returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

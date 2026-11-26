@@ -1,0 +1,57 @@
+{
+  "api": "RUMOperations",
+  "expected_status": 409,
+  "feature": "RUM Operations",
+  "id": "v2/RUM Operations/Create a RUM operation returns \"Conflict. An operation with this name already exists.\" response",
+  "operation_id": "CreateRUMOperation",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RUMOperationCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "display_name": "BDD operation",
+            "journey_rum": {
+              "rum_steps": [
+                {
+                  "nodes": [
+                    {
+                      "query": "@type:action @action.type:click"
+                    }
+                  ],
+                  "type": "start"
+                },
+                {
+                  "nodes": [
+                    {
+                      "query": "@type:view"
+                    }
+                  ],
+                  "type": "stop"
+                }
+              ]
+            },
+            "name": "{{ rum_operation.data.attributes.name }}",
+            "tags": [
+              "team:rum-backend"
+            ]
+          },
+          "type": "operations"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/rum/operations"
+  },
+  "scenario": "Create a RUM operation returns \"Conflict. An operation with this name already exists.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

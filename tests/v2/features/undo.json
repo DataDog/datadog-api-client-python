@@ -2553,12 +2553,30 @@
   "CreateRUMOperation": {
     "tag": "RUM Operations",
     "undo": {
+      "operationId": "DeleteRUMOperation",
+      "parameters": [
+        {
+          "name": "rum_operation_id",
+          "source": "data.id"
+        }
+      ],
       "type": "unsafe"
     }
   },
   "CreateRUMOperationStrongLink": {
     "tag": "RUM Operations",
     "undo": {
+      "operationId": "DeleteRUMOperationStrongLink",
+      "parameters": [
+        {
+          "name": "rum_operation_id",
+          "source": "data.attributes.operation_id"
+        },
+        {
+          "name": "feature_id",
+          "source": "data.attributes.feature_id"
+        }
+      ],
       "type": "unsafe"
     }
   },

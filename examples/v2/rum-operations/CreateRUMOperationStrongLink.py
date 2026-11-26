@@ -15,16 +15,20 @@ from datadog_api_client.v2.model.rum_operation_strong_link_create_request_data i
 from datadog_api_client.v2.model.rum_operation_strong_link_status import RUMOperationStrongLinkStatus
 from datadog_api_client.v2.model.rum_operation_strong_link_type import RUMOperationStrongLinkType
 
+# there is a valid "rum_operation" in the system
+RUM_OPERATION_DATA_ID = environ["RUM_OPERATION_DATA_ID"]
+
 body = RUMOperationStrongLinkCreateRequest(
     data=RUMOperationStrongLinkCreateRequestData(
-        attributes=RUMOperationStrongLinkCreateRequestAttributes(
-            description=None,
-            feature_id="journey-123",
-            operation_id="abc12345-1234-5678-abcd-ef1234567890",
-            status=RUMOperationStrongLinkStatus.CONFIRMED,
-            tags=[],
-        ),
         type=RUMOperationStrongLinkType.STRONG_LINKS,
+        attributes=RUMOperationStrongLinkCreateRequestAttributes(
+            operation_id=RUM_OPERATION_DATA_ID,
+            feature_id="bdd-examplerumoperation",
+            status=RUMOperationStrongLinkStatus.DRAFT,
+            tags=[
+                "team:rum-backend",
+            ],
+        ),
     ),
 )
 

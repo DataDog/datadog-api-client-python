@@ -1,0 +1,35 @@
+{
+  "api": "RUMOperations",
+  "expected_status": 400,
+  "feature": "RUM Operations",
+  "id": "v2/RUM Operations/Search RUM operations returns \"Bad Request\" response",
+  "operation_id": "ListRUMOperations",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "application_id",
+        "required": false,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "invalid-uuid"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/operations/search"
+  },
+  "scenario": "Search RUM operations returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

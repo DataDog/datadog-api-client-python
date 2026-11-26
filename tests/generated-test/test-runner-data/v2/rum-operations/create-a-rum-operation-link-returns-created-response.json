@@ -1,0 +1,38 @@
+{
+  "api": "RUMOperations",
+  "expected_status": 201,
+  "feature": "RUM Operations",
+  "id": "v2/RUM Operations/Create a RUM operation link returns \"Created\" response",
+  "operation_id": "CreateRUMOperationStrongLink",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RUMOperationStrongLinkCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "feature_id": "bdd-{{ unique_lower_alnum }}",
+            "operation_id": "{{ rum_operation.data.id }}",
+            "status": "DRAFT",
+            "tags": [
+              "team:rum-backend"
+            ]
+          },
+          "type": "strong_links"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/rum/operations/strong_links"
+  },
+  "scenario": "Create a RUM operation link returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

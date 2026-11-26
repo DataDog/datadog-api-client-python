@@ -1,0 +1,18 @@
+{
+  "api": "RUMConfig",
+  "expected_status": 200,
+  "feature": "RUM Config",
+  "id": "v2/RUM Config/Get the RUM configuration returns \"OK\" response",
+  "operation_id": "GetRumConfig",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/rum/config"
+  },
+  "scenario": "Get the RUM configuration returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

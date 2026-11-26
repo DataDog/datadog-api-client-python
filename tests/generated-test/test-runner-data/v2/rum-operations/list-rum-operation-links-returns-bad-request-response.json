@@ -1,0 +1,18 @@
+{
+  "api": "RUMOperations",
+  "expected_status": 400,
+  "feature": "RUM Operations",
+  "id": "v2/RUM Operations/List RUM operation links returns \"Bad Request\" response",
+  "operation_id": "ListRUMOperationStrongLinks",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/rum/operations/strong_links"
+  },
+  "scenario": "List RUM operation links returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

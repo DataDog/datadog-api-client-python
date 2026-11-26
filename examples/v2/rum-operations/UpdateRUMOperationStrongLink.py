@@ -15,12 +15,18 @@ from datadog_api_client.v2.model.rum_operation_strong_link_update_request_data i
 )
 from datadog_api_client.v2.model.rum_operation_strong_link_update_status import RUMOperationStrongLinkUpdateStatus
 
+# there is a valid "rum_operation_strong_link" in the system
+RUM_OPERATION_STRONG_LINK_DATA_ATTRIBUTES_FEATURE_ID = environ["RUM_OPERATION_STRONG_LINK_DATA_ATTRIBUTES_FEATURE_ID"]
+RUM_OPERATION_STRONG_LINK_DATA_ATTRIBUTES_OPERATION_ID = environ[
+    "RUM_OPERATION_STRONG_LINK_DATA_ATTRIBUTES_OPERATION_ID"
+]
+
 body = RUMOperationStrongLinkUpdateRequest(
     data=RUMOperationStrongLinkUpdateRequestData(
-        attributes=RUMOperationStrongLinkUpdateRequestAttributes(
-            status=RUMOperationStrongLinkUpdateStatus.CONFIRMED,
-        ),
         type=RUMOperationStrongLinkType.STRONG_LINKS,
+        attributes=RUMOperationStrongLinkUpdateRequestAttributes(
+            status=RUMOperationStrongLinkUpdateStatus.REJECTED,
+        ),
     ),
 )
 
@@ -29,7 +35,9 @@ configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = RUMOperationsApi(api_client)
     response = api_instance.update_rum_operation_strong_link(
-        rum_operation_id="rum_operation_id", feature_id="feature_id", body=body
+        rum_operation_id=RUM_OPERATION_STRONG_LINK_DATA_ATTRIBUTES_OPERATION_ID,
+        feature_id=RUM_OPERATION_STRONG_LINK_DATA_ATTRIBUTES_FEATURE_ID,
+        body=body,
     )
 
     print(response)
