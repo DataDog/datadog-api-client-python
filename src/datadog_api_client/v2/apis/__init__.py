@@ -101,6 +101,7 @@ from datadog_api_client.v2.api.okta_integration_api import OktaIntegrationApi
 from datadog_api_client.v2.api.on_call_api import OnCallApi
 from datadog_api_client.v2.api.on_call_paging_api import OnCallPagingApi
 from datadog_api_client.v2.api.open_ai_codex_integration_api import OpenAICodexIntegrationApi
+from datadog_api_client.v2.api.open_ai_model_inference_integration_api import OpenAIModelInferenceIntegrationApi
 from datadog_api_client.v2.api.opsgenie_integration_api import OpsgenieIntegrationApi
 from datadog_api_client.v2.api.org_authorized_clients_api import OrgAuthorizedClientsApi
 from datadog_api_client.v2.api.org_connections_api import OrgConnectionsApi
@@ -270,6 +271,7 @@ __all__ = [
     "OnCallApi",
     "OnCallPagingApi",
     "OpenAICodexIntegrationApi",
+    "OpenAIModelInferenceIntegrationApi",
     "OpsgenieIntegrationApi",
     "OrgAuthorizedClientsApi",
     "OrgConnectionsApi",

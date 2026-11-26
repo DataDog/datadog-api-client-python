@@ -1,0 +1,92 @@
+# Unless explicitly stated otherwise all files in this repository are licensed under the Apache-2.0 License.
+# This product includes software developed at Datadog (https://www.datadoghq.com/).
+# Copyright 2019-Present Datadog, Inc.
+from __future__ import annotations
+
+from typing import Union, TYPE_CHECKING
+
+from datadog_api_client.model_utils import (
+    ModelNormal,
+    cached_property,
+    unset,
+    UnsetType,
+)
+
+
+if TYPE_CHECKING:
+    from datadog_api_client.v2.model.open_ai_model_inference_integration_account_authentication_response import (
+        OpenAIModelInferenceIntegrationAccountAuthenticationResponse,
+    )
+    from datadog_api_client.v2.model.open_ai_model_inference_integration_dataflows_response import (
+        OpenAIModelInferenceIntegrationDataflowsResponse,
+    )
+    from datadog_api_client.v2.model.open_ai_model_inference_integration_account_settings_response import (
+        OpenAIModelInferenceIntegrationAccountSettingsResponse,
+    )
+    from datadog_api_client.v2.model.open_ai_model_inference_integration_account_bearer_token_auth_response import (
+        OpenAIModelInferenceIntegrationAccountBearerTokenAuthResponse,
+    )
+
+
+class OpenAIModelInferenceIntegrationAccountResponseAttributes(ModelNormal):
+    @cached_property
+    def openapi_types(_):
+        from datadog_api_client.v2.model.open_ai_model_inference_integration_account_authentication_response import (
+            OpenAIModelInferenceIntegrationAccountAuthenticationResponse,
+        )
+        from datadog_api_client.v2.model.open_ai_model_inference_integration_dataflows_response import (
+            OpenAIModelInferenceIntegrationDataflowsResponse,
+        )
+        from datadog_api_client.v2.model.open_ai_model_inference_integration_account_settings_response import (
+            OpenAIModelInferenceIntegrationAccountSettingsResponse,
+        )
+
+        return {
+            "authentication": (OpenAIModelInferenceIntegrationAccountAuthenticationResponse,),
+            "dataflows": (OpenAIModelInferenceIntegrationDataflowsResponse,),
+            "name": (str,),
+            "settings": (OpenAIModelInferenceIntegrationAccountSettingsResponse,),
+        }
+
+    attribute_map = {
+        "authentication": "authentication",
+        "dataflows": "dataflows",
+        "name": "name",
+        "settings": "settings",
+    }
+
+    def __init__(
+        self_,
+        name: str,
+        settings: OpenAIModelInferenceIntegrationAccountSettingsResponse,
+        authentication: Union[
+            OpenAIModelInferenceIntegrationAccountAuthenticationResponse,
+            OpenAIModelInferenceIntegrationAccountBearerTokenAuthResponse,
+            UnsetType,
+        ] = unset,
+        dataflows: Union[OpenAIModelInferenceIntegrationDataflowsResponse, UnsetType] = unset,
+        **kwargs,
+    ):
+        """
+        Attributes of an OpenAI Model Inference integration account returned in responses.
+
+        :param authentication: Authentication configured on the OpenAI Model Inference integration account.
+        :type authentication: OpenAIModelInferenceIntegrationAccountAuthenticationResponse, optional
+
+        :param dataflows: Data Datadog collects from OpenAI Model Inference, keyed by dataflow ID.
+        :type dataflows: OpenAIModelInferenceIntegrationDataflowsResponse, optional
+
+        :param name: Human-readable name of the OpenAI Model Inference integration account.
+        :type name: str
+
+        :param settings: Settings configured on the OpenAI Model Inference integration account.
+        :type settings: OpenAIModelInferenceIntegrationAccountSettingsResponse
+        """
+        if authentication is not unset:
+            kwargs["authentication"] = authentication
+        if dataflows is not unset:
+            kwargs["dataflows"] = dataflows
+        super().__init__(kwargs)
+
+        self_.name = name
+        self_.settings = settings
