@@ -1,0 +1,67 @@
+{
+  "api": "Incidents",
+  "expected_status": 200,
+  "feature": "Incidents",
+  "id": "v2/Incidents/Search for incidents accepts responders include",
+  "operation_id": "SearchIncidents",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": false,
+        "in": "query",
+        "name": "query",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "state:(active OR stable OR resolved)"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "page[size]",
+        "required": false,
+        "schema": {
+          "format": "int64",
+          "ref": null,
+          "type": "integer"
+        },
+        "source": {
+          "type": "literal",
+          "value": 1
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "query",
+        "name": "include",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": "IncidentRelatedObject",
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "responders"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/incidents/search"
+  },
+  "scenario": "Search for incidents accepts responders include",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,58 @@
+{
+  "api": "Incidents",
+  "expected_status": 200,
+  "feature": "Incidents",
+  "id": "v2/Incidents/Get the details of an incident includes responders with modification timestamps",
+  "operation_id": "GetIncident",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "incident_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "incident_with_commander.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": false,
+        "in": "query",
+        "name": "include",
+        "required": false,
+        "schema": {
+          "format": null,
+          "items": {
+            "format": null,
+            "ref": "IncidentRelatedObject",
+            "type": "string"
+          },
+          "ref": null,
+          "type": "array"
+        },
+        "source": {
+          "type": "literal",
+          "value": [
+            "responders"
+          ]
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/incidents/{incident_id}"
+  },
+  "scenario": "Get the details of an incident includes responders with modification timestamps",
+  "schema_version": 1,
+  "version": "v2"
+}
