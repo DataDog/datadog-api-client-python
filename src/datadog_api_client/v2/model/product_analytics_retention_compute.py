@@ -41,7 +41,8 @@ class ProductAnalyticsRetentionCompute(ModelNormal):
         :param aggregation: The aggregation function applied to the metric, such as ``count`` or ``avg``.
         :type aggregation: str
 
-        :param metric: The retention metric to compute, either an absolute count or a rate.
+        :param metric: The retention metric to compute. Use ``__dd.retention`` for the number of retained entities,
+            or ``__dd.retention_rate`` for the share of the cohort that was retained. No other value is accepted.
         :type metric: ProductAnalyticsRetentionComputeMetric
         """
         super().__init__(kwargs)

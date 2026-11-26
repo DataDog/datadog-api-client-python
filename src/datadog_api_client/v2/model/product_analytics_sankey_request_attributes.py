@@ -46,7 +46,10 @@ class ProductAnalyticsSankeyRequestAttributes(ModelNormal):
         """
         Attributes of a Sankey request.
 
-        :param definition: The shape of the Sankey diagram, expressed as the facets to flow between and how many steps to show.
+        :param definition: The shape of the Sankey diagram: the step it is anchored on and how many steps to show.
+            Set exactly one of ``source`` or ``target`` to a step, and send the other one as an empty string.
+            Sending both returns ``Invalid Sankey Mode``. Sending both empty starts the diagram from any view.
+            Each column of the diagram lists view names.
         :type definition: ProductAnalyticsSankeyDefinition
 
         :param search: Selects the sessions a Sankey diagram is built from.

@@ -14,7 +14,8 @@ from typing import ClassVar
 
 class ProductAnalyticsRetentionComputeMetric(ModelSimple):
     """
-    The retention metric to compute, either an absolute count or a rate.
+    The retention metric to compute. Use `__dd.retention` for the number of retained entities,
+        or `__dd.retention_rate` for the share of the cohort that was retained. No other value is accepted.
 
     :param value: Must be one of ["__dd.retention", "__dd.retention_rate"].
     :type value: str

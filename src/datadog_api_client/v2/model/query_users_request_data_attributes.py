@@ -56,6 +56,13 @@ class QueryUsersRequestDataAttributes(ModelNormal):
         :type limit: int, optional
 
         :param query: Filter expression using user attribute conditions to narrow results.
+            Filter timestamp attributes such as ``first_seen`` or ``last_seen`` with Unix timestamps in milliseconds, for
+            example
+            ``first_seen:>=1793750400000`` or ``first_seen:[1793750400000 TO 1794355200000]`` , or with offsets in
+            milliseconds
+            relative to now, for example ``first_seen:[-604800000 TO 0]`` for the last 7 days. A range needs an upper
+            bound.
+            Date strings such as ``2026-10-26T00:00:00Z`` are not supported, because their colons break the query syntax.
         :type query: str, optional
 
         :param select_columns: List of user attribute column names to include in the response.

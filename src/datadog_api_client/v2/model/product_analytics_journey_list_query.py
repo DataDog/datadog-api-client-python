@@ -100,6 +100,7 @@ class ProductAnalyticsJourneyListQuery(ModelNormal):
         :type conversion_type: ProductAnalyticsJourneyConversionType, optional
 
         :param entity_columns: Attribute columns to return for each row, in addition to the identity join key and ``timestamp``.
+            For example, ``@usr.id`` returns the user of each session.
         :type entity_columns: [str], optional
 
         :param entity_filters: Additional search query applied to the returned rows.

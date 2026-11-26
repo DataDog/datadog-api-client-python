@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -45,10 +47,10 @@ class ProductAnalyticsJourneyFunnelStep(ModelNormal):
     def __init__(
         self_,
         elapsed_time_to_next_step: ProductAnalyticsElapsedTime,
-        groups: List[ProductAnalyticsJourneyFunnelStepGroup],
         label: str,
         unit: str,
         value: float,
+        groups: Union[List[ProductAnalyticsJourneyFunnelStepGroup], UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -57,22 +59,23 @@ class ProductAnalyticsJourneyFunnelStep(ModelNormal):
         :param elapsed_time_to_next_step: Elapsed time statistics (min/max/avg in milliseconds).
         :type elapsed_time_to_next_step: ProductAnalyticsElapsedTime
 
-        :param groups: Breakdown of this step by the requested group-by facets.
-        :type groups: [ProductAnalyticsJourneyFunnelStepGroup]
+        :param groups: Breakdown of this step by the requested group-by facets. Omitted when the query has no group-by.
+        :type groups: [ProductAnalyticsJourneyFunnelStepGroup], optional
 
         :param label: Label of the step, derived from the node alias.
         :type label: str
 
-        :param unit: Unit of the elapsed time values.
+        :param unit: The entity counted in ``value`` , such as ``session`` or ``user`` , set by the join key.
         :type unit: str
 
         :param value: Value of the computed metric at this step.
         :type value: float
         """
+        if groups is not unset:
+            kwargs["groups"] = groups
         super().__init__(kwargs)
 
         self_.elapsed_time_to_next_step = elapsed_time_to_next_step
-        self_.groups = groups
         self_.label = label
         self_.unit = unit
         self_.value = value

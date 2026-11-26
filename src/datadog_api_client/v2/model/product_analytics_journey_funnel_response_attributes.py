@@ -3,11 +3,13 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
+    unset,
+    UnsetType,
 )
 
 
@@ -41,7 +43,7 @@ class ProductAnalyticsJourneyFunnelResponseAttributes(ModelNormal):
         end_to_end_conversion_rate: float,
         end_to_end_elapsed_time: ProductAnalyticsElapsedTime,
         funnel_steps: List[ProductAnalyticsJourneyFunnelStep],
-        initial_count: int,
+        initial_count: Union[int, UnsetType] = unset,
         **kwargs,
     ):
         """
@@ -56,12 +58,14 @@ class ProductAnalyticsJourneyFunnelResponseAttributes(ModelNormal):
         :param funnel_steps: The funnel steps, in the order given by the search expression.
         :type funnel_steps: [ProductAnalyticsJourneyFunnelStep]
 
-        :param initial_count: Number of entities that entered the funnel.
-        :type initial_count: int
+        :param initial_count: Number of entities that entered the funnel. The service does not return it today; use the ``value``
+            of the first entry in ``funnel_steps`` instead.
+        :type initial_count: int, optional
         """
+        if initial_count is not unset:
+            kwargs["initial_count"] = initial_count
         super().__init__(kwargs)
 
         self_.end_to_end_conversion_rate = end_to_end_conversion_rate
         self_.end_to_end_elapsed_time = end_to_end_elapsed_time
         self_.funnel_steps = funnel_steps
-        self_.initial_count = initial_count

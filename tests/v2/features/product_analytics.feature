@@ -19,7 +19,7 @@ Feature: Product Analytics
     Given a valid "appKeyAuth" key in the system
     And operation "QueryProductAnalyticsSankey" enabled
     And new "QueryProductAnalyticsSankey" request
-    And body with value {"data": {"attributes": {"definition": {"entries_per_step": 10, "number_of_steps": 3, "source": "@view.name", "target": "@view.name"}, "search": {"audience_filters": {"accounts": [{"name": ""}], "formula": "u", "segments": [{"name": "", "segment_id": "00000000-0000-0000-0000-000000000000"}], "users": [{"name": "u", "query": "*"}]}, "join_keys": {"primary": "@session.id", "secondary": []}, "query": "@type:view"}, "time": {"from": 1756425600000, "to": 1756857600000}}, "type": "sankey_request"}}
+    And body with value {"data": {"attributes": {"definition": {"entries_per_step": 10, "number_of_steps": 3, "source": "@type:view @view.name:\"/logs\"", "target": ""}, "search": {"audience_filters": {"accounts": [{"name": ""}], "formula": "u", "segments": [{"name": "", "segment_id": "00000000-0000-0000-0000-000000000000"}], "users": [{"name": "u", "query": "*"}]}, "join_keys": {"primary": "@session.id", "secondary": []}, "query": "@type:view"}, "time": {"from": 1756425600000, "to": 1756857600000}}, "type": "sankey_request"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -28,7 +28,7 @@ Feature: Product Analytics
     Given a valid "appKeyAuth" key in the system
     And operation "QueryProductAnalyticsSankey" enabled
     And new "QueryProductAnalyticsSankey" request
-    And body with value {"data": {"attributes": {"definition": {"entries_per_step": 10, "number_of_steps": 3, "source": "@view.name", "target": "@view.name"}, "search": {"audience_filters": {"accounts": [{"name": ""}], "formula": "u", "segments": [{"name": "", "segment_id": "00000000-0000-0000-0000-000000000000"}], "users": [{"name": "u", "query": "*"}]}, "join_keys": {"primary": "@session.id", "secondary": []}, "query": "@type:view"}, "time": {"from": 1756425600000, "to": 1756857600000}}, "type": "sankey_request"}}
+    And body with value {"data": {"attributes": {"definition": {"entries_per_step": 10, "number_of_steps": 3, "source": "@type:view @view.name:\"/logs\"", "target": ""}, "search": {"audience_filters": {"accounts": [{"name": ""}], "formula": "u", "segments": [{"name": "", "segment_id": "00000000-0000-0000-0000-000000000000"}], "users": [{"name": "u", "query": "*"}]}, "join_keys": {"primary": "@session.id", "secondary": []}, "query": "@type:view"}, "time": {"from": 1756425600000, "to": 1756857600000}}, "type": "sankey_request"}}
     When the request is sent
     Then the response status is 200 OK
 
