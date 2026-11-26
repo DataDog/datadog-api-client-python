@@ -60,7 +60,7 @@ class RUMAggregateSort(ModelNormal):
         :param order: The order to use, ascending or descending.
         :type order: RUMSortOrder, optional
 
-        :param type: The type of sorting algorithm. ``alphabetical`` sorts buckets by the facet value. ``measure`` sorts them by a computed aggregation.
+        :param type: The type of sorting algorithm. ``alphabetical`` sorts buckets by the facet value. ``measure`` sorts them by a computed aggregation, and is required when the sort sets ``aggregation`` or ``metric``.
         :type type: RUMAggregateSortType, optional
         """
         if aggregation is not unset:
