@@ -30,6 +30,18 @@ from datadog_api_client.v2.model.team_connection_delete_request import TeamConne
 from datadog_api_client.v2.model.team_connections_response import TeamConnectionsResponse
 from datadog_api_client.v2.model.team_connection import TeamConnection
 from datadog_api_client.v2.model.team_connection_create_request import TeamConnectionCreateRequest
+from datadog_api_client.v2.model.external_team_permission_setting_defaults_list_response import (
+    ExternalTeamPermissionSettingDefaultsListResponse,
+)
+from datadog_api_client.v2.model.external_team_permission_setting_defaults_source import (
+    ExternalTeamPermissionSettingDefaultsSource,
+)
+from datadog_api_client.v2.model.external_team_permission_setting_default_response import (
+    ExternalTeamPermissionSettingDefaultResponse,
+)
+from datadog_api_client.v2.model.external_team_permission_setting_default_update_request import (
+    ExternalTeamPermissionSettingDefaultUpdateRequest,
+)
 from datadog_api_client.v2.model.team_sync_response import TeamSyncResponse
 from datadog_api_client.v2.model.team_sync_attributes_source import TeamSyncAttributesSource
 from datadog_api_client.v2.model.team_sync_request import TeamSyncRequest
@@ -225,6 +237,35 @@ class TeamsApi:
                 },
             },
             headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
+        self._delete_external_team_permission_setting_default_endpoint = _Endpoint(
+            settings={
+                "response_type": None,
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/team/settings/external-permissions/{source}/{action}",
+                "operation_id": "delete_external_team_permission_setting_default",
+                "http_method": "DELETE",
+                "version": "v2",
+            },
+            params_map={
+                "source": {
+                    "required": True,
+                    "openapi_types": (ExternalTeamPermissionSettingDefaultsSource,),
+                    "attribute": "source",
+                    "location": "path",
+                },
+                "action": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "action",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["*/*"],
+            },
             api_client=api_client,
         )
 
@@ -620,6 +661,45 @@ class TeamsApi:
             api_client=api_client,
         )
 
+        self._list_external_team_permission_setting_defaults_endpoint = _Endpoint(
+            settings={
+                "response_type": (ExternalTeamPermissionSettingDefaultsListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/team/settings/external-permissions",
+                "operation_id": "list_external_team_permission_setting_defaults",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={},
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
+        self._list_external_team_permission_setting_defaults_by_source_endpoint = _Endpoint(
+            settings={
+                "response_type": (ExternalTeamPermissionSettingDefaultsListResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/team/settings/external-permissions/{source}",
+                "operation_id": "list_external_team_permission_setting_defaults_by_source",
+                "http_method": "GET",
+                "version": "v2",
+            },
+            params_map={
+                "source": {
+                    "required": True,
+                    "openapi_types": (ExternalTeamPermissionSettingDefaultsSource,),
+                    "attribute": "source",
+                    "location": "path",
+                },
+            },
+            headers_map={
+                "accept": ["application/json"],
+            },
+            api_client=api_client,
+        )
+
         self._list_member_teams_endpoint = _Endpoint(
             settings={
                 "response_type": (TeamsResponse,),
@@ -932,6 +1012,38 @@ class TeamsApi:
             api_client=api_client,
         )
 
+        self._update_external_team_permission_setting_default_endpoint = _Endpoint(
+            settings={
+                "response_type": (ExternalTeamPermissionSettingDefaultResponse,),
+                "auth": ["apiKeyAuth", "appKeyAuth", "AuthZ"],
+                "endpoint_path": "/api/v2/team/settings/external-permissions/{source}/{action}",
+                "operation_id": "update_external_team_permission_setting_default",
+                "http_method": "PUT",
+                "version": "v2",
+            },
+            params_map={
+                "source": {
+                    "required": True,
+                    "openapi_types": (ExternalTeamPermissionSettingDefaultsSource,),
+                    "attribute": "source",
+                    "location": "path",
+                },
+                "action": {
+                    "required": True,
+                    "openapi_types": (str,),
+                    "attribute": "action",
+                    "location": "path",
+                },
+                "body": {
+                    "required": True,
+                    "openapi_types": (ExternalTeamPermissionSettingDefaultUpdateRequest,),
+                    "location": "body",
+                },
+            },
+            headers_map={"accept": ["application/json"], "content_type": ["application/json"]},
+            api_client=api_client,
+        )
+
         self._update_team_endpoint = _Endpoint(
             settings={
                 "response_type": (TeamResponse,),
@@ -1222,6 +1334,30 @@ class TeamsApi:
         kwargs["body"] = body
 
         return self._create_team_notification_rule_endpoint.call_with_http_info(**kwargs)
+
+    def delete_external_team_permission_setting_default(
+        self,
+        source: ExternalTeamPermissionSettingDefaultsSource,
+        action: str,
+    ) -> None:
+        """Delete an external team permission default.
+
+        Delete the organization-level permission default for a specific (source, action) pair, reverting that action to
+        its built-in default for all synced teams. The operation is idempotent. Deleting an absent default returns 204. On
+        success, triggers a sync of all existing synced teams so they re-derive their permissions without the override.
+
+        :param source: The external team integration source.
+        :type source: ExternalTeamPermissionSettingDefaultsSource
+        :param action: The permission action to delete the default for.
+        :type action: str
+        :rtype: None
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["source"] = source
+
+        kwargs["action"] = action
+
+        return self._delete_external_team_permission_setting_default_endpoint.call_with_http_info(**kwargs)
 
     def delete_team(
         self,
@@ -1578,6 +1714,39 @@ class TeamsApi:
         kwargs["user_uuid"] = user_uuid
 
         return self._get_user_memberships_endpoint.call_with_http_info(**kwargs)
+
+    def list_external_team_permission_setting_defaults(
+        self,
+    ) -> ExternalTeamPermissionSettingDefaultsListResponse:
+        """List external team permission defaults.
+
+        List the organization-level permission defaults for externally synced teams. Each default maps a
+        (source, action) pair to the Datadog permission required to perform that action on teams managed by that
+        source. For example, a default can set which permission level can add or remove subteams on SCIM-managed
+        teams. Returns configured defaults for all sources.
+
+        :rtype: ExternalTeamPermissionSettingDefaultsListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        return self._list_external_team_permission_setting_defaults_endpoint.call_with_http_info(**kwargs)
+
+    def list_external_team_permission_setting_defaults_by_source(
+        self,
+        source: ExternalTeamPermissionSettingDefaultsSource,
+    ) -> ExternalTeamPermissionSettingDefaultsListResponse:
+        """List a source's external team permission defaults.
+
+        List the organization-level permission defaults for a specific external team integration source. Each default
+        maps a permission action to the Datadog permission required to perform it on teams synced from that source.
+
+        :param source: The external team integration source.
+        :type source: ExternalTeamPermissionSettingDefaultsSource
+        :rtype: ExternalTeamPermissionSettingDefaultsListResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["source"] = source
+
+        return self._list_external_team_permission_setting_defaults_by_source_endpoint.call_with_http_info(**kwargs)
 
     def list_member_teams(
         self,
@@ -2205,6 +2374,36 @@ class TeamsApi:
         kwargs["body"] = body
 
         return self._sync_teams_endpoint.call_with_http_info(**kwargs)
+
+    def update_external_team_permission_setting_default(
+        self,
+        source: ExternalTeamPermissionSettingDefaultsSource,
+        action: str,
+        body: ExternalTeamPermissionSettingDefaultUpdateRequest,
+    ) -> ExternalTeamPermissionSettingDefaultResponse:
+        """Update an external team permission default.
+
+        Create or update the organization-level permission default for a specific (source, action) pair. This controls
+        which Datadog permission is required to perform that action on teams synced from that source. For example, a
+        default can require ``user_access_manage`` to add or remove SCIM-managed subteams. On success, triggers a sync
+        of all existing synced teams so they re-derive the updated permission. Returns 400 if the (source, action,
+        value) combination is not supported.
+
+        :param source: The external team integration source.
+        :type source: ExternalTeamPermissionSettingDefaultsSource
+        :param action: The permission action to configure a default for.
+        :type action: str
+        :type body: ExternalTeamPermissionSettingDefaultUpdateRequest
+        :rtype: ExternalTeamPermissionSettingDefaultResponse
+        """
+        kwargs: Dict[str, Any] = {}
+        kwargs["source"] = source
+
+        kwargs["action"] = action
+
+        kwargs["body"] = body
+
+        return self._update_external_team_permission_setting_default_endpoint.call_with_http_info(**kwargs)
 
     def update_team(
         self,

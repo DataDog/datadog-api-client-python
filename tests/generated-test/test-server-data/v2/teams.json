@@ -1729,6 +1729,35 @@
     },
     {
       "feature": "Teams",
+      "frozen_at": "2026-11-23T16:41:24.513Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/team/settings/external-permissions/scim/add_and_remove_subteam",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Delete an external team permission default returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
       "frozen_at": "2026-03-27T09:21:11.529Z",
       "interactions": [
         {
@@ -7735,6 +7764,68 @@
         }
       ],
       "scenario": "Link teams with external teams returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
+      "frozen_at": "2026-11-23T16:39:35.344Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/team/settings/external-permissions/scim",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "List a source's external team permission defaults returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Teams",
+      "frozen_at": "2026-11-23T16:37:31.283Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/team/settings/external-permissions",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        }
+      ],
+      "scenario": "List external team permission defaults returns \"OK\" response",
       "version": "v2"
     },
     {

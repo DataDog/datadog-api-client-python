@@ -4096,6 +4096,12 @@
       "type": "idempotent"
     }
   },
+  "DeleteExternalTeamPermissionSettingDefault": {
+    "tag": "Teams",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
   "DeleteFastlyAccount": {
     "tag": "Fastly Integration",
     "undo": {
@@ -8488,6 +8494,18 @@
       "type": "safe"
     }
   },
+  "ListExternalTeamPermissionSettingDefaults": {
+    "tag": "Teams",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListExternalTeamPermissionSettingDefaultsBySource": {
+    "tag": "Teams",
+    "undo": {
+      "type": "safe"
+    }
+  },
   "ListFastlyAccounts": {
     "tag": "Fastly Integration",
     "undo": {
@@ -11430,6 +11448,23 @@
     "tag": "Experiments",
     "undo": {
       "type": "idempotent"
+    }
+  },
+  "UpdateExternalTeamPermissionSettingDefault": {
+    "tag": "Teams",
+    "undo": {
+      "operationId": "DeleteExternalTeamPermissionSettingDefault",
+      "parameters": [
+        {
+          "name": "source",
+          "source": "data.attributes.source"
+        },
+        {
+          "name": "action",
+          "source": "data.attributes.action"
+        }
+      ],
+      "type": "unsafe"
     }
   },
   "UpdateFastlyAccount": {

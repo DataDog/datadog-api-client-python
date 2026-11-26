@@ -1,0 +1,20 @@
+"""
+List a source's external team permission defaults returns "OK" response
+"""
+
+from os import environ
+from datadog_api_client import ApiClient, Configuration
+from datadog_api_client.v2.api.teams_api import TeamsApi
+from datadog_api_client.v2.model.external_team_permission_setting_defaults_source import (
+    ExternalTeamPermissionSettingDefaultsSource,
+)
+
+configuration = Configuration()
+configuration.access_token = environ["DD_BEARER_TOKEN"]
+with ApiClient(configuration) as api_client:
+    api_instance = TeamsApi(api_client)
+    response = api_instance.list_external_team_permission_setting_defaults_by_source(
+        source=ExternalTeamPermissionSettingDefaultsSource.SCIM,
+    )
+
+    print(response)

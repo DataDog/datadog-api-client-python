@@ -1,0 +1,51 @@
+{
+  "api": "Teams",
+  "expected_status": 204,
+  "feature": "Teams",
+  "id": "v2/Teams/Delete an external team permission default returns \"No Content\" response",
+  "operation_id": "DeleteExternalTeamPermissionSettingDefault",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "source",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": "ExternalTeamPermissionSettingDefaultsSource",
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "scim"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "action",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "add_and_remove_subteam"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/team/settings/external-permissions/{source}/{action}"
+  },
+  "scenario": "Delete an external team permission default returns \"No Content\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

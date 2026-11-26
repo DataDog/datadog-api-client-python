@@ -4947,6 +4947,33 @@ from datadog_api_client.v2.model.experiments_warehouse_percentile_aggregation_in
 )
 from datadog_api_client.v2.model.exposure_rollout_step_request import ExposureRolloutStepRequest
 from datadog_api_client.v2.model.exposure_schedule_request import ExposureScheduleRequest
+from datadog_api_client.v2.model.external_team_permission_setting_default_response import (
+    ExternalTeamPermissionSettingDefaultResponse,
+)
+from datadog_api_client.v2.model.external_team_permission_setting_default_update_attributes import (
+    ExternalTeamPermissionSettingDefaultUpdateAttributes,
+)
+from datadog_api_client.v2.model.external_team_permission_setting_default_update_data import (
+    ExternalTeamPermissionSettingDefaultUpdateData,
+)
+from datadog_api_client.v2.model.external_team_permission_setting_default_update_request import (
+    ExternalTeamPermissionSettingDefaultUpdateRequest,
+)
+from datadog_api_client.v2.model.external_team_permission_setting_defaults_attributes import (
+    ExternalTeamPermissionSettingDefaultsAttributes,
+)
+from datadog_api_client.v2.model.external_team_permission_setting_defaults_data import (
+    ExternalTeamPermissionSettingDefaultsData,
+)
+from datadog_api_client.v2.model.external_team_permission_setting_defaults_list_response import (
+    ExternalTeamPermissionSettingDefaultsListResponse,
+)
+from datadog_api_client.v2.model.external_team_permission_setting_defaults_source import (
+    ExternalTeamPermissionSettingDefaultsSource,
+)
+from datadog_api_client.v2.model.external_team_permission_setting_defaults_type import (
+    ExternalTeamPermissionSettingDefaultsType,
+)
 from datadog_api_client.v2.model.facet_info_request import FacetInfoRequest
 from datadog_api_client.v2.model.facet_info_request_data import FacetInfoRequestData
 from datadog_api_client.v2.model.facet_info_request_data_attributes import FacetInfoRequestDataAttributes
@@ -18155,6 +18182,15 @@ __all__ = [
     "ExperimentsWarehousePercentileAggregationInput",
     "ExposureRolloutStepRequest",
     "ExposureScheduleRequest",
+    "ExternalTeamPermissionSettingDefaultResponse",
+    "ExternalTeamPermissionSettingDefaultUpdateAttributes",
+    "ExternalTeamPermissionSettingDefaultUpdateData",
+    "ExternalTeamPermissionSettingDefaultUpdateRequest",
+    "ExternalTeamPermissionSettingDefaultsAttributes",
+    "ExternalTeamPermissionSettingDefaultsData",
+    "ExternalTeamPermissionSettingDefaultsListResponse",
+    "ExternalTeamPermissionSettingDefaultsSource",
+    "ExternalTeamPermissionSettingDefaultsType",
     "FacetInfoRequest",
     "FacetInfoRequestData",
     "FacetInfoRequestDataAttributes",
