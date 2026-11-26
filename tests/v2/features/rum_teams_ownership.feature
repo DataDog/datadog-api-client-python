@@ -18,24 +18,21 @@ Feature: Rum Teams Ownership
 
   @skip @team:ddoghq/rum-backend
   Scenario: Bulk create and remove teams ownership mappings returns "Bad Request. One or more operations failed validation, so none of the operations were applied." response
-    Given operation "CreateTeamsOwnershipMappingsBatch" enabled
-    And new "CreateTeamsOwnershipMappingsBatch" request
+    Given new "CreateTeamsOwnershipMappingsBatch" request
     And body with value {"atomic:operations": [{"data": {"attributes": {"application_id": "11111111-2222-3333-4444-555555555555", "match_type": "exact", "service": "web-checkout", "team_handle": "team-rum", "view_name": "/checkout"}, "type": "teams_ownership_mappings"}, "op": "add", "ref": {"id": "{{ unique }}", "type": "teams_ownership_mappings"}}]}
     When the request is sent
     Then the response status is 400 Bad Request. One or more operations failed validation, so none of the operations were applied.
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: Bulk create and remove teams ownership mappings returns "Conflict. One or more mappings requested for creation already exist." response
-    Given operation "CreateTeamsOwnershipMappingsBatch" enabled
-    And new "CreateTeamsOwnershipMappingsBatch" request
+    Given new "CreateTeamsOwnershipMappingsBatch" request
     And body with value {"atomic:operations": [{"data": {"attributes": {"application_id": "11111111-2222-3333-4444-555555555555", "match_type": "exact", "service": "web-checkout", "team_handle": "team-rum", "view_name": "/checkout"}, "type": "teams_ownership_mappings"}, "op": "add", "ref": {"id": "456", "type": "teams_ownership_mappings"}}]}
     When the request is sent
     Then the response status is 409 Conflict. One or more mappings requested for creation already exist.
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: Bulk create and remove teams ownership mappings returns "Not Found. One or more mappings requested for removal do not exist." response
-    Given operation "CreateTeamsOwnershipMappingsBatch" enabled
-    And new "CreateTeamsOwnershipMappingsBatch" request
+    Given new "CreateTeamsOwnershipMappingsBatch" request
     And body with value {"atomic:operations": [{"data": {"attributes": {"application_id": "11111111-2222-3333-4444-555555555555", "match_type": "exact", "service": "web-checkout", "team_handle": "team-rum", "view_name": "/checkout"}, "type": "teams_ownership_mappings"}, "op": "add", "ref": {"id": "456", "type": "teams_ownership_mappings"}}]}
     When the request is sent
     Then the response status is 404 Not Found. One or more mappings requested for removal do not exist.
@@ -59,16 +56,14 @@ Feature: Rum Teams Ownership
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: Create a teams ownership mapping returns "Bad Request" response
-    Given operation "CreateTeamsOwnershipMapping" enabled
-    And new "CreateTeamsOwnershipMapping" request
+    Given new "CreateTeamsOwnershipMapping" request
     And body with value {"data": {"attributes": {"application_id": "11111111-2222-3333-4444-555555555555", "match_type": "exact", "service": "web-checkout", "team_handle": "team-rum", "view_name": "/checkout"}, "type": "teams_ownership_mappings"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: Create a teams ownership mapping returns "Created" response
-    Given operation "CreateTeamsOwnershipMapping" enabled
-    And new "CreateTeamsOwnershipMapping" request
+    Given new "CreateTeamsOwnershipMapping" request
     And body with value {"data": {"attributes": {"application_id": "11111111-2222-3333-4444-555555555555", "match_type": "exact", "service": "web-checkout", "team_handle": "team-rum", "view_name": "/checkout"}, "type": "teams_ownership_mappings"}}
     When the request is sent
     Then the response status is 201 Created
@@ -129,8 +124,7 @@ Feature: Rum Teams Ownership
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: List teams ownership mappings returns "Bad Request" response
-    Given operation "ListTeamsOwnershipMappings" enabled
-    And new "ListTeamsOwnershipMappings" request
+    Given new "ListTeamsOwnershipMappings" request
     When the request is sent
     Then the response status is 400 Bad Request
 
@@ -150,8 +144,7 @@ Feature: Rum Teams Ownership
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: List teams ownership rules returns "Bad Request" response
-    Given operation "ListTeamsOwnershipRules" enabled
-    And new "ListTeamsOwnershipRules" request
+    Given new "ListTeamsOwnershipRules" request
     When the request is sent
     Then the response status is 400 Bad Request
 

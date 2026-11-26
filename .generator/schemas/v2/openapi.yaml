@@ -249644,9 +249644,6 @@ paths:
         operator: OR
         permissions:
           - rum_apps_read
-      x-unstable: |-
-        **Note**: This endpoint is in Preview and is subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
     post:
       description: |-
         Create a teams ownership mapping for your organization.
@@ -249706,9 +249703,6 @@ paths:
         operator: OR
         permissions:
           - rum_apps_write
-      x-unstable: |-
-        **Note**: This endpoint is in Preview and is subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/rum/config/teams-ownership/mappings/operations:
     post:
       description: |-
@@ -249805,9 +249799,6 @@ paths:
         operator: OR
         permissions:
           - rum_apps_write
-      x-unstable: |-
-        **Note**: This endpoint is in Preview and is subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/rum/config/teams-ownership/mappings/{id}:
     delete:
       description: Delete a specific teams ownership mapping from your organization.
@@ -249830,9 +249821,6 @@ paths:
         operator: OR
         permissions:
           - rum_apps_write
-      x-unstable: |-
-        **Note**: This endpoint is in Preview and is subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
     get:
       description: Get a specific teams ownership mapping from your organization.
       operationId: GetTeamsOwnershipMapping
@@ -249873,9 +249861,6 @@ paths:
         operator: OR
         permissions:
           - rum_apps_read
-      x-unstable: |-
-        **Note**: This endpoint is in Preview and is subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/rum/config/teams-ownership/rules:
     get:
       description: |-
@@ -249922,9 +249907,6 @@ paths:
         operator: OR
         permissions:
           - rum_apps_read
-      x-unstable: |-
-        **Note**: This endpoint is in Preview and is subject to change.
-        If you have any feedback, contact [Datadog support](https://docs.datadoghq.com/help/).
   /api/v2/rum/events:
     get:
       description: |-

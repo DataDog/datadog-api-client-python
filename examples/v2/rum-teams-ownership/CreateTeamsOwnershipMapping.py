@@ -29,7 +29,6 @@ body = TeamsOwnershipMappingCreateRequest(
 
 configuration = Configuration()
 configuration.access_token = environ["DD_BEARER_TOKEN"]
-configuration.unstable_operations["create_teams_ownership_mapping"] = True
 with ApiClient(configuration) as api_client:
     api_instance = RumTeamsOwnershipApi(api_client)
     response = api_instance.create_teams_ownership_mapping(body=body)
