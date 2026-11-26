@@ -333,7 +333,7 @@ class MonitorOptions(ModelNormal):
         :param timeout_h: The number of hours of the monitor not reporting data before it automatically resolves from a triggered state. The minimum allowed value is 0 hours. The maximum allowed value is 24 hours.
         :type timeout_h: int, none_type, optional
 
-        :param variables: List of requests that can be used in the monitor query. **This feature is currently in beta.**
+        :param variables: List of requests that can be used in the monitor query.
         :type variables: [MonitorFormulaAndFunctionQueryDefinition], optional
         """
         if aggregation is not unset:

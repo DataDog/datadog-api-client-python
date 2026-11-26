@@ -36,7 +36,7 @@ class MonitorOptionsCustomSchedule(ModelNormal):
 
     def __init__(self_, recurrences: Union[List[MonitorOptionsCustomScheduleRecurrence], UnsetType] = unset, **kwargs):
         """
-        Configuration options for the custom schedule. **This feature is in private beta.**
+        Configuration options for the custom schedule.
 
         :param recurrences: Array of custom schedule recurrences.
         :type recurrences: [MonitorOptionsCustomScheduleRecurrence], optional
