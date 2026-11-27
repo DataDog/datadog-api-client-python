@@ -120,6 +120,12 @@ Feature: RUM Managed Archives
     Then the response status is 200 OK
     And the response "meta.page" has field "total_filtered_count"
 
+  @generated @skip @team:ddoghq/rum-backend @with-pagination
+  Scenario: List archive configurations returns "OK" response with pagination
+    Given new "ListRUMArchiveConfigs" request
+    When the request with pagination is sent
+    Then the response status is 200 OK
+
   @skip-terraform-config @team:ddoghq/rum-backend
   Scenario: Update archive configuration with unsupported enabled retention returns "Bad Request" response
     Given there is a valid "rum_application" in the system
