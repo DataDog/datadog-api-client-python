@@ -3,40 +3,39 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import List, Union, TYPE_CHECKING
+from typing import List
 
 from datadog_api_client.model_utils import (
     ModelNormal,
     cached_property,
-    unset,
-    UnsetType,
 )
 
 
-if TYPE_CHECKING:
-    from datadog_api_client.v2.model.downtime_run_as_principal import DowntimeRunAsPrincipal
-
-
 class DowntimeRunAsItem(ModelNormal):
+    validations = {
+        "principals": {
+            "max_items": 1,
+            "min_items": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
-        from datadog_api_client.v2.model.downtime_run_as_principal import DowntimeRunAsPrincipal
-
         return {
-            "principals": ([DowntimeRunAsPrincipal],),
+            "principals": ([str],),
         }
 
     attribute_map = {
         "principals": "principals",
     }
 
-    def __init__(self_, principals: Union[List[DowntimeRunAsPrincipal], UnsetType] = unset, **kwargs):
+    def __init__(self_, principals: List[str], **kwargs):
         """
-        A set of principals allowed to act on behalf of the downtime.
+        A set of principals the downtime runs as.
 
-        :param principals: List of principals allowed to act on behalf of the downtime.
-        :type principals: [DowntimeRunAsPrincipal], optional
+        :param principals: The principal the downtime runs as. Only one user is supported.
+        :type principals: [str]
         """
-        if principals is not unset:
-            kwargs["principals"] = principals
         super().__init__(kwargs)
+
+        self_.principals = principals

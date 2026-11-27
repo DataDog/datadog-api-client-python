@@ -29,6 +29,13 @@ if TYPE_CHECKING:
 
 
 class DowntimeResponseAttributes(ModelNormal):
+    validations = {
+        "run_as": {
+            "max_items": 1,
+            "min_items": 1,
+        },
+    }
+
     @cached_property
     def openapi_types(_):
         from datadog_api_client.v2.model.downtime_monitor_identifier import DowntimeMonitorIdentifier
@@ -68,9 +75,6 @@ class DowntimeResponseAttributes(ModelNormal):
         "schedule": "schedule",
         "scope": "scope",
         "status": "status",
-    }
-    read_only_vars = {
-        "run_as",
     }
 
     def __init__(
@@ -126,7 +130,8 @@ class DowntimeResponseAttributes(ModelNormal):
         :param notify_end_types: Actions that will trigger a monitor notification if the downtime is in the ``notify_end_types`` state.
         :type notify_end_types: [DowntimeNotifyEndStateActions], optional
 
-        :param run_as: The principals (users, roles, or teams) allowed to act on behalf of the downtime.
+        :param run_as: The user the downtime runs as. The downtime only silences monitors this user can mute. On update, omitting
+            ``run_as`` resets it to the user making the update.
 
             **Note** : This feature is currently in Preview and may not be available for all organizations.
         :type run_as: [DowntimeRunAsItem], optional
