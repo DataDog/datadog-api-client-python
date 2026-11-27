@@ -1,0 +1,36 @@
+{
+  "api": "RUMOperations",
+  "expected_status": 409,
+  "feature": "RUM Operations",
+  "id": "v2/RUM Operations/Create a RUM operation link returns \"Conflict. A link between this operation and journey already exists.\" response",
+  "operation_id": "CreateRUMOperationStrongLink",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RUMOperationStrongLinkCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "feature_id": "{{ rum_operation_strong_link.data.attributes.feature_id }}",
+            "operation_id": "{{ rum_operation_strong_link.data.attributes.operation_id }}",
+            "status": "DRAFT",
+            "tags": []
+          },
+          "type": "strong_links"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/rum/operations/strong_links"
+  },
+  "scenario": "Create a RUM operation link returns \"Conflict. A link between this operation and journey already exists.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

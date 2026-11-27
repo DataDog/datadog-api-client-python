@@ -10543,6 +10543,48 @@
       "version": "v2"
     },
     {
+      "feature": "RUM Config",
+      "feature_file": "../../v2/features/rum_config.feature",
+      "file": "v2/rum-config/get-the-rum-configuration-returns-ok-response.json",
+      "scenario": "Get the RUM configuration returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Config",
+      "feature_file": "../../v2/features/rum_config.feature",
+      "file": "v2/rum-config/update-the-rum-configuration-returns-ok-response.json",
+      "scenario": "Update the RUM configuration returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Insights",
+      "feature_file": "../../v2/features/rum_insights.feature",
+      "file": "v2/rum-insights/query-aggregated-long-tasks-returns-bad-request-response.json",
+      "scenario": "Query aggregated long tasks returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Insights",
+      "feature_file": "../../v2/features/rum_insights.feature",
+      "file": "v2/rum-insights/query-aggregated-long-tasks-returns-successful-response-response.json",
+      "scenario": "Query aggregated long tasks returns \"Successful response\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Insights",
+      "feature_file": "../../v2/features/rum_insights.feature",
+      "file": "v2/rum-insights/query-aggregated-waterfall-returns-bad-request-response.json",
+      "scenario": "Query aggregated waterfall returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Insights",
+      "feature_file": "../../v2/features/rum_insights.feature",
+      "file": "v2/rum-insights/query-aggregated-waterfall-returns-successful-response-response.json",
+      "scenario": "Query aggregated waterfall returns \"Successful response\" response",
+      "version": "v2"
+    },
+    {
       "feature": "RUM Managed Archives",
       "feature_file": "../../v2/features/rum_managed_archives.feature",
       "file": "v2/rum-managed-archives/delete-an-unknown-archive-configuration-returns-not-found-response.json",
@@ -10666,6 +10708,181 @@
       "feature_file": "../../v2/features/rum_metrics.feature",
       "file": "v2/rum-metrics/update-a-rum-based-metric-returns-ok-response.json",
       "scenario": "Update a RUM-based metric returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Operations",
+      "feature_file": "../../v2/features/rum_operations.feature",
+      "file": "v2/rum-operations/create-a-rum-operation-link-returns-bad-request-response.json",
+      "scenario": "Create a RUM operation link returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Operations",
+      "feature_file": "../../v2/features/rum_operations.feature",
+      "file": "v2/rum-operations/create-a-rum-operation-link-returns-conflict-a-link-between-this-operation-and-journey-already-exists-response.json",
+      "scenario": "Create a RUM operation link returns \"Conflict. A link between this operation and journey already exists.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Operations",
+      "feature_file": "../../v2/features/rum_operations.feature",
+      "file": "v2/rum-operations/create-a-rum-operation-link-returns-created-response.json",
+      "scenario": "Create a RUM operation link returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Operations",
+      "feature_file": "../../v2/features/rum_operations.feature",
+      "file": "v2/rum-operations/create-a-rum-operation-link-returns-not-found-the-referenced-operation-id-does-not-exist-response.json",
+      "scenario": "Create a RUM operation link returns \"Not Found. The referenced `operation_id` does not exist.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Operations",
+      "feature_file": "../../v2/features/rum_operations.feature",
+      "file": "v2/rum-operations/create-a-rum-operation-returns-bad-request-response.json",
+      "scenario": "Create a RUM operation returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Operations",
+      "feature_file": "../../v2/features/rum_operations.feature",
+      "file": "v2/rum-operations/create-a-rum-operation-returns-conflict-an-operation-with-this-name-already-exists-response.json",
+      "scenario": "Create a RUM operation returns \"Conflict. An operation with this name already exists.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Operations",
+      "feature_file": "../../v2/features/rum_operations.feature",
+      "file": "v2/rum-operations/create-a-rum-operation-returns-ok-response.json",
+      "scenario": "Create a RUM operation returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Operations",
+      "feature_file": "../../v2/features/rum_operations.feature",
+      "file": "v2/rum-operations/delete-a-rum-operation-link-returns-no-content-response.json",
+      "scenario": "Delete a RUM operation link returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Operations",
+      "feature_file": "../../v2/features/rum_operations.feature",
+      "file": "v2/rum-operations/delete-a-rum-operation-link-returns-not-found-response.json",
+      "scenario": "Delete a RUM operation link returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Operations",
+      "feature_file": "../../v2/features/rum_operations.feature",
+      "file": "v2/rum-operations/delete-a-rum-operation-returns-no-content-response.json",
+      "scenario": "Delete a RUM operation returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Operations",
+      "feature_file": "../../v2/features/rum_operations.feature",
+      "file": "v2/rum-operations/delete-a-rum-operation-returns-not-found-response.json",
+      "scenario": "Delete a RUM operation returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Operations",
+      "feature_file": "../../v2/features/rum_operations.feature",
+      "file": "v2/rum-operations/get-a-rum-operation-by-name-returns-not-found-response.json",
+      "scenario": "Get a RUM operation by name returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Operations",
+      "feature_file": "../../v2/features/rum_operations.feature",
+      "file": "v2/rum-operations/get-a-rum-operation-by-name-returns-ok-response.json",
+      "scenario": "Get a RUM operation by name returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Operations",
+      "feature_file": "../../v2/features/rum_operations.feature",
+      "file": "v2/rum-operations/get-a-rum-operation-returns-not-found-response.json",
+      "scenario": "Get a RUM operation returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Operations",
+      "feature_file": "../../v2/features/rum_operations.feature",
+      "file": "v2/rum-operations/get-a-rum-operation-returns-ok-response.json",
+      "scenario": "Get a RUM operation returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Operations",
+      "feature_file": "../../v2/features/rum_operations.feature",
+      "file": "v2/rum-operations/list-rum-operation-links-returns-bad-request-response.json",
+      "scenario": "List RUM operation links returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Operations",
+      "feature_file": "../../v2/features/rum_operations.feature",
+      "file": "v2/rum-operations/list-rum-operation-links-returns-ok-response.json",
+      "scenario": "List RUM operation links returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Operations",
+      "feature_file": "../../v2/features/rum_operations.feature",
+      "file": "v2/rum-operations/search-rum-operations-returns-bad-request-response.json",
+      "scenario": "Search RUM operations returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Operations",
+      "feature_file": "../../v2/features/rum_operations.feature",
+      "file": "v2/rum-operations/search-rum-operations-returns-ok-response.json",
+      "scenario": "Search RUM operations returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Operations",
+      "feature_file": "../../v2/features/rum_operations.feature",
+      "file": "v2/rum-operations/update-a-rum-operation-link-returns-not-found-response.json",
+      "scenario": "Update a RUM operation link returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Operations",
+      "feature_file": "../../v2/features/rum_operations.feature",
+      "file": "v2/rum-operations/update-a-rum-operation-link-returns-ok-response.json",
+      "scenario": "Update a RUM operation link returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Operations",
+      "feature_file": "../../v2/features/rum_operations.feature",
+      "file": "v2/rum-operations/update-a-rum-operation-returns-bad-request-response.json",
+      "scenario": "Update a RUM operation returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Operations",
+      "feature_file": "../../v2/features/rum_operations.feature",
+      "file": "v2/rum-operations/update-a-rum-operation-returns-conflict-an-operation-with-this-name-already-exists-response.json",
+      "scenario": "Update a RUM operation returns \"Conflict. An operation with this name already exists.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Operations",
+      "feature_file": "../../v2/features/rum_operations.feature",
+      "file": "v2/rum-operations/update-a-rum-operation-returns-not-found-response.json",
+      "scenario": "Update a RUM operation returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Operations",
+      "feature_file": "../../v2/features/rum_operations.feature",
+      "file": "v2/rum-operations/update-a-rum-operation-returns-ok-response.json",
+      "scenario": "Update a RUM operation returns \"OK\" response",
       "version": "v2"
     },
     {

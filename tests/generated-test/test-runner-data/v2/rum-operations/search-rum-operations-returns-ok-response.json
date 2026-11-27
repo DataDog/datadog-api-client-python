@@ -1,0 +1,35 @@
+{
+  "api": "RUMOperations",
+  "expected_status": 200,
+  "feature": "RUM Operations",
+  "id": "v2/RUM Operations/Search RUM operations returns \"OK\" response",
+  "operation_id": "ListRUMOperations",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "query",
+        "required": false,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "rum_operation.data.attributes.name",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/operations/search"
+  },
+  "scenario": "Search RUM operations returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

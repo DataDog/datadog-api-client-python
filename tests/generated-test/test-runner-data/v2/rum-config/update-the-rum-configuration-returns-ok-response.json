@@ -1,0 +1,33 @@
+{
+  "api": "RUMConfig",
+  "expected_status": 200,
+  "feature": "RUM Config",
+  "id": "v2/RUM Config/Update the RUM configuration returns \"OK\" response",
+  "operation_id": "UpdateRumConfig",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RumConfigUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "enforced_application_tags": false
+          },
+          "type": "rum_config"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/rum/config"
+  },
+  "scenario": "Update the RUM configuration returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

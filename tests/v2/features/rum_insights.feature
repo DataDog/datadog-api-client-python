@@ -10,34 +10,36 @@ Feature: RUM Insights
     And a valid "appKeyAuth" key in the system
     And an instance of "RUMInsights" API
 
-  @generated @skip @team:ddoghq/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Query aggregated long tasks returns "Bad Request" response
     Given operation "QueryAggregatedLongTasks" enabled
     And new "QueryAggregatedLongTasks" request
-    And body with value {"data": {"attributes": {"application_id": "ccbc53b1-74f2-496b-bdd7-9a8fa7b7376b", "criteria": {"max": 5.0, "metric": "largest_contentful_paint", "min": 2.5}, "filter": "@session.type:user", "from": 1762437564, "sample_size": 20, "to": 1762523964, "view_name": "/account/login(/:type)"}, "type": "aggregated_long_tasks"}}
+    And body with value {"data": {"attributes": {"application_id": "ccbc53b1-74f2-496b-bdd7-9a8fa7b7376b", "criteria": {"max": 5.0, "metric": "largest_contentful_paint", "min": 2.5}, "filter": "@session.type:user", "from": {{ timestamp('now') }}, "sample_size": 20, "to": {{ timestamp('now') }}, "view_name": "/account/login(/:type)"}, "type": "aggregated_long_tasks"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:ddoghq/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Query aggregated long tasks returns "Successful response" response
     Given operation "QueryAggregatedLongTasks" enabled
     And new "QueryAggregatedLongTasks" request
-    And body with value {"data": {"attributes": {"application_id": "ccbc53b1-74f2-496b-bdd7-9a8fa7b7376b", "criteria": {"max": 5.0, "metric": "largest_contentful_paint", "min": 2.5}, "filter": "@session.type:user", "from": 1762437564, "sample_size": 20, "to": 1762523964, "view_name": "/account/login(/:type)"}, "type": "aggregated_long_tasks"}}
+    And body with value {"data": {"attributes": {"application_id": "ccbc53b1-74f2-496b-bdd7-9a8fa7b7376b", "criteria": {"max": 5.0, "metric": "largest_contentful_paint", "min": 2.5}, "filter": "@session.type:user", "from": {{ timestamp('now - 1h') }}, "sample_size": 20, "to": {{ timestamp('now') }}, "view_name": "/account/login(/:type)"}, "type": "aggregated_long_tasks"}}
     When the request is sent
     Then the response status is 201 Successful response
+    And the response "data.attributes.application_id" is equal to "ccbc53b1-74f2-496b-bdd7-9a8fa7b7376b"
 
-  @generated @skip @team:ddoghq/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Query aggregated waterfall returns "Bad Request" response
     Given operation "QueryAggregatedWaterfall" enabled
     And new "QueryAggregatedWaterfall" request
-    And body with value {"data": {"attributes": {"application_id": "ccbc53b1-74f2-496b-bdd7-9a8fa7b7376b", "criteria": {"max": 5.0, "metric": "largest_contentful_paint", "min": 2.5}, "filter": "@session.type:user", "from": 1762437564, "include_global_appearance": false, "sample_size": 20, "to": 1762523964, "view_name": "/account/login(/:type)"}, "type": "aggregated_waterfall"}}
+    And body with value {"data": {"attributes": {"application_id": "ccbc53b1-74f2-496b-bdd7-9a8fa7b7376b", "criteria": {"max": 5.0, "metric": "largest_contentful_paint", "min": 2.5}, "filter": "@session.type:user", "from": {{ timestamp('now') }}, "include_global_appearance": false, "sample_size": 20, "to": {{ timestamp('now') }}, "view_name": "/account/login(/:type)"}, "type": "aggregated_waterfall"}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:ddoghq/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Query aggregated waterfall returns "Successful response" response
     Given operation "QueryAggregatedWaterfall" enabled
     And new "QueryAggregatedWaterfall" request
-    And body with value {"data": {"attributes": {"application_id": "ccbc53b1-74f2-496b-bdd7-9a8fa7b7376b", "criteria": {"max": 5.0, "metric": "largest_contentful_paint", "min": 2.5}, "filter": "@session.type:user", "from": 1762437564, "include_global_appearance": false, "sample_size": 20, "to": 1762523964, "view_name": "/account/login(/:type)"}, "type": "aggregated_waterfall"}}
+    And body with value {"data": {"attributes": {"application_id": "ccbc53b1-74f2-496b-bdd7-9a8fa7b7376b", "criteria": {"max": 5.0, "metric": "largest_contentful_paint", "min": 2.5}, "filter": "@session.type:user", "from": {{ timestamp('now - 1h') }}, "include_global_appearance": false, "sample_size": 20, "to": {{ timestamp('now') }}, "view_name": "/account/login(/:type)"}, "type": "aggregated_waterfall"}}
     When the request is sent
     Then the response status is 201 Successful response
+    And the response "data.attributes.application_id" is equal to "ccbc53b1-74f2-496b-bdd7-9a8fa7b7376b"

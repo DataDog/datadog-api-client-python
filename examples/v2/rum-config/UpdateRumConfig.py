@@ -13,7 +13,7 @@ from datadog_api_client.v2.model.rum_config_update_request import RumConfigUpdat
 body = RumConfigUpdateRequest(
     data=RumConfigUpdateData(
         attributes=RumConfigUpdateAttributes(
-            enforced_application_tags=True,
+            enforced_application_tags=False,
         ),
         type=RumConfigType.RUM_CONFIG,
     ),

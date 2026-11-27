@@ -1458,6 +1458,42 @@
     "tag": "Rum Teams Ownership"
   },
   {
+    "key": "rum_operation",
+    "operationId": "CreateRUMOperation",
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\"data\": {\"type\": \"operations\", \"attributes\": {\"name\": \"bdd_{{ unique_lower_alnum }}\", \"tags\": [\"team:rum-backend\"], \"journey_rum\": {\"rum_steps\": [{\"type\": \"start\", \"nodes\": [{\"query\": \"@type:action @action.type:click\"}]}, {\"type\": \"stop\", \"nodes\": [{\"query\": \"@type:view\"}]}]}}}}"
+      }
+    ],
+    "step": "there is a valid \"rum_operation\" in the system",
+    "tag": "RUM Operations"
+  },
+  {
+    "key": "rum_operation_b",
+    "operationId": "CreateRUMOperation",
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\"data\": {\"type\": \"operations\", \"attributes\": {\"name\": \"bdd_b_{{ unique_lower_alnum }}\", \"tags\": [\"team:rum-backend\"], \"journey_rum\": {\"rum_steps\": [{\"type\": \"start\", \"nodes\": [{\"query\": \"@type:action @action.type:click\"}]}, {\"type\": \"stop\", \"nodes\": [{\"query\": \"@type:view\"}]}]}}}}"
+      }
+    ],
+    "step": "there is a valid \"rum_operation_b\" in the system",
+    "tag": "RUM Operations"
+  },
+  {
+    "key": "rum_operation_strong_link",
+    "operationId": "CreateRUMOperationStrongLink",
+    "parameters": [
+      {
+        "name": "body",
+        "value": "{\"data\": {\"type\": \"strong_links\", \"attributes\": {\"operation_id\": \"{{ rum_operation.data.id }}\", \"feature_id\": \"bdd-{{ unique_lower_alnum }}\", \"status\": \"DRAFT\", \"tags\": []}}}"
+      }
+    ],
+    "step": "there is a valid \"rum_operation_strong_link\" in the system",
+    "tag": "RUM Operations"
+  },
+  {
     "key": "create_scorecard_rule",
     "operationId": "CreateScorecardRule",
     "parameters": [

@@ -1,0 +1,75 @@
+{
+  "api": "RUMOperations",
+  "expected_status": 200,
+  "feature": "RUM Operations",
+  "id": "v2/RUM Operations/Update a RUM operation returns \"OK\" response",
+  "operation_id": "UpdateRUMOperation",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RUMOperationUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "display_name": "BDD operation updated",
+            "journey_rum": {
+              "rum_steps": [
+                {
+                  "nodes": [
+                    {
+                      "query": "@type:action @action.type:click"
+                    }
+                  ],
+                  "type": "start"
+                },
+                {
+                  "nodes": [
+                    {
+                      "query": "@type:view"
+                    }
+                  ],
+                  "type": "stop"
+                }
+              ]
+            },
+            "name": "{{ rum_operation.data.attributes.name }}",
+            "tags": [
+              "team:rum-backend"
+            ]
+          },
+          "id": "{{ rum_operation.data.id }}",
+          "type": "operations"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rum_operation_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "rum_operation.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/operations/{rum_operation_id}"
+  },
+  "scenario": "Update a RUM operation returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

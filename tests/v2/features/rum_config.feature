@@ -25,12 +25,13 @@ Feature: RUM Config
     When the request is sent
     Then the response status is 201 Created
 
-  @generated @skip @team:ddoghq/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Get the RUM configuration returns "OK" response
     Given operation "GetRumConfig" enabled
     And new "GetRumConfig" request
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "rum_config"
 
   @generated @skip @team:ddoghq/rum-backend
   Scenario: Update the RUM configuration returns "Bad Request" response
@@ -40,10 +41,12 @@ Feature: RUM Config
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:ddoghq/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Update the RUM configuration returns "OK" response
     Given operation "UpdateRumConfig" enabled
     And new "UpdateRumConfig" request
-    And body with value {"data": {"attributes": {"enforced_application_tags": true}, "type": "rum_config"}}
+    And body with value {"data": {"attributes": {"enforced_application_tags": false}, "type": "rum_config"}}
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.type" is equal to "rum_config"
+    And the response "data.attributes.enforced_application_tags" is false

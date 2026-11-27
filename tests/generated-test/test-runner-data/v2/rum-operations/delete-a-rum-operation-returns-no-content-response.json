@@ -1,0 +1,35 @@
+{
+  "api": "RUMOperations",
+  "expected_status": 204,
+  "feature": "RUM Operations",
+  "id": "v2/RUM Operations/Delete a RUM operation returns \"No Content\" response",
+  "operation_id": "DeleteRUMOperation",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "rum_operation_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "rum_operation.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/operations/{rum_operation_id}"
+  },
+  "scenario": "Delete a RUM operation returns \"No Content\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

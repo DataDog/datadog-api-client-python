@@ -1,0 +1,52 @@
+{
+  "api": "RUMOperations",
+  "expected_status": 400,
+  "feature": "RUM Operations",
+  "id": "v2/RUM Operations/Create a RUM operation returns \"Bad Request\" response",
+  "operation_id": "CreateRUMOperation",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RUMOperationCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "display_name": "BDD operation",
+            "journey_rum": {
+              "rum_steps": [
+                {
+                  "composite": {
+                    "kind": "all_of",
+                    "predicates": [
+                      {
+                        "query": "@type:action"
+                      }
+                    ]
+                  },
+                  "type": "start"
+                }
+              ]
+            },
+            "name": "bdd_{{ unique_lower_alnum }}",
+            "tags": [
+              "team:rum-backend"
+            ]
+          },
+          "type": "operations"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/rum/operations"
+  },
+  "scenario": "Create a RUM operation returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
