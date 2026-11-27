@@ -9486,6 +9486,81 @@ from datadog_api_client.v2.model.open_ai_credentials_update import OpenAICredent
 from datadog_api_client.v2.model.open_ai_integration import OpenAIIntegration
 from datadog_api_client.v2.model.open_ai_integration_type import OpenAIIntegrationType
 from datadog_api_client.v2.model.open_ai_integration_update import OpenAIIntegrationUpdate
+from datadog_api_client.v2.model.open_ai_usage_and_costs_cloud_cost_data_integration_dataflow_request import (
+    OpenAIUsageAndCostsCloudCostDataIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.open_ai_usage_and_costs_cloud_cost_data_integration_dataflow_response import (
+    OpenAIUsageAndCostsCloudCostDataIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.open_ai_usage_and_costs_integration_account_authentication_request import (
+    OpenAIUsageAndCostsIntegrationAccountAuthenticationRequest,
+)
+from datadog_api_client.v2.model.open_ai_usage_and_costs_integration_account_authentication_response import (
+    OpenAIUsageAndCostsIntegrationAccountAuthenticationResponse,
+)
+from datadog_api_client.v2.model.open_ai_usage_and_costs_integration_account_authentication_update import (
+    OpenAIUsageAndCostsIntegrationAccountAuthenticationUpdate,
+)
+from datadog_api_client.v2.model.open_ai_usage_and_costs_integration_account_bearer_token_auth_request import (
+    OpenAIUsageAndCostsIntegrationAccountBearerTokenAuthRequest,
+)
+from datadog_api_client.v2.model.open_ai_usage_and_costs_integration_account_bearer_token_auth_response import (
+    OpenAIUsageAndCostsIntegrationAccountBearerTokenAuthResponse,
+)
+from datadog_api_client.v2.model.open_ai_usage_and_costs_integration_account_bearer_token_auth_type import (
+    OpenAIUsageAndCostsIntegrationAccountBearerTokenAuthType,
+)
+from datadog_api_client.v2.model.open_ai_usage_and_costs_integration_account_bearer_token_auth_update import (
+    OpenAIUsageAndCostsIntegrationAccountBearerTokenAuthUpdate,
+)
+from datadog_api_client.v2.model.open_ai_usage_and_costs_integration_account_create_attributes import (
+    OpenAIUsageAndCostsIntegrationAccountCreateAttributes,
+)
+from datadog_api_client.v2.model.open_ai_usage_and_costs_integration_account_create_data import (
+    OpenAIUsageAndCostsIntegrationAccountCreateData,
+)
+from datadog_api_client.v2.model.open_ai_usage_and_costs_integration_account_create_request import (
+    OpenAIUsageAndCostsIntegrationAccountCreateRequest,
+)
+from datadog_api_client.v2.model.open_ai_usage_and_costs_integration_account_response import (
+    OpenAIUsageAndCostsIntegrationAccountResponse,
+)
+from datadog_api_client.v2.model.open_ai_usage_and_costs_integration_account_response_attributes import (
+    OpenAIUsageAndCostsIntegrationAccountResponseAttributes,
+)
+from datadog_api_client.v2.model.open_ai_usage_and_costs_integration_account_response_data import (
+    OpenAIUsageAndCostsIntegrationAccountResponseData,
+)
+from datadog_api_client.v2.model.open_ai_usage_and_costs_integration_account_settings_request import (
+    OpenAIUsageAndCostsIntegrationAccountSettingsRequest,
+)
+from datadog_api_client.v2.model.open_ai_usage_and_costs_integration_account_settings_response import (
+    OpenAIUsageAndCostsIntegrationAccountSettingsResponse,
+)
+from datadog_api_client.v2.model.open_ai_usage_and_costs_integration_account_settings_update import (
+    OpenAIUsageAndCostsIntegrationAccountSettingsUpdate,
+)
+from datadog_api_client.v2.model.open_ai_usage_and_costs_integration_account_update_attributes import (
+    OpenAIUsageAndCostsIntegrationAccountUpdateAttributes,
+)
+from datadog_api_client.v2.model.open_ai_usage_and_costs_integration_account_update_data import (
+    OpenAIUsageAndCostsIntegrationAccountUpdateData,
+)
+from datadog_api_client.v2.model.open_ai_usage_and_costs_integration_account_update_request import (
+    OpenAIUsageAndCostsIntegrationAccountUpdateRequest,
+)
+from datadog_api_client.v2.model.open_ai_usage_and_costs_integration_accounts_response import (
+    OpenAIUsageAndCostsIntegrationAccountsResponse,
+)
+from datadog_api_client.v2.model.open_ai_usage_and_costs_integration_dataflows_request import (
+    OpenAIUsageAndCostsIntegrationDataflowsRequest,
+)
+from datadog_api_client.v2.model.open_ai_usage_and_costs_integration_dataflows_response import (
+    OpenAIUsageAndCostsIntegrationDataflowsResponse,
+)
+from datadog_api_client.v2.model.open_ai_usage_and_costs_usage_metrics_integration_dataflow_response import (
+    OpenAIUsageAndCostsUsageMetricsIntegrationDataflowResponse,
+)
 from datadog_api_client.v2.model.open_api_endpoint import OpenAPIEndpoint
 from datadog_api_client.v2.model.open_api_file import OpenAPIFile
 from datadog_api_client.v2.model.opsgenie_account_create_attributes import OpsgenieAccountCreateAttributes
@@ -21030,6 +21105,31 @@ __all__ = [
     "OpenAIIntegration",
     "OpenAIIntegrationType",
     "OpenAIIntegrationUpdate",
+    "OpenAIUsageAndCostsCloudCostDataIntegrationDataflowRequest",
+    "OpenAIUsageAndCostsCloudCostDataIntegrationDataflowResponse",
+    "OpenAIUsageAndCostsIntegrationAccountAuthenticationRequest",
+    "OpenAIUsageAndCostsIntegrationAccountAuthenticationResponse",
+    "OpenAIUsageAndCostsIntegrationAccountAuthenticationUpdate",
+    "OpenAIUsageAndCostsIntegrationAccountBearerTokenAuthRequest",
+    "OpenAIUsageAndCostsIntegrationAccountBearerTokenAuthResponse",
+    "OpenAIUsageAndCostsIntegrationAccountBearerTokenAuthType",
+    "OpenAIUsageAndCostsIntegrationAccountBearerTokenAuthUpdate",
+    "OpenAIUsageAndCostsIntegrationAccountCreateAttributes",
+    "OpenAIUsageAndCostsIntegrationAccountCreateData",
+    "OpenAIUsageAndCostsIntegrationAccountCreateRequest",
+    "OpenAIUsageAndCostsIntegrationAccountResponse",
+    "OpenAIUsageAndCostsIntegrationAccountResponseAttributes",
+    "OpenAIUsageAndCostsIntegrationAccountResponseData",
+    "OpenAIUsageAndCostsIntegrationAccountSettingsRequest",
+    "OpenAIUsageAndCostsIntegrationAccountSettingsResponse",
+    "OpenAIUsageAndCostsIntegrationAccountSettingsUpdate",
+    "OpenAIUsageAndCostsIntegrationAccountUpdateAttributes",
+    "OpenAIUsageAndCostsIntegrationAccountUpdateData",
+    "OpenAIUsageAndCostsIntegrationAccountUpdateRequest",
+    "OpenAIUsageAndCostsIntegrationAccountsResponse",
+    "OpenAIUsageAndCostsIntegrationDataflowsRequest",
+    "OpenAIUsageAndCostsIntegrationDataflowsResponse",
+    "OpenAIUsageAndCostsUsageMetricsIntegrationDataflowResponse",
     "OpenAPIEndpoint",
     "OpenAPIFile",
     "OpsgenieAccountCreateAttributes",

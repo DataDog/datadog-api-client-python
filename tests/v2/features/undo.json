@@ -2306,6 +2306,19 @@
       "type": "unsafe"
     }
   },
+  "CreateOpenAIUsageAndCostsIntegrationAccount": {
+    "tag": "OpenAI Usage And Costs Integration",
+    "undo": {
+      "operationId": "DeleteOpenAIUsageAndCostsIntegrationAccount",
+      "parameters": [
+        {
+          "name": "account_id",
+          "source": "data.id"
+        }
+      ],
+      "type": "unsafe"
+    }
+  },
   "CreateOpenAPI": {
     "tag": "API Management",
     "undo": {
@@ -4466,6 +4479,12 @@
   },
   "DeleteOpenAICodexIntegrationAccount": {
     "tag": "OpenAI Codex Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "DeleteOpenAIUsageAndCostsIntegrationAccount": {
+    "tag": "OpenAI Usage And Costs Integration",
     "undo": {
       "type": "idempotent"
     }
@@ -6699,6 +6718,12 @@
   },
   "GetOpenAICodexIntegrationAccount": {
     "tag": "OpenAI Codex Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "GetOpenAIUsageAndCostsIntegrationAccount": {
+    "tag": "OpenAI Usage And Costs Integration",
     "undo": {
       "type": "safe"
     }
@@ -9084,6 +9109,12 @@
   },
   "ListOpenAICodexIntegrationAccounts": {
     "tag": "OpenAI Codex Integration",
+    "undo": {
+      "type": "safe"
+    }
+  },
+  "ListOpenAIUsageAndCostsIntegrationAccounts": {
+    "tag": "OpenAI Usage And Costs Integration",
     "undo": {
       "type": "safe"
     }
@@ -11831,6 +11862,12 @@
   },
   "UpdateOpenAICodexIntegrationAccount": {
     "tag": "OpenAI Codex Integration",
+    "undo": {
+      "type": "idempotent"
+    }
+  },
+  "UpdateOpenAIUsageAndCostsIntegrationAccount": {
+    "tag": "OpenAI Usage And Costs Integration",
     "undo": {
       "type": "idempotent"
     }
