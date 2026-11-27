@@ -3,7 +3,252 @@
   "recordings": [
     {
       "feature": "RUM Managed Archives",
-      "frozen_at": "2026-11-05T16:00:15.805Z",
+      "frozen_at": "2026-11-26T12:33:57.771Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "test-rum-31dc10dae7dd1d87",
+                    "type": "ios"
+                  },
+                  "type": "rum_application_create"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/applications",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"a39fbe28-0538-4bca-b1ac-e78ea0a797a6\",\"type\":\"rum_application\",\"attributes\":{\"api_key_id\":2400354,\"apm_rum_flat_sampling_replay_enabled\":true,\"apm_rum_flat_sampling_replay_sample_rate\":1,\"application_id\":\"a39fbe28-0538-4bca-b1ac-e78ea0a797a6\",\"client_token\":\"pubf0828173e8849be16d05f647e6774a21\",\"created_at\":1795696439665,\"created_by_handle\":\"frog@datadoghq.com\",\"error_tracking_exclusion_filter_enabled\":false,\"external_feeds\":[],\"is_active\":false,\"name\":\"test-rum-31dc10dae7dd1d87\",\"ootb_metrics_installed\":false,\"org_id\":321813,\"product_analytics_replay_sample_rate\":100,\"product_scales\":{\"rum_event_processing_scale\":{\"state\":\"ALL\",\"last_modified_at\":1795696439665},\"product_analytics_retention_scale\":{\"state\":\"NONE\",\"last_modified_at\":1795696439665}},\"short_name\":\"test_rum_31dc10dae7dd1d87\",\"tags\":[],\"type\":\"ios\",\"updated_at\":1795696439665,\"updated_by_handle\":\"frog@datadoghq.com\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": true,
+                    "retention_days": 31
+                  },
+                  "id": "a39fbe28-0538-4bca-b1ac-e78ea0a797a6",
+                  "type": "rum_archive_config"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/rum/config/archive/a39fbe28-0538-4bca-b1ac-e78ea0a797a6",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"retention_days must be one of: 30, 90, 180. Received: 31\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/applications/a39fbe28-0538-4bca-b1ac-e78ea0a797a6",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create or update an archive configuration returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Managed Archives",
+      "frozen_at": "2026-11-26T12:34:00.011Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": true,
+                    "retention_days": 90
+                  },
+                  "id": "00000000-0000-0000-0000-000000000000",
+                  "type": "rum_archive_config"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/rum/config/archive/00000000-0000-0000-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"application not found or not accessible: rpc error: code = NotFound desc = NotFound: This application does not exist\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Create or update an archive configuration returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Managed Archives",
+      "frozen_at": "2026-11-26T12:34:00.052Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "test-rum-bf18a89ff3e767e4",
+                    "type": "ios"
+                  },
+                  "type": "rum_application_create"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/applications",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"6f01159d-a7cc-4f41-b02d-8389ae4267ee\",\"type\":\"rum_application\",\"attributes\":{\"api_key_id\":2400355,\"apm_rum_flat_sampling_replay_enabled\":true,\"apm_rum_flat_sampling_replay_sample_rate\":1,\"application_id\":\"6f01159d-a7cc-4f41-b02d-8389ae4267ee\",\"client_token\":\"pubdef148152438de116b062b38db9a70b5\",\"created_at\":1795696440236,\"created_by_handle\":\"frog@datadoghq.com\",\"error_tracking_exclusion_filter_enabled\":false,\"external_feeds\":[],\"is_active\":false,\"name\":\"test-rum-bf18a89ff3e767e4\",\"ootb_metrics_installed\":false,\"org_id\":321813,\"product_analytics_replay_sample_rate\":100,\"product_scales\":{\"rum_event_processing_scale\":{\"state\":\"ALL\",\"last_modified_at\":1795696440236},\"product_analytics_retention_scale\":{\"state\":\"NONE\",\"last_modified_at\":1795696440236}},\"short_name\":\"test_rum_bf18a89ff3e767e4\",\"tags\":[],\"type\":\"ios\",\"updated_at\":1795696440236,\"updated_by_handle\":\"frog@datadoghq.com\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": true,
+                    "retention_days": 90
+                  },
+                  "id": "6f01159d-a7cc-4f41-b02d-8389ae4267ee",
+                  "type": "rum_archive_config"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/rum/config/archive/6f01159d-a7cc-4f41-b02d-8389ae4267ee",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"6f01159d-a7cc-4f41-b02d-8389ae4267ee\",\"type\":\"rum_archive_config\",\"attributes\":{\"enabled\":true,\"org_id\":321813,\"retention_days\":90,\"updated_at\":\"2026-11-26T12:34:00.498061Z\",\"updated_by\":\"frog@datadoghq.com\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/config/archive/6f01159d-a7cc-4f41-b02d-8389ae4267ee",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/applications/6f01159d-a7cc-4f41-b02d-8389ae4267ee",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create or update an archive configuration returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Managed Archives",
+      "frozen_at": "2026-11-26T12:34:01.093Z",
       "interactions": [
         {
           "request": {
@@ -13,7 +258,122 @@
             },
             "content_type": "",
             "method": "DELETE",
-            "path": "/api/v2/rum/config/archive/17938944-0000-0000-0000-179389441500",
+            "path": "/api/v2/rum/config/archive/invalid",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"appId must be a valid UUID: invalid\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Delete an archive configuration returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Managed Archives",
+      "frozen_at": "2026-11-26T12:34:01.134Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "test-rum-e322e1c7fb6a587c",
+                    "type": "ios"
+                  },
+                  "type": "rum_application_create"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/applications",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"f28079ac-8f60-4f38-b577-86134d398aef\",\"type\":\"rum_application\",\"attributes\":{\"api_key_id\":2400356,\"apm_rum_flat_sampling_replay_enabled\":true,\"apm_rum_flat_sampling_replay_sample_rate\":1,\"application_id\":\"f28079ac-8f60-4f38-b577-86134d398aef\",\"client_token\":\"pub2095b2d653c60fb1fb5993016f1f46c0\",\"created_at\":1795696441341,\"created_by_handle\":\"frog@datadoghq.com\",\"error_tracking_exclusion_filter_enabled\":false,\"external_feeds\":[],\"is_active\":false,\"name\":\"test-rum-e322e1c7fb6a587c\",\"ootb_metrics_installed\":false,\"org_id\":321813,\"product_analytics_replay_sample_rate\":100,\"product_scales\":{\"rum_event_processing_scale\":{\"state\":\"ALL\",\"last_modified_at\":1795696441341},\"product_analytics_retention_scale\":{\"state\":\"NONE\",\"last_modified_at\":1795696441341}},\"short_name\":\"test_rum_e322e1c7fb6a587c\",\"tags\":[],\"type\":\"ios\",\"updated_at\":1795696441341,\"updated_by_handle\":\"frog@datadoghq.com\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": true,
+                    "retention_days": 90
+                  },
+                  "id": "f28079ac-8f60-4f38-b577-86134d398aef",
+                  "type": "rum_archive_config"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/rum/config/archive/f28079ac-8f60-4f38-b577-86134d398aef",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"f28079ac-8f60-4f38-b577-86134d398aef\",\"type\":\"rum_archive_config\",\"attributes\":{\"enabled\":true,\"org_id\":321813,\"retention_days\":90,\"updated_at\":\"2026-11-26T12:34:01.559624Z\",\"updated_by\":\"frog@datadoghq.com\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/config/archive/f28079ac-8f60-4f38-b577-86134d398aef",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/config/archive/f28079ac-8f60-4f38-b577-86134d398aef",
             "query": []
           },
           "response": {
@@ -27,14 +387,35 @@
             "reason": "Not Found",
             "status": 404
           }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/applications/f28079ac-8f60-4f38-b577-86134d398aef",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
         }
       ],
-      "scenario": "Delete an unknown archive configuration returns \"Not Found\" response",
+      "scenario": "Delete an archive configuration returns \"No Content\" response",
       "version": "v2"
     },
     {
       "feature": "RUM Managed Archives",
-      "frozen_at": "2026-11-05T16:00:17.317Z",
+      "frozen_at": "2026-11-26T12:34:02.132Z",
       "interactions": [
         {
           "request": {
@@ -43,8 +424,8 @@
               "value": null
             },
             "content_type": "",
-            "method": "GET",
-            "path": "/api/v2/rum/config/archive/17938944-0000-0000-0000-179389441700",
+            "method": "DELETE",
+            "path": "/api/v2/rum/config/archive/17956964-0000-0000-0000-179569644200",
             "query": []
           },
           "response": {
@@ -60,12 +441,12 @@
           }
         }
       ],
-      "scenario": "Get an unknown archive configuration returns \"Not Found\" response",
+      "scenario": "Delete an archive configuration returns \"Not Found\" response",
       "version": "v2"
     },
     {
       "feature": "RUM Managed Archives",
-      "frozen_at": "2026-11-05T16:00:17.455Z",
+      "frozen_at": "2026-11-26T12:34:02.168Z",
       "interactions": [
         {
           "request": {
@@ -91,12 +472,179 @@
           }
         }
       ],
-      "scenario": "Get archive configuration rejects an invalid application ID",
+      "scenario": "Get an archive configuration returns \"Bad Request\" response",
       "version": "v2"
     },
     {
       "feature": "RUM Managed Archives",
-      "frozen_at": "2026-11-05T16:00:17.585Z",
+      "frozen_at": "2026-11-26T12:34:02.201Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/rum/config/archive/17956964-0000-0000-0000-179569644200",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"managed archive configuration not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get an archive configuration returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Managed Archives",
+      "frozen_at": "2026-11-26T12:34:02.237Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "test-rum-ffd0bc32f326bc80",
+                    "type": "ios"
+                  },
+                  "type": "rum_application_create"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/applications",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"04c1da9d-1f1b-4b3c-8980-eddffd5a5522\",\"type\":\"rum_application\",\"attributes\":{\"api_key_id\":2400357,\"apm_rum_flat_sampling_replay_enabled\":true,\"apm_rum_flat_sampling_replay_sample_rate\":1,\"application_id\":\"04c1da9d-1f1b-4b3c-8980-eddffd5a5522\",\"client_token\":\"pub4ee1ece89030ce068f95dd9ff539f3ec\",\"created_at\":1795696442425,\"created_by_handle\":\"frog@datadoghq.com\",\"error_tracking_exclusion_filter_enabled\":false,\"external_feeds\":[],\"is_active\":false,\"name\":\"test-rum-ffd0bc32f326bc80\",\"ootb_metrics_installed\":false,\"org_id\":321813,\"product_analytics_replay_sample_rate\":100,\"product_scales\":{\"rum_event_processing_scale\":{\"state\":\"ALL\",\"last_modified_at\":1795696442425},\"product_analytics_retention_scale\":{\"state\":\"NONE\",\"last_modified_at\":1795696442425}},\"short_name\":\"test_rum_ffd0bc32f326bc80\",\"tags\":[],\"type\":\"ios\",\"updated_at\":1795696442425,\"updated_by_handle\":\"frog@datadoghq.com\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": true,
+                    "retention_days": 90
+                  },
+                  "id": "04c1da9d-1f1b-4b3c-8980-eddffd5a5522",
+                  "type": "rum_archive_config"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/rum/config/archive/04c1da9d-1f1b-4b3c-8980-eddffd5a5522",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"04c1da9d-1f1b-4b3c-8980-eddffd5a5522\",\"type\":\"rum_archive_config\",\"attributes\":{\"enabled\":true,\"org_id\":321813,\"retention_days\":90,\"updated_at\":\"2026-11-26T12:34:02.691983Z\",\"updated_by\":\"frog@datadoghq.com\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/rum/config/archive/04c1da9d-1f1b-4b3c-8980-eddffd5a5522",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"04c1da9d-1f1b-4b3c-8980-eddffd5a5522\",\"type\":\"rum_archive_config\",\"attributes\":{\"enabled\":true,\"org_id\":321813,\"retention_days\":90,\"updated_at\":\"2026-11-26T12:34:02.691983Z\",\"updated_by\":\"frog@datadoghq.com\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/config/archive/04c1da9d-1f1b-4b3c-8980-eddffd5a5522",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/applications/04c1da9d-1f1b-4b3c-8980-eddffd5a5522",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get an archive configuration returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Managed Archives",
+      "frozen_at": "2026-11-26T12:34:03.318Z",
       "interactions": [
         {
           "request": {
@@ -127,7 +675,7 @@
           }
         }
       ],
-      "scenario": "List archive configurations rejects an invalid page size",
+      "scenario": "List archive configurations returns \"Bad Request\" response",
       "version": "v2"
     },
     {
@@ -168,98 +716,6 @@
         }
       ],
       "scenario": "List archive configurations returns \"OK\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "RUM Managed Archives",
-      "frozen_at": "2026-11-05T16:00:17.874Z",
-      "interactions": [
-        {
-          "request": {
-            "body": {
-              "type": "json",
-              "value": {
-                "data": {
-                  "attributes": {
-                    "name": "test-rum-e61d4487abf1d589",
-                    "type": "ios"
-                  },
-                  "type": "rum_application_create"
-                }
-              }
-            },
-            "content_type": "application/json",
-            "method": "POST",
-            "path": "/api/v2/rum/applications",
-            "query": []
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": "{\"data\":{\"id\":\"25bed905-f5bf-4823-850f-337a5398190c\",\"type\":\"rum_application\",\"attributes\":{\"api_key_id\":2297205,\"apm_rum_flat_sampling_replay_enabled\":true,\"apm_rum_flat_sampling_replay_sample_rate\":1,\"application_id\":\"25bed905-f5bf-4823-850f-337a5398190c\",\"client_token\":\"pub00000000000000000000000000000000\",\"created_at\":1793894418177,\"created_by_handle\":\"test@example.com\",\"error_tracking_exclusion_filter_enabled\":false,\"external_feeds\":[],\"is_active\":false,\"name\":\"test-rum-e61d4487abf1d589\",\"ootb_metrics_installed\":false,\"org_id\":321813,\"product_analytics_replay_sample_rate\":100,\"product_scales\":{\"rum_event_processing_scale\":{\"state\":\"ALL\",\"last_modified_at\":1793894418177},\"product_analytics_retention_scale\":{\"state\":\"NONE\",\"last_modified_at\":1793894418177}},\"short_name\":\"test_rum_e61d4487abf1d589\",\"tags\":[],\"type\":\"ios\",\"updated_at\":1793894418177,\"updated_by_handle\":\"test@example.com\"}}}"
-            },
-            "headers": {
-              "content-type": "application/vnd.api+json"
-            },
-            "reason": "Created",
-            "status": 201
-          }
-        },
-        {
-          "request": {
-            "body": {
-              "type": "json",
-              "value": {
-                "data": {
-                  "attributes": {
-                    "enabled": true,
-                    "retention_days": 31
-                  },
-                  "id": "25bed905-f5bf-4823-850f-337a5398190c",
-                  "type": "rum_archive_config"
-                }
-              }
-            },
-            "content_type": "application/json",
-            "method": "PUT",
-            "path": "/api/v2/rum/config/archive/25bed905-f5bf-4823-850f-337a5398190c",
-            "query": []
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"retention_days must be one of: 30, 90, 180. Received: 31\"}]}"
-            },
-            "headers": {
-              "content-type": "application/vnd.api+json"
-            },
-            "reason": "Bad Request",
-            "status": 400
-          }
-        },
-        {
-          "request": {
-            "body": {
-              "type": "empty",
-              "value": null
-            },
-            "content_type": "",
-            "method": "DELETE",
-            "path": "/api/v2/rum/applications/25bed905-f5bf-4823-850f-337a5398190c",
-            "query": []
-          },
-          "response": {
-            "body": {
-              "encoding": "text",
-              "value": ""
-            },
-            "headers": {},
-            "reason": "No Content",
-            "status": 204
-          }
-        }
-      ],
-      "scenario": "Update archive configuration with unsupported enabled retention returns \"Bad Request\" response",
       "version": "v2"
     }
   ],

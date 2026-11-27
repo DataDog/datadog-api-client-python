@@ -476,6 +476,11 @@
       "version": "v2"
     },
     {
+      "feature": "RUM Retention Quotas",
+      "file": "v2/rum-retention-quotas.json",
+      "version": "v2"
+    },
+    {
       "feature": "Reference Tables",
       "file": "v2/reference-tables.json",
       "version": "v2"

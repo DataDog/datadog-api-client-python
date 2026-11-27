@@ -11971,7 +11971,15 @@
   "UpdateRUMArchiveConfig": {
     "tag": "RUM Managed Archives",
     "undo": {
-      "type": "idempotent"
+      "operationId": "DeleteRUMArchiveConfig",
+      "parameters": [
+        {
+          "name": "app_id",
+          "origin": "path",
+          "source": "app_id"
+        }
+      ],
+      "type": "unsafe"
     }
   },
   "UpdateRUMOperation": {
@@ -12528,7 +12536,20 @@
   "UpsertRumQuotaConfig": {
     "tag": "RUM Retention Quotas",
     "undo": {
-      "type": "idempotent"
+      "operationId": "DeleteRumQuotaConfig",
+      "parameters": [
+        {
+          "name": "scope_type",
+          "origin": "path",
+          "source": "scope_type"
+        },
+        {
+          "name": "scope_id",
+          "origin": "path",
+          "source": "scope_id"
+        }
+      ],
+      "type": "unsafe"
     }
   },
   "UpsertScopesRestriction": {

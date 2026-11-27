@@ -1,0 +1,52 @@
+{
+  "api": "RUMManagedArchives",
+  "expected_status": 200,
+  "feature": "RUM Managed Archives",
+  "id": "v2/RUM Managed Archives/Create or update an archive configuration returns \"OK\" response",
+  "operation_id": "UpdateRUMArchiveConfig",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RumArchiveConfigUpsertRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "enabled": true,
+            "retention_days": 90
+          },
+          "id": "{{ rum_application.data.id }}",
+          "type": "rum_archive_config"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "app_id",
+        "required": true,
+        "schema": {
+          "format": "uuid",
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "rum_application.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/config/archive/{app_id}"
+  },
+  "scenario": "Create or update an archive configuration returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

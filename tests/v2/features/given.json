@@ -1434,6 +1434,22 @@
     "tag": "RUM"
   },
   {
+    "key": "rum_archive_config",
+    "operationId": "UpdateRUMArchiveConfig",
+    "parameters": [
+      {
+        "name": "app_id",
+        "source": "rum_application.data.id"
+      },
+      {
+        "name": "body",
+        "value": "{\"data\": {\"id\": \"{{ rum_application.data.id }}\", \"type\": \"rum_archive_config\", \"attributes\": {\"enabled\": true, \"retention_days\": 90}}}"
+      }
+    ],
+    "step": "there is a valid \"rum_archive_config\" in the system",
+    "tag": "RUM Managed Archives"
+  },
+  {
     "key": "rum_metric",
     "operationId": "CreateRumMetric",
     "parameters": [
@@ -1444,6 +1460,26 @@
     ],
     "step": "there is a valid \"rum_metric\" in the system",
     "tag": "Rum Metrics"
+  },
+  {
+    "key": "rum_quota_config",
+    "operationId": "UpsertRumQuotaConfig",
+    "parameters": [
+      {
+        "name": "scope_type",
+        "value": "\"application\""
+      },
+      {
+        "name": "scope_id",
+        "source": "rum_application.data.id"
+      },
+      {
+        "name": "body",
+        "value": "{\"data\": {\"id\": \"{{ rum_application.data.id }}\", \"type\": \"rum_quota_config\", \"attributes\": {\"mode\": \"custom\", \"custom\": {\"window_type\": \"daily\", \"session_limit\": 1000000, \"daily_reset_time\": \"08:00\", \"daily_reset_timezone\": \"+09:00\", \"quota_reached_action\": \"stop\"}}}}"
+      }
+    ],
+    "step": "there is a valid \"rum_quota_config\" in the system",
+    "tag": "RUM Retention Quotas"
   },
   {
     "key": "teams_ownership_mapping",

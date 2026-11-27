@@ -1,0 +1,51 @@
+{
+  "api": "RUMRetentionQuotas",
+  "expected_status": 404,
+  "feature": "RUM Retention Quotas",
+  "id": "v2/RUM Retention Quotas/Delete a RUM retention quota configuration returns \"Not Found\" response",
+  "operation_id": "DeleteRumQuotaConfig",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "scope_type",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": "RumRetentionQuotaScopeType",
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "application"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "scope_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "rum_application.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/config/retention-quota/{scope_type}/{scope_id}"
+  },
+  "scenario": "Delete a RUM retention quota configuration returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

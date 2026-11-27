@@ -1,0 +1,668 @@
+{
+  "feature": "RUM Retention Quotas",
+  "recordings": [
+    {
+      "feature": "RUM Retention Quotas",
+      "frozen_at": "2026-11-26T12:34:03.401Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "test-rum-dd1eeffe7698867f",
+                    "type": "ios"
+                  },
+                  "type": "rum_application_create"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/applications",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"72086cd8-6fb5-4abc-9ec3-6779a081c094\",\"type\":\"rum_application\",\"attributes\":{\"api_key_id\":2400358,\"apm_rum_flat_sampling_replay_enabled\":true,\"apm_rum_flat_sampling_replay_sample_rate\":1,\"application_id\":\"72086cd8-6fb5-4abc-9ec3-6779a081c094\",\"client_token\":\"pub319fe8a9dcc8642ce4d99ba0f3aa6d66\",\"created_at\":1795696443586,\"created_by_handle\":\"frog@datadoghq.com\",\"error_tracking_exclusion_filter_enabled\":false,\"external_feeds\":[],\"is_active\":false,\"name\":\"test-rum-dd1eeffe7698867f\",\"ootb_metrics_installed\":false,\"org_id\":321813,\"product_analytics_replay_sample_rate\":100,\"product_scales\":{\"rum_event_processing_scale\":{\"state\":\"ALL\",\"last_modified_at\":1795696443586},\"product_analytics_retention_scale\":{\"state\":\"NONE\",\"last_modified_at\":1795696443586}},\"short_name\":\"test_rum_dd1eeffe7698867f\",\"tags\":[],\"type\":\"ios\",\"updated_at\":1795696443586,\"updated_by_handle\":\"frog@datadoghq.com\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "custom": {
+                      "daily_reset_time": "08:00",
+                      "daily_reset_timezone": "+09:00",
+                      "quota_reached_action": "stop",
+                      "session_limit": 1000000,
+                      "window_type": "daily"
+                    },
+                    "mode": "custom"
+                  },
+                  "id": "00000000-0000-0000-0000-000000000000",
+                  "type": "rum_quota_config"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/rum/config/retention-quota/application/72086cd8-6fb5-4abc-9ec3-6779a081c094",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"scope_id in URL path (72086cd8-6fb5-4abc-9ec3-6779a081c094) does not match request body id (00000000-0000-0000-0000-000000000000)\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/applications/72086cd8-6fb5-4abc-9ec3-6779a081c094",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create or update a RUM retention quota config returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Retention Quotas",
+      "frozen_at": "2026-11-26T12:34:03.924Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "custom": {
+                      "daily_reset_time": "08:00",
+                      "daily_reset_timezone": "+09:00",
+                      "quota_reached_action": "stop",
+                      "session_limit": 1000000,
+                      "window_type": "daily"
+                    },
+                    "mode": "custom"
+                  },
+                  "id": "00000000-0000-0000-0000-000000000000",
+                  "type": "rum_quota_config"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/rum/config/retention-quota/application/00000000-0000-0000-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"application not found or not accessible\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Create or update a RUM retention quota config returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Retention Quotas",
+      "frozen_at": "2026-11-26T12:34:03.966Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "test-rum-547527a8b638147c",
+                    "type": "ios"
+                  },
+                  "type": "rum_application_create"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/applications",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"3eb5e176-cd99-47eb-8454-16862d317edb\",\"type\":\"rum_application\",\"attributes\":{\"api_key_id\":2400359,\"apm_rum_flat_sampling_replay_enabled\":true,\"apm_rum_flat_sampling_replay_sample_rate\":1,\"application_id\":\"3eb5e176-cd99-47eb-8454-16862d317edb\",\"client_token\":\"pub95d1114b68cc7ab93ec1ac25bd3797d5\",\"created_at\":1795696444143,\"created_by_handle\":\"frog@datadoghq.com\",\"error_tracking_exclusion_filter_enabled\":false,\"external_feeds\":[],\"is_active\":false,\"name\":\"test-rum-547527a8b638147c\",\"ootb_metrics_installed\":false,\"org_id\":321813,\"product_analytics_replay_sample_rate\":100,\"product_scales\":{\"rum_event_processing_scale\":{\"state\":\"ALL\",\"last_modified_at\":1795696444143},\"product_analytics_retention_scale\":{\"state\":\"NONE\",\"last_modified_at\":1795696444143}},\"short_name\":\"test_rum_547527a8b638147c\",\"tags\":[],\"type\":\"ios\",\"updated_at\":1795696444143,\"updated_by_handle\":\"frog@datadoghq.com\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "custom": {
+                      "daily_reset_time": "08:00",
+                      "daily_reset_timezone": "+09:00",
+                      "quota_reached_action": "stop",
+                      "session_limit": 1000000,
+                      "window_type": "daily"
+                    },
+                    "mode": "custom"
+                  },
+                  "id": "3eb5e176-cd99-47eb-8454-16862d317edb",
+                  "type": "rum_quota_config"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/rum/config/retention-quota/application/3eb5e176-cd99-47eb-8454-16862d317edb",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"3eb5e176-cd99-47eb-8454-16862d317edb\",\"type\":\"rum_quota_config\",\"attributes\":{\"custom\":{\"window_type\":\"daily\",\"session_limit\":1000000,\"daily_reset_time\":\"08:00\",\"daily_reset_timezone\":\"+09:00\",\"quota_reached_action\":\"stop\"},\"mode\":\"custom\",\"org_id\":321813,\"updated_at\":\"2026-11-26T12:34:04.376382Z\",\"updated_by\":\"frog@datadoghq.com\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/config/retention-quota/application/3eb5e176-cd99-47eb-8454-16862d317edb",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/applications/3eb5e176-cd99-47eb-8454-16862d317edb",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create or update a RUM retention quota config returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Retention Quotas",
+      "frozen_at": "2026-11-26T12:34:04.989Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "test-rum-2cfb9fd431cf78cb",
+                    "type": "ios"
+                  },
+                  "type": "rum_application_create"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/applications",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"878d137c-c2e4-4fb4-bbc7-277a5c02bc4c\",\"type\":\"rum_application\",\"attributes\":{\"api_key_id\":2400360,\"apm_rum_flat_sampling_replay_enabled\":true,\"apm_rum_flat_sampling_replay_sample_rate\":1,\"application_id\":\"878d137c-c2e4-4fb4-bbc7-277a5c02bc4c\",\"client_token\":\"pube919e9b21924c98816f61651f4dfb531\",\"created_at\":1795696445193,\"created_by_handle\":\"frog@datadoghq.com\",\"error_tracking_exclusion_filter_enabled\":false,\"external_feeds\":[],\"is_active\":false,\"name\":\"test-rum-2cfb9fd431cf78cb\",\"ootb_metrics_installed\":false,\"org_id\":321813,\"product_analytics_replay_sample_rate\":100,\"product_scales\":{\"rum_event_processing_scale\":{\"state\":\"ALL\",\"last_modified_at\":1795696445193},\"product_analytics_retention_scale\":{\"state\":\"NONE\",\"last_modified_at\":1795696445193}},\"short_name\":\"test_rum_2cfb9fd431cf78cb\",\"tags\":[],\"type\":\"ios\",\"updated_at\":1795696445193,\"updated_by_handle\":\"frog@datadoghq.com\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "custom": {
+                      "daily_reset_time": "08:00",
+                      "daily_reset_timezone": "+09:00",
+                      "quota_reached_action": "stop",
+                      "session_limit": 1000000,
+                      "window_type": "daily"
+                    },
+                    "mode": "custom"
+                  },
+                  "id": "878d137c-c2e4-4fb4-bbc7-277a5c02bc4c",
+                  "type": "rum_quota_config"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/rum/config/retention-quota/application/878d137c-c2e4-4fb4-bbc7-277a5c02bc4c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"878d137c-c2e4-4fb4-bbc7-277a5c02bc4c\",\"type\":\"rum_quota_config\",\"attributes\":{\"custom\":{\"window_type\":\"daily\",\"session_limit\":1000000,\"daily_reset_time\":\"08:00\",\"daily_reset_timezone\":\"+09:00\",\"quota_reached_action\":\"stop\"},\"mode\":\"custom\",\"org_id\":321813,\"updated_at\":\"2026-11-26T12:34:05.49823Z\",\"updated_by\":\"frog@datadoghq.com\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/config/retention-quota/application/878d137c-c2e4-4fb4-bbc7-277a5c02bc4c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/config/retention-quota/application/878d137c-c2e4-4fb4-bbc7-277a5c02bc4c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"no quota configuration exists for scope application/878d137c-c2e4-4fb4-bbc7-277a5c02bc4c\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/applications/878d137c-c2e4-4fb4-bbc7-277a5c02bc4c",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Delete a RUM retention quota configuration returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Retention Quotas",
+      "frozen_at": "2026-11-26T12:34:06.096Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "test-rum-ecbc739953bc6506",
+                    "type": "ios"
+                  },
+                  "type": "rum_application_create"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/applications",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"e46ae8a5-2864-4603-becb-dfae40340679\",\"type\":\"rum_application\",\"attributes\":{\"api_key_id\":2400361,\"apm_rum_flat_sampling_replay_enabled\":true,\"apm_rum_flat_sampling_replay_sample_rate\":1,\"application_id\":\"e46ae8a5-2864-4603-becb-dfae40340679\",\"client_token\":\"pub5d9d2959d4355838c17033e27c8c3bd2\",\"created_at\":1795696446361,\"created_by_handle\":\"frog@datadoghq.com\",\"error_tracking_exclusion_filter_enabled\":false,\"external_feeds\":[],\"is_active\":false,\"name\":\"test-rum-ecbc739953bc6506\",\"ootb_metrics_installed\":false,\"org_id\":321813,\"product_analytics_replay_sample_rate\":100,\"product_scales\":{\"rum_event_processing_scale\":{\"state\":\"ALL\",\"last_modified_at\":1795696446361},\"product_analytics_retention_scale\":{\"state\":\"NONE\",\"last_modified_at\":1795696446361}},\"short_name\":\"test_rum_ecbc739953bc6506\",\"tags\":[],\"type\":\"ios\",\"updated_at\":1795696446361,\"updated_by_handle\":\"frog@datadoghq.com\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/config/retention-quota/application/e46ae8a5-2864-4603-becb-dfae40340679",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"no quota configuration exists for scope application/e46ae8a5-2864-4603-becb-dfae40340679\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/applications/e46ae8a5-2864-4603-becb-dfae40340679",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Delete a RUM retention quota configuration returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Retention Quotas",
+      "frozen_at": "2026-11-26T12:34:06.692Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/rum/config/retention-quota/application/17956964-0000-0000-0000-179569644600",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"no quota configuration exists for scope application/17956964-0000-0000-0000-179569644600\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get a RUM retention quota configuration returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Retention Quotas",
+      "frozen_at": "2026-11-26T12:34:06.728Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "test-rum-5ee92a4aabc3415c",
+                    "type": "ios"
+                  },
+                  "type": "rum_application_create"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/applications",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"be9db6c7-c788-49ba-93f7-3ea359715ef9\",\"type\":\"rum_application\",\"attributes\":{\"api_key_id\":2400362,\"apm_rum_flat_sampling_replay_enabled\":true,\"apm_rum_flat_sampling_replay_sample_rate\":1,\"application_id\":\"be9db6c7-c788-49ba-93f7-3ea359715ef9\",\"client_token\":\"pub602840cd479fddc547d9450cce1d6fa2\",\"created_at\":1795696446930,\"created_by_handle\":\"frog@datadoghq.com\",\"error_tracking_exclusion_filter_enabled\":false,\"external_feeds\":[],\"is_active\":false,\"name\":\"test-rum-5ee92a4aabc3415c\",\"ootb_metrics_installed\":false,\"org_id\":321813,\"product_analytics_replay_sample_rate\":100,\"product_scales\":{\"rum_event_processing_scale\":{\"state\":\"ALL\",\"last_modified_at\":1795696446930},\"product_analytics_retention_scale\":{\"state\":\"NONE\",\"last_modified_at\":1795696446930}},\"short_name\":\"test_rum_5ee92a4aabc3415c\",\"tags\":[],\"type\":\"ios\",\"updated_at\":1795696446930,\"updated_by_handle\":\"frog@datadoghq.com\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "custom": {
+                      "daily_reset_time": "08:00",
+                      "daily_reset_timezone": "+09:00",
+                      "quota_reached_action": "stop",
+                      "session_limit": 1000000,
+                      "window_type": "daily"
+                    },
+                    "mode": "custom"
+                  },
+                  "id": "be9db6c7-c788-49ba-93f7-3ea359715ef9",
+                  "type": "rum_quota_config"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PUT",
+            "path": "/api/v2/rum/config/retention-quota/application/be9db6c7-c788-49ba-93f7-3ea359715ef9",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"be9db6c7-c788-49ba-93f7-3ea359715ef9\",\"type\":\"rum_quota_config\",\"attributes\":{\"custom\":{\"window_type\":\"daily\",\"session_limit\":1000000,\"daily_reset_time\":\"08:00\",\"daily_reset_timezone\":\"+09:00\",\"quota_reached_action\":\"stop\"},\"mode\":\"custom\",\"org_id\":321813,\"updated_at\":\"2026-11-26T12:34:07.163927Z\",\"updated_by\":\"frog@datadoghq.com\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/rum/config/retention-quota/application/be9db6c7-c788-49ba-93f7-3ea359715ef9",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"be9db6c7-c788-49ba-93f7-3ea359715ef9\",\"type\":\"rum_quota_config\",\"attributes\":{\"custom\":{\"window_type\":\"daily\",\"session_limit\":1000000,\"daily_reset_time\":\"08:00\",\"daily_reset_timezone\":\"+09:00\",\"quota_reached_action\":\"stop\"},\"mode\":\"custom\",\"org_id\":321813,\"updated_at\":\"2026-11-26T12:34:07.163927Z\",\"updated_by\":\"frog@datadoghq.com\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/config/retention-quota/application/be9db6c7-c788-49ba-93f7-3ea359715ef9",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/applications/be9db6c7-c788-49ba-93f7-3ea359715ef9",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get a RUM retention quota configuration returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

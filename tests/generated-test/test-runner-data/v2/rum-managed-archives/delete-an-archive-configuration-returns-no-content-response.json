@@ -1,13 +1,13 @@
 {
   "api": "RUMManagedArchives",
-  "expected_status": 400,
+  "expected_status": 204,
   "feature": "RUM Managed Archives",
-  "id": "v2/RUM Managed Archives/Get archive configuration rejects an invalid application ID",
-  "operation_id": "GetRUMArchiveConfig",
+  "id": "v2/RUM Managed Archives/Delete an archive configuration returns \"No Content\" response",
+  "operation_id": "DeleteRUMArchiveConfig",
   "request": {
     "body": null,
     "content_type": null,
-    "method": "GET",
+    "method": "DELETE",
     "pagination": false,
     "parameters": [
       {
@@ -21,15 +21,15 @@
           "type": "string"
         },
         "source": {
-          "type": "literal",
-          "value": "invalid"
+          "path": "rum_application.data.id",
+          "type": "fixture"
         },
         "style": null
       }
     ],
     "path": "/api/v2/rum/config/archive/{app_id}"
   },
-  "scenario": "Get archive configuration rejects an invalid application ID",
+  "scenario": "Delete an archive configuration returns \"No Content\" response",
   "schema_version": 1,
   "version": "v2"
 }

@@ -1,0 +1,74 @@
+{
+  "api": "RUMRetentionQuotas",
+  "expected_status": 400,
+  "feature": "RUM Retention Quotas",
+  "id": "v2/RUM Retention Quotas/Create or update a RUM retention quota config returns \"Bad Request\" response",
+  "operation_id": "UpsertRumQuotaConfig",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RumRetentionQuotaConfigUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "custom": {
+              "daily_reset_time": "08:00",
+              "daily_reset_timezone": "+09:00",
+              "quota_reached_action": "stop",
+              "session_limit": 1000000,
+              "window_type": "daily"
+            },
+            "mode": "custom"
+          },
+          "id": "00000000-0000-0000-0000-000000000000",
+          "type": "rum_quota_config"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PUT",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "scope_type",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": "RumRetentionQuotaScopeType",
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "application"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "scope_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "rum_application.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/config/retention-quota/{scope_type}/{scope_id}"
+  },
+  "scenario": "Create or update a RUM retention quota config returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
