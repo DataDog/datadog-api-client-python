@@ -23,6 +23,7 @@ class LLMObsSpanEvaluationMetric(ModelNormal):
         return {
             "assessment": (str,),
             "eval_metric_type": (str,),
+            "higher_is_better": (bool,),
             "reasoning": (str,),
             "status": (str,),
             "tags": ([str],),
@@ -43,6 +44,7 @@ class LLMObsSpanEvaluationMetric(ModelNormal):
     attribute_map = {
         "assessment": "assessment",
         "eval_metric_type": "eval_metric_type",
+        "higher_is_better": "higher_is_better",
         "reasoning": "reasoning",
         "status": "status",
         "tags": "tags",
@@ -53,6 +55,7 @@ class LLMObsSpanEvaluationMetric(ModelNormal):
         self_,
         assessment: Union[str, UnsetType] = unset,
         eval_metric_type: Union[str, UnsetType] = unset,
+        higher_is_better: Union[bool, UnsetType] = unset,
         reasoning: Union[str, UnsetType] = unset,
         status: Union[str, UnsetType] = unset,
         tags: Union[List[str], UnsetType] = unset,
@@ -67,6 +70,9 @@ class LLMObsSpanEvaluationMetric(ModelNormal):
 
         :param eval_metric_type: Type of the evaluation metric (e.g., score, categorical, boolean).
         :type eval_metric_type: str, optional
+
+        :param higher_is_better: Whether a higher numeric score is better. Omitted when no direction was specified.
+        :type higher_is_better: bool, optional
 
         :param reasoning: Human-readable reasoning for the evaluation result.
         :type reasoning: str, optional
@@ -84,6 +90,8 @@ class LLMObsSpanEvaluationMetric(ModelNormal):
             kwargs["assessment"] = assessment
         if eval_metric_type is not unset:
             kwargs["eval_metric_type"] = eval_metric_type
+        if higher_is_better is not unset:
+            kwargs["higher_is_better"] = higher_is_better
         if reasoning is not unset:
             kwargs["reasoning"] = reasoning
         if status is not unset:

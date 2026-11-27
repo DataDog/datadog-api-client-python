@@ -33,6 +33,7 @@ class LLMObsExperimentEvalMetricEvent(ModelNormal):
             "boolean_value": (bool, none_type),
             "categorical_value": (str, none_type),
             "eval_source_type": (str,),
+            "higher_is_better": (bool,),
             "id": (str,),
             "json_value": (
                 {
@@ -84,6 +85,7 @@ class LLMObsExperimentEvalMetricEvent(ModelNormal):
         "boolean_value": "boolean_value",
         "categorical_value": "categorical_value",
         "eval_source_type": "eval_source_type",
+        "higher_is_better": "higher_is_better",
         "id": "id",
         "json_value": "json_value",
         "label": "label",
@@ -104,6 +106,7 @@ class LLMObsExperimentEvalMetricEvent(ModelNormal):
         boolean_value: Union[bool, none_type, UnsetType] = unset,
         categorical_value: Union[str, none_type, UnsetType] = unset,
         eval_source_type: Union[str, UnsetType] = unset,
+        higher_is_better: Union[bool, UnsetType] = unset,
         id: Union[str, UnsetType] = unset,
         json_value: Union[Dict[str, Any], none_type, UnsetType] = unset,
         label: Union[str, UnsetType] = unset,
@@ -132,6 +135,9 @@ class LLMObsExperimentEvalMetricEvent(ModelNormal):
 
         :param eval_source_type: Source type of the evaluation.
         :type eval_source_type: str, optional
+
+        :param higher_is_better: Whether a higher numeric score is better. Omitted when no direction was specified.
+        :type higher_is_better: bool, optional
 
         :param id: Unique identifier of the evaluation metric event.
         :type id: str, optional
@@ -177,6 +183,8 @@ class LLMObsExperimentEvalMetricEvent(ModelNormal):
             kwargs["categorical_value"] = categorical_value
         if eval_source_type is not unset:
             kwargs["eval_source_type"] = eval_source_type
+        if higher_is_better is not unset:
+            kwargs["higher_is_better"] = higher_is_better
         if id is not unset:
             kwargs["id"] = id
         if json_value is not unset:
