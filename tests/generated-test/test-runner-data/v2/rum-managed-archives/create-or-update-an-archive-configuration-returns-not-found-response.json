@@ -1,8 +1,8 @@
 {
   "api": "RUMManagedArchives",
-  "expected_status": 400,
+  "expected_status": 404,
   "feature": "RUM Managed Archives",
-  "id": "v2/RUM Managed Archives/Update archive configuration with unsupported enabled retention returns \"Bad Request\" response",
+  "id": "v2/RUM Managed Archives/Create or update an archive configuration returns \"Not Found\" response",
   "operation_id": "UpdateRUMArchiveConfig",
   "request": {
     "body": {
@@ -16,9 +16,9 @@
         "data": {
           "attributes": {
             "enabled": true,
-            "retention_days": 31
+            "retention_days": 90
           },
-          "id": "{{ rum_application.data.id }}",
+          "id": "00000000-0000-0000-0000-000000000000",
           "type": "rum_archive_config"
         }
       }
@@ -39,14 +39,14 @@
         },
         "source": {
           "type": "literal",
-          "value": "{{ rum_application.data.id }}"
+          "value": "00000000-0000-0000-0000-000000000000"
         },
         "style": null
       }
     ],
     "path": "/api/v2/rum/config/archive/{app_id}"
   },
-  "scenario": "Update archive configuration with unsupported enabled retention returns \"Bad Request\" response",
+  "scenario": "Create or update an archive configuration returns \"Not Found\" response",
   "schema_version": 1,
   "version": "v2"
 }

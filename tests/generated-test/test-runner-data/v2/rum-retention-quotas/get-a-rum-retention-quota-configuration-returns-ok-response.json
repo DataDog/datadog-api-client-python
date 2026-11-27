@@ -1,0 +1,51 @@
+{
+  "api": "RUMRetentionQuotas",
+  "expected_status": 200,
+  "feature": "RUM Retention Quotas",
+  "id": "v2/RUM Retention Quotas/Get a RUM retention quota configuration returns \"OK\" response",
+  "operation_id": "GetRumQuotaConfig",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "scope_type",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": "RumRetentionQuotaScopeType",
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "application"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "scope_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "rum_application.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/config/retention-quota/{scope_type}/{scope_id}"
+  },
+  "scenario": "Get a RUM retention quota configuration returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

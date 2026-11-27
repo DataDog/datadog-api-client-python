@@ -2,7 +2,7 @@
   "api": "RUMManagedArchives",
   "expected_status": 400,
   "feature": "RUM Managed Archives",
-  "id": "v2/RUM Managed Archives/List archive configurations rejects an invalid page size",
+  "id": "v2/RUM Managed Archives/List archive configurations returns \"Bad Request\" response",
   "operation_id": "ListRUMArchiveConfigs",
   "request": {
     "body": null,
@@ -29,7 +29,7 @@
     ],
     "path": "/api/v2/rum/config/archive"
   },
-  "scenario": "List archive configurations rejects an invalid page size",
+  "scenario": "List archive configurations returns \"Bad Request\" response",
   "schema_version": 1,
   "version": "v2"
 }

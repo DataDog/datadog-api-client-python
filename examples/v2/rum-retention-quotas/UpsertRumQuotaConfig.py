@@ -17,6 +17,9 @@ from datadog_api_client.v2.model.rum_retention_quota_reached_action import RumRe
 from datadog_api_client.v2.model.rum_retention_quota_scope_type import RumRetentionQuotaScopeType
 from datadog_api_client.v2.model.rum_retention_quota_window_type import RumRetentionQuotaWindowType
 
+# there is a valid "rum_application" in the system
+RUM_APPLICATION_DATA_ID = environ["RUM_APPLICATION_DATA_ID"]
+
 body = RumRetentionQuotaConfigUpdateRequest(
     data=RumRetentionQuotaConfigUpdateData(
         attributes=RumRetentionQuotaConfigUpdateAttributes(
@@ -29,7 +32,7 @@ body = RumRetentionQuotaConfigUpdateRequest(
             ),
             mode=RumRetentionQuotaMode.CUSTOM,
         ),
-        id="cd73a516-a481-4af5-8352-9b577465c77b",
+        id=RUM_APPLICATION_DATA_ID,
         type=RumRetentionQuotaConfigType.RUM_QUOTA_CONFIG,
     ),
 )
@@ -39,7 +42,7 @@ configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = RUMRetentionQuotasApi(api_client)
     response = api_instance.upsert_rum_quota_config(
-        scope_type=RumRetentionQuotaScopeType.APPLICATION, scope_id="cd73a516-a481-4af5-8352-9b577465c77b", body=body
+        scope_type=RumRetentionQuotaScopeType.APPLICATION, scope_id=RUM_APPLICATION_DATA_ID, body=body
     )
 
     print(response)

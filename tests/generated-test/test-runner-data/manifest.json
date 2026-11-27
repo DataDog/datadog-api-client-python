@@ -10545,29 +10545,71 @@
     {
       "feature": "RUM Managed Archives",
       "feature_file": "../../v2/features/rum_managed_archives.feature",
-      "file": "v2/rum-managed-archives/delete-an-unknown-archive-configuration-returns-not-found-response.json",
-      "scenario": "Delete an unknown archive configuration returns \"Not Found\" response",
+      "file": "v2/rum-managed-archives/create-or-update-an-archive-configuration-returns-bad-request-response.json",
+      "scenario": "Create or update an archive configuration returns \"Bad Request\" response",
       "version": "v2"
     },
     {
       "feature": "RUM Managed Archives",
       "feature_file": "../../v2/features/rum_managed_archives.feature",
-      "file": "v2/rum-managed-archives/get-an-unknown-archive-configuration-returns-not-found-response.json",
-      "scenario": "Get an unknown archive configuration returns \"Not Found\" response",
+      "file": "v2/rum-managed-archives/create-or-update-an-archive-configuration-returns-not-found-response.json",
+      "scenario": "Create or update an archive configuration returns \"Not Found\" response",
       "version": "v2"
     },
     {
       "feature": "RUM Managed Archives",
       "feature_file": "../../v2/features/rum_managed_archives.feature",
-      "file": "v2/rum-managed-archives/get-archive-configuration-rejects-an-invalid-application-id.json",
-      "scenario": "Get archive configuration rejects an invalid application ID",
+      "file": "v2/rum-managed-archives/create-or-update-an-archive-configuration-returns-ok-response.json",
+      "scenario": "Create or update an archive configuration returns \"OK\" response",
       "version": "v2"
     },
     {
       "feature": "RUM Managed Archives",
       "feature_file": "../../v2/features/rum_managed_archives.feature",
-      "file": "v2/rum-managed-archives/list-archive-configurations-rejects-an-invalid-page-size.json",
-      "scenario": "List archive configurations rejects an invalid page size",
+      "file": "v2/rum-managed-archives/delete-an-archive-configuration-returns-bad-request-response.json",
+      "scenario": "Delete an archive configuration returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Managed Archives",
+      "feature_file": "../../v2/features/rum_managed_archives.feature",
+      "file": "v2/rum-managed-archives/delete-an-archive-configuration-returns-no-content-response.json",
+      "scenario": "Delete an archive configuration returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Managed Archives",
+      "feature_file": "../../v2/features/rum_managed_archives.feature",
+      "file": "v2/rum-managed-archives/delete-an-archive-configuration-returns-not-found-response.json",
+      "scenario": "Delete an archive configuration returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Managed Archives",
+      "feature_file": "../../v2/features/rum_managed_archives.feature",
+      "file": "v2/rum-managed-archives/get-an-archive-configuration-returns-bad-request-response.json",
+      "scenario": "Get an archive configuration returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Managed Archives",
+      "feature_file": "../../v2/features/rum_managed_archives.feature",
+      "file": "v2/rum-managed-archives/get-an-archive-configuration-returns-not-found-response.json",
+      "scenario": "Get an archive configuration returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Managed Archives",
+      "feature_file": "../../v2/features/rum_managed_archives.feature",
+      "file": "v2/rum-managed-archives/get-an-archive-configuration-returns-ok-response.json",
+      "scenario": "Get an archive configuration returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Managed Archives",
+      "feature_file": "../../v2/features/rum_managed_archives.feature",
+      "file": "v2/rum-managed-archives/list-archive-configurations-returns-bad-request-response.json",
+      "scenario": "List archive configurations returns \"Bad Request\" response",
       "version": "v2"
     },
     {
@@ -10575,13 +10617,6 @@
       "feature_file": "../../v2/features/rum_managed_archives.feature",
       "file": "v2/rum-managed-archives/list-archive-configurations-returns-ok-response.json",
       "scenario": "List archive configurations returns \"OK\" response",
-      "version": "v2"
-    },
-    {
-      "feature": "RUM Managed Archives",
-      "feature_file": "../../v2/features/rum_managed_archives.feature",
-      "file": "v2/rum-managed-archives/update-archive-configuration-with-unsupported-enabled-retention-returns-bad-request-response.json",
-      "scenario": "Update archive configuration with unsupported enabled retention returns \"Bad Request\" response",
       "version": "v2"
     },
     {
@@ -10848,6 +10883,55 @@
       "feature_file": "../../v2/features/rum_retention_filters.feature",
       "file": "v2/rum-retention-filters/update-a-rum-retention-filter-returns-updated-response.json",
       "scenario": "Update a RUM retention filter returns \"Updated\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Retention Quotas",
+      "feature_file": "../../v2/features/rum_retention_quotas.feature",
+      "file": "v2/rum-retention-quotas/create-or-update-a-rum-retention-quota-config-returns-bad-request-response.json",
+      "scenario": "Create or update a RUM retention quota config returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Retention Quotas",
+      "feature_file": "../../v2/features/rum_retention_quotas.feature",
+      "file": "v2/rum-retention-quotas/create-or-update-a-rum-retention-quota-config-returns-not-found-response.json",
+      "scenario": "Create or update a RUM retention quota config returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Retention Quotas",
+      "feature_file": "../../v2/features/rum_retention_quotas.feature",
+      "file": "v2/rum-retention-quotas/create-or-update-a-rum-retention-quota-config-returns-ok-response.json",
+      "scenario": "Create or update a RUM retention quota config returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Retention Quotas",
+      "feature_file": "../../v2/features/rum_retention_quotas.feature",
+      "file": "v2/rum-retention-quotas/delete-a-rum-retention-quota-configuration-returns-no-content-response.json",
+      "scenario": "Delete a RUM retention quota configuration returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Retention Quotas",
+      "feature_file": "../../v2/features/rum_retention_quotas.feature",
+      "file": "v2/rum-retention-quotas/delete-a-rum-retention-quota-configuration-returns-not-found-response.json",
+      "scenario": "Delete a RUM retention quota configuration returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Retention Quotas",
+      "feature_file": "../../v2/features/rum_retention_quotas.feature",
+      "file": "v2/rum-retention-quotas/get-a-rum-retention-quota-configuration-returns-not-found-response.json",
+      "scenario": "Get a RUM retention quota configuration returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "RUM Retention Quotas",
+      "feature_file": "../../v2/features/rum_retention_quotas.feature",
+      "file": "v2/rum-retention-quotas/get-a-rum-retention-quota-configuration-returns-ok-response.json",
+      "scenario": "Get a RUM retention quota configuration returns \"OK\" response",
       "version": "v2"
     },
     {

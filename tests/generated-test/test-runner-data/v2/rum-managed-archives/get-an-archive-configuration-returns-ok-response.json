@@ -1,8 +1,8 @@
 {
   "api": "RUMManagedArchives",
-  "expected_status": 404,
+  "expected_status": 200,
   "feature": "RUM Managed Archives",
-  "id": "v2/RUM Managed Archives/Get an unknown archive configuration returns \"Not Found\" response",
+  "id": "v2/RUM Managed Archives/Get an archive configuration returns \"OK\" response",
   "operation_id": "GetRUMArchiveConfig",
   "request": {
     "body": null,
@@ -21,15 +21,15 @@
           "type": "string"
         },
         "source": {
-          "type": "literal",
-          "value": "{{ uuid }}"
+          "path": "rum_application.data.id",
+          "type": "fixture"
         },
         "style": null
       }
     ],
     "path": "/api/v2/rum/config/archive/{app_id}"
   },
-  "scenario": "Get an unknown archive configuration returns \"Not Found\" response",
+  "scenario": "Get an archive configuration returns \"OK\" response",
   "schema_version": 1,
   "version": "v2"
 }
