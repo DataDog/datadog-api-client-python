@@ -1,0 +1,32 @@
+{
+   "title":"{{ unique }}",
+   "description":"",
+   "widgets":[
+      {
+         "layout":{
+            "x":0,
+            "y":0,
+            "width":50,
+            "height":25
+         },
+         "definition":{
+            "type":"manage_status",
+            "summary_type":"groups",
+            "display_format":"countsAndList",
+            "color_preference":"text",
+            "hide_zero_counts":true,
+            "show_last_triggered":false,
+            "query":"",
+            "sort":"status,asc",
+            "show_sub_groups": true
+         }
+      }
+   ],
+   "template_variables":[
+
+   ],
+   "layout_type":"free",
+   "notify_list":[
+
+   ]
+}

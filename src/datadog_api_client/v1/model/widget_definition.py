@@ -224,6 +224,9 @@ class WidgetDefinition(ModelComposed):
         :param show_priority: Whether to show the priorities column.
         :type show_priority: bool, optional
 
+        :param show_sub_groups: Whether to count and list each monitor's subgroups instead of its notification groups. Only changes monitors that use `notify_by`, and only for the `groups` and `combined` summary types.
+        :type show_sub_groups: bool, optional
+
         :param start: The start of the list. Typically 0.
         :type start: int, optional
 
