@@ -11232,6 +11232,7 @@ from datadog_api_client.v2.model.saved_filter_condition_request import SavedFilt
 from datadog_api_client.v2.model.saved_filter_creation_type import SavedFilterCreationType
 from datadog_api_client.v2.model.saved_filter_data import SavedFilterData
 from datadog_api_client.v2.model.saved_filter_data_type import SavedFilterDataType
+from datadog_api_client.v2.model.saved_filter_environment_reference import SavedFilterEnvironmentReference
 from datadog_api_client.v2.model.saved_filter_flag_reference import SavedFilterFlagReference
 from datadog_api_client.v2.model.saved_filter_jsonapi_error_response import SavedFilterJSONAPIErrorResponse
 from datadog_api_client.v2.model.saved_filter_permission_denied_attributes import SavedFilterPermissionDeniedAttributes
@@ -22354,6 +22355,7 @@ __all__ = [
     "SavedFilterCreationType",
     "SavedFilterData",
     "SavedFilterDataType",
+    "SavedFilterEnvironmentReference",
     "SavedFilterFlagReference",
     "SavedFilterJSONAPIErrorResponse",
     "SavedFilterPermissionDeniedAttributes",
