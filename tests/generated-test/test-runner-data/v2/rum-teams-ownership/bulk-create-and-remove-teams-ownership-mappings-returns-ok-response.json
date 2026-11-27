@@ -1,0 +1,41 @@
+{
+  "api": "RumTeamsOwnership",
+  "expected_status": 200,
+  "feature": "Rum Teams Ownership",
+  "id": "v2/Rum Teams Ownership/Bulk create and remove teams ownership mappings returns \"OK\" response",
+  "operation_id": "CreateTeamsOwnershipMappingsBatch",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "TeamsOwnershipMappingBatchRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "atomic:operations": [
+          {
+            "data": {
+              "attributes": {
+                "match_type": "exact",
+                "service": "web-checkout-{{ unique_lower_alnum }}",
+                "team_handle": "team-rum",
+                "view_name": "/checkout-{{ unique_lower_alnum }}"
+              },
+              "type": "teams_ownership_mappings"
+            },
+            "op": "add"
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/rum/config/teams-ownership/mappings/operations"
+  },
+  "scenario": "Bulk create and remove teams ownership mappings returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

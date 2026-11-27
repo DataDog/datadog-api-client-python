@@ -1,0 +1,42 @@
+{
+  "api": "RumTeamsOwnership",
+  "expected_status": 200,
+  "feature": "Rum Teams Ownership",
+  "id": "v2/Rum Teams Ownership/List teams ownership rules returns \"OK\" response",
+  "operation_id": "ListTeamsOwnershipRules",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[view_name]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "items": {
+            "format": null,
+            "ref": null,
+            "type": "string"
+          },
+          "ref": null,
+          "type": "array"
+        },
+        "source": {
+          "type": "literal",
+          "value": [
+            "{{ teams_ownership_mapping.data.attributes.view_name }}"
+          ]
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/config/teams-ownership/rules"
+  },
+  "scenario": "List teams ownership rules returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

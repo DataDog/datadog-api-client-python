@@ -1,0 +1,35 @@
+{
+  "api": "RumTeamsOwnership",
+  "expected_status": 404,
+  "feature": "Rum Teams Ownership",
+  "id": "v2/Rum Teams Ownership/Get a teams ownership mapping returns \"Not Found\" response",
+  "operation_id": "GetTeamsOwnershipMapping",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "999999999"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/config/teams-ownership/mappings/{id}"
+  },
+  "scenario": "Get a teams ownership mapping returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

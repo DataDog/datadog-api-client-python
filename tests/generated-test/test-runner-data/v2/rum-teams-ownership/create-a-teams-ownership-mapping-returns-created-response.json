@@ -1,0 +1,36 @@
+{
+  "api": "RumTeamsOwnership",
+  "expected_status": 201,
+  "feature": "Rum Teams Ownership",
+  "id": "v2/Rum Teams Ownership/Create a teams ownership mapping returns \"Created\" response",
+  "operation_id": "CreateTeamsOwnershipMapping",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "TeamsOwnershipMappingCreateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "match_type": "exact",
+            "service": "web-checkout-{{ unique_lower_alnum }}",
+            "team_handle": "team-rum",
+            "view_name": "/checkout-{{ unique_lower_alnum }}"
+          },
+          "type": "teams_ownership_mappings"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/rum/config/teams-ownership/mappings"
+  },
+  "scenario": "Create a teams ownership mapping returns \"Created\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

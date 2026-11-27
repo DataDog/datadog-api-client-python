@@ -501,6 +501,11 @@
       "version": "v2"
     },
     {
+      "feature": "Rum Teams Ownership",
+      "file": "v2/rum-teams-ownership.json",
+      "version": "v2"
+    },
+    {
       "feature": "Scorecards",
       "file": "v2/scorecards.json",
       "version": "v2"
