@@ -3,6 +3,109 @@
   "recordings": [
     {
       "feature": "Rum Retention Filters",
+      "frozen_at": "2026-11-26T12:37:39.137Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": true,
+                    "event_type": "error",
+                    "name": "Test-Create_a_RUM_exclusion_filter_returns_Bad_Request_response-1795696659",
+                    "query": "@error.message:*extension*"
+                  },
+                  "type": "invalid_type"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/exclusion",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"got type \\\"invalid_type\\\" expected one of \\\"exclusion_filters\\\"\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create a RUM exclusion filter returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "frozen_at": "2026-11-26T12:37:41.089Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": true,
+                    "event_type": "error",
+                    "name": "Test-Create_a_RUM_exclusion_filter_returns_Created_response-1795696661",
+                    "query": "@error.message:*extension*"
+                  },
+                  "type": "exclusion_filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/exclusion",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"685cb919-7a62-4f61-87b5-24e1850fb00f\",\"type\":\"exclusion_filters\",\"attributes\":{\"enabled\":true,\"event_type\":\"error\",\"name\":\"Test-Create_a_RUM_exclusion_filter_returns_Created_response-1795696661\",\"query\":\"@error.message:*extension*\"},\"meta\":{\"enabled_at\":1795696661293,\"updated_at\":1795696661293,\"updated_by_handle\":\"frog@datadoghq.com\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/exclusion/685cb919-7a62-4f61-87b5-24e1850fb00f",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a RUM exclusion filter returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
       "frozen_at": "2025-03-03T21:21:22.678Z",
       "interactions": [
         {
@@ -108,6 +211,153 @@
     },
     {
       "feature": "Rum Retention Filters",
+      "frozen_at": "2026-11-26T12:37:41.596Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/exclusion/error_tracking_exclusion_filter",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"405\",\"title\":\"Method Not Allowed\",\"detail\":\"the error tracking exclusion filter cannot be deleted; it is built-in and always present\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Method Not Allowed",
+            "status": 405
+          }
+        }
+      ],
+      "scenario": "Delete a RUM exclusion filter returns \"Method Not Allowed\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "frozen_at": "2026-11-26T12:37:41.832Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": true,
+                    "event_type": "error",
+                    "name": "Test-Delete_a_RUM_exclusion_filter_returns_No_Content_response-1795696661",
+                    "query": "@error.message:*extension*"
+                  },
+                  "type": "exclusion_filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/exclusion",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"7b70cc14-6df3-4b7e-8f54-c143e498a3d4\",\"type\":\"exclusion_filters\",\"attributes\":{\"enabled\":true,\"event_type\":\"error\",\"name\":\"Test-Delete_a_RUM_exclusion_filter_returns_No_Content_response-1795696661\",\"query\":\"@error.message:*extension*\"},\"meta\":{\"enabled_at\":1795696662021,\"updated_at\":1795696662021,\"updated_by_handle\":\"frog@datadoghq.com\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/exclusion/7b70cc14-6df3-4b7e-8f54-c143e498a3d4",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/exclusion/7b70cc14-6df3-4b7e-8f54-c143e498a3d4",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"rpc error: code = NotFound desc = NotFound: This exclusion filter does not exist\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a RUM exclusion filter returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "frozen_at": "2026-11-26T12:37:42.574Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/exclusion/00000000-0000-0000-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"rpc error: code = NotFound desc = NotFound: This exclusion filter does not exist\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a RUM exclusion filter returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
       "frozen_at": "2025-03-05T20:03:40.119Z",
       "interactions": [
         {
@@ -164,6 +414,122 @@
         }
       ],
       "scenario": "Delete a RUM retention filter returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "frozen_at": "2026-11-26T12:37:42.850Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/exclusion/00000000-0000-0000-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"rpc error: code = NotFound desc = NotFound: This exclusion filter does not exist\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get a RUM exclusion filter returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "frozen_at": "2026-11-26T12:37:43.083Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": true,
+                    "event_type": "error",
+                    "name": "Test-Get_a_RUM_exclusion_filter_returns_OK_response-1795696663",
+                    "query": "@error.message:*extension*"
+                  },
+                  "type": "exclusion_filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/exclusion",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"8c330187-f5e7-4d02-942f-558402b31d21\",\"type\":\"exclusion_filters\",\"attributes\":{\"enabled\":true,\"event_type\":\"error\",\"name\":\"Test-Get_a_RUM_exclusion_filter_returns_OK_response-1795696663\",\"query\":\"@error.message:*extension*\"},\"meta\":{\"enabled_at\":1795696663285,\"updated_at\":1795696663285,\"updated_by_handle\":\"frog@datadoghq.com\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/exclusion/8c330187-f5e7-4d02-942f-558402b31d21",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"8c330187-f5e7-4d02-942f-558402b31d21\",\"type\":\"exclusion_filters\",\"attributes\":{\"enabled\":true,\"event_type\":\"error\",\"name\":\"Test-Get_a_RUM_exclusion_filter_returns_OK_response-1795696663\",\"query\":\"@error.message:*extension*\"},\"meta\":{\"enabled_at\":1795696663285,\"updated_at\":1795696663285,\"updated_by_handle\":\"frog@datadoghq.com\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/exclusion/8c330187-f5e7-4d02-942f-558402b31d21",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get a RUM exclusion filter returns \"OK\" response",
       "version": "v2"
     },
     {
@@ -230,6 +596,203 @@
     },
     {
       "feature": "Rum Retention Filters",
+      "frozen_at": "2026-11-26T12:37:43.827Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/permanent/unknown_permanent_filter",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"unknown permanent retention filter ID: unknown_permanent_filter\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get a permanent RUM retention filter returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "frozen_at": "2026-11-26T12:37:44.063Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "test-rum-dd9e2d43960701bf",
+                    "type": "ios"
+                  },
+                  "type": "rum_application_create"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/applications",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"1ab57f03-36dc-4990-890b-2257141a79d1\",\"type\":\"rum_application\",\"attributes\":{\"api_key_id\":2400374,\"apm_rum_flat_sampling_replay_enabled\":true,\"apm_rum_flat_sampling_replay_sample_rate\":1,\"application_id\":\"1ab57f03-36dc-4990-890b-2257141a79d1\",\"client_token\":\"pub0c22fd17b536e29fc3f0c8fea07c5ecd\",\"created_at\":1795696664438,\"created_by_handle\":\"frog@datadoghq.com\",\"error_tracking_exclusion_filter_enabled\":false,\"external_feeds\":[],\"is_active\":false,\"name\":\"test-rum-dd9e2d43960701bf\",\"ootb_metrics_installed\":false,\"org_id\":321813,\"product_analytics_replay_sample_rate\":100,\"product_scales\":{\"rum_event_processing_scale\":{\"state\":\"ALL\",\"last_modified_at\":1795696664438},\"product_analytics_retention_scale\":{\"state\":\"NONE\",\"last_modified_at\":1795696664438}},\"short_name\":\"test_rum_dd9e2d43960701bf\",\"tags\":[],\"type\":\"ios\",\"updated_at\":1795696664438,\"updated_by_handle\":\"frog@datadoghq.com\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/rum/applications/1ab57f03-36dc-4990-890b-2257141a79d1/retention_filters/permanent/synthetics_sessions",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"synthetics_sessions\",\"type\":\"permanent_retention_filters\",\"attributes\":{\"cross_product_sampling\":{\"trace_sample_rate\":100,\"trace_enabled\":false},\"description\":\"All sessions generated by Synthetics are retained at 100%.\",\"editability\":{\"trace_editable\":true},\"name\":\"Synthetics Sessions\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/applications/1ab57f03-36dc-4990-890b-2257141a79d1",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get a permanent RUM retention filter returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "frozen_at": "2026-11-26T12:37:45.176Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "test-rum-c8340caf8a50ac1a",
+                    "type": "ios"
+                  },
+                  "type": "rum_application_create"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/applications",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"93086629-2753-4017-8a4c-3de6a50854ce\",\"type\":\"rum_application\",\"attributes\":{\"api_key_id\":2400375,\"apm_rum_flat_sampling_replay_enabled\":true,\"apm_rum_flat_sampling_replay_sample_rate\":1,\"application_id\":\"93086629-2753-4017-8a4c-3de6a50854ce\",\"client_token\":\"pube9932496949276dca297a77fea9ea8c7\",\"created_at\":1795696665558,\"created_by_handle\":\"frog@datadoghq.com\",\"error_tracking_exclusion_filter_enabled\":false,\"external_feeds\":[],\"is_active\":false,\"name\":\"test-rum-c8340caf8a50ac1a\",\"ootb_metrics_installed\":false,\"org_id\":321813,\"product_analytics_replay_sample_rate\":100,\"product_scales\":{\"rum_event_processing_scale\":{\"state\":\"ALL\",\"last_modified_at\":1795696665558},\"product_analytics_retention_scale\":{\"state\":\"NONE\",\"last_modified_at\":1795696665558}},\"short_name\":\"test_rum_c8340caf8a50ac1a\",\"tags\":[],\"type\":\"ios\",\"updated_at\":1795696665558,\"updated_by_handle\":\"frog@datadoghq.com\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/rum/applications/93086629-2753-4017-8a4c-3de6a50854ce/retention_filters/exclusion",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"error_tracking_exclusion_filter\",\"type\":\"exclusion_filters\",\"attributes\":{\"enabled\":false,\"name\":\"Ignored / Excluded errors from Error Tracking\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/applications/93086629-2753-4017-8a4c-3de6a50854ce",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get all RUM exclusion filters returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
       "frozen_at": "2025-03-03T21:21:23.741Z",
       "interactions": [
         {
@@ -257,6 +820,89 @@
         }
       ],
       "scenario": "Get all RUM retention filters returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "frozen_at": "2026-11-26T12:37:46.347Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "test-rum-9b246be8c16ac10d",
+                    "type": "ios"
+                  },
+                  "type": "rum_application_create"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/applications",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"0cf88e36-f657-4cf9-8f14-73319b98b1bb\",\"type\":\"rum_application\",\"attributes\":{\"api_key_id\":2400376,\"apm_rum_flat_sampling_replay_enabled\":true,\"apm_rum_flat_sampling_replay_sample_rate\":1,\"application_id\":\"0cf88e36-f657-4cf9-8f14-73319b98b1bb\",\"client_token\":\"pub83e124de36e7a77eaacad29029291a90\",\"created_at\":1795696666738,\"created_by_handle\":\"frog@datadoghq.com\",\"error_tracking_exclusion_filter_enabled\":false,\"external_feeds\":[],\"is_active\":false,\"name\":\"test-rum-9b246be8c16ac10d\",\"ootb_metrics_installed\":false,\"org_id\":321813,\"product_analytics_replay_sample_rate\":100,\"product_scales\":{\"rum_event_processing_scale\":{\"state\":\"ALL\",\"last_modified_at\":1795696666738},\"product_analytics_retention_scale\":{\"state\":\"NONE\",\"last_modified_at\":1795696666738}},\"short_name\":\"test_rum_9b246be8c16ac10d\",\"tags\":[],\"type\":\"ios\",\"updated_at\":1795696666738,\"updated_by_handle\":\"frog@datadoghq.com\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/rum/applications/0cf88e36-f657-4cf9-8f14-73319b98b1bb/retention_filters/permanent",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"synthetics_sessions\",\"type\":\"permanent_retention_filters\",\"attributes\":{\"cross_product_sampling\":{\"trace_sample_rate\":100,\"trace_enabled\":false},\"description\":\"All sessions generated by Synthetics are retained at 100%.\",\"editability\":{\"trace_editable\":true},\"name\":\"Synthetics Sessions\"}},{\"id\":\"forced_replay_sessions\",\"type\":\"permanent_retention_filters\",\"attributes\":{\"cross_product_sampling\":{\"trace_sample_rate\":100,\"trace_enabled\":false},\"description\":\"All sessions with a forced replay are retained at 100%.\",\"editability\":{\"trace_editable\":true},\"name\":\"Sessions with forced replays\"}},{\"id\":\"rum_apm_flat_sampling\",\"type\":\"permanent_retention_filters\",\"attributes\":{\"cross_product_sampling\":{\"trace_sample_rate\":100,\"trace_enabled\":true},\"description\":\"Configures APM trace sampling for RUM sessions using flat sampling.\",\"editability\":{\"trace_editable\":false},\"name\":\"RUM APM Flat Sampling\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/applications/0cf88e36-f657-4cf9-8f14-73319b98b1bb",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get all permanent RUM retention filters returns \"OK\" response",
       "version": "v2"
     },
     {
@@ -341,6 +987,217 @@
         }
       ],
       "scenario": "Order RUM retention filters returns \"Ordered\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "frozen_at": "2026-11-26T12:37:47.491Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "Test-Update_a_RUM_exclusion_filter_returns_Bad_Request_response-1795696667"
+                  },
+                  "id": "error_tracking_exclusion_filter",
+                  "type": "exclusion_filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/exclusion/error_tracking_exclusion_filter",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"only 'enabled' can be updated on the error tracking exclusion filter\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Update a RUM exclusion filter returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "frozen_at": "2026-11-26T12:37:47.727Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": true
+                  },
+                  "id": "00000000-0000-0000-0000-000000000000",
+                  "type": "exclusion_filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/exclusion/error_tracking_exclusion_filter",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"409\",\"title\":\"Conflict\",\"detail\":\"ID provided in the payload does not match the url parameter\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Conflict",
+            "status": 409
+          }
+        }
+      ],
+      "scenario": "Update a RUM exclusion filter returns \"Conflict\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "frozen_at": "2026-11-26T12:37:47.970Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": false
+                  },
+                  "id": "00000000-0000-0000-0000-000000000000",
+                  "type": "exclusion_filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/exclusion/00000000-0000-0000-0000-000000000000",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"rpc error: code = NotFound desc = NotFound: This exclusion filter does not exist\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Update a RUM exclusion filter returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "frozen_at": "2026-11-26T12:37:48.205Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": true,
+                    "event_type": "error",
+                    "name": "Test-Update_a_RUM_exclusion_filter_returns_Updated_response-1795696668",
+                    "query": "@error.message:*extension*"
+                  },
+                  "type": "exclusion_filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/exclusion",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"f30c05db-7840-40b2-b237-4a7e872cfca9\",\"type\":\"exclusion_filters\",\"attributes\":{\"enabled\":true,\"event_type\":\"error\",\"name\":\"Test-Update_a_RUM_exclusion_filter_returns_Updated_response-1795696668\",\"query\":\"@error.message:*extension*\"},\"meta\":{\"enabled_at\":1795696668397,\"updated_at\":1795696668397,\"updated_by_handle\":\"frog@datadoghq.com\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "enabled": false,
+                    "name": "Test-Update_a_RUM_exclusion_filter_returns_Updated_response-1795696668-updated"
+                  },
+                  "id": "f30c05db-7840-40b2-b237-4a7e872cfca9",
+                  "type": "exclusion_filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/exclusion/f30c05db-7840-40b2-b237-4a7e872cfca9",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"f30c05db-7840-40b2-b237-4a7e872cfca9\",\"type\":\"exclusion_filters\",\"attributes\":{\"enabled\":false,\"event_type\":\"error\",\"name\":\"Test-Update_a_RUM_exclusion_filter_returns_Updated_response-1795696668-updated\",\"query\":\"@error.message:*extension*\"},\"meta\":{\"enabled_at\":1795696668397,\"updated_at\":1795696668651,\"updated_by_handle\":\"frog@datadoghq.com\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/exclusion/f30c05db-7840-40b2-b237-4a7e872cfca9",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a RUM exclusion filter returns \"Updated\" response",
       "version": "v2"
     },
     {
@@ -470,6 +1327,184 @@
         }
       ],
       "scenario": "Update a RUM retention filter returns \"Updated\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "frozen_at": "2026-11-26T12:37:48.959Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "cross_product_sampling": {
+                      "trace_enabled": true,
+                      "trace_sample_rate": 25
+                    }
+                  },
+                  "id": "rum_apm_flat_sampling",
+                  "type": "permanent_retention_filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/permanent/rum_apm_flat_sampling",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"trace fields are not editable for the rum_apm_flat_sampling filter\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Update a permanent RUM retention filter returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "frozen_at": "2026-11-26T12:37:49.221Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "cross_product_sampling": {
+                      "trace_enabled": true,
+                      "trace_sample_rate": 25
+                    }
+                  },
+                  "id": "unknown_permanent_filter",
+                  "type": "permanent_retention_filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/rum/applications/a33671aa-24fd-4dcd-ba4b-5bbdbafe7690/retention_filters/permanent/unknown_permanent_filter",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"unknown permanent retention filter ID: unknown_permanent_filter\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Update a permanent RUM retention filter returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "frozen_at": "2026-11-26T12:37:49.543Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "name": "test-rum-8150bd5dd82a52b4",
+                    "type": "ios"
+                  },
+                  "type": "rum_application_create"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/applications",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"26b389be-fe38-40f4-ac66-3c42a1766419\",\"type\":\"rum_application\",\"attributes\":{\"api_key_id\":2400377,\"apm_rum_flat_sampling_replay_enabled\":true,\"apm_rum_flat_sampling_replay_sample_rate\":1,\"application_id\":\"26b389be-fe38-40f4-ac66-3c42a1766419\",\"client_token\":\"pub78c6ac957b8979185a92f67e210b4c47\",\"created_at\":1795696670099,\"created_by_handle\":\"frog@datadoghq.com\",\"error_tracking_exclusion_filter_enabled\":false,\"external_feeds\":[],\"is_active\":false,\"name\":\"test-rum-8150bd5dd82a52b4\",\"ootb_metrics_installed\":false,\"org_id\":321813,\"product_analytics_replay_sample_rate\":100,\"product_scales\":{\"rum_event_processing_scale\":{\"state\":\"ALL\",\"last_modified_at\":1795696670099},\"product_analytics_retention_scale\":{\"state\":\"NONE\",\"last_modified_at\":1795696670099}},\"short_name\":\"test_rum_8150bd5dd82a52b4\",\"tags\":[],\"type\":\"ios\",\"updated_at\":1795696670099,\"updated_by_handle\":\"frog@datadoghq.com\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "cross_product_sampling": {
+                      "trace_enabled": true,
+                      "trace_sample_rate": 25
+                    }
+                  },
+                  "id": "synthetics_sessions",
+                  "type": "permanent_retention_filters"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "PATCH",
+            "path": "/api/v2/rum/applications/26b389be-fe38-40f4-ac66-3c42a1766419/retention_filters/permanent/synthetics_sessions",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"synthetics_sessions\",\"type\":\"permanent_retention_filters\",\"attributes\":{\"cross_product_sampling\":{\"trace_sample_rate\":25,\"trace_enabled\":true},\"description\":\"All sessions generated by Synthetics are retained at 100%.\",\"editability\":{\"trace_editable\":true},\"name\":\"Synthetics Sessions\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/applications/26b389be-fe38-40f4-ac66-3c42a1766419",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Update a permanent RUM retention filter returns \"Updated\" response",
       "version": "v2"
     }
   ],

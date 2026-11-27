@@ -1,0 +1,51 @@
+{
+  "api": "RumRetentionFilters",
+  "expected_status": 404,
+  "feature": "Rum Retention Filters",
+  "id": "v2/Rum Retention Filters/Get a permanent RUM retention filter returns \"Not Found\" response",
+  "operation_id": "GetPermanentRetentionFilter",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "app_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "permanent_rf_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": "RumPermanentRetentionFilterID",
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "unknown_permanent_filter"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/applications/{app_id}/retention_filters/permanent/{permanent_rf_id}"
+  },
+  "scenario": "Get a permanent RUM retention filter returns \"Not Found\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

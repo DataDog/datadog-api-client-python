@@ -13,13 +13,13 @@ from datadog_api_client.v2.model.rum_exclusion_filter_type import RumExclusionFi
 
 body = RumExclusionFilterCreateRequest(
     data=RumExclusionFilterCreateData(
+        type=RumExclusionFilterType.EXCLUSION_FILTERS,
         attributes=RumExclusionFilterCreateAttributes(
+            name="Example-Rum-Retention-Filter",
             enabled=True,
             event_type=RumExclusionFilterEventType.ERROR,
-            name="Exclude noisy browser extension errors",
             query="@error.message:*extension*",
         ),
-        type=RumExclusionFilterType.EXCLUSION_FILTERS,
     ),
 )
 
@@ -27,6 +27,6 @@ configuration = Configuration()
 configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = RumRetentionFiltersApi(api_client)
-    response = api_instance.create_exclusion_filter(app_id="app_id", body=body)
+    response = api_instance.create_exclusion_filter(app_id="a33671aa-24fd-4dcd-ba4b-5bbdbafe7690", body=body)
 
     print(response)

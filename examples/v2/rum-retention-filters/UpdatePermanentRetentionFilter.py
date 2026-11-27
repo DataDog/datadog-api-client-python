@@ -16,16 +16,19 @@ from datadog_api_client.v2.model.rum_permanent_retention_filter_update_request i
     RumPermanentRetentionFilterUpdateRequest,
 )
 
+# there is a valid "rum_application" in the system
+RUM_APPLICATION_DATA_ID = environ["RUM_APPLICATION_DATA_ID"]
+
 body = RumPermanentRetentionFilterUpdateRequest(
     data=RumPermanentRetentionFilterUpdateData(
+        id=RumPermanentRetentionFilterID.SYNTHETICS_SESSIONS,
+        type=RumPermanentRetentionFilterType.PERMANENT_RETENTION_FILTERS,
         attributes=RumPermanentRetentionFilterUpdateAttributes(
             cross_product_sampling=RumCrossProductSamplingUpdate(
                 trace_enabled=True,
                 trace_sample_rate=25.0,
             ),
         ),
-        id=RumPermanentRetentionFilterID.SYNTHETICS_SESSIONS,
-        type=RumPermanentRetentionFilterType.PERMANENT_RETENTION_FILTERS,
     ),
 )
 
@@ -34,7 +37,7 @@ configuration.access_token = environ["DD_BEARER_TOKEN"]
 with ApiClient(configuration) as api_client:
     api_instance = RumRetentionFiltersApi(api_client)
     response = api_instance.update_permanent_retention_filter(
-        app_id="app_id", permanent_rf_id=RumPermanentRetentionFilterID.SYNTHETICS_SESSIONS, body=body
+        app_id=RUM_APPLICATION_DATA_ID, permanent_rf_id=RumPermanentRetentionFilterID.SYNTHETICS_SESSIONS, body=body
     )
 
     print(response)
