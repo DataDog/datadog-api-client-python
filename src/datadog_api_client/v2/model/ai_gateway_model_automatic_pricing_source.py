@@ -16,7 +16,6 @@ class AiGatewayModelAutomaticPricingSource(ModelNormal):
         return {
             "match_method": (str,),
             "model_id": (str,),
-            "name": (str,),
             "provider_id": (str,),
             "revision": (str,),
         }
@@ -24,12 +23,11 @@ class AiGatewayModelAutomaticPricingSource(ModelNormal):
     attribute_map = {
         "match_method": "match_method",
         "model_id": "model_id",
-        "name": "name",
         "provider_id": "provider_id",
         "revision": "revision",
     }
 
-    def __init__(self_, match_method: str, model_id: str, name: str, provider_id: str, revision: str, **kwargs):
+    def __init__(self_, match_method: str, model_id: str, provider_id: str, revision: str, **kwargs):
         """
         The pricing source entry the price was read from.
 
@@ -38,9 +36,6 @@ class AiGatewayModelAutomaticPricingSource(ModelNormal):
 
         :param model_id: Model identifier in the source.
         :type model_id: str
-
-        :param name: Pricing source name.
-        :type name: str
 
         :param provider_id: Provider identifier in the source.
         :type provider_id: str
@@ -52,6 +47,5 @@ class AiGatewayModelAutomaticPricingSource(ModelNormal):
 
         self_.match_method = match_method
         self_.model_id = model_id
-        self_.name = name
         self_.provider_id = provider_id
         self_.revision = revision

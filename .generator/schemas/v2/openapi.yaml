@@ -9708,7 +9708,7 @@ components:
         - AVAILABLE_TOOLS
         - GENERATION_SETTINGS
     AiGatewayModelAutomaticPricing:
-      description: The published models.dev price. Present only when it is the effective price.
+      description: The automatically synced published price. Present only when it is the effective price.
       properties:
         last_validated_at:
           description: Time the price was last revalidated against the source.
@@ -9869,10 +9869,6 @@ components:
           description: Model identifier in the source.
           example: gpt-5.2-codex
           type: string
-        name:
-          description: Pricing source name.
-          example: models.dev
-          type: string
         provider_id:
           description: Provider identifier in the source.
           example: openai
@@ -9882,7 +9878,6 @@ components:
           example: source-revision
           type: string
       required:
-        - name
         - provider_id
         - model_id
         - revision
@@ -10601,10 +10596,6 @@ components:
           description: Model identifier in the metadata source provider catalog.
           example: gpt-5.2-codex
           type: string
-        name:
-          description: Metadata source name.
-          example: models.dev
-          type: string
         observed_at:
           description: Last successful observation of this valid source record. Retained invalid entries keep their previous timestamp.
           format: date-time
@@ -10617,7 +10608,6 @@ components:
           description: SHA-256 content revision of the source snapshot that supplied this record.
           type: string
       required:
-        - name
         - provider
         - model_id
         - matched_by
@@ -10668,7 +10658,7 @@ components:
       description: Attributes of a model pricing resource.
       properties:
         authoritative:
-          description: True when models.dev pricing is authoritative for this organization and provider.
+          description: True when automatic pricing is authoritative for this organization and provider.
           example: true
           type: boolean
         automatic_pricing:
@@ -10812,16 +10802,16 @@ components:
     AiGatewayModelPricingEffectiveSource:
       description: Effective source of the model pricing data.
       enum:
+        - automatic
         - catalog_auto
         - model_override
-        - models_dev
         - unpriced
         - unknown
       type: string
       x-enum-varnames:
+        - AUTOMATIC
         - CATALOG_AUTO
         - MODEL_OVERRIDE
-        - MODELS_DEV
         - UNPRICED
         - UNKNOWN
     AiGatewayModelPricingRates:
