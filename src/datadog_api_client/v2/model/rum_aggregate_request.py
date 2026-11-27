@@ -59,7 +59,7 @@ class RUMAggregateRequest(ModelNormal):
         The object sent with the request to retrieve aggregation buckets of RUM events from your organization.
         ``filter.indexes`` is not supported and is ignored.
 
-        :param compute: The list of metrics or timeseries to compute for the retrieved buckets.
+        :param compute: The list of metrics or timeseries to compute for the retrieved buckets. All rules must have the same ``type`` ; mixing ``total`` and ``timeseries`` rules is rejected.
         :type compute: [RUMCompute], optional
 
         :param filter: The search and filter query settings.
