@@ -117,37 +117,23 @@ Feature: Sensitive Data Scanner
     Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/sensitive-data-scanner
-  Scenario: Get Agent Observability Scanning Group returns "Bad Request" response
+  Scenario: Get Target Scanning Group returns "Bad Request" response
     Given new "GetScanningGroup" request
     And request contains "group_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 400 Bad Request
 
   @generated @skip @team:ddoghq/sensitive-data-scanner
-  Scenario: Get Agent Observability Scanning Group returns "Not Found" response
+  Scenario: Get Target Scanning Group returns "Not Found" response
     Given new "GetScanningGroup" request
     And request contains "group_id" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 404 Not Found
 
   @generated @skip @team:ddoghq/sensitive-data-scanner
-  Scenario: Get Agent Observability Scanning Group returns "OK" response
+  Scenario: Get Target Scanning Group returns "OK" response
     Given new "GetScanningGroup" request
     And request contains "group_id" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 200 OK
-
-  @generated @skip @team:ddoghq/sensitive-data-scanner
-  Scenario: List Agent Observability Scanning Groups returns "Bad Request" response
-    Given new "ListTargetScanningGroups" request
-    And request contains "filter[target]" parameter from "REPLACE.ME"
-    When the request is sent
-    Then the response status is 400 Bad Request
-
-  @generated @skip @team:ddoghq/sensitive-data-scanner
-  Scenario: List Agent Observability Scanning Groups returns "OK" response
-    Given new "ListTargetScanningGroups" request
-    And request contains "filter[target]" parameter from "REPLACE.ME"
     When the request is sent
     Then the response status is 200 OK
 
@@ -165,6 +151,20 @@ Feature: Sensitive Data Scanner
     When the request is sent
     Then the response status is 200 OK
     And the response "included" has item with field "id" with value "{{ group.data.id }}"
+
+  @generated @skip @team:ddoghq/sensitive-data-scanner
+  Scenario: List Target Scanning Groups returns "Bad Request" response
+    Given new "ListTargetScanningGroups" request
+    And request contains "filter[target]" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 400 Bad Request
+
+  @generated @skip @team:ddoghq/sensitive-data-scanner
+  Scenario: List Target Scanning Groups returns "OK" response
+    Given new "ListTargetScanningGroups" request
+    And request contains "filter[target]" parameter from "REPLACE.ME"
+    When the request is sent
+    Then the response status is 200 OK
 
   @generated @skip @team:ddoghq/sensitive-data-scanner
   Scenario: List standard patterns returns "Bad Request" response

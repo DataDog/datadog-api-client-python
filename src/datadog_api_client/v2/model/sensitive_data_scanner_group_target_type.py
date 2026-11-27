@@ -14,16 +14,18 @@ from typing import ClassVar
 
 class SensitiveDataScannerGroupTargetType(ModelSimple):
     """
-    Type of target whose scanning groups are served by the target-scoped group routes. `llm_observability` is Agent Observability.
+    Type of target whose scanning groups are served by the target-scoped group routes. `llm_observability` is Agent Observability, `ai_guard` is AI Guard.
 
-    :param value: If omitted defaults to "llm_observability". Must be one of ["llm_observability"].
+    :param value: Must be one of ["llm_observability", "ai_guard"].
     :type value: str
     """
 
     allowed_values = {
         "llm_observability",
+        "ai_guard",
     }
     LLM_OBSERVABILITY: ClassVar["SensitiveDataScannerGroupTargetType"]
+    AI_GUARD: ClassVar["SensitiveDataScannerGroupTargetType"]
 
     @cached_property
     def openapi_types(_):
@@ -33,3 +35,4 @@ class SensitiveDataScannerGroupTargetType(ModelSimple):
 
 
 SensitiveDataScannerGroupTargetType.LLM_OBSERVABILITY = SensitiveDataScannerGroupTargetType("llm_observability")
+SensitiveDataScannerGroupTargetType.AI_GUARD = SensitiveDataScannerGroupTargetType("ai_guard")

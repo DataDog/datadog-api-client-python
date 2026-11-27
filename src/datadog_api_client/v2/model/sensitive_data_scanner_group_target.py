@@ -34,7 +34,7 @@ class SensitiveDataScannerGroupTarget(ModelNormal):
         """
         A target the scanning group applies to.
 
-        :param type: Type of target whose scanning groups are served by the target-scoped group routes. ``llm_observability`` is Agent Observability.
+        :param type: Type of target whose scanning groups are served by the target-scoped group routes. ``llm_observability`` is Agent Observability, ``ai_guard`` is AI Guard.
         :type type: SensitiveDataScannerGroupTargetType
         """
         super().__init__(kwargs)
