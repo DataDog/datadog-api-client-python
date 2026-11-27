@@ -10,7 +10,6 @@ from datadog_api_client.v2.model.sourcemap_symbol_type import SourcemapSymbolTyp
 
 configuration = Configuration()
 configuration.access_token = environ["DD_BEARER_TOKEN"]
-configuration.unstable_operations["list_sourcemaps"] = True
 with ApiClient(configuration) as api_client:
     api_instance = RUMApi(api_client)
     response = api_instance.list_sourcemaps(
