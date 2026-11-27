@@ -12,18 +12,16 @@ from datadog_api_client.v2.model.teams_ownership_mapping_create_data_attributes 
 from datadog_api_client.v2.model.teams_ownership_mapping_create_request import TeamsOwnershipMappingCreateRequest
 from datadog_api_client.v2.model.teams_ownership_mapping_type import TeamsOwnershipMappingType
 from datadog_api_client.v2.model.teams_ownership_match_type import TeamsOwnershipMatchType
-from uuid import UUID
 
 body = TeamsOwnershipMappingCreateRequest(
     data=TeamsOwnershipMappingCreateData(
-        attributes=TeamsOwnershipMappingCreateDataAttributes(
-            application_id=UUID("11111111-2222-3333-4444-555555555555"),
-            match_type=TeamsOwnershipMatchType.EXACT,
-            service="web-checkout",
-            team_handle="team-rum",
-            view_name="/checkout",
-        ),
         type=TeamsOwnershipMappingType.TEAMS_OWNERSHIP_MAPPINGS,
+        attributes=TeamsOwnershipMappingCreateDataAttributes(
+            team_handle="team-rum",
+            view_name="/checkout-examplerumteamsownership",
+            service="web-checkout-examplerumteamsownership",
+            match_type=TeamsOwnershipMatchType.EXACT,
+        ),
     ),
 )
 

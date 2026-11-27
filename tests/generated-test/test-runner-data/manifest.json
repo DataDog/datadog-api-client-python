@@ -10851,6 +10851,104 @@
       "version": "v2"
     },
     {
+      "feature": "Rum Teams Ownership",
+      "feature_file": "../../v2/features/rum_teams_ownership.feature",
+      "file": "v2/rum-teams-ownership/bulk-create-and-remove-teams-ownership-mappings-returns-bad-request-one-or-more-operations-failed-validation-so-none-of-the-operations-were-applied-response.json",
+      "scenario": "Bulk create and remove teams ownership mappings returns \"Bad Request. One or more operations failed validation, so none of the operations were applied.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Teams Ownership",
+      "feature_file": "../../v2/features/rum_teams_ownership.feature",
+      "file": "v2/rum-teams-ownership/bulk-create-and-remove-teams-ownership-mappings-returns-not-found-one-or-more-mappings-requested-for-removal-do-not-exist-response.json",
+      "scenario": "Bulk create and remove teams ownership mappings returns \"Not Found. One or more mappings requested for removal do not exist.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Teams Ownership",
+      "feature_file": "../../v2/features/rum_teams_ownership.feature",
+      "file": "v2/rum-teams-ownership/bulk-create-and-remove-teams-ownership-mappings-returns-ok-response.json",
+      "scenario": "Bulk create and remove teams ownership mappings returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Teams Ownership",
+      "feature_file": "../../v2/features/rum_teams_ownership.feature",
+      "file": "v2/rum-teams-ownership/bulk-create-teams-ownership-mappings-without-a-service-or-application-id-returns-bad-request-response.json",
+      "scenario": "Bulk create teams ownership mappings without a service or application ID returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Teams Ownership",
+      "feature_file": "../../v2/features/rum_teams_ownership.feature",
+      "file": "v2/rum-teams-ownership/create-a-teams-ownership-mapping-returns-bad-request-response.json",
+      "scenario": "Create a teams ownership mapping returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Teams Ownership",
+      "feature_file": "../../v2/features/rum_teams_ownership.feature",
+      "file": "v2/rum-teams-ownership/create-a-teams-ownership-mapping-returns-created-response.json",
+      "scenario": "Create a teams ownership mapping returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Teams Ownership",
+      "feature_file": "../../v2/features/rum_teams_ownership.feature",
+      "file": "v2/rum-teams-ownership/delete-a-teams-ownership-mapping-returns-no-content-response.json",
+      "scenario": "Delete a teams ownership mapping returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Teams Ownership",
+      "feature_file": "../../v2/features/rum_teams_ownership.feature",
+      "file": "v2/rum-teams-ownership/delete-a-teams-ownership-mapping-returns-not-found-response.json",
+      "scenario": "Delete a teams ownership mapping returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Teams Ownership",
+      "feature_file": "../../v2/features/rum_teams_ownership.feature",
+      "file": "v2/rum-teams-ownership/get-a-teams-ownership-mapping-returns-not-found-response.json",
+      "scenario": "Get a teams ownership mapping returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Teams Ownership",
+      "feature_file": "../../v2/features/rum_teams_ownership.feature",
+      "file": "v2/rum-teams-ownership/get-a-teams-ownership-mapping-returns-ok-response.json",
+      "scenario": "Get a teams ownership mapping returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Teams Ownership",
+      "feature_file": "../../v2/features/rum_teams_ownership.feature",
+      "file": "v2/rum-teams-ownership/list-teams-ownership-mappings-returns-bad-request-response.json",
+      "scenario": "List teams ownership mappings returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Teams Ownership",
+      "feature_file": "../../v2/features/rum_teams_ownership.feature",
+      "file": "v2/rum-teams-ownership/list-teams-ownership-mappings-returns-ok-response.json",
+      "scenario": "List teams ownership mappings returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Teams Ownership",
+      "feature_file": "../../v2/features/rum_teams_ownership.feature",
+      "file": "v2/rum-teams-ownership/list-teams-ownership-rules-returns-bad-request-response.json",
+      "scenario": "List teams ownership rules returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Teams Ownership",
+      "feature_file": "../../v2/features/rum_teams_ownership.feature",
+      "file": "v2/rum-teams-ownership/list-teams-ownership-rules-returns-ok-response.json",
+      "scenario": "List teams ownership rules returns \"OK\" response",
+      "version": "v2"
+    },
+    {
       "feature": "Scorecards",
       "feature_file": "../../v2/features/scorecards.feature",
       "file": "v2/scorecards/create-a-new-rule-returns-bad-request-response.json",

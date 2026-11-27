@@ -1,0 +1,35 @@
+{
+  "api": "RumTeamsOwnership",
+  "expected_status": 204,
+  "feature": "Rum Teams Ownership",
+  "id": "v2/Rum Teams Ownership/Delete a teams ownership mapping returns \"No Content\" response",
+  "operation_id": "DeleteTeamsOwnershipMapping",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "DELETE",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "teams_ownership_mapping.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/config/teams-ownership/mappings/{id}"
+  },
+  "scenario": "Delete a teams ownership mapping returns \"No Content\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

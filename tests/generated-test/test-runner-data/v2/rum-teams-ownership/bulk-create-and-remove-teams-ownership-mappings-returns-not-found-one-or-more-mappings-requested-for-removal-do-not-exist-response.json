@@ -1,0 +1,36 @@
+{
+  "api": "RumTeamsOwnership",
+  "expected_status": 404,
+  "feature": "Rum Teams Ownership",
+  "id": "v2/Rum Teams Ownership/Bulk create and remove teams ownership mappings returns \"Not Found. One or more mappings requested for removal do not exist.\" response",
+  "operation_id": "CreateTeamsOwnershipMappingsBatch",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "TeamsOwnershipMappingBatchRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "atomic:operations": [
+          {
+            "op": "remove",
+            "ref": {
+              "id": "999999999",
+              "type": "teams_ownership_mappings"
+            }
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/rum/config/teams-ownership/mappings/operations"
+  },
+  "scenario": "Bulk create and remove teams ownership mappings returns \"Not Found. One or more mappings requested for removal do not exist.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

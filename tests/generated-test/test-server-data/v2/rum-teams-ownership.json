@@ -1,0 +1,795 @@
+{
+  "feature": "Rum Teams Ownership",
+  "recordings": [
+    {
+      "feature": "Rum Teams Ownership",
+      "frozen_at": "2026-11-26T11:04:13.069Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "atomic:operations": [
+                  {
+                    "data": {
+                      "attributes": {
+                        "application_id": "invalid-uuid",
+                        "match_type": "exact",
+                        "service": "web-checkout",
+                        "team_handle": "team-rum",
+                        "view_name": "/checkout"
+                      },
+                      "type": "teams_ownership_mappings"
+                    },
+                    "op": "add"
+                  }
+                ]
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/config/teams-ownership/mappings/operations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"attribute \\\"application_id\\\" must be a valid UUID, got \\\"invalid-uuid\\\"\"}]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Bulk create and remove teams ownership mappings returns \"Bad Request. One or more operations failed validation, so none of the operations were applied.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Teams Ownership",
+      "frozen_at": "2026-11-26T11:04:15.035Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "atomic:operations": [
+                  {
+                    "op": "remove",
+                    "ref": {
+                      "id": "999999999",
+                      "type": "teams_ownership_mappings"
+                    }
+                  }
+                ]
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/config/teams-ownership/mappings/operations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"could not delete IDs (not found): 999999999\"}]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Bulk create and remove teams ownership mappings returns \"Not Found. One or more mappings requested for removal do not exist.\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Teams Ownership",
+      "frozen_at": "2026-11-26T11:04:15.121Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "atomic:operations": [
+                  {
+                    "data": {
+                      "attributes": {
+                        "match_type": "exact",
+                        "service": "web-checkout-testbulkcreateandremoveteamsownershipmappingsreturnsokresponse1795691055",
+                        "team_handle": "team-rum",
+                        "view_name": "/checkout-testbulkcreateandremoveteamsownershipmappingsreturnsokresponse1795691055"
+                      },
+                      "type": "teams_ownership_mappings"
+                    },
+                    "op": "add"
+                  }
+                ]
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/config/teams-ownership/mappings/operations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"atomic:results\":[{\"data\":{\"type\":\"teams_ownership_mappings\",\"id\":\"1054914\",\"attributes\":{\"team_handle\":\"team-rum\",\"view_name\":\"/checkout-testbulkcreateandremoveteamsownershipmappingsreturnsokresponse1795691055\",\"service\":\"web-checkout-testbulkcreateandremoveteamsownershipmappingsreturnsokresponse1795691055\",\"application_id\":\"00000000-0000-0000-0000-000000000000\",\"org_id\":321813,\"created_at\":\"2026-11-26T11:04:15.164616Z\",\"created_by\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"match_type\":\"exact\"}}}]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/config/teams-ownership/mappings/1054914",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Bulk create and remove teams ownership mappings returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Teams Ownership",
+      "frozen_at": "2026-11-26T11:04:15.685Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "atomic:operations": [
+                  {
+                    "data": {
+                      "attributes": {
+                        "match_type": "exact",
+                        "team_handle": "team-rum",
+                        "view_name": "/checkout-testbulkcreateteamsownershipmappingswithoutaserviceorapplicationidreturnsbadrequestrespons1795691055"
+                      },
+                      "type": "teams_ownership_mappings"
+                    },
+                    "op": "add"
+                  }
+                ]
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/config/teams-ownership/mappings/operations",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"either application_id or service needs to be specified\"}]}"
+            },
+            "headers": {
+              "content-type": "application/json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Bulk create teams ownership mappings without a service or application ID returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Teams Ownership",
+      "frozen_at": "2026-11-26T11:04:15.731Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "application_id": "invalid-uuid",
+                    "match_type": "exact",
+                    "service": "web-checkout",
+                    "team_handle": "team-rum",
+                    "view_name": "/checkout"
+                  },
+                  "type": "teams_ownership_mappings"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/config/teams-ownership/mappings",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"invalid application_id \\\"invalid-uuid\\\": must be a valid UUID\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "Create a teams ownership mapping returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Teams Ownership",
+      "frozen_at": "2026-11-26T11:04:15.778Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "match_type": "exact",
+                    "service": "web-checkout-testcreateateamsownershipmappingreturnscreatedresponse1795691055",
+                    "team_handle": "team-rum",
+                    "view_name": "/checkout-testcreateateamsownershipmappingreturnscreatedresponse1795691055"
+                  },
+                  "type": "teams_ownership_mappings"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/config/teams-ownership/mappings",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"1054915\",\"type\":\"teams_ownership_mappings\",\"attributes\":{\"application_id\":\"00000000-0000-0000-0000-000000000000\",\"created_at\":\"2026-11-26T11:04:15.815481Z\",\"created_by\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"match_type\":\"exact\",\"org_id\":321813,\"service\":\"web-checkout-testcreateateamsownershipmappingreturnscreatedresponse1795691055\",\"team_handle\":\"team-rum\",\"view_name\":\"/checkout-testcreateateamsownershipmappingreturnscreatedresponse1795691055\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/config/teams-ownership/mappings/1054915",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Create a teams ownership mapping returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Teams Ownership",
+      "frozen_at": "2026-11-26T11:04:16.318Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "match_type": "exact",
+                    "service": "web-checkout-testdeleteateamsownershipmappingreturnsnocontentresponse1795691056",
+                    "team_handle": "team-rum",
+                    "view_name": "/checkout-testdeleteateamsownershipmappingreturnsnocontentresponse1795691056"
+                  },
+                  "type": "teams_ownership_mappings"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/config/teams-ownership/mappings",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"1054916\",\"type\":\"teams_ownership_mappings\",\"attributes\":{\"application_id\":\"00000000-0000-0000-0000-000000000000\",\"created_at\":\"2026-11-26T11:04:16.354769Z\",\"created_by\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"match_type\":\"exact\",\"org_id\":321813,\"service\":\"web-checkout-testdeleteateamsownershipmappingreturnsnocontentresponse1795691056\",\"team_handle\":\"team-rum\",\"view_name\":\"/checkout-testdeleteateamsownershipmappingreturnsnocontentresponse1795691056\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/config/teams-ownership/mappings/1054916",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/config/teams-ownership/mappings/1054916",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"teams ownership mapping not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a teams ownership mapping returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Teams Ownership",
+      "frozen_at": "2026-11-26T11:04:16.919Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/config/teams-ownership/mappings/999999999",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"teams ownership mapping not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Delete a teams ownership mapping returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Teams Ownership",
+      "frozen_at": "2026-11-26T11:04:16.965Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/rum/config/teams-ownership/mappings/999999999",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"404\",\"title\":\"Not Found\",\"detail\":\"teams ownership mapping not found\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Not Found",
+            "status": 404
+          }
+        }
+      ],
+      "scenario": "Get a teams ownership mapping returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Teams Ownership",
+      "frozen_at": "2026-11-26T11:04:17.017Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "match_type": "exact",
+                    "service": "web-checkout-testgetateamsownershipmappingreturnsokresponse1795691057",
+                    "team_handle": "team-rum",
+                    "view_name": "/checkout-testgetateamsownershipmappingreturnsokresponse1795691057"
+                  },
+                  "type": "teams_ownership_mappings"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/config/teams-ownership/mappings",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"1054917\",\"type\":\"teams_ownership_mappings\",\"attributes\":{\"application_id\":\"00000000-0000-0000-0000-000000000000\",\"created_at\":\"2026-11-26T11:04:17.066472Z\",\"created_by\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"match_type\":\"exact\",\"org_id\":321813,\"service\":\"web-checkout-testgetateamsownershipmappingreturnsokresponse1795691057\",\"team_handle\":\"team-rum\",\"view_name\":\"/checkout-testgetateamsownershipmappingreturnsokresponse1795691057\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/rum/config/teams-ownership/mappings/1054917",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"1054917\",\"type\":\"teams_ownership_mappings\",\"attributes\":{\"application_id\":\"00000000-0000-0000-0000-000000000000\",\"created_at\":\"2026-11-26T11:04:17.066472Z\",\"created_by\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"match_type\":\"exact\",\"org_id\":321813,\"service\":\"web-checkout-testgetateamsownershipmappingreturnsokresponse1795691057\",\"team_handle\":\"team-rum\",\"view_name\":\"/checkout-testgetateamsownershipmappingreturnsokresponse1795691057\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/config/teams-ownership/mappings/1054917",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "Get a teams ownership mapping returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Teams Ownership",
+      "frozen_at": "2026-11-26T11:04:17.576Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/rum/config/teams-ownership/mappings",
+            "query": [
+              [
+                "filter[application_id]",
+                "invalid-uuid"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"invalid application_id \\\"invalid-uuid\\\": must be a valid UUID\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "List teams ownership mappings returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Teams Ownership",
+      "frozen_at": "2026-11-26T11:04:17.627Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "match_type": "exact",
+                    "service": "web-checkout-testlistteamsownershipmappingsreturnsokresponse1795691057",
+                    "team_handle": "team-rum",
+                    "view_name": "/checkout-testlistteamsownershipmappingsreturnsokresponse1795691057"
+                  },
+                  "type": "teams_ownership_mappings"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/config/teams-ownership/mappings",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"1054918\",\"type\":\"teams_ownership_mappings\",\"attributes\":{\"application_id\":\"00000000-0000-0000-0000-000000000000\",\"created_at\":\"2026-11-26T11:04:17.664683Z\",\"created_by\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"match_type\":\"exact\",\"org_id\":321813,\"service\":\"web-checkout-testlistteamsownershipmappingsreturnsokresponse1795691057\",\"team_handle\":\"team-rum\",\"view_name\":\"/checkout-testlistteamsownershipmappingsreturnsokresponse1795691057\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/rum/config/teams-ownership/mappings",
+            "query": [
+              [
+                "filter[view_name]",
+                "/checkout-testlistteamsownershipmappingsreturnsokresponse1795691057"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"1054918\",\"type\":\"teams_ownership_mappings\",\"attributes\":{\"application_id\":\"00000000-0000-0000-0000-000000000000\",\"created_at\":\"2026-11-26T11:04:17.664683Z\",\"created_by\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"match_type\":\"exact\",\"org_id\":321813,\"service\":\"web-checkout-testlistteamsownershipmappingsreturnsokresponse1795691057\",\"team_handle\":\"team-rum\",\"view_name\":\"/checkout-testlistteamsownershipmappingsreturnsokresponse1795691057\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/config/teams-ownership/mappings/1054918",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "List teams ownership mappings returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Teams Ownership",
+      "frozen_at": "2026-11-26T11:04:18.173Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/rum/config/teams-ownership/rules",
+            "query": [
+              [
+                "filter[application_id]",
+                "invalid-uuid"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"errors\":[{\"status\":\"400\",\"title\":\"Bad Request\",\"detail\":\"invalid application_id \\\"invalid-uuid\\\": must be a valid UUID\"}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Bad Request",
+            "status": 400
+          }
+        }
+      ],
+      "scenario": "List teams ownership rules returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Teams Ownership",
+      "frozen_at": "2026-11-26T11:04:18.226Z",
+      "interactions": [
+        {
+          "request": {
+            "body": {
+              "type": "json",
+              "value": {
+                "data": {
+                  "attributes": {
+                    "match_type": "exact",
+                    "service": "web-checkout-testlistteamsownershiprulesreturnsokresponse1795691058",
+                    "team_handle": "team-rum",
+                    "view_name": "/checkout-testlistteamsownershiprulesreturnsokresponse1795691058"
+                  },
+                  "type": "teams_ownership_mappings"
+                }
+              }
+            },
+            "content_type": "application/json",
+            "method": "POST",
+            "path": "/api/v2/rum/config/teams-ownership/mappings",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":{\"id\":\"1054919\",\"type\":\"teams_ownership_mappings\",\"attributes\":{\"application_id\":\"00000000-0000-0000-0000-000000000000\",\"created_at\":\"2026-11-26T11:04:18.263072Z\",\"created_by\":\"028000b7-d90f-4d20-b4a9-6ff4a83b7950\",\"match_type\":\"exact\",\"org_id\":321813,\"service\":\"web-checkout-testlistteamsownershiprulesreturnsokresponse1795691058\",\"team_handle\":\"team-rum\",\"view_name\":\"/checkout-testlistteamsownershiprulesreturnsokresponse1795691058\"}}}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "Created",
+            "status": 201
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "GET",
+            "path": "/api/v2/rum/config/teams-ownership/rules",
+            "query": [
+              [
+                "filter[view_name]",
+                "/checkout-testlistteamsownershiprulesreturnsokresponse1795691058"
+              ]
+            ]
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": "{\"data\":[{\"id\":\"996f62e426e5a87d4bad9349129e648c20309a81a42cef29621c2a22e828b7b4\",\"type\":\"teams_ownership_grouped_mappings\",\"attributes\":{\"application_id\":\"00000000-0000-0000-0000-000000000000\",\"match_type\":\"exact\",\"service\":\"web-checkout-testlistteamsownershiprulesreturnsokresponse1795691058\",\"teams\":[{\"team_handle\":\"team-rum\",\"mapping_id\":\"1054919\"}],\"view_name\":\"/checkout-testlistteamsownershiprulesreturnsokresponse1795691058\"}}]}"
+            },
+            "headers": {
+              "content-type": "application/vnd.api+json"
+            },
+            "reason": "OK",
+            "status": 200
+          }
+        },
+        {
+          "request": {
+            "body": {
+              "type": "empty",
+              "value": null
+            },
+            "content_type": "",
+            "method": "DELETE",
+            "path": "/api/v2/rum/config/teams-ownership/mappings/1054919",
+            "query": []
+          },
+          "response": {
+            "body": {
+              "encoding": "text",
+              "value": ""
+            },
+            "headers": {},
+            "reason": "No Content",
+            "status": 204
+          }
+        }
+      ],
+      "scenario": "List teams ownership rules returns \"OK\" response",
+      "version": "v2"
+    }
+  ],
+  "schema_version": 1,
+  "version": "v2"
+}

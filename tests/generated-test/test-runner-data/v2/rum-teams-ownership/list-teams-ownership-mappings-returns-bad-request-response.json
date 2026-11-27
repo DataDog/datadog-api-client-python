@@ -1,0 +1,42 @@
+{
+  "api": "RumTeamsOwnership",
+  "expected_status": 400,
+  "feature": "Rum Teams Ownership",
+  "id": "v2/Rum Teams Ownership/List teams ownership mappings returns \"Bad Request\" response",
+  "operation_id": "ListTeamsOwnershipMappings",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "query",
+        "name": "filter[application_id]",
+        "required": false,
+        "schema": {
+          "format": null,
+          "items": {
+            "format": "uuid",
+            "ref": null,
+            "type": "string"
+          },
+          "ref": null,
+          "type": "array"
+        },
+        "source": {
+          "type": "literal",
+          "value": [
+            "invalid-uuid"
+          ]
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/config/teams-ownership/mappings"
+  },
+  "scenario": "List teams ownership mappings returns \"Bad Request\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

@@ -1,0 +1,42 @@
+{
+  "api": "RumTeamsOwnership",
+  "expected_status": 400,
+  "feature": "Rum Teams Ownership",
+  "id": "v2/Rum Teams Ownership/Bulk create and remove teams ownership mappings returns \"Bad Request. One or more operations failed validation, so none of the operations were applied.\" response",
+  "operation_id": "CreateTeamsOwnershipMappingsBatch",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "TeamsOwnershipMappingBatchRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "atomic:operations": [
+          {
+            "data": {
+              "attributes": {
+                "application_id": "invalid-uuid",
+                "match_type": "exact",
+                "service": "web-checkout",
+                "team_handle": "team-rum",
+                "view_name": "/checkout"
+              },
+              "type": "teams_ownership_mappings"
+            },
+            "op": "add"
+          }
+        ]
+      }
+    },
+    "content_type": "application/json",
+    "method": "POST",
+    "pagination": false,
+    "parameters": [],
+    "path": "/api/v2/rum/config/teams-ownership/mappings/operations"
+  },
+  "scenario": "Bulk create and remove teams ownership mappings returns \"Bad Request. One or more operations failed validation, so none of the operations were applied.\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
