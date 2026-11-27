@@ -151,7 +151,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:ddoghq/k9-investigation
+  @replay-only @team:ddoghq/k9-investigation
   Scenario: Attach security finding to a Jira issue returns "OK" response
     Given new "AttachJiraIssue" request
     And body with value {"data": {"attributes": {"jira_issue_url": "https://datadoghq-sandbox-538.atlassian.net/browse/CSMSEC-105476"}, "relationships": {"findings": {"data": [{"id": "OTQ3NjJkMmYwMTIzMzMxNTc1Y2Q4MTA5NWU0NTBmMDl-ZjE3NjMxZWVkYzBjZGI1NDY2NWY2OGQxZDk4MDY4MmI=", "type": "findings"}]}, "project": {"data": {"id": "959a6f71-bac8-4027-b1d3-2264f569296f", "type": "projects"}}}, "type": "jira_issues"}}
@@ -161,7 +161,7 @@ Feature: Security Monitoring
     And the response "data.attributes.insights" has item with field "resource_id" with value "OTQ3NjJkMmYwMTIzMzMxNTc1Y2Q4MTA5NWU0NTBmMDl-ZjE3NjMxZWVkYzBjZGI1NDY2NWY2OGQxZDk4MDY4MmI="
     And the response "data.attributes.jira_issue.result.issue_url" is equal to "https://datadoghq-sandbox-538.atlassian.net/browse/CSMSEC-105476"
 
-  @team:ddoghq/k9-investigation
+  @replay-only @team:ddoghq/k9-investigation
   Scenario: Attach security finding to a case returns "OK" response
     Given new "AttachCase" request
     And request contains "case_id" parameter with value "7d16945b-baf8-411e-ab2a-20fe43af1ea3"
@@ -186,7 +186,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:ddoghq/k9-investigation
+  @replay-only @team:ddoghq/k9-investigation
   Scenario: Attach security findings to a Jira issue returns "OK" response
     Given new "AttachJiraIssue" request
     And body with value {"data": {"attributes": {"jira_issue_url": "https://datadoghq-sandbox-538.atlassian.net/browse/CSMSEC-105476"}, "relationships": {"findings": {"data": [{"id": "OTQ3NjJkMmYwMTIzMzMxNTc1Y2Q4MTA5NWU0NTBmMDl-ZjE3NjMxZWVkYzBjZGI1NDY2NWY2OGQxZDk4MDY4MmI=", "type": "findings"}, {"id": "MTNjN2ZmYWMzMDIxYmU1ZDFiZDRjNWUwN2I1NzVmY2F-YTA3MzllMTUzNWM3NmEyZjdiNzEzOWM5YmViZTMzOGM=", "type": "findings"}]}, "project": {"data": {"id": "959a6f71-bac8-4027-b1d3-2264f569296f", "type": "projects"}}}, "type": "jira_issues"}}
@@ -255,7 +255,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 404 Not Found
 
-  @team:ddoghq/k9-investigation
+  @replay-only @team:ddoghq/k9-investigation
   Scenario: Attach security findings to a case returns "OK" response
     Given new "AttachCase" request
     And request contains "case_id" parameter with value "7d16945b-baf8-411e-ab2a-20fe43af1ea3"
@@ -602,7 +602,7 @@ Feature: Security Monitoring
     And the response "data.attributes.type_name" is equal to "datadog_security_monitoring_suppression"
     And the response "data.attributes.resource_id" is equal to "abc-123"
 
-  @team:ddoghq/k9-investigation
+  @replay-only @team:ddoghq/k9-investigation
   Scenario: Create Jira issue for security finding returns "Created" response
     Given new "CreateJiraIssues" request
     And body with value {"data": [{"attributes": {"title": "A title", "description": "A description"}, "relationships": {"findings": {"data": [{"id": "YmNlZmJhYTcyMDU5ZDk0ZDhiNjRmNGI0NDk4MDdiNzN-MDJlMjg0NzNmYzJiODY2MzJkNjU0OTI4NmVhZTUyY2U=", "type": "findings"}]}, "project": {"data": {"id": "959a6f71-bac8-4027-b1d3-2264f569296f", "type": "projects"}}}, "type": "jira_issues"}]}
@@ -618,7 +618,7 @@ Feature: Security Monitoring
     And the response "data[0].attributes.insights[0].type" is equal to "SECURITY_FINDING"
     And the response "data[0].attributes.jira_issue.status" is equal to "COMPLETED"
 
-  @team:ddoghq/k9-investigation
+  @replay-only @team:ddoghq/k9-investigation
   Scenario: Create Jira issue for security findings returns "Created" response
     Given new "CreateJiraIssues" request
     And body with value {"data": [{"attributes": {"title": "A title", "description": "A description"}, "relationships": {"findings": {"data": [{"id": "a3ZoLXNjbS14eXV-aS0wNWY5MGYwMGE4NDg2ODdlOA==", "type": "findings"}, {"id": "eWswLWJsdC1hZm5-aS0wMjRlYTgwMzVkZTU1MGIwYQ==", "type": "findings"}]}, "project": {"data": {"id": "959a6f71-bac8-4027-b1d3-2264f569296f", "type": "projects"}}}, "type": "jira_issues"}]}
@@ -643,7 +643,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:ddoghq/k9-investigation
+  @replay-only @team:ddoghq/k9-investigation
   Scenario: Create Jira issues for security findings returns "Created" response
     Given new "CreateJiraIssues" request
     And body with value {"data": [{"attributes": {"title": "A title", "description": "A description"}, "relationships": {"findings": {"data": [{"id": "eWswLWJsdC1hZm5-aS0wMjRlYTgwMzVkZTU1MGIwYQ==", "type": "findings"}]}, "project": {"data": {"id": "959a6f71-bac8-4027-b1d3-2264f569296f", "type": "projects"}}}, "type": "jira_issues"}, {"attributes": {"title": "A title", "description": "A description"}, "relationships": {"findings": {"data": [{"id": "a3ZoLXNjbS14eXV-aS0wNWY5MGYwMGE4NDg2ODdlOA==", "type": "findings"}]}, "project": {"data": {"id": "959a6f71-bac8-4027-b1d3-2264f569296f", "type": "projects"}}}, "type": "jira_issues"}]}
@@ -1187,7 +1187,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 422 Unprocessable Entity
 
-  @team:ddoghq/k9-investigation
+  @replay-only @team:ddoghq/k9-investigation
   Scenario: Create case for security finding returns "Created" response
     Given new "CreateCases" request
     And body with value {"data": [{"attributes": {"title": "A title", "description": "A description"}, "relationships": {"findings": {"data": [{"id": "YjdhNDM3N2QyNTFjYmUwYTY3NDdhMTg0YTk2Yjg5MDl-ZjNmMzAwOTFkZDNhNGQzYzI0MzgxNTk4MjRjZmE2NzE=", "type": "findings"}]}, "project": {"data": {"id": "959a6f71-bac8-4027-b1d3-2264f569296f", "type": "projects"}}}, "type": "cases"}]}
@@ -1202,7 +1202,7 @@ Feature: Security Monitoring
     And the response "data[0].attributes.insights[0].resource_id" is equal to "YjdhNDM3N2QyNTFjYmUwYTY3NDdhMTg0YTk2Yjg5MDl-ZjNmMzAwOTFkZDNhNGQzYzI0MzgxNTk4MjRjZmE2NzE="
     And the response "data[0].attributes.insights[0].type" is equal to "SECURITY_FINDING"
 
-  @team:ddoghq/k9-investigation
+  @replay-only @team:ddoghq/k9-investigation
   Scenario: Create case for security findings returns "Created" response
     Given new "CreateCases" request
     And body with value {"data": [{"attributes": {"title": "A title", "description": "A description"}, "relationships": {"findings": {"data": [{"id": "ZTd5LWNuYi1seWV-aS0wMjI2NGZjZjRmZWQ5ODMyMg==", "type": "findings"}, {"id": "c2FuLXhyaS1kZnN-aS0wODM3MjVhMTM2MDExNzNkOQ==", "type": "findings"}]}, "project": {"data": {"id": "959a6f71-bac8-4027-b1d3-2264f569296f", "type": "projects"}}}, "type": "cases"}]}
@@ -1226,7 +1226,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:ddoghq/k9-investigation
+  @replay-only @team:ddoghq/k9-investigation
   Scenario: Create cases for security findings returns "Created" response
     Given new "CreateCases" request
     And body with value {"data": [{"attributes": {"title": "A title", "description": "A description"}, "relationships": {"findings": {"data": [{"id": "YjdhNDM3N2QyNTFjYmUwYTY3NDdhMTg0YTk2Yjg5MDl-ZjNmMzAwOTFkZDNhNGQzYzI0MzgxNTk4MjRjZmE2NzE=", "type": "findings"}]}, "project": {"data": {"id": "959a6f71-bac8-4027-b1d3-2264f569296f", "type": "projects"}}}, "type": "cases"}, {"attributes": {"title": "A title", "description": "A description"}, "relationships": {"findings": {"data": [{"id": "OGRlMDIwYzk4MjFmZTZiNTQwMzk2ZjUxNzg0MDc0NjR-MTk3Yjk4MDI4ZDQ4YzI2ZGZiMWJmMTNhNDEwZGZkYWI=", "type": "findings"}]}, "project": {"data": {"id": "959a6f71-bac8-4027-b1d3-2264f569296f", "type": "projects"}}}, "type": "cases"}]}
@@ -1699,7 +1699,7 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @team:ddoghq/k9-investigation
+  @replay-only @team:ddoghq/k9-investigation
   Scenario: Detach security findings from their case returns "No Content" response
     Given new "DetachCase" request
     And body with value {"data": {"relationships": {"findings": {"data": [{"id": "YzM2MTFjYzcyNmY0Zjg4MTAxZmRlNjQ1MWU1ZGQwYzR-YzI5NzE5Y2Y4MzU4ZjliNzhkNjYxNTY0ODIzZDQ2YTM=", "type": "findings"}]}}, "type": "cases"}}
@@ -3324,14 +3324,14 @@ Feature: Security Monitoring
     When the request is sent
     Then the response status is 422 Unprocessable Entity
 
-  @team:ddoghq/k9-investigation
+  @replay-only @team:ddoghq/k9-investigation
   Scenario: Mute security findings returns "Accepted" response
     Given new "MuteSecurityFindings" request
     And body with value {"data": {"attributes": {"mute": {"description": "To be resolved later.", "expire_at": 1778721573794, "is_muted": true, "reason": "RISK_ACCEPTED"}}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwMC0wYmd-MDE4NjcyMDJkMzE4MDE5ODY5MGE4ZmQ2MmFlMjg0Y2M=", "type": "findings"}]}}, "type": "mute"}}
     When the request is sent
     Then the response status is 202 Accepted
 
-  @team:ddoghq/k9-investigation
+  @replay-only @team:ddoghq/k9-investigation
   Scenario: Mute security findings returns "Not Found" response
     Given new "MuteSecurityFindings" request
     And body with value {"data": {"attributes": {"mute": {"description": "To be resolved later.", "expire_at": 1778721573794, "is_muted": true, "reason": "RISK_ACCEPTED"}}, "relationships": {"findings": {"data": [{"id": "ZGVmLTAwcC1pZXJ-aS0wZjhjNjMyZDNmMzRlZTgzNw==", "type": "findings"}]}}, "type": "mute"}}
