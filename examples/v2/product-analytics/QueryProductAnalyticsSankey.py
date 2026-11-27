@@ -31,8 +31,8 @@ body = ProductAnalyticsSankeyRequest(
             definition=ProductAnalyticsSankeyDefinition(
                 entries_per_step=10,
                 number_of_steps=3,
-                source="@view.name",
-                target="@view.name",
+                source='@type:view @view.name:"/logs"',
+                target="",
             ),
             search=ProductAnalyticsSankeySearch(
                 audience_filters=ProductAnalyticsAudienceFilters(

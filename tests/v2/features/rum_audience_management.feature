@@ -85,7 +85,7 @@ Feature: Rum Audience Management
   Scenario: Query event filtered users returns "Successful response with filtered user data" response
     Given operation "QueryEventFilteredUsers" enabled
     And new "QueryEventFilteredUsers" request
-    And body with value {"data": {"attributes": {"event_query": {"query": "@type:view AND @view.loading_time:>3000 AND @application.name:ecommerce-platform", "time_frame": {"end": 1761309676, "start": 1760100076}}, "include_row_count": true, "limit": 25, "query": "user_org_id:5001 AND first_country_code:US AND first_browser_name:Chrome", "select_columns": ["user_id", "user_email", "first_country_code", "first_browser_name", "events_count", "session_count", "error_count", "avg_loading_time"]}, "id": "query_event_filtered_users_request", "type": "query_event_filtered_users_request"}}
+    And body with value {"data": {"attributes": {"event_query": {"query": "@type:view AND @view.loading_time:>3000 AND @application.name:ecommerce-platform", "time_frame": {"end": 1761309676000, "start": 1760100076000}}, "include_row_count": true, "limit": 25, "query": "first_country_code:US AND first_browser_name:Chrome", "select_columns": ["user_id", "user_email", "user_name", "first_seen", "last_seen", "first_country_code", "first_browser_name"]}, "id": "query_event_filtered_users_request", "type": "query_event_filtered_users_request"}}
     When the request is sent
     Then the response status is 200 Successful response with filtered user data
 
