@@ -1434,6 +1434,22 @@
     "tag": "RUM"
   },
   {
+    "key": "rum_exclusion_filter",
+    "operationId": "CreateExclusionFilter",
+    "parameters": [
+      {
+        "name": "app_id",
+        "value": "\"a33671aa-24fd-4dcd-ba4b-5bbdbafe7690\""
+      },
+      {
+        "name": "body",
+        "value": "{\n  \"data\": {\n    \"type\": \"exclusion_filters\",\n    \"attributes\": {\n      \"name\": \"{{ unique }}\",\n      \"enabled\": true,\n      \"event_type\": \"error\",\n      \"query\": \"@error.message:*extension*\"\n    }\n  }\n}"
+      }
+    ],
+    "step": "there is a valid \"rum_exclusion_filter\" in the system",
+    "tag": "Rum Retention Filters"
+  },
+  {
     "key": "rum_metric",
     "operationId": "CreateRumMetric",
     "parameters": [

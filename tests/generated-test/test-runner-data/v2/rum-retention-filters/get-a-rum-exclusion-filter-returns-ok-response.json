@@ -1,0 +1,51 @@
+{
+  "api": "RumRetentionFilters",
+  "expected_status": 200,
+  "feature": "Rum Retention Filters",
+  "id": "v2/Rum Retention Filters/Get a RUM exclusion filter returns \"OK\" response",
+  "operation_id": "GetExclusionFilter",
+  "request": {
+    "body": null,
+    "content_type": null,
+    "method": "GET",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "app_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "ef_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "rum_exclusion_filter.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/applications/{app_id}/retention_filters/exclusion/{ef_id}"
+  },
+  "scenario": "Get a RUM exclusion filter returns \"OK\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

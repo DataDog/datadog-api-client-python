@@ -1,0 +1,68 @@
+{
+  "api": "RumRetentionFilters",
+  "expected_status": 200,
+  "feature": "Rum Retention Filters",
+  "id": "v2/Rum Retention Filters/Update a RUM exclusion filter returns \"Updated\" response",
+  "operation_id": "UpdateExclusionFilter",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RumExclusionFilterUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "enabled": false,
+            "name": "{{ unique }}-updated"
+          },
+          "id": "{{ rum_exclusion_filter.data.id }}",
+          "type": "exclusion_filters"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "app_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "ef_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "rum_exclusion_filter.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/applications/{app_id}/retention_filters/exclusion/{ef_id}"
+  },
+  "scenario": "Update a RUM exclusion filter returns \"Updated\" response",
+  "schema_version": 1,
+  "version": "v2"
+}

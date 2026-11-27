@@ -9,21 +9,25 @@ Feature: Rum Retention Filters
     And a valid "appKeyAuth" key in the system
     And an instance of "RumRetentionFilters" API
 
-  @generated @skip @team:ddoghq/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Create a RUM exclusion filter returns "Bad Request" response
     Given new "CreateExclusionFilter" request
-    And request contains "app_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"enabled": true, "event_type": "error", "name": "Exclude noisy browser extension errors", "query": "@error.message:*extension*"}, "type": "exclusion_filters"}}
+    And request contains "app_id" parameter with value "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
+    And body with value {"data": {"type": "invalid_type", "attributes": {"name": "{{ unique }}", "enabled": true, "event_type": "error", "query": "@error.message:*extension*"}}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:ddoghq/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Create a RUM exclusion filter returns "Created" response
     Given new "CreateExclusionFilter" request
-    And request contains "app_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"enabled": true, "event_type": "error", "name": "Exclude noisy browser extension errors", "query": "@error.message:*extension*"}, "type": "exclusion_filters"}}
+    And request contains "app_id" parameter with value "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
+    And body with value {"data": {"type": "exclusion_filters", "attributes": {"name": "{{ unique }}", "enabled": true, "event_type": "error", "query": "@error.message:*extension*"}}}
     When the request is sent
     Then the response status is 201 Created
+    And the response "data.type" is equal to "exclusion_filters"
+    And the response "data.attributes.name" is equal to "{{ unique }}"
+    And the response "data.attributes.event_type" is equal to "error"
+    And the response "data.attributes.query" is equal to "@error.message:*extension*"
 
   @team:ddoghq/rum-backend
   Scenario: Create a RUM retention filter returns "Bad Request" response
@@ -47,27 +51,28 @@ Feature: Rum Retention Filters
     And the response "data.attributes.query" is equal to "custom_query"
     And the response "data.attributes.sample_rate" is equal to 50
 
-  @generated @skip @team:ddoghq/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Delete a RUM exclusion filter returns "Method Not Allowed" response
     Given new "DeleteExclusionFilter" request
-    And request contains "app_id" parameter from "REPLACE.ME"
-    And request contains "ef_id" parameter from "REPLACE.ME"
+    And request contains "app_id" parameter with value "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
+    And request contains "ef_id" parameter with value "error_tracking_exclusion_filter"
     When the request is sent
     Then the response status is 405 Method Not Allowed
 
-  @generated @skip @team:ddoghq/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Delete a RUM exclusion filter returns "No Content" response
-    Given new "DeleteExclusionFilter" request
-    And request contains "app_id" parameter from "REPLACE.ME"
-    And request contains "ef_id" parameter from "REPLACE.ME"
+    Given there is a valid "rum_exclusion_filter" in the system
+    And new "DeleteExclusionFilter" request
+    And request contains "app_id" parameter with value "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
+    And request contains "ef_id" parameter from "rum_exclusion_filter.data.id"
     When the request is sent
     Then the response status is 204 No Content
 
-  @generated @skip @team:ddoghq/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Delete a RUM exclusion filter returns "Not Found" response
     Given new "DeleteExclusionFilter" request
-    And request contains "app_id" parameter from "REPLACE.ME"
-    And request contains "ef_id" parameter from "REPLACE.ME"
+    And request contains "app_id" parameter with value "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
+    And request contains "ef_id" parameter with value "00000000-0000-0000-0000-000000000000"
     When the request is sent
     Then the response status is 404 Not Found
 
@@ -87,21 +92,24 @@ Feature: Rum Retention Filters
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:ddoghq/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Get a RUM exclusion filter returns "Not Found" response
     Given new "GetExclusionFilter" request
-    And request contains "app_id" parameter from "REPLACE.ME"
-    And request contains "ef_id" parameter from "REPLACE.ME"
+    And request contains "app_id" parameter with value "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
+    And request contains "ef_id" parameter with value "00000000-0000-0000-0000-000000000000"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:ddoghq/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Get a RUM exclusion filter returns "OK" response
-    Given new "GetExclusionFilter" request
-    And request contains "app_id" parameter from "REPLACE.ME"
-    And request contains "ef_id" parameter from "REPLACE.ME"
+    Given there is a valid "rum_exclusion_filter" in the system
+    And new "GetExclusionFilter" request
+    And request contains "app_id" parameter with value "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
+    And request contains "ef_id" parameter from "rum_exclusion_filter.data.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.id" is equal to "{{ rum_exclusion_filter.data.id }}"
+    And the response "data.attributes.name" is equal to "{{ rum_exclusion_filter.data.attributes.name }}"
 
   @team:ddoghq/rum-backend
   Scenario: Get a RUM retention filter returns "Not Found" response
@@ -126,28 +134,33 @@ Feature: Rum Retention Filters
     And the response "data.attributes.query" is equal to "custom_query"
     And the response "data.attributes.sample_rate" is equal to 25
 
-  @generated @skip @team:ddoghq/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Get a permanent RUM retention filter returns "Not Found" response
     Given new "GetPermanentRetentionFilter" request
-    And request contains "app_id" parameter from "REPLACE.ME"
-    And request contains "permanent_rf_id" parameter from "REPLACE.ME"
+    And request contains "app_id" parameter with value "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
+    And request contains "permanent_rf_id" parameter with value "unknown_permanent_filter"
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:ddoghq/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Get a permanent RUM retention filter returns "OK" response
-    Given new "GetPermanentRetentionFilter" request
-    And request contains "app_id" parameter from "REPLACE.ME"
-    And request contains "permanent_rf_id" parameter from "REPLACE.ME"
+    Given there is a valid "rum_application" in the system
+    And new "GetPermanentRetentionFilter" request
+    And request contains "app_id" parameter from "rum_application.data.id"
+    And request contains "permanent_rf_id" parameter with value "synthetics_sessions"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data.id" is equal to "synthetics_sessions"
+    And the response "data.type" is equal to "permanent_retention_filters"
 
-  @generated @skip @team:ddoghq/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Get all RUM exclusion filters returns "OK" response
-    Given new "ListExclusionFilters" request
-    And request contains "app_id" parameter from "REPLACE.ME"
+    Given there is a valid "rum_application" in the system
+    And new "ListExclusionFilters" request
+    And request contains "app_id" parameter from "rum_application.data.id"
     When the request is sent
     Then the response status is 200 OK
+    And the response "data[0].id" is equal to "error_tracking_exclusion_filter"
 
   @replay-only @team:ddoghq/rum-backend
   Scenario: Get all RUM retention filters returns "OK" response
@@ -157,10 +170,11 @@ Feature: Rum Retention Filters
     Then the response status is 200 OK
     And the response "data" has length 3
 
-  @generated @skip @team:ddoghq/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Get all permanent RUM retention filters returns "OK" response
-    Given new "ListPermanentRetentionFilters" request
-    And request contains "app_id" parameter from "REPLACE.ME"
+    Given there is a valid "rum_application" in the system
+    And new "ListPermanentRetentionFilters" request
+    And request contains "app_id" parameter from "rum_application.data.id"
     When the request is sent
     Then the response status is 200 OK
 
@@ -183,41 +197,44 @@ Feature: Rum Retention Filters
     And the response "data[1].id" is equal to "42d89430-5b80-426e-a44b-ba3b417ece25"
     And the response "data[2].id" is equal to "bff0bc34-99e9-4c16-adce-f47e71948c23"
 
-  @generated @skip @team:ddoghq/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Update a RUM exclusion filter returns "Bad Request" response
     Given new "UpdateExclusionFilter" request
-    And request contains "app_id" parameter from "REPLACE.ME"
-    And request contains "ef_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"enabled": true, "event_type": "error", "name": "Exclude noisy browser extension errors", "query": "@error.message:*extension*"}, "id": "051601eb-54a0-abc0-03f9-cc02efa18892", "type": "exclusion_filters"}}
+    And request contains "app_id" parameter with value "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
+    And request contains "ef_id" parameter with value "error_tracking_exclusion_filter"
+    And body with value {"data": {"id": "error_tracking_exclusion_filter", "type": "exclusion_filters", "attributes": {"name": "{{ unique }}"}}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:ddoghq/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Update a RUM exclusion filter returns "Conflict" response
     Given new "UpdateExclusionFilter" request
-    And request contains "app_id" parameter from "REPLACE.ME"
-    And request contains "ef_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"enabled": true, "event_type": "error", "name": "Exclude noisy browser extension errors", "query": "@error.message:*extension*"}, "id": "051601eb-54a0-abc0-03f9-cc02efa18892", "type": "exclusion_filters"}}
+    And request contains "app_id" parameter with value "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
+    And request contains "ef_id" parameter with value "error_tracking_exclusion_filter"
+    And body with value {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "exclusion_filters", "attributes": {"enabled": true}}}
     When the request is sent
     Then the response status is 409 Conflict
 
-  @generated @skip @team:ddoghq/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Update a RUM exclusion filter returns "Not Found" response
     Given new "UpdateExclusionFilter" request
-    And request contains "app_id" parameter from "REPLACE.ME"
-    And request contains "ef_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"enabled": true, "event_type": "error", "name": "Exclude noisy browser extension errors", "query": "@error.message:*extension*"}, "id": "051601eb-54a0-abc0-03f9-cc02efa18892", "type": "exclusion_filters"}}
+    And request contains "app_id" parameter with value "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
+    And request contains "ef_id" parameter with value "00000000-0000-0000-0000-000000000000"
+    And body with value {"data": {"id": "00000000-0000-0000-0000-000000000000", "type": "exclusion_filters", "attributes": {"enabled": false}}}
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:ddoghq/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Update a RUM exclusion filter returns "Updated" response
-    Given new "UpdateExclusionFilter" request
-    And request contains "app_id" parameter from "REPLACE.ME"
-    And request contains "ef_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"enabled": true, "event_type": "error", "name": "Exclude noisy browser extension errors", "query": "@error.message:*extension*"}, "id": "051601eb-54a0-abc0-03f9-cc02efa18892", "type": "exclusion_filters"}}
+    Given there is a valid "rum_exclusion_filter" in the system
+    And new "UpdateExclusionFilter" request
+    And request contains "app_id" parameter with value "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
+    And request contains "ef_id" parameter from "rum_exclusion_filter.data.id"
+    And body with value {"data": {"id": "{{ rum_exclusion_filter.data.id }}", "type": "exclusion_filters", "attributes": {"enabled": false, "name": "{{ unique }}-updated"}}}
     When the request is sent
     Then the response status is 200 Updated
+    And the response "data.attributes.enabled" is equal to false
+    And the response "data.attributes.name" is equal to "{{ unique }}-updated"
 
   @team:ddoghq/rum-backend
   Scenario: Update a RUM retention filter returns "Bad Request" response
@@ -253,29 +270,32 @@ Feature: Rum Retention Filters
     And the response "data.attributes.query" is equal to "view_query"
     And the response "data.attributes.sample_rate" is equal to 100
 
-  @generated @skip @team:ddoghq/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Update a permanent RUM retention filter returns "Bad Request" response
     Given new "UpdatePermanentRetentionFilter" request
-    And request contains "app_id" parameter from "REPLACE.ME"
-    And request contains "permanent_rf_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"cross_product_sampling": {"trace_enabled": true, "trace_sample_rate": 25.0}}, "id": "synthetics_sessions", "type": "permanent_retention_filters"}}
+    And request contains "app_id" parameter with value "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
+    And request contains "permanent_rf_id" parameter with value "rum_apm_flat_sampling"
+    And body with value {"data": {"id": "rum_apm_flat_sampling", "type": "permanent_retention_filters", "attributes": {"cross_product_sampling": {"trace_enabled": true, "trace_sample_rate": 25.0}}}}
     When the request is sent
     Then the response status is 400 Bad Request
 
-  @generated @skip @team:ddoghq/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Update a permanent RUM retention filter returns "Not Found" response
     Given new "UpdatePermanentRetentionFilter" request
-    And request contains "app_id" parameter from "REPLACE.ME"
-    And request contains "permanent_rf_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"cross_product_sampling": {"trace_enabled": true, "trace_sample_rate": 25.0}}, "id": "synthetics_sessions", "type": "permanent_retention_filters"}}
+    And request contains "app_id" parameter with value "a33671aa-24fd-4dcd-ba4b-5bbdbafe7690"
+    And request contains "permanent_rf_id" parameter with value "unknown_permanent_filter"
+    And body with value {"data": {"id": "unknown_permanent_filter", "type": "permanent_retention_filters", "attributes": {"cross_product_sampling": {"trace_enabled": true, "trace_sample_rate": 25.0}}}}
     When the request is sent
     Then the response status is 404 Not Found
 
-  @generated @skip @team:ddoghq/rum-backend
+  @team:ddoghq/rum-backend
   Scenario: Update a permanent RUM retention filter returns "Updated" response
-    Given new "UpdatePermanentRetentionFilter" request
-    And request contains "app_id" parameter from "REPLACE.ME"
-    And request contains "permanent_rf_id" parameter from "REPLACE.ME"
-    And body with value {"data": {"attributes": {"cross_product_sampling": {"trace_enabled": true, "trace_sample_rate": 25.0}}, "id": "synthetics_sessions", "type": "permanent_retention_filters"}}
+    Given there is a valid "rum_application" in the system
+    And new "UpdatePermanentRetentionFilter" request
+    And request contains "app_id" parameter from "rum_application.data.id"
+    And request contains "permanent_rf_id" parameter with value "synthetics_sessions"
+    And body with value {"data": {"id": "synthetics_sessions", "type": "permanent_retention_filters", "attributes": {"cross_product_sampling": {"trace_enabled": true, "trace_sample_rate": 25.0}}}}
     When the request is sent
     Then the response status is 200 Updated
+    And the response "data.id" is equal to "synthetics_sessions"
+    And the response "data.attributes.cross_product_sampling.trace_enabled" is equal to true

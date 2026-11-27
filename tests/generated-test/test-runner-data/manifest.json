@@ -10769,6 +10769,20 @@
     {
       "feature": "Rum Retention Filters",
       "feature_file": "../../v2/features/rum_retention_filters.feature",
+      "file": "v2/rum-retention-filters/create-a-rum-exclusion-filter-returns-bad-request-response.json",
+      "scenario": "Create a RUM exclusion filter returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "feature_file": "../../v2/features/rum_retention_filters.feature",
+      "file": "v2/rum-retention-filters/create-a-rum-exclusion-filter-returns-created-response.json",
+      "scenario": "Create a RUM exclusion filter returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "feature_file": "../../v2/features/rum_retention_filters.feature",
       "file": "v2/rum-retention-filters/create-a-rum-retention-filter-returns-bad-request-response.json",
       "scenario": "Create a RUM retention filter returns \"Bad Request\" response",
       "version": "v2"
@@ -10778,6 +10792,27 @@
       "feature_file": "../../v2/features/rum_retention_filters.feature",
       "file": "v2/rum-retention-filters/create-a-rum-retention-filter-returns-created-response.json",
       "scenario": "Create a RUM retention filter returns \"Created\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "feature_file": "../../v2/features/rum_retention_filters.feature",
+      "file": "v2/rum-retention-filters/delete-a-rum-exclusion-filter-returns-method-not-allowed-response.json",
+      "scenario": "Delete a RUM exclusion filter returns \"Method Not Allowed\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "feature_file": "../../v2/features/rum_retention_filters.feature",
+      "file": "v2/rum-retention-filters/delete-a-rum-exclusion-filter-returns-no-content-response.json",
+      "scenario": "Delete a RUM exclusion filter returns \"No Content\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "feature_file": "../../v2/features/rum_retention_filters.feature",
+      "file": "v2/rum-retention-filters/delete-a-rum-exclusion-filter-returns-not-found-response.json",
+      "scenario": "Delete a RUM exclusion filter returns \"Not Found\" response",
       "version": "v2"
     },
     {
@@ -10797,6 +10832,20 @@
     {
       "feature": "Rum Retention Filters",
       "feature_file": "../../v2/features/rum_retention_filters.feature",
+      "file": "v2/rum-retention-filters/get-a-rum-exclusion-filter-returns-not-found-response.json",
+      "scenario": "Get a RUM exclusion filter returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "feature_file": "../../v2/features/rum_retention_filters.feature",
+      "file": "v2/rum-retention-filters/get-a-rum-exclusion-filter-returns-ok-response.json",
+      "scenario": "Get a RUM exclusion filter returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "feature_file": "../../v2/features/rum_retention_filters.feature",
       "file": "v2/rum-retention-filters/get-a-rum-retention-filter-returns-not-found-response.json",
       "scenario": "Get a RUM retention filter returns \"Not Found\" response",
       "version": "v2"
@@ -10811,8 +10860,36 @@
     {
       "feature": "Rum Retention Filters",
       "feature_file": "../../v2/features/rum_retention_filters.feature",
+      "file": "v2/rum-retention-filters/get-a-permanent-rum-retention-filter-returns-not-found-response.json",
+      "scenario": "Get a permanent RUM retention filter returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "feature_file": "../../v2/features/rum_retention_filters.feature",
+      "file": "v2/rum-retention-filters/get-a-permanent-rum-retention-filter-returns-ok-response.json",
+      "scenario": "Get a permanent RUM retention filter returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "feature_file": "../../v2/features/rum_retention_filters.feature",
+      "file": "v2/rum-retention-filters/get-all-rum-exclusion-filters-returns-ok-response.json",
+      "scenario": "Get all RUM exclusion filters returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "feature_file": "../../v2/features/rum_retention_filters.feature",
       "file": "v2/rum-retention-filters/get-all-rum-retention-filters-returns-ok-response.json",
       "scenario": "Get all RUM retention filters returns \"OK\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "feature_file": "../../v2/features/rum_retention_filters.feature",
+      "file": "v2/rum-retention-filters/get-all-permanent-rum-retention-filters-returns-ok-response.json",
+      "scenario": "Get all permanent RUM retention filters returns \"OK\" response",
       "version": "v2"
     },
     {
@@ -10827,6 +10904,34 @@
       "feature_file": "../../v2/features/rum_retention_filters.feature",
       "file": "v2/rum-retention-filters/order-rum-retention-filters-returns-ordered-response.json",
       "scenario": "Order RUM retention filters returns \"Ordered\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "feature_file": "../../v2/features/rum_retention_filters.feature",
+      "file": "v2/rum-retention-filters/update-a-rum-exclusion-filter-returns-bad-request-response.json",
+      "scenario": "Update a RUM exclusion filter returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "feature_file": "../../v2/features/rum_retention_filters.feature",
+      "file": "v2/rum-retention-filters/update-a-rum-exclusion-filter-returns-conflict-response.json",
+      "scenario": "Update a RUM exclusion filter returns \"Conflict\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "feature_file": "../../v2/features/rum_retention_filters.feature",
+      "file": "v2/rum-retention-filters/update-a-rum-exclusion-filter-returns-not-found-response.json",
+      "scenario": "Update a RUM exclusion filter returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "feature_file": "../../v2/features/rum_retention_filters.feature",
+      "file": "v2/rum-retention-filters/update-a-rum-exclusion-filter-returns-updated-response.json",
+      "scenario": "Update a RUM exclusion filter returns \"Updated\" response",
       "version": "v2"
     },
     {
@@ -10848,6 +10953,27 @@
       "feature_file": "../../v2/features/rum_retention_filters.feature",
       "file": "v2/rum-retention-filters/update-a-rum-retention-filter-returns-updated-response.json",
       "scenario": "Update a RUM retention filter returns \"Updated\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "feature_file": "../../v2/features/rum_retention_filters.feature",
+      "file": "v2/rum-retention-filters/update-a-permanent-rum-retention-filter-returns-bad-request-response.json",
+      "scenario": "Update a permanent RUM retention filter returns \"Bad Request\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "feature_file": "../../v2/features/rum_retention_filters.feature",
+      "file": "v2/rum-retention-filters/update-a-permanent-rum-retention-filter-returns-not-found-response.json",
+      "scenario": "Update a permanent RUM retention filter returns \"Not Found\" response",
+      "version": "v2"
+    },
+    {
+      "feature": "Rum Retention Filters",
+      "feature_file": "../../v2/features/rum_retention_filters.feature",
+      "file": "v2/rum-retention-filters/update-a-permanent-rum-retention-filter-returns-updated-response.json",
+      "scenario": "Update a permanent RUM retention filter returns \"Updated\" response",
       "version": "v2"
     },
     {

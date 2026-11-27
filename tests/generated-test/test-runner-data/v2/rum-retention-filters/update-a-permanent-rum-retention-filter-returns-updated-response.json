@@ -1,0 +1,70 @@
+{
+  "api": "RumRetentionFilters",
+  "expected_status": 200,
+  "feature": "Rum Retention Filters",
+  "id": "v2/Rum Retention Filters/Update a permanent RUM retention filter returns \"Updated\" response",
+  "operation_id": "UpdatePermanentRetentionFilter",
+  "request": {
+    "body": {
+      "schema": {
+        "format": null,
+        "ref": "RumPermanentRetentionFilterUpdateRequest",
+        "type": "object"
+      },
+      "source": "inline",
+      "value": {
+        "data": {
+          "attributes": {
+            "cross_product_sampling": {
+              "trace_enabled": true,
+              "trace_sample_rate": 25.0
+            }
+          },
+          "id": "synthetics_sessions",
+          "type": "permanent_retention_filters"
+        }
+      }
+    },
+    "content_type": "application/json",
+    "method": "PATCH",
+    "pagination": false,
+    "parameters": [
+      {
+        "explode": null,
+        "in": "path",
+        "name": "app_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": null,
+          "type": "string"
+        },
+        "source": {
+          "path": "rum_application.data.id",
+          "type": "fixture"
+        },
+        "style": null
+      },
+      {
+        "explode": null,
+        "in": "path",
+        "name": "permanent_rf_id",
+        "required": true,
+        "schema": {
+          "format": null,
+          "ref": "RumPermanentRetentionFilterID",
+          "type": "string"
+        },
+        "source": {
+          "type": "literal",
+          "value": "synthetics_sessions"
+        },
+        "style": null
+      }
+    ],
+    "path": "/api/v2/rum/applications/{app_id}/retention_filters/permanent/{permanent_rf_id}"
+  },
+  "scenario": "Update a permanent RUM retention filter returns \"Updated\" response",
+  "schema_version": 1,
+  "version": "v2"
+}
