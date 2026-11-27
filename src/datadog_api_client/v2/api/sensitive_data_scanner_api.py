@@ -392,9 +392,9 @@ class SensitiveDataScannerApi:
         self,
         group_id: str,
     ) -> SensitiveDataScannerTargetGroupResponse:
-        """Get Agent Observability Scanning Group.
+        """Get Target Scanning Group.
 
-        Get an Agent Observability scanning group, with its rules included.
+        Get an Agent Observability or AI Guard scanning group, with its rules included.
         Scanning groups of logs, RUM, events, and APM are reported as not found.
 
         :param group_id: The ID of a group of rules.
@@ -434,10 +434,10 @@ class SensitiveDataScannerApi:
         self,
         filter_target: SensitiveDataScannerGroupTargetType,
     ) -> SensitiveDataScannerTargetGroupListResponse:
-        """List Agent Observability Scanning Groups.
+        """List Target Scanning Groups.
 
-        List the Agent Observability scanning groups, with their rules included.
-        The list always includes the default Agent Observability scanning group.
+        List the scanning groups of a target, such as Agent Observability or AI Guard, with their rules included.
+        The list always includes the default scanning group of the target.
         Scanning groups of logs, RUM, events, and APM are listed by the List Scanning Groups endpoint.
 
         :param filter_target: Target whose scanning groups are listed.

@@ -1,5 +1,5 @@
 """
-List Agent Observability Scanning Groups returns "OK" response
+List Target Scanning Groups returns "OK" response
 """
 
 from os import environ
