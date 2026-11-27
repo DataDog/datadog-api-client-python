@@ -9486,6 +9486,84 @@ from datadog_api_client.v2.model.open_ai_credentials_update import OpenAICredent
 from datadog_api_client.v2.model.open_ai_integration import OpenAIIntegration
 from datadog_api_client.v2.model.open_ai_integration_type import OpenAIIntegrationType
 from datadog_api_client.v2.model.open_ai_integration_update import OpenAIIntegrationUpdate
+from datadog_api_client.v2.model.open_ai_model_inference_integration_account_authentication_request import (
+    OpenAIModelInferenceIntegrationAccountAuthenticationRequest,
+)
+from datadog_api_client.v2.model.open_ai_model_inference_integration_account_authentication_response import (
+    OpenAIModelInferenceIntegrationAccountAuthenticationResponse,
+)
+from datadog_api_client.v2.model.open_ai_model_inference_integration_account_authentication_update import (
+    OpenAIModelInferenceIntegrationAccountAuthenticationUpdate,
+)
+from datadog_api_client.v2.model.open_ai_model_inference_integration_account_bearer_token_auth_request import (
+    OpenAIModelInferenceIntegrationAccountBearerTokenAuthRequest,
+)
+from datadog_api_client.v2.model.open_ai_model_inference_integration_account_bearer_token_auth_response import (
+    OpenAIModelInferenceIntegrationAccountBearerTokenAuthResponse,
+)
+from datadog_api_client.v2.model.open_ai_model_inference_integration_account_bearer_token_auth_type import (
+    OpenAIModelInferenceIntegrationAccountBearerTokenAuthType,
+)
+from datadog_api_client.v2.model.open_ai_model_inference_integration_account_bearer_token_auth_update import (
+    OpenAIModelInferenceIntegrationAccountBearerTokenAuthUpdate,
+)
+from datadog_api_client.v2.model.open_ai_model_inference_integration_account_create_attributes import (
+    OpenAIModelInferenceIntegrationAccountCreateAttributes,
+)
+from datadog_api_client.v2.model.open_ai_model_inference_integration_account_create_data import (
+    OpenAIModelInferenceIntegrationAccountCreateData,
+)
+from datadog_api_client.v2.model.open_ai_model_inference_integration_account_create_request import (
+    OpenAIModelInferenceIntegrationAccountCreateRequest,
+)
+from datadog_api_client.v2.model.open_ai_model_inference_integration_account_response import (
+    OpenAIModelInferenceIntegrationAccountResponse,
+)
+from datadog_api_client.v2.model.open_ai_model_inference_integration_account_response_attributes import (
+    OpenAIModelInferenceIntegrationAccountResponseAttributes,
+)
+from datadog_api_client.v2.model.open_ai_model_inference_integration_account_response_data import (
+    OpenAIModelInferenceIntegrationAccountResponseData,
+)
+from datadog_api_client.v2.model.open_ai_model_inference_integration_account_settings_request import (
+    OpenAIModelInferenceIntegrationAccountSettingsRequest,
+)
+from datadog_api_client.v2.model.open_ai_model_inference_integration_account_settings_response import (
+    OpenAIModelInferenceIntegrationAccountSettingsResponse,
+)
+from datadog_api_client.v2.model.open_ai_model_inference_integration_account_settings_update import (
+    OpenAIModelInferenceIntegrationAccountSettingsUpdate,
+)
+from datadog_api_client.v2.model.open_ai_model_inference_integration_account_update_attributes import (
+    OpenAIModelInferenceIntegrationAccountUpdateAttributes,
+)
+from datadog_api_client.v2.model.open_ai_model_inference_integration_account_update_data import (
+    OpenAIModelInferenceIntegrationAccountUpdateData,
+)
+from datadog_api_client.v2.model.open_ai_model_inference_integration_account_update_request import (
+    OpenAIModelInferenceIntegrationAccountUpdateRequest,
+)
+from datadog_api_client.v2.model.open_ai_model_inference_integration_accounts_response import (
+    OpenAIModelInferenceIntegrationAccountsResponse,
+)
+from datadog_api_client.v2.model.open_ai_model_inference_integration_dataflows_request import (
+    OpenAIModelInferenceIntegrationDataflowsRequest,
+)
+from datadog_api_client.v2.model.open_ai_model_inference_integration_dataflows_response import (
+    OpenAIModelInferenceIntegrationDataflowsResponse,
+)
+from datadog_api_client.v2.model.open_ai_model_inference_llm_completions_integration_dataflow_request import (
+    OpenAIModelInferenceLLMCompletionsIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.open_ai_model_inference_llm_completions_integration_dataflow_response import (
+    OpenAIModelInferenceLLMCompletionsIntegrationDataflowResponse,
+)
+from datadog_api_client.v2.model.open_ai_model_inference_project_cloud_cost_data_integration_dataflow_request import (
+    OpenAIModelInferenceProjectCloudCostDataIntegrationDataflowRequest,
+)
+from datadog_api_client.v2.model.open_ai_model_inference_project_cloud_cost_data_integration_dataflow_response import (
+    OpenAIModelInferenceProjectCloudCostDataIntegrationDataflowResponse,
+)
 from datadog_api_client.v2.model.open_api_endpoint import OpenAPIEndpoint
 from datadog_api_client.v2.model.open_api_file import OpenAPIFile
 from datadog_api_client.v2.model.opsgenie_account_create_attributes import OpsgenieAccountCreateAttributes
@@ -21030,6 +21108,32 @@ __all__ = [
     "OpenAIIntegration",
     "OpenAIIntegrationType",
     "OpenAIIntegrationUpdate",
+    "OpenAIModelInferenceIntegrationAccountAuthenticationRequest",
+    "OpenAIModelInferenceIntegrationAccountAuthenticationResponse",
+    "OpenAIModelInferenceIntegrationAccountAuthenticationUpdate",
+    "OpenAIModelInferenceIntegrationAccountBearerTokenAuthRequest",
+    "OpenAIModelInferenceIntegrationAccountBearerTokenAuthResponse",
+    "OpenAIModelInferenceIntegrationAccountBearerTokenAuthType",
+    "OpenAIModelInferenceIntegrationAccountBearerTokenAuthUpdate",
+    "OpenAIModelInferenceIntegrationAccountCreateAttributes",
+    "OpenAIModelInferenceIntegrationAccountCreateData",
+    "OpenAIModelInferenceIntegrationAccountCreateRequest",
+    "OpenAIModelInferenceIntegrationAccountResponse",
+    "OpenAIModelInferenceIntegrationAccountResponseAttributes",
+    "OpenAIModelInferenceIntegrationAccountResponseData",
+    "OpenAIModelInferenceIntegrationAccountSettingsRequest",
+    "OpenAIModelInferenceIntegrationAccountSettingsResponse",
+    "OpenAIModelInferenceIntegrationAccountSettingsUpdate",
+    "OpenAIModelInferenceIntegrationAccountUpdateAttributes",
+    "OpenAIModelInferenceIntegrationAccountUpdateData",
+    "OpenAIModelInferenceIntegrationAccountUpdateRequest",
+    "OpenAIModelInferenceIntegrationAccountsResponse",
+    "OpenAIModelInferenceIntegrationDataflowsRequest",
+    "OpenAIModelInferenceIntegrationDataflowsResponse",
+    "OpenAIModelInferenceLLMCompletionsIntegrationDataflowRequest",
+    "OpenAIModelInferenceLLMCompletionsIntegrationDataflowResponse",
+    "OpenAIModelInferenceProjectCloudCostDataIntegrationDataflowRequest",
+    "OpenAIModelInferenceProjectCloudCostDataIntegrationDataflowResponse",
     "OpenAPIEndpoint",
     "OpenAPIFile",
     "OpsgenieAccountCreateAttributes",
