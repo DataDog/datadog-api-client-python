@@ -1932,6 +1932,7 @@ from datadog_api_client.v2.model.clone_form_data import CloneFormData
 from datadog_api_client.v2.model.clone_form_data_attributes import CloneFormDataAttributes
 from datadog_api_client.v2.model.clone_form_request import CloneFormRequest
 from datadog_api_client.v2.model.cloud_asset_type import CloudAssetType
+from datadog_api_client.v2.model.cloud_configuration_compliance_framework import CloudConfigurationComplianceFramework
 from datadog_api_client.v2.model.cloud_configuration_compliance_rule_options import (
     CloudConfigurationComplianceRuleOptions,
 )
@@ -16339,6 +16340,7 @@ __all__ = [
     "CloneFormDataAttributes",
     "CloneFormRequest",
     "CloudAssetType",
+    "CloudConfigurationComplianceFramework",
     "CloudConfigurationComplianceRuleOptions",
     "CloudConfigurationRegoRule",
     "CloudConfigurationRuleCaseCreate",

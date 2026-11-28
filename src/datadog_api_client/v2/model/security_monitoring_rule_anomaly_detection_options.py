@@ -27,6 +27,10 @@ if TYPE_CHECKING:
 
 class SecurityMonitoringRuleAnomalyDetectionOptions(ModelNormal):
     validations = {
+        "instantaneous_baseline_timeout_minutes": {
+            "inclusive_maximum": 360,
+            "inclusive_minimum": 0,
+        },
         "learning_period_baseline": {
             "inclusive_minimum": 0,
         },
@@ -48,6 +52,7 @@ class SecurityMonitoringRuleAnomalyDetectionOptions(ModelNormal):
             "bucket_duration": (SecurityMonitoringRuleAnomalyDetectionOptionsBucketDuration,),
             "detection_tolerance": (SecurityMonitoringRuleAnomalyDetectionOptionsDetectionTolerance,),
             "instantaneous_baseline": (bool,),
+            "instantaneous_baseline_timeout_minutes": (int,),
             "learning_duration": (SecurityMonitoringRuleAnomalyDetectionOptionsLearningDuration,),
             "learning_period_baseline": (int,),
         }
@@ -56,6 +61,7 @@ class SecurityMonitoringRuleAnomalyDetectionOptions(ModelNormal):
         "bucket_duration": "bucketDuration",
         "detection_tolerance": "detectionTolerance",
         "instantaneous_baseline": "instantaneousBaseline",
+        "instantaneous_baseline_timeout_minutes": "instantaneousBaselineTimeoutMinutes",
         "learning_duration": "learningDuration",
         "learning_period_baseline": "learningPeriodBaseline",
     }
@@ -65,6 +71,7 @@ class SecurityMonitoringRuleAnomalyDetectionOptions(ModelNormal):
         bucket_duration: Union[SecurityMonitoringRuleAnomalyDetectionOptionsBucketDuration, UnsetType] = unset,
         detection_tolerance: Union[SecurityMonitoringRuleAnomalyDetectionOptionsDetectionTolerance, UnsetType] = unset,
         instantaneous_baseline: Union[bool, UnsetType] = unset,
+        instantaneous_baseline_timeout_minutes: Union[int, UnsetType] = unset,
         learning_duration: Union[SecurityMonitoringRuleAnomalyDetectionOptionsLearningDuration, UnsetType] = unset,
         learning_period_baseline: Union[int, UnsetType] = unset,
         **kwargs,
@@ -83,6 +90,9 @@ class SecurityMonitoringRuleAnomalyDetectionOptions(ModelNormal):
         :param instantaneous_baseline: When set to true, Datadog uses previous values that fall within the defined learning window to construct the baseline, enabling the system to establish an accurate baseline more rapidly rather than relying solely on gradual learning over time.
         :type instantaneous_baseline: bool, optional
 
+        :param instantaneous_baseline_timeout_minutes: Maximum time in minutes to build the instantaneous baseline. Only used when ``instantaneousBaseline`` is true.
+        :type instantaneous_baseline_timeout_minutes: int, optional
+
         :param learning_duration: Learning duration in hours. Anomaly detection waits for at least this amount of historical data before it starts evaluating.
         :type learning_duration: SecurityMonitoringRuleAnomalyDetectionOptionsLearningDuration, optional
 
@@ -95,6 +105,8 @@ class SecurityMonitoringRuleAnomalyDetectionOptions(ModelNormal):
             kwargs["detection_tolerance"] = detection_tolerance
         if instantaneous_baseline is not unset:
             kwargs["instantaneous_baseline"] = instantaneous_baseline
+        if instantaneous_baseline_timeout_minutes is not unset:
+            kwargs["instantaneous_baseline_timeout_minutes"] = instantaneous_baseline_timeout_minutes
         if learning_duration is not unset:
             kwargs["learning_duration"] = learning_duration
         if learning_period_baseline is not unset:

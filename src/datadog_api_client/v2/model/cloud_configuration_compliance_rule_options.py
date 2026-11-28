@@ -3,7 +3,7 @@
 # Copyright 2019-Present Datadog, Inc.
 from __future__ import annotations
 
-from typing import Union, TYPE_CHECKING
+from typing import List, Union, TYPE_CHECKING
 
 from datadog_api_client.model_utils import (
     ModelNormal,
@@ -14,22 +14,30 @@ from datadog_api_client.model_utils import (
 
 
 if TYPE_CHECKING:
+    from datadog_api_client.v2.model.cloud_configuration_compliance_framework import (
+        CloudConfigurationComplianceFramework,
+    )
     from datadog_api_client.v2.model.cloud_configuration_rego_rule import CloudConfigurationRegoRule
 
 
 class CloudConfigurationComplianceRuleOptions(ModelNormal):
     @cached_property
     def openapi_types(_):
+        from datadog_api_client.v2.model.cloud_configuration_compliance_framework import (
+            CloudConfigurationComplianceFramework,
+        )
         from datadog_api_client.v2.model.cloud_configuration_rego_rule import CloudConfigurationRegoRule
 
         return {
             "complex_rule": (bool,),
+            "compliance_frameworks": ([CloudConfigurationComplianceFramework],),
             "rego_rule": (CloudConfigurationRegoRule,),
             "resource_type": (str,),
         }
 
     attribute_map = {
         "complex_rule": "complexRule",
+        "compliance_frameworks": "complianceFrameworks",
         "rego_rule": "regoRule",
         "resource_type": "resourceType",
     }
@@ -37,6 +45,7 @@ class CloudConfigurationComplianceRuleOptions(ModelNormal):
     def __init__(
         self_,
         complex_rule: Union[bool, UnsetType] = unset,
+        compliance_frameworks: Union[List[CloudConfigurationComplianceFramework], UnsetType] = unset,
         rego_rule: Union[CloudConfigurationRegoRule, UnsetType] = unset,
         resource_type: Union[str, UnsetType] = unset,
         **kwargs,
@@ -49,6 +58,9 @@ class CloudConfigurationComplianceRuleOptions(ModelNormal):
             Must be set to true if ``regoRule.resourceTypes`` contains more than one item. Defaults to false.
         :type complex_rule: bool, optional
 
+        :param compliance_frameworks: Compliance framework requirements the rule maps to.
+        :type compliance_frameworks: [CloudConfigurationComplianceFramework], optional
+
         :param rego_rule: Rule details.
         :type rego_rule: CloudConfigurationRegoRule, optional
 
@@ -57,6 +69,8 @@ class CloudConfigurationComplianceRuleOptions(ModelNormal):
         """
         if complex_rule is not unset:
             kwargs["complex_rule"] = complex_rule
+        if compliance_frameworks is not unset:
+            kwargs["compliance_frameworks"] = compliance_frameworks
         if rego_rule is not unset:
             kwargs["rego_rule"] = rego_rule
         if resource_type is not unset:
