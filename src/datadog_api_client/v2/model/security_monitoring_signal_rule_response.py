@@ -41,6 +41,7 @@ class SecurityMonitoringSignalRuleResponse(ModelNormal):
             "creation_author_id": (int,),
             "custom_message": (str,),
             "custom_name": (str,),
+            "default_tags": ([str],),
             "deprecation_date": (int,),
             "filters": ([SecurityMonitoringFilter],),
             "has_extended_title": (bool,),
@@ -55,6 +56,7 @@ class SecurityMonitoringSignalRuleResponse(ModelNormal):
             "tags": ([str],),
             "type": (SecurityMonitoringSignalRuleType,),
             "update_author_id": (int,),
+            "updated_at": (int,),
             "version": (int,),
         }
 
@@ -65,6 +67,7 @@ class SecurityMonitoringSignalRuleResponse(ModelNormal):
         "creation_author_id": "creationAuthorId",
         "custom_message": "customMessage",
         "custom_name": "customName",
+        "default_tags": "defaultTags",
         "deprecation_date": "deprecationDate",
         "filters": "filters",
         "has_extended_title": "hasExtendedTitle",
@@ -79,6 +82,7 @@ class SecurityMonitoringSignalRuleResponse(ModelNormal):
         "tags": "tags",
         "type": "type",
         "update_author_id": "updateAuthorId",
+        "updated_at": "updatedAt",
         "version": "version",
     }
 
@@ -90,6 +94,7 @@ class SecurityMonitoringSignalRuleResponse(ModelNormal):
         creation_author_id: Union[int, UnsetType] = unset,
         custom_message: Union[str, UnsetType] = unset,
         custom_name: Union[str, UnsetType] = unset,
+        default_tags: Union[List[str], UnsetType] = unset,
         deprecation_date: Union[int, UnsetType] = unset,
         filters: Union[List[SecurityMonitoringFilter], UnsetType] = unset,
         has_extended_title: Union[bool, UnsetType] = unset,
@@ -104,6 +109,7 @@ class SecurityMonitoringSignalRuleResponse(ModelNormal):
         tags: Union[List[str], UnsetType] = unset,
         type: Union[SecurityMonitoringSignalRuleType, UnsetType] = unset,
         update_author_id: Union[int, UnsetType] = unset,
+        updated_at: Union[int, UnsetType] = unset,
         version: Union[int, UnsetType] = unset,
         **kwargs,
     ):
@@ -127,6 +133,9 @@ class SecurityMonitoringSignalRuleResponse(ModelNormal):
 
         :param custom_name: Custom/Overridden name of the rule (used in case of Default rule update).
         :type custom_name: str, optional
+
+        :param default_tags: Default Tags for default rules (included in tags)
+        :type default_tags: [str], optional
 
         :param deprecation_date: When the rule will be deprecated, timestamp in milliseconds.
         :type deprecation_date: int, optional
@@ -170,6 +179,9 @@ class SecurityMonitoringSignalRuleResponse(ModelNormal):
         :param update_author_id: User ID of the user who updated the rule.
         :type update_author_id: int, optional
 
+        :param updated_at: The date the rule was last updated, in milliseconds.
+        :type updated_at: int, optional
+
         :param version: The version of the rule.
         :type version: int, optional
         """
@@ -185,6 +197,8 @@ class SecurityMonitoringSignalRuleResponse(ModelNormal):
             kwargs["custom_message"] = custom_message
         if custom_name is not unset:
             kwargs["custom_name"] = custom_name
+        if default_tags is not unset:
+            kwargs["default_tags"] = default_tags
         if deprecation_date is not unset:
             kwargs["deprecation_date"] = deprecation_date
         if filters is not unset:
@@ -213,6 +227,8 @@ class SecurityMonitoringSignalRuleResponse(ModelNormal):
             kwargs["type"] = type
         if update_author_id is not unset:
             kwargs["update_author_id"] = update_author_id
+        if updated_at is not unset:
+            kwargs["updated_at"] = updated_at
         if version is not unset:
             kwargs["version"] = version
         super().__init__(kwargs)
